@@ -1,0 +1,55 @@
+<template>
+  <section>
+    <FeatherAutocomplete
+      class="my-autocomplete"
+      label="Tag"
+      v-model="value"
+      :loading="loading"
+      :results="results"
+      type="single"
+      @search="search"
+      allow-new
+      @new="addTag"
+    ></FeatherAutocomplete>
+  </section>
+</template>
+<script>
+import { FeatherAutocomplete } from "@featherds/autocomplete";
+const tags = ["removed", "release", "add", "update"];
+export default {
+  data() {
+    return {
+      timeout: -1,
+      loading: false,
+      results: [],
+      value: undefined,
+    };
+  },
+  methods: {
+    search(q) {
+      this.loading = true;
+      clearTimeout(this.timeout);
+      this.timeout = setTimeout(() => {
+        this.results = tags
+          .filter((x) => x.toLowerCase().indexOf(q) > -1)
+          .map((x) => ({
+            _text: x,
+          }));
+        this.loading = false;
+      }, 500);
+    },
+    addTag(tag) {
+      tags.push(tag);
+      this.value = { _text: tag };
+    },
+  },
+  components: {
+    FeatherAutocomplete,
+  },
+};
+</script>
+<style lang="scss" scoped>
+.my-autocomplete {
+  width: 400px !important;
+}
+</style>

@@ -1,0 +1,158 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`FeatherRadioGroup.vue should have error text 1`] = `
+<div
+  class="feather-radio-group-container"
+>
+  <label
+    class="group-label"
+    for="feather-radio-group"
+  >
+    Unit Test Radio Group
+  </label>
+  <div
+    aria-describedby="feather-input-description"
+    aria-invalid="true"
+    class="feather-radio-group"
+    data-ref-id="feather-radio-group"
+    id="feather-radio-group"
+    role="radiogroup"
+  >
+    
+    
+  </div>
+  <div
+    class="feather-input-sub-text"
+    data-v-764b8d6b=""
+    id="feather-input-description"
+    style=""
+  >
+    <!---->
+    <div
+      aria-live="assertive"
+      class="feather-input-error"
+      data-ref-id="feather-form-element-error"
+      data-v-764b8d6b=""
+    >
+      TEST HINT
+    </div>
+    
+    
+  </div>
+</div>
+`;
+
+exports[`FeatherRadioGroup.vue should have hint text 1`] = `
+<div
+  class="feather-radio-group-container"
+>
+  <label
+    class="group-label"
+    for="feather-radio-group"
+  >
+    Unit Test Radio Group
+  </label>
+  <div
+    aria-describedby="feather-input-description"
+    aria-invalid="false"
+    class="feather-radio-group"
+    data-ref-id="feather-radio-group"
+    id="feather-radio-group"
+    role="radiogroup"
+  >
+    
+    
+  </div>
+  <div
+    class="feather-input-sub-text"
+    data-v-764b8d6b=""
+    id="feather-input-description"
+  >
+    <div
+      class="feather-input-hint"
+      data-ref-id="feather-form-element-hint"
+      data-v-764b8d6b=""
+    >
+      TEST HINT
+    </div>
+    <!---->
+    
+    
+  </div>
+</div>
+`;
+
+exports[`FeatherRadioGroup.vue should set id and name 1`] = `
+<div
+  class="feather-radio-group-container"
+>
+  <label
+    class="group-label"
+    for="feather-radio-group"
+  >
+    Unit Test Radio Group
+  </label>
+  <div
+    aria-describedby="feather-input-description"
+    aria-invalid="false"
+    class="feather-radio-group"
+    data-ref-id="feather-radio-group"
+    id="feather-radio-group"
+    role="radiogroup"
+  >
+    
+    
+  </div>
+  <div
+    class="feather-input-sub-text"
+    data-v-764b8d6b=""
+    id="feather-input-description"
+    style="display: none;"
+  >
+    <!---->
+    <!---->
+    
+    
+  </div>
+</div>
+`;
+
+exports[`FeatherRadioGroup.vue should stack vertically 1`] = `
+<div
+  class="feather-radio-group-container vertical"
+>
+  <label
+    class="group-label"
+    for="feather-radio-group"
+  >
+    Unit Test Radio Group
+  </label>
+  <div
+    aria-describedby="feather-input-description"
+    aria-invalid="false"
+    class="feather-radio-group"
+    data-ref-id="feather-radio-group"
+    id="feather-radio-group"
+    role="radiogroup"
+  >
+    
+    
+  </div>
+  <div
+    class="feather-input-sub-text"
+    data-v-764b8d6b=""
+    id="feather-input-description"
+  >
+    <div
+      class="feather-input-hint"
+      data-ref-id="feather-form-element-hint"
+      data-v-764b8d6b=""
+    >
+      TEST HINT
+    </div>
+    <!---->
+    
+    
+  </div>
+</div>
+`;

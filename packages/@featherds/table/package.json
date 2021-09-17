@@ -1,0 +1,21 @@
+{
+  "name": "@featherds/table",
+  "version": "0.101.1-ftr.65",
+  "description": "A collection of styles and components for creating tables",
+  "author": "NantHealth",
+  "main": "dist/app.js",
+  "license": "UNLICENSED",
+  "scripts": {},
+  "dependencies": {
+    "@featherds/composables": "file:../composables",
+    "@featherds/icon": "file:../icon",
+    "@featherds/ripple": "file:../ripple",
+    "@featherds/styles": "file:../styles",
+    "vue": "^3.1.0-0"
+  },
+  "keywords": [
+    "feather",
+    "table"
+  ],
+  "types": "./src/index.d.ts"
+}

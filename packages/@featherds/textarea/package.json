@@ -1,0 +1,19 @@
+{
+  "name": "@featherds/textarea",
+  "version": "0.101.1-ftr.65",
+  "author": "NantHealth",
+  "scripts": {},
+  "main": "dist/app.js",
+  "license": "Apache-2.0",
+  "dependencies": {
+    "@featherds/input-helper": "file:../input-helper",
+    "@featherds/styles": "file:../styles",
+    "@featherds/utils": "file:../utils",
+    "vue": "^3.1.0"
+  },
+  "keywords": [
+    "vue",
+    "FeatherTextarea"
+  ],
+  "types": "./src/index.d.ts"
+}

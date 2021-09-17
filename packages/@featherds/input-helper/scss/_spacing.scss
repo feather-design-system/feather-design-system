@@ -1,0 +1,31 @@
+@import "~@featherds/styles/themes/variables";
+
+@mixin input-spacing() {
+  padding-top: $spacing-s;
+  padding-bottom: $spacing-s;
+}
+
+@mixin group-spacing {
+  padding-top: $spacing-s;
+  padding-bottom: $spacing-s;
+  line-height: 0;
+
+  :deep(.layout-container) {
+    margin-right: $spacing-xxl;
+    &:last-of-type {
+      margin-right: 0;
+    }
+  }
+  &.vertical :deep(.layout-container) {
+    display: block;
+    margin-bottom: $spacing-m;
+    margin-right: 0;
+  }
+  label {
+    margin-bottom: $spacing-m;
+  }
+
+  .feather-input-sub-text {
+    padding: $spacing-m 0 0 0;
+  }
+}

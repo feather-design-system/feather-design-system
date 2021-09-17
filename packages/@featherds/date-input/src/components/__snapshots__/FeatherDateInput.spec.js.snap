@@ -1,0 +1,52 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`FeatherDateInput.vue should select date initially passed in as value 1`] = `
+<div
+  aria-describedby="feather-input-description"
+  aria-disabled="false"
+  aria-invalid="false"
+  aria-label="Test"
+  class="feather-date-input-group"
+  id="feather-input-label"
+  role="group"
+>
+  <span
+    aria-label="Month"
+    aria-valuemax="12"
+    aria-valuemin="1"
+    aria-valuenow="2"
+    aria-valuetext="2"
+    data-ref-id="feather-date-input-month"
+    role="spinbutton"
+    tabindex="0"
+  >
+    02
+  </span>
+   / 
+  <span
+    aria-label="Day"
+    aria-valuemax="31"
+    aria-valuemin="1"
+    aria-valuenow="1"
+    aria-valuetext="1"
+    data-ref-id="feather-date-input-day"
+    role="spinbutton"
+    tabindex="-1"
+  >
+    01
+  </span>
+   / 
+  <span
+    aria-label="Year"
+    aria-valuemax="2030"
+    aria-valuemin="1900"
+    aria-valuenow="2020"
+    aria-valuetext="2020"
+    data-ref-id="feather-date-input-year"
+    role="spinbutton"
+    tabindex="-1"
+  >
+    2020
+  </span>
+</div>
+`;

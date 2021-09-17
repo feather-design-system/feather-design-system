@@ -1,0 +1,11 @@
+{
+  "name": "@featherds/utils",
+  "version": "0.101.1-ftr.65",
+  "author": "NantHealth",
+  "scripts": {},
+  "keywords": [
+    "vue",
+    "FeatherUtils"
+  ],
+  "types": "./src/index.d.ts"
+}

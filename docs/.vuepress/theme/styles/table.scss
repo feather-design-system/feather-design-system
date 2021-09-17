@@ -1,0 +1,6 @@
+@import "~@featherds/table/scss/table";
+
+table:not([class]) {
+  @include table();
+  @include row-striped();
+}

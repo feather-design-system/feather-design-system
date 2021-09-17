@@ -1,0 +1,1162 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`FeatherTextarea.vue should allow custom blur events 1`] = `
+<div
+  class="feather-textarea-container"
+>
+  <div
+    class="feather-input-wrapper-container raised feather-input-content"
+    data-v-47a74f22=""
+  >
+    <fieldset
+      aria-hidden="true"
+      class="feather-input-border"
+      data-v-47a74f22=""
+    >
+      <legend
+        data-v-47a74f22=""
+      >
+        label
+      </legend>
+    </fieldset>
+    <label
+      class="feather-input-label"
+      data-ref-id="feather-form-element-label"
+      data-v-47a74f22=""
+      for="feather-textarea-label"
+      style="left: 12px;"
+    >
+      label
+    </label>
+    <div
+      class="feather-input-wrapper"
+      data-v-47a74f22=""
+    >
+      <div
+        class="prefix"
+        data-v-47a74f22=""
+      >
+        
+        
+      </div>
+      
+      <textarea
+        aria-describedby="feather-textarea-description"
+        aria-disabled="false"
+        aria-invalid="false"
+        class="feather-textarea"
+        data-ref-id="feather-input"
+        id="feather-textarea-label"
+        maxlength="false"
+        name="feather-textarea-label"
+      />
+      
+      <div
+        class="post"
+        data-v-47a74f22=""
+      >
+        <!---->
+        <!---->
+        
+        
+      </div>
+    </div>
+  </div>
+  <div
+    class="feather-input-sub-text"
+    data-v-764b8d6b=""
+    id="feather-textarea-description"
+  >
+    <!---->
+    <!---->
+    
+    
+  </div>
+</div>
+`;
+
+exports[`FeatherTextarea.vue should allow custom focus events 1`] = `
+<div
+  class="feather-textarea-container"
+>
+  <div
+    class="feather-input-wrapper-container raised focused feather-input-content focused"
+    data-v-47a74f22=""
+  >
+    <fieldset
+      aria-hidden="true"
+      class="feather-input-border"
+      data-v-47a74f22=""
+    >
+      <legend
+        data-v-47a74f22=""
+      >
+        label
+      </legend>
+    </fieldset>
+    <label
+      class="feather-input-label"
+      data-ref-id="feather-form-element-label"
+      data-v-47a74f22=""
+      for="feather-textarea-label"
+      style="left: 12px;"
+    >
+      label
+    </label>
+    <div
+      class="feather-input-wrapper"
+      data-v-47a74f22=""
+    >
+      <div
+        class="prefix"
+        data-v-47a74f22=""
+      >
+        
+        
+      </div>
+      
+      <textarea
+        aria-describedby="feather-textarea-description"
+        aria-disabled="false"
+        aria-invalid="false"
+        class="feather-textarea"
+        data-ref-id="feather-input"
+        id="feather-textarea-label"
+        maxlength="false"
+        name="feather-textarea-label"
+      />
+      
+      <div
+        class="post"
+        data-v-47a74f22=""
+      >
+        <!---->
+        <!---->
+        
+        
+      </div>
+    </div>
+  </div>
+  <div
+    class="feather-input-sub-text"
+    data-v-764b8d6b=""
+    id="feather-textarea-description"
+  >
+    <!---->
+    <!---->
+    
+    
+  </div>
+</div>
+`;
+
+exports[`FeatherTextarea.vue should clear textarea when clear-icon is clicked 1`] = `
+<div
+  class="feather-textarea-container"
+>
+  <div
+    class="feather-input-wrapper-container feather-input-content"
+    data-v-47a74f22=""
+  >
+    <fieldset
+      aria-hidden="true"
+      class="feather-input-border"
+      data-v-47a74f22=""
+    >
+      <legend
+        data-v-47a74f22=""
+      >
+        label
+      </legend>
+    </fieldset>
+    <label
+      class="feather-input-label"
+      data-ref-id="feather-form-element-label"
+      data-v-47a74f22=""
+      for="feather-textarea-label"
+      style="left: 16px;"
+    >
+      label
+    </label>
+    <div
+      class="feather-input-wrapper"
+      data-v-47a74f22=""
+    >
+      <div
+        class="prefix"
+        data-v-47a74f22=""
+      >
+        
+        
+      </div>
+      
+      <textarea
+        aria-describedby="feather-textarea-description"
+        aria-disabled="false"
+        aria-invalid="false"
+        class="feather-textarea"
+        data-ref-id="feather-input"
+        id="feather-textarea-label"
+        maxlength="false"
+        name="feather-textarea-label"
+      />
+      
+      <div
+        class="post"
+        data-v-47a74f22=""
+      >
+        <!---->
+        <!---->
+        
+        
+      </div>
+    </div>
+  </div>
+  <div
+    class="feather-input-sub-text"
+    data-v-764b8d6b=""
+    id="feather-textarea-description"
+  >
+    <!---->
+    <!---->
+    
+    
+  </div>
+</div>
+`;
+
+exports[`FeatherTextarea.vue should not render a clear icon when the textarea doesn't have a value 1`] = `
+<div
+  class="feather-textarea-container"
+>
+  <div
+    class="feather-input-wrapper-container feather-input-content"
+    data-v-47a74f22=""
+  >
+    <fieldset
+      aria-hidden="true"
+      class="feather-input-border"
+      data-v-47a74f22=""
+    >
+      <legend
+        data-v-47a74f22=""
+      >
+        label
+      </legend>
+    </fieldset>
+    <label
+      class="feather-input-label"
+      data-ref-id="feather-form-element-label"
+      data-v-47a74f22=""
+      for="feather-textarea-label"
+      style="left: 16px;"
+    >
+      label
+    </label>
+    <div
+      class="feather-input-wrapper"
+      data-v-47a74f22=""
+    >
+      <div
+        class="prefix"
+        data-v-47a74f22=""
+      >
+        
+        
+      </div>
+      
+      <textarea
+        aria-describedby="feather-textarea-description"
+        aria-disabled="false"
+        aria-invalid="false"
+        class="feather-textarea"
+        data-ref-id="feather-input"
+        id="feather-textarea-label"
+        maxlength="false"
+        name="feather-textarea-label"
+      />
+      
+      <div
+        class="post"
+        data-v-47a74f22=""
+      >
+        <!---->
+        <!---->
+        
+        
+      </div>
+    </div>
+  </div>
+  <div
+    class="feather-input-sub-text"
+    data-v-764b8d6b=""
+    id="feather-textarea-description"
+  >
+    <!---->
+    <!---->
+    
+    
+  </div>
+</div>
+`;
+
+exports[`FeatherTextarea.vue should render a clear icon when clear has a value and textarea also has a value 1`] = `
+<div
+  class="feather-textarea-container"
+>
+  <div
+    class="feather-input-wrapper-container raised feather-input-content"
+    data-v-47a74f22=""
+  >
+    <fieldset
+      aria-hidden="true"
+      class="feather-input-border"
+      data-v-47a74f22=""
+    >
+      <legend
+        data-v-47a74f22=""
+      >
+        label
+      </legend>
+    </fieldset>
+    <label
+      class="feather-input-label"
+      data-ref-id="feather-form-element-label"
+      data-v-47a74f22=""
+      for="feather-textarea-label"
+      style="left: 12px;"
+    >
+      label
+    </label>
+    <div
+      class="feather-input-wrapper"
+      data-v-47a74f22=""
+    >
+      <div
+        class="prefix"
+        data-v-47a74f22=""
+      >
+        
+        
+      </div>
+      
+      <textarea
+        aria-describedby="feather-textarea-description"
+        aria-disabled="false"
+        aria-invalid="false"
+        class="feather-textarea"
+        data-ref-id="feather-input"
+        id="feather-textarea-label"
+        maxlength="false"
+        name="feather-textarea-label"
+      />
+      
+      <div
+        class="post"
+        data-v-47a74f22=""
+      >
+        <a
+          class="action-icon hide-when-disabled"
+          data-ref-id="feather-form-element-clear"
+          data-v-12cb8e54=""
+          data-v-47a74f22=""
+          href="#"
+          title="clear"
+        >
+          <svg
+            aria-hidden="true"
+            class="feather-icon"
+            data-v-0aa06a12=""
+            data-v-12cb8e54=""
+            focusable="false"
+            height="24"
+            role="img"
+            viewBox="0 0 24 24"
+            width="24"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M12,2A10,10,0,1,0,22,12,10,10,0,0,0,12,2Zm5,13.24A1.26,1.26,0,0,1,17,17a1.24,1.24,0,0,1-1.76,0L12,13.73,8.76,17A1.24,1.24,0,1,1,7,15.24L10.24,12,7,8.76A1.24,1.24,0,0,1,8.76,7L12,10.2,15.24,7A1.24,1.24,0,1,1,17,8.76L13.76,12Z"
+            />
+          </svg>
+        </a>
+        <!---->
+        
+        
+      </div>
+    </div>
+  </div>
+  <div
+    class="feather-input-sub-text"
+    data-v-764b8d6b=""
+    id="feather-textarea-description"
+  >
+    <!---->
+    <!---->
+    
+    
+  </div>
+</div>
+`;
+
+exports[`FeatherTextarea.vue should render a maxlength attribute and character count when maxlength specified 1`] = `
+<div
+  class="feather-textarea-container"
+>
+  <div
+    class="feather-input-wrapper-container raised feather-input-content"
+    data-v-47a74f22=""
+  >
+    <fieldset
+      aria-hidden="true"
+      class="feather-input-border"
+      data-v-47a74f22=""
+    >
+      <legend
+        data-v-47a74f22=""
+      >
+        label
+      </legend>
+    </fieldset>
+    <label
+      class="feather-input-label"
+      data-ref-id="feather-form-element-label"
+      data-v-47a74f22=""
+      for="feather-textarea-label"
+      style="left: 12px;"
+    >
+      label
+    </label>
+    <div
+      class="feather-input-wrapper"
+      data-v-47a74f22=""
+    >
+      <div
+        class="prefix"
+        data-v-47a74f22=""
+      >
+        
+        
+      </div>
+      
+      <textarea
+        aria-describedby="feather-textarea-description"
+        aria-disabled="false"
+        aria-invalid="false"
+        class="feather-textarea"
+        data-ref-id="feather-input"
+        id="feather-textarea-label"
+        maxlength="5"
+        name="feather-textarea-label"
+      />
+      
+      <div
+        class="post"
+        data-v-47a74f22=""
+      >
+        <!---->
+        <!---->
+        
+        
+      </div>
+    </div>
+  </div>
+  <div
+    class="feather-input-sub-text"
+    data-v-764b8d6b=""
+    id="feather-textarea-description"
+  >
+    <!---->
+    <!---->
+    
+    <div
+      class="feather-input-count"
+      data-ref-id="feather-form-element-count"
+    >
+      4 / 5
+    </div>
+    
+  </div>
+</div>
+`;
+
+exports[`FeatherTextarea.vue should render an textarea error 1`] = `
+<div
+  class="feather-textarea-container"
+>
+  <div
+    class="feather-input-wrapper-container error feather-input-content error"
+    data-v-47a74f22=""
+  >
+    <fieldset
+      aria-hidden="true"
+      class="feather-input-border"
+      data-v-47a74f22=""
+    >
+      <legend
+        data-v-47a74f22=""
+      >
+        label
+      </legend>
+    </fieldset>
+    <label
+      class="feather-input-label"
+      data-ref-id="feather-form-element-label"
+      data-v-47a74f22=""
+      for="feather-textarea-label"
+      style="left: 16px;"
+    >
+      label
+    </label>
+    <div
+      class="feather-input-wrapper"
+      data-v-47a74f22=""
+    >
+      <div
+        class="prefix"
+        data-v-47a74f22=""
+      >
+        
+        
+      </div>
+      
+      <textarea
+        aria-describedby="feather-textarea-description"
+        aria-disabled="false"
+        aria-invalid="true"
+        class="feather-textarea error"
+        data-ref-id="feather-input"
+        id="feather-textarea-label"
+        maxlength="false"
+        name="feather-textarea-label"
+      />
+      
+      <div
+        class="post"
+        data-v-47a74f22=""
+      >
+        <!---->
+        <svg
+          aria-hidden="true"
+          class="error-icon hide-when-disabled feather-icon error-icon hide-when-disabled"
+          data-v-0aa06a12=""
+          data-v-47a74f22=""
+          data-v-4f84c6fe=""
+          focusable="false"
+          height="24"
+          role="img"
+          viewBox="0 0 24 24"
+          width="24"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path
+            d="M11,15h2v2H11Zm0-8h2v6H11Zm1-5A10,10,0,1,0,22,12,10,10,0,0,0,12,2Zm0,18a8,8,0,1,1,8-8A8,8,0,0,1,12,20Z"
+          />
+        </svg>
+        
+        
+      </div>
+    </div>
+  </div>
+  <div
+    class="feather-input-sub-text"
+    data-v-764b8d6b=""
+    id="feather-textarea-description"
+  >
+    <!---->
+    <div
+      aria-live="assertive"
+      class="feather-input-error"
+      data-ref-id="feather-form-element-error"
+      data-v-764b8d6b=""
+    >
+      Error text
+    </div>
+    
+    
+  </div>
+</div>
+`;
+
+exports[`FeatherTextarea.vue should render an textarea error and has a value 1`] = `
+<div
+  class="feather-textarea-container"
+>
+  <div
+    class="feather-input-wrapper-container raised error feather-input-content error"
+    data-v-47a74f22=""
+  >
+    <fieldset
+      aria-hidden="true"
+      class="feather-input-border"
+      data-v-47a74f22=""
+    >
+      <legend
+        data-v-47a74f22=""
+      >
+        label
+      </legend>
+    </fieldset>
+    <label
+      class="feather-input-label"
+      data-ref-id="feather-form-element-label"
+      data-v-47a74f22=""
+      for="feather-textarea-label"
+      style="left: 12px;"
+    >
+      label
+    </label>
+    <div
+      class="feather-input-wrapper"
+      data-v-47a74f22=""
+    >
+      <div
+        class="prefix"
+        data-v-47a74f22=""
+      >
+        
+        
+      </div>
+      
+      <textarea
+        aria-describedby="feather-textarea-description"
+        aria-disabled="false"
+        aria-invalid="true"
+        class="feather-textarea error"
+        data-ref-id="feather-input"
+        id="feather-textarea-label"
+        maxlength="false"
+        name="feather-textarea-label"
+      />
+      
+      <div
+        class="post"
+        data-v-47a74f22=""
+      >
+        <!---->
+        <svg
+          aria-hidden="true"
+          class="error-icon hide-when-disabled feather-icon error-icon hide-when-disabled"
+          data-v-0aa06a12=""
+          data-v-47a74f22=""
+          data-v-4f84c6fe=""
+          focusable="false"
+          height="24"
+          role="img"
+          viewBox="0 0 24 24"
+          width="24"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path
+            d="M11,15h2v2H11Zm0-8h2v6H11Zm1-5A10,10,0,1,0,22,12,10,10,0,0,0,12,2Zm0,18a8,8,0,1,1,8-8A8,8,0,0,1,12,20Z"
+          />
+        </svg>
+        
+        
+      </div>
+    </div>
+  </div>
+  <div
+    class="feather-input-sub-text"
+    data-v-764b8d6b=""
+    id="feather-textarea-description"
+  >
+    <!---->
+    <div
+      aria-live="assertive"
+      class="feather-input-error"
+      data-ref-id="feather-form-element-error"
+      data-v-764b8d6b=""
+    >
+      Error text
+    </div>
+    
+    
+  </div>
+</div>
+`;
+
+exports[`FeatherTextarea.vue should render an textarea error and has focus 1`] = `
+<div
+  class="feather-textarea-container"
+>
+  <div
+    class="feather-input-wrapper-container raised focused error feather-input-content error focused"
+    data-v-47a74f22=""
+  >
+    <fieldset
+      aria-hidden="true"
+      class="feather-input-border"
+      data-v-47a74f22=""
+    >
+      <legend
+        data-v-47a74f22=""
+      >
+        label
+      </legend>
+    </fieldset>
+    <label
+      class="feather-input-label"
+      data-ref-id="feather-form-element-label"
+      data-v-47a74f22=""
+      for="feather-textarea-label"
+      style="left: 12px;"
+    >
+      label
+    </label>
+    <div
+      class="feather-input-wrapper"
+      data-v-47a74f22=""
+    >
+      <div
+        class="prefix"
+        data-v-47a74f22=""
+      >
+        
+        
+      </div>
+      
+      <textarea
+        aria-describedby="feather-textarea-description"
+        aria-disabled="false"
+        aria-invalid="true"
+        class="feather-textarea error"
+        data-ref-id="feather-input"
+        id="feather-textarea-label"
+        maxlength="false"
+        name="feather-textarea-label"
+      />
+      
+      <div
+        class="post"
+        data-v-47a74f22=""
+      >
+        <!---->
+        <svg
+          aria-hidden="true"
+          class="error-icon hide-when-disabled feather-icon error-icon hide-when-disabled"
+          data-v-0aa06a12=""
+          data-v-47a74f22=""
+          data-v-4f84c6fe=""
+          focusable="false"
+          height="24"
+          role="img"
+          viewBox="0 0 24 24"
+          width="24"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path
+            d="M11,15h2v2H11Zm0-8h2v6H11Zm1-5A10,10,0,1,0,22,12,10,10,0,0,0,12,2Zm0,18a8,8,0,1,1,8-8A8,8,0,0,1,12,20Z"
+          />
+        </svg>
+        
+        
+      </div>
+    </div>
+  </div>
+  <div
+    class="feather-input-sub-text"
+    data-v-764b8d6b=""
+    id="feather-textarea-description"
+  >
+    <!---->
+    <div
+      aria-live="assertive"
+      class="feather-input-error"
+      data-ref-id="feather-form-element-error"
+      data-v-764b8d6b=""
+    >
+      Error text
+    </div>
+    
+    
+  </div>
+</div>
+`;
+
+exports[`FeatherTextarea.vue should render an textarea with a label 1`] = `
+<div
+  class="feather-textarea-container"
+>
+  <div
+    class="feather-input-wrapper-container feather-input-content"
+    data-v-47a74f22=""
+  >
+    <fieldset
+      aria-hidden="true"
+      class="feather-input-border"
+      data-v-47a74f22=""
+    >
+      <legend
+        data-v-47a74f22=""
+      >
+        label
+      </legend>
+    </fieldset>
+    <label
+      class="feather-input-label"
+      data-ref-id="feather-form-element-label"
+      data-v-47a74f22=""
+      for="feather-textarea-label"
+      style="left: 16px;"
+    >
+      label
+    </label>
+    <div
+      class="feather-input-wrapper"
+      data-v-47a74f22=""
+    >
+      <div
+        class="prefix"
+        data-v-47a74f22=""
+      >
+        
+        
+      </div>
+      
+      <textarea
+        aria-describedby="feather-textarea-description"
+        aria-disabled="false"
+        aria-invalid="false"
+        class="feather-textarea"
+        data-ref-id="feather-input"
+        id="feather-textarea-label"
+        maxlength="false"
+        name="feather-textarea-label"
+      />
+      
+      <div
+        class="post"
+        data-v-47a74f22=""
+      >
+        <!---->
+        <!---->
+        
+        
+      </div>
+    </div>
+  </div>
+  <div
+    class="feather-input-sub-text"
+    data-v-764b8d6b=""
+    id="feather-textarea-description"
+  >
+    <!---->
+    <!---->
+    
+    
+  </div>
+</div>
+`;
+
+exports[`FeatherTextarea.vue should render an textarea with a label and hint text 1`] = `
+<div
+  class="feather-textarea-container"
+>
+  <div
+    class="feather-input-wrapper-container feather-input-content"
+    data-v-47a74f22=""
+  >
+    <fieldset
+      aria-hidden="true"
+      class="feather-input-border"
+      data-v-47a74f22=""
+    >
+      <legend
+        data-v-47a74f22=""
+      >
+        label
+      </legend>
+    </fieldset>
+    <label
+      class="feather-input-label"
+      data-ref-id="feather-form-element-label"
+      data-v-47a74f22=""
+      for="feather-textarea-label"
+      style="left: 16px;"
+    >
+      label
+    </label>
+    <div
+      class="feather-input-wrapper"
+      data-v-47a74f22=""
+    >
+      <div
+        class="prefix"
+        data-v-47a74f22=""
+      >
+        
+        
+      </div>
+      
+      <textarea
+        aria-describedby="feather-textarea-description"
+        aria-disabled="false"
+        aria-invalid="false"
+        class="feather-textarea"
+        data-ref-id="feather-input"
+        id="feather-textarea-label"
+        maxlength="false"
+        name="feather-textarea-label"
+      />
+      
+      <div
+        class="post"
+        data-v-47a74f22=""
+      >
+        <!---->
+        <!---->
+        
+        
+      </div>
+    </div>
+  </div>
+  <div
+    class="feather-input-sub-text"
+    data-v-764b8d6b=""
+    id="feather-textarea-description"
+  >
+    <div
+      class="feather-input-hint"
+      data-ref-id="feather-form-element-hint"
+      data-v-764b8d6b=""
+    >
+      hint text
+    </div>
+    <!---->
+    
+    
+  </div>
+</div>
+`;
+
+exports[`FeatherTextarea.vue should render an textarea with a preset value 1`] = `
+<div
+  class="feather-textarea-container"
+>
+  <div
+    class="feather-input-wrapper-container raised feather-input-content"
+    data-v-47a74f22=""
+  >
+    <fieldset
+      aria-hidden="true"
+      class="feather-input-border"
+      data-v-47a74f22=""
+    >
+      <legend
+        data-v-47a74f22=""
+      >
+        label
+      </legend>
+    </fieldset>
+    <label
+      class="feather-input-label"
+      data-ref-id="feather-form-element-label"
+      data-v-47a74f22=""
+      for="feather-textarea-label"
+      style="left: 12px;"
+    >
+      label
+    </label>
+    <div
+      class="feather-input-wrapper"
+      data-v-47a74f22=""
+    >
+      <div
+        class="prefix"
+        data-v-47a74f22=""
+      >
+        
+        
+      </div>
+      
+      <textarea
+        aria-describedby="feather-textarea-description"
+        aria-disabled="false"
+        aria-invalid="false"
+        class="feather-textarea"
+        data-ref-id="feather-input"
+        id="feather-textarea-label"
+        maxlength="false"
+        name="feather-textarea-label"
+      />
+      
+      <div
+        class="post"
+        data-v-47a74f22=""
+      >
+        <!---->
+        <!---->
+        
+        
+      </div>
+    </div>
+  </div>
+  <div
+    class="feather-input-sub-text"
+    data-v-764b8d6b=""
+    id="feather-textarea-description"
+  >
+    <div
+      class="feather-input-hint"
+      data-ref-id="feather-form-element-hint"
+      data-v-764b8d6b=""
+    >
+      hint text
+    </div>
+    <!---->
+    
+    
+  </div>
+</div>
+`;
+
+exports[`FeatherTextarea.vue should render an textarea with raised label when focused 1`] = `
+<div
+  class="feather-textarea-container"
+>
+  <div
+    class="feather-input-wrapper-container raised focused feather-input-content focused"
+    data-v-47a74f22=""
+  >
+    <fieldset
+      aria-hidden="true"
+      class="feather-input-border"
+      data-v-47a74f22=""
+    >
+      <legend
+        data-v-47a74f22=""
+      >
+        label
+      </legend>
+    </fieldset>
+    <label
+      class="feather-input-label"
+      data-ref-id="feather-form-element-label"
+      data-v-47a74f22=""
+      for="feather-textarea-label"
+      style="left: 12px;"
+    >
+      label
+    </label>
+    <div
+      class="feather-input-wrapper"
+      data-v-47a74f22=""
+    >
+      <div
+        class="prefix"
+        data-v-47a74f22=""
+      >
+        
+        
+      </div>
+      
+      <textarea
+        aria-describedby="feather-textarea-description"
+        aria-disabled="false"
+        aria-invalid="false"
+        class="feather-textarea"
+        data-ref-id="feather-input"
+        id="feather-textarea-label"
+        maxlength="false"
+        name="feather-textarea-label"
+      />
+      
+      <div
+        class="post"
+        data-v-47a74f22=""
+      >
+        <!---->
+        <!---->
+        
+        
+      </div>
+    </div>
+  </div>
+  <div
+    class="feather-input-sub-text"
+    data-v-764b8d6b=""
+    id="feather-textarea-description"
+  >
+    <!---->
+    <!---->
+    
+    
+  </div>
+</div>
+`;
+
+exports[`FeatherTextarea.vue should render an textarea with raised label when focused and has a value 1`] = `
+<div
+  class="feather-textarea-container"
+>
+  <div
+    class="feather-input-wrapper-container raised focused feather-input-content focused"
+    data-v-47a74f22=""
+  >
+    <fieldset
+      aria-hidden="true"
+      class="feather-input-border"
+      data-v-47a74f22=""
+    >
+      <legend
+        data-v-47a74f22=""
+      >
+        label
+      </legend>
+    </fieldset>
+    <label
+      class="feather-input-label"
+      data-ref-id="feather-form-element-label"
+      data-v-47a74f22=""
+      for="feather-textarea-label"
+      style="left: 12px;"
+    >
+      label
+    </label>
+    <div
+      class="feather-input-wrapper"
+      data-v-47a74f22=""
+    >
+      <div
+        class="prefix"
+        data-v-47a74f22=""
+      >
+        
+        
+      </div>
+      
+      <textarea
+        aria-describedby="feather-textarea-description"
+        aria-disabled="false"
+        aria-invalid="false"
+        class="feather-textarea"
+        data-ref-id="feather-input"
+        id="feather-textarea-label"
+        maxlength="false"
+        name="feather-textarea-label"
+      />
+      
+      <div
+        class="post"
+        data-v-47a74f22=""
+      >
+        <!---->
+        <!---->
+        
+        
+      </div>
+    </div>
+  </div>
+  <div
+    class="feather-input-sub-text"
+    data-v-764b8d6b=""
+    id="feather-textarea-description"
+  >
+    <!---->
+    <!---->
+    
+    
+  </div>
+</div>
+`;

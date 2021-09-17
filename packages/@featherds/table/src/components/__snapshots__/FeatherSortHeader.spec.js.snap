@@ -1,0 +1,147 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`FeatherSortHeader.vue should set aria-sort based on prop 1`] = `
+<th
+  aria-sort="ascending"
+  data-ref-id="feather-sort-header"
+>
+  <div
+    aria-describedby="feather-sort-header-description"
+    class="header-flex-container content"
+    role="button"
+    tabindex="0"
+  >
+    <span
+      class="sort-cell-label"
+    >
+      
+      
+    </span>
+    <span
+      class="description"
+    />
+    <span
+      class="hidden-description"
+      id="feather-sort-header-description"
+    >
+      Click to Sort
+    </span>
+    <span
+      aria-hidden="true"
+      class="icon focus hover"
+    >
+      <feather-icon-stub
+        flex="false"
+        icon="[object Object]"
+      />
+      <feather-ripple-stub
+        center="true"
+      />
+    </span>
+  </div>
+  <span
+    aria-atomic="true"
+    aria-live="assertive"
+    class="alert"
+    role="alert"
+  />
+</th>
+`;
+
+exports[`FeatherSortHeader.vue should set aria-sort based on prop 2`] = `
+<th
+  aria-sort="descending"
+  data-ref-id="feather-sort-header"
+>
+  <div
+    aria-describedby="feather-sort-header-description"
+    class="header-flex-container content"
+    role="button"
+    tabindex="0"
+  >
+    <span
+      class="sort-cell-label"
+    >
+      
+      
+    </span>
+    <span
+      class="description"
+    />
+    <span
+      class="hidden-description"
+      id="feather-sort-header-description"
+    >
+      Click to Sort
+    </span>
+    <span
+      aria-hidden="true"
+      class="icon focus hover"
+    >
+      <feather-icon-stub
+        flex="false"
+        icon="[object Object]"
+      />
+      <feather-ripple-stub
+        center="true"
+      />
+    </span>
+  </div>
+  <span
+    aria-atomic="true"
+    aria-live="assertive"
+    class="alert"
+    role="alert"
+  />
+</th>
+`;
+
+exports[`FeatherSortHeader.vue should set aria-sort based on prop 3`] = `
+<th
+  aria-sort="none"
+  data-ref-id="feather-sort-header"
+>
+  <div
+    aria-describedby="feather-sort-header-description"
+    class="header-flex-container content"
+    role="button"
+    tabindex="0"
+  >
+    <span
+      class="sort-cell-label"
+    >
+      
+      
+    </span>
+    <span
+      class="description"
+    >
+      Sorted None
+    </span>
+    <span
+      class="hidden-description"
+      id="feather-sort-header-description"
+    >
+      Click to Sort
+    </span>
+    <span
+      aria-hidden="true"
+      class="icon focus hover"
+    >
+      <feather-icon-stub
+        flex="false"
+        icon="[object Object]"
+      />
+      <feather-ripple-stub
+        center="true"
+      />
+    </span>
+  </div>
+  <span
+    aria-atomic="true"
+    aria-live="assertive"
+    class="alert"
+    role="alert"
+  />
+</th>
+`;

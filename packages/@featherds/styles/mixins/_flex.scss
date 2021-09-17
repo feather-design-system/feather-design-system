@@ -1,0 +1,21 @@
+@mixin flex() {
+  display: flex;
+}
+
+@mixin horizontal() {
+  flex-direction: row;
+}
+@mixin vertical() {
+  flex-direction: column;
+}
+
+@mixin fill() {
+  flex: 1 1 auto;
+}
+@mixin none() {
+  flex: none;
+}
+@mixin center() {
+  align-items: center;
+  justify-content: center;
+}

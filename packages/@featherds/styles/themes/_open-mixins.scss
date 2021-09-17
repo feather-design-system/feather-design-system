@@ -1,0 +1,52 @@
+@use "sass:map";
+
+@import "base-light";
+@import "base-dark";
+@import "base-theme";
+@import "utils";
+@import "variables";
+
+$open-light-primary: (
+  $primary: #3a4bd3,
+  $primary-variant: #131736,
+  $state-color-on-surface: #131736
+);
+$open-light-primary: add-RGB($open-light-primary);
+
+$open-light-map: map-collect($base-theme, $base-light, $open-light-primary);
+
+@mixin open-light() {
+  @each $property, $value in $open-light-map {
+    #{$property}: #{$value};
+  }
+}
+
+$open-dark-primary: (
+  $primary: #14d1df,
+  $primary-variant: #b5eff3,
+  $surface: #131736
+);
+$open-dark-primary: add-RGB($open-dark-primary);
+
+$open-dark-primary: map-collect(
+  (
+    $elevation-background-0: mix(map.get($open-dark-primary, $surface), #fff, 100%),
+    $elevation-background-1: mix(map.get($open-dark-primary, $surface), #fff, 95%),
+    $elevation-background-2: mix(map.get($open-dark-primary, $surface), #fff, 93%),
+    $elevation-background-3: mix(map.get($open-dark-primary, $surface), #fff, 92%),
+    $elevation-background-4: mix(map.get($open-dark-primary, $surface), #fff, 91%),
+    $elevation-background-6: mix(map.get($open-dark-primary, $surface), #fff, 89%),
+    $elevation-background-8: mix(map.get($open-dark-primary, $surface), #fff, 88%),
+    $elevation-background-12: mix(map.get($open-dark-primary, $surface), #fff, 86%),
+    $elevation-background-16: mix(map.get($open-dark-primary, $surface), #fff, 85%),
+    $elevation-background-24: mix(map.get($open-dark-primary, $surface), #fff, 84%)
+  ),
+  $open-dark-primary
+);
+$open-dark-map: map-collect($base-theme, $base-dark, $open-dark-primary);
+
+@mixin open-dark() {
+  @each $property, $value in $open-dark-map {
+    #{$property}: #{$value};
+  }
+}

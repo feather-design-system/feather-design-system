@@ -1,0 +1,20 @@
+{
+  "name": "@featherds/pagination",
+  "version": "0.101.1-ftr.65",
+  "author": "NantHealth",
+  "scripts": {},
+  "main": "dist/app.js",
+  "license": "Apache-2.0",
+  "dependencies": {
+    "@featherds/button": "file:../button",
+    "@featherds/icon": "file:../icon",
+    "@featherds/select": "file:../select",
+    "@featherds/styles": "file:../styles",
+    "vue": "^3.1.0-0"
+  },
+  "keywords": [
+    "vue",
+    "FeatherPagination"
+  ],
+  "types": "./src/index.d.ts"
+}

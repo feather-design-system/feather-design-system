@@ -1,0 +1,264 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`RadioChip radio button should set aria-checked based on data 1`] = `
+<div
+  allow-click="true"
+  aria-checked="true"
+  aria-disabled="false"
+  aria-labelledby="chip-label-id"
+  class="chip focus hover selected"
+  role="radio"
+  tabindex="0"
+>
+  
+  <!--v-if-->
+  <span
+    class="label"
+    id="chip-label-id"
+    title="false"
+  >
+    
+    
+    Test
+    
+    
+  </span>
+  
+  <!--v-if-->
+</div>
+`;
+
+exports[`RadioChip radio button should set aria-checked based on data 2`] = `
+<div
+  allow-click="true"
+  aria-checked="false"
+  aria-disabled="false"
+  aria-labelledby="chip-label-id"
+  class="chip focus hover"
+  role="radio"
+  tabindex="-1"
+>
+  
+  <!--v-if-->
+  <span
+    class="label"
+    id="chip-label-id"
+    title="false"
+  >
+    
+    
+    Test
+    
+    
+  </span>
+  
+  <!--v-if-->
+</div>
+`;
+
+exports[`RadioChip radio button should set aria-disabled based on property 1`] = `
+<div
+  allow-click="false"
+  aria-checked="false"
+  aria-disabled="true"
+  aria-labelledby="chip-label-id"
+  class="chip disabled focus hover"
+  role="radio"
+  tabindex="-1"
+>
+  
+  <!--v-if-->
+  <span
+    class="label"
+    id="chip-label-id"
+    title="false"
+  >
+    
+    
+    Test
+    
+    
+  </span>
+  
+  <!--v-if-->
+</div>
+`;
+
+exports[`RadioChip radio button should set aria-disabled based on property 2`] = `
+<div
+  allow-click="true"
+  aria-checked="false"
+  aria-disabled="false"
+  aria-labelledby="chip-label-id"
+  class="chip focus hover"
+  role="radio"
+  tabindex="-1"
+>
+  
+  <!--v-if-->
+  <span
+    class="label"
+    id="chip-label-id"
+    title="false"
+  >
+    
+    
+    Test
+    
+    
+  </span>
+  
+  <!--v-if-->
+</div>
+`;
+
+exports[`RadioChip should render a disabled chip 1`] = `
+<div
+  allow-click="false"
+  aria-checked="false"
+  aria-disabled="true"
+  aria-labelledby="chip-label-id"
+  class="chip disabled focus hover"
+  role="radio"
+  tabindex="-1"
+>
+  
+  <!--v-if-->
+  <span
+    class="label"
+    id="chip-label-id"
+    title="false"
+  >
+    
+    
+    Test
+    
+    
+  </span>
+  
+  <!--v-if-->
+</div>
+`;
+
+exports[`RadioChip should render a standard chip 1`] = `
+<div
+  allow-click="true"
+  aria-checked="false"
+  aria-disabled="false"
+  aria-labelledby="chip-label-id"
+  class="chip focus hover"
+  role="radio"
+  tabindex="-1"
+>
+  
+  <!--v-if-->
+  <span
+    class="label"
+    id="chip-label-id"
+    title="false"
+  >
+    
+    
+    Test
+    
+    
+  </span>
+  
+  <!--v-if-->
+</div>
+`;
+
+exports[`RadioChip should render a standard chip with icon 1`] = `
+<div
+  allow-click="true"
+  aria-checked="false"
+  aria-disabled="false"
+  aria-labelledby="chip-label-id"
+  class="chip focus hover"
+  role="radio"
+  tabindex="-1"
+>
+  
+  <span
+    class="chip-icon"
+    role="presentation"
+  >
+    
+    
+    <span>
+      *
+    </span>
+    
+    
+  </span>
+  <span
+    class="label"
+    id="chip-label-id"
+    title="false"
+  >
+    
+    
+    Test
+    
+    
+  </span>
+  
+  <!--v-if-->
+</div>
+`;
+
+exports[`RadioChip should render condensed 1`] = `
+<div
+  allow-click="true"
+  aria-checked="false"
+  aria-disabled="false"
+  aria-labelledby="chip-label-id"
+  class="chip condensed focus hover"
+  role="radio"
+  tabindex="-1"
+>
+  
+  <!--v-if-->
+  <span
+    class="label"
+    id="chip-label-id"
+    title="false"
+  >
+    
+    
+    Test
+    
+    
+  </span>
+  
+  <!--v-if-->
+</div>
+`;
+
+exports[`RadioChip should render condensed from a group 1`] = `
+<div
+  allow-click="true"
+  aria-checked="false"
+  aria-disabled="false"
+  aria-labelledby="chip-label-id"
+  class="chip focus hover"
+  role="radio"
+  tabindex="-1"
+>
+  
+  <!--v-if-->
+  <span
+    class="label"
+    id="chip-label-id"
+    title="false"
+  >
+    
+    
+    Test
+    
+    
+  </span>
+  
+  <!--v-if-->
+</div>
+`;

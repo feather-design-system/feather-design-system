@@ -1,0 +1,419 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Feather Chip List list format should render child chips correctly 1`] = `
+<div
+  aria-label="TEST"
+  class="chip-list"
+  data-ref-id="feather-chip-list"
+  role="grid"
+>
+  
+  <div
+    aria-disabled="false"
+    class="chip"
+    role="row"
+  >
+    
+    <span
+      aria-disabled="false"
+      role="gridcell"
+    >
+      <span
+        class="chip-label-button"
+      >
+        <!--v-if-->
+        <span
+          class="label"
+          id="chip-text"
+          title="false"
+        >
+          
+          
+          TEST
+          
+          
+        </span>
+      </span>
+    </span>
+    <!--v-if-->
+    
+    <!--v-if-->
+  </div>
+  <div
+    aria-disabled="false"
+    class="chip"
+    role="row"
+  >
+    
+    <span
+      aria-disabled="false"
+      role="gridcell"
+    >
+      <span
+        class="chip-label-button"
+      >
+        <!--v-if-->
+        <span
+          class="label"
+          id="chip-text"
+          title="false"
+        >
+          
+          
+          TEST
+          
+          
+        </span>
+      </span>
+    </span>
+    <!--v-if-->
+    
+    <!--v-if-->
+  </div>
+  
+</div>
+`;
+
+exports[`Feather Chip List list format should render child chips with click correctly 1`] = `
+<div
+  aria-label="TEST"
+  class="chip-list"
+  data-ref-id="feather-chip-list"
+  role="grid"
+>
+  
+  <div
+    aria-disabled="false"
+    class="chip hover focus"
+    role="row"
+    style="overflow: hidden; position: relative;"
+  >
+    
+    <span
+      aria-disabled="false"
+      role="gridcell"
+    >
+      <span
+        class="chip-label-button"
+        role="button"
+        tabindex="0"
+      >
+        <!--v-if-->
+        <span
+          class="label"
+          id="chip-text"
+          title="false"
+        >
+          
+          
+          TEST
+          
+          
+        </span>
+      </span>
+    </span>
+    <!--v-if-->
+    
+    <!---->
+  </div>
+  <div
+    aria-disabled="false"
+    class="chip hover focus"
+    role="row"
+    style="overflow: hidden; position: relative;"
+  >
+    
+    <span
+      aria-disabled="false"
+      role="gridcell"
+    >
+      <span
+        class="chip-label-button"
+        role="button"
+        tabindex="0"
+      >
+        <!--v-if-->
+        <span
+          class="label"
+          id="chip-text"
+          title="false"
+        >
+          
+          
+          TEST
+          
+          
+        </span>
+      </span>
+    </span>
+    <!--v-if-->
+    
+    <!---->
+  </div>
+  
+</div>
+`;
+
+exports[`Feather Chip List list format should render child chips with delete correctly 1`] = `
+<div
+  aria-label="TEST"
+  class="chip-list"
+  data-ref-id="feather-chip-list"
+  role="grid"
+>
+  
+  <div
+    aria-disabled="false"
+    class="chip focus"
+    role="row"
+  >
+    
+    <span
+      aria-disabled="false"
+      role="gridcell"
+    >
+      <span
+        class="chip-label-button"
+      >
+        <!--v-if-->
+        <span
+          class="label"
+          id="chip-text"
+          title="false"
+        >
+          
+          
+          TEST
+          
+          
+        </span>
+      </span>
+    </span>
+    <span
+      class="chip-delete"
+      role="gridcell"
+    >
+      <a
+        aria-describedby="chip-text"
+        aria-label="Remove"
+        class="delete-icon"
+        href="#"
+        role="button"
+      >
+        <svg
+          aria-hidden="true"
+          class="feather-icon feather-icon-flex"
+          data-v-0aa06a12=""
+          focusable="false"
+          height="24"
+          role="img"
+          viewBox="0 0 24 24"
+          width="24"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path
+            d="M12,2A10,10,0,1,0,22,12,10,10,0,0,0,12,2Zm5,13.24A1.26,1.26,0,0,1,17,17a1.24,1.24,0,0,1-1.76,0L12,13.73,8.76,17A1.24,1.24,0,1,1,7,15.24L10.24,12,7,8.76A1.24,1.24,0,0,1,8.76,7L12,10.2,15.24,7A1.24,1.24,0,1,1,17,8.76L13.76,12Z"
+          />
+        </svg>
+      </a>
+    </span>
+    
+    <!--v-if-->
+  </div>
+  <div
+    aria-disabled="false"
+    class="chip focus"
+    role="row"
+  >
+    
+    <span
+      aria-disabled="false"
+      role="gridcell"
+    >
+      <span
+        class="chip-label-button"
+      >
+        <!--v-if-->
+        <span
+          class="label"
+          id="chip-text"
+          title="false"
+        >
+          
+          
+          TEST
+          
+          
+        </span>
+      </span>
+    </span>
+    <span
+      class="chip-delete"
+      role="gridcell"
+    >
+      <a
+        aria-describedby="chip-text"
+        aria-label="Remove"
+        class="delete-icon"
+        href="#"
+        role="button"
+      >
+        <svg
+          aria-hidden="true"
+          class="feather-icon feather-icon-flex"
+          data-v-0aa06a12=""
+          focusable="false"
+          height="24"
+          role="img"
+          viewBox="0 0 24 24"
+          width="24"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path
+            d="M12,2A10,10,0,1,0,22,12,10,10,0,0,0,12,2Zm5,13.24A1.26,1.26,0,0,1,17,17a1.24,1.24,0,0,1-1.76,0L12,13.73,8.76,17A1.24,1.24,0,1,1,7,15.24L10.24,12,7,8.76A1.24,1.24,0,0,1,8.76,7L12,10.2,15.24,7A1.24,1.24,0,1,1,17,8.76L13.76,12Z"
+          />
+        </svg>
+      </a>
+    </span>
+    
+    <!--v-if-->
+  </div>
+  
+</div>
+`;
+
+exports[`Feather Chip List list format should render child chips with one disabled correctly 1`] = `
+<div
+  aria-label="TEST"
+  class="chip-list"
+  data-ref-id="feather-chip-list"
+  role="grid"
+>
+  
+  <div
+    aria-disabled="false"
+    class="chip"
+    role="row"
+  >
+    
+    <span
+      aria-disabled="false"
+      role="gridcell"
+    >
+      <span
+        class="chip-label-button"
+      >
+        <!--v-if-->
+        <span
+          class="label"
+          id="chip-text"
+          title="false"
+        >
+          
+          
+          TEST
+          
+          
+        </span>
+      </span>
+    </span>
+    <!--v-if-->
+    
+    <!--v-if-->
+  </div>
+  <div
+    aria-disabled="true"
+    class="chip disabled"
+    role="row"
+  >
+    
+    <span
+      aria-disabled="true"
+      role="gridcell"
+    >
+      <span
+        class="chip-label-button"
+      >
+        <!--v-if-->
+        <span
+          class="label"
+          id="chip-text"
+          title="false"
+        >
+          
+          
+          TEST
+          
+          
+        </span>
+      </span>
+    </span>
+    <!--v-if-->
+    
+    <!--v-if-->
+  </div>
+  
+</div>
+`;
+
+exports[`Feather Chip List radio format should render child chips to correctly 1`] = `
+<div
+  aria-label="TEST"
+  class="chip-list"
+  data-ref-id="feather-chip-list"
+  role="radiogroup"
+>
+  
+  <div
+    allow-click="true"
+    aria-checked="true"
+    aria-disabled="false"
+    aria-labelledby="chip-label-id"
+    class="chip focus hover selected"
+    role="radio"
+    tabindex="0"
+  >
+    
+    <!--v-if-->
+    <span
+      class="label"
+      id="chip-label-id"
+      title="false"
+    >
+      
+      
+      TEST
+      
+      
+    </span>
+    
+    <!--v-if-->
+  </div>
+  <div
+    allow-click="true"
+    aria-checked="false"
+    aria-disabled="false"
+    aria-labelledby="chip-label-id"
+    class="chip focus hover"
+    role="radio"
+    tabindex="-1"
+  >
+    
+    <!--v-if-->
+    <span
+      class="label"
+      id="chip-label-id"
+      title="false"
+    >
+      
+      
+      TEST
+      
+      
+    </span>
+    
+    <!--v-if-->
+  </div>
+  
+</div>
+`;

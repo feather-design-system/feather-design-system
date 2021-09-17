@@ -1,0 +1,282 @@
+@import "~@featherds/styles/themes/variables";
+@import "~@featherds/styles/themes/utils";
+@import "~@featherds/styles/mixins/typography";
+
+@mixin table-condensed {
+  tr {
+    height: 40px;
+  }
+  thead tr th {
+    height: 48px;
+  }
+
+  thead {
+    .checkbox-cell,
+    .icon-cell {
+      width: 48px;
+      padding: 0;
+    }
+  }
+  tbody {
+    .checkbox-cell,
+    .icon-cell {
+      width: 48px;
+      padding: 0;
+    }
+  }
+}
+
+@mixin row-select {
+  tbody > tr.selected td {
+    background: linear-gradient(alpha($primary, 0.12), alpha($primary, 0.12));
+  }
+}
+@mixin tbody-select {
+  tbody.selected > tr td {
+    background: linear-gradient(alpha($primary, 0.12), alpha($primary, 0.12));
+  }
+}
+
+@mixin row-striped() {
+  tbody > tr:nth-child(even) {
+    background: linear-gradient(
+      var($border-light-on-surface),
+      var($border-light-on-surface)
+    );
+  }
+}
+
+@mixin tbody-striped() {
+  tbody:nth-child(even) {
+    background: linear-gradient(
+      var($border-light-on-surface),
+      var($border-light-on-surface)
+    );
+  }
+}
+@mixin row-hover() {
+  tbody {
+    & > tr,
+    & > tr:nth-child(even) {
+      &:hover td {
+        background: linear-gradient(
+          alpha($state-color-on-neutral, var($state-opacity-hover-on-neutral)),
+          alpha($state-color-on-neutral, var($state-opacity-hover-on-neutral))
+        );
+      }
+    }
+  }
+  tbody {
+    & > tr.selected,
+    & > tr.selected:nth-child(even) {
+      &:hover td {
+        background: linear-gradient(
+            alpha($primary, 0.12),
+            alpha($primary, 0.12)
+          ),
+          linear-gradient(
+            alpha(
+              $state-color-on-neutral,
+              var($state-opacity-hover-on-neutral)
+            ),
+            alpha($state-color-on-neutral, var($state-opacity-hover-on-neutral))
+          );
+      }
+    }
+  }
+}
+
+@mixin tbody-hover() {
+  tbody,
+  tbody:nth-child(even) {
+    &:hover td {
+      background: linear-gradient(
+        alpha($state-color-on-neutral, var($state-opacity-hover-on-neutral)),
+        alpha($state-color-on-neutral, var($state-opacity-hover-on-neutral))
+      );
+    }
+  }
+  tbody.selected,
+  tbody.selected:nth-child(even) {
+    &:hover td {
+      background: linear-gradient(alpha($primary, 0.12), alpha($primary, 0.12)),
+        linear-gradient(
+          alpha($state-color-on-neutral, var($state-opacity-hover-on-neutral)),
+          alpha($state-color-on-neutral, var($state-opacity-hover-on-neutral))
+        );
+    }
+  }
+}
+@mixin tbody-row() {
+  tbody {
+    position: relative;
+    td {
+      box-shadow: none;
+    }
+    box-shadow: 0 1px 0 0 var($border-on-surface);
+  }
+  tbody {
+    tr:first-child {
+      td[colspan] {
+        vertical-align: bottom;
+        padding-bottom: 1.5px;
+      }
+    }
+    tr:nth-child(2) td {
+      vertical-align: top;
+      padding-top: 1.5px;
+    }
+  }
+  @include table-condensed();
+}
+@mixin table() {
+  border-spacing: 0px;
+  margin-top: $spacing-l;
+  margin-bottom: $spacing-l;
+  @include body-small();
+  color: var($secondary-text-on-surface);
+
+  + .feather-pagination {
+    //use paginations bottom margin for spacing.
+    margin-top: -$spacing-l;
+  }
+
+  caption {
+    text-align: left;
+    @include subtitle1();
+    color: var($primary-text-on-surface);
+    margin-bottom: $spacing-m;
+  }
+  th {
+    padding: 0 16px;
+    align-items: center;
+    font-weight: bold;
+    text-align: left;
+    border-bottom: 1px solid var($disabled-text-on-surface);
+    & a {
+      display: inline-block;
+      padding: 9px 0px;
+    }
+  }
+
+  td {
+    padding: 0px 16px;
+    box-shadow: 0 1px 0 0 var($border-on-surface);
+    text-align: left;
+    .btn {
+      margin-top: 0;
+      margin-bottom: 0;
+    }
+  }
+  th :deep(.btn.btn-icon-table) {
+    height: 24px;
+    width: 24px;
+    border-width: 1px;
+    svg {
+      width: 18px;
+      font-size: 18px;
+      vertical-align: middle;
+    }
+  }
+
+  tbody > tr {
+    background-color: transparent;
+  }
+
+  .checkbox-cell {
+    .layout-container {
+      margin: 0;
+    }
+    .feather-checkbox-table {
+      -webkit-user-select: none;
+      -moz-user-select: none;
+      -ms-user-select: none;
+
+      -o-user-select: none;
+      user-select: none;
+      margin-left: 0px;
+    }
+  }
+  .icon-cell {
+    font-size: 18px;
+  }
+  thead {
+    .checkbox-cell,
+    .icon-cell {
+      width: 56px;
+      padding: 0;
+      & > * {
+        vertical-align: middle;
+      }
+    }
+  }
+  tbody {
+    .checkbox-cell,
+    .icon-cell {
+      width: 52px;
+      padding: 0;
+      & > * {
+        vertical-align: middle;
+      }
+    }
+  }
+
+  thead tr th {
+    height: 56px;
+  }
+  //need for selection and hover
+  tr {
+    height: 52px;
+  }
+  tbody > tr {
+    position: relative;
+  }
+
+  //Column alignments
+  $col-limit: 50;
+  %text-left {
+    text-align: left;
+  }
+  %text-right {
+    text-align: right;
+    :deep(.header-flex-container) {
+      justify-content: flex-end;
+    }
+  }
+  %text-center {
+    text-align: center;
+    :deep(.header-flex-container) {
+      justify-content: center;
+    }
+  }
+  .tl {
+    @extend %text-left;
+  }
+  .tr {
+    @extend %text-right;
+  }
+  .tc {
+    @extend %text-center;
+  }
+
+  @for $i from 1 through $col-limit {
+    &.tl#{$i} td:nth-child(#{$i}),
+    &.tl#{$i} th:nth-child(#{$i}) {
+      @extend %text-left;
+    }
+  }
+
+  @for $i from 1 through $col-limit {
+    &.tr#{$i} td:nth-child(#{$i}),
+    &.tr#{$i} th:nth-child(#{$i}) {
+      @extend %text-right;
+    }
+  }
+
+  @for $i from 1 through $col-limit {
+    &.tc#{$i} td:nth-child(#{$i}),
+    &.tc#{$i} th:nth-child(#{$i}) {
+      @extend %text-center;
+    }
+  }
+}

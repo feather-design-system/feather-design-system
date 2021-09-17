@@ -1,0 +1,59 @@
+@import "../themes/variables";
+
+@mixin media-query($min, $max) {
+  @if $min != null and $max != null {
+    @media (min-width: $min) and (max-width: $max) {
+      @content;
+    }
+  } @else if $max == null {
+    @media (min-width: $min) {
+      @content;
+    }
+  } @else if $min == null {
+    @media (max-width: $max) {
+      @content;
+    }
+  }
+}
+
+//for(md) is for everything sized md and smaller.
+@mixin media-query-for($name) {
+  $size: map-get($grid, $name);
+  @if $size != null {
+    $max: map-get($size, max);
+    $min: map-get($size, min);
+    @if $max != null {
+      @media (max-width: $max) {
+        @content;
+      }
+    } @else if $min != null {
+      @media (min-width: $min) {
+        @content;
+      }
+    }
+  }
+}
+
+@mixin media-query-above($name) {
+  $size: map-get($grid, $name);
+  @if $size != null {
+    $max: map-get($size, max);
+    @if $max != null {
+      @media (min-width: $max +1) {
+        @content;
+      }
+    }
+  }
+}
+
+@mixin media-query-below($name) {
+  $size: map-get($grid, $name);
+  @if $size != null {
+    $min: map-get($size, min);
+    @if $max != null {
+      @media (max-width: $min -1) {
+        @content;
+      }
+    }
+  }
+}

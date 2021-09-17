@@ -1,0 +1,33 @@
+@import "utils";
+@import "variables";
+
+$typography: (
+  $root-font-size: 16px,
+  $header-font-family: #{"Inter",
+    Helvetica,
+    Arial,
+    sans-serif},
+  $font-family: #{"OpenSans",
+  Helvetica,
+  Arial,
+  sans-serif},
+  $font-light: 300,
+  $font-normal: normal,
+  $font-medium: 500,
+  $font-semibold: 600,
+  $font-bold: 700,
+  $base-font-size: 14px
+);
+
+$layout: (
+  $content-width: 1200px,
+  $zindex-dropdown: 1000,
+  $zindex-sticky: 1020,
+  $zindex-fixed: 1030,
+  $zindex-modal-backdrop: 1040,
+  $zindex-modal: 1050,
+  $zindex-popover: 1060,
+  $zindex-tooltip: 1070
+);
+
+$base-theme: map-collect($typography, $layout);

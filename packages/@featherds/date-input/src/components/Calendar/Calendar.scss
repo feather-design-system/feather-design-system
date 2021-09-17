@@ -1,0 +1,114 @@
+@use "sass:math";
+@import "@featherds/styles/themes/variables";
+@import "@featherds/styles/mixins/typography";
+@import "@featherds/styles/themes/utils";
+$width: 30px;
+.sr-only {
+  @include screen-reader;
+}
+.picker {
+  box-sizing: border-box;
+  z-index: var($zindex-dropdown);
+  display: flex;
+  flex-direction: column;
+}
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0px $spacing-m;
+  .chevron {
+    width: 36px;
+    margin: 0;
+    &.left {
+      margin-right: $spacing-m;
+    }
+  }
+  .inline-select {
+    width: 130px;
+    margin: $spacing-xxs 0;
+    display: inline-block;
+    margin-right: $spacing-s;
+    &.year {
+      margin-right: $spacing-m;
+      width: 85px;
+    }
+  }
+}
+.calendar {
+  margin: 0 $spacing-m $spacing-m $spacing-m;
+  border-collapse: collapse;
+  td,
+  tr {
+    padding: 0;
+  }
+  tr:last-child {
+    .cell {
+      margin-bottom: 0;
+    }
+  }
+  td:last-child {
+    .cell {
+      margin-right: 0;
+    }
+  }
+  .cell {
+    margin-right: $spacing-xxs;
+    margin-bottom: $spacing-xxs;
+    height: $width;
+    width: 44px;
+    @include body-small;
+    border-radius: 2px;
+    border: 2px solid transparent;
+    background-color: var($surface);
+    cursor: pointer;
+
+    @include state-on-surface();
+
+    &.highlighted {
+      border: 2px solid var($primary);
+    }
+
+    &.selected {
+      background: var($primary);
+      color: var($primary-text-on-color);
+      font-weight: var($font-bold);
+      &:focus.focus {
+        background: var($primary);
+      }
+      &:hover.hover {
+        background: var($primary);
+        &:focus.focus {
+          background: var($primary);
+        }
+      }
+    }
+
+    &.disabled {
+      @include state-disabled($border-light-on-surface);
+      background: var($border-light-on-surface);
+      color: var($disabled-text-on-surface);
+      border-radius: 0px;
+      cursor: default;
+    }
+
+    &:focus {
+      outline: 0;
+    }
+  }
+  .blank {
+    @include body-small;
+    color: var($disabled-text-on-surface);
+  }
+  .day-header {
+    @include body-small;
+    font-weight: var($font-bold);
+    color: var($secondary-text-on-surface);
+    width: percentage(math.div(1, 7));
+    cursor: default;
+    &:hover {
+      background: inherit;
+      color: var($secondary-text-on-surface);
+    }
+  }
+}

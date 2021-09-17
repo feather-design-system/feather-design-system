@@ -1,0 +1,280 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`GridChip should emit a click event 1`] = `
+<div
+  aria-disabled="false"
+  class="chip hover focus"
+  role="row"
+  style="overflow: hidden; position: relative;"
+>
+  
+  <span
+    aria-disabled="false"
+    role="gridcell"
+  >
+    <span
+      class="chip-label-button"
+      role="button"
+      tabindex="0"
+    >
+      <!--v-if-->
+      <span
+        class="label"
+        id="chip-text"
+        title="false"
+      >
+        
+        
+        Test
+        
+        
+      </span>
+    </span>
+  </span>
+  <!--v-if-->
+  
+  <!---->
+</div>
+`;
+
+exports[`GridChip should render a disabled chip 1`] = `
+<div
+  aria-disabled="true"
+  class="chip disabled"
+  role="row"
+>
+  
+  <span
+    aria-disabled="true"
+    role="gridcell"
+  >
+    <span
+      class="chip-label-button"
+    >
+      <!--v-if-->
+      <span
+        class="label"
+        id="chip-text"
+        title="false"
+      >
+        
+        
+        Test
+        
+        
+      </span>
+    </span>
+  </span>
+  <!--v-if-->
+  
+  <!--v-if-->
+</div>
+`;
+
+exports[`GridChip should render a removable chip 1`] = `
+<div
+  aria-disabled="false"
+  class="chip focus"
+  role="row"
+>
+  
+  <span
+    aria-disabled="false"
+    role="gridcell"
+  >
+    <span
+      class="chip-label-button"
+    >
+      <!--v-if-->
+      <span
+        class="label"
+        id="chip-text"
+        title="false"
+      >
+        
+        
+        Test
+        
+        
+      </span>
+    </span>
+  </span>
+  <span
+    class="chip-delete"
+    role="gridcell"
+  >
+    <a
+      aria-describedby="chip-text"
+      aria-label="Remove"
+      class="delete-icon"
+      href="#"
+      role="button"
+    >
+      <svg
+        aria-hidden="true"
+        class="feather-icon feather-icon-flex"
+        data-v-0aa06a12=""
+        focusable="false"
+        height="24"
+        role="img"
+        viewBox="0 0 24 24"
+        width="24"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <path
+          d="M12,2A10,10,0,1,0,22,12,10,10,0,0,0,12,2Zm5,13.24A1.26,1.26,0,0,1,17,17a1.24,1.24,0,0,1-1.76,0L12,13.73,8.76,17A1.24,1.24,0,1,1,7,15.24L10.24,12,7,8.76A1.24,1.24,0,0,1,8.76,7L12,10.2,15.24,7A1.24,1.24,0,1,1,17,8.76L13.76,12Z"
+        />
+      </svg>
+    </a>
+  </span>
+  
+  <!--v-if-->
+</div>
+`;
+
+exports[`GridChip should render a standard chip 1`] = `
+<div
+  aria-disabled="false"
+  class="chip"
+  role="row"
+>
+  
+  <span
+    aria-disabled="false"
+    role="gridcell"
+  >
+    <span
+      class="chip-label-button"
+    >
+      <!--v-if-->
+      <span
+        class="label"
+        id="chip-text"
+        title="false"
+      >
+        
+        
+        Test
+        
+        
+      </span>
+    </span>
+  </span>
+  <!--v-if-->
+  
+  <!--v-if-->
+</div>
+`;
+
+exports[`GridChip should render a standard chip with icon 1`] = `
+<div
+  aria-disabled="false"
+  class="chip"
+  role="row"
+>
+  
+  <span
+    aria-disabled="false"
+    role="gridcell"
+  >
+    <span
+      class="chip-label-button"
+    >
+      <span
+        class="chip-icon"
+        role="presentation"
+      >
+        
+        
+        <span>
+          *
+        </span>
+        
+        
+      </span>
+      <span
+        class="label"
+        id="chip-text"
+        title="false"
+      >
+        
+        
+        Test
+        
+        
+      </span>
+    </span>
+  </span>
+  <!--v-if-->
+  
+  <!--v-if-->
+</div>
+`;
+
+exports[`GridChip should render condensed 1`] = `
+<div
+  aria-disabled="false"
+  class="chip condensed"
+  role="row"
+>
+  
+  <span
+    aria-disabled="false"
+    role="gridcell"
+  >
+    <span
+      class="chip-label-button"
+    >
+      <!--v-if-->
+      <span
+        class="label"
+        id="chip-text"
+        title="false"
+      >
+        
+        
+        Test
+        
+        
+      </span>
+    </span>
+  </span>
+  <!--v-if-->
+  
+  <!--v-if-->
+</div>
+`;
+
+exports[`GridChip should render condensed from a group 1`] = `
+<div
+  aria-disabled="false"
+  class="chip"
+  role="row"
+>
+  
+  <span
+    aria-disabled="false"
+    role="gridcell"
+  >
+    <span
+      class="chip-label-button"
+    >
+      <!--v-if-->
+      <span
+        class="label"
+        id="chip-text"
+        title="false"
+      >
+        
+        
+        Test
+        
+        
+      </span>
+    </span>
+  </span>
+  <!--v-if-->
+  
+  <!--v-if-->
+</div>
+`;

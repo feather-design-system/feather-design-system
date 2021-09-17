@@ -1,0 +1,182 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`ReadOnlyChip should render a disabled chip 1`] = `
+<div
+  aria-disabled="true"
+  class="chip disabled"
+  role="row"
+>
+  
+  <span
+    aria-disabled="true"
+    role="gridcell"
+  >
+    <span
+      class="chip-label-button"
+    >
+      <!--v-if-->
+      <span
+        class="label"
+        id="chip-text"
+        title="false"
+      >
+        
+        
+        Test
+        
+        
+      </span>
+    </span>
+  </span>
+  <!--v-if-->
+  
+  <!--v-if-->
+</div>
+`;
+
+exports[`ReadOnlyChip should render a standard chip 1`] = `
+<div
+  aria-disabled="false"
+  class="chip"
+  role="row"
+>
+  
+  <span
+    aria-disabled="false"
+    role="gridcell"
+  >
+    <span
+      class="chip-label-button"
+    >
+      <!--v-if-->
+      <span
+        class="label"
+        id="chip-text"
+        title="false"
+      >
+        
+        
+        Test
+        
+        
+      </span>
+    </span>
+  </span>
+  <!--v-if-->
+  
+  <!--v-if-->
+</div>
+`;
+
+exports[`ReadOnlyChip should render a standard chip with icon 1`] = `
+<div
+  aria-disabled="false"
+  class="chip"
+  role="row"
+>
+  
+  <span
+    aria-disabled="false"
+    role="gridcell"
+  >
+    <span
+      class="chip-label-button"
+    >
+      <span
+        class="chip-icon"
+        role="presentation"
+      >
+        
+        
+        <span>
+          *
+        </span>
+        
+        
+      </span>
+      <span
+        class="label"
+        id="chip-text"
+        title="false"
+      >
+        
+        
+        Test
+        
+        
+      </span>
+    </span>
+  </span>
+  <!--v-if-->
+  
+  <!--v-if-->
+</div>
+`;
+
+exports[`ReadOnlyChip should render condensed 1`] = `
+<div
+  aria-disabled="false"
+  class="chip condensed"
+  role="row"
+>
+  
+  <span
+    aria-disabled="false"
+    role="gridcell"
+  >
+    <span
+      class="chip-label-button"
+    >
+      <!--v-if-->
+      <span
+        class="label"
+        id="chip-text"
+        title="false"
+      >
+        
+        
+        Test
+        
+        
+      </span>
+    </span>
+  </span>
+  <!--v-if-->
+  
+  <!--v-if-->
+</div>
+`;
+
+exports[`ReadOnlyChip should render condensed from a group 1`] = `
+<div
+  aria-disabled="false"
+  class="chip"
+  role="row"
+>
+  
+  <span
+    aria-disabled="false"
+    role="gridcell"
+  >
+    <span
+      class="chip-label-button"
+    >
+      <!--v-if-->
+      <span
+        class="label"
+        id="chip-text"
+        title="false"
+      >
+        
+        
+        Test
+        
+        
+      </span>
+    </span>
+  </span>
+  <!--v-if-->
+  
+  <!--v-if-->
+</div>
+`;

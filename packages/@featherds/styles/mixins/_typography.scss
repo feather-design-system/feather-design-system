@@ -1,0 +1,159 @@
+@import "../themes/variables";
+@mixin rendering {
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+@mixin header {
+  font-family: var($header-font-family);
+  color: var($primary-text-on-surface);
+  @include rendering();
+}
+
+@mixin display1 {
+  @include header();
+  font-size: 5rem;
+  line-height: 6rem;
+  letter-spacing: -0.015em;
+  font-weight: var($font-normal);
+}
+
+@mixin display2 {
+  @include header();
+  font-size: 3.75rem;
+  line-height: 4.5rem;
+  letter-spacing: -0.0083em;
+  font-weight: var($font-normal);
+}
+
+@mixin display3 {
+  @include header();
+  font-size: 3rem;
+  line-height: 3.6rem;
+  letter-spacing: -0.005em;
+  font-weight: var($font-medium);
+}
+
+@mixin title {
+  @include header();
+  font-size: 2.125rem;
+  line-height: 2.625rem;
+  letter-spacing: normal;
+  font-weight: var($font-light);
+}
+
+@mixin headline1 {
+  @include header();
+  font-size: 1.75rem;
+  line-height: 2.1rem;
+  font-weight: var($font-bold);
+  letter-spacing: normal;
+}
+@mixin headline2 {
+  @include header();
+  font-size: 1.5rem;
+  line-height: 2.125rem;
+  font-weight: var($font-normal);
+  letter-spacing: normal;
+}
+@mixin headline3 {
+  @include header();
+  font-size: 1.1875rem;
+  line-height: 2rem;
+  font-weight: var($font-bold);
+  letter-spacing: 0.0121em;
+}
+@mixin headline4 {
+  @include header();
+  font-size: 1rem;
+  line-height: 2rem;
+  font-weight: var($font-normal);
+  letter-spacing: 0.0125em;
+}
+@mixin subtitle1 {
+  @include header();
+  font-size: 0.875rem;
+  line-height: 1.375rem;
+  font-weight: var($font-bold);
+  letter-spacing: 0.00714286em;
+}
+@mixin subtitle2 {
+  @include header();
+  font-size: 0.8125rem;
+  line-height: 1.125rem;
+  font-weight: var($font-semibold);
+  letter-spacing: 0.00692308em;
+}
+
+@mixin body-large {
+  font-family: var($font-family);
+  font-size: 1rem;
+  line-height: 1.5rem;
+  letter-spacing: 0.03125em;
+  font-weight: var($font-normal);
+  color: var($primary-text-on-surface);
+  @include rendering();
+}
+@mixin body-small {
+  font-family: var($font-family);
+  font-size: 0.875rem;
+  line-height: 1.375rem;
+  letter-spacing: 0.01786em;
+  font-weight: var($font-normal);
+  color: var($primary-text-on-surface);
+  @include rendering();
+}
+
+@mixin button {
+  font-family: var($font-family);
+  font-size: 0.875rem;
+  line-height: 2.375rem;
+  font-weight: var($font-semibold);
+  letter-spacing: 0.08928571em;
+  color: var($primary-text-on-surface);
+  text-transform: uppercase;
+  @include rendering();
+}
+
+@mixin caption {
+  font-size: 0.75rem;
+  line-height: 1.375rem;
+  letter-spacing: normal;
+  font-style: italic;
+  font-weight: var($font-semibold);
+  color: var($primary-text-on-surface);
+  @include rendering();
+}
+
+@mixin overline {
+  font-size: 0.75rem;
+  line-height: 2.125rem;
+  font-weight: var($font-semibold);
+  letter-spacing: 0.105em;
+  color: var($primary-text-on-surface);
+  text-transform: uppercase;
+  @include rendering();
+}
+
+@mixin screen-reader() {
+  position: absolute;
+  top: auto;
+  left: -99999px;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  user-select: none;
+}
+
+@mixin anchor() {
+  font-family: var($font-family);
+  font-size: 1em; //inherit
+  color: var($clickable-normal);
+  text-decoration: none;
+  &:hover {
+    text-decoration: underline;
+  }
+  &:visited {
+    color: var($clickable-visited);
+  }
+}

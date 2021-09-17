@@ -1,0 +1,77 @@
+name: Release
+
+on:
+  workflow_dispatch:
+    inputs:
+      version:
+        description: 'Version'
+        required: true
+
+env:
+  GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+  NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
+  CI_USER: ${{ secrets.CI_USER}}
+  CI_EMAIL: ${{ secrets.CI_EMAIL }}
+  VERSION: ${{ github.event.inputs.version }}
+jobs:
+  release:
+    runs-on: ubuntu-latest
+    if: github.event_name == 'workflow_dispatch'
+    steps:
+      - uses: actions/checkout@v2
+      - uses: actions/cache@v2
+        with:
+          path: |
+            node_modules
+            **/node_modules
+          key: ${{ runner.os }}-${{ hashFiles('./package-lock.json') }}
+      - run: git config --global user.email "$CI_EMAIL"
+      - run: git config --global user.name "$CI_USER"
+      - run: npm ci
+
+      - name: NPM version
+        run: npm version $VERSION -m "$MESSAGE"
+        env:
+          MESSAGE: ${{ format('chore(release){0} version %s', ':') }}
+      - name: NPM publish
+        run: npm publish --access public
+
+      - name: Push Version Commit
+        run: git push
+      - name: Push Version Tag
+        run: git push origin $VERSION
+
+      - name: Extract Changelog
+        uses: yashanand1910/standard-release-notes@v1.2.1
+        id: get_release_notes
+        with:
+          version: ${{ github.event.inputs.version }} # Required
+
+      - name: Create Release
+        id: create_release
+        uses: actions/create-release@latest
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }} # This token is provided by Actions, you do not need to create your own token
+        with:
+          tag_name: ${{ github.event.inputs.version }}
+          release_name: Release ${{ github.event.inputs.version }}
+          body: |
+            ${{ steps.get_release_notes.outputs.release_notes }}
+          draft: false
+          prerelease: false
+
+      - name: Azure login
+        uses: azure/login@v1
+        with:
+            creds: ${{ secrets.AZURE_TOKEN }}
+
+      - name: Upload to Azure blob storage
+        uses: azure/CLI@v1
+        with:
+          azcliversion: 2.0.72
+          inlineScript: |
+              az storage blob upload-batch --account-name prsv -d '$web' -s ./docs/.vuepress/dist
+
+      - name: Azure logout
+        run: |
+              az logout

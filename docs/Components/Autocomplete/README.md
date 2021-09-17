@@ -1,0 +1,277 @@
+---
+title: "Autocomplete"
+lang: en-US
+tags: ["Autocomplete", "component"]
+layout: ComponentLayout
+
+---
+
+
+`@featherds/autocomplete`
+
+## Getting Started
+
+### Item Display Text
+
+It is expected that your `results` and `value` will be Objects (or an Array of Objects) that have the display text you wish to use available as a property. You can configure which property you want to use as display text by setting the `text-prop` property to the name of the object property you want to use.
+
+For example if you objects is:
+
+```js
+const results = [
+  {
+    id: 1,
+    name: "Rik",
+  },
+];
+```
+
+You would configure the `text-prop` to be `name`.
+
+### Search Event
+
+The search event is throttled out of the box. It will also adhere to any `minChar` restrictions you place on the autocomplete. When you are handling the search event be sure to set the `loading` property to `true` if you are making an asynchronous call. Once you have your results make sure you have `_text` property set on each object and then set `results` property to your results array and `loading` to `false`.
+
+### Min Character
+
+When setting the `minChar` property you must also specify a `minChar` property on the `labels` property to warn the user about this restriction. UX should be able to define this text for you. Note `${min}` will be replaced with the number specified in the `minChar` property.
+
+### No Results
+
+Please reach out to UX to define what text to display when there are no results found. You can then set `noResults` property of the `labels` property to this value.
+
+### Results Menu Height
+
+You can configure the results menu height by setting the height style for `.feather-autocomplete-results-list`. Out of the box the height is configured to allow up to 6 rows before scrolling. We have provided a mixin for you to easily configure the height of the results menu.
+
+The following example allows `10` items to be displayed before scrolling.
+
+```scss
+.my-component :deep(.feather-autocomplete-results-list) {
+  @include autocomplete-results-height(10);
+}
+```
+
+### Chip Pre Icon
+
+To configure a pre icon inside a selected chip you must specify a `_pre` property on the value object with a `title` and `icon` property. `title` should be a string detailing what the icon is for. `icon` should be a Feather icon.
+
+#### Ahead of time
+
+If you know ahead of time that a selection would require an icon. Then you can populate this `_pre` property when you are creating your `results` array.
+
+#### After Selection
+
+If you only know once an item has been selected then you will need to update your `value` array to have the correct `_pre` property. The following code snippet can help you achieve this. Please note the use of `$set` is necessary.
+
+```js
+this.$set(this.value, index, {
+  _pre: {
+    icon: icon,
+    title: "There is an issue with this selection",
+  },
+  ...this.value[index],
+});
+```
+
+In the example above we update the value array at the index where the icon needs to be inserted
+
+## Examples
+
+### Multi Select
+
+#### Basic Async
+
+Note in this example we are using the `setTimeout` to mimic asynchronous behaviour.
+
+@@@ Autocomplete-ExampleFeatherAutocompleteMulti
+
+#### Min Characters
+
+This autocomplete has a 2 character limit. Try searching for **ja**
+
+@@@ Autocomplete-ExampleMinCharMulti
+
+#### Grid Results
+
+This autocomplete displays the results inside of a grid
+
+@@@ Autocomplete-ExampleGridMulti
+
+#### Selection Limit
+
+This autocomplete has a min char and a selection limit of 2. Try searching for **ja**
+
+@@@ Autocomplete-ExampleLimitMulti
+
+#### Highlighting
+
+This autocomplete uses the `ignore-case` method for highlighting. See [Highlighting](#highlighting) section.
+
+@@@ Autocomplete-ExampleHighlightMulti
+
+#### Warning Icon in Chip
+
+This autocomplete automatically ads a warning icon to any selected value. See [Chip Pre Icon](#chip-pre-icon) section.
+
+@@@ Autocomplete-ExampleWarningChip
+
+### Single Select
+
+#### Basic Async
+
+Note in this example we are using the `setTimeout` to mimic asynchronous behaviour.
+
+@@@ Autocomplete-ExampleFeatherAutocompleteSingle
+
+#### Min Characters
+
+This autocomplete has a 2 character limit. Try searching for **ja**
+
+@@@ Autocomplete-ExampleMinCharSingle
+
+#### Allow New
+
+This example allows you to add new items. The `new` event is triggered with the text for the new element. **You** must then create the new element and update `modelValue` to contain the new value. `addTag` method does that in this example.
+
+@@@ Autocomplete-ExampleAllowNewSingle
+
+#### Grid Results
+
+This autocomplete displays the results inside of a grid
+
+@@@ Autocomplete-ExampleGridSingle
+
+#### Highlighting
+
+This autocomplete uses the `ignore-case` method for highlighting. See [Highlighting](#highlighting) section.
+
+@@@ Autocomplete-ExampleHighlightSingle
+
+## FeatherAutocomplete
+
+### Props
+
+| Name           | Description                                                                                                                           | Type                | Required | Default                                 |
+| -------------- | ------------------------------------------------------------------------------------------------------------------------------------- | ------------------- | -------- | --------------------------------------- |
+| label          | Label for the autocomplete                                                                                                            | `String`            | `true`   | -                                       |
+| type           | Type of autocomplete to render. Allowed:`"multi"`,`"single"`                                                                          | `String`            | `true`   | -                                       |
+| modelValue     | Current value the autocomplete has. In `multi` mode it will be an `Array`. In `single` it will be a `Object` selected                 | `Array` or `Object` | `false`  | `[]` or `undefined`                     |
+| results        | Array of search results to display in dropdown                                                                                        | `Array`             | `false`  | `[]`                                    |
+| textProp       | Property name that is used to get the display text from `value` and `results`.                                                        | `String`            | `false`  | `_text`                                 |
+| error          | Error string to display under autocomplete                                                                                            | `String`            | `false`  | -                                       |
+| hint           | Hint string to display under autocomplete                                                                                             | `String`            | `false`  | -                                       |
+| loading        | When true autocomplete will be in a loading state                                                                                     | `Boolean`           | `false`  | `false`                                 |
+| allowNew       | When true autocomplete will allow new items to be added. Only available in `single` mode                                              | `Boolean`           | `false`  | `false`                                 |
+| highlight      | Determines how the query is matched in the results. Allowed:`"off"`,`"ignore-case"`. See [Highlighting](#highlighting) section        | `String`            | `false`  | `"off"`                                 |
+| background     | Sets label background color to `background`                                                                                           | `Boolean`           | `false`  | `false`                                 |
+| minChar        | Will only emit `search` even when query is atleast `minChar` long                                                                     | `Number`            | `false`  | `0`                                     |
+| selectionLimit | Limits the number of items that can be selected. Only takes effect in `multi`. Don't forget to set the label                          | `Number`            | `false`  | -                                       |
+| labels         | Object containing labels to be used by this component. Mainly used for i18n or customization of labels. See [Labels](#labels) example | `Object`            | `false`  | See [Labels](#labels) example           |
+| gridConfig     | Array containing configuration for rendering the grid results. See [Grid Config](#grid-config) example                                | `Object`            | `false`  | See [Grid Config](#grid-config) example |
+| hideLabel      | Hides the label for the input in scenarios like tables where it would get in the way                                                  | `Boolean`           | `false`  | -                                       |
+
+### Labels
+
+Text labels for autocomplete can be customized via the `labels` property. The default `labels` values are:
+
+```js
+{
+  noResults: "No results found",
+  minChar: "Enter ${min} characters to search",
+  clear: "Clear value", //used for clear icon in single mode
+  selectionLimit: "Selection limit reached",
+  new: "New"
+}
+```
+
+### Grid Config
+
+An array made up of objects that contain configuration for each column. Allowed properties are:
+
+- `title` - this should be the display name of the column
+- `prop` - this is the corresponding property of the `results` object that contains the value to be rendered in the column
+- `align` - this optional property can be used to configure the column to be `right` aligned. Default layout is `left` aligned.
+
+#### Example Config
+
+```js
+[
+  {
+    title: "Name",
+    prop: "name",
+  },
+  {
+    title: "Email",
+    prop: "email",
+  },
+  {
+    title: "Car",
+    prop: "car",
+  },
+  {
+    title: "Order",
+    prop: "order",
+    align: "right",
+  },
+];
+```
+
+Result object structure:
+
+```js
+{
+  name: "Clarke",
+  email: "cwinwright0@test.com",
+  car: "Porsche",
+  order: 20
+},
+
+```
+
+### Highlighting
+
+Highlighting can be used to showcase what part of the string matched the search query. By default this is set to off. Currently the only other option is `ignore-case`, this will match the first instance of the query string in the `textProp` regardless of case.
+
+### Events
+
+- `search` - Emits `string` query coming from the autocomplete. This event is throttled.
+- `update:modelValue` - Emits an array that is the new value of the autocomplete.
+- `new` - Emits `string` that should be the display text of the new element. This event is only used when `allowNew` is `true`.
+
+### Slots
+
+- `pre` - define an icon that will appear before the input. Default is a search icon.
+- `min-char` - will override any `minCharText` value you provide. Use this or the property but **NOT** both.
+
+### data-ref-ids
+
+- `feather-input` - on the `input` element
+- `feather-form-element-label` - on the `label` text element
+- `feather-form-element-hint` - on the hint text element
+- `feather-form-element-error` - on the error text element
+- `feather-form-element-clear` - on anchor tag surrounding the clear icon
+- `feather-autocomplete-min-char` - on the min char element
+- `feather-autocomplete-no-results` - on the no results element
+- `feather-autocomplete-selection-limit` - on the selection limit element
+
+### Attributes
+
+Specifying an `class` or `data-ref-id` attribute will cause them to be applied to the components root containing `div`. All other attributes are inherited to the `input` were it makes sense. Some will be ignored as they will conflict with some of the attributes we need to use for accessibility.
+
+#### Class
+
+Use the `class` attribute to specify custom spacing needed for the element.
+
+#### data-ref-id
+
+Use the `data-ref-id` attribute when you need to access the element for E2E testing.
+
+## Accessibility
+
+We are aware of the following issues with JAWS 2018:
+
+- Pressing enter to select turns on forms mode.
+- Pressing enter to clear the token or input does not work.
+
+We are hoping updating to the latest JAWS version will resolve these issues.

@@ -1,0 +1,17 @@
+{
+  "name": "@featherds/app-layout",
+  "version": "0.101.1-ftr.65",
+  "author": "NantHealth",
+  "scripts": {},
+  "main": "dist/app.js",
+  "license": "Apache-2.0",
+  "dependencies": {
+    "@featherds/styles": "file:../styles",
+    "vue": "^3.1.0-0"
+  },
+  "keywords": [
+    "vue",
+    "FeatherAppLayout"
+  ],
+  "types": "./src/index.d.ts"
+}
