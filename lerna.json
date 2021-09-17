@@ -2,5 +2,5 @@
   "packages": [
     "packages/@featherds/*"
   ],
-  "version": "0.101.1-ftr.65"
+  "version": "0.0.1"
 }
