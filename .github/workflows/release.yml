@@ -34,8 +34,7 @@ jobs:
         env:
           MESSAGE: ${{ format('chore(release){0} version %s', ':') }}
       - name: NPM publish
-        run: npm run custom:publish
-
+        run: npm run custom:publish -- $VERSION
       - name: Push Version Commit
         run: git push
       - name: Push Version Tag
