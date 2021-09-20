@@ -1,6 +1,9 @@
 {
   "name": "@featherds/table",
   "version": "0.101.1-ftr.65",
+  "publishConfig": {
+    "access": "public"
+  },
   "description": "A collection of styles and components for creating tables",
   "author": "NantHealth",
   "main": "dist/app.js",

@@ -1,6 +1,9 @@
 {
   "name": "@featherds/ripple",
   "version": "0.101.1-ftr.65",
+  "publishConfig": {
+    "access": "public"
+  },
   "description": "A wee ripple.",
   "author": "NantHealth",
   "scripts": {},

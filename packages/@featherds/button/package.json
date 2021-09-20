@@ -1,6 +1,9 @@
 {
   "name": "@featherds/button",
   "version": "0.101.1-ftr.65",
+  "publishConfig": {
+    "access": "public"
+  },
   "description": "Feather styled button and link component.",
   "author": "NantHealth",
   "scripts": {},

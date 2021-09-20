@@ -1,6 +1,9 @@
 {
   "name": "@featherds/styles",
   "version": "0.101.1-ftr.65",
+  "publishConfig": {
+    "access": "public"
+  },
   "description": "A collection of Feather styles",
   "author": "NantHealth",
   "main": "dist/app.js",

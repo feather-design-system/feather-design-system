@@ -1,6 +1,9 @@
 {
   "name": "@featherds/back-button",
   "version": "0.101.1-ftr.65",
+  "publishConfig": {
+    "access": "public"
+  },
   "description": "Feather Back Button",
   "author": "NantHealth",
   "scripts": {},

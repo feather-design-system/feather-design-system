@@ -1,6 +1,9 @@
 {
   "name": "@featherds/input",
   "version": "0.101.1-ftr.65",
+  "publishConfig": {
+    "access": "public"
+  },
   "author": "NantHealth",
   "scripts": {},
   "main": "dist/app.js",
