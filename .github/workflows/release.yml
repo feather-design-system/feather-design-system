@@ -34,7 +34,7 @@ jobs:
         env:
           MESSAGE: ${{ format('chore(release){0} version %s', ':') }}
       - name: NPM publish
-        run: npm publish --access public
+        run: npm run custom:publish
 
       - name: Push Version Commit
         run: git push
