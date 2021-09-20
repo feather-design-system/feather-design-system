@@ -34,7 +34,8 @@ jobs:
           node-version: '16.x'
           registry-url: 'https://registry.npmjs.org'
       - run: npm ci
-
+      - name: NPM who am i!?
+        run: npm whoami
       - name: NPM publish
         run: npm run custom:publish -- $VERSION
       - name: Push Version Commit
