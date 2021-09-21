@@ -91,7 +91,7 @@
     "change-case": "^4.1.1",
     "commitizen": "^4.2.4",
     "conventional-changelog-cli": "^2.1.1",
-    "cross-env": "^5.2.0",
+    "cross-env": "^5.2.1",
     "cz-conventional-changelog": "^3.2.0",
     "eslint": "^7.29.0",
     "eslint-plugin-prettier": "^3.4.0",
