@@ -19,15 +19,24 @@ export default {
   },
   watch: {
     selected(v, ov) {
-      window.localStorage.setItem(KEY, JSON.stringify(v));
-      document.body.classList.remove(ov._text);
-      document.body.classList.add(v._text);
-      update(v);
+      this.updateTheme(v, ov);
     },
   },
   mounted() {
-    this.selected =
-      JSON.parse(window.localStorage.getItem(KEY)) || this.selected;
+    const targetTheme = JSON.parse(window.localStorage.getItem(KEY));
+    const currSelected = this.selected;
+    this.selected = targetTheme || currSelected;
+    //edge case, if there is no localstorage, the watch doesn't fire (the values haven't changed)
+    //so we need to manually force the initial theme render
+    if(!targetTheme) this.updateTheme(this.selected, this.selected);
+  },
+  methods: {
+    updateTheme(curr, old) {
+      window.localStorage.setItem(KEY, JSON.stringify(curr));
+      document.body.classList.remove(old._text);
+      document.body.classList.add(curr._text);
+      update(curr);
+    }
   },
   components: {
     FeatherSelect,
