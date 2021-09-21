@@ -1,6 +1,6 @@
 {
   "name": "@featherds/pagination",
-  "version": "0.2.2",
+  "version": "0.1.15",
   "publishConfig": {
     "access": "public"
   },
