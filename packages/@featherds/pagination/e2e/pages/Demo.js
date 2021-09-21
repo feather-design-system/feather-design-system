@@ -8,29 +8,29 @@ const BUTTON = {
   LAST: 3,
 };
 
-const create = () => {
-  browser.url(`https://google.com`);
+const create = async () => {
+  await browser.url(`https://google.com`);
   $("input").waitForExist({ timeout: 60000 });
-  browser.url(`${process.env.VUE_DEV_SERVER_URL}/Pagination-Demo`);
-  $(INPUT).waitForExist({ timeout: 60000 });
+  await browser.url(`${process.env.VUE_DEV_SERVER_URL}/Pagination-Demo`);
+  await (await $(INPUT)).waitForExist({ timeout: 60000 });
 
   return {
-    clickNext() {
-      $$(BUTTONS)[BUTTON.NEXT].click();
+    async clickNext() {
+      await (await $$(BUTTONS))[BUTTON.NEXT].click();
     },
-    clickFirst() {
-      $$(BUTTONS)[BUTTON.FIRST].click();
+    async clickFirst() {
+      await (await $$(BUTTONS))[BUTTON.FIRST].click();
     },
-    clickLast() {
-      $$(BUTTONS)[BUTTON.LAST].click();
+    async clickLast() {
+      await (await $$(BUTTONS))[BUTTON.LAST].click();
     },
-    clickPrevious() {
-      $$(BUTTONS)[BUTTON.PREVIOUS].click();
+    async clickPrevious() {
+      await (await $$(BUTTONS))[BUTTON.PREVIOUS].click();
     },
 
-    getCurretPage() {
-      const text = $(CURRENT).getText().trim();
-      return parseInt(text, 10);
+    async getCurretPage() {
+      const text = await (await $(CURRENT)).getText();
+      return parseInt(text.trim(), 10);
     },
   };
 };
