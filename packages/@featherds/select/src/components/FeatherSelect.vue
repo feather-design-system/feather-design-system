@@ -47,7 +47,6 @@
         @select="handleSelect"
         @keydown="handleKeyDown"
       >
-        <slot />
       </List>
     </FeatherMenu>
     <InputSubText :id="subTextId"></InputSubText>
