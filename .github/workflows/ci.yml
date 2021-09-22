@@ -12,7 +12,19 @@ env:
   LAMBDA_USER: ${{ secrets.LAMBDA_USER }}
   LAMBDA_KEY: ${{ secrets.LAMBDA_KEY }}
 jobs:
+  install:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - uses: actions/setup-node@v2
+        with:
+          node-version: 16.x
+          cache: "npm"
+      - name: NPM install
+        run: npm ci
+
   lint:
+    needs: install
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
@@ -25,6 +37,7 @@ jobs:
       - name: Run lint
         run: npm run lint --if-present
   build:
+    needs: install
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
@@ -46,6 +59,7 @@ jobs:
           path: ./junit.xml # Path to test results
           reporter: jest-junit # Format of test results
   e2e:
+    needs: install
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
@@ -57,10 +71,3 @@ jobs:
         run: npm ci
       - name: Run E2E
         run: npm run test:e2e
-      - name: E2E Test Report
-        uses: dorny/test-reporter@v1
-        if: success() || failure() # run this step even if previous step failed
-        with:
-          name: E2E Tests # Name of the check run which will be created
-          path: ./results-e2e.xml # Path to test results
-          reporter: jest-junit # Format of test results
