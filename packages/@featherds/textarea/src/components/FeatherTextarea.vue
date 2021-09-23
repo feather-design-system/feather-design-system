@@ -148,7 +148,7 @@ export default defineComponent({
       };
     },
     charCount() {
-      return `${this.internalValue?.length || "0"} / ${this.maxlength}`;
+      return `${(this.internalValue && this.internalValue.length) || "0"} / ${this.maxlength}`;
     },
   },
   watch: {

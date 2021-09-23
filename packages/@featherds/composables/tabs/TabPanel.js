@@ -19,7 +19,7 @@ const useTabPanel = (props) => {
   let thisEl, parent, index;
   onMounted(() => {
     thisEl = panel.value;
-    parent = thisEl?.parentNode;
+    parent = (thisEl && thisEl.parentNode) ? thisEl.parentNode : [];
     index = thisEl
       ? Array.prototype.indexOf.call(parent.children, thisEl)
       : null;
