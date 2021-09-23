@@ -332,6 +332,7 @@ export default {
       iframe,
       object,
       embed {
+        vertical-align: bottom;
         height: 100%;
         width: 100%;
       }
@@ -347,9 +348,12 @@ export default {
 }
 
 .viewer-body {
+  overflow: hidden;
+
   .lhs-panel,
   .main-panel {
     display: inline-block;
+    overflow: auto;
   }
 
   .main-panel {
@@ -361,7 +365,6 @@ export default {
     width: 25%;
     min-width: 180px;
     height: 100%;
-    overflow: auto;
     + .main-panel {
       width: 75%;
     }
@@ -384,7 +387,8 @@ export default {
   padding-top: 48px;
 }
 .file-error {
-  height: 100%;
+  height:auto;
+  min-height:100%;
   display: flex;
   align-items: center;
   justify-content: center;
