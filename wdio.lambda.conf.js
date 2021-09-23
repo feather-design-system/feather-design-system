@@ -59,10 +59,7 @@ module.exports.config = Object.assign({}, base, {
   capabilities,
   specs: ["./packages/@featherds/**/e2e/**/*.spec.js"],
   baseUrl: `${process.env.VUE_DEV_SERVER_URL}`,
-  reporters: process.env.GITHUB_TOKEN ? ["junit"] : ["spec"],
-  reporterOptions: {
-    outputDir: "e2e/reports/",
-  },
+  reporters: ["spec"],
   maxInstances: 3,
   specFileRetries: 3,
   framework: "mocha",

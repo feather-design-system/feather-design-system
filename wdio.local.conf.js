@@ -14,8 +14,8 @@ module.exports.config = {
   capabilities: [
     {
       maxInstances: 1,
-      browserName: "chrome"
-    }
+      browserName: "chrome",
+    },
   ],
 
   reporters: ["spec"],
@@ -23,6 +23,6 @@ module.exports.config = {
   framework: "mocha",
   mochaOpts: {
     ui: "bdd",
-    timeout: 5 * 60 * 1000
-  }
+    timeout: 5 * 60 * 1000,
+  },
 };

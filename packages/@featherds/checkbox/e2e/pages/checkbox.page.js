@@ -21,26 +21,28 @@ class Checkbox {
   get secondChild() {
     return $("#secondChild");
   }
-  open(url) {
-    browser.url("https://www.google.com");
-    $("body").waitForExist({ timeout: 60000 });
-    browser.url(`${process.env.VUE_DEV_SERVER_URL}${url}`);
-    $("[role='checkbox']").waitForExist({ timeout: 60000 });
+  async open(url) {
+    await browser.url("https://www.google.com");
+    const body = await $("body");
+    await body.waitForExist({ timeout: 60000 });
+    await browser.url(`${process.env.VUE_DEV_SERVER_URL}${url}`);
+    const checkbox = await $("[role='checkbox']");
+    await checkbox.waitForExist({ timeout: 60000 });
   }
-  getCheckbox(checkbox) {
-    return getCheckbox(checkbox);
+  async getCheckbox(checkbox) {
+    return await getCheckbox(checkbox);
   }
-  isChecked(checkbox) {
-    return isChecked(checkbox);
+  async isChecked(checkbox) {
+    return await isChecked(checkbox);
   }
-  isUnchecked(checkbox) {
-    return isUnchecked(checkbox);
+  async isUnchecked(checkbox) {
+    return await isUnchecked(checkbox);
   }
-  isIndeterminate(checkbox) {
-    return isIndeterminate(checkbox);
+  async isIndeterminate(checkbox) {
+    return await isIndeterminate(checkbox);
   }
-  isDisabled(checkbox) {
-    return isDisabled(checkbox);
+  async isDisabled(checkbox) {
+    return await isDisabled(checkbox);
   }
 }
 

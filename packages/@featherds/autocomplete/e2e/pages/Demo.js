@@ -3,24 +3,24 @@ const MENUITEM = ".result-item";
 const CHIP = ".chip";
 const CHIPDELETE = ".chip-delete";
 
-const create = () => {
-  browser.url(`${process.env.VUE_DEV_SERVER_URL}/Autocomplete-Demo`);
-  $(INPUT).waitForExist({ timeout: 60000 });
+const create = async () => {
+  await browser.url(`${process.env.VUE_DEV_SERVER_URL}/Autocomplete-Demo`);
+  await (await $(INPUT)).waitForExist({ timeout: 60000 });
   return {
-    selectItem(index) {
+    selectItem: async (index) => {
       var runInBrowser = function (argument) {
         argument.click();
       };
-      var elementToClickOn = $(INPUT);
-      browser.execute(runInBrowser, elementToClickOn);
-      $(MENUITEM).waitForDisplayed({ timeout: 60000 });
-      $$(MENUITEM)[index].click();
+      var elementToClickOn = await $(INPUT);
+      await browser.execute(runInBrowser, elementToClickOn);
+      await (await $(MENUITEM)).waitForDisplayed({ timeout: 60000 });
+      await (await $$(MENUITEM))[index].click();
     },
-    getChipCount() {
-      return $$(CHIP).length;
+    getChipCount: async () => {
+      return await $$(CHIP).length;
     },
-    removeChip(index) {
-      $$(CHIPDELETE)[index].click();
+    removeChip: async (index) => {
+      await $$(CHIPDELETE)[index].click();
     },
   };
 };

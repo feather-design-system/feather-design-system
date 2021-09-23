@@ -10,3 +10,5 @@ demo/routes.js
 docs/.vuepress/.cache/
 docs/.vuepress/.temp/
 docs/Packages/*/
+results-e2e.xml
+junit.xml

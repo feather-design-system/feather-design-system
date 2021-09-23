@@ -3,33 +3,33 @@ const CLOSE = "[data-ref-id='dialog-close']";
 const DIALOG = "[role='dialog']";
 
 class FeatherDialog {
-  open() {
-    browser.url("https://google.com");
-    $("body").waitForDisplayed({ timeout: 60000 });
-    browser.url(`${process.env.VUE_DEV_SERVER_URL}/Dialog-Demo`);
-    $("body").waitForDisplayed({ timeout: 60000 });
-    this.waitForOpenButton();
+  async open() {
+    await browser.url("https://google.com");
+    await (await $("body")).waitForDisplayed({ timeout: 60000 });
+    await browser.url(`${process.env.VUE_DEV_SERVER_URL}/Dialog-Demo`);
+    await (await $("body")).waitForDisplayed({ timeout: 60000 });
+    await this.waitForOpenButton();
   }
-  waitForOpenButton() {
-    if (!$(BUTTON).isDisplayed()) {
-      $(BUTTON).waitForDisplayed({ timeout: 60000 });
+  async waitForOpenButton() {
+    if (!(await (await $(BUTTON)).isDisplayed())) {
+      await (await $(BUTTON)).waitForDisplayed({ timeout: 60000 });
     }
   }
-  waitForDialogToShow() {
-    if (!$(DIALOG).isDisplayed()) {
-      $(DIALOG).waitForDisplayed({ timeout: 60000 });
+  async waitForDialogToShow() {
+    if (!(await (await $(DIALOG)).isDisplayed())) {
+      await (await $(DIALOG)).waitForDisplayed({ timeout: 60000 });
     }
   }
-  dialogDisplayed() {
-    return $(DIALOG).isDisplayed();
+  async dialogDisplayed() {
+    return await (await $(DIALOG)).isDisplayed();
   }
 
-  openModal() {
-    $(BUTTON).click();
-    this.waitForDialogToShow();
+  async openModal() {
+    await (await $(BUTTON)).click();
+    await this.waitForDialogToShow();
   }
-  clickClose() {
-    $(CLOSE).click();
+  async clickClose() {
+    await (await $(CLOSE)).click();
   }
 }
 module.exports = new FeatherDialog();

@@ -1,3 +1,16 @@
+## 0.2.3 (2021-09-21)
+
+
+
+## 0.1.15 (2021-09-21)
+
+
+### Bug Fixes
+
+* **documentation:** fixes for docs site ([e40303e](https://github.com/feather-design-system/feather-design-system/commit/e40303eaa8f2192ea91dd3cc350f101531d29ae3))
+
+
+
 ## 0.2.2 (2021-09-20)
 
 
