@@ -1,3 +1,12 @@
+## 0.2.4 (2021-09-24)
+
+
+### Bug Fixes
+
+* resolved broken snapshots ([be2638a](https://github.com/feather-design-system/feather-design-system/commit/be2638a1cf27da0b7f33b686c3a33f6ac9bf18fe))
+
+
+
 ## 0.2.3 (2021-09-21)
 
 
