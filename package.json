@@ -4,7 +4,7 @@
   "author": "NantHealth",
   "license": "Apache-2.0",
   "scripts": {
-    "commit": "git-cz",
+    "commit": "commit help",
     "prepare": "husky install",
     "serve": "node scripts/serve.js",
     "build": "node scripts/build.js",
@@ -64,6 +64,7 @@
     "@babel/node": "^7.8.7",
     "@babel/preset-env": "^7.9.0",
     "@commitlint/cli": "^13.1.0",
+    "@commitlint/prompt-cli": "^13.1.0",
     "@commitlint/config-conventional": "^13.1.0",
     "@testing-library/jest-dom": "^5.11.3",
     "@types/jest": "^25.2.1",
@@ -87,7 +88,6 @@
     "babel-jest": "^25.2.6",
     "chai": "^4.2.0",
     "change-case": "^4.1.1",
-    "commitizen": "^4.2.4",
     "conventional-changelog-cli": "^2.1.1",
     "cross-env": "^5.2.1",
     "cz-conventional-changelog": "^3.2.0",
@@ -123,10 +123,5 @@
   },
   "keywords": [
     "vue"
-  ],
-  "config": {
-    "commitizen": {
-      "path": "./node_modules/cz-conventional-changelog"
-    }
-  }
+  ]
 }

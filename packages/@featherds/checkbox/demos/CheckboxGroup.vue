@@ -17,6 +17,17 @@
       <FeatherCheckbox v-model="ready"> Ready </FeatherCheckbox>
       <FeatherCheckbox v-model="approve"> Approvde </FeatherCheckbox>
     </FeatherCheckboxGroup>
+    <FeatherCheckboxGroup
+      class="wrap"
+      label="Some random label"
+      hint="Test hint for this example"
+    >
+      <FeatherCheckbox v-model="subscribe"> subscribe </FeatherCheckbox>
+      <FeatherCheckbox v-model="ready"> Ready </FeatherCheckbox>
+      <FeatherCheckbox v-model="approve"> Approvde </FeatherCheckbox>
+      <FeatherCheckbox v-model="approve"> Approvde </FeatherCheckbox>
+      <FeatherCheckbox v-model="approve"> Approvde </FeatherCheckbox>
+    </FeatherCheckboxGroup>
   </div>
 </template>
 <script>
@@ -35,3 +46,8 @@ export default {
   },
 };
 </script>
+<style lang="scss" scoped>
+.wrap:deep(.feather-checkbox) {
+  width: 100px;
+}
+</style>
