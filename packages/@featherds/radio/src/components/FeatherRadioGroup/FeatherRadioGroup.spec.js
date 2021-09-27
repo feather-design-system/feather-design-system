@@ -65,6 +65,21 @@ describe("FeatherRadioGroup.vue", () => {
     expect(wrapper.wrapperElement).toMatchSnapshot();
   });
 
+  it("should select non null or undefined falsey value", async () => {
+    const slots = {
+      default: [getRadio(0, false), getRadio(1, false)],
+    };
+    const wrapper = getWrapper({
+      slots,
+      propsData: { modelValue: 0 },
+    });
+    await nextTick();
+    await nextTick();
+    expect(
+      wrapper.findAll("[role='radio']")[0].attributes("aria-checked")
+    ).toBe("true");
+  });
+
   it("should set first property on first radio if none match the value", async () => {
     const slots = {
       default: [getRadio(1, false), getRadio(2, false)],

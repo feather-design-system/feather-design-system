@@ -11,8 +11,14 @@ const useRadioGroup = (modelValue, emit) => {
     }
     const values = radios.value.map((x) => x.value);
     //select the radio that matches the current value
-    if (!!modelValue.value && !currentSelected.value)
+    //select the radio that matches the current value
+    if (
+      modelValue.value !== undefined &&
+      modelValue.value !== null &&
+      !currentSelected.value
+    ) {
       currentSelected.value = radios.value[values.indexOf(modelValue.value)];
+    }
     //if nothing is selected then set the first property on first radio that isnt disabled
     if (!currentSelected.value && radios.value.length) {
       let enabled = radios.value.filter((x) => !x.disabled);
