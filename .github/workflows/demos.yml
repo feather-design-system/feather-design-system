@@ -38,7 +38,7 @@ jobs:
         with:
           azcliversion: 2.0.72
           inlineScript: |
-            az storage blob upload-batch --account-name prsv2 -d '$web' -s ./demo-dist
+            az storage blob upload-batch --account-name prsv -d '$web/demos' -s ./demo-dist
 
       - name: Azure logout
         run: |
