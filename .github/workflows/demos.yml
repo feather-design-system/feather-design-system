@@ -1,0 +1,46 @@
+# This workflow will do a clean install of node dependencies, cache/restore them, build the source code and run tests across different versions of node
+# For more information see: https://help.github.com/actions/language-and-framework-guides/using-nodejs-with-github-actions
+
+name: CI
+
+on:
+  push:
+    branches:
+      - dev
+
+env:
+  GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+  CI_USER: ${{ secrets.CI_USER}}
+  CI_EMAIL: ${{ secrets.CI_EMAIL }}
+jobs:
+  release:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - name: Setup npm
+        uses: actions/setup-node@v2
+        with:
+          cache: "npm"
+          node-version: "16.x"
+          registry-url: "https://registry.npmjs.org"
+      - run: npm ci
+      - name: Build project
+        run: npm run build
+      - name: Build demos
+        run: npm run demo:build
+      - name: Azure login
+        uses: azure/login@v1
+        with:
+          creds: ${{ secrets.AZURE_TOKEN }}
+
+      - name: Upload to Azure blob storage
+        uses: azure/CLI@v1
+        with:
+          azcliversion: 2.0.72
+          inlineScript: |
+            az storage blob upload-batch --account-name prsv2 -d '$web' -s ./demo-dist
+
+      - name: Azure logout
+        run: |
+          az logout
+

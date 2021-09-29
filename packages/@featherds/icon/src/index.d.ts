@@ -15,6 +15,36 @@ declare module "@featherds/icon/alert/Warning" {
   export = compModule;
 }
 
+declare module "@featherds/icon/communication/Call" {
+  import { defineComponent } from "vue";
+  const compModule: ReturnType<typeof defineComponent>;
+  export = compModule;
+}
+
+declare module "@featherds/icon/communication/Chat" {
+  import { defineComponent } from "vue";
+  const compModule: ReturnType<typeof defineComponent>;
+  export = compModule;
+}
+
+declare module "@featherds/icon/communication/Email" {
+  import { defineComponent } from "vue";
+  const compModule: ReturnType<typeof defineComponent>;
+  export = compModule;
+}
+
+declare module "@featherds/icon/communication/Fax" {
+  import { defineComponent } from "vue";
+  const compModule: ReturnType<typeof defineComponent>;
+  export = compModule;
+}
+
+declare module "@featherds/icon/communication/Phone" {
+  import { defineComponent } from "vue";
+  const compModule: ReturnType<typeof defineComponent>;
+  export = compModule;
+}
+
 declare module "@featherds/icon/actions/Account" {
   import { defineComponent } from "vue";
   const compModule: ReturnType<typeof defineComponent>;
@@ -388,36 +418,6 @@ declare module "@featherds/icon/actions/Visibility" {
 }
 
 declare module "@featherds/icon/actions/VisibilityOff" {
-  import { defineComponent } from "vue";
-  const compModule: ReturnType<typeof defineComponent>;
-  export = compModule;
-}
-
-declare module "@featherds/icon/communication/Call" {
-  import { defineComponent } from "vue";
-  const compModule: ReturnType<typeof defineComponent>;
-  export = compModule;
-}
-
-declare module "@featherds/icon/communication/Chat" {
-  import { defineComponent } from "vue";
-  const compModule: ReturnType<typeof defineComponent>;
-  export = compModule;
-}
-
-declare module "@featherds/icon/communication/Email" {
-  import { defineComponent } from "vue";
-  const compModule: ReturnType<typeof defineComponent>;
-  export = compModule;
-}
-
-declare module "@featherds/icon/communication/Fax" {
-  import { defineComponent } from "vue";
-  const compModule: ReturnType<typeof defineComponent>;
-  export = compModule;
-}
-
-declare module "@featherds/icon/communication/Phone" {
   import { defineComponent } from "vue";
   const compModule: ReturnType<typeof defineComponent>;
   export = compModule;

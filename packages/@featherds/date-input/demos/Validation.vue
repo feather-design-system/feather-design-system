@@ -1,51 +1,61 @@
 <template>
-  <section>
-    <ValidationObserver ref="validator" mode="lazy">
-      <ValidationProvider
-        :name="label"
-        :rules="{ required: submitted, future: true }"
-        v-slot="{ errors }"
-      >
-        <FeatherDateInput
-          v-model="test"
-          :label="label"
-          :error="errors[0]"
-          background
-          class="my-date"
-        ></FeatherDateInput>
-      </ValidationProvider>
-      <button @click="onSubmit">Submit</button>
-    </ValidationObserver>
-  </section>
+  <form @submit="onSubmit">
+    <FeatherDateInput
+      v-model="date"
+      :label="label"
+      :error="dateError"
+      background
+      class="my-date"
+    ></FeatherDateInput>
+
+    <button @mousedown="setSubmitted" type="submit">Submit</button>
+  </form>
 </template>
 <script>
-import { ValidationProvider, ValidationObserver } from "vee-validate";
+
+import { useForm, useField } from "vee-validate";
+import { ref, computed } from "vue";
 import * as components from "./../src";
 export default {
-  data() {
+  setup() {
+    const submitted = ref(false);
+    const schema = computed(() => {
+      return {
+        date(v) {
+          if (submitted.value) {
+            if (v) {
+              return true;
+            }
+            return "Required";
+          }
+          return true;
+        },
+      };
+    });
+    // Create a form context with the validation schema
+    const { handleSubmit } = useForm({
+      validationSchema: schema,
+    });
+
+    const { value: date, errorMessage: dateError } = useField("date");
+
+    const onSubmit = handleSubmit((values) => {
+      console.log(values);
+    });
+    const setSubmitted = () => {
+      submitted.value = true;
+    };
+
+    const label = "Date of Birth or something";
     return {
-      label: "Appointment Date",
-      test: undefined,
-      submitted: false,
-      today: new Date(),
+      date,
+      dateError,
+      label,
+      setSubmitted,
+      onSubmit,
     };
   },
-  methods: {
-    onSubmit() {
-      this.submitted = true;
-      this.$nextTick(() => {
-        this.$refs.validator.validate().then((v) => {
-          if (v) {
-            console.log(`email: ${this.email}`);
-            console.log(`name: ${this.name}`);
-          }
-        });
-      });
-    },
-  },
   components: {
-    ValidationProvider,
-    ValidationObserver,
     ...components,
   },
 };

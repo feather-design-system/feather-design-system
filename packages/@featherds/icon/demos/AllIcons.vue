@@ -14,6 +14,16 @@ import alertError from "@featherds/icon/alert/Error";
 
 import alertWarning from "@featherds/icon/alert/Warning";
 
+import communicationCall from "@featherds/icon/communication/Call";
+
+import communicationChat from "@featherds/icon/communication/Chat";
+
+import communicationEmail from "@featherds/icon/communication/Email";
+
+import communicationFax from "@featherds/icon/communication/Fax";
+
+import communicationPhone from "@featherds/icon/communication/Phone";
+
 import actionsAccount from "@featherds/icon/actions/Account";
 
 import actionsAccountCircle from "@featherds/icon/actions/AccountCircle";
@@ -140,16 +150,6 @@ import actionsVisibility from "@featherds/icon/actions/Visibility";
 
 import actionsVisibilityOff from "@featherds/icon/actions/VisibilityOff";
 
-import communicationCall from "@featherds/icon/communication/Call";
-
-import communicationChat from "@featherds/icon/communication/Chat";
-
-import communicationEmail from "@featherds/icon/communication/Email";
-
-import communicationFax from "@featherds/icon/communication/Fax";
-
-import communicationPhone from "@featherds/icon/communication/Phone";
-
 import fileFolderOpen from "@featherds/icon/file/FolderOpen";
 
 import hardwareDesktopWindows from "@featherds/icon/hardware/DesktopWindows";
@@ -251,6 +251,11 @@ export default {
     return {
       featherIcons:[{ icon: alertError, key: "alertError" },
         { icon: alertWarning, key: "alertWarning" },
+        { icon: communicationCall, key: "communicationCall" },
+        { icon: communicationChat, key: "communicationChat" },
+        { icon: communicationEmail, key: "communicationEmail" },
+        { icon: communicationFax, key: "communicationFax" },
+        { icon: communicationPhone, key: "communicationPhone" },
         { icon: actionsAccount, key: "actionsAccount" },
         { icon: actionsAccountCircle, key: "actionsAccountCircle" },
         { icon: actionsAdd, key: "actionsAdd" },
@@ -314,11 +319,6 @@ export default {
         { icon: actionsViewDetails, key: "actionsViewDetails" },
         { icon: actionsVisibility, key: "actionsVisibility" },
         { icon: actionsVisibilityOff, key: "actionsVisibilityOff" },
-        { icon: communicationCall, key: "communicationCall" },
-        { icon: communicationChat, key: "communicationChat" },
-        { icon: communicationEmail, key: "communicationEmail" },
-        { icon: communicationFax, key: "communicationFax" },
-        { icon: communicationPhone, key: "communicationPhone" },
         { icon: fileFolderOpen, key: "fileFolderOpen" },
         { icon: hardwareDesktopWindows, key: "hardwareDesktopWindows" },
         { icon: hardwareKeyboardArrowDown, key: "hardwareKeyboardArrowDown" },

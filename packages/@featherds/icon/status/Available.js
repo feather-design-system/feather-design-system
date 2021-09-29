@@ -1,4 +1,10 @@
 import { openBlock, createElementBlock, createStaticVNode } from "vue";
+var _export_sfc = (sfc, props) => {
+  for (const [key, val] of props) {
+    sfc[key] = val;
+  }
+  return sfc;
+};
 const _sfc_main = {};
 const _hoisted_1 = {
   xmlns: "http://www.w3.org/2000/svg",
@@ -14,5 +20,5 @@ const _hoisted_5 = [
 function _sfc_render(_ctx, _cache) {
   return openBlock(), createElementBlock("svg", _hoisted_1, _hoisted_5);
 }
-_sfc_main.render = _sfc_render;
-export { _sfc_main as default };
+var Available = /* @__PURE__ */ _export_sfc(_sfc_main, [["render", _sfc_render]]);
+export { Available as default };
