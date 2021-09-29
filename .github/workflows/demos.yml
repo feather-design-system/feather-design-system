@@ -36,14 +36,14 @@ jobs:
       - name: Delete old demos
         uses: azure/CLI@v1
         with:
-          azcliversion: 2.0.72
+          azcliversion: 2.28.0
           inlineScript: |
             az storage remove -c '$web' -p "demos" --recursive --account-name prsv
 
       - name: Upload to Azure blob storage
         uses: azure/CLI@v1
         with:
-          azcliversion: 2.0.72
+          azcliversion: 2.28.0
           inlineScript: |
             az storage blob upload-batch --account-name prsv -d '$web/demos' -s ./demo-dist
 

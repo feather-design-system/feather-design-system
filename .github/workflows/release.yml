@@ -71,14 +71,14 @@ jobs:
       - name: Delete old docs
         uses: azure/CLI@v1
         with:
-          azcliversion: 2.0.72
+          azcliversion: 2.28.0
           inlineScript: |
             az storage remove -c '$web' --exclude-path "demos" --recursive --account-name prsv
 
       - name: Upload to Azure blob storage
         uses: azure/CLI@v1
         with:
-          azcliversion: 2.0.72
+          azcliversion: 2.28.0
           inlineScript: |
             az storage blob upload-batch --account-name prsv -d '$web' -s ./docs/.vuepress/dist
 
