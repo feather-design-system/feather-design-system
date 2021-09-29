@@ -1,3 +1,12 @@
+## 0.2.6 (2021-09-29)
+
+
+### Bug Fixes
+
+* **demos:** updating the cli version ([7c1963e](https://github.com/feather-design-system/feather-design-system/commit/7c1963e477a4dbc98492b804a8df8afc2874f542))
+
+
+
 ## 0.2.5 (2021-09-29)
 
 
