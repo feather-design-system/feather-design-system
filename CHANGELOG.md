@@ -1,3 +1,12 @@
+## 0.2.5 (2021-09-29)
+
+
+### Bug Fixes
+
+* **demos:** typo ([d54b28d](https://github.com/feather-design-system/feather-design-system/commit/d54b28d4d968ef7ea097b0034bf5ffb4a4d8805d))
+
+
+
 ## 0.2.4 (2021-09-24)
 
 
