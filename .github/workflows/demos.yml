@@ -33,6 +33,13 @@ jobs:
         with:
           creds: ${{ secrets.AZURE_TOKEN }}
 
+      - name: Delete old demos
+        uses: azure/CLI@v1
+        with:
+          azcliversion: 2.0.72
+          inlineScript: |
+            az storage remove -c '$web' -n "demos" --recursive --account-name prsv
+
       - name: Upload to Azure blob storage
         uses: azure/CLI@v1
         with:

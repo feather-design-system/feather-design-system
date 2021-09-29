@@ -5,6 +5,7 @@ const run = async () =>
   build({
     configFile: "./vite.config.js",
     root: process.cwd(),
+    base: "/demos/",
     resolve: {
       alias: [...sassImports, ...moduleImport, ...fileImport],
       extensions: [".mjs", ".js", ".ts", ".jsx", ".tsx", ".json", ".vue"],
