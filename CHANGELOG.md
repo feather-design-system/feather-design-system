@@ -1,3 +1,12 @@
+## 0.2.7 (2021-09-30)
+
+
+### Bug Fixes
+
+* **demos:** switching argument back as it was deleting the entire blob ([b15f895](https://github.com/feather-design-system/feather-design-system/commit/b15f895aa118dcbec45b4ca68b6ac92ff657d14c))
+
+
+
 ## 0.2.6 (2021-09-29)
 
 
