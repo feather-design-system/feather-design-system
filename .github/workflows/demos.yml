@@ -12,8 +12,9 @@ env:
   GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
   CI_USER: ${{ secrets.CI_USER}}
   CI_EMAIL: ${{ secrets.CI_EMAIL }}
+
 jobs:
-  release:
+  deploy:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
@@ -23,11 +24,13 @@ jobs:
           cache: "npm"
           node-version: "16.x"
           registry-url: "https://registry.npmjs.org"
+
       - run: npm ci
       - name: Build project
         run: npm run build
       - name: Build demos
         run: npm run demo:build
+
       - name: Azure login
         uses: azure/login@v1
         with:
