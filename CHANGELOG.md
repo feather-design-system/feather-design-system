@@ -1,3 +1,12 @@
+## 0.2.9 (2021-09-30)
+
+
+### Bug Fixes
+
+* **demos:** updated deploy.yml ([d04d0cf](https://github.com/feather-design-system/feather-design-system/commit/d04d0cf4f82cca6095eb2942b1cf04d4319f8c0c))
+
+
+
 ## 0.2.8 (2021-09-30)
 
 
