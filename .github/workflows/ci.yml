@@ -22,7 +22,6 @@ jobs:
           cache: "npm"
       - name: NPM install
         run: npm ci
-
   lint:
     needs: install
     runs-on: ubuntu-latest
