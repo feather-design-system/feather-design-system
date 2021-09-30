@@ -1,5 +1,6 @@
 const build = require("./vite/demoBuild");
 (async () => {
-  await require("./demos");
+  const prepareDemos = require("./demos");
+  await prepareDemos.run("/demos");
   await build.run();
 })();

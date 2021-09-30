@@ -3,7 +3,8 @@ const path = require("path");
 const fs = require("fs-extra");
 const { pascalCase } = require("change-case");
 const { getPackageName } = require("./utils");
-module.exports = (async () => {
+
+const run = (async (subfolder = "") => {
   const globs = [`packages/@featherds/*/demos/*.vue`];
   const files = await globby(globs, {
     cwd: process.cwd(),
@@ -30,14 +31,14 @@ module.exports = (async () => {
 
   const routesExports = `
       export default [
-        {path:"",component:Home},
-        {path:"/",component:Home},
+        {path:"${subfolder}",component:Home},
+        {path:"${subfolder}/",component:Home},
         ${Object.values(routes)
           .map((arr) =>
             arr
               .map(
                 ({ route, component }) =>
-                  `{path:"${route}",component:() => import("${component}")},`
+                  `{path:"${subfolder}${route}",component:() => import("${component}")},`
               )
               .join("\n")
           )
@@ -58,7 +59,7 @@ module.exports = (async () => {
         const lis = routes[key]
           .map(
             ({ route, name }) => `
-      <li><router-link to="${route}">${name}</router-link></li>
+      <li><router-link to="${subfolder}${route}">${name}</router-link></li>
       `
           )
           .join("\n");
@@ -74,4 +75,6 @@ module.exports = (async () => {
   // const linter = new Service(process.cwd());
   // //lint the files we just created to avoid unncessary errors
   // return linter.run("lint", { _: ["", "./demo/"] });
-})();
+});
+
+module.exports = { run };

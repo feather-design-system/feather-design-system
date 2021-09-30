@@ -1,6 +1,7 @@
 const serve = require("./vite/serve");
 (async () => {
-  await require("./demos");
+  const prepareDemos = require("./demos");
+  await prepareDemos.run();
   const server = await serve.run();
   await server.listen();
 })();
