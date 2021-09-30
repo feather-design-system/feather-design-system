@@ -1,7 +1,7 @@
 const args = process.argv.slice(2);
 const serve = require("./vite/serve");
 (async () => {
-  await require("./demos");
+  await require("./demos").run();
   const server = await serve.run();
   await server.listen();
 
