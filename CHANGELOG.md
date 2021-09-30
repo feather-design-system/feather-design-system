@@ -1,3 +1,12 @@
+## 0.2.8 (2021-09-30)
+
+
+### Bug Fixes
+
+* **release notes:** trying a different changelog action ([0830e44](https://github.com/feather-design-system/feather-design-system/commit/0830e44b4d3cd25dda09be62bd84a37f90426f24))
+
+
+
 ## 0.2.7 (2021-09-30)
 
 
