@@ -58,7 +58,7 @@ jobs:
           tag_name: ${{ github.event.inputs.version }}
           release_name: Release ${{ github.event.inputs.version }}
           body: |
-            ${{ steps.get_release_notes.outputs.release_notes }}
+            ${{steps.github_release.outputs.changelog}}
           draft: false
           prerelease: false
 
