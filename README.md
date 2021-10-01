@@ -1,46 +1,13 @@
-# feather design system
+# Feather Design System
 
-## Dev setup
+## Introduction
 
-### Initial
+Feather Design System is a Vue-based design system for creating consistent web UIs that follow best practices for typography, contrast, and layout.
 
-```js
-npm install
-npm run build
-```
+## Documentation
 
-Be sure to run install then build command. This ensures that all packages are ready for consumption of sibiling packages. For example if you are going to work on `textarea` you will need the `input` package built.
+Documentation is currently available here: https://prsv.z13.web.core.windows.net/ NOTE: this location is temporary, just be careful if bookmarking.
 
-### Dev
+## Install
 
-```js
-npm run serve
-```
-
-## Docs
-
-### Development
-
-Our component documentation is auto generate based on the `docs` folder in each package. There is static documentation that exists in the root `docs` folder which is mainly used for UX patterns.
-
-To run the docs locally:
-
-```js
-npm run docs:dev
-```
-
-To perform a static build of the docs run:
-
-```js
-npm run docs:build
-```
-
-## Packages
-
-To generate a new package with a rough scaffold run:
-
-```js
-npm run new -- package
-```
-
-You will then recieve prompts for the package name and for the name of the first component to put in.
+All Feather Design System packages exist under the `@featherds` npm scope. For details on all packages available please checkout the [Documentation](#Documentation) specifically the `Components` section which will detail what package to install to begin using the component.
