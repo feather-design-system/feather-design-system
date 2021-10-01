@@ -13,7 +13,7 @@ Thank you so much for being interested in contributing to Feather Design System.
 - The `main` branch is a snapshot of the latest stable release. The `dev` branch is where all latest code changes live.
 - Checkout topic branches from the relevant branch, typically this will be `dev`.
 - Do not check in `dist` or built assets.
-- Make sure `npm test` passes.
+- Make sure `npm run test` passes.
 - Make sure all commit and pull request messages adhere to our commitlint standard. [We follow the Angular commit convention](https://github.com/conventional-changelog/conventional-changelog/tree/master/packages/conventional-changelog-angular).
 - All PRs should have an accompanying issue.
 - Please add test cases for new features or bug fixes.
