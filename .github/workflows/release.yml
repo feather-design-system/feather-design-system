@@ -44,10 +44,10 @@ jobs:
         run: git push --follow-tags
 
       - name: Extract Changelog
-        uses: mikepenz/release-changelog-builder-action@v2.4.2
+        uses: yashanand1910/standard-release-notes@v1.2.1
         id: get_release_notes
         with:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          version: ${{ github.event.inputs.version }} # Required
 
       - name: Create Release
         id: create_release
@@ -58,7 +58,7 @@ jobs:
           tag_name: ${{ github.event.inputs.version }}
           release_name: Release ${{ github.event.inputs.version }}
           body: |
-            ${{steps.github_release.outputs.changelog}}
+            ${{ steps.get_release_notes.outputs.release_notes }}
           draft: false
           prerelease: false
 
