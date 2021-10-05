@@ -1,12 +1,146 @@
 @import "utils";
 @import "variables";
 
+$display1: (
+  $display1-font-size: 5rem,
+  $display1-line-height: 6rem,
+  $display1-letter-spacing: -0.015em,
+  $display1-font-weight: var($font-normal),
+  $display1-text-transform: none,
+  $display1-font-style: normal,
+);
+
+$display2: (
+  $display2-font-size: 3.75rem,
+  $display2-line-height: 4.5rem,
+  $display2-letter-spacing: -0.0083em,
+  $display2-font-weight: var($font-normal),
+  $display2-text-transform: none,
+  $display2-font-style: normal,
+);
+
+$display3: (
+  $display3-font-size: 3.3rem,
+  $display3-line-height: 3.75rem,
+  $display3-letter-spacing: -0.005em,
+  $display3-font-weight: var($font-medium),
+  $display3-text-transform: none,
+  $display3-font-style: normal,
+);
+
+$title: (
+  $title-font-size: 2.25rem,
+  $title-line-height: 1.25rem,
+  $title-letter-spacing: normal,
+  $title-font-weight: var($font-light),
+  $title-text-transform: none,
+  $title-font-style: normal,
+);
+
+$headline1: (
+  $headline1-font-size: 1.75rem,
+  $headline1-line-height: 2.1rem,
+  $headline1-letter-spacing: normal,
+  $headline1-font-weight: var($font-bold),
+  $headline1-text-transform: none,
+  $headline1-font-style: normal,
+);
+
+$headline2: (
+  $headline2-font-size: 1.5rem,
+  $headline2-line-height: 2.125rem,
+  $headline2-letter-spacing: normal,
+  $headline2-font-weight: var($font-normal),
+  $headline2-text-transform: none,
+  $headline2-font-style: normal,
+);
+
+$headline3: (
+  $headline3-font-size: 1.125rem,
+  $headline3-line-height: 2rem,
+  $headline3-letter-spacing: 0.0121em,
+  $headline3-font-weight: var($font-bold),
+  $headline3-text-transform: none,
+  $headline3-font-style: normal,
+);
+
+$headline4: (
+  $headline4-font-size: 1rem,
+  $headline4-line-height: 2rem,
+  $headline4-letter-spacing: 0.0125em,
+  $headline4-font-weight: var($font-semibold),
+  $headline4-text-transform: none,
+  $headline4-font-style: normal,
+);
+
+$subtitle1: (
+  $subtitle1-font-size: 0.875rem,
+  $subtitle1-line-height: 1.375rem,
+  $subtitle1-letter-spacing: 0.00714286em,
+  $subtitle1-font-weight: var($font-bold),
+  $subtitle1-text-transform: none,
+  $subtitle1-font-style: normal,
+);
+
+$subtitle2: (
+  $subtitle2-font-size: 0.8125rem,
+  $subtitle2-line-height: 1.125rem,
+  $subtitle2-letter-spacing: 0.00692308em,
+  $subtitle2-font-weight: var($font-semibold),
+  $subtitle2-text-transform: none,
+  $subtitle2-font-style: normal,
+);
+
+$body-large: (
+  $body-large-font-size: 1rem,
+  $body-large-line-height: 1.5rem,
+  $body-large-letter-spacing: 0.03125em,
+  $body-large-font-weight: var($font-normal),
+  $body-large-text-transform: none,
+  $body-large-font-style: normal,
+);
+
+$body-small: (
+  $body-small-font-size: 0.875rem,
+  $body-small-line-height: 1.375rem,
+  $body-small-letter-spacing: 0.01786em,
+  $body-small-font-weight: var($font-normal),
+  $body-small-text-transform: none,
+  $body-small-font-style: normal,
+);
+
+$button: (
+  $button-font-size: 0.875rem,
+  $button-line-height: 2.375rem,
+  $button-letter-spacing: 0.08928571em,
+  $button-font-weight: var($font-semibold),
+  $button-text-transform: uppercase,
+  $button-font-style: normal,
+);
+$caption: (
+  $caption-font-size: 0.75rem,
+  $caption-line-height: 1.375rem,
+  $caption-letter-spacing: normal,
+  $caption-font-weight: var($font-semibold),
+  $caption-text-transform: none,
+  $caption-font-style: italic,
+);
+
+$overline: (
+  $overline-font-size: 0.75rem,
+  $overline-line-height: 2.125rem,
+  $overline-letter-spacing: 0.105em,
+  $overline-font-weight: var($font-semibold),
+  $overline-text-transform: uppercase,
+  $overline-font-style: normal,
+);
+
 $typography: (
   $root-font-size: 16px,
   $header-font-family: #{"Inter",
-    Helvetica,
-    Arial,
-    sans-serif},
+  Helvetica,
+  Arial,
+  sans-serif},
   $font-family: #{"OpenSans",
   Helvetica,
   Arial,
@@ -16,7 +150,7 @@ $typography: (
   $font-medium: 500,
   $font-semibold: 600,
   $font-bold: 700,
-  $base-font-size: 14px
+  $base-font-size: 14px,
 );
 
 $layout: (
@@ -27,7 +161,25 @@ $layout: (
   $zindex-modal-backdrop: 1040,
   $zindex-modal: 1050,
   $zindex-popover: 1060,
-  $zindex-tooltip: 1070
+  $zindex-tooltip: 1070,
 );
 
-$base-theme: map-collect($typography, $layout);
+$base-theme: map-collect(
+  $display1,
+  $display2,
+  $display3,
+  $title,
+  $headline1,
+  $headline2,
+  $headline3,
+  $headline4,
+  $subtitle1,
+  $subtitle2,
+  $body-large,
+  $body-small,
+  $button,
+  $caption,
+  $overline,
+  $typography,
+  $layout
+);
