@@ -1,3 +1,12 @@
+## 0.2.10 (2021-10-05)
+
+
+### Bug Fixes
+
+* **ci:** retrying the old changelog generation method ([4af8483](https://github.com/feather-design-system/feather-design-system/commit/4af84837938e8400b2e07c3493d1eb63ee79a427))
+
+
+
 ## 0.2.9 (2021-09-30)
 
 
