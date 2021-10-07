@@ -1,0 +1,200 @@
+@import "utils";
+@import "variables";
+$colors: (
+  $secondary-variant: #00BFCB,
+  $secondary: #00666D,
+  $clickable-normal: #0402a9,
+  $clickable-selected: #0402a9,
+  $clickable-visited: #670101,
+  $background: #f4f7FC,
+  $surface: #ffffff,
+  $error: #d43d45,
+  $success: #0f6e00,
+  $warning: #ffac26,
+  $state-color-on-color: #fff,
+  $state-color-on-neutral: #000 //added here so RGB is added
+);
+
+$colors: add-RGB($colors);
+
+$on-color: (
+  $primary-text-on-color: rgba(255, 255, 255, 1),
+  $secondary-text-on-color: rgba(255, 255, 255, 0.78),
+  $disabled-text-on-color: rgba(255, 255, 255, 0.5),
+  $border-on-color: rgba(255, 255, 255, 0.24),
+  $border-light-on-color: rgba(255, 255, 255, 0.12)
+);
+
+$on-surface: (
+  $primary-text-on-surface: rgba(10, 12, 27, 0.9),
+  $secondary-text-on-surface: rgba(10, 12, 27, 0.7),
+  $disabled-text-on-surface: rgba(10, 12, 27, 0.4),
+  $border-on-surface: rgba(10, 12, 27, 0.12),
+  $border-light-on-surface: rgba(10, 12, 27, 0.06)
+);
+
+$on-warning: (
+  $primary-text-on-warning: rgba(10, 12, 27, 0.9),
+  $secondary-text-on-warning: rgba(10, 12, 27, 0.6),
+  $disabled-text-on-warning: rgba(10, 12, 27, 0.4),
+  $border-on-warning: rgba(10, 12, 27, 0.12),
+  $border-light-on-warning: rgba(10, 12, 27, 0.06)
+);
+
+$shadeColor: rgb(10, 12, 27);
+$shades: (
+  $shade-1: rgba($shadeColor, 0.6),
+  $shade-2: rgba($shadeColor, 0.4),
+  $shade-3: rgba($shadeColor, 0.24),
+  $shade-4: rgba($shadeColor, 0.12)
+);
+
+$state-on-surface: (
+  $state-opacity-hover-on-surface: 0.08,
+  $state-opacity-pressed-on-surface: 0.32,
+  $state-opacity-selected-on-surface: 0.12,
+  $state-opacity-focus-on-surface: 0.12
+);
+$state-on-neutral: (
+  $state-opacity-hover-on-neutral: 0.08,
+  $state-opacity-pressed-on-neutral: 0.32,
+  $state-opacity-selected-on-neutral: 0.12,
+  $state-opacity-focus-on-neutral: 0.12
+);
+$state-on-color: (
+  $state-opacity-hover-on-color: 0.08,
+  $state-opacity-pressed-on-color: 0.32,
+  $state-opacity-selected-on-color: 0.16,
+  $state-opacity-focus-on-color: 0.16,
+  $state-border-focus-on-color: 2px solid #000,
+  $state-inner-border-color-focus-on-color: rgba(255, 255, 255, 0.24)
+);
+
+$shadows: (
+  $shadow-0: #{
+  0 0 0 0 rgba(0, 0, 0, 0.2),
+  0 0 0 0 rgba(0, 0, 0, 0.14),
+  0 0 0 0 rgba(0, 0, 0, 0.12)},
+  $shadow-1: #{
+  0 2px 1px -1px rgba(0, 0, 0, 0.2),
+  0 1px 1px 0 rgba(0, 0, 0, 0.14),
+  0 1px 3px 0 rgba(0, 0, 0, 0.12)},
+  $shadow-2: #{
+  0 3px 1px -2px rgba(0, 0, 0, 0.2),
+  0 2px 2px 0 rgba(0, 0, 0, 0.14),
+  0 1px 5px 0 rgba(0, 0, 0, 0.12)},
+  $shadow-3: #{
+  0 3px 3px -2px rgba(0, 0, 0, 0.2),
+  0 3px 4px 0 rgba(0, 0, 0, 0.14),
+  0 1px 8px 0 rgba(0, 0, 0, 0.12)},
+  $shadow-4: #{
+  0 2px 4px -1px rgba(0, 0, 0, 0.2),
+  0 4px 5px 0 rgba(0, 0, 0, 0.14),
+  0 1px 10px 0 rgba(0, 0, 0, 0.12)},
+  $shadow-5: #{
+  0 3px 5px -1px rgba(0, 0, 0, 0.2),
+  0 5px 8px 0 rgba(0, 0, 0, 0.14),
+  0 1px 14px 0 rgba(0, 0, 0, 0.12)},
+  $shadow-6: #{
+  0 3px 5px -1px rgba(0, 0, 0, 0.2),
+  0 6px 10px 0 rgba(0, 0, 0, 0.14),
+  0 1px 18px 0 rgba(0, 0, 0, 0.12)},
+  $shadow-7: #{
+  0 4px 5px -2px rgba(0, 0, 0, 0.2),
+  0 7px 10px 1px rgba(0, 0, 0, 0.14),
+  0 2px 16px 1px rgba(0, 0, 0, 0.12)},
+  $shadow-8: #{
+  0 5px 5px -3px rgba(0, 0, 0, 0.2),
+  0 8px 10px 1px rgba(0, 0, 0, 0.14),
+  0 3px 14px 2px rgba(0, 0, 0, 0.12)},
+  $shadow-9: #{
+  0 5px 6px -3px rgba(0, 0, 0, 0.2),
+  0 9px 12px 1px rgba(0, 0, 0, 0.14),
+  0 3px 16px 2px rgba(0, 0, 0, 0.12)},
+  $shadow-10: #{
+  0 6px 6px -3px rgba(0, 0, 0, 0.2),
+  0 10px 14px 1px rgba(0, 0, 0, 0.14),
+  0 4px 18px 3px rgba(0, 0, 0, 0.12)},
+  $shadow-11: #{
+  0 6px 7px -4px rgba(0, 0, 0, 0.2),
+  0 11px 15px 1px rgba(0, 0, 0, 0.14),
+  0 4px 20px 3px rgba(0, 0, 0, 0.12)},
+  $shadow-12: #{
+  0 7px 8px -4px rgba(0, 0, 0, 0.2),
+  0 12px 17px 2px rgba(0, 0, 0, 0.14),
+  0 5px 22px 4px rgba(0, 0, 0, 0.12)},
+  $shadow-13: #{
+  0 7px 8px -4px rgba(0, 0, 0, 0.2),
+  0 13px 19px 2px rgba(0, 0, 0, 0.14),
+  0 5px 24px 4px rgba(0, 0, 0, 0.12)},
+  $shadow-14: #{
+  0 7px 9px -4px rgba(0, 0, 0, 0.2),
+  0 14px 21px 2px rgba(0, 0, 0, 0.14),
+  0 5px 26px 4px rgba(0, 0, 0, 0.12)},
+  $shadow-15: #{
+  0 8px 9px -5px rgba(0, 0, 0, 0.2),
+  0 15px 22px 2px rgba(0, 0, 0, 0.14),
+  0 6px 28px 5px rgba(0, 0, 0, 0.12)},
+  $shadow-16: #{
+  0 8px 10px -5px rgba(0, 0, 0, 0.2),
+  0 16px 24px 2px rgba(0, 0, 0, 0.14),
+  0 6px 30px 5px rgba(0, 0, 0, 0.12)},
+  $shadow-17: #{
+  0 8px 11px -5px rgba(0, 0, 0, 0.2),
+  0 17px 26px 2px rgba(0, 0, 0, 0.14),
+  0 6px 32px 5px rgba(0, 0, 0, 0.12)},
+  $shadow-18: #{
+  0 9px 11px -5px rgba(0, 0, 0, 0.2),
+  0 18px 28px 2px rgba(0, 0, 0, 0.14),
+  0 7px 34px 6px rgba(0, 0, 0, 0.12)},
+  $shadow-19: #{
+  0 9px 12px -6px rgba(0, 0, 0, 0.2),
+  0 19px 29px 2px rgba(0, 0, 0, 0.14),
+  0 7px 36px 6px rgba(0, 0, 0, 0.12)},
+  $shadow-20: #{
+  0 10px 13px -6px rgba(0, 0, 0, 0.2),
+  0 20px 31px 3px rgba(0, 0, 0, 0.14),
+  0 8px 38px 7px rgba(0, 0, 0, 0.12)},
+  $shadow-21: #{
+  0 10px 13px -6px rgba(0, 0, 0, 0.2),
+  0 21px 33px 3px rgba(0, 0, 0, 0.14),
+  0 8px 40px 7px rgba(0, 0, 0, 0.12)},
+  $shadow-22: #{
+  0 10px 14px -6px rgba(0, 0, 0, 0.2),
+  0 22px 35px 3px rgba(0, 0, 0, 0.14),
+  0 8px 42px 7px rgba(0, 0, 0, 0.12)},
+  $shadow-23: #{
+  0 11px 14px -7px rgba(0, 0, 0, 0.2),
+  0 23px 36px 3px rgba(0, 0, 0, 0.14),
+  0 9px 44px 8px rgba(0, 0, 0, 0.12)},
+  $shadow-24: #{
+  0 11px 15px -7px rgba(0, 0, 0, 0.2),
+  0 24px 38px 3px rgba(0, 0, 0, 0.14),
+  0 9px 46px 8px rgba(0, 0, 0, 0.12)}
+);
+
+$elevation-background: (
+  $elevation-background-0: #fff,
+  $elevation-background-1: #fff,
+  $elevation-background-2: #fff,
+  $elevation-background-3: #fff,
+  $elevation-background-4: #fff,
+  $elevation-background-6: #fff,
+  $elevation-background-8: #fff,
+  $elevation-background-12: #fff,
+  $elevation-background-16: #fff,
+  $elevation-background-24: #fff
+);
+
+$base-light: map-collect(
+  $colors,
+  $on-color,
+  $on-surface,
+  $on-warning,
+  $state-on-surface,
+  $state-on-neutral,
+  $state-on-color,
+  $shades,
+  $elevation-background,
+  $shadows
+);

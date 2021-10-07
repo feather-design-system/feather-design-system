@@ -1,0 +1,20 @@
+{
+  "name": "@featherds/progress",
+  "version": "0.2.10",
+  "publishConfig": {
+    "access": "public"
+  },
+  "author": "NantHealth",
+  "scripts": {},
+  "main": "dist/app.js",
+  "license": "Apache-2.0",
+  "dependencies": {
+    "@featherds/styles": "file:../styles",
+    "vue": "^3.1.0-0"
+  },
+  "keywords": [
+    "vue",
+    "FeatherSpinner"
+  ],
+  "types": "./src/index.d.ts"
+}

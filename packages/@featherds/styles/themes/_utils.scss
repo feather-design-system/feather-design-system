@@ -1,0 +1,239 @@
+@function map-collect($maps...) {
+  $collection: ();
+
+  @each $map in $maps {
+    $collection: map-merge($collection, $map);
+  }
+  @return $collection;
+}
+
+@function add-RGB($colors) {
+  $rgbMap: ();
+  @each $name, $color in $colors {
+    $rgbMap: map-merge($rgbMap, (#{$name + "-r"}: red($color)));
+    $rgbMap: map-merge($rgbMap, (#{$name + "-g"}: green($color)));
+    $rgbMap: map-merge($rgbMap, (#{$name + "-b"}: blue($color)));
+  }
+  @return map-merge($colors, $rgbMap);
+}
+
+@function alpha($color, $alpha) {
+  $r: var(#{$color + "-r"});
+  $g: var(#{$color + "-g"});
+  $b: var(#{$color + "-b"});
+
+  @return rgba($r, $g, $b, $alpha);
+}
+
+@function neutral-gradient($opacity) {
+  @return linear-gradient(
+    alpha($state-color-on-neutral, var($opacity)),
+    alpha($state-color-on-neutral, var($opacity))
+  );
+}
+
+@function surface-gradient($opacity) {
+  @return linear-gradient(
+    alpha($state-color-on-surface, var($opacity)),
+    alpha($state-color-on-surface, var($opacity))
+  );
+}
+
+@function color-gradient($opacity) {
+  @return linear-gradient(
+    alpha($state-color-on-color, var($opacity)),
+    alpha($state-color-on-color, var($opacity))
+  );
+}
+
+@function defaultTransparent($color) {
+  @if $color {
+    @return var($color);
+  }
+  @return rgba(0, 0, 0, 0);
+}
+
+@function linear-grad($background) {
+  @return linear-gradient(
+    defaultTransparent($background),
+    defaultTransparent($background)
+  );
+}
+@mixin state-on-color($background: false) {
+  .ripple {
+    background-color: var($state-color-on-color);
+    opacity: var($state-opacity-pressed-on-color);
+  }
+  &.selected,
+  .selected {
+    background: color-gradient($state-opacity-selected-on-color),
+      linear-grad($background);
+  }
+
+  &.hover:hover,
+  &:hover .hover {
+    background: color-gradient($state-opacity-hover-on-color),
+      linear-grad($background);
+    &.selected {
+      background: color-gradient($state-opacity-selected-on-color),
+        color-gradient($state-opacity-hover-on-color), linear-grad($background);
+    }
+  }
+  &:focus.focus,
+  &:focus .focus {
+    background: color-gradient($state-opacity-focus-on-color),
+      linear-grad($background);
+    &.selected {
+      background: color-gradient($state-opacity-selected-on-color),
+        color-gradient($state-opacity-focus-on-color), linear-grad($background);
+    }
+  }
+  &:hover:focus .focus.hover,
+  &:hover:focus.focus.hover {
+    background: color-gradient($state-opacity-hover-on-color),
+      color-gradient($state-opacity-focus-on-color), linear-grad($background);
+    &.selected {
+      background: color-gradient($state-opacity-selected-on-color),
+        color-gradient($state-opacity-hover-on-color),
+        color-gradient($state-opacity-focus-on-color), linear-grad($background);
+    }
+  }
+}
+@mixin state-on-surface($background: false) {
+  .ripple {
+    background-color: var($state-color-on-surface);
+    opacity: var($state-opacity-pressed-on-surface);
+  }
+  &.selected,
+  .selected {
+    background: surface-gradient($state-opacity-selected-on-surface),
+      linear-grad($background);
+  }
+
+  &.hover:hover,
+  &:hover .hover {
+    background: surface-gradient($state-opacity-hover-on-surface),
+      linear-grad($background);
+    &.selected {
+      background: surface-gradient($state-opacity-selected-on-surface),
+        surface-gradient($state-opacity-hover-on-surface),
+        linear-grad($background);
+    }
+  }
+  &:focus.focus,
+  &:focus .focus {
+    background: surface-gradient($state-opacity-focus-on-surface),
+      linear-grad($background);
+    &.selected {
+      background: surface-gradient($state-opacity-selected-on-surface),
+        surface-gradient($state-opacity-focus-on-surface),
+        linear-grad($background);
+    }
+  }
+  &:hover:focus .focus.hover,
+  &:hover:focus.focus.hover {
+    background: surface-gradient($state-opacity-hover-on-surface),
+      surface-gradient($state-opacity-focus-on-surface),
+      linear-grad($background);
+    &.selected {
+      background: surface-gradient($state-opacity-selected-on-surface),
+        surface-gradient($state-opacity-hover-on-surface),
+        surface-gradient($state-opacity-focus-on-surface),
+        linear-grad($background);
+    }
+  }
+}
+
+@mixin state-on-neutral($background: false) {
+  .ripple {
+    background-color: var($state-color-on-neutral);
+    opacity: var($state-opacity-pressed-on-neutral);
+  }
+  &.selected,
+  .selected {
+    background: neutral-gradient($state-opacity-selected-on-neutral),
+      linear-grad($background);
+  }
+
+  &.hover:hover,
+  &:hover .hover {
+    background: neutral-gradient($state-opacity-hover-on-neutral),
+      linear-grad($background);
+    &.selected {
+      background: neutral-gradient($state-opacity-selected-on-neutral),
+        neutral-gradient($state-opacity-hover-on-neutral),
+        linear-grad($background);
+    }
+  }
+  &:focus.focus,
+  &:focus .focus,
+  &.focused.focus,
+  &.focused .focus {
+    background: neutral-gradient($state-opacity-focus-on-neutral),
+      linear-grad($background);
+    &.selected {
+      background: neutral-gradient($state-opacity-selected-on-neutral),
+        neutral-gradient($state-opacity-focus-on-neutral),
+        linear-grad($background);
+    }
+  }
+  &:hover:focus .focus.hover,
+  &:hover:focus.focus.hover,
+  &:hover.focused .focus.hover,
+  &:hover.focused.focus.hover {
+    background: neutral-gradient($state-opacity-hover-on-neutral),
+      neutral-gradient($state-opacity-focus-on-neutral),
+      linear-grad($background);
+    &.selected {
+      background: neutral-gradient($state-opacity-selected-on-neutral),
+        neutral-gradient($state-opacity-hover-on-neutral),
+        neutral-gradient($state-opacity-focus-on-neutral),
+        linear-grad($background);
+    }
+  }
+}
+
+@mixin state-disabled($background: false) {
+  &.selected,
+  .selected {
+    background: defaultTransparent($background);
+  }
+
+  &.hover:hover,
+  &:hover .hover {
+    background: defaultTransparent($background);
+    &.selected {
+      background: defaultTransparent($background);
+    }
+  }
+  &:focus.focus,
+  &:focus .focus {
+    background: defaultTransparent($background);
+    &.selected {
+      background: defaultTransparent($background);
+    }
+  }
+  &:hover:focus .focus.hover,
+  &:hover:focus.focus.hover {
+    background: defaultTransparent($background);
+    &.selected {
+      background: defaultTransparent($background);
+    }
+  }
+}
+
+@mixin button-state-on-color() {
+  @include state-on-color($primary);
+
+  &:hover {
+    box-shadow: var($shadow-4);
+    &:focus {
+      box-shadow: var($shadow-4),
+        inset 0 0 1px 0 var($state-inner-border-color-focus-on-color);
+    }
+  }
+  &:focus {
+    border: var($state-border-focus-on-color);
+    box-shadow: inset 0 0 0 1px var($state-inner-border-color-focus-on-color);
+  }
+}

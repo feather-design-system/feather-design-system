@@ -1,0 +1,465 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`InputWrapper.vue should hide the label when hideLabel is true 1`] = `
+<div
+  class="feather-input-wrapper-container"
+>
+  <fieldset
+    aria-hidden="true"
+    class="feather-input-border"
+  >
+    <legend>
+      test
+    </legend>
+  </fieldset>
+  <label
+    class="feather-input-label"
+    data-ref-id="feather-form-element-label"
+    for="test"
+    style="left: 16px; display: none;"
+  >
+    test
+  </label>
+  <div
+    class="feather-input-wrapper"
+  >
+    <div
+      class="prefix"
+    >
+      
+      
+    </div>
+    
+    
+    <div
+      class="post"
+    >
+      <!--v-if-->
+      <!--v-if-->
+      
+      
+    </div>
+  </div>
+</div>
+`;
+
+exports[`InputWrapper.vue should render a focused border & raised label 1`] = `
+<div
+  class="feather-input-wrapper-container focused"
+>
+  <fieldset
+    aria-hidden="true"
+    class="feather-input-border"
+  >
+    <legend>
+      test
+    </legend>
+  </fieldset>
+  <label
+    class="feather-input-label"
+    data-ref-id="feather-form-element-label"
+    for="test"
+    style="left: 16px;"
+  >
+    test
+  </label>
+  <div
+    class="feather-input-wrapper"
+  >
+    <div
+      class="prefix"
+    >
+      
+      
+    </div>
+    
+    
+    <div
+      class="post"
+    >
+      <!--v-if-->
+      <!--v-if-->
+      
+      
+    </div>
+  </div>
+</div>
+`;
+
+exports[`InputWrapper.vue should render a normal wrapper 1`] = `
+<div
+  class="feather-input-wrapper-container"
+>
+  <fieldset
+    aria-hidden="true"
+    class="feather-input-border"
+  >
+    <legend>
+      test
+    </legend>
+  </fieldset>
+  <label
+    class="feather-input-label"
+    data-ref-id="feather-form-element-label"
+    for="test"
+    style="left: 16px;"
+  >
+    test
+  </label>
+  <div
+    class="feather-input-wrapper"
+  >
+    <div
+      class="prefix"
+    >
+      
+      
+    </div>
+    
+    
+    <div
+      class="post"
+    >
+      <!--v-if-->
+      <!--v-if-->
+      
+      
+    </div>
+  </div>
+</div>
+`;
+
+exports[`InputWrapper.vue should render a raised label 1`] = `
+<div
+  class="feather-input-wrapper-container raised"
+>
+  <fieldset
+    aria-hidden="true"
+    class="feather-input-border"
+  >
+    <legend>
+      test
+    </legend>
+  </fieldset>
+  <label
+    class="feather-input-label"
+    data-ref-id="feather-form-element-label"
+    for="test"
+    style="left: 12px;"
+  >
+    test
+  </label>
+  <div
+    class="feather-input-wrapper"
+  >
+    <div
+      class="prefix"
+    >
+      
+      
+    </div>
+    
+    
+    <div
+      class="post"
+    >
+      <!--v-if-->
+      <!--v-if-->
+      
+      
+    </div>
+  </div>
+</div>
+`;
+
+exports[`InputWrapper.vue should render clear and error icons 1`] = `
+<div
+  class="feather-input-wrapper-container error"
+>
+  <fieldset
+    aria-hidden="true"
+    class="feather-input-border"
+  >
+    <legend>
+      test
+    </legend>
+  </fieldset>
+  <label
+    class="feather-input-label"
+    data-ref-id="feather-form-element-label"
+    for="test"
+    style="left: 16px;"
+  >
+    test
+  </label>
+  <div
+    class="feather-input-wrapper"
+  >
+    <div
+      class="prefix"
+    >
+      
+      
+    </div>
+    
+    
+    <div
+      class="post"
+    >
+      <a
+        class="action-icon hide-when-disabled"
+        data-ref-id="feather-form-element-clear"
+        href="#"
+        title="Clear Text"
+      >
+        <svg
+          aria-hidden="true"
+          class="feather-icon"
+          data-v-0aa06a12=""
+          focusable="false"
+          height="24"
+          role="img"
+          viewBox="0 0 24 24"
+          width="24"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path
+            d="M12,2A10,10,0,1,0,22,12,10,10,0,0,0,12,2Zm5,13.24A1.26,1.26,0,0,1,17,17a1.24,1.24,0,0,1-1.76,0L12,13.73,8.76,17A1.24,1.24,0,1,1,7,15.24L10.24,12,7,8.76A1.24,1.24,0,0,1,8.76,7L12,10.2,15.24,7A1.24,1.24,0,1,1,17,8.76L13.76,12Z"
+          />
+        </svg>
+      </a>
+      <svg
+        aria-hidden="true"
+        class="error-icon hide-when-disabled feather-icon error-icon hide-when-disabled"
+        data-v-0aa06a12=""
+        focusable="false"
+        height="24"
+        role="img"
+        viewBox="0 0 24 24"
+        width="24"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <path
+          d="M11,15h2v2H11Zm0-8h2v6H11Zm1-5A10,10,0,1,0,22,12,10,10,0,0,0,12,2Zm0,18a8,8,0,1,1,8-8A8,8,0,0,1,12,20Z"
+        />
+      </svg>
+      
+      
+    </div>
+  </div>
+</div>
+`;
+
+exports[`InputWrapper.vue should render clear icon when clear and show clear is set 1`] = `
+<div
+  class="feather-input-wrapper-container"
+>
+  <fieldset
+    aria-hidden="true"
+    class="feather-input-border"
+  >
+    <legend>
+      test
+    </legend>
+  </fieldset>
+  <label
+    class="feather-input-label"
+    data-ref-id="feather-form-element-label"
+    for="test"
+    style="left: 16px;"
+  >
+    test
+  </label>
+  <div
+    class="feather-input-wrapper"
+  >
+    <div
+      class="prefix"
+    >
+      
+      
+    </div>
+    
+    
+    <div
+      class="post"
+    >
+      <a
+        class="action-icon hide-when-disabled"
+        data-ref-id="feather-form-element-clear"
+        href="#"
+        title="Clear Text"
+      >
+        <svg
+          aria-hidden="true"
+          class="feather-icon"
+          data-v-0aa06a12=""
+          focusable="false"
+          height="24"
+          role="img"
+          viewBox="0 0 24 24"
+          width="24"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path
+            d="M12,2A10,10,0,1,0,22,12,10,10,0,0,0,12,2Zm5,13.24A1.26,1.26,0,0,1,17,17a1.24,1.24,0,0,1-1.76,0L12,13.73,8.76,17A1.24,1.24,0,1,1,7,15.24L10.24,12,7,8.76A1.24,1.24,0,0,1,8.76,7L12,10.2,15.24,7A1.24,1.24,0,1,1,17,8.76L13.76,12Z"
+          />
+        </svg>
+      </a>
+      <!--v-if-->
+      
+      
+    </div>
+  </div>
+</div>
+`;
+
+exports[`InputWrapper.vue should render in an error state 1`] = `
+<div
+  class="feather-input-wrapper-container error"
+>
+  <fieldset
+    aria-hidden="true"
+    class="feather-input-border"
+  >
+    <legend>
+      test
+    </legend>
+  </fieldset>
+  <label
+    class="feather-input-label"
+    data-ref-id="feather-form-element-label"
+    for="test"
+    style="left: 16px;"
+  >
+    test
+  </label>
+  <div
+    class="feather-input-wrapper"
+  >
+    <div
+      class="prefix"
+    >
+      
+      
+    </div>
+    
+    
+    <div
+      class="post"
+    >
+      <!--v-if-->
+      <svg
+        aria-hidden="true"
+        class="error-icon hide-when-disabled feather-icon error-icon hide-when-disabled"
+        data-v-0aa06a12=""
+        focusable="false"
+        height="24"
+        role="img"
+        viewBox="0 0 24 24"
+        width="24"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <path
+          d="M11,15h2v2H11Zm0-8h2v6H11Zm1-5A10,10,0,1,0,22,12,10,10,0,0,0,12,2Zm0,18a8,8,0,1,1,8-8A8,8,0,0,1,12,20Z"
+        />
+      </svg>
+      
+      
+    </div>
+  </div>
+</div>
+`;
+
+exports[`InputWrapper.vue should render in disabled state 1`] = `
+<div
+  class="feather-input-wrapper-container disabled"
+>
+  <fieldset
+    aria-hidden="true"
+    class="feather-input-border"
+  >
+    <legend>
+      test
+    </legend>
+  </fieldset>
+  <label
+    class="feather-input-label"
+    data-ref-id="feather-form-element-label"
+    for="test"
+    style="left: 16px;"
+  >
+    test
+  </label>
+  <div
+    class="feather-input-wrapper"
+  >
+    <div
+      class="prefix"
+    >
+      
+      
+    </div>
+    
+    
+    <div
+      class="post"
+    >
+      <!--v-if-->
+      <!--v-if-->
+      
+      
+    </div>
+  </div>
+</div>
+`;
+
+exports[`InputWrapper.vue should take into account any prefix elements when not raised 1`] = `
+<div
+  class="feather-input-wrapper-container"
+>
+  <fieldset
+    aria-hidden="true"
+    class="feather-input-border"
+  >
+    <legend>
+      test
+    </legend>
+  </fieldset>
+  <label
+    class="feather-input-label"
+    data-ref-id="feather-form-element-label"
+    for="test"
+    style="left: 16px;"
+  >
+    test
+  </label>
+  <div
+    class="feather-input-wrapper"
+  >
+    <div
+      class="prefix"
+    >
+      
+      
+    </div>
+    
+    <div
+      class="prefix"
+      style="width: 10px; display: inline-block;"
+    />
+    <span>
+      CONTENT
+    </span>
+    
+    <div
+      class="post"
+    >
+      <!--v-if-->
+      <!--v-if-->
+      
+      
+    </div>
+  </div>
+</div>
+`;

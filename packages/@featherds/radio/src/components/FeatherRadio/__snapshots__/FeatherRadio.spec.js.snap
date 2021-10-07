@@ -1,0 +1,200 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`FeatherRadio.vue should set aria-checked based on data 1`] = `
+<div
+  class="layout-container"
+>
+  <div
+    aria-checked="true"
+    aria-disabled="false"
+    aria-labelledby="radio-label-id"
+    class="feather-radio"
+    data-ref-id="feather-radio"
+    role="radio"
+    tabindex="0"
+  >
+    <div
+      class="radio hover focus"
+      style="overflow: hidden; position: relative;"
+    >
+      <div
+        aria-hidden="true"
+        class="icon"
+      >
+        <svg
+          class="dot"
+          height="16"
+          width="16"
+        >
+          <circle
+            cx="8"
+            cy="8"
+            r="5"
+            stroke="black"
+            stroke-width="0"
+          />
+        </svg>
+      </div>
+      <!---->
+    </div>
+    <span
+      class="label"
+      data-ref-id="feather-radio-label"
+      id="radio-label-id"
+    >
+      
+      Hello
+      
+    </span>
+  </div>
+</div>
+`;
+
+exports[`FeatherRadio.vue should set aria-checked based on data 2`] = `
+<div
+  class="layout-container"
+>
+  <div
+    aria-checked="false"
+    aria-disabled="false"
+    aria-labelledby="radio-label-id"
+    class="feather-radio"
+    data-ref-id="feather-radio"
+    role="radio"
+    tabindex="-1"
+  >
+    <div
+      class="radio hover focus"
+      style="overflow: hidden; position: relative;"
+    >
+      <div
+        aria-hidden="true"
+        class="icon"
+      >
+        <svg
+          class="dot"
+          height="16"
+          width="16"
+        >
+          <circle
+            cx="8"
+            cy="8"
+            r="5"
+            stroke="black"
+            stroke-width="0"
+          />
+        </svg>
+      </div>
+      <!---->
+    </div>
+    <span
+      class="label"
+      data-ref-id="feather-radio-label"
+      id="radio-label-id"
+    >
+      
+      Hello
+      
+    </span>
+  </div>
+</div>
+`;
+
+exports[`FeatherRadio.vue should set aria-disabled based on property 1`] = `
+<div
+  class="layout-container"
+>
+  <div
+    aria-checked="false"
+    aria-disabled="true"
+    aria-labelledby="radio-label-id"
+    class="feather-radio"
+    data-ref-id="feather-radio"
+    role="radio"
+    tabindex="-1"
+  >
+    <div
+      class="radio hover focus"
+    >
+      <div
+        aria-hidden="true"
+        class="icon"
+      >
+        <svg
+          class="dot"
+          height="16"
+          width="16"
+        >
+          <circle
+            cx="8"
+            cy="8"
+            r="5"
+            stroke="black"
+            stroke-width="0"
+          />
+        </svg>
+      </div>
+      <!--v-if-->
+    </div>
+    <span
+      class="label"
+      data-ref-id="feather-radio-label"
+      id="radio-label-id"
+    >
+      
+      Hello
+      
+    </span>
+  </div>
+</div>
+`;
+
+exports[`FeatherRadio.vue should set aria-disabled based on property 2`] = `
+<div
+  class="layout-container"
+>
+  <div
+    aria-checked="false"
+    aria-disabled="false"
+    aria-labelledby="radio-label-id"
+    class="feather-radio"
+    data-ref-id="feather-radio"
+    role="radio"
+    tabindex="-1"
+  >
+    <div
+      class="radio hover focus"
+      style="overflow: hidden; position: relative;"
+    >
+      <div
+        aria-hidden="true"
+        class="icon"
+      >
+        <svg
+          class="dot"
+          height="16"
+          width="16"
+        >
+          <circle
+            cx="8"
+            cy="8"
+            r="5"
+            stroke="black"
+            stroke-width="0"
+          />
+        </svg>
+      </div>
+      <!---->
+    </div>
+    <span
+      class="label"
+      data-ref-id="feather-radio-label"
+      id="radio-label-id"
+    >
+      
+      Hello
+      
+    </span>
+  </div>
+</div>
+`;

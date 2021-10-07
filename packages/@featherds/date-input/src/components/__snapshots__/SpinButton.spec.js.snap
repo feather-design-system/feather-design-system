@@ -1,0 +1,29 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`SpinButton.vue should render correctly 1`] = `
+<span
+  aria-label="Test"
+  aria-valuemax="10"
+  aria-valuemin="0"
+  aria-valuenow="4"
+  aria-valuetext="4"
+  role="spinbutton"
+  tabindex="-1"
+>
+  04
+</span>
+`;
+
+exports[`SpinButton.vue should render placeholder when there is no value 1`] = `
+<span
+  aria-label="Test"
+  aria-valuemax="10"
+  aria-valuemin="0"
+  aria-valuenow="0"
+  aria-valuetext="dd"
+  role="spinbutton"
+  tabindex="-1"
+>
+  dd
+</span>
+`;

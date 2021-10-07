@@ -1,0 +1,180 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`FeatherExpansionPanel.vue should have correct HTML structure 1`] = `
+<div
+  class="feather-expansion"
+>
+  <div
+    aria-level="4"
+    role="heading"
+  >
+    <a
+      aria-busy="false"
+      aria-controls="feather-expansion-panel"
+      aria-disabled="false"
+      aria-expanded="false"
+      class="feather-expansion-header-button"
+      data-ref-id="feather-expansion-header-button"
+      href="#"
+      id="feather-expansion-header"
+      role="button"
+    >
+      <span
+        class="feather-expansion-header-button-text"
+      >
+        
+        TITLE
+        
+      </span>
+      <svg
+        aria-hidden="true"
+        class="feather-expansion-header-button-icon feather-icon feather-expansion-header-button-icon"
+        data-v-0aa06a12=""
+        focusable="false"
+        height="24"
+        role="img"
+        viewBox="0 0 24 24"
+        width="24"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <path
+          d="M6.71,9.29a1,1,0,0,0,0,1.41l4.59,4.59a1,1,0,0,0,1.41,0L17.3,10.7a1,1,0,0,0-1.41-1.41L12,13.17,8.12,9.29A1,1,0,0,0,6.71,9.29Z"
+        />
+      </svg>
+    </a>
+  </div>
+  <transition-stub>
+    <!--v-if-->
+  </transition-stub>
+</div>
+`;
+
+exports[`FeatherExpansionPanel.vue should not toggle expanded when disabled 1`] = `
+<div
+  class="feather-expansion"
+>
+  <div
+    aria-level="4"
+    role="heading"
+  >
+    <a
+      aria-busy="false"
+      aria-controls="feather-expansion-panel"
+      aria-disabled="true"
+      aria-expanded="false"
+      class="feather-expansion-header-button disabled"
+      data-ref-id="feather-expansion-header-button"
+      href="#"
+      id="feather-expansion-header"
+      role="button"
+    >
+      <span
+        class="feather-expansion-header-button-text"
+      >
+        
+        TITLE
+        
+      </span>
+      <svg
+        aria-hidden="true"
+        class="feather-expansion-header-button-icon disabled feather-icon feather-expansion-header-button-icon disabled"
+        data-v-0aa06a12=""
+        focusable="false"
+        height="24"
+        role="img"
+        viewBox="0 0 24 24"
+        width="24"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <path
+          d="M6.71,9.29a1,1,0,0,0,0,1.41l4.59,4.59a1,1,0,0,0,1.41,0L17.3,10.7a1,1,0,0,0-1.41-1.41L12,13.17,8.12,9.29A1,1,0,0,0,6.71,9.29Z"
+        />
+      </svg>
+    </a>
+  </div>
+  <transition-stub>
+    <!--v-if-->
+  </transition-stub>
+</div>
+`;
+
+exports[`FeatherExpansionPanel.vue should render loading 1`] = `
+<div
+  class="feather-expansion"
+>
+  <div
+    aria-level="4"
+    role="heading"
+  >
+    <a
+      aria-busy="true"
+      aria-controls="feather-expansion-panel"
+      aria-disabled="false"
+      aria-expanded="true"
+      class="feather-expansion-header-button expanded"
+      data-ref-id="feather-expansion-header-button"
+      href="#"
+      id="feather-expansion-header"
+      role="button"
+    >
+      <span
+        class="feather-expansion-header-button-text"
+      >
+        
+        TITLE
+        
+      </span>
+      <svg
+        aria-hidden="true"
+        class="feather-expansion-header-button-icon rotated feather-icon feather-expansion-header-button-icon rotated"
+        data-v-0aa06a12=""
+        focusable="false"
+        height="24"
+        role="img"
+        viewBox="0 0 24 24"
+        width="24"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <path
+          d="M6.71,9.29a1,1,0,0,0,0,1.41l4.59,4.59a1,1,0,0,0,1.41,0L17.3,10.7a1,1,0,0,0-1.41-1.41L12,13.17,8.12,9.29A1,1,0,0,0,6.71,9.29Z"
+        />
+      </svg>
+    </a>
+  </div>
+  <transition-stub>
+    <div
+      aria-labelledby="feather-expansion-header"
+      data-ref-id="feather-expansion-content"
+      id="feather-expansion-panel"
+      role="region"
+    >
+      <div
+        class="panel-content"
+      >
+        <div
+          class="spinner-container"
+          data-v-137d8659=""
+        >
+          <svg
+            class="spinner"
+            data-v-137d8659=""
+            viewBox="0 0 66 66"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <circle
+              class="path"
+              cx="33"
+              cy="33"
+              data-v-137d8659=""
+              fill="none"
+              r="30"
+              stroke-linecap="round"
+              stroke-width="6"
+            />
+          </svg>
+        </div>
+      </div>
+    </div>
+  </transition-stub>
+</div>
+`;

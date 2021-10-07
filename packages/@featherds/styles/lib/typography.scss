@@ -1,0 +1,42 @@
+@import "../mixins/typography";
+
+h1 {
+  @include headline1();
+}
+h2 {
+  @include headline2();
+}
+
+h3 {
+  @include headline3();
+}
+
+h4 {
+  @include headline4();
+}
+
+h5 {
+  @include subtitle1();
+}
+
+h6 {
+  @include subtitle2();
+}
+
+p {
+  @include body-small();
+}
+
+small,
+.small,
+.caption {
+  @include caption();
+}
+
+a {
+  @include anchor();
+}
+
+.sr-text {
+  @include screen-reader();
+}

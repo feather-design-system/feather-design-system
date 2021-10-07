@@ -1,0 +1,13 @@
+@import "../mixins/typography";
+.feather-styles {
+  @include body-small();
+  @import "reset";
+  @import "typography";
+}
+html.feather-styles,
+html.feather-styles body,
+body.feather-styles {
+  height: 100%;
+  padding: 0;
+  margin: 0;
+}

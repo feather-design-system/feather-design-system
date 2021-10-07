@@ -1,0 +1,34 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Badge.vue should render correct type with title 1`] = `
+<div
+  class="badge error"
+>
+  <div
+    class="badge-icon"
+    title="TEST"
+  />
+</div>
+`;
+
+exports[`Badge.vue should render correct type with title 2`] = `
+<div
+  class="badge info"
+>
+  <div
+    class="badge-icon"
+    title="TEST"
+  />
+</div>
+`;
+
+exports[`Badge.vue should render siblings modifier 1`] = `
+<div
+  class="badge error siblings"
+>
+  <div
+    class="badge-icon"
+    title="TEST"
+  />
+</div>
+`;

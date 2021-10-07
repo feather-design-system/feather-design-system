@@ -1,0 +1,89 @@
+// <- 960px 12 col 24px but row max width is 1200px
+// 959 - 840px 12 col 24px row 100%
+// 839 - 720px 8 col 24px row 100%
+// 719 - 600px 8 col 16px row 100%
+// 599 -> 4 col 16px row 100%
+@use "sass:math";
+@import "../themes/variables";
+
+@import "./responsive";
+
+@mixin row {
+  display: flex;
+  flex-wrap: wrap;
+
+  @each $label, $map in $grid {
+    $gutter: map-get($map, gutter);
+    @include media-query-for($label) {
+      margin-left: -1 * math.div($gutter, 2);
+      margin-right: -1 * math.div($gutter, 2);
+    }
+  }
+}
+
+@mixin container($full: false) {
+  @if $full {
+    max-width: 100%;
+  } @else {
+    max-width: var($content-width);
+  }
+  @each $label, $map in $grid {
+    $gutter: map-get($map, gutter);
+    @include media-query-for($label) {
+      padding-left: $gutter;
+      padding-right: $gutter;
+    }
+  }
+}
+
+@mixin col($breakpoint, $col-number:0) {
+  //if breakpoint is a number then breakpoint defaults to xl
+  @if type-of($breakpoint) == number {
+    $col-number: $breakpoint;
+    //get details but dont do a media query
+    $map: map-get($grid, xl);
+    $col: map-get($map, col);
+    $gutter: map-get($map, gutter);
+
+    @include column($col-number, $col, $gutter);
+  } @else {
+    $map: map-get($grid, $breakpoint);
+    $col: map-get($map, col);
+    $gutter: map-get($map, gutter);
+
+    @include media-query-for($breakpoint) {
+      @include column($col-number, $col, $gutter);
+    }
+  }
+}
+
+@mixin offset($breakpoint, $offset:0) {
+  //if breakpoint is a number then breakpoint defaults to xl
+  @if type-of($breakpoint) == number {
+    $offset: $breakpoint;
+    //get details but dont do a media query
+    $map: map-get($grid, xl);
+    $col: map-get($map, col);
+
+    @include offset($offset, $col);
+  } @else {
+    $map: map-get($grid, $breakpoint);
+    $col: map-get($map, col);
+
+    @include media-query-for($breakpoint) {
+      @include offset($offset, $col);
+    }
+  }
+}
+
+@mixin column($col-number, $total-cols, $gutter) {
+  flex: 1;
+  padding-left: math.div($gutter, 2);
+  padding-right: math.div($gutter, 2);
+  flex-basis: (math.div(100, $total-cols) * $col-number) * 1%;
+  max-width: (math.div(100, $total-cols) * $col-number) * 1%;
+}
+
+@mixin offset($offset, $total-cols) {
+  margin-left: (math.div(100, $total-cols) * $offset) * 1%;
+}

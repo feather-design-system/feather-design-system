@@ -1,0 +1,24 @@
+{
+  "name": "@featherds/navigation-rail",
+  "version": "0.2.10",
+  "publishConfig": {
+    "access": "public"
+  },
+  "author": "NantHealth",
+  "scripts": {},
+  "main": "dist/app.js",
+  "license": "Apache-2.0",
+  "dependencies": {
+    "@featherds/composables": "file:../composables",
+    "@featherds/icon": "file:../icon",
+    "@featherds/list": "file:../list",
+    "@featherds/ripple": "file:../ripple",
+    "@featherds/styles": "file:../styles",
+    "vue": "^3.1.0-0"
+  },
+  "keywords": [
+    "vue",
+    "FeatherNavigationRail"
+  ],
+  "types": "./src/index.d.ts"
+}

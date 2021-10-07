@@ -1,0 +1,105 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`FeatherDropdown.vue should pass through cover property 1`] = `
+<div
+  class="feather-menu feather-dropdown-container"
+  data-v-6f68d0ea=""
+>
+  
+  
+  <a
+    menu-trigger=""
+  >
+    TEST
+  </a>
+  
+  
+  <div
+    class="feather-menu-dropdown bottom-left covered"
+    data-v-6f68d0ea=""
+    id="feather-menu-dropdown"
+    style="display: none;"
+  >
+    
+    <ul
+      aria-labelledby="feather-menu-trigger"
+      class="feather-dropdown"
+      role="menu"
+    >
+      
+      <li
+        role="presentation"
+      >
+        <a
+          role="menuitem"
+        >
+          TEST
+        </a>
+      </li>
+      <li
+        role="presentation"
+      >
+        <a
+          role="menuitem"
+        >
+          TEST
+        </a>
+      </li>
+      
+    </ul>
+    
+  </div>
+</div>
+`;
+
+exports[`FeatherDropdown.vue should pass through right property 1`] = `
+<div
+  class="feather-menu feather-dropdown-container"
+  data-v-6f68d0ea=""
+>
+  
+  
+  <a
+    menu-trigger=""
+  >
+    TEST
+  </a>
+  
+  
+  <div
+    class="feather-menu-dropdown bottom-right"
+    data-v-6f68d0ea=""
+    id="feather-menu-dropdown"
+    style="display: none;"
+  >
+    
+    <ul
+      aria-labelledby="feather-menu-trigger"
+      class="feather-dropdown"
+      role="menu"
+    >
+      
+      <li
+        role="presentation"
+      >
+        <a
+          role="menuitem"
+        >
+          TEST
+        </a>
+      </li>
+      <li
+        role="presentation"
+      >
+        <a
+          role="menuitem"
+        >
+          TEST
+        </a>
+      </li>
+      
+    </ul>
+    
+  </div>
+</div>
+`;

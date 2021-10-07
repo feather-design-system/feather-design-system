@@ -1,0 +1,767 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`FeatherPdfViewer.vue should always show error state when force-error is true and can preview 1`] = `
+<div
+  class="feather-pdfviewer"
+>
+  <transition-stub>
+    <focus-trap-stub
+      class="trap"
+      enable="true"
+    >
+      <div
+        aria-label="Test2"
+        aria-modal="true"
+        class="content"
+        data-ref-id="feather-pdfviewer"
+        role="dialog"
+      >
+        <div
+          class="focus-area"
+          first-focus=""
+          tabindex="-1"
+        >
+          <header>
+            <span
+              data-ref-id="feather-pdfviewer-title"
+            >
+              Test
+            </span>
+            <feather-button-stub
+              asanchor="true"
+              data-ref-id="feather-pdfviewer-download-button"
+              disabled="false"
+              download=""
+              href="test.pdf"
+              primary="false"
+              secondary="false"
+              target="_blank"
+              text="true"
+            >
+               download pdf
+            </feather-button-stub>
+          </header>
+          <div
+            class="viewer-body"
+          >
+            <!--v-if-->
+            <div
+              class="main-panel"
+            >
+              <!--v-if-->
+              <!--v-if-->
+              <div
+                class="file-error"
+              >
+                
+                <error-panel-stub
+                  downloadtext="download pdf"
+                  downloadurl="test.pdf"
+                  text="OOPS! Preview failed to load!"
+                />
+                
+              </div>
+              <!--v-if-->
+            </div>
+          </div>
+          <feather-button-stub
+            asanchor="true"
+            class="close-icon"
+            data-ref-id="feather-pdfviewer-close"
+            disabled="false"
+            href="#"
+            icon="Close Viewer"
+            primary="false"
+            secondary="false"
+            text="false"
+          >
+            <feather-icon-stub
+              flex="false"
+              icon="[object Object]"
+            />
+          </feather-button-stub>
+        </div>
+      </div>
+    </focus-trap-stub>
+  </transition-stub>
+</div>
+`;
+
+exports[`FeatherPdfViewer.vue should always show error state when force-error is true and can preview 2`] = `
+<div
+  class="feather-pdfviewer"
+>
+  <transition-stub>
+    <focus-trap-stub
+      class="trap"
+      enable="true"
+    >
+      <div
+        aria-label="Test2"
+        aria-modal="true"
+        class="content"
+        data-ref-id="feather-pdfviewer"
+        role="dialog"
+      >
+        <div
+          class="focus-area"
+          first-focus=""
+          tabindex="-1"
+        >
+          <header>
+            <span
+              data-ref-id="feather-pdfviewer-title"
+            >
+              Test
+            </span>
+            <feather-button-stub
+              asanchor="true"
+              data-ref-id="feather-pdfviewer-download-button"
+              disabled="false"
+              download=""
+              href="test.pdf"
+              primary="false"
+              secondary="false"
+              target="_blank"
+              text="true"
+            >
+               download pdf
+            </feather-button-stub>
+          </header>
+          <div
+            class="viewer-body"
+          >
+            <!--v-if-->
+            <div
+              class="main-panel"
+            >
+              <!--v-if-->
+              <!--v-if-->
+              <div
+                class="file-error"
+              >
+                
+                <error-panel-stub
+                  downloadtext="download pdf"
+                  downloadurl="test.pdf"
+                  text="OOPS! Preview failed to load!"
+                />
+                
+              </div>
+              <!--v-if-->
+            </div>
+          </div>
+          <feather-button-stub
+            asanchor="true"
+            class="close-icon"
+            data-ref-id="feather-pdfviewer-close"
+            disabled="false"
+            href="#"
+            icon="Close Viewer"
+            primary="false"
+            secondary="false"
+            text="false"
+          >
+            <feather-icon-stub
+              flex="false"
+              icon="[object Object]"
+            />
+          </feather-button-stub>
+        </div>
+      </div>
+    </focus-trap-stub>
+  </transition-stub>
+</div>
+`;
+
+exports[`FeatherPdfViewer.vue should always show error state when force-error is true and should show no preview 1`] = `
+<div
+  class="feather-pdfviewer"
+>
+  <transition-stub>
+    <focus-trap-stub
+      class="trap"
+      enable="true"
+    >
+      <div
+        aria-label="Test2"
+        aria-modal="true"
+        class="content"
+        data-ref-id="feather-pdfviewer"
+        role="dialog"
+      >
+        <div
+          class="focus-area"
+          first-focus=""
+          tabindex="-1"
+        >
+          <header>
+            <span
+              data-ref-id="feather-pdfviewer-title"
+            >
+              Test
+            </span>
+            <feather-button-stub
+              asanchor="true"
+              data-ref-id="feather-pdfviewer-download-button"
+              disabled="false"
+              download=""
+              href="test.docx"
+              primary="false"
+              secondary="false"
+              target="_blank"
+              text="true"
+            >
+               download docx
+            </feather-button-stub>
+          </header>
+          <div
+            class="viewer-body"
+          >
+            <!--v-if-->
+            <div
+              class="main-panel"
+            >
+              <!--v-if-->
+              <!--v-if-->
+              <div
+                class="file-error"
+              >
+                
+                <error-panel-stub
+                  downloadtext="download docx"
+                  downloadurl="test.docx"
+                  text="OOPS! Preview failed to load!"
+                />
+                
+              </div>
+              <!--v-if-->
+            </div>
+          </div>
+          <feather-button-stub
+            asanchor="true"
+            class="close-icon"
+            data-ref-id="feather-pdfviewer-close"
+            disabled="false"
+            href="#"
+            icon="Close Viewer"
+            primary="false"
+            secondary="false"
+            text="false"
+          >
+            <feather-icon-stub
+              flex="false"
+              icon="[object Object]"
+            />
+          </feather-button-stub>
+        </div>
+      </div>
+    </focus-trap-stub>
+  </transition-stub>
+</div>
+`;
+
+exports[`FeatherPdfViewer.vue should always show error state when force-error is true and should show no preview 2`] = `
+<div
+  class="feather-pdfviewer"
+>
+  <transition-stub>
+    <focus-trap-stub
+      class="trap"
+      enable="true"
+    >
+      <div
+        aria-label="Test2"
+        aria-modal="true"
+        class="content"
+        data-ref-id="feather-pdfviewer"
+        role="dialog"
+      >
+        <div
+          class="focus-area"
+          first-focus=""
+          tabindex="-1"
+        >
+          <header>
+            <span
+              data-ref-id="feather-pdfviewer-title"
+            >
+              Test
+            </span>
+            <feather-button-stub
+              asanchor="true"
+              data-ref-id="feather-pdfviewer-download-button"
+              disabled="false"
+              download=""
+              href="test.docx"
+              primary="false"
+              secondary="false"
+              target="_blank"
+              text="true"
+            >
+               download docx
+            </feather-button-stub>
+          </header>
+          <div
+            class="viewer-body"
+          >
+            <!--v-if-->
+            <div
+              class="main-panel"
+            >
+              <!--v-if-->
+              <!--v-if-->
+              <div
+                class="file-error"
+              >
+                
+                <error-panel-stub
+                  downloadtext="download docx"
+                  downloadurl="test.docx"
+                  text="OOPS! Preview failed to load!"
+                />
+                
+              </div>
+              <!--v-if-->
+            </div>
+          </div>
+          <feather-button-stub
+            asanchor="true"
+            class="close-icon"
+            data-ref-id="feather-pdfviewer-close"
+            disabled="false"
+            href="#"
+            icon="Close Viewer"
+            primary="false"
+            secondary="false"
+            text="false"
+          >
+            <feather-icon-stub
+              flex="false"
+              icon="[object Object]"
+            />
+          </feather-button-stub>
+        </div>
+      </div>
+    </focus-trap-stub>
+  </transition-stub>
+</div>
+`;
+
+exports[`FeatherPdfViewer.vue should display error when no preview url and not pdf 1`] = `
+<div
+  class="feather-pdfviewer"
+>
+  <transition-stub>
+    <focus-trap-stub
+      class="trap"
+      enable="true"
+    >
+      <div
+        aria-label="Test2"
+        aria-modal="true"
+        class="content"
+        data-ref-id="feather-pdfviewer"
+        role="dialog"
+      >
+        <div
+          class="focus-area"
+          first-focus=""
+          tabindex="-1"
+        >
+          <header>
+            <span
+              data-ref-id="feather-pdfviewer-title"
+            >
+              Test
+            </span>
+            <feather-button-stub
+              asanchor="true"
+              data-ref-id="feather-pdfviewer-download-button"
+              disabled="false"
+              download=""
+              href="test.docx"
+              primary="false"
+              secondary="false"
+              target="_blank"
+              text="true"
+            >
+               download docx
+            </feather-button-stub>
+          </header>
+          <div
+            class="viewer-body"
+          >
+            <!--v-if-->
+            <div
+              class="main-panel"
+            >
+              <!--v-if-->
+              <!--v-if-->
+              <!--v-if-->
+              <div
+                class="file-error"
+              >
+                
+                <error-panel-stub
+                  downloadtext="download docx"
+                  downloadurl="test.docx"
+                  text="OOPS! Preview failed to load!"
+                />
+                
+              </div>
+            </div>
+          </div>
+          <feather-button-stub
+            asanchor="true"
+            class="close-icon"
+            data-ref-id="feather-pdfviewer-close"
+            disabled="false"
+            href="#"
+            icon="Close Viewer"
+            primary="false"
+            secondary="false"
+            text="false"
+          >
+            <feather-icon-stub
+              flex="false"
+              icon="[object Object]"
+            />
+          </feather-button-stub>
+        </div>
+      </div>
+    </focus-trap-stub>
+  </transition-stub>
+</div>
+`;
+
+exports[`FeatherPdfViewer.vue should display error when preview url doesn't return 200 1`] = `
+<div
+  class="feather-pdfviewer"
+>
+  <transition-stub>
+    <focus-trap-stub
+      class="trap"
+      enable="true"
+    >
+      <div
+        aria-label="Test2"
+        aria-modal="true"
+        class="content"
+        data-ref-id="feather-pdfviewer"
+        role="dialog"
+      >
+        <div
+          class="focus-area"
+          first-focus=""
+          tabindex="-1"
+        >
+          <header>
+            <span
+              data-ref-id="feather-pdfviewer-title"
+            >
+              Test
+            </span>
+            <feather-button-stub
+              asanchor="true"
+              data-ref-id="feather-pdfviewer-download-button"
+              disabled="false"
+              download=""
+              href="test.pdf"
+              primary="false"
+              secondary="false"
+              target="_blank"
+              text="true"
+            >
+               download pdf
+            </feather-button-stub>
+          </header>
+          <div
+            class="viewer-body"
+          >
+            <!--v-if-->
+            <div
+              class="main-panel"
+            >
+              <!--v-if-->
+              <!--v-if-->
+              <div
+                class="file-error"
+              >
+                
+                <error-panel-stub
+                  downloadtext="download pdf"
+                  downloadurl="test.pdf"
+                  text="OOPS! Preview failed to load!"
+                />
+                
+              </div>
+              <!--v-if-->
+            </div>
+          </div>
+          <feather-button-stub
+            asanchor="true"
+            class="close-icon"
+            data-ref-id="feather-pdfviewer-close"
+            disabled="false"
+            href="#"
+            icon="Close Viewer"
+            primary="false"
+            secondary="false"
+            text="false"
+          >
+            <feather-icon-stub
+              flex="false"
+              icon="[object Object]"
+            />
+          </feather-button-stub>
+        </div>
+      </div>
+    </focus-trap-stub>
+  </transition-stub>
+</div>
+`;
+
+exports[`FeatherPdfViewer.vue should display original download when extension is not pdf 1`] = `
+<div
+  class="feather-pdfviewer"
+>
+  <transition-stub>
+    <focus-trap-stub
+      class="trap"
+      enable="true"
+    >
+      <div
+        aria-label="Test2"
+        aria-modal="true"
+        class="content"
+        data-ref-id="feather-pdfviewer"
+        role="dialog"
+      >
+        <div
+          class="focus-area"
+          first-focus=""
+          tabindex="-1"
+        >
+          <header>
+            <span
+              data-ref-id="feather-pdfviewer-title"
+            >
+              Test
+            </span>
+            <feather-button-stub
+              asanchor="true"
+              data-ref-id="feather-pdfviewer-download-button"
+              disabled="false"
+              download=""
+              href="test.docx"
+              primary="false"
+              secondary="false"
+              target="_blank"
+              text="true"
+            >
+               download docx
+            </feather-button-stub>
+          </header>
+          <div
+            class="viewer-body"
+          >
+            <!--v-if-->
+            <div
+              class="main-panel"
+            >
+              <!--v-if-->
+              <!--v-if-->
+              <!--v-if-->
+              <div
+                class="file-error"
+              >
+                
+                <error-panel-stub
+                  downloadtext="download docx"
+                  downloadurl="test.docx"
+                  text="OOPS! Preview failed to load!"
+                />
+                
+              </div>
+            </div>
+          </div>
+          <feather-button-stub
+            asanchor="true"
+            class="close-icon"
+            data-ref-id="feather-pdfviewer-close"
+            disabled="false"
+            href="#"
+            icon="Close Viewer"
+            primary="false"
+            secondary="false"
+            text="false"
+          >
+            <feather-icon-stub
+              flex="false"
+              icon="[object Object]"
+            />
+          </feather-button-stub>
+        </div>
+      </div>
+    </focus-trap-stub>
+  </transition-stub>
+</div>
+`;
+
+exports[`FeatherPdfViewer.vue should display preview when the preview url exists 1`] = `
+<div
+  class="feather-pdfviewer"
+>
+  <transition-stub>
+    <focus-trap-stub
+      class="trap"
+      enable="true"
+    >
+      <div
+        aria-label="Test2"
+        aria-modal="true"
+        class="content"
+        data-ref-id="feather-pdfviewer"
+        role="dialog"
+      >
+        <div
+          class="focus-area"
+          first-focus=""
+          tabindex="-1"
+        >
+          <header>
+            <span
+              data-ref-id="feather-pdfviewer-title"
+            >
+              Test
+            </span>
+            <feather-button-stub
+              asanchor="true"
+              data-ref-id="feather-pdfviewer-download-button"
+              disabled="false"
+              download=""
+              href="test.pdf"
+              primary="false"
+              secondary="false"
+              target="_blank"
+              text="true"
+            >
+               download pdf
+            </feather-button-stub>
+          </header>
+          <div
+            class="viewer-body"
+          >
+            <!--v-if-->
+            <div
+              class="main-panel"
+            >
+              <iframe
+                data-ref-id="feather-pdfviewer-preview-iframe"
+                frameborder="0"
+                src="test.pdf"
+                title="Test"
+              />
+              <!--v-if-->
+              <!--v-if-->
+              <!--v-if-->
+            </div>
+          </div>
+          <feather-button-stub
+            asanchor="true"
+            class="close-icon"
+            data-ref-id="feather-pdfviewer-close"
+            disabled="false"
+            href="#"
+            icon="Close Viewer"
+            primary="false"
+            secondary="false"
+            text="false"
+          >
+            <feather-icon-stub
+              flex="false"
+              icon="[object Object]"
+            />
+          </feather-button-stub>
+        </div>
+      </div>
+    </focus-trap-stub>
+  </transition-stub>
+</div>
+`;
+
+exports[`FeatherPdfViewer.vue should hide download button when hide-actions is true 1`] = `
+<div
+  class="feather-pdfviewer"
+>
+  <transition-stub>
+    <focus-trap-stub
+      class="trap"
+      enable="true"
+    >
+      <div
+        aria-label="Test2"
+        aria-modal="true"
+        class="content"
+        data-ref-id="feather-pdfviewer"
+        role="dialog"
+      >
+        <div
+          class="focus-area"
+          first-focus=""
+          tabindex="-1"
+        >
+          <header>
+            <span
+              data-ref-id="feather-pdfviewer-title"
+            >
+              Test
+            </span>
+            <!--v-if-->
+          </header>
+          <div
+            class="viewer-body"
+          >
+            <!--v-if-->
+            <div
+              class="main-panel"
+            >
+              <!--v-if-->
+              <!--v-if-->
+              <!--v-if-->
+              <div
+                class="file-error"
+              >
+                
+                <error-panel-stub
+                  downloadtext="download docx"
+                  downloadurl="test.docx"
+                  text="OOPS! Preview failed to load!"
+                />
+                
+              </div>
+            </div>
+          </div>
+          <feather-button-stub
+            asanchor="true"
+            class="close-icon"
+            data-ref-id="feather-pdfviewer-close"
+            disabled="false"
+            href="#"
+            icon="Close Viewer"
+            primary="false"
+            secondary="false"
+            text="false"
+          >
+            <feather-icon-stub
+              flex="false"
+              icon="[object Object]"
+            />
+          </feather-button-stub>
+        </div>
+      </div>
+    </focus-trap-stub>
+  </transition-stub>
+</div>
+`;

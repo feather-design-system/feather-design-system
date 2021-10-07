@@ -1,0 +1,203 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`FeatherPagination.vue should disable first and previous buttons on first page 1`] = `
+<div
+  class="feather-pagination"
+>
+  <div
+    class="per-page-text"
+  >
+    Rows per page
+  </div>
+  <feather-select-stub
+    class="page-size-select"
+    inline=""
+    label="Rows per page"
+    modelvalue="[object Object]"
+    options="[object Object],[object Object],[object Object]"
+    textprop="_text"
+  />
+  <div
+    class="range-text"
+  >
+    1 - 10 of 100
+  </div>
+  <nav
+    aria-label="Pagination controls"
+  >
+    <ul>
+      <li>
+        <feather-button-stub
+          asanchor="true"
+          class="action"
+          data-ref-id="feather-pagination-first-button"
+          disabled="true"
+          href="#"
+          icon="Go to first page"
+          primary="false"
+          secondary="false"
+          text="false"
+        >
+          <feather-icon-stub
+            flex="false"
+            icon="[object Object]"
+          />
+        </feather-button-stub>
+      </li>
+      <li>
+        <feather-button-stub
+          asanchor="true"
+          class="action"
+          data-ref-id="feather-pagination-previous-button"
+          disabled="true"
+          href="#"
+          icon="Go to previous page"
+          primary="false"
+          secondary="false"
+          text="false"
+        >
+          <feather-icon-stub
+            flex="false"
+            icon="[object Object]"
+          />
+        </feather-button-stub>
+      </li>
+      <li>
+        <feather-button-stub
+          asanchor="true"
+          class="action"
+          data-ref-id="feather-pagination-next-button"
+          disabled="false"
+          href="#"
+          icon="Go to next page"
+          primary="false"
+          secondary="false"
+          text="false"
+        >
+          <feather-icon-stub
+            flex="false"
+            icon="[object Object]"
+          />
+        </feather-button-stub>
+        <feather-button-stub
+          asanchor="true"
+          class="action"
+          data-ref-id="feather-pagination-last-button"
+          disabled="false"
+          href="#"
+          icon="Go to last page"
+          primary="false"
+          secondary="false"
+          text="false"
+        >
+          <feather-icon-stub
+            flex="false"
+            icon="[object Object]"
+          />
+        </feather-button-stub>
+      </li>
+    </ul>
+  </nav>
+</div>
+`;
+
+exports[`FeatherPagination.vue should disable last and next buttons on last page 1`] = `
+<div
+  class="feather-pagination"
+>
+  <div
+    class="per-page-text"
+  >
+    Rows per page
+  </div>
+  <feather-select-stub
+    class="page-size-select"
+    inline=""
+    label="Rows per page"
+    modelvalue="[object Object]"
+    options="[object Object],[object Object],[object Object]"
+    textprop="_text"
+  />
+  <div
+    class="range-text"
+  >
+    11 - 20 of 20
+  </div>
+  <nav
+    aria-label="Pagination controls"
+  >
+    <ul>
+      <li>
+        <feather-button-stub
+          asanchor="true"
+          class="action"
+          data-ref-id="feather-pagination-first-button"
+          disabled="false"
+          href="#"
+          icon="Go to first page"
+          primary="false"
+          secondary="false"
+          text="false"
+        >
+          <feather-icon-stub
+            flex="false"
+            icon="[object Object]"
+          />
+        </feather-button-stub>
+      </li>
+      <li>
+        <feather-button-stub
+          asanchor="true"
+          class="action"
+          data-ref-id="feather-pagination-previous-button"
+          disabled="false"
+          href="#"
+          icon="Go to previous page"
+          primary="false"
+          secondary="false"
+          text="false"
+        >
+          <feather-icon-stub
+            flex="false"
+            icon="[object Object]"
+          />
+        </feather-button-stub>
+      </li>
+      <li>
+        <feather-button-stub
+          asanchor="true"
+          class="action"
+          data-ref-id="feather-pagination-next-button"
+          disabled="true"
+          href="#"
+          icon="Go to next page"
+          primary="false"
+          secondary="false"
+          text="false"
+        >
+          <feather-icon-stub
+            flex="false"
+            icon="[object Object]"
+          />
+        </feather-button-stub>
+        <feather-button-stub
+          asanchor="true"
+          class="action"
+          data-ref-id="feather-pagination-last-button"
+          disabled="true"
+          href="#"
+          icon="Go to last page"
+          primary="false"
+          secondary="false"
+          text="false"
+        >
+          <feather-icon-stub
+            flex="false"
+            icon="[object Object]"
+          />
+        </feather-button-stub>
+      </li>
+    </ul>
+  </nav>
+</div>
+`;

@@ -1,0 +1,84 @@
+// <- 960px 12 col 24px but row max width is 1200px
+// 959 - 840px 12 col 24px row 100%
+// 839 - 720px 8 col 24px row 100%
+// 719 - 600px 8 col 16px row 100%
+// 599 -> 4 col 16px row 100%
+@use "sass:math";
+@import "../themes/variables";
+@import "../mixins/grid";
+@import "../mixins/responsive";
+
+.feather-row {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.feather-container {
+  max-width: var($content-width);
+  &.full-width {
+    max-width: 100%;
+  }
+}
+
+@each $label, $map in $grid {
+  $col: map-get($map, col);
+  $gutter: map-get($map, gutter);
+
+  @include media-query-for($label) {
+    .feather-container {
+      padding-left: $gutter;
+      padding-right: $gutter;
+    }
+    .feather-row {
+      margin-left: -1 * math.div($gutter, 2);
+      margin-right: -1 * math.div($gutter, 2);
+    }
+    .feather-gutter-left {
+      padding-left: $gutter;
+    }
+    .feather-gutter-right {
+      padding-right: $gutter;
+    }
+    .feather-gutter {
+      padding-left: $gutter;
+      padding-right: $gutter;
+    }
+    .feather-half-gutter-right {
+      padding-right: math.div($gutter, 2);
+    }
+    .feather-half-gutter-left {
+      padding-left: math.div($gutter, 2);
+    }
+    .feather-half-gutter {
+      padding-right: math.div($gutter, 2);
+      padding-left: math.div($gutter, 2);
+    }
+
+    @for $i from 1 through $col {
+      .feather-col-#{$label}-#{$i} {
+        @include column($i, $col, $gutter);
+      }
+      .feather-offset-#{$label}-#{$i} {
+        @include offset($i, $col);
+      }
+
+      //override generic padding only
+      .feather-col-#{$i} {
+        padding-left: math.div($gutter, 2);
+        padding-right: math.div($gutter, 2);
+      }
+    }
+  }
+
+  //use xl for basis for generic
+  @if $label == "xl" {
+    @for $i from 1 through $col {
+      .feather-col-#{$i} {
+        @include column($i, $col, $gutter);
+      }
+      .feather-offset-#{$i} {
+        @include offset($i, $col);
+      }
+    }
+  }
+}

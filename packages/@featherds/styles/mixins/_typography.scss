@@ -1,0 +1,182 @@
+@import "../themes/variables";
+@mixin rendering {
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+@mixin header {
+  font-family: var($header-font-family);
+  color: var($primary-text-on-surface);
+  @include rendering();
+}
+
+@mixin display1 {
+  @include header();
+  font-size: var($display1-font-size);
+  line-height: var($display1-line-height);
+  letter-spacing: var($display1-letter-spacing);
+  font-weight: var($display1-font-weight);
+  text-transform: var($display1-text-transform);
+}
+
+@mixin display2 {
+  @include header();
+  font-size: var($display2-font-size);
+  line-height: var($display2-line-height);
+  letter-spacing: var($display2-letter-spacing);
+  font-weight: var($display2-font-weight);
+  text-transform: var($display2-text-transform);
+}
+
+@mixin display3 {
+  @include header();
+  font-size: var($display3-font-size);
+  line-height: var($display3-line-height);
+  letter-spacing: var($display3-letter-spacing);
+  font-weight: var($display3-font-weight);
+  text-transform: var($display3-text-transform);
+}
+
+@mixin title {
+  @include header();
+  font-size: var($title-font-size);
+  line-height: var($title-line-height);
+  letter-spacing: var($title-letter-spacing);
+  font-weight: var($title-font-weight);
+  text-transform: var($title-text-transform);
+}
+
+@mixin headline1 {
+  @include header();
+  font-size: var($headline1-font-size);
+  line-height: var($headline1-line-height);
+  letter-spacing: var($headline1-letter-spacing);
+  font-weight: var($headline1-font-weight);
+  text-transform: var($headline1-text-transform);
+  font-style: var($headline1-font-style);
+}
+@mixin headline2 {
+  @include header();
+  font-size: var($headline2-font-size);
+  line-height: var($headline2-line-height);
+  letter-spacing: var($headline2-letter-spacing);
+  font-weight: var($headline2-font-weight);
+  text-transform: var($headline2-text-transform);
+  font-style: var($headline2-font-style);
+}
+@mixin headline3 {
+  @include header();
+  font-size: var($headline3-font-size);
+  line-height: var($headline3-line-height);
+  letter-spacing: var($headline3-letter-spacing);
+  font-weight: var($headline3-font-weight);
+  text-transform: var($headline3-text-transform);
+  font-style: var($headline3-font-style);
+}
+@mixin headline4 {
+  @include header();
+  font-size: var($headline4-font-size);
+  line-height: var($headline4-line-height);
+  letter-spacing: var($headline4-letter-spacing);
+  font-weight: var($headline4-font-weight);
+  text-transform: var($headline4-text-transform);
+  font-style: var($headline4-font-style);
+}
+@mixin subtitle1 {
+  @include header();
+  font-size: var($subtitle1-font-size);
+  line-height: var($subtitle1-line-height);
+  letter-spacing: var($subtitle1-letter-spacing);
+  font-weight: var($subtitle1-font-weight);
+  text-transform: var($subtitle1-text-transform);
+  font-style: var($subtitle1-font-style);
+}
+@mixin subtitle2 {
+  @include header();
+  font-size: var($subtitle2-font-size);
+  line-height: var($subtitle2-line-height);
+  letter-spacing: var($subtitle2-letter-spacing);
+  font-weight: var($subtitle2-font-weight);
+  text-transform: var($subtitle2-text-transform);
+  font-style: var($subtitle2-font-style);
+}
+
+@mixin body-large {
+  font-family: var($font-family);
+  font-size: var($body-large-font-size);
+  line-height: var($body-large-line-height);
+  letter-spacing: var($body-large-letter-spacing);
+  font-weight: var($body-large-font-weight);
+  text-transform: var($body-large-text-transform);
+  font-style: var($body-small-font-style);
+  color: var($primary-text-on-surface);
+  @include rendering();
+}
+@mixin body-small {
+  font-family: var($font-family);
+  font-size: var($body-small-font-size);
+  line-height: var($body-small-line-height);
+  letter-spacing: var($body-small-letter-spacing);
+  font-weight: var($body-small-font-weight);
+  text-transform: var($body-small-text-transform);
+  font-style: var($body-small-font-style);
+  color: var($primary-text-on-surface);
+  @include rendering();
+}
+
+@mixin button {
+  font-family: var($font-family);
+  color: var($primary-text-on-surface);
+  font-size: var($button-font-size);
+  line-height: var($button-line-height);
+  letter-spacing: var($button-letter-spacing);
+  font-weight: var($button-font-weight);
+  text-transform: var($button-text-transform);
+  font-style: var($button-font-style);
+  @include rendering();
+}
+
+@mixin caption {
+  font-size: var($caption-font-size);
+  line-height: var($caption-line-height);
+  letter-spacing: var($caption-letter-spacing);
+  font-weight: var($caption-font-weight);
+  text-transform: var($caption-text-transform);
+  font-style: var($caption-font-style);
+  color: var($primary-text-on-surface);
+  @include rendering();
+}
+
+@mixin overline {
+  font-size: var($overline-font-size);
+  line-height: var($overline-line-height);
+  letter-spacing: var($overline-letter-spacing);
+  font-weight: var($overline-font-weight);
+  text-transform: var($overline-text-transform);
+  font-style: var($overline-font-style);
+  color: var($primary-text-on-surface);
+  @include rendering();
+}
+
+@mixin screen-reader() {
+  position: absolute;
+  top: auto;
+  left: -99999px;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  user-select: none;
+}
+
+@mixin anchor() {
+  font-family: var($font-family);
+  font-size: 1em; //inherit
+  color: var($clickable-normal);
+  text-decoration: none;
+  &:hover {
+    text-decoration: underline;
+  }
+  &:visited {
+    color: var($clickable-visited);
+  }
+}

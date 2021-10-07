@@ -1,0 +1,23 @@
+{
+  "name": "@featherds/dialog",
+  "version": "0.2.10",
+  "publishConfig": {
+    "access": "public"
+  },
+  "author": "NantHealth",
+  "scripts": {},
+  "main": "dist/app.js",
+  "license": "Apache-2.0",
+  "dependencies": {
+    "@featherds/composables": "file:../composables",
+    "@featherds/icon": "file:../icon",
+    "@featherds/styles": "file:../styles",
+    "@featherds/utils": "file:../utils",
+    "vue": "^3.1.0-0"
+  },
+  "keywords": [
+    "vue",
+    "FeatherDialog"
+  ],
+  "types": "./src/index.d.ts"
+}

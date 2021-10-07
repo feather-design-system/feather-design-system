@@ -1,0 +1,6832 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Feather Autocomplete base functionality multi disabled state should render in a disabled state with a value 1`] = `
+<div
+  class="feather-autocomplete-container"
+>
+  <div
+    class="feather-menu feather-autocomplete-menu-container"
+    data-v-6f68d0ea=""
+  >
+    
+    <div
+      aria-expanded="false"
+      aria-haspopup="listbox"
+      aria-label="Users"
+      aria-owns="feather-autocomplete-input-results"
+      class="feather-input-wrapper-container raised disabled"
+      data-v-47a74f22=""
+      menu-trigger=""
+      role="combobox"
+    >
+      <fieldset
+        aria-hidden="true"
+        class="feather-input-border"
+        data-v-47a74f22=""
+      >
+        <legend
+          data-v-47a74f22=""
+        >
+          Users
+        </legend>
+      </fieldset>
+      <label
+        class="feather-input-label"
+        data-ref-id="feather-form-element-label"
+        data-v-47a74f22=""
+        for="feather-autocomplete-input"
+        style="left: 12px;"
+      >
+        Users
+      </label>
+      <div
+        class="feather-input-wrapper has-prefix"
+        data-v-47a74f22=""
+      >
+        <div
+          class="prefix"
+          data-v-47a74f22=""
+        >
+          
+          
+          <svg
+            aria-hidden="true"
+            class="feather-icon"
+            data-v-0aa06a12=""
+            focusable="false"
+            height="24"
+            role="img"
+            viewBox="0 0 24 24"
+            width="24"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M20.29,18.84l-5.56-5.56A6.48,6.48,0,0,0,10.86,3.1,6.5,6.5,0,0,0,7.58,15.67a6.43,6.43,0,0,0,5.74-1l5.56,5.56a1,1,0,0,0,1.41,0h0A1,1,0,0,0,20.29,18.84ZM5,9.46A4.5,4.5,0,1,1,9.5,14,4.49,4.49,0,0,1,5,9.46Z"
+            />
+          </svg>
+          
+          
+        </div>
+        
+        <div
+          class="feather-autocomplete-content disabled"
+        >
+          <div
+            aria-atomic="true"
+            aria-live="assertive"
+            class="alert"
+            role="alert"
+          />
+          <div
+            class="description"
+            id="feather-autocomplete-input-selected"
+          >
+            Item 1, Item 2
+          </div>
+          
+          <div
+            aria-disabled="true"
+            class="chip condensed disabled focus autocomplete-chip"
+            data-v-3454cba5=""
+            role="button"
+          >
+            
+            <!--v-if-->
+            <span
+              class="label"
+              data-v-5fe439b1=""
+              title="false"
+            >
+              
+              Item 1
+              
+            </span>
+            <span
+              class="chip-delete"
+            >
+              <span
+                class="feather-icon-container delete-icon"
+                data-v-0aa06a12=""
+              >
+                <svg
+                  aria-hidden="false"
+                  aria-label="Remove"
+                  class="delete-icon feather-icon feather-icon-flex"
+                  focusable="false"
+                  height="24"
+                  role="img"
+                  viewBox="0 0 24 24"
+                  width="24"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M12,2A10,10,0,1,0,22,12,10,10,0,0,0,12,2Zm5,13.24A1.26,1.26,0,0,1,17,17a1.24,1.24,0,0,1-1.76,0L12,13.73,8.76,17A1.24,1.24,0,1,1,7,15.24L10.24,12,7,8.76A1.24,1.24,0,0,1,8.76,7L12,10.2,15.24,7A1.24,1.24,0,1,1,17,8.76L13.76,12Z"
+                  />
+                </svg>
+              </span>
+            </span>
+            
+            <!---->
+          </div>
+          <div
+            aria-disabled="true"
+            class="chip condensed disabled focus autocomplete-chip"
+            data-v-3454cba5=""
+            role="button"
+          >
+            
+            <!--v-if-->
+            <span
+              class="label"
+              data-v-5fe439b1=""
+              title="false"
+            >
+              
+              Item 2
+              
+            </span>
+            <span
+              class="chip-delete"
+            >
+              <span
+                class="feather-icon-container delete-icon"
+                data-v-0aa06a12=""
+              >
+                <svg
+                  aria-hidden="false"
+                  aria-label="Remove"
+                  class="delete-icon feather-icon feather-icon-flex"
+                  focusable="false"
+                  height="24"
+                  role="img"
+                  viewBox="0 0 24 24"
+                  width="24"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M12,2A10,10,0,1,0,22,12,10,10,0,0,0,12,2Zm5,13.24A1.26,1.26,0,0,1,17,17a1.24,1.24,0,0,1-1.76,0L12,13.73,8.76,17A1.24,1.24,0,1,1,7,15.24L10.24,12,7,8.76A1.24,1.24,0,0,1,8.76,7L12,10.2,15.24,7A1.24,1.24,0,1,1,17,8.76L13.76,12Z"
+                  />
+                </svg>
+              </span>
+            </span>
+            
+            <!---->
+          </div>
+          
+          <textarea
+            aria-activedescendant=""
+            aria-autocomplete="list"
+            aria-busy="false"
+            aria-controls="feather-autocomplete-input-results"
+            aria-describedby="feather-autocomplete-input-selected feather-autocomplete-description"
+            aria-disabled="true"
+            aria-invalid="false"
+            autocomplete="off"
+            class="feather-autocomplete-input"
+            data-ref-id="feather-input"
+            disabled=""
+            id="feather-autocomplete-input"
+            readonly=""
+            style="height: 26px; flex-basis: 40px; white-space: nowrap;"
+            tabindex="-1"
+          />
+        </div>
+        
+        <div
+          class="post"
+          data-v-47a74f22=""
+        >
+          <!---->
+          <!---->
+          
+          <svg
+            aria-hidden="true"
+            class="feather-autocomplete-dropdown-icon feather-icon feather-autocomplete-dropdown-icon"
+            data-v-0aa06a12=""
+            focusable="false"
+            height="24"
+            role="img"
+            viewBox="0 0 24 24"
+            width="24"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M6.71,9.29a1,1,0,0,0,0,1.41l4.59,4.59a1,1,0,0,0,1.41,0L17.3,10.7a1,1,0,0,0-1.41-1.41L12,13.17,8.12,9.29A1,1,0,0,0,6.71,9.29Z"
+            />
+          </svg>
+          
+        </div>
+      </div>
+    </div>
+    
+    <div
+      class="feather-menu-dropdown bottom-left"
+      data-v-6f68d0ea=""
+      id="feather-menu-dropdown"
+      style="display: none;"
+    >
+      
+      <ul
+        aria-hidden="false"
+        aria-label="Users"
+        aria-live="polite"
+        aria-multiselectable="true"
+        class="feather-list feather-autocomplete-results-list autocomplete-results"
+        data-v-4ef0e6d6=""
+        id="feather-autocomplete-input-results"
+        role="listbox"
+        style="display: none;"
+        tabindex="-1"
+      >
+        
+        
+      </ul>
+      <!--v-if-->
+      <!--v-if-->
+      <!--v-if-->
+      <!--v-if-->
+      <!--v-if-->
+      
+    </div>
+  </div>
+  <div
+    class="feather-input-sub-text"
+    data-v-764b8d6b=""
+    id="feather-autocomplete-description"
+    style="display: none;"
+  >
+    <!---->
+    <!---->
+    
+    
+  </div>
+</div>
+`;
+
+exports[`Feather Autocomplete base functionality multi disabled state should render in a disabled state with no value 1`] = `
+<div
+  class="feather-autocomplete-container"
+>
+  <div
+    class="feather-menu feather-autocomplete-menu-container"
+    data-v-6f68d0ea=""
+  >
+    
+    <div
+      aria-expanded="false"
+      aria-haspopup="listbox"
+      aria-label="Users"
+      aria-owns="feather-autocomplete-input-results"
+      class="feather-input-wrapper-container disabled"
+      data-v-47a74f22=""
+      menu-trigger=""
+      role="combobox"
+    >
+      <fieldset
+        aria-hidden="true"
+        class="feather-input-border"
+        data-v-47a74f22=""
+      >
+        <legend
+          data-v-47a74f22=""
+        >
+          Users
+        </legend>
+      </fieldset>
+      <label
+        class="feather-input-label"
+        data-ref-id="feather-form-element-label"
+        data-v-47a74f22=""
+        for="feather-autocomplete-input"
+        style="left: 16px;"
+      >
+        Users
+      </label>
+      <div
+        class="feather-input-wrapper has-prefix"
+        data-v-47a74f22=""
+      >
+        <div
+          class="prefix"
+          data-v-47a74f22=""
+        >
+          
+          
+          <svg
+            aria-hidden="true"
+            class="feather-icon"
+            data-v-0aa06a12=""
+            focusable="false"
+            height="24"
+            role="img"
+            viewBox="0 0 24 24"
+            width="24"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M20.29,18.84l-5.56-5.56A6.48,6.48,0,0,0,10.86,3.1,6.5,6.5,0,0,0,7.58,15.67a6.43,6.43,0,0,0,5.74-1l5.56,5.56a1,1,0,0,0,1.41,0h0A1,1,0,0,0,20.29,18.84ZM5,9.46A4.5,4.5,0,1,1,9.5,14,4.49,4.49,0,0,1,5,9.46Z"
+            />
+          </svg>
+          
+          
+        </div>
+        
+        <div
+          class="feather-autocomplete-content disabled"
+        >
+          <div
+            aria-atomic="true"
+            aria-live="assertive"
+            class="alert"
+            role="alert"
+          />
+          <div
+            class="description"
+            id="feather-autocomplete-input-selected"
+          />
+          
+          
+          <textarea
+            aria-activedescendant=""
+            aria-autocomplete="list"
+            aria-busy="false"
+            aria-controls="feather-autocomplete-input-results"
+            aria-describedby="feather-autocomplete-input-selected feather-autocomplete-description"
+            aria-disabled="true"
+            aria-invalid="false"
+            autocomplete="off"
+            class="feather-autocomplete-input"
+            data-ref-id="feather-input"
+            disabled=""
+            id="feather-autocomplete-input"
+            readonly=""
+            style="height: 26px; flex-basis: 40px; white-space: nowrap;"
+            tabindex="-1"
+          />
+        </div>
+        
+        <div
+          class="post"
+          data-v-47a74f22=""
+        >
+          <!---->
+          <!---->
+          
+          <svg
+            aria-hidden="true"
+            class="feather-autocomplete-dropdown-icon feather-icon feather-autocomplete-dropdown-icon"
+            data-v-0aa06a12=""
+            focusable="false"
+            height="24"
+            role="img"
+            viewBox="0 0 24 24"
+            width="24"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M6.71,9.29a1,1,0,0,0,0,1.41l4.59,4.59a1,1,0,0,0,1.41,0L17.3,10.7a1,1,0,0,0-1.41-1.41L12,13.17,8.12,9.29A1,1,0,0,0,6.71,9.29Z"
+            />
+          </svg>
+          
+        </div>
+      </div>
+    </div>
+    
+    <div
+      class="feather-menu-dropdown bottom-left"
+      data-v-6f68d0ea=""
+      id="feather-menu-dropdown"
+      style="display: none;"
+    >
+      
+      <ul
+        aria-hidden="false"
+        aria-label="Users"
+        aria-live="polite"
+        aria-multiselectable="true"
+        class="feather-list feather-autocomplete-results-list autocomplete-results"
+        data-v-4ef0e6d6=""
+        id="feather-autocomplete-input-results"
+        role="listbox"
+        style="display: none;"
+        tabindex="-1"
+      >
+        
+        
+      </ul>
+      <!--v-if-->
+      <!--v-if-->
+      <!--v-if-->
+      <!--v-if-->
+      <!--v-if-->
+      
+    </div>
+  </div>
+  <div
+    class="feather-input-sub-text"
+    data-v-764b8d6b=""
+    id="feather-autocomplete-description"
+    style="display: none;"
+  >
+    <!---->
+    <!---->
+    
+    
+  </div>
+</div>
+`;
+
+exports[`Feather Autocomplete base functionality multi should lower label when there is no value and autocomplete doesnt have focus 1`] = `
+<div
+  class="feather-autocomplete-container"
+>
+  <div
+    class="feather-menu feather-autocomplete-menu-container"
+    data-v-6f68d0ea=""
+  >
+    
+    <div
+      aria-expanded="false"
+      aria-haspopup="listbox"
+      aria-label="Users"
+      aria-owns="feather-autocomplete-input-results"
+      class="feather-input-wrapper-container"
+      data-v-47a74f22=""
+      menu-trigger=""
+      role="combobox"
+    >
+      <fieldset
+        aria-hidden="true"
+        class="feather-input-border"
+        data-v-47a74f22=""
+      >
+        <legend
+          data-v-47a74f22=""
+        >
+          Users
+        </legend>
+      </fieldset>
+      <label
+        class="feather-input-label"
+        data-ref-id="feather-form-element-label"
+        data-v-47a74f22=""
+        for="feather-autocomplete-input"
+        style="left: 16px;"
+      >
+        Users
+      </label>
+      <div
+        class="feather-input-wrapper has-prefix"
+        data-v-47a74f22=""
+      >
+        <div
+          class="prefix"
+          data-v-47a74f22=""
+        >
+          
+          
+          <svg
+            aria-hidden="true"
+            class="feather-icon"
+            data-v-0aa06a12=""
+            focusable="false"
+            height="24"
+            role="img"
+            viewBox="0 0 24 24"
+            width="24"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M20.29,18.84l-5.56-5.56A6.48,6.48,0,0,0,10.86,3.1,6.5,6.5,0,0,0,7.58,15.67a6.43,6.43,0,0,0,5.74-1l5.56,5.56a1,1,0,0,0,1.41,0h0A1,1,0,0,0,20.29,18.84ZM5,9.46A4.5,4.5,0,1,1,9.5,14,4.49,4.49,0,0,1,5,9.46Z"
+            />
+          </svg>
+          
+          
+        </div>
+        
+        <div
+          class="feather-autocomplete-content"
+        >
+          <div
+            aria-atomic="true"
+            aria-live="assertive"
+            class="alert"
+            role="alert"
+          />
+          <div
+            class="description"
+            id="feather-autocomplete-input-selected"
+          />
+          
+          
+          <textarea
+            aria-activedescendant=""
+            aria-autocomplete="list"
+            aria-busy="false"
+            aria-controls="feather-autocomplete-input-results"
+            aria-describedby="feather-autocomplete-input-selected feather-autocomplete-description"
+            aria-disabled="false"
+            aria-invalid="false"
+            autocomplete="off"
+            class="feather-autocomplete-input"
+            data-ref-id="feather-input"
+            id="feather-autocomplete-input"
+            style="height: 26px; flex-basis: 40px; white-space: nowrap;"
+            tabindex="0"
+          />
+        </div>
+        
+        <div
+          class="post"
+          data-v-47a74f22=""
+        >
+          <!---->
+          <!---->
+          
+          <svg
+            aria-hidden="true"
+            class="feather-autocomplete-dropdown-icon feather-icon feather-autocomplete-dropdown-icon"
+            data-v-0aa06a12=""
+            focusable="false"
+            height="24"
+            role="img"
+            viewBox="0 0 24 24"
+            width="24"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M6.71,9.29a1,1,0,0,0,0,1.41l4.59,4.59a1,1,0,0,0,1.41,0L17.3,10.7a1,1,0,0,0-1.41-1.41L12,13.17,8.12,9.29A1,1,0,0,0,6.71,9.29Z"
+            />
+          </svg>
+          
+        </div>
+      </div>
+    </div>
+    
+    <div
+      class="feather-menu-dropdown bottom-left"
+      data-v-6f68d0ea=""
+      id="feather-menu-dropdown"
+      style="display: none;"
+    >
+      
+      <ul
+        aria-hidden="false"
+        aria-label="Users"
+        aria-live="polite"
+        aria-multiselectable="true"
+        class="feather-list feather-autocomplete-results-list autocomplete-results"
+        data-v-4ef0e6d6=""
+        id="feather-autocomplete-input-results"
+        role="listbox"
+        style="display: none;"
+        tabindex="-1"
+      >
+        
+        
+      </ul>
+      <!--v-if-->
+      <!--v-if-->
+      <!--v-if-->
+      <!--v-if-->
+      <!--v-if-->
+      
+    </div>
+  </div>
+  <div
+    class="feather-input-sub-text"
+    data-v-764b8d6b=""
+    id="feather-autocomplete-description"
+    style="display: none;"
+  >
+    <!---->
+    <!---->
+    
+    
+  </div>
+</div>
+`;
+
+exports[`Feather Autocomplete base functionality multi should not leave previous search results visible whilst new search is being performed 1`] = `
+<div
+  class="feather-autocomplete-container"
+>
+  <div
+    class="feather-menu feather-autocomplete-menu-container"
+    data-v-6f68d0ea=""
+  >
+    
+    <div
+      aria-controls="feather-menu-dropdown"
+      aria-expanded="false"
+      aria-haspopup="true"
+      aria-label="Users"
+      aria-owns="feather-autocomplete-input-results"
+      class="feather-input-wrapper-container raised focused"
+      data-v-47a74f22=""
+      id="feather-menu-trigger"
+      menu-trigger=""
+      role="combobox"
+    >
+      <fieldset
+        aria-hidden="true"
+        class="feather-input-border"
+        data-v-47a74f22=""
+      >
+        <legend
+          data-v-47a74f22=""
+        >
+          Users
+        </legend>
+      </fieldset>
+      <label
+        class="feather-input-label"
+        data-ref-id="feather-form-element-label"
+        data-v-47a74f22=""
+        for="feather-autocomplete-input"
+        style="left: 12px;"
+      >
+        Users
+      </label>
+      <div
+        class="feather-input-wrapper has-prefix"
+        data-v-47a74f22=""
+      >
+        <div
+          class="prefix"
+          data-v-47a74f22=""
+        >
+          
+          
+          <svg
+            aria-hidden="true"
+            class="feather-icon"
+            data-v-0aa06a12=""
+            focusable="false"
+            height="24"
+            role="img"
+            viewBox="0 0 24 24"
+            width="24"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M20.29,18.84l-5.56-5.56A6.48,6.48,0,0,0,10.86,3.1,6.5,6.5,0,0,0,7.58,15.67a6.43,6.43,0,0,0,5.74-1l5.56,5.56a1,1,0,0,0,1.41,0h0A1,1,0,0,0,20.29,18.84ZM5,9.46A4.5,4.5,0,1,1,9.5,14,4.49,4.49,0,0,1,5,9.46Z"
+            />
+          </svg>
+          
+          
+        </div>
+        
+        <div
+          class="feather-autocomplete-content"
+        >
+          <div
+            aria-atomic="true"
+            aria-live="assertive"
+            class="alert"
+            role="alert"
+          />
+          <div
+            class="description"
+            id="feather-autocomplete-input-selected"
+          />
+          
+          
+          <textarea
+            aria-activedescendant=""
+            aria-autocomplete="list"
+            aria-busy="true"
+            aria-controls="feather-autocomplete-input-results"
+            aria-describedby="feather-autocomplete-input-selected feather-autocomplete-description"
+            aria-disabled="false"
+            aria-invalid="false"
+            autocomplete="off"
+            class="feather-autocomplete-input"
+            data-ref-id="feather-input"
+            id="feather-autocomplete-input"
+            style="height: 0px; flex-basis: 100%; white-space: normal;"
+            tabindex="0"
+          />
+        </div>
+        
+        <div
+          class="post"
+          data-v-47a74f22=""
+        >
+          <!---->
+          <!---->
+          
+          <svg
+            aria-hidden="true"
+            class="feather-autocomplete-dropdown-icon rotate feather-icon feather-autocomplete-dropdown-icon rotate"
+            data-v-0aa06a12=""
+            focusable="false"
+            height="24"
+            role="img"
+            viewBox="0 0 24 24"
+            width="24"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M6.71,9.29a1,1,0,0,0,0,1.41l4.59,4.59a1,1,0,0,0,1.41,0L17.3,10.7a1,1,0,0,0-1.41-1.41L12,13.17,8.12,9.29A1,1,0,0,0,6.71,9.29Z"
+            />
+          </svg>
+          
+        </div>
+      </div>
+    </div>
+    
+    <div
+      class="feather-menu-dropdown bottom-left"
+      data-v-6f68d0ea=""
+      id="feather-menu-dropdown"
+      style=""
+    >
+      
+      <ul
+        aria-hidden="false"
+        aria-label="Users"
+        aria-live="polite"
+        aria-multiselectable="true"
+        class="feather-list feather-autocomplete-results-list autocomplete-results"
+        data-v-4ef0e6d6=""
+        id="feather-autocomplete-input-results"
+        role="listbox"
+        style="display: none;"
+        tabindex="-1"
+      >
+        
+        <!-- eslint-disable -->
+        
+        
+        <li
+          aria-selected="false"
+          class="feather-list-item hover focus highlighted result-item hover"
+          data-v-e9e0333c=""
+          id="result-item"
+          role="option"
+          style="overflow: hidden; position: relative;"
+          tabindex="-1"
+        >
+          <!---->
+          <span
+            class="feather-list-item-text"
+            data-v-e9e0333c=""
+          >
+            <span>
+              <span>
+                Item 1
+              </span>
+              <!--v-if-->
+              <!--v-if-->
+            </span>
+            <!--v-if-->
+          </span>
+          <!---->
+        </li>
+        <!--v-if-->
+        
+        
+        <li
+          aria-selected="false"
+          class="feather-list-item hover focus result-item hover"
+          data-v-e9e0333c=""
+          role="option"
+          style="overflow: hidden; position: relative;"
+          tabindex="-1"
+        >
+          <!---->
+          <span
+            class="feather-list-item-text"
+            data-v-e9e0333c=""
+          >
+            <span>
+              <span>
+                Item 2
+              </span>
+              <!--v-if-->
+              <!--v-if-->
+            </span>
+            <!--v-if-->
+          </span>
+          <!---->
+        </li>
+        <!--v-if-->
+        
+        
+        
+      </ul>
+      <!--v-if-->
+      <!--v-if-->
+      <!--v-if-->
+      <!--v-if-->
+      <div
+        class="spinner-container"
+      >
+        <svg
+          class="spinner"
+          viewBox="0 0 66 66"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <circle
+            class="path"
+            cx="33"
+            cy="33"
+            fill="none"
+            r="30"
+            stroke-linecap="round"
+            stroke-width="6"
+          />
+        </svg>
+      </div>
+      
+    </div>
+  </div>
+  <div
+    class="feather-input-sub-text"
+    data-v-764b8d6b=""
+    id="feather-autocomplete-description"
+    style="display: none;"
+  >
+    <!---->
+    <!---->
+    
+    
+  </div>
+</div>
+`;
+
+exports[`Feather Autocomplete base functionality multi should raise the label when the autocomplete has a value 1`] = `
+<div
+  class="feather-autocomplete-container"
+>
+  <div
+    class="feather-menu feather-autocomplete-menu-container"
+    data-v-6f68d0ea=""
+  >
+    
+    <div
+      aria-expanded="false"
+      aria-haspopup="listbox"
+      aria-label="Users"
+      aria-owns="feather-autocomplete-input-results"
+      class="feather-input-wrapper-container raised"
+      data-v-47a74f22=""
+      menu-trigger=""
+      role="combobox"
+    >
+      <fieldset
+        aria-hidden="true"
+        class="feather-input-border"
+        data-v-47a74f22=""
+      >
+        <legend
+          data-v-47a74f22=""
+        >
+          Users
+        </legend>
+      </fieldset>
+      <label
+        class="feather-input-label"
+        data-ref-id="feather-form-element-label"
+        data-v-47a74f22=""
+        for="feather-autocomplete-input"
+        style="left: 12px;"
+      >
+        Users
+      </label>
+      <div
+        class="feather-input-wrapper has-prefix"
+        data-v-47a74f22=""
+      >
+        <div
+          class="prefix"
+          data-v-47a74f22=""
+        >
+          
+          
+          <svg
+            aria-hidden="true"
+            class="feather-icon"
+            data-v-0aa06a12=""
+            focusable="false"
+            height="24"
+            role="img"
+            viewBox="0 0 24 24"
+            width="24"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M20.29,18.84l-5.56-5.56A6.48,6.48,0,0,0,10.86,3.1,6.5,6.5,0,0,0,7.58,15.67a6.43,6.43,0,0,0,5.74-1l5.56,5.56a1,1,0,0,0,1.41,0h0A1,1,0,0,0,20.29,18.84ZM5,9.46A4.5,4.5,0,1,1,9.5,14,4.49,4.49,0,0,1,5,9.46Z"
+            />
+          </svg>
+          
+          
+        </div>
+        
+        <div
+          class="feather-autocomplete-content"
+        >
+          <div
+            aria-atomic="true"
+            aria-live="assertive"
+            class="alert"
+            role="alert"
+          />
+          <div
+            class="description"
+            id="feather-autocomplete-input-selected"
+          >
+            Item 1, Item 2
+          </div>
+          
+          <div
+            aria-disabled="false"
+            class="chip condensed focus autocomplete-chip"
+            data-v-3454cba5=""
+            role="button"
+          >
+            
+            <!--v-if-->
+            <span
+              class="label"
+              data-v-5fe439b1=""
+              title="false"
+            >
+              
+              Item 1
+              
+            </span>
+            <span
+              class="chip-delete"
+            >
+              <span
+                class="feather-icon-container delete-icon"
+                data-v-0aa06a12=""
+              >
+                <svg
+                  aria-hidden="false"
+                  aria-label="Remove"
+                  class="delete-icon feather-icon feather-icon-flex"
+                  focusable="false"
+                  height="24"
+                  role="img"
+                  viewBox="0 0 24 24"
+                  width="24"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M12,2A10,10,0,1,0,22,12,10,10,0,0,0,12,2Zm5,13.24A1.26,1.26,0,0,1,17,17a1.24,1.24,0,0,1-1.76,0L12,13.73,8.76,17A1.24,1.24,0,1,1,7,15.24L10.24,12,7,8.76A1.24,1.24,0,0,1,8.76,7L12,10.2,15.24,7A1.24,1.24,0,1,1,17,8.76L13.76,12Z"
+                  />
+                </svg>
+              </span>
+            </span>
+            
+            <!---->
+          </div>
+          <div
+            aria-disabled="false"
+            class="chip condensed focus autocomplete-chip"
+            data-v-3454cba5=""
+            role="button"
+          >
+            
+            <!--v-if-->
+            <span
+              class="label"
+              data-v-5fe439b1=""
+              title="false"
+            >
+              
+              Item 2
+              
+            </span>
+            <span
+              class="chip-delete"
+            >
+              <span
+                class="feather-icon-container delete-icon"
+                data-v-0aa06a12=""
+              >
+                <svg
+                  aria-hidden="false"
+                  aria-label="Remove"
+                  class="delete-icon feather-icon feather-icon-flex"
+                  focusable="false"
+                  height="24"
+                  role="img"
+                  viewBox="0 0 24 24"
+                  width="24"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M12,2A10,10,0,1,0,22,12,10,10,0,0,0,12,2Zm5,13.24A1.26,1.26,0,0,1,17,17a1.24,1.24,0,0,1-1.76,0L12,13.73,8.76,17A1.24,1.24,0,1,1,7,15.24L10.24,12,7,8.76A1.24,1.24,0,0,1,8.76,7L12,10.2,15.24,7A1.24,1.24,0,1,1,17,8.76L13.76,12Z"
+                  />
+                </svg>
+              </span>
+            </span>
+            
+            <!---->
+          </div>
+          
+          <textarea
+            aria-activedescendant=""
+            aria-autocomplete="list"
+            aria-busy="false"
+            aria-controls="feather-autocomplete-input-results"
+            aria-describedby="feather-autocomplete-input-selected feather-autocomplete-description"
+            aria-disabled="false"
+            aria-invalid="false"
+            autocomplete="off"
+            class="feather-autocomplete-input"
+            data-ref-id="feather-input"
+            id="feather-autocomplete-input"
+            style="height: 26px; flex-basis: 40px; white-space: nowrap;"
+            tabindex="0"
+          />
+        </div>
+        
+        <div
+          class="post"
+          data-v-47a74f22=""
+        >
+          <!---->
+          <!---->
+          
+          <svg
+            aria-hidden="true"
+            class="feather-autocomplete-dropdown-icon feather-icon feather-autocomplete-dropdown-icon"
+            data-v-0aa06a12=""
+            focusable="false"
+            height="24"
+            role="img"
+            viewBox="0 0 24 24"
+            width="24"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M6.71,9.29a1,1,0,0,0,0,1.41l4.59,4.59a1,1,0,0,0,1.41,0L17.3,10.7a1,1,0,0,0-1.41-1.41L12,13.17,8.12,9.29A1,1,0,0,0,6.71,9.29Z"
+            />
+          </svg>
+          
+        </div>
+      </div>
+    </div>
+    
+    <div
+      class="feather-menu-dropdown bottom-left"
+      data-v-6f68d0ea=""
+      id="feather-menu-dropdown"
+      style="display: none;"
+    >
+      
+      <ul
+        aria-hidden="false"
+        aria-label="Users"
+        aria-live="polite"
+        aria-multiselectable="true"
+        class="feather-list feather-autocomplete-results-list autocomplete-results"
+        data-v-4ef0e6d6=""
+        id="feather-autocomplete-input-results"
+        role="listbox"
+        style="display: none;"
+        tabindex="-1"
+      >
+        
+        
+      </ul>
+      <!--v-if-->
+      <!--v-if-->
+      <!--v-if-->
+      <!--v-if-->
+      <!--v-if-->
+      
+    </div>
+  </div>
+  <div
+    class="feather-input-sub-text"
+    data-v-764b8d6b=""
+    id="feather-autocomplete-description"
+    style="display: none;"
+  >
+    <!---->
+    <!---->
+    
+    
+  </div>
+</div>
+`;
+
+exports[`Feather Autocomplete base functionality multi should show loading spinner when search is performed 1`] = `
+<div
+  class="feather-autocomplete-container"
+>
+  <div
+    class="feather-menu feather-autocomplete-menu-container"
+    data-v-6f68d0ea=""
+  >
+    
+    <div
+      aria-controls="feather-menu-dropdown"
+      aria-expanded="false"
+      aria-haspopup="true"
+      aria-label="Users"
+      aria-owns="feather-autocomplete-input-results"
+      class="feather-input-wrapper-container raised focused"
+      data-v-47a74f22=""
+      id="feather-menu-trigger"
+      menu-trigger=""
+      role="combobox"
+    >
+      <fieldset
+        aria-hidden="true"
+        class="feather-input-border"
+        data-v-47a74f22=""
+      >
+        <legend
+          data-v-47a74f22=""
+        >
+          Users
+        </legend>
+      </fieldset>
+      <label
+        class="feather-input-label"
+        data-ref-id="feather-form-element-label"
+        data-v-47a74f22=""
+        for="feather-autocomplete-input"
+        style="left: 12px;"
+      >
+        Users
+      </label>
+      <div
+        class="feather-input-wrapper has-prefix"
+        data-v-47a74f22=""
+      >
+        <div
+          class="prefix"
+          data-v-47a74f22=""
+        >
+          
+          
+          <svg
+            aria-hidden="true"
+            class="feather-icon"
+            data-v-0aa06a12=""
+            focusable="false"
+            height="24"
+            role="img"
+            viewBox="0 0 24 24"
+            width="24"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M20.29,18.84l-5.56-5.56A6.48,6.48,0,0,0,10.86,3.1,6.5,6.5,0,0,0,7.58,15.67a6.43,6.43,0,0,0,5.74-1l5.56,5.56a1,1,0,0,0,1.41,0h0A1,1,0,0,0,20.29,18.84ZM5,9.46A4.5,4.5,0,1,1,9.5,14,4.49,4.49,0,0,1,5,9.46Z"
+            />
+          </svg>
+          
+          
+        </div>
+        
+        <div
+          class="feather-autocomplete-content"
+        >
+          <div
+            aria-atomic="true"
+            aria-live="assertive"
+            class="alert"
+            role="alert"
+          />
+          <div
+            class="description"
+            id="feather-autocomplete-input-selected"
+          />
+          
+          
+          <textarea
+            aria-activedescendant=""
+            aria-autocomplete="list"
+            aria-busy="true"
+            aria-controls="feather-autocomplete-input-results"
+            aria-describedby="feather-autocomplete-input-selected feather-autocomplete-description"
+            aria-disabled="false"
+            aria-invalid="false"
+            autocomplete="off"
+            class="feather-autocomplete-input"
+            data-ref-id="feather-input"
+            id="feather-autocomplete-input"
+            style="height: 0px; flex-basis: 100%; white-space: normal;"
+            tabindex="0"
+          />
+        </div>
+        
+        <div
+          class="post"
+          data-v-47a74f22=""
+        >
+          <!---->
+          <!---->
+          
+          <svg
+            aria-hidden="true"
+            class="feather-autocomplete-dropdown-icon rotate feather-icon feather-autocomplete-dropdown-icon rotate"
+            data-v-0aa06a12=""
+            focusable="false"
+            height="24"
+            role="img"
+            viewBox="0 0 24 24"
+            width="24"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M6.71,9.29a1,1,0,0,0,0,1.41l4.59,4.59a1,1,0,0,0,1.41,0L17.3,10.7a1,1,0,0,0-1.41-1.41L12,13.17,8.12,9.29A1,1,0,0,0,6.71,9.29Z"
+            />
+          </svg>
+          
+        </div>
+      </div>
+    </div>
+    
+    <div
+      class="feather-menu-dropdown bottom-left"
+      data-v-6f68d0ea=""
+      id="feather-menu-dropdown"
+      style=""
+    >
+      
+      <ul
+        aria-hidden="false"
+        aria-label="Users"
+        aria-live="polite"
+        aria-multiselectable="true"
+        class="feather-list feather-autocomplete-results-list autocomplete-results"
+        data-v-4ef0e6d6=""
+        id="feather-autocomplete-input-results"
+        role="listbox"
+        style="display: none;"
+        tabindex="-1"
+      >
+        
+        
+      </ul>
+      <!--v-if-->
+      <!--v-if-->
+      <!--v-if-->
+      <!--v-if-->
+      <div
+        class="spinner-container"
+      >
+        <svg
+          class="spinner"
+          viewBox="0 0 66 66"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <circle
+            class="path"
+            cx="33"
+            cy="33"
+            fill="none"
+            r="30"
+            stroke-linecap="round"
+            stroke-width="6"
+          />
+        </svg>
+      </div>
+      
+    </div>
+  </div>
+  <div
+    class="feather-input-sub-text"
+    data-v-764b8d6b=""
+    id="feather-autocomplete-description"
+    style="display: none;"
+  >
+    <!---->
+    <!---->
+    
+    
+  </div>
+</div>
+`;
+
+exports[`Feather Autocomplete base functionality multi should show no results text when search returns no results 1`] = `
+<div
+  class="feather-autocomplete-container"
+>
+  <div
+    class="feather-menu feather-autocomplete-menu-container"
+    data-v-6f68d0ea=""
+  >
+    
+    <div
+      aria-controls="feather-menu-dropdown"
+      aria-expanded="false"
+      aria-haspopup="true"
+      aria-label="Users"
+      aria-owns="feather-autocomplete-input-results"
+      class="feather-input-wrapper-container raised focused"
+      data-v-47a74f22=""
+      id="feather-menu-trigger"
+      menu-trigger=""
+      role="combobox"
+    >
+      <fieldset
+        aria-hidden="true"
+        class="feather-input-border"
+        data-v-47a74f22=""
+      >
+        <legend
+          data-v-47a74f22=""
+        >
+          Users
+        </legend>
+      </fieldset>
+      <label
+        class="feather-input-label"
+        data-ref-id="feather-form-element-label"
+        data-v-47a74f22=""
+        for="feather-autocomplete-input"
+        style="left: 12px;"
+      >
+        Users
+      </label>
+      <div
+        class="feather-input-wrapper has-prefix"
+        data-v-47a74f22=""
+      >
+        <div
+          class="prefix"
+          data-v-47a74f22=""
+        >
+          
+          
+          <svg
+            aria-hidden="true"
+            class="feather-icon"
+            data-v-0aa06a12=""
+            focusable="false"
+            height="24"
+            role="img"
+            viewBox="0 0 24 24"
+            width="24"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M20.29,18.84l-5.56-5.56A6.48,6.48,0,0,0,10.86,3.1,6.5,6.5,0,0,0,7.58,15.67a6.43,6.43,0,0,0,5.74-1l5.56,5.56a1,1,0,0,0,1.41,0h0A1,1,0,0,0,20.29,18.84ZM5,9.46A4.5,4.5,0,1,1,9.5,14,4.49,4.49,0,0,1,5,9.46Z"
+            />
+          </svg>
+          
+          
+        </div>
+        
+        <div
+          class="feather-autocomplete-content"
+        >
+          <div
+            aria-atomic="true"
+            aria-live="assertive"
+            class="alert"
+            role="alert"
+          />
+          <div
+            class="description"
+            id="feather-autocomplete-input-selected"
+          />
+          
+          
+          <textarea
+            aria-activedescendant=""
+            aria-autocomplete="list"
+            aria-busy="false"
+            aria-controls="feather-autocomplete-input-results"
+            aria-describedby="feather-autocomplete-input-selected feather-autocomplete-description"
+            aria-disabled="false"
+            aria-invalid="false"
+            autocomplete="off"
+            class="feather-autocomplete-input"
+            data-ref-id="feather-input"
+            id="feather-autocomplete-input"
+            style="height: 0px; flex-basis: 100%; white-space: normal;"
+            tabindex="0"
+          />
+        </div>
+        
+        <div
+          class="post"
+          data-v-47a74f22=""
+        >
+          <!---->
+          <!---->
+          
+          <svg
+            aria-hidden="true"
+            class="feather-autocomplete-dropdown-icon rotate feather-icon feather-autocomplete-dropdown-icon rotate"
+            data-v-0aa06a12=""
+            focusable="false"
+            height="24"
+            role="img"
+            viewBox="0 0 24 24"
+            width="24"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M6.71,9.29a1,1,0,0,0,0,1.41l4.59,4.59a1,1,0,0,0,1.41,0L17.3,10.7a1,1,0,0,0-1.41-1.41L12,13.17,8.12,9.29A1,1,0,0,0,6.71,9.29Z"
+            />
+          </svg>
+          
+        </div>
+      </div>
+    </div>
+    
+    <div
+      class="feather-menu-dropdown bottom-left"
+      data-v-6f68d0ea=""
+      id="feather-menu-dropdown"
+      style=""
+    >
+      
+      <ul
+        aria-hidden="false"
+        aria-label="Users"
+        aria-live="polite"
+        aria-multiselectable="true"
+        class="feather-list feather-autocomplete-results-list autocomplete-results"
+        data-v-4ef0e6d6=""
+        id="feather-autocomplete-input-results"
+        role="listbox"
+        style="display: none;"
+        tabindex="-1"
+      >
+        
+        
+      </ul>
+      <!--v-if-->
+      <ul
+        class="feather-list result-list"
+        data-v-4ef0e6d6=""
+      >
+        
+        <li
+          class="feather-list-item hover focus"
+          data-v-e9e0333c=""
+          style="overflow: hidden; position: relative;"
+        >
+          <!---->
+          <span
+            class="feather-list-item-text"
+            data-v-e9e0333c=""
+          >
+            
+            <span
+              data-ref-id="feather-autocomplete-no-results"
+            >
+              No results found
+            </span>
+            
+          </span>
+          <!---->
+        </li>
+        
+      </ul>
+      <!--v-if-->
+      <!--v-if-->
+      <!--v-if-->
+      
+    </div>
+  </div>
+  <div
+    class="feather-input-sub-text"
+    data-v-764b8d6b=""
+    id="feather-autocomplete-description"
+    style="display: none;"
+  >
+    <!---->
+    <!---->
+    
+    
+  </div>
+</div>
+`;
+
+exports[`Feather Autocomplete base functionality single disabled state should render in a disabled state with a value 1`] = `
+<div
+  class="feather-autocomplete-container"
+>
+  <div
+    class="feather-menu feather-autocomplete-menu-container"
+    data-v-6f68d0ea=""
+  >
+    
+    <div
+      aria-expanded="false"
+      aria-haspopup="listbox"
+      aria-label="Users"
+      aria-owns="feather-autocomplete-input-results"
+      class="feather-input-wrapper-container raised disabled"
+      data-v-47a74f22=""
+      menu-trigger=""
+      role="combobox"
+    >
+      <fieldset
+        aria-hidden="true"
+        class="feather-input-border"
+        data-v-47a74f22=""
+      >
+        <legend
+          data-v-47a74f22=""
+        >
+          Users
+        </legend>
+      </fieldset>
+      <label
+        class="feather-input-label"
+        data-ref-id="feather-form-element-label"
+        data-v-47a74f22=""
+        for="feather-autocomplete-input"
+        style="left: 12px;"
+      >
+        Users
+      </label>
+      <div
+        class="feather-input-wrapper has-prefix"
+        data-v-47a74f22=""
+      >
+        <div
+          class="prefix"
+          data-v-47a74f22=""
+        >
+          
+          
+          <svg
+            aria-hidden="true"
+            class="feather-icon"
+            data-v-0aa06a12=""
+            focusable="false"
+            height="24"
+            role="img"
+            viewBox="0 0 24 24"
+            width="24"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M20.29,18.84l-5.56-5.56A6.48,6.48,0,0,0,10.86,3.1,6.5,6.5,0,0,0,7.58,15.67a6.43,6.43,0,0,0,5.74-1l5.56,5.56a1,1,0,0,0,1.41,0h0A1,1,0,0,0,20.29,18.84ZM5,9.46A4.5,4.5,0,1,1,9.5,14,4.49,4.49,0,0,1,5,9.46Z"
+            />
+          </svg>
+          
+          
+        </div>
+        
+        <div
+          class="feather-autocomplete-content disabled"
+        >
+          <div
+            aria-atomic="true"
+            aria-live="assertive"
+            class="alert"
+            role="alert"
+          />
+          <div
+            class="description"
+            id="feather-autocomplete-input-selected"
+          />
+          
+          
+          <textarea
+            aria-activedescendant=""
+            aria-autocomplete="list"
+            aria-busy="false"
+            aria-controls="feather-autocomplete-input-results"
+            aria-describedby="feather-autocomplete-input-selected feather-autocomplete-description"
+            aria-disabled="true"
+            aria-invalid="false"
+            autocomplete="off"
+            class="feather-autocomplete-input"
+            data-ref-id="feather-input"
+            disabled=""
+            id="feather-autocomplete-input"
+            readonly=""
+            style="height: 26px; flex-basis: 40px; white-space: nowrap;"
+            tabindex="-1"
+          />
+        </div>
+        
+        <div
+          class="post"
+          data-v-47a74f22=""
+        >
+          <a
+            class="action-icon hide-when-disabled"
+            data-ref-id="feather-form-element-clear"
+            data-v-12cb8e54=""
+            data-v-47a74f22=""
+            href="#"
+            title="Clear value"
+          >
+            <svg
+              aria-hidden="true"
+              class="feather-icon"
+              data-v-0aa06a12=""
+              data-v-12cb8e54=""
+              focusable="false"
+              height="24"
+              role="img"
+              viewBox="0 0 24 24"
+              width="24"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M12,2A10,10,0,1,0,22,12,10,10,0,0,0,12,2Zm5,13.24A1.26,1.26,0,0,1,17,17a1.24,1.24,0,0,1-1.76,0L12,13.73,8.76,17A1.24,1.24,0,1,1,7,15.24L10.24,12,7,8.76A1.24,1.24,0,0,1,8.76,7L12,10.2,15.24,7A1.24,1.24,0,1,1,17,8.76L13.76,12Z"
+              />
+            </svg>
+          </a>
+          <!---->
+          
+          <svg
+            aria-hidden="true"
+            class="feather-autocomplete-dropdown-icon feather-icon feather-autocomplete-dropdown-icon"
+            data-v-0aa06a12=""
+            focusable="false"
+            height="24"
+            role="img"
+            viewBox="0 0 24 24"
+            width="24"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M6.71,9.29a1,1,0,0,0,0,1.41l4.59,4.59a1,1,0,0,0,1.41,0L17.3,10.7a1,1,0,0,0-1.41-1.41L12,13.17,8.12,9.29A1,1,0,0,0,6.71,9.29Z"
+            />
+          </svg>
+          
+        </div>
+      </div>
+    </div>
+    
+    <div
+      class="feather-menu-dropdown bottom-left"
+      data-v-6f68d0ea=""
+      id="feather-menu-dropdown"
+      style="display: none;"
+    >
+      
+      <ul
+        aria-hidden="false"
+        aria-label="Users"
+        aria-live="polite"
+        aria-multiselectable="false"
+        class="feather-list feather-autocomplete-results-list autocomplete-results"
+        data-v-4ef0e6d6=""
+        id="feather-autocomplete-input-results"
+        role="listbox"
+        style="display: none;"
+        tabindex="-1"
+      >
+        
+        
+      </ul>
+      <!--v-if-->
+      <!--v-if-->
+      <!--v-if-->
+      <!--v-if-->
+      <!--v-if-->
+      
+    </div>
+  </div>
+  <div
+    class="feather-input-sub-text"
+    data-v-764b8d6b=""
+    id="feather-autocomplete-description"
+    style="display: none;"
+  >
+    <!---->
+    <!---->
+    
+    
+  </div>
+</div>
+`;
+
+exports[`Feather Autocomplete base functionality single disabled state should render in a disabled state with no value 1`] = `
+<div
+  class="feather-autocomplete-container"
+>
+  <div
+    class="feather-menu feather-autocomplete-menu-container"
+    data-v-6f68d0ea=""
+  >
+    
+    <div
+      aria-expanded="false"
+      aria-haspopup="listbox"
+      aria-label="Users"
+      aria-owns="feather-autocomplete-input-results"
+      class="feather-input-wrapper-container disabled"
+      data-v-47a74f22=""
+      menu-trigger=""
+      role="combobox"
+    >
+      <fieldset
+        aria-hidden="true"
+        class="feather-input-border"
+        data-v-47a74f22=""
+      >
+        <legend
+          data-v-47a74f22=""
+        >
+          Users
+        </legend>
+      </fieldset>
+      <label
+        class="feather-input-label"
+        data-ref-id="feather-form-element-label"
+        data-v-47a74f22=""
+        for="feather-autocomplete-input"
+        style="left: 16px;"
+      >
+        Users
+      </label>
+      <div
+        class="feather-input-wrapper has-prefix"
+        data-v-47a74f22=""
+      >
+        <div
+          class="prefix"
+          data-v-47a74f22=""
+        >
+          
+          
+          <svg
+            aria-hidden="true"
+            class="feather-icon"
+            data-v-0aa06a12=""
+            focusable="false"
+            height="24"
+            role="img"
+            viewBox="0 0 24 24"
+            width="24"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M20.29,18.84l-5.56-5.56A6.48,6.48,0,0,0,10.86,3.1,6.5,6.5,0,0,0,7.58,15.67a6.43,6.43,0,0,0,5.74-1l5.56,5.56a1,1,0,0,0,1.41,0h0A1,1,0,0,0,20.29,18.84ZM5,9.46A4.5,4.5,0,1,1,9.5,14,4.49,4.49,0,0,1,5,9.46Z"
+            />
+          </svg>
+          
+          
+        </div>
+        
+        <div
+          class="feather-autocomplete-content disabled"
+        >
+          <div
+            aria-atomic="true"
+            aria-live="assertive"
+            class="alert"
+            role="alert"
+          />
+          <div
+            class="description"
+            id="feather-autocomplete-input-selected"
+          />
+          
+          
+          <textarea
+            aria-activedescendant=""
+            aria-autocomplete="list"
+            aria-busy="false"
+            aria-controls="feather-autocomplete-input-results"
+            aria-describedby="feather-autocomplete-input-selected feather-autocomplete-description"
+            aria-disabled="true"
+            aria-invalid="false"
+            autocomplete="off"
+            class="feather-autocomplete-input"
+            data-ref-id="feather-input"
+            disabled=""
+            id="feather-autocomplete-input"
+            readonly=""
+            style="height: 26px; flex-basis: 40px; white-space: nowrap;"
+            tabindex="-1"
+          />
+        </div>
+        
+        <div
+          class="post"
+          data-v-47a74f22=""
+        >
+          <!---->
+          <!---->
+          
+          <svg
+            aria-hidden="true"
+            class="feather-autocomplete-dropdown-icon feather-icon feather-autocomplete-dropdown-icon"
+            data-v-0aa06a12=""
+            focusable="false"
+            height="24"
+            role="img"
+            viewBox="0 0 24 24"
+            width="24"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M6.71,9.29a1,1,0,0,0,0,1.41l4.59,4.59a1,1,0,0,0,1.41,0L17.3,10.7a1,1,0,0,0-1.41-1.41L12,13.17,8.12,9.29A1,1,0,0,0,6.71,9.29Z"
+            />
+          </svg>
+          
+        </div>
+      </div>
+    </div>
+    
+    <div
+      class="feather-menu-dropdown bottom-left"
+      data-v-6f68d0ea=""
+      id="feather-menu-dropdown"
+      style="display: none;"
+    >
+      
+      <ul
+        aria-hidden="false"
+        aria-label="Users"
+        aria-live="polite"
+        aria-multiselectable="false"
+        class="feather-list feather-autocomplete-results-list autocomplete-results"
+        data-v-4ef0e6d6=""
+        id="feather-autocomplete-input-results"
+        role="listbox"
+        style="display: none;"
+        tabindex="-1"
+      >
+        
+        
+      </ul>
+      <!--v-if-->
+      <!--v-if-->
+      <!--v-if-->
+      <!--v-if-->
+      <!--v-if-->
+      
+    </div>
+  </div>
+  <div
+    class="feather-input-sub-text"
+    data-v-764b8d6b=""
+    id="feather-autocomplete-description"
+    style="display: none;"
+  >
+    <!---->
+    <!---->
+    
+    
+  </div>
+</div>
+`;
+
+exports[`Feather Autocomplete base functionality single should lower label when there is no value and autocomplete doesnt have focus 1`] = `
+<div
+  class="feather-autocomplete-container"
+>
+  <div
+    class="feather-menu feather-autocomplete-menu-container"
+    data-v-6f68d0ea=""
+  >
+    
+    <div
+      aria-expanded="false"
+      aria-haspopup="listbox"
+      aria-label="Users"
+      aria-owns="feather-autocomplete-input-results"
+      class="feather-input-wrapper-container"
+      data-v-47a74f22=""
+      menu-trigger=""
+      role="combobox"
+    >
+      <fieldset
+        aria-hidden="true"
+        class="feather-input-border"
+        data-v-47a74f22=""
+      >
+        <legend
+          data-v-47a74f22=""
+        >
+          Users
+        </legend>
+      </fieldset>
+      <label
+        class="feather-input-label"
+        data-ref-id="feather-form-element-label"
+        data-v-47a74f22=""
+        for="feather-autocomplete-input"
+        style="left: 16px;"
+      >
+        Users
+      </label>
+      <div
+        class="feather-input-wrapper has-prefix"
+        data-v-47a74f22=""
+      >
+        <div
+          class="prefix"
+          data-v-47a74f22=""
+        >
+          
+          
+          <svg
+            aria-hidden="true"
+            class="feather-icon"
+            data-v-0aa06a12=""
+            focusable="false"
+            height="24"
+            role="img"
+            viewBox="0 0 24 24"
+            width="24"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M20.29,18.84l-5.56-5.56A6.48,6.48,0,0,0,10.86,3.1,6.5,6.5,0,0,0,7.58,15.67a6.43,6.43,0,0,0,5.74-1l5.56,5.56a1,1,0,0,0,1.41,0h0A1,1,0,0,0,20.29,18.84ZM5,9.46A4.5,4.5,0,1,1,9.5,14,4.49,4.49,0,0,1,5,9.46Z"
+            />
+          </svg>
+          
+          
+        </div>
+        
+        <div
+          class="feather-autocomplete-content"
+        >
+          <div
+            aria-atomic="true"
+            aria-live="assertive"
+            class="alert"
+            role="alert"
+          />
+          <div
+            class="description"
+            id="feather-autocomplete-input-selected"
+          />
+          
+          
+          <textarea
+            aria-activedescendant=""
+            aria-autocomplete="list"
+            aria-busy="false"
+            aria-controls="feather-autocomplete-input-results"
+            aria-describedby="feather-autocomplete-input-selected feather-autocomplete-description"
+            aria-disabled="false"
+            aria-invalid="false"
+            autocomplete="off"
+            class="feather-autocomplete-input"
+            data-ref-id="feather-input"
+            id="feather-autocomplete-input"
+            style="height: 26px; flex-basis: 40px; white-space: nowrap;"
+            tabindex="0"
+          />
+        </div>
+        
+        <div
+          class="post"
+          data-v-47a74f22=""
+        >
+          <!---->
+          <!---->
+          
+          <svg
+            aria-hidden="true"
+            class="feather-autocomplete-dropdown-icon feather-icon feather-autocomplete-dropdown-icon"
+            data-v-0aa06a12=""
+            focusable="false"
+            height="24"
+            role="img"
+            viewBox="0 0 24 24"
+            width="24"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M6.71,9.29a1,1,0,0,0,0,1.41l4.59,4.59a1,1,0,0,0,1.41,0L17.3,10.7a1,1,0,0,0-1.41-1.41L12,13.17,8.12,9.29A1,1,0,0,0,6.71,9.29Z"
+            />
+          </svg>
+          
+        </div>
+      </div>
+    </div>
+    
+    <div
+      class="feather-menu-dropdown bottom-left"
+      data-v-6f68d0ea=""
+      id="feather-menu-dropdown"
+      style="display: none;"
+    >
+      
+      <ul
+        aria-hidden="false"
+        aria-label="Users"
+        aria-live="polite"
+        aria-multiselectable="false"
+        class="feather-list feather-autocomplete-results-list autocomplete-results"
+        data-v-4ef0e6d6=""
+        id="feather-autocomplete-input-results"
+        role="listbox"
+        style="display: none;"
+        tabindex="-1"
+      >
+        
+        
+      </ul>
+      <!--v-if-->
+      <!--v-if-->
+      <!--v-if-->
+      <!--v-if-->
+      <!--v-if-->
+      
+    </div>
+  </div>
+  <div
+    class="feather-input-sub-text"
+    data-v-764b8d6b=""
+    id="feather-autocomplete-description"
+    style="display: none;"
+  >
+    <!---->
+    <!---->
+    
+    
+  </div>
+</div>
+`;
+
+exports[`Feather Autocomplete base functionality single should not leave previous search results visible whilst new search is being performed 1`] = `
+<div
+  class="feather-autocomplete-container"
+>
+  <div
+    class="feather-menu feather-autocomplete-menu-container"
+    data-v-6f68d0ea=""
+  >
+    
+    <div
+      aria-controls="feather-menu-dropdown"
+      aria-expanded="false"
+      aria-haspopup="true"
+      aria-label="Users"
+      aria-owns="feather-autocomplete-input-results"
+      class="feather-input-wrapper-container raised focused"
+      data-v-47a74f22=""
+      id="feather-menu-trigger"
+      menu-trigger=""
+      role="combobox"
+    >
+      <fieldset
+        aria-hidden="true"
+        class="feather-input-border"
+        data-v-47a74f22=""
+      >
+        <legend
+          data-v-47a74f22=""
+        >
+          Users
+        </legend>
+      </fieldset>
+      <label
+        class="feather-input-label"
+        data-ref-id="feather-form-element-label"
+        data-v-47a74f22=""
+        for="feather-autocomplete-input"
+        style="left: 12px;"
+      >
+        Users
+      </label>
+      <div
+        class="feather-input-wrapper has-prefix"
+        data-v-47a74f22=""
+      >
+        <div
+          class="prefix"
+          data-v-47a74f22=""
+        >
+          
+          
+          <svg
+            aria-hidden="true"
+            class="feather-icon"
+            data-v-0aa06a12=""
+            focusable="false"
+            height="24"
+            role="img"
+            viewBox="0 0 24 24"
+            width="24"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M20.29,18.84l-5.56-5.56A6.48,6.48,0,0,0,10.86,3.1,6.5,6.5,0,0,0,7.58,15.67a6.43,6.43,0,0,0,5.74-1l5.56,5.56a1,1,0,0,0,1.41,0h0A1,1,0,0,0,20.29,18.84ZM5,9.46A4.5,4.5,0,1,1,9.5,14,4.49,4.49,0,0,1,5,9.46Z"
+            />
+          </svg>
+          
+          
+        </div>
+        
+        <div
+          class="feather-autocomplete-content"
+        >
+          <div
+            aria-atomic="true"
+            aria-live="assertive"
+            class="alert"
+            role="alert"
+          />
+          <div
+            class="description"
+            id="feather-autocomplete-input-selected"
+          />
+          
+          
+          <textarea
+            aria-activedescendant=""
+            aria-autocomplete="list"
+            aria-busy="true"
+            aria-controls="feather-autocomplete-input-results"
+            aria-describedby="feather-autocomplete-input-selected feather-autocomplete-description"
+            aria-disabled="false"
+            aria-invalid="false"
+            autocomplete="off"
+            class="feather-autocomplete-input"
+            data-ref-id="feather-input"
+            id="feather-autocomplete-input"
+            style="height: 0px; flex-basis: 100%; white-space: normal;"
+            tabindex="0"
+          />
+        </div>
+        
+        <div
+          class="post"
+          data-v-47a74f22=""
+        >
+          <!---->
+          <!---->
+          
+          <svg
+            aria-hidden="true"
+            class="feather-autocomplete-dropdown-icon rotate feather-icon feather-autocomplete-dropdown-icon rotate"
+            data-v-0aa06a12=""
+            focusable="false"
+            height="24"
+            role="img"
+            viewBox="0 0 24 24"
+            width="24"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M6.71,9.29a1,1,0,0,0,0,1.41l4.59,4.59a1,1,0,0,0,1.41,0L17.3,10.7a1,1,0,0,0-1.41-1.41L12,13.17,8.12,9.29A1,1,0,0,0,6.71,9.29Z"
+            />
+          </svg>
+          
+        </div>
+      </div>
+    </div>
+    
+    <div
+      class="feather-menu-dropdown bottom-left"
+      data-v-6f68d0ea=""
+      id="feather-menu-dropdown"
+      style=""
+    >
+      
+      <ul
+        aria-hidden="false"
+        aria-label="Users"
+        aria-live="polite"
+        aria-multiselectable="false"
+        class="feather-list feather-autocomplete-results-list autocomplete-results"
+        data-v-4ef0e6d6=""
+        id="feather-autocomplete-input-results"
+        role="listbox"
+        style="display: none;"
+        tabindex="-1"
+      >
+        
+        <!-- eslint-disable -->
+        
+        
+        <li
+          aria-selected="false"
+          class="feather-list-item hover focus result-item hover"
+          data-v-e9e0333c=""
+          role="option"
+          style="overflow: hidden; position: relative;"
+          tabindex="-1"
+        >
+          <!---->
+          <span
+            class="feather-list-item-text"
+            data-v-e9e0333c=""
+          >
+            <span>
+              <span>
+                Item 1
+              </span>
+              <!--v-if-->
+              <!--v-if-->
+            </span>
+            <!--v-if-->
+          </span>
+          <!---->
+        </li>
+        <!--v-if-->
+        
+        
+        <li
+          aria-selected="false"
+          class="feather-list-item hover focus result-item hover"
+          data-v-e9e0333c=""
+          role="option"
+          style="overflow: hidden; position: relative;"
+          tabindex="-1"
+        >
+          <!---->
+          <span
+            class="feather-list-item-text"
+            data-v-e9e0333c=""
+          >
+            <span>
+              <span>
+                Item 2
+              </span>
+              <!--v-if-->
+              <!--v-if-->
+            </span>
+            <!--v-if-->
+          </span>
+          <!---->
+        </li>
+        <!--v-if-->
+        
+        
+        
+      </ul>
+      <!--v-if-->
+      <!--v-if-->
+      <!--v-if-->
+      <!--v-if-->
+      <div
+        class="spinner-container"
+      >
+        <svg
+          class="spinner"
+          viewBox="0 0 66 66"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <circle
+            class="path"
+            cx="33"
+            cy="33"
+            fill="none"
+            r="30"
+            stroke-linecap="round"
+            stroke-width="6"
+          />
+        </svg>
+      </div>
+      
+    </div>
+  </div>
+  <div
+    class="feather-input-sub-text"
+    data-v-764b8d6b=""
+    id="feather-autocomplete-description"
+    style="display: none;"
+  >
+    <!---->
+    <!---->
+    
+    
+  </div>
+</div>
+`;
+
+exports[`Feather Autocomplete base functionality single should raise the label when the autocomplete has a value 1`] = `
+<div
+  class="feather-autocomplete-container"
+>
+  <div
+    class="feather-menu feather-autocomplete-menu-container"
+    data-v-6f68d0ea=""
+  >
+    
+    <div
+      aria-expanded="false"
+      aria-haspopup="listbox"
+      aria-label="Users"
+      aria-owns="feather-autocomplete-input-results"
+      class="feather-input-wrapper-container raised"
+      data-v-47a74f22=""
+      menu-trigger=""
+      role="combobox"
+    >
+      <fieldset
+        aria-hidden="true"
+        class="feather-input-border"
+        data-v-47a74f22=""
+      >
+        <legend
+          data-v-47a74f22=""
+        >
+          Users
+        </legend>
+      </fieldset>
+      <label
+        class="feather-input-label"
+        data-ref-id="feather-form-element-label"
+        data-v-47a74f22=""
+        for="feather-autocomplete-input"
+        style="left: 12px;"
+      >
+        Users
+      </label>
+      <div
+        class="feather-input-wrapper has-prefix"
+        data-v-47a74f22=""
+      >
+        <div
+          class="prefix"
+          data-v-47a74f22=""
+        >
+          
+          
+          <svg
+            aria-hidden="true"
+            class="feather-icon"
+            data-v-0aa06a12=""
+            focusable="false"
+            height="24"
+            role="img"
+            viewBox="0 0 24 24"
+            width="24"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M20.29,18.84l-5.56-5.56A6.48,6.48,0,0,0,10.86,3.1,6.5,6.5,0,0,0,7.58,15.67a6.43,6.43,0,0,0,5.74-1l5.56,5.56a1,1,0,0,0,1.41,0h0A1,1,0,0,0,20.29,18.84ZM5,9.46A4.5,4.5,0,1,1,9.5,14,4.49,4.49,0,0,1,5,9.46Z"
+            />
+          </svg>
+          
+          
+        </div>
+        
+        <div
+          class="feather-autocomplete-content"
+        >
+          <div
+            aria-atomic="true"
+            aria-live="assertive"
+            class="alert"
+            role="alert"
+          />
+          <div
+            class="description"
+            id="feather-autocomplete-input-selected"
+          />
+          
+          
+          <textarea
+            aria-activedescendant=""
+            aria-autocomplete="list"
+            aria-busy="false"
+            aria-controls="feather-autocomplete-input-results"
+            aria-describedby="feather-autocomplete-input-selected feather-autocomplete-description"
+            aria-disabled="false"
+            aria-invalid="false"
+            autocomplete="off"
+            class="feather-autocomplete-input"
+            data-ref-id="feather-input"
+            id="feather-autocomplete-input"
+            style="height: 26px; flex-basis: 40px; white-space: nowrap;"
+            tabindex="0"
+          />
+        </div>
+        
+        <div
+          class="post"
+          data-v-47a74f22=""
+        >
+          <a
+            class="action-icon hide-when-disabled"
+            data-ref-id="feather-form-element-clear"
+            data-v-12cb8e54=""
+            data-v-47a74f22=""
+            href="#"
+            title="Clear value"
+          >
+            <svg
+              aria-hidden="true"
+              class="feather-icon"
+              data-v-0aa06a12=""
+              data-v-12cb8e54=""
+              focusable="false"
+              height="24"
+              role="img"
+              viewBox="0 0 24 24"
+              width="24"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M12,2A10,10,0,1,0,22,12,10,10,0,0,0,12,2Zm5,13.24A1.26,1.26,0,0,1,17,17a1.24,1.24,0,0,1-1.76,0L12,13.73,8.76,17A1.24,1.24,0,1,1,7,15.24L10.24,12,7,8.76A1.24,1.24,0,0,1,8.76,7L12,10.2,15.24,7A1.24,1.24,0,1,1,17,8.76L13.76,12Z"
+              />
+            </svg>
+          </a>
+          <!---->
+          
+          <svg
+            aria-hidden="true"
+            class="feather-autocomplete-dropdown-icon feather-icon feather-autocomplete-dropdown-icon"
+            data-v-0aa06a12=""
+            focusable="false"
+            height="24"
+            role="img"
+            viewBox="0 0 24 24"
+            width="24"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M6.71,9.29a1,1,0,0,0,0,1.41l4.59,4.59a1,1,0,0,0,1.41,0L17.3,10.7a1,1,0,0,0-1.41-1.41L12,13.17,8.12,9.29A1,1,0,0,0,6.71,9.29Z"
+            />
+          </svg>
+          
+        </div>
+      </div>
+    </div>
+    
+    <div
+      class="feather-menu-dropdown bottom-left"
+      data-v-6f68d0ea=""
+      id="feather-menu-dropdown"
+      style="display: none;"
+    >
+      
+      <ul
+        aria-hidden="false"
+        aria-label="Users"
+        aria-live="polite"
+        aria-multiselectable="false"
+        class="feather-list feather-autocomplete-results-list autocomplete-results"
+        data-v-4ef0e6d6=""
+        id="feather-autocomplete-input-results"
+        role="listbox"
+        style="display: none;"
+        tabindex="-1"
+      >
+        
+        
+      </ul>
+      <!--v-if-->
+      <!--v-if-->
+      <!--v-if-->
+      <!--v-if-->
+      <!--v-if-->
+      
+    </div>
+  </div>
+  <div
+    class="feather-input-sub-text"
+    data-v-764b8d6b=""
+    id="feather-autocomplete-description"
+    style="display: none;"
+  >
+    <!---->
+    <!---->
+    
+    
+  </div>
+</div>
+`;
+
+exports[`Feather Autocomplete base functionality single should show loading spinner when search is performed 1`] = `
+<div
+  class="feather-autocomplete-container"
+>
+  <div
+    class="feather-menu feather-autocomplete-menu-container"
+    data-v-6f68d0ea=""
+  >
+    
+    <div
+      aria-controls="feather-menu-dropdown"
+      aria-expanded="false"
+      aria-haspopup="true"
+      aria-label="Users"
+      aria-owns="feather-autocomplete-input-results"
+      class="feather-input-wrapper-container raised focused"
+      data-v-47a74f22=""
+      id="feather-menu-trigger"
+      menu-trigger=""
+      role="combobox"
+    >
+      <fieldset
+        aria-hidden="true"
+        class="feather-input-border"
+        data-v-47a74f22=""
+      >
+        <legend
+          data-v-47a74f22=""
+        >
+          Users
+        </legend>
+      </fieldset>
+      <label
+        class="feather-input-label"
+        data-ref-id="feather-form-element-label"
+        data-v-47a74f22=""
+        for="feather-autocomplete-input"
+        style="left: 12px;"
+      >
+        Users
+      </label>
+      <div
+        class="feather-input-wrapper has-prefix"
+        data-v-47a74f22=""
+      >
+        <div
+          class="prefix"
+          data-v-47a74f22=""
+        >
+          
+          
+          <svg
+            aria-hidden="true"
+            class="feather-icon"
+            data-v-0aa06a12=""
+            focusable="false"
+            height="24"
+            role="img"
+            viewBox="0 0 24 24"
+            width="24"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M20.29,18.84l-5.56-5.56A6.48,6.48,0,0,0,10.86,3.1,6.5,6.5,0,0,0,7.58,15.67a6.43,6.43,0,0,0,5.74-1l5.56,5.56a1,1,0,0,0,1.41,0h0A1,1,0,0,0,20.29,18.84ZM5,9.46A4.5,4.5,0,1,1,9.5,14,4.49,4.49,0,0,1,5,9.46Z"
+            />
+          </svg>
+          
+          
+        </div>
+        
+        <div
+          class="feather-autocomplete-content"
+        >
+          <div
+            aria-atomic="true"
+            aria-live="assertive"
+            class="alert"
+            role="alert"
+          />
+          <div
+            class="description"
+            id="feather-autocomplete-input-selected"
+          />
+          
+          
+          <textarea
+            aria-activedescendant=""
+            aria-autocomplete="list"
+            aria-busy="true"
+            aria-controls="feather-autocomplete-input-results"
+            aria-describedby="feather-autocomplete-input-selected feather-autocomplete-description"
+            aria-disabled="false"
+            aria-invalid="false"
+            autocomplete="off"
+            class="feather-autocomplete-input"
+            data-ref-id="feather-input"
+            id="feather-autocomplete-input"
+            style="height: 0px; flex-basis: 100%; white-space: normal;"
+            tabindex="0"
+          />
+        </div>
+        
+        <div
+          class="post"
+          data-v-47a74f22=""
+        >
+          <!---->
+          <!---->
+          
+          <svg
+            aria-hidden="true"
+            class="feather-autocomplete-dropdown-icon rotate feather-icon feather-autocomplete-dropdown-icon rotate"
+            data-v-0aa06a12=""
+            focusable="false"
+            height="24"
+            role="img"
+            viewBox="0 0 24 24"
+            width="24"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M6.71,9.29a1,1,0,0,0,0,1.41l4.59,4.59a1,1,0,0,0,1.41,0L17.3,10.7a1,1,0,0,0-1.41-1.41L12,13.17,8.12,9.29A1,1,0,0,0,6.71,9.29Z"
+            />
+          </svg>
+          
+        </div>
+      </div>
+    </div>
+    
+    <div
+      class="feather-menu-dropdown bottom-left"
+      data-v-6f68d0ea=""
+      id="feather-menu-dropdown"
+      style=""
+    >
+      
+      <ul
+        aria-hidden="false"
+        aria-label="Users"
+        aria-live="polite"
+        aria-multiselectable="false"
+        class="feather-list feather-autocomplete-results-list autocomplete-results"
+        data-v-4ef0e6d6=""
+        id="feather-autocomplete-input-results"
+        role="listbox"
+        style="display: none;"
+        tabindex="-1"
+      >
+        
+        
+      </ul>
+      <!--v-if-->
+      <!--v-if-->
+      <!--v-if-->
+      <!--v-if-->
+      <div
+        class="spinner-container"
+      >
+        <svg
+          class="spinner"
+          viewBox="0 0 66 66"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <circle
+            class="path"
+            cx="33"
+            cy="33"
+            fill="none"
+            r="30"
+            stroke-linecap="round"
+            stroke-width="6"
+          />
+        </svg>
+      </div>
+      
+    </div>
+  </div>
+  <div
+    class="feather-input-sub-text"
+    data-v-764b8d6b=""
+    id="feather-autocomplete-description"
+    style="display: none;"
+  >
+    <!---->
+    <!---->
+    
+    
+  </div>
+</div>
+`;
+
+exports[`Feather Autocomplete base functionality single should show no results text when search returns no results 1`] = `
+<div
+  class="feather-autocomplete-container"
+>
+  <div
+    class="feather-menu feather-autocomplete-menu-container"
+    data-v-6f68d0ea=""
+  >
+    
+    <div
+      aria-controls="feather-menu-dropdown"
+      aria-expanded="false"
+      aria-haspopup="true"
+      aria-label="Users"
+      aria-owns="feather-autocomplete-input-results"
+      class="feather-input-wrapper-container raised focused"
+      data-v-47a74f22=""
+      id="feather-menu-trigger"
+      menu-trigger=""
+      role="combobox"
+    >
+      <fieldset
+        aria-hidden="true"
+        class="feather-input-border"
+        data-v-47a74f22=""
+      >
+        <legend
+          data-v-47a74f22=""
+        >
+          Users
+        </legend>
+      </fieldset>
+      <label
+        class="feather-input-label"
+        data-ref-id="feather-form-element-label"
+        data-v-47a74f22=""
+        for="feather-autocomplete-input"
+        style="left: 12px;"
+      >
+        Users
+      </label>
+      <div
+        class="feather-input-wrapper has-prefix"
+        data-v-47a74f22=""
+      >
+        <div
+          class="prefix"
+          data-v-47a74f22=""
+        >
+          
+          
+          <svg
+            aria-hidden="true"
+            class="feather-icon"
+            data-v-0aa06a12=""
+            focusable="false"
+            height="24"
+            role="img"
+            viewBox="0 0 24 24"
+            width="24"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M20.29,18.84l-5.56-5.56A6.48,6.48,0,0,0,10.86,3.1,6.5,6.5,0,0,0,7.58,15.67a6.43,6.43,0,0,0,5.74-1l5.56,5.56a1,1,0,0,0,1.41,0h0A1,1,0,0,0,20.29,18.84ZM5,9.46A4.5,4.5,0,1,1,9.5,14,4.49,4.49,0,0,1,5,9.46Z"
+            />
+          </svg>
+          
+          
+        </div>
+        
+        <div
+          class="feather-autocomplete-content"
+        >
+          <div
+            aria-atomic="true"
+            aria-live="assertive"
+            class="alert"
+            role="alert"
+          />
+          <div
+            class="description"
+            id="feather-autocomplete-input-selected"
+          />
+          
+          
+          <textarea
+            aria-activedescendant=""
+            aria-autocomplete="list"
+            aria-busy="false"
+            aria-controls="feather-autocomplete-input-results"
+            aria-describedby="feather-autocomplete-input-selected feather-autocomplete-description"
+            aria-disabled="false"
+            aria-invalid="false"
+            autocomplete="off"
+            class="feather-autocomplete-input"
+            data-ref-id="feather-input"
+            id="feather-autocomplete-input"
+            style="height: 0px; flex-basis: 100%; white-space: normal;"
+            tabindex="0"
+          />
+        </div>
+        
+        <div
+          class="post"
+          data-v-47a74f22=""
+        >
+          <!---->
+          <!---->
+          
+          <svg
+            aria-hidden="true"
+            class="feather-autocomplete-dropdown-icon rotate feather-icon feather-autocomplete-dropdown-icon rotate"
+            data-v-0aa06a12=""
+            focusable="false"
+            height="24"
+            role="img"
+            viewBox="0 0 24 24"
+            width="24"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M6.71,9.29a1,1,0,0,0,0,1.41l4.59,4.59a1,1,0,0,0,1.41,0L17.3,10.7a1,1,0,0,0-1.41-1.41L12,13.17,8.12,9.29A1,1,0,0,0,6.71,9.29Z"
+            />
+          </svg>
+          
+        </div>
+      </div>
+    </div>
+    
+    <div
+      class="feather-menu-dropdown bottom-left"
+      data-v-6f68d0ea=""
+      id="feather-menu-dropdown"
+      style=""
+    >
+      
+      <ul
+        aria-hidden="false"
+        aria-label="Users"
+        aria-live="polite"
+        aria-multiselectable="false"
+        class="feather-list feather-autocomplete-results-list autocomplete-results"
+        data-v-4ef0e6d6=""
+        id="feather-autocomplete-input-results"
+        role="listbox"
+        style="display: none;"
+        tabindex="-1"
+      >
+        
+        
+      </ul>
+      <!--v-if-->
+      <ul
+        class="feather-list result-list"
+        data-v-4ef0e6d6=""
+      >
+        
+        <li
+          class="feather-list-item hover focus"
+          data-v-e9e0333c=""
+          style="overflow: hidden; position: relative;"
+        >
+          <!---->
+          <span
+            class="feather-list-item-text"
+            data-v-e9e0333c=""
+          >
+            
+            <span
+              data-ref-id="feather-autocomplete-no-results"
+            >
+              No results found
+            </span>
+            
+          </span>
+          <!---->
+        </li>
+        
+      </ul>
+      <!--v-if-->
+      <!--v-if-->
+      <!--v-if-->
+      
+    </div>
+  </div>
+  <div
+    class="feather-input-sub-text"
+    data-v-764b8d6b=""
+    id="feather-autocomplete-description"
+    style="display: none;"
+  >
+    <!---->
+    <!---->
+    
+    
+  </div>
+</div>
+`;
+
+exports[`Feather Autocomplete multi:specific chip selection should move chip selection left when left arrow is pressed, so long it is not the left most token 1`] = `
+<div
+  class="feather-autocomplete-container"
+>
+  <div
+    class="feather-menu feather-autocomplete-menu-container"
+    data-v-6f68d0ea=""
+  >
+    
+    <div
+      aria-controls="feather-menu-dropdown"
+      aria-expanded="false"
+      aria-haspopup="true"
+      aria-label="Users"
+      aria-owns="feather-autocomplete-input-results"
+      class="feather-input-wrapper-container raised"
+      data-v-47a74f22=""
+      id="feather-menu-trigger"
+      menu-trigger=""
+      role="combobox"
+    >
+      <fieldset
+        aria-hidden="true"
+        class="feather-input-border"
+        data-v-47a74f22=""
+      >
+        <legend
+          data-v-47a74f22=""
+        >
+          Users
+        </legend>
+      </fieldset>
+      <label
+        class="feather-input-label"
+        data-ref-id="feather-form-element-label"
+        data-v-47a74f22=""
+        for="feather-autocomplete-input"
+        style="left: 12px;"
+      >
+        Users
+      </label>
+      <div
+        class="feather-input-wrapper has-prefix"
+        data-v-47a74f22=""
+      >
+        <div
+          class="prefix"
+          data-v-47a74f22=""
+        >
+          
+          
+          <svg
+            aria-hidden="true"
+            class="feather-icon"
+            data-v-0aa06a12=""
+            focusable="false"
+            height="24"
+            role="img"
+            viewBox="0 0 24 24"
+            width="24"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M20.29,18.84l-5.56-5.56A6.48,6.48,0,0,0,10.86,3.1,6.5,6.5,0,0,0,7.58,15.67a6.43,6.43,0,0,0,5.74-1l5.56,5.56a1,1,0,0,0,1.41,0h0A1,1,0,0,0,20.29,18.84ZM5,9.46A4.5,4.5,0,1,1,9.5,14,4.49,4.49,0,0,1,5,9.46Z"
+            />
+          </svg>
+          
+          
+        </div>
+        
+        <div
+          class="feather-autocomplete-content"
+        >
+          <div
+            aria-atomic="true"
+            aria-live="assertive"
+            class="alert"
+            role="alert"
+          />
+          <div
+            class="description"
+            id="feather-autocomplete-input-selected"
+          >
+            Test1, Test2
+          </div>
+          
+          <div
+            aria-disabled="false"
+            class="chip condensed focus autocomplete-chip focused"
+            data-v-3454cba5=""
+            id="active-chip"
+            role="button"
+          >
+            
+            <!--v-if-->
+            <span
+              class="label"
+              data-v-5fe439b1=""
+              title="false"
+            >
+              
+              Test1
+              
+            </span>
+            <span
+              class="chip-delete"
+            >
+              <span
+                class="feather-icon-container delete-icon"
+                data-v-0aa06a12=""
+              >
+                <svg
+                  aria-hidden="false"
+                  aria-label="Remove"
+                  class="delete-icon feather-icon feather-icon-flex"
+                  focusable="false"
+                  height="24"
+                  role="img"
+                  viewBox="0 0 24 24"
+                  width="24"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M12,2A10,10,0,1,0,22,12,10,10,0,0,0,12,2Zm5,13.24A1.26,1.26,0,0,1,17,17a1.24,1.24,0,0,1-1.76,0L12,13.73,8.76,17A1.24,1.24,0,1,1,7,15.24L10.24,12,7,8.76A1.24,1.24,0,0,1,8.76,7L12,10.2,15.24,7A1.24,1.24,0,1,1,17,8.76L13.76,12Z"
+                  />
+                </svg>
+              </span>
+            </span>
+            
+            <!---->
+          </div>
+          <div
+            aria-disabled="false"
+            class="chip condensed focus autocomplete-chip"
+            data-v-3454cba5=""
+            role="button"
+          >
+            
+            <!--v-if-->
+            <span
+              class="label"
+              data-v-5fe439b1=""
+              title="false"
+            >
+              
+              Test2
+              
+            </span>
+            <span
+              class="chip-delete"
+            >
+              <span
+                class="feather-icon-container delete-icon"
+                data-v-0aa06a12=""
+              >
+                <svg
+                  aria-hidden="false"
+                  aria-label="Remove"
+                  class="delete-icon feather-icon feather-icon-flex"
+                  focusable="false"
+                  height="24"
+                  role="img"
+                  viewBox="0 0 24 24"
+                  width="24"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M12,2A10,10,0,1,0,22,12,10,10,0,0,0,12,2Zm5,13.24A1.26,1.26,0,0,1,17,17a1.24,1.24,0,0,1-1.76,0L12,13.73,8.76,17A1.24,1.24,0,1,1,7,15.24L10.24,12,7,8.76A1.24,1.24,0,0,1,8.76,7L12,10.2,15.24,7A1.24,1.24,0,1,1,17,8.76L13.76,12Z"
+                  />
+                </svg>
+              </span>
+            </span>
+            
+            <!---->
+          </div>
+          
+          <textarea
+            aria-activedescendant="active-chip"
+            aria-autocomplete="list"
+            aria-busy="false"
+            aria-controls="feather-autocomplete-input-results"
+            aria-describedby="feather-autocomplete-input-selected feather-autocomplete-description"
+            aria-disabled="false"
+            aria-invalid="false"
+            autocomplete="off"
+            class="feather-autocomplete-input"
+            data-ref-id="feather-input"
+            id="feather-autocomplete-input"
+            style="height: 0px; flex-basis: 100%; white-space: normal;"
+            tabindex="0"
+          />
+        </div>
+        
+        <div
+          class="post"
+          data-v-47a74f22=""
+        >
+          <!---->
+          <!---->
+          
+          <svg
+            aria-hidden="true"
+            class="feather-autocomplete-dropdown-icon feather-icon feather-autocomplete-dropdown-icon"
+            data-v-0aa06a12=""
+            focusable="false"
+            height="24"
+            role="img"
+            viewBox="0 0 24 24"
+            width="24"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M6.71,9.29a1,1,0,0,0,0,1.41l4.59,4.59a1,1,0,0,0,1.41,0L17.3,10.7a1,1,0,0,0-1.41-1.41L12,13.17,8.12,9.29A1,1,0,0,0,6.71,9.29Z"
+            />
+          </svg>
+          
+        </div>
+      </div>
+    </div>
+    
+    <div
+      class="feather-menu-dropdown bottom-left"
+      data-v-6f68d0ea=""
+      id="feather-menu-dropdown"
+      style="display: none;"
+    >
+      
+      <ul
+        aria-hidden="false"
+        aria-label="Users"
+        aria-live="polite"
+        aria-multiselectable="true"
+        class="feather-list feather-autocomplete-results-list autocomplete-results"
+        data-v-4ef0e6d6=""
+        id="feather-autocomplete-input-results"
+        role="listbox"
+        style="display: none;"
+        tabindex="-1"
+      >
+        
+        
+      </ul>
+      <!--v-if-->
+      <!--v-if-->
+      <!--v-if-->
+      <!--v-if-->
+      <!--v-if-->
+      
+    </div>
+  </div>
+  <div
+    class="feather-input-sub-text"
+    data-v-764b8d6b=""
+    id="feather-autocomplete-description"
+    style="display: none;"
+  >
+    <!---->
+    <!---->
+    
+    
+  </div>
+</div>
+`;
+
+exports[`Feather Autocomplete multi:specific chip selection should move chip selection right when right arrow is pressed, so long it is not the right most token 1`] = `
+<div
+  class="feather-autocomplete-container"
+>
+  <div
+    class="feather-menu feather-autocomplete-menu-container"
+    data-v-6f68d0ea=""
+  >
+    
+    <div
+      aria-controls="feather-menu-dropdown"
+      aria-expanded="false"
+      aria-haspopup="true"
+      aria-label="Users"
+      aria-owns="feather-autocomplete-input-results"
+      class="feather-input-wrapper-container raised"
+      data-v-47a74f22=""
+      id="feather-menu-trigger"
+      menu-trigger=""
+      role="combobox"
+    >
+      <fieldset
+        aria-hidden="true"
+        class="feather-input-border"
+        data-v-47a74f22=""
+      >
+        <legend
+          data-v-47a74f22=""
+        >
+          Users
+        </legend>
+      </fieldset>
+      <label
+        class="feather-input-label"
+        data-ref-id="feather-form-element-label"
+        data-v-47a74f22=""
+        for="feather-autocomplete-input"
+        style="left: 12px;"
+      >
+        Users
+      </label>
+      <div
+        class="feather-input-wrapper has-prefix"
+        data-v-47a74f22=""
+      >
+        <div
+          class="prefix"
+          data-v-47a74f22=""
+        >
+          
+          
+          <svg
+            aria-hidden="true"
+            class="feather-icon"
+            data-v-0aa06a12=""
+            focusable="false"
+            height="24"
+            role="img"
+            viewBox="0 0 24 24"
+            width="24"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M20.29,18.84l-5.56-5.56A6.48,6.48,0,0,0,10.86,3.1,6.5,6.5,0,0,0,7.58,15.67a6.43,6.43,0,0,0,5.74-1l5.56,5.56a1,1,0,0,0,1.41,0h0A1,1,0,0,0,20.29,18.84ZM5,9.46A4.5,4.5,0,1,1,9.5,14,4.49,4.49,0,0,1,5,9.46Z"
+            />
+          </svg>
+          
+          
+        </div>
+        
+        <div
+          class="feather-autocomplete-content"
+        >
+          <div
+            aria-atomic="true"
+            aria-live="assertive"
+            class="alert"
+            role="alert"
+          />
+          <div
+            class="description"
+            id="feather-autocomplete-input-selected"
+          >
+            Test1, Test2
+          </div>
+          
+          <div
+            aria-disabled="false"
+            class="chip condensed focus autocomplete-chip"
+            data-v-3454cba5=""
+            role="button"
+          >
+            
+            <!--v-if-->
+            <span
+              class="label"
+              data-v-5fe439b1=""
+              title="false"
+            >
+              
+              Test1
+              
+            </span>
+            <span
+              class="chip-delete"
+            >
+              <span
+                class="feather-icon-container delete-icon"
+                data-v-0aa06a12=""
+              >
+                <svg
+                  aria-hidden="false"
+                  aria-label="Remove"
+                  class="delete-icon feather-icon feather-icon-flex"
+                  focusable="false"
+                  height="24"
+                  role="img"
+                  viewBox="0 0 24 24"
+                  width="24"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M12,2A10,10,0,1,0,22,12,10,10,0,0,0,12,2Zm5,13.24A1.26,1.26,0,0,1,17,17a1.24,1.24,0,0,1-1.76,0L12,13.73,8.76,17A1.24,1.24,0,1,1,7,15.24L10.24,12,7,8.76A1.24,1.24,0,0,1,8.76,7L12,10.2,15.24,7A1.24,1.24,0,1,1,17,8.76L13.76,12Z"
+                  />
+                </svg>
+              </span>
+            </span>
+            
+            <!---->
+          </div>
+          <div
+            aria-disabled="false"
+            class="chip condensed focus autocomplete-chip focused"
+            data-v-3454cba5=""
+            id="active-chip"
+            role="button"
+          >
+            
+            <!--v-if-->
+            <span
+              class="label"
+              data-v-5fe439b1=""
+              title="false"
+            >
+              
+              Test2
+              
+            </span>
+            <span
+              class="chip-delete"
+            >
+              <span
+                class="feather-icon-container delete-icon"
+                data-v-0aa06a12=""
+              >
+                <svg
+                  aria-hidden="false"
+                  aria-label="Remove"
+                  class="delete-icon feather-icon feather-icon-flex"
+                  focusable="false"
+                  height="24"
+                  role="img"
+                  viewBox="0 0 24 24"
+                  width="24"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M12,2A10,10,0,1,0,22,12,10,10,0,0,0,12,2Zm5,13.24A1.26,1.26,0,0,1,17,17a1.24,1.24,0,0,1-1.76,0L12,13.73,8.76,17A1.24,1.24,0,1,1,7,15.24L10.24,12,7,8.76A1.24,1.24,0,0,1,8.76,7L12,10.2,15.24,7A1.24,1.24,0,1,1,17,8.76L13.76,12Z"
+                  />
+                </svg>
+              </span>
+            </span>
+            
+            <!---->
+          </div>
+          
+          <textarea
+            aria-activedescendant="active-chip"
+            aria-autocomplete="list"
+            aria-busy="false"
+            aria-controls="feather-autocomplete-input-results"
+            aria-describedby="feather-autocomplete-input-selected feather-autocomplete-description"
+            aria-disabled="false"
+            aria-invalid="false"
+            autocomplete="off"
+            class="feather-autocomplete-input"
+            data-ref-id="feather-input"
+            id="feather-autocomplete-input"
+            style="height: 0px; flex-basis: 100%; white-space: normal;"
+            tabindex="0"
+          />
+        </div>
+        
+        <div
+          class="post"
+          data-v-47a74f22=""
+        >
+          <!---->
+          <!---->
+          
+          <svg
+            aria-hidden="true"
+            class="feather-autocomplete-dropdown-icon feather-icon feather-autocomplete-dropdown-icon"
+            data-v-0aa06a12=""
+            focusable="false"
+            height="24"
+            role="img"
+            viewBox="0 0 24 24"
+            width="24"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M6.71,9.29a1,1,0,0,0,0,1.41l4.59,4.59a1,1,0,0,0,1.41,0L17.3,10.7a1,1,0,0,0-1.41-1.41L12,13.17,8.12,9.29A1,1,0,0,0,6.71,9.29Z"
+            />
+          </svg>
+          
+        </div>
+      </div>
+    </div>
+    
+    <div
+      class="feather-menu-dropdown bottom-left"
+      data-v-6f68d0ea=""
+      id="feather-menu-dropdown"
+      style="display: none;"
+    >
+      
+      <ul
+        aria-hidden="false"
+        aria-label="Users"
+        aria-live="polite"
+        aria-multiselectable="true"
+        class="feather-list feather-autocomplete-results-list autocomplete-results"
+        data-v-4ef0e6d6=""
+        id="feather-autocomplete-input-results"
+        role="listbox"
+        style="display: none;"
+        tabindex="-1"
+      >
+        
+        
+      </ul>
+      <!--v-if-->
+      <!--v-if-->
+      <!--v-if-->
+      <!--v-if-->
+      <!--v-if-->
+      
+    </div>
+  </div>
+  <div
+    class="feather-input-sub-text"
+    data-v-764b8d6b=""
+    id="feather-autocomplete-description"
+    style="display: none;"
+  >
+    <!---->
+    <!---->
+    
+    
+  </div>
+</div>
+`;
+
+exports[`Feather Autocomplete multi:specific chip selection should not move chip selection when left is pressed on the left most token 1`] = `
+<div
+  class="feather-autocomplete-container"
+>
+  <div
+    class="feather-menu feather-autocomplete-menu-container"
+    data-v-6f68d0ea=""
+  >
+    
+    <div
+      aria-controls="feather-menu-dropdown"
+      aria-expanded="false"
+      aria-haspopup="true"
+      aria-label="Users"
+      aria-owns="feather-autocomplete-input-results"
+      class="feather-input-wrapper-container raised"
+      data-v-47a74f22=""
+      id="feather-menu-trigger"
+      menu-trigger=""
+      role="combobox"
+    >
+      <fieldset
+        aria-hidden="true"
+        class="feather-input-border"
+        data-v-47a74f22=""
+      >
+        <legend
+          data-v-47a74f22=""
+        >
+          Users
+        </legend>
+      </fieldset>
+      <label
+        class="feather-input-label"
+        data-ref-id="feather-form-element-label"
+        data-v-47a74f22=""
+        for="feather-autocomplete-input"
+        style="left: 12px;"
+      >
+        Users
+      </label>
+      <div
+        class="feather-input-wrapper has-prefix"
+        data-v-47a74f22=""
+      >
+        <div
+          class="prefix"
+          data-v-47a74f22=""
+        >
+          
+          
+          <svg
+            aria-hidden="true"
+            class="feather-icon"
+            data-v-0aa06a12=""
+            focusable="false"
+            height="24"
+            role="img"
+            viewBox="0 0 24 24"
+            width="24"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M20.29,18.84l-5.56-5.56A6.48,6.48,0,0,0,10.86,3.1,6.5,6.5,0,0,0,7.58,15.67a6.43,6.43,0,0,0,5.74-1l5.56,5.56a1,1,0,0,0,1.41,0h0A1,1,0,0,0,20.29,18.84ZM5,9.46A4.5,4.5,0,1,1,9.5,14,4.49,4.49,0,0,1,5,9.46Z"
+            />
+          </svg>
+          
+          
+        </div>
+        
+        <div
+          class="feather-autocomplete-content"
+        >
+          <div
+            aria-atomic="true"
+            aria-live="assertive"
+            class="alert"
+            role="alert"
+          />
+          <div
+            class="description"
+            id="feather-autocomplete-input-selected"
+          >
+            Test1, Test2
+          </div>
+          
+          <div
+            aria-disabled="false"
+            class="chip condensed focus autocomplete-chip focused"
+            data-v-3454cba5=""
+            id="active-chip"
+            role="button"
+          >
+            
+            <!--v-if-->
+            <span
+              class="label"
+              data-v-5fe439b1=""
+              title="false"
+            >
+              
+              Test1
+              
+            </span>
+            <span
+              class="chip-delete"
+            >
+              <span
+                class="feather-icon-container delete-icon"
+                data-v-0aa06a12=""
+              >
+                <svg
+                  aria-hidden="false"
+                  aria-label="Remove"
+                  class="delete-icon feather-icon feather-icon-flex"
+                  focusable="false"
+                  height="24"
+                  role="img"
+                  viewBox="0 0 24 24"
+                  width="24"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M12,2A10,10,0,1,0,22,12,10,10,0,0,0,12,2Zm5,13.24A1.26,1.26,0,0,1,17,17a1.24,1.24,0,0,1-1.76,0L12,13.73,8.76,17A1.24,1.24,0,1,1,7,15.24L10.24,12,7,8.76A1.24,1.24,0,0,1,8.76,7L12,10.2,15.24,7A1.24,1.24,0,1,1,17,8.76L13.76,12Z"
+                  />
+                </svg>
+              </span>
+            </span>
+            
+            <!---->
+          </div>
+          <div
+            aria-disabled="false"
+            class="chip condensed focus autocomplete-chip"
+            data-v-3454cba5=""
+            role="button"
+          >
+            
+            <!--v-if-->
+            <span
+              class="label"
+              data-v-5fe439b1=""
+              title="false"
+            >
+              
+              Test2
+              
+            </span>
+            <span
+              class="chip-delete"
+            >
+              <span
+                class="feather-icon-container delete-icon"
+                data-v-0aa06a12=""
+              >
+                <svg
+                  aria-hidden="false"
+                  aria-label="Remove"
+                  class="delete-icon feather-icon feather-icon-flex"
+                  focusable="false"
+                  height="24"
+                  role="img"
+                  viewBox="0 0 24 24"
+                  width="24"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M12,2A10,10,0,1,0,22,12,10,10,0,0,0,12,2Zm5,13.24A1.26,1.26,0,0,1,17,17a1.24,1.24,0,0,1-1.76,0L12,13.73,8.76,17A1.24,1.24,0,1,1,7,15.24L10.24,12,7,8.76A1.24,1.24,0,0,1,8.76,7L12,10.2,15.24,7A1.24,1.24,0,1,1,17,8.76L13.76,12Z"
+                  />
+                </svg>
+              </span>
+            </span>
+            
+            <!---->
+          </div>
+          
+          <textarea
+            aria-activedescendant="active-chip"
+            aria-autocomplete="list"
+            aria-busy="false"
+            aria-controls="feather-autocomplete-input-results"
+            aria-describedby="feather-autocomplete-input-selected feather-autocomplete-description"
+            aria-disabled="false"
+            aria-invalid="false"
+            autocomplete="off"
+            class="feather-autocomplete-input"
+            data-ref-id="feather-input"
+            id="feather-autocomplete-input"
+            style="height: 0px; flex-basis: 100%; white-space: normal;"
+            tabindex="0"
+          />
+        </div>
+        
+        <div
+          class="post"
+          data-v-47a74f22=""
+        >
+          <!---->
+          <!---->
+          
+          <svg
+            aria-hidden="true"
+            class="feather-autocomplete-dropdown-icon feather-icon feather-autocomplete-dropdown-icon"
+            data-v-0aa06a12=""
+            focusable="false"
+            height="24"
+            role="img"
+            viewBox="0 0 24 24"
+            width="24"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M6.71,9.29a1,1,0,0,0,0,1.41l4.59,4.59a1,1,0,0,0,1.41,0L17.3,10.7a1,1,0,0,0-1.41-1.41L12,13.17,8.12,9.29A1,1,0,0,0,6.71,9.29Z"
+            />
+          </svg>
+          
+        </div>
+      </div>
+    </div>
+    
+    <div
+      class="feather-menu-dropdown bottom-left"
+      data-v-6f68d0ea=""
+      id="feather-menu-dropdown"
+      style="display: none;"
+    >
+      
+      <ul
+        aria-hidden="false"
+        aria-label="Users"
+        aria-live="polite"
+        aria-multiselectable="true"
+        class="feather-list feather-autocomplete-results-list autocomplete-results"
+        data-v-4ef0e6d6=""
+        id="feather-autocomplete-input-results"
+        role="listbox"
+        style="display: none;"
+        tabindex="-1"
+      >
+        
+        
+      </ul>
+      <!--v-if-->
+      <!--v-if-->
+      <!--v-if-->
+      <!--v-if-->
+      <!--v-if-->
+      
+    </div>
+  </div>
+  <div
+    class="feather-input-sub-text"
+    data-v-764b8d6b=""
+    id="feather-autocomplete-description"
+    style="display: none;"
+  >
+    <!---->
+    <!---->
+    
+    
+  </div>
+</div>
+`;
+
+exports[`Feather Autocomplete multi:specific chip selection should not perform any chip navigation when there is text 1`] = `
+<div
+  class="feather-autocomplete-container"
+>
+  <div
+    class="feather-menu feather-autocomplete-menu-container"
+    data-v-6f68d0ea=""
+  >
+    
+    <div
+      aria-controls="feather-menu-dropdown"
+      aria-expanded="false"
+      aria-haspopup="true"
+      aria-label="Users"
+      aria-owns="feather-autocomplete-input-results"
+      class="feather-input-wrapper-container raised"
+      data-v-47a74f22=""
+      id="feather-menu-trigger"
+      menu-trigger=""
+      role="combobox"
+    >
+      <fieldset
+        aria-hidden="true"
+        class="feather-input-border"
+        data-v-47a74f22=""
+      >
+        <legend
+          data-v-47a74f22=""
+        >
+          Users
+        </legend>
+      </fieldset>
+      <label
+        class="feather-input-label"
+        data-ref-id="feather-form-element-label"
+        data-v-47a74f22=""
+        for="feather-autocomplete-input"
+        style="left: 12px;"
+      >
+        Users
+      </label>
+      <div
+        class="feather-input-wrapper has-prefix"
+        data-v-47a74f22=""
+      >
+        <div
+          class="prefix"
+          data-v-47a74f22=""
+        >
+          
+          
+          <svg
+            aria-hidden="true"
+            class="feather-icon"
+            data-v-0aa06a12=""
+            focusable="false"
+            height="24"
+            role="img"
+            viewBox="0 0 24 24"
+            width="24"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M20.29,18.84l-5.56-5.56A6.48,6.48,0,0,0,10.86,3.1,6.5,6.5,0,0,0,7.58,15.67a6.43,6.43,0,0,0,5.74-1l5.56,5.56a1,1,0,0,0,1.41,0h0A1,1,0,0,0,20.29,18.84ZM5,9.46A4.5,4.5,0,1,1,9.5,14,4.49,4.49,0,0,1,5,9.46Z"
+            />
+          </svg>
+          
+          
+        </div>
+        
+        <div
+          class="feather-autocomplete-content"
+        >
+          <div
+            aria-atomic="true"
+            aria-live="assertive"
+            class="alert"
+            role="alert"
+          />
+          <div
+            class="description"
+            id="feather-autocomplete-input-selected"
+          >
+            Test1, Test2
+          </div>
+          
+          <div
+            aria-disabled="false"
+            class="chip condensed focus autocomplete-chip"
+            data-v-3454cba5=""
+            role="button"
+          >
+            
+            <!--v-if-->
+            <span
+              class="label"
+              data-v-5fe439b1=""
+              title="false"
+            >
+              
+              Test1
+              
+            </span>
+            <span
+              class="chip-delete"
+            >
+              <span
+                class="feather-icon-container delete-icon"
+                data-v-0aa06a12=""
+              >
+                <svg
+                  aria-hidden="false"
+                  aria-label="Remove"
+                  class="delete-icon feather-icon feather-icon-flex"
+                  focusable="false"
+                  height="24"
+                  role="img"
+                  viewBox="0 0 24 24"
+                  width="24"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M12,2A10,10,0,1,0,22,12,10,10,0,0,0,12,2Zm5,13.24A1.26,1.26,0,0,1,17,17a1.24,1.24,0,0,1-1.76,0L12,13.73,8.76,17A1.24,1.24,0,1,1,7,15.24L10.24,12,7,8.76A1.24,1.24,0,0,1,8.76,7L12,10.2,15.24,7A1.24,1.24,0,1,1,17,8.76L13.76,12Z"
+                  />
+                </svg>
+              </span>
+            </span>
+            
+            <!---->
+          </div>
+          <div
+            aria-disabled="false"
+            class="chip condensed focus autocomplete-chip"
+            data-v-3454cba5=""
+            role="button"
+          >
+            
+            <!--v-if-->
+            <span
+              class="label"
+              data-v-5fe439b1=""
+              title="false"
+            >
+              
+              Test2
+              
+            </span>
+            <span
+              class="chip-delete"
+            >
+              <span
+                class="feather-icon-container delete-icon"
+                data-v-0aa06a12=""
+              >
+                <svg
+                  aria-hidden="false"
+                  aria-label="Remove"
+                  class="delete-icon feather-icon feather-icon-flex"
+                  focusable="false"
+                  height="24"
+                  role="img"
+                  viewBox="0 0 24 24"
+                  width="24"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M12,2A10,10,0,1,0,22,12,10,10,0,0,0,12,2Zm5,13.24A1.26,1.26,0,0,1,17,17a1.24,1.24,0,0,1-1.76,0L12,13.73,8.76,17A1.24,1.24,0,1,1,7,15.24L10.24,12,7,8.76A1.24,1.24,0,0,1,8.76,7L12,10.2,15.24,7A1.24,1.24,0,1,1,17,8.76L13.76,12Z"
+                  />
+                </svg>
+              </span>
+            </span>
+            
+            <!---->
+          </div>
+          
+          <textarea
+            aria-activedescendant=""
+            aria-autocomplete="list"
+            aria-busy="false"
+            aria-controls="feather-autocomplete-input-results"
+            aria-describedby="feather-autocomplete-input-selected feather-autocomplete-description"
+            aria-disabled="false"
+            aria-invalid="false"
+            autocomplete="off"
+            class="feather-autocomplete-input"
+            data-ref-id="feather-input"
+            id="feather-autocomplete-input"
+            style="height: 0px; flex-basis: 100%; white-space: normal;"
+            tabindex="0"
+          />
+        </div>
+        
+        <div
+          class="post"
+          data-v-47a74f22=""
+        >
+          <!---->
+          <!---->
+          
+          <svg
+            aria-hidden="true"
+            class="feather-autocomplete-dropdown-icon feather-icon feather-autocomplete-dropdown-icon"
+            data-v-0aa06a12=""
+            focusable="false"
+            height="24"
+            role="img"
+            viewBox="0 0 24 24"
+            width="24"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M6.71,9.29a1,1,0,0,0,0,1.41l4.59,4.59a1,1,0,0,0,1.41,0L17.3,10.7a1,1,0,0,0-1.41-1.41L12,13.17,8.12,9.29A1,1,0,0,0,6.71,9.29Z"
+            />
+          </svg>
+          
+        </div>
+      </div>
+    </div>
+    
+    <div
+      class="feather-menu-dropdown bottom-left"
+      data-v-6f68d0ea=""
+      id="feather-menu-dropdown"
+      style="display: none;"
+    >
+      
+      <ul
+        aria-hidden="false"
+        aria-label="Users"
+        aria-live="polite"
+        aria-multiselectable="true"
+        class="feather-list feather-autocomplete-results-list autocomplete-results"
+        data-v-4ef0e6d6=""
+        id="feather-autocomplete-input-results"
+        role="listbox"
+        style="display: none;"
+        tabindex="-1"
+      >
+        
+        
+      </ul>
+      <!--v-if-->
+      <!--v-if-->
+      <!--v-if-->
+      <!--v-if-->
+      <!--v-if-->
+      
+    </div>
+  </div>
+  <div
+    class="feather-input-sub-text"
+    data-v-764b8d6b=""
+    id="feather-autocomplete-description"
+    style="display: none;"
+  >
+    <!---->
+    <!---->
+    
+    
+  </div>
+</div>
+`;
+
+exports[`Feather Autocomplete multi:specific chip selection should select rightmost token if left is pressed whilst navigating the menu and there is no search text 1`] = `
+<div
+  class="feather-autocomplete-container"
+>
+  <div
+    class="feather-menu feather-autocomplete-menu-container"
+    data-v-6f68d0ea=""
+  >
+    
+    <div
+      aria-controls="feather-menu-dropdown"
+      aria-expanded="true"
+      aria-haspopup="true"
+      aria-label="Users"
+      aria-owns="feather-autocomplete-input-results"
+      class="feather-input-wrapper-container raised focused"
+      data-v-47a74f22=""
+      id="feather-menu-trigger"
+      menu-trigger=""
+      role="combobox"
+    >
+      <fieldset
+        aria-hidden="true"
+        class="feather-input-border"
+        data-v-47a74f22=""
+      >
+        <legend
+          data-v-47a74f22=""
+        >
+          Users
+        </legend>
+      </fieldset>
+      <label
+        class="feather-input-label"
+        data-ref-id="feather-form-element-label"
+        data-v-47a74f22=""
+        for="feather-autocomplete-input"
+        style="left: 12px;"
+      >
+        Users
+      </label>
+      <div
+        class="feather-input-wrapper has-prefix"
+        data-v-47a74f22=""
+      >
+        <div
+          class="prefix"
+          data-v-47a74f22=""
+        >
+          
+          
+          <svg
+            aria-hidden="true"
+            class="feather-icon"
+            data-v-0aa06a12=""
+            focusable="false"
+            height="24"
+            role="img"
+            viewBox="0 0 24 24"
+            width="24"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M20.29,18.84l-5.56-5.56A6.48,6.48,0,0,0,10.86,3.1,6.5,6.5,0,0,0,7.58,15.67a6.43,6.43,0,0,0,5.74-1l5.56,5.56a1,1,0,0,0,1.41,0h0A1,1,0,0,0,20.29,18.84ZM5,9.46A4.5,4.5,0,1,1,9.5,14,4.49,4.49,0,0,1,5,9.46Z"
+            />
+          </svg>
+          
+          
+        </div>
+        
+        <div
+          class="feather-autocomplete-content"
+        >
+          <div
+            aria-atomic="true"
+            aria-live="assertive"
+            class="alert"
+            role="alert"
+          />
+          <div
+            class="description"
+            id="feather-autocomplete-input-selected"
+          >
+            Test11, Test21
+          </div>
+          
+          <div
+            aria-disabled="false"
+            class="chip condensed focus autocomplete-chip"
+            data-v-3454cba5=""
+            role="button"
+          >
+            
+            <!--v-if-->
+            <span
+              class="label"
+              data-v-5fe439b1=""
+              title="false"
+            >
+              
+              Test11
+              
+            </span>
+            <span
+              class="chip-delete"
+            >
+              <span
+                class="feather-icon-container delete-icon"
+                data-v-0aa06a12=""
+              >
+                <svg
+                  aria-hidden="false"
+                  aria-label="Remove"
+                  class="delete-icon feather-icon feather-icon-flex"
+                  focusable="false"
+                  height="24"
+                  role="img"
+                  viewBox="0 0 24 24"
+                  width="24"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M12,2A10,10,0,1,0,22,12,10,10,0,0,0,12,2Zm5,13.24A1.26,1.26,0,0,1,17,17a1.24,1.24,0,0,1-1.76,0L12,13.73,8.76,17A1.24,1.24,0,1,1,7,15.24L10.24,12,7,8.76A1.24,1.24,0,0,1,8.76,7L12,10.2,15.24,7A1.24,1.24,0,1,1,17,8.76L13.76,12Z"
+                  />
+                </svg>
+              </span>
+            </span>
+            
+            <!---->
+          </div>
+          <div
+            aria-disabled="false"
+            class="chip condensed focus autocomplete-chip focused"
+            data-v-3454cba5=""
+            id="active-chip"
+            role="button"
+          >
+            
+            <!--v-if-->
+            <span
+              class="label"
+              data-v-5fe439b1=""
+              title="false"
+            >
+              
+              Test21
+              
+            </span>
+            <span
+              class="chip-delete"
+            >
+              <span
+                class="feather-icon-container delete-icon"
+                data-v-0aa06a12=""
+              >
+                <svg
+                  aria-hidden="false"
+                  aria-label="Remove"
+                  class="delete-icon feather-icon feather-icon-flex"
+                  focusable="false"
+                  height="24"
+                  role="img"
+                  viewBox="0 0 24 24"
+                  width="24"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M12,2A10,10,0,1,0,22,12,10,10,0,0,0,12,2Zm5,13.24A1.26,1.26,0,0,1,17,17a1.24,1.24,0,0,1-1.76,0L12,13.73,8.76,17A1.24,1.24,0,1,1,7,15.24L10.24,12,7,8.76A1.24,1.24,0,0,1,8.76,7L12,10.2,15.24,7A1.24,1.24,0,1,1,17,8.76L13.76,12Z"
+                  />
+                </svg>
+              </span>
+            </span>
+            
+            <!---->
+          </div>
+          
+          <textarea
+            aria-activedescendant="active-chip"
+            aria-autocomplete="list"
+            aria-busy="false"
+            aria-controls="feather-autocomplete-input-results"
+            aria-describedby="feather-autocomplete-input-selected feather-autocomplete-description"
+            aria-disabled="false"
+            aria-invalid="false"
+            autocomplete="off"
+            class="feather-autocomplete-input"
+            data-ref-id="feather-input"
+            id="feather-autocomplete-input"
+            style="height: 0px; flex-basis: 100%; white-space: normal;"
+            tabindex="0"
+          />
+        </div>
+        
+        <div
+          class="post"
+          data-v-47a74f22=""
+        >
+          <!---->
+          <!---->
+          
+          <svg
+            aria-hidden="true"
+            class="feather-autocomplete-dropdown-icon rotate feather-icon feather-autocomplete-dropdown-icon rotate"
+            data-v-0aa06a12=""
+            focusable="false"
+            height="24"
+            role="img"
+            viewBox="0 0 24 24"
+            width="24"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M6.71,9.29a1,1,0,0,0,0,1.41l4.59,4.59a1,1,0,0,0,1.41,0L17.3,10.7a1,1,0,0,0-1.41-1.41L12,13.17,8.12,9.29A1,1,0,0,0,6.71,9.29Z"
+            />
+          </svg>
+          
+        </div>
+      </div>
+    </div>
+    
+    <div
+      class="feather-menu-dropdown bottom-left"
+      data-v-6f68d0ea=""
+      id="feather-menu-dropdown"
+      style=""
+    >
+      
+      <ul
+        aria-hidden="false"
+        aria-label="Users"
+        aria-live="polite"
+        aria-multiselectable="true"
+        class="feather-list feather-autocomplete-results-list autocomplete-results"
+        data-v-4ef0e6d6=""
+        id="feather-autocomplete-input-results"
+        role="listbox"
+        style=""
+        tabindex="-1"
+      >
+        
+        <!-- eslint-disable -->
+        
+        
+        <li
+          aria-selected="false"
+          class="feather-list-item hover focus result-item hover"
+          data-v-e9e0333c=""
+          role="option"
+          style="overflow: hidden; position: relative;"
+          tabindex="-1"
+        >
+          <!---->
+          <span
+            class="feather-list-item-text"
+            data-v-e9e0333c=""
+          >
+            <span>
+              <span>
+                Test1
+              </span>
+              <!--v-if-->
+              <!--v-if-->
+            </span>
+            <!--v-if-->
+          </span>
+          <!---->
+        </li>
+        <!--v-if-->
+        
+        
+        <li
+          aria-selected="false"
+          class="feather-list-item hover focus result-item hover"
+          data-v-e9e0333c=""
+          role="option"
+          style="overflow: hidden; position: relative;"
+          tabindex="-1"
+        >
+          <!---->
+          <span
+            class="feather-list-item-text"
+            data-v-e9e0333c=""
+          >
+            <span>
+              <span>
+                Test2
+              </span>
+              <!--v-if-->
+              <!--v-if-->
+            </span>
+            <!--v-if-->
+          </span>
+          <!---->
+        </li>
+        <!--v-if-->
+        
+        
+        
+      </ul>
+      <!--v-if-->
+      <!--v-if-->
+      <!--v-if-->
+      <!--v-if-->
+      <!--v-if-->
+      
+    </div>
+  </div>
+  <div
+    class="feather-input-sub-text"
+    data-v-764b8d6b=""
+    id="feather-autocomplete-description"
+    style="display: none;"
+  >
+    <!---->
+    <!---->
+    
+    
+  </div>
+</div>
+`;
+
+exports[`Feather Autocomplete multi:specific chip selection should select the right most chip when left arrow is pressed and input has no text 1`] = `
+<div
+  class="feather-autocomplete-container"
+>
+  <div
+    class="feather-menu feather-autocomplete-menu-container"
+    data-v-6f68d0ea=""
+  >
+    
+    <div
+      aria-controls="feather-menu-dropdown"
+      aria-expanded="false"
+      aria-haspopup="true"
+      aria-label="Users"
+      aria-owns="feather-autocomplete-input-results"
+      class="feather-input-wrapper-container raised"
+      data-v-47a74f22=""
+      id="feather-menu-trigger"
+      menu-trigger=""
+      role="combobox"
+    >
+      <fieldset
+        aria-hidden="true"
+        class="feather-input-border"
+        data-v-47a74f22=""
+      >
+        <legend
+          data-v-47a74f22=""
+        >
+          Users
+        </legend>
+      </fieldset>
+      <label
+        class="feather-input-label"
+        data-ref-id="feather-form-element-label"
+        data-v-47a74f22=""
+        for="feather-autocomplete-input"
+        style="left: 12px;"
+      >
+        Users
+      </label>
+      <div
+        class="feather-input-wrapper has-prefix"
+        data-v-47a74f22=""
+      >
+        <div
+          class="prefix"
+          data-v-47a74f22=""
+        >
+          
+          
+          <svg
+            aria-hidden="true"
+            class="feather-icon"
+            data-v-0aa06a12=""
+            focusable="false"
+            height="24"
+            role="img"
+            viewBox="0 0 24 24"
+            width="24"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M20.29,18.84l-5.56-5.56A6.48,6.48,0,0,0,10.86,3.1,6.5,6.5,0,0,0,7.58,15.67a6.43,6.43,0,0,0,5.74-1l5.56,5.56a1,1,0,0,0,1.41,0h0A1,1,0,0,0,20.29,18.84ZM5,9.46A4.5,4.5,0,1,1,9.5,14,4.49,4.49,0,0,1,5,9.46Z"
+            />
+          </svg>
+          
+          
+        </div>
+        
+        <div
+          class="feather-autocomplete-content"
+        >
+          <div
+            aria-atomic="true"
+            aria-live="assertive"
+            class="alert"
+            role="alert"
+          />
+          <div
+            class="description"
+            id="feather-autocomplete-input-selected"
+          >
+            Test1, Test2
+          </div>
+          
+          <div
+            aria-disabled="false"
+            class="chip condensed focus autocomplete-chip"
+            data-v-3454cba5=""
+            role="button"
+          >
+            
+            <!--v-if-->
+            <span
+              class="label"
+              data-v-5fe439b1=""
+              title="false"
+            >
+              
+              Test1
+              
+            </span>
+            <span
+              class="chip-delete"
+            >
+              <span
+                class="feather-icon-container delete-icon"
+                data-v-0aa06a12=""
+              >
+                <svg
+                  aria-hidden="false"
+                  aria-label="Remove"
+                  class="delete-icon feather-icon feather-icon-flex"
+                  focusable="false"
+                  height="24"
+                  role="img"
+                  viewBox="0 0 24 24"
+                  width="24"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M12,2A10,10,0,1,0,22,12,10,10,0,0,0,12,2Zm5,13.24A1.26,1.26,0,0,1,17,17a1.24,1.24,0,0,1-1.76,0L12,13.73,8.76,17A1.24,1.24,0,1,1,7,15.24L10.24,12,7,8.76A1.24,1.24,0,0,1,8.76,7L12,10.2,15.24,7A1.24,1.24,0,1,1,17,8.76L13.76,12Z"
+                  />
+                </svg>
+              </span>
+            </span>
+            
+            <!---->
+          </div>
+          <div
+            aria-disabled="false"
+            class="chip condensed focus autocomplete-chip focused"
+            data-v-3454cba5=""
+            id="active-chip"
+            role="button"
+          >
+            
+            <!--v-if-->
+            <span
+              class="label"
+              data-v-5fe439b1=""
+              title="false"
+            >
+              
+              Test2
+              
+            </span>
+            <span
+              class="chip-delete"
+            >
+              <span
+                class="feather-icon-container delete-icon"
+                data-v-0aa06a12=""
+              >
+                <svg
+                  aria-hidden="false"
+                  aria-label="Remove"
+                  class="delete-icon feather-icon feather-icon-flex"
+                  focusable="false"
+                  height="24"
+                  role="img"
+                  viewBox="0 0 24 24"
+                  width="24"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M12,2A10,10,0,1,0,22,12,10,10,0,0,0,12,2Zm5,13.24A1.26,1.26,0,0,1,17,17a1.24,1.24,0,0,1-1.76,0L12,13.73,8.76,17A1.24,1.24,0,1,1,7,15.24L10.24,12,7,8.76A1.24,1.24,0,0,1,8.76,7L12,10.2,15.24,7A1.24,1.24,0,1,1,17,8.76L13.76,12Z"
+                  />
+                </svg>
+              </span>
+            </span>
+            
+            <!---->
+          </div>
+          
+          <textarea
+            aria-activedescendant="active-chip"
+            aria-autocomplete="list"
+            aria-busy="false"
+            aria-controls="feather-autocomplete-input-results"
+            aria-describedby="feather-autocomplete-input-selected feather-autocomplete-description"
+            aria-disabled="false"
+            aria-invalid="false"
+            autocomplete="off"
+            class="feather-autocomplete-input"
+            data-ref-id="feather-input"
+            id="feather-autocomplete-input"
+            style="height: 0px; flex-basis: 100%; white-space: normal;"
+            tabindex="0"
+          />
+        </div>
+        
+        <div
+          class="post"
+          data-v-47a74f22=""
+        >
+          <!---->
+          <!---->
+          
+          <svg
+            aria-hidden="true"
+            class="feather-autocomplete-dropdown-icon feather-icon feather-autocomplete-dropdown-icon"
+            data-v-0aa06a12=""
+            focusable="false"
+            height="24"
+            role="img"
+            viewBox="0 0 24 24"
+            width="24"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M6.71,9.29a1,1,0,0,0,0,1.41l4.59,4.59a1,1,0,0,0,1.41,0L17.3,10.7a1,1,0,0,0-1.41-1.41L12,13.17,8.12,9.29A1,1,0,0,0,6.71,9.29Z"
+            />
+          </svg>
+          
+        </div>
+      </div>
+    </div>
+    
+    <div
+      class="feather-menu-dropdown bottom-left"
+      data-v-6f68d0ea=""
+      id="feather-menu-dropdown"
+      style="display: none;"
+    >
+      
+      <ul
+        aria-hidden="false"
+        aria-label="Users"
+        aria-live="polite"
+        aria-multiselectable="true"
+        class="feather-list feather-autocomplete-results-list autocomplete-results"
+        data-v-4ef0e6d6=""
+        id="feather-autocomplete-input-results"
+        role="listbox"
+        style="display: none;"
+        tabindex="-1"
+      >
+        
+        
+      </ul>
+      <!--v-if-->
+      <!--v-if-->
+      <!--v-if-->
+      <!--v-if-->
+      <!--v-if-->
+      
+    </div>
+  </div>
+  <div
+    class="feather-input-sub-text"
+    data-v-764b8d6b=""
+    id="feather-autocomplete-description"
+    style="display: none;"
+  >
+    <!---->
+    <!---->
+    
+    
+  </div>
+</div>
+`;
+
+exports[`Feather Autocomplete multi:specific chip selection should should deselect chip when right arrow is pressed on right most token 1`] = `
+<div
+  class="feather-autocomplete-container"
+>
+  <div
+    class="feather-menu feather-autocomplete-menu-container"
+    data-v-6f68d0ea=""
+  >
+    
+    <div
+      aria-controls="feather-menu-dropdown"
+      aria-expanded="false"
+      aria-haspopup="true"
+      aria-label="Users"
+      aria-owns="feather-autocomplete-input-results"
+      class="feather-input-wrapper-container raised"
+      data-v-47a74f22=""
+      id="feather-menu-trigger"
+      menu-trigger=""
+      role="combobox"
+    >
+      <fieldset
+        aria-hidden="true"
+        class="feather-input-border"
+        data-v-47a74f22=""
+      >
+        <legend
+          data-v-47a74f22=""
+        >
+          Users
+        </legend>
+      </fieldset>
+      <label
+        class="feather-input-label"
+        data-ref-id="feather-form-element-label"
+        data-v-47a74f22=""
+        for="feather-autocomplete-input"
+        style="left: 12px;"
+      >
+        Users
+      </label>
+      <div
+        class="feather-input-wrapper has-prefix"
+        data-v-47a74f22=""
+      >
+        <div
+          class="prefix"
+          data-v-47a74f22=""
+        >
+          
+          
+          <svg
+            aria-hidden="true"
+            class="feather-icon"
+            data-v-0aa06a12=""
+            focusable="false"
+            height="24"
+            role="img"
+            viewBox="0 0 24 24"
+            width="24"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M20.29,18.84l-5.56-5.56A6.48,6.48,0,0,0,10.86,3.1,6.5,6.5,0,0,0,7.58,15.67a6.43,6.43,0,0,0,5.74-1l5.56,5.56a1,1,0,0,0,1.41,0h0A1,1,0,0,0,20.29,18.84ZM5,9.46A4.5,4.5,0,1,1,9.5,14,4.49,4.49,0,0,1,5,9.46Z"
+            />
+          </svg>
+          
+          
+        </div>
+        
+        <div
+          class="feather-autocomplete-content"
+        >
+          <div
+            aria-atomic="true"
+            aria-live="assertive"
+            class="alert"
+            role="alert"
+          />
+          <div
+            class="description"
+            id="feather-autocomplete-input-selected"
+          >
+            Test1, Test2
+          </div>
+          
+          <div
+            aria-disabled="false"
+            class="chip condensed focus autocomplete-chip"
+            data-v-3454cba5=""
+            role="button"
+          >
+            
+            <!--v-if-->
+            <span
+              class="label"
+              data-v-5fe439b1=""
+              title="false"
+            >
+              
+              Test1
+              
+            </span>
+            <span
+              class="chip-delete"
+            >
+              <span
+                class="feather-icon-container delete-icon"
+                data-v-0aa06a12=""
+              >
+                <svg
+                  aria-hidden="false"
+                  aria-label="Remove"
+                  class="delete-icon feather-icon feather-icon-flex"
+                  focusable="false"
+                  height="24"
+                  role="img"
+                  viewBox="0 0 24 24"
+                  width="24"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M12,2A10,10,0,1,0,22,12,10,10,0,0,0,12,2Zm5,13.24A1.26,1.26,0,0,1,17,17a1.24,1.24,0,0,1-1.76,0L12,13.73,8.76,17A1.24,1.24,0,1,1,7,15.24L10.24,12,7,8.76A1.24,1.24,0,0,1,8.76,7L12,10.2,15.24,7A1.24,1.24,0,1,1,17,8.76L13.76,12Z"
+                  />
+                </svg>
+              </span>
+            </span>
+            
+            <!---->
+          </div>
+          <div
+            aria-disabled="false"
+            class="chip condensed focus autocomplete-chip"
+            data-v-3454cba5=""
+            role="button"
+          >
+            
+            <!--v-if-->
+            <span
+              class="label"
+              data-v-5fe439b1=""
+              title="false"
+            >
+              
+              Test2
+              
+            </span>
+            <span
+              class="chip-delete"
+            >
+              <span
+                class="feather-icon-container delete-icon"
+                data-v-0aa06a12=""
+              >
+                <svg
+                  aria-hidden="false"
+                  aria-label="Remove"
+                  class="delete-icon feather-icon feather-icon-flex"
+                  focusable="false"
+                  height="24"
+                  role="img"
+                  viewBox="0 0 24 24"
+                  width="24"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M12,2A10,10,0,1,0,22,12,10,10,0,0,0,12,2Zm5,13.24A1.26,1.26,0,0,1,17,17a1.24,1.24,0,0,1-1.76,0L12,13.73,8.76,17A1.24,1.24,0,1,1,7,15.24L10.24,12,7,8.76A1.24,1.24,0,0,1,8.76,7L12,10.2,15.24,7A1.24,1.24,0,1,1,17,8.76L13.76,12Z"
+                  />
+                </svg>
+              </span>
+            </span>
+            
+            <!---->
+          </div>
+          
+          <textarea
+            aria-activedescendant=""
+            aria-autocomplete="list"
+            aria-busy="false"
+            aria-controls="feather-autocomplete-input-results"
+            aria-describedby="feather-autocomplete-input-selected feather-autocomplete-description"
+            aria-disabled="false"
+            aria-invalid="false"
+            autocomplete="off"
+            class="feather-autocomplete-input"
+            data-ref-id="feather-input"
+            id="feather-autocomplete-input"
+            style="height: 0px; flex-basis: 100%; white-space: normal;"
+            tabindex="0"
+          />
+        </div>
+        
+        <div
+          class="post"
+          data-v-47a74f22=""
+        >
+          <!---->
+          <!---->
+          
+          <svg
+            aria-hidden="true"
+            class="feather-autocomplete-dropdown-icon feather-icon feather-autocomplete-dropdown-icon"
+            data-v-0aa06a12=""
+            focusable="false"
+            height="24"
+            role="img"
+            viewBox="0 0 24 24"
+            width="24"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M6.71,9.29a1,1,0,0,0,0,1.41l4.59,4.59a1,1,0,0,0,1.41,0L17.3,10.7a1,1,0,0,0-1.41-1.41L12,13.17,8.12,9.29A1,1,0,0,0,6.71,9.29Z"
+            />
+          </svg>
+          
+        </div>
+      </div>
+    </div>
+    
+    <div
+      class="feather-menu-dropdown bottom-left"
+      data-v-6f68d0ea=""
+      id="feather-menu-dropdown"
+      style="display: none;"
+    >
+      
+      <ul
+        aria-hidden="false"
+        aria-label="Users"
+        aria-live="polite"
+        aria-multiselectable="true"
+        class="feather-list feather-autocomplete-results-list autocomplete-results"
+        data-v-4ef0e6d6=""
+        id="feather-autocomplete-input-results"
+        role="listbox"
+        style="display: none;"
+        tabindex="-1"
+      >
+        
+        
+      </ul>
+      <!--v-if-->
+      <!--v-if-->
+      <!--v-if-->
+      <!--v-if-->
+      <!--v-if-->
+      
+    </div>
+  </div>
+  <div
+    class="feather-input-sub-text"
+    data-v-764b8d6b=""
+    id="feather-autocomplete-description"
+    style="display: none;"
+  >
+    <!---->
+    <!---->
+    
+    
+  </div>
+</div>
+`;
+
+exports[`Feather Autocomplete multi:specific selection limit should clear warning when item is removed 1`] = `
+<div
+  class="feather-autocomplete-container"
+>
+  <div
+    class="feather-menu feather-autocomplete-menu-container"
+    data-v-6f68d0ea=""
+  >
+    
+    <div
+      aria-controls="feather-menu-dropdown"
+      aria-expanded="false"
+      aria-haspopup="true"
+      aria-label="Users"
+      aria-owns="feather-autocomplete-input-results"
+      class="feather-input-wrapper-container raised focused"
+      data-v-47a74f22=""
+      id="feather-menu-trigger"
+      menu-trigger=""
+      role="combobox"
+    >
+      <fieldset
+        aria-hidden="true"
+        class="feather-input-border"
+        data-v-47a74f22=""
+      >
+        <legend
+          data-v-47a74f22=""
+        >
+          Users
+        </legend>
+      </fieldset>
+      <label
+        class="feather-input-label"
+        data-ref-id="feather-form-element-label"
+        data-v-47a74f22=""
+        for="feather-autocomplete-input"
+        style="left: 12px;"
+      >
+        Users
+      </label>
+      <div
+        class="feather-input-wrapper has-prefix"
+        data-v-47a74f22=""
+      >
+        <div
+          class="prefix"
+          data-v-47a74f22=""
+        >
+          
+          
+          <svg
+            aria-hidden="true"
+            class="feather-icon"
+            data-v-0aa06a12=""
+            focusable="false"
+            height="24"
+            role="img"
+            viewBox="0 0 24 24"
+            width="24"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M20.29,18.84l-5.56-5.56A6.48,6.48,0,0,0,10.86,3.1,6.5,6.5,0,0,0,7.58,15.67a6.43,6.43,0,0,0,5.74-1l5.56,5.56a1,1,0,0,0,1.41,0h0A1,1,0,0,0,20.29,18.84ZM5,9.46A4.5,4.5,0,1,1,9.5,14,4.49,4.49,0,0,1,5,9.46Z"
+            />
+          </svg>
+          
+          
+        </div>
+        
+        <div
+          class="feather-autocomplete-content"
+        >
+          <div
+            aria-atomic="true"
+            aria-live="assertive"
+            class="alert"
+            role="alert"
+          />
+          <div
+            class="description"
+            id="feather-autocomplete-input-selected"
+          >
+            Item 1, Item 2
+          </div>
+          
+          <div
+            aria-disabled="false"
+            class="chip condensed focus autocomplete-chip"
+            data-v-3454cba5=""
+            role="button"
+          >
+            
+            <!--v-if-->
+            <span
+              class="label"
+              data-v-5fe439b1=""
+              title="false"
+            >
+              
+              Item 1
+              
+            </span>
+            <span
+              class="chip-delete"
+            >
+              <span
+                class="feather-icon-container delete-icon"
+                data-v-0aa06a12=""
+              >
+                <svg
+                  aria-hidden="false"
+                  aria-label="Remove"
+                  class="delete-icon feather-icon feather-icon-flex"
+                  focusable="false"
+                  height="24"
+                  role="img"
+                  viewBox="0 0 24 24"
+                  width="24"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M12,2A10,10,0,1,0,22,12,10,10,0,0,0,12,2Zm5,13.24A1.26,1.26,0,0,1,17,17a1.24,1.24,0,0,1-1.76,0L12,13.73,8.76,17A1.24,1.24,0,1,1,7,15.24L10.24,12,7,8.76A1.24,1.24,0,0,1,8.76,7L12,10.2,15.24,7A1.24,1.24,0,1,1,17,8.76L13.76,12Z"
+                  />
+                </svg>
+              </span>
+            </span>
+            
+            <!---->
+          </div>
+          <div
+            aria-disabled="false"
+            class="chip condensed focus autocomplete-chip"
+            data-v-3454cba5=""
+            role="button"
+          >
+            
+            <!--v-if-->
+            <span
+              class="label"
+              data-v-5fe439b1=""
+              title="false"
+            >
+              
+              Item 2
+              
+            </span>
+            <span
+              class="chip-delete"
+            >
+              <span
+                class="feather-icon-container delete-icon"
+                data-v-0aa06a12=""
+              >
+                <svg
+                  aria-hidden="false"
+                  aria-label="Remove"
+                  class="delete-icon feather-icon feather-icon-flex"
+                  focusable="false"
+                  height="24"
+                  role="img"
+                  viewBox="0 0 24 24"
+                  width="24"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M12,2A10,10,0,1,0,22,12,10,10,0,0,0,12,2Zm5,13.24A1.26,1.26,0,0,1,17,17a1.24,1.24,0,0,1-1.76,0L12,13.73,8.76,17A1.24,1.24,0,1,1,7,15.24L10.24,12,7,8.76A1.24,1.24,0,0,1,8.76,7L12,10.2,15.24,7A1.24,1.24,0,1,1,17,8.76L13.76,12Z"
+                  />
+                </svg>
+              </span>
+            </span>
+            
+            <!---->
+          </div>
+          
+          <textarea
+            aria-activedescendant=""
+            aria-autocomplete="list"
+            aria-busy="false"
+            aria-controls="feather-autocomplete-input-results"
+            aria-describedby="feather-autocomplete-input-selected feather-autocomplete-description"
+            aria-disabled="false"
+            aria-invalid="false"
+            autocomplete="off"
+            class="feather-autocomplete-input"
+            data-ref-id="feather-input"
+            id="feather-autocomplete-input"
+            style="height: 26px; flex-basis: 40px; white-space: nowrap;"
+            tabindex="0"
+          />
+        </div>
+        
+        <div
+          class="post"
+          data-v-47a74f22=""
+        >
+          <!---->
+          <!---->
+          
+          <svg
+            aria-hidden="true"
+            class="feather-autocomplete-dropdown-icon rotate feather-icon feather-autocomplete-dropdown-icon rotate"
+            data-v-0aa06a12=""
+            focusable="false"
+            height="24"
+            role="img"
+            viewBox="0 0 24 24"
+            width="24"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M6.71,9.29a1,1,0,0,0,0,1.41l4.59,4.59a1,1,0,0,0,1.41,0L17.3,10.7a1,1,0,0,0-1.41-1.41L12,13.17,8.12,9.29A1,1,0,0,0,6.71,9.29Z"
+            />
+          </svg>
+          
+        </div>
+      </div>
+    </div>
+    
+    <div
+      class="feather-menu-dropdown bottom-left"
+      data-v-6f68d0ea=""
+      id="feather-menu-dropdown"
+      style=""
+    >
+      
+      <ul
+        aria-hidden="false"
+        aria-label="Users"
+        aria-live="polite"
+        aria-multiselectable="true"
+        class="feather-list feather-autocomplete-results-list autocomplete-results"
+        data-v-4ef0e6d6=""
+        id="feather-autocomplete-input-results"
+        role="listbox"
+        style="display: none;"
+        tabindex="-1"
+      >
+        
+        
+      </ul>
+      <!--v-if-->
+      <!--v-if-->
+      <ul
+        class="feather-list result-list selection-limit-warning"
+        data-v-4ef0e6d6=""
+      >
+        
+        <li
+          class="feather-list-item hover focus"
+          data-v-e9e0333c=""
+          style="overflow: hidden; position: relative;"
+        >
+          <!---->
+          <span
+            class="feather-list-item-text"
+            data-v-e9e0333c=""
+          >
+            
+            <svg
+              aria-hidden="true"
+              class="feather-icon"
+              data-v-0aa06a12=""
+              focusable="false"
+              height="24"
+              id="Icons"
+              role="img"
+              viewBox="0 0 24 24"
+              width="24"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <g>
+                <path
+                  d="M12,10a1,1,0,0,0-1,1v5a1,1,0,0,0,2,0V11A1,1,0,0,0,12,10Z"
+                />
+                <rect
+                  height="2"
+                  rx="0.65"
+                  width="2"
+                  x="11"
+                  y="7"
+                />
+                <path
+                  d="M12,2A10,10,0,1,0,22,12,10,10,0,0,0,12,2Zm0,18a8,8,0,1,1,8-8A8,8,0,0,1,12,20Z"
+                />
+              </g>
+            </svg>
+            <span
+              data-ref-id="feather-autocomplete-selection-limit"
+            >
+              Selection limit reached
+            </span>
+            
+          </span>
+          <!---->
+        </li>
+        
+      </ul>
+      <!--v-if-->
+      <!--v-if-->
+      
+    </div>
+  </div>
+  <div
+    class="feather-input-sub-text"
+    data-v-764b8d6b=""
+    id="feather-autocomplete-description"
+    style="display: none;"
+  >
+    <!---->
+    <!---->
+    
+    
+  </div>
+</div>
+`;
+
+exports[`Feather Autocomplete multi:specific selection limit should display a warning when selection limit is from initial value and has focus 1`] = `
+<div
+  class="feather-autocomplete-container"
+>
+  <div
+    class="feather-menu feather-autocomplete-menu-container"
+    data-v-6f68d0ea=""
+  >
+    
+    <div
+      aria-controls="feather-menu-dropdown"
+      aria-expanded="false"
+      aria-haspopup="true"
+      aria-label="Users"
+      aria-owns="feather-autocomplete-input-results"
+      class="feather-input-wrapper-container raised focused"
+      data-v-47a74f22=""
+      id="feather-menu-trigger"
+      menu-trigger=""
+      role="combobox"
+    >
+      <fieldset
+        aria-hidden="true"
+        class="feather-input-border"
+        data-v-47a74f22=""
+      >
+        <legend
+          data-v-47a74f22=""
+        >
+          Users
+        </legend>
+      </fieldset>
+      <label
+        class="feather-input-label"
+        data-ref-id="feather-form-element-label"
+        data-v-47a74f22=""
+        for="feather-autocomplete-input"
+        style="left: 12px;"
+      >
+        Users
+      </label>
+      <div
+        class="feather-input-wrapper has-prefix"
+        data-v-47a74f22=""
+      >
+        <div
+          class="prefix"
+          data-v-47a74f22=""
+        >
+          
+          
+          <svg
+            aria-hidden="true"
+            class="feather-icon"
+            data-v-0aa06a12=""
+            focusable="false"
+            height="24"
+            role="img"
+            viewBox="0 0 24 24"
+            width="24"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M20.29,18.84l-5.56-5.56A6.48,6.48,0,0,0,10.86,3.1,6.5,6.5,0,0,0,7.58,15.67a6.43,6.43,0,0,0,5.74-1l5.56,5.56a1,1,0,0,0,1.41,0h0A1,1,0,0,0,20.29,18.84ZM5,9.46A4.5,4.5,0,1,1,9.5,14,4.49,4.49,0,0,1,5,9.46Z"
+            />
+          </svg>
+          
+          
+        </div>
+        
+        <div
+          class="feather-autocomplete-content"
+        >
+          <div
+            aria-atomic="true"
+            aria-live="assertive"
+            class="alert"
+            role="alert"
+          />
+          <div
+            class="description"
+            id="feather-autocomplete-input-selected"
+          >
+            Item 1, Item 2
+          </div>
+          
+          <div
+            aria-disabled="false"
+            class="chip condensed focus autocomplete-chip"
+            data-v-3454cba5=""
+            role="button"
+          >
+            
+            <!--v-if-->
+            <span
+              class="label"
+              data-v-5fe439b1=""
+              title="false"
+            >
+              
+              Item 1
+              
+            </span>
+            <span
+              class="chip-delete"
+            >
+              <span
+                class="feather-icon-container delete-icon"
+                data-v-0aa06a12=""
+              >
+                <svg
+                  aria-hidden="false"
+                  aria-label="Remove"
+                  class="delete-icon feather-icon feather-icon-flex"
+                  focusable="false"
+                  height="24"
+                  role="img"
+                  viewBox="0 0 24 24"
+                  width="24"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M12,2A10,10,0,1,0,22,12,10,10,0,0,0,12,2Zm5,13.24A1.26,1.26,0,0,1,17,17a1.24,1.24,0,0,1-1.76,0L12,13.73,8.76,17A1.24,1.24,0,1,1,7,15.24L10.24,12,7,8.76A1.24,1.24,0,0,1,8.76,7L12,10.2,15.24,7A1.24,1.24,0,1,1,17,8.76L13.76,12Z"
+                  />
+                </svg>
+              </span>
+            </span>
+            
+            <!---->
+          </div>
+          <div
+            aria-disabled="false"
+            class="chip condensed focus autocomplete-chip"
+            data-v-3454cba5=""
+            role="button"
+          >
+            
+            <!--v-if-->
+            <span
+              class="label"
+              data-v-5fe439b1=""
+              title="false"
+            >
+              
+              Item 2
+              
+            </span>
+            <span
+              class="chip-delete"
+            >
+              <span
+                class="feather-icon-container delete-icon"
+                data-v-0aa06a12=""
+              >
+                <svg
+                  aria-hidden="false"
+                  aria-label="Remove"
+                  class="delete-icon feather-icon feather-icon-flex"
+                  focusable="false"
+                  height="24"
+                  role="img"
+                  viewBox="0 0 24 24"
+                  width="24"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M12,2A10,10,0,1,0,22,12,10,10,0,0,0,12,2Zm5,13.24A1.26,1.26,0,0,1,17,17a1.24,1.24,0,0,1-1.76,0L12,13.73,8.76,17A1.24,1.24,0,1,1,7,15.24L10.24,12,7,8.76A1.24,1.24,0,0,1,8.76,7L12,10.2,15.24,7A1.24,1.24,0,1,1,17,8.76L13.76,12Z"
+                  />
+                </svg>
+              </span>
+            </span>
+            
+            <!---->
+          </div>
+          
+          <textarea
+            aria-activedescendant=""
+            aria-autocomplete="list"
+            aria-busy="false"
+            aria-controls="feather-autocomplete-input-results"
+            aria-describedby="feather-autocomplete-input-selected feather-autocomplete-description"
+            aria-disabled="false"
+            aria-invalid="false"
+            autocomplete="off"
+            class="feather-autocomplete-input"
+            data-ref-id="feather-input"
+            id="feather-autocomplete-input"
+            style="height: 0px; flex-basis: 100%; white-space: normal;"
+            tabindex="0"
+          />
+        </div>
+        
+        <div
+          class="post"
+          data-v-47a74f22=""
+        >
+          <!---->
+          <!---->
+          
+          <svg
+            aria-hidden="true"
+            class="feather-autocomplete-dropdown-icon rotate feather-icon feather-autocomplete-dropdown-icon rotate"
+            data-v-0aa06a12=""
+            focusable="false"
+            height="24"
+            role="img"
+            viewBox="0 0 24 24"
+            width="24"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M6.71,9.29a1,1,0,0,0,0,1.41l4.59,4.59a1,1,0,0,0,1.41,0L17.3,10.7a1,1,0,0,0-1.41-1.41L12,13.17,8.12,9.29A1,1,0,0,0,6.71,9.29Z"
+            />
+          </svg>
+          
+        </div>
+      </div>
+    </div>
+    
+    <div
+      class="feather-menu-dropdown bottom-left"
+      data-v-6f68d0ea=""
+      id="feather-menu-dropdown"
+      style=""
+    >
+      
+      <ul
+        aria-hidden="false"
+        aria-label="Users"
+        aria-live="polite"
+        aria-multiselectable="true"
+        class="feather-list feather-autocomplete-results-list autocomplete-results"
+        data-v-4ef0e6d6=""
+        id="feather-autocomplete-input-results"
+        role="listbox"
+        style="display: none;"
+        tabindex="-1"
+      >
+        
+        
+      </ul>
+      <!--v-if-->
+      <!--v-if-->
+      <ul
+        class="feather-list result-list selection-limit-warning"
+        data-v-4ef0e6d6=""
+      >
+        
+        <li
+          class="feather-list-item hover focus"
+          data-v-e9e0333c=""
+          style="overflow: hidden; position: relative;"
+        >
+          <!---->
+          <span
+            class="feather-list-item-text"
+            data-v-e9e0333c=""
+          >
+            
+            <svg
+              aria-hidden="true"
+              class="feather-icon"
+              data-v-0aa06a12=""
+              focusable="false"
+              height="24"
+              id="Icons"
+              role="img"
+              viewBox="0 0 24 24"
+              width="24"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <g>
+                <path
+                  d="M12,10a1,1,0,0,0-1,1v5a1,1,0,0,0,2,0V11A1,1,0,0,0,12,10Z"
+                />
+                <rect
+                  height="2"
+                  rx="0.65"
+                  width="2"
+                  x="11"
+                  y="7"
+                />
+                <path
+                  d="M12,2A10,10,0,1,0,22,12,10,10,0,0,0,12,2Zm0,18a8,8,0,1,1,8-8A8,8,0,0,1,12,20Z"
+                />
+              </g>
+            </svg>
+            <span
+              data-ref-id="feather-autocomplete-selection-limit"
+            >
+              Selection limit reached
+            </span>
+            
+          </span>
+          <!---->
+        </li>
+        
+      </ul>
+      <!--v-if-->
+      <!--v-if-->
+      
+    </div>
+  </div>
+  <div
+    class="feather-input-sub-text"
+    data-v-764b8d6b=""
+    id="feather-autocomplete-description"
+    style="display: none;"
+  >
+    <!---->
+    <!---->
+    
+    
+  </div>
+</div>
+`;
+
+exports[`Feather Autocomplete multi:specific selection limit should display a warning when selection limit is reached and has focus 1`] = `
+<div
+  class="feather-autocomplete-container"
+>
+  <div
+    class="feather-menu feather-autocomplete-menu-container"
+    data-v-6f68d0ea=""
+  >
+    
+    <div
+      aria-controls="feather-menu-dropdown"
+      aria-expanded="false"
+      aria-haspopup="true"
+      aria-label="Users"
+      aria-owns="feather-autocomplete-input-results"
+      class="feather-input-wrapper-container raised focused"
+      data-v-47a74f22=""
+      id="feather-menu-trigger"
+      menu-trigger=""
+      role="combobox"
+    >
+      <fieldset
+        aria-hidden="true"
+        class="feather-input-border"
+        data-v-47a74f22=""
+      >
+        <legend
+          data-v-47a74f22=""
+        >
+          Users
+        </legend>
+      </fieldset>
+      <label
+        class="feather-input-label"
+        data-ref-id="feather-form-element-label"
+        data-v-47a74f22=""
+        for="feather-autocomplete-input"
+        style="left: 12px;"
+      >
+        Users
+      </label>
+      <div
+        class="feather-input-wrapper has-prefix"
+        data-v-47a74f22=""
+      >
+        <div
+          class="prefix"
+          data-v-47a74f22=""
+        >
+          
+          
+          <svg
+            aria-hidden="true"
+            class="feather-icon"
+            data-v-0aa06a12=""
+            focusable="false"
+            height="24"
+            role="img"
+            viewBox="0 0 24 24"
+            width="24"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M20.29,18.84l-5.56-5.56A6.48,6.48,0,0,0,10.86,3.1,6.5,6.5,0,0,0,7.58,15.67a6.43,6.43,0,0,0,5.74-1l5.56,5.56a1,1,0,0,0,1.41,0h0A1,1,0,0,0,20.29,18.84ZM5,9.46A4.5,4.5,0,1,1,9.5,14,4.49,4.49,0,0,1,5,9.46Z"
+            />
+          </svg>
+          
+          
+        </div>
+        
+        <div
+          class="feather-autocomplete-content"
+        >
+          <div
+            aria-atomic="true"
+            aria-live="assertive"
+            class="alert"
+            role="alert"
+          >
+            Selection limit reached
+          </div>
+          <div
+            class="description"
+            id="feather-autocomplete-input-selected"
+          >
+            Item 1, Item 2
+          </div>
+          
+          <div
+            aria-disabled="false"
+            class="chip condensed focus autocomplete-chip"
+            data-v-3454cba5=""
+            role="button"
+          >
+            
+            <!--v-if-->
+            <span
+              class="label"
+              data-v-5fe439b1=""
+              title="false"
+            >
+              
+              Item 1
+              
+            </span>
+            <span
+              class="chip-delete"
+            >
+              <span
+                class="feather-icon-container delete-icon"
+                data-v-0aa06a12=""
+              >
+                <svg
+                  aria-hidden="false"
+                  aria-label="Remove"
+                  class="delete-icon feather-icon feather-icon-flex"
+                  focusable="false"
+                  height="24"
+                  role="img"
+                  viewBox="0 0 24 24"
+                  width="24"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M12,2A10,10,0,1,0,22,12,10,10,0,0,0,12,2Zm5,13.24A1.26,1.26,0,0,1,17,17a1.24,1.24,0,0,1-1.76,0L12,13.73,8.76,17A1.24,1.24,0,1,1,7,15.24L10.24,12,7,8.76A1.24,1.24,0,0,1,8.76,7L12,10.2,15.24,7A1.24,1.24,0,1,1,17,8.76L13.76,12Z"
+                  />
+                </svg>
+              </span>
+            </span>
+            
+            <!---->
+          </div>
+          <div
+            aria-disabled="false"
+            class="chip condensed focus autocomplete-chip"
+            data-v-3454cba5=""
+            role="button"
+          >
+            
+            <!--v-if-->
+            <span
+              class="label"
+              data-v-5fe439b1=""
+              title="false"
+            >
+              
+              Item 2
+              
+            </span>
+            <span
+              class="chip-delete"
+            >
+              <span
+                class="feather-icon-container delete-icon"
+                data-v-0aa06a12=""
+              >
+                <svg
+                  aria-hidden="false"
+                  aria-label="Remove"
+                  class="delete-icon feather-icon feather-icon-flex"
+                  focusable="false"
+                  height="24"
+                  role="img"
+                  viewBox="0 0 24 24"
+                  width="24"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M12,2A10,10,0,1,0,22,12,10,10,0,0,0,12,2Zm5,13.24A1.26,1.26,0,0,1,17,17a1.24,1.24,0,0,1-1.76,0L12,13.73,8.76,17A1.24,1.24,0,1,1,7,15.24L10.24,12,7,8.76A1.24,1.24,0,0,1,8.76,7L12,10.2,15.24,7A1.24,1.24,0,1,1,17,8.76L13.76,12Z"
+                  />
+                </svg>
+              </span>
+            </span>
+            
+            <!---->
+          </div>
+          
+          <textarea
+            aria-activedescendant=""
+            aria-autocomplete="list"
+            aria-busy="false"
+            aria-controls="feather-autocomplete-input-results"
+            aria-describedby="feather-autocomplete-input-selected feather-autocomplete-description"
+            aria-disabled="false"
+            aria-invalid="false"
+            autocomplete="off"
+            class="feather-autocomplete-input"
+            data-ref-id="feather-input"
+            id="feather-autocomplete-input"
+            style="height: 0px; flex-basis: 100%; white-space: normal;"
+            tabindex="0"
+          />
+        </div>
+        
+        <div
+          class="post"
+          data-v-47a74f22=""
+        >
+          <!---->
+          <!---->
+          
+          <svg
+            aria-hidden="true"
+            class="feather-autocomplete-dropdown-icon rotate feather-icon feather-autocomplete-dropdown-icon rotate"
+            data-v-0aa06a12=""
+            focusable="false"
+            height="24"
+            role="img"
+            viewBox="0 0 24 24"
+            width="24"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M6.71,9.29a1,1,0,0,0,0,1.41l4.59,4.59a1,1,0,0,0,1.41,0L17.3,10.7a1,1,0,0,0-1.41-1.41L12,13.17,8.12,9.29A1,1,0,0,0,6.71,9.29Z"
+            />
+          </svg>
+          
+        </div>
+      </div>
+    </div>
+    
+    <div
+      class="feather-menu-dropdown bottom-left"
+      data-v-6f68d0ea=""
+      id="feather-menu-dropdown"
+      style=""
+    >
+      
+      <ul
+        aria-hidden="false"
+        aria-label="Users"
+        aria-live="polite"
+        aria-multiselectable="true"
+        class="feather-list feather-autocomplete-results-list autocomplete-results"
+        data-v-4ef0e6d6=""
+        id="feather-autocomplete-input-results"
+        role="listbox"
+        style="display: none;"
+        tabindex="-1"
+      >
+        
+        
+      </ul>
+      <!--v-if-->
+      <!--v-if-->
+      <ul
+        class="feather-list result-list selection-limit-warning"
+        data-v-4ef0e6d6=""
+      >
+        
+        <li
+          class="feather-list-item hover focus"
+          data-v-e9e0333c=""
+          style="overflow: hidden; position: relative;"
+        >
+          <!---->
+          <span
+            class="feather-list-item-text"
+            data-v-e9e0333c=""
+          >
+            
+            <svg
+              aria-hidden="true"
+              class="feather-icon"
+              data-v-0aa06a12=""
+              focusable="false"
+              height="24"
+              id="Icons"
+              role="img"
+              viewBox="0 0 24 24"
+              width="24"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <g>
+                <path
+                  d="M12,10a1,1,0,0,0-1,1v5a1,1,0,0,0,2,0V11A1,1,0,0,0,12,10Z"
+                />
+                <rect
+                  height="2"
+                  rx="0.65"
+                  width="2"
+                  x="11"
+                  y="7"
+                />
+                <path
+                  d="M12,2A10,10,0,1,0,22,12,10,10,0,0,0,12,2Zm0,18a8,8,0,1,1,8-8A8,8,0,0,1,12,20Z"
+                />
+              </g>
+            </svg>
+            <span
+              data-ref-id="feather-autocomplete-selection-limit"
+            >
+              Selection limit reached
+            </span>
+            
+          </span>
+          <!---->
+        </li>
+        
+      </ul>
+      <!--v-if-->
+      <!--v-if-->
+      
+    </div>
+  </div>
+  <div
+    class="feather-input-sub-text"
+    data-v-764b8d6b=""
+    id="feather-autocomplete-description"
+    style="display: none;"
+  >
+    <!---->
+    <!---->
+    
+    
+  </div>
+</div>
+`;
+
+exports[`Feather Autocomplete multi:specific selection limit should display a warning when selection limit is reached from menu selection 1`] = `
+<div
+  class="feather-autocomplete-container"
+>
+  <div
+    class="feather-menu feather-autocomplete-menu-container"
+    data-v-6f68d0ea=""
+  >
+    
+    <div
+      aria-controls="feather-menu-dropdown"
+      aria-expanded="false"
+      aria-haspopup="true"
+      aria-label="Users"
+      aria-owns="feather-autocomplete-input-results"
+      class="feather-input-wrapper-container raised focused"
+      data-v-47a74f22=""
+      id="feather-menu-trigger"
+      menu-trigger=""
+      role="combobox"
+    >
+      <fieldset
+        aria-hidden="true"
+        class="feather-input-border"
+        data-v-47a74f22=""
+      >
+        <legend
+          data-v-47a74f22=""
+        >
+          Users
+        </legend>
+      </fieldset>
+      <label
+        class="feather-input-label"
+        data-ref-id="feather-form-element-label"
+        data-v-47a74f22=""
+        for="feather-autocomplete-input"
+        style="left: 12px;"
+      >
+        Users
+      </label>
+      <div
+        class="feather-input-wrapper has-prefix"
+        data-v-47a74f22=""
+      >
+        <div
+          class="prefix"
+          data-v-47a74f22=""
+        >
+          
+          
+          <svg
+            aria-hidden="true"
+            class="feather-icon"
+            data-v-0aa06a12=""
+            focusable="false"
+            height="24"
+            role="img"
+            viewBox="0 0 24 24"
+            width="24"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M20.29,18.84l-5.56-5.56A6.48,6.48,0,0,0,10.86,3.1,6.5,6.5,0,0,0,7.58,15.67a6.43,6.43,0,0,0,5.74-1l5.56,5.56a1,1,0,0,0,1.41,0h0A1,1,0,0,0,20.29,18.84ZM5,9.46A4.5,4.5,0,1,1,9.5,14,4.49,4.49,0,0,1,5,9.46Z"
+            />
+          </svg>
+          
+          
+        </div>
+        
+        <div
+          class="feather-autocomplete-content"
+        >
+          <div
+            aria-atomic="true"
+            aria-live="assertive"
+            class="alert"
+            role="alert"
+          >
+            Selection limit reached
+          </div>
+          <div
+            class="description"
+            id="feather-autocomplete-input-selected"
+          />
+          
+          
+          <textarea
+            aria-activedescendant=""
+            aria-autocomplete="list"
+            aria-busy="false"
+            aria-controls="feather-autocomplete-input-results"
+            aria-describedby="feather-autocomplete-input-selected feather-autocomplete-description"
+            aria-disabled="false"
+            aria-invalid="false"
+            autocomplete="off"
+            class="feather-autocomplete-input"
+            data-ref-id="feather-input"
+            id="feather-autocomplete-input"
+            style="height: 0px; flex-basis: 100%; white-space: normal;"
+            tabindex="0"
+          />
+        </div>
+        
+        <div
+          class="post"
+          data-v-47a74f22=""
+        >
+          <!---->
+          <!---->
+          
+          <svg
+            aria-hidden="true"
+            class="feather-autocomplete-dropdown-icon rotate feather-icon feather-autocomplete-dropdown-icon rotate"
+            data-v-0aa06a12=""
+            focusable="false"
+            height="24"
+            role="img"
+            viewBox="0 0 24 24"
+            width="24"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M6.71,9.29a1,1,0,0,0,0,1.41l4.59,4.59a1,1,0,0,0,1.41,0L17.3,10.7a1,1,0,0,0-1.41-1.41L12,13.17,8.12,9.29A1,1,0,0,0,6.71,9.29Z"
+            />
+          </svg>
+          
+        </div>
+      </div>
+    </div>
+    
+    <div
+      class="feather-menu-dropdown bottom-left"
+      data-v-6f68d0ea=""
+      id="feather-menu-dropdown"
+      style=""
+    >
+      
+      <ul
+        aria-hidden="false"
+        aria-label="Users"
+        aria-live="polite"
+        aria-multiselectable="true"
+        class="feather-list feather-autocomplete-results-list autocomplete-results"
+        data-v-4ef0e6d6=""
+        id="feather-autocomplete-input-results"
+        role="listbox"
+        style="display: none;"
+        tabindex="-1"
+      >
+        
+        <!-- eslint-disable -->
+        
+        
+        <li
+          aria-selected="false"
+          class="feather-list-item hover focus highlighted result-item hover"
+          data-v-e9e0333c=""
+          id="result-item"
+          role="option"
+          style="overflow: hidden; position: relative;"
+          tabindex="-1"
+        >
+          <!---->
+          <span
+            class="feather-list-item-text"
+            data-v-e9e0333c=""
+          >
+            <span>
+              <span>
+                Item 1
+              </span>
+              <!--v-if-->
+              <!--v-if-->
+            </span>
+            <!--v-if-->
+          </span>
+          <!---->
+        </li>
+        <!--v-if-->
+        
+        
+        <li
+          aria-selected="false"
+          class="feather-list-item hover focus result-item hover"
+          data-v-e9e0333c=""
+          role="option"
+          style="overflow: hidden; position: relative;"
+          tabindex="-1"
+        >
+          <!---->
+          <span
+            class="feather-list-item-text"
+            data-v-e9e0333c=""
+          >
+            <span>
+              <span>
+                Item 2
+              </span>
+              <!--v-if-->
+              <!--v-if-->
+            </span>
+            <!--v-if-->
+          </span>
+          <!---->
+        </li>
+        <!--v-if-->
+        
+        
+        
+      </ul>
+      <!--v-if-->
+      <!--v-if-->
+      <ul
+        class="feather-list result-list selection-limit-warning"
+        data-v-4ef0e6d6=""
+      >
+        
+        <li
+          class="feather-list-item hover focus"
+          data-v-e9e0333c=""
+          style="overflow: hidden; position: relative;"
+        >
+          <!---->
+          <span
+            class="feather-list-item-text"
+            data-v-e9e0333c=""
+          >
+            
+            <svg
+              aria-hidden="true"
+              class="feather-icon"
+              data-v-0aa06a12=""
+              focusable="false"
+              height="24"
+              id="Icons"
+              role="img"
+              viewBox="0 0 24 24"
+              width="24"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <g>
+                <path
+                  d="M12,10a1,1,0,0,0-1,1v5a1,1,0,0,0,2,0V11A1,1,0,0,0,12,10Z"
+                />
+                <rect
+                  height="2"
+                  rx="0.65"
+                  width="2"
+                  x="11"
+                  y="7"
+                />
+                <path
+                  d="M12,2A10,10,0,1,0,22,12,10,10,0,0,0,12,2Zm0,18a8,8,0,1,1,8-8A8,8,0,0,1,12,20Z"
+                />
+              </g>
+            </svg>
+            <span
+              data-ref-id="feather-autocomplete-selection-limit"
+            >
+              Selection limit reached
+            </span>
+            
+          </span>
+          <!---->
+        </li>
+        
+      </ul>
+      <!--v-if-->
+      <!--v-if-->
+      
+    </div>
+  </div>
+  <div
+    class="feather-input-sub-text"
+    data-v-764b8d6b=""
+    id="feather-autocomplete-description"
+    style="display: none;"
+  >
+    <!---->
+    <!---->
+    
+    
+  </div>
+</div>
+`;
+
+exports[`Feather Autocomplete multi:specific should hide/reset menu and clear text input when it loses focus 1`] = `
+<div
+  class="feather-autocomplete-container"
+>
+  <div
+    class="feather-menu feather-autocomplete-menu-container"
+    data-v-6f68d0ea=""
+  >
+    
+    <div
+      aria-controls="feather-menu-dropdown"
+      aria-expanded="false"
+      aria-haspopup="true"
+      aria-label="Users"
+      aria-owns="feather-autocomplete-input-results"
+      class="feather-input-wrapper-container"
+      data-v-47a74f22=""
+      id="feather-menu-trigger"
+      menu-trigger=""
+      role="combobox"
+    >
+      <fieldset
+        aria-hidden="true"
+        class="feather-input-border"
+        data-v-47a74f22=""
+      >
+        <legend
+          data-v-47a74f22=""
+        >
+          Users
+        </legend>
+      </fieldset>
+      <label
+        class="feather-input-label"
+        data-ref-id="feather-form-element-label"
+        data-v-47a74f22=""
+        for="feather-autocomplete-input"
+        style="left: 16px;"
+      >
+        Users
+      </label>
+      <div
+        class="feather-input-wrapper has-prefix"
+        data-v-47a74f22=""
+      >
+        <div
+          class="prefix"
+          data-v-47a74f22=""
+        >
+          
+          
+          <svg
+            aria-hidden="true"
+            class="feather-icon"
+            data-v-0aa06a12=""
+            focusable="false"
+            height="24"
+            role="img"
+            viewBox="0 0 24 24"
+            width="24"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M20.29,18.84l-5.56-5.56A6.48,6.48,0,0,0,10.86,3.1,6.5,6.5,0,0,0,7.58,15.67a6.43,6.43,0,0,0,5.74-1l5.56,5.56a1,1,0,0,0,1.41,0h0A1,1,0,0,0,20.29,18.84ZM5,9.46A4.5,4.5,0,1,1,9.5,14,4.49,4.49,0,0,1,5,9.46Z"
+            />
+          </svg>
+          
+          
+        </div>
+        
+        <div
+          class="feather-autocomplete-content"
+        >
+          <div
+            aria-atomic="true"
+            aria-live="assertive"
+            class="alert"
+            role="alert"
+          />
+          <div
+            class="description"
+            id="feather-autocomplete-input-selected"
+          />
+          
+          
+          <textarea
+            aria-activedescendant=""
+            aria-autocomplete="list"
+            aria-busy="false"
+            aria-controls="feather-autocomplete-input-results"
+            aria-describedby="feather-autocomplete-input-selected feather-autocomplete-description"
+            aria-disabled="false"
+            aria-invalid="false"
+            autocomplete="off"
+            class="feather-autocomplete-input"
+            data-ref-id="feather-input"
+            id="feather-autocomplete-input"
+            style="height: 0px; flex-basis: 100%; white-space: normal;"
+            tabindex="0"
+          />
+        </div>
+        
+        <div
+          class="post"
+          data-v-47a74f22=""
+        >
+          <!---->
+          <!---->
+          
+          <svg
+            aria-hidden="true"
+            class="feather-autocomplete-dropdown-icon feather-icon feather-autocomplete-dropdown-icon"
+            data-v-0aa06a12=""
+            focusable="false"
+            height="24"
+            role="img"
+            viewBox="0 0 24 24"
+            width="24"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M6.71,9.29a1,1,0,0,0,0,1.41l4.59,4.59a1,1,0,0,0,1.41,0L17.3,10.7a1,1,0,0,0-1.41-1.41L12,13.17,8.12,9.29A1,1,0,0,0,6.71,9.29Z"
+            />
+          </svg>
+          
+        </div>
+      </div>
+    </div>
+    
+    <div
+      class="feather-menu-dropdown bottom-left"
+      data-v-6f68d0ea=""
+      id="feather-menu-dropdown"
+      style="display: none;"
+    >
+      
+      <ul
+        aria-hidden="false"
+        aria-label="Users"
+        aria-live="polite"
+        aria-multiselectable="true"
+        class="feather-list feather-autocomplete-results-list autocomplete-results"
+        data-v-4ef0e6d6=""
+        id="feather-autocomplete-input-results"
+        role="listbox"
+        style="display: none;"
+        tabindex="-1"
+      >
+        
+        
+      </ul>
+      <!--v-if-->
+      <!--v-if-->
+      <!--v-if-->
+      <!--v-if-->
+      <!--v-if-->
+      
+    </div>
+  </div>
+  <div
+    class="feather-input-sub-text"
+    data-v-764b8d6b=""
+    id="feather-autocomplete-description"
+    style="display: none;"
+  >
+    <!---->
+    <!---->
+    
+    
+  </div>
+</div>
+`;
+
+exports[`Feather Autocomplete single:specific should close menu when enter is pressed on a menu item to select it 1`] = `
+<div
+  class="feather-autocomplete-container"
+>
+  <div
+    class="feather-menu feather-autocomplete-menu-container"
+    data-v-6f68d0ea=""
+  >
+    
+    <div
+      aria-controls="feather-menu-dropdown"
+      aria-expanded="true"
+      aria-haspopup="true"
+      aria-label="Users"
+      aria-owns="feather-autocomplete-input-results"
+      class="feather-input-wrapper-container raised focused"
+      data-v-47a74f22=""
+      id="feather-menu-trigger"
+      menu-trigger=""
+      role="combobox"
+    >
+      <fieldset
+        aria-hidden="true"
+        class="feather-input-border"
+        data-v-47a74f22=""
+      >
+        <legend
+          data-v-47a74f22=""
+        >
+          Users
+        </legend>
+      </fieldset>
+      <label
+        class="feather-input-label"
+        data-ref-id="feather-form-element-label"
+        data-v-47a74f22=""
+        for="feather-autocomplete-input"
+        style="left: 12px;"
+      >
+        Users
+      </label>
+      <div
+        class="feather-input-wrapper has-prefix"
+        data-v-47a74f22=""
+      >
+        <div
+          class="prefix"
+          data-v-47a74f22=""
+        >
+          
+          
+          <svg
+            aria-hidden="true"
+            class="feather-icon"
+            data-v-0aa06a12=""
+            focusable="false"
+            height="24"
+            role="img"
+            viewBox="0 0 24 24"
+            width="24"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M20.29,18.84l-5.56-5.56A6.48,6.48,0,0,0,10.86,3.1,6.5,6.5,0,0,0,7.58,15.67a6.43,6.43,0,0,0,5.74-1l5.56,5.56a1,1,0,0,0,1.41,0h0A1,1,0,0,0,20.29,18.84ZM5,9.46A4.5,4.5,0,1,1,9.5,14,4.49,4.49,0,0,1,5,9.46Z"
+            />
+          </svg>
+          
+          
+        </div>
+        
+        <div
+          class="feather-autocomplete-content"
+        >
+          <div
+            aria-atomic="true"
+            aria-live="assertive"
+            class="alert"
+            role="alert"
+          />
+          <div
+            class="description"
+            id="feather-autocomplete-input-selected"
+          />
+          
+          
+          <textarea
+            aria-activedescendant=""
+            aria-autocomplete="list"
+            aria-busy="false"
+            aria-controls="feather-autocomplete-input-results"
+            aria-describedby="feather-autocomplete-input-selected feather-autocomplete-description"
+            aria-disabled="false"
+            aria-invalid="false"
+            autocomplete="off"
+            class="feather-autocomplete-input"
+            data-ref-id="feather-input"
+            id="feather-autocomplete-input"
+            style="height: 0px; flex-basis: 100%; white-space: normal;"
+            tabindex="0"
+          />
+        </div>
+        
+        <div
+          class="post"
+          data-v-47a74f22=""
+        >
+          <!---->
+          <!---->
+          
+          <svg
+            aria-hidden="true"
+            class="feather-autocomplete-dropdown-icon rotate feather-icon feather-autocomplete-dropdown-icon rotate"
+            data-v-0aa06a12=""
+            focusable="false"
+            height="24"
+            role="img"
+            viewBox="0 0 24 24"
+            width="24"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M6.71,9.29a1,1,0,0,0,0,1.41l4.59,4.59a1,1,0,0,0,1.41,0L17.3,10.7a1,1,0,0,0-1.41-1.41L12,13.17,8.12,9.29A1,1,0,0,0,6.71,9.29Z"
+            />
+          </svg>
+          
+        </div>
+      </div>
+    </div>
+    
+    <div
+      class="feather-menu-dropdown bottom-left"
+      data-v-6f68d0ea=""
+      id="feather-menu-dropdown"
+      style=""
+    >
+      
+      <ul
+        aria-hidden="false"
+        aria-label="Users"
+        aria-live="polite"
+        aria-multiselectable="false"
+        class="feather-list feather-autocomplete-results-list autocomplete-results"
+        data-v-4ef0e6d6=""
+        id="feather-autocomplete-input-results"
+        role="listbox"
+        style=""
+        tabindex="-1"
+      >
+        
+        <!-- eslint-disable -->
+        
+        
+        <li
+          aria-selected="false"
+          class="feather-list-item hover focus result-item hover"
+          data-v-e9e0333c=""
+          role="option"
+          style="overflow: hidden; position: relative;"
+          tabindex="-1"
+        >
+          <!---->
+          <span
+            class="feather-list-item-text"
+            data-v-e9e0333c=""
+          >
+            <span>
+              <span>
+                Item 1
+              </span>
+              <!--v-if-->
+              <!--v-if-->
+            </span>
+            <!--v-if-->
+          </span>
+          <!---->
+        </li>
+        <!--v-if-->
+        
+        
+        <li
+          aria-selected="false"
+          class="feather-list-item hover focus result-item hover"
+          data-v-e9e0333c=""
+          role="option"
+          style="overflow: hidden; position: relative;"
+          tabindex="-1"
+        >
+          <!---->
+          <span
+            class="feather-list-item-text"
+            data-v-e9e0333c=""
+          >
+            <span>
+              <span>
+                Item 2
+              </span>
+              <!--v-if-->
+              <!--v-if-->
+            </span>
+            <!--v-if-->
+          </span>
+          <!---->
+        </li>
+        <!--v-if-->
+        
+        
+        
+      </ul>
+      <!--v-if-->
+      <!--v-if-->
+      <!--v-if-->
+      <!--v-if-->
+      <!--v-if-->
+      
+    </div>
+  </div>
+  <div
+    class="feather-input-sub-text"
+    data-v-764b8d6b=""
+    id="feather-autocomplete-description"
+    style="display: none;"
+  >
+    <!---->
+    <!---->
+    
+    
+  </div>
+</div>
+`;
+
+exports[`Feather Autocomplete single:specific should handle a null property on value 1`] = `
+<div
+  class="feather-autocomplete-container"
+>
+  <div
+    class="feather-menu feather-autocomplete-menu-container"
+    data-v-6f68d0ea=""
+  >
+    
+    <div
+      aria-expanded="false"
+      aria-haspopup="listbox"
+      aria-label="Users"
+      aria-owns="feather-autocomplete-input-results"
+      class="feather-input-wrapper-container raised"
+      data-v-47a74f22=""
+      menu-trigger=""
+      role="combobox"
+    >
+      <fieldset
+        aria-hidden="true"
+        class="feather-input-border"
+        data-v-47a74f22=""
+      >
+        <legend
+          data-v-47a74f22=""
+        >
+          Users
+        </legend>
+      </fieldset>
+      <label
+        class="feather-input-label"
+        data-ref-id="feather-form-element-label"
+        data-v-47a74f22=""
+        for="feather-autocomplete-input"
+        style="left: 12px;"
+      >
+        Users
+      </label>
+      <div
+        class="feather-input-wrapper has-prefix"
+        data-v-47a74f22=""
+      >
+        <div
+          class="prefix"
+          data-v-47a74f22=""
+        >
+          
+          
+          <svg
+            aria-hidden="true"
+            class="feather-icon"
+            data-v-0aa06a12=""
+            focusable="false"
+            height="24"
+            role="img"
+            viewBox="0 0 24 24"
+            width="24"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M20.29,18.84l-5.56-5.56A6.48,6.48,0,0,0,10.86,3.1,6.5,6.5,0,0,0,7.58,15.67a6.43,6.43,0,0,0,5.74-1l5.56,5.56a1,1,0,0,0,1.41,0h0A1,1,0,0,0,20.29,18.84ZM5,9.46A4.5,4.5,0,1,1,9.5,14,4.49,4.49,0,0,1,5,9.46Z"
+            />
+          </svg>
+          
+          
+        </div>
+        
+        <div
+          class="feather-autocomplete-content"
+        >
+          <div
+            aria-atomic="true"
+            aria-live="assertive"
+            class="alert"
+            role="alert"
+          />
+          <div
+            class="description"
+            id="feather-autocomplete-input-selected"
+          >
+            Item 1, Item 2
+          </div>
+          
+          
+          <textarea
+            aria-activedescendant=""
+            aria-autocomplete="list"
+            aria-busy="false"
+            aria-controls="feather-autocomplete-input-results"
+            aria-describedby="feather-autocomplete-input-selected feather-autocomplete-description"
+            aria-disabled="false"
+            aria-invalid="false"
+            autocomplete="off"
+            class="feather-autocomplete-input"
+            data-ref-id="feather-input"
+            id="feather-autocomplete-input"
+            style="height: 26px; flex-basis: 40px; white-space: nowrap;"
+            tabindex="0"
+          />
+        </div>
+        
+        <div
+          class="post"
+          data-v-47a74f22=""
+        >
+          <a
+            class="action-icon hide-when-disabled"
+            data-ref-id="feather-form-element-clear"
+            data-v-12cb8e54=""
+            data-v-47a74f22=""
+            href="#"
+            title="Clear value"
+          >
+            <svg
+              aria-hidden="true"
+              class="feather-icon"
+              data-v-0aa06a12=""
+              data-v-12cb8e54=""
+              focusable="false"
+              height="24"
+              role="img"
+              viewBox="0 0 24 24"
+              width="24"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M12,2A10,10,0,1,0,22,12,10,10,0,0,0,12,2Zm5,13.24A1.26,1.26,0,0,1,17,17a1.24,1.24,0,0,1-1.76,0L12,13.73,8.76,17A1.24,1.24,0,1,1,7,15.24L10.24,12,7,8.76A1.24,1.24,0,0,1,8.76,7L12,10.2,15.24,7A1.24,1.24,0,1,1,17,8.76L13.76,12Z"
+              />
+            </svg>
+          </a>
+          <!---->
+          
+          <svg
+            aria-hidden="true"
+            class="feather-autocomplete-dropdown-icon feather-icon feather-autocomplete-dropdown-icon"
+            data-v-0aa06a12=""
+            focusable="false"
+            height="24"
+            role="img"
+            viewBox="0 0 24 24"
+            width="24"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M6.71,9.29a1,1,0,0,0,0,1.41l4.59,4.59a1,1,0,0,0,1.41,0L17.3,10.7a1,1,0,0,0-1.41-1.41L12,13.17,8.12,9.29A1,1,0,0,0,6.71,9.29Z"
+            />
+          </svg>
+          
+        </div>
+      </div>
+    </div>
+    
+    <div
+      class="feather-menu-dropdown bottom-left"
+      data-v-6f68d0ea=""
+      id="feather-menu-dropdown"
+      style="display: none;"
+    >
+      
+      <ul
+        aria-hidden="false"
+        aria-label="Users"
+        aria-live="polite"
+        aria-multiselectable="false"
+        class="feather-list feather-autocomplete-results-list autocomplete-results"
+        data-v-4ef0e6d6=""
+        id="feather-autocomplete-input-results"
+        role="listbox"
+        style="display: none;"
+        tabindex="-1"
+      >
+        
+        
+      </ul>
+      <!--v-if-->
+      <!--v-if-->
+      <!--v-if-->
+      <!--v-if-->
+      <!--v-if-->
+      
+    </div>
+  </div>
+  <div
+    class="feather-input-sub-text"
+    data-v-764b8d6b=""
+    id="feather-autocomplete-description"
+    style="display: none;"
+  >
+    <!---->
+    <!---->
+    
+    
+  </div>
+</div>
+`;
+
+exports[`Feather Autocomplete single:specific should show add new element when in add-new mode 1`] = `
+<div
+  class="feather-autocomplete-container"
+>
+  <div
+    class="feather-menu feather-autocomplete-menu-container"
+    data-v-6f68d0ea=""
+  >
+    
+    <div
+      aria-controls="feather-menu-dropdown"
+      aria-expanded="true"
+      aria-haspopup="true"
+      aria-label="Users"
+      aria-owns="feather-autocomplete-input-results"
+      class="feather-input-wrapper-container raised focused"
+      data-v-47a74f22=""
+      id="feather-menu-trigger"
+      menu-trigger=""
+      role="combobox"
+    >
+      <fieldset
+        aria-hidden="true"
+        class="feather-input-border"
+        data-v-47a74f22=""
+      >
+        <legend
+          data-v-47a74f22=""
+        >
+          Users
+        </legend>
+      </fieldset>
+      <label
+        class="feather-input-label"
+        data-ref-id="feather-form-element-label"
+        data-v-47a74f22=""
+        for="feather-autocomplete-input"
+        style="left: 12px;"
+      >
+        Users
+      </label>
+      <div
+        class="feather-input-wrapper has-prefix"
+        data-v-47a74f22=""
+      >
+        <div
+          class="prefix"
+          data-v-47a74f22=""
+        >
+          
+          
+          <svg
+            aria-hidden="true"
+            class="feather-icon"
+            data-v-0aa06a12=""
+            focusable="false"
+            height="24"
+            role="img"
+            viewBox="0 0 24 24"
+            width="24"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M20.29,18.84l-5.56-5.56A6.48,6.48,0,0,0,10.86,3.1,6.5,6.5,0,0,0,7.58,15.67a6.43,6.43,0,0,0,5.74-1l5.56,5.56a1,1,0,0,0,1.41,0h0A1,1,0,0,0,20.29,18.84ZM5,9.46A4.5,4.5,0,1,1,9.5,14,4.49,4.49,0,0,1,5,9.46Z"
+            />
+          </svg>
+          
+          
+        </div>
+        
+        <div
+          class="feather-autocomplete-content"
+        >
+          <div
+            aria-atomic="true"
+            aria-live="assertive"
+            class="alert"
+            role="alert"
+          />
+          <div
+            class="description"
+            id="feather-autocomplete-input-selected"
+          />
+          
+          
+          <textarea
+            aria-activedescendant=""
+            aria-autocomplete="list"
+            aria-busy="false"
+            aria-controls="feather-autocomplete-input-results"
+            aria-describedby="feather-autocomplete-input-selected feather-autocomplete-description"
+            aria-disabled="false"
+            aria-invalid="false"
+            autocomplete="off"
+            class="feather-autocomplete-input"
+            data-ref-id="feather-input"
+            id="feather-autocomplete-input"
+            style="height: 0px; flex-basis: 100%; white-space: normal;"
+            tabindex="0"
+          />
+        </div>
+        
+        <div
+          class="post"
+          data-v-47a74f22=""
+        >
+          <!---->
+          <!---->
+          
+          <svg
+            aria-hidden="true"
+            class="feather-autocomplete-dropdown-icon rotate feather-icon feather-autocomplete-dropdown-icon rotate"
+            data-v-0aa06a12=""
+            focusable="false"
+            height="24"
+            role="img"
+            viewBox="0 0 24 24"
+            width="24"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M6.71,9.29a1,1,0,0,0,0,1.41l4.59,4.59a1,1,0,0,0,1.41,0L17.3,10.7a1,1,0,0,0-1.41-1.41L12,13.17,8.12,9.29A1,1,0,0,0,6.71,9.29Z"
+            />
+          </svg>
+          
+        </div>
+      </div>
+    </div>
+    
+    <div
+      class="feather-menu-dropdown bottom-left"
+      data-v-6f68d0ea=""
+      id="feather-menu-dropdown"
+      style=""
+    >
+      
+      <ul
+        aria-hidden="false"
+        aria-label="Users"
+        aria-live="polite"
+        aria-multiselectable="false"
+        class="feather-list feather-autocomplete-results-list autocomplete-results"
+        data-v-4ef0e6d6=""
+        id="feather-autocomplete-input-results"
+        role="listbox"
+        style=""
+        tabindex="-1"
+      >
+        
+        <!-- eslint-disable -->
+        
+        
+        <li
+          aria-selected="false"
+          class="feather-list-item hover focus result-item hover"
+          data-v-e9e0333c=""
+          role="option"
+          style="overflow: hidden; position: relative;"
+          tabindex="-1"
+        >
+          <!---->
+          <span
+            class="feather-list-item-text"
+            data-v-e9e0333c=""
+          >
+            <span>
+              <span>
+                j
+              </span>
+              <!--v-if-->
+              <!--v-if-->
+            </span>
+            <span
+              class="autocomplete-item-new-label"
+            >
+              New
+            </span>
+          </span>
+          <!---->
+        </li>
+        <!--v-if-->
+        
+        
+        
+      </ul>
+      <!--v-if-->
+      <!--v-if-->
+      <!--v-if-->
+      <!--v-if-->
+      <!--v-if-->
+      
+    </div>
+  </div>
+  <div
+    class="feather-input-sub-text"
+    data-v-764b8d6b=""
+    id="feather-autocomplete-description"
+    style="display: none;"
+  >
+    <!---->
+    <!---->
+    
+    
+  </div>
+</div>
+`;

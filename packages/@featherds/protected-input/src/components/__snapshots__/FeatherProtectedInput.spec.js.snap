@@ -1,0 +1,211 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`FeatherProtectedInput.vue should change input type when show password is clicked 1`] = `
+<div
+  class="feather-input-container"
+  data-v-6d715908=""
+>
+  <div
+    class="feather-input-wrapper-container raised focused feather-input-content focused"
+    data-v-47a74f22=""
+    data-v-6d715908=""
+  >
+    <fieldset
+      aria-hidden="true"
+      class="feather-input-border"
+      data-v-47a74f22=""
+    >
+      <legend
+        data-v-47a74f22=""
+      >
+        TEST
+      </legend>
+    </fieldset>
+    <label
+      class="feather-input-label"
+      data-ref-id="feather-form-element-label"
+      data-v-47a74f22=""
+      for="feather-input-label"
+      style="left: 12px;"
+    >
+      TEST
+    </label>
+    <div
+      class="feather-input-wrapper"
+      data-v-47a74f22=""
+    >
+      <div
+        class="prefix"
+        data-v-47a74f22=""
+      >
+        
+        
+      </div>
+      
+      <input
+        aria-describedby="feather-input-description"
+        aria-disabled="false"
+        aria-invalid="false"
+        class="feather-input"
+        data-ref-id="feather-input"
+        data-v-6d715908=""
+        id="feather-input-label"
+        maxlength="false"
+        name="feather-input-label"
+        type="input"
+      />
+      
+      <div
+        class="post"
+        data-v-47a74f22=""
+      >
+        <!---->
+        <!---->
+        
+        
+        <a
+          class="password-icon hide-when-disabled"
+          data-ref-id="feather-input-password-icon"
+          href="#"
+          title="Hide password"
+        >
+          <svg
+            aria-hidden="true"
+            class="feather-icon"
+            data-v-0aa06a12=""
+            focusable="false"
+            height="24"
+            role="img"
+            viewBox="0 0 24 24"
+            width="24"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M12,6a9.78,9.78,0,0,1,8.82,5.49,9.65,9.65,0,0,1-2.41,3.12L19.82,16a11.75,11.75,0,0,0,3-4.12,1,1,0,0,0,0-.8A11.83,11.83,0,0,0,8.36,4.58L10,6.23A10.11,10.11,0,0,1,12,6ZM10.93,7.15,13,9.21a2.5,2.5,0,0,1,1.28,1.28l2.07,2.07a4.68,4.68,0,0,0,.14-1.07A4.47,4.47,0,0,0,12,7,4.24,4.24,0,0,0,10.93,7.15ZM2.71,4.58l2,2A11.66,11.66,0,0,0,1.17,11.1a1,1,0,0,0,0,.8A11.81,11.81,0,0,0,12,19a11.73,11.73,0,0,0,4.32-.82L19,20.88a1,1,0,0,0,1.42,0h0a1,1,0,0,0,0-1.41L4.13,3.17a1,1,0,0,0-1.42,0h0A1,1,0,0,0,2.71,4.58Zm6.8,6.79L12.12,14,12,14a2.5,2.5,0,0,1-2.5-2.5C9.5,11.45,9.51,11.42,9.51,11.37ZM6.11,8,7.86,9.72A4.6,4.6,0,0,0,7.5,11.5a4.51,4.51,0,0,0,6.27,4.13l1,1A10.43,10.43,0,0,1,12,17,9.76,9.76,0,0,1,3.18,11.5,9.78,9.78,0,0,1,6.11,8Z"
+            />
+          </svg>
+        </a>
+        
+        
+      </div>
+    </div>
+  </div>
+  <div
+    class="feather-input-sub-text"
+    data-v-6d715908=""
+    data-v-764b8d6b=""
+    id="feather-input-description"
+    style="display: none;"
+  >
+    <!---->
+    <!---->
+    
+    
+  </div>
+</div>
+`;
+
+exports[`FeatherProtectedInput.vue should render with show password icon by default 1`] = `
+<div
+  class="feather-input-container"
+  data-v-6d715908=""
+>
+  <div
+    class="feather-input-wrapper-container feather-input-content"
+    data-v-47a74f22=""
+    data-v-6d715908=""
+  >
+    <fieldset
+      aria-hidden="true"
+      class="feather-input-border"
+      data-v-47a74f22=""
+    >
+      <legend
+        data-v-47a74f22=""
+      >
+        TEST
+      </legend>
+    </fieldset>
+    <label
+      class="feather-input-label"
+      data-ref-id="feather-form-element-label"
+      data-v-47a74f22=""
+      for="feather-input-label"
+      style="left: 16px;"
+    >
+      TEST
+    </label>
+    <div
+      class="feather-input-wrapper"
+      data-v-47a74f22=""
+    >
+      <div
+        class="prefix"
+        data-v-47a74f22=""
+      >
+        
+        
+      </div>
+      
+      <input
+        aria-describedby="feather-input-description"
+        aria-disabled="false"
+        aria-invalid="false"
+        class="feather-input"
+        data-ref-id="feather-input"
+        data-v-6d715908=""
+        id="feather-input-label"
+        maxlength="false"
+        name="feather-input-label"
+        type="password"
+      />
+      
+      <div
+        class="post"
+        data-v-47a74f22=""
+      >
+        <!---->
+        <!---->
+        
+        
+        <a
+          class="password-icon hide-when-disabled"
+          data-ref-id="feather-input-password-icon"
+          href="#"
+          title="Show password"
+        >
+          <svg
+            aria-hidden="true"
+            class="feather-icon"
+            data-v-0aa06a12=""
+            focusable="false"
+            height="24"
+            role="img"
+            viewBox="0 0 24 24"
+            width="24"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M12,6a9.78,9.78,0,0,1,8.82,5.49,9.83,9.83,0,0,1-17.64,0A9.78,9.78,0,0,1,12,6m0-2A11.83,11.83,0,0,0,1.17,11.1a1,1,0,0,0,0,.81,11.82,11.82,0,0,0,21.66,0,1,1,0,0,0,0-.81A11.83,11.83,0,0,0,12,4Zm0,5a2.5,2.5,0,1,1-2.5,2.5A2.5,2.5,0,0,1,12,9m0-2a4.49,4.49,0,1,0,4.5,4.49A4.5,4.5,0,0,0,12,7Z"
+            />
+          </svg>
+        </a>
+        
+        
+      </div>
+    </div>
+  </div>
+  <div
+    class="feather-input-sub-text"
+    data-v-6d715908=""
+    data-v-764b8d6b=""
+    id="feather-input-description"
+    style="display: none;"
+  >
+    <!---->
+    <!---->
+    
+    
+  </div>
+</div>
+`;

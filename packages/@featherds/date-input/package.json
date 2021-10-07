@@ -1,0 +1,28 @@
+{
+  "name": "@featherds/date-input",
+  "version": "0.2.10",
+  "publishConfig": {
+    "access": "public"
+  },
+  "author": "NantHealth",
+  "scripts": {},
+  "main": "dist/app.js",
+  "license": "Apache-2.0",
+  "dependencies": {
+    "@featherds/button": "file:../button",
+    "@featherds/composables": "file:../composables",
+    "@featherds/icon": "file:../icon",
+    "@featherds/input-helper": "file:../input-helper",
+    "@featherds/menu": "file:../menu",
+    "@featherds/select": "file:../select",
+    "@featherds/styles": "file:../styles",
+    "@featherds/utils": "file:../utils",
+    "date-fns": "^2.17.0",
+    "vue": "^3.1.0-0"
+  },
+  "keywords": [
+    "vue",
+    "FeatherDateInput"
+  ],
+  "types": "./src/index.d.ts"
+}

@@ -1,0 +1,81 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Highlighter ignore case should highlight reglardless of case 1`] = `
+<span>
+  <span>
+    a
+  </span>
+  <span
+    class="highlight"
+  >
+    BC
+  </span>
+  <span>
+    d
+  </span>
+</span>
+`;
+
+exports[`Highlighter ignore case should highlight text at the end of the string 1`] = `
+<span>
+  <span>
+    ab
+  </span>
+  <span
+    class="highlight"
+  >
+    cd
+  </span>
+  <!--v-if-->
+</span>
+`;
+
+exports[`Highlighter ignore case should highlight text at the start of the string 1`] = `
+<span>
+  <span />
+  <span
+    class="highlight"
+  >
+    ab
+  </span>
+  <span>
+    cd
+  </span>
+</span>
+`;
+
+exports[`Highlighter ignore case should highlight text in the middle of the string 1`] = `
+<span>
+  <span>
+    a
+  </span>
+  <span
+    class="highlight"
+  >
+    bc
+  </span>
+  <span>
+    d
+  </span>
+</span>
+`;
+
+exports[`Highlighter ignore case should not highlight when there isn't a match 1`] = `
+<span>
+  <span>
+    abcd
+  </span>
+  <!--v-if-->
+  <!--v-if-->
+</span>
+`;
+
+exports[`Highlighter should not highlight when turned off 1`] = `
+<span>
+  <span>
+    abcd
+  </span>
+  <!--v-if-->
+  <!--v-if-->
+</span>
+`;

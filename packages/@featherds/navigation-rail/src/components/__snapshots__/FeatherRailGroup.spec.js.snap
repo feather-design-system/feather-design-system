@@ -1,0 +1,10 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`FeatherRailGroup.vue should render the component open with a label 1`] = `
+<nav
+  aria-label="Test"
+  class="nav-rail-group"
+>
+  <feather-list-stub />
+</nav>
+`;

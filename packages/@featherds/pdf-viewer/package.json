@@ -1,0 +1,25 @@
+{
+  "name": "@featherds/pdf-viewer",
+  "version": "0.2.10",
+  "publishConfig": {
+    "access": "public"
+  },
+  "author": "NantHealth",
+  "scripts": {},
+  "main": "dist/app.js",
+  "license": "Apache-2.0",
+  "dependencies": {
+    "@featherds/button": "file:../button",
+    "@featherds/composables": "file:../composables",
+    "@featherds/dialog": "file:../dialog",
+    "@featherds/icon": "file:../icon",
+    "@featherds/progress": "file:../progress",
+    "@featherds/styles": "file:../styles",
+    "vue": "^3.1.0-0"
+  },
+  "keywords": [
+    "vue",
+    "FeatherPdfViewer"
+  ],
+  "types": "./src/index.d.ts"
+}

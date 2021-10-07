@@ -1,0 +1,217 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`FeatherCheckbox.vue should have a label 1`] = `
+<div
+  class="layout-container"
+>
+  <div
+    aria-checked="false"
+    aria-disabled="false"
+    aria-labelledby="checkbox-label"
+    class="feather-checkbox feather-form-input feather-checkbox-table"
+    data-ref-id="feather-checkbox"
+    id="checkbox"
+    role="checkbox"
+    tabindex="0"
+  >
+    <div
+      class="checkbox hover focus"
+      style="overflow: hidden; position: relative;"
+    >
+      <div
+        class="box"
+      >
+        <svg
+          class="checkmark"
+          focusable="false"
+          role="presentation"
+          viewBox="0 0 24 24"
+        >
+          <path
+            class="path"
+            d="M1.73,12.91 8.1,19.28 22.79,4.59"
+            fill="none"
+          />
+        </svg>
+        <div
+          class="indeterminate"
+        />
+      </div>
+      <!---->
+    </div>
+    <label
+      data-ref-id="feather-checkbox-label"
+      for="checkbox"
+      id="checkbox-label"
+    >
+      
+      <span>
+        Hello
+      </span>
+      
+    </label>
+  </div>
+</div>
+`;
+
+exports[`FeatherCheckbox.vue should set aria-checked based on property 1`] = `
+<div
+  class="layout-container"
+>
+  <div
+    aria-checked="true"
+    aria-disabled="false"
+    aria-labelledby="checkbox-label"
+    class="feather-checkbox feather-form-input feather-checkbox-table"
+    data-ref-id="feather-checkbox"
+    id="checkbox"
+    role="checkbox"
+    tabindex="0"
+  >
+    <div
+      class="checkbox hover focus"
+      style="overflow: hidden; position: relative;"
+    >
+      <div
+        class="box"
+      >
+        <svg
+          class="checkmark"
+          focusable="false"
+          role="presentation"
+          viewBox="0 0 24 24"
+        >
+          <path
+            class="path"
+            d="M1.73,12.91 8.1,19.28 22.79,4.59"
+            fill="none"
+          />
+        </svg>
+        <div
+          class="indeterminate"
+        />
+      </div>
+      <!---->
+    </div>
+    <label
+      data-ref-id="feather-checkbox-label"
+      for="checkbox"
+      id="checkbox-label"
+    >
+      
+      <span>
+        Hello
+      </span>
+      
+    </label>
+  </div>
+</div>
+`;
+
+exports[`FeatherCheckbox.vue should set aria-checked based on property 2`] = `
+<div
+  class="layout-container"
+>
+  <div
+    aria-checked="false"
+    aria-disabled="false"
+    aria-labelledby="checkbox-label"
+    class="feather-checkbox feather-form-input feather-checkbox-table"
+    data-ref-id="feather-checkbox"
+    id="checkbox"
+    role="checkbox"
+    tabindex="0"
+  >
+    <div
+      class="checkbox hover focus"
+      style="overflow: hidden; position: relative;"
+    >
+      <div
+        class="box"
+      >
+        <svg
+          class="checkmark"
+          focusable="false"
+          role="presentation"
+          viewBox="0 0 24 24"
+        >
+          <path
+            class="path"
+            d="M1.73,12.91 8.1,19.28 22.79,4.59"
+            fill="none"
+          />
+        </svg>
+        <div
+          class="indeterminate"
+        />
+      </div>
+      <!---->
+    </div>
+    <label
+      data-ref-id="feather-checkbox-label"
+      for="checkbox"
+      id="checkbox-label"
+    >
+      
+      <span>
+        Hello
+      </span>
+      
+    </label>
+  </div>
+</div>
+`;
+
+exports[`FeatherCheckbox.vue should set aria-checked based on property 3`] = `
+<div
+  class="layout-container"
+>
+  <div
+    aria-checked="mixed"
+    aria-disabled="false"
+    aria-labelledby="checkbox-label"
+    class="feather-checkbox feather-form-input feather-checkbox-table"
+    data-ref-id="feather-checkbox"
+    id="checkbox"
+    role="checkbox"
+    tabindex="0"
+  >
+    <div
+      class="checkbox hover focus"
+      style="overflow: hidden; position: relative;"
+    >
+      <div
+        class="box"
+      >
+        <svg
+          class="checkmark"
+          focusable="false"
+          role="presentation"
+          viewBox="0 0 24 24"
+        >
+          <path
+            class="path"
+            d="M1.73,12.91 8.1,19.28 22.79,4.59"
+            fill="none"
+          />
+        </svg>
+        <div
+          class="indeterminate"
+        />
+      </div>
+      <!---->
+    </div>
+    <label
+      data-ref-id="feather-checkbox-label"
+      for="checkbox"
+      id="checkbox-label"
+    >
+      
+      <span>
+        Hello
+      </span>
+      
+    </label>
+  </div>
+</div>
+`;

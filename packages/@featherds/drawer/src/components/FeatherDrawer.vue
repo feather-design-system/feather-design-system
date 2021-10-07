@@ -1,0 +1,182 @@
+<template>
+  <div class="drawer-container">
+    <transition name="greyOutShim">
+      <div v-if="modelValue" class="greyedOut"></div>
+    </transition>
+    <transition
+      :name="left ? 'drawer-left' : 'drawer'"
+      v-on:after-enter="shown = true"
+      v-on:after-leave="shown = false"
+    >
+      <focus-trap
+        v-show="modelValue"
+        :enable="modelValue"
+        :style="{ width: width }"
+        :key="'sect'"
+        class="content"
+        :class="{ left: left }"
+      >
+        <div
+          :aria-label="titleLabel"
+          ref="drawer"
+          role="dialog"
+          aria-modal="true"
+          data-ref-id="feather-drawer"
+          tabindex="-1"
+        >
+          <div class="slot">
+            <slot></slot>
+          </div>
+          <dialog-close :close-text="closeLabel" @close="close"></dialog-close>
+        </div>
+      </focus-trap>
+    </transition>
+  </div>
+</template>
+
+<script>
+import { FocusTrap, DialogClose } from "@featherds/dialog";
+import { useCloseOnEsc } from "@featherds/composables/modal/CloseOnEsc";
+import { useRestoreFocus } from "@featherds/composables/modal/RestoreFocus";
+import { useHideBodyOverflow } from "@featherds/composables/modal/HideOverflow";
+import { useLabelProperty } from "@featherds/composables/LabelProperty";
+import { toRef, watch } from "vue";
+const LABELS = {
+  title: "REQUIRED",
+  close: "Close Dialog",
+};
+
+export default {
+  model: {
+    prop: "modelValue",
+    event: "update:modelValue",
+  },
+  emits: ["update:modelValue", "shown", "hidden"],
+  props: {
+    modelValue: {
+      type: Boolean,
+      default: false,
+      required: true,
+    },
+    width: {
+      type: String,
+      default: "auto",
+      validator(value) {
+        if (value === "auto") {
+          return true;
+        }
+        return /(\d*)(px|%|em|vw)/.test(value);
+      },
+    },
+    left: {
+      type: Boolean,
+      default: false,
+    },
+    labels: {
+      type: Object,
+      default() {
+        return LABELS;
+      },
+      validator(v) {
+        return !!v.title;
+      },
+    },
+  },
+  setup(props, context) {
+    const labels = useLabelProperty(toRef(props, "labels"), LABELS);
+    const isShown = toRef(props, "modelValue");
+    const close = () => {
+      context.emit("update:modelValue", false);
+    };
+
+    useHideBodyOverflow(isShown);
+    useRestoreFocus(isShown);
+    watch(useCloseOnEsc(isShown), () => {
+      close();
+    });
+
+    watch(isShown, (v) => {
+      if (v) {
+        context.emit("shown");
+      } else {
+        context.emit("hidden");
+      }
+    });
+    return { close, isShown, ...labels };
+  },
+  components: {
+    DialogClose,
+    FocusTrap,
+  },
+};
+</script>
+
+<style lang="scss" scoped>
+@import "~@featherds/styles/themes/variables";
+@import "~@featherds/styles/mixins/elevation";
+.greyedOut {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  z-index: var($zindex-modal-backdrop);
+  background-color: rgba(0, 0, 0, 0.3);
+}
+
+.content {
+  position: fixed;
+  top: 0;
+  right: 0;
+  height: 100%;
+  z-index: var($zindex-modal);
+  background-color: var($surface);
+  margin-left: 56px;
+  @include elevation(8);
+  &.left {
+    right: unset;
+    left: 0;
+    margin-right: 56px;
+    margin-left: 0px;
+  }
+  :deep(.focus-trap-content) {
+    height: 100%;
+  }
+}
+
+.slot,
+[role="dialog"] {
+  height: 100%;
+}
+
+/* Transitions */
+.drawer-enter-active,
+.drawer-leave-active,
+.drawer-left-enter-active,
+.drawer-left-leave-active {
+  transition: transform 0.3s cubic-bezier(0.2, 0.6, 0.4, 1);
+}
+
+.drawer-enter-from,
+.drawer-leave-to {
+  transform: translateX(100%);
+}
+.drawer-left-enter-from,
+.drawer-left-leave-to {
+  transform: translateX(-100%);
+}
+
+.greyOutShim-enter-active,
+.greyOutShim-leave-active {
+  transition: opacity 0.3s ease-in;
+}
+
+.greyOutShim-enter-from,
+.greyOutShim-leave-to {
+  opacity: 0;
+}
+.content :deep([data-lock]),
+.content :deep(.focus-trap-content) {
+  height: 100%;
+}
+</style>

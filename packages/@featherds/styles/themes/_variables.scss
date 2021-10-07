@@ -1,0 +1,286 @@
+@function prefix($prop) {
+  @return --feather-#{$prop};
+}
+
+$primary: prefix(primary);
+$primary-variant: prefix(primary-variant);
+$secondary-variant: prefix(secondary-variant);
+$secondary: prefix(secondary);
+$clickable-normal: prefix(clickable-normal);
+$clickable-selected: prefix(clickable-selected);
+$clickable-visited: prefix(clickable-visited);
+$background: prefix(background);
+$surface: prefix(surface);
+$error: prefix(error);
+$success: prefix(success);
+$warning: prefix(warning);
+
+$primary-text-on-color: prefix(primary-text-on-color);
+$secondary-text-on-color: prefix(secondary-text-on-color);
+$disabled-text-on-color: prefix(disabled-text-on-color);
+$border-on-color: prefix(border-on-color);
+$border-light-on-color: prefix(border-light-on-color);
+
+$primary-text-on-surface: prefix(primary-text-on-surface);
+$secondary-text-on-surface: prefix(secondary-text-on-surface);
+$disabled-text-on-surface: prefix(disabled-text-on-surface);
+$border-on-surface: prefix(border-on-surface);
+$border-light-on-surface: prefix(border-light-on-surface);
+
+$primary-text-on-warning: prefix(primary-text-on-warning);
+$secondary-text-on-warning: prefix(secondary-text-on-warning);
+$disabled-text-on-warning: prefix(disabled-text-on-warning);
+$border-on-warning: prefix(border-on-warning);
+$border-light-on-warning: prefix(border-light-on-warning);
+
+$root-font-size: prefix(root-font-size);
+$header-font-family: prefix(header-font-family);
+$font-family: prefix(font-family);
+$font-light: prefix(font-light);
+$font-normal: prefix(font-normal);
+$font-medium: prefix(font-medium);
+$font-semibold: prefix(font-semibold);
+$font-bold: prefix(font-bold);
+$base-font-size: prefix(base-font-size);
+
+$shade-1: prefix(shade-1);
+$shade-2: prefix(shade-2);
+$shade-3: prefix(shade-3);
+$shade-4: prefix(shade-4);
+
+$state-opacity-hover-on-surface: prefix(state-opacity-hover-on-surface);
+$state-opacity-pressed-on-surface: prefix(state-opacity-pressed-on-surface);
+$state-opacity-selected-on-surface: prefix(state-opacity-selected-on-surface);
+$state-opacity-focus-on-surface: prefix(state-opacity-focus-on-surface);
+$state-color-on-surface: prefix(state-color-on-surface);
+
+$state-opacity-hover-on-neutral: prefix(state-opacity-hover-on-neutral);
+$state-opacity-pressed-on-neutral: prefix(state-opacity-pressed-on-neutral);
+$state-opacity-selected-on-neutral: prefix(state-opacity-selected-on-neutral);
+$state-opacity-focus-on-neutral: prefix(state-opacity-focus-on-neutral);
+$state-color-on-neutral: prefix(state-color-on-neutral);
+
+$state-opacity-hover-on-color: prefix(state-opacity-hover-on-color);
+$state-opacity-pressed-on-color: prefix(state-opacity-pressed-on-color);
+$state-opacity-selected-on-color: prefix(state-opacity-selected-on-color);
+$state-opacity-focus-on-color: prefix(state-opacity-focus-on-color);
+$state-border-focus-on-color: prefix(state-border-focus-on-color);
+$state-inner-border-color-focus-on-color: prefix(
+  state-inner-border-color-focus-on-color
+);
+$state-color-on-color: prefix(state-color-on-color);
+
+$shadow-0: prefix(shadow-0);
+$shadow-1: prefix(shadow-1);
+$shadow-2: prefix(shadow-2);
+$shadow-3: prefix(shadow-3);
+$shadow-4: prefix(shadow-4);
+$shadow-5: prefix(shadow-5);
+$shadow-6: prefix(shadow-6);
+$shadow-7: prefix(shadow-7);
+$shadow-8: prefix(shadow-8);
+$shadow-9: prefix(shadow-9);
+$shadow-10: prefix(shadow-10);
+$shadow-11: prefix(shadow-11);
+$shadow-12: prefix(shadow-12);
+$shadow-13: prefix(shadow-13);
+$shadow-14: prefix(shadow-14);
+$shadow-15: prefix(shadow-15);
+$shadow-16: prefix(shadow-16);
+$shadow-17: prefix(shadow-17);
+$shadow-18: prefix(shadow-18);
+$shadow-19: prefix(shadow-19);
+$shadow-20: prefix(shadow-20);
+$shadow-21: prefix(shadow-21);
+$shadow-22: prefix(shadow-22);
+$shadow-23: prefix(shadow-23);
+$shadow-24: prefix(shadow-24);
+
+$elevation-background-0: prefix(elevation-background-0);
+$elevation-background-1: prefix(elevation-background-1);
+$elevation-background-2: prefix(elevation-background-2);
+$elevation-background-3: prefix(elevation-background-3);
+$elevation-background-4: prefix(elevation-background-4);
+$elevation-background-6: prefix(elevation-background-6);
+$elevation-background-8: prefix(elevation-background-8);
+$elevation-background-12: prefix(elevation-background-12);
+$elevation-background-16: prefix(elevation-background-16);
+$elevation-background-24: prefix(elevation-background-24);
+
+//typography
+//display1
+$display1-font-size: prefix(display1-font-size);
+$display1-line-height: prefix(display1-line-height);
+$display1-letter-spacing: prefix(display1-letter-spacing);
+$display1-font-weight: prefix(display1-font-weight);
+$display1-text-transform: prefix(display1-text-transform);
+$display1-font-style: prefix(display1-font-style);
+
+//display2
+$display2-font-size: prefix(display2-font-size);
+$display2-line-height: prefix(display2-line-height);
+$display2-letter-spacing: prefix(display2-letter-spacing);
+$display2-font-weight: prefix(display2-font-weight);
+$display2-text-transform: prefix(display2-text-transform);
+$display2-font-style: prefix(display2-font-style);
+
+//display3
+$display3-font-size: prefix(display3-font-size);
+$display3-line-height: prefix(display3-line-height);
+$display3-letter-spacing: prefix(display3-letter-spacing);
+$display3-font-weight: prefix(display3-font-weight);
+$display3-text-transform: prefix(display3-text-transform);
+$display3-font-style: prefix(display3-font-style);
+
+//title
+$title-font-size: prefix(title-font-size);
+$title-line-height: prefix(title-line-height);
+$title-letter-spacing: prefix(title-letter-spacing);
+$title-font-weight: prefix(title-font-weight);
+$title-text-transform: prefix(title-text-transform);
+$title-font-style: prefix(title-font-style);
+
+//headline1
+$headline1-font-size: prefix(headline1-font-size);
+$headline1-line-height: prefix(headline1-line-height);
+$headline1-letter-spacing: prefix(headline1-letter-spacing);
+$headline1-font-weight: prefix(headline1-font-weight);
+$headline1-text-transform: prefix(headline1-text-transform);
+$headline1-font-style: prefix(headline1-font-style);
+
+//headline2
+$headline2-font-size: prefix(headline2-font-size);
+$headline2-line-height: prefix(headline2-line-height);
+$headline2-letter-spacing: prefix(headline2-letter-spacing);
+$headline2-font-weight: prefix(headline2-font-weight);
+$headline2-text-transform: prefix(headline2-text-transform);
+$headline2-font-style: prefix(headline2-font-style);
+
+//headline3
+$headline3-font-size: prefix(headline3-font-size);
+$headline3-line-height: prefix(headline3-line-height);
+$headline3-letter-spacing: prefix(headline3-letter-spacing);
+$headline3-font-weight: prefix(headline3-font-weight);
+$headline3-text-transform: prefix(headline3-text-transform);
+$headline3-font-style: prefix(headline3-font-style);
+
+//headline4
+$headline4-font-size: prefix(headline4-font-size);
+$headline4-line-height: prefix(headline4-line-height);
+$headline4-letter-spacing: prefix(headline4-letter-spacing);
+$headline4-font-weight: prefix(headline4-font-weight);
+$headline4-text-transform: prefix(headline4-text-transform);
+$headline4-font-style: prefix(headline4-font-style);
+
+//subtitle1
+$subtitle1-font-size: prefix(subtitle1-font-size);
+$subtitle1-line-height: prefix(subtitle1-line-height);
+$subtitle1-letter-spacing: prefix(subtitle1-letter-spacing);
+$subtitle1-font-weight: prefix(subtitle1-font-weight);
+$subtitle1-text-transform: prefix(subtitle1-text-transform);
+$subtitle1-font-style: prefix(subtitle1-font-style);
+
+//subtitle2
+$subtitle2-font-size: prefix(subtitle2-font-size);
+$subtitle2-line-height: prefix(subtitle2-line-height);
+$subtitle2-letter-spacing: prefix(subtitle2-letter-spacing);
+$subtitle2-font-weight: prefix(subtitle2-font-weight);
+$subtitle2-text-transform: prefix(subtitle2-text-transform);
+$subtitle2-font-style: prefix(subtitle2-font-style);
+
+//body-large
+$body-large-font-size: prefix(body-large-font-size);
+$body-large-line-height: prefix(body-large-line-height);
+$body-large-letter-spacing: prefix(body-large-letter-spacing);
+$body-large-font-weight: prefix(body-large-font-weight);
+$body-large-text-transform: prefix(body-large-text-transform);
+$body-large-font-style: prefix(body-large-font-style);
+
+//body-small
+$body-small-font-size: prefix(body-small-font-size);
+$body-small-line-height: prefix(body-small-line-height);
+$body-small-letter-spacing: prefix(body-small-letter-spacing);
+$body-small-font-weight: prefix(body-small-font-weight);
+$body-small-text-transform: prefix(body-small-text-transform);
+$body-small-font-style: prefix(body-small-font-style);
+
+//button
+$button-font-size: prefix(button-font-size);
+$button-line-height: prefix(button-line-height);
+$button-letter-spacing: prefix(button-letter-spacing);
+$button-font-weight: prefix(button-font-weight);
+$button-text-transform: prefix(button-text-transform);
+$button-font-style: prefix(button-font-style);
+
+//caption
+$caption-font-size: prefix(caption-font-size);
+$caption-line-height: prefix(caption-line-height);
+$caption-letter-spacing: prefix(caption-letter-spacing);
+$caption-font-weight: prefix(caption-font-weight);
+$caption-text-transform: prefix(caption-text-transform);
+$caption-font-style: prefix(caption-font-style);
+
+//overline
+$overline-font-size: prefix(overline-font-size);
+$overline-line-height: prefix(overline-line-height);
+$overline-letter-spacing: prefix(overline-letter-spacing);
+$overline-font-weight: prefix(overline-font-weight);
+$overline-text-transform: prefix(overline-text-transform);
+$overline-font-style: prefix(overline-font-style);
+
+//layout
+$content-width: prefix(content-width);
+
+$zindex-dropdown: prefix(zindex-dropdown);
+$zindex-sticky: prefix(zindex-sticky);
+$zindex-fixed: prefix(zindex-fixed);
+$zindex-modal-backdrop: prefix(zindex-modal-backdrop);
+$zindex-modal: prefix(zindex-modal);
+$zindex-popover: prefix(zindex-popover);
+$zindex-tooltip: prefix(zindex-tooltip);
+
+$xl-gutter: 24px;
+$l-gutter: 24px;
+$m-gutter: 24px;
+$s-gutter: 16px;
+$xs-gutter: 16px;
+
+$grid: (
+  xl: (
+    min: 960px,
+    col: 12,
+    gutter: $xl-gutter,
+  ),
+  l: (
+    min: 840px,
+    max: 959px,
+    col: 12,
+    gutter: $l-gutter,
+  ),
+  m: (
+    min: 720px,
+    max: 839px,
+    col: 8,
+    gutter: $m-gutter,
+  ),
+  s: (
+    min: 600px,
+    max: 719px,
+    col: 8,
+    gutter: $s-gutter,
+  ),
+  xs: (
+    min: 0px,
+    max: 599px,
+    col: 4,
+    gutter: $xs-gutter,
+  ),
+);
+
+$spacing-xxs: 4px;
+$spacing-xs: 8px;
+$spacing-s: 12px;
+$spacing-m: 16px;
+$spacing-l: 20px;
+$spacing-xl: 24px;
+$spacing-xxl: 48px;

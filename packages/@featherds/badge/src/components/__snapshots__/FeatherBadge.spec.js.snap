@@ -1,0 +1,91 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`FeatherBadge.vue should render multiple icon in correct order 1`] = `
+<span
+  class="badge-container"
+>
+  
+  
+  <div
+    class="badges"
+  >
+    
+    <badge-stub
+      siblings="true"
+      title="MESSAGE"
+      type="info"
+    />
+    <badge-stub
+      siblings="true"
+      title="MESSAGE"
+      type="error"
+    />
+    
+  </div>
+</span>
+`;
+
+exports[`FeatherBadge.vue should render multiple icon inline in correct order  1`] = `
+<span
+  class="badge-container inline"
+>
+  
+  
+  <div
+    class="badges"
+  >
+    
+    <badge-stub
+      siblings="true"
+      title="MESSAGE"
+      type="info"
+    />
+    <badge-stub
+      siblings="true"
+      title="MESSAGE"
+      type="error"
+    />
+    
+  </div>
+</span>
+`;
+
+exports[`FeatherBadge.vue should render single icon  1`] = `
+<span
+  class="badge-container"
+>
+  
+  
+  <div
+    class="badges"
+  >
+    
+    <badge-stub
+      siblings="false"
+      title="MESSAGE"
+      type="info"
+    />
+    
+  </div>
+</span>
+`;
+
+exports[`FeatherBadge.vue should render single icon inline 1`] = `
+<span
+  class="badge-container inline"
+>
+  
+  
+  <div
+    class="badges"
+  >
+    
+    <badge-stub
+      siblings="false"
+      title="MESSAGE"
+      type="info"
+    />
+    
+  </div>
+</span>
+`;

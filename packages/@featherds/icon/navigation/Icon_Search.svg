@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="24" height="24" viewBox="0 0 24 24">
+  <defs>
+    <symbol id="material_system_icon_border" data-name="material_system_icon_border" viewBox="0 0 48 48">
+      <rect width="48" height="48" fill="none"/>
+    </symbol>
+  </defs>
+  <g>
+    <use width="48" height="48" transform="translate(0 0) scale(0.5)" xlink:href="#material_system_icon_border"/>
+    <path d="M21.62,20.38l-6.24-6.24A7.43,7.43,0,0,0,17,9.5,7.5,7.5,0,1,0,9.5,17a7.43,7.43,0,0,0,4.64-1.62l6.24,6.24a.88.88,0,0,0,1.24-1.24ZM9.5,15A5.5,5.5,0,1,1,15,9.5,5.5,5.5,0,0,1,9.5,15Z"/>
+  </g>
+</svg>

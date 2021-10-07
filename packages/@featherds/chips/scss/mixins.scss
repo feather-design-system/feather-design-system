@@ -1,0 +1,38 @@
+@import "@featherds/styles/themes/variables";
+
+@mixin standalone-chip() {
+  margin: 12px 16px;
+}
+
+@mixin condensed-chip() {
+  height: 26px;
+  padding: 0;
+}
+
+@mixin chip-delete() {
+  display: inline-flex;
+  align-items: center;
+  pointer-events: auto;
+  position: relative;
+  width: 22px;
+  height: 18px;
+  z-index: 1;
+  flex-shrink: 0;
+
+  .delete-icon {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 18px;
+    height: 18px;
+    margin-right: 4px;
+    color: var($secondary-text-on-surface);
+    cursor: pointer;
+    &:hover {
+      color: var($primary-text-on-surface);
+    }
+    &:focus {
+      outline: 0;
+    }
+  }
+}
