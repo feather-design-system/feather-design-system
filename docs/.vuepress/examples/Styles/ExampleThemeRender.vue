@@ -54,8 +54,8 @@ export default {
 };
 </script>
 <style lang="scss" scoped>
-@import "~@featherds/styles/themes/variables";
-@import "~@featherds/styles/mixins/typography";
+@import "@featherds/styles/themes/variables";
+@import "@featherds/styles/mixins/typography";
 
 .theme-render {
   padding: 8px 32px;
@@ -78,7 +78,7 @@ export default {
 </style>
 
 <style lang="scss" scoped>
-@import "~@featherds/styles/themes/open-mixins";
+@import "@featherds/styles/themes/open-mixins";
 
 @function str-replace($string, $search, $replace: "") {
   $index: str-index($string, $search);

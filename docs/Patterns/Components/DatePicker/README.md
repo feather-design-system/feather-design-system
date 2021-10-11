@@ -9,8 +9,6 @@ Date pickers allow users to select a date from the past, present or future. Thes
 
 ## Component
 
-<ComponentCard component="FeatherDateInput" package="DateInput" />
-
 ## Anatomy
 
 A date picker consists of two primary methods of interaction: the text field date input and the calendar picker input. The text field date input is best used when the user needs to enter a date that occurs relatively long ago or far in the future. The text field date input allows for faster input thanks to the minimal number of clicks involved and the speed with which users are able to type. The calendar input involves more clicks on the user’s behalf, but it is more accurate and more visually engaging for users, breaking the repetitive nature of data entry. Each of the two date input controls has their own set of child elements and sub-components.

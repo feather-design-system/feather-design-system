@@ -125,6 +125,7 @@
 }
 
 @mixin button {
+  @include header();
   font-family: var($font-family);
   color: var($primary-text-on-surface);
   font-size: var($button-font-size);
@@ -133,7 +134,6 @@
   font-weight: var($button-font-weight);
   text-transform: var($button-text-transform);
   font-style: var($button-font-style);
-  @include rendering();
 }
 
 @mixin caption {
@@ -148,6 +148,7 @@
 }
 
 @mixin overline {
+  @include header();
   font-size: var($overline-font-size);
   line-height: var($overline-line-height);
   letter-spacing: var($overline-letter-spacing);
@@ -155,7 +156,6 @@
   text-transform: var($overline-text-transform);
   font-style: var($overline-font-style);
   color: var($primary-text-on-surface);
-  @include rendering();
 }
 
 @mixin screen-reader() {

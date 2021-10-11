@@ -21,7 +21,7 @@
   </div>
 </template>
 <style lang="scss" scoped>
-@import "~@featherds/styles/mixins/grid";
+@import "@featherds/styles/mixins/grid";
 
 .container {
   @include container;

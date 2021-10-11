@@ -1,6 +1,6 @@
 <template>
   <li>
-    <a :href="item.href" class="sidebar-link" :class="{ active: active }">{{
+    <a :href="item.href" class="sidebar-item" :class="{ active: active }">{{
       item.title
     }}</a>
   </li>
@@ -19,13 +19,16 @@ export default {
 };
 </script>
 <style lang="scss" scoped>
-@import "~@featherds/styles/themes/variables";
-@import "~@featherds/styles/mixins/typography";
+@import "@featherds/styles/themes/variables";
+@import "@featherds/styles/mixins/typography";
 
 li a {
-  padding: 4px 4px 4px 16px;
-  display: inline-block;
+  height: 32px;
+  padding-left: 16px;
+  display: flex;
+  align-items: center;
   border-left: 2px solid var($shade-4);
+  @include body-small;
   color: var($secondary-text-on-surface);
   &:visited {
     color: var($secondary-text-on-surface);
@@ -33,12 +36,10 @@ li a {
   &:hover {
     text-decoration: none;
     color: var($primary-text-on-surface);
-    border-left: 2px solid var($shade-3);
   }
   &.active {
-    color: var($primary-text-on-surface);
-    border-left: 2px solid var($shade-1);
-    font-weight: var($font-bold);
+    color: var($primary);
+    border-left: 2px solid var($primary);
   }
 }
 </style>

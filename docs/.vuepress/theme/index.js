@@ -2,7 +2,6 @@
 const { path } = require("@vuepress/utils");
 module.exports = {
   layouts: path.resolve(__dirname, "./layouts"),
-  clientAppSetupFiles: path.resolve(__dirname, "./preloadTheme.js"),
   plugins: [
     [
       "@vuepress/prismjs",
@@ -19,16 +18,10 @@ module.exports = {
     [
       "@vuepress/register-components",
       {
-        componentsDir: path.resolve(__dirname, "./components"),
-      },
-    ],
-    [
-      "@vuepress/register-components",
-      {
         componentsDir: path.resolve(__dirname, "../examples"),
       },
     ],
-    // ["@vuepress/active-header-links"],
+    ["@vuepress/active-header-links", { offset: 60 }],
     [
       "@vuepress/plugin-container",
       {

@@ -16,7 +16,7 @@
 
 <style lang="scss" scoped>
 @use "sass:math";
-@import "~@featherds/styles/themes/variables";
+@import "@featherds/styles/themes/variables";
 $offset: 187;
 $duration: 1.4s;
 

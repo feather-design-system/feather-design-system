@@ -9,8 +9,6 @@ Elevation is a method of establishing visual hierarchy in a layout using the per
 
 ## Components
 
-<ComponentCard component="Elevation" package="Styles" />
-
 ## Relative Elevation
 
 All objects in the Feather design system have a resting elevation. Some objects have active elevation, which refers to the change in elevation they undergo based on some user interaction. Active elevation is usually the result of a state change (ex. From resting state to hover state). Some components and surfaces may appear over top of others. This has an affect on the shadow that certain elements cast. The diagram below depicts the elevation for all components in the Feather design system.

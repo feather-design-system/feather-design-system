@@ -7,8 +7,8 @@
 @import "variables";
 
 $open-light-primary: (
-  $primary: #3a4bd3,
-  $primary-variant: #131736,
+  $primary: #273180,
+  $primary-variant: #00BFCB,
   $state-color-on-surface: #131736
 );
 $open-light-primary: add-RGB($open-light-primary);
@@ -22,9 +22,9 @@ $open-light-map: map-collect($base-theme, $base-light, $open-light-primary);
 }
 
 $open-dark-primary: (
-  $primary: #14d1df,
+  $primary: #00BFCB,
   $primary-variant: #b5eff3,
-  $surface: #131736
+  $surface: #15182B
 );
 $open-dark-primary: add-RGB($open-dark-primary);
 

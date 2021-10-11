@@ -136,8 +136,8 @@ export default {
 };
 </script>
 <style lang="scss" scoped>
-@import "~@featherds/table/scss/table";
-@import "~@featherds/styles/mixins/typography";
+@import "@featherds/table/scss/table";
+@import "@featherds/styles/mixins/typography";
 table {
   width: 100%;
   @include table();

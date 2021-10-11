@@ -1,5 +1,9 @@
 <template>
   <section>
+    <p>
+      The results of this autocomplete appear in a grid. Please check out the
+      <a href="#grid-config">Grid Config</a>
+    </p>
     <FeatherAutocomplete
       class="my-autocomplete"
       label="Users"

@@ -48,8 +48,8 @@ export default {
 };
 </script>
 <style lang="scss" scoped>
-@import "~@featherds/styles/themes/variables";
-@import "~@featherds/styles/themes/utils";
+@import "@featherds/styles/themes/variables";
+@import "@featherds/styles/themes/utils";
 a.round {
   display: flex;
   align-items: center;
@@ -61,24 +61,24 @@ a.round {
   justify-content: center;
   &:hover {
     background: linear-gradient(
-      alpha($state-color-on-neutral, var($state-opacity-hover-on-neutral)),
-      alpha($state-color-on-neutral, var($state-opacity-hover-on-neutral))
+      alpha($state-color-on-color, var($state-opacity-hover-on-color)),
+      alpha($state-color-on-color, var($state-opacity-hover-on-color))
     );
     &:focus {
       background: linear-gradient(
-          alpha($state-color-on-neutral, var($state-opacity-hover-on-neutral)),
-          alpha($state-color-on-neutral, var($state-opacity-hover-on-neutral))
+          alpha($state-color-on-color, var($state-opacity-hover-on-color)),
+          alpha($state-color-on-color, var($state-opacity-hover-on-color))
         ),
         linear-gradient(
-          alpha($state-color-on-neutral, var($state-opacity-focus-on-neutral)),
-          alpha($state-color-on-neutral, var($state-opacity-focus-on-neutral))
+          alpha($state-color-on-color, var($state-opacity-focus-on-color)),
+          alpha($state-color-on-color, var($state-opacity-focus-on-color))
         );
     }
   }
   &:focus {
     background: linear-gradient(
-      alpha($state-color-on-neutral, var($state-opacity-focus-on-neutral)),
-      alpha($state-color-on-neutral, var($state-opacity-focus-on-neutral))
+      alpha($state-color-on-color, var($state-opacity-focus-on-color)),
+      alpha($state-color-on-color, var($state-opacity-focus-on-color))
     );
     border: 1px solid var($surface);
     outline: 0;
@@ -104,8 +104,8 @@ a.home {
   padding: 4px;
   &:focus {
     background: linear-gradient(
-      alpha($state-color-on-neutral, var($state-opacity-focus-on-neutral)),
-      alpha($state-color-on-neutral, var($state-opacity-focus-on-neutral))
+      alpha($state-color-on-color, var($state-opacity-focus-on-color)),
+      alpha($state-color-on-color, var($state-opacity-focus-on-color))
     );
   }
   :deep(svg.feather-icon) {

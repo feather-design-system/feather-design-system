@@ -88,9 +88,9 @@ export default {
 };
 </script>
 <style lang="scss" scoped>
-@import "~@featherds/styles/mixins/typography";
-@import "~@featherds/styles/themes/variables";
-@import "~@featherds/styles/themes/utils";
+@import "@featherds/styles/mixins/typography";
+@import "@featherds/styles/themes/variables";
+@import "@featherds/styles/themes/utils";
 @import "../../scss/variables";
 li {
   list-style: none;

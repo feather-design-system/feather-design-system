@@ -2,11 +2,7 @@ const fs = require("fs-extra");
 
 const generateAllDemoFile = async (feather) => {
   const getImport = (icon) =>
-    `import ${icon.group}${
-      icon.name
-    } from "@featherds/icon/${icon.group}/${
-      icon.name
-    }";
+    `import ${icon.group}${icon.name} from "@featherds/icon/${icon.group}/${icon.name}";
 `;
 
   const htmlTemplate = await fs.readFile(__dirname + "/allDemo.html");
@@ -37,7 +33,7 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-@import "~@featherds/styles/themes/variables";
+@import "@featherds/styles/themes/variables";
 .icons {
   font-size: 20px;
   color: var($primary);

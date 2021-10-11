@@ -37,7 +37,7 @@ export default {
 }
 </style>
 <style lang="scss">
-@import "~@featherds/styles/themes/open-mixins";
+@import "@featherds/styles/themes/open-mixins";
 
 .light {
   @include open-light();

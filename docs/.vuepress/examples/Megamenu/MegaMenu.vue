@@ -4,10 +4,8 @@
       <template v-slot:left>
         <FeatherMegaMenu name="Management" close-text="Close" id="management">
           <template v-slot:button>
-            <FeatherAppBarButton
-              >Management
-              <FeatherIcon :icon="iconCaret" class="icon" />
-            </FeatherAppBarButton>
+            Management
+            <FeatherIcon :icon="iconCaret" class="icon" />
           </template>
           <div class="feather-row">
             <div
@@ -61,11 +59,7 @@
   </section>
 </template>
 <script>
-import {
-  FeatherAppBar,
-  FeatherAppBarLink,
-  FeatherAppBarButton,
-} from "@featherds/app-bar";
+import { FeatherAppBar } from "@featherds/app-bar";
 import { FeatherListHeader, FeatherListItem } from "@featherds/list";
 import { FeatherIcon } from "@featherds/icon";
 import KeyboardArrowDown from "@featherds/icon/navigation/ExpandMore";
@@ -83,7 +77,6 @@ export default {
   },
   components: {
     FeatherAppBar,
-    FeatherAppBarButton,
     FeatherListItem,
     FeatherMegaMenu,
     FeatherIcon,

@@ -1,11 +1,11 @@
 ---
 title: "ProtectedInput"
+pre: "@featherds/protected-input"
+design: "The protected input component is used in scenarios where sensitive user information must be entered into a computer interface discreetly. Protected input components should primarily focus on keeping user information private."
 lang: en-US
 tags: ["ProtectedInput", "component"]
 layout: ComponentLayout
 ---
-
-`@featherds/protected-input`
 
 ## Example
 

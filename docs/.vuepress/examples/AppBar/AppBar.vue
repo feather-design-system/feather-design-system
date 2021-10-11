@@ -1,6 +1,12 @@
 <template>
   <section>
     <FeatherAppBar :labels="labels" :content="content" class="demo-app-bar">
+      <template v-slot:left>
+        <FeatherAppBarLink :icon="support" title="Support" url="#" />
+      </template>
+      <template v-slot:center>
+        <FeatherAppBarLink :icon="support" title="Support" url="#" />
+      </template>
       <template v-slot:right>
         <FeatherAppBarLink :icon="support" title="Support" url="#" />
       </template>

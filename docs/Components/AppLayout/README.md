@@ -1,19 +1,19 @@
 ---
-title: "AppLayout"
+title: "App Layout"
+pre: "@featherds/app-layout"
+description: "Provides common application layouts"
 lang: en-US
-tags: ["AppLayout", "component"]
+tags: ["AppLayout", "App-Layout", "component"]
 layout: ComponentLayout
 
 ---
 
-`@featherds/app-layout`
-
 ## Getting Started
 
-`AppLayout` supports a few layouts out of the box.
+[AppLayout](#applayout) supports a few layouts out of the box.
 
 :::warning NOTE
-In the following examples `AppHeader`, `AppFooter` and `AppRail` are all application implementations that use the `FeatherAppBar`, `FeatherFooter` and `FeatherNavigationRail` components. Using non Feather components in your implementation will have undersirable side effects. `AppContent` is the main content area of the application.
+In the following examples `AppHeader`, `AppFooter` and `AppRail` are all application implementations that use the [App Bar](/Components/AppBar/), [Footer](/Components/Footer/) and [Navigation Rail](/Components/NavigationRail/) components respectively. Using non Feather DS components in your implementation will have undersirable side effects. `AppContent` is the main content area of the application.
 :::
 
 ### Centered Layout
@@ -94,7 +94,7 @@ This layout has the content being full width and utilizes a rail navigation. Whe
 </FeatherAppLayout>
 ```
 
-## FeatherAppLayout
+## AppLayout
 
 ### Props
 
@@ -104,7 +104,7 @@ This layout has the content being full width and utilizes a rail navigation. Whe
 
 ### Slots
 
-- `header` - slot that should contain a [FeatherAppBar](../AppBar/)
-- `rail` - slot that should contain a [FeatherNavigationRail](../NavigationRail/)
-- `footer` - slot that should contain a [FeatherFooter](../Footer/)
-- `default` - slot that should the main app content. Slot content is contained within a `.feather-container` therefore you can start using `.feather-row`s to get your layout started.
+- `header` - slot should contain an [App Bar](../AppBar/)
+- `rail` - slot should contain a [Navigation Rail](../NavigationRail/)
+- `footer` - slot should contain a [Footer](../Footer/)
+- `default` - slot should the main app content. Slot content is contained within a `.feather-container` therefore you can start using `.feather-row`s to structure your content

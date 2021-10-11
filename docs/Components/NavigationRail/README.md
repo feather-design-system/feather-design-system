@@ -1,20 +1,15 @@
 ---
 title: "NavigationRail"
+pre: "@featherds/navigation-rail"
 lang: en-US
 tags: ["NavigationRail", "component"]
 ---
 
-# NavigationRail
+## Design
 
-`@featherds/navigation-rail`
+Provides the ability to select one of multiple navigation paths with each path being represented by an icon. It may be used within another control, such as a drawer, to provide access to all ‘top level’ panels within that drawer without the need to continually open and close it.
 
-## Getting Started
-
-The `FeatherNavigationRail` has 2 states; expanded and collapsed. When expanded all menu items are visible and can be interacted with. When it is collapsed only the `main` group is visible. When using `FeatherNavigationRail` please only populated the `main` and `default` slot with the `FeatherRailGroup` and `FeatherRailItem` components.
-
-The `header` content should not exceed `40px` in height.
-
-When collapsed the `FeatherNavigationRail` will take up `52px` in width, when expanded it will not move any content on the page due to its `fixed` position. Therefore you don't need to worry about page content shifting.
+Navigation rails should only be used on desktop and tablet devices (not smaller format devices).
 
 ## Example
 
@@ -67,6 +62,14 @@ When collapsed the `FeatherNavigationRail` will take up `52px` in width, when ex
 ```
 
 ## FeatherNavigationRail
+
+### Getting Started
+
+The `FeatherNavigationRail` has 2 states; expanded and collapsed. When expanded all menu items are visible and can be interacted with. When it is collapsed only the `main` group is visible. When using `FeatherNavigationRail` please only populated the `main` and `default` slot with the `FeatherRailGroup` and `FeatherRailItem` components.
+
+The `header` content should not exceed `40px` in height.
+
+When collapsed the `FeatherNavigationRail` will take up `52px` in width, when expanded it will not move any content on the page due to its `fixed` position. Therefore you don't need to worry about page content shifting.
 
 ### Props
 

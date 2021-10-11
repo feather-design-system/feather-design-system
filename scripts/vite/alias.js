@@ -3,7 +3,7 @@ const scope = "@featherds";
 const folder = "@featherds";
 const sassImports = [
   {
-    find: new RegExp(`^~${scope}/([a-z-/]+)/(.*)`),
+    find: new RegExp(`^${scope}/([a-z-/]+)/(.*)`),
     replacement: path.resolve(process.cwd(), `./packages/${folder}/$1/$2`),
   },
 ];

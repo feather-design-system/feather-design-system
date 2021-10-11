@@ -15,6 +15,14 @@ $error: prefix(error);
 $success: prefix(success);
 $warning: prefix(warning);
 
+$hero-gradient-1-1: prefix(hero-gradient-1-1);
+$hero-gradient-1-2: prefix(hero-gradient-1-2);
+$hero-gradient-1-3: prefix(hero-gradient-1-3);
+$hero-gradient-2-1: prefix(hero-gradient-2-1);
+$hero-gradient-2-2: prefix(hero-gradient-2-2);
+$hero-gradient-2-3: prefix(hero-gradient-2-3);
+$hero-gradient-2-4: prefix(hero-gradient-2-4);
+
 $primary-text-on-color: prefix(primary-text-on-color);
 $secondary-text-on-color: prefix(secondary-text-on-color);
 $disabled-text-on-color: prefix(disabled-text-on-color);
@@ -230,7 +238,7 @@ $overline-font-style: prefix(overline-font-style);
 
 //layout
 $content-width: prefix(content-width);
-
+$header-height: prefix(header-height);
 $zindex-dropdown: prefix(zindex-dropdown);
 $zindex-sticky: prefix(zindex-sticky);
 $zindex-fixed: prefix(zindex-fixed);
@@ -242,38 +250,44 @@ $zindex-tooltip: prefix(zindex-tooltip);
 $xl-gutter: 24px;
 $l-gutter: 24px;
 $m-gutter: 24px;
-$s-gutter: 16px;
-$xs-gutter: 16px;
+$s-gutter: 24px;
+$xs-gutter: 24px;
+$xxs-gutter: 16px;
 
 $grid: (
   xl: (
-    min: 960px,
+    min: 1441px,
     col: 12,
     gutter: $xl-gutter,
   ),
   l: (
-    min: 840px,
-    max: 959px,
+    min: 1261px,
+    max: 1440px,
     col: 12,
     gutter: $l-gutter,
   ),
   m: (
-    min: 720px,
-    max: 839px,
-    col: 8,
+    min: 1065px,
+    max: 1260px,
+    col: 12,
     gutter: $m-gutter,
   ),
   s: (
-    min: 600px,
-    max: 719px,
+    min: 761px,
+    max: 1064px,
     col: 8,
     gutter: $s-gutter,
   ),
   xs: (
-    min: 0px,
-    max: 599px,
-    col: 4,
+    min: 521px,
+    max: 760px,
+    col: 8,
     gutter: $xs-gutter,
+  ),
+  xxs: (
+    max: 520px,
+    col: 4,
+    gutter: $xxs-gutter,
   ),
 );
 

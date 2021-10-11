@@ -160,7 +160,9 @@ export default {
       };
     },
     charCount() {
-      return `${(this.internalValue && this.internalValue.length) || "0"} / ${this.maxlength}`;
+      return `${(this.internalValue && this.internalValue.length) || "0"} / ${
+        this.maxlength
+      }`;
     },
   },
   watch: {
@@ -210,9 +212,9 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-@import "~@featherds/styles/themes/variables";
-@import "~@featherds/styles/mixins/typography";
-@import "~@featherds/input-helper/scss/spacing";
+@import "@featherds/styles/themes/variables";
+@import "@featherds/styles/mixins/typography";
+@import "@featherds/input-helper/scss/spacing";
 .feather-input-container {
   @include input-spacing;
 }

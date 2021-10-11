@@ -15,8 +15,6 @@ Navigation rails should only be used on desktop and tablet devices (not smaller 
 
 ## Components
 
-<ComponentCard component="FeatherNavigationRail" package="NavigationRail" />
-
 ## Anatomy
 
 The navigation rail is meant to provide a condensed subset of primary navigation endpoints from the nav drawer. The rail is used in cases where a user needs access to a handful of top-level destinations while maintaining a clear, immersive view of the primary screen content. The “surface” of the rail is meant to occlude as little of the background as possible while acting as a persistent navigation element.

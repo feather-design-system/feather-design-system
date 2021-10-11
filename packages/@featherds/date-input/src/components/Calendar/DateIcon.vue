@@ -4,6 +4,7 @@
     data-ref-id="feather-date-input-icon"
     class="action-icon hide-when-disabled hover focus"
     href="#"
+    @click.prevent.stop="swallow"
   >
     <FeatherIcon :icon="icon" />
   </a>
@@ -11,7 +12,6 @@
 <script>
 import DateIcon from "@featherds/icon/action/CalendarStartDate";
 import { FeatherIcon } from "@featherds/icon";
-import { markRaw } from "vue";
 export default {
   props: {
     title: {
@@ -21,8 +21,11 @@ export default {
   },
   computed: {
     icon() {
-      return markRaw(DateIcon);
+      return DateIcon;
     },
+  },
+  methods: {
+    swallow() {},
   },
   components: {
     FeatherIcon,
@@ -30,8 +33,8 @@ export default {
 };
 </script>
 <style lang="scss" scoped>
-@import "~@featherds/styles/themes/variables";
-@import "~@featherds/styles/themes/utils";
+@import "@featherds/styles/themes/variables";
+@import "@featherds/styles/themes/utils";
 .action-icon {
   display: inline-flex;
   align-items: center;

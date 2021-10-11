@@ -1,18 +1,22 @@
 ---
 title: "Table"
+pre: "@featherds/table"
+description: "Tables display a matrix of data organized into rows and columns. Users can quickly scan rows and columns to gather contextual insights about information. Tables may contain interactive elements like menus and buttons, they can contain visual-only elements like icons and labels and they can contain advanced functionality to filter, search and sort contents."
 lang: en-US
 tags: ["Table", "component"]
 
 layout: ComponentLayout
 ---
 
-`@featherds/table`
+## Design
 
-`@featherds/table` has predefined table classes that allow you to effectively style a basic table as required. It also provides a common component for sorting that you can include if you require.
+Tables have been designed to elevate the data at all times. The purpose of the table is to organize data so users may gain insights around the data by making comparisons. Tables should be organized by default, sorted or alphabetized. Tables should ensure that any interaction is made clear to the user, either using hover states or color. Tables should be easy to user and easy to interpret.
 
 ## Example
 
 <Table-Examples />
+
+## Table Fucntionality
 
 ### Row Click
 
@@ -28,7 +32,9 @@ In both of the actions examples above you will notice screen reader (`.sr-only`)
 
 :::
 
-## Styles
+## Table Styles
+
+`@featherds/table` has predefined table classes that allow you to effectively style a basic table as required. It also provides a common component for sorting that you can include if you require.
 
 ### Mixins
 
@@ -39,7 +45,7 @@ Table styling is exposed through various mixins that can be combined to produce 
 All tables must include at least this mixin in order to achieve the required styling.
 
 ```scss
-@import "~@featherds/table/scss/table";
+@import "@featherds/table/scss/table";
 table {
   @include table();
 }
@@ -52,7 +58,7 @@ The `table` mixin provide basic table styling as well as the [Column alignment](
 The`row-select` mixin adds the `.selected` class which can be set on `tr` elements to show that the row is selected.
 
 ```scss
-@import "~@featherds/table/scss/table";
+@import "@featherds/table/scss/table";
 table {
   @include table();
   @include row-select();
@@ -64,7 +70,7 @@ table {
 The`row-hover` mixin adds styling to each row when it is hovered over.
 
 ```scss
-@import "~@featherds/table/scss/table";
+@import "@featherds/table/scss/table";
 table {
   @include table();
   @include row-hover();
@@ -76,7 +82,7 @@ table {
 The`table-condensed` mixin reduces the sizing of the table.
 
 ```scss
-@import "~@featherds/table/scss/table";
+@import "@featherds/table/scss/table";
 table {
   @include table();
   @include table-condensed();
@@ -88,7 +94,7 @@ table {
 The`row-striped` mixin adds striping pattern to the table.
 
 ```scss
-@import "~@featherds/table/scss/table";
+@import "@featherds/table/scss/table";
 table {
   @include table();
   @include row-striped();
@@ -100,14 +106,14 @@ table {
 The`tbody-striped` mixin adds striping pattern to the table by striping the underlying tbody elements. This is useful when you need to stripe grouped rows. The best way to group rows is to use multiple `tbody`s.
 
 ```scss
-@import "~@featherds/table/scss/table";
+@import "@featherds/table/scss/table";
 table {
   @include table();
   @include tbody-striped();
 }
 ```
 
-## Classes
+## Table Classes
 
 These classes are available when you use the [Table](#table) mixin.
 

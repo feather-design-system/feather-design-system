@@ -752,9 +752,9 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-@import "~@featherds/styles/mixins/typography";
-@import "~@featherds/styles/themes/variables";
-@import "~@featherds/input-helper/scss/spacing";
+@import "@featherds/styles/mixins/typography";
+@import "@featherds/styles/themes/variables";
+@import "@featherds/input-helper/scss/spacing";
 .feather-autocomplete-container {
   @include input-spacing;
 }

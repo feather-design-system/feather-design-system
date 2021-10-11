@@ -10,8 +10,6 @@ lang: en-US
 
 ## Components
 
-<ComponentCard component="FeatherDropdown" package="Dropdown" />
-
 ## Anatomy
 
 ![Anatomy](./Menus-web-resources/image/Menus_-_Anatomy.png)

@@ -7,8 +7,6 @@ lang: en-US
 
 ## Component
 
-<ComponentCard component="FeatherCheckbox" package="Checkbox" />
-
 ## Usage
 
 Check boxes are used when a user must make a section from one or more options in a list of information. Check boxes can be used as binary controls, allowin gusers to toggle specific options or functions on, or off. Indeterminate check boxes can be used to present a parent object in a list of child check boxes.

@@ -3,14 +3,11 @@ title: "PDF Viewer"
 lang: en-US
 ---
 
-
 # PDF Viewer
 
 The Feather PDF viewer is built to provide application-specific funtionality around documents while relying on the default PDF viewer that ships with all major web browsers to render the document. The UI for the Feather PDF viewer must not rely on or obfuscate any portion of the browser PDF viewer since the browser viewer does not provide any means of interface with external components or applications.
 
 ## Components
-
-<ComponentCard component="FeatherPdfViewer" package="PdfViewer" />
 
 ## Anatomy
 

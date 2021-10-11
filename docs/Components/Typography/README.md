@@ -1,13 +1,13 @@
 ---
 title: "Typography"
+pre: "@featherds/styles"
+description: "Rich type and powerful messaging"
 lang: en-US
 tags: ["Typography", "component"]
 layout: ComponentLayout
 ---
 
-`@featherds/styles`
-
-Typography styles are applied to some [elements](#elements) by default when including `@featherds-styles`. All typography styles are exposed through `scss` mixins and should be how all typography styles are consumed.
+Typography styles are applied to some [elements](#elements) by default when including `@featherds/styles`. All typography styles are exposed through `SCSS` mixins and should be how all typography styles are consumed.
 
 ::: tip Recommendation
 Use mixins where possible. They allow you to style the element with the correct typography without being constrained to a given element.
@@ -18,7 +18,7 @@ Use mixins where possible. They allow you to style the element with the correct 
 Feather styles some HTML elements by default. Typography styles are applied to elements directly when you include `@featherds/styles` and add the `.feather-styles` class to a parent element.
 
 ```scss
-@import "~@featherds/styles";
+@import "@featherds/styles";
 ```
 
 This import will also style the following HTML Elements:
@@ -35,7 +35,7 @@ This import will also style the following HTML Elements:
 
 <style lang="scss">
 
-  @import "~@featherds/styles/mixins/typography";
+  @import "@featherds/styles/mixins/typography";
   .feather-styles .demo-headings{
     h1,h2,h3,h4,h5,h6,p,a{
       margin:0;
@@ -76,14 +76,19 @@ p {
 
 ## Mixins
 
-Mixins can be used by importing `@featherds/styles/mixins/typograpy`.
+Mixins can be used by importing `@featherds/styles/mixins/typography`.
 
 ```scss
-@import "~@featherds/styles/mixins/typography";
+@import "@featherds/styles/mixins/typography";
 ```
 
 It exposes the following mixins:
 
+- `rendering`
+- `display1`
+- `display2`
+- `display3`
+- `title`
 - `headline1`
 - `headline2`
 - `headline3`
@@ -92,6 +97,7 @@ It exposes the following mixins:
 - `subtitle2`
 - `body-large`
 - `body-small`
+- `header`
 - `button`
 - `caption`
 - `overline`

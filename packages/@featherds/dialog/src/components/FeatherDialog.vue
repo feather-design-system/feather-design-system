@@ -32,9 +32,6 @@
               </header>
 
               <div class="dialog-content">
-                <div v-if="hasIcon" class="icon-wrapper">
-                  <slot name="icon" />
-                </div>
                 <slot />
               </div>
             </div>
@@ -112,9 +109,7 @@ export default {
     const close = () => {
       context.emit("update:modelValue", false);
     };
-    const hasIcon = computed(() => {
-      return !!context.slots.icon;
-    });
+
     const hasFooter = computed(() => {
       return !!context.slots.footer;
     });
@@ -141,7 +136,7 @@ export default {
       }
     });
 
-    return { close, hasIcon, hasFooter, headerId, element, shown, ...labels };
+    return { close, hasFooter, headerId, element, shown, ...labels };
   },
   components: {
     FocusTrap,
@@ -151,9 +146,9 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-@import "~@featherds/styles/themes/variables";
-@import "~@featherds/styles/mixins/elevation";
-@import "~@featherds/styles/mixins/typography";
+@import "@featherds/styles/themes/variables";
+@import "@featherds/styles/mixins/elevation";
+@import "@featherds/styles/mixins/typography";
 .feather-dialog {
   position: fixed;
   left: 0;
@@ -218,11 +213,6 @@ export default {
 
 .dialog-content {
   display: flex;
-  font-size: 38px;
-  .icon-wrapper {
-    padding-right: 32px;
-    line-height: 1.25em;
-  }
 }
 
 :deep(.closeButton) {

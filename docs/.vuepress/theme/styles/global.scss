@@ -4,22 +4,19 @@ $font-path: "@featherds/styles/fonts/" !default;
 @import "@featherds/styles/themes/open-dark";
 
 @import "@featherds/styles/lib/grid";
+@import "@featherds/styles/mixins/responsive";
 @import "./containers.scss";
 // Code and the like
 @import "prism-themes/themes/prism-atom-dark.css";
 @import "@featherds/styles/themes/open-mixins";
 @import "./search.scss";
 html,
-body {
+body,
+#app {
+  min-height: 100vh;
   background-color: var($surface);
   color: var($primary-text-on-surface);
   min-height: 100%;
-}
-main {
-  box-sizing: border-box;
-  flex: 1;
-  width: 100%;
-  margin: 0 auto;
 }
 
 .open-light {
@@ -45,8 +42,8 @@ pre code {
 pre[class*="language-"] {
   background-color: #0a0c1b;
 }
-//include local table stylings
-//replace with styling from feather table
+// //include local table stylings
+// //replace with styling from feather table
 @import "./table.scss";
 
 //Reset some spacing
@@ -56,24 +53,37 @@ body {
 }
 
 .feather-styles {
-  h1,
-  h2,
-  h3,
-  h4,
-  h5,
-  h6,
-  p,
-  ul {
-    margin: 0.8em 0;
+  main > {
+    ul,
+    ol {
+      padding-left: 20px;
+      margin-bottom: 40px;
+      @include body-small;
+    }
+    li {
+      margin-bottom: 16px;
+      &::marker {
+        color: var($secondary-text-on-surface);
+      }
+    }
   }
-  ul {
-    padding-left: 40px;
+  pre[class*="language-"] {
+    margin: 0;
+    margin-bottom: 24px;
   }
-  li > ul {
-    margin-bottom: 0;
+  table:not([class]) {
     margin-top: 0;
-    color: var($secondary-text-on-surface);
+    margin-bottom: 24px;
+    width: 100%;
   }
+  @include media-query-below(m) {
+    table:not([class]) {
+      display: block;
+      max-width: 100vw;
+      overflow-x: auto;
+    }
+  }
+
   blockquote {
     border-left: 2px solid var($shade-2);
     margin: 1.5em 10px;
@@ -85,49 +95,70 @@ body {
     margin: 32px 8px;
   }
   h1 {
-    @include display1();
-    margin: 0.25em 0;
+    @include display2();
+    margin-bottom: 8px;
   }
   h2 {
-    @include title();
-    margin: 0.6em 0;
+    @include headline1();
+    margin-bottom: 24px;
+  }
+  * + h2 {
+    margin-top: 56px;
   }
   h3 {
+    margin-bottom: 16px;
     @include headline2();
   }
   h4 {
-    @include subtitle2();
+    @include headline3();
+    margin-bottom: 16px;
   }
-}
-
-.hero {
-  .hero-title {
-    background-color: var($background);
-    padding: 20px 0;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    h2,
-    p {
-      color: var($primary-text-on-surface);
-      opacity: 0.9;
-      text-align: center;
-    }
-    h1 {
-      @include display2();
-      color: var($primary-text-on-surface);
-      opacity: 0.9;
-      text-align: center;
-    }
+  p {
+    @include body-large();
+    margin-bottom: 24px;
   }
-  h2 {
-    margin-bottom: 0;
-    padding-bottom: 0.25em;
-    border-bottom: 1px solid var($border-on-surface);
+  img {
+    margin-bottom: 24px;
   }
 }
 
 //Do not show the # before each title
 .header-anchor {
   display: none;
+}
+
+@include media-query-below(s) {
+  .feather-styles {
+    h1 {
+      @include headline1();
+      margin: 0.25em 0;
+    }
+    h2 {
+      @include headline2();
+      margin-bottom: 8px;
+    }
+    h3 {
+      margin-bottom: 8px;
+      @include headline3();
+    }
+    h4 {
+      @include headline4();
+      margin-bottom: 8px;
+    }
+    h5 {
+      @include subtitle1();
+      margin-bottom: 8px;
+    }
+    h6 {
+      @include subtitle2();
+      margin-bottom: 8px;
+    }
+    p {
+      @include body-small();
+      margin-bottom: 8px;
+    }
+    ul {
+      margin-bottom: 8px;
+    }
+  }
 }

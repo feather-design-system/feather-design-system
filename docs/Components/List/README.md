@@ -1,17 +1,16 @@
 ---
 title: "List"
+pre: "@featherds/list"
 lang: en-US
 tags: ["List", "component"]
 layout: ComponentLayout
 ---
 
-`@featherds/list`
-
-Creates a feather styled list. Can be used to create an interactive list (`li` > `a`, default) or a static list (`li`, see `as-li` prop).
+## Design
 
 :::warning WARNING
 
-This component does not provide any keyboard functionality or accessibility standard. That needs to applied based one the usecase.
+These components does not provide any keyboard functionality or accessibility standard. That needs to applied based on the usecase.
 
 :::
 
@@ -26,6 +25,8 @@ This component does not provide any keyboard functionality or accessibility stan
 - `default` - place `FeatherListItem`, `FeatherListSwitch`, `FeatherListHeader` and `FeatherListSeparator` here.
 
 ## FeatherListItem
+
+Creates a feather styled list. Can be used to create an interactive list (`li` > `a`, default) or a static list (`li`, see `as-li` prop).
 
 ### Props
 

@@ -1,19 +1,24 @@
 ---
 title: "Dialog"
+pre: "@featherds/dialog"
 lang: en-US
 tags: ["Dialog", "component"]
 layout: ComponentLayout
 ---
 
-`@featherds/dialog`
+## Design
+
+Our dialogs allow for the use of both raised and flat button styles within the button bar at the bottom of the dialogs. The more complex workflows of the healthcare space necessitate the use of multiple styles with our buttons in order to communicate the priority of the buttons/functions within our dialogs. For example, the primary action within a dialog may be called out using our primary button style, while lower priority functions such as “Cancel” use our more muted tertiary button styles.
+
+## Examples
+
+<Dialog-Examples />
 
 ## FeatherDialog
 
 ### Getting Started
 
 You **must** configure the `labels` property to have a relevant title. See [Labels](#labels).
-
-<Dialog-Examples />
 
 ### Props
 
@@ -47,7 +52,6 @@ Text labels for autocomplete can be customized via the `labels` property. The de
 ### Slots
 
 - `default` main content of the dialog should go here. Header is specified via [Labels](#labels).
-- `icon` icon to appear in the main modal body should be placed here
 - `footer` footer content should be placed in here.
 
 ### data-ref-ids

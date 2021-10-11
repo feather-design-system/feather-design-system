@@ -1,24 +1,40 @@
 <template>
-  <div class="fake-rail">
-    <aside class="nav-rail">
-      <div class="rail-title">Components</div>
-      <FeatherList class="rail-list">
+  <div class="nav-list-container">
+    <div class="nav-list">
+      <div class="fake-header"><a href="/">FEATHER DS</a></div>
+      <FeatherList class="nav-links">
+        <FeatherListHeader>Guides</FeatherListHeader>
+        <FeatherListItem
+          :selected="isCurrent($withBase('/Components/GettingStarted'))"
+          :href="$withBase('/Components/GettingStarted')"
+          focus-first
+          >Getting Started</FeatherListItem
+        >
+        <template v-for="item in guides" :key="item.name">
+          <FeatherListItem :href="item.url" :selected="isCurrent(item.url)">{{
+            item.name
+          }}</FeatherListItem>
+        </template>
+        <FeatherListSeparator />
+
+        <FeatherListHeader>Components</FeatherListHeader>
+
         <FeatherListItem
           :selected="isCurrent($withBase('/Components/'))"
           :href="$withBase('/Components/')"
-          >Getting Started</FeatherListItem
+          first-focus
+          >Overview</FeatherListItem
         >
-        <template v-for="group in groups" :key="group.name">
-          <FeatherListHeader>{{ group.name }}</FeatherListHeader>
-          <template v-for="item in group.items" :key="item.name">
-            <FeatherListItem :href="item.url" :selected="isCurrent(item.url)">{{
-              item.name
-            }}</FeatherListItem>
-          </template>
-          <FeatherListSeparator />
+
+        <template v-for="item in items" :key="item.name">
+          <FeatherListItem
+            :href="$withBase(item.url)"
+            :selected="isCurrent(item.url)"
+            >{{ item.name }}</FeatherListItem
+          >
         </template>
       </FeatherList>
-    </aside>
+    </div>
   </div>
 </template>
 <script>
@@ -28,122 +44,37 @@ import {
   FeatherListHeader,
   FeatherListSeparator,
 } from "@featherds/list";
+import { inject } from "vue";
+import components from "./components";
 export default {
+  setup() {
+    const register = inject("feather-app-layout-expanded", false);
+    if (register) {
+      register();
+    }
+  },
   data() {
     return {
-      groups: [
+      guides: [
+        { name: "Themes", url: this.$withBase("/Components/Themes/") },
         {
-          name: "Style",
-          items: [
-            { name: "Themes", url: this.$withBase("/Components/Themes/") },
-            {
-              name: "Elevation",
-              url: this.$withBase("/Components/Elevation/"),
-            },
-            {
-              name: "Typography",
-              url: this.$withBase("/Components/Typography/"),
-            },
-            {
-              name: "Variables",
-              url: this.$withBase("/Components/Variables/"),
-            },
-          ],
+          name: "Typography",
+          url: this.$withBase("/Components/Typography/"),
         },
         {
-          name: "Layout",
-          items: [
-            {
-              name: "App Layout",
-              url: this.$withBase("/Components/AppLayout/"),
-            },
-            { name: "App Bar", url: this.$withBase("/Components/AppBar/") },
-            {
-              name: "Navigation Rail",
-              url: this.$withBase("/Components/NavigationRail/"),
-            },
-            { name: "Grid", url: this.$withBase("/Components/Grid/") },
-            { name: "Footer", url: this.$withBase("/Components/Footer/") },
-          ],
+          name: "Variables",
+          url: this.$withBase("/Components/Variables/"),
         },
-        {
-          name: "Form",
-          items: [
-            { name: "Button", url: this.$withBase("/Components/Button/") },
-            { name: "Input", url: this.$withBase("/Components/Input/") },
-            { name: "Textarea", url: this.$withBase("/Components/Textarea/") },
-            { name: "Checkbox", url: this.$withBase("/Components/Checkbox/") },
-            { name: "Radio Button", url: this.$withBase("/Components/Radio/") },
-            {
-              name: "Autocomplete",
-              url: this.$withBase("/Components/Autocomplete/"),
-            },
-            {
-              name: "Date Input",
-              url: this.$withBase("/Components/DateInput/"),
-            },
-            {
-              name: "Protected Input",
-              url: this.$withBase("/Components/ProtectedInput/"),
-            },
-            { name: "Select", url: this.$withBase("/Components/Select/") },
-          ],
-        },
-        {
-          name: "Overlay",
-          items: [
-            { name: "Drawer", url: this.$withBase("/Components/Drawer/") },
-            { name: "Dialog", url: this.$withBase("/Components/Dialog/") },
-            {
-              name: "Dropdown",
-              url: this.$withBase("/Components/Dropdown/"),
-            },
-            { name: "Mega Menu", url: this.$withBase("/Components/Megamenu/") },
-          ],
-        },
-        {
-          name: "Data Display",
-          items: [
-            { name: "Table", url: this.$withBase("/Components/Table/") },
-            {
-              name: "Pagination",
-              url: this.$withBase("/Components/Pagination/"),
-            },
-            {
-              name: "Pdf Viewer",
-              url: this.$withBase("/Components/PdfViewer/"),
-            },
-            { name: "Chips", url: this.$withBase("/Components/Chips/") },
-          ],
-        },
-        {
-          name: "Display",
-          items: [
-            { name: "Tabs", url: this.$withBase("/Components/Tabs/") },
-            {
-              name: "List",
-              url: this.$withBase("/Components/List/"),
-            },
-            {
-              name: "Expansion",
-              url: this.$withBase("/Components/Expansion/"),
-            },
-          ],
-        },
-        {
-          name: "Visual",
-          items: [
-            { name: "Progress", url: this.$withBase("/Components/Progress/") },
-            { name: "Icon", url: this.$withBase("/Components/Icon/") },
-            {
-              name: "Icon Button",
-              url: this.$withBase("/Components/IconButton/"),
-            },
-
-            { name: "Badge", url: this.$withBase("/Components/Badge/") },
-          ],
-        },
-      ],
+      ].sort((a, b) => {
+        if (a.name > b.name) {
+          return 1;
+        }
+        if (a.name < b.name) {
+          return -1;
+        }
+        return 0;
+      }),
+      items: components,
     };
   },
   methods: {
@@ -160,33 +91,51 @@ export default {
 };
 </script>
 <style lang="scss" scoped>
-@import "~@featherds/styles/themes/variables";
-@import "~@featherds/styles/mixins/typography";
-@import "~@featherds/styles/mixins/elevation";
-@import "~@featherds/styles/mixins/flex";
-@import "~@featherds/styles/themes/utils";
+@import "@featherds/styles/themes/variables";
+@import "@featherds/styles/mixins/elevation";
+@import "@featherds/styles/mixins/typography";
 $width: 264px;
-.nav-rail {
-  transition: width 280ms ease-in-out;
-  position: fixed;
+.fake-header {
+  display: flex;
+  align-items: center;
+  height: var($header-height);
+  padding-left: 16px;
+  flex: none;
+  border-bottom: 1px solid var($border-on-surface);
+  a {
+    @include headline4;
+    color: var($primary-text-on-surface);
+    &:hover,
+    &:visited,
+    &:active {
+      color: var($primary-text-on-surface);
+    }
+  }
+}
+.nav-list-container {
+  display: flex;
   width: $width;
-  left: 0;
-  top: 60px;
-  height: calc(100vh - 60px);
+}
+
+.nav-list {
+  height: calc(100vh);
   background: var($background);
   color: var($primary-text-on-surface);
-  overflow: auto;
-}
-.fake-rail {
+  @include elevation(2);
+  position: fixed;
   width: $width;
-  height: calc(100vh - 60px);
-}
-.rail-title {
-  border-bottom: 1px solid var($border-on-surface);
-  padding: 8px 6px 8px 12px;
-  @include headline4;
-}
-.rail-list {
-  overflow-y: hidden;
+  top: 0;
+  left: 0;
+  display: flex;
+  flex-direction: column;
+  .nav-links {
+    overflow-y: auto;
+    :deep(.feather-list-item-text) {
+      @include body-large;
+    }
+    :deep(.feather-list-item) {
+      height: 48px !important;
+    }
+  }
 }
 </style>

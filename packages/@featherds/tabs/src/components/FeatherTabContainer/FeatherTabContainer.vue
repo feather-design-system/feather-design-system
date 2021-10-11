@@ -88,11 +88,14 @@ export default {
       this.updateSlider();
     });
   },
+  unmounted() {
+    this.ro.disconnect();
+  },
 };
 </script>
 
 <style lang="scss" scoped>
-@import "~@featherds/styles/themes/variables";
+@import "@featherds/styles/themes/variables";
 .feather-tab-container {
   position: relative;
   .feather-tab-slider {
@@ -124,7 +127,7 @@ export default {
 }
 </style>
 <style lang="scss">
-@import "~@featherds/styles/themes/variables";
+@import "@featherds/styles/themes/variables";
 .feather-tab-slider {
   background-color: var($primary);
 }

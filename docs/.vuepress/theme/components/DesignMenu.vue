@@ -1,8 +1,8 @@
 <template>
-  <div class="fake-rail">
-    <aside class="nav-rail">
-      <div class="rail-title">Design</div>
-      <FeatherList class="rail-list">
+  <div class="nav-list-container">
+    <div class="nav-list">
+      <div class="fake-header"><a href="/">FEATHER DS</a></div>
+      <FeatherList class="nav-links">
         <template v-for="group in groups" :key="group.name">
           <FeatherListHeader>{{ group.name }}</FeatherListHeader>
           <template v-for="item in group.items" :key="item.name">
@@ -13,7 +13,7 @@
           <FeatherListSeparator />
         </template>
       </FeatherList>
-    </aside>
+    </div>
   </div>
 </template>
 <script>
@@ -21,16 +21,28 @@ import {
   FeatherList,
   FeatherListItem,
   FeatherListHeader,
-  FeatherListSeparator
+  FeatherListSeparator,
 } from "@featherds/list";
+import { inject } from "vue";
+
 export default {
+  setup() {
+    const register = inject("feather-app-layout-expanded", false);
+    if (register) {
+      register();
+    }
+  },
   data() {
     return {
       groups: [
         {
-          name: "Principles",
+          name: "Styles",
           items: [
-            { name: "Foundation", url: this.$withBase("/Design/Foundation/") },
+            { name: "Color", url: this.$withBase("/Foundation/Styles/Color/") },
+            {
+              name: "Typography",
+              url: this.$withBase("/Foundation/Styles/Typography/"),
+            },
           ],
         },
       ],
@@ -50,34 +62,51 @@ export default {
 };
 </script>
 <style lang="scss" scoped>
-@import "~@featherds/styles/themes/variables";
-@import "~@featherds/styles/mixins/typography";
-@import "~@featherds/styles/mixins/elevation";
-@import "~@featherds/styles/mixins/flex";
-@import "~@featherds/styles/themes/utils";
+@import "@featherds/styles/themes/variables";
+@import "@featherds/styles/mixins/elevation";
+@import "@featherds/styles/mixins/typography";
 $width: 264px;
-.nav-rail {
-  transition: width 280ms ease-in-out;
-  position: fixed;
-  width: $width;
-  left: 0;
-  top: 60px;
-  height: calc(100vh - 60px);
-  background: var($background);
-  color: var($primary-text-on-surface);
-  overflow: auto;
-}
-.fake-rail {
-  width: $width;
-  height: calc(100vh - 60px);
-}
-.rail-title {
+.fake-header {
+  display: flex;
+  align-items: center;
+  height: var($header-height);
+  padding-left: 16px;
+  flex: none;
   border-bottom: 1px solid var($border-on-surface);
-  padding: 8px 6px 8px 12px;
-  @include headline4;
+  a {
+    @include headline4;
+    color: var($primary-text-on-surface);
+    &:hover,
+    &:visited,
+    &:active {
+      color: var($primary-text-on-surface);
+    }
+  }
+}
+.nav-list-container {
+  display: flex;
+  width: $width;
 }
 
-.rail-list {
-  overflow-y: hidden;
+.nav-list {
+  height: calc(100vh);
+  background: var($background);
+  color: var($primary-text-on-surface);
+  @include elevation(2);
+  position: fixed;
+  width: $width;
+  top: 0;
+  left: 0;
+  display: flex;
+  flex-direction: column;
+  .nav-links {
+    overflow-y: auto;
+    :deep(.feather-list-item-text) {
+      @include body-large;
+    }
+    :deep(.feather-list-item) {
+      height: 48px !important;
+    }
+  }
 }
 </style>

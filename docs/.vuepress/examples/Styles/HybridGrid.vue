@@ -17,7 +17,7 @@
   </div>
 </template>
 <style lang="scss" scoped>
-@import "~@featherds/styles/themes/variables";
+@import "@featherds/styles/themes/variables";
 .feather-row {
   ul {
     border: 1px solid var($primary);

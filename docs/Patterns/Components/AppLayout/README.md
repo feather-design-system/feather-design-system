@@ -11,8 +11,6 @@ lang: en-US
 
 ## Components
 
-<ComponentCard component="FeatherAppLayout" package="AppLayout" />
-
 ## Full Width Application Bar
 
 Applications should be using an app bar that considers the entire window width. The app bar component should use the internal component margin as a default - but should be variable to ensure proper alignment with application content when possible (ex. the menu icon aligning with the icons in a navigation rail).

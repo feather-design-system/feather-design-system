@@ -8,6 +8,7 @@
     :aria-valuemax="max"
     :aria-valuenow="modelValue || 0"
     :aria-valuetext="modelValue || placeholder"
+    :class="{ disabled: disabled }"
     @keydown="handleKeyDown"
     @focus="handleFocus"
     @click.stop="handleFocus"
@@ -38,6 +39,10 @@ export default {
     label: {
       type: String,
       required: true,
+    },
+    disabled: {
+      type: Boolean,
+      default: false,
     },
     placeholder: {
       type: String,
@@ -100,6 +105,9 @@ export default {
       }
     },
     handleFocus(e) {
+      if (this.disabled) {
+        return;
+      }
       this.highlight(e.target);
       this.input = "";
     },
@@ -187,10 +195,15 @@ export default {
 };
 </script>
 <style lang="scss" scoped>
+@import "@featherds/styles/themes/variables";
 span {
   cursor: pointer;
   &:focus {
     outline: 0;
+  }
+  &.disabled {
+    cursor: text;
+    color: var($disabled-text-on-surface);
   }
 }
 </style>

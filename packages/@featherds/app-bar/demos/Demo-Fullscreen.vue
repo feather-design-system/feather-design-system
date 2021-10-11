@@ -1,6 +1,6 @@
 <template>
   <section>
-    <FeatherAppBar :labels="labels" :content="content">
+    <FeatherAppBar :labels="labels" :content="content" scroll-hide>
       <template v-slot:right>
         <FeatherAppBarLink
           :icon="support"

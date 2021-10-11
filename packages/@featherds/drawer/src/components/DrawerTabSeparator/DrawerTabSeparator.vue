@@ -4,7 +4,7 @@
   </li>
 </template>
 <style lang="scss" scoped>
-@import "~@featherds/styles/themes/variables";
+@import "@featherds/styles/themes/variables";
 hr {
   position: relative;
   margin: 7px 3px;

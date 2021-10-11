@@ -71,10 +71,10 @@ export default {
 };
 </script>
 <style lang="scss" scoped>
-@import "~@featherds/styles/themes/variables";
-@import "~@featherds/styles/mixins/typography";
-@import "~@featherds/styles/themes/utils";
-@import "~@featherds/drawer/src/scss/variables";
+@import "@featherds/styles/themes/variables";
+@import "@featherds/styles/mixins/typography";
+@import "@featherds/styles/themes/utils";
+@import "@featherds/drawer/src/scss/variables";
 
 li {
   position: relative;

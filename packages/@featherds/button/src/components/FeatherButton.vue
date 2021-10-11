@@ -118,11 +118,11 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-@import "~@featherds/styles/mixins/typography";
-@import "~@featherds/styles/mixins/elevation";
-@import "~@featherds/styles/mixins/flex";
-@import "~@featherds/styles/themes/utils";
-@import "~@featherds/styles/themes/variables";
+@import "@featherds/styles/mixins/typography";
+@import "@featherds/styles/mixins/elevation";
+@import "@featherds/styles/mixins/flex";
+@import "@featherds/styles/themes/utils";
+@import "@featherds/styles/themes/variables";
 
 @mixin disabled-styles() {
   &[aria-disabled="true"] {

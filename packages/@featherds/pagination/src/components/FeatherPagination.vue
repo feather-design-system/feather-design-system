@@ -226,7 +226,7 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-@import "~@featherds/styles/themes/variables";
+@import "@featherds/styles/themes/variables";
 .feather-pagination {
   display: flex;
   border: 1px solid var($border-on-surface);

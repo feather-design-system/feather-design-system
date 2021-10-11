@@ -8,7 +8,6 @@
   "scripts": {},
   "dependencies": {
     "@featherds/utils": "file:../utils",
-    "lodash.debounce": "^4.0.8",
     "vue": "^3.1.0-0"
   },
   "keywords": [

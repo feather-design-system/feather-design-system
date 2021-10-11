@@ -1,6 +1,8 @@
 <template>
   <div class="mega-menu">
-    <slot name="button" :open="open" :clicked="menuButtonClicked"></slot>
+    <MegaMenuButton @click="menuButtonClicked" :open="open">
+      <slot name="button"></slot>
+    </MegaMenuButton>
     <transition name="slide-down" @after-enter="afterEnter">
       <div v-if="open" ref="menu" :role="role" class="menu">
         <div class="center">
@@ -29,24 +31,19 @@
 <script>
 import { DialogClose } from "@featherds/dialog";
 import { MenuFocusLoop } from "@featherds/menu";
-import MenuName from "./MenuName/MenuName.vue";
-import { provide, ref } from "vue";
+import MenuName from "./MenuName/MenuName";
+import MegaMenuButton from "./MegaMenuButton";
+import { ref } from "vue";
 import { KEYCODES } from "@featherds/utils/keys";
 
 export default {
   setup() {
-    //we need to provide;
-    // - open - the current state of the menu
-    // - menuButtonClicked - the method to open the menu
     const open = ref(false);
     const focusEl = ref();
     const menuButtonClicked = (e) => {
       if (e && e.srcElement) focusEl.value = e.srcElement;
       open.value = !open.value;
     };
-
-    provide("menu-open", open);
-    provide("menu-toggle", menuButtonClicked);
 
     return {
       open,
@@ -57,6 +54,7 @@ export default {
   components: {
     DialogClose,
     MenuName,
+    MegaMenuButton,
   },
   directives: {
     MenuFocusLoop,
@@ -130,9 +128,9 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-@import "~@featherds/styles/themes/variables";
-@import "~@featherds/styles/mixins/elevation";
-@import "~@featherds/styles/mixins/flex";
+@import "@featherds/styles/themes/variables";
+@import "@featherds/styles/mixins/elevation";
+@import "@featherds/styles/mixins/flex";
 .mega-menu {
   display: inline-block;
   vertical-align: top;

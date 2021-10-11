@@ -9,8 +9,6 @@ A dropdown list control presents the user with a list of options allowing them t
 
 ## Components
 
-<ComponentCard component="FeatherSelect" package="Select" />
-
 ## Anatomy
 
 ![Anatomy of a select input](./Select-web-resources/image/Select_Component_-_Anatomy.png)

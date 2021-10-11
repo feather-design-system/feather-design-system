@@ -30,8 +30,8 @@ export default {
 };
 </script>
 <style lang="scss" scoped>
-@import "~@featherds/styles/mixins/typography";
-@import "~@featherds/styles/themes/variables";
+@import "@featherds/styles/mixins/typography";
+@import "@featherds/styles/themes/variables";
 .label {
   @include body-small();
   color: var($secondary-text-on-surface);

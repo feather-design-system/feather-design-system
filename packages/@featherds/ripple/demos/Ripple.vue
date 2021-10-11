@@ -17,7 +17,7 @@ export default {
 };
 </script>
 <style lang="scss" scoped>
-@import "~@featherds/styles/themes/variables";
+@import "@featherds/styles/themes/variables";
 .ripple-container {
   height: 200px;
   width: 200px;

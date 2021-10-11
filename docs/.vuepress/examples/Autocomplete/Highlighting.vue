@@ -1,5 +1,9 @@
 <template>
   <section>
+    <p>
+      This autocomplete uses the <code>ignore-case</code> method for
+      highlighting. See <a href="#highlighting">Highlighting</a> section.
+    </p>
     <FeatherAutocomplete
       class="my-autocomplete"
       label="Users"
@@ -7,7 +11,6 @@
       v-model="value"
       :loading="loading"
       :results="results"
-      :labels="labels"
       @search="search"
       highlight="ignore-case"
     ></FeatherAutocomplete>
@@ -23,11 +26,6 @@ export default {
       loading: false,
       results: [],
       value: undefined,
-      labels: {
-        minChar: "ASK UX FOR MIN CHAR TEXT ${min}",
-        noResults: "ASK UX FOR NO RESULTS TEXT",
-        clear: " ASK UX FOR CLEAR TEXT",
-      },
     };
   },
   methods: {

@@ -9,8 +9,6 @@ The protected input component is used in scenarios where sensitive user informat
 
 ## Components
 
-<ComponentCard component="FeatherProtectedInput" package="ProtectedInput" />
-
 ## Anatomy
 
 The protected input is a variation of the standard text input field. A protected input field uses a trailing icon to indicate the visibility state of the user input. This icon may be used to toggle the obfuscation of the characters in the text input field.

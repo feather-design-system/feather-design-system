@@ -9,13 +9,6 @@ lang: en-US
 
 ## Component
 
-<ComponentCard component="FeatherDrawer" package="Drawer" />
-
-Simplifies the user interface by
-
-- providing navigation options
-- providing easy access to additional information related to the current action without having to leave the current page.
-
 <hr />
 
 ## Anatomy

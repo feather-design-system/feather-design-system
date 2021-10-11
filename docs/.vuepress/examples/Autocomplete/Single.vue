@@ -1,21 +1,22 @@
 <template>
   <section>
+    <p>
+      This autocomplete allow you a single item. Try searching for <b>ja</b>
+    </p>
     <FeatherAutocomplete
       class="my-autocomplete"
       label="Users"
       v-model="value"
       :loading="loading"
       :results="results"
-      text-prop="name"
       type="single"
       @search="search"
-      :grid-config="config"
     ></FeatherAutocomplete>
   </section>
 </template>
 <script>
 import { FeatherAutocomplete } from "@featherds/autocomplete";
-import people from "./userObjects";
+import names from "./users";
 export default {
   data() {
     return {
@@ -23,25 +24,6 @@ export default {
       loading: false,
       results: [],
       value: undefined,
-      config: [
-        {
-          title: "Name",
-          prop: "name",
-        },
-        {
-          title: "Email",
-          prop: "email",
-        },
-        {
-          title: "Car",
-          prop: "car",
-        },
-        {
-          title: "Order",
-          prop: "order",
-          align: "right",
-        },
-      ],
     };
   },
   methods: {
@@ -49,10 +31,11 @@ export default {
       this.loading = true;
       clearTimeout(this.timeout);
       this.timeout = setTimeout(() => {
-        this.results = people.filter(
-          (x) => x.name.toLowerCase().indexOf(q) > -1
-        );
-
+        this.results = names
+          .filter((x) => x.toLowerCase().indexOf(q) > -1)
+          .map((x) => ({
+            _text: x,
+          }));
         this.loading = false;
       }, 500);
     },

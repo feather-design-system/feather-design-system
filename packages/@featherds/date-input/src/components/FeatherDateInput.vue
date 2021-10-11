@@ -30,11 +30,12 @@
           </template>
           <div v-bind="attrs" role="group" class="feather-date-input-group">
             <SpinButton
-              tabindex="0"
+              :tabindex="disabled ? -1 : 0"
               :label="monthLabel"
               ref="monthButton"
               :min="1"
               :max="12"
+              :disabled="disabled"
               v-model="month"
               placeholder="mm"
               @next="focusDay"
@@ -46,6 +47,7 @@
               ref="dayButton"
               :min="1"
               :max="31"
+              :disabled="disabled"
               v-model="day"
               placeholder="dd"
               @next="focusYear"
@@ -58,6 +60,7 @@
               ref="yearButton"
               :min="minYear"
               :max="maxYear"
+              :disabled="disabled"
               v-model="year"
               placeholder="yyyy"
               @previous="focusDay"
@@ -163,6 +166,7 @@ export default {
 
     const value = toRef(props, "modelValue");
     const label = toRef(props, "label");
+    const disabled = toRef(props, "disabled");
     const menu = ref();
     const showClear = ref(false);
 
@@ -173,6 +177,11 @@ export default {
           day.value = nv.getDate();
           year.value = nv.getFullYear();
           month.value = nv.getMonth() + 1;
+        }
+        if (nv === undefined) {
+          day.value = undefined;
+          year.value = undefined;
+          month.value = undefined;
         }
       },
       { immediate: true }
@@ -204,10 +213,10 @@ export default {
     const attrs = computed(() => {
       const _attrs = {
         ...context.attrs,
-        class: "",
+        class: disabled.value ? "disabled" : "",
         id: inputId.value,
         "aria-label": label.value,
-        "aria-disabled": props.disabled,
+        "aria-disabled": disabled.value,
         "aria-describedby": (context.attrs["aria-describedby"] || "")
           .split(" ")
           .concat([descriptionId.value])
@@ -231,12 +240,21 @@ export default {
       const yearButton = ref();
 
       const focusMonth = () => {
+        if (disabled.value) {
+          return;
+        }
         monthButton.value.focus();
       };
       const focusDay = () => {
+        if (disabled.value) {
+          return;
+        }
         dayButton.value.focus();
       };
       const focusYear = () => {
+        if (disabled.value) {
+          return;
+        }
         yearButton.value.focus();
       };
 
@@ -258,6 +276,9 @@ export default {
     })();
 
     const handleFocus = () => {
+      if (disabled.value) {
+        return;
+      }
       focused.value = true;
     };
     const handleBlur = () => {
@@ -357,12 +378,17 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-@import "~@featherds/input-helper/scss/spacing";
+@import "@featherds/input-helper/scss/spacing";
+@import "@featherds/styles/themes/variables";
 .feather-input-container {
   @include input-spacing;
 }
 .feather-date-input-group {
   flex: 1;
+  &.disabled {
+    cursor: default;
+    color: var($disabled-text-on-surface);
+  }
 }
 .feather-date-input-menu-container {
   width: 100%;

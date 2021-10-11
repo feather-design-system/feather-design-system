@@ -21,7 +21,7 @@
   </div>
 </template>
 <style lang="scss" scoped>
-@import "~@featherds/styles/lib/grid";
+@import "@featherds/styles/lib/grid";
 .feather-row {
   div.content {
     border: 1px solid red;

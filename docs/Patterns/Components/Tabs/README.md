@@ -9,10 +9,6 @@ Tabs provide an easy way for users to navigate through information that shares a
 
 ## Components
 
-<ComponentCard component="FeatherTab" package="Tabs" />
-<ComponentCard component="FeatherTabContainer" package="Tabs" />
-<ComponentCard component="FeatherTabPanel" package="Tabs" />
-
 ## Anatomy
 
 Tabs contain two elements: the rail and the tab -- both elements reside within a tab group. The rail is generally used for indicating a selected state and may move between tabs within the tab group. Tabs are the individual items and do not move within the tab group.

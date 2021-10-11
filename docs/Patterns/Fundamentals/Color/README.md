@@ -11,12 +11,9 @@ Color is one of the most important elements in any design system. Color is used 
 
 ## Components
 
-<ComponentCard component="Colors" package="Styles" />
-
 ## Package
 
 All color styles are available in the [`@featherds/styles`](/Packages/Styles/) package. See the [theme guide](/Packages/Styles/Components/Colors.html) for live examples and code examples.
-
 
 ## Usage
 
@@ -31,8 +28,6 @@ Primary colors are based on the brand-specific color for their respective applic
 - Highlighting selected text
 - Progress bars
 - links and headlines
-
-
 
 ## Accessibility
 

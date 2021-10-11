@@ -9,8 +9,6 @@ Pagination will be used if technical limitations prevent infinite scrolling or i
 
 ## Components
 
-<ComponentCard component="FeatherPagination" package="Pagination" />
-
 ## Pagination Design
 
 The pagination design is very close to the Google Material Design standards. Keeping pagination simple and styling it in a similar fashion to the table ensures that the pagination component can be seamlessly added to a table component or used as a stand-alone component if necessary.

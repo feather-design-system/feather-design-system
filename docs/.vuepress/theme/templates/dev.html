@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+  </head>
+  <body>
+    <script>
+      const theme = JSON.parse(
+        window.localStorage.getItem(
+          "FEATHER_DOCS_CREATED_BY_RIK_RANDOMLY_WHAT_A_GUY"
+        )
+      );
+      if (theme) document.body.classList.add(theme._text);
+    </script>
+    <div id="app"></div>
+  </body>
+</html>

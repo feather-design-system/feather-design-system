@@ -1,5 +1,11 @@
 <template>
   <section>
+    <p>
+      This example allows you to add new items. The <code>new</code> event is
+      triggered with the text for the new element. <b>You</b> must then create
+      the new element and update <code>modelValue</code> to contain the new
+      value. <code>addTag</code> method does that in this example.
+    </p>
     <FeatherAutocomplete
       class="my-autocomplete"
       label="Tag"

@@ -1,35 +1,36 @@
 ---
 title: "Footer"
+pre: "@featherds/footer"
+description: "A global Footer component that can contain various content, including copyright"
 lang: en-US
 tags: ["Footer", "component"]
 layout: ComponentLayout
 ---
 
-`@featherds/footer`
-
 ## Examples
 
 <Footer-Examples />
 
-## FeatherFooter
+## Footer
 
 ### Props
 
-| Name      | Description                                                                      | Type     | Required | Default |
-| --------- | -------------------------------------------------------------------------------- | -------- | -------- | ------- |
-| copyright | a string where any instance of `${year}` will be replaced with the current year. | `String` | `true`   | -       |
+| Name      | Description                                                                     | Type     | Required | Default |
+| --------- | ------------------------------------------------------------------------------- | -------- | -------- | ------- |
+| copyright | a string where any instance of `${year}` will be replaced with the current year | `String` | `true`   | -       |
 
 ### Slots
 
-- `links` content will be displayed in a list. Should be `FeatherFooterLink`s.
+- `contact` - contact information; displayed as the first row
+- `links` -  content will be displayed in a list. Should be `FooterLink`s
 
 ### data-ref-ids
 
-- `feather-footer` The main footer wrapper element
+- `feather-footer` - the main Footer wrapper element
 
-## FeatherFooterLink
+## FooterLink
 
-A link component for the footer, simple encapsulation component
+A link component for the Footer, simple encapsulation component
 
 ### Props
 
@@ -39,18 +40,18 @@ A link component for the footer, simple encapsulation component
 
 ### Slots
 
-- `default` Content to be displayed in the anchor tag.
+- `default` - content to be displayed in the anchor tag
 
 ### data-ref-ids
 
-- `feather-footer-link` The anchor tag encapsulating the link
+- `feather-footer-link` - the anchor tag encapsulating the link
 
-## FeatherFooterTelephone
+## FooterTelephone
 
-A telephone link component for the footer, allowing for mobile users to click to dial
+A telephone link component for the Footer, allowing for mobile users to click to dial
 
 ### Props
 
-| Name   | Description                       | Type     | Required | Default |
-| ------ | --------------------------------- | -------- | -------- | ------- |
-| number | Telephone number to be displayed. | `String` | `true`   | -       |
+| Name   | Description                      | Type     | Required | Default |
+| ------ | -------------------------------- | -------- | -------- | ------- |
+| number | telephone number to be displayed | `String` | `true`   | -       |

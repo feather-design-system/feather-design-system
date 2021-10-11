@@ -19,10 +19,13 @@ export default {
 };
 </script>
 <style lang="scss" scoped>
-@import "~@featherds/styles/mixins/typography";
+@import "@featherds/styles/mixins/typography";
 .sidebar .title {
   @include overline();
   text-transform: uppercase;
+  margin-bottom: 16px;
+  display: inline-block;
+  color: var($primary-text-on-surface);
 }
 ul {
   margin: 0;

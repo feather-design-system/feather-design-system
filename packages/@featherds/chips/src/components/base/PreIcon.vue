@@ -3,7 +3,7 @@
 </template>
 
 <style lang="scss" scoped>
-@import "~@featherds/styles/themes/variables";
+@import "@featherds/styles/themes/variables";
 .chip-icon {
   height: 24px;
   width: 24px;

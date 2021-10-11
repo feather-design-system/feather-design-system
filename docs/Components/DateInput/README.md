@@ -1,15 +1,19 @@
 ---
 title: "DateInput"
+pre: "@featherds/date-input"
+description: "Date inputs allow users to select a date from the past, present or future. These components are often found in form workflows where data entry is the primary user objective."
 lang: en-US
 tags: ["DateInput", "component"]
 layout: ComponentLayout
 ---
 
-`@featherds/date-input`
+## Design
 
-## FeatherDateInput
+## Examples
 
 <DateInput-Examples />
+
+## FeatherDateInput
 
 ### Props
 

@@ -6,6 +6,8 @@ const { noopDirectiveTransform } = require("@vue/compiler-dom");
 const vueSourcePlugin = require("./plugins/vueSourcePlugin");
 module.exports = {
   title: "Feather",
+  templateDev: path.resolve(__dirname, "./theme/templates/dev.html"),
+  templateSSR: path.resolve(__dirname, "./theme/templates/ssr.html"),
   theme: path.resolve(__dirname, "./theme"),
   patterns: [
     "README.md",

@@ -83,9 +83,9 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-@import "~@featherds/styles/mixins/typography";
-@import "~@featherds/input-helper/scss/spacing";
-@import "~@featherds/styles/themes/variables";
+@import "@featherds/styles/mixins/typography";
+@import "@featherds/input-helper/scss/spacing";
+@import "@featherds/styles/themes/variables";
 
 .group-label {
   @include subtitle1();

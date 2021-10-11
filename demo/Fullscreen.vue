@@ -13,7 +13,7 @@ export default {
 };
 </script>
 <style lang="scss">
-@import "~@featherds/styles/themes/variables";
+@import "@featherds/styles/themes/variables";
 body {
   background-color: var($background);
   margin: 0;
