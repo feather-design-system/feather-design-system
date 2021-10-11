@@ -1,20 +1,22 @@
 <template>
-  <FeatherSelect
-    background
-    label="Theme"
-    v-model="selected"
-    :options="themes"
-    class="theme-select"
-  />
+  <FeatherButton class="toggle" @click.prevent="toggleTheme" href="#" icon="Toggle theme">
+    <FeatherIcon :title="selected._text" :icon="icon" />
+  </FeatherButton>
 </template>
 <script>
-import { FeatherSelect } from "@featherds/select";
+import { FeatherIcon } from "@featherds/icon";
+import { FeatherButton } from "@featherds/button";
 import { THEMES, KEY, update } from "./themes";
+import actionsVisibility from "@featherds/icon/actions/Visibility";
+import actionsVisibilityOff from "@featherds/icon/actions/VisibilityOff";
+
 export default {
   data() {
     return {
       selected: THEMES[0],
       themes: THEMES,
+      light: actionsVisibility,
+      dark: actionsVisibilityOff
     };
   },
   watch: {
@@ -36,31 +38,28 @@ export default {
       document.body.classList.remove(old._text);
       document.body.classList.add(curr._text);
       update(curr);
+    },
+    toggleTheme() {
+      const currIndex = this.themes.map((e) => e._text).indexOf(this.selected._text);
+      const newIndex = (currIndex === this.themes.length-1) ? 0 : currIndex+1;
+      this.selected = this.themes[newIndex];
     }
   },
+  computed: {
+    icon() {
+      return this.selected && this.selected._text.includes("dark") ? this.dark : this.light;
+    },
+  },
   components: {
-    FeatherSelect,
+    FeatherIcon,
+    FeatherButton
   },
 };
 </script>
 <style lang="scss" scoped>
+@import "~@featherds/styles/themes/variables";
 @import "~@featherds/styles/mixins/typography";
-.hidden-label {
-  @include screen-reader();
-}
-.theme-select {
-  width: 160px;
-  display: inline-block;
-  :deep(.feather-input-wrapper-container) {
-    margin-top: 0;
-  }
-  :deep(.feather-input-wrapper-container) {
-    --feather-primary: var(--feather-surface);
-    --feather-primary-text-on-surface: var(--feather-surface);
-    --feather-secondary-text-on-surface: var(--feather-secondary-text-on-color);
-  }
-  :deep(label) {
-    display: none;
-  }
+.toggle {
+  color: var($primary-text-on-color)
 }
 </style>

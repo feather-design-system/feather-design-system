@@ -1,6 +1,6 @@
 <template>
   <section>
-    <FeatherTabContainer v-model="selected">
+    <FeatherTabContainer v-model="index">
       <template v-slot:tabs>
         <FeatherTab id="one" controls="onepanel">Tab one</FeatherTab>
         <FeatherTab id="two" controls="twopanel">Tab Two</FeatherTab>
@@ -13,7 +13,7 @@
         role="tabpanel"
         tabindex="0"
         id="onepanel"
-        :aria-expanded="selected === 0"
+        :aria-expanded="index === 0"
         aria-labelledby="one"
       >
         One Panel
@@ -22,7 +22,7 @@
         role="tabpanel"
         tabindex="0"
         id="twopanel"
-        :aria-expanded="selected === 1"
+        :aria-expanded="index === 1"
         aria-labelledby="two"
       >
         Two Panel
@@ -31,7 +31,7 @@
         role="tabpanel"
         tabindex="0"
         id="threepanel"
-        :aria-expanded="selected === 2"
+        :aria-expanded="index === 2"
         aria-labelledby="three"
       >
         Three Panel
@@ -44,7 +44,7 @@ import { FeatherTab, FeatherTabContainer } from "@featherds/tabs";
 export default {
   data() {
     return {
-      selected: 1,
+      index: 1,
     };
   },
   components: {

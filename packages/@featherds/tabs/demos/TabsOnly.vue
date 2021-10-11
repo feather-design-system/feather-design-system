@@ -1,6 +1,6 @@
 <template>
   <section>
-    <FeatherTabContainer v-model="selected">
+    <FeatherTabContainer v-model="index">
       <template v-slot:tabs>
         <FeatherTab id="one" controls="onepanel">Tab one</FeatherTab>
         <FeatherTab id="two" controls="twopanel">Tab Two</FeatherTab>
@@ -13,7 +13,7 @@
 import * as components from "./../src";
 export default {
   data() {
-    return { selected: 1 };
+    return { index: 1 };
   },
   components: {
     ...components,

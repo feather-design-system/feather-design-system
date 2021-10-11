@@ -8,22 +8,25 @@
     >
       <template v-slot:left>
         <div class="header-title">
-          <a :href="$withBase('/')">Feather Design</a>
+          <a :href="$withBase('/')">( ?° ?? ?°) FEATHER DS</a>
           &nbsp;
         </div>
+      </template>
+      <template v-slot:center>
         <!-- Patterns -->
-        <FeatherAppBarButton @click="goToDesign">Design</FeatherAppBarButton>
-
+        <AppBarLink title="Foundation" url="/Design/Foundation/">Foundation</AppBarLink>
         <!-- Packages -->
-        <FeatherAppBarButton @click="goToComponents"
-          >Components</FeatherAppBarButton
-        >
+        <AppBarLink title="Components" url="/Components/">Components</AppBarLink>
       </template>
       <template v-slot:right>
         <div class="right-container">
           <PageThemeChange class="theme-changer" />
-          <DocSearch /></div
-      ></template>
+          <span class="search-container">
+            <FeatherIcon class="search-icon" title="Search Feather..." :icon="iconSearch" />
+            <DocSearch />
+          </span>
+        </div>
+      </template>
     </FeatherAppBar>
     <div id="main">
       <slot />
@@ -32,13 +35,14 @@
 </template>
 <script>
 import { FeatherIcon } from "@featherds/icon";
+import Search from "@featherds/icon/navigation/Search";
 import KeyboardArrowDown from "@featherds/icon/navigation/ExpandMore";
 import { FeatherMegaMenu } from "@featherds/megamenu";
 import {
-  FeatherAppBarButton,
   FeatherAppBarLink,
   FeatherAppBar,
 } from "@featherds/app-bar";
+import AppBarLink from "../components/AppBarLink.vue";
 import PageThemeChange from "../global-components/PageThemeChange";
 
 export default {
@@ -48,24 +52,16 @@ export default {
         skip: "Skip to main content",
       },
       iconCaret: KeyboardArrowDown,
+      iconSearch: Search,
     };
   },
-  methods: {
-    goToComponents() {
-      this.$router.push("/Components/");
-    },
-    goToDesign() {
-      this.$router.push("/Design/Foundation/");
-    },
-  },
-
   components: {
     PageThemeChange,
     FeatherIcon,
     FeatherMegaMenu,
-    FeatherAppBarButton,
     FeatherAppBarLink,
     FeatherAppBar,
+    AppBarLink
   },
 };
 </script>
@@ -83,12 +79,13 @@ export default {
 .header-title {
   height: 100%;
   display: inline-block;
-  margin-right: 8px;
+  margin-right: 24px;
   a {
-    @include headline1();
+    @include headline4();
     color: var($surface);
     line-height: 63px;
     text-decoration: none;
+    text-transform: uppercase;
     &:hover,
     &:visited {
       text-decoration: none;
@@ -96,13 +93,61 @@ export default {
     }
   }
 }
+
 .right-container {
   display: flex;
   align-items: center;
   height: 100%;
+
+  & .search-container {
+    & .search-icon {
+      color: var($secondary-text-on-color);
+      font-size: 24px;
+      position: relative;
+      top: 3px;
+      left: 45px;
+      margin-left: -24px;
+    }
+  }
 }
 .theme-changer {
   margin-right: 12px;
+}
+::v-deep(div.header-content) {
+  div.center-horiz {
+    &.left {
+      order: 1;
+    }
+    &.center {
+      order: 2;
+      margin-left: auto;
+    }
+    &.right {
+      order: 3;
+      padding-left: 0;
+      flex: 0;
+    }
+  }
+}
+@media all and (max-width: 760px) {
+  ::v-deep(div.header-content) {
+    flex-wrap: wrap;
+    height: 120px;
+
+    div.center-horiz {
+      height: 60px;
+      &.left, &.right {
+        flex-grow: 0;
+        flex-basis: 50%;
+      }
+      &.center {
+        order: 4;
+        margin-left: 0;
+        flex: 1;
+        justify-content: center;
+      }
+    }
+  }
 }
 </style>
 <style lang="scss">
