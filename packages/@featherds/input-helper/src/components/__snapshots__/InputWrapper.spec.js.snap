@@ -2,7 +2,7 @@
 
 exports[`InputWrapper.vue should hide the label when hideLabel is true 1`] = `
 <div
-  class="feather-input-wrapper-container"
+  class="feather-input-wrapper-container error"
 >
   <fieldset
     aria-hidden="true"
@@ -35,7 +35,21 @@ exports[`InputWrapper.vue should hide the label when hideLabel is true 1`] = `
       class="post"
     >
       <!--v-if-->
-      <!--v-if-->
+      <svg
+        aria-hidden="true"
+        class="error-icon hide-when-disabled feather-icon error-icon hide-when-disabled"
+        data-v-0aa06a12=""
+        focusable="false"
+        height="24"
+        role="img"
+        viewBox="0 0 24 24"
+        width="24"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <path
+          d="M11,15h2v2H11Zm0-8h2v6H11Zm1-5A10,10,0,1,0,22,12,10,10,0,0,0,12,2Zm0,18a8,8,0,1,1,8-8A8,8,0,0,1,12,20Z"
+        />
+      </svg>
       
       
     </div>
@@ -45,7 +59,7 @@ exports[`InputWrapper.vue should hide the label when hideLabel is true 1`] = `
 
 exports[`InputWrapper.vue should render a focused border & raised label 1`] = `
 <div
-  class="feather-input-wrapper-container focused"
+  class="feather-input-wrapper-container focused error"
 >
   <fieldset
     aria-hidden="true"
@@ -78,7 +92,21 @@ exports[`InputWrapper.vue should render a focused border & raised label 1`] = `
       class="post"
     >
       <!--v-if-->
-      <!--v-if-->
+      <svg
+        aria-hidden="true"
+        class="error-icon hide-when-disabled feather-icon error-icon hide-when-disabled"
+        data-v-0aa06a12=""
+        focusable="false"
+        height="24"
+        role="img"
+        viewBox="0 0 24 24"
+        width="24"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <path
+          d="M11,15h2v2H11Zm0-8h2v6H11Zm1-5A10,10,0,1,0,22,12,10,10,0,0,0,12,2Zm0,18a8,8,0,1,1,8-8A8,8,0,0,1,12,20Z"
+        />
+      </svg>
       
       
     </div>
@@ -88,7 +116,7 @@ exports[`InputWrapper.vue should render a focused border & raised label 1`] = `
 
 exports[`InputWrapper.vue should render a normal wrapper 1`] = `
 <div
-  class="feather-input-wrapper-container"
+  class="feather-input-wrapper-container error"
 >
   <fieldset
     aria-hidden="true"
@@ -121,7 +149,21 @@ exports[`InputWrapper.vue should render a normal wrapper 1`] = `
       class="post"
     >
       <!--v-if-->
-      <!--v-if-->
+      <svg
+        aria-hidden="true"
+        class="error-icon hide-when-disabled feather-icon error-icon hide-when-disabled"
+        data-v-0aa06a12=""
+        focusable="false"
+        height="24"
+        role="img"
+        viewBox="0 0 24 24"
+        width="24"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <path
+          d="M11,15h2v2H11Zm0-8h2v6H11Zm1-5A10,10,0,1,0,22,12,10,10,0,0,0,12,2Zm0,18a8,8,0,1,1,8-8A8,8,0,0,1,12,20Z"
+        />
+      </svg>
       
       
     </div>
@@ -131,7 +173,7 @@ exports[`InputWrapper.vue should render a normal wrapper 1`] = `
 
 exports[`InputWrapper.vue should render a raised label 1`] = `
 <div
-  class="feather-input-wrapper-container raised"
+  class="feather-input-wrapper-container raised error"
 >
   <fieldset
     aria-hidden="true"
@@ -164,7 +206,21 @@ exports[`InputWrapper.vue should render a raised label 1`] = `
       class="post"
     >
       <!--v-if-->
-      <!--v-if-->
+      <svg
+        aria-hidden="true"
+        class="error-icon hide-when-disabled feather-icon error-icon hide-when-disabled"
+        data-v-0aa06a12=""
+        focusable="false"
+        height="24"
+        role="img"
+        viewBox="0 0 24 24"
+        width="24"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <path
+          d="M11,15h2v2H11Zm0-8h2v6H11Zm1-5A10,10,0,1,0,22,12,10,10,0,0,0,12,2Zm0,18a8,8,0,1,1,8-8A8,8,0,0,1,12,20Z"
+        />
+      </svg>
       
       
     </div>
@@ -262,7 +318,7 @@ exports[`InputWrapper.vue should render clear and error icons 1`] = `
 
 exports[`InputWrapper.vue should render clear icon when clear and show clear is set 1`] = `
 <div
-  class="feather-input-wrapper-container"
+  class="feather-input-wrapper-container error"
 >
   <fieldset
     aria-hidden="true"
@@ -314,7 +370,21 @@ exports[`InputWrapper.vue should render clear icon when clear and show clear is 
           />
         </svg>
       </a>
-      <!--v-if-->
+      <svg
+        aria-hidden="true"
+        class="error-icon hide-when-disabled feather-icon error-icon hide-when-disabled"
+        data-v-0aa06a12=""
+        focusable="false"
+        height="24"
+        role="img"
+        viewBox="0 0 24 24"
+        width="24"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <path
+          d="M11,15h2v2H11Zm0-8h2v6H11Zm1-5A10,10,0,1,0,22,12,10,10,0,0,0,12,2Zm0,18a8,8,0,1,1,8-8A8,8,0,0,1,12,20Z"
+        />
+      </svg>
       
       
     </div>
@@ -393,7 +463,7 @@ exports[`InputWrapper.vue should render in an error state 1`] = `
 
 exports[`InputWrapper.vue should render in disabled state 1`] = `
 <div
-  class="feather-input-wrapper-container disabled"
+  class="feather-input-wrapper-container error disabled"
 >
   <fieldset
     aria-hidden="true"
@@ -426,7 +496,21 @@ exports[`InputWrapper.vue should render in disabled state 1`] = `
       class="post"
     >
       <!--v-if-->
-      <!--v-if-->
+      <svg
+        aria-hidden="true"
+        class="error-icon hide-when-disabled feather-icon error-icon hide-when-disabled"
+        data-v-0aa06a12=""
+        focusable="false"
+        height="24"
+        role="img"
+        viewBox="0 0 24 24"
+        width="24"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <path
+          d="M11,15h2v2H11Zm0-8h2v6H11Zm1-5A10,10,0,1,0,22,12,10,10,0,0,0,12,2Zm0,18a8,8,0,1,1,8-8A8,8,0,0,1,12,20Z"
+        />
+      </svg>
       
       
     </div>
@@ -436,7 +520,7 @@ exports[`InputWrapper.vue should render in disabled state 1`] = `
 
 exports[`InputWrapper.vue should take into account any prefix elements when not raised 1`] = `
 <div
-  class="feather-input-wrapper-container"
+  class="feather-input-wrapper-container error"
 >
   <fieldset
     aria-hidden="true"
@@ -476,7 +560,21 @@ exports[`InputWrapper.vue should take into account any prefix elements when not 
       class="post"
     >
       <!--v-if-->
-      <!--v-if-->
+      <svg
+        aria-hidden="true"
+        class="error-icon hide-when-disabled feather-icon error-icon hide-when-disabled"
+        data-v-0aa06a12=""
+        focusable="false"
+        height="24"
+        role="img"
+        viewBox="0 0 24 24"
+        width="24"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <path
+          d="M11,15h2v2H11Zm0-8h2v6H11Zm1-5A10,10,0,1,0,22,12,10,10,0,0,0,12,2Zm0,18a8,8,0,1,1,8-8A8,8,0,0,1,12,20Z"
+        />
+      </svg>
       
       
     </div>

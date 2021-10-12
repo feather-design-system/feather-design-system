@@ -2,9 +2,10 @@
   <form @submit="onSubmit" novalidate>
     <h1>Register, v2</h1>
     * indicates required
-    <div class="errors" v-if="errors.length">
+    <div class="errors" v-if="errors.length || headingText.length">
       <div class="error-heading" tabindex="-1" ref="heading">
         {{ errorsHeading }}
+        {{ headingText }}
       </div>
       <ul>
         <li v-for="item in errors" :key="item.inputId">
@@ -32,12 +33,23 @@
       required
     />
     <button type="submit">Submit</button>
+    <div class="submitting" v-if="submitting">
+      <FeatherSpinner />
+    </div>
+    <div
+      class="alert"
+      aria-live="assertive"
+      aria-atomic="true"
+      ref="alert"
+    ></div>
   </form>
 </template>
 <script>
 import { string } from "yup";
 import { ref, computed, provide, nextTick } from "vue";
 import * as components from "./../src";
+
+import { FeatherSpinner } from "@featherds/progress";
 
 export default {
   setup() {
@@ -52,16 +64,23 @@ export default {
 
     const email = ref("");
     const emailV = string().required("Required").email();
-    const errors = ref([]);
-    const errorsHeading = ref("");
-    const heading = ref();
+    const submitting = ref();
+    const alert = ref();
     const removeAsteriks = (str) => {
       return str.replace(/ \*$/, "");
     };
     const focusElement = (id) => {
       document.getElementById(id).focus();
     };
+    const errors = ref([]);
+    const heading = ref();
+
+    const errorsHeading = computed(() => {
+      return errors.value.length > 0 ? errors.value.length + " errors" : "";
+    });
+    const headingText = ref("");
     const onSubmit = (e) => {
+      headingText.value = "";
       errors.value = [];
       e.preventDefault();
       const validation = Object.keys(controls).map((key) => {
@@ -73,8 +92,19 @@ export default {
           v.fullMessage = `${removeAsteriks(v.label)} - ${v.message}`;
           return v;
         });
-      errorsHeading.value = errors.value ? errors.value.length + " errors" : "";
-      nextTick(() => heading.value.focus());
+
+      if (errors.value.length) {
+        nextTick(() => heading.value.focus());
+      } else {
+        submitting.value = true;
+        alert.value.textContent = "Submitting form, please wait";
+
+        setTimeout(() => {
+          submitting.value = false;
+          headingText.value = "Server error occured. Please try again later.";
+          nextTick(() => heading.value.focus());
+        }, 3000);
+      }
     };
 
     const addHash = (str) => `#${str}`;
@@ -87,12 +117,22 @@ export default {
       errors,
       errorsHeading,
       heading,
+      headingText,
       addHash,
       focusElement,
+      submitting,
+      alert,
     };
   },
   components: {
     ...components,
+    FeatherSpinner,
   },
 };
 </script>
+<style lang="scss" scoped>
+@import "@featherds/styles/mixins/typography";
+.alert {
+  @include screen-reader();
+}
+</style>

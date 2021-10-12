@@ -2,14 +2,14 @@
   <div class="feather-input-sub-text" :id="id" v-show="hasContent">
     <div
       class="feather-input-hint"
-      v-if="hint && !error"
+      v-if="hint && !error.length"
       data-ref-id="feather-form-element-hint"
     >
       {{ hint }}
     </div>
     <div
       class="feather-input-error"
-      v-if="error"
+      v-if="error.length > 0"
       data-ref-id="feather-form-element-error"
       aria-live="assertive"
     >
@@ -19,7 +19,7 @@
   </div>
 </template>
 <script>
-import { inject } from "vue";
+import { inject, computed } from "vue";
 export default {
   computed: {
     hasContent() {
@@ -39,8 +39,17 @@ export default {
   },
   setup() {
     const options = inject("subTextOptions");
-
-    return options;
+    const errorMessage = inject("validationErrorMessage", false);
+    const error = computed(() => {
+      if (options.error) {
+        return options.error;
+      }
+      if (errorMessage && errorMessage.value) {
+        return errorMessage.value;
+      }
+      return "";
+    });
+    return { ...options, error };
   },
 };
 </script>

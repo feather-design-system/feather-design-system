@@ -32,12 +32,23 @@
       required
     />
     <button type="submit">Submit</button>
+    <div class="submitting" v-if="submitting">
+      <FeatherSpinner />
+    </div>
+    <div
+      class="alert"
+      aria-live="assertive"
+      aria-atomic="true"
+      ref="alert"
+    ></div>
   </form>
 </template>
 <script>
 import { string } from "yup";
 import { ref, computed, provide, nextTick } from "vue";
 import * as components from "./../src";
+
+import { FeatherSpinner } from "@featherds/progress";
 
 export default {
   setup() {
@@ -55,6 +66,8 @@ export default {
     const errors = ref([]);
     const errorsHeading = ref("");
     const heading = ref();
+    const submitting = ref();
+    const alert = ref();
     const removeAsteriks = (str) => {
       return str.replace(/ \*$/, "");
     };
@@ -73,8 +86,21 @@ export default {
           v.fullMessage = `${removeAsteriks(v.label)} - ${v.message}`;
           return v;
         });
-      errorsHeading.value = errors.value ? errors.value.length + " errors" : "";
-      nextTick(() => heading.value.focus());
+
+      if (errors.value.length) {
+        errorsHeading.value = errors.value
+          ? errors.value.length + " errors"
+          : "";
+        nextTick(() => heading.value.focus());
+      } else {
+        submitting.value = true;
+        alert.value.textContent = "Submitting form, please wait";
+
+        setTimeout(() => {
+          alert.value.textContent = "Submission successful";
+          submitting.value = false;
+        }, 5000);
+      }
     };
 
     const addHash = (str) => `#${str}`;
@@ -89,10 +115,19 @@ export default {
       heading,
       addHash,
       focusElement,
+      submitting,
+      alert,
     };
   },
   components: {
     ...components,
+    FeatherSpinner,
   },
 };
 </script>
+<style lang="scss" scoped>
+@import "@featherds/styles/mixins/typography";
+.alert {
+  @include screen-reader();
+}
+</style>

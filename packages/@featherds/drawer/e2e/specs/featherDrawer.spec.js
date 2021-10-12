@@ -8,13 +8,11 @@ describe("Feather Drawer", () => {
     await page.openDrawer();
     expect(await page.drawerDisplayed()).to.equal(true);
     await page.closeDrawer();
-    expect(await page.drawerDisplayed()).to.equal(false);
   });
   it("should open left drawer", async () => {
     const page = await Left.create();
     await page.openDrawer();
     expect(await page.drawerDisplayed()).to.equal(true);
     await page.closeDrawer();
-    expect(await page.drawerDisplayed()).to.equal(false);
   });
 });

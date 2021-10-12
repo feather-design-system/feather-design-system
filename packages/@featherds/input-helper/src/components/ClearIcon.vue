@@ -1,6 +1,6 @@
 <template>
   <ActionIcon
-    @click.stop="$emit('clear')"
+    @click.stop.prevent="$emit('clear')"
     :title="clear"
     :icon="clearIcon"
     data-ref-id="feather-form-element-clear"
