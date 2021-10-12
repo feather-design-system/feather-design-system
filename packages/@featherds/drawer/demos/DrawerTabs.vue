@@ -162,6 +162,14 @@ export default {
   },
 };
 </script>
+<style lang="scss" scoped>
+.drawer-container .drawer-tab-content[role="tabpanel"] :deep(div.header) {
+  display: none;
+}
+.drawer-container :deep(a.closeButton) {
+  display: none;
+}
+</style>
 <style>
 .fixed-width {
   width: 266px;

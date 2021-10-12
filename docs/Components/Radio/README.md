@@ -57,6 +57,7 @@ Radio buttons should be used in a [RadioGroup](#RadioGroup). The Radio Group wil
 | hint       | hint text to be displayed below the group             | `String`  | `false`  | -       |
 | error      | error text to be displayed below the group            | `String`  | `false`  | -       |
 | vertical   | when true will put radio buttons in a vertical layout | `Boolean` | `false`  | `false` |
+| schema     | a schema for use in validation                        | `Object`  | `false`  | -       |
 
 ### Events
 

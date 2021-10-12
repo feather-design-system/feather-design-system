@@ -35,7 +35,7 @@
 <script>
 import ClearIcon from "./ClearIcon";
 import ErrorIcon from "./ErrorIcon";
-import { inject } from "vue";
+import { inject, computed } from "vue";
 export default {
   emits: ["clear", "wrapper-click"],
   props: {
@@ -67,7 +67,17 @@ export default {
   },
   setup() {
     const options = inject("wrapperOptions");
-    return options;
+    const errorMessage = inject("validationErrorMessage", false);
+    const error = computed(() => {
+      if (options.error) {
+        return options.error;
+      }
+      if (errorMessage && errorMessage.value) {
+        return errorMessage.value;
+      }
+      return false;
+    });
+    return { ...options, error };
   },
   computed: {
     computedClearText() {

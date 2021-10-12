@@ -69,12 +69,14 @@ Instead use:
 
 ### Props
 
-| Name     | Description                                           | Type      | Required | Default |
-| -------- | ----------------------------------------------------- | --------- | -------- | ------- |
-| label    | label for the Checkbox group                          | `String`  | `true`   | -       |
-| hint     | hint text to be displayed below the group             | `String`  | `false`  | -       |
-| error    | error text to be displayed below the group            | `String`  | `false`  | -       |
-| vertical | when true will put Radio buttons in a vertical layout | `Boolean` | `false`  | `false` |
+| Name       | Description                                            | Type      | Required | Default |
+| ---------- | ------------------------------------------------------ | --------- | -------- | ------- |
+| modelValue | optional object of checkbox values for validation only | `Object`  | `false`  | -       |
+| label      | label for the Checkbox group                           | `String`  | `true`   | -       |
+| hint       | hint text to be displayed below the group              | `String`  | `false`  | -       |
+| error      | error text to be displayed below the group             | `String`  | `false`  | -       |
+| vertical   | when true will put Radio buttons in a vertical layout  | `Boolean` | `false`  | `false` |
+| schema     | a schema for use in validation                         | `Object`  | `false`  | -       |
 
 ### Slots
 
@@ -87,3 +89,7 @@ Instead use:
 ### Attributes
 
 Specifying a `class` or `data-ref-id` attribute will cause them to be applied to the component root container `div`. All other attributes are passed to the `input` where it makes sense. Some will be ignored if they conflict with attributes we need to use for accessibility.
+
+### Notes
+
+The structure of Checkboxes means that their value is atomic and not shared with the CheckboxGroup by default. For convenient validation, you can instead bind Checkbox values to properties of an `Object` and pass in a validation schema. However, this is totally optional and can also be achieved without using an `Object`. Please see the [Form Validation](/Components/FormValidation/) page for a working example.

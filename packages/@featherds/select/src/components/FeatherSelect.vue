@@ -66,6 +66,8 @@ import { FeatherMenu } from "@featherds/menu";
 import { getSafeId } from "@featherds/utils/id";
 import { KEYCODES } from "@featherds/utils/keys";
 import List from "./List";
+import { useValidation } from "@featherds/input/src/components/useValidation";
+import { computed, toRef } from "vue";
 
 export default {
   mixins: [InputWrapperMixin, InputSubTextMixin, InputInheritAttrsMixin],
@@ -89,6 +91,24 @@ export default {
         return [];
       },
     },
+    schema: {
+      type: Object,
+      required: false,
+    },
+  },
+  setup(props) {
+    const inputId = computed(() => {
+      return getSafeId("feather-select-input");
+    });
+
+    const { validate } = useValidation(
+      inputId,
+      toRef(props, "modelValue"),
+      props.label,
+      props.schema
+    );
+
+    return { inputId, validate };
   },
   data() {
     return {
@@ -105,9 +125,6 @@ export default {
     },
     subTextId() {
       return getSafeId("feather-select-description");
-    },
-    inputId() {
-      return getSafeId("feather-select-input");
     },
     inputAttrs() {
       return {
@@ -183,6 +200,7 @@ export default {
       }
     },
     handleInputBlur() {
+      this.validate();
       if (this.hasFocus && !this.showMenu) {
         this.hasFocus = false;
       }

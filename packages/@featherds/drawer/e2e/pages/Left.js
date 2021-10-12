@@ -5,7 +5,7 @@ const LEFTCLOSE = "#left-drawer [data-ref-id='dialog-close']";
 const create = async () => {
   await browser.url(`https://google.com`);
   await (await $("input")).waitForExist({ timeout: 60000 });
-  await browser.url(`${process.env.VUE_DEV_SERVER_URL}/Drawer-Demo`);
+  await browser.url(`${process.env.VUE_DEV_SERVER_URL}/Drawer-Demo?test`);
   const button = await $(LEFTBUTTON);
   await button.waitForExist({ timeout: 60000 });
   var runInBrowser = function (argument) {

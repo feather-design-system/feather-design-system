@@ -12,6 +12,10 @@ module.exports = [
         name: "Variables",
         url: "/Components/Variables/",
       },
+      {
+        name: "Form Validation",
+        url: "/Components/FormValidation/",
+      },
     ],
   },
   {

@@ -118,6 +118,7 @@ In the example above, we update the value array at the index where the icon need
 | labels         | object containing labels to be used by this component. Mainly used for i18n or customization of labels. See [Labels](#labels) example | `Object`            | `false`  | See [Labels](#labels) example           |
 | gridConfig     | array containing configuration for rendering the grid results. See [Grid Config](#grid-config) example                                | `Object`            | `false`  | See [Grid Config](#grid-config) example |
 | hideLabel      | hides the label for the input in scenarios like tables where it would get in the way                                                  | `Boolean`           | `false`  | -                                       |
+| schema         | a schema for use in validation                                                                                                        | `Object`            | `false`  | -                                       |
 
 ### Labels
 

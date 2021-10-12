@@ -35,6 +35,8 @@
 <script>
 import { defineComponent } from "vue";
 import { getSafeId } from "@featherds/utils/id";
+import { useValidation } from "@featherds/input/src/components/useValidation";
+import { computed, toRef } from "vue";
 
 import {
   InputWrapper,
@@ -63,6 +65,10 @@ export default defineComponent({
       type: Boolean,
       default: false,
     },
+    schema: {
+      type: Object,
+      required: false,
+    },
   },
   data() {
     return {
@@ -72,9 +78,6 @@ export default defineComponent({
     };
   },
   computed: {
-    inputId() {
-      return getSafeId("feather-textarea-label");
-    },
     descriptionId() {
       return getSafeId("feather-textarea-description");
     },
@@ -169,6 +172,24 @@ export default defineComponent({
       },
     },
   },
+  setup(props) {
+    const incomingId = toRef(props, "id");
+    const inputId = computed(() => {
+      if (incomingId.value) {
+        return incomingId.value;
+      }
+      return getSafeId("feather-textarea-label");
+    });
+
+    const { validate } = useValidation(
+      inputId,
+      toRef(props, "modelValue"),
+      props.label,
+      props.schema
+    );
+
+    return { inputId, incomingId, validate };
+  },
   methods: {
     handleClear() {
       this.internalValue = "";
@@ -181,6 +202,7 @@ export default defineComponent({
       this.focused = true;
     },
     handleBlur() {
+      this.validate();
       this.focused = false;
     },
     handleInput(e) {
