@@ -37,7 +37,8 @@
 </template>
 <script>
 import { getSafeId } from "@featherds/utils/id";
-
+import { useValidation } from "./useValidation";
+import { ref, toRef, computed } from "vue";
 import {
   InputWrapper,
   InputWrapperMixin,
@@ -65,17 +66,41 @@ export default {
       required: false,
       default: 0,
     },
+    schema: {
+      type: Object,
+      required: false,
+    },
+    id: {
+      type: String,
+      required: false,
+    },
+  },
+
+  setup(props) {
+    const incomingId = toRef(props, "id");
+    const inputId = computed(() => {
+      if (incomingId.value) {
+        return incomingId.value;
+      }
+      return getSafeId("feather-input-label");
+    });
+    const internalValue = ref();
+
+    const { validate } = useValidation(
+      inputId,
+      internalValue,
+      props.label,
+      props.schema
+    );
+
+    return { inputId, internalValue, validate };
   },
   data() {
     return {
       focused: false,
-      internalValue: undefined,
     };
   },
   computed: {
-    inputId() {
-      return getSafeId("feather-input-label");
-    },
     descriptionId() {
       return getSafeId("feather-input-description");
     },
@@ -149,6 +174,7 @@ export default {
           }
         },
         onBlur: (e) => {
+          this.validate();
           this.handleBlur();
           if (this.$attrs.onBlur) {
             this.$attrs.onBlur(e);

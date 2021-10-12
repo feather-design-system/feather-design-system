@@ -25,8 +25,8 @@ describe("InputSubText.vue", () => {
     const wrapper = getWrapper({
       global: {
         provide: {
-          hint: ref("HINT"),
-          error: ref(""),
+          hint: "HINT",
+          error: "",
         },
       },
     });
@@ -39,8 +39,8 @@ describe("InputSubText.vue", () => {
     const wrapper = getWrapper({
       global: {
         provide: {
-          hint: ref(""),
-          error: ref("HINT"),
+          hint: "",
+          error: "HINT",
         },
       },
     });

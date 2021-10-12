@@ -49,6 +49,8 @@ Inputs can be used as a singular object in a layout, or they can be paired toget
 | disabled   | puts the Input into a disabled state                                                             | `Boolean` | `false`  | `false`      |
 | maxlength  | maximum amount of characters this Input will accept                                              | `Number`  | `false`  | 0 - no limit |
 | hideLabel  | hides the label for the Input in scenarios like tables where it would get in the way             | `Boolean` | `false`  | -            |
+| id         | an ID that can be will be assigned to the input element                                          | `String`  | `false`  | -            |
+| schema     | a schema for use in validation                                                                   | `Object`  | `false`  | -            |
 
 ### Events
 
@@ -70,3 +72,19 @@ Inputs can be used as a singular object in a layout, or they can be paired toget
 ### Attributes
 
 Specifying an `class` or `data-ref-id` attribute will cause them to be applied to the component root container `div`. All other attributes are inherited to the `input` where applicable. Some will be ignored if they conflict with attributes used for accessibility.
+
+
+## ValidationHeader
+This is an element designed to be used in conjunction with forms using the `yup` validation library. This component displays a list of errors and links to the errored fields which helps in best practices for form validation. Please see the examples in the [Form Validation page](/Components/FormValidation/#examples)
+
+### Props
+
+| Name       | Description                                                      | Type    | Required | Default |
+| ---------- | ---------------------------------------------------------------- | ------- | -------- | ------- |
+| errorList  | an array of yup `ValidationError` objects produced by validation | `Array` | `false`  | `[]`    |
+
+
+### data-ref-ids
+
+- `feather-validation-header` - the root element
+

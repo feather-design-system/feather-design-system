@@ -5,7 +5,7 @@ const serve = require("./vite/serve");
   const server = await serve.run();
   await server.listen();
 
-  process.env.VUE_DEV_SERVER_URL = `http://localhost.lambdatest.com:${server.config.server.port}`;
+  process.env.VUE_DEV_SERVER_URL = `http://localhost.lambdatest.com:${server.config.server.port}/demos/#`;
 
   const execa = require("execa");
   const wdioBinPath = require.resolve("@wdio/cli/bin/wdio");

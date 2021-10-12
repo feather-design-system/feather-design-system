@@ -4,6 +4,7 @@
       class="feather-radio"
       role="radio"
       ref="input"
+      :id="id"
       :aria-checked="checked ? 'true' : 'false'"
       :aria-disabled="disabled ? 'true' : 'false'"
       :aria-labelledby="labelId"
@@ -54,6 +55,9 @@ export default {
     const focus = () => {
       input.value.focus();
     };
+    const id = computed(() => {
+      return getSafeId("feather-radio-button");
+    });
 
     //register
     const register = inject("register");
@@ -66,6 +70,7 @@ export default {
       disabled: props.disabled,
       value: props.value,
       checked,
+      id,
     };
     register(vm);
     const click = () => {
@@ -80,6 +85,7 @@ export default {
       click,
       input,
       checked,
+      id,
     };
   },
   components: {

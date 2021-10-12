@@ -35,6 +35,7 @@ These components are often found in the form of workflows where data entry is th
 | mondayFirst   | should monday be first day of the week.                                                                                               | `Boolean` | `false`  | -                                     |
 | disabledDates | can be used to configure disabled dates. See [Disabled Dates](#disabled-dates)                                                        | `Object`  | `false`  | See [Disabled Dates](#disabled-dates) |
 | labels        | Object containing labels to be used by this component. Mainly used for i18n or customization of labels. See [Labels](#labels) example | `Object`  | `false`  | See [Labels](#labels) example         |
+| schema        | a schema for use in validation                                                                                                        | `Object`  | `false`  | -                                     |
 
 ### Labels
 

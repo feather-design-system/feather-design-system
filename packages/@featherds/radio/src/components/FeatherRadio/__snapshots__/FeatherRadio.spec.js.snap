@@ -10,6 +10,7 @@ exports[`FeatherRadio.vue should set aria-checked based on data 1`] = `
     aria-labelledby="radio-label-id"
     class="feather-radio"
     data-ref-id="feather-radio"
+    id="feather-radio-button"
     role="radio"
     tabindex="0"
   >
@@ -60,6 +61,7 @@ exports[`FeatherRadio.vue should set aria-checked based on data 2`] = `
     aria-labelledby="radio-label-id"
     class="feather-radio"
     data-ref-id="feather-radio"
+    id="feather-radio-button"
     role="radio"
     tabindex="-1"
   >
@@ -110,6 +112,7 @@ exports[`FeatherRadio.vue should set aria-disabled based on property 1`] = `
     aria-labelledby="radio-label-id"
     class="feather-radio"
     data-ref-id="feather-radio"
+    id="feather-radio-button"
     role="radio"
     tabindex="-1"
   >
@@ -159,6 +162,7 @@ exports[`FeatherRadio.vue should set aria-disabled based on property 2`] = `
     aria-labelledby="radio-label-id"
     class="feather-radio"
     data-ref-id="feather-radio"
+    id="feather-radio-button"
     role="radio"
     tabindex="-1"
   >

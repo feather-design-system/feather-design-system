@@ -30,6 +30,7 @@
           </template>
           <div v-bind="attrs" role="group" class="feather-date-input-group">
             <SpinButton
+              :id="monthId"
               :tabindex="disabled ? -1 : 0"
               :label="monthLabel"
               ref="monthButton"
@@ -97,6 +98,7 @@
 import { ref, computed, watch, toRef } from "vue";
 import { getSafeId } from "@featherds/utils/id";
 import { KEYCODES } from "@featherds/utils/keys";
+import { useValidation } from "@featherds/input/src/components/useValidation";
 
 import { useLabelProperty } from "@featherds/composables/LabelProperty";
 import {
@@ -157,6 +159,10 @@ export default {
         return LABELS;
       },
     },
+    schema: {
+      type: Object,
+      required: false,
+    },
   },
   mixins: [InputWrapperMixin, InputSubTextMixin, InputInheritAttrsMixin],
   setup(props, context) {
@@ -169,6 +175,20 @@ export default {
     const disabled = toRef(props, "disabled");
     const menu = ref();
     const showClear = ref(false);
+
+    const inputId = computed(() => {
+      return getSafeId("feather-date-input-label");
+    });
+    const monthId = computed(() => {
+      return getSafeId("feather-date-input-month");
+    });
+
+    const { validate } = useValidation(
+      ref(monthId),
+      value,
+      props.label,
+      props.schema
+    );
 
     watch(
       value,
@@ -206,12 +226,8 @@ export default {
     const focused = ref(false);
     const showMenu = ref(false);
 
-    const inputId = computed(() => {
-      return getSafeId("feather-input-label");
-    });
-
     const descriptionId = computed(() => {
-      return getSafeId("feather-input-description");
+      return getSafeId("feather-date-input-description");
     });
 
     const attrs = computed(() => {
@@ -286,6 +302,7 @@ export default {
       focused.value = true;
     };
     const handleBlur = () => {
+      validate();
       focused.value = false;
       context.emit("blur");
       spinbuttons.deselectAllSpinButtons();
@@ -344,6 +361,7 @@ export default {
     };
     const labels = useLabelProperty(toRef(props, "labels"), LABELS);
     return {
+      validate,
       day,
       month,
       year,
@@ -354,6 +372,7 @@ export default {
       menu,
       calendar,
       inputId,
+      monthId,
       descriptionId,
       attrs,
       closeCalendar,

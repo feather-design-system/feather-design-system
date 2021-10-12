@@ -158,11 +158,11 @@ import { getSafeId } from "@featherds/utils/id";
 import { KEYCODES } from "@featherds/utils/keys";
 import { toView } from "@featherds/utils/scroll";
 import { useLabelProperty } from "@featherds/composables/LabelProperty";
-import { toRef } from "vue";
 import { useResultList } from "./Results/ResultList";
 import { useResultGrid } from "./Results/ResultGrid";
+import { useValidation } from "@featherds/input/src/components/useValidation";
 import HighlightMixin from "./Highlight/HighlightMixin";
-import { markRaw } from "vue";
+import { ref, computed, toRef, markRaw } from "vue";
 
 const LABELS = {
   noResults: "No results found",
@@ -236,6 +236,10 @@ export default {
     },
     gridConfig: {
       type: Array,
+    },
+    schema: {
+      type: Object,
+      required: false,
     },
   },
   data() {
@@ -334,9 +338,6 @@ export default {
     },
     subTextId() {
       return getSafeId("feather-autocomplete-description");
-    },
-    inputId() {
-      return getSafeId("feather-autocomplete-input");
     },
     resultsId() {
       return getSafeId("feather-autocomplete-input-results");
@@ -653,6 +654,7 @@ export default {
       this.$refs.input.focus();
     },
     handleInputBlur() {
+      this.validate();
       this.strategy.handleInputBlur();
       if (this.forceCloseResults || !this.showMenu) {
         this.handleOutsideClick();
@@ -726,12 +728,31 @@ export default {
     } else {
       resultsRender = useResultList();
     }
+
+    const incomingId = toRef(props, "id");
+    const inputId = computed(() => {
+      if (incomingId.value) {
+        return incomingId.value;
+      }
+      return getSafeId("feather-autocomplete-input");
+    });
+
+    const { validate } = useValidation(
+      inputId,
+      toRef(props, "modelValue"),
+      props.label,
+      props.schema
+    );
+
     return {
       ...labels,
       active: resultsRender.active,
       handleResultNavigation: resultsRender.handleKeyPress,
       resetResultIndex: resultsRender.reset,
       selectFirst: resultsRender.first,
+      inputId,
+      incomingId,
+      validate,
     };
   },
   mounted() {

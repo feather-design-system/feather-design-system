@@ -344,7 +344,7 @@ const baseFunctionality = (type) => {
   });
 };
 
-describe("Feather Autocomplete", () => {
+describe("FeatherAutocomplete", () => {
   describe("base functionality", () => {
     baseFunctionality(TYPES.multi);
     baseFunctionality(TYPES.single);
