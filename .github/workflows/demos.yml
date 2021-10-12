@@ -4,6 +4,7 @@
 name: Generate Demos
 
 on:
+  workflow_dispatch:
   push:
     branches:
       - dev
