@@ -65,8 +65,8 @@
     "@babel/node": "^7.8.7",
     "@babel/preset-env": "^7.9.0",
     "@commitlint/cli": "^13.1.0",
-    "@commitlint/prompt-cli": "^13.1.0",
     "@commitlint/config-conventional": "^13.1.0",
+    "@commitlint/prompt-cli": "^13.1.0",
     "@testing-library/jest-dom": "^5.11.3",
     "@types/jest": "^25.2.1",
     "@vee-validate/rules": "^4.1.20",
@@ -79,7 +79,7 @@
     "@vuepress/plugin-container": "v2.0.0-beta.24",
     "@vuepress/plugin-prismjs": "v2.0.0-beta.24",
     "@vuepress/plugin-register-components": "v2.0.0-beta.24",
-    "@vuepress/plugin-search": "v2.0.0-beta.24",
+    "@vuepress/plugin-docsearch": "v2.0.0-beta.24",
     "@wdio/cli": "^7.0.0",
     "@wdio/local-runner": "^7.0.0",
     "@wdio/mocha-framework": "^7.0.0",
@@ -120,7 +120,8 @@
     "vue-router": "^4.0.0",
     "vuepress-vite": "2.0.0-beta.24",
     "wdio-lambdatest-service": "1.0.3",
-    "webdriverio": "^7.0.0"
+    "webdriverio": "^7.0.0",
+    "yup": "^0.32.10"
   },
   "keywords": [
     "vue"

@@ -6,7 +6,7 @@ $font-path: "@featherds/styles/fonts/" !default;
 @import "@featherds/styles/lib/grid";
 @import "./containers.scss";
 // Code and the like
-@import "prism-themes/themes/prism-vsc-dark-plus.css";
+@import "prism-themes/themes/prism-atom-dark.css";
 @import "@featherds/styles/themes/open-mixins";
 
 html,
@@ -29,12 +29,16 @@ main {
 .open-dark {
   @include open-dark();
 }
+.DocSearch {
+  @include body-small();
+  @import "@featherds/styles/lib/reset";
+  @import "@featherds/styles/lib/typography";
+}
 
 code {
   padding: 0px 4px;
-  color: #c0341d;
-  background-color: #fbe5e1;
-  border-radius: 4px;
+  color: #3a4bd3;
+  background-color: #eef4ff;
 }
 pre code {
   padding: 0;
@@ -42,7 +46,10 @@ pre code {
   background-color: inherit;
   border-radius: unset;
 }
-
+:not(pre) > code[class*="language-"],
+pre[class*="language-"] {
+  background-color: #0a0c1b;
+}
 //include local table stylings
 //replace with styling from feather table
 @import "./table.scss";

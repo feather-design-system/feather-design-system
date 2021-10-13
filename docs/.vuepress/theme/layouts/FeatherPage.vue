@@ -14,14 +14,15 @@
         <!-- Patterns -->
         <FeatherAppBarButton @click="goToDesign">Design</FeatherAppBarButton>
 
-
         <!-- Packages -->
-       <FeatherAppBarButton @click="goToComponents">Components</FeatherAppBarButton>
+        <FeatherAppBarButton @click="goToComponents"
+          >Components</FeatherAppBarButton
+        >
       </template>
       <template v-slot:right>
         <div class="right-container">
           <PageThemeChange class="theme-changer" />
-          <SearchBox placeholder="Search" /></div
+          <Docsearch /></div
       ></template>
     </FeatherAppBar>
     <div id="main">
@@ -82,7 +83,7 @@ export default {
 .header-title {
   height: 100%;
   display: inline-block;
-  margin-right:8px;
+  margin-right: 8px;
   a {
     @include headline1();
     color: var($surface);

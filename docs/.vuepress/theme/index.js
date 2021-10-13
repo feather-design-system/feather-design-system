@@ -2,7 +2,7 @@
 const { path } = require("@vuepress/utils");
 module.exports = {
   layouts: path.resolve(__dirname, "./layouts"),
-  clientAppSetupFiles: path.resolve(__dirname, './preloadTheme.js'),
+  clientAppSetupFiles: path.resolve(__dirname, "./preloadTheme.js"),
   extendsMarkdown: (md) => {
     // use more markdown-it plugins!
     md.use(require("../plugins/demo.js"));
@@ -48,9 +48,15 @@ module.exports = {
       },
     ],
     [
-      "@vuepress/search",
+      "@vuepress/docsearch",
       {
-        searchMaxSuggestions: 10,
+        apiKey: "3586ad692e4fd2ca21e8ad06f4181eaf",
+        indexName: "feather_design",
+        locales: {
+          "/": {
+            placeholder: "Search",
+          },
+        },
       },
     ],
   ],
