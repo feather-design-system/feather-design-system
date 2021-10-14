@@ -8,7 +8,7 @@
 </template>
 <script>
 import { FeatherIcon } from "@featherds/icon";
-import Call from "@featherds/icon/communication/Call";
+import Call from "@featherds/icon/communication/Phone";
 import { markRaw } from "vue";
 export default {
   props: {

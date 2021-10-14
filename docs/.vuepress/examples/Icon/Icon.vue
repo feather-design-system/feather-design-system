@@ -5,11 +5,10 @@
 </template>
 <script>
 import { FeatherIcon } from "@featherds/icon";
-import Add from "@featherds/icon/actions/Add";
+import Add from "@featherds/icon/action/Add";
 import { markRaw } from "vue";
 export default {
   computed: {
-
     add() {
       return markRaw(Add);
     },

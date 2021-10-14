@@ -75,8 +75,8 @@
 import { FeatherSelect } from "@featherds/select";
 import { FeatherButton } from "@featherds/button";
 import { FeatherIcon } from "@featherds/icon";
-import ChevronLeft from "@featherds/icon/navigation/LeftChevron";
-import ChevronRight from "@featherds/icon/navigation/RightChevron";
+import ChevronLeft from "@featherds/icon/navigation/ChevronLeft";
+import ChevronRight from "@featherds/icon/navigation/ChevronRight";
 import FirstPage from "@featherds/icon/navigation/FirstPage";
 import LastPage from "@featherds/icon/navigation/LastPage";
 import { markRaw } from "vue";

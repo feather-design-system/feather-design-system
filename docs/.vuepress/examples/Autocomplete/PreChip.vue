@@ -13,7 +13,7 @@
 </template>
 <script>
 import { FeatherAutocomplete } from "@featherds/autocomplete";
-import icon from "@featherds/icon/notifications/ErrorOutline";
+import icon from "@featherds/icon/notification/Warning";
 import names from "./users";
 export default {
   data() {

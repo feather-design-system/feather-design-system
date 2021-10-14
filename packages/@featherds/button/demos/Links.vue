@@ -59,7 +59,7 @@
 </template>
 <script>
 import { FeatherIcon } from "@featherds/icon";
-import Backup from "@featherds/icon/actions/AddComment";
+import Backup from "@featherds/icon/action/AddComment";
 import { markRaw } from "vue";
 
 import * as components from "./../src";

@@ -46,8 +46,8 @@ import {
   FeatherRailGroup,
   FeatherRailItem,
 } from "@featherds/navigation-rail";
-import App from "@featherds/icon/medical/LineOfBusiness";
-import Account from "@featherds/icon/actions/Account";
+import App from "@featherds/icon/medical/Hospital";
+import Account from "@featherds/icon/action/AccountCircle";
 import { FeatherIcon } from "@featherds/icon";
 import { markRaw } from "vue";
 

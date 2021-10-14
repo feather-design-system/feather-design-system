@@ -5,7 +5,7 @@
 </template>
 <script>
 import * as components from "./../src";
-import Add from "@featherds/icon/actions/AssignTo";
+import Add from "@featherds/icon/action/AssignTo";
 export default {
   components: {
     ...components,

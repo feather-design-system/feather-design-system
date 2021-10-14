@@ -77,7 +77,7 @@
 import { FeatherIcon } from "@featherds/icon";
 import Available from "@featherds/icon/status/Available";
 import Unavailable from "@featherds/icon/status/Unavailable";
-import Menu from "@featherds/icon/navigation/MoreVertical";
+import Menu from "@featherds/icon/navigation/MoreVert";
 import { FeatherSortHeader, SORT, RowAction } from "@featherds/table";
 import { FeatherPagination } from "@featherds/pagination";
 import { FeatherButton } from "@featherds/button";

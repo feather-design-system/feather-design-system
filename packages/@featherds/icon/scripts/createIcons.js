@@ -43,14 +43,14 @@ async function generateComponentFiles(files, packageDir, destDir, reg) {
 
 async function generateFeatherIconComponents() {
   const globs = IGNORE_FOLDERS.map((x) => `!packages/@featherds/icon/${x}/**`);
-  globs.push("packages/@featherds/icon/**/[Ii]con_*.svg");
+  globs.push("packages/@featherds/icon/**/ic_*.svg");
   const files = await globby(globs);
   const packageDir = path.resolve(`${process.cwd()}/packages/@featherds/icon`);
   return generateComponentFiles(
     files,
     packageDir,
     FEATHER_DEST_DIR,
-    /[Ii]con_(.*)\.svg/g
+    /ic_(.*)\.svg/g
   );
 }
 
@@ -67,7 +67,11 @@ async function generateFeatherJSFiles() {
   return Promise.all(
     folders.map(async (folder) => {
       const files = await globby(`${FEATHER_DEST_DIR}/${folder}/*vue`);
-      await vite.run(`${FEATHER_DEST_DIR}/${folder}`, files);
+      try {
+        await vite.run(`${FEATHER_DEST_DIR}/${folder}`, files);
+      } catch (e) {
+        console.error(e);
+      }
       return Promise.all(files.map((f) => fs.remove(f)));
     })
   );
@@ -89,9 +93,7 @@ const moveFeatherIconsToDocs = moveIconsToDocs(FEATHER_DEST_DIR, "Feather");
 
 const generateTypeDefinitions = async (feather) => {
   const getIconModuleDefinition = (icon) =>
-    `declare module "@featherds/icon/${
-      icon.group
-    }/${icon.name}" {
+    `declare module "@featherds/icon/${icon.group}/${icon.name}" {
   import { defineComponent } from "vue";
   const compModule: ReturnType<typeof defineComponent>;
   export = compModule;

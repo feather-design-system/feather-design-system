@@ -95,9 +95,9 @@
 </template>
 <script>
 import { FeatherIcon } from "@featherds/icon";
-import menu from "@featherds/icon/navigation/MoreVertical";
-import code from "@featherds/icon/actions/Code";
-import backup from "@featherds/icon/actions/AddComment";
+import menu from "@featherds/icon/navigation/MoreVert";
+import code from "@featherds/icon/action/Code";
+import backup from "@featherds/icon/action/AddComment";
 import { FeatherDropdown, FeatherDropdownItem } from "@featherds/dropdown";
 import { FeatherCheckbox } from "@featherds/checkbox";
 import { FeatherButton } from "@featherds/button";

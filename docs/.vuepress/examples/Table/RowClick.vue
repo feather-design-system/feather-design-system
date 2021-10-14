@@ -70,7 +70,7 @@
 </template>
 <script>
 import { FeatherIcon } from "@featherds/icon";
-import MoreVert from "@featherds/icon/navigation/MoreVertical";
+import MoreVert from "@featherds/icon/navigation/MoreVert";
 import { FeatherDropdown, FeatherDropdownItem } from "@featherds/dropdown";
 import { FeatherCheckbox } from "@featherds/checkbox";
 import { FeatherButton } from "@featherds/button";

@@ -54,14 +54,12 @@ exports[`Feather Autocomplete base functionality multi disabled state should ren
             class="feather-icon"
             data-v-0aa06a12=""
             focusable="false"
-            height="24"
             role="img"
             viewBox="0 0 24 24"
-            width="24"
             xmlns="http://www.w3.org/2000/svg"
           >
             <path
-              d="M20.29,18.84l-5.56-5.56A6.48,6.48,0,0,0,10.86,3.1,6.5,6.5,0,0,0,7.58,15.67a6.43,6.43,0,0,0,5.74-1l5.56,5.56a1,1,0,0,0,1.41,0h0A1,1,0,0,0,20.29,18.84ZM5,9.46A4.5,4.5,0,1,1,9.5,14,4.49,4.49,0,0,1,5,9.46Z"
+              d="M20.71,19.29l-6-6A6.48,6.48,0,0,0,10.86,3.14,6.5,6.5,0,0,0,7.58,15.71a6.43,6.43,0,0,0,5.74-1l6,6a1,1,0,0,0,1.42,0A1,1,0,0,0,20.71,19.29ZM9.5,14A4.5,4.5,0,1,1,14,9.5,4.49,4.49,0,0,1,9.5,14Z"
             />
           </svg>
           
@@ -158,14 +156,12 @@ exports[`Feather Autocomplete base functionality multi disabled state should ren
             class="feather-autocomplete-dropdown-icon feather-icon feather-autocomplete-dropdown-icon"
             data-v-0aa06a12=""
             focusable="false"
-            height="24"
             role="img"
             viewBox="0 0 24 24"
-            width="24"
             xmlns="http://www.w3.org/2000/svg"
           >
             <path
-              d="M6.71,9.29a1,1,0,0,0,0,1.41l4.59,4.59a1,1,0,0,0,1.41,0L17.3,10.7a1,1,0,0,0-1.41-1.41L12,13.17,8.12,9.29A1,1,0,0,0,6.71,9.29Z"
+              d="M6.7,9.29a1,1,0,0,0,0,1.41L12,16l5.3-5.3a1,1,0,0,0-1.41-1.41L12,13.17,8.11,9.29A1,1,0,0,0,6.7,9.29Z"
             />
           </svg>
           
@@ -271,14 +267,12 @@ exports[`Feather Autocomplete base functionality multi disabled state should ren
             class="feather-icon"
             data-v-0aa06a12=""
             focusable="false"
-            height="24"
             role="img"
             viewBox="0 0 24 24"
-            width="24"
             xmlns="http://www.w3.org/2000/svg"
           >
             <path
-              d="M20.29,18.84l-5.56-5.56A6.48,6.48,0,0,0,10.86,3.1,6.5,6.5,0,0,0,7.58,15.67a6.43,6.43,0,0,0,5.74-1l5.56,5.56a1,1,0,0,0,1.41,0h0A1,1,0,0,0,20.29,18.84ZM5,9.46A4.5,4.5,0,1,1,9.5,14,4.49,4.49,0,0,1,5,9.46Z"
+              d="M20.71,19.29l-6-6A6.48,6.48,0,0,0,10.86,3.14,6.5,6.5,0,0,0,7.58,15.71a6.43,6.43,0,0,0,5.74-1l6,6a1,1,0,0,0,1.42,0A1,1,0,0,0,20.71,19.29ZM9.5,14A4.5,4.5,0,1,1,14,9.5,4.49,4.49,0,0,1,9.5,14Z"
             />
           </svg>
           
@@ -331,14 +325,12 @@ exports[`Feather Autocomplete base functionality multi disabled state should ren
             class="feather-autocomplete-dropdown-icon feather-icon feather-autocomplete-dropdown-icon"
             data-v-0aa06a12=""
             focusable="false"
-            height="24"
             role="img"
             viewBox="0 0 24 24"
-            width="24"
             xmlns="http://www.w3.org/2000/svg"
           >
             <path
-              d="M6.71,9.29a1,1,0,0,0,0,1.41l4.59,4.59a1,1,0,0,0,1.41,0L17.3,10.7a1,1,0,0,0-1.41-1.41L12,13.17,8.12,9.29A1,1,0,0,0,6.71,9.29Z"
+              d="M6.7,9.29a1,1,0,0,0,0,1.41L12,16l5.3-5.3a1,1,0,0,0-1.41-1.41L12,13.17,8.11,9.29A1,1,0,0,0,6.7,9.29Z"
             />
           </svg>
           
@@ -444,14 +436,12 @@ exports[`Feather Autocomplete base functionality multi should lower label when t
             class="feather-icon"
             data-v-0aa06a12=""
             focusable="false"
-            height="24"
             role="img"
             viewBox="0 0 24 24"
-            width="24"
             xmlns="http://www.w3.org/2000/svg"
           >
             <path
-              d="M20.29,18.84l-5.56-5.56A6.48,6.48,0,0,0,10.86,3.1,6.5,6.5,0,0,0,7.58,15.67a6.43,6.43,0,0,0,5.74-1l5.56,5.56a1,1,0,0,0,1.41,0h0A1,1,0,0,0,20.29,18.84ZM5,9.46A4.5,4.5,0,1,1,9.5,14,4.49,4.49,0,0,1,5,9.46Z"
+              d="M20.71,19.29l-6-6A6.48,6.48,0,0,0,10.86,3.14,6.5,6.5,0,0,0,7.58,15.71a6.43,6.43,0,0,0,5.74-1l6,6a1,1,0,0,0,1.42,0A1,1,0,0,0,20.71,19.29ZM9.5,14A4.5,4.5,0,1,1,14,9.5,4.49,4.49,0,0,1,9.5,14Z"
             />
           </svg>
           
@@ -502,14 +492,12 @@ exports[`Feather Autocomplete base functionality multi should lower label when t
             class="feather-autocomplete-dropdown-icon feather-icon feather-autocomplete-dropdown-icon"
             data-v-0aa06a12=""
             focusable="false"
-            height="24"
             role="img"
             viewBox="0 0 24 24"
-            width="24"
             xmlns="http://www.w3.org/2000/svg"
           >
             <path
-              d="M6.71,9.29a1,1,0,0,0,0,1.41l4.59,4.59a1,1,0,0,0,1.41,0L17.3,10.7a1,1,0,0,0-1.41-1.41L12,13.17,8.12,9.29A1,1,0,0,0,6.71,9.29Z"
+              d="M6.7,9.29a1,1,0,0,0,0,1.41L12,16l5.3-5.3a1,1,0,0,0-1.41-1.41L12,13.17,8.11,9.29A1,1,0,0,0,6.7,9.29Z"
             />
           </svg>
           
@@ -617,14 +605,12 @@ exports[`Feather Autocomplete base functionality multi should not leave previous
             class="feather-icon"
             data-v-0aa06a12=""
             focusable="false"
-            height="24"
             role="img"
             viewBox="0 0 24 24"
-            width="24"
             xmlns="http://www.w3.org/2000/svg"
           >
             <path
-              d="M20.29,18.84l-5.56-5.56A6.48,6.48,0,0,0,10.86,3.1,6.5,6.5,0,0,0,7.58,15.67a6.43,6.43,0,0,0,5.74-1l5.56,5.56a1,1,0,0,0,1.41,0h0A1,1,0,0,0,20.29,18.84ZM5,9.46A4.5,4.5,0,1,1,9.5,14,4.49,4.49,0,0,1,5,9.46Z"
+              d="M20.71,19.29l-6-6A6.48,6.48,0,0,0,10.86,3.14,6.5,6.5,0,0,0,7.58,15.71a6.43,6.43,0,0,0,5.74-1l6,6a1,1,0,0,0,1.42,0A1,1,0,0,0,20.71,19.29ZM9.5,14A4.5,4.5,0,1,1,14,9.5,4.49,4.49,0,0,1,9.5,14Z"
             />
           </svg>
           
@@ -675,14 +661,12 @@ exports[`Feather Autocomplete base functionality multi should not leave previous
             class="feather-autocomplete-dropdown-icon rotate feather-icon feather-autocomplete-dropdown-icon rotate"
             data-v-0aa06a12=""
             focusable="false"
-            height="24"
             role="img"
             viewBox="0 0 24 24"
-            width="24"
             xmlns="http://www.w3.org/2000/svg"
           >
             <path
-              d="M6.71,9.29a1,1,0,0,0,0,1.41l4.59,4.59a1,1,0,0,0,1.41,0L17.3,10.7a1,1,0,0,0-1.41-1.41L12,13.17,8.12,9.29A1,1,0,0,0,6.71,9.29Z"
+              d="M6.7,9.29a1,1,0,0,0,0,1.41L12,16l5.3-5.3a1,1,0,0,0-1.41-1.41L12,13.17,8.11,9.29A1,1,0,0,0,6.7,9.29Z"
             />
           </svg>
           
@@ -866,14 +850,12 @@ exports[`Feather Autocomplete base functionality multi should raise the label wh
             class="feather-icon"
             data-v-0aa06a12=""
             focusable="false"
-            height="24"
             role="img"
             viewBox="0 0 24 24"
-            width="24"
             xmlns="http://www.w3.org/2000/svg"
           >
             <path
-              d="M20.29,18.84l-5.56-5.56A6.48,6.48,0,0,0,10.86,3.1,6.5,6.5,0,0,0,7.58,15.67a6.43,6.43,0,0,0,5.74-1l5.56,5.56a1,1,0,0,0,1.41,0h0A1,1,0,0,0,20.29,18.84ZM5,9.46A4.5,4.5,0,1,1,9.5,14,4.49,4.49,0,0,1,5,9.46Z"
+              d="M20.71,19.29l-6-6A6.48,6.48,0,0,0,10.86,3.14,6.5,6.5,0,0,0,7.58,15.71a6.43,6.43,0,0,0,5.74-1l6,6a1,1,0,0,0,1.42,0A1,1,0,0,0,20.71,19.29ZM9.5,14A4.5,4.5,0,1,1,14,9.5,4.49,4.49,0,0,1,9.5,14Z"
             />
           </svg>
           
@@ -925,14 +907,12 @@ exports[`Feather Autocomplete base functionality multi should raise the label wh
                   aria-label="Remove"
                   class="delete-icon feather-icon feather-icon-flex"
                   focusable="false"
-                  height="24"
                   role="img"
                   viewBox="0 0 24 24"
-                  width="24"
                   xmlns="http://www.w3.org/2000/svg"
                 >
                   <path
-                    d="M12,2A10,10,0,1,0,22,12,10,10,0,0,0,12,2Zm5,13.24A1.26,1.26,0,0,1,17,17a1.24,1.24,0,0,1-1.76,0L12,13.73,8.76,17A1.24,1.24,0,1,1,7,15.24L10.24,12,7,8.76A1.24,1.24,0,0,1,8.76,7L12,10.2,15.24,7A1.24,1.24,0,1,1,17,8.76L13.76,12Z"
+                    d="M19,17.55,13.43,12,19,6.4A1,1,0,1,0,17.58,5L12,10.58,6.42,5A1,1,0,0,0,5,6.42L10.6,12,5,17.6A1,1,0,0,0,5,19a1,1,0,0,0,.71.29,1,1,0,0,0,.71-.3L12,13.41,17.6,19a1,1,0,0,0,.71.29A1,1,0,0,0,19,19,1,1,0,0,0,19,17.55Z"
                   />
                 </svg>
               </span>
@@ -969,14 +949,12 @@ exports[`Feather Autocomplete base functionality multi should raise the label wh
                   aria-label="Remove"
                   class="delete-icon feather-icon feather-icon-flex"
                   focusable="false"
-                  height="24"
                   role="img"
                   viewBox="0 0 24 24"
-                  width="24"
                   xmlns="http://www.w3.org/2000/svg"
                 >
                   <path
-                    d="M12,2A10,10,0,1,0,22,12,10,10,0,0,0,12,2Zm5,13.24A1.26,1.26,0,0,1,17,17a1.24,1.24,0,0,1-1.76,0L12,13.73,8.76,17A1.24,1.24,0,1,1,7,15.24L10.24,12,7,8.76A1.24,1.24,0,0,1,8.76,7L12,10.2,15.24,7A1.24,1.24,0,1,1,17,8.76L13.76,12Z"
+                    d="M19,17.55,13.43,12,19,6.4A1,1,0,1,0,17.58,5L12,10.58,6.42,5A1,1,0,0,0,5,6.42L10.6,12,5,17.6A1,1,0,0,0,5,19a1,1,0,0,0,.71.29,1,1,0,0,0,.71-.3L12,13.41,17.6,19a1,1,0,0,0,.71.29A1,1,0,0,0,19,19,1,1,0,0,0,19,17.55Z"
                   />
                 </svg>
               </span>
@@ -1014,14 +992,12 @@ exports[`Feather Autocomplete base functionality multi should raise the label wh
             class="feather-autocomplete-dropdown-icon feather-icon feather-autocomplete-dropdown-icon"
             data-v-0aa06a12=""
             focusable="false"
-            height="24"
             role="img"
             viewBox="0 0 24 24"
-            width="24"
             xmlns="http://www.w3.org/2000/svg"
           >
             <path
-              d="M6.71,9.29a1,1,0,0,0,0,1.41l4.59,4.59a1,1,0,0,0,1.41,0L17.3,10.7a1,1,0,0,0-1.41-1.41L12,13.17,8.12,9.29A1,1,0,0,0,6.71,9.29Z"
+              d="M6.7,9.29a1,1,0,0,0,0,1.41L12,16l5.3-5.3a1,1,0,0,0-1.41-1.41L12,13.17,8.11,9.29A1,1,0,0,0,6.7,9.29Z"
             />
           </svg>
           
@@ -1129,14 +1105,12 @@ exports[`Feather Autocomplete base functionality multi should show loading spinn
             class="feather-icon"
             data-v-0aa06a12=""
             focusable="false"
-            height="24"
             role="img"
             viewBox="0 0 24 24"
-            width="24"
             xmlns="http://www.w3.org/2000/svg"
           >
             <path
-              d="M20.29,18.84l-5.56-5.56A6.48,6.48,0,0,0,10.86,3.1,6.5,6.5,0,0,0,7.58,15.67a6.43,6.43,0,0,0,5.74-1l5.56,5.56a1,1,0,0,0,1.41,0h0A1,1,0,0,0,20.29,18.84ZM5,9.46A4.5,4.5,0,1,1,9.5,14,4.49,4.49,0,0,1,5,9.46Z"
+              d="M20.71,19.29l-6-6A6.48,6.48,0,0,0,10.86,3.14,6.5,6.5,0,0,0,7.58,15.71a6.43,6.43,0,0,0,5.74-1l6,6a1,1,0,0,0,1.42,0A1,1,0,0,0,20.71,19.29ZM9.5,14A4.5,4.5,0,1,1,14,9.5,4.49,4.49,0,0,1,9.5,14Z"
             />
           </svg>
           
@@ -1187,14 +1161,12 @@ exports[`Feather Autocomplete base functionality multi should show loading spinn
             class="feather-autocomplete-dropdown-icon rotate feather-icon feather-autocomplete-dropdown-icon rotate"
             data-v-0aa06a12=""
             focusable="false"
-            height="24"
             role="img"
             viewBox="0 0 24 24"
-            width="24"
             xmlns="http://www.w3.org/2000/svg"
           >
             <path
-              d="M6.71,9.29a1,1,0,0,0,0,1.41l4.59,4.59a1,1,0,0,0,1.41,0L17.3,10.7a1,1,0,0,0-1.41-1.41L12,13.17,8.12,9.29A1,1,0,0,0,6.71,9.29Z"
+              d="M6.7,9.29a1,1,0,0,0,0,1.41L12,16l5.3-5.3a1,1,0,0,0-1.41-1.41L12,13.17,8.11,9.29A1,1,0,0,0,6.7,9.29Z"
             />
           </svg>
           
@@ -1320,14 +1292,12 @@ exports[`Feather Autocomplete base functionality multi should show no results te
             class="feather-icon"
             data-v-0aa06a12=""
             focusable="false"
-            height="24"
             role="img"
             viewBox="0 0 24 24"
-            width="24"
             xmlns="http://www.w3.org/2000/svg"
           >
             <path
-              d="M20.29,18.84l-5.56-5.56A6.48,6.48,0,0,0,10.86,3.1,6.5,6.5,0,0,0,7.58,15.67a6.43,6.43,0,0,0,5.74-1l5.56,5.56a1,1,0,0,0,1.41,0h0A1,1,0,0,0,20.29,18.84ZM5,9.46A4.5,4.5,0,1,1,9.5,14,4.49,4.49,0,0,1,5,9.46Z"
+              d="M20.71,19.29l-6-6A6.48,6.48,0,0,0,10.86,3.14,6.5,6.5,0,0,0,7.58,15.71a6.43,6.43,0,0,0,5.74-1l6,6a1,1,0,0,0,1.42,0A1,1,0,0,0,20.71,19.29ZM9.5,14A4.5,4.5,0,1,1,14,9.5,4.49,4.49,0,0,1,9.5,14Z"
             />
           </svg>
           
@@ -1378,14 +1348,12 @@ exports[`Feather Autocomplete base functionality multi should show no results te
             class="feather-autocomplete-dropdown-icon rotate feather-icon feather-autocomplete-dropdown-icon rotate"
             data-v-0aa06a12=""
             focusable="false"
-            height="24"
             role="img"
             viewBox="0 0 24 24"
-            width="24"
             xmlns="http://www.w3.org/2000/svg"
           >
             <path
-              d="M6.71,9.29a1,1,0,0,0,0,1.41l4.59,4.59a1,1,0,0,0,1.41,0L17.3,10.7a1,1,0,0,0-1.41-1.41L12,13.17,8.12,9.29A1,1,0,0,0,6.71,9.29Z"
+              d="M6.7,9.29a1,1,0,0,0,0,1.41L12,16l5.3-5.3a1,1,0,0,0-1.41-1.41L12,13.17,8.11,9.29A1,1,0,0,0,6.7,9.29Z"
             />
           </svg>
           
@@ -1518,14 +1486,12 @@ exports[`Feather Autocomplete base functionality single disabled state should re
             class="feather-icon"
             data-v-0aa06a12=""
             focusable="false"
-            height="24"
             role="img"
             viewBox="0 0 24 24"
-            width="24"
             xmlns="http://www.w3.org/2000/svg"
           >
             <path
-              d="M20.29,18.84l-5.56-5.56A6.48,6.48,0,0,0,10.86,3.1,6.5,6.5,0,0,0,7.58,15.67a6.43,6.43,0,0,0,5.74-1l5.56,5.56a1,1,0,0,0,1.41,0h0A1,1,0,0,0,20.29,18.84ZM5,9.46A4.5,4.5,0,1,1,9.5,14,4.49,4.49,0,0,1,5,9.46Z"
+              d="M20.71,19.29l-6-6A6.48,6.48,0,0,0,10.86,3.14,6.5,6.5,0,0,0,7.58,15.71a6.43,6.43,0,0,0,5.74-1l6,6a1,1,0,0,0,1.42,0A1,1,0,0,0,20.71,19.29ZM9.5,14A4.5,4.5,0,1,1,14,9.5,4.49,4.49,0,0,1,9.5,14Z"
             />
           </svg>
           
@@ -1584,14 +1550,12 @@ exports[`Feather Autocomplete base functionality single disabled state should re
               data-v-0aa06a12=""
               data-v-12cb8e54=""
               focusable="false"
-              height="24"
               role="img"
               viewBox="0 0 24 24"
-              width="24"
               xmlns="http://www.w3.org/2000/svg"
             >
               <path
-                d="M12,2A10,10,0,1,0,22,12,10,10,0,0,0,12,2Zm5,13.24A1.26,1.26,0,0,1,17,17a1.24,1.24,0,0,1-1.76,0L12,13.73,8.76,17A1.24,1.24,0,1,1,7,15.24L10.24,12,7,8.76A1.24,1.24,0,0,1,8.76,7L12,10.2,15.24,7A1.24,1.24,0,1,1,17,8.76L13.76,12Z"
+                d="M19,17.55,13.43,12,19,6.4A1,1,0,1,0,17.58,5L12,10.58,6.42,5A1,1,0,0,0,5,6.42L10.6,12,5,17.6A1,1,0,0,0,5,19a1,1,0,0,0,.71.29,1,1,0,0,0,.71-.3L12,13.41,17.6,19a1,1,0,0,0,.71.29A1,1,0,0,0,19,19,1,1,0,0,0,19,17.55Z"
               />
             </svg>
           </a>
@@ -1602,14 +1566,12 @@ exports[`Feather Autocomplete base functionality single disabled state should re
             class="feather-autocomplete-dropdown-icon feather-icon feather-autocomplete-dropdown-icon"
             data-v-0aa06a12=""
             focusable="false"
-            height="24"
             role="img"
             viewBox="0 0 24 24"
-            width="24"
             xmlns="http://www.w3.org/2000/svg"
           >
             <path
-              d="M6.71,9.29a1,1,0,0,0,0,1.41l4.59,4.59a1,1,0,0,0,1.41,0L17.3,10.7a1,1,0,0,0-1.41-1.41L12,13.17,8.12,9.29A1,1,0,0,0,6.71,9.29Z"
+              d="M6.7,9.29a1,1,0,0,0,0,1.41L12,16l5.3-5.3a1,1,0,0,0-1.41-1.41L12,13.17,8.11,9.29A1,1,0,0,0,6.7,9.29Z"
             />
           </svg>
           
@@ -1715,14 +1677,12 @@ exports[`Feather Autocomplete base functionality single disabled state should re
             class="feather-icon"
             data-v-0aa06a12=""
             focusable="false"
-            height="24"
             role="img"
             viewBox="0 0 24 24"
-            width="24"
             xmlns="http://www.w3.org/2000/svg"
           >
             <path
-              d="M20.29,18.84l-5.56-5.56A6.48,6.48,0,0,0,10.86,3.1,6.5,6.5,0,0,0,7.58,15.67a6.43,6.43,0,0,0,5.74-1l5.56,5.56a1,1,0,0,0,1.41,0h0A1,1,0,0,0,20.29,18.84ZM5,9.46A4.5,4.5,0,1,1,9.5,14,4.49,4.49,0,0,1,5,9.46Z"
+              d="M20.71,19.29l-6-6A6.48,6.48,0,0,0,10.86,3.14,6.5,6.5,0,0,0,7.58,15.71a6.43,6.43,0,0,0,5.74-1l6,6a1,1,0,0,0,1.42,0A1,1,0,0,0,20.71,19.29ZM9.5,14A4.5,4.5,0,1,1,14,9.5,4.49,4.49,0,0,1,9.5,14Z"
             />
           </svg>
           
@@ -1775,14 +1735,12 @@ exports[`Feather Autocomplete base functionality single disabled state should re
             class="feather-autocomplete-dropdown-icon feather-icon feather-autocomplete-dropdown-icon"
             data-v-0aa06a12=""
             focusable="false"
-            height="24"
             role="img"
             viewBox="0 0 24 24"
-            width="24"
             xmlns="http://www.w3.org/2000/svg"
           >
             <path
-              d="M6.71,9.29a1,1,0,0,0,0,1.41l4.59,4.59a1,1,0,0,0,1.41,0L17.3,10.7a1,1,0,0,0-1.41-1.41L12,13.17,8.12,9.29A1,1,0,0,0,6.71,9.29Z"
+              d="M6.7,9.29a1,1,0,0,0,0,1.41L12,16l5.3-5.3a1,1,0,0,0-1.41-1.41L12,13.17,8.11,9.29A1,1,0,0,0,6.7,9.29Z"
             />
           </svg>
           
@@ -1888,14 +1846,12 @@ exports[`Feather Autocomplete base functionality single should lower label when 
             class="feather-icon"
             data-v-0aa06a12=""
             focusable="false"
-            height="24"
             role="img"
             viewBox="0 0 24 24"
-            width="24"
             xmlns="http://www.w3.org/2000/svg"
           >
             <path
-              d="M20.29,18.84l-5.56-5.56A6.48,6.48,0,0,0,10.86,3.1,6.5,6.5,0,0,0,7.58,15.67a6.43,6.43,0,0,0,5.74-1l5.56,5.56a1,1,0,0,0,1.41,0h0A1,1,0,0,0,20.29,18.84ZM5,9.46A4.5,4.5,0,1,1,9.5,14,4.49,4.49,0,0,1,5,9.46Z"
+              d="M20.71,19.29l-6-6A6.48,6.48,0,0,0,10.86,3.14,6.5,6.5,0,0,0,7.58,15.71a6.43,6.43,0,0,0,5.74-1l6,6a1,1,0,0,0,1.42,0A1,1,0,0,0,20.71,19.29ZM9.5,14A4.5,4.5,0,1,1,14,9.5,4.49,4.49,0,0,1,9.5,14Z"
             />
           </svg>
           
@@ -1946,14 +1902,12 @@ exports[`Feather Autocomplete base functionality single should lower label when 
             class="feather-autocomplete-dropdown-icon feather-icon feather-autocomplete-dropdown-icon"
             data-v-0aa06a12=""
             focusable="false"
-            height="24"
             role="img"
             viewBox="0 0 24 24"
-            width="24"
             xmlns="http://www.w3.org/2000/svg"
           >
             <path
-              d="M6.71,9.29a1,1,0,0,0,0,1.41l4.59,4.59a1,1,0,0,0,1.41,0L17.3,10.7a1,1,0,0,0-1.41-1.41L12,13.17,8.12,9.29A1,1,0,0,0,6.71,9.29Z"
+              d="M6.7,9.29a1,1,0,0,0,0,1.41L12,16l5.3-5.3a1,1,0,0,0-1.41-1.41L12,13.17,8.11,9.29A1,1,0,0,0,6.7,9.29Z"
             />
           </svg>
           
@@ -2061,14 +2015,12 @@ exports[`Feather Autocomplete base functionality single should not leave previou
             class="feather-icon"
             data-v-0aa06a12=""
             focusable="false"
-            height="24"
             role="img"
             viewBox="0 0 24 24"
-            width="24"
             xmlns="http://www.w3.org/2000/svg"
           >
             <path
-              d="M20.29,18.84l-5.56-5.56A6.48,6.48,0,0,0,10.86,3.1,6.5,6.5,0,0,0,7.58,15.67a6.43,6.43,0,0,0,5.74-1l5.56,5.56a1,1,0,0,0,1.41,0h0A1,1,0,0,0,20.29,18.84ZM5,9.46A4.5,4.5,0,1,1,9.5,14,4.49,4.49,0,0,1,5,9.46Z"
+              d="M20.71,19.29l-6-6A6.48,6.48,0,0,0,10.86,3.14,6.5,6.5,0,0,0,7.58,15.71a6.43,6.43,0,0,0,5.74-1l6,6a1,1,0,0,0,1.42,0A1,1,0,0,0,20.71,19.29ZM9.5,14A4.5,4.5,0,1,1,14,9.5,4.49,4.49,0,0,1,9.5,14Z"
             />
           </svg>
           
@@ -2119,14 +2071,12 @@ exports[`Feather Autocomplete base functionality single should not leave previou
             class="feather-autocomplete-dropdown-icon rotate feather-icon feather-autocomplete-dropdown-icon rotate"
             data-v-0aa06a12=""
             focusable="false"
-            height="24"
             role="img"
             viewBox="0 0 24 24"
-            width="24"
             xmlns="http://www.w3.org/2000/svg"
           >
             <path
-              d="M6.71,9.29a1,1,0,0,0,0,1.41l4.59,4.59a1,1,0,0,0,1.41,0L17.3,10.7a1,1,0,0,0-1.41-1.41L12,13.17,8.12,9.29A1,1,0,0,0,6.71,9.29Z"
+              d="M6.7,9.29a1,1,0,0,0,0,1.41L12,16l5.3-5.3a1,1,0,0,0-1.41-1.41L12,13.17,8.11,9.29A1,1,0,0,0,6.7,9.29Z"
             />
           </svg>
           
@@ -2309,14 +2259,12 @@ exports[`Feather Autocomplete base functionality single should raise the label w
             class="feather-icon"
             data-v-0aa06a12=""
             focusable="false"
-            height="24"
             role="img"
             viewBox="0 0 24 24"
-            width="24"
             xmlns="http://www.w3.org/2000/svg"
           >
             <path
-              d="M20.29,18.84l-5.56-5.56A6.48,6.48,0,0,0,10.86,3.1,6.5,6.5,0,0,0,7.58,15.67a6.43,6.43,0,0,0,5.74-1l5.56,5.56a1,1,0,0,0,1.41,0h0A1,1,0,0,0,20.29,18.84ZM5,9.46A4.5,4.5,0,1,1,9.5,14,4.49,4.49,0,0,1,5,9.46Z"
+              d="M20.71,19.29l-6-6A6.48,6.48,0,0,0,10.86,3.14,6.5,6.5,0,0,0,7.58,15.71a6.43,6.43,0,0,0,5.74-1l6,6a1,1,0,0,0,1.42,0A1,1,0,0,0,20.71,19.29ZM9.5,14A4.5,4.5,0,1,1,14,9.5,4.49,4.49,0,0,1,9.5,14Z"
             />
           </svg>
           
@@ -2373,14 +2321,12 @@ exports[`Feather Autocomplete base functionality single should raise the label w
               data-v-0aa06a12=""
               data-v-12cb8e54=""
               focusable="false"
-              height="24"
               role="img"
               viewBox="0 0 24 24"
-              width="24"
               xmlns="http://www.w3.org/2000/svg"
             >
               <path
-                d="M12,2A10,10,0,1,0,22,12,10,10,0,0,0,12,2Zm5,13.24A1.26,1.26,0,0,1,17,17a1.24,1.24,0,0,1-1.76,0L12,13.73,8.76,17A1.24,1.24,0,1,1,7,15.24L10.24,12,7,8.76A1.24,1.24,0,0,1,8.76,7L12,10.2,15.24,7A1.24,1.24,0,1,1,17,8.76L13.76,12Z"
+                d="M19,17.55,13.43,12,19,6.4A1,1,0,1,0,17.58,5L12,10.58,6.42,5A1,1,0,0,0,5,6.42L10.6,12,5,17.6A1,1,0,0,0,5,19a1,1,0,0,0,.71.29,1,1,0,0,0,.71-.3L12,13.41,17.6,19a1,1,0,0,0,.71.29A1,1,0,0,0,19,19,1,1,0,0,0,19,17.55Z"
               />
             </svg>
           </a>
@@ -2391,14 +2337,12 @@ exports[`Feather Autocomplete base functionality single should raise the label w
             class="feather-autocomplete-dropdown-icon feather-icon feather-autocomplete-dropdown-icon"
             data-v-0aa06a12=""
             focusable="false"
-            height="24"
             role="img"
             viewBox="0 0 24 24"
-            width="24"
             xmlns="http://www.w3.org/2000/svg"
           >
             <path
-              d="M6.71,9.29a1,1,0,0,0,0,1.41l4.59,4.59a1,1,0,0,0,1.41,0L17.3,10.7a1,1,0,0,0-1.41-1.41L12,13.17,8.12,9.29A1,1,0,0,0,6.71,9.29Z"
+              d="M6.7,9.29a1,1,0,0,0,0,1.41L12,16l5.3-5.3a1,1,0,0,0-1.41-1.41L12,13.17,8.11,9.29A1,1,0,0,0,6.7,9.29Z"
             />
           </svg>
           
@@ -2506,14 +2450,12 @@ exports[`Feather Autocomplete base functionality single should show loading spin
             class="feather-icon"
             data-v-0aa06a12=""
             focusable="false"
-            height="24"
             role="img"
             viewBox="0 0 24 24"
-            width="24"
             xmlns="http://www.w3.org/2000/svg"
           >
             <path
-              d="M20.29,18.84l-5.56-5.56A6.48,6.48,0,0,0,10.86,3.1,6.5,6.5,0,0,0,7.58,15.67a6.43,6.43,0,0,0,5.74-1l5.56,5.56a1,1,0,0,0,1.41,0h0A1,1,0,0,0,20.29,18.84ZM5,9.46A4.5,4.5,0,1,1,9.5,14,4.49,4.49,0,0,1,5,9.46Z"
+              d="M20.71,19.29l-6-6A6.48,6.48,0,0,0,10.86,3.14,6.5,6.5,0,0,0,7.58,15.71a6.43,6.43,0,0,0,5.74-1l6,6a1,1,0,0,0,1.42,0A1,1,0,0,0,20.71,19.29ZM9.5,14A4.5,4.5,0,1,1,14,9.5,4.49,4.49,0,0,1,9.5,14Z"
             />
           </svg>
           
@@ -2564,14 +2506,12 @@ exports[`Feather Autocomplete base functionality single should show loading spin
             class="feather-autocomplete-dropdown-icon rotate feather-icon feather-autocomplete-dropdown-icon rotate"
             data-v-0aa06a12=""
             focusable="false"
-            height="24"
             role="img"
             viewBox="0 0 24 24"
-            width="24"
             xmlns="http://www.w3.org/2000/svg"
           >
             <path
-              d="M6.71,9.29a1,1,0,0,0,0,1.41l4.59,4.59a1,1,0,0,0,1.41,0L17.3,10.7a1,1,0,0,0-1.41-1.41L12,13.17,8.12,9.29A1,1,0,0,0,6.71,9.29Z"
+              d="M6.7,9.29a1,1,0,0,0,0,1.41L12,16l5.3-5.3a1,1,0,0,0-1.41-1.41L12,13.17,8.11,9.29A1,1,0,0,0,6.7,9.29Z"
             />
           </svg>
           
@@ -2697,14 +2637,12 @@ exports[`Feather Autocomplete base functionality single should show no results t
             class="feather-icon"
             data-v-0aa06a12=""
             focusable="false"
-            height="24"
             role="img"
             viewBox="0 0 24 24"
-            width="24"
             xmlns="http://www.w3.org/2000/svg"
           >
             <path
-              d="M20.29,18.84l-5.56-5.56A6.48,6.48,0,0,0,10.86,3.1,6.5,6.5,0,0,0,7.58,15.67a6.43,6.43,0,0,0,5.74-1l5.56,5.56a1,1,0,0,0,1.41,0h0A1,1,0,0,0,20.29,18.84ZM5,9.46A4.5,4.5,0,1,1,9.5,14,4.49,4.49,0,0,1,5,9.46Z"
+              d="M20.71,19.29l-6-6A6.48,6.48,0,0,0,10.86,3.14,6.5,6.5,0,0,0,7.58,15.71a6.43,6.43,0,0,0,5.74-1l6,6a1,1,0,0,0,1.42,0A1,1,0,0,0,20.71,19.29ZM9.5,14A4.5,4.5,0,1,1,14,9.5,4.49,4.49,0,0,1,9.5,14Z"
             />
           </svg>
           
@@ -2755,14 +2693,12 @@ exports[`Feather Autocomplete base functionality single should show no results t
             class="feather-autocomplete-dropdown-icon rotate feather-icon feather-autocomplete-dropdown-icon rotate"
             data-v-0aa06a12=""
             focusable="false"
-            height="24"
             role="img"
             viewBox="0 0 24 24"
-            width="24"
             xmlns="http://www.w3.org/2000/svg"
           >
             <path
-              d="M6.71,9.29a1,1,0,0,0,0,1.41l4.59,4.59a1,1,0,0,0,1.41,0L17.3,10.7a1,1,0,0,0-1.41-1.41L12,13.17,8.12,9.29A1,1,0,0,0,6.71,9.29Z"
+              d="M6.7,9.29a1,1,0,0,0,0,1.41L12,16l5.3-5.3a1,1,0,0,0-1.41-1.41L12,13.17,8.11,9.29A1,1,0,0,0,6.7,9.29Z"
             />
           </svg>
           
@@ -2897,14 +2833,12 @@ exports[`Feather Autocomplete multi:specific chip selection should move chip sel
             class="feather-icon"
             data-v-0aa06a12=""
             focusable="false"
-            height="24"
             role="img"
             viewBox="0 0 24 24"
-            width="24"
             xmlns="http://www.w3.org/2000/svg"
           >
             <path
-              d="M20.29,18.84l-5.56-5.56A6.48,6.48,0,0,0,10.86,3.1,6.5,6.5,0,0,0,7.58,15.67a6.43,6.43,0,0,0,5.74-1l5.56,5.56a1,1,0,0,0,1.41,0h0A1,1,0,0,0,20.29,18.84ZM5,9.46A4.5,4.5,0,1,1,9.5,14,4.49,4.49,0,0,1,5,9.46Z"
+              d="M20.71,19.29l-6-6A6.48,6.48,0,0,0,10.86,3.14,6.5,6.5,0,0,0,7.58,15.71a6.43,6.43,0,0,0,5.74-1l6,6a1,1,0,0,0,1.42,0A1,1,0,0,0,20.71,19.29ZM9.5,14A4.5,4.5,0,1,1,14,9.5,4.49,4.49,0,0,1,9.5,14Z"
             />
           </svg>
           
@@ -2957,14 +2891,12 @@ exports[`Feather Autocomplete multi:specific chip selection should move chip sel
                   aria-label="Remove"
                   class="delete-icon feather-icon feather-icon-flex"
                   focusable="false"
-                  height="24"
                   role="img"
                   viewBox="0 0 24 24"
-                  width="24"
                   xmlns="http://www.w3.org/2000/svg"
                 >
                   <path
-                    d="M12,2A10,10,0,1,0,22,12,10,10,0,0,0,12,2Zm5,13.24A1.26,1.26,0,0,1,17,17a1.24,1.24,0,0,1-1.76,0L12,13.73,8.76,17A1.24,1.24,0,1,1,7,15.24L10.24,12,7,8.76A1.24,1.24,0,0,1,8.76,7L12,10.2,15.24,7A1.24,1.24,0,1,1,17,8.76L13.76,12Z"
+                    d="M19,17.55,13.43,12,19,6.4A1,1,0,1,0,17.58,5L12,10.58,6.42,5A1,1,0,0,0,5,6.42L10.6,12,5,17.6A1,1,0,0,0,5,19a1,1,0,0,0,.71.29,1,1,0,0,0,.71-.3L12,13.41,17.6,19a1,1,0,0,0,.71.29A1,1,0,0,0,19,19,1,1,0,0,0,19,17.55Z"
                   />
                 </svg>
               </span>
@@ -3001,14 +2933,12 @@ exports[`Feather Autocomplete multi:specific chip selection should move chip sel
                   aria-label="Remove"
                   class="delete-icon feather-icon feather-icon-flex"
                   focusable="false"
-                  height="24"
                   role="img"
                   viewBox="0 0 24 24"
-                  width="24"
                   xmlns="http://www.w3.org/2000/svg"
                 >
                   <path
-                    d="M12,2A10,10,0,1,0,22,12,10,10,0,0,0,12,2Zm5,13.24A1.26,1.26,0,0,1,17,17a1.24,1.24,0,0,1-1.76,0L12,13.73,8.76,17A1.24,1.24,0,1,1,7,15.24L10.24,12,7,8.76A1.24,1.24,0,0,1,8.76,7L12,10.2,15.24,7A1.24,1.24,0,1,1,17,8.76L13.76,12Z"
+                    d="M19,17.55,13.43,12,19,6.4A1,1,0,1,0,17.58,5L12,10.58,6.42,5A1,1,0,0,0,5,6.42L10.6,12,5,17.6A1,1,0,0,0,5,19a1,1,0,0,0,.71.29,1,1,0,0,0,.71-.3L12,13.41,17.6,19a1,1,0,0,0,.71.29A1,1,0,0,0,19,19,1,1,0,0,0,19,17.55Z"
                   />
                 </svg>
               </span>
@@ -3046,14 +2976,12 @@ exports[`Feather Autocomplete multi:specific chip selection should move chip sel
             class="feather-autocomplete-dropdown-icon feather-icon feather-autocomplete-dropdown-icon"
             data-v-0aa06a12=""
             focusable="false"
-            height="24"
             role="img"
             viewBox="0 0 24 24"
-            width="24"
             xmlns="http://www.w3.org/2000/svg"
           >
             <path
-              d="M6.71,9.29a1,1,0,0,0,0,1.41l4.59,4.59a1,1,0,0,0,1.41,0L17.3,10.7a1,1,0,0,0-1.41-1.41L12,13.17,8.12,9.29A1,1,0,0,0,6.71,9.29Z"
+              d="M6.7,9.29a1,1,0,0,0,0,1.41L12,16l5.3-5.3a1,1,0,0,0-1.41-1.41L12,13.17,8.11,9.29A1,1,0,0,0,6.7,9.29Z"
             />
           </svg>
           
@@ -3161,14 +3089,12 @@ exports[`Feather Autocomplete multi:specific chip selection should move chip sel
             class="feather-icon"
             data-v-0aa06a12=""
             focusable="false"
-            height="24"
             role="img"
             viewBox="0 0 24 24"
-            width="24"
             xmlns="http://www.w3.org/2000/svg"
           >
             <path
-              d="M20.29,18.84l-5.56-5.56A6.48,6.48,0,0,0,10.86,3.1,6.5,6.5,0,0,0,7.58,15.67a6.43,6.43,0,0,0,5.74-1l5.56,5.56a1,1,0,0,0,1.41,0h0A1,1,0,0,0,20.29,18.84ZM5,9.46A4.5,4.5,0,1,1,9.5,14,4.49,4.49,0,0,1,5,9.46Z"
+              d="M20.71,19.29l-6-6A6.48,6.48,0,0,0,10.86,3.14,6.5,6.5,0,0,0,7.58,15.71a6.43,6.43,0,0,0,5.74-1l6,6a1,1,0,0,0,1.42,0A1,1,0,0,0,20.71,19.29ZM9.5,14A4.5,4.5,0,1,1,14,9.5,4.49,4.49,0,0,1,9.5,14Z"
             />
           </svg>
           
@@ -3220,14 +3146,12 @@ exports[`Feather Autocomplete multi:specific chip selection should move chip sel
                   aria-label="Remove"
                   class="delete-icon feather-icon feather-icon-flex"
                   focusable="false"
-                  height="24"
                   role="img"
                   viewBox="0 0 24 24"
-                  width="24"
                   xmlns="http://www.w3.org/2000/svg"
                 >
                   <path
-                    d="M12,2A10,10,0,1,0,22,12,10,10,0,0,0,12,2Zm5,13.24A1.26,1.26,0,0,1,17,17a1.24,1.24,0,0,1-1.76,0L12,13.73,8.76,17A1.24,1.24,0,1,1,7,15.24L10.24,12,7,8.76A1.24,1.24,0,0,1,8.76,7L12,10.2,15.24,7A1.24,1.24,0,1,1,17,8.76L13.76,12Z"
+                    d="M19,17.55,13.43,12,19,6.4A1,1,0,1,0,17.58,5L12,10.58,6.42,5A1,1,0,0,0,5,6.42L10.6,12,5,17.6A1,1,0,0,0,5,19a1,1,0,0,0,.71.29,1,1,0,0,0,.71-.3L12,13.41,17.6,19a1,1,0,0,0,.71.29A1,1,0,0,0,19,19,1,1,0,0,0,19,17.55Z"
                   />
                 </svg>
               </span>
@@ -3265,14 +3189,12 @@ exports[`Feather Autocomplete multi:specific chip selection should move chip sel
                   aria-label="Remove"
                   class="delete-icon feather-icon feather-icon-flex"
                   focusable="false"
-                  height="24"
                   role="img"
                   viewBox="0 0 24 24"
-                  width="24"
                   xmlns="http://www.w3.org/2000/svg"
                 >
                   <path
-                    d="M12,2A10,10,0,1,0,22,12,10,10,0,0,0,12,2Zm5,13.24A1.26,1.26,0,0,1,17,17a1.24,1.24,0,0,1-1.76,0L12,13.73,8.76,17A1.24,1.24,0,1,1,7,15.24L10.24,12,7,8.76A1.24,1.24,0,0,1,8.76,7L12,10.2,15.24,7A1.24,1.24,0,1,1,17,8.76L13.76,12Z"
+                    d="M19,17.55,13.43,12,19,6.4A1,1,0,1,0,17.58,5L12,10.58,6.42,5A1,1,0,0,0,5,6.42L10.6,12,5,17.6A1,1,0,0,0,5,19a1,1,0,0,0,.71.29,1,1,0,0,0,.71-.3L12,13.41,17.6,19a1,1,0,0,0,.71.29A1,1,0,0,0,19,19,1,1,0,0,0,19,17.55Z"
                   />
                 </svg>
               </span>
@@ -3310,14 +3232,12 @@ exports[`Feather Autocomplete multi:specific chip selection should move chip sel
             class="feather-autocomplete-dropdown-icon feather-icon feather-autocomplete-dropdown-icon"
             data-v-0aa06a12=""
             focusable="false"
-            height="24"
             role="img"
             viewBox="0 0 24 24"
-            width="24"
             xmlns="http://www.w3.org/2000/svg"
           >
             <path
-              d="M6.71,9.29a1,1,0,0,0,0,1.41l4.59,4.59a1,1,0,0,0,1.41,0L17.3,10.7a1,1,0,0,0-1.41-1.41L12,13.17,8.12,9.29A1,1,0,0,0,6.71,9.29Z"
+              d="M6.7,9.29a1,1,0,0,0,0,1.41L12,16l5.3-5.3a1,1,0,0,0-1.41-1.41L12,13.17,8.11,9.29A1,1,0,0,0,6.7,9.29Z"
             />
           </svg>
           
@@ -3425,14 +3345,12 @@ exports[`Feather Autocomplete multi:specific chip selection should not move chip
             class="feather-icon"
             data-v-0aa06a12=""
             focusable="false"
-            height="24"
             role="img"
             viewBox="0 0 24 24"
-            width="24"
             xmlns="http://www.w3.org/2000/svg"
           >
             <path
-              d="M20.29,18.84l-5.56-5.56A6.48,6.48,0,0,0,10.86,3.1,6.5,6.5,0,0,0,7.58,15.67a6.43,6.43,0,0,0,5.74-1l5.56,5.56a1,1,0,0,0,1.41,0h0A1,1,0,0,0,20.29,18.84ZM5,9.46A4.5,4.5,0,1,1,9.5,14,4.49,4.49,0,0,1,5,9.46Z"
+              d="M20.71,19.29l-6-6A6.48,6.48,0,0,0,10.86,3.14,6.5,6.5,0,0,0,7.58,15.71a6.43,6.43,0,0,0,5.74-1l6,6a1,1,0,0,0,1.42,0A1,1,0,0,0,20.71,19.29ZM9.5,14A4.5,4.5,0,1,1,14,9.5,4.49,4.49,0,0,1,9.5,14Z"
             />
           </svg>
           
@@ -3485,14 +3403,12 @@ exports[`Feather Autocomplete multi:specific chip selection should not move chip
                   aria-label="Remove"
                   class="delete-icon feather-icon feather-icon-flex"
                   focusable="false"
-                  height="24"
                   role="img"
                   viewBox="0 0 24 24"
-                  width="24"
                   xmlns="http://www.w3.org/2000/svg"
                 >
                   <path
-                    d="M12,2A10,10,0,1,0,22,12,10,10,0,0,0,12,2Zm5,13.24A1.26,1.26,0,0,1,17,17a1.24,1.24,0,0,1-1.76,0L12,13.73,8.76,17A1.24,1.24,0,1,1,7,15.24L10.24,12,7,8.76A1.24,1.24,0,0,1,8.76,7L12,10.2,15.24,7A1.24,1.24,0,1,1,17,8.76L13.76,12Z"
+                    d="M19,17.55,13.43,12,19,6.4A1,1,0,1,0,17.58,5L12,10.58,6.42,5A1,1,0,0,0,5,6.42L10.6,12,5,17.6A1,1,0,0,0,5,19a1,1,0,0,0,.71.29,1,1,0,0,0,.71-.3L12,13.41,17.6,19a1,1,0,0,0,.71.29A1,1,0,0,0,19,19,1,1,0,0,0,19,17.55Z"
                   />
                 </svg>
               </span>
@@ -3529,14 +3445,12 @@ exports[`Feather Autocomplete multi:specific chip selection should not move chip
                   aria-label="Remove"
                   class="delete-icon feather-icon feather-icon-flex"
                   focusable="false"
-                  height="24"
                   role="img"
                   viewBox="0 0 24 24"
-                  width="24"
                   xmlns="http://www.w3.org/2000/svg"
                 >
                   <path
-                    d="M12,2A10,10,0,1,0,22,12,10,10,0,0,0,12,2Zm5,13.24A1.26,1.26,0,0,1,17,17a1.24,1.24,0,0,1-1.76,0L12,13.73,8.76,17A1.24,1.24,0,1,1,7,15.24L10.24,12,7,8.76A1.24,1.24,0,0,1,8.76,7L12,10.2,15.24,7A1.24,1.24,0,1,1,17,8.76L13.76,12Z"
+                    d="M19,17.55,13.43,12,19,6.4A1,1,0,1,0,17.58,5L12,10.58,6.42,5A1,1,0,0,0,5,6.42L10.6,12,5,17.6A1,1,0,0,0,5,19a1,1,0,0,0,.71.29,1,1,0,0,0,.71-.3L12,13.41,17.6,19a1,1,0,0,0,.71.29A1,1,0,0,0,19,19,1,1,0,0,0,19,17.55Z"
                   />
                 </svg>
               </span>
@@ -3574,14 +3488,12 @@ exports[`Feather Autocomplete multi:specific chip selection should not move chip
             class="feather-autocomplete-dropdown-icon feather-icon feather-autocomplete-dropdown-icon"
             data-v-0aa06a12=""
             focusable="false"
-            height="24"
             role="img"
             viewBox="0 0 24 24"
-            width="24"
             xmlns="http://www.w3.org/2000/svg"
           >
             <path
-              d="M6.71,9.29a1,1,0,0,0,0,1.41l4.59,4.59a1,1,0,0,0,1.41,0L17.3,10.7a1,1,0,0,0-1.41-1.41L12,13.17,8.12,9.29A1,1,0,0,0,6.71,9.29Z"
+              d="M6.7,9.29a1,1,0,0,0,0,1.41L12,16l5.3-5.3a1,1,0,0,0-1.41-1.41L12,13.17,8.11,9.29A1,1,0,0,0,6.7,9.29Z"
             />
           </svg>
           
@@ -3689,14 +3601,12 @@ exports[`Feather Autocomplete multi:specific chip selection should not perform a
             class="feather-icon"
             data-v-0aa06a12=""
             focusable="false"
-            height="24"
             role="img"
             viewBox="0 0 24 24"
-            width="24"
             xmlns="http://www.w3.org/2000/svg"
           >
             <path
-              d="M20.29,18.84l-5.56-5.56A6.48,6.48,0,0,0,10.86,3.1,6.5,6.5,0,0,0,7.58,15.67a6.43,6.43,0,0,0,5.74-1l5.56,5.56a1,1,0,0,0,1.41,0h0A1,1,0,0,0,20.29,18.84ZM5,9.46A4.5,4.5,0,1,1,9.5,14,4.49,4.49,0,0,1,5,9.46Z"
+              d="M20.71,19.29l-6-6A6.48,6.48,0,0,0,10.86,3.14,6.5,6.5,0,0,0,7.58,15.71a6.43,6.43,0,0,0,5.74-1l6,6a1,1,0,0,0,1.42,0A1,1,0,0,0,20.71,19.29ZM9.5,14A4.5,4.5,0,1,1,14,9.5,4.49,4.49,0,0,1,9.5,14Z"
             />
           </svg>
           
@@ -3748,14 +3658,12 @@ exports[`Feather Autocomplete multi:specific chip selection should not perform a
                   aria-label="Remove"
                   class="delete-icon feather-icon feather-icon-flex"
                   focusable="false"
-                  height="24"
                   role="img"
                   viewBox="0 0 24 24"
-                  width="24"
                   xmlns="http://www.w3.org/2000/svg"
                 >
                   <path
-                    d="M12,2A10,10,0,1,0,22,12,10,10,0,0,0,12,2Zm5,13.24A1.26,1.26,0,0,1,17,17a1.24,1.24,0,0,1-1.76,0L12,13.73,8.76,17A1.24,1.24,0,1,1,7,15.24L10.24,12,7,8.76A1.24,1.24,0,0,1,8.76,7L12,10.2,15.24,7A1.24,1.24,0,1,1,17,8.76L13.76,12Z"
+                    d="M19,17.55,13.43,12,19,6.4A1,1,0,1,0,17.58,5L12,10.58,6.42,5A1,1,0,0,0,5,6.42L10.6,12,5,17.6A1,1,0,0,0,5,19a1,1,0,0,0,.71.29,1,1,0,0,0,.71-.3L12,13.41,17.6,19a1,1,0,0,0,.71.29A1,1,0,0,0,19,19,1,1,0,0,0,19,17.55Z"
                   />
                 </svg>
               </span>
@@ -3792,14 +3700,12 @@ exports[`Feather Autocomplete multi:specific chip selection should not perform a
                   aria-label="Remove"
                   class="delete-icon feather-icon feather-icon-flex"
                   focusable="false"
-                  height="24"
                   role="img"
                   viewBox="0 0 24 24"
-                  width="24"
                   xmlns="http://www.w3.org/2000/svg"
                 >
                   <path
-                    d="M12,2A10,10,0,1,0,22,12,10,10,0,0,0,12,2Zm5,13.24A1.26,1.26,0,0,1,17,17a1.24,1.24,0,0,1-1.76,0L12,13.73,8.76,17A1.24,1.24,0,1,1,7,15.24L10.24,12,7,8.76A1.24,1.24,0,0,1,8.76,7L12,10.2,15.24,7A1.24,1.24,0,1,1,17,8.76L13.76,12Z"
+                    d="M19,17.55,13.43,12,19,6.4A1,1,0,1,0,17.58,5L12,10.58,6.42,5A1,1,0,0,0,5,6.42L10.6,12,5,17.6A1,1,0,0,0,5,19a1,1,0,0,0,.71.29,1,1,0,0,0,.71-.3L12,13.41,17.6,19a1,1,0,0,0,.71.29A1,1,0,0,0,19,19,1,1,0,0,0,19,17.55Z"
                   />
                 </svg>
               </span>
@@ -3837,14 +3743,12 @@ exports[`Feather Autocomplete multi:specific chip selection should not perform a
             class="feather-autocomplete-dropdown-icon feather-icon feather-autocomplete-dropdown-icon"
             data-v-0aa06a12=""
             focusable="false"
-            height="24"
             role="img"
             viewBox="0 0 24 24"
-            width="24"
             xmlns="http://www.w3.org/2000/svg"
           >
             <path
-              d="M6.71,9.29a1,1,0,0,0,0,1.41l4.59,4.59a1,1,0,0,0,1.41,0L17.3,10.7a1,1,0,0,0-1.41-1.41L12,13.17,8.12,9.29A1,1,0,0,0,6.71,9.29Z"
+              d="M6.7,9.29a1,1,0,0,0,0,1.41L12,16l5.3-5.3a1,1,0,0,0-1.41-1.41L12,13.17,8.11,9.29A1,1,0,0,0,6.7,9.29Z"
             />
           </svg>
           
@@ -3952,14 +3856,12 @@ exports[`Feather Autocomplete multi:specific chip selection should select rightm
             class="feather-icon"
             data-v-0aa06a12=""
             focusable="false"
-            height="24"
             role="img"
             viewBox="0 0 24 24"
-            width="24"
             xmlns="http://www.w3.org/2000/svg"
           >
             <path
-              d="M20.29,18.84l-5.56-5.56A6.48,6.48,0,0,0,10.86,3.1,6.5,6.5,0,0,0,7.58,15.67a6.43,6.43,0,0,0,5.74-1l5.56,5.56a1,1,0,0,0,1.41,0h0A1,1,0,0,0,20.29,18.84ZM5,9.46A4.5,4.5,0,1,1,9.5,14,4.49,4.49,0,0,1,5,9.46Z"
+              d="M20.71,19.29l-6-6A6.48,6.48,0,0,0,10.86,3.14,6.5,6.5,0,0,0,7.58,15.71a6.43,6.43,0,0,0,5.74-1l6,6a1,1,0,0,0,1.42,0A1,1,0,0,0,20.71,19.29ZM9.5,14A4.5,4.5,0,1,1,14,9.5,4.49,4.49,0,0,1,9.5,14Z"
             />
           </svg>
           
@@ -4011,14 +3913,12 @@ exports[`Feather Autocomplete multi:specific chip selection should select rightm
                   aria-label="Remove"
                   class="delete-icon feather-icon feather-icon-flex"
                   focusable="false"
-                  height="24"
                   role="img"
                   viewBox="0 0 24 24"
-                  width="24"
                   xmlns="http://www.w3.org/2000/svg"
                 >
                   <path
-                    d="M12,2A10,10,0,1,0,22,12,10,10,0,0,0,12,2Zm5,13.24A1.26,1.26,0,0,1,17,17a1.24,1.24,0,0,1-1.76,0L12,13.73,8.76,17A1.24,1.24,0,1,1,7,15.24L10.24,12,7,8.76A1.24,1.24,0,0,1,8.76,7L12,10.2,15.24,7A1.24,1.24,0,1,1,17,8.76L13.76,12Z"
+                    d="M19,17.55,13.43,12,19,6.4A1,1,0,1,0,17.58,5L12,10.58,6.42,5A1,1,0,0,0,5,6.42L10.6,12,5,17.6A1,1,0,0,0,5,19a1,1,0,0,0,.71.29,1,1,0,0,0,.71-.3L12,13.41,17.6,19a1,1,0,0,0,.71.29A1,1,0,0,0,19,19,1,1,0,0,0,19,17.55Z"
                   />
                 </svg>
               </span>
@@ -4056,14 +3956,12 @@ exports[`Feather Autocomplete multi:specific chip selection should select rightm
                   aria-label="Remove"
                   class="delete-icon feather-icon feather-icon-flex"
                   focusable="false"
-                  height="24"
                   role="img"
                   viewBox="0 0 24 24"
-                  width="24"
                   xmlns="http://www.w3.org/2000/svg"
                 >
                   <path
-                    d="M12,2A10,10,0,1,0,22,12,10,10,0,0,0,12,2Zm5,13.24A1.26,1.26,0,0,1,17,17a1.24,1.24,0,0,1-1.76,0L12,13.73,8.76,17A1.24,1.24,0,1,1,7,15.24L10.24,12,7,8.76A1.24,1.24,0,0,1,8.76,7L12,10.2,15.24,7A1.24,1.24,0,1,1,17,8.76L13.76,12Z"
+                    d="M19,17.55,13.43,12,19,6.4A1,1,0,1,0,17.58,5L12,10.58,6.42,5A1,1,0,0,0,5,6.42L10.6,12,5,17.6A1,1,0,0,0,5,19a1,1,0,0,0,.71.29,1,1,0,0,0,.71-.3L12,13.41,17.6,19a1,1,0,0,0,.71.29A1,1,0,0,0,19,19,1,1,0,0,0,19,17.55Z"
                   />
                 </svg>
               </span>
@@ -4101,14 +3999,12 @@ exports[`Feather Autocomplete multi:specific chip selection should select rightm
             class="feather-autocomplete-dropdown-icon rotate feather-icon feather-autocomplete-dropdown-icon rotate"
             data-v-0aa06a12=""
             focusable="false"
-            height="24"
             role="img"
             viewBox="0 0 24 24"
-            width="24"
             xmlns="http://www.w3.org/2000/svg"
           >
             <path
-              d="M6.71,9.29a1,1,0,0,0,0,1.41l4.59,4.59a1,1,0,0,0,1.41,0L17.3,10.7a1,1,0,0,0-1.41-1.41L12,13.17,8.12,9.29A1,1,0,0,0,6.71,9.29Z"
+              d="M6.7,9.29a1,1,0,0,0,0,1.41L12,16l5.3-5.3a1,1,0,0,0-1.41-1.41L12,13.17,8.11,9.29A1,1,0,0,0,6.7,9.29Z"
             />
           </svg>
           
@@ -4275,14 +4171,12 @@ exports[`Feather Autocomplete multi:specific chip selection should select the ri
             class="feather-icon"
             data-v-0aa06a12=""
             focusable="false"
-            height="24"
             role="img"
             viewBox="0 0 24 24"
-            width="24"
             xmlns="http://www.w3.org/2000/svg"
           >
             <path
-              d="M20.29,18.84l-5.56-5.56A6.48,6.48,0,0,0,10.86,3.1,6.5,6.5,0,0,0,7.58,15.67a6.43,6.43,0,0,0,5.74-1l5.56,5.56a1,1,0,0,0,1.41,0h0A1,1,0,0,0,20.29,18.84ZM5,9.46A4.5,4.5,0,1,1,9.5,14,4.49,4.49,0,0,1,5,9.46Z"
+              d="M20.71,19.29l-6-6A6.48,6.48,0,0,0,10.86,3.14,6.5,6.5,0,0,0,7.58,15.71a6.43,6.43,0,0,0,5.74-1l6,6a1,1,0,0,0,1.42,0A1,1,0,0,0,20.71,19.29ZM9.5,14A4.5,4.5,0,1,1,14,9.5,4.49,4.49,0,0,1,9.5,14Z"
             />
           </svg>
           
@@ -4334,14 +4228,12 @@ exports[`Feather Autocomplete multi:specific chip selection should select the ri
                   aria-label="Remove"
                   class="delete-icon feather-icon feather-icon-flex"
                   focusable="false"
-                  height="24"
                   role="img"
                   viewBox="0 0 24 24"
-                  width="24"
                   xmlns="http://www.w3.org/2000/svg"
                 >
                   <path
-                    d="M12,2A10,10,0,1,0,22,12,10,10,0,0,0,12,2Zm5,13.24A1.26,1.26,0,0,1,17,17a1.24,1.24,0,0,1-1.76,0L12,13.73,8.76,17A1.24,1.24,0,1,1,7,15.24L10.24,12,7,8.76A1.24,1.24,0,0,1,8.76,7L12,10.2,15.24,7A1.24,1.24,0,1,1,17,8.76L13.76,12Z"
+                    d="M19,17.55,13.43,12,19,6.4A1,1,0,1,0,17.58,5L12,10.58,6.42,5A1,1,0,0,0,5,6.42L10.6,12,5,17.6A1,1,0,0,0,5,19a1,1,0,0,0,.71.29,1,1,0,0,0,.71-.3L12,13.41,17.6,19a1,1,0,0,0,.71.29A1,1,0,0,0,19,19,1,1,0,0,0,19,17.55Z"
                   />
                 </svg>
               </span>
@@ -4379,14 +4271,12 @@ exports[`Feather Autocomplete multi:specific chip selection should select the ri
                   aria-label="Remove"
                   class="delete-icon feather-icon feather-icon-flex"
                   focusable="false"
-                  height="24"
                   role="img"
                   viewBox="0 0 24 24"
-                  width="24"
                   xmlns="http://www.w3.org/2000/svg"
                 >
                   <path
-                    d="M12,2A10,10,0,1,0,22,12,10,10,0,0,0,12,2Zm5,13.24A1.26,1.26,0,0,1,17,17a1.24,1.24,0,0,1-1.76,0L12,13.73,8.76,17A1.24,1.24,0,1,1,7,15.24L10.24,12,7,8.76A1.24,1.24,0,0,1,8.76,7L12,10.2,15.24,7A1.24,1.24,0,1,1,17,8.76L13.76,12Z"
+                    d="M19,17.55,13.43,12,19,6.4A1,1,0,1,0,17.58,5L12,10.58,6.42,5A1,1,0,0,0,5,6.42L10.6,12,5,17.6A1,1,0,0,0,5,19a1,1,0,0,0,.71.29,1,1,0,0,0,.71-.3L12,13.41,17.6,19a1,1,0,0,0,.71.29A1,1,0,0,0,19,19,1,1,0,0,0,19,17.55Z"
                   />
                 </svg>
               </span>
@@ -4424,14 +4314,12 @@ exports[`Feather Autocomplete multi:specific chip selection should select the ri
             class="feather-autocomplete-dropdown-icon feather-icon feather-autocomplete-dropdown-icon"
             data-v-0aa06a12=""
             focusable="false"
-            height="24"
             role="img"
             viewBox="0 0 24 24"
-            width="24"
             xmlns="http://www.w3.org/2000/svg"
           >
             <path
-              d="M6.71,9.29a1,1,0,0,0,0,1.41l4.59,4.59a1,1,0,0,0,1.41,0L17.3,10.7a1,1,0,0,0-1.41-1.41L12,13.17,8.12,9.29A1,1,0,0,0,6.71,9.29Z"
+              d="M6.7,9.29a1,1,0,0,0,0,1.41L12,16l5.3-5.3a1,1,0,0,0-1.41-1.41L12,13.17,8.11,9.29A1,1,0,0,0,6.7,9.29Z"
             />
           </svg>
           
@@ -4539,14 +4427,12 @@ exports[`Feather Autocomplete multi:specific chip selection should should desele
             class="feather-icon"
             data-v-0aa06a12=""
             focusable="false"
-            height="24"
             role="img"
             viewBox="0 0 24 24"
-            width="24"
             xmlns="http://www.w3.org/2000/svg"
           >
             <path
-              d="M20.29,18.84l-5.56-5.56A6.48,6.48,0,0,0,10.86,3.1,6.5,6.5,0,0,0,7.58,15.67a6.43,6.43,0,0,0,5.74-1l5.56,5.56a1,1,0,0,0,1.41,0h0A1,1,0,0,0,20.29,18.84ZM5,9.46A4.5,4.5,0,1,1,9.5,14,4.49,4.49,0,0,1,5,9.46Z"
+              d="M20.71,19.29l-6-6A6.48,6.48,0,0,0,10.86,3.14,6.5,6.5,0,0,0,7.58,15.71a6.43,6.43,0,0,0,5.74-1l6,6a1,1,0,0,0,1.42,0A1,1,0,0,0,20.71,19.29ZM9.5,14A4.5,4.5,0,1,1,14,9.5,4.49,4.49,0,0,1,9.5,14Z"
             />
           </svg>
           
@@ -4598,14 +4484,12 @@ exports[`Feather Autocomplete multi:specific chip selection should should desele
                   aria-label="Remove"
                   class="delete-icon feather-icon feather-icon-flex"
                   focusable="false"
-                  height="24"
                   role="img"
                   viewBox="0 0 24 24"
-                  width="24"
                   xmlns="http://www.w3.org/2000/svg"
                 >
                   <path
-                    d="M12,2A10,10,0,1,0,22,12,10,10,0,0,0,12,2Zm5,13.24A1.26,1.26,0,0,1,17,17a1.24,1.24,0,0,1-1.76,0L12,13.73,8.76,17A1.24,1.24,0,1,1,7,15.24L10.24,12,7,8.76A1.24,1.24,0,0,1,8.76,7L12,10.2,15.24,7A1.24,1.24,0,1,1,17,8.76L13.76,12Z"
+                    d="M19,17.55,13.43,12,19,6.4A1,1,0,1,0,17.58,5L12,10.58,6.42,5A1,1,0,0,0,5,6.42L10.6,12,5,17.6A1,1,0,0,0,5,19a1,1,0,0,0,.71.29,1,1,0,0,0,.71-.3L12,13.41,17.6,19a1,1,0,0,0,.71.29A1,1,0,0,0,19,19,1,1,0,0,0,19,17.55Z"
                   />
                 </svg>
               </span>
@@ -4642,14 +4526,12 @@ exports[`Feather Autocomplete multi:specific chip selection should should desele
                   aria-label="Remove"
                   class="delete-icon feather-icon feather-icon-flex"
                   focusable="false"
-                  height="24"
                   role="img"
                   viewBox="0 0 24 24"
-                  width="24"
                   xmlns="http://www.w3.org/2000/svg"
                 >
                   <path
-                    d="M12,2A10,10,0,1,0,22,12,10,10,0,0,0,12,2Zm5,13.24A1.26,1.26,0,0,1,17,17a1.24,1.24,0,0,1-1.76,0L12,13.73,8.76,17A1.24,1.24,0,1,1,7,15.24L10.24,12,7,8.76A1.24,1.24,0,0,1,8.76,7L12,10.2,15.24,7A1.24,1.24,0,1,1,17,8.76L13.76,12Z"
+                    d="M19,17.55,13.43,12,19,6.4A1,1,0,1,0,17.58,5L12,10.58,6.42,5A1,1,0,0,0,5,6.42L10.6,12,5,17.6A1,1,0,0,0,5,19a1,1,0,0,0,.71.29,1,1,0,0,0,.71-.3L12,13.41,17.6,19a1,1,0,0,0,.71.29A1,1,0,0,0,19,19,1,1,0,0,0,19,17.55Z"
                   />
                 </svg>
               </span>
@@ -4687,14 +4569,12 @@ exports[`Feather Autocomplete multi:specific chip selection should should desele
             class="feather-autocomplete-dropdown-icon feather-icon feather-autocomplete-dropdown-icon"
             data-v-0aa06a12=""
             focusable="false"
-            height="24"
             role="img"
             viewBox="0 0 24 24"
-            width="24"
             xmlns="http://www.w3.org/2000/svg"
           >
             <path
-              d="M6.71,9.29a1,1,0,0,0,0,1.41l4.59,4.59a1,1,0,0,0,1.41,0L17.3,10.7a1,1,0,0,0-1.41-1.41L12,13.17,8.12,9.29A1,1,0,0,0,6.71,9.29Z"
+              d="M6.7,9.29a1,1,0,0,0,0,1.41L12,16l5.3-5.3a1,1,0,0,0-1.41-1.41L12,13.17,8.11,9.29A1,1,0,0,0,6.7,9.29Z"
             />
           </svg>
           
@@ -4802,14 +4682,12 @@ exports[`Feather Autocomplete multi:specific selection limit should clear warnin
             class="feather-icon"
             data-v-0aa06a12=""
             focusable="false"
-            height="24"
             role="img"
             viewBox="0 0 24 24"
-            width="24"
             xmlns="http://www.w3.org/2000/svg"
           >
             <path
-              d="M20.29,18.84l-5.56-5.56A6.48,6.48,0,0,0,10.86,3.1,6.5,6.5,0,0,0,7.58,15.67a6.43,6.43,0,0,0,5.74-1l5.56,5.56a1,1,0,0,0,1.41,0h0A1,1,0,0,0,20.29,18.84ZM5,9.46A4.5,4.5,0,1,1,9.5,14,4.49,4.49,0,0,1,5,9.46Z"
+              d="M20.71,19.29l-6-6A6.48,6.48,0,0,0,10.86,3.14,6.5,6.5,0,0,0,7.58,15.71a6.43,6.43,0,0,0,5.74-1l6,6a1,1,0,0,0,1.42,0A1,1,0,0,0,20.71,19.29ZM9.5,14A4.5,4.5,0,1,1,14,9.5,4.49,4.49,0,0,1,9.5,14Z"
             />
           </svg>
           
@@ -4861,14 +4739,12 @@ exports[`Feather Autocomplete multi:specific selection limit should clear warnin
                   aria-label="Remove"
                   class="delete-icon feather-icon feather-icon-flex"
                   focusable="false"
-                  height="24"
                   role="img"
                   viewBox="0 0 24 24"
-                  width="24"
                   xmlns="http://www.w3.org/2000/svg"
                 >
                   <path
-                    d="M12,2A10,10,0,1,0,22,12,10,10,0,0,0,12,2Zm5,13.24A1.26,1.26,0,0,1,17,17a1.24,1.24,0,0,1-1.76,0L12,13.73,8.76,17A1.24,1.24,0,1,1,7,15.24L10.24,12,7,8.76A1.24,1.24,0,0,1,8.76,7L12,10.2,15.24,7A1.24,1.24,0,1,1,17,8.76L13.76,12Z"
+                    d="M19,17.55,13.43,12,19,6.4A1,1,0,1,0,17.58,5L12,10.58,6.42,5A1,1,0,0,0,5,6.42L10.6,12,5,17.6A1,1,0,0,0,5,19a1,1,0,0,0,.71.29,1,1,0,0,0,.71-.3L12,13.41,17.6,19a1,1,0,0,0,.71.29A1,1,0,0,0,19,19,1,1,0,0,0,19,17.55Z"
                   />
                 </svg>
               </span>
@@ -4905,14 +4781,12 @@ exports[`Feather Autocomplete multi:specific selection limit should clear warnin
                   aria-label="Remove"
                   class="delete-icon feather-icon feather-icon-flex"
                   focusable="false"
-                  height="24"
                   role="img"
                   viewBox="0 0 24 24"
-                  width="24"
                   xmlns="http://www.w3.org/2000/svg"
                 >
                   <path
-                    d="M12,2A10,10,0,1,0,22,12,10,10,0,0,0,12,2Zm5,13.24A1.26,1.26,0,0,1,17,17a1.24,1.24,0,0,1-1.76,0L12,13.73,8.76,17A1.24,1.24,0,1,1,7,15.24L10.24,12,7,8.76A1.24,1.24,0,0,1,8.76,7L12,10.2,15.24,7A1.24,1.24,0,1,1,17,8.76L13.76,12Z"
+                    d="M19,17.55,13.43,12,19,6.4A1,1,0,1,0,17.58,5L12,10.58,6.42,5A1,1,0,0,0,5,6.42L10.6,12,5,17.6A1,1,0,0,0,5,19a1,1,0,0,0,.71.29,1,1,0,0,0,.71-.3L12,13.41,17.6,19a1,1,0,0,0,.71.29A1,1,0,0,0,19,19,1,1,0,0,0,19,17.55Z"
                   />
                 </svg>
               </span>
@@ -4950,14 +4824,12 @@ exports[`Feather Autocomplete multi:specific selection limit should clear warnin
             class="feather-autocomplete-dropdown-icon rotate feather-icon feather-autocomplete-dropdown-icon rotate"
             data-v-0aa06a12=""
             focusable="false"
-            height="24"
             role="img"
             viewBox="0 0 24 24"
-            width="24"
             xmlns="http://www.w3.org/2000/svg"
           >
             <path
-              d="M6.71,9.29a1,1,0,0,0,0,1.41l4.59,4.59a1,1,0,0,0,1.41,0L17.3,10.7a1,1,0,0,0-1.41-1.41L12,13.17,8.12,9.29A1,1,0,0,0,6.71,9.29Z"
+              d="M6.7,9.29a1,1,0,0,0,0,1.41L12,16l5.3-5.3a1,1,0,0,0-1.41-1.41L12,13.17,8.11,9.29A1,1,0,0,0,6.7,9.29Z"
             />
           </svg>
           
@@ -5010,28 +4882,23 @@ exports[`Feather Autocomplete multi:specific selection limit should clear warnin
               class="feather-icon"
               data-v-0aa06a12=""
               focusable="false"
-              height="24"
-              id="Icons"
               role="img"
               viewBox="0 0 24 24"
-              width="24"
               xmlns="http://www.w3.org/2000/svg"
             >
-              <g>
-                <path
-                  d="M12,10a1,1,0,0,0-1,1v5a1,1,0,0,0,2,0V11A1,1,0,0,0,12,10Z"
-                />
-                <rect
-                  height="2"
-                  rx="0.65"
-                  width="2"
-                  x="11"
-                  y="7"
-                />
-                <path
-                  d="M12,2A10,10,0,1,0,22,12,10,10,0,0,0,12,2Zm0,18a8,8,0,1,1,8-8A8,8,0,0,1,12,20Z"
-                />
-              </g>
+              <path
+                d="M12,10a1,1,0,0,0-1,1v5a1,1,0,0,0,2,0V11A1,1,0,0,0,12,10Z"
+              />
+              <rect
+                height="2"
+                rx="0.65"
+                width="2"
+                x="11"
+                y="7"
+              />
+              <path
+                d="M12,2A10,10,0,1,0,22,12,10,10,0,0,0,12,2Zm0,18a8,8,0,1,1,8-8A8,8,0,0,1,12,20Z"
+              />
             </svg>
             <span
               data-ref-id="feather-autocomplete-selection-limit"
@@ -5120,14 +4987,12 @@ exports[`Feather Autocomplete multi:specific selection limit should display a wa
             class="feather-icon"
             data-v-0aa06a12=""
             focusable="false"
-            height="24"
             role="img"
             viewBox="0 0 24 24"
-            width="24"
             xmlns="http://www.w3.org/2000/svg"
           >
             <path
-              d="M20.29,18.84l-5.56-5.56A6.48,6.48,0,0,0,10.86,3.1,6.5,6.5,0,0,0,7.58,15.67a6.43,6.43,0,0,0,5.74-1l5.56,5.56a1,1,0,0,0,1.41,0h0A1,1,0,0,0,20.29,18.84ZM5,9.46A4.5,4.5,0,1,1,9.5,14,4.49,4.49,0,0,1,5,9.46Z"
+              d="M20.71,19.29l-6-6A6.48,6.48,0,0,0,10.86,3.14,6.5,6.5,0,0,0,7.58,15.71a6.43,6.43,0,0,0,5.74-1l6,6a1,1,0,0,0,1.42,0A1,1,0,0,0,20.71,19.29ZM9.5,14A4.5,4.5,0,1,1,14,9.5,4.49,4.49,0,0,1,9.5,14Z"
             />
           </svg>
           
@@ -5179,14 +5044,12 @@ exports[`Feather Autocomplete multi:specific selection limit should display a wa
                   aria-label="Remove"
                   class="delete-icon feather-icon feather-icon-flex"
                   focusable="false"
-                  height="24"
                   role="img"
                   viewBox="0 0 24 24"
-                  width="24"
                   xmlns="http://www.w3.org/2000/svg"
                 >
                   <path
-                    d="M12,2A10,10,0,1,0,22,12,10,10,0,0,0,12,2Zm5,13.24A1.26,1.26,0,0,1,17,17a1.24,1.24,0,0,1-1.76,0L12,13.73,8.76,17A1.24,1.24,0,1,1,7,15.24L10.24,12,7,8.76A1.24,1.24,0,0,1,8.76,7L12,10.2,15.24,7A1.24,1.24,0,1,1,17,8.76L13.76,12Z"
+                    d="M19,17.55,13.43,12,19,6.4A1,1,0,1,0,17.58,5L12,10.58,6.42,5A1,1,0,0,0,5,6.42L10.6,12,5,17.6A1,1,0,0,0,5,19a1,1,0,0,0,.71.29,1,1,0,0,0,.71-.3L12,13.41,17.6,19a1,1,0,0,0,.71.29A1,1,0,0,0,19,19,1,1,0,0,0,19,17.55Z"
                   />
                 </svg>
               </span>
@@ -5223,14 +5086,12 @@ exports[`Feather Autocomplete multi:specific selection limit should display a wa
                   aria-label="Remove"
                   class="delete-icon feather-icon feather-icon-flex"
                   focusable="false"
-                  height="24"
                   role="img"
                   viewBox="0 0 24 24"
-                  width="24"
                   xmlns="http://www.w3.org/2000/svg"
                 >
                   <path
-                    d="M12,2A10,10,0,1,0,22,12,10,10,0,0,0,12,2Zm5,13.24A1.26,1.26,0,0,1,17,17a1.24,1.24,0,0,1-1.76,0L12,13.73,8.76,17A1.24,1.24,0,1,1,7,15.24L10.24,12,7,8.76A1.24,1.24,0,0,1,8.76,7L12,10.2,15.24,7A1.24,1.24,0,1,1,17,8.76L13.76,12Z"
+                    d="M19,17.55,13.43,12,19,6.4A1,1,0,1,0,17.58,5L12,10.58,6.42,5A1,1,0,0,0,5,6.42L10.6,12,5,17.6A1,1,0,0,0,5,19a1,1,0,0,0,.71.29,1,1,0,0,0,.71-.3L12,13.41,17.6,19a1,1,0,0,0,.71.29A1,1,0,0,0,19,19,1,1,0,0,0,19,17.55Z"
                   />
                 </svg>
               </span>
@@ -5268,14 +5129,12 @@ exports[`Feather Autocomplete multi:specific selection limit should display a wa
             class="feather-autocomplete-dropdown-icon rotate feather-icon feather-autocomplete-dropdown-icon rotate"
             data-v-0aa06a12=""
             focusable="false"
-            height="24"
             role="img"
             viewBox="0 0 24 24"
-            width="24"
             xmlns="http://www.w3.org/2000/svg"
           >
             <path
-              d="M6.71,9.29a1,1,0,0,0,0,1.41l4.59,4.59a1,1,0,0,0,1.41,0L17.3,10.7a1,1,0,0,0-1.41-1.41L12,13.17,8.12,9.29A1,1,0,0,0,6.71,9.29Z"
+              d="M6.7,9.29a1,1,0,0,0,0,1.41L12,16l5.3-5.3a1,1,0,0,0-1.41-1.41L12,13.17,8.11,9.29A1,1,0,0,0,6.7,9.29Z"
             />
           </svg>
           
@@ -5328,28 +5187,23 @@ exports[`Feather Autocomplete multi:specific selection limit should display a wa
               class="feather-icon"
               data-v-0aa06a12=""
               focusable="false"
-              height="24"
-              id="Icons"
               role="img"
               viewBox="0 0 24 24"
-              width="24"
               xmlns="http://www.w3.org/2000/svg"
             >
-              <g>
-                <path
-                  d="M12,10a1,1,0,0,0-1,1v5a1,1,0,0,0,2,0V11A1,1,0,0,0,12,10Z"
-                />
-                <rect
-                  height="2"
-                  rx="0.65"
-                  width="2"
-                  x="11"
-                  y="7"
-                />
-                <path
-                  d="M12,2A10,10,0,1,0,22,12,10,10,0,0,0,12,2Zm0,18a8,8,0,1,1,8-8A8,8,0,0,1,12,20Z"
-                />
-              </g>
+              <path
+                d="M12,10a1,1,0,0,0-1,1v5a1,1,0,0,0,2,0V11A1,1,0,0,0,12,10Z"
+              />
+              <rect
+                height="2"
+                rx="0.65"
+                width="2"
+                x="11"
+                y="7"
+              />
+              <path
+                d="M12,2A10,10,0,1,0,22,12,10,10,0,0,0,12,2Zm0,18a8,8,0,1,1,8-8A8,8,0,0,1,12,20Z"
+              />
             </svg>
             <span
               data-ref-id="feather-autocomplete-selection-limit"
@@ -5438,14 +5292,12 @@ exports[`Feather Autocomplete multi:specific selection limit should display a wa
             class="feather-icon"
             data-v-0aa06a12=""
             focusable="false"
-            height="24"
             role="img"
             viewBox="0 0 24 24"
-            width="24"
             xmlns="http://www.w3.org/2000/svg"
           >
             <path
-              d="M20.29,18.84l-5.56-5.56A6.48,6.48,0,0,0,10.86,3.1,6.5,6.5,0,0,0,7.58,15.67a6.43,6.43,0,0,0,5.74-1l5.56,5.56a1,1,0,0,0,1.41,0h0A1,1,0,0,0,20.29,18.84ZM5,9.46A4.5,4.5,0,1,1,9.5,14,4.49,4.49,0,0,1,5,9.46Z"
+              d="M20.71,19.29l-6-6A6.48,6.48,0,0,0,10.86,3.14,6.5,6.5,0,0,0,7.58,15.71a6.43,6.43,0,0,0,5.74-1l6,6a1,1,0,0,0,1.42,0A1,1,0,0,0,20.71,19.29ZM9.5,14A4.5,4.5,0,1,1,14,9.5,4.49,4.49,0,0,1,9.5,14Z"
             />
           </svg>
           
@@ -5499,14 +5351,12 @@ exports[`Feather Autocomplete multi:specific selection limit should display a wa
                   aria-label="Remove"
                   class="delete-icon feather-icon feather-icon-flex"
                   focusable="false"
-                  height="24"
                   role="img"
                   viewBox="0 0 24 24"
-                  width="24"
                   xmlns="http://www.w3.org/2000/svg"
                 >
                   <path
-                    d="M12,2A10,10,0,1,0,22,12,10,10,0,0,0,12,2Zm5,13.24A1.26,1.26,0,0,1,17,17a1.24,1.24,0,0,1-1.76,0L12,13.73,8.76,17A1.24,1.24,0,1,1,7,15.24L10.24,12,7,8.76A1.24,1.24,0,0,1,8.76,7L12,10.2,15.24,7A1.24,1.24,0,1,1,17,8.76L13.76,12Z"
+                    d="M19,17.55,13.43,12,19,6.4A1,1,0,1,0,17.58,5L12,10.58,6.42,5A1,1,0,0,0,5,6.42L10.6,12,5,17.6A1,1,0,0,0,5,19a1,1,0,0,0,.71.29,1,1,0,0,0,.71-.3L12,13.41,17.6,19a1,1,0,0,0,.71.29A1,1,0,0,0,19,19,1,1,0,0,0,19,17.55Z"
                   />
                 </svg>
               </span>
@@ -5543,14 +5393,12 @@ exports[`Feather Autocomplete multi:specific selection limit should display a wa
                   aria-label="Remove"
                   class="delete-icon feather-icon feather-icon-flex"
                   focusable="false"
-                  height="24"
                   role="img"
                   viewBox="0 0 24 24"
-                  width="24"
                   xmlns="http://www.w3.org/2000/svg"
                 >
                   <path
-                    d="M12,2A10,10,0,1,0,22,12,10,10,0,0,0,12,2Zm5,13.24A1.26,1.26,0,0,1,17,17a1.24,1.24,0,0,1-1.76,0L12,13.73,8.76,17A1.24,1.24,0,1,1,7,15.24L10.24,12,7,8.76A1.24,1.24,0,0,1,8.76,7L12,10.2,15.24,7A1.24,1.24,0,1,1,17,8.76L13.76,12Z"
+                    d="M19,17.55,13.43,12,19,6.4A1,1,0,1,0,17.58,5L12,10.58,6.42,5A1,1,0,0,0,5,6.42L10.6,12,5,17.6A1,1,0,0,0,5,19a1,1,0,0,0,.71.29,1,1,0,0,0,.71-.3L12,13.41,17.6,19a1,1,0,0,0,.71.29A1,1,0,0,0,19,19,1,1,0,0,0,19,17.55Z"
                   />
                 </svg>
               </span>
@@ -5588,14 +5436,12 @@ exports[`Feather Autocomplete multi:specific selection limit should display a wa
             class="feather-autocomplete-dropdown-icon rotate feather-icon feather-autocomplete-dropdown-icon rotate"
             data-v-0aa06a12=""
             focusable="false"
-            height="24"
             role="img"
             viewBox="0 0 24 24"
-            width="24"
             xmlns="http://www.w3.org/2000/svg"
           >
             <path
-              d="M6.71,9.29a1,1,0,0,0,0,1.41l4.59,4.59a1,1,0,0,0,1.41,0L17.3,10.7a1,1,0,0,0-1.41-1.41L12,13.17,8.12,9.29A1,1,0,0,0,6.71,9.29Z"
+              d="M6.7,9.29a1,1,0,0,0,0,1.41L12,16l5.3-5.3a1,1,0,0,0-1.41-1.41L12,13.17,8.11,9.29A1,1,0,0,0,6.7,9.29Z"
             />
           </svg>
           
@@ -5648,28 +5494,23 @@ exports[`Feather Autocomplete multi:specific selection limit should display a wa
               class="feather-icon"
               data-v-0aa06a12=""
               focusable="false"
-              height="24"
-              id="Icons"
               role="img"
               viewBox="0 0 24 24"
-              width="24"
               xmlns="http://www.w3.org/2000/svg"
             >
-              <g>
-                <path
-                  d="M12,10a1,1,0,0,0-1,1v5a1,1,0,0,0,2,0V11A1,1,0,0,0,12,10Z"
-                />
-                <rect
-                  height="2"
-                  rx="0.65"
-                  width="2"
-                  x="11"
-                  y="7"
-                />
-                <path
-                  d="M12,2A10,10,0,1,0,22,12,10,10,0,0,0,12,2Zm0,18a8,8,0,1,1,8-8A8,8,0,0,1,12,20Z"
-                />
-              </g>
+              <path
+                d="M12,10a1,1,0,0,0-1,1v5a1,1,0,0,0,2,0V11A1,1,0,0,0,12,10Z"
+              />
+              <rect
+                height="2"
+                rx="0.65"
+                width="2"
+                x="11"
+                y="7"
+              />
+              <path
+                d="M12,2A10,10,0,1,0,22,12,10,10,0,0,0,12,2Zm0,18a8,8,0,1,1,8-8A8,8,0,0,1,12,20Z"
+              />
             </svg>
             <span
               data-ref-id="feather-autocomplete-selection-limit"
@@ -5758,14 +5599,12 @@ exports[`Feather Autocomplete multi:specific selection limit should display a wa
             class="feather-icon"
             data-v-0aa06a12=""
             focusable="false"
-            height="24"
             role="img"
             viewBox="0 0 24 24"
-            width="24"
             xmlns="http://www.w3.org/2000/svg"
           >
             <path
-              d="M20.29,18.84l-5.56-5.56A6.48,6.48,0,0,0,10.86,3.1,6.5,6.5,0,0,0,7.58,15.67a6.43,6.43,0,0,0,5.74-1l5.56,5.56a1,1,0,0,0,1.41,0h0A1,1,0,0,0,20.29,18.84ZM5,9.46A4.5,4.5,0,1,1,9.5,14,4.49,4.49,0,0,1,5,9.46Z"
+              d="M20.71,19.29l-6-6A6.48,6.48,0,0,0,10.86,3.14,6.5,6.5,0,0,0,7.58,15.71a6.43,6.43,0,0,0,5.74-1l6,6a1,1,0,0,0,1.42,0A1,1,0,0,0,20.71,19.29ZM9.5,14A4.5,4.5,0,1,1,14,9.5,4.49,4.49,0,0,1,9.5,14Z"
             />
           </svg>
           
@@ -5818,14 +5657,12 @@ exports[`Feather Autocomplete multi:specific selection limit should display a wa
             class="feather-autocomplete-dropdown-icon rotate feather-icon feather-autocomplete-dropdown-icon rotate"
             data-v-0aa06a12=""
             focusable="false"
-            height="24"
             role="img"
             viewBox="0 0 24 24"
-            width="24"
             xmlns="http://www.w3.org/2000/svg"
           >
             <path
-              d="M6.71,9.29a1,1,0,0,0,0,1.41l4.59,4.59a1,1,0,0,0,1.41,0L17.3,10.7a1,1,0,0,0-1.41-1.41L12,13.17,8.12,9.29A1,1,0,0,0,6.71,9.29Z"
+              d="M6.7,9.29a1,1,0,0,0,0,1.41L12,16l5.3-5.3a1,1,0,0,0-1.41-1.41L12,13.17,8.11,9.29A1,1,0,0,0,6.7,9.29Z"
             />
           </svg>
           
@@ -5938,28 +5775,23 @@ exports[`Feather Autocomplete multi:specific selection limit should display a wa
               class="feather-icon"
               data-v-0aa06a12=""
               focusable="false"
-              height="24"
-              id="Icons"
               role="img"
               viewBox="0 0 24 24"
-              width="24"
               xmlns="http://www.w3.org/2000/svg"
             >
-              <g>
-                <path
-                  d="M12,10a1,1,0,0,0-1,1v5a1,1,0,0,0,2,0V11A1,1,0,0,0,12,10Z"
-                />
-                <rect
-                  height="2"
-                  rx="0.65"
-                  width="2"
-                  x="11"
-                  y="7"
-                />
-                <path
-                  d="M12,2A10,10,0,1,0,22,12,10,10,0,0,0,12,2Zm0,18a8,8,0,1,1,8-8A8,8,0,0,1,12,20Z"
-                />
-              </g>
+              <path
+                d="M12,10a1,1,0,0,0-1,1v5a1,1,0,0,0,2,0V11A1,1,0,0,0,12,10Z"
+              />
+              <rect
+                height="2"
+                rx="0.65"
+                width="2"
+                x="11"
+                y="7"
+              />
+              <path
+                d="M12,2A10,10,0,1,0,22,12,10,10,0,0,0,12,2Zm0,18a8,8,0,1,1,8-8A8,8,0,0,1,12,20Z"
+              />
             </svg>
             <span
               data-ref-id="feather-autocomplete-selection-limit"
@@ -6048,14 +5880,12 @@ exports[`Feather Autocomplete multi:specific should hide/reset menu and clear te
             class="feather-icon"
             data-v-0aa06a12=""
             focusable="false"
-            height="24"
             role="img"
             viewBox="0 0 24 24"
-            width="24"
             xmlns="http://www.w3.org/2000/svg"
           >
             <path
-              d="M20.29,18.84l-5.56-5.56A6.48,6.48,0,0,0,10.86,3.1,6.5,6.5,0,0,0,7.58,15.67a6.43,6.43,0,0,0,5.74-1l5.56,5.56a1,1,0,0,0,1.41,0h0A1,1,0,0,0,20.29,18.84ZM5,9.46A4.5,4.5,0,1,1,9.5,14,4.49,4.49,0,0,1,5,9.46Z"
+              d="M20.71,19.29l-6-6A6.48,6.48,0,0,0,10.86,3.14,6.5,6.5,0,0,0,7.58,15.71a6.43,6.43,0,0,0,5.74-1l6,6a1,1,0,0,0,1.42,0A1,1,0,0,0,20.71,19.29ZM9.5,14A4.5,4.5,0,1,1,14,9.5,4.49,4.49,0,0,1,9.5,14Z"
             />
           </svg>
           
@@ -6106,14 +5936,12 @@ exports[`Feather Autocomplete multi:specific should hide/reset menu and clear te
             class="feather-autocomplete-dropdown-icon feather-icon feather-autocomplete-dropdown-icon"
             data-v-0aa06a12=""
             focusable="false"
-            height="24"
             role="img"
             viewBox="0 0 24 24"
-            width="24"
             xmlns="http://www.w3.org/2000/svg"
           >
             <path
-              d="M6.71,9.29a1,1,0,0,0,0,1.41l4.59,4.59a1,1,0,0,0,1.41,0L17.3,10.7a1,1,0,0,0-1.41-1.41L12,13.17,8.12,9.29A1,1,0,0,0,6.71,9.29Z"
+              d="M6.7,9.29a1,1,0,0,0,0,1.41L12,16l5.3-5.3a1,1,0,0,0-1.41-1.41L12,13.17,8.11,9.29A1,1,0,0,0,6.7,9.29Z"
             />
           </svg>
           
@@ -6221,14 +6049,12 @@ exports[`Feather Autocomplete single:specific should close menu when enter is pr
             class="feather-icon"
             data-v-0aa06a12=""
             focusable="false"
-            height="24"
             role="img"
             viewBox="0 0 24 24"
-            width="24"
             xmlns="http://www.w3.org/2000/svg"
           >
             <path
-              d="M20.29,18.84l-5.56-5.56A6.48,6.48,0,0,0,10.86,3.1,6.5,6.5,0,0,0,7.58,15.67a6.43,6.43,0,0,0,5.74-1l5.56,5.56a1,1,0,0,0,1.41,0h0A1,1,0,0,0,20.29,18.84ZM5,9.46A4.5,4.5,0,1,1,9.5,14,4.49,4.49,0,0,1,5,9.46Z"
+              d="M20.71,19.29l-6-6A6.48,6.48,0,0,0,10.86,3.14,6.5,6.5,0,0,0,7.58,15.71a6.43,6.43,0,0,0,5.74-1l6,6a1,1,0,0,0,1.42,0A1,1,0,0,0,20.71,19.29ZM9.5,14A4.5,4.5,0,1,1,14,9.5,4.49,4.49,0,0,1,9.5,14Z"
             />
           </svg>
           
@@ -6279,14 +6105,12 @@ exports[`Feather Autocomplete single:specific should close menu when enter is pr
             class="feather-autocomplete-dropdown-icon rotate feather-icon feather-autocomplete-dropdown-icon rotate"
             data-v-0aa06a12=""
             focusable="false"
-            height="24"
             role="img"
             viewBox="0 0 24 24"
-            width="24"
             xmlns="http://www.w3.org/2000/svg"
           >
             <path
-              d="M6.71,9.29a1,1,0,0,0,0,1.41l4.59,4.59a1,1,0,0,0,1.41,0L17.3,10.7a1,1,0,0,0-1.41-1.41L12,13.17,8.12,9.29A1,1,0,0,0,6.71,9.29Z"
+              d="M6.7,9.29a1,1,0,0,0,0,1.41L12,16l5.3-5.3a1,1,0,0,0-1.41-1.41L12,13.17,8.11,9.29A1,1,0,0,0,6.7,9.29Z"
             />
           </svg>
           
@@ -6451,14 +6275,12 @@ exports[`Feather Autocomplete single:specific should handle a null property on v
             class="feather-icon"
             data-v-0aa06a12=""
             focusable="false"
-            height="24"
             role="img"
             viewBox="0 0 24 24"
-            width="24"
             xmlns="http://www.w3.org/2000/svg"
           >
             <path
-              d="M20.29,18.84l-5.56-5.56A6.48,6.48,0,0,0,10.86,3.1,6.5,6.5,0,0,0,7.58,15.67a6.43,6.43,0,0,0,5.74-1l5.56,5.56a1,1,0,0,0,1.41,0h0A1,1,0,0,0,20.29,18.84ZM5,9.46A4.5,4.5,0,1,1,9.5,14,4.49,4.49,0,0,1,5,9.46Z"
+              d="M20.71,19.29l-6-6A6.48,6.48,0,0,0,10.86,3.14,6.5,6.5,0,0,0,7.58,15.71a6.43,6.43,0,0,0,5.74-1l6,6a1,1,0,0,0,1.42,0A1,1,0,0,0,20.71,19.29ZM9.5,14A4.5,4.5,0,1,1,14,9.5,4.49,4.49,0,0,1,9.5,14Z"
             />
           </svg>
           
@@ -6517,14 +6339,12 @@ exports[`Feather Autocomplete single:specific should handle a null property on v
               data-v-0aa06a12=""
               data-v-12cb8e54=""
               focusable="false"
-              height="24"
               role="img"
               viewBox="0 0 24 24"
-              width="24"
               xmlns="http://www.w3.org/2000/svg"
             >
               <path
-                d="M12,2A10,10,0,1,0,22,12,10,10,0,0,0,12,2Zm5,13.24A1.26,1.26,0,0,1,17,17a1.24,1.24,0,0,1-1.76,0L12,13.73,8.76,17A1.24,1.24,0,1,1,7,15.24L10.24,12,7,8.76A1.24,1.24,0,0,1,8.76,7L12,10.2,15.24,7A1.24,1.24,0,1,1,17,8.76L13.76,12Z"
+                d="M19,17.55,13.43,12,19,6.4A1,1,0,1,0,17.58,5L12,10.58,6.42,5A1,1,0,0,0,5,6.42L10.6,12,5,17.6A1,1,0,0,0,5,19a1,1,0,0,0,.71.29,1,1,0,0,0,.71-.3L12,13.41,17.6,19a1,1,0,0,0,.71.29A1,1,0,0,0,19,19,1,1,0,0,0,19,17.55Z"
               />
             </svg>
           </a>
@@ -6535,14 +6355,12 @@ exports[`Feather Autocomplete single:specific should handle a null property on v
             class="feather-autocomplete-dropdown-icon feather-icon feather-autocomplete-dropdown-icon"
             data-v-0aa06a12=""
             focusable="false"
-            height="24"
             role="img"
             viewBox="0 0 24 24"
-            width="24"
             xmlns="http://www.w3.org/2000/svg"
           >
             <path
-              d="M6.71,9.29a1,1,0,0,0,0,1.41l4.59,4.59a1,1,0,0,0,1.41,0L17.3,10.7a1,1,0,0,0-1.41-1.41L12,13.17,8.12,9.29A1,1,0,0,0,6.71,9.29Z"
+              d="M6.7,9.29a1,1,0,0,0,0,1.41L12,16l5.3-5.3a1,1,0,0,0-1.41-1.41L12,13.17,8.11,9.29A1,1,0,0,0,6.7,9.29Z"
             />
           </svg>
           
@@ -6650,14 +6468,12 @@ exports[`Feather Autocomplete single:specific should show add new element when i
             class="feather-icon"
             data-v-0aa06a12=""
             focusable="false"
-            height="24"
             role="img"
             viewBox="0 0 24 24"
-            width="24"
             xmlns="http://www.w3.org/2000/svg"
           >
             <path
-              d="M20.29,18.84l-5.56-5.56A6.48,6.48,0,0,0,10.86,3.1,6.5,6.5,0,0,0,7.58,15.67a6.43,6.43,0,0,0,5.74-1l5.56,5.56a1,1,0,0,0,1.41,0h0A1,1,0,0,0,20.29,18.84ZM5,9.46A4.5,4.5,0,1,1,9.5,14,4.49,4.49,0,0,1,5,9.46Z"
+              d="M20.71,19.29l-6-6A6.48,6.48,0,0,0,10.86,3.14,6.5,6.5,0,0,0,7.58,15.71a6.43,6.43,0,0,0,5.74-1l6,6a1,1,0,0,0,1.42,0A1,1,0,0,0,20.71,19.29ZM9.5,14A4.5,4.5,0,1,1,14,9.5,4.49,4.49,0,0,1,9.5,14Z"
             />
           </svg>
           
@@ -6708,14 +6524,12 @@ exports[`Feather Autocomplete single:specific should show add new element when i
             class="feather-autocomplete-dropdown-icon rotate feather-icon feather-autocomplete-dropdown-icon rotate"
             data-v-0aa06a12=""
             focusable="false"
-            height="24"
             role="img"
             viewBox="0 0 24 24"
-            width="24"
             xmlns="http://www.w3.org/2000/svg"
           >
             <path
-              d="M6.71,9.29a1,1,0,0,0,0,1.41l4.59,4.59a1,1,0,0,0,1.41,0L17.3,10.7a1,1,0,0,0-1.41-1.41L12,13.17,8.12,9.29A1,1,0,0,0,6.71,9.29Z"
+              d="M6.7,9.29a1,1,0,0,0,0,1.41L12,16l5.3-5.3a1,1,0,0,0-1.41-1.41L12,13.17,8.11,9.29A1,1,0,0,0,6.7,9.29Z"
             />
           </svg>
           

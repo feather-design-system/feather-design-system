@@ -49,7 +49,7 @@
 <script>
 import * as components from "./../src";
 import { FeatherIcon } from "@featherds/icon";
-import Search from "@featherds/icon/actions/Search";
+import Search from "@featherds/icon/action/Search";
 import { markRaw } from "vue";
 export default {
   data() {

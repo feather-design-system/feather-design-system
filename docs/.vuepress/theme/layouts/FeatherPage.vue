@@ -32,7 +32,7 @@
 </template>
 <script>
 import { FeatherIcon } from "@featherds/icon";
-import KeyboardArrowDown from "@featherds/icon/navigation/DownChevron";
+import KeyboardArrowDown from "@featherds/icon/navigation/ExpandMore";
 import { FeatherMegaMenu } from "@featherds/megamenu";
 import {
   FeatherAppBarButton,

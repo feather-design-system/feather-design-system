@@ -139,7 +139,7 @@
 </template>
 <script>
 import { FeatherIcon } from "@featherds/icon";
-import Face from "@featherds/icon/actions/AccountCircle";
+import Face from "@featherds/icon/action/AccountCircle";
 import { markRaw } from "vue";
 
 import { FeatherCheckbox } from "@featherds/checkbox";

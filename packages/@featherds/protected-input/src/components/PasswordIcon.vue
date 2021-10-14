@@ -11,8 +11,8 @@
 </template>
 <script>
 import { FeatherIcon } from "@featherds/icon";
-import passwordHide from "@featherds/icon/actions/VisibilityOff";
-import passwordShow from "@featherds/icon/actions/Visibility";
+import passwordHide from "@featherds/icon/action/Hide";
+import passwordShow from "@featherds/icon/action/View";
 export default {
   model: {
     prop: "modelValue",
@@ -43,10 +43,10 @@ export default {
     },
     icon() {
       if (this.modelValue) {
-        return passwordShow;
+        return passwordHide;
       }
 
-      return passwordHide;
+      return passwordShow;
     },
   },
   methods: {

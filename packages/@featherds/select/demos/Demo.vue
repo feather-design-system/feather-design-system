@@ -65,7 +65,7 @@
 <script>
 import states from "./states";
 import { FeatherIcon } from "@featherds/icon";
-import Place from "@featherds/icon/actions/Location";
+import Place from "@featherds/icon/action/Location";
 import * as components from "./../src";
 export default {
   data() {

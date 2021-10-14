@@ -17,7 +17,7 @@
 </template>
 <script>
 import { FeatherIcon } from "@featherds/icon";
-import Close from "@featherds/icon/navigation/Close";
+import Close from "@featherds/icon/navigation/Cancel";
 
 export default {
   emits: ["close"],

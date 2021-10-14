@@ -69,7 +69,7 @@
 <script>
 import { FeatherIcon } from "@featherds/icon";
 import { FeatherPagination } from "@featherds/pagination";
-import Face from "@featherds/icon/actions/AccountCircle";
+import Face from "@featherds/icon/action/AccountCircle";
 import { markRaw } from "vue";
 
 import { FeatherCheckbox } from "@featherds/checkbox";
@@ -82,7 +82,7 @@ export default {
       condensed: false,
       hover: false,
       selected: false,
-      icon: (Face),
+      icon: Face,
       all: false,
       checkbox1: true,
       checkbox2: false,

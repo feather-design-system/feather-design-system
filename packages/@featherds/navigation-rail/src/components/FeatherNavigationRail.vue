@@ -37,7 +37,7 @@
   </div>
 </template>
 <script>
-import Chevron from "@featherds/icon/navigation/LeftChevron";
+import Chevron from "@featherds/icon/navigation/ChevronLeft";
 import { FeatherIcon } from "@featherds/icon";
 import { ref, toRef, watch } from "vue";
 import { FeatherList } from "@featherds/list";

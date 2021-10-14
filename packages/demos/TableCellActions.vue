@@ -90,10 +90,10 @@
 import { FeatherIcon } from "@featherds/icon";
 import Available from "@featherds/icon/status/Available";
 import Unavailable from "@featherds/icon/status/Unavailable";
-import Menu from "@featherds/icon/navigation/MoreVertical";
-import refresh from "@featherds/icon/actions/Cached";
-import code from "@featherds/icon/actions/Code";
-import backup from "@featherds/icon/actions/AddComment";
+import Menu from "@featherds/icon/navigation/MoreVert";
+import refresh from "@featherds/icon/action/Cached";
+import code from "@featherds/icon/action/Code";
+import backup from "@featherds/icon/action/AddComment";
 import { FeatherSortHeader, SORT, RowAction } from "@featherds/table";
 import { FeatherPagination } from "@featherds/pagination";
 import { FeatherButton } from "@featherds/button";

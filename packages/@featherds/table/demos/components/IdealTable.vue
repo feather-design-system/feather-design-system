@@ -142,8 +142,8 @@
 <script>
 import { FeatherIcon } from "@featherds/icon";
 import { FeatherPagination } from "@featherds/pagination";
-import Face from "@featherds/icon/actions/AccountCircle";
-import MoreVert from "@featherds/icon/navigation/MoreVertical";
+import Face from "@featherds/icon/action/AccountCircle";
+import MoreVert from "@featherds/icon/navigation/MoreVert";
 import { markRaw } from "vue";
 
 import { FeatherCheckbox } from "@featherds/checkbox";

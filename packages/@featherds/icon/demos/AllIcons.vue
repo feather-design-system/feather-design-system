@@ -10,197 +10,297 @@
 
   <script>
   import * as components from "./../src";
-import alertError from "@featherds/icon/alert/Error";
+import communicationCertificate from "@featherds/icon/communication/Certificate";
 
-import alertWarning from "@featherds/icon/alert/Warning";
-
-import communicationCall from "@featherds/icon/communication/Call";
+import communicationCertificateAlt from "@featherds/icon/communication/CertificateAlt";
 
 import communicationChat from "@featherds/icon/communication/Chat";
 
-import communicationEmail from "@featherds/icon/communication/Email";
+import communicationContacts from "@featherds/icon/communication/Contacts";
 
-import communicationFax from "@featherds/icon/communication/Fax";
+import communicationDocumentation from "@featherds/icon/communication/Documentation";
+
+import communicationIdCard from "@featherds/icon/communication/IdCard";
 
 import communicationPhone from "@featherds/icon/communication/Phone";
 
-import actionsAccount from "@featherds/icon/actions/Account";
+import contentBlogArticle from "@featherds/icon/content/BlogArticle";
 
-import actionsAccountCircle from "@featherds/icon/actions/AccountCircle";
+import contentVideo from "@featherds/icon/content/Video";
 
-import actionsAdd from "@featherds/icon/actions/Add";
+import actionAccountCircle from "@featherds/icon/action/AccountCircle";
 
-import actionsAddComment from "@featherds/icon/actions/AddComment";
+import actionAdd from "@featherds/icon/action/Add";
 
-import actionsAddNote from "@featherds/icon/actions/AddNote";
+import actionAddCircleAlt from "@featherds/icon/action/AddCircleAlt";
 
-import actionsApprovals from "@featherds/icon/actions/Approvals";
+import actionAddComment from "@featherds/icon/action/AddComment";
 
-import actionsArchive from "@featherds/icon/actions/Archive";
+import actionAddNote from "@featherds/icon/action/AddNote";
 
-import actionsAssignTo from "@featherds/icon/actions/AssignTo";
+import actionAddUser from "@featherds/icon/action/AddUser";
 
-import actionsAttachment from "@featherds/icon/actions/Attachment";
+import actionArchive from "@featherds/icon/action/Archive";
 
-import actionsBuild from "@featherds/icon/actions/Build";
+import actionAssignTo from "@featherds/icon/action/AssignTo";
 
-import actionsBusiness from "@featherds/icon/actions/Business";
+import actionAttachEmail from "@featherds/icon/action/AttachEmail";
 
-import actionsCalendar from "@featherds/icon/actions/Calendar";
+import actionAttachFile from "@featherds/icon/action/AttachFile";
 
-import actionsCancel from "@featherds/icon/actions/Cancel";
+import actionBuild from "@featherds/icon/action/Build";
 
-import actionsChangeOwner from "@featherds/icon/actions/ChangeOwner";
+import actionBusiness from "@featherds/icon/action/Business";
 
-import actionsChangePassword from "@featherds/icon/actions/ChangePassword";
+import actionCalendar from "@featherds/icon/action/Calendar";
 
-import actionsCheckCircle from "@featherds/icon/actions/CheckCircle";
+import actionCalendarEndDate from "@featherds/icon/action/CalendarEndDate";
 
-import actionsClock from "@featherds/icon/actions/Clock";
+import actionCalendarStartDate from "@featherds/icon/action/CalendarStartDate";
 
-import actionsCode from "@featherds/icon/actions/Code";
+import actionCancel from "@featherds/icon/action/Cancel";
 
-import actionsComment from "@featherds/icon/actions/Comment";
+import actionChangeOwner from "@featherds/icon/action/ChangeOwner";
 
-import actionsContentCopy from "@featherds/icon/actions/ContentCopy";
+import actionCheckCircle from "@featherds/icon/action/CheckCircle";
 
-import actionsContentPaste from "@featherds/icon/actions/ContentPaste";
+import actionCloud from "@featherds/icon/action/Cloud";
 
-import actionsCostSavings from "@featherds/icon/actions/CostSavings";
+import actionCloudDownload from "@featherds/icon/action/CloudDownload";
 
-import actionsDelete from "@featherds/icon/actions/Delete";
+import actionCloudUpload from "@featherds/icon/action/CloudUpload";
 
-import actionsDone from "@featherds/icon/actions/Done";
+import actionCode from "@featherds/icon/action/Code";
 
-import actionsDoneCircle from "@featherds/icon/actions/DoneCircle";
+import actionComment from "@featherds/icon/action/Comment";
 
-import actionsDownload from "@featherds/icon/actions/Download";
+import actionContactSupport from "@featherds/icon/action/ContactSupport";
 
-import actionsDownloadDocument from "@featherds/icon/actions/DownloadDocument";
+import actionContentCopy from "@featherds/icon/action/ContentCopy";
 
-import actionsDownloadFile from "@featherds/icon/actions/DownloadFile";
+import actionContentPaste from "@featherds/icon/action/ContentPaste";
 
-import actionsEdit from "@featherds/icon/actions/Edit";
+import actionCycle from "@featherds/icon/action/Cycle";
 
-import actionsEndDate from "@featherds/icon/actions/EndDate";
+import actionDashboard from "@featherds/icon/action/Dashboard";
 
-import actionsExitToApp from "@featherds/icon/actions/ExitToApp";
+import actionDateRange from "@featherds/icon/action/DateRange";
 
-import actionsExpand from "@featherds/icon/actions/Expand";
+import actionDelete from "@featherds/icon/action/Delete";
 
-import actionsFilter from "@featherds/icon/actions/Filter";
+import actionDownloadFile from "@featherds/icon/action/DownloadFile";
 
-import actionsHelp from "@featherds/icon/actions/Help";
+import actionEdit from "@featherds/icon/action/Edit";
 
-import actionsHelpWebsite from "@featherds/icon/actions/HelpWebsite";
+import actionEditMode from "@featherds/icon/action/EditMode";
 
-import actionsIdCard from "@featherds/icon/actions/IdCard";
+import actionEmail from "@featherds/icon/action/Email";
 
-import actionsInfo from "@featherds/icon/actions/Info";
+import actionEmailDraft from "@featherds/icon/action/EmailDraft";
 
-import actionsLocation from "@featherds/icon/actions/Location";
+import actionEmailInbox from "@featherds/icon/action/EmailInbox";
 
-import actionsLock from "@featherds/icon/actions/Lock";
+import actionEmailSecure from "@featherds/icon/action/EmailSecure";
 
-import actionsOptions from "@featherds/icon/actions/Options";
+import actionExitToApp from "@featherds/icon/action/ExitToApp";
 
-import actionsPerson from "@featherds/icon/actions/Person";
+import actionExpand from "@featherds/icon/action/Expand";
 
-import actionsPin from "@featherds/icon/actions/Pin";
+import actionFeedback from "@featherds/icon/action/Feedback";
 
-import actionsPrint from "@featherds/icon/actions/Print";
+import actionFeedbackAlt from "@featherds/icon/action/FeedbackAlt";
 
-import actionsProfile from "@featherds/icon/actions/Profile";
+import actionFileCopy from "@featherds/icon/action/FileCopy";
 
-import actionsRemove from "@featherds/icon/actions/Remove";
+import actionFilterAlt from "@featherds/icon/action/FilterAlt";
 
-import actionsRestore from "@featherds/icon/actions/Restore";
+import actionHelp from "@featherds/icon/action/Help";
 
-import actionsReviewComplete from "@featherds/icon/actions/ReviewComplete";
+import actionHide from "@featherds/icon/action/Hide";
 
-import actionsReviewerS from "@featherds/icon/actions/ReviewerS";
+import actionHome from "@featherds/icon/action/Home";
 
-import actionsReviewReason from "@featherds/icon/actions/ReviewReason";
+import actionInfo from "@featherds/icon/action/Info";
 
-import actionsSchedule from "@featherds/icon/actions/Schedule";
+import actionInformationExchange from "@featherds/icon/action/InformationExchange";
 
-import actionsSearch from "@featherds/icon/actions/Search";
+import actionLightDarkMode from "@featherds/icon/action/LightDarkMode";
 
-import actionsSecurity from "@featherds/icon/actions/Security";
+import actionLink from "@featherds/icon/action/Link";
 
-import actionsSettings from "@featherds/icon/actions/Settings";
+import actionList from "@featherds/icon/action/List";
 
-import actionsSignOut from "@featherds/icon/actions/SignOut";
+import actionLocation from "@featherds/icon/action/Location";
 
-import actionsStartDate from "@featherds/icon/actions/StartDate";
+import actionLocationCity from "@featherds/icon/action/LocationCity";
 
-import actionsSubmissions from "@featherds/icon/actions/Submissions";
+import actionLock from "@featherds/icon/action/Lock";
 
-import actionsTrash from "@featherds/icon/actions/Trash";
+import actionLockPasswordProtected from "@featherds/icon/action/LockPasswordProtected";
 
-import actionsUnpinned from "@featherds/icon/actions/Unpinned";
+import actionLoggerConfigs from "@featherds/icon/action/LoggerConfigs";
 
-import actionsUploadFile from "@featherds/icon/actions/UploadFile";
+import actionLogIn from "@featherds/icon/action/LogIn";
 
-import actionsVerifedUser from "@featherds/icon/actions/VerifedUser";
+import actionLogOut from "@featherds/icon/action/LogOut";
 
-import actionsViewDetails from "@featherds/icon/actions/ViewDetails";
+import actionManageProfile from "@featherds/icon/action/ManageProfile";
 
-import actionsVisibility from "@featherds/icon/actions/Visibility";
+import actionMarkComplete from "@featherds/icon/action/MarkComplete";
 
-import actionsVisibilityOff from "@featherds/icon/actions/VisibilityOff";
+import actionMarkIncomplete from "@featherds/icon/action/MarkIncomplete";
+
+import actionMarkRead from "@featherds/icon/action/MarkRead";
+
+import actionMarkUnread from "@featherds/icon/action/MarkUnread";
+
+import actionNotifications from "@featherds/icon/action/Notifications";
+
+import actionOptions from "@featherds/icon/action/Options";
+
+import actionPerson from "@featherds/icon/action/Person";
+
+import actionPin from "@featherds/icon/action/Pin";
+
+import actionPlayCircle from "@featherds/icon/action/PlayCircle";
+
+import actionPrint from "@featherds/icon/action/Print";
+
+import actionRemove from "@featherds/icon/action/Remove";
+
+import actionRemoveUser from "@featherds/icon/action/RemoveUser";
+
+import actionReporting from "@featherds/icon/action/Reporting";
+
+import actionRestore from "@featherds/icon/action/Restore";
+
+import actionSearch from "@featherds/icon/action/Search";
+
+import actionSend from "@featherds/icon/action/Send";
+
+import actionSendWorkflow from "@featherds/icon/action/SendWorkflow";
+
+import actionSettings from "@featherds/icon/action/Settings";
+
+import actionShare from "@featherds/icon/action/Share";
+
+import actionSort from "@featherds/icon/action/Sort";
+
+import actionSubscriptions from "@featherds/icon/action/Subscriptions";
+
+import actionSupportCenter from "@featherds/icon/action/SupportCenter";
+
+import actionUnlock from "@featherds/icon/action/Unlock";
+
+import actionUpdateSchedules from "@featherds/icon/action/UpdateSchedules";
+
+import actionUpdateUtilities from "@featherds/icon/action/UpdateUtilities";
+
+import actionUploadFile from "@featherds/icon/action/UploadFile";
+
+import actionVerifedUser from "@featherds/icon/action/VerifedUser";
+
+import actionView from "@featherds/icon/action/View";
+
+import actionViewDetails from "@featherds/icon/action/ViewDetails";
+
+import actionWorkflow from "@featherds/icon/action/Workflow";
+
+import fileAttachment from "@featherds/icon/file/Attachment";
+
+import fileFolder from "@featherds/icon/file/Folder";
+
+import fileFolderAdd from "@featherds/icon/file/FolderAdd";
+
+import fileFolderLocked from "@featherds/icon/file/FolderLocked";
 
 import fileFolderOpen from "@featherds/icon/file/FolderOpen";
 
+import fileGeneric from "@featherds/icon/file/Generic";
+
+import fileImage from "@featherds/icon/file/Image";
+
+import filePdf from "@featherds/icon/file/Pdf";
+
+import fileText from "@featherds/icon/file/Text";
+
+import fileWordDoc from "@featherds/icon/file/WordDoc";
+
+import fileXls from "@featherds/icon/file/Xls";
+
+import fileZip from "@featherds/icon/file/Zip";
+
+import hardwareAppliances from "@featherds/icon/hardware/Appliances";
+
+import hardwareAppliancesAlt from "@featherds/icon/hardware/AppliancesAlt";
+
+import hardwareApplianceProfiles from "@featherds/icon/hardware/ApplianceProfiles";
+
 import hardwareDesktopWindows from "@featherds/icon/hardware/DesktopWindows";
+
+import hardwareInstances from "@featherds/icon/hardware/Instances";
 
 import hardwareKeyboardArrowDown from "@featherds/icon/hardware/KeyboardArrowDown";
 
+import hardwareKeyboardArrowUp from "@featherds/icon/hardware/KeyboardArrowUp";
+
+import hardwareLaptop from "@featherds/icon/hardware/Laptop";
+
+import hardwareMinionProfiles from "@featherds/icon/hardware/MinionProfiles";
+
+import hardwareNetwork from "@featherds/icon/hardware/Network";
+
+import hardwareNetworkProfiles from "@featherds/icon/hardware/NetworkProfiles";
+
+import hardwareRouter from "@featherds/icon/hardware/Router";
+
 import hardwareSecurity from "@featherds/icon/hardware/Security";
 
-import medicalAddTemp from "@featherds/icon/medical/AddTemp";
+import hardwareServer from "@featherds/icon/hardware/Server";
 
-import medicalDiagnosis from "@featherds/icon/medical/Diagnosis";
+import hardwareVirtualMachine from "@featherds/icon/hardware/VirtualMachine";
+
+import hardwareVirtualMachineAlt from "@featherds/icon/hardware/VirtualMachineAlt";
+
+import medicalAmbulance from "@featherds/icon/medical/Ambulance";
+
+import medicalCostSavings from "@featherds/icon/medical/CostSavings";
 
 import medicalDrug from "@featherds/icon/medical/Drug";
 
 import medicalDrugGroupId from "@featherds/icon/medical/DrugGroupId";
 
-import medicalJustificationQuestions from "@featherds/icon/medical/JustificationQuestions";
-
-import medicalLineOfBusiness from "@featherds/icon/medical/LineOfBusiness";
+import medicalHospital from "@featherds/icon/medical/Hospital";
 
 import medicalPatient from "@featherds/icon/medical/Patient";
 
-import medicalPayer from "@featherds/icon/medical/Payer";
+import medicalPayor from "@featherds/icon/medical/Payor";
 
 import medicalProvider from "@featherds/icon/medical/Provider";
 
-import medicalRegimen from "@featherds/icon/medical/Regimen";
-
-import medicalSiteOfService from "@featherds/icon/medical/SiteOfService";
+import medicalProviderOffice from "@featherds/icon/medical/ProviderOffice";
 
 import medicalTreatment from "@featherds/icon/medical/Treatment";
 
+import medicalTreatmentCycle from "@featherds/icon/medical/TreatmentCycle";
+
 import medicalTreatmentSchedule from "@featherds/icon/medical/TreatmentSchedule";
 
-import medicalTreatmentStatus from "@featherds/icon/medical/TreatmentStatus";
+import medicalVitals from "@featherds/icon/medical/Vitals";
 
-import medicalTreeChild from "@featherds/icon/medical/TreeChild";
+import navigationApps from "@featherds/icon/navigation/Apps";
 
-import medicalWorkflowStates from "@featherds/icon/medical/WorkflowStates";
+import navigationAppsGetMore from "@featherds/icon/navigation/AppsGetMore";
 
 import navigationArrowBack from "@featherds/icon/navigation/ArrowBack";
 
+import navigationArrowDropDown from "@featherds/icon/navigation/ArrowDropDown";
+
 import navigationCancel from "@featherds/icon/navigation/Cancel";
 
+import navigationChevronLeft from "@featherds/icon/navigation/ChevronLeft";
+
 import navigationChevronRight from "@featherds/icon/navigation/ChevronRight";
-
-import navigationClose from "@featherds/icon/navigation/Close";
-
-import navigationDownChevron from "@featherds/icon/navigation/DownChevron";
-
-import navigationDropDownArrow from "@featherds/icon/navigation/DropDownArrow";
 
 import navigationExpandLess from "@featherds/icon/navigation/ExpandLess";
 
@@ -212,160 +312,225 @@ import navigationFullscreen from "@featherds/icon/navigation/Fullscreen";
 
 import navigationFullscreenExit from "@featherds/icon/navigation/FullscreenExit";
 
+import navigationGridView from "@featherds/icon/navigation/GridView";
+
 import navigationLastPage from "@featherds/icon/navigation/LastPage";
 
-import navigationLeftChevron from "@featherds/icon/navigation/LeftChevron";
+import navigationMenu from "@featherds/icon/navigation/Menu";
+
+import navigationMenuClose from "@featherds/icon/navigation/MenuClose";
+
+import navigationMenuOpen from "@featherds/icon/navigation/MenuOpen";
 
 import navigationMoreHoriz from "@featherds/icon/navigation/MoreHoriz";
 
 import navigationMoreVert from "@featherds/icon/navigation/MoreVert";
 
-import navigationMoreVertical from "@featherds/icon/navigation/MoreVertical";
+import navigationRefresh from "@featherds/icon/navigation/Refresh";
 
-import navigationRightArrow from "@featherds/icon/navigation/RightArrow";
+import navigationSubdirectoryArrowLeft from "@featherds/icon/navigation/SubdirectoryArrowLeft";
 
-import navigationRightChevron from "@featherds/icon/navigation/RightChevron";
+import navigationSubdirectoryArrowRight from "@featherds/icon/navigation/SubdirectoryArrowRight";
 
-import navigationSearch from "@featherds/icon/navigation/Search";
+import navigationUnfoldLess from "@featherds/icon/navigation/UnfoldLess";
 
 import navigationUnfoldMore from "@featherds/icon/navigation/UnfoldMore";
 
-import navigationUpChevron from "@featherds/icon/navigation/UpChevron";
+import notificationConnected from "@featherds/icon/notification/Connected";
 
-import notificationsAlert from "@featherds/icon/notifications/Alert";
+import notificationError from "@featherds/icon/notification/Error";
 
-import notificationsErrorOutline from "@featherds/icon/notifications/ErrorOutline";
+import notificationUnconnected from "@featherds/icon/notification/Unconnected";
 
-import notificationsNotifications from "@featherds/icon/notifications/Notifications";
+import notificationWarning from "@featherds/icon/notification/Warning";
 
-import notificationsWarning from "@featherds/icon/notifications/Warning";
+import notificationWifi from "@featherds/icon/notification/Wifi";
 
-import statusAvailable from "@featherds/icon/status/Available";
+import notificationWifiNoConnection from "@featherds/icon/notification/WifiNoConnection";
 
-import statusUnavailable from "@featherds/icon/status/Unavailable";
+import notificationWifiOff from "@featherds/icon/notification/WifiOff";
+
+import notificationWifiSignalBad from "@featherds/icon/notification/WifiSignalBad";
+
+import notificationWifiStatusBar from "@featherds/icon/notification/WifiStatusBar";
 
 
 
 export default {
   data(){
     return {
-      featherIcons:[{ icon: alertError, key: "alertError" },
-        { icon: alertWarning, key: "alertWarning" },
-        { icon: communicationCall, key: "communicationCall" },
+      featherIcons:[{ icon: communicationCertificate, key: "communicationCertificate" },
+        { icon: communicationCertificateAlt, key: "communicationCertificateAlt" },
         { icon: communicationChat, key: "communicationChat" },
-        { icon: communicationEmail, key: "communicationEmail" },
-        { icon: communicationFax, key: "communicationFax" },
+        { icon: communicationContacts, key: "communicationContacts" },
+        { icon: communicationDocumentation, key: "communicationDocumentation" },
+        { icon: communicationIdCard, key: "communicationIdCard" },
         { icon: communicationPhone, key: "communicationPhone" },
-        { icon: actionsAccount, key: "actionsAccount" },
-        { icon: actionsAccountCircle, key: "actionsAccountCircle" },
-        { icon: actionsAdd, key: "actionsAdd" },
-        { icon: actionsAddComment, key: "actionsAddComment" },
-        { icon: actionsAddNote, key: "actionsAddNote" },
-        { icon: actionsApprovals, key: "actionsApprovals" },
-        { icon: actionsArchive, key: "actionsArchive" },
-        { icon: actionsAssignTo, key: "actionsAssignTo" },
-        { icon: actionsAttachment, key: "actionsAttachment" },
-        { icon: actionsBuild, key: "actionsBuild" },
-        { icon: actionsBusiness, key: "actionsBusiness" },
-        { icon: actionsCalendar, key: "actionsCalendar" },
-        { icon: actionsCancel, key: "actionsCancel" },
-        { icon: actionsChangeOwner, key: "actionsChangeOwner" },
-        { icon: actionsChangePassword, key: "actionsChangePassword" },
-        { icon: actionsCheckCircle, key: "actionsCheckCircle" },
-        { icon: actionsClock, key: "actionsClock" },
-        { icon: actionsCode, key: "actionsCode" },
-        { icon: actionsComment, key: "actionsComment" },
-        { icon: actionsContentCopy, key: "actionsContentCopy" },
-        { icon: actionsContentPaste, key: "actionsContentPaste" },
-        { icon: actionsCostSavings, key: "actionsCostSavings" },
-        { icon: actionsDelete, key: "actionsDelete" },
-        { icon: actionsDone, key: "actionsDone" },
-        { icon: actionsDoneCircle, key: "actionsDoneCircle" },
-        { icon: actionsDownload, key: "actionsDownload" },
-        { icon: actionsDownloadDocument, key: "actionsDownloadDocument" },
-        { icon: actionsDownloadFile, key: "actionsDownloadFile" },
-        { icon: actionsEdit, key: "actionsEdit" },
-        { icon: actionsEndDate, key: "actionsEndDate" },
-        { icon: actionsExitToApp, key: "actionsExitToApp" },
-        { icon: actionsExpand, key: "actionsExpand" },
-        { icon: actionsFilter, key: "actionsFilter" },
-        { icon: actionsHelp, key: "actionsHelp" },
-        { icon: actionsHelpWebsite, key: "actionsHelpWebsite" },
-        { icon: actionsIdCard, key: "actionsIdCard" },
-        { icon: actionsInfo, key: "actionsInfo" },
-        { icon: actionsLocation, key: "actionsLocation" },
-        { icon: actionsLock, key: "actionsLock" },
-        { icon: actionsOptions, key: "actionsOptions" },
-        { icon: actionsPerson, key: "actionsPerson" },
-        { icon: actionsPin, key: "actionsPin" },
-        { icon: actionsPrint, key: "actionsPrint" },
-        { icon: actionsProfile, key: "actionsProfile" },
-        { icon: actionsRemove, key: "actionsRemove" },
-        { icon: actionsRestore, key: "actionsRestore" },
-        { icon: actionsReviewComplete, key: "actionsReviewComplete" },
-        { icon: actionsReviewerS, key: "actionsReviewerS" },
-        { icon: actionsReviewReason, key: "actionsReviewReason" },
-        { icon: actionsSchedule, key: "actionsSchedule" },
-        { icon: actionsSearch, key: "actionsSearch" },
-        { icon: actionsSecurity, key: "actionsSecurity" },
-        { icon: actionsSettings, key: "actionsSettings" },
-        { icon: actionsSignOut, key: "actionsSignOut" },
-        { icon: actionsStartDate, key: "actionsStartDate" },
-        { icon: actionsSubmissions, key: "actionsSubmissions" },
-        { icon: actionsTrash, key: "actionsTrash" },
-        { icon: actionsUnpinned, key: "actionsUnpinned" },
-        { icon: actionsUploadFile, key: "actionsUploadFile" },
-        { icon: actionsVerifedUser, key: "actionsVerifedUser" },
-        { icon: actionsViewDetails, key: "actionsViewDetails" },
-        { icon: actionsVisibility, key: "actionsVisibility" },
-        { icon: actionsVisibilityOff, key: "actionsVisibilityOff" },
+        { icon: contentBlogArticle, key: "contentBlogArticle" },
+        { icon: contentVideo, key: "contentVideo" },
+        { icon: actionAccountCircle, key: "actionAccountCircle" },
+        { icon: actionAdd, key: "actionAdd" },
+        { icon: actionAddCircleAlt, key: "actionAddCircleAlt" },
+        { icon: actionAddComment, key: "actionAddComment" },
+        { icon: actionAddNote, key: "actionAddNote" },
+        { icon: actionAddUser, key: "actionAddUser" },
+        { icon: actionArchive, key: "actionArchive" },
+        { icon: actionAssignTo, key: "actionAssignTo" },
+        { icon: actionAttachEmail, key: "actionAttachEmail" },
+        { icon: actionAttachFile, key: "actionAttachFile" },
+        { icon: actionBuild, key: "actionBuild" },
+        { icon: actionBusiness, key: "actionBusiness" },
+        { icon: actionCalendar, key: "actionCalendar" },
+        { icon: actionCalendarEndDate, key: "actionCalendarEndDate" },
+        { icon: actionCalendarStartDate, key: "actionCalendarStartDate" },
+        { icon: actionCancel, key: "actionCancel" },
+        { icon: actionChangeOwner, key: "actionChangeOwner" },
+        { icon: actionCheckCircle, key: "actionCheckCircle" },
+        { icon: actionCloud, key: "actionCloud" },
+        { icon: actionCloudDownload, key: "actionCloudDownload" },
+        { icon: actionCloudUpload, key: "actionCloudUpload" },
+        { icon: actionCode, key: "actionCode" },
+        { icon: actionComment, key: "actionComment" },
+        { icon: actionContactSupport, key: "actionContactSupport" },
+        { icon: actionContentCopy, key: "actionContentCopy" },
+        { icon: actionContentPaste, key: "actionContentPaste" },
+        { icon: actionCycle, key: "actionCycle" },
+        { icon: actionDashboard, key: "actionDashboard" },
+        { icon: actionDateRange, key: "actionDateRange" },
+        { icon: actionDelete, key: "actionDelete" },
+        { icon: actionDownloadFile, key: "actionDownloadFile" },
+        { icon: actionEdit, key: "actionEdit" },
+        { icon: actionEditMode, key: "actionEditMode" },
+        { icon: actionEmail, key: "actionEmail" },
+        { icon: actionEmailDraft, key: "actionEmailDraft" },
+        { icon: actionEmailInbox, key: "actionEmailInbox" },
+        { icon: actionEmailSecure, key: "actionEmailSecure" },
+        { icon: actionExitToApp, key: "actionExitToApp" },
+        { icon: actionExpand, key: "actionExpand" },
+        { icon: actionFeedback, key: "actionFeedback" },
+        { icon: actionFeedbackAlt, key: "actionFeedbackAlt" },
+        { icon: actionFileCopy, key: "actionFileCopy" },
+        { icon: actionFilterAlt, key: "actionFilterAlt" },
+        { icon: actionHelp, key: "actionHelp" },
+        { icon: actionHide, key: "actionHide" },
+        { icon: actionHome, key: "actionHome" },
+        { icon: actionInfo, key: "actionInfo" },
+        { icon: actionInformationExchange, key: "actionInformationExchange" },
+        { icon: actionLightDarkMode, key: "actionLightDarkMode" },
+        { icon: actionLink, key: "actionLink" },
+        { icon: actionList, key: "actionList" },
+        { icon: actionLocation, key: "actionLocation" },
+        { icon: actionLocationCity, key: "actionLocationCity" },
+        { icon: actionLock, key: "actionLock" },
+        { icon: actionLockPasswordProtected, key: "actionLockPasswordProtected" },
+        { icon: actionLoggerConfigs, key: "actionLoggerConfigs" },
+        { icon: actionLogIn, key: "actionLogIn" },
+        { icon: actionLogOut, key: "actionLogOut" },
+        { icon: actionManageProfile, key: "actionManageProfile" },
+        { icon: actionMarkComplete, key: "actionMarkComplete" },
+        { icon: actionMarkIncomplete, key: "actionMarkIncomplete" },
+        { icon: actionMarkRead, key: "actionMarkRead" },
+        { icon: actionMarkUnread, key: "actionMarkUnread" },
+        { icon: actionNotifications, key: "actionNotifications" },
+        { icon: actionOptions, key: "actionOptions" },
+        { icon: actionPerson, key: "actionPerson" },
+        { icon: actionPin, key: "actionPin" },
+        { icon: actionPlayCircle, key: "actionPlayCircle" },
+        { icon: actionPrint, key: "actionPrint" },
+        { icon: actionRemove, key: "actionRemove" },
+        { icon: actionRemoveUser, key: "actionRemoveUser" },
+        { icon: actionReporting, key: "actionReporting" },
+        { icon: actionRestore, key: "actionRestore" },
+        { icon: actionSearch, key: "actionSearch" },
+        { icon: actionSend, key: "actionSend" },
+        { icon: actionSendWorkflow, key: "actionSendWorkflow" },
+        { icon: actionSettings, key: "actionSettings" },
+        { icon: actionShare, key: "actionShare" },
+        { icon: actionSort, key: "actionSort" },
+        { icon: actionSubscriptions, key: "actionSubscriptions" },
+        { icon: actionSupportCenter, key: "actionSupportCenter" },
+        { icon: actionUnlock, key: "actionUnlock" },
+        { icon: actionUpdateSchedules, key: "actionUpdateSchedules" },
+        { icon: actionUpdateUtilities, key: "actionUpdateUtilities" },
+        { icon: actionUploadFile, key: "actionUploadFile" },
+        { icon: actionVerifedUser, key: "actionVerifedUser" },
+        { icon: actionView, key: "actionView" },
+        { icon: actionViewDetails, key: "actionViewDetails" },
+        { icon: actionWorkflow, key: "actionWorkflow" },
+        { icon: fileAttachment, key: "fileAttachment" },
+        { icon: fileFolder, key: "fileFolder" },
+        { icon: fileFolderAdd, key: "fileFolderAdd" },
+        { icon: fileFolderLocked, key: "fileFolderLocked" },
         { icon: fileFolderOpen, key: "fileFolderOpen" },
+        { icon: fileGeneric, key: "fileGeneric" },
+        { icon: fileImage, key: "fileImage" },
+        { icon: filePdf, key: "filePdf" },
+        { icon: fileText, key: "fileText" },
+        { icon: fileWordDoc, key: "fileWordDoc" },
+        { icon: fileXls, key: "fileXls" },
+        { icon: fileZip, key: "fileZip" },
+        { icon: hardwareAppliances, key: "hardwareAppliances" },
+        { icon: hardwareAppliancesAlt, key: "hardwareAppliancesAlt" },
+        { icon: hardwareApplianceProfiles, key: "hardwareApplianceProfiles" },
         { icon: hardwareDesktopWindows, key: "hardwareDesktopWindows" },
+        { icon: hardwareInstances, key: "hardwareInstances" },
         { icon: hardwareKeyboardArrowDown, key: "hardwareKeyboardArrowDown" },
+        { icon: hardwareKeyboardArrowUp, key: "hardwareKeyboardArrowUp" },
+        { icon: hardwareLaptop, key: "hardwareLaptop" },
+        { icon: hardwareMinionProfiles, key: "hardwareMinionProfiles" },
+        { icon: hardwareNetwork, key: "hardwareNetwork" },
+        { icon: hardwareNetworkProfiles, key: "hardwareNetworkProfiles" },
+        { icon: hardwareRouter, key: "hardwareRouter" },
         { icon: hardwareSecurity, key: "hardwareSecurity" },
-        { icon: medicalAddTemp, key: "medicalAddTemp" },
-        { icon: medicalDiagnosis, key: "medicalDiagnosis" },
+        { icon: hardwareServer, key: "hardwareServer" },
+        { icon: hardwareVirtualMachine, key: "hardwareVirtualMachine" },
+        { icon: hardwareVirtualMachineAlt, key: "hardwareVirtualMachineAlt" },
+        { icon: medicalAmbulance, key: "medicalAmbulance" },
+        { icon: medicalCostSavings, key: "medicalCostSavings" },
         { icon: medicalDrug, key: "medicalDrug" },
         { icon: medicalDrugGroupId, key: "medicalDrugGroupId" },
-        { icon: medicalJustificationQuestions, key: "medicalJustificationQuestions" },
-        { icon: medicalLineOfBusiness, key: "medicalLineOfBusiness" },
+        { icon: medicalHospital, key: "medicalHospital" },
         { icon: medicalPatient, key: "medicalPatient" },
-        { icon: medicalPayer, key: "medicalPayer" },
+        { icon: medicalPayor, key: "medicalPayor" },
         { icon: medicalProvider, key: "medicalProvider" },
-        { icon: medicalRegimen, key: "medicalRegimen" },
-        { icon: medicalSiteOfService, key: "medicalSiteOfService" },
+        { icon: medicalProviderOffice, key: "medicalProviderOffice" },
         { icon: medicalTreatment, key: "medicalTreatment" },
+        { icon: medicalTreatmentCycle, key: "medicalTreatmentCycle" },
         { icon: medicalTreatmentSchedule, key: "medicalTreatmentSchedule" },
-        { icon: medicalTreatmentStatus, key: "medicalTreatmentStatus" },
-        { icon: medicalTreeChild, key: "medicalTreeChild" },
-        { icon: medicalWorkflowStates, key: "medicalWorkflowStates" },
+        { icon: medicalVitals, key: "medicalVitals" },
+        { icon: navigationApps, key: "navigationApps" },
+        { icon: navigationAppsGetMore, key: "navigationAppsGetMore" },
         { icon: navigationArrowBack, key: "navigationArrowBack" },
+        { icon: navigationArrowDropDown, key: "navigationArrowDropDown" },
         { icon: navigationCancel, key: "navigationCancel" },
+        { icon: navigationChevronLeft, key: "navigationChevronLeft" },
         { icon: navigationChevronRight, key: "navigationChevronRight" },
-        { icon: navigationClose, key: "navigationClose" },
-        { icon: navigationDownChevron, key: "navigationDownChevron" },
-        { icon: navigationDropDownArrow, key: "navigationDropDownArrow" },
         { icon: navigationExpandLess, key: "navigationExpandLess" },
         { icon: navigationExpandMore, key: "navigationExpandMore" },
         { icon: navigationFirstPage, key: "navigationFirstPage" },
         { icon: navigationFullscreen, key: "navigationFullscreen" },
         { icon: navigationFullscreenExit, key: "navigationFullscreenExit" },
+        { icon: navigationGridView, key: "navigationGridView" },
         { icon: navigationLastPage, key: "navigationLastPage" },
-        { icon: navigationLeftChevron, key: "navigationLeftChevron" },
+        { icon: navigationMenu, key: "navigationMenu" },
+        { icon: navigationMenuClose, key: "navigationMenuClose" },
+        { icon: navigationMenuOpen, key: "navigationMenuOpen" },
         { icon: navigationMoreHoriz, key: "navigationMoreHoriz" },
         { icon: navigationMoreVert, key: "navigationMoreVert" },
-        { icon: navigationMoreVertical, key: "navigationMoreVertical" },
-        { icon: navigationRightArrow, key: "navigationRightArrow" },
-        { icon: navigationRightChevron, key: "navigationRightChevron" },
-        { icon: navigationSearch, key: "navigationSearch" },
+        { icon: navigationRefresh, key: "navigationRefresh" },
+        { icon: navigationSubdirectoryArrowLeft, key: "navigationSubdirectoryArrowLeft" },
+        { icon: navigationSubdirectoryArrowRight, key: "navigationSubdirectoryArrowRight" },
+        { icon: navigationUnfoldLess, key: "navigationUnfoldLess" },
         { icon: navigationUnfoldMore, key: "navigationUnfoldMore" },
-        { icon: navigationUpChevron, key: "navigationUpChevron" },
-        { icon: notificationsAlert, key: "notificationsAlert" },
-        { icon: notificationsErrorOutline, key: "notificationsErrorOutline" },
-        { icon: notificationsNotifications, key: "notificationsNotifications" },
-        { icon: notificationsWarning, key: "notificationsWarning" },
-        { icon: statusAvailable, key: "statusAvailable" },
-        { icon: statusUnavailable, key: "statusUnavailable" }]
+        { icon: notificationConnected, key: "notificationConnected" },
+        { icon: notificationError, key: "notificationError" },
+        { icon: notificationUnconnected, key: "notificationUnconnected" },
+        { icon: notificationWarning, key: "notificationWarning" },
+        { icon: notificationWifi, key: "notificationWifi" },
+        { icon: notificationWifiNoConnection, key: "notificationWifiNoConnection" },
+        { icon: notificationWifiOff, key: "notificationWifiOff" },
+        { icon: notificationWifiSignalBad, key: "notificationWifiSignalBad" },
+        { icon: notificationWifiStatusBar, key: "notificationWifiStatusBar" }]
     };
   },
   components: {

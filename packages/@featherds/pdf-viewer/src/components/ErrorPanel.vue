@@ -45,7 +45,7 @@
 import { FeatherButton } from "@featherds/button";
 import { FeatherIcon } from "@featherds/icon";
 
-import icon from "@featherds/icon/actions/DownloadDocument";
+import icon from "@featherds/icon/action/DownloadFile";
 
 export default {
   props: {

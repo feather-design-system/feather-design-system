@@ -85,8 +85,8 @@ import { KEYCODES } from "@featherds/utils/keys";
 import { FeatherButton } from "@featherds/button";
 import { FeatherSelect } from "@featherds/select";
 import { FeatherIcon } from "@featherds/icon";
-import prevIcon from "@featherds/icon/navigation/LeftChevron";
-import nextIcon from "@featherds/icon/navigation/RightChevron";
+import prevIcon from "@featherds/icon/navigation/ChevronLeft";
+import nextIcon from "@featherds/icon/navigation/ChevronRight";
 import utils from "./DateUtils";
 import { markRaw } from "vue";
 export default {

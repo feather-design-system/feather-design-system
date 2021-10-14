@@ -8,11 +8,9 @@ var _export_sfc = (sfc, props) => {
 const _sfc_main = {};
 const _hoisted_1 = {
   xmlns: "http://www.w3.org/2000/svg",
-  width: "24",
-  height: "24",
   viewBox: "0 0 24 24"
 };
-const _hoisted_2 = /* @__PURE__ */ createElementVNode("path", { d: "M13.4,3.64,4,13a4.95,4.95,0,0,0,7,7l4-4h0l1.42-1.42h0l4-4a4.95,4.95,0,0,0-7-7Zm-3.79,15a3,3,0,0,1-4.18-4.18l4-4,4.17,4.17ZM19,9.23l-4,4L10.83,9l4-4A3,3,0,0,1,19,9.23Z" }, null, -1);
+const _hoisted_2 = /* @__PURE__ */ createElementVNode("path", { d: "M19.57,4.43a4.85,4.85,0,0,0-6.88,0L4.43,12.69a4.86,4.86,0,1,0,6.88,6.88l8.26-8.26A4.85,4.85,0,0,0,19.57,4.43ZM9.9,18.16A2.87,2.87,0,0,1,5.84,14.1l3.42-3.42,4.06,4.06ZM18.16,9.9l-3.42,3.42L10.68,9.26,14.1,5.84A2.87,2.87,0,0,1,18.16,9.9Z" }, null, -1);
 const _hoisted_3 = [
   _hoisted_2
 ];

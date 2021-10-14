@@ -25,7 +25,7 @@
 <script>
 import { FeatherRipple } from "@featherds/ripple";
 import { FeatherIcon } from "@featherds/icon";
-import icon from "@featherds/icon/navigation/LeftChevron";
+import icon from "@featherds/icon/navigation/ChevronLeft";
 import { getSafeId } from "@featherds/utils/id";
 import { markRaw } from "vue";
 

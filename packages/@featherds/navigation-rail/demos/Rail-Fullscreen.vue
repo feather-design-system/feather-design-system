@@ -52,8 +52,8 @@
 <script>
 import * as components from "./../src";
 import { FeatherAppBar, FeatherAppBarLink } from "@featherds/app-bar";
-import App from "@featherds/icon/medical/LineOfBusiness";
-import Account from "@featherds/icon/actions/Account";
+import App from "@featherds/icon/medical/Hospital";
+import Account from "@featherds/icon/action/AccountCircle";
 import { FeatherIcon } from "@featherds/icon";
 import { markRaw } from "vue";
 

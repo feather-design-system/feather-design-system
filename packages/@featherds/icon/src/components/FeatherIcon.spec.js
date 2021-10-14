@@ -1,7 +1,7 @@
 import axe from "@featherds/utils/test/axe";
 import FeatherIcon from "./FeatherIcon.vue";
 import { mount } from "@vue/test-utils";
-import Add from "@featherds/icon/actions/Add";
+import Add from "@featherds/icon/action/Add";
 import { markRaw } from "vue";
 
 describe("Feather Icon", () => {

@@ -53,7 +53,7 @@
 <script>
 import { FeatherIcon } from "@featherds/icon";
 import { FeatherSpinner } from "@featherds/progress";
-import DownArrow from "@featherds/icon/navigation/DownChevron";
+import DownArrow from "@featherds/icon/navigation/ExpandMore";
 import { getSafeId } from "@featherds/utils/id";
 import { markRaw } from "vue";
 

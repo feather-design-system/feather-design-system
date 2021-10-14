@@ -37,7 +37,7 @@
 import * as components from "../src";
 import { FeatherButton } from "@featherds/button";
 import { FeatherIcon } from "@featherds/icon";
-import Warning from "@featherds/icon/alert/Warning";
+import Warning from "@featherds/icon/notification/Warning";
 import { markRaw } from "vue";
 
 export default {

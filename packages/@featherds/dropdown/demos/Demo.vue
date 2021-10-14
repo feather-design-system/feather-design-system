@@ -69,9 +69,9 @@
 import { FeatherButton } from "@featherds/button";
 import { FeatherCheckbox } from "@featherds/checkbox";
 import { FeatherIcon } from "@featherds/icon";
-import SearchIcon from "@featherds/icon/actions/Search";
-import EditIcon from "@featherds/icon/actions/Download";
-import FilterIcon from "@featherds/icon/actions/Filter";
+import SearchIcon from "@featherds/icon/action/Search";
+import EditIcon from "@featherds/icon/action/DownloadFile";
+import FilterIcon from "@featherds/icon/action/FilterAlt";
 import MenuIcon from "@featherds/icon/navigation/MoreHoriz";
 import * as components from "../src";
 import { markRaw } from "vue";
