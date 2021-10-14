@@ -54,7 +54,7 @@ module.exports = {
         indexName: "feather_design",
         locales: {
           "/": {
-            placeholder: "Search",
+            placeholder: "Search Feather ...  ",
           },
         },
       },
