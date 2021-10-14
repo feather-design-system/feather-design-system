@@ -19,7 +19,7 @@
 </template>
 <script>
 import * as components from "./../src";
-import Support from "@featherds/icon/actions/Help";
+import Support from "@featherds/icon/action/Help";
 export default {
   data() {
     return {

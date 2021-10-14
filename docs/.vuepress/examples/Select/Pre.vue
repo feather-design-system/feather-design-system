@@ -17,7 +17,7 @@
 import states from "./states";
 import { FeatherSelect } from "@featherds/select";
 import { FeatherIcon } from "@featherds/icon";
-import Place from "@featherds/icon/actions/Location";
+import Place from "@featherds/icon/action/Location";
 import { markRaw } from "vue";
 export default {
   data() {

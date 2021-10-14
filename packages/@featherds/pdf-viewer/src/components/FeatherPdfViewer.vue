@@ -91,8 +91,8 @@ import { FocusTrap } from "@featherds/dialog";
 import { FeatherSpinner } from "@featherds/progress";
 import { FeatherButton } from "@featherds/button";
 import { FeatherIcon } from "@featherds/icon";
-import CloseIcon from "@featherds/icon/navigation/LeftChevron";
-import DownloadIcon from "@featherds/icon/actions/DownloadDocument";
+import CloseIcon from "@featherds/icon/navigation/ChevronLeft";
+import DownloadIcon from "@featherds/icon/action/DownloadFile";
 import { useCloseOnEsc } from "@featherds/composables/modal/CloseOnEsc";
 import { useRestoreFocus } from "@featherds/composables/modal/RestoreFocus";
 import { useHideBodyOverflow } from "@featherds/composables/modal/HideOverflow";
@@ -387,8 +387,8 @@ export default {
   padding-top: 48px;
 }
 .file-error {
-  height:auto;
-  min-height:100%;
+  height: auto;
+  min-height: 100%;
   display: flex;
   align-items: center;
   justify-content: center;

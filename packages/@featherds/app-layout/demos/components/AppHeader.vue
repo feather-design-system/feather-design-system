@@ -11,7 +11,7 @@
 </template>
 <script>
 import * as components from "@featherds/app-bar";
-import Support from "@featherds/icon/actions/Help";
+import Support from "@featherds/icon/action/Help";
 export default {
   props: {
     full: {

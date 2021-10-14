@@ -22,8 +22,8 @@ import { FeatherIcon } from "@featherds/icon";
 import { markRaw } from "vue";
 
 import MenuIcon from "@featherds/icon/navigation/MoreHoriz";
-import SearchIcon from "@featherds/icon/actions/Search";
-import EditIcon from "@featherds/icon/actions/Download";
+import SearchIcon from "@featherds/icon/action/Search";
+import EditIcon from "@featherds/icon/action/DownloadFile";
 export default {
   data() {
     return {

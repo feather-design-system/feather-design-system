@@ -3,7 +3,7 @@
 </template>
 <script>
 import { FeatherIcon } from "@featherds/icon";
-import Error from "@featherds/icon/notifications/ErrorOutline";
+import Error from "@featherds/icon/notification/Warning";
 import { markRaw } from "vue";
 export default {
   computed: {

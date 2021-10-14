@@ -9,7 +9,7 @@
   </a>
 </template>
 <script>
-import DateIcon from "@featherds/icon/actions/StartDate";
+import DateIcon from "@featherds/icon/action/CalendarStartDate";
 import { FeatherIcon } from "@featherds/icon";
 import { markRaw } from "vue";
 export default {

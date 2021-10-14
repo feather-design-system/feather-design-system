@@ -68,7 +68,7 @@ import {
 } from "@featherds/app-bar";
 import { FeatherListHeader, FeatherListItem } from "@featherds/list";
 import { FeatherIcon } from "@featherds/icon";
-import KeyboardArrowDown from "@featherds/icon/navigation/DownChevron";
+import KeyboardArrowDown from "@featherds/icon/navigation/ExpandMore";
 import { FeatherMegaMenu } from "@featherds/megamenu";
 import { markRaw } from "vue";
 export default {

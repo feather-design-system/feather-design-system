@@ -36,7 +36,7 @@
   </div>
 </template>
 <script>
-import map from "@featherds/icon/actions/Location";
+import map from "@featherds/icon/action/Location";
 import { FeatherIcon } from "@featherds/icon";
 import * as components from "@featherds/chips";
 export default {

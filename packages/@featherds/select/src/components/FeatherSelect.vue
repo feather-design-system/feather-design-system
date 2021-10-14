@@ -61,7 +61,7 @@ import {
   InputInheritAttrsMixin,
 } from "@featherds/input-helper";
 import { FeatherIcon } from "@featherds/icon";
-import KeyboardArrowDown from "@featherds/icon/navigation/DownChevron";
+import KeyboardArrowDown from "@featherds/icon/navigation/ExpandMore";
 import { FeatherMenu } from "@featherds/menu";
 import { getSafeId } from "@featherds/utils/id";
 import { KEYCODES } from "@featherds/utils/keys";

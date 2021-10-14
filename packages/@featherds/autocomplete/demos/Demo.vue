@@ -17,7 +17,7 @@
 </template>
 <script>
 import * as components from "./../src";
-import icon from "@featherds/icon/notifications/ErrorOutline";
+import icon from "@featherds/icon/notification/Warning";
 const names = [
   "Liam",
   "Emma",

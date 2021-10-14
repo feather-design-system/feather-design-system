@@ -31,14 +31,12 @@ exports[`FeatherExpansionPanel.vue should have correct HTML structure 1`] = `
         class="feather-expansion-header-button-icon feather-icon feather-expansion-header-button-icon"
         data-v-0aa06a12=""
         focusable="false"
-        height="24"
         role="img"
         viewBox="0 0 24 24"
-        width="24"
         xmlns="http://www.w3.org/2000/svg"
       >
         <path
-          d="M6.71,9.29a1,1,0,0,0,0,1.41l4.59,4.59a1,1,0,0,0,1.41,0L17.3,10.7a1,1,0,0,0-1.41-1.41L12,13.17,8.12,9.29A1,1,0,0,0,6.71,9.29Z"
+          d="M6.7,9.29a1,1,0,0,0,0,1.41L12,16l5.3-5.3a1,1,0,0,0-1.41-1.41L12,13.17,8.11,9.29A1,1,0,0,0,6.7,9.29Z"
         />
       </svg>
     </a>
@@ -80,14 +78,12 @@ exports[`FeatherExpansionPanel.vue should not toggle expanded when disabled 1`] 
         class="feather-expansion-header-button-icon disabled feather-icon feather-expansion-header-button-icon disabled"
         data-v-0aa06a12=""
         focusable="false"
-        height="24"
         role="img"
         viewBox="0 0 24 24"
-        width="24"
         xmlns="http://www.w3.org/2000/svg"
       >
         <path
-          d="M6.71,9.29a1,1,0,0,0,0,1.41l4.59,4.59a1,1,0,0,0,1.41,0L17.3,10.7a1,1,0,0,0-1.41-1.41L12,13.17,8.12,9.29A1,1,0,0,0,6.71,9.29Z"
+          d="M6.7,9.29a1,1,0,0,0,0,1.41L12,16l5.3-5.3a1,1,0,0,0-1.41-1.41L12,13.17,8.11,9.29A1,1,0,0,0,6.7,9.29Z"
         />
       </svg>
     </a>
@@ -129,14 +125,12 @@ exports[`FeatherExpansionPanel.vue should render loading 1`] = `
         class="feather-expansion-header-button-icon rotated feather-icon feather-expansion-header-button-icon rotated"
         data-v-0aa06a12=""
         focusable="false"
-        height="24"
         role="img"
         viewBox="0 0 24 24"
-        width="24"
         xmlns="http://www.w3.org/2000/svg"
       >
         <path
-          d="M6.71,9.29a1,1,0,0,0,0,1.41l4.59,4.59a1,1,0,0,0,1.41,0L17.3,10.7a1,1,0,0,0-1.41-1.41L12,13.17,8.12,9.29A1,1,0,0,0,6.71,9.29Z"
+          d="M6.7,9.29a1,1,0,0,0,0,1.41L12,16l5.3-5.3a1,1,0,0,0-1.41-1.41L12,13.17,8.11,9.29A1,1,0,0,0,6.7,9.29Z"
         />
       </svg>
     </a>

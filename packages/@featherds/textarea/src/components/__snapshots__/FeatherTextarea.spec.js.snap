@@ -369,14 +369,12 @@ exports[`FeatherTextarea.vue should render a clear icon when clear has a value a
             data-v-0aa06a12=""
             data-v-12cb8e54=""
             focusable="false"
-            height="24"
             role="img"
             viewBox="0 0 24 24"
-            width="24"
             xmlns="http://www.w3.org/2000/svg"
           >
             <path
-              d="M12,2A10,10,0,1,0,22,12,10,10,0,0,0,12,2Zm5,13.24A1.26,1.26,0,0,1,17,17a1.24,1.24,0,0,1-1.76,0L12,13.73,8.76,17A1.24,1.24,0,1,1,7,15.24L10.24,12,7,8.76A1.24,1.24,0,0,1,8.76,7L12,10.2,15.24,7A1.24,1.24,0,1,1,17,8.76L13.76,12Z"
+              d="M19,17.55,13.43,12,19,6.4A1,1,0,1,0,17.58,5L12,10.58,6.42,5A1,1,0,0,0,5,6.42L10.6,12,5,17.6A1,1,0,0,0,5,19a1,1,0,0,0,.71.29,1,1,0,0,0,.71-.3L12,13.41,17.6,19a1,1,0,0,0,.71.29A1,1,0,0,0,19,19,1,1,0,0,0,19,17.55Z"
             />
           </svg>
         </a>
@@ -540,17 +538,29 @@ exports[`FeatherTextarea.vue should render an textarea error 1`] = `
           aria-hidden="true"
           class="error-icon hide-when-disabled feather-icon error-icon hide-when-disabled"
           data-v-0aa06a12=""
+          data-v-329cf64a=""
           data-v-47a74f22=""
-          data-v-4f84c6fe=""
           focusable="false"
-          height="24"
           role="img"
           viewBox="0 0 24 24"
-          width="24"
           xmlns="http://www.w3.org/2000/svg"
         >
           <path
-            d="M11,15h2v2H11Zm0-8h2v6H11Zm1-5A10,10,0,1,0,22,12,10,10,0,0,0,12,2Zm0,18a8,8,0,1,1,8-8A8,8,0,0,1,12,20Z"
+            d="M12,2A10,10,0,1,0,22,12,10,10,0,0,0,12,2Zm0,18a8,8,0,1,1,8-8A8,8,0,0,1,12,20Z"
+          />
+          <rect
+            height="7"
+            rx="1"
+            width="2"
+            x="11"
+            y="7"
+          />
+          <rect
+            height="2"
+            rx="0.65"
+            width="2"
+            x="11"
+            y="15"
           />
         </svg>
         
@@ -638,17 +648,29 @@ exports[`FeatherTextarea.vue should render an textarea error and has a value 1`]
           aria-hidden="true"
           class="error-icon hide-when-disabled feather-icon error-icon hide-when-disabled"
           data-v-0aa06a12=""
+          data-v-329cf64a=""
           data-v-47a74f22=""
-          data-v-4f84c6fe=""
           focusable="false"
-          height="24"
           role="img"
           viewBox="0 0 24 24"
-          width="24"
           xmlns="http://www.w3.org/2000/svg"
         >
           <path
-            d="M11,15h2v2H11Zm0-8h2v6H11Zm1-5A10,10,0,1,0,22,12,10,10,0,0,0,12,2Zm0,18a8,8,0,1,1,8-8A8,8,0,0,1,12,20Z"
+            d="M12,2A10,10,0,1,0,22,12,10,10,0,0,0,12,2Zm0,18a8,8,0,1,1,8-8A8,8,0,0,1,12,20Z"
+          />
+          <rect
+            height="7"
+            rx="1"
+            width="2"
+            x="11"
+            y="7"
+          />
+          <rect
+            height="2"
+            rx="0.65"
+            width="2"
+            x="11"
+            y="15"
           />
         </svg>
         
@@ -736,17 +758,29 @@ exports[`FeatherTextarea.vue should render an textarea error and has focus 1`] =
           aria-hidden="true"
           class="error-icon hide-when-disabled feather-icon error-icon hide-when-disabled"
           data-v-0aa06a12=""
+          data-v-329cf64a=""
           data-v-47a74f22=""
-          data-v-4f84c6fe=""
           focusable="false"
-          height="24"
           role="img"
           viewBox="0 0 24 24"
-          width="24"
           xmlns="http://www.w3.org/2000/svg"
         >
           <path
-            d="M11,15h2v2H11Zm0-8h2v6H11Zm1-5A10,10,0,1,0,22,12,10,10,0,0,0,12,2Zm0,18a8,8,0,1,1,8-8A8,8,0,0,1,12,20Z"
+            d="M12,2A10,10,0,1,0,22,12,10,10,0,0,0,12,2Zm0,18a8,8,0,1,1,8-8A8,8,0,0,1,12,20Z"
+          />
+          <rect
+            height="7"
+            rx="1"
+            width="2"
+            x="11"
+            y="7"
+          />
+          <rect
+            height="2"
+            rx="0.65"
+            width="2"
+            x="11"
+            y="15"
           />
         </svg>
         

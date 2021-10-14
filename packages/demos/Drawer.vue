@@ -191,12 +191,12 @@
 <script>
 import * as components from "@featherds/drawer";
 import { FeatherIcon } from "@featherds/icon";
-import AccountCircle from "@featherds/icon/actions/AccountCircle";
-import Notifications from "@featherds/icon/notifications/Notifications";
-import Settings from "@featherds/icon/actions/Settings";
-import Support from "@featherds/icon/actions/Help";
-import Lock from "@featherds/icon/actions/Lock";
-import ExitToApp from "@featherds/icon/actions/ExitToApp";
+import AccountCircle from "@featherds/icon/action/AccountCircle";
+import Notifications from "@featherds/icon/action/Notifications";
+import Settings from "@featherds/icon/action/Settings";
+import Support from "@featherds/icon/action/Help";
+import Lock from "@featherds/icon/action/Lock";
+import ExitToApp from "@featherds/icon/action/ExitToApp";
 import * as listComponents from "@featherds/list";
 import { markRaw } from "vue";
 

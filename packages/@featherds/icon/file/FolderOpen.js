@@ -7,10 +7,7 @@ var _export_sfc = (sfc, props) => {
 };
 const _sfc_main = {};
 const _hoisted_1 = {
-  id: "Icons",
   xmlns: "http://www.w3.org/2000/svg",
-  width: "24",
-  height: "24",
   viewBox: "0 0 24 24"
 };
 const _hoisted_2 = /* @__PURE__ */ createElementVNode("path", { d: "M20,6H12a2,2,0,0,0-2-2H4A2,2,0,0,0,2,6V18a2,2,0,0,0,2,2H20a2,2,0,0,0,2-2V8A2,2,0,0,0,20,6Zm0,12H4V8H20Z" }, null, -1);

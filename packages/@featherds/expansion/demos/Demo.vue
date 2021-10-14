@@ -86,7 +86,7 @@
 import * as components from "./../src";
 import { FeatherIcon } from "@featherds/icon";
 import { FeatherButton } from "@featherds/button";
-import Icon from "@featherds/icon/navigation/RightChevron";
+import Icon from "@featherds/icon/navigation/ChevronRight";
 import { markRaw } from "vue";
 export default {
   data() {

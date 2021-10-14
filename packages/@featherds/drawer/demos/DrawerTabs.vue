@@ -138,7 +138,7 @@
 <script>
 import * as components from "../src";
 import { FeatherIcon } from "@featherds/icon";
-import Support from "@featherds/icon/actions/Help";
+import Support from "@featherds/icon/action/Help";
 import * as listComponents from "@featherds/list";
 
 export default {
