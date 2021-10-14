@@ -3,12 +3,13 @@
     class="focus autocomplete-chip"
     :class="{ focused: focused }"
     condensed
+    :disabled="disabled"
   >
     <BaseChipPreIcon v-if="showPreIcon">
       <FeatherIcon :icon="pre.icon" :title="pre.title"> </FeatherIcon
     ></BaseChipPreIcon>
     <BaseChipLabel>{{ text }}</BaseChipLabel>
-    <span class="chip-delete" @click.stop="handleClick">
+    <span class="chip-delete" @click.stop="handleClick" v-if="!disabled">
       <FeatherIcon class="delete-icon" flex :title="removeLabel"
         ><Cancel />
       </FeatherIcon>
@@ -33,6 +34,9 @@ export default {
     },
     text: {
       type: String,
+    },
+    disabled: {
+      type: Boolean,
     },
     pre: {
       type: Object,

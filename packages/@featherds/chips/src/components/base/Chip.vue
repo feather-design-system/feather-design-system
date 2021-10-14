@@ -117,7 +117,7 @@ export default {
     background-color: var($border-light-on-surface);
     @include state-disabled($border-light-on-surface);
     cursor: default;
-    .label {
+    :deep(.label) {
       color: var($disabled-text-on-surface);
       cursor: default;
       &:hover {
