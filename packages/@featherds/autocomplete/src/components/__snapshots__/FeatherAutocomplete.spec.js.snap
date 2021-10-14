@@ -87,7 +87,7 @@ exports[`Feather Autocomplete base functionality multi disabled state should ren
           <div
             aria-disabled="true"
             class="chip condensed disabled focus autocomplete-chip"
-            data-v-3454cba5=""
+            data-v-31fe4c88=""
             role="button"
           >
             
@@ -101,37 +101,14 @@ exports[`Feather Autocomplete base functionality multi disabled state should ren
               Item 1
               
             </span>
-            <span
-              class="chip-delete"
-            >
-              <span
-                class="feather-icon-container delete-icon"
-                data-v-0aa06a12=""
-              >
-                <svg
-                  aria-hidden="false"
-                  aria-label="Remove"
-                  class="delete-icon feather-icon feather-icon-flex"
-                  focusable="false"
-                  height="24"
-                  role="img"
-                  viewBox="0 0 24 24"
-                  width="24"
-                  xmlns="http://www.w3.org/2000/svg"
-                >
-                  <path
-                    d="M12,2A10,10,0,1,0,22,12,10,10,0,0,0,12,2Zm5,13.24A1.26,1.26,0,0,1,17,17a1.24,1.24,0,0,1-1.76,0L12,13.73,8.76,17A1.24,1.24,0,1,1,7,15.24L10.24,12,7,8.76A1.24,1.24,0,0,1,8.76,7L12,10.2,15.24,7A1.24,1.24,0,1,1,17,8.76L13.76,12Z"
-                  />
-                </svg>
-              </span>
-            </span>
+            <!--v-if-->
             
             <!---->
           </div>
           <div
             aria-disabled="true"
             class="chip condensed disabled focus autocomplete-chip"
-            data-v-3454cba5=""
+            data-v-31fe4c88=""
             role="button"
           >
             
@@ -145,30 +122,7 @@ exports[`Feather Autocomplete base functionality multi disabled state should ren
               Item 2
               
             </span>
-            <span
-              class="chip-delete"
-            >
-              <span
-                class="feather-icon-container delete-icon"
-                data-v-0aa06a12=""
-              >
-                <svg
-                  aria-hidden="false"
-                  aria-label="Remove"
-                  class="delete-icon feather-icon feather-icon-flex"
-                  focusable="false"
-                  height="24"
-                  role="img"
-                  viewBox="0 0 24 24"
-                  width="24"
-                  xmlns="http://www.w3.org/2000/svg"
-                >
-                  <path
-                    d="M12,2A10,10,0,1,0,22,12,10,10,0,0,0,12,2Zm5,13.24A1.26,1.26,0,0,1,17,17a1.24,1.24,0,0,1-1.76,0L12,13.73,8.76,17A1.24,1.24,0,1,1,7,15.24L10.24,12,7,8.76A1.24,1.24,0,0,1,8.76,7L12,10.2,15.24,7A1.24,1.24,0,1,1,17,8.76L13.76,12Z"
-                  />
-                </svg>
-              </span>
-            </span>
+            <!--v-if-->
             
             <!---->
           </div>
@@ -943,7 +897,7 @@ exports[`Feather Autocomplete base functionality multi should raise the label wh
           <div
             aria-disabled="false"
             class="chip condensed focus autocomplete-chip"
-            data-v-3454cba5=""
+            data-v-31fe4c88=""
             role="button"
           >
             
@@ -987,7 +941,7 @@ exports[`Feather Autocomplete base functionality multi should raise the label wh
           <div
             aria-disabled="false"
             class="chip condensed focus autocomplete-chip"
-            data-v-3454cba5=""
+            data-v-31fe4c88=""
             role="button"
           >
             
@@ -2970,7 +2924,7 @@ exports[`Feather Autocomplete multi:specific chip selection should move chip sel
           <div
             aria-disabled="false"
             class="chip condensed focus autocomplete-chip focused"
-            data-v-3454cba5=""
+            data-v-31fe4c88=""
             id="active-chip"
             role="button"
           >
@@ -3015,7 +2969,7 @@ exports[`Feather Autocomplete multi:specific chip selection should move chip sel
           <div
             aria-disabled="false"
             class="chip condensed focus autocomplete-chip"
-            data-v-3454cba5=""
+            data-v-31fe4c88=""
             role="button"
           >
             
@@ -3234,7 +3188,7 @@ exports[`Feather Autocomplete multi:specific chip selection should move chip sel
           <div
             aria-disabled="false"
             class="chip condensed focus autocomplete-chip"
-            data-v-3454cba5=""
+            data-v-31fe4c88=""
             role="button"
           >
             
@@ -3278,7 +3232,7 @@ exports[`Feather Autocomplete multi:specific chip selection should move chip sel
           <div
             aria-disabled="false"
             class="chip condensed focus autocomplete-chip focused"
-            data-v-3454cba5=""
+            data-v-31fe4c88=""
             id="active-chip"
             role="button"
           >
@@ -3498,7 +3452,7 @@ exports[`Feather Autocomplete multi:specific chip selection should not move chip
           <div
             aria-disabled="false"
             class="chip condensed focus autocomplete-chip focused"
-            data-v-3454cba5=""
+            data-v-31fe4c88=""
             id="active-chip"
             role="button"
           >
@@ -3543,7 +3497,7 @@ exports[`Feather Autocomplete multi:specific chip selection should not move chip
           <div
             aria-disabled="false"
             class="chip condensed focus autocomplete-chip"
-            data-v-3454cba5=""
+            data-v-31fe4c88=""
             role="button"
           >
             
@@ -3762,7 +3716,7 @@ exports[`Feather Autocomplete multi:specific chip selection should not perform a
           <div
             aria-disabled="false"
             class="chip condensed focus autocomplete-chip"
-            data-v-3454cba5=""
+            data-v-31fe4c88=""
             role="button"
           >
             
@@ -3806,7 +3760,7 @@ exports[`Feather Autocomplete multi:specific chip selection should not perform a
           <div
             aria-disabled="false"
             class="chip condensed focus autocomplete-chip"
-            data-v-3454cba5=""
+            data-v-31fe4c88=""
             role="button"
           >
             
@@ -4025,7 +3979,7 @@ exports[`Feather Autocomplete multi:specific chip selection should select rightm
           <div
             aria-disabled="false"
             class="chip condensed focus autocomplete-chip"
-            data-v-3454cba5=""
+            data-v-31fe4c88=""
             role="button"
           >
             
@@ -4069,7 +4023,7 @@ exports[`Feather Autocomplete multi:specific chip selection should select rightm
           <div
             aria-disabled="false"
             class="chip condensed focus autocomplete-chip focused"
-            data-v-3454cba5=""
+            data-v-31fe4c88=""
             id="active-chip"
             role="button"
           >
@@ -4346,7 +4300,7 @@ exports[`Feather Autocomplete multi:specific chip selection should select the ri
           <div
             aria-disabled="false"
             class="chip condensed focus autocomplete-chip"
-            data-v-3454cba5=""
+            data-v-31fe4c88=""
             role="button"
           >
             
@@ -4390,7 +4344,7 @@ exports[`Feather Autocomplete multi:specific chip selection should select the ri
           <div
             aria-disabled="false"
             class="chip condensed focus autocomplete-chip focused"
-            data-v-3454cba5=""
+            data-v-31fe4c88=""
             id="active-chip"
             role="button"
           >
@@ -4610,7 +4564,7 @@ exports[`Feather Autocomplete multi:specific chip selection should should desele
           <div
             aria-disabled="false"
             class="chip condensed focus autocomplete-chip"
-            data-v-3454cba5=""
+            data-v-31fe4c88=""
             role="button"
           >
             
@@ -4654,7 +4608,7 @@ exports[`Feather Autocomplete multi:specific chip selection should should desele
           <div
             aria-disabled="false"
             class="chip condensed focus autocomplete-chip"
-            data-v-3454cba5=""
+            data-v-31fe4c88=""
             role="button"
           >
             
@@ -4873,7 +4827,7 @@ exports[`Feather Autocomplete multi:specific selection limit should clear warnin
           <div
             aria-disabled="false"
             class="chip condensed focus autocomplete-chip"
-            data-v-3454cba5=""
+            data-v-31fe4c88=""
             role="button"
           >
             
@@ -4917,7 +4871,7 @@ exports[`Feather Autocomplete multi:specific selection limit should clear warnin
           <div
             aria-disabled="false"
             class="chip condensed focus autocomplete-chip"
-            data-v-3454cba5=""
+            data-v-31fe4c88=""
             role="button"
           >
             
@@ -5190,7 +5144,7 @@ exports[`Feather Autocomplete multi:specific selection limit should display a wa
           <div
             aria-disabled="false"
             class="chip condensed focus autocomplete-chip"
-            data-v-3454cba5=""
+            data-v-31fe4c88=""
             role="button"
           >
             
@@ -5234,7 +5188,7 @@ exports[`Feather Autocomplete multi:specific selection limit should display a wa
           <div
             aria-disabled="false"
             class="chip condensed focus autocomplete-chip"
-            data-v-3454cba5=""
+            data-v-31fe4c88=""
             role="button"
           >
             
@@ -5509,7 +5463,7 @@ exports[`Feather Autocomplete multi:specific selection limit should display a wa
           <div
             aria-disabled="false"
             class="chip condensed focus autocomplete-chip"
-            data-v-3454cba5=""
+            data-v-31fe4c88=""
             role="button"
           >
             
@@ -5553,7 +5507,7 @@ exports[`Feather Autocomplete multi:specific selection limit should display a wa
           <div
             aria-disabled="false"
             class="chip condensed focus autocomplete-chip"
-            data-v-3454cba5=""
+            data-v-31fe4c88=""
             role="button"
           >
             
