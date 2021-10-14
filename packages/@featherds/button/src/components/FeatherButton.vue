@@ -101,7 +101,7 @@ export default {
       data.attrs["title"] = label;
       return h(tag, { ...data.attrs, ...data.on, class: data.class }, [
         this.$slots.default(),
-        h(FeatherRipple, { center: true }),
+        this.disabled ? undefined : h(FeatherRipple, { center: true }),
       ]);
     }
 

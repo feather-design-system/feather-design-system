@@ -1,7 +1,7 @@
 <template>
   <section>
     <FeatherButton primary>Primary Button</FeatherButton>
-    <FeatherButton href="#" primary icon="Backup">
+    <FeatherButton href="#" primary icon="Backup" disabled>
       <FeatherIcon :icon="backup"> </FeatherIcon>
     </FeatherButton>
     <FeatherButton href="#" icon="Send SMS">
