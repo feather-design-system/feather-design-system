@@ -3,29 +3,19 @@ title: "Pagination"
 lang: en-US
 tags: ["Pagination", "component"]
 layout: ComponentLayout
-
 ---
 
-
 `@featherds/pagination`
+
+## Examples
+
+<Pagination-Examples />
+
+## FeatherPagination
 
 Pagination component that can be used in the footer of a table to help control navigation.
 
 When setting up pagination make sure to pass in a `pageSize` but also to listen for the `update-pageSize` event so that you can recieve new values for `pageSize`. We automatically reset the `value` to `1` when the `pageSize` is changed.
-
-## FeatherPagination
-
-### Basic Example
-
-One thing to note when setting up pagination is to make sure to pass in a `pageSize` but also to listen for the `update-pageSize` event so that you can recieve new values for `pageSize`.
-
-@@@ Pagination-ExampleFeatherPagination
-
-### Custom Page Sizes
-
-To specify custom page sizes you should pass an array of numbers to the `pageSizes` property.
-
-@@@ Pagination-ExamplePageSizes
 
 ### Labels
 
@@ -44,9 +34,6 @@ Text labels for pagination can be customized via the `labels` property. The defa
 ```
 
 **NOTE** for range `${start}`, `${end}` and `${total}` will be replaced with the corresponding values.
-
-@@@ Pagination-ExampleLabels
-
 
 ### Props
 

@@ -3,18 +3,15 @@ title: "ProtectedInput"
 lang: en-US
 tags: ["ProtectedInput", "component"]
 layout: ComponentLayout
-
 ---
-
 
 `@featherds/protected-input`
 
 ## Example
 
-@@@ ProtectedInput-ExampleFeatherProtectedInput
+<ProtectedInput-Examples />
 
 ## FeatherProtectedInput
-
 
 ### Props
 

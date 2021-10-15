@@ -6,9 +6,7 @@ tags: ["Badge", "component"]
 layout: ComponentLayout
 ---
 
-
 `@featherds/badge`
-
 
 ## FeatherBadge
 
@@ -56,22 +54,7 @@ The default position of a badge is the top right. Use the `inline` property to m
 
 ### Examples
 
-#### Single Badge
-
-@@@ Badge-ExampleSingle
-
-#### Single Badge Inline
-
-@@@ Badge-ExampleSingleInline
-
-#### Multiple Badge
-
-@@@ Badge-ExampleMulti
-
-#### Multiple Badge Inline
-
-@@@ Badge-ExampleMultiInline
-
+<Badge-Examples />
 
 ### Props
 
@@ -84,9 +67,7 @@ The default position of a badge is the top right. Use the `inline` property to m
 
 - `default` - should contain content to have the badge applied to it.
 
-
 ## FeatherTextBadge
-
 
 ### Badge Configuration
 
@@ -98,19 +79,16 @@ Currently there are only two types supported, `INFO` and `ERROR`. You may only h
 
 ```js
 import { FeatherTextBadge, TYPES } from "@featherds/badge";
-
 ```
 
 ### Example
 
-
-@@@ Badge-ExampleText
-
+<Badge-TextExamples />
 
 ### Props
 
-| Name   | Description                                                                           | Type                   | Required | Default |
-| ------ | ------------------------------------------------------------------------------------- | ---------------------- | -------- | ------- |
+| Name | Description                                                                          | Type     | Required | Default |
+| ---- | ------------------------------------------------------------------------------------ | -------- | -------- | ------- |
 | type | configure what badge to display. See the [Badge Configuration](#badge-configuration) | `String` | `true`   | -       |
 
 ### Slots

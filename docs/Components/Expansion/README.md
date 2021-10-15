@@ -3,24 +3,15 @@ title: "Expansion"
 lang: en-US
 tags: ["Expansion", "component"]
 layout: ComponentLayout
-
 ---
-
 
 `@featherds/expansion`
 
+## Examples
+
+<Expansion-Examples />
+
 ## FeatherExpansionPanel
-
-@@@ Expansion-ExampleFeatherExpansionPanel
-
-### Disabled State
-
-@@@ Expansion-Disabled
-
-### Loading State
-
-@@@ Expansion-Loading
-
 
 ### Props
 

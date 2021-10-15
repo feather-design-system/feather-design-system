@@ -6,7 +6,7 @@ const hideBodyOverflow = (e) => {
   return originalOverflow;
 };
 const resetBodyOverflow = (originalOverflow, element) => {
-  if (originalOverflow !== undefined) {
+  if (originalOverflow !== undefined && element) {
     element.style.overflow = originalOverflow;
   }
   return undefined;

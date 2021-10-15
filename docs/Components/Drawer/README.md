@@ -3,7 +3,6 @@ title: "Drawer"
 lang: en-US
 tags: ["Drawer", "component"]
 layout: ComponentLayout
-
 ---
 
 `@featherds/drawer`
@@ -12,18 +11,9 @@ layout: ComponentLayout
 
 You **must** configure the `labels` property to have a relevant title. See [Labels](#labels).
 
+## Examples
 
-### Basic drawers
-
-These are simple examples of just using the drawer component alone
-
-@@@ Drawer-ExampleFeatherDrawer
-
-### Fully completed drawer with menus and tabs
-
-This example includes everything
-
-@@@ Drawer-ExampleFeatherDrawerComplete
+<Drawer-Examples />
 
 ## FeatherDrawer
 
@@ -67,8 +57,6 @@ Text labels for autocomplete can be customized via the `labels` property. The de
 
 A wrapper component for encapsulating the content of drawers in tabs. This expects `DrawerTab` and `DrawerTabContent` components in the `tabs` and `default` slots respectively.
 
-
-
 ### Props
 
 | Name       | Description           | Type     | Required | Default |
@@ -92,7 +80,6 @@ A wrapper component for encapsulating the content of drawers in tabs. This expec
 
 A tab component, designed to be used in the `tabs` slot of a `DrawerTabContainer`. Takes a label prop which defines the slideout text.
 
-
 ### Props
 
 | Name      | Description                             | Type      | Required   | Default     |
@@ -102,13 +89,11 @@ A tab component, designed to be used in the `tabs` slot of a `DrawerTabContainer
 | disabled  | `true` when the tab is disabled         | `Boolean` | `false`    | `false`     |
 | label     | label for icon and slide out text.      | `String`  | `required` | `undefined` |
 
-
 ### Slots
 
 | Name    | Description                                             | Default Slot Content |
 | ------- | ------------------------------------------------------- | -------------------- |
 | default | content to be placed inside the tab. Typically an icon. | -                    |
-
 
 ## DrawerContent
 

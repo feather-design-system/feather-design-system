@@ -26,7 +26,7 @@ import {
   FeatherList,
   FeatherListItem,
   FeatherListHeader,
-  FeatherListSeparator
+  FeatherListSeparator,
 } from "@featherds/list";
 export default {
   data() {
@@ -43,7 +43,8 @@ export default {
             {
               name: "Typography",
               url: this.$withBase("/Components/Typography/"),
-            },{
+            },
+            {
               name: "Variables",
               url: this.$withBase("/Components/Variables/"),
             },
@@ -118,14 +119,14 @@ export default {
         {
           name: "Display",
           items: [
-            { name: "Tabs", url: this.$withBase("/Components/Table/") },
+            { name: "Tabs", url: this.$withBase("/Components/Tabs/") },
             {
               name: "List",
               url: this.$withBase("/Components/List/"),
             },
             {
               name: "Expansion",
-              url: this.$withBase("/Components/PdfViewer/"),
+              url: this.$withBase("/Components/Expansion/"),
             },
           ],
         },
@@ -134,7 +135,10 @@ export default {
           items: [
             { name: "Progress", url: this.$withBase("/Components/Progress/") },
             { name: "Icon", url: this.$withBase("/Components/Icon/") },
-            { name: "Icon Button", url: this.$withBase("/Components/IconButton/") },
+            {
+              name: "Icon Button",
+              url: this.$withBase("/Components/IconButton/"),
+            },
 
             { name: "Badge", url: this.$withBase("/Components/Badge/") },
           ],
@@ -151,7 +155,7 @@ export default {
     FeatherList,
     FeatherListItem,
     FeatherListHeader,
-    FeatherListSeparator
+    FeatherListSeparator,
   },
 };
 </script>
@@ -182,7 +186,7 @@ $width: 264px;
   padding: 8px 6px 8px 12px;
   @include headline4;
 }
-.rail-list{
+.rail-list {
   overflow-y: hidden;
 }
 </style>

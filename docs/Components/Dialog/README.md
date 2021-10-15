@@ -3,7 +3,6 @@ title: "Dialog"
 lang: en-US
 tags: ["Dialog", "component"]
 layout: ComponentLayout
-
 ---
 
 `@featherds/dialog`
@@ -14,19 +13,7 @@ layout: ComponentLayout
 
 You **must** configure the `labels` property to have a relevant title. See [Labels](#labels).
 
-
-### Basic
-
-@@@ Dialog-ExampleFeatherDialog
-
-### Relative Dialog
-
-@@@ Dialog-ExampleFeatherDialogRelative
-
-### Hidden Title
-
-@@@ Dialog-ExampleFeatherDialogFocus
-
+<Dialog-Examples />
 
 ### Props
 

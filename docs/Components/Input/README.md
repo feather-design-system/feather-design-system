@@ -3,36 +3,15 @@ title: "Input"
 lang: en-US
 tags: ["Input", "component"]
 layout: ComponentLayout
-
 ---
-
 
 `@featherds/input`
 
+## Examples
+
+<Input-Examples />
+
 ## FeatherInput
-
-The following example shows how to set the `hint` text of an input as well as how to use the `v-model` binding to get the value from the input.
-
-@@@ Input-ExampleFeatherInput
-
-### Error
-
-By setting the `error` property to an error string the input will be set into an error state.
-
-@@@ Input-ExampleErrorInput
-
-### Clear
-
-By setting the `clear` property to a string label, the input will display the clear icon when there is a value present with the correct label.
-
-@@@ Input-ExampleClearInput
-
-### Max Length
-
-By setting the `maxlength` property to a number, the input will display a character countdown and enforce the max length.
-
-@@@ Input-ExampleMaxLengthInput
-
 
 ### Props
 
@@ -47,7 +26,7 @@ By setting the `maxlength` property to a number, the input will display a charac
 | background | Sets the label background color to `$background`. Use this if control is on a background surface. | `Boolean` | `false`  | `false`      |
 | disabled   | Puts the input into a disabled state                                                              | `Boolean` | `false`  | `false`      |
 | maxlength  | Maximum amount of characters this input will accept                                               | `Number`  | `false`  | 0 - no limit |
-| hideLabel      | Hides the label for the input in scenarios like tables where it would get in the way                                                  | `Boolean`           | `false`  | -                                       |
+| hideLabel  | Hides the label for the input in scenarios like tables where it would get in the way              | `Boolean` | `false`  | -            |
 
 ### Events
 

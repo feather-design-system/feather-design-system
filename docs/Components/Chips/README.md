@@ -11,8 +11,7 @@ layout: ComponentLayout
 
 ### Chip types
 
-@@@ Chips-ExampleFeatherChips
-
+<Chips-Examples/>
 
 ### Props
 
@@ -30,25 +29,6 @@ layout: ComponentLayout
 ## FeatherChipList
 
 There are 3 fundamental types, specified in the chip list component. All lists can be displayed in `condensed` mode;
-
-### List
-
-This is the default, these are standard chips that are displayed in a list of n items. They can have icons and can be disabled
-
-@@@ Chips-ExampleFeatherChips
-
-### Single
-
-This for single standalone icons, they are given extra spacing
-
-@@@ Chips-ExampleFeatherChipsSingle
-
-### Radio
-
-These are icons used as a radio selection, only one can be active at a given time
-
-@@@ Chips-ExampleFeatherChipsRadio
-
 
 ### Props
 

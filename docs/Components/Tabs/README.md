@@ -3,17 +3,13 @@ title: "Tabs"
 lang: en-US
 tags: ["Tabs", "component"]
 layout: ComponentLayout
-
 ---
-
 
 `@featherds/tabs`
 
 ## Example
 
-Simple tab example
-
-@@@ Tabs-ExampleFeatherTab
+<Tabs-Examples />
 
 ### Tabs Only
 
@@ -22,9 +18,6 @@ There can be a need to have tabs control panels that cannot be directly encapsul
 - You **must** specify the `controls` and `id` attribute on the `FeatherTab`. `controls` should be the ID of the panel it is responsible for.
 - You are responsible for showing and hiding the correct panel.
 - Panels **must** have correct aria labelling to maintain accessibility. See example below.
-
-@@@ Tabs-ExampleTabsOnly
-
 
 ## FeatherTabContainer
 
@@ -67,8 +60,8 @@ Note that normally, all these props are automatically populated when used inside
 
 ### Slots
 
-| Name    | Description                      |
-| ------- | -------------------------------- |
+| Name    | Description                           |
+| ------- | ------------------------------------- |
 | default | text displayed inside the tab element |
 
 ## FeatherTabPanel
@@ -83,7 +76,6 @@ Note that normally, all these props are automatically populated when used inside
 | ---- | ------------------------------------------- | -------- | -------- | ------- |
 | id   | ID of the element                           | `String` | `false`  | -       |
 | tab  | ID of the tab element that opens this panel | `String` | `false`  | -       |
-
 
 ### Slots
 

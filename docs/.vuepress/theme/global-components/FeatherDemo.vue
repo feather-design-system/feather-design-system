@@ -1,13 +1,14 @@
 <template>
-  <div class="feather-demo" :class="selected._text">
+  <div class="feather-demo">
     <div class="demo-toolbar">
       <FeatherSelect
         background
-        label="Theme"
+        label="demo"
         v-model="selected"
-        :options="themes"
+        :options="demos"
         class="theme-select"
         inline
+        v-if="demos.length > 1"
       />
 
       <FeatherButton text @click="showSource = !showSource"
@@ -21,29 +22,49 @@
       @leave="leave"
     >
       <div class="source" v-if="showSource">
-        <slot />
+        <pre
+          class="language-html"
+        ><code v-html="activeDemoSource" class="language-html"></code></pre>
       </div>
     </transition>
     <div class="demo">
-      <component :is="component" />
+      <component :is="activeDemoComponent" />
     </div>
   </div>
 </template>
 <script>
-import { THEMES, KEY, watch, unwatch } from "./themes";
+import Prism from "prismjs";
+import { ref, computed } from "vue";
 import { FeatherButton } from "@featherds/button";
 import { FeatherSelect } from "@featherds/select";
-
 export default {
-  name: "FeatherDemo",
   props: {
-    component: String,
+    demos: {
+      type: Array,
+      required: true,
+    },
   },
-  data() {
+  setup(props) {
+    const showSource = ref(false);
+    const demos = ref(props.demos);
+    const selected = ref(demos.value[0]);
+
+    const activeDemoComponent = computed(() => selected.value.component);
+
+    const activeDemoSource = computed(() => {
+      const src = selected.value.source;
+      if (src) {
+        return Prism.highlight(src, Prism.languages.markup, "vue");
+      }
+      return "<div>Sorry no code</div>";
+    });
+
     return {
-      selected: THEMES[0],
-      themes: THEMES,
-      showSource: false,
+      showSource,
+      demos,
+      selected,
+      activeDemoComponent,
+      activeDemoSource,
     };
   },
   methods: {
@@ -91,16 +112,6 @@ export default {
         element.style.height = 0;
       });
     },
-    updateValue(v) {
-      this.selected = v;
-    },
-  },
-  mounted() {
-    this.selected = JSON.parse(window.localStorage.getItem(KEY)) || this.selected;
-    watch(this.updateValue);
-  },
-  unmounted() {
-    unwatch(this.updateValue);
   },
   components: {
     FeatherButton,
@@ -108,7 +119,6 @@ export default {
   },
 };
 </script>
-
 <style lang="scss" scoped>
 @import "~@featherds/styles/themes/variables";
 @import "~@featherds/styles/mixins/typography";
@@ -155,7 +165,6 @@ export default {
   margin-right: 8px;
 }
 .theme-select {
-  width: 170px;
   display: inline-block;
   margin-right: 8px;
   &:deep(.feather-select-container) {

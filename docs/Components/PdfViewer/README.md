@@ -8,6 +8,10 @@ layout: ComponentLayout
 
 `@featherds/pdf-viewer`
 
+## Examples
+
+<PdfViewer-Examples />
+
 ## Getting Started
 
 `FeatherPdfViewer` is created to view PDF documents in the browser. You may choose to convert certain document types into PDF so they can be viewed directly in the browser.
@@ -18,30 +22,6 @@ PDFViewer performs a `HEAD` request against the given document to preview. If a 
 
 ## FeatherPdfViewer
 
-### PDF Document
-
-The following example shows how to configure the viewer to work with a PDF document.
-
-@@@ PdfViewer-PdfExample
-
-### Document with Preview
-
-The following example shows how to configure the viewer to work with a non PDF document that has a PDF preview.
-
-@@@ PdfViewer-DocExample
-
-### Document with No Preview
-
-The following example shows how to configure the viewer to work with a non PDF document that doesn't have a PDF preview
-
-@@@ PdfViewer-NoPreviewExample
-
-### Preview with Panel
-
-The following example shows how to configure the viewer to work with a panel.
-
-@@@ PdfViewer-Panel
-
 ### Props
 
 | Name              | Description                                                                                                                           | Type      | Required | Default                       |
@@ -51,7 +31,7 @@ The following example shows how to configure the viewer to work with a panel.
 | documentUrl       | url to the document                                                                                                                   | `String`  | `true`   | -                             |
 | previewUrl        | url to the PDF preview                                                                                                                | `String`  | `false`  | -                             |
 | forceError        | forces viewer into error state                                                                                                        | `Boolean` | `false`  | -                             |
-| hideActions        | hides any of the actions that appear in the header                                                                                                        | `Boolean` | `false`  | -                             |
+| hideActions       | hides any of the actions that appear in the header                                                                                    | `Boolean` | `false`  | -                             |
 | labels            | Object containing labels to be used by this component. Mainly used for i18n or customization of labels. See [Labels](#labels) example | `Object`  | `false`  | See [Labels](#labels) example |
 
 ### Labels
@@ -68,6 +48,7 @@ Text labels for the preview can be customized via the `labels` property. The def
   viewerTitle: "PDF Viewer - ${docname}"
 }
 ```
+
 Please note that both `title` and `viewerTitle` are **required**
 
 ### Events

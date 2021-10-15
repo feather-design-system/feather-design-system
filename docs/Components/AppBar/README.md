@@ -5,17 +5,13 @@ tags: ["AppBar", "component"]
 layout: ComponentLayout
 ---
 
-
 `@featherds/app-bar`
 
 `AppBar` is responsible for the `NantBlue` bar along the top of the page. In order to add icons/drawers/menus to the app bar you will need to add components to the correct slots. The app bar will include a skip to content link needed for accessibility requirements.
 
-
 ## Example
 
-Basic example with right aligned icon.
-
-@@@ AppBar-ExampleFeatherAppBar
+<AppBar-Examples/>
 
 ## FeatherAppBar
 
@@ -51,11 +47,9 @@ Basic example with right aligned icon.
 | titleText | descriptive text for the button     | `String`  | `false`  | -        |
 | popUp     | sets ARIA attributes for popUp mode | `String`  | `false`  | `"menu"` |
 
-
 ### Slots
 
 - `default` - used to insert content into the button
-
 
 ## FeatherAppBarLink
 
