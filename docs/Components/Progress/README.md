@@ -8,7 +8,6 @@ layout: ComponentLayout
 
 `@featherds/progress`
 
-
 ## FeatherSpinner
 
-@@@ Progress-ExampleFeatherSpinner
+<Progress-Examples />

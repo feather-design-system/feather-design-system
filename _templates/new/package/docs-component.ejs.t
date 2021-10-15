@@ -12,7 +12,7 @@ Component description
 
 ## Example
 
-@@@ <%= h.changeCase.pascalCase(package) %>-Example<%= h.changeCase.pascalCase(component) %>
+<<%= h.changeCase.pascalCase(package) %>-Example<%= h.changeCase.pascalCase(component) %> />
 
 
 ## API

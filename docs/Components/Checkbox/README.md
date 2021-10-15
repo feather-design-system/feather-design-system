@@ -5,29 +5,11 @@ tags: ["Checkbox", "component"]
 layout: ComponentLayout
 ---
 
-
 `@featherds/checkbox`
 
 ## FeatherCheckbox
 
-### Simple example
-
-This is the basic usecase for a checkbox
-
-@@@ Checkbox-ExampleFeatherCheckbox
-
-### Indeterminate example
-
-This example show cases how to use the indeterminate state for a tree like structure.
-
-@@@ Checkbox-ExampleIndeterminate
-
-### Inline example
-
-This example shows how to use a checkbox that doesn't need a visibile label. This can be useful when displaying a checkbox in a table.
-
-@@@ Checkbox-ExampleInline
-
+<Checkbox-Examples />
 
 ### Props
 
@@ -59,17 +41,7 @@ This example shows how to use a checkbox that doesn't need a visibile label. Thi
 - `feather-checkbox` selects the checkbox control. Responds to click and keydown events.
 - `feather-checkbox-label` selects the checkbox label.
 
-
 ## FeatherCheckboxGroup
-
-### Default Layout
-
-@@@ Checkbox-ExampleCheckboxGroup
-
-### Vertical Layout
-
-@@@ Checkbox-ExampleCheckboxGroupVertical
-
 
 ### Props
 

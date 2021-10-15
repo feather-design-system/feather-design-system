@@ -3,21 +3,17 @@ title: "Radio"
 lang: en-US
 tags: ["Radio", "component"]
 layout: ComponentLayout
-
 ---
-
 
 `@featherds/radio`
 
-Radio buttons should be used in a [FeatherRadioGroup](#FeatherRadioGroup). The radio group will provide a lot more functionality that should be used in a form. FeatherRadio is simply a radio button without any functionality that the form will need.
-
 ## Example
 
-This example shows how to use radio buttons in a radio group and with different data types:
-
-@@@ Radio-ExampleFeatherRadio
+<Radio-Examples />
 
 ## FeatherRadio
+
+Radio buttons should be used in a [FeatherRadioGroup](#FeatherRadioGroup). The radio group will provide a lot more functionality that should be used in a form. FeatherRadio is simply a radio button without any functionality that the form will need.
 
 ### Props
 

@@ -2,8 +2,8 @@
 const path = require("path");
 const utils = require("../../scripts/utils");
 const { sassImports } = require("../../scripts/vite/alias");
-const isFeature = utils.isFeature();
-const {noopDirectiveTransform } = require("@vue/compiler-dom");
+const { noopDirectiveTransform } = require("@vue/compiler-dom");
+const vueSourcePlugin = require("./plugins/vueSourcePlugin");
 module.exports = {
   title: "Feather",
   theme: path.resolve(__dirname, "./theme"),
@@ -22,15 +22,16 @@ module.exports = {
         extensions: [".mjs", ".js", ".ts", ".jsx", ".tsx", ".json", ".vue"],
         alias: [...sassImports],
       },
+      plugins: [vueSourcePlugin],
     },
     vuePluginOptions: {
       template: {
         compilerOptions: {
           directiveTransforms: {
-            "row-action":noopDirectiveTransform
-          }
-        }
-      }
-    }
+            "row-action": noopDirectiveTransform,
+          },
+        },
+      },
+    },
   },
 };

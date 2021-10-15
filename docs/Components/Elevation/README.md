@@ -3,9 +3,7 @@ title: "Elevation"
 lang: en-US
 tags: ["Elevation", "component"]
 layout: ComponentLayout
-
 ---
-
 
 `@featherds/styles`
 
@@ -13,4 +11,4 @@ layout: ComponentLayout
 
 ## Examples
 
-@@@ Styles-ElevationMixin
+<Styles-ElevationMixin />

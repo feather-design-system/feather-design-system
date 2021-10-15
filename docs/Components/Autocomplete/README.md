@@ -3,9 +3,7 @@ title: "Autocomplete"
 lang: en-US
 tags: ["Autocomplete", "component"]
 layout: ComponentLayout
-
 ---
-
 
 `@featherds/autocomplete`
 
@@ -78,43 +76,33 @@ In the example above we update the value array at the index where the icon needs
 
 ## Examples
 
+<Autocomplete-Examples />
+
 ### Multi Select
 
 #### Basic Async
 
 Note in this example we are using the `setTimeout` to mimic asynchronous behaviour.
 
-@@@ Autocomplete-ExampleFeatherAutocompleteMulti
-
 #### Min Characters
 
 This autocomplete has a 2 character limit. Try searching for **ja**
-
-@@@ Autocomplete-ExampleMinCharMulti
 
 #### Grid Results
 
 This autocomplete displays the results inside of a grid
 
-@@@ Autocomplete-ExampleGridMulti
-
 #### Selection Limit
 
 This autocomplete has a min char and a selection limit of 2. Try searching for **ja**
-
-@@@ Autocomplete-ExampleLimitMulti
 
 #### Highlighting
 
 This autocomplete uses the `ignore-case` method for highlighting. See [Highlighting](#highlighting) section.
 
-@@@ Autocomplete-ExampleHighlightMulti
-
 #### Warning Icon in Chip
 
 This autocomplete automatically ads a warning icon to any selected value. See [Chip Pre Icon](#chip-pre-icon) section.
-
-@@@ Autocomplete-ExampleWarningChip
 
 ### Single Select
 
@@ -122,31 +110,21 @@ This autocomplete automatically ads a warning icon to any selected value. See [C
 
 Note in this example we are using the `setTimeout` to mimic asynchronous behaviour.
 
-@@@ Autocomplete-ExampleFeatherAutocompleteSingle
-
 #### Min Characters
 
 This autocomplete has a 2 character limit. Try searching for **ja**
-
-@@@ Autocomplete-ExampleMinCharSingle
 
 #### Allow New
 
 This example allows you to add new items. The `new` event is triggered with the text for the new element. **You** must then create the new element and update `modelValue` to contain the new value. `addTag` method does that in this example.
 
-@@@ Autocomplete-ExampleAllowNewSingle
-
 #### Grid Results
 
 This autocomplete displays the results inside of a grid
 
-@@@ Autocomplete-ExampleGridSingle
-
 #### Highlighting
 
 This autocomplete uses the `ignore-case` method for highlighting. See [Highlighting](#highlighting) section.
-
-@@@ Autocomplete-ExampleHighlightSingle
 
 ## FeatherAutocomplete
 

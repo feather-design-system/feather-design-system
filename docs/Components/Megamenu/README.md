@@ -3,18 +3,17 @@ title: "Megamenu"
 lang: en-US
 tags: ["Megamenu", "component"]
 layout: ComponentLayout
-
 ---
-
 
 `@featherds/megamenu`
 
-Behaves like a dropdown menu except it takes up full width of screen. Typically for use in app-bars.
+## Examples
+
+<Megamenu-Examples />
 
 ## FeatherMegamenu
 
-@@@ Megamenu-ExampleFeatherMegaMenu
-
+Behaves like a dropdown menu except it takes up full width of screen. Typically for use in app-bars.
 
 ### Props
 
@@ -31,4 +30,3 @@ Behaves like a dropdown menu except it takes up full width of screen. Typically 
 
 - `default` - content that is put inside the menu, to the right of the menu name. This has a scoped property of open, which will be true when the menu is open and false otherwise.
 - `button` - The button for opening the menu. This is a scoped slot and is passed two scope params - `open` and `clicked`. `open` is a boolean denoting current state. `clicked` is a method to call that will toggle the state
-

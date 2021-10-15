@@ -3,17 +3,15 @@ title: "Icon"
 lang: en-US
 tags: ["Icon", "component"]
 layout: ComponentLayout
-
 ---
 
 `@featherds/icon`
 
+## Examples
 
+<Icon-Examples />
 
 ## FeatherIcon
-
-@@@ Icon-ExampleFeatherIcon
-
 
 ### Props
 
@@ -27,13 +25,11 @@ layout: ComponentLayout
 
 If you are using an icon that is described by the text along side it or the labelling of the icon is taken care of by a parent control (`FeatherButton`) then you don't need to use the `title` property. If there is no text then you must use the `title` property to help describe what the icon is for.
 
-
 #### Feather import
 
 ```js
 import AddAlert from "@featherds/icon/alert/AddAlert";
 ```
-
 
 ## Icons
 

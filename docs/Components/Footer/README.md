@@ -7,10 +7,11 @@ layout: ComponentLayout
 
 `@featherds/footer`
 
+## Examples
+
+<Footer-Examples />
+
 ## FeatherFooter
-
-@@@ Footer-ExampleFeatherFooter
-
 
 ### Props
 
@@ -30,7 +31,6 @@ layout: ComponentLayout
 
 A link component for the footer, simple encapsulation component
 
-
 ### Props
 
 | Name | Description            | Type     | Required | Default |
@@ -47,9 +47,7 @@ A link component for the footer, simple encapsulation component
 
 ## FeatherFooterTelephone
 
-
 A telephone link component for the footer, allowing for mobile users to click to dial
-
 
 ### Props
 

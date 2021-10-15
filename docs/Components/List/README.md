@@ -15,7 +15,9 @@ This component does not provide any keyboard functionality or accessibility stan
 
 :::
 
-@@@ List-ExampleList
+## Examples
+
+<List-Examples />
 
 ## FeatherList
 

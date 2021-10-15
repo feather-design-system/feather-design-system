@@ -3,9 +3,7 @@ title: "Typography"
 lang: en-US
 tags: ["Typography", "component"]
 layout: ComponentLayout
-
 ---
-
 
 `@featherds/styles`
 
@@ -14,7 +12,6 @@ Typography styles are applied to some [elements](#elements) by default when incl
 ::: tip Recommendation
 Use mixins where possible. They allow you to style the element with the correct typography without being constrained to a given element.
 :::
-
 
 ## Elements
 
@@ -75,7 +72,7 @@ p {
 
 </style>
 
-@@@ Styles-TypographyHeaderElements
+<Styles-TypographyHeaderElements />
 
 ## Mixins
 
@@ -101,4 +98,4 @@ It exposes the following mixins:
 - `screen-reader`
 - `anchor`
 
-@@@ Styles-TypographyMixins
+<Styles-TypographyMixins />

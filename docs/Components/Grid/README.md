@@ -7,7 +7,6 @@ layout: ComponentLayout
 
 `@featherds/styles`
 
-
 ## Mixins
 
 :::tip Recommendation
@@ -25,31 +24,29 @@ We have added a number of mixins which is our preferred method for using grid la
 You have the following mixins available:
 
 ```scss
-
 // creates a grid container constrained to our max width
-.my-container{
+.my-container {
   @include container;
 }
 
 // creates a grid container that is full width
-.my-container{
+.my-container {
   @include container(true);
 }
 
 // create a row
-.my-row{
+.my-row {
   @include row;
 }
 
 // create a generic column.
-.my-column{
+.my-column {
   //column width is 2
   @include col(2);
-
 }
 
 // create a responsive column.
-.my-responsive-column{
+.my-responsive-column {
   @include col(xl, 8);
   @include col(l, 8);
   @include col(m, 4);
@@ -58,7 +55,7 @@ You have the following mixins available:
 }
 
 // create a generic, offset column.
-.my-offset-column{
+.my-offset-column {
   //column width is 2
   @include col(2);
   //offset width is 2
@@ -66,7 +63,7 @@ You have the following mixins available:
 }
 
 // create a responsive, offset column.
-.my-offset-responsive-column{
+.my-offset-responsive-column {
   @include col(xl, 8);
   @include col(l, 8);
   @include col(m, 4);
@@ -79,7 +76,6 @@ You have the following mixins available:
   @include offset(s, 2);
   @include offset(xs, 1);
 }
-
 ```
 
 ## Class
@@ -182,16 +178,16 @@ If your application is not concerned with being responsive under `960px` you can
 
 The following example is 10/2 split @ xl, 8/4 split @ l, 6/2 split @ m, 4/4 split @ s and 4/4 split @ xs. How can it be 4/4 @ xs? This essentially means that this small size each column should take up all the width it can.
 
-@@@ Styles-ResponsiveGrid
+<Styles-ResponsiveGrid />
 
 ### Generic
 
 The following example uses the generic column classes to create a 10/2 split.
 
-@@@ Styles-GenericGrid
+<Styles-GenericGrid />
 
 ### Hybrid Grid
 
 You can combine the responsive and generic grids. This can be useful if you want to specifically style a given breakpoint from the responsive grid but otherwise use the generic columns widths. Consider wanting to have a 10/2 split but at the m breakpoint you want to switch to a 4/4 split.
 
-@@@ Styles-HybridGrid
+<Styles-HybridGrid />

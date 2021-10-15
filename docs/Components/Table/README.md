@@ -6,16 +6,13 @@ tags: ["Table", "component"]
 layout: ComponentLayout
 ---
 
-
 `@featherds/table`
 
 `@featherds/table` has predefined table classes that allow you to effectively style a basic table as required. It also provides a common component for sorting that you can include if you require.
 
 ## Example
 
-The following example showcases the visual styling provided by this package. Sorting functionality and selection functionality needs to be implementing by the consuming application.
-
-@@@ Table-ExampleTable
+<Table-Examples />
 
 ### Row Click
 
@@ -23,13 +20,7 @@ If the row is meant to have a click action you _must_ use the `rowAction` direct
 
 In the following example notice that clicking the checkbox or any menu item does not trigger the row action to be logged in the console. This is the benefit of the `rowAction` directive.
 
-@@@ Table-RowClick
-
 ### Button Actions
-
-The following example also include more button actions that may live alongside the more actions dropdown.
-
-@@@ Table-ButtonActions
 
 :::warning Accessibility
 
@@ -169,11 +160,11 @@ Similarly, if your cell only contains a checkbox, you can have it styled accordi
 
 ### Props
 
-| Name     | Description     | Type     | Required | Default                       |
-| -------- | --------------- | -------- | -------- | ----------------------------- |
-| sort     | current applied sort to the column                                                                                                       | `asc`,    `desc`,  ` none`                         | `true` | -   |
-| property | should be the name of the property that is to be sorted. This is only used to help you identify the sorting in the `sort-changed` event. | `String` | `true`   | -                             |
-| labels   | object containing labels to be used by this component. Mainly used for i18n or customization of labels. See [Labels](#labels) example    | `Object` | `false`  | See [Labels](#labels) example |
+| Name     | Description                                                                                                                              | Type                   | Required | Default                       |
+| -------- | ---------------------------------------------------------------------------------------------------------------------------------------- | ---------------------- | -------- | ----------------------------- |
+| sort     | current applied sort to the column                                                                                                       | `asc`, `desc`, ` none` | `true`   | -                             |
+| property | should be the name of the property that is to be sorted. This is only used to help you identify the sorting in the `sort-changed` event. | `String`               | `true`   | -                             |
+| labels   | object containing labels to be used by this component. Mainly used for i18n or customization of labels. See [Labels](#labels) example    | `Object`               | `false`  | See [Labels](#labels) example |
 
 ### Labels
 

@@ -3,9 +3,7 @@ title: "Ripple"
 lang: en-US
 tags: ["Ripple", "component"]
 layout: ComponentLayout
-
 ---
-
 
 `@featherds/ripple`
 
@@ -27,12 +25,6 @@ When using a ripple it will force its direct parent to have `overflow:hidden` in
   opacity: var($state-opacity-pressed-on-surface);
 }
 ```
-
-#### In a Button
-
-@@@ Ripple-ExampleButton
-
-
 
 ### Props
 

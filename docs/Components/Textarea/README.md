@@ -3,24 +3,13 @@ title: "Textarea"
 lang: en-US
 tags: ["Textarea", "component"]
 layout: ComponentLayout
-
 ---
 
 `@featherds/textarea`
 
-
 ## Example
 
-Define the `rows` attribute to control the height of the textarea.
-
-@@@ Textarea-Textarea
-
-
-### Auto grow
-
-Use the `auto` property to allow the textarea to grow.
-
-@@@ Textarea-TextareaAuto
+<Textarea-Examples />
 
 ## FeatherTextarea
 
@@ -37,7 +26,7 @@ Use the `auto` property to allow the textarea to grow.
 | disabled   | Puts the textarea into a disabled state                                                           | `Boolean` | `false`  | `false`      |
 | maxlength  | Maximum amount of characters this textarea will accept                                            | `Number`  | `false`  | 0 - no limit |
 | auto       | When true the textarea will automatically grow.                                                   | `Boolean` | `false`  | `false`      |
-| hideLabel      | Hides the label for the input in scenarios like tables where it would get in the way                                                  | `Boolean`           | `false`  | -                                       |
+| hideLabel  | Hides the label for the input in scenarios like tables where it would get in the way              | `Boolean` | `false`  | -            |
 
 ### Events
 

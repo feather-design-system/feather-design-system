@@ -3,10 +3,13 @@ title: "Select"
 lang: en-US
 tags: ["Select", "component"]
 layout: ComponentLayout
-
 ---
+
 `@featherds/select`
 
+## Examples
+
+<Select-Examples />
 
 ## Getting Started
 
@@ -41,14 +44,6 @@ The following example allows `10` items to be displayed before scrolling.
 }
 ```
 
-## Example
-
-@@@ Select-ExampleFeatherSelect
-
-### Pre Icon + Clear Icon
-
-@@@ Select-FeatherSelectPre
-
 ## FeatherSelect
 
 ### Props
@@ -63,7 +58,7 @@ The following example allows `10` items to be displayed before scrolling.
 | clear      | Label for the clear link that will appear at the end of the input when this has a value. | `String`        | `false`  | `""`        |
 | hint       | Hint string to display under select                                                      | `String`        | `false`  | -           |
 | background | Sets label background color to `background`                                              | `Boolean`       | `false`  | `false`     |
-| hideLabel      | Hides the label for the input in scenarios like tables where it would get in the way                                                  | `Boolean`           | `false`  | -                                       |
+| hideLabel  | Hides the label for the input in scenarios like tables where it would get in the way     | `Boolean`       | `false`  | -           |
 
 ### Events
 

@@ -3,42 +3,15 @@ title: "Dropdown"
 lang: en-US
 tags: ["Dropdown", "component"]
 layout: ComponentLayout
-
 ---
 
 `@featherds/dropdown`
 
+## Examples
+
+<Dropdown-Examples />
+
 ## FeatherDropdown
-
-### Dropdown Menu Height
-
-You can configure the dropdown menu height by setting the height style for `.feather-dropdown`. Out of the box the height is configured to allow up to `6` rows before scrolling. We have provided a mixin for you to easily configure the height of the menu.
-
-The following example allows `10` items to be displayed before scrolling.
-
-```scss
-@import "~@featherds/dropdown/scss/mixins";
-
-.my-component :deep(.feather-dropdown) {
-  @include dropdown-menu-height(10);
-}
-```
-
-
-@@@ Dropdown-ExampleDropdownIcons
-
-### Cover
-
-Using the cover option.
-
-@@@ Dropdown-ExampleDropdownCover
-
-### Right Aligned
-
-Using the right aligned option. Centered to show right alignment.
-
-@@@ Dropdown-ExampleDropdownRight
-
 
 ### Props
 
@@ -58,22 +31,21 @@ Using the right aligned option. Centered to show right alignment.
 - `default` - slot to put dropdown items in.
 - `trigger` - slot to put trigger in, typically a button.
 
+### Dropdown Menu Height
 
+You can configure the dropdown menu height by setting the height style for `.feather-dropdown`. Out of the box the height is configured to allow up to `6` rows before scrolling. We have provided a mixin for you to easily configure the height of the menu.
+
+The following example allows `10` items to be displayed before scrolling.
+
+```scss
+@import "~@featherds/dropdown/scss/mixins";
+
+.my-component :deep(.feather-dropdown) {
+  @include dropdown-menu-height(10);
+}
+```
 
 ## FeatherDropdownItem
-
-### No Icons
-
-@@@ Dropdown-ExampleDropdown
-
-### Icons
-
-@@@ Dropdown-ExampleDropdownIcons
-
-### Disabled Option
-
-@@@ Dropdown-ExampleDropdownDisabled
-
 
 ### Props
 

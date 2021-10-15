@@ -3,22 +3,13 @@ title: "DateInput"
 lang: en-US
 tags: ["DateInput", "component"]
 layout: ComponentLayout
-
 ---
-
 
 `@featherds/date-input`
 
 ## FeatherDateInput
 
-@@@ DateInput-ExampleFeatherDateInput
-
-### Disabling Dates
-
-In this example we disable all dates that occur in the past. See [Disabled Dates](#disabled-dates) for more details on how to configure different scenarios.
-
-@@@ DateInput-ExampleFeatherDateInputDisabled
-
+<DateInput-Examples />
 
 ### Props
 

@@ -3,16 +3,13 @@ title: "BackButton"
 lang: en-US
 tags: ["BackButton", "component"]
 layout: ComponentLayout
-
 ---
-
 
 `@featherds/back-button`
 
-
 ## Example
 
-@@@ BackButton-ExampleBackButton
+<BackButton-Examples />
 
 ## FeatherBackButton
 
@@ -22,8 +19,6 @@ layout: ComponentLayout
 | --------- | ------------------------------------------------ | -------- | -------- | ------- |
 | longHover | number of milliseconds to consider a long hover. | `Number` | `false`  | `500`   |
 
-
 ### Slots
 
 - `default` should be text to display.
-

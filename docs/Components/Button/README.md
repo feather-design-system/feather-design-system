@@ -3,27 +3,13 @@ title: "Button"
 lang: en-US
 tags: ["Button", "component"]
 layout: ComponentLayout
-
 ---
-
 
 `@featherds/button`
 
-## Buttons
+## Examples
 
-@@@ Button-ExampleButton
-
-
-### Disabled Buttons
-
-@@@ Button-ExampleButtonDisabled
-
-### Anchors with Button styling
-
-Use the following technique if you need to use an anchor but have it styled as a button.
-
-@@@ Button-ExampleLink
-
+<Button-Examples />
 
 ### Props
 
