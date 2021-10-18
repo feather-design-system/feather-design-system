@@ -1,7 +1,7 @@
 <template>
   <FeatherListItem :href="href">
     <template v-slot:icon>
-      <FeatherIcon v-if="icon" :icon="icon" :title="title" />
+      <FeatherIcon v-if="hasIcon" :icon="icon" :title="title" />
     </template>
     <slot>{{ title }}</slot>
   </FeatherListItem>
@@ -21,6 +21,11 @@ export default {
     title: {
       type: String,
       required: true,
+    },
+  },
+  computed: {
+    hasIcon() {
+      return !!this.icon;
     },
   },
   components: {
