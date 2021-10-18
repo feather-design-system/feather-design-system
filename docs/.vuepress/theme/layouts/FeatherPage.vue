@@ -22,7 +22,7 @@
       <template v-slot:right>
         <div class="right-container">
           <PageThemeChange class="theme-changer" />
-          <Docsearch /></div
+          <DocSearch /></div
       ></template>
     </FeatherAppBar>
     <div id="main">

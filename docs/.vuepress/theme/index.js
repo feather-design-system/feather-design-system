@@ -47,17 +47,5 @@ module.exports = {
         defaultTitle: "warning",
       },
     ],
-    [
-      "@vuepress/docsearch",
-      {
-        apiKey: "3586ad692e4fd2ca21e8ad06f4181eaf",
-        indexName: "feather_design",
-        locales: {
-          "/": {
-            placeholder: "Search Feather ...  ",
-          },
-        },
-      },
-    ],
   ],
 };
