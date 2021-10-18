@@ -12,6 +12,6 @@ describe("FeatherRailGroup.vue", () => {
         label: "Test",
       },
     });
-    expect(wrapper.wrapperElement).toMatchSnapshot();
+    expect(wrapper.element).toMatchSnapshot();
   });
 });

@@ -716,7 +716,7 @@ exports[`Feather Autocomplete base functionality multi should not leave previous
         <li
           aria-selected="false"
           class="feather-list-item hover focus highlighted result-item hover"
-          data-v-e9e0333c=""
+          data-v-75e68a16=""
           id="result-item"
           role="option"
           style="overflow: hidden; position: relative;"
@@ -725,7 +725,7 @@ exports[`Feather Autocomplete base functionality multi should not leave previous
           <!---->
           <span
             class="feather-list-item-text"
-            data-v-e9e0333c=""
+            data-v-75e68a16=""
           >
             <span>
               <span>
@@ -744,7 +744,7 @@ exports[`Feather Autocomplete base functionality multi should not leave previous
         <li
           aria-selected="false"
           class="feather-list-item hover focus result-item hover"
-          data-v-e9e0333c=""
+          data-v-75e68a16=""
           role="option"
           style="overflow: hidden; position: relative;"
           tabindex="-1"
@@ -752,7 +752,7 @@ exports[`Feather Autocomplete base functionality multi should not leave previous
           <!---->
           <span
             class="feather-list-item-text"
-            data-v-e9e0333c=""
+            data-v-75e68a16=""
           >
             <span>
               <span>
@@ -1421,13 +1421,13 @@ exports[`Feather Autocomplete base functionality multi should show no results te
         
         <li
           class="feather-list-item hover focus"
-          data-v-e9e0333c=""
+          data-v-75e68a16=""
           style="overflow: hidden; position: relative;"
         >
           <!---->
           <span
             class="feather-list-item-text"
-            data-v-e9e0333c=""
+            data-v-75e68a16=""
           >
             
             <span
@@ -2157,7 +2157,7 @@ exports[`Feather Autocomplete base functionality single should not leave previou
         <li
           aria-selected="false"
           class="feather-list-item hover focus result-item hover"
-          data-v-e9e0333c=""
+          data-v-75e68a16=""
           role="option"
           style="overflow: hidden; position: relative;"
           tabindex="-1"
@@ -2165,7 +2165,7 @@ exports[`Feather Autocomplete base functionality single should not leave previou
           <!---->
           <span
             class="feather-list-item-text"
-            data-v-e9e0333c=""
+            data-v-75e68a16=""
           >
             <span>
               <span>
@@ -2184,7 +2184,7 @@ exports[`Feather Autocomplete base functionality single should not leave previou
         <li
           aria-selected="false"
           class="feather-list-item hover focus result-item hover"
-          data-v-e9e0333c=""
+          data-v-75e68a16=""
           role="option"
           style="overflow: hidden; position: relative;"
           tabindex="-1"
@@ -2192,7 +2192,7 @@ exports[`Feather Autocomplete base functionality single should not leave previou
           <!---->
           <span
             class="feather-list-item-text"
-            data-v-e9e0333c=""
+            data-v-75e68a16=""
           >
             <span>
               <span>
@@ -2795,13 +2795,13 @@ exports[`Feather Autocomplete base functionality single should show no results t
         
         <li
           class="feather-list-item hover focus"
-          data-v-e9e0333c=""
+          data-v-75e68a16=""
           style="overflow: hidden; position: relative;"
         >
           <!---->
           <span
             class="feather-list-item-text"
-            data-v-e9e0333c=""
+            data-v-75e68a16=""
           >
             
             <span
@@ -4136,7 +4136,7 @@ exports[`Feather Autocomplete multi:specific chip selection should select rightm
         <li
           aria-selected="false"
           class="feather-list-item hover focus result-item hover"
-          data-v-e9e0333c=""
+          data-v-75e68a16=""
           role="option"
           style="overflow: hidden; position: relative;"
           tabindex="-1"
@@ -4144,7 +4144,7 @@ exports[`Feather Autocomplete multi:specific chip selection should select rightm
           <!---->
           <span
             class="feather-list-item-text"
-            data-v-e9e0333c=""
+            data-v-75e68a16=""
           >
             <span>
               <span>
@@ -4163,7 +4163,7 @@ exports[`Feather Autocomplete multi:specific chip selection should select rightm
         <li
           aria-selected="false"
           class="feather-list-item hover focus result-item hover"
-          data-v-e9e0333c=""
+          data-v-75e68a16=""
           role="option"
           style="overflow: hidden; position: relative;"
           tabindex="-1"
@@ -4171,7 +4171,7 @@ exports[`Feather Autocomplete multi:specific chip selection should select rightm
           <!---->
           <span
             class="feather-list-item-text"
-            data-v-e9e0333c=""
+            data-v-75e68a16=""
           >
             <span>
               <span>
@@ -4988,13 +4988,13 @@ exports[`Feather Autocomplete multi:specific selection limit should clear warnin
         
         <li
           class="feather-list-item hover focus"
-          data-v-e9e0333c=""
+          data-v-75e68a16=""
           style="overflow: hidden; position: relative;"
         >
           <!---->
           <span
             class="feather-list-item-text"
-            data-v-e9e0333c=""
+            data-v-75e68a16=""
           >
             
             <svg
@@ -5305,13 +5305,13 @@ exports[`Feather Autocomplete multi:specific selection limit should display a wa
         
         <li
           class="feather-list-item hover focus"
-          data-v-e9e0333c=""
+          data-v-75e68a16=""
           style="overflow: hidden; position: relative;"
         >
           <!---->
           <span
             class="feather-list-item-text"
-            data-v-e9e0333c=""
+            data-v-75e68a16=""
           >
             
             <svg
@@ -5624,13 +5624,13 @@ exports[`Feather Autocomplete multi:specific selection limit should display a wa
         
         <li
           class="feather-list-item hover focus"
-          data-v-e9e0333c=""
+          data-v-75e68a16=""
           style="overflow: hidden; position: relative;"
         >
           <!---->
           <span
             class="feather-list-item-text"
-            data-v-e9e0333c=""
+            data-v-75e68a16=""
           >
             
             <svg
@@ -5848,7 +5848,7 @@ exports[`Feather Autocomplete multi:specific selection limit should display a wa
         <li
           aria-selected="false"
           class="feather-list-item hover focus highlighted result-item hover"
-          data-v-e9e0333c=""
+          data-v-75e68a16=""
           id="result-item"
           role="option"
           style="overflow: hidden; position: relative;"
@@ -5857,7 +5857,7 @@ exports[`Feather Autocomplete multi:specific selection limit should display a wa
           <!---->
           <span
             class="feather-list-item-text"
-            data-v-e9e0333c=""
+            data-v-75e68a16=""
           >
             <span>
               <span>
@@ -5876,7 +5876,7 @@ exports[`Feather Autocomplete multi:specific selection limit should display a wa
         <li
           aria-selected="false"
           class="feather-list-item hover focus result-item hover"
-          data-v-e9e0333c=""
+          data-v-75e68a16=""
           role="option"
           style="overflow: hidden; position: relative;"
           tabindex="-1"
@@ -5884,7 +5884,7 @@ exports[`Feather Autocomplete multi:specific selection limit should display a wa
           <!---->
           <span
             class="feather-list-item-text"
-            data-v-e9e0333c=""
+            data-v-75e68a16=""
           >
             <span>
               <span>
@@ -5911,13 +5911,13 @@ exports[`Feather Autocomplete multi:specific selection limit should display a wa
         
         <li
           class="feather-list-item hover focus"
-          data-v-e9e0333c=""
+          data-v-75e68a16=""
           style="overflow: hidden; position: relative;"
         >
           <!---->
           <span
             class="feather-list-item-text"
-            data-v-e9e0333c=""
+            data-v-75e68a16=""
           >
             
             <svg
@@ -6306,7 +6306,7 @@ exports[`Feather Autocomplete single:specific should close menu when enter is pr
         <li
           aria-selected="false"
           class="feather-list-item hover focus result-item hover"
-          data-v-e9e0333c=""
+          data-v-75e68a16=""
           role="option"
           style="overflow: hidden; position: relative;"
           tabindex="-1"
@@ -6314,7 +6314,7 @@ exports[`Feather Autocomplete single:specific should close menu when enter is pr
           <!---->
           <span
             class="feather-list-item-text"
-            data-v-e9e0333c=""
+            data-v-75e68a16=""
           >
             <span>
               <span>
@@ -6333,7 +6333,7 @@ exports[`Feather Autocomplete single:specific should close menu when enter is pr
         <li
           aria-selected="false"
           class="feather-list-item hover focus result-item hover"
-          data-v-e9e0333c=""
+          data-v-75e68a16=""
           role="option"
           style="overflow: hidden; position: relative;"
           tabindex="-1"
@@ -6341,7 +6341,7 @@ exports[`Feather Autocomplete single:specific should close menu when enter is pr
           <!---->
           <span
             class="feather-list-item-text"
-            data-v-e9e0333c=""
+            data-v-75e68a16=""
           >
             <span>
               <span>
@@ -6733,7 +6733,7 @@ exports[`Feather Autocomplete single:specific should show add new element when i
         <li
           aria-selected="false"
           class="feather-list-item hover focus result-item hover"
-          data-v-e9e0333c=""
+          data-v-75e68a16=""
           role="option"
           style="overflow: hidden; position: relative;"
           tabindex="-1"
@@ -6741,7 +6741,7 @@ exports[`Feather Autocomplete single:specific should show add new element when i
           <!---->
           <span
             class="feather-list-item-text"
-            data-v-e9e0333c=""
+            data-v-75e68a16=""
           >
             <span>
               <span>

@@ -27,7 +27,10 @@ export default {
       this.$slots.icon &&
       this.$slots
         .icon()
-        .findIndex((o) => o.children && o.children.length !== 0) !== -1;
+        .findIndex(
+          (o) =>
+            (o.children && o.children.length !== 0) || (o.type && o.type.render)
+        ) !== -1;
     if (hasIcon) {
       icon = h(
         "span",
@@ -76,7 +79,7 @@ export default {
       },
       [icon, text, ripple]
     );
-    return h("li", { role: "presentation" }, [anchor]);
+    return h("li", {}, [anchor]);
   },
 };
 </script>
