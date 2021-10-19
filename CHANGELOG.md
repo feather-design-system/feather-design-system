@@ -1,3 +1,21 @@
+## [0.2.11](https://github.com/feather-design-system/feather-design-system/compare/v0.2.10...v0.2.11) (2021-10-19)
+
+
+### Bug Fixes
+
+* **autocomplete:** disabled chip could still be removed, fixed styling of chip label when disabled ([610706f](https://github.com/feather-design-system/feather-design-system/commit/610706f424ba60a2a3a9882db029ccf3536b7733))
+* **button:** disabled icon button should have no ripple ([09476e4](https://github.com/feather-design-system/feather-design-system/commit/09476e4658b236006057c573ec9079f3736b92c2))
+* **ci:** adding more depth to release checkout, hopefully changelog etc will start working now ([c1c8c5a](https://github.com/feather-design-system/feather-design-system/commit/c1c8c5ac6dc26d7eb48e7dcffca1a47ebcc84463))
+* **demos:** removing auto publish of demos, making this a manual step ([d75ac32](https://github.com/feather-design-system/feather-design-system/commit/d75ac328baf8ae7b8ea61f1caf002e68828da349))
+* **nav-rail:** fixing accessibility issue with navbar and icons not showing ([7d056c6](https://github.com/feather-design-system/feather-design-system/commit/7d056c6adc58e27a0d58e4760bfe1b93e75f53b3))
+
+
+### Features
+
+* **ci:** workflow dispatch on demos. ([ce92844](https://github.com/feather-design-system/feather-design-system/commit/ce92844df26725ff9d9333fac565a14575bca307))
+
+
+
 ## 0.2.10 (2021-10-05)
 
 
