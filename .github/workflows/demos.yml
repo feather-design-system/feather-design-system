@@ -3,11 +3,7 @@
 
 name: Generate Demos
 
-on:
-  workflow_dispatch:
-  push:
-    branches:
-      - dev
+on: workflow_dispatch
 
 env:
   GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
