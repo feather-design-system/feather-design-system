@@ -24,24 +24,15 @@ exports[`FeatherDropdown.vue should pass through cover property 1`] = `
     <ul
       aria-labelledby="feather-menu-trigger"
       class="feather-dropdown"
-      role="menu"
     >
       
-      <li
-        role="presentation"
-      >
-        <a
-          role="menuitem"
-        >
+      <li>
+        <a>
           TEST
         </a>
       </li>
-      <li
-        role="presentation"
-      >
-        <a
-          role="menuitem"
-        >
+      <li>
+        <a>
           TEST
         </a>
       </li>
@@ -76,24 +67,15 @@ exports[`FeatherDropdown.vue should pass through right property 1`] = `
     <ul
       aria-labelledby="feather-menu-trigger"
       class="feather-dropdown"
-      role="menu"
     >
       
-      <li
-        role="presentation"
-      >
-        <a
-          role="menuitem"
-        >
+      <li>
+        <a>
           TEST
         </a>
       </li>
-      <li
-        role="presentation"
-      >
-        <a
-          role="menuitem"
-        >
+      <li>
+        <a>
           TEST
         </a>
       </li>

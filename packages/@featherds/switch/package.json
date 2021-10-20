@@ -1,5 +1,5 @@
 {
-  "name": "@featherds/list",
+  "name": "@featherds/switch",
   "version": "0.2.11",
   "publishConfig": {
     "access": "public"
@@ -9,15 +9,12 @@
   "main": "dist/app.js",
   "license": "Apache-2.0",
   "dependencies": {
-    "@featherds/ripple": "file:../ripple",
     "@featherds/styles": "file:../styles",
-    "@featherds/switch": "file:../switch",
-    "@featherds/utils": "file:../utils",
     "vue": "^3.1.0-0"
   },
   "keywords": [
     "vue",
-    "FeatherList"
+    "FeatherSwitch"
   ],
   "types": "./src/index.d.ts"
 }

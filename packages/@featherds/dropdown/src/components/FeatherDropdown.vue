@@ -16,7 +16,6 @@
       <ul
         @keydown="handleKeydown"
         :aria-labelledby="slotProps.labelId"
-        role="menu"
         class="feather-dropdown"
         :class="{ standard: standard }"
       >
@@ -66,9 +65,7 @@ export default {
     );
     watch(localOpen, (open) => {
       if (open) {
-        const items = Array.from(
-          menu.value.menu.querySelectorAll("a[role=menuitem]")
-        );
+        const items = Array.from(menu.value.menu.querySelectorAll("a"));
         dropdownService.setItems(items);
         nextTick(() => {
           dropdownService.selectFirst();

@@ -1,3 +1,7 @@
+@use "sass:meta";
+@use "sass:map";
+@use "sass:list";
+
 @function map-collect($maps...) {
   $collection: ();
 
@@ -16,7 +20,19 @@
   }
   @return map-merge($colors, $rgbMap);
 }
-
+@function layers($args...) {
+  @debug $args;
+  $values: $args;
+  $gradients: ();
+  @each $color in $values {
+    $gradients: list.append(
+      $gradients,
+      linear-gradient($color, $color),
+      $separator: comma
+    );
+  }
+  @return $gradients;
+}
 @function alpha($color, $alpha) {
   $r: var(#{$color + "-r"});
   $g: var(#{$color + "-g"});

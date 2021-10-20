@@ -45,6 +45,10 @@ export default {
       { class: ["feather-list-item-text"] },
       { default: this.$slots.default }
     );
+    let post;
+    if (this.$slots.post) {
+      post = h("span", { class: "feather-list-item-post" }, this.$slots.post());
+    }
     const ripple = this.disabled ? undefined : h(FeatherRipple);
     if (this.asLi) {
       return h(
@@ -61,7 +65,7 @@ export default {
             this.$attrs.class || "",
           ],
         },
-        [icon, text, ripple]
+        [icon, text, post, ripple]
       );
     }
     const anchor = h(
@@ -77,7 +81,7 @@ export default {
           this.$attrs.class || "",
         ],
       },
-      [icon, text, ripple]
+      [icon, text, post, ripple]
     );
     return h("li", {}, [anchor]);
   },
@@ -114,7 +118,7 @@ li {
     }
   }
   .feather-list-item-text {
-    flex: none;
+    flex: 1;
   }
   .feather-list-item-icon {
     flex: none;
@@ -125,6 +129,12 @@ li {
     font-size: 18px;
     color: var($secondary-text-on-surface);
     width: 1em;
+  }
+  .feather-list-item-post {
+    flex: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
   }
 }
 

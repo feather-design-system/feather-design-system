@@ -1,6 +1,6 @@
 const DROPDOWN = "#first";
 const BUTTON = "#menu-button";
-const MENU = "[role='menu'";
+const MENU = "ul";
 
 const create = async () => {
   await browser.url("https://www.google.com");

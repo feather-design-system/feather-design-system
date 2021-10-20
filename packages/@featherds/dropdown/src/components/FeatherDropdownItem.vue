@@ -2,7 +2,6 @@
   <FeatherListItem
     ref="link"
     href="#"
-    role="menuitem"
     tabindex="-1"
     @click.prevent.stop="handleClick"
     :disabled="disabled"

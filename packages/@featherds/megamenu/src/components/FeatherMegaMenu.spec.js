@@ -6,11 +6,11 @@ import { MenuFocusLoop } from "@featherds/menu";
 const menuName = "Test";
 const templateWithColumnsLinks = `<div>
                                     <div>
-                                    <li><a role="menuitem" href="#" id="1">1</a></li>
-                                    <li><a role="menuitem" href="#" id="2">2</a></li>
+                                    <li><a href="#" id="1">1</a></li>
+                                    <li><a  href="#" id="2">2</a></li>
                                     </div>
                                     <div>
-                                    <li><a role="menuitem" href="#" id="3">3</a></li>
+                                    <li><a href="#" id="3">3</a></li>
                                     </div>
                                   </div>`;
 

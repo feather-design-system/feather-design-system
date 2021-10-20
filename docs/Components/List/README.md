@@ -23,7 +23,7 @@ This component does not provide any keyboard functionality or accessibility stan
 
 ### Slots
 
-- `default` - place `FeatherListItem`, `FeatherListHeader` and `FeatherListSeparator` here.
+- `default` - place `FeatherListItem`, `FeatherListSwitch`, `FeatherListHeader` and `FeatherListSeparator` here.
 
 ## FeatherListItem
 
@@ -40,6 +40,25 @@ This component does not provide any keyboard functionality or accessibility stan
 
 - `default` - main content of the item.
 - `icon` - left aligned icons should be placed here.
+- `post` - content to appear fixed to the end of the item
+
+## FeatherListSwitch
+
+### Props
+
+| Name       | Description                         | Type      | Required | Default |
+| ---------- | ----------------------------------- | --------- | -------- | ------- |
+| disabled   | when true will render disabled item | `Boolean` | `false`  | `false` |
+| modelValue | when true, switch will be selected  | `Boolean` | `false`  | `false` |
+
+### Slots
+
+- `default` - main content of the item.
+- `icon` - left aligned icons should be placed here.
+
+### Events
+
+- `update:modelValue` called when modelValue is updated.
 
 ## FeatherListHeader
 
