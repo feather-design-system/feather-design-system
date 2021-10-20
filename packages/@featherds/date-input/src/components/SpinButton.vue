@@ -168,7 +168,18 @@ export default {
           }
           stop(e);
           break;
-        default:
+        case KEYCODES.DELETE:
+          //reset
+          this.input = "";
+          this.$emit("update:modelValue", undefined);
+          stop(e);
+          break;
+        case KEYCODES.BACKSPACE:
+          this.input = this.input.slice(0, -1);
+
+          this.parseValue(this.input);
+          stop(e);
+
           break;
       }
     },

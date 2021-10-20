@@ -1,5 +1,6 @@
 import SpinButton from "./SpinButton.vue";
 import { mount } from "@vue/test-utils";
+import { KEYCODES } from "@featherds/utils/keys";
 
 const getWrapper = function (options) {
   return mount(SpinButton, options);
@@ -117,5 +118,74 @@ describe("SpinButton.vue", () => {
 
     await setValue(wrapper, "009");
     expect(wrapper.emitted("update:modelValue")[3][0]).toBe(9); //one for each char
+  });
+  it("should clear value when delete is pressed", async () => {
+    const wrapper = getWrapper({
+      propsData: {
+        modelValue: 11,
+        min: 5,
+        max: 1000,
+        label: "Test",
+        placeholder: "dd",
+      },
+    });
+
+    await wrapper.find("span").trigger("keydown", {
+      keyCode: KEYCODES.DELETE,
+    });
+    expect(wrapper.emitted("update:modelValue")[0][0]).toBeUndefined();
+    await wrapper.setProps({
+      modelValue: wrapper.emitted("update:modelValue")[0][0],
+    });
+    expect(getValue(wrapper)).toBe("dd");
+  });
+  it("should clear input when no character is typed", async () => {
+    const wrapper = getWrapper({
+      propsData: {
+        modelValue: 11,
+        min: 5,
+        max: 1000,
+        label: "Test",
+        placeholder: "dd",
+      },
+    });
+
+    await wrapper.find("span").trigger("keydown", {
+      keyCode: KEYCODES.BACKSPACE,
+    });
+    expect(wrapper.emitted("update:modelValue")[0][0]).toBeUndefined();
+    await wrapper.setProps({
+      modelValue: wrapper.emitted("update:modelValue")[0][0],
+    });
+    expect(getValue(wrapper)).toBe("dd");
+  });
+  it("should clear last character typed when backspace is pressed", async () => {
+    const wrapper = getWrapper({
+      propsData: {
+        modelValue: 11,
+        min: 5,
+        max: 1000,
+        label: "Test",
+        placeholder: "dd",
+      },
+    });
+
+    await wrapper.find("span").trigger("keydown", {
+      key: "1",
+    });
+    await wrapper.find("span").trigger("keydown", {
+      key: "1",
+    });
+    await wrapper.find("span").trigger("keydown", {
+      key: "9",
+    });
+
+    expect(wrapper.emitted("update:modelValue")[2][0]).toBe(119);
+
+    await wrapper.find("span").trigger("keydown", {
+      keyCode: KEYCODES.BACKSPACE,
+    });
+    expect(wrapper.emitted("update:modelValue")[3][0]).toBe(11);
+    expect(getValue(wrapper)).toBe("0011");
   });
 });
