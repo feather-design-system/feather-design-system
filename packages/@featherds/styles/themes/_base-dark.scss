@@ -12,7 +12,8 @@ $colors: (
   $warning: #ffac26,
   $state-color-on-color: #0a0c1b,
   $state-color-on-surface: #fff,
-  $state-color-on-neutral: #fff
+  $state-color-on-neutral: #fff,
+  $primary-text-on-surface: rgba(255, 255, 255, 1),
 );
 $colors: add-RGB($colors);
 
@@ -21,15 +22,14 @@ $on-color: (
   $secondary-text-on-color: rgba(10, 12, 27, 0.78),
   $disabled-text-on-color: rgba(10, 12, 27, 0.5),
   $border-on-color: rgba(10, 12, 27, 0.12),
-  $border-light-on-color: rgba(10, 12, 27, 0.06)
+  $border-light-on-color: rgba(10, 12, 27, 0.06),
 );
 
 $on-surface: (
-  $primary-text-on-surface: rgba(255, 255, 255, 1),
   $secondary-text-on-surface: rgba(255, 255, 255, 0.78),
   $disabled-text-on-surface: rgba(255, 255, 255, 0.5),
   $border-on-surface: rgba(255, 255, 255, 0.24),
-  $border-light-on-surface: rgba(255, 255, 255, 0.12)
+  $border-light-on-surface: rgba(255, 255, 255, 0.12),
 );
 
 $on-warning: (
@@ -37,7 +37,7 @@ $on-warning: (
   $secondary-text-on-warning: rgba(0, 0, 0, 0.78),
   $disabled-text-on-warning: rgba(0, 0, 0, 0.5),
   $border-on-warning: rgba(0, 0, 0, 0.12),
-  $border-light-on-warning: rgba(0, 0, 0, 0.06)
+  $border-light-on-warning: rgba(0, 0, 0, 0.06),
 );
 
 $shadeColor: white;
@@ -45,20 +45,20 @@ $shades: (
   $shade-1: rgba($shadeColor, 0.6),
   $shade-2: rgba($shadeColor, 0.4),
   $shade-3: rgba($shadeColor, 0.24),
-  $shade-4: rgba($shadeColor, 0.12)
+  $shade-4: rgba($shadeColor, 0.12),
 );
 $state-on-surface: (
   $state-opacity-hover-on-surface: 0.08,
   $state-opacity-pressed-on-surface: 0.32,
   $state-opacity-selected-on-surface: 0.12,
-  $state-opacity-focus-on-surface: 0.12
+  $state-opacity-focus-on-surface: 0.12,
 );
 
 $state-on-neutral: (
   $state-opacity-hover-on-neutral: 0.08,
   $state-opacity-pressed-on-neutral: 0.32,
   $state-opacity-selected-on-neutral: 0.12,
-  $state-opacity-focus-on-neutral: 0.12
+  $state-opacity-focus-on-neutral: 0.12,
 );
 $state-on-color: (
   $state-opacity-hover-on-color: 0.08,
@@ -66,7 +66,7 @@ $state-on-color: (
   $state-opacity-selected-on-color: 0.12,
   $state-opacity-focus-on-color: 0.12,
   $state-border-focus-on-color: 2px solid white,
-  $state-inner-border-color-focus-on-color: rgba(0, 0, 0, 0.6)
+  $state-inner-border-color-focus-on-color: rgba(0, 0, 0, 0.6),
 );
 
 $shadows: (
@@ -94,7 +94,7 @@ $shadows: (
   $shadow-21: 0 0 #fff,
   $shadow-22: 0 0 #fff,
   $shadow-23: 0 0 #fff,
-  $shadow-24: 0 0 #fff
+  $shadow-24: 0 0 #fff,
 );
 
 $base-dark: map-collect(

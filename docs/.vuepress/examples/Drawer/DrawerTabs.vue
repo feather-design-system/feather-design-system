@@ -21,28 +21,17 @@
           <span>My Account</span>
         </template>
         <FeatherList>
-          <FeatherListItem
-            href="#"
-            tab-index="0"
-            title="Mange Profile"
-            role="menuitem"
-          >
+          <FeatherListItem href="#" tab-index="0" title="Mange Profile">
             Manage Profile
           </FeatherListItem>
           <FeatherListItem
             href="#"
             tab-index="0"
             title="Set Notification Preferences"
-            role="menuitem"
           >
             Set Notification Preferences
           </FeatherListItem>
-          <FeatherListItem
-            href="#"
-            tab-index="0"
-            title="Set Timeout Durations"
-            role="menuitem"
-          >
+          <FeatherListItem href="#" tab-index="0" title="Set Timeout Durations">
             Set Timeout Durations
           </FeatherListItem>
         </FeatherList>

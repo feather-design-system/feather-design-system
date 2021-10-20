@@ -55,6 +55,7 @@
     "@featherds/ripple": "file:packages/@featherds/ripple",
     "@featherds/select": "file:packages/@featherds/select",
     "@featherds/styles": "file:packages/@featherds/styles",
+    "@featherds/switch": "file:packages/@featherds/switch",
     "@featherds/table": "file:packages/@featherds/table",
     "@featherds/tabs": "file:packages/@featherds/tabs",
     "@featherds/textarea": "file:packages/@featherds/textarea",

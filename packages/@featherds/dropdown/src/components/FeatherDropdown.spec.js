@@ -15,8 +15,8 @@ const getTrigger = () => ({
   },
 });
 const getLi = (disabled = false) => ({
-  template: `<li role="presentation">
-    <a role="menuitem">TEST</a>
+  template: `<li>
+    <a>TEST</a>
   </li>`,
   data() {
     return { disabled: disabled, focused: false };

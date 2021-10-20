@@ -46,7 +46,6 @@ describe("FeatherNavigationRail.vue", () => {
         },
       },
     });
-    console.log(wrapper.element.innerHTML);
     expect(await axe(wrapper.element)).toHaveNoViolations();
   });
 });

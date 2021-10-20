@@ -35,36 +35,19 @@
             <span>Tab one</span>
           </template>
           <FeatherList>
-            <FeatherListItem
-              href="#"
-              tab-index="0"
-              title="Menu item 1"
-              role="menuitem"
-            >
+            <FeatherListItem href="#" tab-index="0" title="Menu item 1">
               <template v-slot:icon>
                 <FeatherIcon :icon="support" class="icon" />
               </template>
               Menu item 1
             </FeatherListItem>
-            <FeatherListItem
-              href="#"
-              tab-index="0"
-              title="Menu item 2"
-              role="menuitem"
+            <FeatherListItem href="#" tab-index="0" title="Menu item 2"
               >Menu item 2</FeatherListItem
             >
-            <FeatherListItem
-              href="#"
-              tab-index="0"
-              title="Menu item 3"
-              role="menuitem"
+            <FeatherListItem href="#" tab-index="0" title="Menu item 3"
               >Menu item 3</FeatherListItem
             >
-            <FeatherListItem
-              href="#"
-              tab-index="0"
-              title="Menu item 4"
-              role="menuitem"
+            <FeatherListItem href="#" tab-index="0" title="Menu item 4"
               >Menu item 4</FeatherListItem
             >
           </FeatherList>

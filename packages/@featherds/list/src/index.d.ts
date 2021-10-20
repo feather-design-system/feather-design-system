@@ -4,10 +4,12 @@ declare module "@featherds/list" {
   const FeatherListItem: ReturnType<typeof defineComponent>;
   const FeatherListHeader: ReturnType<typeof defineComponent>;
   const FeatherListSeparator: ReturnType<typeof defineComponent>;
+  const FeatherListSwitch: ReturnType<typeof defineComponent>;
   export {
     FeatherList,
     FeatherListItem,
     FeatherListHeader,
     FeatherListSeparator,
+    FeatherListSwitch,
   };
 }
