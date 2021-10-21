@@ -2,8 +2,9 @@
 <div class="hero">
 <Hero>
   <template v-slot:spacer><HeaderMask transparent /></template>
-  <h2>Welcome to the Feather Design System</h2>
-  <p>Feather DS is an open source design system used for NantHealth and OpenNMS products</p>
+  <h1>Welcome to the Feather Design System</h1>
+  <p class="body-large">Feather DS is an open source design system used<br/>
+  for NantHealth and OpenNMS products.</p>
   <FeatherButton primary>Get Started</FeatherButton>
   <FeatherButton text>
     <template v-slot:icon>

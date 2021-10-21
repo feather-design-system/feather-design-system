@@ -8,7 +8,7 @@
     >
       <template v-slot:left>
         <div class="header-title">
-          <a :href="$withBase('/')">( ?° ?? ?°) FEATHER DS</a>
+          <a :href="$withBase('/')">( ?? ?? ??) FEATHER DS</a>
           &nbsp;
         </div>
       </template>
@@ -21,10 +21,7 @@
       <template v-slot:right>
         <div class="right-container">
           <PageThemeChange class="theme-changer" />
-          <span class="search-container">
-            <FeatherIcon class="search-icon" title="Search Feather..." :icon="iconSearch" />
-            <DocSearch />
-          </span>
+          <DocSearch />
         </div>
       </template>
     </FeatherAppBar>
@@ -35,7 +32,6 @@
 </template>
 <script>
 import { FeatherIcon } from "@featherds/icon";
-import Search from "@featherds/icon/navigation/Search";
 import KeyboardArrowDown from "@featherds/icon/navigation/ExpandMore";
 import { FeatherMegaMenu } from "@featherds/megamenu";
 import {
@@ -52,7 +48,6 @@ export default {
         skip: "Skip to main content",
       },
       iconCaret: KeyboardArrowDown,
-      iconSearch: Search,
     };
   },
   components: {
