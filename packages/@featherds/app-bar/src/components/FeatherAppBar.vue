@@ -1,7 +1,7 @@
 <template>
   <div class="feather-app-bar-wrapper" :class="{ 'full-width': !!full }">
     <a class="skip" :href="contentId">{{ skipLabel }}</a>
-    <header class="banner">
+    <header class="banner" :class="[displayClass, transitionClass]">
       <div class="header-content center-horiz">
         <div class="left center-horiz">
           <slot name="left"></slot>
@@ -18,7 +18,8 @@
 </template>
 <script>
 import { useLabelProperty } from "@featherds/composables/LabelProperty";
-import { toRef, inject } from "vue";
+import { useScroll } from "@featherds/composables/events/Scroll";
+import { toRef, inject, ref, onMounted } from "vue";
 const LABELS = {
   skip: "REQUIRED",
 };
@@ -41,12 +42,45 @@ export default {
       type: Boolean,
       default: false,
     },
+    scrollHide: {
+      type: Boolean,
+      default: false,
+    },
   },
   setup(props) {
+    const scrollHide = props.scrollHide;
     const labels = useLabelProperty(toRef(props, "labels"), LABELS);
-
     const full = inject("feather-app-layout-full-width", props.fullWidth);
-    return { full, ...labels };
+
+    //scroll hiding
+    const transitionClass = ref("no-transition");
+    const displayClass = ref("show");
+
+    if (scroll) {
+      let previousScrollPosition = 0;
+      const documentRef = ref(document);
+      const onScroll = () => {
+        const scrollTop = document.documentElement.scrollTop;
+        const scrollingDown = scrollTop >= previousScrollPosition;
+        previousScrollPosition = scrollTop;
+        if (scrollTop > 60 && scrollingDown) {
+          displayClass.value = "hide";
+          return;
+        }
+        if (scrollTop > 60 && !scrollingDown) {
+          displayClass.value = "show";
+          return;
+        }
+        displayClass.value = "show";
+      };
+      const activate = useScroll(documentRef, onScroll);
+      onMounted(() => {
+        activate.value = true;
+        onScroll();
+        transitionClass.value = "";
+      });
+    }
+    return { full, ...labels, transitionClass, displayClass };
   },
   computed: {
     contentId() {
@@ -94,6 +128,16 @@ header {
   top: 0;
   left: 0;
   z-index: var($zindex-fixed);
+  transition: transform 280ms ease-in-out;
+  &.show {
+    transform: translateY(0px);
+  }
+  &.hide {
+    transform: translateY(-100%);
+  }
+  &.no-transition {
+    transition: none;
+  }
 }
 
 .header-content {

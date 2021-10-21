@@ -5,6 +5,7 @@
       :labels="appbarLabels"
       content="main"
       full-width
+      scroll-hide
     >
       <template v-slot:left>
         <div class="header-title">
@@ -14,9 +15,13 @@
       </template>
       <template v-slot:center>
         <!-- Patterns -->
-        <AppBarLink title="Foundation" url="/Design/Foundation/">Foundation</AppBarLink>
+        <AppBarLink title="Foundation" url="/Design/Foundation/"
+          >Foundation</AppBarLink
+        >
         <!-- Packages -->
-        <AppBarLink title="Components" url="/Components/">Components</AppBarLink>
+        <AppBarLink title="Components" url="/Components/"
+          >Components</AppBarLink
+        >
       </template>
       <template v-slot:right>
         <div class="right-container">
@@ -36,10 +41,7 @@ import { FeatherIcon } from "@featherds/icon";
 import KeyboardArrowDown from "@featherds/icon/navigation/ExpandMore";
 import FeatherLogoFull from "@featherds/icon/branding/FeatherLogoFull";
 import { FeatherMegaMenu } from "@featherds/megamenu";
-import {
-  FeatherAppBarLink,
-  FeatherAppBar,
-} from "@featherds/app-bar";
+import { FeatherAppBarLink, FeatherAppBar } from "@featherds/app-bar";
 import AppBarLink from "../components/AppBarLink.vue";
 import PageThemeChange from "../global-components/PageThemeChange";
 import Footer from "../global-components/Footer";
@@ -78,7 +80,7 @@ export default {
   }
   ::v-deep(.main-content) {
     padding-bottom: 0;
-  }
+}
 }
 .header-title {
   height: 100%;
@@ -99,7 +101,7 @@ export default {
   &, & a {
     display: inline-flex;
     align-items: center;
-  }
+}
   .feather-icon {
     height: inherit;
     width: inherit;
@@ -148,7 +150,8 @@ export default {
 
     div.center-horiz {
       height: 60px;
-      &.left, &.right {
+      &.left,
+      &.right {
         flex-grow: 0;
         flex-basis: 50%;
       }
