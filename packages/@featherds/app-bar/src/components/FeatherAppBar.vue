@@ -52,7 +52,6 @@ export default {
     },
   },
   setup(props) {
-    const scrollHide = props.scrollHide;
     const labels = useLabelProperty(toRef(props, "labels"), LABELS);
     const full = inject("feather-app-layout-full-width", props.fullWidth);
 
@@ -61,7 +60,7 @@ export default {
     const displayClass = ref("show");
     const wrapper = ref();
 
-    if (scroll) {
+    if (props.scrollHide) {
       let previousScrollPosition = 0;
       let height = 60;
       const documentRef = ref(document);
