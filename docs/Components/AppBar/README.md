@@ -26,7 +26,8 @@ layout: ComponentLayout
 
 ```js
 {
-  skip: "REQUIRED";
+  skip: "REQUIRED",
+  expand: "Click to expand",
 }
 ```
 

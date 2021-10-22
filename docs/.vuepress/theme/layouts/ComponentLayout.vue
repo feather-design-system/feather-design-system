@@ -1,8 +1,10 @@
 <template>
   <FeatherPage class="layout">
-    <ComponentMenu></ComponentMenu>
+    <template v-slot:rail>
+      <ComponentMenu></ComponentMenu>
+    </template>
     <div class="center content feather-container">
-      <h1 class="title">{{title}}</h1>
+      <h1 class="title">{{ title }}</h1>
       <div class="toc" v-if="sidebarItems.length">
         <Sidebar :items="sidebarItems" title="Contents" />
       </div>
@@ -18,8 +20,8 @@ import Sidebar from "../components/Sidebar.vue";
 import ComponentMenu from "../components/ComponentMenu.vue";
 export default {
   computed: {
-    title(){
-      return this.$page.title
+    title() {
+      return this.$page.title;
     },
     sidebarItems() {
       if (this.$page && this.$page.headers) {
@@ -35,7 +37,8 @@ export default {
   },
   components: {
     FeatherPage,
-    Sidebar,ComponentMenu
+    Sidebar,
+    ComponentMenu,
   },
 };
 </script>

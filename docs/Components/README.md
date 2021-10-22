@@ -1,9 +1,6 @@
 ---
-title: "Getting Started"
+title: "All Components"
 lang: en-US
-tags: ["Getting Started", "component"]
+tags: ["All Components", "component"]
 layout: ComponentLayout
-
 ---
-
-

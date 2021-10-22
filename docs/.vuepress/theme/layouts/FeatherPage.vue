@@ -1,40 +1,41 @@
 <template>
-  <div class="feather-styles">
-    <FeatherAppBar
-      class="header-with-search"
-      :labels="appbarLabels"
-      content="main"
-      full-width
-      scroll-hide
-    >
-      <template v-slot:left>
-        <div class="header-title">
-          <a :href="$withBase('/')"><FeatherIcon :icon="LogoFull" title="Feather DS"></FeatherIcon></a>
-          &nbsp;
-        </div>
-      </template>
-      <template v-slot:center>
-        <!-- Patterns -->
-        <AppBarLink title="Foundation" url="/Design/Foundation/"
-          >Foundation</AppBarLink
-        >
-        <!-- Packages -->
-        <AppBarLink title="Components" url="/Components/"
-          >Components</AppBarLink
-        >
-      </template>
-      <template v-slot:right>
-        <div class="right-container">
-          <PageThemeChange class="theme-changer" />
-          <DocSearch />
-        </div>
-      </template>
-    </FeatherAppBar>
+  <FeatherAppLayout class="feather-styles" content-layout="full">
+    <template v-slot:header>
+      <FeatherAppBar
+        class="header-with-search"
+        :labels="appbarLabels"
+        content="main"
+        full-width
+        scroll-hide
+      >
+        <template v-slot:left>
+          <div class="header-title">
+            <a :href="$withBase('/')">( ?� ?? ?�) FEATHER DS</a>
+            &nbsp;
+          </div>
+        </template>
+        <template v-slot:center>
+          <!-- Patterns -->
+          <AppBarLink title="Foundation" url="/Design/Foundation/"
+            >Foundation</AppBarLink
+          >
+          <!-- Packages -->
+          <AppBarLink title="Components" url="/Components/"
+            >Components</AppBarLink
+          >
+        </template>
+        <template v-slot:right>
+          <div class="right-container">
+            <PageThemeChange class="theme-changer" />
+            <DocSearch />
+          </div>
+        </template> </FeatherAppBar
+    ></template>
+    <template v-slot:rail><slot name="rail" /></template>
     <div id="main">
       <slot />
     </div>
-    <Footer />
-  </div>
+  </FeatherAppLayout>
 </template>
 <script>
 import { FeatherIcon } from "@featherds/icon";
@@ -42,6 +43,7 @@ import KeyboardArrowDown from "@featherds/icon/navigation/ExpandMore";
 import FeatherLogoFull from "@featherds/icon/branding/FeatherLogoFull";
 import { FeatherMegaMenu } from "@featherds/megamenu";
 import { FeatherAppBarLink, FeatherAppBar } from "@featherds/app-bar";
+import { FeatherAppLayout } from "@featherds/app-layout";
 import AppBarLink from "../components/AppBarLink.vue";
 import PageThemeChange from "../global-components/PageThemeChange";
 import Footer from "../global-components/Footer";
@@ -51,9 +53,10 @@ export default {
     return {
       appbarLabels: {
         skip: "Skip to main content",
+        expand: "Click to expand side navigation",
       },
       iconCaret: KeyboardArrowDown,
-      LogoFull: FeatherLogoFull
+      LogoFull: FeatherLogoFull,
     };
   },
   components: {
@@ -63,7 +66,8 @@ export default {
     FeatherAppBarLink,
     FeatherAppBar,
     AppBarLink,
-    Footer
+    Footer,
+    FeatherAppLayout,
   },
 };
 </script>
@@ -80,7 +84,7 @@ export default {
   }
   ::v-deep(.main-content) {
     padding-bottom: 0;
-}
+  }
 }
 .header-title {
   height: 100%;
@@ -98,10 +102,11 @@ export default {
       color: var($surface);
     }
   }
-  &, & a {
+  &,
+  & a {
     display: inline-flex;
     align-items: center;
-}
+  }
   .feather-icon {
     height: inherit;
     width: inherit;

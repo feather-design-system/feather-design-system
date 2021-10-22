@@ -8,6 +8,14 @@
     <header class="banner" :class="[displayClass, transitionClass]">
       <div class="header-content center-horiz">
         <div class="left center-horiz">
+          <FeatherAppBarLink
+            v-if="canShowExpand"
+            class="expand-button"
+            :icon="menu"
+            :title="expandLabel"
+            @click.stop.prevent="expand"
+            url="#"
+          />
           <slot name="left"></slot>
         </div>
         <div class="center center-horiz">
@@ -22,10 +30,13 @@
 </template>
 <script>
 import { useLabelProperty } from "@featherds/composables/LabelProperty";
+import FeatherAppBarLink from "./FeatherAppBarLink";
 import { useScroll } from "@featherds/composables/events/Scroll";
+import Support from "@featherds/icon/actions/Help";
 import { toRef, inject, ref, onMounted } from "vue";
 const LABELS = {
   skip: "REQUIRED",
+  expand: "Click to expand",
 };
 export default {
   props: {
@@ -91,12 +102,37 @@ export default {
         transitionClass.value = "";
       });
     }
-    return { full, ...labels, transitionClass, displayClass, wrapper };
+
+    const useExpander = () => {
+      //expand button
+      const expander = inject("feather-app-layout-expander", false);
+      if (expander) {
+        const { active: canShowExpand, expand } = expander();
+        return { canShowExpand, expand };
+      }
+      return { canShowExpand: ref(false) };
+    };
+
+    return {
+      full,
+      ...labels,
+      transitionClass,
+      displayClass,
+      wrapper,
+      ...useExpander(),
+    };
   },
   computed: {
     contentId() {
       return `#${this.content}`;
     },
+
+    menu() {
+      return Support;
+    },
+  },
+  components: {
+    FeatherAppBarLink,
   },
 };
 </script>
@@ -167,6 +203,14 @@ header {
   @include media-query-for(s) {
     padding-left: $s-gutter;
     padding-right: $s-gutter;
+  }
+  .expand-button {
+    display: none;
+  }
+  @include media-query-below(xl) {
+    .expand-button {
+      display: flex;
+    }
   }
 }
 .full-width .header-content {
