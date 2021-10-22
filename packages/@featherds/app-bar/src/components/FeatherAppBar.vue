@@ -60,6 +60,7 @@ export default {
       let previousScrollPosition = 0;
       const documentRef = ref(document);
       const onScroll = () => {
+        console.log("HERE");
         const scrollTop = document.documentElement.scrollTop;
         const scrollingDown = scrollTop >= previousScrollPosition;
         previousScrollPosition = scrollTop;
