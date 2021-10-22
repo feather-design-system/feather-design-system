@@ -1,5 +1,9 @@
 <template>
-  <div class="feather-app-bar-wrapper" :class="{ 'full-width': !!full }">
+  <div
+    class="feather-app-bar-wrapper"
+    ref="wrapper"
+    :class="{ 'full-width': !!full }"
+  >
     <a class="skip" :href="contentId">{{ skipLabel }}</a>
     <header class="banner" :class="[displayClass, transitionClass]">
       <div class="header-content center-horiz">
@@ -55,20 +59,21 @@ export default {
     //scroll hiding
     const transitionClass = ref("no-transition");
     const displayClass = ref("show");
+    const wrapper = ref();
 
     if (scroll) {
       let previousScrollPosition = 0;
+      let height = 60;
       const documentRef = ref(document);
       const onScroll = () => {
-        console.log("HERE");
         const scrollTop = document.documentElement.scrollTop;
         const scrollingDown = scrollTop >= previousScrollPosition;
         previousScrollPosition = scrollTop;
-        if (scrollTop > 60 && scrollingDown) {
+        if (scrollTop > height && scrollingDown) {
           displayClass.value = "hide";
           return;
         }
-        if (scrollTop > 60 && !scrollingDown) {
+        if (scrollTop > height && !scrollingDown) {
           displayClass.value = "show";
           return;
         }
@@ -76,12 +81,18 @@ export default {
       };
       const activate = useScroll(documentRef, onScroll);
       onMounted(() => {
+        height = parseInt(
+          getComputedStyle(wrapper.value).getPropertyValue(
+            "--feather-header-height"
+          ),
+          10
+        );
         activate.value = true;
         onScroll();
         transitionClass.value = "";
       });
     }
-    return { full, ...labels, transitionClass, displayClass };
+    return { full, ...labels, transitionClass, displayClass, wrapper };
   },
   computed: {
     contentId() {
@@ -104,7 +115,7 @@ export default {
 .feather-app-bar-wrapper,
 .banner {
   width: 100%;
-  height: 60px;
+  height: var($header-height);
 }
 
 a.skip {
