@@ -27,6 +27,14 @@ export default {
 body div.feather-styles.layout header.banner {
   transition: all 0.2s linear;
 }
+.feather-icon.atom {
+  height: inherit;
+  width: inherit;
+  stroke: var($primary);
+  circle {
+    stroke: none;
+  }
+}
 
 body.pagetop div.feather-styles.layout {
   & header.banner {
@@ -49,8 +57,8 @@ body.pagetop div.feather-styles.layout {
     }
   }
 }
-div.feather-styles.layout {
 
+div.feather-styles.layout {
   & > div.feather-app-bar-wrapper {
     position: fixed;
     z-index: 3;
@@ -94,14 +102,76 @@ div.feather-styles.layout {
     margin: 0 auto;
     max-width: var($content-width);
     text-align: left;
+    padding: 80px 0;
+
+    &.philosophy {
+      display: flex;
+
+      .left, .right {
+        display: flex;
+        flex-basis: 50%;
+      }
+
+      .left {
+        & > span {
+          flex-direction: column;
+          display: flex;
+          align-items: flex-start;
+          justify-content: center;
+          padding-left: 40px;
+          padding-right: 20px;
+
+          border-right: 2px solid var($shade-1);
+        }
+      }
+      .right {
+        ol {
+          padding-left: calc(40px + 4em);
+          list-style-type: decimal-leading-zero;
+        }
+        li::marker {
+          color: var($primary);
+          font-size: 2em;
+          font-weight: bold;
+        }
+        dt{
+          @include headline2();
+        }
+        dd {
+          margin-inline-start: 0;
+        }
+        li:first-of-type dl {
+          margin-top: 0;
+        }
+        li:last-of-type dl {
+          margin-bottom: 0;
+        }
+      }
+    }
   }
 
   & > h2 {
     margin-top: 0.1em;
   }
 
-  &.light {
-    background-color: #FFF;
+  a.sexy-card {
+    display: block;
+    max-width: 317px;
+    border: 1px solid var($secondary-variant);
+    background-color: var($surface);
+    border-bottom-right-radius: 16px;
+
+    img {
+      display: inline-block;
+    }
+    span, h3 {
+      padding: 0 24px;
+    }
+    span.overline {
+      @include overline();
+      margin-top: 24px;
+      padding-bottom: 0;
+    }
   }
 }
 </style>

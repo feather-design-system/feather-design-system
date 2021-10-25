@@ -89,11 +89,10 @@ body {
     margin: 0.25em 0;
   }
   h2 {
-    @include title();
-    margin: 0.6em 0;
+    @include headline2();
   }
   h3 {
-    @include headline2();
+    @include headline3();
   }
   h4 {
     @include subtitle2();

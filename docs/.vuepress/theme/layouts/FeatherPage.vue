@@ -8,7 +8,7 @@
     >
       <template v-slot:left>
         <div class="header-title">
-          <a :href="$withBase('/')">( ?? ?? ??) FEATHER DS</a>
+          <a :href="$withBase('/')"><FeatherIcon :icon="LogoFull" title="Feather DS"></FeatherIcon></a>
           &nbsp;
         </div>
       </template>
@@ -33,6 +33,7 @@
 <script>
 import { FeatherIcon } from "@featherds/icon";
 import KeyboardArrowDown from "@featherds/icon/navigation/ExpandMore";
+import FeatherLogoFull from "@featherds/icon/branding/FeatherLogoFull";
 import { FeatherMegaMenu } from "@featherds/megamenu";
 import {
   FeatherAppBarLink,
@@ -48,6 +49,7 @@ export default {
         skip: "Skip to main content",
       },
       iconCaret: KeyboardArrowDown,
+      LogoFull: FeatherLogoFull
     };
   },
   components: {
@@ -86,6 +88,14 @@ export default {
       text-decoration: none;
       color: var($surface);
     }
+  }
+  &, & a {
+    display: inline-flex;
+    align-items: center;
+  }
+  .feather-icon {
+    height: inherit;
+    width: inherit;
   }
 }
 
