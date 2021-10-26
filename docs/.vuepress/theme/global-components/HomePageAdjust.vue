@@ -24,6 +24,7 @@ export default {
 <style lang="scss">
 @import "~@featherds/styles/themes/variables";
 @import "~@featherds/styles/mixins/typography";
+@import "~@featherds/styles/mixins/elevation";
 body div.feather-styles.layout header.banner {
   transition: all 0.2s linear;
 }
@@ -86,7 +87,7 @@ div.feather-styles.layout {
 .feather-styles section {
   position: relative;
   z-index: 0;
-  background-color: var($surface);
+  background-color: var($background);
   &:before {
     content: "";
     position: absolute;
@@ -95,7 +96,31 @@ div.feather-styles.layout {
     bottom: 0;
     left: 0;
     right: 0;
-    background-color: var($surface);
+    background-color: var($background);
+  }
+
+  &.gradient-1, &.gradient-2 {
+    &, &:before {
+      background-color: transparent;
+    }
+    .header-mask {
+      background: transparent;
+    }
+  }
+  &.gradient-1:before {
+    background:
+      radial-gradient(ellipse 100% 250% at 130% 180%, var($gradient-4) 0%, #14D1DF00 100%) 0% 0% no-repeat padding-box,
+      radial-gradient(ellipse 200% 500% at -90% 0%, var($gradient-1) 0%, #14D1DF00 100%) 0% 0% no-repeat padding-box;
+    //opacity: 0.5;
+    //filter: blur(50px);
+  }
+  &.gradient-2:before {
+    background:
+      radial-gradient(ellipse 100% 250% at 130% -115%, var($gradient-4) 0%, #14D1DF00 100%) 0% 0% no-repeat padding-box,
+      radial-gradient(ellipse 200% 200% at -100% -110%, var($gradient-1) 0%, #14D1DF00 100%) 0% 0% no-repeat padding-box,
+      radial-gradient(ellipse 100% 250% at 110% 250%, var($gradient-3) 0%, #14D1DF00 100%) 0% 0% no-repeat padding-box,
+      radial-gradient(ellipse 200% 200% at -90% 160%, var($gradient-2) 0%, #14D1DF00 100%) 0% 0% no-repeat padding-box;
+    //opacity: 0.5;
   }
 
   .section-wrapper {
@@ -103,6 +128,16 @@ div.feather-styles.layout {
     max-width: var($content-width);
     text-align: left;
     padding: 80px 0;
+
+    &.center {
+      text-align: center;
+    }
+
+    &.learn {
+      h2 {
+        margin-top: 0;
+      }
+    }
 
     &.philosophy {
       display: flex;
@@ -122,6 +157,11 @@ div.feather-styles.layout {
           padding-right: 20px;
 
           border-right: 2px solid var($shade-1);
+
+          p {
+            padding-top: 0;
+            @include body-large();
+          }
         }
       }
       .right {
@@ -148,29 +188,87 @@ div.feather-styles.layout {
         }
       }
     }
+
+    &.story {
+      display: flex;
+      justify-content: center;
+      position: relative;
+      padding: 40px 0 48px 0;
+
+      svg.logo.feather-icon {
+        color: var($primary);
+        position: absolute;
+        font-size: 30px;
+        margin-left: -46px;
+        opacity: .2;
+      }
+      .title, .tagline {
+        display: block;
+      }
+      .tagline {
+        @include overline();
+        line-height: var($overline-font-size);
+        color: var($primary);
+        padding-bottom: 8px;
+      }
+      .title {
+        @include title();
+        line-height: var($title-font-size);
+      }
+    }
   }
 
   & > h2 {
     margin-top: 0.1em;
   }
 
+  div.card-group {
+    display: flex;
+    justify-content: space-around;
+    margin-top: 36px;
+  }
   a.sexy-card {
     display: block;
     max-width: 317px;
-    border: 1px solid var($secondary-variant);
+    border: 1px solid var($primary);
     background-color: var($surface);
     border-bottom-right-radius: 16px;
+    text-decoration: none;
+    transition: 0.3s;
+
+    &:hover {
+      @include elevation(4);
+      cursor: pointer;
+    }
 
     img {
-      display: inline-block;
+      display: block;
     }
-    span, h3 {
-      padding: 0 24px;
+    div.card-inner {
+      position: relative;
+      padding: 24px 24px 32px 24px;
     }
     span.overline {
       @include overline();
-      margin-top: 24px;
+      line-height: normal;
       padding-bottom: 0;
+      color: var($primary);
+    }
+    h3 {
+      margin-top: 8px;
+      margin-bottom: 0;
+      margin-right: 16px;
+      line-height: var($headline3-font-size);
+    }
+    .feather-icon {
+      color: var($primary);
+      position: absolute;
+      font-size: 40px;
+      bottom: 0;
+      right: 0;
+      transform: rotate(180deg);
+      font-size: 40px;
+      margin: 0 8px 8px 0;
     }
   }
 }

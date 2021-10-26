@@ -28,6 +28,7 @@
     <div id="main">
       <slot />
     </div>
+    <Footer />
   </div>
 </template>
 <script>
@@ -41,6 +42,7 @@ import {
 } from "@featherds/app-bar";
 import AppBarLink from "../components/AppBarLink.vue";
 import PageThemeChange from "../global-components/PageThemeChange";
+import Footer from "../global-components/Footer";
 
 export default {
   data() {
@@ -58,7 +60,8 @@ export default {
     FeatherMegaMenu,
     FeatherAppBarLink,
     FeatherAppBar,
-    AppBarLink
+    AppBarLink,
+    Footer
   },
 };
 </script>
@@ -71,6 +74,9 @@ export default {
   flex-direction: row;
   :deep(img) {
     max-width: 100%;
+  }
+  ::v-deep(.main-content) {
+    padding-bottom: 0;
   }
 }
 .header-title {

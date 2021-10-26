@@ -14,7 +14,10 @@ $colors: (
   $state-color-on-surface: #fff,
   $state-color-on-neutral: #fff,
   $primary-text-on-surface: rgba(255, 255, 255, 1),
-);
+  $gradient-1: #3D50C5,
+  $gradient-2: #32E7F3,
+  $gradient-3: #DB2973,
+  $gradient-4: #3A4BD3);
 $colors: add-RGB($colors);
 
 $on-color: (
