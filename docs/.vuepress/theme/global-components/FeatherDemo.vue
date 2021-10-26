@@ -1,6 +1,9 @@
 <template>
   <div class="feather-demo">
     <div class="demo-toolbar">
+      <FeatherButton text @click="showSource = !showSource"
+        >view code</FeatherButton
+      >
       <FeatherSelect
         background
         label="demo"
@@ -10,10 +13,6 @@
         inline
         v-if="demos.length > 1"
       />
-
-      <FeatherButton text @click="showSource = !showSource"
-        >view code</FeatherButton
-      >
     </div>
     <transition
       name="expand"
@@ -122,12 +121,14 @@ export default {
 <style lang="scss" scoped>
 @import "~@featherds/styles/themes/variables";
 @import "~@featherds/styles/mixins/typography";
+@import "~@featherds/styles/mixins/responsive";
 .feather-demo {
   border: 1px solid var($shade-4);
   background-color: var($background);
   border-radius: 4px;
   :deep(pre[class*="language-"]) {
     margin: 0;
+    border-radius: 0;
   }
   //revert default documentation styling
   h1 {
@@ -147,13 +148,23 @@ export default {
 }
 .demo-toolbar {
   background-color: var($background);
-  padding: 4px;
+  height: 64px;
+  padding: 0 16px;
   display: flex;
   align-items: center;
-  justify-content: flex-end;
+  justify-content: space-between;
   border-radius: 4px 4px 0 0;
-  > * {
-    margin: 0 4px;
+}
+@include media-query-below(m) {
+  .demo-toolbar {
+    flex-direction: column-reverse;
+    height: auto;
+    .theme-select {
+      width: 80%;
+    }
+    .btn-text {
+      margin: 8px 0;
+    }
   }
 }
 .demo {
@@ -166,7 +177,7 @@ export default {
 }
 .theme-select {
   display: inline-block;
-  margin-right: 8px;
+  width: 280px;
   &:deep(.feather-select-container) {
     padding: 4px;
   }
