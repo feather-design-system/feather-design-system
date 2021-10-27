@@ -1,7 +1,7 @@
 <template>
-  <a :href="url" :aria-label="title" class="link" :class="{active: active}">
+  <a :href="url" :aria-label="title" class="link" :class="{ active: active }">
     <slot></slot>
-    <FeatherRipple v-if="type === 'round'" center />
+    <FeatherRipple />
   </a>
 </template>
 <script>
@@ -9,8 +9,8 @@ import { FeatherRipple } from "@featherds/ripple";
 export default {
   data() {
     return {
-      current: false
-    }
+      current: false,
+    };
   },
   props: {
     title: {
@@ -47,9 +47,17 @@ a.link {
   justify-content: center;
   align-content: center;
   flex-direction: column;
-  &, &:active, &:hover, &:visited {
+  &,
+  &:active,
+  &:hover,
+  &:visited {
     color: var($primary-text-on-color);
     text-decoration: none;
+  }
+
+  :deep(.ripple) {
+    background-color: var($state-color-on-neutral);
+    opacity: var($state-opacity-pressed-on-neutral);
   }
   &:focus {
     background: linear-gradient(

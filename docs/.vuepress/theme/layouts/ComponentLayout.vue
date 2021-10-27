@@ -80,18 +80,16 @@ export default {
 
 .title-container {
   padding: 40px 0;
+  margin-bottom: 40px;
   background: var($background);
   .pre-text {
     @include overline();
     color: var($primary);
     margin: 0;
-  }
-  .title {
-    margin: 0;
+    margin-bottom: 8px;
   }
   .title-description {
     margin: 0;
-    margin-top: 8px;
   }
 }
 $gutterwidth: 150px;

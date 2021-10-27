@@ -48,7 +48,7 @@ pre[class*="language-"] {
 }
 // //include local table stylings
 // //replace with styling from feather table
-// @import "./table.scss";
+@import "./table.scss";
 
 //Reset some spacing
 body {
@@ -58,13 +58,13 @@ body {
 
 .feather-styles {
   ul {
-    padding-left: 40px;
-    margin-bottom: 24px;
+    padding-left: 20px;
+    margin-bottom: 40px;
+    @include body-small;
   }
   li > ul {
-    margin-bottom: 0;
     margin-top: 0;
-    color: var($secondary-text-on-surface);
+    color: var($primary-text-on-surface);
   }
   blockquote {
     border-left: 2px solid var($shade-2);
@@ -78,23 +78,23 @@ body {
   }
   h1 {
     @include display2();
-    margin: 0.25em 0;
+    margin-bottom: 8px;
   }
   h2 {
-    @include title();
-    margin-bottom: 24px;
+    @include headline1();
+    margin-bottom: 26px;
   }
   h3 {
-    margin-bottom: 24px;
+    margin-bottom: 19px;
     @include headline2();
   }
   h4 {
-    @include subtitle2();
-    margin-bottom: 24px;
+    @include headline3();
+    margin-bottom: 21px;
   }
   p {
     @include body-large();
-    margin-bottom: 24px;
+    margin-bottom: 29px;
   }
 }
 

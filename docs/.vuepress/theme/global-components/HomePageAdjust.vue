@@ -1,24 +1,23 @@
-<template>
-</template>
+<template></template>
 <script>
 export default {
   mounted() {
     this.recalc();
-    window.addEventListener('scroll', this.recalc);
+    window.addEventListener("scroll", this.recalc);
   },
   unmounted() {
-    window.removeEventListener('scroll', this.recalc);
+    window.removeEventListener("scroll", this.recalc);
   },
   methods: {
     recalc() {
       //if we've scrolled the page at all
-      if(window.scrollY) {
+      if (window.scrollY) {
         document.body.classList.remove("pagetop");
       } else {
         document.body.classList.add("pagetop");
       }
-    }
-  }
+    },
+  },
 };
 </script>
 <style lang="scss">
@@ -36,21 +35,22 @@ body div.feather-styles.layout header.banner {
     stroke: none;
   }
 }
-header.banner {
-  background-color: transparent;
-  box-shadow: none;
-}
 body.pagetop div.feather-styles.layout {
   & header.banner {
-    &, & .header-content {
-      background-color: transparent;
-    }
-
-    & .header-content {
-      .header-title a, a.link, .toggle, #search-container .DocSearch-Button, .search-icon, .DocSearch.DocSearch-Button:hover .DocSearch-Button-Placeholder {
+    background-color: transparent;
+    box-shadow: none;
+    .header-content {
+      .header-title a,
+      a.link,
+      .toggle,
+      #search-container .DocSearch-Button,
+      .search-icon,
+      .DocSearch.DocSearch-Button:hover .DocSearch-Button-Placeholder {
         color: var($primary-text-on-surface);
       }
-      .DocSearch.DocSearch-Button:hover:after, .DocSearch.DocSearch-Button:focus:after, .DocSearch.DocSearch-Button:active:after {
+      .DocSearch.DocSearch-Button:hover:after,
+      .DocSearch.DocSearch-Button:focus:after,
+      .DocSearch.DocSearch-Button:active:after {
         background-color: var($primary-text-on-surface);
       }
       .DocSearch.DocSearch-Button {
@@ -61,11 +61,11 @@ body.pagetop div.feather-styles.layout {
 }
 
 div.feather-styles.layout {
-  & > div.feather-app-bar-wrapper {
+  div.feather-app-bar-wrapper {
     position: fixed;
     z-index: 3;
 
-    & > a.skip {
+    a.skip {
       margin-left: -10000000px;
       &:focus {
         margin-left: 0px;
@@ -73,14 +73,14 @@ div.feather-styles.layout {
     }
   }
 
-  & > #main > div.center {
+  #main div.center {
     padding-top: 0;
   }
   .body-large {
     @include body-large();
   }
 }
-.feather-styles.layout > #main > .center.content {
+.feather-styles.layout #main .center.content {
   padding: 0;
   margin: 0;
   max-width: none;
@@ -100,8 +100,10 @@ div.feather-styles.layout {
     background-color: var($surface);
   }
 
-  &.gradient-1, &.gradient-2 {
-    &, &:before {
+  &.gradient-1,
+  &.gradient-2 {
+    &,
+    &:before {
       background-color: transparent;
     }
     .header-mask {
@@ -109,17 +111,12 @@ div.feather-styles.layout {
     }
   }
   &.gradient-1:before {
-    background:
-      var($hero-gradient-1-1),
-      var($hero-gradient-1-2),
+    background: var($hero-gradient-1-1), var($hero-gradient-1-2),
       var($hero-gradient-1-3);
   }
   &.gradient-2:before {
-    background:
-      var($hero-gradient-2-1),
-      var($hero-gradient-2-2),
-      var($hero-gradient-2-3),
-      var($hero-gradient-2-4);
+    background: var($hero-gradient-2-1), var($hero-gradient-2-2),
+      var($hero-gradient-2-3), var($hero-gradient-2-4);
   }
 
   .section-wrapper {
@@ -147,7 +144,8 @@ div.feather-styles.layout {
       flex-wrap: wrap;
       padding: 40px;
 
-      .left, .right {
+      .left,
+      .right {
         padding: 40px 0;
         display: flex;
         flex-basis: 0;
@@ -170,7 +168,7 @@ div.feather-styles.layout {
             padding-top: 0;
             margin-top: 5px;
             @include body-large();
-            color: var($secondary-text-on-surface)
+            color: var($secondary-text-on-surface);
           }
         }
       }
@@ -187,7 +185,7 @@ div.feather-styles.layout {
         dl {
           margin-bottom: 24px;
         }
-        dt{
+        dt {
           @include headline2();
         }
         dd {
@@ -214,9 +212,10 @@ div.feather-styles.layout {
         position: absolute;
         font-size: 30px;
         margin-left: -46px;
-        opacity: .2;
+        opacity: 0.2;
       }
-      .title, .tagline {
+      .title,
+      .tagline {
         display: block;
       }
       .tagline {
@@ -237,22 +236,31 @@ div.feather-styles.layout {
   }
 
   div.card-group {
-    display: flex;
-    justify-content: space-around;
     margin-top: 36px;
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
   }
   a.sexy-card {
-    display: block;
-    max-width: 317px;
+    display: inline-block;
+    width: 317px;
+    height: 356px;
+    flex: none;
     border: 1px solid var($secondary);
     background-color: var($surface);
     border-bottom-right-radius: 16px;
     text-decoration: none;
     transition: 0.3s;
-
-    &:hover, &:focus {
+    vertical-align: middle;
+    margin-right: 8px;
+    margin-bottom: 8px;
+    &:hover,
+    &:focus {
       @include elevation(4);
       cursor: pointer;
+    }
+    &:last-child {
+      margin-right: 0;
     }
 
     img {

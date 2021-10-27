@@ -10,7 +10,18 @@
       >
         <template v-slot:left>
           <div class="header-title">
-            <a :href="$withBase('/')">( ?� ?? ?�) FEATHER DS</a>
+            <a :href="$withBase('/')"
+              ><FeatherIcon
+                :icon="LogoFull"
+                title="Feather DS"
+                class="full-header-icon"
+              ></FeatherIcon
+              ><FeatherIcon
+                :icon="Logo"
+                title="Feather DS"
+                class="small-header-icon"
+              ></FeatherIcon
+            ></a>
             &nbsp;
           </div>
         </template>
@@ -41,6 +52,7 @@
 import { FeatherIcon } from "@featherds/icon";
 import KeyboardArrowDown from "@featherds/icon/navigation/ExpandMore";
 import FeatherLogoFull from "@featherds/icon/branding/FeatherLogoFull";
+import FeatherLogoMotif from "@featherds/icon/branding/FeatherLogoMotif";
 import { FeatherMegaMenu } from "@featherds/megamenu";
 import { FeatherAppBarLink, FeatherAppBar } from "@featherds/app-bar";
 import { FeatherAppLayout } from "@featherds/app-layout";
@@ -57,6 +69,7 @@ export default {
       },
       iconCaret: KeyboardArrowDown,
       LogoFull: FeatherLogoFull,
+      Logo: FeatherLogoMotif,
     };
   },
   components: {
@@ -74,6 +87,7 @@ export default {
 <style lang="scss" scoped>
 @import "~@featherds/styles/lib/grid";
 @import "~@featherds/styles/mixins/typography";
+@import "~@featherds/styles/mixins/responsive";
 @import "~@featherds/styles/themes/variables";
 #main {
   display: flex;
@@ -102,7 +116,7 @@ export default {
     }
   }
   &,
-  & a {
+  a {
     display: inline-flex;
     align-items: center;
   }
@@ -147,11 +161,25 @@ export default {
     }
   }
 }
-@media all and (max-width: 760px) {
-  ::v-deep(div.header-content) {
-    flex-wrap: wrap;
-    height: 120px;
+.small-header-icon {
+  display: none;
+}
+.full-header-icon {
+  display: block;
+}
 
+@include media-query-below(l) {
+  .small-header-icon {
+    display: block;
+  }
+  .full-header-icon {
+    display: none;
+  }
+}
+@include media-query-below(s) {
+  ::v-deep(div.feather-app-bar-wrapper) {
+    --feather-header-height: 120px;
+    flex-wrap: wrap;
     div.center-horiz {
       height: 60px;
       &.left,

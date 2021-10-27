@@ -96,7 +96,7 @@ import sections from "@source/groups";
       development and design assets and resources.
     </p>
     <div class="card-group">
-      <a class="sexy-card">
+      <a class="sexy-card" :href="$withBase('/Components/GettingStarted/')">
         <img :src="$withBase('/assets/branding/home-components.png')" title="Components"/>
         <div class="card-inner">
           <span class="overline">Components</span>
@@ -105,15 +105,15 @@ import sections from "@source/groups";
         </div>
       </a>
       <a class="sexy-card">
-        <img :src="$withBase('/assets/branding/home-foundation.png')" title="Components"/>
+        <img :src="$withBase('/assets/branding/home-foundation.png')" title="Foundation"/>
         <div class="card-inner">
           <span class="overline">Design</span>
           <h3>Foundational concepts</h3>
           <FeatherIcon :icon="arrow" focusable="false"></FeatherIcon>
         </div>
       </a>
-      <a class="sexy-card">
-        <img :src="$withBase('/assets/branding/home-typography.png')" title="Components"/>
+      <a class="sexy-card" :href="$withBase('/Components/Typography/')">
+        <img :src="$withBase('/assets/branding/home-typography.png')" title="Typography"/>
         <div class="card-inner">
           <span class="overline">Typography</span>
           <h3>Typographical mastery</h3>
@@ -123,7 +123,6 @@ import sections from "@source/groups";
     </div>
   </div>
 </section>
-
 
 <section>
   <div class="section-wrapper story">

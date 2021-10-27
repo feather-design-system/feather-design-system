@@ -116,6 +116,7 @@ export default {
   flex: 1;
   display: flex;
   justify-content: center;
+  width: 100%;
   > .app-content-container {
     width: 100%;
   }

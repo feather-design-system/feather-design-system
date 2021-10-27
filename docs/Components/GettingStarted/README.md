@@ -9,7 +9,7 @@ layout: ComponentLayout
 
 ## Intro
 
-FeatherDS components are built using [Vue3](https://v3.vuejs.org/). If you haven't already set up your Vue3 project we recommend either using [Vite](https://vitejs.dev/guide/#overview) or [Vue CLI](https://cli.vuejs.org/guide/) to get your project set up and running.
+FeatherDS components are built using [Vue3](https://v3.vuejs.org/). If you haven't already set up your Vue3 project we recommend either using [Vite](https://vitejs.dev/guide/#overview) or [Vue CLI](https://cli.vuejs.org/guide/) to get your project set up and running. FeatherDS requires the use of a Javascript Bundler and cannot be comsumed directly in the browser.
 
 ## Prerequisites
 

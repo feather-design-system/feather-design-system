@@ -32,7 +32,7 @@
 import { useLabelProperty } from "@featherds/composables/LabelProperty";
 import FeatherAppBarLink from "./FeatherAppBarLink";
 import { useScroll } from "@featherds/composables/events/Scroll";
-import Support from "@featherds/icon/actions/Help";
+import Menu from "@featherds/icon/navigation/Menu";
 import { toRef, inject, ref, onMounted } from "vue";
 const LABELS = {
   skip: "REQUIRED",
@@ -76,6 +76,12 @@ export default {
       let height = 60;
       const documentRef = ref(document);
       const onScroll = () => {
+        height = parseInt(
+          getComputedStyle(wrapper.value).getPropertyValue(
+            "--feather-header-height"
+          ),
+          10
+        );
         const scrollTop = document.documentElement.scrollTop;
         const scrollingDown = scrollTop >= previousScrollPosition;
         previousScrollPosition = scrollTop;
@@ -91,12 +97,6 @@ export default {
       };
       const activate = useScroll(documentRef, onScroll);
       onMounted(() => {
-        height = parseInt(
-          getComputedStyle(wrapper.value).getPropertyValue(
-            "--feather-header-height"
-          ),
-          10
-        );
         activate.value = true;
         onScroll();
         transitionClass.value = "";
@@ -128,7 +128,7 @@ export default {
     },
 
     menu() {
-      return Support;
+      return Menu;
     },
   },
   components: {
@@ -175,6 +175,8 @@ header {
   top: 0;
   left: 0;
   z-index: var($zindex-fixed);
+  background-color: var($secondary);
+
   transition: transform 280ms ease-in-out;
   &.show {
     transform: translateY(0px);
@@ -188,7 +190,6 @@ header {
 }
 
 .header-content {
-  background-color: var($secondary);
   margin: 0 auto;
   height: 100%;
   display: flex;
