@@ -3,8 +3,16 @@
     <template v-slot:rail>
       <ComponentMenu></ComponentMenu>
     </template>
+    <div class="title-container">
+      <div class="title-section center feather-container">
+        <p class="pre-text">{{ preText }}</p>
+        <h1 class="title">{{ title }}</h1>
+        <p class="title-description">
+          {{ description }}
+        </p>
+      </div>
+    </div>
     <div class="center content feather-container">
-      <h1 class="title">{{ title }}</h1>
       <div class="toc" v-if="sidebarItems.length">
         <Sidebar :items="sidebarItems" title="Contents" />
       </div>
@@ -22,6 +30,12 @@ export default {
   computed: {
     title() {
       return this.$page.title;
+    },
+    description() {
+      return this.$page.frontmatter.description;
+    },
+    preText() {
+      return this.$page.frontmatter.pre;
     },
     sidebarItems() {
       if (this.$page && this.$page.headers) {
@@ -62,6 +76,23 @@ export default {
 :deep(.smaller) {
   font-size: 0.6em;
   opacity: 0.8;
+}
+
+.title-container {
+  padding: 40px 0;
+  background: var($background);
+  .pre-text {
+    @include overline();
+    color: var($primary);
+    margin: 0;
+  }
+  .title {
+    margin: 0;
+  }
+  .title-description {
+    margin: 0;
+    margin-top: 8px;
+  }
 }
 $gutterwidth: 150px;
 .center.content {

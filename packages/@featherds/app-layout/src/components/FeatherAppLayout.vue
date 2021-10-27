@@ -118,10 +118,6 @@ export default {
   justify-content: center;
   > .app-content-container {
     width: 100%;
-    @include container();
-    &.full-width {
-      @include container(true);
-    }
   }
 }
 .app-aside {

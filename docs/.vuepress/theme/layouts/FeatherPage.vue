@@ -77,8 +77,7 @@ export default {
 @import "~@featherds/styles/themes/variables";
 #main {
   display: flex;
-  flex-direction: row;
-  flex-wrap: wrap;
+  flex-direction: column;
   :deep(img) {
     max-width: 100%;
   }

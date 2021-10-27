@@ -20,7 +20,7 @@ $display2: (
 );
 
 $display3: (
-  $display3-font-size: 3.3rem,
+  $display3-font-size: 3rem,
   $display3-line-height: 3.75rem,
   $display3-letter-spacing: -0.005em,
   $display3-font-weight: var($font-medium),
@@ -29,8 +29,8 @@ $display3: (
 );
 
 $title: (
-  $title-font-size: 2.25rem,
-  $title-line-height: 1.25rem,
+  $title-font-size: 2.125rem,
+  $title-line-height: 2.625rem,
   $title-letter-spacing: normal,
   $title-font-weight: var($font-light),
   $title-text-transform: none,
@@ -39,16 +39,16 @@ $title: (
 
 $headline1: (
   $headline1-font-size: 1.75rem,
-  $headline1-line-height: 2.1rem,
+  $headline1-line-height: 2.25rem,
   $headline1-letter-spacing: normal,
-  $headline1-font-weight: var($font-bold),
+  $headline1-font-weight: var($font-semibold),
   $headline1-text-transform: none,
   $headline1-font-style: normal,
 );
 
 $headline2: (
   $headline2-font-size: 1.5rem,
-  $headline2-line-height: 2.125rem,
+  $headline2-line-height: 2rem,
   $headline2-letter-spacing: normal,
   $headline2-font-weight: var($font-normal),
   $headline2-text-transform: none,
@@ -56,7 +56,7 @@ $headline2: (
 );
 
 $headline3: (
-  $headline3-font-size: 1.125rem,
+  $headline3-font-size: 1.875rem,
   $headline3-line-height: 2rem,
   $headline3-letter-spacing: 0.0121em,
   $headline3-font-weight: var($font-bold),
@@ -75,7 +75,7 @@ $headline4: (
 
 $subtitle1: (
   $subtitle1-font-size: 0.875rem,
-  $subtitle1-line-height: 1.375rem,
+  $subtitle1-line-height: 1.5rem,
   $subtitle1-letter-spacing: 0.00714286em,
   $subtitle1-font-weight: var($font-bold),
   $subtitle1-text-transform: none,
@@ -84,7 +84,7 @@ $subtitle1: (
 
 $subtitle2: (
   $subtitle2-font-size: 0.8125rem,
-  $subtitle2-line-height: 1.125rem,
+  $subtitle2-line-height: 1.25rem,
   $subtitle2-letter-spacing: 0.00692308em,
   $subtitle2-font-weight: var($font-semibold),
   $subtitle2-text-transform: none,
@@ -102,7 +102,7 @@ $body-large: (
 
 $body-small: (
   $body-small-font-size: 0.875rem,
-  $body-small-line-height: 1.375rem,
+  $body-small-line-height: 1.25rem,
   $body-small-letter-spacing: 0.01786em,
   $body-small-font-weight: var($font-normal),
   $body-small-text-transform: none,
@@ -111,24 +111,24 @@ $body-small: (
 
 $button: (
   $button-font-size: 0.875rem,
-  $button-line-height: 2.375rem,
+  $button-line-height: 1.25rem,
   $button-letter-spacing: 0.08928571em,
-  $button-font-weight: var($font-semibold),
+  $button-font-weight: var($font-bold),
   $button-text-transform: uppercase,
   $button-font-style: normal,
 );
 $caption: (
   $caption-font-size: 0.75rem,
-  $caption-line-height: 1.375rem,
+  $caption-line-height: 1rem,
   $caption-letter-spacing: normal,
-  $caption-font-weight: var($font-semibold),
+  $caption-font-weight: var($font-normal),
   $caption-text-transform: none,
-  $caption-font-style: italic,
+  $caption-font-style: normal,
 );
 
 $overline: (
   $overline-font-size: 0.75rem,
-  $overline-line-height: 2.125rem,
+  $overline-line-height: 1rem,
   $overline-letter-spacing: 0.105em,
   $overline-font-weight: var($font-semibold),
   $overline-text-transform: uppercase,
