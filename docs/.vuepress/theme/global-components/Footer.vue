@@ -53,7 +53,8 @@ export default {
 @import "~@featherds/styles/themes/variables";
 @import "~@featherds/styles/mixins/typography";
 footer {
-  background-color: var($surface);
+  background-color: var($background);
+  flex-basis: 100%;
 
   .inner-wrapper {
     display: flex;

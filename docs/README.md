@@ -1,13 +1,13 @@
 <HomePageAdjust />
 <div class="hero">
   <section class="gradient-1">
-    <HeaderMask transparent />
+    <HeaderMask />
     <div class="section-wrapper center">
       <h1>Welcome to the Feather Design System</h1>
       <p class="body-large">Feather DS is an open source design system used<br/>
       for NantHealth and OpenNMS products.</p>
       <FeatherButton primary>Get Started</FeatherButton>
-      <FeatherButton text>
+      <FeatherButton secondary>
         <template v-slot:icon>
           <FeatherIcon :icon="icon" aria-hidden="true" focusable="false"></FeatherIcon>
         </template>
@@ -20,7 +20,7 @@
 <script>
 import { FeatherButton } from "@featherds/button";
 import { FeatherIcon } from "@featherds/icon";
-import icon from "@featherds/icon/actions/Help";
+import icon from "@featherds/icon/action/Help";
 import atom from "@featherds/icon/branding/Atom";
 import arrow from "@featherds/icon/navigation/ArrowBack";
 import FeatherLogoMotif from "@featherds/icon/branding/FeatherLogoMotif";

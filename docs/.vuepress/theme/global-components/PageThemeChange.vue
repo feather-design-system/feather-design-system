@@ -7,8 +7,8 @@
 import { FeatherIcon } from "@featherds/icon";
 import { FeatherButton } from "@featherds/button";
 import { THEMES, KEY, update } from "./themes";
-import actionsVisibility from "@featherds/icon/actions/Visibility";
-import actionsVisibilityOff from "@featherds/icon/actions/VisibilityOff";
+import actionsVisibility from "@featherds/icon/action/LightDarkMode";
+import actionsVisibilityOff from "@featherds/icon/action/LightDarkMode"
 
 export default {
   data() {

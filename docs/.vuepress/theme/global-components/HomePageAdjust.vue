@@ -36,11 +36,12 @@ body div.feather-styles.layout header.banner {
     stroke: none;
   }
 }
-
+header.banner {
+  background-color: transparent;
+  box-shadow: none;
+}
 body.pagetop div.feather-styles.layout {
   & header.banner {
-    box-shadow: none;
-
     &, & .header-content {
       background-color: transparent;
     }
@@ -87,7 +88,7 @@ div.feather-styles.layout {
 .feather-styles section {
   position: relative;
   z-index: 0;
-  background-color: var($background);
+  background-color: var($surface);
   &:before {
     content: "";
     position: absolute;
@@ -96,7 +97,7 @@ div.feather-styles.layout {
     bottom: 0;
     left: 0;
     right: 0;
-    background-color: var($background);
+    background-color: var($surface);
   }
 
   &.gradient-1, &.gradient-2 {
@@ -109,25 +110,23 @@ div.feather-styles.layout {
   }
   &.gradient-1:before {
     background:
-      radial-gradient(ellipse 100% 250% at 130% 180%, var($gradient-4) 0%, #14D1DF00 100%) 0% 0% no-repeat padding-box,
-      radial-gradient(ellipse 200% 500% at -90% 0%, var($gradient-1) 0%, #14D1DF00 100%) 0% 0% no-repeat padding-box;
-    //opacity: 0.5;
-    //filter: blur(50px);
+      var($hero-gradient-1-1),
+      var($hero-gradient-1-2),
+      var($hero-gradient-1-3);
   }
   &.gradient-2:before {
     background:
-      radial-gradient(ellipse 100% 250% at 130% -115%, var($gradient-4) 0%, #14D1DF00 100%) 0% 0% no-repeat padding-box,
-      radial-gradient(ellipse 200% 200% at -100% -110%, var($gradient-1) 0%, #14D1DF00 100%) 0% 0% no-repeat padding-box,
-      radial-gradient(ellipse 100% 250% at 110% 250%, var($gradient-3) 0%, #14D1DF00 100%) 0% 0% no-repeat padding-box,
-      radial-gradient(ellipse 200% 200% at -90% 160%, var($gradient-2) 0%, #14D1DF00 100%) 0% 0% no-repeat padding-box;
-    //opacity: 0.5;
+      var($hero-gradient-2-1),
+      var($hero-gradient-2-2),
+      var($hero-gradient-2-3),
+      var($hero-gradient-2-4);
   }
 
   .section-wrapper {
     margin: 0 auto;
     max-width: var($content-width);
     text-align: left;
-    padding: 80px 0;
+    padding: 80px 40px;
 
     &.center {
       text-align: center;
@@ -141,10 +140,15 @@ div.feather-styles.layout {
 
     &.philosophy {
       display: flex;
+      flex-wrap: wrap;
+      padding: 40px;
 
       .left, .right {
+        padding: 40px 0;
         display: flex;
-        flex-basis: 50%;
+        flex-basis: 0;
+        flex-shrink: 0;
+        flex-grow: 1;
       }
 
       .left {
@@ -160,7 +164,9 @@ div.feather-styles.layout {
 
           p {
             padding-top: 0;
+            margin-top: 5px;
             @include body-large();
+            color: var($secondary-text-on-surface)
           }
         }
       }
@@ -174,10 +180,14 @@ div.feather-styles.layout {
           font-size: 2em;
           font-weight: bold;
         }
+        dl {
+          margin-bottom: 24px;
+        }
         dt{
           @include headline2();
         }
         dd {
+          @include body-small();
           margin-inline-start: 0;
         }
         li:first-of-type dl {
@@ -193,7 +203,7 @@ div.feather-styles.layout {
       display: flex;
       justify-content: center;
       position: relative;
-      padding: 40px 0 48px 0;
+      padding: 40px 48px 48px 48px;
 
       svg.logo.feather-icon {
         color: var($primary);
@@ -230,13 +240,13 @@ div.feather-styles.layout {
   a.sexy-card {
     display: block;
     max-width: 317px;
-    border: 1px solid var($primary);
+    border: 1px solid var($secondary);
     background-color: var($surface);
     border-bottom-right-radius: 16px;
     text-decoration: none;
     transition: 0.3s;
 
-    &:hover {
+    &:hover, &:focus {
       @include elevation(4);
       cursor: pointer;
     }

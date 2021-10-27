@@ -8,7 +8,7 @@ import "@docsearch/css";
 import { onMounted } from "vue";
 import { useDocSearch } from "./useDocSearch";
 import { FeatherIcon } from "@featherds/icon";
-import Search from "@featherds/icon/navigation/Search";
+import Search from "@featherds/icon/action/Search";
 export default {
   setup() {
     const iconSearch = Search;
@@ -38,7 +38,12 @@ export default {
   left: 48px;
   margin-left: -24px;
 }
-#search-container ::v-deep(.DocSearch-Search-Icon) {
-  visibility: hidden;
+#search-container {
+  ::v-deep(.DocSearch-Search-Icon) {
+    visibility: hidden;
+  }
+  ::v-deep(.DocSearch-Button-Placeholder) {
+    display: block;
+  }
 }
 </style>

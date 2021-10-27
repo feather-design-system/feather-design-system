@@ -90,7 +90,6 @@ a.skip {
 header {
   color: var($primary-text-on-color);
   @include elevation(4);
-  background-color: var($secondary);
   position: fixed;
   top: 0;
   left: 0;
@@ -98,6 +97,7 @@ header {
 }
 
 .header-content {
+  background-color: var($secondary);
   margin: 0 auto;
   height: 100%;
   display: flex;

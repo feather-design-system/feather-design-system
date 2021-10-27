@@ -13,12 +13,20 @@ $colors: (
   $state-color-on-color: #0a0c1b,
   $state-color-on-surface: #fff,
   $state-color-on-neutral: #fff,
-  $primary-text-on-surface: rgba(255, 255, 255, 1),
-  $gradient-1: #3D50C5,
-  $gradient-2: #32E7F3,
-  $gradient-3: #DB2973,
-  $gradient-4: #3A4BD3);
+  $primary-text-on-surface: rgba(255, 255, 255, 1)
+);
+
 $colors: add-RGB($colors);
+
+$hero-gradients: (
+  $hero-gradient-1-1: radial-gradient(ellipse 400% 600% at 100% 0%, rgba(#3A4BD3, 0.45) 0%, #14D1DF00 100%) 0% 0% no-repeat padding-box,
+  $hero-gradient-1-2: radial-gradient(ellipse 200% 200% at 25% 40%, rgba(#DB2973, .5) 0%, #14D1DF00 100%) 0% 0% no-repeat padding-box,
+  $hero-gradient-1-3: radial-gradient(ellipse 50% 100% at 75% 66%, rgba(#32E7F3, .7) 0%, #14D1DF00 100%) 0% 0% no-repeat padding-box,
+  $hero-gradient-2-1: radial-gradient(ellipse 300% 150% at 0% -55%, rgba(#3A4BD3, .45) 0%, #14D1DF00 100%) 0% 0% no-repeat padding-box,
+  $hero-gradient-2-2: radial-gradient(ellipse 200% 200% at -20% -135%, rgba(#DB2973, .5) 0%, #14D1DF00 100%) 0% 0% no-repeat padding-box,
+  $hero-gradient-2-3: radial-gradient(ellipse 50% 100% at 75% -44%, rgba(#32E7F3, .1) 0%, #14D1DF00 100%) 0% 0% no-repeat padding-box,
+  $hero-gradient-2-4: radial-gradient(ellipse 0% 0% at 0% 0%, transparent 0%, transparent 100%) 0% 0% no-repeat padding-box,
+);
 
 $on-color: (
   $primary-text-on-color: rgba(10, 12, 27, 1),
@@ -102,6 +110,7 @@ $shadows: (
 
 $base-dark: map-collect(
   $colors,
+  $hero-gradients,
   $on-color,
   $on-surface,
   $on-warning,

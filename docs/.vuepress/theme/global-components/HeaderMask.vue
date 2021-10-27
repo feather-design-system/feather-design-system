@@ -60,7 +60,7 @@ export default {
     transition: all 0.2s linear;
   }
   .frosted {
-    background-color: rgba(var($surface) .8);
-    backdrop-filter: blur(8px);
+    //background-color: rgba(var($surface) .8);
+    //backdrop-filter: blur(8px);
   }
 </style>
