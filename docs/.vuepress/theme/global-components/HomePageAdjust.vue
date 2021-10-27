@@ -132,6 +132,10 @@ div.feather-styles.layout {
       text-align: center;
     }
 
+    button.btn-secondary > svg path {
+      fill: var($primary);
+    }
+
     &.learn {
       h2 {
         margin-top: 0;

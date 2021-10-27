@@ -27,8 +27,8 @@
     </FeatherAppBar>
     <div id="main">
       <slot />
-      <Footer />
     </div>
+    <Footer />
   </div>
 </template>
 <script>
