@@ -27,11 +27,11 @@
         </template>
         <template v-slot:center>
           <!-- Patterns -->
-          <AppBarLink title="Foundation" url="/Design/Foundation/"
+          <AppBarLink title="Foundation" :url="$withBase('/Design/Foundation/')"
             >Foundation</AppBarLink
           >
           <!-- Packages -->
-          <AppBarLink title="Components" url="/Components/"
+          <AppBarLink title="Components" :url="$withBase('/Components/')"
             >Components</AppBarLink
           >
         </template>

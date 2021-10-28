@@ -42,8 +42,5 @@ export default {
   ::v-deep(.DocSearch-Search-Icon) {
     visibility: hidden;
   }
-  ::v-deep(.DocSearch-Button-Placeholder) {
-    display: block;
-  }
 }
 </style>

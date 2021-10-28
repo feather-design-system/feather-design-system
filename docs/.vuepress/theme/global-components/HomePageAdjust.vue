@@ -35,6 +35,8 @@ body div.feather-styles.layout header.banner {
     stroke: none;
   }
 }
+
+//Header tweaks
 body.pagetop div.feather-styles.layout {
   & header.banner {
     background-color: transparent;
@@ -59,7 +61,6 @@ body.pagetop div.feather-styles.layout {
     }
   }
 }
-
 div.feather-styles.layout {
   div.feather-app-bar-wrapper {
     position: fixed;
@@ -73,9 +74,6 @@ div.feather-styles.layout {
     }
   }
 
-  #main div.center {
-    padding-top: 0;
-  }
   .body-large {
     @include body-large();
   }
@@ -85,6 +83,8 @@ div.feather-styles.layout {
   margin: 0;
   max-width: none;
 }
+
+//content adjustments
 .feather-styles section {
   position: relative;
   z-index: 0;
@@ -120,6 +120,15 @@ div.feather-styles.layout {
   }
 
   .section-wrapper {
+    h1 {
+      @include headline1();
+    }
+    h2 {
+      @include headline2();
+    }
+    h3 {
+      @include headline3();
+    }
     margin: 0 auto;
     max-width: var($content-width);
     text-align: left;
@@ -191,6 +200,7 @@ div.feather-styles.layout {
         dd {
           @include body-small();
           margin-inline-start: 0;
+          margin-top: 8px;
         }
         li:first-of-type dl {
           margin-top: 0;
@@ -243,6 +253,7 @@ div.feather-styles.layout {
   }
   a.sexy-card {
     display: inline-block;
+    position: relative;
     width: 317px;
     height: 356px;
     flex: none;
