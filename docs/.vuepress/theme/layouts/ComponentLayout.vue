@@ -61,9 +61,6 @@ export default {
 @import "~@featherds/styles/mixins/elevation";
 @import "~@featherds/styles/mixins/typography";
 
-.center.content {
-  padding-top: 24px;
-}
 .center {
   box-sizing: border-box;
   flex: 1;
@@ -79,8 +76,8 @@ export default {
 }
 
 .title-container {
-  padding: 40px 0;
   margin-bottom: 40px;
+  padding: 40px 0;
   background: var($background);
   .pre-text {
     @include overline();
@@ -111,6 +108,9 @@ $gutterwidth: 150px;
     div.toc {
       position: static;
       margin: 16px;
+      margin-top: 0px;
+      margin-bottom: 56px;
+      width: 200px;
     }
   }
 }

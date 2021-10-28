@@ -1,15 +1,16 @@
 ---
 title: "Button"
 lang: en-US
+pre: "@featherds/button"
 tags: ["Button", "component"]
 layout: ComponentLayout
 ---
 
-`@featherds/button`
-
 ## Examples
 
 <Button-Examples />
+
+## FeatherButton
 
 ### Props
 
@@ -32,13 +33,6 @@ layout: ComponentLayout
 
 - `default` content of the button. Place text in here or an icon when `icon` property is set.
 - `icon` icon to be displayed alongside the text content of default. It is a separate slot so we can ensure correct spacing.
-
-## Upgrading
-
-When upgrading from `feather-button` to `@featherds/button` there are a few breaking changes:
-
-- `hollow` no longer exists. Use `text` instead.
-- `link` no longer exists. Use `text` instead.
 
 ## Icons in Buttons
 
