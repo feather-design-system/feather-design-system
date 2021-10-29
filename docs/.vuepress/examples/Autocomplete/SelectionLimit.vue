@@ -1,15 +1,21 @@
 <template>
-  <FeatherAutocomplete
-    class="my-autocomplete"
-    label="Users"
-    v-model="value"
-    :loading="loading"
-    :results="results"
-    type="multi"
-    @search="search"
-    :selection-limit="2"
-    :min-char="2"
-  ></FeatherAutocomplete>
+  <section>
+    <p>
+      This autocomplete has a min char and a selection limit of 2. Try searching
+      for <b>ja</b>
+    </p>
+    <FeatherAutocomplete
+      class="my-autocomplete"
+      label="Users"
+      v-model="value"
+      :loading="loading"
+      :results="results"
+      type="multi"
+      @search="search"
+      :selection-limit="2"
+      :min-char="2"
+    ></FeatherAutocomplete>
+  </section>
 </template>
 <script>
 import { FeatherAutocomplete } from "@featherds/autocomplete";

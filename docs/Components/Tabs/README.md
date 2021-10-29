@@ -1,23 +1,15 @@
 ---
 title: "Tabs"
+pre: "@featherds/tabs"
+description: "Tabs provide an easy way for users to navigate through information that shares a common context or theme at the same level of the application hierarchy."
 lang: en-US
 tags: ["Tabs", "component"]
 layout: ComponentLayout
 ---
 
-`@featherds/tabs`
-
 ## Example
 
 <Tabs-Examples />
-
-### Tabs Only
-
-There can be a need to have tabs control panels that cannot be directly encapsulated in a `FeatherTabContainer`. For instances like this you can use `FeatherTab` without a corresponding panel with a few caveats.
-
-- You **must** specify the `controls` and `id` attribute on the `FeatherTab`. `controls` should be the ID of the panel it is responsible for.
-- You are responsible for showing and hiding the correct panel.
-- Panels **must** have correct aria labelling to maintain accessibility. See example below.
 
 ## FeatherTabContainer
 

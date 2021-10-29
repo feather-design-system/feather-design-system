@@ -1,5 +1,9 @@
 <template>
   <section>
+    <p>
+      This autocomplete automatically ads a warning icon to any selected value.
+      See <a href="#chip-pre-icon">Chip Pre Icon</a> section.
+    </p>
     <FeatherAutocomplete
       class="my-autocomplete"
       label="Users"

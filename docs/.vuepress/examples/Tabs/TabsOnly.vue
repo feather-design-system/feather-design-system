@@ -1,5 +1,15 @@
 <template>
   <section>
+    <p>
+      <ul>
+        <li>You <b>must</b> specify the <code>controls</code> and <code>id</code> attribute on the <code>FeatherTab</code>. <code>controls</code> should be the ID of the panel it is responsible for.
+         </li>
+         <li>
+          You are responsible for showing and hiding the correct panel.
+         </li>
+         <li> Panels <b>must</b>have correct aria labelling to maintain accessibility.</li>
+      </ul>
+    </p>
     <FeatherTabContainer v-model="index">
       <template v-slot:tabs>
         <FeatherTab id="one" controls="onepanel">Tab one</FeatherTab>

@@ -1,11 +1,17 @@
 ---
 title: "Input"
+pre: "@featherds/input"
+description: "Text fields provide a way for users to enter and edit text. Text fields can exist as singular objects in a layout, or they can be paired together to form a “field-set” where users need to enter lots of related information."
 lang: en-US
 tags: ["Input", "component"]
 layout: ComponentLayout
 ---
 
-`@featherds/input`
+## Design
+
+As of now, there is only one type of text field: The outlined text field
+
+The modern design trend with text fields is meant to promote minimalism. It’s very common to see text fields represented as either a shaded volume or an empty volume with a defined bottom border or “stroke” meant to signify the line on which the user will enter information. User testing has shown that users tend to get confused by this as it doesn’t provide a strong enough visual affordance for an interactive text input element. The solution utilizes a border around the perimeter of the text field to draw on design cues from the past -- ensuring optimal recognition, while respecting the modern push for minimalism.
 
 ## Examples
 

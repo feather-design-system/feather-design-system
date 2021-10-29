@@ -1,15 +1,24 @@
 ---
 title: "Checkbox"
+pre: "@featherds/checkbox"
 lang: en-US
 tags: ["Checkbox", "component"]
 layout: ComponentLayout
 ---
 
-`@featherds/checkbox`
+## Design
 
-## FeatherCheckbox
+WIP
+
+## Examples
 
 <Checkbox-Examples />
+
+## Usage
+
+Check boxes are used when a user must make a section from one or more options in a list of information. Check boxes can be used as binary controls, allowin gusers to toggle specific options or functions on, or off. Indeterminate check boxes can be used to present a parent object in a list of child check boxes.
+
+## FeatherCheckbox
 
 ### Props
 

@@ -1,11 +1,15 @@
 ---
 title: "Radio"
+pre: "@featherds/radio"
+description: "Radio buttons allow users to choose one option from a list of mutually exclusive alternatives. A pair of radio buttons will provide a binary choice similar to a checkbox. An important difference between a pair of radio buttons and a checkbox is that the radio button group may start in a state where neither option is selected (neither yes nor no). This can be especially useful when an explicit choice is required of the user, where we cannot make a default assumption about their preference."
 lang: en-US
 tags: ["Radio", "component"]
 layout: ComponentLayout
 ---
 
-`@featherds/radio`
+## Design
+
+The radio button design has been kept minimal, while the animation during interaction provides another level of visual interest. As the radio button is selected, the inner-circle grows from the center and the radio button may inherit the product color. Radio buttons are closely aligned with Google’s Material Design standards.
 
 ## Example
 

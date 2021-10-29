@@ -1,11 +1,10 @@
 ---
 title: "Footer"
+pre: "@featherds/footer"
 lang: en-US
 tags: ["Footer", "component"]
 layout: ComponentLayout
 ---
-
-`@featherds/footer`
 
 ## Examples
 

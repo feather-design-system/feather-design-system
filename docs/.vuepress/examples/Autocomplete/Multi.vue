@@ -1,5 +1,9 @@
 <template>
   <section>
+    <p>
+      This autocomplete allow you to select multiple items. Try searching for
+      <b>ja</b>
+    </p>
     <FeatherAutocomplete
       class="my-autocomplete"
       label="Users"
@@ -7,7 +11,6 @@
       v-model="value"
       :loading="loading"
       :results="results"
-      :labels="labels"
       @search="search"
     ></FeatherAutocomplete>
   </section>
@@ -22,11 +25,6 @@ export default {
       loading: false,
       results: [],
       value: [],
-      labels: {
-        minChar: "ASK UX FOR MIN CHAR TEXT ${min}",
-        noResults: "ASK UX FOR NO RESULTS TEXT",
-        clear: "ASK UX FOR CLEAR TEXT",
-      },
     };
   },
   methods: {

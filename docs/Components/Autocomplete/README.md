@@ -1,11 +1,19 @@
 ---
 title: "Autocomplete"
+pre: "@featherds/autocomplete"
+description: "The Autocomplete pattern will help users to search for, select and provide valid answers from large datasets. As the user types into a text box, a list of matching answers is shown in a drop-down menu below the text box. The user can then choose one or more items from the list instead of typing the whole answer."
 lang: en-US
 tags: ["Autocomplete", "component"]
 layout: ComponentLayout
 ---
 
-`@featherds/autocomplete`
+## Design
+
+Autocomplete consists of three components: a text input field, a drop-down select menu and chips. The hover and focus states for an autocomplete pattern are inherited from the text input field component. The hover, select and focus states for the menu are inherited from the drop-down select menu and the chip hover and focus states apply as well.
+
+## Examples
+
+<Autocomplete-Examples />
 
 ## Getting Started
 
@@ -73,58 +81,6 @@ this.$set(this.value, index, {
 ```
 
 In the example above we update the value array at the index where the icon needs to be inserted
-
-## Examples
-
-<Autocomplete-Examples />
-
-### Multi Select
-
-#### Basic Async
-
-Note in this example we are using the `setTimeout` to mimic asynchronous behaviour.
-
-#### Min Characters
-
-This autocomplete has a 2 character limit. Try searching for **ja**
-
-#### Grid Results
-
-This autocomplete displays the results inside of a grid
-
-#### Selection Limit
-
-This autocomplete has a min char and a selection limit of 2. Try searching for **ja**
-
-#### Highlighting
-
-This autocomplete uses the `ignore-case` method for highlighting. See [Highlighting](#highlighting) section.
-
-#### Warning Icon in Chip
-
-This autocomplete automatically ads a warning icon to any selected value. See [Chip Pre Icon](#chip-pre-icon) section.
-
-### Single Select
-
-#### Basic Async
-
-Note in this example we are using the `setTimeout` to mimic asynchronous behaviour.
-
-#### Min Characters
-
-This autocomplete has a 2 character limit. Try searching for **ja**
-
-#### Allow New
-
-This example allows you to add new items. The `new` event is triggered with the text for the new element. **You** must then create the new element and update `modelValue` to contain the new value. `addTag` method does that in this example.
-
-#### Grid Results
-
-This autocomplete displays the results inside of a grid
-
-#### Highlighting
-
-This autocomplete uses the `ignore-case` method for highlighting. See [Highlighting](#highlighting) section.
 
 ## FeatherAutocomplete
 

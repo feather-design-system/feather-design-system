@@ -1,5 +1,8 @@
 <template>
   <section>
+    <p>
+      This autocomplete has a 2 character limit. Try searching for <b>ja</b>
+    </p>
     <FeatherAutocomplete
       class="my-autocomplete"
       label="Users"
@@ -9,7 +12,6 @@
       :results="results"
       @search="search"
       :min-char="2"
-      :labels="labels"
     ></FeatherAutocomplete>
   </section>
 </template>
@@ -24,11 +26,6 @@ export default {
       results: [],
       value: undefined,
       minChar: 2,
-      labels: {
-        minChar: "ASK UX FOR MIN CHAR TEXT ${min}",
-        noResults: "ASK UX FOR NO RESULTS TEXT",
-        clear: " ASK UX FOR CLEAR TEXT",
-      },
     };
   },
   methods: {

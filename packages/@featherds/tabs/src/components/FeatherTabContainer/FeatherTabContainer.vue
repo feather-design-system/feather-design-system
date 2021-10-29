@@ -88,6 +88,9 @@ export default {
       this.updateSlider();
     });
   },
+  unmounted() {
+    this.ro.disconnect();
+  },
 };
 </script>
 
