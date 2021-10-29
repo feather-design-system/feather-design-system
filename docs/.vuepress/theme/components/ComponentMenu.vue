@@ -4,16 +4,18 @@
       <div class="fake-header"><a href="/">FEATHER DS</a></div>
       <FeatherList class="nav-links">
         <FeatherListItem
-          :selected="isCurrent($withBase('/Components/'))"
-          :href="$withBase('/Components/')"
-          first-focus
-          >Components</FeatherListItem
-        >
-        <FeatherListItem
           :selected="isCurrent($withBase('/Components/GettingStarted'))"
           :href="$withBase('/Components/GettingStarted')"
           focus-first
           >Getting Started</FeatherListItem
+        >
+        <FeatherListSeparator />
+
+        <FeatherListItem
+          :selected="isCurrent($withBase('/Components/'))"
+          :href="$withBase('/Components/')"
+          first-focus
+          >All Components</FeatherListItem
         >
 
         <template v-for="item in items" :key="item.name">

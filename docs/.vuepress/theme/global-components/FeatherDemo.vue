@@ -126,6 +126,7 @@ export default {
   border: 1px solid var($shade-4);
   background-color: var($background);
   border-radius: 4px;
+  margin-bottom: 16px;
   :deep(pre[class*="language-"]) {
     margin: 0;
     border-radius: 0;

@@ -168,7 +168,7 @@ export default {
   display: block;
 }
 
-@include media-query-below(l) {
+@include media-query-below(m) {
   .small-header-icon {
     display: block;
   }

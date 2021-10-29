@@ -58,7 +58,8 @@ body {
 
 .feather-styles {
   main {
-    ul {
+    ul,
+    ol {
       padding-left: 20px;
       margin-bottom: 40px;
       @include body-small;
@@ -69,10 +70,14 @@ body {
         color: var($secondary-text-on-surface);
       }
     }
-    li > ul {
-      margin-top: 0;
-      color: var($primary-text-on-surface);
-    }
+  }
+  pre[class*="language-"] {
+    margin: 0;
+    margin-bottom: 24px;
+  }
+  table:not([class]) {
+    margin-top: 0;
+    margin-bottom: 24px;
   }
 
   blockquote {
@@ -94,7 +99,7 @@ body {
     margin-bottom: 24px;
   }
   * + h2 {
-    margin-top: 40px;
+    margin-top: 56px;
   }
   h3 {
     margin-bottom: 16px;

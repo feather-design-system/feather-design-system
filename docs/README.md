@@ -24,7 +24,6 @@ import icon from "@featherds/icon/action/Help";
 import atom from "@featherds/icon/branding/Atom";
 import arrow from "@featherds/icon/navigation/ArrowBack";
 import FeatherLogoMotif from "@featherds/icon/branding/FeatherLogoMotif";
-import sections from "@source/groups";
   export default{
     components: {
       FeatherButton,
@@ -42,11 +41,6 @@ import sections from "@source/groups";
       },
       logo(){
         return FeatherLogoMotif;
-      }
-    },
-    data(){
-      return {
-        sections
       }
     },
     methods: {

@@ -2,13 +2,33 @@
 title: "Button"
 lang: en-US
 pre: "@featherds/button"
+description: "Buttons help users initiate actions or navigate through your application"
 tags: ["Button", "component"]
 layout: ComponentLayout
 ---
 
+## Design
+
+Buttons act as interaction points for users throughout most common software experiences. Buttons can be extremely high priority items, or they can be diminished when paired with information or other interaction points that require a user’s full attention.
+
+<OverlineLinks title="Related Components">
+<OverlineLink :href="$withBase('/Components/IconButton/')">Icon Button</OverlineLink>
+<OverlineLink :href="$withBase('/Components/BackButton/')">Back Button</OverlineLink>
+</OverlineLinks>
+
 ## Examples
 
 <Button-Examples />
+
+## Usage
+
+Buttons indicate “action points” to a user. They can exist as optional interaction points that have an effect on one or more parts of the application, or interaction may be required to proceed farther into the experience. Buttons may be used in the following examples:
+
+1. Dialogs
+2. Modal Windows
+3. Forms
+4. Cards
+5. Toolbars
 
 ## FeatherButton
 
