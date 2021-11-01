@@ -72,6 +72,7 @@ export default {
         { name: "Footer", url: this.$withBase("/Components/Footer/") },
 
         { name: "Button", url: this.$withBase("/Components/Button/") },
+        { name: "Back Button", url: this.$withBase("/Components/BackButton/") },
         { name: "Input", url: this.$withBase("/Components/Input/") },
         { name: "Textarea", url: this.$withBase("/Components/Textarea/") },
         { name: "Checkbox", url: this.$withBase("/Components/Checkbox/") },

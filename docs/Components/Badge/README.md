@@ -1,14 +1,21 @@
 ---
 title: "Badge"
+pre: "@featherds/badge"
+description: "Badges are small status descriptors for UI elements. A badge consists of a small shape in close proximity to another object (its parent), such as a button, text string, or icon. Badges can indicate a status update anywhere in the application depending on the level at which the badge is displayed."
 lang: en-US
 tags: ["Badge", "component"]
-
 layout: ComponentLayout
 ---
 
-`@featherds/badge`
+## Design
 
-## FeatherBadge
+Badges have been designed with a similar look and feel to mobile operating system badges used to show status in application icon grids and status bars. Badges are meant to be minimal but impactful, providing a high-level status indication to a user. Feather design makes use of two distinct badge shapes: the circle badge which is meant to act as a general notification, informing the user that a change has taken place at a child level, and the diamond badge, which indicates an error or warning that exists at a child level.
+
+## FeatherBadge (dot)
+
+### Design
+
+Badges should be used to indicate a state change that has occurred at a lower level of the application hierarchy. This is based on the notification paradigm employed in mobile phone platforms that has proliferated across modern human interface domains. Badges should only be used when the notification of a low-level state change will provide a benefit to the user.
 
 ### Badge Configuration
 
@@ -68,6 +75,10 @@ The default position of a badge is the top right. Use the `inline` property to m
 - `default` - should contain content to have the badge applied to it.
 
 ## FeatherTextBadge
+
+### Design
+
+Text badges are used when context-specific notifications must be presented to a user. Text badges generally indicate the state of an element, component or sub-component. Text badges should always be positioned to the right of the most prominent text associated with the component, sub-component or element. Visually, the badge should seem as though it sits at the top level of the hierarchy.
 
 ### Badge Configuration
 

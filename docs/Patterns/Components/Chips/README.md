@@ -5,7 +5,7 @@ lang: en-US
 
 # Chips
 
-Chips are compact components that represent input, attribute, or action. Chips allow users to enter information, make selections, fi lter content, or trigger actions. While buttons are expected to appear consistently and with familiar calls to action, chips should appear dynamically as a group of multiple interactive elements.
+Chips are compact components that represent input, attribute, or action. Chips allow users to enter information, make selections, filter content, or trigger actions. While buttons are expected to appear consistently and with familiar calls to action, chips should appear dynamically as a group of multiple interactive elements.
 
 ## Component
 
