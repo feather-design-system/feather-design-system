@@ -3,15 +3,14 @@
     <div class="nav-list">
       <div class="fake-header"><a href="/">FEATHER DS</a></div>
       <FeatherList class="nav-links">
+        <FeatherListHeader>Guides</FeatherListHeader>
         <FeatherListItem
           :selected="isCurrent($withBase('/Components/GettingStarted'))"
           :href="$withBase('/Components/GettingStarted')"
           focus-first
           >Getting Started</FeatherListItem
         >
-        <FeatherListSeparator />
-        <FeatherListHeader>Styles</FeatherListHeader>
-        <template v-for="item in styles" :key="item.name">
+        <template v-for="item in guides" :key="item.name">
           <FeatherListItem :href="item.url" :selected="isCurrent(item.url)">{{
             item.name
           }}</FeatherListItem>
@@ -24,7 +23,7 @@
           :selected="isCurrent($withBase('/Components/'))"
           :href="$withBase('/Components/')"
           first-focus
-          >Components Overview</FeatherListItem
+          >Overview</FeatherListItem
         >
 
         <template v-for="item in items" :key="item.name">
@@ -53,12 +52,8 @@ export default {
   },
   data() {
     return {
-      styles: [
+      guides: [
         { name: "Themes", url: this.$withBase("/Components/Themes/") },
-        {
-          name: "Elevation",
-          url: this.$withBase("/Components/Elevation/"),
-        },
         {
           name: "Typography",
           url: this.$withBase("/Components/Typography/"),

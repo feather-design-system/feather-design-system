@@ -68,6 +68,7 @@ export default defineComponent({
     return {
       focused: false,
       internalValue: undefined,
+      initialHeight: 0,
     };
   },
   computed: {
@@ -148,7 +149,9 @@ export default defineComponent({
       };
     },
     charCount() {
-      return `${(this.internalValue && this.internalValue.length) || "0"} / ${this.maxlength}`;
+      return `${(this.internalValue && this.internalValue.length) || "0"} / ${
+        this.maxlength
+      }`;
     },
   },
   watch: {
@@ -215,12 +218,19 @@ export default defineComponent({
           tx.style.flexBasis = "100%";
         }
         this.$nextTick(() => {
-          tx.style.height = `${tx.scrollHeight}px`;
+          tx.style.height = `${
+            tx.scrollHeight < this.initialHeight
+              ? this.initialHeight
+              : tx.scrollHeight
+          }px`;
         });
       });
     },
   },
-
+  mounted() {
+    const tx = this.$refs.input;
+    this.initialHeight = tx.getBoundingClientRect().height;
+  },
   components: {
     InputSubText,
     InputWrapper,
