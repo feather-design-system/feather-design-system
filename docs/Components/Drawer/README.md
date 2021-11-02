@@ -1,21 +1,27 @@
 ---
 title: "Drawer"
+pre: "@featherds/drawer"
 lang: en-US
 tags: ["Drawer", "component"]
 layout: ComponentLayout
 ---
 
-`@featherds/drawer`
+## Design
 
-### Getting Started
+Simplifies the user interface by
 
-You **must** configure the `labels` property to have a relevant title. See [Labels](#labels).
+- providing navigation options
+- providing easy access to additional information related to the current action without having to leave the current page.
 
 ## Examples
 
 <Drawer-Examples />
 
 ## FeatherDrawer
+
+### Getting Started
+
+You **must** configure the `labels` property to have a relevant title. See [Labels](#labels).
 
 ### Props
 

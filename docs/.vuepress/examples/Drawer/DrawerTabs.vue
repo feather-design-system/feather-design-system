@@ -53,7 +53,7 @@ import AccountCircle from "@featherds/icon/action/AccountCircle";
 import Notifications from "@featherds/icon/action/Notifications";
 import Settings from "@featherds/icon/action/Settings";
 import Support from "@featherds/icon/action/Help";
-import Lock from "@featherds/icon/action/Lock";
+
 import * as listComponents from "@featherds/list";
 
 export default {
@@ -69,11 +69,6 @@ export default {
     alerts: Notifications,
     settings: Settings,
     help: Support,
-    support: Support,
-    timeout: Timelapse,
-    padlock: Lock,
-    key: VpnKey,
-    close: ExitToApp,
   }),
 };
 </script>

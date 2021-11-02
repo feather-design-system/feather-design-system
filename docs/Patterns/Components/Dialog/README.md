@@ -11,8 +11,6 @@ lang: en-US
 
 <ComponentCard component="FeatherDialog" package="Dialog" />
 
-Our dialogs allow for the use of both raised and flat button styles within the button bar at the bottom of the dialogs. The more complex workflows of the healthcare space necessitate the use of multiple styles with our buttons in order to communicate the priority of the buttons/functions within our dialogs. For example, the primary action within a dialog may be called out using our primary button style, while lower priority functions such as “Cancel” use our more muted tertiary button styles.
-
 ## Usage
 
 Simplifies the user interface by providing easy access to additional information related to the current action without having to leave the current page. Modal dialogs may contain interactive elements and use a lightbox effect to dim the page behind giving more focus to the dialog’s task. A modal dialog requires action to be taken.
