@@ -1,5 +1,9 @@
 <template>
-  <FeatherIcon class="search-icon" title="Search Feather..." :icon="iconSearch" />
+  <FeatherIcon
+    class="search-icon"
+    title="Search Feather..."
+    :icon="iconSearch"
+  />
   <div id="search-container"></div>
 </template>
 <script>
@@ -25,7 +29,7 @@ export default {
   },
   components: {
     FeatherIcon,
-  }
+  },
 };
 </script>
 <style lang="scss" scoped>
@@ -39,7 +43,7 @@ export default {
   margin-left: -24px;
 }
 #search-container {
-  ::v-deep(.DocSearch-Search-Icon) {
+  :deep(.DocSearch-Search-Icon) {
     visibility: hidden;
   }
 }

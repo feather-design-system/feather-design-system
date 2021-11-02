@@ -45,6 +45,18 @@ describe("SpinButton.vue", () => {
     });
     expect(wrapper.wrapperElement).toMatchSnapshot();
   });
+  it("should render disabled", () => {
+    const wrapper = getWrapper({
+      propsData: {
+        min: 0,
+        max: 10,
+        label: "Test",
+        placeholder: "dd",
+        disabled: true,
+      },
+    });
+    expect(wrapper.element).toMatchSnapshot();
+  });
   it("should add 0s for 1000 ", async () => {
     const wrapper = getWrapper({
       props: {

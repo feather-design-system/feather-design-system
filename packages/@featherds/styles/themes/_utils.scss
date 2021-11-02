@@ -21,7 +21,6 @@
   @return map-merge($colors, $rgbMap);
 }
 @function layers($args...) {
-  @debug $args;
   $values: $args;
   $gradients: ();
   @each $color in $values {

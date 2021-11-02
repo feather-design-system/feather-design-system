@@ -6,6 +6,13 @@
       background
       class="my-date"
     ></FeatherDateInput>
+    <FeatherDateInput
+      v-model="test"
+      label="Appointment Date"
+      background
+      disabled
+      class="my-date"
+    ></FeatherDateInput>
   </section>
 </template>
 <script>

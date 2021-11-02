@@ -95,7 +95,7 @@ export default {
   :deep(img) {
     max-width: 100%;
   }
-  ::v-deep(.main-content) {
+  :deep(.main-content) {
     padding-bottom: 0;
   }
 }
@@ -145,7 +145,7 @@ export default {
 .theme-changer {
   margin-right: 12px;
 }
-::v-deep(div.header-content) {
+:deep(div.header-content) {
   div.center-horiz {
     &.left {
       order: 1;
@@ -177,7 +177,7 @@ export default {
   }
 }
 @include media-query-below(s) {
-  ::v-deep(div.feather-app-bar-wrapper) {
+  :deep(div.feather-app-bar-wrapper) {
     --feather-header-height: 120px;
     flex-wrap: wrap;
     div.center-horiz {
