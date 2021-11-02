@@ -10,12 +10,21 @@
           >Getting Started</FeatherListItem
         >
         <FeatherListSeparator />
+        <FeatherListHeader>Styles</FeatherListHeader>
+        <template v-for="item in styles" :key="item.name">
+          <FeatherListItem :href="item.url" :selected="isCurrent(item.url)">{{
+            item.name
+          }}</FeatherListItem>
+        </template>
+        <FeatherListSeparator />
+
+        <FeatherListHeader>Components</FeatherListHeader>
 
         <FeatherListItem
           :selected="isCurrent($withBase('/Components/'))"
           :href="$withBase('/Components/')"
           first-focus
-          >All Components</FeatherListItem
+          >Components Overview</FeatherListItem
         >
 
         <template v-for="item in items" :key="item.name">
@@ -44,7 +53,7 @@ export default {
   },
   data() {
     return {
-      items: [
+      styles: [
         { name: "Themes", url: this.$withBase("/Components/Themes/") },
         {
           name: "Elevation",
@@ -58,7 +67,16 @@ export default {
           name: "Variables",
           url: this.$withBase("/Components/Variables/"),
         },
-
+      ].sort((a, b) => {
+        if (a.name > b.name) {
+          return 1;
+        }
+        if (a.name < b.name) {
+          return -1;
+        }
+        return 0;
+      }),
+      items: [
         {
           name: "App Layout",
           url: this.$withBase("/Components/AppLayout/"),
