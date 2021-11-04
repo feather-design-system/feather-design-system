@@ -195,7 +195,7 @@ export default {
 };
 </script>
 <style lang="scss" scoped>
-@import "~@featherds/styles/themes/variables";
+@import "@featherds/styles/themes/variables";
 span {
   cursor: pointer;
   &:focus {

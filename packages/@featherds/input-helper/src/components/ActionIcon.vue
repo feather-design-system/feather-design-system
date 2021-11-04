@@ -22,7 +22,7 @@ export default {
 };
 </script>
 <style lang="scss" scoped>
-@import "~@featherds/styles/themes/variables";
+@import "@featherds/styles/themes/variables";
 .action-icon {
   display: inline-flex;
   align-items: center;

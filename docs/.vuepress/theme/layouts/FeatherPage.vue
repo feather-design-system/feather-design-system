@@ -46,6 +46,7 @@
     <div id="main">
       <slot />
     </div>
+    <Footer />
   </FeatherAppLayout>
 </template>
 <script>
@@ -85,10 +86,10 @@ export default {
 };
 </script>
 <style lang="scss" scoped>
-@import "~@featherds/styles/lib/grid";
-@import "~@featherds/styles/mixins/typography";
-@import "~@featherds/styles/mixins/responsive";
-@import "~@featherds/styles/themes/variables";
+@import "@featherds/styles/lib/grid";
+@import "@featherds/styles/mixins/typography";
+@import "@featherds/styles/mixins/responsive";
+@import "@featherds/styles/themes/variables";
 #main {
   display: flex;
   flex-direction: column;

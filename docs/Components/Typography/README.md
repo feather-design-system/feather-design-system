@@ -18,7 +18,7 @@ Use mixins where possible. They allow you to style the element with the correct 
 Feather styles some HTML elements by default. Typography styles are applied to elements directly when you include `@featherds/styles` and add the `.feather-styles` class to a parent element.
 
 ```scss
-@import "~@featherds/styles";
+@import "@featherds/styles";
 ```
 
 This import will also style the following HTML Elements:
@@ -35,7 +35,7 @@ This import will also style the following HTML Elements:
 
 <style lang="scss">
 
-  @import "~@featherds/styles/mixins/typography";
+  @import "@featherds/styles/mixins/typography";
   .feather-styles .demo-headings{
     h1,h2,h3,h4,h5,h6,p,a{
       margin:0;
@@ -79,7 +79,7 @@ p {
 Mixins can be used by importing `@featherds/styles/mixins/typograpy`.
 
 ```scss
-@import "~@featherds/styles/mixins/typography";
+@import "@featherds/styles/mixins/typography";
 ```
 
 It exposes the following mixins:

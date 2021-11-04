@@ -17,7 +17,7 @@
   </section>
 </template>
 <style lang="scss" scoped>
-@import "~@featherds/styles/mixins/typography";
+@import "@featherds/styles/mixins/typography";
 .display-1 {
   @include display1();
 }

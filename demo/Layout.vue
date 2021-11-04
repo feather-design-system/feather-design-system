@@ -15,8 +15,8 @@ export default {
 };
 </script>
 <style lang="scss">
-@import "~@featherds/styles/themes/variables";
-@import "~@featherds/styles/mixins/grid";
+@import "@featherds/styles/themes/variables";
+@import "@featherds/styles/mixins/grid";
 body {
   background-color: var($background);
 }

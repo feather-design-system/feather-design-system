@@ -166,9 +166,9 @@ export default {
 };
 </script>
 <style lang="scss" scoped>
-@import "~@featherds/styles/themes/variables";
-@import "~@featherds/styles/mixins/elevation";
-@import "~@featherds/styles/mixins/typography";
+@import "@featherds/styles/themes/variables";
+@import "@featherds/styles/mixins/elevation";
+@import "@featherds/styles/mixins/typography";
 $width: 264px;
 .fake-header {
   display: flex;
@@ -189,7 +189,9 @@ $width: 264px;
 }
 .nav-list-container {
   display: flex;
+  width: $width;
 }
+
 .nav-list {
   height: calc(100vh);
   background: var($background);

@@ -33,7 +33,7 @@ export default {
 };
 </script>
 <style lang="scss" scoped>
-@import "~@featherds/styles/themes/variables";
+@import "@featherds/styles/themes/variables";
 .search-icon {
   color: var($secondary-text-on-color);
   font-size: 24px;

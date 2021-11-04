@@ -38,8 +38,8 @@ export default {
 };
 </script>
 <style lang="scss" scoped>
-@import "~@featherds/styles/themes/variables";
-@import "~@featherds/styles/mixins/elevation";
+@import "@featherds/styles/themes/variables";
+@import "@featherds/styles/mixins/elevation";
 $width: 264px;
 .fake-header {
   height: var($header-height);

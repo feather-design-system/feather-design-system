@@ -5,7 +5,7 @@
 </template>
 <style lang="scss" scoped>
 @import "../../scss/variables";
-@import "~@featherds/styles/mixins/typography";
+@import "@featherds/styles/mixins/typography";
 .feather-list-header {
   list-style: none;
   @include subtitle2();

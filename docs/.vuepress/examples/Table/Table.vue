@@ -106,7 +106,7 @@ export default {
 };
 </script>
 <style lang="scss" scoped>
-@import "~@featherds/table/scss/table";
+@import "@featherds/table/scss/table";
 table {
   width: 100%;
   @include table();

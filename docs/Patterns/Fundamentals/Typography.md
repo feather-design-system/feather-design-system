@@ -50,7 +50,7 @@ Caption and overline text are the smallest styles. These are meant to be used as
 ## Examples
 
 <style lang="scss">
-@import "~@featherds/styles/mixins/typography";
+@import "@featherds/styles/mixins/typography";
 .feather-container p.body-large{
   @include body-large();
 }

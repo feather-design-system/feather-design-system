@@ -119,9 +119,9 @@ export default {
 };
 </script>
 <style lang="scss" scoped>
-@import "~@featherds/styles/themes/variables";
-@import "~@featherds/styles/mixins/typography";
-@import "~@featherds/styles/mixins/responsive";
+@import "@featherds/styles/themes/variables";
+@import "@featherds/styles/mixins/typography";
+@import "@featherds/styles/mixins/responsive";
 .feather-demo {
   border: 1px solid var($shade-4);
   background-color: var($background);

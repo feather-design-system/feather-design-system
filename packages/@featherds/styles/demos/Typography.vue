@@ -25,7 +25,7 @@
 </template>
 
 <style lang="scss" scoped>
-@import "~@featherds/styles/mixins/typography";
+@import "@featherds/styles/mixins/typography";
 .italics {
   font-style: italic;
 }

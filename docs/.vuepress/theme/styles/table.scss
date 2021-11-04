@@ -1,4 +1,4 @@
-@import "~@featherds/table/scss/table";
+@import "@featherds/table/scss/table";
 
 table:not([class]) {
   @include table();

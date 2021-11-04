@@ -378,8 +378,8 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-@import "~@featherds/input-helper/scss/spacing";
-@import "~@featherds/styles/themes/variables";
+@import "@featherds/input-helper/scss/spacing";
+@import "@featherds/styles/themes/variables";
 .feather-input-container {
   @include input-spacing;
 }

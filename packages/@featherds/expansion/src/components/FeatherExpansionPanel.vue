@@ -176,9 +176,9 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-@import "~@featherds/styles/themes/variables";
-@import "~@featherds/styles/mixins/typography";
-@import "~@featherds/styles/mixins/elevation";
+@import "@featherds/styles/themes/variables";
+@import "@featherds/styles/mixins/typography";
+@import "@featherds/styles/mixins/elevation";
 
 .feather-expansion {
   width: 100%;

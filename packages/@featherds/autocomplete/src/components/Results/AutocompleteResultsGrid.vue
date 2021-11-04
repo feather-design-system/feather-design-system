@@ -139,10 +139,10 @@ export default {
 };
 </script>
 <style lang="scss" scoped>
-@import "~@featherds/styles/mixins/typography";
-@import "~@featherds/styles/themes/variables";
-@import "~@featherds/styles/themes/utils";
-@import "~@featherds/table/scss/_table";
+@import "@featherds/styles/mixins/typography";
+@import "@featherds/styles/themes/variables";
+@import "@featherds/styles/themes/utils";
+@import "@featherds/table/scss/_table";
 .feather-autocomplete-results-grid {
   overflow-y: scroll;
 }

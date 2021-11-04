@@ -20,7 +20,7 @@ export default {
 };
 </script>
 <style lang="scss" scoped>
-@import "~@featherds/styles/themes/variables";
+@import "@featherds/styles/themes/variables";
 .fake-header {
   height: 60px;
   background-color: var($background);

@@ -35,10 +35,10 @@ export default {
 
 <style lang="scss" scoped>
 @use "sass:math";
-@import "~@featherds/styles/themes/variables";
-@import "~@featherds/styles/mixins/elevation";
-@import "~@featherds/styles/mixins/flex";
-@import "~@featherds/styles/themes/utils";
+@import "@featherds/styles/themes/variables";
+@import "@featherds/styles/mixins/elevation";
+@import "@featherds/styles/mixins/flex";
+@import "@featherds/styles/themes/utils";
 $circleHeight: 20px;
 $height: 36px;
 $trackHeight: 14px;

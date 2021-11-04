@@ -19,8 +19,8 @@ export default {
 };
 </script>
 <style lang="scss" scoped>
-@import "~@featherds/styles/themes/variables";
-@import "~@featherds/styles/mixins/typography";
+@import "@featherds/styles/themes/variables";
+@import "@featherds/styles/mixins/typography";
 div.group {
   margin-top: 8px;
   h3 {

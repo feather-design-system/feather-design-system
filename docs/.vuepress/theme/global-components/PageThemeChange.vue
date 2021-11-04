@@ -1,5 +1,10 @@
 <template>
-  <FeatherButton class="toggle" @click.prevent="toggleTheme" href="#" icon="Toggle theme">
+  <FeatherButton
+    class="toggle"
+    @click.prevent="toggleTheme"
+    href="#"
+    icon="Toggle theme"
+  >
     <FeatherIcon :title="selected._text" :icon="icon" />
   </FeatherButton>
 </template>
@@ -8,7 +13,7 @@ import { FeatherIcon } from "@featherds/icon";
 import { FeatherButton } from "@featherds/button";
 import { THEMES, KEY, update } from "./themes";
 import actionsVisibility from "@featherds/icon/action/LightDarkMode";
-import actionsVisibilityOff from "@featherds/icon/action/LightDarkMode"
+import actionsVisibilityOff from "@featherds/icon/action/LightDarkMode";
 
 export default {
   data() {
@@ -16,7 +21,7 @@ export default {
       selected: THEMES[0],
       themes: THEMES,
       light: actionsVisibility,
-      dark: actionsVisibilityOff
+      dark: actionsVisibilityOff,
     };
   },
   watch: {
@@ -30,7 +35,7 @@ export default {
     this.selected = targetTheme || currSelected;
     //edge case, if there is no localstorage, the watch doesn't fire (the values haven't changed)
     //so we need to manually force the initial theme render
-    if(!targetTheme) this.updateTheme(this.selected, this.selected);
+    if (!targetTheme) this.updateTheme(this.selected, this.selected);
   },
   methods: {
     updateTheme(curr, old) {
@@ -40,26 +45,30 @@ export default {
       update(curr);
     },
     toggleTheme() {
-      const currIndex = this.themes.map((e) => e._text).indexOf(this.selected._text);
-      const newIndex = (currIndex === this.themes.length-1) ? 0 : currIndex+1;
+      const currIndex = this.themes
+        .map((e) => e._text)
+        .indexOf(this.selected._text);
+      const newIndex = currIndex === this.themes.length - 1 ? 0 : currIndex + 1;
       this.selected = this.themes[newIndex];
-    }
+    },
   },
   computed: {
     icon() {
-      return this.selected && this.selected._text.includes("dark") ? this.dark : this.light;
+      return this.selected && this.selected._text.includes("dark")
+        ? this.dark
+        : this.light;
     },
   },
   components: {
     FeatherIcon,
-    FeatherButton
+    FeatherButton,
   },
 };
 </script>
 <style lang="scss" scoped>
-@import "~@featherds/styles/themes/variables";
-@import "~@featherds/styles/mixins/typography";
+@import "@featherds/styles/themes/variables";
+@import "@featherds/styles/mixins/typography";
 .toggle {
-  color: var($primary-text-on-color)
+  color: var($primary-text-on-color);
 }
 </style>

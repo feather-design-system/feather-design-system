@@ -1,15 +1,18 @@
-
-  <template>
+<template>
   <section>
     <h2>Feather</h2>
     <section class="icons">
-      <FeatherIcon v-for="icon in featherIcons" :icon="icon.icon" :key="icon.key"></FeatherIcon>
+      <FeatherIcon
+        v-for="icon in featherIcons"
+        :icon="icon.icon"
+        :key="icon.key"
+      ></FeatherIcon>
     </section>
   </section>
 </template>
 
-  <script>
-  import * as components from "./../src";
+<script>
+import * as components from "./../src";
 import actionAccountCircle from "@featherds/icon/action/AccountCircle";
 
 import actionAdd from "@featherds/icon/action/Add";
@@ -354,12 +357,11 @@ import notificationWifiSignalBad from "@featherds/icon/notification/WifiSignalBa
 
 import notificationWifiStatusBar from "@featherds/icon/notification/WifiStatusBar";
 
-
-
 export default {
-  data(){
+  data() {
     return {
-      featherIcons:[{ icon: actionAccountCircle, key: "actionAccountCircle" },
+      featherIcons: [
+        { icon: actionAccountCircle, key: "actionAccountCircle" },
         { icon: actionAdd, key: "actionAdd" },
         { icon: actionAddCircleAlt, key: "actionAddCircleAlt" },
         { icon: actionAddComment, key: "actionAddComment" },
@@ -413,7 +415,10 @@ export default {
         { icon: actionLocation, key: "actionLocation" },
         { icon: actionLocationCity, key: "actionLocationCity" },
         { icon: actionLock, key: "actionLock" },
-        { icon: actionLockPasswordProtected, key: "actionLockPasswordProtected" },
+        {
+          icon: actionLockPasswordProtected,
+          key: "actionLockPasswordProtected",
+        },
         { icon: actionLoggerConfigs, key: "actionLoggerConfigs" },
         { icon: actionLogIn, key: "actionLogIn" },
         { icon: actionLogOut, key: "actionLogOut" },
@@ -449,7 +454,10 @@ export default {
         { icon: actionViewDetails, key: "actionViewDetails" },
         { icon: actionWorkflow, key: "actionWorkflow" },
         { icon: communicationCertificate, key: "communicationCertificate" },
-        { icon: communicationCertificateAlt, key: "communicationCertificateAlt" },
+        {
+          icon: communicationCertificateAlt,
+          key: "communicationCertificateAlt",
+        },
         { icon: communicationChat, key: "communicationChat" },
         { icon: communicationContacts, key: "communicationContacts" },
         { icon: communicationDocumentation, key: "communicationDocumentation" },
@@ -518,8 +526,14 @@ export default {
         { icon: navigationMoreHoriz, key: "navigationMoreHoriz" },
         { icon: navigationMoreVert, key: "navigationMoreVert" },
         { icon: navigationRefresh, key: "navigationRefresh" },
-        { icon: navigationSubdirectoryArrowLeft, key: "navigationSubdirectoryArrowLeft" },
-        { icon: navigationSubdirectoryArrowRight, key: "navigationSubdirectoryArrowRight" },
+        {
+          icon: navigationSubdirectoryArrowLeft,
+          key: "navigationSubdirectoryArrowLeft",
+        },
+        {
+          icon: navigationSubdirectoryArrowRight,
+          key: "navigationSubdirectoryArrowRight",
+        },
         { icon: navigationUnfoldLess, key: "navigationUnfoldLess" },
         { icon: navigationUnfoldMore, key: "navigationUnfoldMore" },
         { icon: notificationConnected, key: "notificationConnected" },
@@ -527,20 +541,24 @@ export default {
         { icon: notificationUnconnected, key: "notificationUnconnected" },
         { icon: notificationWarning, key: "notificationWarning" },
         { icon: notificationWifi, key: "notificationWifi" },
-        { icon: notificationWifiNoConnection, key: "notificationWifiNoConnection" },
+        {
+          icon: notificationWifiNoConnection,
+          key: "notificationWifiNoConnection",
+        },
         { icon: notificationWifiOff, key: "notificationWifiOff" },
         { icon: notificationWifiSignalBad, key: "notificationWifiSignalBad" },
-        { icon: notificationWifiStatusBar, key: "notificationWifiStatusBar" }]
+        { icon: notificationWifiStatusBar, key: "notificationWifiStatusBar" },
+      ],
     };
   },
   components: {
-    ...components
-  }
+    ...components,
+  },
 };
 </script>
 
 <style lang="scss" scoped>
-@import "~@featherds/styles/themes/variables";
+@import "@featherds/styles/themes/variables";
 .icons {
   font-size: 20px;
   color: var($primary);

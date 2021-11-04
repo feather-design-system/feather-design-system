@@ -41,7 +41,7 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-@import "~@featherds/styles/themes/variables";
+@import "@featherds/styles/themes/variables";
 $close-width: 48px;
 $small-width: 40px;
 a.closeButton {

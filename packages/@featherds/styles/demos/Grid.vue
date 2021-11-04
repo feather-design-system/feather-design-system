@@ -234,7 +234,7 @@
   </section>
 </template>
 <style lang="scss" scoped>
-@import "~@featherds/styles/lib/grid";
+@import "@featherds/styles/lib/grid";
 .feather-row {
   ul {
     border: 1px solid red;

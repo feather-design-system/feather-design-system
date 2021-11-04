@@ -19,7 +19,7 @@ export default {
 };
 </script>
 <style lang="scss" scoped>
-@import "~@featherds/styles/mixins/typography";
+@import "@featherds/styles/mixins/typography";
 .sidebar .title {
   @include overline();
   text-transform: uppercase;

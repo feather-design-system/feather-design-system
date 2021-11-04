@@ -17,7 +17,7 @@ export default {
 };
 </script>
 <style lang="scss" scoped>
-@import "~@featherds/styles/themes/variables";
+@import "@featherds/styles/themes/variables";
 .error-icon {
   color: var($error);
   font-size: 20px;

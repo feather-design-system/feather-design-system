@@ -29,7 +29,7 @@ export default {
   data() {
     return {
       search: "",
-      feather: data.feather
+      feather: data.feather,
     };
   },
   computed: {
@@ -59,8 +59,8 @@ export default {
 };
 </script>
 <style scoped lang="scss">
-@import "~@featherds/styles/mixins/typography";
-@import "~@featherds/styles/themes/variables";
+@import "@featherds/styles/mixins/typography";
+@import "@featherds/styles/themes/variables";
 ul {
   padding: 0;
   margin: 0;

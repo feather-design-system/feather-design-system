@@ -120,8 +120,8 @@ export default {
 };
 </script>
 <style lang="scss" scoped>
-@import "~@featherds/table/scss/table";
-@import "~@featherds/styles/themes/variables";
+@import "@featherds/table/scss/table";
+@import "@featherds/styles/themes/variables";
 table {
   width: 100%;
   @include table();

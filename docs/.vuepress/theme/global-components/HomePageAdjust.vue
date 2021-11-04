@@ -21,9 +21,9 @@ export default {
 };
 </script>
 <style lang="scss">
-@import "~@featherds/styles/themes/variables";
-@import "~@featherds/styles/mixins/typography";
-@import "~@featherds/styles/mixins/elevation";
+@import "@featherds/styles/themes/variables";
+@import "@featherds/styles/mixins/typography";
+@import "@featherds/styles/mixins/elevation";
 body div.feather-styles.layout header.banner {
   transition: all 0.2s linear;
 }

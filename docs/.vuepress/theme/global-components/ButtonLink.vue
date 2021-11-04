@@ -20,7 +20,7 @@ export default {
 };
 </script>
 <style lang="scss" scoped>
-@import "~@featherds/styles/themes/variables";
+@import "@featherds/styles/themes/variables";
 .docs-button-link {
   --feather-primary: var(#{$secondary-variant});
   --feather-state-color-on-surface: var(#{$secondary-variant});

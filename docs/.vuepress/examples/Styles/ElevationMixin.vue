@@ -16,8 +16,8 @@ export default {
 };
 </script>
 <style lang="scss" scoped>
-@import "~@featherds/styles/mixins/elevation";
-@import "~@featherds/styles/themes/variables";
+@import "@featherds/styles/mixins/elevation";
+@import "@featherds/styles/themes/variables";
 
 $elevations: 0, 1, 2, 3, 4, 6, 8, 12, 16, 24;
 @each $i in $elevations {

@@ -18,7 +18,7 @@ The mixin support is provided to allow easy use of our grid functionality inside
 We have added a number of mixins which is our preferred method for using grid layout inside of a SFC. To use the mixins you need to import:
 
 ```scss
-@import "~@featherds/styles/mixins/grid";
+@import "@featherds/styles/mixins/grid";
 ```
 
 You have the following mixins available:
@@ -83,7 +83,7 @@ You have the following mixins available:
 `@featherds/styles` has a number of classes that are utilized to create a grid layout. To use these classes you need to import:
 
 ```scss
-@import "~@featherds/styles/lib/grid";
+@import "@featherds/styles/lib/grid";
 ```
 
 These classes are **NOT** included in our default include anymore.

@@ -31,7 +31,7 @@ export default {
 };
 </script>
 <style lang="scss" scoped>
-@import "~@featherds/styles/themes/variables";
+@import "@featherds/styles/themes/variables";
 ul {
   margin: 0;
   padding: 0;

@@ -63,7 +63,7 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-@import "~@featherds/chips/scss/mixins";
+@import "@featherds/chips/scss/mixins";
 .autocomplete-chip.chip {
   margin: 4px 0;
   margin-right: 8px;

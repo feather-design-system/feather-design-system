@@ -75,7 +75,7 @@ export default {
 };
 </script>
 <style lang="scss" scoped>
-@import "~@featherds/styles/themes/variables";
+@import "@featherds/styles/themes/variables";
 .surface {
   background-color: var($surface);
   padding: 20px;

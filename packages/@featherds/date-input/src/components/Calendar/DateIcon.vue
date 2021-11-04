@@ -30,8 +30,8 @@ export default {
 };
 </script>
 <style lang="scss" scoped>
-@import "~@featherds/styles/themes/variables";
-@import "~@featherds/styles/themes/utils";
+@import "@featherds/styles/themes/variables";
+@import "@featherds/styles/themes/utils";
 .action-icon {
   display: inline-flex;
   align-items: center;

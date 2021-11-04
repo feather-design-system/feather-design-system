@@ -26,11 +26,14 @@
           </li>
         </ul>
         <span class="blurb">
-          A blurb about the Feather Design system. This could also be a place that links to opening an issue to GitHub
+          A blurb about the Feather Design system. This could also be a place
+          that links to opening an issue to GitHub
         </span>
       </div>
       <div class="branding">
-        <a :href="$withBase('/')"><FeatherIcon :icon="LogoFull" title="Feather DS"></FeatherIcon></a>
+        <a :href="$withBase('/')"
+          ><FeatherIcon :icon="LogoFull" title="Feather DS"></FeatherIcon
+        ></a>
       </div>
     </div>
   </footer>
@@ -41,17 +44,17 @@ import FeatherLogoFull from "@featherds/icon/branding/FeatherLogoFull";
 export default {
   data() {
     return {
-      LogoFull: FeatherLogoFull
+      LogoFull: FeatherLogoFull,
     };
   },
   components: {
-    FeatherIcon
+    FeatherIcon,
   },
 };
 </script>
 <style lang="scss" scoped>
-@import "~@featherds/styles/themes/variables";
-@import "~@featherds/styles/mixins/typography";
+@import "@featherds/styles/themes/variables";
+@import "@featherds/styles/mixins/typography";
 footer {
   background-color: var($background);
   flex-basis: 100%;
@@ -75,12 +78,15 @@ footer {
         margin: 0;
         margin-right: 180px;
         columns: 2;
-
+        li {
+          margin-bottom: 16px;
+        }
         a {
           color: var($primary-text-on-surface);
         }
       }
-      ul, span.blurb {
+      ul,
+      span.blurb {
         flex-basis: 320px;
         flex-shrink: 0;
         margin-bottom: 28px;

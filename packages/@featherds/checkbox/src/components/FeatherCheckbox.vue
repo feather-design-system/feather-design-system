@@ -133,9 +133,9 @@ export default {
 
 <style lang="scss" scoped>
 @use "sass:math";
-@import "~@featherds/styles/themes/variables";
-@import "~@featherds/styles/themes/utils";
-@import "~@featherds/styles/mixins/typography";
+@import "@featherds/styles/themes/variables";
+@import "@featherds/styles/themes/utils";
+@import "@featherds/styles/mixins/typography";
 
 .feather-checkbox {
   @include state-on-surface();

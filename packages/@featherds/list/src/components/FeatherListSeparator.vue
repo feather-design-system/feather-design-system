@@ -12,7 +12,7 @@ export default {
 };
 </script>
 <style lang="scss" scoped>
-@import "~@featherds/styles/themes/variables";
+@import "@featherds/styles/themes/variables";
 li.feather-list-item {
   padding: 0;
 }

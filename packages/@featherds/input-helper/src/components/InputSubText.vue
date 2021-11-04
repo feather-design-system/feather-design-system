@@ -45,8 +45,8 @@ export default {
 };
 </script>
 <style lang="scss" scoped>
-@import "~@featherds/styles/themes/variables";
-@import "~@featherds/styles/mixins/typography";
+@import "@featherds/styles/themes/variables";
+@import "@featherds/styles/mixins/typography";
 .feather-input-sub-text {
   display: flex;
   padding: 4px 12px 4px 16px;

@@ -3,22 +3,18 @@ title: "Variables"
 lang: en-US
 tags: ["Variables", "component"]
 layout: ComponentLayout
-
 ---
-
 
 `@featherds/styles`
 
-
 `@featherds/styles` exposes SASS variables through `@featherds/styles/themes/variables`. These variables directly correspond to theme variables.
-
 
 ## Using a variable
 
 To use a variable that is defined as part of a theme you first need to import the `variables` file into your `scss`.
 
 ```scss
-@import "~@featherds/styles/themes/variables";
+@import "@featherds/styles/themes/variables";
 ```
 
 Each of the variables are exposed in SCSS variables for easier consumption.
@@ -32,8 +28,6 @@ Each of the variables are exposed in SCSS variables for easier consumption.
 ### Why not use the var directly.
 
 We recommend not using the CSS Variables syntax directly. SCSS doesn't have great support for CSS Variables and wouldn't catch any typos in variable names. By using this technique we provide a level of security that the variable does infact exist and any typos can be caught early in development.
-
-
 
 ## Colors
 

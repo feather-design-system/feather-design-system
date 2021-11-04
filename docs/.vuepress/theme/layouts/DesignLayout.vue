@@ -2,7 +2,7 @@
   <FeatherPage class="layout">
     <DesignMenu></DesignMenu>
     <div class="center content feather-container">
-      <h1 class="title">{{title}}</h1>
+      <h1 class="title">{{ title }}</h1>
       <div class="toc" v-if="sidebarItems.length">
         <Sidebar :items="sidebarItems" title="Contents" />
       </div>
@@ -18,8 +18,8 @@ import Sidebar from "../components/Sidebar.vue";
 import DesignMenu from "../components/DesignMenu.vue";
 export default {
   computed: {
-    title(){
-      return this.$page.title
+    title() {
+      return this.$page.title;
     },
     sidebarItems() {
       if (this.$page && this.$page.headers) {
@@ -36,15 +36,15 @@ export default {
   components: {
     FeatherPage,
     Sidebar,
-    DesignMenu
+    DesignMenu,
   },
 };
 </script>
 <style lang="scss" scoped>
-@import "~@featherds/styles/themes/variables";
-@import "~@featherds/styles/mixins/elevation";
-@import "~@featherds/styles/mixins/typography";
-:deep(h1:not(.title)){
+@import "@featherds/styles/themes/variables";
+@import "@featherds/styles/mixins/elevation";
+@import "@featherds/styles/mixins/typography";
+:deep(h1:not(.title)) {
   display: none;
 }
 .center.content {

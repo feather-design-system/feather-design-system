@@ -116,8 +116,8 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-@import "~@featherds/styles/themes/variables";
-@import "~@featherds/styles/mixins/typography";
+@import "@featherds/styles/themes/variables";
+@import "@featherds/styles/mixins/typography";
 @import "../../../scss/mixins";
 [role="gridcell"] {
   height: 100%;

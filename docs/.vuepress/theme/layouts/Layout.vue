@@ -34,9 +34,9 @@ export default {
 };
 </script>
 <style lang="scss" scoped>
-@import "~@featherds/styles/themes/variables";
-@import "~@featherds/styles/mixins/elevation";
-@import "~@featherds/styles/mixins/typography";
+@import "@featherds/styles/themes/variables";
+@import "@featherds/styles/mixins/elevation";
+@import "@featherds/styles/mixins/typography";
 .center.content {
   padding-top: 24px;
 }
