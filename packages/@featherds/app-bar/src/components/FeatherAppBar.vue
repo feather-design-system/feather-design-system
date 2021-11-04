@@ -194,7 +194,6 @@ header {
   height: 100%;
   display: flex;
   justify-content: center;
-  flex-wrap: wrap;
   max-width: var($content-width);
   padding-top: 0;
   padding-bottom: 0;

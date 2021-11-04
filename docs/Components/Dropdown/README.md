@@ -1,11 +1,10 @@
 ---
 title: "Dropdown"
+pre: "@featherds/dropdown"
 lang: en-US
 tags: ["Dropdown", "component"]
 layout: ComponentLayout
 ---
-
-`@featherds/dropdown`
 
 ## Examples
 

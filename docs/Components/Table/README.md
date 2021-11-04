@@ -1,18 +1,22 @@
 ---
 title: "Table"
+pre: "@featherds/table"
+description: "Tables display a matrix of data organized into rows and columns. Users can quickly scan rows and columns to gather contextual insights about information. Tables may contain interactive elements like menus and buttons, they can contain visual-only elements like icons and labels and they can contain advanced functionality to filter, search and sort contents."
 lang: en-US
 tags: ["Table", "component"]
 
 layout: ComponentLayout
 ---
 
-`@featherds/table`
+## Design
 
-`@featherds/table` has predefined table classes that allow you to effectively style a basic table as required. It also provides a common component for sorting that you can include if you require.
+Tables have been designed to elevate the data at all times. The purpose of the table is to organize data so users may gain insights around the data by making comparisons. Tables should be organized by default, sorted or alphabetized. Tables should ensure that any interaction is made clear to the user, either using hover states or color. Tables should be easy to user and easy to interpret.
 
 ## Example
 
 <Table-Examples />
+
+## Table Fucntionality
 
 ### Row Click
 
@@ -28,7 +32,9 @@ In both of the actions examples above you will notice screen reader (`.sr-only`)
 
 :::
 
-## Styles
+## Table Styles
+
+`@featherds/table` has predefined table classes that allow you to effectively style a basic table as required. It also provides a common component for sorting that you can include if you require.
 
 ### Mixins
 
@@ -107,7 +113,7 @@ table {
 }
 ```
 
-## Classes
+## Table Classes
 
 These classes are available when you use the [Table](#table) mixin.
 

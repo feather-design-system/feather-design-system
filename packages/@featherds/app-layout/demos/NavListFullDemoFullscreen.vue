@@ -1,6 +1,6 @@
 <template>
   <section>
-    <FeatherAppLayout content-layout="full">
+    <FeatherAppLayout>
       <template v-slot:header>
         <AppHeader scroll-hide />
       </template>

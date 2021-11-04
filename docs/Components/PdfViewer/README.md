@@ -1,26 +1,28 @@
 ---
 title: "PdfViewer"
+pre: "@featherds/pdf-viewer"
 lang: en-US
 tags: ["PdfViewer", "component"]
-
 layout: ComponentLayout
 ---
 
-`@featherds/pdf-viewer`
+## Design
+
+The Feather PDF viewer is built to provide application-specific funtionality around documents while relying on the default PDF viewer that ships with all major web browsers to render the document. The UI for the Feather PDF viewer must not rely on or obfuscate any portion of the browser PDF viewer since the browser viewer does not provide any means of interface with external components or applications.
 
 ## Examples
 
 <PdfViewer-Examples />
 
-## Getting Started
+## FeatherPdfViewer
+
+### Getting Started
 
 `FeatherPdfViewer` is created to view PDF documents in the browser. You may choose to convert certain document types into PDF so they can be viewed directly in the browser.
 
 When using the `FeatherPdfViewer` be sure to use the `aria-expanded` attribute on the element that triggers the viewer to help indicate to a screen reader that something will be opened.
 
 PDFViewer performs a `HEAD` request against the given document to preview. If a `previewUrl` is specified it will make a request for that. Failing that it will use the `documentUrl`. The corresponding `XMLHttpRequest` object is emitted via the `check-request` event. If a state other than `200` is returned we display the error state. Unique error messages can be configured via the [labels](#labels) or the [error slot](#slots).
-
-## FeatherPdfViewer
 
 ### Props
 

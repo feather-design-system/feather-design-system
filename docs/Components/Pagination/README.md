@@ -1,11 +1,15 @@
 ---
 title: "Pagination"
+pre: "@featherds/pagination"
+description: "Pagination will be used if technical limitations prevent infinite scrolling or if there is a clear benefit to the user over other methods of lateral navigation (moving through screens at the same level of hierarchy) or infinte scroll. Pagination elements display information about the number of pages that exist and provide controls to navigate through them."
 lang: en-US
 tags: ["Pagination", "component"]
 layout: ComponentLayout
 ---
 
-`@featherds/pagination`
+## Design
+
+The pagination design is very close to the Google Material Design standards. Keeping pagination simple and styling it in a similar fashion to the table ensures that the pagination component can be seamlessly added to a table component or used as a stand-alone component if necessary.
 
 ## Examples
 

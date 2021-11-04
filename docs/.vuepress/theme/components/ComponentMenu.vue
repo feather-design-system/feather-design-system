@@ -189,7 +189,6 @@ $width: 264px;
 }
 .nav-list-container {
   display: flex;
-  width: $width;
 }
 .nav-list {
   height: calc(100vh);

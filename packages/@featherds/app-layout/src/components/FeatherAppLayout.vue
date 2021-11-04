@@ -118,7 +118,11 @@ export default {
   justify-content: center;
   width: 100%;
   > .app-content-container {
+    max-width: var($content-width);
     width: 100%;
+    &.full-width {
+      max-width: none;
+    }
   }
 }
 .app-aside {

@@ -179,7 +179,9 @@ export default {
 @include media-query-below(s) {
   :deep(div.feather-app-bar-wrapper) {
     --feather-header-height: 120px;
-    flex-wrap: wrap;
+    .header-content {
+      flex-wrap: wrap;
+    }
     div.center-horiz {
       height: 60px;
       &.left,

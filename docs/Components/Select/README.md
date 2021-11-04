@@ -1,19 +1,21 @@
 ---
 title: "Select"
+pre: "@featherds/select"
+description: "A dropdown list control presents the user with a list of options allowing them to select a single option from the menu. Our basic dropdown list does not allow the user to enter in custom text or provide anything other than the most rudimentary built-in search facilities."
 lang: en-US
 tags: ["Select", "component"]
 layout: ComponentLayout
 ---
 
-`@featherds/select`
-
 ## Examples
 
 <Select-Examples />
 
-## Getting Started
+## FeatherSelect
 
-### Item Display Text
+### Getting Started
+
+#### Item Display Text
 
 It is expected that your select options will be an Array of Objects. You can therefore specify which property you want to use as display text in the dropdown by setting the `text-prop` to the property name.
 
@@ -30,7 +32,7 @@ const options = [
 
 You would configure the `text-prop` to be `name`.
 
-### Options Menu Height
+#### Options Menu Height
 
 You can configure the options menu height by setting the height style for `.feather-select-options-list`. Out of the box the height is configured to allow up to 6 rows before scrolling. We have provided a mixin for you to easily configure the height of the menu.
 
@@ -43,8 +45,6 @@ The following example allows `10` items to be displayed before scrolling.
   @include select-menu-height(10);
 }
 ```
-
-## FeatherSelect
 
 ### Props
 
