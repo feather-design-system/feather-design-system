@@ -1,5 +1,5 @@
 <template>
-  <FeatherAppLayout class="feather-styles" content-layout="full">
+  <FeatherAppLayout class="feather-styles" :class="{ homepage: isHomepage }" content-layout="full">
     <template v-slot:header>
       <FeatherAppBar
         class="header-with-search"
@@ -71,7 +71,12 @@ export default {
       iconCaret: KeyboardArrowDown,
       LogoFull: FeatherLogoFull,
       Logo: FeatherLogoMotif,
+      isHomepage: false
     };
+  },
+  mounted() {
+    const routerHash = decodeURIComponent(this.$route.path);
+    this.isHomepage = routerHash.toLowerCase() === "/";
   },
   components: {
     PageThemeChange,
@@ -202,4 +207,5 @@ export default {
 </style>
 <style lang="scss">
 @import "../styles/global";
+@import "../styles/homepage";
 </style>

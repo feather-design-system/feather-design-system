@@ -50,6 +50,7 @@ export default {
       //check the height of the header
       //apply that height to this element
       let header = document.querySelector(".header-content.center-horiz");
+      console.log(header.getBoundingClientRect().height);
       this.mask.style.height = `${header.getBoundingClientRect().height}px`;
     },
   },
