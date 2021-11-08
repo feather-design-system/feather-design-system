@@ -39,7 +39,7 @@ export default {
 @import "@featherds/styles/mixins/typography";
 
 a.link {
-  @include body-small();
+  @include header();
   height: 100%;
   padding: 8px;
   margin: 0 12px;

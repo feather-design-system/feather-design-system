@@ -62,8 +62,8 @@ footer {
   .inner-wrapper {
     display: flex;
     flex-direction: column;
-    width: 100%;
-    padding: 40px 62px;
+    max-width: 1200px;
+    padding: 40px 40px;
 
     .links {
       display: flex;
@@ -78,6 +78,7 @@ footer {
         margin: 0;
         margin-right: 180px;
         columns: 2;
+        margin-bottom: 28px;
         li {
           margin-bottom: 16px;
         }
@@ -89,7 +90,33 @@ footer {
       span.blurb {
         flex-basis: 320px;
         flex-shrink: 0;
-        margin-bottom: 28px;
+      }
+    }
+
+    @media screen and (max-width: 899px) {
+      .links {
+        justify-content: space-between;
+        ul {
+          margin-right: 40px;
+          flex-basis: auto;
+        }
+      }
+    }
+    @media screen and (max-width: 680px) {
+      .links {
+        ul {
+          margin-right: 0;
+        }
+        span.blurb {
+          flex-basis: 100%;
+        }
+      }
+    }
+    @media screen and (max-width: 360px) {
+      .links {
+        ul {
+          columns: 1;
+        }
       }
     }
     .branding {

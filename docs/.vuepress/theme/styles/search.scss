@@ -1,5 +1,5 @@
 .DocSearch {
-  @include body-small();
+  @include header();
   @import "@featherds/styles/lib/reset";
   @import "@featherds/styles/lib/typography";
   --docsearch-searchbox-background: transparent;
@@ -14,7 +14,7 @@
     border-radius: 4px;
     height: 40px;
     border: 1px solid var($secondary-text-on-color);
-    padding: 0 16px 0 12px;
+    padding: 0 16px 1px 12px;
     position: relative;
     &:hover,
     &:focus,

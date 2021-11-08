@@ -1,14 +1,11 @@
-@import "~@featherds/styles/themes/variables";
-@import "~@featherds/styles/mixins/typography";
-@import "~@featherds/styles/mixins/elevation";
+@import "@featherds/styles/themes/variables";
+@import "@featherds/styles/mixins/typography";
+@import "@featherds/styles/mixins/elevation";
 
-body div.feather-styles.layout.homepage header.banner {
-  background-color: transparent;
-  box-shadow: none;
-}
 body.pagescroll div.feather-styles.layout.homepage header.banner {
   background-color: var($secondary);
   transition: all 0.2s linear;
+  @include header();
 }
 .feather-icon.atom {
   height: inherit;
@@ -19,29 +16,6 @@ body.pagescroll div.feather-styles.layout.homepage header.banner {
   }
 }
 
-//Header tweaks
-body.pagetop div.feather-styles.homepage.layout {
-  & header.banner {
-    .header-content {
-      .header-title a,
-      a.link,
-      .toggle,
-      #search-container .DocSearch-Button,
-      .search-icon,
-      .DocSearch.DocSearch-Button:hover .DocSearch-Button-Placeholder {
-        color: var($primary-text-on-surface);
-      }
-      .DocSearch.DocSearch-Button:hover:after,
-      .DocSearch.DocSearch-Button:focus:after,
-      .DocSearch.DocSearch-Button:active:after {
-        background-color: var($primary-text-on-surface);
-      }
-      .DocSearch.DocSearch-Button {
-        border-color: var($primary-text-on-surface);
-      }
-    }
-  }
-}
 div.feather-styles.homepage.layout {
   div.feather-app-bar-wrapper {
     position: fixed;
@@ -301,6 +275,35 @@ div.feather-styles.homepage.layout {
 }
 
 //responsive adjustments
+@media screen and (min-width: 719px) {
+  body div.feather-styles.layout.homepage header.banner{
+    background-color: transparent;
+    box-shadow: none;
+  }
+  //Header tweaks
+  body.pagetop div.feather-styles.homepage.layout {
+    & header.banner {
+      .header-content {
+        .header-title a,
+        a.link,
+        .toggle,
+        #search-container .DocSearch-Button,
+        .search-icon,
+        .DocSearch.DocSearch-Button:hover .DocSearch-Button-Placeholder {
+          color: var($primary-text-on-surface);
+        }
+        .DocSearch.DocSearch-Button:hover:after,
+        .DocSearch.DocSearch-Button:focus:after,
+        .DocSearch.DocSearch-Button:active:after {
+          background-color: var($primary-text-on-surface);
+        }
+        .DocSearch.DocSearch-Button {
+          border-color: var($primary-text-on-surface);
+        }
+      }
+    }
+  }
+}
 @media screen and (max-width: 750px) {
   .feather-styles.homepage section .section-wrapper.philosophy {
     flex-direction: column;
@@ -350,6 +353,10 @@ div.feather-styles.homepage.layout {
   .feather-styles.homepage section div.card-group {
     h3 {
       @include headline4();
+      margin-top: 8px;
+      margin-bottom: 0;
+      margin-right: 16px;
+      line-height: var($headline3-font-size);
     }
     a.sexy-card {
       flex: 0 0 33%;
@@ -358,13 +365,26 @@ div.feather-styles.homepage.layout {
   }
 }
 @media screen and (max-width: 599px) {
-  .feather-styles.homepage section div.card-group {
-    justify-content: center;
-    flex-wrap: wrap;
-    a.sexy-card {
-      flex: 0 0 100%;
-      max-width: 317px;
+  .feather-styles.homepage section {
+    .learn h2, .learn p {
+      text-align: center;
     }
+    div.card-group {
+      justify-content: center;
+      flex-wrap: wrap;
+      a.sexy-card {
+        flex: 0 0 100%;
+        max-width: 317px;
+        margin-bottom: 24px;
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 899px) {
+  .feather-styles.homepage section .section-wrapper.story {
+    padding-left: 40px;
+    padding-right: 40px;
   }
   .feather-styles.homepage section .section-wrapper.story svg.logo.feather-icon {
     position: relative;

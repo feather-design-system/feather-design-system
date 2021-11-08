@@ -49,7 +49,7 @@ export default {
     resize() {
       //check the height of the header
       //apply that height to this element
-      let header = document.querySelector(".header-content.center-horiz");
+      let header = document.querySelector("div.feather-app-bar-wrapper");
       console.log(header.getBoundingClientRect().height);
       this.mask.style.height = `${header.getBoundingClientRect().height}px`;
     },
