@@ -62,7 +62,8 @@ footer {
   .inner-wrapper {
     display: flex;
     flex-direction: column;
-    max-width: 1200px;
+    max-width: var($content-width);
+    margin: 0 auto;
     padding: 40px 40px;
 
     .links {

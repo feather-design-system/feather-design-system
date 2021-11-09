@@ -1,13 +1,7 @@
 <template>
   <section>
     <FeatherMegaMenu name="Test" close-text="close">
-      <template v-slot:button="slotProps">
-        <div>
-          <button @click="slotProps.clicked" :aria-selected="slotProps.open">
-            Management
-          </button>
-        </div>
-      </template>
+      <template v-slot:button> Management </template>
       <div class="feather-row">
         <div
           class="

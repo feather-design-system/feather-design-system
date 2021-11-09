@@ -19,12 +19,16 @@ App bars are used on all applications at the highest level of hierarchy. The app
 
 ## FeatherAppBar
 
+This component is responsible for the header layout and positioning. `FeatherAppBarLink` and `FeatherAppBarButton` can be placed in it's slots to achieve the desired layout.
+
 ### Props
 
-| Name    | Description                                                                    | Type     | Required | Default |
-| ------- | ------------------------------------------------------------------------------ | -------- | -------- | ------- |
-| content | ID of the main content of the page. Needed for accessibility.                  | `String` | `true`   | -       |
-| labels  | Object containing labels used by this component. See [Labels](#labels) example | `Object` | `true`   | -       |
+| Name       | Description                                                                          | Type      | Required | Default |
+| ---------- | ------------------------------------------------------------------------------------ | --------- | -------- | ------- |
+| content    | ID of the main content of the page. Needed for accessibility.                        | `String`  | `true`   | -       |
+| labels     | Object containing labels used by this component. See [Labels](#labels) example       | `Object`  | `true`   | -       |
+| fulLWidth  | When `true` the header content will take up the fullWidth                            | `Boolean` | `false`  | -       |
+| scrollHide | When `true` the header will hide when scrolling down and reappear if user scrolls up | `Boolean` | `false`  | -       |
 
 ### Labels
 
@@ -39,24 +43,11 @@ App bars are used on all applications at the highest level of hierarchy. The app
 
 - `left` this slot should be used for the product logo. `FeatherAppBarLink` as `home` type should be used.
 - `right` this slot puts content to the right of the app bar.
-
-## FeatherAppBarButton
-
-### Props
-
-| Name      | Description                         | Type      | Required | Default  |
-| --------- | ----------------------------------- | --------- | -------- | -------- |
-| selected  | adds class and styles when selected | `Boolean` | `false`  | `false`  |
-| expanded  | descriptive text for the button     | `Boolean` | `false`  | `false`  |
-| icon      | switches to icon display mode       | `Boolean` | `false`  | `false`  |
-| titleText | descriptive text for the button     | `String`  | `false`  | -        |
-| popUp     | sets ARIA attributes for popUp mode | `String`  | `false`  | `"menu"` |
-
-### Slots
-
-- `default` - used to insert content into the button
+- `center` this slot puts contentin the center of the app bar.
 
 ## FeatherAppBarLink
+
+`FeatherAppBarLink` provides link functionality in the header. Currently we only support the use of icons in this component. `round` icons will be the most frequently used. The `home` configuration is largely used for brand icons that would link to the home page.
 
 ### Props
 
