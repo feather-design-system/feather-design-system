@@ -3,6 +3,48 @@ declare module "@featherds/icon" {
   const FeatherIcon: ReturnType<typeof defineComponent>;
   export { FeatherIcon };
 }
+declare module "@featherds/icon/communication/Certificate" {
+  import { defineComponent } from "vue";
+  const compModule: ReturnType<typeof defineComponent>;
+  export = compModule;
+}
+
+declare module "@featherds/icon/communication/CertificateAlt" {
+  import { defineComponent } from "vue";
+  const compModule: ReturnType<typeof defineComponent>;
+  export = compModule;
+}
+
+declare module "@featherds/icon/communication/Chat" {
+  import { defineComponent } from "vue";
+  const compModule: ReturnType<typeof defineComponent>;
+  export = compModule;
+}
+
+declare module "@featherds/icon/communication/Contacts" {
+  import { defineComponent } from "vue";
+  const compModule: ReturnType<typeof defineComponent>;
+  export = compModule;
+}
+
+declare module "@featherds/icon/communication/Documentation" {
+  import { defineComponent } from "vue";
+  const compModule: ReturnType<typeof defineComponent>;
+  export = compModule;
+}
+
+declare module "@featherds/icon/communication/IdCard" {
+  import { defineComponent } from "vue";
+  const compModule: ReturnType<typeof defineComponent>;
+  export = compModule;
+}
+
+declare module "@featherds/icon/communication/Phone" {
+  import { defineComponent } from "vue";
+  const compModule: ReturnType<typeof defineComponent>;
+  export = compModule;
+}
+
 declare module "@featherds/icon/action/AccountCircle" {
   import { defineComponent } from "vue";
   const compModule: ReturnType<typeof defineComponent>;
@@ -537,66 +579,6 @@ declare module "@featherds/icon/action/Workflow" {
   export = compModule;
 }
 
-declare module "@featherds/icon/branding/Atom" {
-  import { defineComponent } from "vue";
-  const compModule: ReturnType<typeof defineComponent>;
-  export = compModule;
-}
-
-declare module "@featherds/icon/communication/Certificate" {
-  import { defineComponent } from "vue";
-  const compModule: ReturnType<typeof defineComponent>;
-  export = compModule;
-}
-
-declare module "@featherds/icon/communication/CertificateAlt" {
-  import { defineComponent } from "vue";
-  const compModule: ReturnType<typeof defineComponent>;
-  export = compModule;
-}
-
-declare module "@featherds/icon/communication/Chat" {
-  import { defineComponent } from "vue";
-  const compModule: ReturnType<typeof defineComponent>;
-  export = compModule;
-}
-
-declare module "@featherds/icon/communication/Contacts" {
-  import { defineComponent } from "vue";
-  const compModule: ReturnType<typeof defineComponent>;
-  export = compModule;
-}
-
-declare module "@featherds/icon/communication/Documentation" {
-  import { defineComponent } from "vue";
-  const compModule: ReturnType<typeof defineComponent>;
-  export = compModule;
-}
-
-declare module "@featherds/icon/communication/IdCard" {
-  import { defineComponent } from "vue";
-  const compModule: ReturnType<typeof defineComponent>;
-  export = compModule;
-}
-
-declare module "@featherds/icon/communication/Phone" {
-  import { defineComponent } from "vue";
-  const compModule: ReturnType<typeof defineComponent>;
-  export = compModule;
-}
-
-declare module "@featherds/icon/content/BlogArticle" {
-  import { defineComponent } from "vue";
-  const compModule: ReturnType<typeof defineComponent>;
-  export = compModule;
-}
-
-declare module "@featherds/icon/content/Video" {
-  import { defineComponent } from "vue";
-  const compModule: ReturnType<typeof defineComponent>;
-  export = compModule;
-}
-
 declare module "@featherds/icon/file/Attachment" {
   import { defineComponent } from "vue";
   const compModule: ReturnType<typeof defineComponent>;
@@ -664,6 +646,24 @@ declare module "@featherds/icon/file/Xls" {
 }
 
 declare module "@featherds/icon/file/Zip" {
+  import { defineComponent } from "vue";
+  const compModule: ReturnType<typeof defineComponent>;
+  export = compModule;
+}
+
+declare module "@featherds/icon/content/BlogArticle" {
+  import { defineComponent } from "vue";
+  const compModule: ReturnType<typeof defineComponent>;
+  export = compModule;
+}
+
+declare module "@featherds/icon/content/Video" {
+  import { defineComponent } from "vue";
+  const compModule: ReturnType<typeof defineComponent>;
+  export = compModule;
+}
+
+declare module "@featherds/icon/branding/Atom" {
   import { defineComponent } from "vue";
   const compModule: ReturnType<typeof defineComponent>;
   export = compModule;

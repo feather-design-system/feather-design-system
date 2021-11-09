@@ -3286,9 +3286,9 @@ exports[`FeatherDateInput.vue should render disabled 1`] = `
                 aria-disabled="false"
                 aria-label="Thursday, November 4, 2021"
                 aria-pressed="false"
-                class="cell day hover focus highlighted today"
-                data-ref-id="feather-calendar-highlighted-day"
-                tabindex="0"
+                class="cell day hover focus"
+                data-ref-id=""
+                tabindex="-1"
                 type="button"
               >
                 4
@@ -3355,9 +3355,9 @@ exports[`FeatherDateInput.vue should render disabled 1`] = `
                 aria-disabled="false"
                 aria-label="Tuesday, November 9, 2021"
                 aria-pressed="false"
-                class="cell day hover focus"
-                data-ref-id=""
-                tabindex="-1"
+                class="cell day hover focus highlighted today"
+                data-ref-id="feather-calendar-highlighted-day"
+                tabindex="0"
                 type="button"
               >
                 9
@@ -7062,9 +7062,9 @@ exports[`FeatherDateInput.vue should show clear icon when there is a value 1`] =
                 aria-disabled="false"
                 aria-label="Thursday, November 4, 2021"
                 aria-pressed="false"
-                class="cell day hover focus highlighted today"
-                data-ref-id="feather-calendar-highlighted-day"
-                tabindex="0"
+                class="cell day hover focus"
+                data-ref-id=""
+                tabindex="-1"
                 type="button"
               >
                 4
@@ -7131,9 +7131,9 @@ exports[`FeatherDateInput.vue should show clear icon when there is a value 1`] =
                 aria-disabled="false"
                 aria-label="Tuesday, November 9, 2021"
                 aria-pressed="false"
-                class="cell day hover focus"
-                data-ref-id=""
-                tabindex="-1"
+                class="cell day hover focus highlighted today"
+                data-ref-id="feather-calendar-highlighted-day"
+                tabindex="0"
                 type="button"
               >
                 9

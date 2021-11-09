@@ -10,10 +10,6 @@
 
   <script>
   import * as components from "./../src";
-import contentBlogArticle from "@featherds/icon/content/BlogArticle";
-
-import contentVideo from "@featherds/icon/content/Video";
-
 import communicationCertificate from "@featherds/icon/communication/Certificate";
 
 import communicationCertificateAlt from "@featherds/icon/communication/CertificateAlt";
@@ -206,26 +202,6 @@ import actionViewDetails from "@featherds/icon/action/ViewDetails";
 
 import actionWorkflow from "@featherds/icon/action/Workflow";
 
-import brandingAtom from "@featherds/icon/branding/Atom";
-
-import communicationCertificate from "@featherds/icon/communication/Certificate";
-
-import communicationCertificateAlt from "@featherds/icon/communication/CertificateAlt";
-
-import communicationChat from "@featherds/icon/communication/Chat";
-
-import communicationContacts from "@featherds/icon/communication/Contacts";
-
-import communicationDocumentation from "@featherds/icon/communication/Documentation";
-
-import communicationIdCard from "@featherds/icon/communication/IdCard";
-
-import communicationPhone from "@featherds/icon/communication/Phone";
-
-import contentBlogArticle from "@featherds/icon/content/BlogArticle";
-
-import contentVideo from "@featherds/icon/content/Video";
-
 import fileAttachment from "@featherds/icon/file/Attachment";
 
 import fileFolder from "@featherds/icon/file/Folder";
@@ -249,6 +225,12 @@ import fileWordDoc from "@featherds/icon/file/WordDoc";
 import fileXls from "@featherds/icon/file/Xls";
 
 import fileZip from "@featherds/icon/file/Zip";
+
+import contentBlogArticle from "@featherds/icon/content/BlogArticle";
+
+import contentVideo from "@featherds/icon/content/Video";
+
+import brandingAtom from "@featherds/icon/branding/Atom";
 
 import hardwareAppliances from "@featherds/icon/hardware/Appliances";
 
@@ -379,9 +361,7 @@ import notificationWifiStatusBar from "@featherds/icon/notification/WifiStatusBa
 export default {
   data(){
     return {
-      featherIcons:[{ icon: contentBlogArticle, key: "contentBlogArticle" },
-        { icon: contentVideo, key: "contentVideo" },
-        { icon: communicationCertificate, key: "communicationCertificate" },
+      featherIcons:[{ icon: communicationCertificate, key: "communicationCertificate" },
         { icon: communicationCertificateAlt, key: "communicationCertificateAlt" },
         { icon: communicationChat, key: "communicationChat" },
         { icon: communicationContacts, key: "communicationContacts" },
@@ -477,16 +457,6 @@ export default {
         { icon: actionView, key: "actionView" },
         { icon: actionViewDetails, key: "actionViewDetails" },
         { icon: actionWorkflow, key: "actionWorkflow" },
-        { icon: brandingAtom, key: "brandingAtom" },
-        { icon: communicationCertificate, key: "communicationCertificate" },
-        { icon: communicationCertificateAlt, key: "communicationCertificateAlt" },
-        { icon: communicationChat, key: "communicationChat" },
-        { icon: communicationContacts, key: "communicationContacts" },
-        { icon: communicationDocumentation, key: "communicationDocumentation" },
-        { icon: communicationIdCard, key: "communicationIdCard" },
-        { icon: communicationPhone, key: "communicationPhone" },
-        { icon: contentBlogArticle, key: "contentBlogArticle" },
-        { icon: contentVideo, key: "contentVideo" },
         { icon: fileAttachment, key: "fileAttachment" },
         { icon: fileFolder, key: "fileFolder" },
         { icon: fileFolderAdd, key: "fileFolderAdd" },
@@ -499,6 +469,9 @@ export default {
         { icon: fileWordDoc, key: "fileWordDoc" },
         { icon: fileXls, key: "fileXls" },
         { icon: fileZip, key: "fileZip" },
+        { icon: contentBlogArticle, key: "contentBlogArticle" },
+        { icon: contentVideo, key: "contentVideo" },
+        { icon: brandingAtom, key: "brandingAtom" },
         { icon: hardwareAppliances, key: "hardwareAppliances" },
         { icon: hardwareAppliancesAlt, key: "hardwareAppliancesAlt" },
         { icon: hardwareApplianceProfiles, key: "hardwareApplianceProfiles" },

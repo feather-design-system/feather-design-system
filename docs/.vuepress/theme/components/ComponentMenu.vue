@@ -205,6 +205,12 @@ $width: 264px;
   flex-direction: column;
   .nav-links {
     overflow-y: auto;
+    :deep(.feather-list-item-text) {
+      @include body-large;
+    }
+    :deep(.feather-list-item) {
+      height: 48px !important;
+    }
   }
 }
 </style>
