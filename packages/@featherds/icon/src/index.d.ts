@@ -57,6 +57,252 @@ declare module "@featherds/icon/content/Video" {
   export = compModule;
 }
 
+declare module "@featherds/icon/file/Attachment" {
+  import { defineComponent } from "vue";
+  const compModule: ReturnType<typeof defineComponent>;
+  export = compModule;
+}
+
+declare module "@featherds/icon/file/Folder" {
+  import { defineComponent } from "vue";
+  const compModule: ReturnType<typeof defineComponent>;
+  export = compModule;
+}
+
+declare module "@featherds/icon/file/FolderAdd" {
+  import { defineComponent } from "vue";
+  const compModule: ReturnType<typeof defineComponent>;
+  export = compModule;
+}
+
+declare module "@featherds/icon/file/FolderLocked" {
+  import { defineComponent } from "vue";
+  const compModule: ReturnType<typeof defineComponent>;
+  export = compModule;
+}
+
+declare module "@featherds/icon/file/FolderOpen" {
+  import { defineComponent } from "vue";
+  const compModule: ReturnType<typeof defineComponent>;
+  export = compModule;
+}
+
+declare module "@featherds/icon/file/Generic" {
+  import { defineComponent } from "vue";
+  const compModule: ReturnType<typeof defineComponent>;
+  export = compModule;
+}
+
+declare module "@featherds/icon/file/Image" {
+  import { defineComponent } from "vue";
+  const compModule: ReturnType<typeof defineComponent>;
+  export = compModule;
+}
+
+declare module "@featherds/icon/file/Pdf" {
+  import { defineComponent } from "vue";
+  const compModule: ReturnType<typeof defineComponent>;
+  export = compModule;
+}
+
+declare module "@featherds/icon/file/Text" {
+  import { defineComponent } from "vue";
+  const compModule: ReturnType<typeof defineComponent>;
+  export = compModule;
+}
+
+declare module "@featherds/icon/file/WordDoc" {
+  import { defineComponent } from "vue";
+  const compModule: ReturnType<typeof defineComponent>;
+  export = compModule;
+}
+
+declare module "@featherds/icon/file/Xls" {
+  import { defineComponent } from "vue";
+  const compModule: ReturnType<typeof defineComponent>;
+  export = compModule;
+}
+
+declare module "@featherds/icon/file/Zip" {
+  import { defineComponent } from "vue";
+  const compModule: ReturnType<typeof defineComponent>;
+  export = compModule;
+}
+
+declare module "@featherds/icon/medical/Ambulance" {
+  import { defineComponent } from "vue";
+  const compModule: ReturnType<typeof defineComponent>;
+  export = compModule;
+}
+
+declare module "@featherds/icon/medical/CostSavings" {
+  import { defineComponent } from "vue";
+  const compModule: ReturnType<typeof defineComponent>;
+  export = compModule;
+}
+
+declare module "@featherds/icon/medical/Drug" {
+  import { defineComponent } from "vue";
+  const compModule: ReturnType<typeof defineComponent>;
+  export = compModule;
+}
+
+declare module "@featherds/icon/medical/DrugGroupId" {
+  import { defineComponent } from "vue";
+  const compModule: ReturnType<typeof defineComponent>;
+  export = compModule;
+}
+
+declare module "@featherds/icon/medical/Hospital" {
+  import { defineComponent } from "vue";
+  const compModule: ReturnType<typeof defineComponent>;
+  export = compModule;
+}
+
+declare module "@featherds/icon/medical/Patient" {
+  import { defineComponent } from "vue";
+  const compModule: ReturnType<typeof defineComponent>;
+  export = compModule;
+}
+
+declare module "@featherds/icon/medical/Payor" {
+  import { defineComponent } from "vue";
+  const compModule: ReturnType<typeof defineComponent>;
+  export = compModule;
+}
+
+declare module "@featherds/icon/medical/Provider" {
+  import { defineComponent } from "vue";
+  const compModule: ReturnType<typeof defineComponent>;
+  export = compModule;
+}
+
+declare module "@featherds/icon/medical/ProviderOffice" {
+  import { defineComponent } from "vue";
+  const compModule: ReturnType<typeof defineComponent>;
+  export = compModule;
+}
+
+declare module "@featherds/icon/medical/Treatment" {
+  import { defineComponent } from "vue";
+  const compModule: ReturnType<typeof defineComponent>;
+  export = compModule;
+}
+
+declare module "@featherds/icon/medical/TreatmentCycle" {
+  import { defineComponent } from "vue";
+  const compModule: ReturnType<typeof defineComponent>;
+  export = compModule;
+}
+
+declare module "@featherds/icon/medical/TreatmentSchedule" {
+  import { defineComponent } from "vue";
+  const compModule: ReturnType<typeof defineComponent>;
+  export = compModule;
+}
+
+declare module "@featherds/icon/medical/Vitals" {
+  import { defineComponent } from "vue";
+  const compModule: ReturnType<typeof defineComponent>;
+  export = compModule;
+}
+
+declare module "@featherds/icon/hardware/ApplianceProfiles" {
+  import { defineComponent } from "vue";
+  const compModule: ReturnType<typeof defineComponent>;
+  export = compModule;
+}
+
+declare module "@featherds/icon/hardware/Appliances" {
+  import { defineComponent } from "vue";
+  const compModule: ReturnType<typeof defineComponent>;
+  export = compModule;
+}
+
+declare module "@featherds/icon/hardware/AppliancesAlt" {
+  import { defineComponent } from "vue";
+  const compModule: ReturnType<typeof defineComponent>;
+  export = compModule;
+}
+
+declare module "@featherds/icon/hardware/DesktopWindows" {
+  import { defineComponent } from "vue";
+  const compModule: ReturnType<typeof defineComponent>;
+  export = compModule;
+}
+
+declare module "@featherds/icon/hardware/Instances" {
+  import { defineComponent } from "vue";
+  const compModule: ReturnType<typeof defineComponent>;
+  export = compModule;
+}
+
+declare module "@featherds/icon/hardware/KeyboardArrowDown" {
+  import { defineComponent } from "vue";
+  const compModule: ReturnType<typeof defineComponent>;
+  export = compModule;
+}
+
+declare module "@featherds/icon/hardware/KeyboardArrowUp" {
+  import { defineComponent } from "vue";
+  const compModule: ReturnType<typeof defineComponent>;
+  export = compModule;
+}
+
+declare module "@featherds/icon/hardware/Laptop" {
+  import { defineComponent } from "vue";
+  const compModule: ReturnType<typeof defineComponent>;
+  export = compModule;
+}
+
+declare module "@featherds/icon/hardware/MinionProfiles" {
+  import { defineComponent } from "vue";
+  const compModule: ReturnType<typeof defineComponent>;
+  export = compModule;
+}
+
+declare module "@featherds/icon/hardware/Network" {
+  import { defineComponent } from "vue";
+  const compModule: ReturnType<typeof defineComponent>;
+  export = compModule;
+}
+
+declare module "@featherds/icon/hardware/NetworkProfiles" {
+  import { defineComponent } from "vue";
+  const compModule: ReturnType<typeof defineComponent>;
+  export = compModule;
+}
+
+declare module "@featherds/icon/hardware/Router" {
+  import { defineComponent } from "vue";
+  const compModule: ReturnType<typeof defineComponent>;
+  export = compModule;
+}
+
+declare module "@featherds/icon/hardware/Security" {
+  import { defineComponent } from "vue";
+  const compModule: ReturnType<typeof defineComponent>;
+  export = compModule;
+}
+
+declare module "@featherds/icon/hardware/Server" {
+  import { defineComponent } from "vue";
+  const compModule: ReturnType<typeof defineComponent>;
+  export = compModule;
+}
+
+declare module "@featherds/icon/hardware/VirtualMachine" {
+  import { defineComponent } from "vue";
+  const compModule: ReturnType<typeof defineComponent>;
+  export = compModule;
+}
+
+declare module "@featherds/icon/hardware/VirtualMachineAlt" {
+  import { defineComponent } from "vue";
+  const compModule: ReturnType<typeof defineComponent>;
+  export = compModule;
+}
+
 declare module "@featherds/icon/action/AccountCircle" {
   import { defineComponent } from "vue";
   const compModule: ReturnType<typeof defineComponent>;
@@ -387,12 +633,6 @@ declare module "@featherds/icon/action/LockPasswordProtected" {
   export = compModule;
 }
 
-declare module "@featherds/icon/action/LoggerConfigs" {
-  import { defineComponent } from "vue";
-  const compModule: ReturnType<typeof defineComponent>;
-  export = compModule;
-}
-
 declare module "@featherds/icon/action/LogIn" {
   import { defineComponent } from "vue";
   const compModule: ReturnType<typeof defineComponent>;
@@ -400,6 +640,12 @@ declare module "@featherds/icon/action/LogIn" {
 }
 
 declare module "@featherds/icon/action/LogOut" {
+  import { defineComponent } from "vue";
+  const compModule: ReturnType<typeof defineComponent>;
+  export = compModule;
+}
+
+declare module "@featherds/icon/action/LoggerConfigs" {
   import { defineComponent } from "vue";
   const compModule: ReturnType<typeof defineComponent>;
   export = compModule;
@@ -591,247 +837,55 @@ declare module "@featherds/icon/action/Workflow" {
   export = compModule;
 }
 
-declare module "@featherds/icon/file/Attachment" {
+declare module "@featherds/icon/notification/Connected" {
   import { defineComponent } from "vue";
   const compModule: ReturnType<typeof defineComponent>;
   export = compModule;
 }
 
-declare module "@featherds/icon/file/Folder" {
+declare module "@featherds/icon/notification/Error" {
   import { defineComponent } from "vue";
   const compModule: ReturnType<typeof defineComponent>;
   export = compModule;
 }
 
-declare module "@featherds/icon/file/FolderAdd" {
+declare module "@featherds/icon/notification/Unconnected" {
   import { defineComponent } from "vue";
   const compModule: ReturnType<typeof defineComponent>;
   export = compModule;
 }
 
-declare module "@featherds/icon/file/FolderLocked" {
+declare module "@featherds/icon/notification/Warning" {
   import { defineComponent } from "vue";
   const compModule: ReturnType<typeof defineComponent>;
   export = compModule;
 }
 
-declare module "@featherds/icon/file/FolderOpen" {
+declare module "@featherds/icon/notification/Wifi" {
   import { defineComponent } from "vue";
   const compModule: ReturnType<typeof defineComponent>;
   export = compModule;
 }
 
-declare module "@featherds/icon/file/Generic" {
+declare module "@featherds/icon/notification/WifiNoConnection" {
   import { defineComponent } from "vue";
   const compModule: ReturnType<typeof defineComponent>;
   export = compModule;
 }
 
-declare module "@featherds/icon/file/Image" {
+declare module "@featherds/icon/notification/WifiOff" {
   import { defineComponent } from "vue";
   const compModule: ReturnType<typeof defineComponent>;
   export = compModule;
 }
 
-declare module "@featherds/icon/file/Pdf" {
+declare module "@featherds/icon/notification/WifiSignalBad" {
   import { defineComponent } from "vue";
   const compModule: ReturnType<typeof defineComponent>;
   export = compModule;
 }
 
-declare module "@featherds/icon/file/Text" {
-  import { defineComponent } from "vue";
-  const compModule: ReturnType<typeof defineComponent>;
-  export = compModule;
-}
-
-declare module "@featherds/icon/file/WordDoc" {
-  import { defineComponent } from "vue";
-  const compModule: ReturnType<typeof defineComponent>;
-  export = compModule;
-}
-
-declare module "@featherds/icon/file/Xls" {
-  import { defineComponent } from "vue";
-  const compModule: ReturnType<typeof defineComponent>;
-  export = compModule;
-}
-
-declare module "@featherds/icon/file/Zip" {
-  import { defineComponent } from "vue";
-  const compModule: ReturnType<typeof defineComponent>;
-  export = compModule;
-}
-
-declare module "@featherds/icon/hardware/Appliances" {
-  import { defineComponent } from "vue";
-  const compModule: ReturnType<typeof defineComponent>;
-  export = compModule;
-}
-
-declare module "@featherds/icon/hardware/AppliancesAlt" {
-  import { defineComponent } from "vue";
-  const compModule: ReturnType<typeof defineComponent>;
-  export = compModule;
-}
-
-declare module "@featherds/icon/hardware/ApplianceProfiles" {
-  import { defineComponent } from "vue";
-  const compModule: ReturnType<typeof defineComponent>;
-  export = compModule;
-}
-
-declare module "@featherds/icon/hardware/DesktopWindows" {
-  import { defineComponent } from "vue";
-  const compModule: ReturnType<typeof defineComponent>;
-  export = compModule;
-}
-
-declare module "@featherds/icon/hardware/Instances" {
-  import { defineComponent } from "vue";
-  const compModule: ReturnType<typeof defineComponent>;
-  export = compModule;
-}
-
-declare module "@featherds/icon/hardware/KeyboardArrowDown" {
-  import { defineComponent } from "vue";
-  const compModule: ReturnType<typeof defineComponent>;
-  export = compModule;
-}
-
-declare module "@featherds/icon/hardware/KeyboardArrowUp" {
-  import { defineComponent } from "vue";
-  const compModule: ReturnType<typeof defineComponent>;
-  export = compModule;
-}
-
-declare module "@featherds/icon/hardware/Laptop" {
-  import { defineComponent } from "vue";
-  const compModule: ReturnType<typeof defineComponent>;
-  export = compModule;
-}
-
-declare module "@featherds/icon/hardware/MinionProfiles" {
-  import { defineComponent } from "vue";
-  const compModule: ReturnType<typeof defineComponent>;
-  export = compModule;
-}
-
-declare module "@featherds/icon/hardware/Network" {
-  import { defineComponent } from "vue";
-  const compModule: ReturnType<typeof defineComponent>;
-  export = compModule;
-}
-
-declare module "@featherds/icon/hardware/NetworkProfiles" {
-  import { defineComponent } from "vue";
-  const compModule: ReturnType<typeof defineComponent>;
-  export = compModule;
-}
-
-declare module "@featherds/icon/hardware/Router" {
-  import { defineComponent } from "vue";
-  const compModule: ReturnType<typeof defineComponent>;
-  export = compModule;
-}
-
-declare module "@featherds/icon/hardware/Security" {
-  import { defineComponent } from "vue";
-  const compModule: ReturnType<typeof defineComponent>;
-  export = compModule;
-}
-
-declare module "@featherds/icon/hardware/Server" {
-  import { defineComponent } from "vue";
-  const compModule: ReturnType<typeof defineComponent>;
-  export = compModule;
-}
-
-declare module "@featherds/icon/hardware/VirtualMachine" {
-  import { defineComponent } from "vue";
-  const compModule: ReturnType<typeof defineComponent>;
-  export = compModule;
-}
-
-declare module "@featherds/icon/hardware/VirtualMachineAlt" {
-  import { defineComponent } from "vue";
-  const compModule: ReturnType<typeof defineComponent>;
-  export = compModule;
-}
-
-declare module "@featherds/icon/medical/Ambulance" {
-  import { defineComponent } from "vue";
-  const compModule: ReturnType<typeof defineComponent>;
-  export = compModule;
-}
-
-declare module "@featherds/icon/medical/CostSavings" {
-  import { defineComponent } from "vue";
-  const compModule: ReturnType<typeof defineComponent>;
-  export = compModule;
-}
-
-declare module "@featherds/icon/medical/Drug" {
-  import { defineComponent } from "vue";
-  const compModule: ReturnType<typeof defineComponent>;
-  export = compModule;
-}
-
-declare module "@featherds/icon/medical/DrugGroupId" {
-  import { defineComponent } from "vue";
-  const compModule: ReturnType<typeof defineComponent>;
-  export = compModule;
-}
-
-declare module "@featherds/icon/medical/Hospital" {
-  import { defineComponent } from "vue";
-  const compModule: ReturnType<typeof defineComponent>;
-  export = compModule;
-}
-
-declare module "@featherds/icon/medical/Patient" {
-  import { defineComponent } from "vue";
-  const compModule: ReturnType<typeof defineComponent>;
-  export = compModule;
-}
-
-declare module "@featherds/icon/medical/Payor" {
-  import { defineComponent } from "vue";
-  const compModule: ReturnType<typeof defineComponent>;
-  export = compModule;
-}
-
-declare module "@featherds/icon/medical/Provider" {
-  import { defineComponent } from "vue";
-  const compModule: ReturnType<typeof defineComponent>;
-  export = compModule;
-}
-
-declare module "@featherds/icon/medical/ProviderOffice" {
-  import { defineComponent } from "vue";
-  const compModule: ReturnType<typeof defineComponent>;
-  export = compModule;
-}
-
-declare module "@featherds/icon/medical/Treatment" {
-  import { defineComponent } from "vue";
-  const compModule: ReturnType<typeof defineComponent>;
-  export = compModule;
-}
-
-declare module "@featherds/icon/medical/TreatmentCycle" {
-  import { defineComponent } from "vue";
-  const compModule: ReturnType<typeof defineComponent>;
-  export = compModule;
-}
-
-declare module "@featherds/icon/medical/TreatmentSchedule" {
-  import { defineComponent } from "vue";
-  const compModule: ReturnType<typeof defineComponent>;
-  export = compModule;
-}
-
-declare module "@featherds/icon/medical/Vitals" {
+declare module "@featherds/icon/notification/WifiStatusBar" {
   import { defineComponent } from "vue";
   const compModule: ReturnType<typeof defineComponent>;
   export = compModule;
@@ -976,60 +1030,6 @@ declare module "@featherds/icon/navigation/UnfoldLess" {
 }
 
 declare module "@featherds/icon/navigation/UnfoldMore" {
-  import { defineComponent } from "vue";
-  const compModule: ReturnType<typeof defineComponent>;
-  export = compModule;
-}
-
-declare module "@featherds/icon/notification/Connected" {
-  import { defineComponent } from "vue";
-  const compModule: ReturnType<typeof defineComponent>;
-  export = compModule;
-}
-
-declare module "@featherds/icon/notification/Error" {
-  import { defineComponent } from "vue";
-  const compModule: ReturnType<typeof defineComponent>;
-  export = compModule;
-}
-
-declare module "@featherds/icon/notification/Unconnected" {
-  import { defineComponent } from "vue";
-  const compModule: ReturnType<typeof defineComponent>;
-  export = compModule;
-}
-
-declare module "@featherds/icon/notification/Warning" {
-  import { defineComponent } from "vue";
-  const compModule: ReturnType<typeof defineComponent>;
-  export = compModule;
-}
-
-declare module "@featherds/icon/notification/Wifi" {
-  import { defineComponent } from "vue";
-  const compModule: ReturnType<typeof defineComponent>;
-  export = compModule;
-}
-
-declare module "@featherds/icon/notification/WifiNoConnection" {
-  import { defineComponent } from "vue";
-  const compModule: ReturnType<typeof defineComponent>;
-  export = compModule;
-}
-
-declare module "@featherds/icon/notification/WifiOff" {
-  import { defineComponent } from "vue";
-  const compModule: ReturnType<typeof defineComponent>;
-  export = compModule;
-}
-
-declare module "@featherds/icon/notification/WifiSignalBad" {
-  import { defineComponent } from "vue";
-  const compModule: ReturnType<typeof defineComponent>;
-  export = compModule;
-}
-
-declare module "@featherds/icon/notification/WifiStatusBar" {
   import { defineComponent } from "vue";
   const compModule: ReturnType<typeof defineComponent>;
   export = compModule;
