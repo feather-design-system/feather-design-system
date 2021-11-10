@@ -7,7 +7,6 @@ var _export_sfc = (sfc, props) => {
 };
 const _sfc_main = {};
 const _hoisted_1 = {
-  id: "Icons",
   xmlns: "http://www.w3.org/2000/svg",
   width: "24",
   height: "24",
