@@ -78,6 +78,14 @@ body {
   table:not([class]) {
     margin-top: 0;
     margin-bottom: 24px;
+    width: 100%;
+  }
+  @include media-query-below(m) {
+    table:not([class]) {
+      display: block;
+      max-width: 100vw;
+      overflow-x: auto;
+    }
   }
 
   blockquote {
