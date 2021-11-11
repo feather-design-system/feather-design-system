@@ -43,6 +43,7 @@ import {
   FeatherListSeparator,
 } from "@featherds/list";
 import { inject } from "vue";
+import components from "./components";
 export default {
   setup() {
     const register = inject("feather-app-layout-expanded", false);
@@ -71,85 +72,7 @@ export default {
         }
         return 0;
       }),
-      items: [
-        {
-          name: "App Layout",
-          url: this.$withBase("/Components/AppLayout/"),
-        },
-        { name: "App Bar", url: this.$withBase("/Components/AppBar/") },
-        {
-          name: "Navigation Rail",
-          url: this.$withBase("/Components/NavigationRail/"),
-        },
-        { name: "Grid", url: this.$withBase("/Components/Grid/") },
-        { name: "Footer", url: this.$withBase("/Components/Footer/") },
-
-        { name: "Button", url: this.$withBase("/Components/Button/") },
-        { name: "Back Button", url: this.$withBase("/Components/BackButton/") },
-        { name: "Input", url: this.$withBase("/Components/Input/") },
-        { name: "Textarea", url: this.$withBase("/Components/Textarea/") },
-        { name: "Checkbox", url: this.$withBase("/Components/Checkbox/") },
-        { name: "Radio Button", url: this.$withBase("/Components/Radio/") },
-        {
-          name: "Autocomplete",
-          url: this.$withBase("/Components/Autocomplete/"),
-        },
-        {
-          name: "Date Input",
-          url: this.$withBase("/Components/DateInput/"),
-        },
-        {
-          name: "Protected Input",
-          url: this.$withBase("/Components/ProtectedInput/"),
-        },
-        { name: "Select", url: this.$withBase("/Components/Select/") },
-
-        { name: "Drawer", url: this.$withBase("/Components/Drawer/") },
-        { name: "Dialog", url: this.$withBase("/Components/Dialog/") },
-        {
-          name: "Dropdown",
-          url: this.$withBase("/Components/Dropdown/"),
-        },
-        { name: "Mega Menu", url: this.$withBase("/Components/Megamenu/") },
-
-        { name: "Table", url: this.$withBase("/Components/Table/") },
-        {
-          name: "Pagination",
-          url: this.$withBase("/Components/Pagination/"),
-        },
-        {
-          name: "Pdf Viewer",
-          url: this.$withBase("/Components/PdfViewer/"),
-        },
-        { name: "Chips", url: this.$withBase("/Components/Chips/") },
-
-        { name: "Tabs", url: this.$withBase("/Components/Tabs/") },
-        {
-          name: "List",
-          url: this.$withBase("/Components/List/"),
-        },
-        {
-          name: "Expansion",
-          url: this.$withBase("/Components/Expansion/"),
-        },
-
-        { name: "Progress", url: this.$withBase("/Components/Progress/") },
-        { name: "Icon", url: this.$withBase("/Components/Icon/") },
-        {
-          name: "Icon Button",
-          url: this.$withBase("/Components/IconButton/"),
-        },
-
-        { name: "Badge", url: this.$withBase("/Components/Badge/") },
-      ].sort((a, b) => {
-        if (a.name > b.name) {
-          return 1;
-        }
-        if (a.name < b.name) {
-          return -1;
-        }
-        return 0;
-      }),
+      items: components,
     };
   },
   methods: {

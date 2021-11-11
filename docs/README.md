@@ -23,7 +23,6 @@ import { FeatherButton } from "@featherds/button";
 import { FeatherIcon } from "@featherds/icon";
 import icon from "@featherds/icon/action/Help";
 import atom from "@featherds/icon/branding/Atom";
-import arrow from "@featherds/icon/navigation/ArrowBack";
 import FeatherLogoMotif from "@featherds/icon/branding/FeatherLogoMotif";
   export default{
     components: {
@@ -36,9 +35,6 @@ import FeatherLogoMotif from "@featherds/icon/branding/FeatherLogoMotif";
       },
       atom(){
         return atom;
-      },
-      arrow(){
-        return arrow;
       },
       logo(){
         return FeatherLogoMotif;
@@ -92,34 +88,24 @@ import FeatherLogoMotif from "@featherds/icon/branding/FeatherLogoMotif";
   <div class="section-wrapper learn">
     <h2>Learn More About Feather DS</h2>
     <p class="body-small">
-      Get started on your next project with our most popular<br/>
-      development and design assets and resources.
+      Get started on your next project with our most popular development and design assets and resources.
     </p>
     <div class="card-group">
-      <a class="sexy-card" :href="$withBase('/Components/GettingStarted/')">
-        <img :src="$withBase('/assets/branding/home-components.png')" title="Components"/>
-        <div class="card-inner">
-          <span class="overline">Components</span>
-          <h3>Getting Started</h3>
-        </div>
-        <FeatherIcon :icon="arrow" focusable="false"></FeatherIcon>
-      </a>
-      <a class="sexy-card" :href="$withBase('/Design/Foundation/')">
-        <img :src="$withBase('/assets/branding/home-foundation.png')" title="Foundation"/>
-        <div class="card-inner">
-          <span class="overline">Design</span>
-          <h3>Foundational concepts</h3>
-        </div>
-        <FeatherIcon :icon="arrow" focusable="false"></FeatherIcon>
-      </a>
-      <a class="sexy-card" :href="$withBase('/Components/Typography/')">
-        <img :src="$withBase('/assets/branding/home-typography.png')" title="Typography"/>
-        <div class="card-inner">
-          <span class="overline">Typography</span>
-          <h3>Typographical mastery</h3>
-        </div>
-        <FeatherIcon :icon="arrow" focusable="false"></FeatherIcon>
-      </a>
+      <PrettyCard
+        href="/Components/GettingStarted/"
+        img-url="/assets/branding/home-components.png"
+        overline="Components">Getting Started
+      </PrettyCard>
+      <PrettyCard
+        href="/Design/Foundation/"
+        img-url="/assets/branding/home-foundation.png"
+        overline="Design">Foundational concepts
+      </PrettyCard>
+      <PrettyCard
+        href="/Components/Typography/"
+        img-url="/assets/branding/home-typography.png"
+        overline="Typography">Typographical mastery
+      </PrettyCard>
     </div>
   </div>
 </section>
