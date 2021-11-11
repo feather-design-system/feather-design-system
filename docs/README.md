@@ -1,7 +1,6 @@
 <HomePageAdjust />
 <div class="hero">
   <section class="gradient-1">
-    <HeaderMask />
     <div class="section-wrapper center">
       <h1>Welcome to Feather Design System</h1>
       <p class="body-large">Feather DS is an open source design system used
@@ -136,4 +135,3 @@ import FeatherLogoMotif from "@featherds/icon/branding/FeatherLogoMotif";
     </div>
   </div>
 </section>
-

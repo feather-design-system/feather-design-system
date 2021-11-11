@@ -1,5 +1,9 @@
 <template>
-  <FeatherAppLayout class="feather-styles" :class="{ homepage: isHomepage }" content-layout="full">
+  <FeatherAppLayout
+    class="feather-styles"
+    :class="{ homepage: isHomepage }"
+    content-layout="full"
+  >
     <template v-slot:header>
       <FeatherAppBar
         class="header-with-search"
@@ -58,8 +62,9 @@ import { FeatherMegaMenu } from "@featherds/megamenu";
 import { FeatherAppBarLink, FeatherAppBar } from "@featherds/app-bar";
 import { FeatherAppLayout } from "@featherds/app-layout";
 import AppBarLink from "../components/AppBarLink.vue";
-import PageThemeChange from "../global-components/PageThemeChange";
-import Footer from "../global-components/Footer";
+import PageThemeChange from "../components/PageThemeChange";
+import Footer from "../components/Footer";
+import DocSearch from "../components/DocSearch";
 
 export default {
   data() {
@@ -71,7 +76,7 @@ export default {
       iconCaret: KeyboardArrowDown,
       LogoFull: FeatherLogoFull,
       Logo: FeatherLogoMotif,
-      isHomepage: false
+      isHomepage: false,
     };
   },
   mounted() {
@@ -87,6 +92,7 @@ export default {
     AppBarLink,
     Footer,
     FeatherAppLayout,
+    DocSearch,
   },
 };
 </script>
