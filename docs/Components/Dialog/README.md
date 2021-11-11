@@ -52,7 +52,6 @@ Text labels for autocomplete can be customized via the `labels` property. The de
 ### Slots
 
 - `default` main content of the dialog should go here. Header is specified via [Labels](#labels).
-- `icon` icon to appear in the main modal body should be placed here
 - `footer` footer content should be placed in here.
 
 ### data-ref-ids
