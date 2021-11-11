@@ -148,6 +148,27 @@ describe("FeatherRadioGroup.vue", () => {
     await wrapper.find("[role='radio']").trigger("click");
     expect(wrapper.emitted("update:modelValue")[0][0]).toBe(1);
   });
+
+  it("should select radio button when modelValue is updated", async () => {
+    const slots = {
+      default: [getRadio(1, false), getRadio(2, false)],
+    };
+    const wrapper = getWrapper({
+      slots,
+      propsData: { modelValue: 1 },
+    });
+    await wrapper.vm.$nextTick();
+    await wrapper.vm.$nextTick();
+    await wrapper.setProps({
+      modelValue: 2,
+    });
+    await wrapper.vm.$nextTick();
+    await wrapper.vm.$nextTick();
+
+    expect(
+      wrapper.findAll("[role='radio']")[1].attributes("aria-checked")
+    ).toBe("true");
+  });
   it("should not select a disabled clicked radio button", async () => {
     const slots = {
       default: [getRadio(1, true), getRadio(2, false)],
