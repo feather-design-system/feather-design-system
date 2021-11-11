@@ -22,6 +22,9 @@ main {
   width: 100%;
   margin: 0 auto;
 }
+div.center.content {
+  padding-bottom: 24px;
+}
 
 .open-light {
   @include open-light();

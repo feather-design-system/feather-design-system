@@ -9,7 +9,7 @@ layout: ComponentLayout
 
 ## Design
 
-Buttons act as interaction points for users throughout most common software experiences. Buttons can be extremely high priority items, or they can be diminished when paired with information or other interaction points that require a user’s full attention.
+Buttons act as primary interaction points for users. Buttons can be extremely high priority items, or they can be diminished when paired with information or other interaction points that require a users full attention.
 
 <OverlineLinks title="Related Components">
 <OverlineLink :href="$withBase('/Components/IconButton/')">Icon Button</OverlineLink>
@@ -22,7 +22,7 @@ Buttons act as interaction points for users throughout most common software expe
 
 ## Usage
 
-Buttons indicate “action points” to a user. They can exist as optional interaction points that have an effect on one or more parts of the application, or interaction may be required to proceed farther into the experience. Buttons may be used in the following examples:
+Buttons indicate 'action points' to a user. They can exist as optional interaction points that have an effect on one or more parts of the application, or interaction may be required to proceed farther into the experience. Buttons may be used in the following examples:
 
 1. Dialogs
 2. Modal Windows
@@ -40,13 +40,13 @@ Buttons indicate “action points” to a user. They can exist as optional inter
 | secondary | applies the secondary styling to the button.                                                                              | `Boolean` | `false`  | -       |
 | text      | applies the text-only styling to the button.                                                                              | `Boolean` | `false`  | -       |
 | icon      | should be set to the label to be given to the icon. This option restricts the size of the button so only an icon can fit. | `String`  | `false`  | -       |
-| fab       | applies necessary FAB styling with true.                                                                                  | `Boolean` | `false`  | -       |
 | disabled  | applies the disabled styling to the button. Note button can still be interacted with as a normal button.                  | `Boolean` | `false`  | -       |
 | asAnchor  | when true will use an `anchor` element instead of a button. This allows you to set the `href` attribute.                  | `Boolean` | `false`  | -       |
+| onColor   | changes the colors for use when the background is non-standard.                                                           | `Boolean` | `false`  | -       |
 
 ### Events
 
-- `click` emitted when button is clicked funny old thing. Though if button is disabled then `disabled-click` is emitted.
+- `click` emitted when button is clicked. Though if button is disabled then `disabled-click` is emitted.
 - `disabled-click` emitted when button is clicked and disabled.
 
 ### Slots
@@ -64,10 +64,10 @@ When using an icon alongside text you should **always** mark the icon as `aria-h
     margin-bottom: 3px;
   }
 </style>
-
 <FeatherButton :disabled="disabled" primary type="submit">
-  <FeatherIcon slot="icon" :icon="backup" aria-hidden="true" focusable="false">
-  </FeatherIcon>
-  Submit Primary Button
+  <template v-slot:icon>
+    <FeatherIcon :icon="backup" aria-hidden="true" focusable="false" />
+    Submit Primary Button
+  </template>
 </FeatherButton>
 ```

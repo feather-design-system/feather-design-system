@@ -1,13 +1,13 @@
 ---
 title: "Typography"
+pre: "@featherds/styles"
+description: "Rich type and powerful messaging"
 lang: en-US
 tags: ["Typography", "component"]
 layout: ComponentLayout
 ---
 
-`@featherds/styles`
-
-Typography styles are applied to some [elements](#elements) by default when including `@featherds-styles`. All typography styles are exposed through `scss` mixins and should be how all typography styles are consumed.
+Typography styles are applied to some [elements](#elements) by default when including `@featherds-styles`. All typography styles are exposed through `SCSS` mixins and should be how all typography styles are consumed.
 
 ::: tip Recommendation
 Use mixins where possible. They allow you to style the element with the correct typography without being constrained to a given element.
@@ -76,7 +76,7 @@ p {
 
 ## Mixins
 
-Mixins can be used by importing `@featherds/styles/mixins/typograpy`.
+Mixins can be used by importing `@featherds/styles/mixins/typography`.
 
 ```scss
 @import "@featherds/styles/mixins/typography";
@@ -84,6 +84,11 @@ Mixins can be used by importing `@featherds/styles/mixins/typograpy`.
 
 It exposes the following mixins:
 
+- `rendering`
+- `display1`
+- `display2`
+- `display3`
+- `title`
 - `headline1`
 - `headline2`
 - `headline3`
@@ -92,6 +97,7 @@ It exposes the following mixins:
 - `subtitle2`
 - `body-large`
 - `body-small`
+- `header`
 - `button`
 - `caption`
 - `overline`

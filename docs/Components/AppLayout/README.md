@@ -1,12 +1,12 @@
 ---
 title: "AppLayout"
+pre: "@featherds/app-layout"
+description: "Provides common application layouts"
 lang: en-US
 tags: ["AppLayout", "component"]
 layout: ComponentLayout
 
 ---
-
-`@featherds/app-layout`
 
 ## Getting Started
 
@@ -107,4 +107,4 @@ This layout has the content being full width and utilizes a rail navigation. Whe
 - `header` - slot that should contain a [FeatherAppBar](../AppBar/)
 - `rail` - slot that should contain a [FeatherNavigationRail](../NavigationRail/)
 - `footer` - slot that should contain a [FeatherFooter](../Footer/)
-- `default` - slot that should the main app content. Slot content is contained within a `.feather-container` therefore you can start using `.feather-row`s to get your layout started.
+- `default` - slot that should the main app content. Slot content is contained within a `.feather-container` therefore you can start using `.feather-row`s to structure your content.

@@ -7,7 +7,7 @@
          <li>
           You are responsible for showing and hiding the correct panel.
          </li>
-         <li> Panels <b>must</b>have correct aria labelling to maintain accessibility.</li>
+         <li> Panels <b>must</b> have correct aria labelling to maintain accessibility.</li>
       </ul>
     </p>
     <FeatherTabContainer v-model="index">

@@ -24,10 +24,11 @@ This component is responsible for the header layout and positioning. `FeatherApp
 ### Props
 
 | Name       | Description                                                                          | Type      | Required | Default |
+| ------- | --------------------------------------------------------------------------------------- | --------- | -------- | ------- |
 | ---------- | ------------------------------------------------------------------------------------ | --------- | -------- | ------- |
 | content    | ID of the main content of the page. Needed for accessibility.                        | `String`  | `true`   | -       |
 | labels     | Object containing labels used by this component. See [Labels](#labels) example       | `Object`  | `true`   | -       |
-| fulLWidth  | When `true` the header content will take up the fullWidth                            | `Boolean` | `false`  | -       |
+| fulLWidth  | When `true` the header content will take up the full width                           | `Boolean` | `false`  | -       |
 | scrollHide | When `true` the header will hide when scrolling down and reappear if user scrolls up | `Boolean` | `false`  | -       |
 
 ### Labels
@@ -42,8 +43,8 @@ This component is responsible for the header layout and positioning. `FeatherApp
 ### Slots
 
 - `left` this slot should be used for the product logo. `FeatherAppBarLink` as `home` type should be used.
+- `center` this slot is currently used for bespoke scenarios where custom CSS is required for center-alignment or special responsive behaviour.
 - `right` this slot puts content to the right of the app bar.
-- `center` this slot puts contentin the center of the app bar.
 
 ## FeatherAppBarLink
 

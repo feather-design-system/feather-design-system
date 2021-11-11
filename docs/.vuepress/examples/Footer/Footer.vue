@@ -2,6 +2,9 @@
   <div>
     <div style="height: 10px"></div>
     <FeatherFooter :copyright="copyright">
+      <template v-slot:contact>
+        Contact information
+      </template>
       <template v-slot:links>
         <FeatherFooterLink href="#termsofuse" @click="log('test')">
           Terms of Use

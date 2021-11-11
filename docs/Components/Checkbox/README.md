@@ -1,6 +1,7 @@
 ---
 title: "Checkbox"
 pre: "@featherds/checkbox"
+description: "Checkboxes are ideal for selection of items or indication of state"
 lang: en-US
 tags: ["Checkbox", "component"]
 layout: ComponentLayout
@@ -16,7 +17,7 @@ WIP
 
 ## Usage
 
-Check boxes are used when a user must make a section from one or more options in a list of information. Check boxes can be used as binary controls, allowin gusers to toggle specific options or functions on, or off. Indeterminate check boxes can be used to present a parent object in a list of child check boxes.
+Checkboxes are used when a user must make a selection from one or more options in a list of information. Checkboxes can be used as binary controls, allowing users to toggle specific options or functions. Indeterminate checkboxes can be used to present a parent object in a list of child check boxes.
 
 ## FeatherCheckbox
 
@@ -24,11 +25,11 @@ Check boxes are used when a user must make a section from one or more options in
 
 | Name          | Description                                                                      | Type      | Required | Default |
 | ------------- | -------------------------------------------------------------------------------- | --------- | -------- | ------- |
-| disabled      | will disabled the control when true.                                             | `Boolean` | `false`  | -       |
+| disabled      | will disable the control when true.                                              | `Boolean` | `false`  | -       |
 | modelValue    | whether checkbox is checked or not.                                              | `Boolean` | `false`  | -       |
 | indeterminate | whether checkbox is indeterminate or not.                                        | `Boolean` | `false`  | -       |
-| label         | sets the `aria-label` attribute of the checkbox and hides the normal label slot. | `String`  | -        |
-| noFocus       | sets the `tabindex` of the checkbox to `-1`.                                     | `Boolean` | `false`  | -       |
+| label         | sets the `aria-label` attribute of the checkbox and hides the normal label slot. | `String`  | -        |         |
+| noFocus       | sets the `tabindex` of the checkbox to `-1`, preventing tab focus                | `Boolean` | `false`  | -       |
 
 ### Events
 
@@ -65,20 +66,13 @@ Check boxes are used when a user must make a section from one or more options in
 
 | Name    | Description                                      |
 | ------- | ------------------------------------------------ |
-| default | should be FeatherCheckboxes to be used in group. |
+| default | The FeatherCheckboxes to be used in the group.   |
 
 ### data-ref-ids
 
-- `feather-checkbox-group` group element
+- `feather-checkbox-group` selects the wrapper div for the group
 
 ### Attributes
 
-Specifying an `class` or `data-ref-id` attribute will cause them to be applied to the components root containing `div`. All other attributes are inherited to the `input` were it makes sense. Some will be ignored as they will conflict with some of the attributes we need to use for accessibility.
+Specifying a `class` or `data-ref-id` attribute will cause them to be applied to the component root container `div`. All other attributes are passed to the `input` where it makes sense. Some will be ignored if they conflict with attributes we need to use for accessibility.
 
-#### Class
-
-Use the `class` attribute to specify custom spacing needed for the element.
-
-#### data-ref-id
-
-Use the `data-ref-id` attribute when you need to access the element for E2E testing.

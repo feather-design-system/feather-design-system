@@ -9,7 +9,15 @@ layout: ComponentLayout
 
 ## Design
 
-Autocomplete consists of three components: a text input field, a drop-down select menu and chips. The hover and focus states for an autocomplete pattern are inherited from the text input field component. The hover, select and focus states for the menu are inherited from the drop-down select menu and the chip hover and focus states apply as well.
+Autocomplete consists of three components:
+
+- a text input field
+- a drop-down select menu
+- one or more chips
+
+The hover and focus states for the autocomplete pattern are inherited from the `input` component.<br />
+The hover, select and focus states for the menu are inherited from the `dropdown` component.<br />
+Chips are used directly from the `chip` component.
 
 ## Examples
 
@@ -21,7 +29,7 @@ Autocomplete consists of three components: a text input field, a drop-down selec
 
 It is expected that your `results` and `value` will be Objects (or an Array of Objects) that have the display text you wish to use available as a property. You can configure which property you want to use as display text by setting the `text-prop` property to the name of the object property you want to use.
 
-For example if you objects is:
+For example if your objects are structured like the following:
 
 ```js
 const results = [
@@ -36,15 +44,15 @@ You would configure the `text-prop` to be `name`.
 
 ### Search Event
 
-The search event is throttled out of the box. It will also adhere to any `minChar` restrictions you place on the autocomplete. When you are handling the search event be sure to set the `loading` property to `true` if you are making an asynchronous call. Once you have your results make sure you have `_text` property set on each object and then set `results` property to your results array and `loading` to `false`.
+The search event is throttled (debounce) out of the box. It will also adhere to any `minChar` restrictions you place on the autocomplete. When you are handling the search event be sure to set the `loading` property to `true` if you are making an asynchronous call. Once you have your results, make sure you have `_text` property set on each object and then set `results` property to your results array and `loading` to `false`.
 
-### Min Character
+### Min Characters
 
-When setting the `minChar` property you must also specify a `minChar` property on the `labels` property to warn the user about this restriction. UX should be able to define this text for you. Note `${min}` will be replaced with the number specified in the `minChar` property.
+When setting the `minChar` property, be sure to add a `minChar` property on the `labels` prop to warn the user about this restriction. Note the token `${min}` will be replaced with the number specified in the `minChar` property.
 
 ### No Results
 
-Please reach out to UX to define what text to display when there are no results found. You can then set `noResults` property of the `labels` property to this value.
+If an empty results set is passed, the `noResults` property of the `labels` prop will be used for the message displayed.
 
 ### Results Menu Height
 
@@ -60,15 +68,13 @@ The following example allows `10` items to be displayed before scrolling.
 
 ### Chip Pre Icon
 
-To configure a pre icon inside a selected chip you must specify a `_pre` property on the value object with a `title` and `icon` property. `title` should be a string detailing what the icon is for. `icon` should be a Feather icon.
+To configure a 'pre' icon inside a selected chip, you must add a `_pre` property on the `value` prop that is composed of an object containing a `title` and `icon` property. `title` should be a string detailing what the icon is for. `icon` should be a Feather icon.
 
-#### Ahead of time
-
-If you know ahead of time that a selection would require an icon. Then you can populate this `_pre` property when you are creating your `results` array.
+If you know ahead of time that a selection will require an icon, you can populate this `_pre` property when you are creating your `results` array.
 
 #### After Selection
 
-If you only know once an item has been selected then you will need to update your `value` array to have the correct `_pre` property. The following code snippet can help you achieve this. Please note the use of `$set` is necessary.
+If your item is already selected, you will need to update your `value` array to have the correct `_pre` property. The following code snippet can help you achieve this. Please note the use of `$set` is necessary.
 
 ```js
 this.$set(this.value, index, {
@@ -80,7 +86,7 @@ this.$set(this.value, index, {
 });
 ```
 
-In the example above we update the value array at the index where the icon needs to be inserted
+In the example above, we update the value array at the index where the icon needs to be inserted.
 
 ## FeatherAutocomplete
 
@@ -100,6 +106,7 @@ In the example above we update the value array at the index where the icon needs
 | highlight      | Determines how the query is matched in the results. Allowed:`"off"`,`"ignore-case"`. See [Highlighting](#highlighting) section        | `String`            | `false`  | `"off"`                                 |
 | background     | Sets label background color to `background`                                                                                           | `Boolean`           | `false`  | `false`                                 |
 | minChar        | Will only emit `search` even when query is atleast `minChar` long                                                                     | `Number`            | `false`  | `0`                                     |
+| newMatcher     | If `allowNew` is enabled, this is the function that ascertains if the search term entered is unique/new                               | `function`          | `false`  | Compares query and item in lower case   |
 | selectionLimit | Limits the number of items that can be selected. Only takes effect in `multi`. Don't forget to set the label                          | `Number`            | `false`  | -                                       |
 | labels         | Object containing labels to be used by this component. Mainly used for i18n or customization of labels. See [Labels](#labels) example | `Object`            | `false`  | See [Labels](#labels) example           |
 | gridConfig     | Array containing configuration for rendering the grid results. See [Grid Config](#grid-config) example                                | `Object`            | `false`  | See [Grid Config](#grid-config) example |
@@ -121,11 +128,11 @@ Text labels for autocomplete can be customized via the `labels` property. The de
 
 ### Grid Config
 
-An array made up of objects that contain configuration for each column. Allowed properties are:
+An Array of custom objects that contain configuration for each column. Allowed properties are:
 
 - `title` - this should be the display name of the column
-- `prop` - this is the corresponding property of the `results` object that contains the value to be rendered in the column
-- `align` - this optional property can be used to configure the column to be `right` aligned. Default layout is `left` aligned.
+- `prop` - the name of the value contained within the `results` object that is to be rendered in this column
+- `align` - Optional, can be used to configure the column to be `right` aligned. Default layout is `left` aligned.
 
 #### Example Config
 
@@ -165,11 +172,11 @@ Result object structure:
 
 ### Highlighting
 
-Highlighting can be used to showcase what part of the string matched the search query. By default this is set to off. Currently the only other option is `ignore-case`, this will match the first instance of the query string in the `textProp` regardless of case.
+Highlighting can be used to showcase what part of the string matched the search query. By default the `highlight` prop is set to off. Currently the only other option is `ignore-case`, this will match the first instance of the query string in the `textProp` regardless of case.
 
 ### Events
 
-- `search` - Emits `string` query coming from the autocomplete. This event is throttled.
+- `search` - Emits the `string` query coming from the autocomplete. This event is throttled (debounced).
 - `update:modelValue` - Emits an array that is the new value of the autocomplete.
 - `new` - Emits `string` that should be the display text of the new element. This event is only used when `allowNew` is `true`.
 
@@ -191,15 +198,7 @@ Highlighting can be used to showcase what part of the string matched the search 
 
 ### Attributes
 
-Specifying an `class` or `data-ref-id` attribute will cause them to be applied to the components root containing `div`. All other attributes are inherited to the `input` were it makes sense. Some will be ignored as they will conflict with some of the attributes we need to use for accessibility.
-
-#### Class
-
-Use the `class` attribute to specify custom spacing needed for the element.
-
-#### data-ref-id
-
-Use the `data-ref-id` attribute when you need to access the element for E2E testing.
+Specifying a `class` or `data-ref-id` attribute will cause them to be applied to the component's root container `div`. All other attributes are inherited to the `input` where it makes sense. Some will be ignored if they conflict with some of the attributes used for accessibility.
 
 ## Accessibility
 

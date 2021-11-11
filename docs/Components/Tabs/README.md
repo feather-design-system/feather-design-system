@@ -19,8 +19,7 @@ layout: ComponentLayout
 
 | Name       | Description                                            | Type      | Required | Default |
 | ---------- | ------------------------------------------------------ | --------- | -------- | ------- |
-| raised     | Raises the tab several pixels if required              | `Boolean` | `false`  | -       |
-| modelValue | Can be set if you want to open a different default tab | `Number`  | `false`  | `0`     |
+| modelValue | Can be set if you want to open a specific tab          | `Number`  | `false`  | `0`     |
 | vertical   | Toggles vertical rather than default horizontal tabs   | `Boolean` | `False`  | `False` |
 
 ### Events
@@ -38,7 +37,7 @@ layout: ComponentLayout
 
 ## FeatherTab
 
-`FeatherTab` faciliates tab interactions in various containers, and is re-used for drawer tabs and others. Tabs are hosted in Tab Containers.
+`FeatherTab` faciliates tab interactions in various containers and is re-used for drawer tabs and others. Tabs are hosted in Tab Containers.
 
 ### Props
 
@@ -48,7 +47,7 @@ Note that normally, all these props are automatically populated when used inside
 | -------- | --------------------------------------------- | --------- | -------- | ------- |
 | id       | ID of the element                             | `String`  | `false`  | -       |
 | controls | ID of the element this control is influencing | `String`  | `false`  | -       |
-| disabled | Toggles the disabled state for this tab       | `Boolean` | `False`  | `False` |
+| disabled | Toggles the disabled state for this tab       | `Boolean` | `false`  | `False` |
 
 ### Slots
 
