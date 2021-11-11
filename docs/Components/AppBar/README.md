@@ -19,16 +19,15 @@ App bars are used on all applications at the highest level of hierarchy. The app
 
 ## FeatherAppBar
 
-This component is responsible for the header layout and positioning. `FeatherAppBarLink` and `FeatherAppBarButton` can be placed in it's slots to achieve the desired layout.
+This component is responsible for the header layout and positioning. `FeatherAppBarLink` can be placed in its slots to achieve the desired layout.
 
 ### Props
 
 | Name       | Description                                                                          | Type      | Required | Default |
-| ------- | --------------------------------------------------------------------------------------- | --------- | -------- | ------- |
 | ---------- | ------------------------------------------------------------------------------------ | --------- | -------- | ------- |
 | content    | ID of the main content of the page. Needed for accessibility.                        | `String`  | `true`   | -       |
 | labels     | Object containing labels used by this component. See [Labels](#labels) example       | `Object`  | `true`   | -       |
-| fulLWidth  | When `true` the header content will take up the full width                           | `Boolean` | `false`  | -       |
+| fullWidth  | When `true` the header content will take up the full width                           | `Boolean` | `false`  | -       |
 | scrollHide | When `true` the header will hide when scrolling down and reappear if user scrolls up | `Boolean` | `false`  | -       |
 
 ### Labels
