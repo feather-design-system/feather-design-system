@@ -44,7 +44,6 @@ a.pretty-card {
   display: inline-block;
   position: relative;
   width: 317px;
-  height: 356px;
   flex: 0 1 317px;
   border: 1px solid var($secondary);
   background-color: var($surface);
@@ -60,13 +59,16 @@ a.pretty-card {
   &:last-child {
     margin-right: 0;
   }
+  h3 {
+    @include headline3();
+  }
 
   img {
     display: block;
   }
   div.card-inner {
     position: relative;
-    padding: 24px 24px 32px 24px;
+    padding: 24px 24px 40px 24px;
   }
   span.overline {
     @include overline();

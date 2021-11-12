@@ -27,9 +27,11 @@
         >
 
         <template v-for="item in items" :key="item.name">
-          <FeatherListItem :href="item.url" :selected="isCurrent(item.url)">{{
-            item.name
-          }}</FeatherListItem>
+          <FeatherListItem
+            :href="$withBase(item.url)"
+            :selected="isCurrent(item.url)"
+            >{{ item.name }}</FeatherListItem
+          >
         </template>
       </FeatherList>
     </div>

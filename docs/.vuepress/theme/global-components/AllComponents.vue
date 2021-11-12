@@ -1,9 +1,6 @@
 <template>
   <div class="all-components">
-    <PrettyCard
-      v-for="item in items"
-      href="item.url"
-      img-url="/assets/branding/home-foundation.png"
+    <PrettyCard v-for="item in items" :href="item.url" :img-url="item.image"
       >{{ item.name }}
     </PrettyCard>
   </div>
@@ -22,5 +19,20 @@ export default {
 .all-components {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
+  row-gap: 20px;
+  column-gap: 20px;
+  justify-items: center;
+  justify-content: center;
+}
+
+@media screen and (max-width: 1300px) {
+  .all-components {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+@media screen and (max-width: 680px) {
+  .all-components {
+    grid-template-columns: 1fr;
+  }
 }
 </style>

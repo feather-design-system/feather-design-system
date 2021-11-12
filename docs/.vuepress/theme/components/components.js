@@ -1,75 +1,155 @@
-import { withBase } from "@vuepress/client";
-
 export default [
   {
     name: "App Layout",
-    url: withBase("/Components/AppLayout/"),
+    url: "/Components/AppLayout/",
+    image: "/assets/components/AppLayout.png",
   },
-  { name: "App Bar", url: withBase("/Components/AppBar/") },
+  {
+    name: "App Bar",
+    url: "/Components/AppBar/",
+    image: "/assets/components/AppBar.png",
+  },
   {
     name: "Navigation Rail",
-    url: withBase("/Components/NavigationRail/"),
+    url: "/Components/NavigationRail/",
+    image: "/assets/components/NavigationRail.png",
   },
-  { name: "Grid", url: withBase("/Components/Grid/") },
-  { name: "Footer", url: withBase("/Components/Footer/") },
+  {
+    name: "Footer",
+    url: "/Components/Footer/",
+    image: "/assets/components/Footer.png",
+  },
 
-  { name: "Button", url: withBase("/Components/Button/") },
-  { name: "Back Button", url: withBase("/Components/BackButton/") },
-  { name: "Input", url: withBase("/Components/Input/") },
-  { name: "Textarea", url: withBase("/Components/Textarea/") },
-  { name: "Checkbox", url: withBase("/Components/Checkbox/") },
-  { name: "Radio Button", url: withBase("/Components/Radio/") },
+  {
+    name: "Button",
+    url: "/Components/Button/",
+    image: "/assets/components/Button.png",
+  },
+  {
+    name: "Back Button",
+    url: "/Components/BackButton/",
+    image: "/assets/components/BackButton.png",
+  },
+  {
+    name: "Input",
+    url: "/Components/Input/",
+    image: "/assets/components/Input.png",
+  },
+  {
+    name: "Textarea",
+    url: "/Components/Textarea/",
+    image: "/assets/components/Textarea.png",
+  },
+  {
+    name: "Checkbox",
+    url: "/Components/Checkbox/",
+    image: "/assets/components/Checkbox.png",
+  },
+  {
+    name: "Radio Button",
+    url: "/Components/Radio/",
+    image: "/assets/components/RadioButtons.png",
+  },
   {
     name: "Autocomplete",
-    url: withBase("/Components/Autocomplete/"),
+    url: "/Components/Autocomplete/",
+    image: "/assets/components/Autocomplete.png",
   },
   {
     name: "Date Input",
-    url: withBase("/Components/DateInput/"),
+    url: "/Components/DateInput/",
+    image: "/assets/components/DateInput.png",
   },
   {
     name: "Protected Input",
-    url: withBase("/Components/ProtectedInput/"),
+    url: "/Components/ProtectedInput/",
+    image: "/assets/components/ProtectedInput.png",
   },
-  { name: "Select", url: withBase("/Components/Select/") },
+  {
+    name: "Select",
+    url: "/Components/Select/",
+    image: "/assets/components/Select.png",
+  },
 
-  { name: "Drawer", url: withBase("/Components/Drawer/") },
-  { name: "Dialog", url: withBase("/Components/Dialog/") },
+  {
+    name: "Drawer",
+    url: "/Components/Drawer/",
+    image: "/assets/components/Drawer.png",
+  },
+  {
+    name: "Dialog",
+    url: "/Components/Dialog/",
+    image: "/assets/components/Dialog.png",
+  },
   {
     name: "Dropdown",
-    url: withBase("/Components/Dropdown/"),
+    url: "/Components/Dropdown/",
+    image: "/assets/components/Dropdown.png",
   },
-  { name: "Mega Menu", url: withBase("/Components/Megamenu/") },
+  {
+    name: "Mega Menu",
+    url: "/Components/Megamenu/",
+    image: "/assets/components/Megamenu.png",
+  },
 
-  { name: "Table", url: withBase("/Components/Table/") },
+  {
+    name: "Table",
+    url: "/Components/Table/",
+    image: "/assets/components/Table.png",
+  },
   {
     name: "Pagination",
-    url: withBase("/Components/Pagination/"),
+    url: "/Components/Pagination/",
+    image: "/assets/components/Pagination.png",
   },
   {
     name: "Pdf Viewer",
-    url: withBase("/Components/PdfViewer/"),
+    url: "/Components/PdfViewer/",
+    image: "/assets/components/PdfViewer.png",
   },
-  { name: "Chips", url: withBase("/Components/Chips/") },
+  {
+    name: "Chips",
+    url: "/Components/Chips/",
+    image: "/assets/components/Chips.png",
+  },
 
-  { name: "Tabs", url: withBase("/Components/Tabs/") },
+  {
+    name: "Tabs",
+    url: "/Components/Tabs/",
+    image: "/assets/components/Tabs.png",
+  },
   {
     name: "List",
-    url: withBase("/Components/List/"),
+    url: "/Components/List/",
+    image: "/assets/components/List.png",
   },
   {
     name: "Expansion",
-    url: withBase("/Components/Expansion/"),
+    url: "/Components/Expansion/",
+    image: "/assets/components/ExpansionPanel.png",
   },
 
-  { name: "Progress", url: withBase("/Components/Progress/") },
-  { name: "Icon", url: withBase("/Components/Icon/") },
+  {
+    name: "Progress",
+    url: "/Components/Progress/",
+    image: "/assets/components/Progress.png",
+  },
+  {
+    name: "Icon",
+    url: "/Components/Icon/",
+    image: "/assets/components/Icon.png",
+  },
   {
     name: "Icon Button",
-    url: withBase("/Components/IconButton/"),
+    url: "/Components/IconButton/",
+    image: "/assets/components/IconButton.png",
   },
 
-  { name: "Badge", url: withBase("/Components/Badge/") },
+  {
+    name: "Badge",
+    url: "/Components/Badge/",
+    image: "/assets/components/Badges.png",
+  },
 ].sort((a, b) => {
   if (a.name > b.name) {
     return 1;
