@@ -16,15 +16,6 @@ body {
   color: var($primary-text-on-surface);
   min-height: 100%;
 }
-main {
-  box-sizing: border-box;
-  flex: 1;
-  width: 100%;
-  margin: 0 auto;
-}
-div.center.content {
-  padding-bottom: 24px;
-}
 
 .open-light {
   @include open-light();
@@ -131,7 +122,7 @@ body {
   display: none;
 }
 
-@include media-query-below(m) {
+@include media-query-below(s) {
   .feather-styles {
     h1 {
       @include headline1();

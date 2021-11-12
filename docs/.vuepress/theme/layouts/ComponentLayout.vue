@@ -1,22 +1,29 @@
 <template>
-  <FeatherPage class="layout">
+  <FeatherPage class="layout" :class="class">
     <template v-slot:rail>
       <ComponentMenu></ComponentMenu>
     </template>
     <div class="title-container">
       <div class="title-section center feather-container">
-        <p class="pre-text">{{ preText }}</p>
-        <h1 class="title">{{ title }}</h1>
-        <p class="title-description">
-          {{ description }}
-        </p>
+        <div class="content-container">
+          <p class="pre-text">{{ preText }}</p>
+          <h1 class="title">{{ title }}</h1>
+          <p class="title-description">
+            {{ description }}
+          </p>
+        </div>
       </div>
     </div>
-    <div class="center content feather-container">
-      <div class="toc" v-if="sidebarItems.length">
+    <div class="feather-container center">
+      <div
+        class="toc"
+        :class="{ fixed: fixed }"
+        v-if="sidebarItems.length"
+        ref="toc"
+      >
         <Sidebar :items="sidebarItems" title="Contents" />
       </div>
-      <main class="main-content">
+      <main class="main-content content-container">
         <Content />
       </main>
     </div>
@@ -26,13 +33,36 @@
 import FeatherPage from "./FeatherPage";
 import Sidebar from "../components/Sidebar.vue";
 import ComponentMenu from "../components/ComponentMenu.vue";
+import { useScroll } from "@featherds/composables/events/Scroll";
+import { ref, watch } from "vue";
 export default {
+  setup() {
+    const toc = ref();
+    const fixed = ref(false);
+    let tocTop = 0;
+    const onScroll = () => {
+      const scrollPos = document.documentElement.scrollTop;
+
+      fixed.value = scrollPos >= tocTop;
+    };
+
+    const activate = useScroll(ref(document), onScroll);
+    activate.value = true;
+    watch(toc, (nv) => {
+      tocTop = nv.getBoundingClientRect().top - 60;
+    });
+
+    return { toc, fixed };
+  },
   computed: {
     title() {
       return this.$page.title;
     },
     description() {
       return this.$page.frontmatter.description;
+    },
+    class() {
+      return this.$page.frontmatter.class;
     },
     preText() {
       return this.$page.frontmatter.pre;
@@ -60,15 +90,29 @@ export default {
 @import "@featherds/styles/themes/variables";
 @import "@featherds/styles/mixins/elevation";
 @import "@featherds/styles/mixins/typography";
+@import "@featherds/styles/mixins/responsive";
 
+$contentWidth: 760px - 48px;
+.content-container {
+  width: $contentWidth;
+}
+@include media-query-below(s) {
+  .content-container {
+    width: 100%;
+  }
+}
+.all-components .content-container {
+  width: 100%;
+}
 .center {
   box-sizing: border-box;
   flex: 1;
   width: 100%;
   margin: 0 auto;
+  position: relative;
 }
 .main-content {
-  padding-bottom: 60px;
+  margin-bottom: 60px;
 }
 :deep(.smaller) {
   font-size: 0.6em;
@@ -90,22 +134,30 @@ export default {
   }
 }
 $gutterwidth: 150px;
-.center.content {
-  position: relative;
-  .main-content,
-  .title-content {
-    width: 100%;
-  }
-  div.toc {
-    width: $gutterwidth;
-    padding-left: 16px;
+div.toc {
+  padding-left: 16px;
+  position: absolute;
+  left: calc(50% + 184px);
+  &.fixed {
     position: fixed;
-    left: calc(50% + 720px);
+    top: 84px;
+    left: calc(50% + 315px);
   }
 }
-@media only screen and (max-width: 1780px) {
-  .center.content {
-    div.toc {
+
+@include media-query-below(xl) {
+  div.toc.fixed {
+    left: calc(50% + 184px);
+  }
+}
+@include media-query-below(l) {
+  div.toc {
+    position: static;
+    margin: 16px;
+    margin-top: 0px;
+    margin-bottom: 56px;
+    width: 200px;
+    &.fixed {
       position: static;
       margin: 16px;
       margin-top: 0px;

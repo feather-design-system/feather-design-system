@@ -1,6 +1,6 @@
 <template>
   <li>
-    <a :href="item.href" class="sidebar-link" :class="{ active: active }">{{
+    <a :href="item.href" class="sidebar-item" :class="{ active: active }">{{
       item.title
     }}</a>
   </li>

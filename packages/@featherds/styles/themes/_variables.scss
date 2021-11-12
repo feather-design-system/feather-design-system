@@ -255,32 +255,37 @@ $xs-gutter: 16px;
 
 $grid: (
   xl: (
-    min: 960px,
+    min: 1441px,
     col: 12,
     gutter: $xl-gutter,
   ),
   l: (
-    min: 840px,
-    max: 959px,
+    min: 1261px,
+    max: 1440px,
     col: 12,
     gutter: $l-gutter,
   ),
   m: (
-    min: 720px,
-    max: 839px,
+    min: 1065px,
+    max: 1260px,
     col: 8,
     gutter: $m-gutter,
   ),
   s: (
-    min: 600px,
-    max: 719px,
+    min: 761px,
+    max: 1064px,
     col: 8,
     gutter: $s-gutter,
   ),
   xs: (
-    min: 0px,
-    max: 599px,
-    col: 4,
+    min: 521px,
+    max: 760px,
+    col: 2,
+    gutter: $xs-gutter,
+  ),
+  xxs: (
+    max: 520px,
+    col: 2,
     gutter: $xs-gutter,
   ),
 );

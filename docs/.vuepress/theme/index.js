@@ -22,7 +22,7 @@ module.exports = {
         componentsDir: path.resolve(__dirname, "../examples"),
       },
     ],
-    // ["@vuepress/active-header-links"],
+    ["@vuepress/active-header-links", { offset: 60 }],
     [
       "@vuepress/plugin-container",
       {
