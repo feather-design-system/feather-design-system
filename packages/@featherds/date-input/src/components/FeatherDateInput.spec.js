@@ -118,7 +118,6 @@ describe("FeatherDateInput.vue", () => {
   });
   it("should show clear icon when there is a value", async () => {
     const wrapper = getWrapper();
-    expect(wrapper.element).toMatchSnapshot();
 
     await wrapper.setProps({
       modelValue: new Date(2020, 1, 1),
@@ -131,6 +130,7 @@ describe("FeatherDateInput.vue", () => {
     const wrapper = getWrapper({
       propsData: {
         disabled: true,
+        modelValue: new Date(2020, 1, 1),
       },
     });
     expect(wrapper.element).toMatchSnapshot();

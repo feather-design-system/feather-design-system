@@ -1,5 +1,5 @@
 <template>
-  <section>
+  <section class="all-icons">
     <div class="feather-row">
       <div class="feather-col-3">
         <FeatherInput label="Search Icons" v-model="search" clear />
@@ -58,6 +58,17 @@ export default {
   },
 };
 </script>
+<style>
+.open-dark .all-icons img {
+  filter: invert(96%) sepia(1%) saturate(926%) hue-rotate(144deg)
+    brightness(111%) contrast(100%);
+}
+
+.open-light .all-icons img {
+  filter: invert(0%) sepia(100%) saturate(7500%) hue-rotate(59deg)
+    brightness(89%) contrast(111%);
+}
+</style>
 <style scoped lang="scss">
 @import "@featherds/styles/mixins/typography";
 @import "@featherds/styles/themes/variables";
