@@ -18,12 +18,6 @@
         Account
       </template>
     </FeatherButton>
-    <FeatherButton>
-      <template v-slot:icon>
-        <FeatherIcon :icon="support" aria-hidden="true" focusable="false" />
-        Support
-      </template>
-    </FeatherButton>
   </section>
 </template>
 <script>
