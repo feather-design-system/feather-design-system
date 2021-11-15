@@ -12,7 +12,7 @@ layout: ComponentLayout
 Buttons act as primary interaction points for users. Buttons can be extremely high priority items, or they can be diminished when paired with information or other interaction points that require a users full attention.
 
 <OverlineLinks title="Related Components">
-<OverlineLink :href="$withBase('/Components/IconButton/')">Icon Button</OverlineLink>
+<OverlineLink href="#icon-button">Icon Button</OverlineLink>
 <OverlineLink :href="$withBase('/Components/BackButton/')">Back Button</OverlineLink>
 </OverlineLinks>
 
@@ -23,14 +23,14 @@ Buttons act as primary interaction points for users. Buttons can be extremely hi
 ## Usage
 
 Buttons indicate 'action points' to a user. They can exist as optional interaction points that have an effect on one or more parts of the application, or interaction may be required to proceed farther into the experience. Buttons may be used in the following examples:
-
+  
 1. Dialogs
 2. Modal Windows
 3. Forms
 4. Cards
 5. Toolbars
 
-## FeatherButton
+## Button
 
 ### Props
 
@@ -54,7 +54,35 @@ Buttons indicate 'action points' to a user. They can exist as optional interacti
 - `default` content of the button. Place text in here or an icon when `icon` property is set.
 - `icon` icon to be displayed alongside the text content of default. It is a separate slot so we can ensure correct spacing.
 
-## Icons in Buttons
+## Icon Button
+Icon button is a special configuration of our Button. It only supports text based styling, any other type will be ignored. Utilize the `icon` property to pass in an appropriate label for the icon button. In the examples above see the "Icon Button".
+
+```html
+<template>
+  <FeatherButton icon="Add">
+    <FeatherIcon :icon="icon"> </FeatherIcon>
+  </FeatherButton>
+</template>
+<script>
+import { FeatherButton } from "@featherds/button";
+import { FeatherIcon } from "@featherds/icon";
+import icon from "@featherds/icon/action/Add";
+export default {
+  computed: {
+    icon() {
+      return icon;
+    },
+  },
+  components: {
+    FeatherIcon,
+    FeatherButton,
+  },
+};
+</script>
+
+```
+
+## Text Icon Button
 
 When using an icon alongside text you should **always** mark the icon as `aria-hidden="true"`. You may also notice that sometimes the text and icon are out of alignment. Unfortunately due to the different aspect ratios of some of our icons this will happen. Please use the following technique to adjust the vertical align.
 

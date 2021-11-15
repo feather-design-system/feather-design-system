@@ -139,11 +139,6 @@ export default [
     url: "/Components/Icon/",
     image: "/assets/components/Icon.png",
   },
-  {
-    name: "Icon Button",
-    url: "/Components/IconButton/",
-    image: "/assets/components/IconButton.png",
-  },
 
   {
     name: "Badge",

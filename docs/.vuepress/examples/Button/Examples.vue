@@ -3,6 +3,7 @@
   ./AsLinks.vue
   ./Disabled.vue
   ./Icons.vue
+  ./IconButton.vue
 </src>
 <template>
   <FeatherDemo :demos="demos" />
@@ -11,6 +12,7 @@
 import Buttons from "./Buttons.vue";
 import AsLinks from "./AsLinks.vue";
 import Disabled from "./Disabled.vue";
+import IconButton from "./IconButton.vue";
 import Icons from "./Icons.vue";
 import { ref, getCurrentInstance, markRaw } from "vue";
 export default {
@@ -34,9 +36,14 @@ export default {
         source: instance.type.srcs["Disabled"],
       },
       {
-        _text: "Buttons: Icons",
+        _text: "Buttons: with Icons",
         component: markRaw(Icons),
         source: instance.type.srcs["Icons"],
+      },
+      {
+        _text: "Icon Button",
+        component: markRaw(IconButton),
+        source: instance.type.srcs["IconButton"],
       },
     ]);
 
