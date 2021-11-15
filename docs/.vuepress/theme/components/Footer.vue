@@ -4,25 +4,25 @@
       <div class="links">
         <ul>
           <li>
-            <a href="#">GitHub</a>
+            <a href="https://github.com/feather-design-system/feather-design-system">GitHub</a>
           </li>
           <li>
-            <a href="#">Contributing</a>
+            <a href="https://github.com/feather-design-system/feather-design-system/blob/main/CONTRIBUTING.md">Contributing</a>
           </li>
           <li>
-            <a href="#">Licenses</a>
+            <a href="https://github.com/feather-design-system/feather-design-system/blob/main/LICENSE">Licenses</a>
           </li>
           <li>
             <a href="#">Accessibility</a>
           </li>
           <li>
-            <a href="#">NantHealth Blog</a>
+            <a href="https://nanthealth.com/resources/category/articles/">NantHealth Blog</a>
           </li>
           <li>
-            <a href="#">OpenNMS Blog</a>
+            <a href="https://www.opennms.com/en/blog/category/blog/">OpenNMS Blog</a>
           </li>
           <li>
-            <a href="#">Careers</a>
+            <a href="https://nanthealth.com/careers/">Careers</a>
           </li>
         </ul>
         <span class="blurb">
