@@ -135,11 +135,11 @@ $gutterwidth: 150px;
 div.toc {
   padding-left: 16px;
   position: absolute;
-  left: calc(50% + 184px);
+  left: calc(50% + 200px);
   &.fixed {
     position: fixed;
     top: 84px;
-    left: calc(50% + 315px);
+    left: calc(50% + 331px);
   }
 }
 
