@@ -4,22 +4,35 @@
       <div class="links">
         <ul>
           <li>
-            <a href="https://github.com/feather-design-system/feather-design-system">GitHub</a>
+            <a
+              href="https://github.com/feather-design-system/feather-design-system"
+              >GitHub</a
+            >
           </li>
           <li>
-            <a href="https://github.com/feather-design-system/feather-design-system/blob/main/CONTRIBUTING.md">Contributing</a>
+            <a
+              href="https://github.com/feather-design-system/feather-design-system/blob/main/CONTRIBUTING.md"
+              >Contributing</a
+            >
           </li>
           <li>
-            <a href="https://github.com/feather-design-system/feather-design-system/blob/main/LICENSE">Licenses</a>
+            <a
+              href="https://github.com/feather-design-system/feather-design-system/blob/main/LICENSE"
+              >Licenses</a
+            >
           </li>
           <li>
-            <a href="#">Accessibility</a>
+            <a :href="$withBase('/Accessibility.html')">Accessibility</a>
           </li>
           <li>
-            <a href="https://nanthealth.com/resources/category/articles/">NantHealth Blog</a>
+            <a href="https://nanthealth.com/resources/category/articles/"
+              >NantHealth Blog</a
+            >
           </li>
           <li>
-            <a href="https://www.opennms.com/en/blog/category/blog/">OpenNMS Blog</a>
+            <a href="https://www.opennms.com/en/blog/category/blog/"
+              >OpenNMS Blog</a
+            >
           </li>
           <li>
             <a href="https://nanthealth.com/careers/">Careers</a>

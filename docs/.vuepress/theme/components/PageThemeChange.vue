@@ -4,6 +4,7 @@
     @click.prevent="toggleTheme"
     href="#"
     icon="Toggle theme"
+    on-color
   >
     <FeatherIcon :title="selected._text" :icon="icon" />
   </FeatherButton>

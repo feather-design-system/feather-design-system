@@ -102,6 +102,7 @@ export default {
 @import "@featherds/styles/mixins/responsive";
 @import "@featherds/styles/themes/variables";
 #main {
+  flex: 1;
   display: flex;
   flex-direction: column;
   :deep(img) {
@@ -137,7 +138,15 @@ export default {
     width: inherit;
   }
 }
-
+.feather-styles {
+  :deep(.app-content-container) {
+    display: flex;
+    flex-direction: column;
+  }
+  :deep(footer) {
+    flex: none;
+  }
+}
 .right-container {
   display: flex;
   align-items: center;

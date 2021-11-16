@@ -11,7 +11,9 @@ $font-path: "@featherds/styles/fonts/" !default;
 @import "@featherds/styles/themes/open-mixins";
 @import "./search.scss";
 html,
-body {
+body,
+#app {
+  min-height: 100vh;
   background-color: var($surface);
   color: var($primary-text-on-surface);
   min-height: 100%;
