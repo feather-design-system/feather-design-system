@@ -9,9 +9,6 @@ The app bar is anchored to the top of the application window and provides screen
 
 ## Components
 
-<ComponentCard component="FeatherAppBar" package="AppBar" />
-<ComponentCard component="FeatherAppBarLink" package="AppBar" />
-
 ## Usage
 
 App bars are used on all applications at the highest level of hierarchy. The app bar can serve as the top level of navigation in an application through the use of a “menu” button and can become a “contextual” app bar to better serve user needs based on required functionality for a given application context.
@@ -40,7 +37,7 @@ An app bar contains branding elements, screen titles, navigation and actions. Se
 #### Ation Buttons
 
 - These are generally presented as icons only
-  - Unless a brand specific icon is provided - please use the FeatherUI  icon equivalent.
+  - Unless a brand specific icon is provided - please use the FeatherUI icon equivalent.
   - action buttons should follow the “button” component pattern for states and active area
   - action buttons should be center-aligned in the header
   - The “art area” inside the button is 24px x 24px while the active area is 40px x 40px to accomodate touch-based interfaces at small sizes.

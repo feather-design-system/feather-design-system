@@ -196,6 +196,8 @@ const baseFunctionality = (type) => {
       });
     });
     describe("Accessibility", () => {
+      beforeEach(() => jest.setTimeout(60000));
+
       it("should be accessible in default state", async () => {
         jest.useRealTimers();
         const wrapper = getFullWrapper();

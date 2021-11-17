@@ -7,8 +7,6 @@ lang: en-US
 
 ## Component
 
-<ComponentCard component="Typography" package="Styles" />
-
 ## Package
 
 All typography styles are available in the [`@featherds/styles`](/Packages/Styles/) package. See the [typography guide](/Packages/Styles/Guides/Typography.html) for live examples and code examples.

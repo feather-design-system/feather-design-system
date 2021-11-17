@@ -9,8 +9,6 @@ This is a generic control that will allow the user to go back to a previous page
 
 ## Component
 
-<ComponentCard component="FeatherBackButton" package="BackButton" />
-
 ## Back Button Design
 
 The back button has been designed to provide a persistent control for reverse navigation. The button appears as an outlined button in it’s default, active state and transforms into a solid contained button with elevation when the user hovers over it to elevate it’s priority in the layout.

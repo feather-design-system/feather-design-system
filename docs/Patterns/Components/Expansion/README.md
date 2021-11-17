@@ -9,8 +9,6 @@ An expansion panel is a lightweight container that may either stand alone or be 
 
 ## Components
 
-<ComponentCard component="FeatherExpansionPanel" package="Expansion" />
-
 ## Usage
 
 Expansion panels can be used for pages with excessive content or to hide content that is not immediately necessary for a user.

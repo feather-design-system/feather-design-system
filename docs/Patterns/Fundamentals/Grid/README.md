@@ -9,8 +9,6 @@ The layout grid is based around a maximum width of 1176px which addresses the ma
 
 ## Component
 
-<ComponentCard component="Grid" package="Styles" />
-
 ## Grid Layout
 
 ![Grid layout image](./assets/Grid_System.png)

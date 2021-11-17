@@ -11,8 +11,6 @@ Buttons act as interaction points for users throughout most common software expe
 
 ## Component
 
-<ComponentCard component="FeatherButton" package="Button" />
-
 ## Usage
 
 Buttons indicate “action points” to a user. They can exist as optional interaction points that have an effect on one or more parts of the application, or interaction may be required to proceed farther into the experience. Buttons may be used in the following examples:

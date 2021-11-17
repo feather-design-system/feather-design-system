@@ -9,8 +9,6 @@ lang: en-US
 
 ## Component
 
-<ComponentCard component="FeatherDialog" package="Dialog" />
-
 ## Usage
 
 Simplifies the user interface by providing easy access to additional information related to the current action without having to leave the current page. Modal dialogs may contain interactive elements and use a lightbox effect to dim the page behind giving more focus to the dialog’s task. A modal dialog requires action to be taken.

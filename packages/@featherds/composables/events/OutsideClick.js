@@ -1,4 +1,4 @@
-import { watch, onBeforeUnmount, ref } from "vue";
+import { watch, onBeforeUnmount, ref, onMounted } from "vue";
 
 const useOutsideClick = (elementRef, listener) => {
   const active = ref(false);
@@ -19,25 +19,27 @@ const useOutsideClick = (elementRef, listener) => {
       window.removeEventListener("blur", windowBlurChecker);
     }
   };
-  const unwatch = watch(
-    [elementRef, active],
-    ([el, enabled]) => {
-      if (el && document && window && enabled) {
-        document.addEventListener("click", outSideClick);
-        document.addEventListener("focus", outSideClick, true);
-        window.addEventListener("blur", windowBlurChecker);
-      } else {
-        removeEvents();
+  onMounted(() => {
+    const unwatch = watch(
+      [elementRef, active],
+      ([el, enabled]) => {
+        if (el && document && window && enabled) {
+          document.addEventListener("click", outSideClick);
+          document.addEventListener("focus", outSideClick, true);
+          window.addEventListener("blur", windowBlurChecker);
+        } else {
+          removeEvents();
+        }
+      },
+      {
+        immediate: true,
       }
-    },
-    {
-      immediate: true,
-    }
-  );
+    );
 
-  onBeforeUnmount(() => {
-    unwatch();
-    removeEvents();
+    onBeforeUnmount(() => {
+      unwatch();
+      removeEvents();
+    });
   });
 
   return active;

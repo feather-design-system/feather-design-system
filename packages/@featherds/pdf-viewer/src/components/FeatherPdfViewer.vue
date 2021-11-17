@@ -189,7 +189,10 @@ export default {
       return previewUrl.value ? previewUrl.value : undefined;
     });
 
-    const msie = window.navigator.userAgent.indexOf("MSIE ");
+    const msie =
+      typeof window !== "undefined"
+        ? window.navigator.userAgent.indexOf("MSIE ")
+        : -1;
     let hasPreviewer = true;
     if (msie >= 0) {
       try {

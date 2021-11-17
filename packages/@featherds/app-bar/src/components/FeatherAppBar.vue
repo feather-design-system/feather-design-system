@@ -74,7 +74,6 @@ export default {
     if (props.scrollHide) {
       let previousScrollPosition = 0;
       let height = 60;
-      const documentRef = ref(document);
       const onScroll = () => {
         height = parseInt(
           getComputedStyle(wrapper.value).getPropertyValue(
@@ -95,8 +94,10 @@ export default {
         }
         displayClass.value = "show";
       };
-      const activate = useScroll(documentRef, onScroll);
+
       onMounted(() => {
+        const documentRef = ref(document);
+        const activate = useScroll(documentRef, onScroll);
         activate.value = true;
         onScroll();
         transitionClass.value = "";

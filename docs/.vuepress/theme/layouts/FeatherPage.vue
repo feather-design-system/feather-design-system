@@ -1,9 +1,5 @@
 <template>
-  <FeatherAppLayout
-    class="feather-styles"
-    :class="{ homepage: isHomepage }"
-    content-layout="full"
-  >
+  <FeatherAppLayout class="feather-styles" content-layout="full">
     <template v-slot:header>
       <FeatherAppBar
         class="header-with-search"
@@ -76,12 +72,7 @@ export default {
       iconCaret: KeyboardArrowDown,
       LogoFull: FeatherLogoFull,
       Logo: FeatherLogoMotif,
-      isHomepage: false,
     };
-  },
-  mounted() {
-    const routerHash = decodeURIComponent(this.$route.path);
-    this.isHomepage = routerHash.toLowerCase() === "/";
   },
   components: {
     PageThemeChange,
@@ -219,8 +210,19 @@ export default {
     }
   }
 }
+//need this for SSR to hide the menu by default render when small enough
+@include media-query-below(xl) {
+  .feather-styles :deep(.app-rail) {
+    .app-rail-content {
+      position: fixed;
+      left: 0;
+      top: 0;
+      z-index: var($zindex-modal);
+      transform: translateX(-100%);
+    }
+  }
+}
 </style>
 <style lang="scss">
 @import "../styles/global";
-@import "../styles/homepage";
 </style>

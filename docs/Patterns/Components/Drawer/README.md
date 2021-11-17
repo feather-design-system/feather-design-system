@@ -9,8 +9,6 @@ lang: en-US
 
 ## Component
 
-<ComponentCard component="FeatherDrawer" package="Drawer" />
-
 <hr />
 
 ## Anatomy

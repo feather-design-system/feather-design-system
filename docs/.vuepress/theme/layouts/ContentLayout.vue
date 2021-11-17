@@ -33,7 +33,7 @@
 import FeatherPage from "./FeatherPage";
 import Sidebar from "../components/Sidebar.vue";
 import { useScroll } from "@featherds/composables/events/Scroll";
-import { ref, watch } from "vue";
+import { ref, watch, onMounted } from "vue";
 export default {
   setup() {
     const toc = ref();
@@ -45,8 +45,11 @@ export default {
       fixed.value = scrollPos >= tocTop;
     };
 
-    const activate = useScroll(ref(document), onScroll);
-    activate.value = true;
+    onMounted(() => {
+      const activate = useScroll(ref(document), onScroll);
+      activate.value = true;
+    });
+
     watch(toc, (nv) => {
       tocTop = nv.getBoundingClientRect().top - 60;
     });

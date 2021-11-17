@@ -14,7 +14,7 @@ const useCloseOnEsc = (visibleRef) => {
     (v) => {
       if (v) {
         document.addEventListener("keydown", handleEsc);
-      } else {
+      } else if (typeof document !== "undefined") {
         document.removeEventListener("keydown", handleEsc);
       }
     },

@@ -9,8 +9,6 @@ Chips are compact components that represent input, attribute, or action. Chips a
 
 ## Component
 
-<ComponentCard component="FeatherChip" package="Chips" />
-
 ## Chips Principles
 
 - **Compact** - compact components that represent discrete information.

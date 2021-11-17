@@ -128,7 +128,7 @@ ${feather.map(getIconModuleDefinition).join(`
   await Promise.all([
     generateFeatherJSFiles(),
     moveFeatherIconsToDocs(featherIcons),
-    fs.outputJson(`./docs/.vuepress/components/Icon/icons.json`, {
+    fs.outputJson(`./docs/.vuepress/examples/Icon/icons.json`, {
       feather: group(featherIcons),
     }),
     generateTypeDefinitions(featherIcons),

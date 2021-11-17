@@ -1,4 +1,4 @@
-import { watch, onBeforeUnmount, ref } from "vue";
+import { watch, onBeforeUnmount, ref, onMounted } from "vue";
 const useResize = (listener) => {
   const active = ref(false);
   let ticking = false;
@@ -18,23 +18,25 @@ const useResize = (listener) => {
       window.removeEventListener("resize", requestTick);
     }
   };
-  const unwatch = watch(
-    active,
-    (enabled) => {
-      if (window && enabled) {
-        window.addEventListener("resize", requestTick);
-      } else {
-        removeEvents();
+  onMounted(() => {
+    const unwatch = watch(
+      active,
+      (enabled) => {
+        if (window && enabled) {
+          window.addEventListener("resize", requestTick);
+        } else {
+          removeEvents();
+        }
+      },
+      {
+        immediate: true,
       }
-    },
-    {
-      immediate: true,
-    }
-  );
+    );
 
-  onBeforeUnmount(() => {
-    unwatch();
-    removeEvents();
+    onBeforeUnmount(() => {
+      unwatch();
+      removeEvents();
+    });
   });
 
   return active;

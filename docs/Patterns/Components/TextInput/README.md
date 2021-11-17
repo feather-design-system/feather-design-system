@@ -9,8 +9,6 @@ Text fields provide a way for users to enter and edit text. Text fields can exis
 
 ## Components
 
-<ComponentCard component="FeatherInput" package="Input" />
-
 ## Text Field Design
 
 As of now, there is only one type of text field: The outlined text field

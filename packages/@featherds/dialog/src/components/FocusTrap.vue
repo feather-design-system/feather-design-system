@@ -19,10 +19,16 @@ export default {
     return {
       lastFocus: undefined,
       ignoreUtilFocusChanges: false,
+      rendered: false,
     };
   },
+  computed: {
+    ready() {
+      return this.rendered && this.enable;
+    },
+  },
   watch: {
-    enable: {
+    ready: {
       immediate: true,
       handler: "enableTrap",
     },
@@ -58,7 +64,8 @@ export default {
       }
     },
     removeFocusTrapEvents() {
-      document.removeEventListener("focus", this.trapFocus, true);
+      if (typeof document !== "undefined")
+        document.removeEventListener("focus", this.trapFocus, true);
     },
     focusFirstDescendant(element) {
       for (var i = 0; i < element.childNodes.length; i++) {
@@ -129,6 +136,9 @@ export default {
           return false;
       }
     },
+  },
+  mounted() {
+    this.rendered = true;
   },
   beforeUnmount() {
     this.removeFocusTrapEvents();

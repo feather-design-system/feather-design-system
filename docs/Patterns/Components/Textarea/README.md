@@ -9,8 +9,6 @@ A text field area is meant to provide users with a suitable field size to accomo
 
 ## Components
 
-<ComponentCard component="FeatherTextarea" package="textarea" />
-
 ## Anatomy
 
 The text field area consists of all the same general elements that the standard text field contains. The primary difference between the two is the omission of any icons inside the text field container.

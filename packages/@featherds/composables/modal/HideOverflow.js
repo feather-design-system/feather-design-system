@@ -1,4 +1,4 @@
-import { watch, onBeforeUnmount, nextTick } from "vue";
+import { watch, onBeforeUnmount, nextTick, onMounted } from "vue";
 
 const hideBodyOverflow = (e) => {
   const originalOverflow = e.style.overflow;
@@ -13,22 +13,27 @@ const resetBodyOverflow = (originalOverflow, element) => {
 };
 const useHideBodyOverflow = (visibleRef) => {
   let originalOverflow;
-  const element = document.body;
+  const element =
+    typeof document !== "undefined"
+      ? document.body
+      : { style: { overflow: "hidden" } };
 
   onBeforeUnmount(() => resetBodyOverflow(originalOverflow, element));
-  watch(
-    visibleRef,
-    (v) => {
-      if (v) {
-        nextTick(() => {
-          originalOverflow = hideBodyOverflow(element);
-        });
-      } else {
-        //hidden
-        resetBodyOverflow(originalOverflow, element);
-      }
-    },
-    { immediate: true }
+  onMounted(() =>
+    watch(
+      visibleRef,
+      (v) => {
+        if (v) {
+          nextTick(() => {
+            originalOverflow = hideBodyOverflow(element);
+          });
+        } else {
+          //hidden
+          resetBodyOverflow(originalOverflow, element);
+        }
+      },
+      { immediate: true }
+    )
   );
 };
 

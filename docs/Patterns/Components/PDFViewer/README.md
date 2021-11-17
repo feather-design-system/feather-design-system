@@ -9,8 +9,6 @@ The Feather PDF viewer is built to provide application-specific funtionality aro
 
 ## Components
 
-<ComponentCard component="FeatherPdfViewer" package="PdfViewer" />
-
 ## Anatomy
 
 The Feather PDF viewer acts like a “frame” around the browser PDF viewer. The primary element is a large horizontal bar that spans the full width of the screen and sits above the browser PDF viewer interface. This bar is designed to look similar to the app bar component - helping reinforce the visual language of the underlying application.

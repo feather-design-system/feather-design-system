@@ -9,9 +9,6 @@ Tables display a matrix of data organized into rows and columns. Users can quick
 
 ## Components
 
-<ComponentCard component="FeatherTable" package="Table" />
-<ComponentCard component="FeatherSortHeader" package="Table" />
-
 ## Table Design
 
 Tables have been designed to elevate the data at all times. The purpose of the table is to organize data so users may gain insights around the data by making comparisons. Tables should be organized by default, sorted or alphabetized. Tables should ensure that any interaction is made clear to the user, either using hover states or color. Tables should be easy to user and easy to interpret.

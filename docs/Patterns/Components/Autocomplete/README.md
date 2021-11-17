@@ -9,8 +9,6 @@ The Autocomplete pattern will help users to search for, select and provide valid
 
 ## Components
 
-<ComponentCard component="FeatherAutocomplete" package="autocomplete" />
-
 ## Autocomplete Design
 
 Autocomplete consists of three components: a text input field, a drop-down select menu and chips. The hover and focus states for an autocomplete pattern are inherited from the text input field component. The hover, select and focus states for the menu are inherited from the drop-down select menu and the chip hover and focus states apply as well.

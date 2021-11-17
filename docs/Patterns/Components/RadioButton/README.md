@@ -9,9 +9,6 @@ Radio buttons allow users to choose one option from a list of mutually exclusive
 
 ## Components
 
-<ComponentCard component="FeatherRadio" package="Radio" />
-<ComponentCard component="FeatherRadioGroup" package="Radio" />
-
 ## Radio Button Design
 
 The radio button design has been kept minimal, while the animation during interaction provides another level of visual interest. As the radio button is selected, the inner-circle grows from the center and the radio button may inherit the product color. Radio buttons are closely aligned with Google’s Material Design standards.
