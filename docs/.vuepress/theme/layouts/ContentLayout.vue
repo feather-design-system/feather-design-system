@@ -93,7 +93,7 @@ export default {
 @import "@featherds/styles/mixins/typography";
 @import "@featherds/styles/mixins/responsive";
 
-$contentWidth: 760px - 48px;
+$contentWidth: 760px;
 .content-container {
   width: $contentWidth;
 }
@@ -138,11 +138,11 @@ $gutterwidth: 150px;
 div.toc {
   padding-left: 16px;
   position: absolute;
-  left: calc(50% + 200px);
+  left: calc(50% + 248px);
   &.fixed {
     position: fixed;
     top: 84px;
-    left: calc(50% + 331px);
+    left: calc(50% + 379px);
   }
 }
 
