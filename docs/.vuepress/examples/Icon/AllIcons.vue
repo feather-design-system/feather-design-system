@@ -48,7 +48,7 @@ export default {
   methods: {
     getFeatherSrc(icon) {
       return this.$withBase(
-        `/assets/Packages/icon/${icon.group}Feather${icon.name}.svg`
+        `/assets/Packages/Icon/${icon.group}Feather${icon.name}.svg`
       );
     },
   },

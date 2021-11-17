@@ -80,7 +80,7 @@ async function generateFeatherJSFiles() {
 const moveIconsToDocs = (srcRoot, suffix) => async (icons) => {
   const paths = icons.map((icon) => ({
     src: `${srcRoot}/${icon.group}/${icon.name}.svg`,
-    dest: `./docs/.vuepress/public/assets/Packages/icon/${icon.group}${suffix}${icon.name}.svg`,
+    dest: `./docs/.vuepress/public/assets/Packages/Icon/${icon.group}${suffix}${icon.name}.svg`,
   }));
   console.log("Moving " + suffix + " Icons to doc assets");
   return Promise.all(
