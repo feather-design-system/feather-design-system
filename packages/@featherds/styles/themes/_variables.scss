@@ -250,8 +250,9 @@ $zindex-tooltip: prefix(zindex-tooltip);
 $xl-gutter: 24px;
 $l-gutter: 24px;
 $m-gutter: 24px;
-$s-gutter: 16px;
-$xs-gutter: 16px;
+$s-gutter: 24px;
+$xs-gutter: 24px;
+$xxs-gutter: 16px;
 
 $grid: (
   xl: (
@@ -268,7 +269,7 @@ $grid: (
   m: (
     min: 1065px,
     max: 1260px,
-    col: 8,
+    col: 12,
     gutter: $m-gutter,
   ),
   s: (
@@ -280,13 +281,13 @@ $grid: (
   xs: (
     min: 521px,
     max: 760px,
-    col: 2,
+    col: 8,
     gutter: $xs-gutter,
   ),
   xxs: (
     max: 520px,
-    col: 2,
-    gutter: $xs-gutter,
+    col: 4,
+    gutter: $xxs-gutter,
   ),
 );
 
