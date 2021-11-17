@@ -1,3 +1,20 @@
+## [0.2.12](https://github.com/feather-design-system/feather-design-system/compare/v0.2.11...v0.2.12) (2021-11-17)
+
+
+### Bug Fixes
+
+* **date-input:** delete/backspace now working ([ed2916d](https://github.com/feather-design-system/feather-design-system/commit/ed2916d0315837764e5d32fa1a727cd3fd5b6ea8))
+* github actions Azure CLI versions stripped to avoid conflicts in future runs ([e4173d2](https://github.com/feather-design-system/feather-design-system/commit/e4173d22961133661bc6acc65abbd21be80afd63))
+* **radio:** should update when modelValue is updated ([cd76b09](https://github.com/feather-design-system/feather-design-system/commit/cd76b09cf35d20c6c25977f6912e74197533bf4a))
+
+
+### Features
+
+* **icons:** new icon set added ([3c6f619](https://github.com/feather-design-system/feather-design-system/commit/3c6f619beb18b55142323d7504214a8121c16f57))
+* **list:** adding switch option ([f39b173](https://github.com/feather-design-system/feather-design-system/commit/f39b1736296d94ec2d68fdadde3eb36a458d9587))
+
+
+
 ## [0.2.11](https://github.com/feather-design-system/feather-design-system/compare/v0.2.10...v0.2.11) (2021-10-19)
 
 
