@@ -24,7 +24,7 @@ export default {
   },
   computed: {
     active() {
-      const routerHash = decodeURIComponent(this.$route.path);
+      const routerHash = decodeURIComponent(this.$route.href);
       return routerHash.toLowerCase().indexOf(this.url.toLowerCase()) != -1;
     },
   },
