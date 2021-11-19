@@ -11,57 +11,51 @@ layout: ComponentLayout
 
 <Tabs-Examples />
 
-## FeatherTabContainer
+## TabContainer
 
-`FeatherTabContainer` is a container that groups `tabs` and `tab panels`. It binds them together so that clicking a specific tab will reveal the requisite container
+`TabContainer` is a container that groups `tabs` and `tab panels`. It binds them together so that clicking a specific tab will reveal the requisite container
 
 ### Props
 
 | Name       | Description                                            | Type      | Required | Default |
 | ---------- | ------------------------------------------------------ | --------- | -------- | ------- |
-| modelValue | Can be set if you want to open a specific tab          | `Number`  | `false`  | `0`     |
-| vertical   | Toggles vertical rather than default horizontal tabs   | `Boolean` | `False`  | `False` |
+| modelValue | can be set if you want to open a specific tab          | `Number`  | `false`  | `0`     |
+| vertical   | toggles vertical rather than default horizontal tabs   | `Boolean` | `False`  | `False` |
 
 ### Events
 
-| Name              | Description                                                              | Properties |
-| ----------------- | ------------------------------------------------------------------------ | ---------- |
-| update:modelValue | Emitted when the tab has changed - payload is the new selected tab index | `index`    |
+- `update:modelValue` - emitted when the tab has changed - payload is the new selected tab index
 
 ### Slots
 
-| Name    | Description                           |
-| ------- | ------------------------------------- |
-| tabs    | Slot for the FeatherTab elements      |
-| default | Slot for the FeatherTabPanel elements |
+- `tabs` - slot for the Tab elements
+- `default` - slot for the TabPanel elements
 
-## FeatherTab
+## Tab
 
-`FeatherTab` faciliates tab interactions in various containers and is re-used for drawer tabs and others. Tabs are hosted in Tab Containers.
+`Tab` faciliates Tab interactions in various containers and is re-used for drawer tabs and others. Tabs are hosted in Tab Containers.
 
 ### Props
 
-Note that normally, all these props are automatically populated when used inside of a `FeatherTabContainer`. You normally have no need to give these values unless you want to override them.
+Note that normally, all these props are automatically populated when used inside of a `TabContainer`. You normally have no need to give these values unless you want to override them.
 
 | Name     | Description                                   | Type      | Required | Default |
 | -------- | --------------------------------------------- | --------- | -------- | ------- |
 | id       | ID of the element                             | `String`  | `false`  | -       |
 | controls | ID of the element this control is influencing | `String`  | `false`  | -       |
-| disabled | Toggles the disabled state for this tab       | `Boolean` | `false`  | `False` |
+| disabled | toggles the disabled state for this tab       | `Boolean` | `false`  | `False` |
 
 ### Slots
 
-| Name    | Description                           |
-| ------- | ------------------------------------- |
-| default | text displayed inside the tab element |
+- `default` - text displayed inside the tab element
 
-## FeatherTabPanel
+## TabPanel
 
-`FeatherTabPanel` is a container for the content of a tab - it is implicitly paired with a tab within a `tab container` element
+`TabPanel` is a container for the content of a tab - it is implicitly paired with a tab within a `TabContainer` element
 
 ### Props
 
-Note that normally, all these props are automatically populated when used inside of a `FeatherTabContainer`. You normally have no need to give these values unless you want to override them.
+Note that normally, all these props are automatically populated when used inside of a `TabContainer`. You normally have no need to give these values unless you want to override them.
 
 | Name | Description                                 | Type     | Required | Default |
 | ---- | ------------------------------------------- | -------- | -------- | ------- |
@@ -70,6 +64,4 @@ Note that normally, all these props are automatically populated when used inside
 
 ### Slots
 
-| Name    | Description                           |
-| ------- | ------------------------------------- |
-| default | The content displayed for a given tab |
+- `default` - the content displayed for a given tab

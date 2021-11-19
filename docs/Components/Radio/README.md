@@ -9,15 +9,15 @@ layout: ComponentLayout
 
 ## Design
 
-The radio button design has been kept minimal, while the animation during interaction provides another level of visual interest. As the radio button is selected, the inner-circle grows from the center and the radio button may inherit the product color. Radio buttons are closely aligned with Google’s Material Design standards.
+The Radio button design has been kept minimal, while the animation during interaction provides another level of visual interest. As the Radio button is selected, the inner-circle grows from the center and the radio button may inherit the product color. Radio buttons are closely aligned with Google’s Material Design standards.
 
 ## Example
 
 <Radio-Examples />
 
-## FeatherRadio
+## Radio
 
-Radio buttons should be used in a [FeatherRadioGroup](#FeatherRadioGroup). The radio group will provide a lot more functionality that should be used in a form. FeatherRadio is simply a radio button without any functionality that a form will need.
+Radio buttons should be used in a [RadioGroup](#RadioGroup). The Radio Group will provide a lot more functionality that should be used in a form. Radio is simply a radio button without any functionality that a form will need.
 
 ### Props
 
@@ -28,10 +28,8 @@ Radio buttons should be used in a [FeatherRadioGroup](#FeatherRadioGroup). The r
 
 ### Events
 
-| Name    | Description                             | Properties |
-| ------- | --------------------------------------- | ---------- |
-| checked | emitted with the radio buttons value    | `Any`      |
-| blur    | emitted when blur occurs                | `{Event}`  |
+- `checked` - emitted with the radio buttons value
+- `blur` - emitted when blur occurs
 
 ### Slots
 
@@ -41,8 +39,8 @@ Radio buttons should be used in a [FeatherRadioGroup](#FeatherRadioGroup). The r
 
 ### data-ref-ids
 
-- `feather-radio` radio element that responds to click and key presses
-- `feather-radio-label` label element
+- `feather-radio` - radio element that responds to click and key presses
+- `feather-radio-label` - label element
 
 ## FeatherRadioGroup
 
@@ -50,28 +48,24 @@ Radio buttons should be used in a [FeatherRadioGroup](#FeatherRadioGroup). The r
 
 | Name       | Description                                           | Type      | Required | Default |
 | ---------- | ----------------------------------------------------- | --------- | -------- | ------- |
-| label      | Label for the radio group                             | `String`  | `true`   | -       |
-| modelValue | Current value selected by the radio group             | `Any`     | `false`  | -       |
-| hint       | Hint text to be displayed below the group             | `String`  | `false`  | -       |
-| error      | Error text to be displayed below the group            | `String`  | `false`  | -       |
-| vertical   | When true will put radio buttons in a vertical layout | `Boolean` | `false`  | `false` |
+| label      | label for the radio group                             | `String`  | `true`   | -       |
+| modelValue | current value selected by the radio group             | `Any`     | `false`  | -       |
+| hint       | hint text to be displayed below the group             | `String`  | `false`  | -       |
+| error      | error text to be displayed below the group            | `String`  | `false`  | -       |
+| vertical   | when true will put radio buttons in a vertical layout | `Boolean` | `false`  | `false` |
 
 ### Events
 
-| Name              | Description                                             | Properties |
-| ----------------- | ------------------------------------------------------- | ---------- |
-| update:modelValue | triggered with the selected radio buttons value         | `Any`      |
-| blur              | triggers when radio button loses focus inside the group | `{Event}`  |
+- `update:modelValue` - triggered with the selected radio buttons value
+- `blur` - triggers when radio button loses focus inside the group
 
 ### Slots
 
-| Name    | Description                                        |
-| ------- | -------------------------------------------------- |
-| default | should be FeatherRadioButtons to be used in group  |
+- `default` - Radios to be used in group
 
 ### data-ref-ids
 
-- `feather-radio-group` group element that responds to key presses
+- `feather-radio-group` - group element that responds to key presses
 
 ### Attributes
 

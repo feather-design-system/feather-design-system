@@ -1,7 +1,7 @@
 ---
 title: "Getting Started"
 pre: "Welcome"
-description: "Help and guidance to get you started with FeatherDS."
+description: "Help and guidance to get you started with Feather DS."
 lang: en-US
 tags: ["Getting Started", "component"]
 layout: ComponentLayout
@@ -9,11 +9,11 @@ layout: ComponentLayout
 
 ## Intro
 
-FeatherDS components are built using [Vue3](https://v3.vuejs.org/). If you haven't already set up your Vue3 project we recommend either using [Vite](https://vitejs.dev/guide/#overview) or [Vue CLI v5](https://cli.vuejs.org/guide/) to get your project set up and running. FeatherDS requires the use of a Javascript Bundler and cannot be consumed directly in the browser.
+Feather DS components are built using [Vue3](https://v3.vuejs.org/). If you haven't already set up your Vue3 project we recommend either using [Vite](https://vitejs.dev/guide/#overview) or [Vue CLI v5](https://cli.vuejs.org/guide/) to get your project set up and running. FeatherDS requires the use of a Javascript Bundler and cannot be consumed directly in the browser.
 
 ## Prerequisites
 
-Before you begin using FeatherDS you will need to have the following setup on your system;
+Before you begin using Feather DS, you will need to have the following setup on your system;
 
 - [Node v14.15.0 or newer](https://nodejs.org/en/)
 - [NPM v7](https://docs.npmjs.com/downloading-and-installing-node-js-and-npm)
@@ -51,7 +51,7 @@ import "@featherds/styles/themes/open-light.css";
 createApp(App).mount("#app");
 ```
 
-Once you have the imports setup you will need to add the `.feather-styles` class to the root node of your application. If you are using FeatherDS in a legacy application and want to limit CSS bleed, put this class on the parent node of the DOM element containing the FeatherDS components.
+Once you have the imports setup you will need to add the `.feather-styles` class to the root node of your application. If you are using Feather DS in a legacy application and want to limit CSS bleed, put this class on the parent node of the DOM element containing the Feather DS components.
 
 ## Using Components
 

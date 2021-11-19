@@ -8,7 +8,7 @@ layout: ComponentLayout
 
 ## Design
 
-Elevation is a method of establishing visual hierarchy in a layout using the perception of depth. The Feather Design System utilizes Google Material Design across components to show relationships based on the shadows certain objects cast on other objects and their environment.
+Elevation is a method of establishing visual hierarchy in a layout using the perception of depth. Feather DS utilizes Google Material Design across components to show relationships based on the shadows certain objects cast on other objects and their environment.
 
 ## Examples
 

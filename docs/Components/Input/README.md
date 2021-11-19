@@ -17,33 +17,31 @@ The modern design trend with text fields is meant to promote minimalism. It’s 
 
 <Input-Examples />
 
-## FeatherInput
+## Input
 
 ### Props
 
 | Name       | Description                                                                                       | Type      | Required | Default      |
 | ---------- | ------------------------------------------------------------------------------------------------- | --------- | -------- | ------------ |
-| modelValue | Value to be placed in the input                                                                   | `String`  | `false`  | -            |
-| label      | Text label for the input                                                                          | `String`  | `true`   | -            |
-| hint       | Hint text to be displayed below the input                                                         | `String`  | `false`  | -            |
-| error      | Error text to be displayed below the input                                                        | `String`  | `false`  | -            |
-| clear      | Label for the clear link that will appear at the end of the input when it has a value             | `String`  | `false`  | `""`         |
-| type       | Type of underlying input                                                                          | `String`  | `false`  | `"text"`     |
-| background | Sets the label background color to `$background`. Use this if control is on a background surface  | `Boolean` | `false`  | `false`      |
-| disabled   | Puts the input into a disabled state                                                              | `Boolean` | `false`  | `false`      |
-| maxlength  | Maximum amount of characters this input will accept                                               | `Number`  | `false`  | 0 - no limit |
-| hideLabel  | Hides the label for the input in scenarios like tables where it would get in the way              | `Boolean` | `false`  | -            |
+| modelValue | value to be placed in the Input                                                                   | `String`  | `false`  | -            |
+| label      | text label for the Input                                                                          | `String`  | `true`   | -            |
+| hint       | hint text to be displayed below the Input                                                         | `String`  | `false`  | -            |
+| error      | error text to be displayed below the Input                                                        | `String`  | `false`  | -            |
+| clear      | label for the clear link that will appear at the end of the Input when it has a value             | `String`  | `false`  | `""`         |
+| type       | type of underlying Input                                                                          | `String`  | `false`  | `"text"`     |
+| background | sets the label background color to `$background`. Use this if control is on a background surface  | `Boolean` | `false`  | `false`      |
+| disabled   | puts the Input into a disabled state                                                              | `Boolean` | `false`  | `false`      |
+| maxlength  | maximum amount of characters this Input will accept                                               | `Number`  | `false`  | 0 - no limit |
+| hideLabel  | hides the label for the Input in scenarios like tables where it would get in the way              | `Boolean` | `false`  | -            |
 
 ### Events
 
-| Name                | Description                                                              | Properties |
-| ------------------- | ------------------------------------------------------------------------ | ---------- |
-| `update:modelValue` | Emitted when the input value changes - payload is the new text           | `content`  |
+- `update:modelValue` - emitted when the Input value changes, payload is the new text
 
 ### Slots
 
-- `pre` content will appear before the input but inside the border. Should only be used for icons.
-- `post` content will appear after the input but inside the border. Should only be used for icons.
+- `pre` - content will appear before the Input but inside the border. Should only be used for icons
+- `post` - content will appear after the Input but inside the border. Should only be used for icons
 
 ### data-ref-ids
 

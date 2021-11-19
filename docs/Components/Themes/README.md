@@ -24,14 +24,14 @@ Each theme file provides a set of CSS Variables for the `:root` element in the H
 
 ## Usage
 
-To get started using our theme you will want to import `@featherds/styles` directly. After that you can import the `css` file that contains the theme you want to use.
+To get started using our themes you will want to import `@featherds/styles` directly. After that you can import the `CSS` file that contains the theme you want to use.
 
 ```js
 import { createApp } from "vue";
 import App from "./App.vue";
 
 import "@featherds/styles";//loads base level typography and minor reset
-import "@featherds/styles/themes/open-light.css"; // load css theme directly
+import "@featherds/styles/themes/open-light.css"; // load CSS theme directly
 
 createApp(App)
   .mount("#app");
