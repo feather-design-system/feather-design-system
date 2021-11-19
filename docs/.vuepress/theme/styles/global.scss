@@ -117,6 +117,9 @@ body {
     @include body-large();
     margin-bottom: 24px;
   }
+  img {
+    margin-bottom: 24px;
+  }
 }
 
 //Do not show the # before each title

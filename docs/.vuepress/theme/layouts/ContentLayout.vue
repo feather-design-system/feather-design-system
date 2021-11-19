@@ -148,7 +148,7 @@ div.toc {
 
 @include media-query-below(xl) {
   div.toc.fixed {
-    left: calc(50% + 184px);
+    left: calc(50% + 248px);
   }
 }
 @include media-query-below(l) {

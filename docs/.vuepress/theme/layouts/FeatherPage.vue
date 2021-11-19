@@ -27,7 +27,7 @@
         </template>
         <template v-slot:center>
           <!-- Patterns -->
-          <AppBarLink title="Foundation" :url="$withBase('/Design/Foundation/')"
+          <AppBarLink title="Foundation" :url="$withBase('/Foundation/')"
             >Foundation</AppBarLink
           >
           <!-- Packages -->

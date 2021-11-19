@@ -65,6 +65,7 @@ a.pretty-card {
 
   img {
     display: block;
+    margin: 0;
   }
   div.card-inner {
     position: relative;

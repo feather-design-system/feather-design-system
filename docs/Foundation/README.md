@@ -1,9 +1,8 @@
 ---
 title: "Foundation"
 lang: en-US
-tags: ["Foundation", "design"]
+tags: ["Foundation", "Styles"]
 layout: DesignLayout
-
 ---
 
 # Placeholder
