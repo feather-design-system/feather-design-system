@@ -24,3 +24,7 @@ Text hierarchy helps to aid the user in understanding which information to focus
 ## Line Length
 
 Wide lines of text can be difficult to read and can hinder user’s focus. In order to maintain readability, we recommend line lengths between 60 and 90 characters.
+
+In scenarios where design needs require shorter character lengths, we strongly recommend reassessing content needs and attempting to condense text to a single statement.
+
+<img :src="$withBase('/assets/foundation/styles/LineLength.png')" alt="optimal line lengths for accessibility" />
