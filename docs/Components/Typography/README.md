@@ -7,7 +7,7 @@ tags: ["Typography", "component"]
 layout: ComponentLayout
 ---
 
-Typography styles are applied to some [elements](#elements) by default when including `@featherds-styles`. All typography styles are exposed through `SCSS` mixins and should be how all typography styles are consumed.
+Typography styles are applied to some [elements](#elements) by default when including `@featherds/styles`. All typography styles are exposed through `SCSS` mixins and should be how all typography styles are consumed.
 
 ::: tip Recommendation
 Use mixins where possible. They allow you to style the element with the correct typography without being constrained to a given element.

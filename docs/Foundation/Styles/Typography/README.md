@@ -28,3 +28,7 @@ Wide lines of text can be difficult to read and can hinder user’s focus. In or
 In scenarios where design needs require shorter character lengths, we strongly recommend reassessing content needs and attempting to condense text to a single statement.
 
 <img :src="$withBase('/assets/foundation/styles/LineLength.png')" alt="optimal line lengths for accessibility" />
+
+## Package
+
+All typography styles are available in the `@featherds/styles` package. See the [Typography Guide](/Components/Typography/) for live demos and code examples.
