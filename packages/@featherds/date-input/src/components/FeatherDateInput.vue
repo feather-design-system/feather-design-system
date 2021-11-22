@@ -187,12 +187,16 @@ export default {
       { immediate: true }
     );
 
-    watch([day, month, year], ([_day, _month, _year]) => {
-      if (_day !== undefined && _month !== undefined && _year !== undefined) {
-        context.emit("update:modelValue", new Date(_year, _month - 1, _day));
-      }
-      showClear.value = !!(_day || _month || _year);
-    });
+    watch(
+      [day, month, year],
+      ([_day, _month, _year]) => {
+        if (_day !== undefined && _month !== undefined && _year !== undefined) {
+          context.emit("update:modelValue", new Date(_year, _month - 1, _day));
+        }
+        showClear.value = !!(_day || _month || _year);
+      },
+      { immediate: true }
+    );
 
     const handleCalendarSelection = (_value) => {
       context.emit("update:modelValue", _value);
