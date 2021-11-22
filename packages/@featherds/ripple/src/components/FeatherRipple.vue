@@ -21,7 +21,7 @@ export default {
     },
   },
   methods: {
-    onMousedown($event) {
+    onClick($event) {
       //reset on every click
       this.pressed = false;
       this.active = false;
@@ -89,7 +89,7 @@ export default {
     });
   },
   mounted() {
-    this.parent.addEventListener("mousedown", this.onMousedown);
+    this.parent.addEventListener("click", this.onClick);
     const parentStyles = window.getComputedStyle(this.parent);
     this.parent.style.overflow = "hidden";
     if (
@@ -102,7 +102,7 @@ export default {
     this.parent.style.position = "relative";
   },
   unmounted() {
-    this.parent.removeEventListener("mousedown", this.onMousedown);
+    this.parent.removeEventListener("click", this.onClick);
   },
 };
 </script>

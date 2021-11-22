@@ -135,6 +135,16 @@ describe("FeatherDateInput.vue", () => {
     });
     expect(wrapper.element).toMatchSnapshot();
   });
+  it("should show clear icon when there is a value", async () => {
+    const wrapper = getWrapper({
+      propsData: {
+        modelValue: new Date(2020, 1, 1),
+      },
+    });
+
+    //check show clear as to avoid GMT issues with snapshotting.
+    expect(wrapper.vm.showClear).toBe(true);
+  });
   it("should be accessible", async () => {
     id.getSafeId.mockRestore();
     const wrapper = mount(FeatherDateInput, {

@@ -8,6 +8,7 @@
     :aria-valuemax="max"
     :aria-valuenow="modelValue || 0"
     :aria-valuetext="modelValue || placeholder"
+    :aria-disabled="disabled"
     :class="{ disabled: disabled }"
     @keydown="handleKeyDown"
     @focus="handleFocus"
@@ -120,6 +121,9 @@ export default {
       }
     },
     handleKeyDown(e) {
+      if (this.disabled) {
+        return;
+      }
       const isModifiedKeyPress = (_ev) => {
         return _ev.shiftKey || _ev.ctrlKey || _ev.metaKey || _ev.altKey;
       };
