@@ -1,7 +1,7 @@
 ---
 title: "Back Button"
 pre: "@featherds/back-button"
-description: "This is a generic control that will allow the user to go back to a previous page. This is not intended to be a breadcrumb style of navigation, but simply provides a mechanism to return to a logical position within the transaction."
+description: "A generic button that allows the user to go back to a previous page."
 lang: en-US
 tags: ["BackButton", "Back-Button", "component"]
 layout: ComponentLayout
@@ -27,4 +27,4 @@ The Back Button has been designed to provide a persistent control for reverse na
 
 ### Slots
 
-- `default` text to display
+- `default` - text to display

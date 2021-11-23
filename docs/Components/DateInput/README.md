@@ -1,7 +1,7 @@
 ---
 title: "DateInput"
 pre: "@featherds/date-input"
-description: "Date inputs allow users to select a date from the past, present or future. These components are often found in form workflows where data entry is the primary user objective."
+description: "Date Inputs allow users to select a date from the past, present or future."
 lang: en-US
 tags: ["DateInput", "component"]
 layout: ComponentLayout
@@ -13,13 +13,13 @@ layout: ComponentLayout
 
 <DateInput-Examples />
 
-## FeatherDateInput
+## DateInput
 
 ### Props
 
 | Name          | Description                                                                                                                           | Type      | Required | Default                               |
 | ------------- | ------------------------------------------------------------------------------------------------------------------------------------- | --------- | -------- | ------------------------------------- |
-| modelValue    | Value of the input                                                                                                                    | `Date`    | `false`  | -                                     |
+| modelValue    | value of the input                                                                                                                    | `Date`    | `false`  | -                                     |
 | minYear       | minimum year to show                                                                                                                  | `Number`  | `false`  | `1900`                                |
 | maxYear       | maximum year to show                                                                                                                  | `Number`  | `false`  | `2030`                                |
 | mondayFirst   | should monday be first day of the week.                                                                                               | `Boolean` | `false`  | -                                     |
@@ -28,7 +28,7 @@ layout: ComponentLayout
 
 ### Labels
 
-Text labels for autocomplete can be customized via the `labels` property. The default `labels` values are:
+Text labels for Date Input can be customized via the `labels` property. The default `labels` values are:
 
 ```js
 {
@@ -48,22 +48,22 @@ Text labels for autocomplete can be customized via the `labels` property. The de
 
 ### Disabled Dates
 
-| Name        | Description                                                                                                                                                         | Type                     |
-| ----------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------------------------ |
-| to          | will disable all dates up to this value.                                                                                                                            | `Date`                   |
-| from        | will disable all dates from this value.                                                                                                                             | `Date`                   |
-| ranges      | an array of objects. Each object must have a `to` and `from` property. Will disable `from` date `to` the next. It is used to disable inclusive values of the range. | `{from:Date, to:Date}[]` |
-| days        | will disable days of the week based on numbers in the array. `0-6`.                                                                                                 | `number[]`               |
-| daysOfMonth | will disable dates in a month based on numbers in the array. `1-31`.                                                                                                | `number[]`               |
+| Name        | Description                                                                                                                                                        | Type                     |
+| ----------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------ |
+| to          | will disable all dates up to this value                                                                                                                            | `Date`                   |
+| from        | will disable all dates from this value                                                                                                                             | `Date`                   |
+| ranges      | an array of objects. Each object must have a `to` and `from` property. Will disable `from` date `to` the next. It is used to disable inclusive values of the range | `{from:Date, to:Date}[]` |
+| days        | will disable days of the week based on numbers in the array. `0-6`                                                                                                 | `number[]`               |
+| daysOfMonth | will disable dates in a month based on numbers in the array. `1-31`                                                                                                | `number[]`               |
 
 ### Events
 
-- `update:modelValue` - triggered with new value.
-- `blur` - triggered when control loses focus.
+- `update:modelValue` - triggered with new value
+- `blur` - triggered when control loses focus
 
 ### Slots
 
-- `pre` - define an icon that will appear before the input.
+- `pre` - define an icon that will appear before the input
 
 ### data-ref-ids
 
@@ -80,11 +80,3 @@ Text labels for autocomplete can be customized via the `labels` property. The de
 ### Attributes
 
 Specifying an `class` or `data-ref-id` attribute will cause them to be applied to the components root containing `div`. All other attributes are inherited to the `input` were it makes sense. Some will be ignored as they will conflict with some of the attributes we need to use for accessibility.
-
-#### Class
-
-Use the `class` attribute to specify custom spacing needed for the element.
-
-#### data-ref-id
-
-Use the `data-ref-id` attribute when you need to access the element for E2E testing.

@@ -40,7 +40,7 @@ Checkboxes are used when a user must make a selection from one or more options i
 
 ### Slots
 
-- `default` -contents will be placed in a label for the Checkbox
+- `default` - contents will be placed in a label for the Checkbox
 
 ### data-ref-id
 

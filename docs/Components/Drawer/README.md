@@ -1,6 +1,7 @@
 ---
 title: "Drawer"
 pre: "@featherds/drawer"
+description: "An alternative pattern to Dialogs, Drawers allow displaying additional content or requests for information."
 lang: en-US
 tags: ["Drawer", "component"]
 layout: ComponentLayout
@@ -11,13 +12,13 @@ layout: ComponentLayout
 Simplifies the user interface by
 
 - providing navigation options
-- providing easy access to additional information related to the current action without having to leave the current page.
+- providing easy access to additional information related to the current action without having to leave the current page
 
 ## Examples
 
 <Drawer-Examples />
 
-## FeatherDrawer
+## Drawer
 
 ### Getting Started
 
@@ -25,21 +26,21 @@ You **must** configure the `labels` property to have a relevant title. See [Labe
 
 ### Props
 
-| Name       | Description                                                                                                                           | Type      | Required | Default                       |
-| ---------- | ------------------------------------------------------------------------------------------------------------------------------------- | --------- | -------- | ----------------------------- |
-| modelValue | use `v-model` to set modelValue property. This controls whether the drawer is visible or not.                                         | `Boolean` | -        | `false`                       |
-| width      | can have value `"auto"` or must end with a `px,%,em,vw`. Controls the width of the drawer.                                            | `String`  | -        | `"auto"`                      |
-| labels     | Object containing labels to be used by this component. Mainly used for i18n or customization of labels. See [Labels](#labels) example | `Object`  | `false`  | See [Labels](#labels) example |
-| left       | When true drawer will appear to the left of the window.                                                                               | `Boolean` | -        | `false`                       |
+| Name       | Description                                                                                                                             | Type      | Required | Default                       |
+| ---------- | --------------------------------------------------------------------------------------------------------------------------------------- | --------- | -------- | ----------------------------- |
+| modelValue | use `v-model` to set modelValue property. This controls whether the Drawer is visible or not                                            | `Boolean` | -        | `false`                       |
+| width      | can have value `"auto"` or must end with a `px,%,em,vw`. Controls the width of the Drawer                                               | `String`  | -        | `"auto"`                      |
+| labels     | `Object` containing labels to be used by this component. Mainly used for i18n or customization of labels. See [Labels](#labels) example | `Object`  | `false`  | See [Labels](#labels) example |
+| left       | When true Drawer will appear to the left of the window                                                                                  | `Boolean` | -        | `false`                       |
 
 ### Labels
 
-Text labels for autocomplete can be customized via the `labels` property. The default `labels` values are:
+Text labels for Drawer can be customized via the `labels` property. The default `labels` values are:
 
 ```js
 {
   title: "REQUIRED",
-  close: "Close Dialog"
+  close: "Close Drawer"
 }
 ```
 
@@ -47,21 +48,21 @@ Text labels for autocomplete can be customized via the `labels` property. The de
 
 ### Events
 
-- `update:modelValue` uses this to trigger update to `v-model`.
-- `shown` triggered after drawer has finished showing itself.
-- `hidden` triggered after drawer has finished hiding itself.
+- `update:modelValue` - uses this to trigger update to `v-model`
+- `shown` - triggered after Drawer has finished showing itself
+- `hidden` - triggered after Drawer has finished hiding itself
 
 ### Slots
 
-- `default` content that is displayed inside the drawer.
+- `default` - content that is displayed inside the Drawer
 
 ### data-ref-ids
 
-- `feather-drawer` main drawer div.
+- `feather-drawer` - main Drawer div
 
 ## DrawerTabContainer
 
-A wrapper component for encapsulating the content of drawers in tabs. This expects `DrawerTab` and `DrawerTabContent` components in the `tabs` and `default` slots respectively.
+A wrapper component for encapsulating the content of Drawers in tabs. This expects `DrawerTab` and `DrawerTabContent` components in the `tabs` and `default` slots respectively.
 
 ### Props
 
@@ -71,16 +72,12 @@ A wrapper component for encapsulating the content of drawers in tabs. This expec
 
 ### Events
 
-| Name              | Description                                                                   | Properties |
-| ----------------- | ----------------------------------------------------------------------------- | ---------- |
-| update:modelValue | emitted when a tab is selected. Is given the index of the newly selected tab. | `Number`   |
+- `update:modelValue` - emitted when a tab is selected. Is given the index of the newly selected tab
 
 ### Slots
 
-| Name    | Description                                                                                                                          | Content |
-| ------- | ------------------------------------------------------------------------------------------------------------------------------------ | ------- |
-| default | tab content should be placed here. i.e. `tab-content` elements. **ORDER IS IMPORTANT** it should match the tab order in `tabs` slot. | -       |
-| tabs    | tabs should be placed here. i.e. `TabMixin` elements. **ORDER IS IMPORTANT** it should match the tab order in `default` slot.        | -       |
+- `default` - tab content should be placed here. i.e. `tab-content` elements. **ORDER IS IMPORTANT** it should match the tab order in `tabs` slot
+- `tabs` - tabs should be placed here. i.e. `TabMixin` elements. **ORDER IS IMPORTANT** it should match the tab order in `default` slot
 
 ## DrawerTab
 
@@ -90,36 +87,32 @@ A tab component, designed to be used in the `tabs` slot of a `DrawerTabContainer
 
 | Name      | Description                             | Type      | Required   | Default     |
 | --------- | --------------------------------------- | --------- | ---------- | ----------- |
-| contentId | id of the content that the tab controls | `String`  | `false`    | -           |
-| tabId     | id tab                                  | `String`  | `false`    | -           |
+| contentId | ID of the content that the tab controls | `String`  | `false`    | -           |
+| tabId     | ID of the tab                           | `String`  | `false`    | -           |
 | disabled  | `true` when the tab is disabled         | `Boolean` | `false`    | `false`     |
 | label     | label for icon and slide out text.      | `String`  | `required` | `undefined` |
 
 ### Slots
 
-| Name    | Description                                             | Default Slot Content |
-| ------- | ------------------------------------------------------- | -------------------- |
-| default | content to be placed inside the tab. Typically an icon. | -                    |
+- `default` - content to be placed inside the tab, typically an [Icon](/components/icon)
 
 ## DrawerContent
 
-A wrapper for tab content, designed to be used in the `default` slot of a `DrawerTabContainer`. Takes a header title either through the `label` prop or through the `header` slot.
+A wrapper for Tab Content, designed to be used in the `default` slot of a `DrawerTabContainer`. Takes a header title either through the `label` prop or through the `header` slot.
 
 ### Props
 
 | Name      | Description                                                                                    | Type      | Required | Default |
 | --------- | ---------------------------------------------------------------------------------------------- | --------- | -------- | ------- |
-| header    | text that will be displayed as the header of the content aea unless the `header` slot is used. | `String`  | `false`  | -       |
+| header    | text that will be displayed as the header of the content aea unless the `header` slot is used  | `String`  | `false`  | -       |
 | contentId | id of the content that the tab controls                                                        | `String`  | `false`  | -       |
 | tabId     | id tab                                                                                         | `String`  | `false`  | -       |
 | disabled  | true when the tab is disabled                                                                  | `Boolean` | `false`  | `false` |
 
 ### Slots
 
-| Name    | Description                                                        | Content |
-| ------- | ------------------------------------------------------------------ | ------- |
-| default | slot gets loaded as the content of the tab. Underneath the header. | -       |
-| header  | slot gets loaded in the header area regardless of `header` prop.   | -       |
+- `default` - slot gets loaded as the content of the tab. Underneath the header
+- `header` - slot gets loaded in the header area regardless of `header` prop
 
 ## DrawerTabSeparator
 
