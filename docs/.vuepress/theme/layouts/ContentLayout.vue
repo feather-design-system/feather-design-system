@@ -95,7 +95,7 @@ export default {
 
 $contentWidth: 760px;
 .content-container {
-  width: $contentWidth;
+  max-width: $contentWidth;
 }
 @include media-query-below(s) {
   .content-container {

@@ -43,6 +43,10 @@ export default {
               name: "Typography",
               url: this.$withBase("/Foundation/Styles/Typography/"),
             },
+            {
+              name: "Elevation",
+              url: this.$withBase("/Foundation/Styles/Elevation/"),
+            },
           ],
         },
       ],
