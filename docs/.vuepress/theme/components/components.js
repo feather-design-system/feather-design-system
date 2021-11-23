@@ -89,7 +89,7 @@ export default [
   {
     name: "Mega Menu",
     url: "/Components/Megamenu/",
-    image: "/assets/components/Megamenu.png",
+    image: "/assets/components/MegaMenu.png",
   },
 
   {
