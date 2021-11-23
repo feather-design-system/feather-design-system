@@ -1,8 +1,13 @@
-// .vuepress/config.js
 const { path } = require("@vuepress/utils");
 module.exports = {
   layouts: path.resolve(__dirname, "./layouts"),
   plugins: [
+    [
+      path.resolve(__dirname, "../plugins/sitemap"),
+      {
+        hostname: "http://feather.nanthealth.com",
+      },
+    ],
     [
       "@vuepress/prismjs",
       {
