@@ -55,6 +55,7 @@ a.pretty-card {
   &:focus {
     @include elevation(4);
     cursor: pointer;
+    text-decoration: none;
   }
   &:last-child {
     margin-right: 0;
