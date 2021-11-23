@@ -1,3 +1,17 @@
+## [0.9.1](https://github.com/feather-design-system/feather-design-system/compare/v0.2.12...v0.9.1) (2021-11-23)
+
+
+### Bug Fixes
+
+* **ripple,date-input:** disabled date input behaves as expected, ripple allows fast clicks ([1cab2df](https://github.com/feather-design-system/feather-design-system/commit/1cab2dfd8002e931b8fc4ac6ee763fb9d4e44788))
+
+
+### Features
+
+* new docs, SSR, assorted fixes, new icons and much more! ([e33e206](https://github.com/feather-design-system/feather-design-system/commit/e33e206981367b2f4a811d339f3e7603395c0b89))
+
+
+
 ## [0.2.12](https://github.com/feather-design-system/feather-design-system/compare/v0.2.11...v0.2.12) (2021-11-17)
 
 
