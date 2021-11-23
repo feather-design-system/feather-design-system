@@ -46,52 +46,41 @@ Any time you are using a color you **MUST** use one of these variables.
 - `$shade-3`
 - `$shade-4`
 
-## Text Colors
+## On Backgrounds
 
-Any text should have color defined by one of these variables.
+We have a standard hierarchy of colors that should only be used on certain backgrounds. This restriction provides assurance that accessibility compliance will be achieved when using the variables.
 
 ### On Primary/Error/Success
+
+One of the following variables should be used for text color when on a background color of `$primary`, `$error` or `$success`:
 
 - `$primary-text-on-color`
 - `$secondary-text-on-color`
 - `$disabled-text-on-color`
+- `$border-on-color`
+- `$border-light-on-color`
 
-### On Surface/Background/Warning
+### On Surface/Background
+
+One of the following variables should be used for text color when on a background color of `$surface` or `$background`:
 
 - `$primary-text-on-surface`
 - `$secondary-text-on-surface`
 - `$disabled-text-on-surface`
-
-## Border Colors
-
-- `$border-on-color`
-- `$border-light-on-color`
 - `$border-on-surface`
 - `$border-light-on-surface`
+
+### On Warning
+
+One of the following variables should be used for text color when on a background color of `$warning`:
+
+- `$primary-text-on-warning`
+- `$secondary-text-on-warning`
+- `$disabled-text-on-warning`
 - `$border-on-warning`
 - `$border-light-on-warning`
 
-## States
-
-In general, you should not need to use these. They are opacity levels applied over a color/surface to show a different state.
-
-### On Color
-
-- `$state-opacity-hover-on-color`
-- `$state-opacity-pressed-on-color`
-- `$state-opacity-selected-on-color`
-- `$state-opacity-focus-on-color`
-- `$state-border-focus-on-color`
-- `$state-inner-border-color-focus-on-color`
-
-### On Surface
-
-- `$state-opacity-hover-on-surface`
-- `$state-opacity-pressed-on-surface`
-- `$state-opacity-selected-on-surface`
-- `$state-opacity-focus-on-surface`
-
-### Links
+## Links
 
 - `$clickable-normal`
 - `$clickable-selected`
@@ -118,32 +107,3 @@ Instead of using these variables directly, you should be using the mixins provid
 - `$zindex-modal`
 - `$zindex-popover`
 - `$zindex-tooltip`
-
-## Shadows
-
-Instead of using these variables directly you should be using the mixins provided to create elevation. See [Elevation](../Elevation/) for more details.
-
-- `$shadow-1`
-- `$shadow-2`
-- `$shadow-3`
-- `$shadow-4`
-- `$shadow-5`
-- `$shadow-6`
-- `$shadow-7`
-- `$shadow-8`
-- `$shadow-9`
-- `$shadow-10`
-- `$shadow-11`
-- `$shadow-12`
-- `$shadow-13`
-- `$shadow-14`
-- `$shadow-15`
-- `$shadow-16`
-- `$shadow-17`
-- `$shadow-18`
-- `$shadow-19`
-- `$shadow-20`
-- `$shadow-21`
-- `$shadow-22`
-- `$shadow-23`
-- `$shadow-24`

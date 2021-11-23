@@ -13,26 +13,6 @@ Typography styles are applied to some [elements](#elements) by default when incl
 Use mixins where possible. They allow you to style the element with the correct typography without being constrained to a given element.
 :::
 
-## Elements
-
-Feather styles some HTML elements by default. Typography styles are applied to elements directly when you include `@featherds/styles` and add the `.feather-styles` class to a parent element.
-
-```scss
-@import "@featherds/styles";
-```
-
-This import will also style the following HTML Elements:
-
-- `h1`
-- `h2`
-- `h3`
-- `h4`
-- `h5`
-- `h6`
-- `p`
-- `small`
-- `a`
-
 <style lang="scss">
 
   @import "@featherds/styles/mixins/typography";
@@ -72,7 +52,9 @@ p {
 
 </style>
 
-<Styles-TypographyHeaderElements />
+## Examples
+
+<Styles-TypographyExamples />
 
 ## Mixins
 
@@ -104,4 +86,22 @@ It exposes the following mixins:
 - `screen-reader`
 - `anchor`
 
-<Styles-TypographyMixins />
+## Elements
+
+Feather styles some HTML elements by default. Typography styles are applied to elements directly when you include `@featherds/styles` and add the `.feather-styles` class to a parent element.
+
+```scss
+@import "@featherds/styles";
+```
+
+This import will also style the following HTML Elements:
+
+- `h1`
+- `h2`
+- `h3`
+- `h4`
+- `h5`
+- `h6`
+- `p`
+- `small`
+- `a`
