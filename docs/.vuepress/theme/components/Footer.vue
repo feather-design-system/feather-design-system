@@ -39,8 +39,7 @@
           </li>
         </ul>
         <span class="blurb">
-          A blurb about the Feather Design system. This could also be a place
-          that links to opening an issue to GitHub
+
         </span>
       </div>
       <div class="branding">
@@ -92,7 +91,7 @@ footer {
         margin: 0;
         margin-right: 180px;
         columns: 2;
-        margin-bottom: 28px;
+        //margin-bottom: 28px;
         li {
           margin-bottom: 16px;
         }

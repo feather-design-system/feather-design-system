@@ -1,7 +1,7 @@
 ---
 title: "App Bar"
 pre: "@featherds/app-bar"
-description: "The App Bar is anchored to the top of the application window and provides screen-specific information and actions to the user. The App Bar is also a prime location for brand and product identity. This is where company logos and product names are typically displayed."
+description: "A header component that is anchored to the top of the application window and provides screen-specific information and actions to the user."
 lang: en-US
 tags: ["AppBar", "App-Bar", "component"]
 layout: ComponentLayout
@@ -9,13 +9,15 @@ layout: ComponentLayout
 
 ## Design
 
+The App Bar is designed to help anchor the user and can provide key interaction points. It is a prime location for brand and product identity. As a consistent component throughout the application, the App Bar is where company logos and product names are typically displayed. In addition to company logos, the App Bar also inherits primary theme colors to help visually anchor users on any page within the application.
+
 ## Example
 
 <AppBar-Examples/>
 
 ## Usage
 
-App bars are used on all applications at the highest level of hierarchy. The App Bar can serve as the top level of navigation in an application through the use of a “menu” button and can become a “contextual” App Bar to better serve user needs based on required functionality for a given application context.
+App Bars are used on all applications at the highest level of hierarchy. The App Bar can serve as the top level of navigation in an application through the use of a “menu” button and can become a “contextual” App Bar to better serve user needs based on required functionality for a given application context.
 
 ## AppBar
 
