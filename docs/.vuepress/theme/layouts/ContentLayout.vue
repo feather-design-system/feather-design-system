@@ -104,6 +104,7 @@ $contentWidth: 760px;
 }
 .all-components .content-container {
   width: 100%;
+  max-width: 100%;
 }
 .center {
   box-sizing: border-box;
