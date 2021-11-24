@@ -19,7 +19,7 @@ import actionsVisibilityOff from "@featherds/icon/action/LightDarkMode";
 export default {
   data() {
     return {
-      selected: THEMES[0],
+      selected: THEMES[1],
       themes: THEMES,
       light: actionsVisibility,
       dark: actionsVisibilityOff,
