@@ -1,6 +1,7 @@
 ---
-title: "PdfViewer"
+title: "PDF Viewer"
 pre: "@featherds/pdf-viewer"
+description: "Designed to view documents within the existing context and provide access to controls."
 lang: en-US
 tags: ["PdfViewer", "component"]
 layout: ComponentLayout
@@ -8,21 +9,21 @@ layout: ComponentLayout
 
 ## Design
 
-The Feather PDF viewer is built to provide application-specific funtionality around documents while relying on the default PDF viewer that ships with all major web browsers to render the document. The UI for the Feather PDF viewer must not rely on or obfuscate any portion of the browser PDF viewer since the browser viewer does not provide any means of interface with external components or applications.
+The PDF Viewer is built to provide application-specific funtionality around documents while relying on the default PDF viewer that ships with all major web browsers to render the document. The UI for the Feather PDF viewer must not rely on or obfuscate any portion of the browser PDF viewer since the browser viewer does not provide any means of interface with external components or applications.
 
 ## Examples
 
 <PdfViewer-Examples />
 
-## FeatherPdfViewer
+## PdfViewer
 
 ### Getting Started
 
-`FeatherPdfViewer` is created to view PDF documents in the browser. You may choose to convert certain document types into PDF so they can be viewed directly in the browser.
+`PdfViewer` is created to view PDF documents in the browser. You may choose to convert certain document types into PDF so they can be viewed directly in the browser.
 
-When using the `FeatherPdfViewer` be sure to use the `aria-expanded` attribute on the element that triggers the viewer to help indicate to a screen reader that something will be opened.
+When using the `PdfViewer` be sure to use the `aria-expanded` attribute on the element that triggers the viewer to help indicate to a screen reader that something will be opened.
 
-PDFViewer performs a `HEAD` request against the given document to preview. If a `previewUrl` is specified it will make a request for that. Failing that it will use the `documentUrl`. The corresponding `XMLHttpRequest` object is emitted via the `check-request` event. If a state other than `200` is returned we display the error state. Unique error messages can be configured via the [labels](#labels) or the [error slot](#slots).
+PDF Viewer performs a `HEAD` request against the given document to preview. If a `previewUrl` is specified it will make a request for that. Failing that it will use the `documentUrl`. The corresponding `XMLHttpRequest` object is emitted via the `check-request` event. If a state other than `200` is returned the error state will be displayed. Unique error messages can be configured via the [labels](#labels) or the [error slot](#slots).
 
 ### Props
 
@@ -55,16 +56,16 @@ Please note that both `title` and `viewerTitle` are **required**
 
 ### Events
 
-- `update:modelValue` - emitted when `modelValue` is updated.
-- `shown` - emitted when preview dialog is visible.
-- `hidden` - emitted when preview dialog is hiddne.
-- `check-request` - emitted with the `XMLHttpRequest` when it has completed.
+- `update:modelValue` - emitted when `modelValue` is updated
+- `shown` - emitted when preview dialog is visible
+- `hidden` - emitted when preview dialog is hiddne
+- `check-request` - emitted with the `XMLHttpRequest` when it has completed
 
 ### Slots
 
-- `panel` - places content in the left hand panel in the preview.
-- `error` - places content in the center of the main panel. Only shown when there is an error. Default content is provided only use as needed for customization.
-- `no-preview` - places content in the center of the main panel. Only shown when the document cannot be previewed. Default content is provided only use as needed for customization.
+- `panel` - places content in the left hand panel in the preview
+- `error` - places content in the center of the main panel. Only shown when there is an error. Default content is provided only use as needed for customization
+- `no-preview` - places content in the center of the main panel. Only shown when the document cannot be previewed. Default content is provided only use as needed for customization
 
 ### data-ref-ids
 

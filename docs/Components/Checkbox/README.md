@@ -1,7 +1,7 @@
 ---
 title: "Checkbox"
 pre: "@featherds/checkbox"
-description: "Checkboxes are ideal for selection of items or indication of state"
+description: "Checkboxes are ideal for selection of items or indication of state."
 lang: en-US
 tags: ["Checkbox", "component"]
 layout: ComponentLayout

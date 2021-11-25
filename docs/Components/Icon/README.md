@@ -1,34 +1,34 @@
 ---
 title: "Icon"
 lang: en-US
+pre: "@featherds/icon"
+description: "Rich iconography to help make your content engage and inspire."
 tags: ["Icon", "component"]
 layout: ComponentLayout
 ---
-
-`@featherds/icon`
 
 ## Examples
 
 <Icon-Examples />
 
-## FeatherIcon
+## Icon
 
 ### Props
 
 | Name  | Description                                         | Type      | Required | Default |
 | ----- | --------------------------------------------------- | --------- | -------- | ------- |
-| icon  | Should be icon componet to be rendered              | `Object`  | `true`   | -       |
-| flex  | Should be used when icon is inside a flex container | `Boolean` | `false`  | `false` |
-| title | Set this when you want to give a label to the icon. | `String`  | `false`  | -       |
+| icon  | should be Icon componet to be rendered              | `Object`  | `true`   | -       |
+| flex  | should be used when Icon is inside a flex container | `Boolean` | `false`  | `false` |
+| title | set this when you want to give a label to the Icon  | `String`  | `false`  | -       |
 
 ### Accessibility
 
-If you are using an icon that is described by the text along side it or the labelling of the icon is taken care of by a parent control (`FeatherButton`) then you don't need to use the `title` property. If there is no text then you must use the `title` property to help describe what the icon is for.
+If you are using an Icon that is described by the text alongside it or the labelling of the Icon is taken care of by a parent control (for example [Button](/Components/Button)) then you don't need to use the `title` property. If there is no text then you must use the `title` property to help describe what the Icon is for.
 
-#### Feather import
+#### Import
 
 ```js
-import AddAlert from "@featherds/icon/alert/AddAlert";
+import AddAlert from "@featherds/icon/action/Add";
 ```
 
 ## Icons

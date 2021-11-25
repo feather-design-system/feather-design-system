@@ -1,7 +1,7 @@
 ---
-title: "ProtectedInput"
+title: "Protected Input"
 pre: "@featherds/protected-input"
-design: "The protected input component is used in scenarios where sensitive user information must be entered into a computer interface discreetly. Protected input components should primarily focus on keeping user information private."
+design: "For scenarios where sensitive user information must be entered into a computer interface discreetly."
 lang: en-US
 tags: ["ProtectedInput", "component"]
 layout: ComponentLayout
@@ -11,7 +11,7 @@ layout: ComponentLayout
 
 <ProtectedInput-Examples />
 
-## FeatherProtectedInput
+## ProtectedInput
 
 ### Props
 
@@ -21,13 +21,13 @@ layout: ComponentLayout
 | label      | Text label for the input                                                                                                              | `String`  | `true`   | -                             |
 | hint       | Hint text to be displayed below the input                                                                                             | `String`  | `false`  | -                             |
 | error      | Error text to be displayed below the input                                                                                            | `String`  | `false`  | -                             |
-| background | Sets the label background color to `$background`. Use this if control is on a background surface.                                     | `Boolean` | `false`  | `false`                       |
+| background | Sets the label background color to `$background`. Use this if control is on a background surface                                      | `Boolean` | `false`  | `false`                       |
 | disabled   | Puts the input into a disabled state                                                                                                  | `Boolean` | `false`  | `false`                       |
 | labels     | Object containing labels to be used by this component. Mainly used for i18n or customization of labels. See [Labels](#labels) example | `Object`  | `false`  | See [Labels](#labels) example |
 
 ### Labels
 
-Text labels for protected input can be customized via the `labels` property. The default `labels` values are:
+Text labels for Protected Input can be customized via the `labels` property. The default `labels` values are:
 
 ```js
 {
@@ -38,7 +38,7 @@ Text labels for protected input can be customized via the `labels` property. The
 
 ### Events
 
-- `update:modelValue` - emitted when there is a new value.
+- `update:modelValue` - emitted when there is a new value
 
 ### data-ref-ids
 
@@ -50,12 +50,4 @@ Text labels for protected input can be customized via the `labels` property. The
 
 ### Attributes
 
-Specifying an `class` or `data-ref-id` attribute will cause them to be applied to the components root containing `div`. All other attributes are inherited to the `input` were it makes sense. Some will be ignored as they will conflict with some of the attributes we need to use for accessibility.
-
-#### Class
-
-Use the `class` attribute to specify custom spacing needed for the element.
-
-#### data-ref-id
-
-Use the `data-ref-id` attribute when you need to access the element for E2E testing.
+Specifying a `class` or `data-ref-id` attribute will cause them to be applied to the component's root container `div`. All other attributes are inherited to the `input` where it makes sense. Some will be ignored if they conflict with some of the attributes used for accessibility.

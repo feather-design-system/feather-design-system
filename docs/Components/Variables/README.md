@@ -1,7 +1,7 @@
 ---
 title: "Variables"
 pre: "@featherds/styles"
-description: "Powerful theming and customisation"
+description: "Powerful theming and customisation."
 lang: en-US
 tags: ["Variables", "component"]
 layout: ComponentLayout

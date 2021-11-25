@@ -46,7 +46,7 @@ export default [
     image: "/assets/components/Checkbox.png",
   },
   {
-    name: "Radio Button",
+    name: "Radio",
     url: "/Components/Radio/",
     image: "/assets/components/RadioButtons.png",
   },
@@ -103,7 +103,7 @@ export default [
     image: "/assets/components/Pagination.png",
   },
   {
-    name: "Pdf Viewer",
+    name: "PDF Viewer",
     url: "/Components/PdfViewer/",
     image: "/assets/components/PdfViewer.png",
   },

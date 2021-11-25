@@ -1,11 +1,11 @@
 ---
 title: "Grid"
+pre: "@featherds/styles"
+description: "Tools and presets for scaffolding your application layout."
 lang: en-US
 tags: ["Grid", "component"]
 layout: ComponentLayout
 ---
-
-`@featherds/styles`
 
 ## Mixins
 
@@ -86,7 +86,7 @@ You have the following mixins available:
 @import "@featherds/styles/lib/grid";
 ```
 
-These classes are **NOT** included in our default include anymore.
+These classes are **NOT** included in our default include.
 
 Be aware when including this import in a `scoped` `scss` style tag in a SFC. It will include all of the grid classes in your CSS which will result in a lot of bloat. If you want to use the classes we recommend including the grid import in your `main` file, alongside your theme import, that way your entire app can continue to use the classes.
 
@@ -128,7 +128,7 @@ Rows contain columns and will always take up 100% of the parent element.
 
 ### Columns
 
-Columns are only allow inside rows. They are used to specify the width of the content you want to render. For details on how to define columns see [Grid Breakpoints](#grid-breakpoints) and [Generic Columns](#generic-columns).
+Columns are only allowed inside rows. They are used to specify the width of the content you want to render. For details on how to define columns see [Grid Breakpoints](#grid-breakpoints) and [Generic Columns](#generic-columns).
 
 ```html
 <div class="feather-row">

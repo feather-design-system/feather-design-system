@@ -42,7 +42,7 @@ Radio buttons should be used in a [RadioGroup](#RadioGroup). The Radio Group wil
 - `feather-radio` - radio element that responds to click and key presses
 - `feather-radio-label` - label element
 
-## FeatherRadioGroup
+## RadioGroup
 
 ### Props
 

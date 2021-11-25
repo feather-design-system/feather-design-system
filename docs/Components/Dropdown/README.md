@@ -1,6 +1,7 @@
 ---
 title: "Dropdown"
 pre: "@featherds/dropdown"
+description: "A small container for menus and options."
 lang: en-US
 tags: ["Dropdown", "component"]
 layout: ComponentLayout
@@ -10,16 +11,16 @@ layout: ComponentLayout
 
 <Dropdown-Examples />
 
-## FeatherDropdown
+## Dropdown
 
 ### Props
 
 | Name       | Description                                         | Type      | Required | Default |
 | ---------- | --------------------------------------------------- | --------- | -------- | ------- |
-| modelValue | when `true` dropdown will be open                   | `Boolean` | `false`  | -       |
-| cover      | when `true` dropdown will cover triggering element  | `Boolean` | `false`  | -       |
-| right      | when `true` dropdown will try to align to the right | `Boolean` | `false`  | -       |
-| standard   | when `true` dropdown appear in the standard width   | `Boolean` | `false`  | -       |
+| modelValue | when `true` Dropdown will be open                   | `Boolean` | `false`  | -       |
+| cover      | when `true` Dropdown will cover triggering element  | `Boolean` | `false`  | -       |
+| right      | when `true` Dropdown will try to align to the right | `Boolean` | `false`  | -       |
+| standard   | when `true` Dropdown appear in the standard width   | `Boolean` | `false`  | -       |
 
 ### Events
 
@@ -27,12 +28,12 @@ layout: ComponentLayout
 
 ### Slots
 
-- `default` - slot to put dropdown items in.
-- `trigger` - slot to put trigger in, typically a button.
+- `default` - slot to put Dropdown items in
+- `trigger` - slot to put trigger in, typically a button
 
 ### Dropdown Menu Height
 
-You can configure the dropdown menu height by setting the height style for `.feather-dropdown`. Out of the box the height is configured to allow up to `6` rows before scrolling. We have provided a mixin for you to easily configure the height of the menu.
+You can configure the Dropdown menu height by setting the height style for `.feather-dropdown`. Out of the box the height is configured to allow up to `6` rows before scrolling. We have provided a mixin for you to easily configure the height of the menu.
 
 The following example allows `10` items to be displayed before scrolling.
 
@@ -44,7 +45,7 @@ The following example allows `10` items to be displayed before scrolling.
 }
 ```
 
-## FeatherDropdownItem
+## DropdownItem
 
 ### Props
 
@@ -58,5 +59,5 @@ The following example allows `10` items to be displayed before scrolling.
 
 ### Slots
 
-- `default` - slot to put text in.
-- `icon` - slot to put icon in.
+- `default` - slot to put text in
+- `icon` - slot to put icon in

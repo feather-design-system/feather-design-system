@@ -1,7 +1,7 @@
 ---
-title: "FeatherChip"
+title: "Chips"
 pre: "@featherds/chips"
-description: "Chips are delicious"
+description: "Chips are delicious."
 lang: en-US
 tags: ["FeatherChip", "component"]
 layout: ComponentLayout

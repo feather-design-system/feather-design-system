@@ -1,34 +1,33 @@
 ---
 title: "Table"
 pre: "@featherds/table"
-description: "Tables display a matrix of data organized into rows and columns. Users can quickly scan rows and columns to gather contextual insights about information. Tables may contain interactive elements like menus and buttons, they can contain visual-only elements like icons and labels and they can contain advanced functionality to filter, search and sort contents."
+description: "Tables display a matrix of data with functionality to assist in sorting and filtering of information."
 lang: en-US
 tags: ["Table", "component"]
-
 layout: ComponentLayout
 ---
 
 ## Design
 
-Tables have been designed to elevate the data at all times. The purpose of the table is to organize data so users may gain insights around the data by making comparisons. Tables should be organized by default, sorted or alphabetized. Tables should ensure that any interaction is made clear to the user, either using hover states or color. Tables should be easy to user and easy to interpret.
+Tables have been designed to elevate the data at all times. The purpose of the Table is to organize data so users may gain insights around the data by making comparisons. Tables should be organized by default, sorted or alphabetized. Tables should ensure that any interaction is made clear to the user, either using hover states or color. Tables should be easy to use and easy to interpret.
 
 ## Example
 
 <Table-Examples />
 
-## Table Fucntionality
+## Table Functionality
 
 ### Row Click
 
-If the row is meant to have a click action you _must_ use the `rowAction` directive provided. The reason for using this over the `click` handler is we safe guard against menus and other action items inside the table from triggering the row action.
+If the row is meant to have a click action, you _must_ use the `rowAction` directive provided. The reason for using this over the `click` handler is we safeguard against menus and other action items inside the table from triggering the row action.
 
-In the following example notice that clicking the checkbox or any menu item does not trigger the row action to be logged in the console. This is the benefit of the `rowAction` directive.
+In the above example notice that clicking the checkbox or any menu item does not trigger the row action to be logged in the console. This is the benefit of the `rowAction` directive.
 
 ### Button Actions
 
 :::warning Accessibility
 
-In both of the actions examples above you will notice screen reader (`.sr-only`) only text as well as verbose labels. When providing actions in the table row it is important to provide some indicator as to what row the user is acting on. Just that little bit extra of information provides them with enough context to make an informed decision.
+In both of the actions examples above you will notice screen reader (`.sr-only`) only text as well as verbose labels. When providing actions in the table row it is important to provide some indicator as to what row the user is acting upon. A little bit extra information can really help provide context to make an informed decision.
 
 :::
 
@@ -55,7 +54,7 @@ The `table` mixin provide basic table styling as well as the [Column alignment](
 
 #### row-select
 
-The`row-select` mixin adds the `.selected` class which can be set on `tr` elements to show that the row is selected.
+The `row-select` mixin adds the `.selected` class which can be set on `tr` elements to show that the row is selected.
 
 ```scss
 @import "@featherds/table/scss/table";
@@ -67,7 +66,7 @@ table {
 
 #### row-hover
 
-The`row-hover` mixin adds styling to each row when it is hovered over.
+The `row-hover` mixin adds styling to each row when it is hovered over.
 
 ```scss
 @import "@featherds/table/scss/table";
@@ -79,7 +78,7 @@ table {
 
 #### table-condensed
 
-The`table-condensed` mixin reduces the sizing of the table.
+The `table-condensed` mixin reduces the sizing of the table.
 
 ```scss
 @import "@featherds/table/scss/table";
@@ -91,7 +90,7 @@ table {
 
 #### row-striped
 
-The`row-striped` mixin adds striping pattern to the table.
+The `row-striped` mixin adds striping pattern to the table.
 
 ```scss
 @import "@featherds/table/scss/table";
@@ -103,7 +102,7 @@ table {
 
 #### tbody-striped
 
-The`tbody-striped` mixin adds striping pattern to the table by striping the underlying tbody elements. This is useful when you need to stripe grouped rows. The best way to group rows is to use multiple `tbody`s.
+The `tbody-striped` mixin adds striping pattern to the table by striping the underlying `tbody` elements. This is useful when you need to stripe grouped rows. The best way to group rows is to use multiple `tbody`s.
 
 ```scss
 @import "@featherds/table/scss/table";
@@ -162,19 +161,19 @@ Similarly, if your cell only contains a checkbox, you can have it styled accordi
 </td>
 ```
 
-## FeatherSortHeader
+## SortHeader
 
 ### Props
 
 | Name     | Description                                                                                                                              | Type                   | Required | Default                       |
 | -------- | ---------------------------------------------------------------------------------------------------------------------------------------- | ---------------------- | -------- | ----------------------------- |
 | sort     | current applied sort to the column                                                                                                       | `asc`, `desc`, ` none` | `true`   | -                             |
-| property | should be the name of the property that is to be sorted. This is only used to help you identify the sorting in the `sort-changed` event. | `String`               | `true`   | -                             |
+| property | should be the name of the property that is to be sorted. This is only used to help you identify the sorting in the `sort-changed` event  | `String`               | `true`   | -                             |
 | labels   | object containing labels to be used by this component. Mainly used for i18n or customization of labels. See [Labels](#labels) example    | `Object`               | `false`  | See [Labels](#labels) example |
 
 ### Labels
 
-Text labels for sort header can be customized via the `labels` property. The default `labels` values are:
+Text labels for can be customized via the `labels` property. The default `labels` values are:
 
 ```js
 {
@@ -191,7 +190,7 @@ Text labels for sort header can be customized via the `labels` property. The def
 
 ### Slots
 
-- `default` The text content of the header
+- `default` - the text content of the header
 
 ### data-ref-ids
 
@@ -199,7 +198,7 @@ Text labels for sort header can be customized via the `labels` property. The def
 
 ### Accessibility
 
-Current know issues:
+Current known issues:
 
-- Announcement of `Sorted None` in the button name when not sorted. This is to handle the lack of announcement by NVDA which does not announce the `aria-sort` attribute when it is set to none.
-- Duplicate announcement of sort changing in JAWS. This is due to NVDA not announcing a sort change we must announce our own which causes duplication in JAWS.
+- Announcement of `Sorted None` in the button name when not sorted. This is to handle the lack of announcement by NVDA which does not announce the `aria-sort` attribute when it is set to none
+- Duplicate announcement of sort changing in JAWS. This is due to NVDA not announcing a sort change we must announce our own which causes duplication in JAWS

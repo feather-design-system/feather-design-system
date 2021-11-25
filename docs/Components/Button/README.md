@@ -2,7 +2,7 @@
 title: "Button"
 lang: en-US
 pre: "@featherds/button"
-description: "Buttons help users initiate actions or navigate through your application"
+description: "Buttons help users initiate actions or navigate through your application."
 tags: ["Button", "component"]
 layout: ComponentLayout
 ---

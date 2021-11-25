@@ -1,8 +1,10 @@
 ---
-title: "NavigationRail"
+title: "Navigation Rail"
 pre: "@featherds/navigation-rail"
 lang: en-US
+description: "A side rail for holding navigation elements and related information."
 tags: ["NavigationRail", "component"]
+layout: ComponentLayout
 ---
 
 ## Design
@@ -61,15 +63,15 @@ Navigation rails should only be used on desktop and tablet devices (not smaller 
 </script>
 ```
 
-## FeatherNavigationRail
+## NavigationRail
 
 ### Getting Started
 
-The `FeatherNavigationRail` has 2 states; expanded and collapsed. When expanded all menu items are visible and can be interacted with. When it is collapsed only the `main` group is visible. When using `FeatherNavigationRail` please only populated the `main` and `default` slot with the `FeatherRailGroup` and `FeatherRailItem` components.
+The `NavigationRail` has 2 states; expanded and collapsed. When expanded all menu items are visible and can be interacted with. When it is collapsed only the `main` group is visible. When using `NavigationRail` please only populate the `main` and `default` slot with `RailGroup` and `RailItem` components.
 
 The `header` content should not exceed `40px` in height.
 
-When collapsed the `FeatherNavigationRail` will take up `52px` in width, when expanded it will not move any content on the page due to its `fixed` position. Therefore you don't need to worry about page content shifting.
+When collapsed the `NavigationRail` will take up `52px` in width, when expanded it will not move any content on the page due to its `fixed` position. Therefore you don't need to worry about page content shifting.
 
 ### Props
 
@@ -80,7 +82,7 @@ When collapsed the `FeatherNavigationRail` will take up `52px` in width, when ex
 
 ### Labels
 
-Text labels for navigation rail can be customized via the `labels` property. The default `labels` values are:
+Text labels for Navigation Rail can be customized via the `labels` property. The default `labels` values are:
 
 ```js
 {
@@ -95,16 +97,16 @@ Text labels for navigation rail can be customized via the `labels` property. The
 
 ### Slots
 
-- `default` this is where any menu groups that are not considered part of the `main` group should go. This content will be hidden when collapsed.
-- `main` this is where you should put `FeatherRailItem`s that are part of the `main` navigation group. These items will have there icon maintain visibility whilst the menu is collapsed.
-- `header` this is where extra content should go that appears to the left of the expand/collapse button. This content will be hidden when collapsed.
+- `default` - this is where any menu groups that are not considered part of the `main` group should go. This content will be hidden when collapsed.
+- `main` - this is where you should put `RailItem`s that are part of the `main` navigation group. These items will have there icon maintain visibility whilst the menu is collapsed
+- `header` - this is where extra content should go that appears to the left of the expand/collapse button. This content will be hidden when collapsed
 
 ### data-ref-ids
 
-- `feather-navigation-rail-expand` button that triggers expand/collapse.
-- `feather-navigation-rail-main` nav that contains the main navigation.
+- `feather-navigation-rail-expand` - button that triggers expand/collapse
+- `feather-navigation-rail-main` - nav that contains the main navigation
 
-## FeatherRailGroup
+## RailGroup
 
 ### Props
 
@@ -114,11 +116,11 @@ Text labels for navigation rail can be customized via the `labels` property. The
 
 ### Slots
 
-- `default` this is where `FeatherRailItem`s should be placed.
+- `default` - `RailItem`s should be placed here
 
-## FeatherRailItem
+## RailItem
 
-This item should be used in the `main` slot of [FeatherNavigationRail](#FeatherNavigationRail) or as a child of [FeatherRailGroup](#FeatherRailGroup).
+This item should be used in the `main` slot of [NavigationRail](#NavigationRail) or as a child of [RailGroup](#RailGroup).
 
 ### Props
 
@@ -130,4 +132,4 @@ This item should be used in the `main` slot of [FeatherNavigationRail](#FeatherN
 
 ### Slots
 
-- `default` this can be used to set the content of the item to something other than `title`
+- `default` - can be used to set the content of the item to something other than `title`

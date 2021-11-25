@@ -1,7 +1,7 @@
 ---
 title: "Footer"
 pre: "@featherds/footer"
-description: "A global Footer component that can contain various content, including copyright"
+description: "A global Footer component that can contain various content, including copyright."
 lang: en-US
 tags: ["Footer", "component"]
 layout: ComponentLayout

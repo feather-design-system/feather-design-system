@@ -1,7 +1,7 @@
 ---
 title: "Autocomplete"
 pre: "@featherds/autocomplete"
-description: "The Autocomplete pattern will help users to search for, select and provide valid answers from large datasets. As the user types into a text box, a list of matching answers is shown in a drop-down menu below the text box. The user can then choose one or more items from the list instead of typing the whole answer."
+description: "Helps users to search for, select and provide valid answers from large datasets."
 lang: en-US
 tags: ["Autocomplete", "component"]
 layout: ComponentLayout

@@ -1,5 +1,5 @@
 ---
-title: "DateInput"
+title: "Date Input"
 pre: "@featherds/date-input"
 description: "Date Inputs allow users to select a date from the past, present or future."
 lang: en-US

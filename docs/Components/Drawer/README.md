@@ -90,7 +90,7 @@ A tab component, designed to be used in the `tabs` slot of a `DrawerTabContainer
 | contentId | ID of the content that the tab controls | `String`  | `false`    | -           |
 | tabId     | ID of the tab                           | `String`  | `false`    | -           |
 | disabled  | `true` when the tab is disabled         | `Boolean` | `false`    | `false`     |
-| label     | label for icon and slide out text.      | `String`  | `required` | `undefined` |
+| label     | label for icon and slide out text       | `String`  | `required` | `undefined` |
 
 ### Slots
 

@@ -1,6 +1,7 @@
 ---
 title: "Elevation"
 pre: "@featherds/styles"
+description: "Helps define heirarchy through a sense of depth."
 lang: en-US
 tags: ["Elevation", "component"]
 layout: ComponentLayout
@@ -12,6 +13,6 @@ Elevation is a method of establishing visual hierarchy in a layout using the per
 
 ## Examples
 
-`@featherds/styles` has predefined elevation mixins that allow you to define an elevation to an element. The mixin is exposed through `@featherds/styles/mixins/elevation` and takes in one of the following numbers as a parameter: `0, 1, 2, 3, 4, 6, 8, 12, 16, 24`
+`@featherds/styles` has predefined elevation mixins that allow you to define an elevation to an element. The mixin is exposed through `@featherds/styles/mixins/elevation` and takes one of the following numbers as a parameter: `0, 1, 2, 3, 4, 6, 8, 12, 16, 24`
 
 <Styles-ElevationMixin />

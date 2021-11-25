@@ -1,7 +1,7 @@
 ---
 title: "Typography"
 pre: "@featherds/styles"
-description: "Rich type and powerful messaging"
+description: "Rich type and powerful messaging."
 lang: en-US
 tags: ["Typography", "component"]
 layout: ComponentLayout
