@@ -46,11 +46,7 @@
         <section>
           <div class="section-wrapper philosophy">
             <div class="left">
-              <FeatherIcon
-                class="atom"
-                :icon="atom"
-                focusable="false"
-              ></FeatherIcon>
+              <AtomBranded />
               <span>
                 <h2>Our Design Philosophy</h2>
                 <p>
@@ -149,21 +145,19 @@
 import { FeatherButton } from "@featherds/button";
 import FeatherPage from "./FeatherPage.vue";
 import { FeatherIcon } from "@featherds/icon";
+import AtomBranded from "../components/AtomBranded.vue";
 import icon from "@featherds/icon/action/Help";
-import atom from "@featherds/icon/branding/Atom";
 import FeatherLogoMotif from "@featherds/icon/branding/FeatherLogoMotif";
 export default {
   components: {
     FeatherButton,
     FeatherIcon,
     FeatherPage,
+    AtomBranded
   },
   computed: {
     icon() {
       return icon;
-    },
-    atom() {
-      return atom;
     },
     logo() {
       return FeatherLogoMotif;
@@ -200,14 +194,6 @@ body.pagescroll div.feather-styles.layout.homepage header.banner {
   background-color: var($secondary);
   transition: all 0.2s linear;
   @include header();
-}
-.feather-icon.atom {
-  height: inherit;
-  width: inherit;
-  stroke: var($primary);
-  circle {
-    stroke: none;
-  }
 }
 
 div.feather-styles.homepage.layout {
@@ -326,6 +312,10 @@ div.feather-styles.homepage.layout {
       }
 
       .left {
+        & > svg {
+          flex: 0 0;
+          flex-basis: 140px;
+        }
         & > span {
           flex-direction: column;
           display: flex;
