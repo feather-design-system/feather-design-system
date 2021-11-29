@@ -79,7 +79,7 @@ a.pretty-card {
     color: var($primary);
   }
   h3 {
-    margin-top: 8px;
+    margin-top: 0;
     margin-bottom: 0;
     margin-right: 16px;
     line-height: var($headline3-font-size);
