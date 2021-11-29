@@ -11,17 +11,12 @@
         <template v-slot:left>
           <div class="header-title">
             <a :href="$withBase('/')"
-              ><FeatherIcon
-                :icon="LogoFull"
-                title="Feather DS"
+              ><FeatherLogoFull
                 class="full-header-icon"
-              ></FeatherIcon
-              ><FeatherIcon
-                :icon="Logo"
-                title="Feather DS"
+              /><FeatherLogoMotif
                 class="small-header-icon"
-              ></FeatherIcon
-            ></a>
+              />
+            </a>
             &nbsp;
           </div>
         </template>
@@ -52,8 +47,8 @@
 <script>
 import { FeatherIcon } from "@featherds/icon";
 import KeyboardArrowDown from "@featherds/icon/navigation/ExpandMore";
-import FeatherLogoFull from "@featherds/icon/branding/FeatherLogoFull";
-import FeatherLogoMotif from "@featherds/icon/branding/FeatherLogoMotif";
+import FeatherLogoFull from "../components/FeatherLogoFull.vue";
+import FeatherLogoMotif from "../components/FeatherLogoMotif.vue";
 import { FeatherMegaMenu } from "@featherds/megamenu";
 import { FeatherAppBarLink, FeatherAppBar } from "@featherds/app-bar";
 import { FeatherAppLayout } from "@featherds/app-layout";
@@ -70,8 +65,6 @@ export default {
         expand: "Click to expand side navigation",
       },
       iconCaret: KeyboardArrowDown,
-      LogoFull: FeatherLogoFull,
-      Logo: FeatherLogoMotif,
     };
   },
   components: {
@@ -84,6 +77,8 @@ export default {
     Footer,
     FeatherAppLayout,
     DocSearch,
+    FeatherLogoFull,
+    FeatherLogoMotif
   },
 };
 </script>

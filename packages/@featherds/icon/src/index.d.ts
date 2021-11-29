@@ -537,6 +537,18 @@ declare module "@featherds/icon/action/Workflow" {
   export = compModule;
 }
 
+declare module "@featherds/icon/content/BlogArticle" {
+  import { defineComponent } from "vue";
+  const compModule: ReturnType<typeof defineComponent>;
+  export = compModule;
+}
+
+declare module "@featherds/icon/content/Video" {
+  import { defineComponent } from "vue";
+  const compModule: ReturnType<typeof defineComponent>;
+  export = compModule;
+}
+
 declare module "@featherds/icon/communication/Certificate" {
   import { defineComponent } from "vue";
   const compModule: ReturnType<typeof defineComponent>;
@@ -574,18 +586,6 @@ declare module "@featherds/icon/communication/IdCard" {
 }
 
 declare module "@featherds/icon/communication/Phone" {
-  import { defineComponent } from "vue";
-  const compModule: ReturnType<typeof defineComponent>;
-  export = compModule;
-}
-
-declare module "@featherds/icon/content/BlogArticle" {
-  import { defineComponent } from "vue";
-  const compModule: ReturnType<typeof defineComponent>;
-  export = compModule;
-}
-
-declare module "@featherds/icon/content/Video" {
   import { defineComponent } from "vue";
   const compModule: ReturnType<typeof defineComponent>;
   export = compModule;
