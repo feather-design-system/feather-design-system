@@ -188,6 +188,10 @@ import actionViewDetails from "@featherds/icon/action/ViewDetails";
 
 import actionWorkflow from "@featherds/icon/action/Workflow";
 
+import contentBlogArticle from "@featherds/icon/content/BlogArticle";
+
+import contentVideo from "@featherds/icon/content/Video";
+
 import communicationCertificate from "@featherds/icon/communication/Certificate";
 
 import communicationCertificateAlt from "@featherds/icon/communication/CertificateAlt";
@@ -201,10 +205,6 @@ import communicationDocumentation from "@featherds/icon/communication/Documentat
 import communicationIdCard from "@featherds/icon/communication/IdCard";
 
 import communicationPhone from "@featherds/icon/communication/Phone";
-
-import contentBlogArticle from "@featherds/icon/content/BlogArticle";
-
-import contentVideo from "@featherds/icon/content/Video";
 
 import fileAttachment from "@featherds/icon/file/Attachment";
 
@@ -448,6 +448,8 @@ export default {
         { icon: actionView, key: "actionView" },
         { icon: actionViewDetails, key: "actionViewDetails" },
         { icon: actionWorkflow, key: "actionWorkflow" },
+        { icon: contentBlogArticle, key: "contentBlogArticle" },
+        { icon: contentVideo, key: "contentVideo" },
         { icon: communicationCertificate, key: "communicationCertificate" },
         { icon: communicationCertificateAlt, key: "communicationCertificateAlt" },
         { icon: communicationChat, key: "communicationChat" },
@@ -455,8 +457,6 @@ export default {
         { icon: communicationDocumentation, key: "communicationDocumentation" },
         { icon: communicationIdCard, key: "communicationIdCard" },
         { icon: communicationPhone, key: "communicationPhone" },
-        { icon: contentBlogArticle, key: "contentBlogArticle" },
-        { icon: contentVideo, key: "contentVideo" },
         { icon: fileAttachment, key: "fileAttachment" },
         { icon: fileFolder, key: "fileFolder" },
         { icon: fileFolderAdd, key: "fileFolderAdd" },

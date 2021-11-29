@@ -44,23 +44,19 @@
       </div>
       <div class="branding">
         <a :href="$withBase('/')"
-          ><FeatherIcon :icon="LogoFull" title="Feather DS"></FeatherIcon
-        ></a>
+          ><FeatherLogoFull title="Feather DS" />
+        </a>
       </div>
     </div>
   </footer>
 </template>
 <script>
 import { FeatherIcon } from "@featherds/icon";
-import FeatherLogoFull from "@featherds/icon/branding/FeatherLogoFull";
+import FeatherLogoFull from "../components/FeatherLogoFull.vue";
 export default {
-  data() {
-    return {
-      LogoFull: FeatherLogoFull,
-    };
-  },
   components: {
     FeatherIcon,
+    FeatherLogoFull
   },
 };
 </script>
@@ -138,7 +134,7 @@ footer {
       svg {
         height: auto;
         width: auto;
-        color: var($primary-text-on-surface);
+        fill: var($primary-text-on-surface);
       }
     }
   }
