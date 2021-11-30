@@ -124,11 +124,7 @@
         <section>
           <div class="section-wrapper story">
             <div class="story-wrapper">
-              <FeatherIcon
-                class="logo"
-                :icon="logo"
-                focusable="false"
-              ></FeatherIcon>
+              <FeatherLogoMotif></FeatherLogoMotif>
               <span class="tagline">Our Story</span>
               <span class="title">
                 NantHealth builds technology that simplifies healthcare
@@ -144,23 +140,19 @@
 <script>
 import { FeatherButton } from "@featherds/button";
 import FeatherPage from "./FeatherPage.vue";
-import { FeatherIcon } from "@featherds/icon";
 import AtomBranded from "../components/AtomBranded.vue";
 import icon from "@featherds/icon/action/Help";
-import FeatherLogoMotif from "@featherds/icon/branding/FeatherLogoMotif";
+import FeatherLogoMotif from "../components/FeatherLogoMotif.vue";
 export default {
   components: {
     FeatherButton,
-    FeatherIcon,
     FeatherPage,
-    AtomBranded
+    AtomBranded,
+    FeatherLogoMotif
   },
   computed: {
     icon() {
       return icon;
-    },
-    logo() {
-      return FeatherLogoMotif;
     },
   },
   mounted() {
@@ -370,8 +362,8 @@ div.feather-styles.homepage.layout {
       position: relative;
       padding: 40px 48px 48px 48px;
 
-      svg.logo.feather-icon {
-        color: var($primary);
+      svg {
+        fill: var($primary);
         position: absolute;
         font-size: 30px;
         margin-left: -46px;
@@ -522,7 +514,7 @@ div.feather-styles.homepage.layout {
   .feather-styles.homepage
     section
     .section-wrapper.story
-    svg.logo.feather-icon {
+    svg {
     position: relative;
     margin-left: 0;
     margin-bottom: 8px;
