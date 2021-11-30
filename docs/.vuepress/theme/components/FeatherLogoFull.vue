@@ -23,7 +23,7 @@
 @import "@featherds/styles/themes/variables";
 
 svg {
-  fill: var($primary-text-on-color);
+  fill: currentColor;
   stroke: none;
 }
 

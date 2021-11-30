@@ -1,38 +1,23 @@
 <template>
-  <svg viewBox="0 0 144.59 162.64" xmlns="http://www.w3.org/2000/svg">
-    <g stroke-linecap="round" stroke-miterlimit="10" stroke-width="2">
-      <path d="m38.8 127.92c-17.7 3.64-31.34 1.74-36.07-6.44-6.73-11.74 6.87-32.94 31.82-52.26"/>
-      <path d="m72.29 116.38a163.87 163.87 0 0 1 -25.83 9.69"/>
-      <path d="m41.93 63.79c4.64-3.24 9.6-6.4 14.81-9.41 38.42-22.18 76.52-28.1 85.11-13.22s-15.58 44.92-54 67.1q-3.57 2.07-7.13 3.94"/>
-      <path d="m72.75 46.48c5 2.34 10 5 15.1 7.9 2.5 1.45 5 2.93 7.33 4.44"/>
-      <path d="m46.46 36.57a154.9 154.9 0 0 1 17.19 5.91"/>
-      <path d="m124 81.32c15.79 15.57 23.27 30.84 17.88 40.16-8.59 14.88-46.69 9-85.11-13.22s-62.63-52.26-54.04-67.1c4.71-8.16 18.27-10.06 35.86-6.48"/>
-      <path d="m102.66 63.79a175.48 175.48 0 0 1 14.9 11.6"/>
-      <path d="m41.36 89.81c-.12-2.79-.17-5.62-.17-8.49 0-44.32 13.92-80.32 31.1-80.32 9.41 0 17.84 10.78 23.55 27.83"/>
-      <path d="m98.13 126.07c-5.58 21.46-15.07 35.57-25.84 35.57s-20.2-14-25.79-35.41a165.3 165.3 0 0 1 -4.57-27.38"/>
-      <path d="m98.13 36.57a180.71 180.71 0 0 1 5.27 44.75 189.68 189.68 0 0 1 -3.49 37"/>
-    </g>
-    <g class="motif">
-      <path d="m56.41 65.44h8.07v8.07h-8.07z"/>
-      <path d="m68.26 65.44h8.07v8.07h-8.07z"/>
-      <path d="m80.1 65.44h8.07a0 0 0 0 1 0 0v3.77a4.31 4.31 0 0 1 -4.31 4.31h-3.76a0 0 0 0 1 0 0v-8.08a0 0 0 0 1 0 0z"/>
-      <path d="m56.41 77.28h8.07v8.07h-8.07z"/>
-      <path d="m68.26 77.28h8.07a0 0 0 0 1 0 0v3.77a4.31 4.31 0 0 1 -4.33 4.31h-3.74a0 0 0 0 1 0 0v-8.08a0 0 0 0 1 0 0z"/>
-      <path d="m56.41 89.13h8.07a0 0 0 0 1 0 0v3.77a4.31 4.31 0 0 1 -4.31 4.31h-3.76a0 0 0 0 1 0 0v-8.08a0 0 0 0 1 0 0z"/>
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 168.732 162.643">
+    <g transform="translate(1.366 1)">
+      <ellipse cx="26.879" cy="80.322" rx="26.879" ry="80.322" transform="translate(56.121)" stroke-width="2"/>
+      <ellipse cx="26.879" cy="80.322" rx="26.879" ry="80.322" transform="translate(0 63.439) rotate(-60)" stroke-width="2"/>
+      <ellipse cx="80.322" cy="26.879" rx="80.322" ry="26.879" transform="translate(0 97.204) rotate(-30)" stroke-width="2"/>
+      <circle cx="8.491" cy="8.491" r="8.491" transform="translate(74.509 71.831)"/>
     </g>
   </svg>
 </template>
 <style lang="scss" scoped>
 @import "@featherds/styles/themes/variables";
 
-g {
-  fill: none;
+circle {
+  fill: var($primary-text-on-surface);
+  stroke: none;
+}
+ellipse {
   stroke: var($primary);
-
-  &.motif {
-    stroke: none;
-    fill: var($primary-text-on-surface);
-  }
+  fill: none;
 }
 
 </style>
