@@ -94,6 +94,13 @@ body {
     border-bottom: none;
     margin: 32px 8px;
   }
+  figure {
+    margin: 0;
+    margin-bottom: 24px;
+    & img {
+      margin-bottom: 0;
+    }
+  }
   h1 {
     @include display2();
     margin-bottom: 8px;

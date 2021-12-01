@@ -17,21 +17,21 @@ Extended palettes help to define our color theming for Feather DS. For the examp
 
 <ClientOnly>
 <picture>
-
-<source :srcset="$withBase('/assets/foundation/styles/SkyBlueMobile.png')"
-            media="(max-width: 520px)">
-<img :src="$withBase('/assets/foundation/styles/SkyBlue.png')" alt="Image of Sky blue colors" />
+  <source :srcset="$withBase('/assets/foundation/styles/SkyBlueMobile.png')"
+              media="(max-width: 520px)">
+  <img :src="$withBase('/assets/foundation/styles/SkyBlue.png')" alt="Image of Sky blue colors" />
 </picture>
 
-<picture>
+<figure>
+    <picture>
+      <source :srcset="$withBase('/assets/foundation/styles/DarkBlueMobile.png')"
+                  media="(max-width: 520px)">
+      <img :src="$withBase('/assets/foundation/styles/DarkBlue.png')" alt="Image of Dark blue colors" />
+    </picture>
+    <figcaption>Toggle between dark and light mode to view contrast shifts between all values.</figcaption>
+</figure>
 
-<source :srcset="$withBase('/assets/foundation/styles/DarkBlueMobile.png')"
-            media="(max-width: 520px)">
-<img :src="$withBase('/assets/foundation/styles/DarkBlue.png')" alt="Image of Dark blue colors" />
-</picture>
 </ClientOnly>
-
-Toggle between dark and light mode to view contrast shifts between all values.
 
 Theming will consist of 4 brand centric colors - primary, primary variant, secondary and secondary variant. These colors are derived from the extended palette. Colors are also specified for background, surface, on color, on background, and on surface.
 
