@@ -4,7 +4,7 @@ lang: en-US
 pre: "@featherds/button"
 description: "An interaction point to help users initiate actions or navigate through your application."
 tags: ["Button", "component"]
-layout: ComponentLayout
+menu: components
 ---
 
 ## Design
@@ -65,6 +65,7 @@ Choose the type of Button based on the importance of the action. They can exist 
 - `icon` - icon to be displayed alongside the text content of default. It is a separate slot so we can ensure correct spacing.
 
 ## Icon Button
+
 Icon Button is a special configuration of our Button. It only supports text based styling, any other type will be ignored. Utilize the `icon` property to pass in an appropriate label for the Icon Button. In the examples above see the "Icon Button".
 
 ```html
@@ -74,22 +75,21 @@ Icon Button is a special configuration of our Button. It only supports text base
   </FeatherButton>
 </template>
 <script>
-import { FeatherButton } from "@featherds/button";
-import { FeatherIcon } from "@featherds/icon";
-import icon from "@featherds/icon/action/Add";
-export default {
-  computed: {
-    icon() {
-      return icon;
+  import { FeatherButton } from "@featherds/button";
+  import { FeatherIcon } from "@featherds/icon";
+  import icon from "@featherds/icon/action/Add";
+  export default {
+    computed: {
+      icon() {
+        return icon;
+      },
     },
-  },
-  components: {
-    FeatherIcon,
-    FeatherButton,
-  },
-};
+    components: {
+      FeatherIcon,
+      FeatherButton,
+    },
+  };
 </script>
-
 ```
 
 ## Text Icon Button

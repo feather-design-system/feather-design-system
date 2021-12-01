@@ -4,7 +4,7 @@ pre: "@featherds/styles"
 description: "Helps define heirarchy through a sense of depth."
 lang: en-US
 tags: ["Elevation", "component"]
-layout: ComponentLayout
+menu: components
 ---
 
 ## Design

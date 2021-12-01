@@ -4,7 +4,7 @@ pre: "@featherds/navigation-rail"
 lang: en-US
 description: "A side rail for holding navigation elements and related information."
 tags: ["NavigationRail", "component"]
-layout: ComponentLayout
+menu: components
 ---
 
 ## Design

@@ -4,24 +4,12 @@
       <template v-slot:button> Management </template>
       <div class="feather-row">
         <div
-          class="
-            feather-col-xl-4
-            feather-col-l-4
-            feather-col-m-4
-            feather-col-s-4
-            feather-col-xs-4
-          "
+          class="feather-col-xl-4 feather-col-l-4 feather-col-m-4 feather-col-s-4 feather-col-xs-4"
         >
           <FeatherListItem href="#Regimen">Regimen Search</FeatherListItem>
         </div>
         <div
-          class="
-            feather-col-xl-4
-            feather-col-l-4
-            feather-col-m-4
-            feather-col-s-4
-            feather-col-xs-4
-          "
+          class="feather-col-xl-4 feather-col-l-4 feather-col-m-4 feather-col-s-4 feather-col-xs-4"
         >
           <FeatherListItem href="#Disease">Disease Management</FeatherListItem>
           <FeatherListItem href="#SDisease"
@@ -32,13 +20,7 @@
           >
         </div>
         <div
-          class="
-            feather-col-xl-4
-            feather-col-l-4
-            feather-col-m-4
-            feather-col-s-4
-            feather-col-xs-4
-          "
+          class="feather-col-xl-4 feather-col-l-4 feather-col-m-4 feather-col-s-4 feather-col-xs-4"
         >
           <FeatherListItem href="#Templates"
             >Create New Template</FeatherListItem

@@ -4,13 +4,7 @@
 
     <div class="feather-row">
       <div
-        class="
-          feather-col-xl-2
-          feather-col-l-2
-          feather-col-m-2
-          feather-col-s-2
-          feather-col-xs-1
-        "
+        class="feather-col-xl-2 feather-col-l-2 feather-col-m-2 feather-col-s-2 feather-col-xs-1"
       >
         <ul>
           <li>xl col 2</li>
@@ -21,13 +15,7 @@
         </ul>
       </div>
       <div
-        class="
-          feather-col-xl-8
-          feather-col-l-8
-          feather-col-m-4
-          feather-col-s-4
-          feather-col-xs-2
-        "
+        class="feather-col-xl-8 feather-col-l-8 feather-col-m-4 feather-col-s-4 feather-col-xs-2"
       >
         <ul>
           <li>xl col 8</li>
@@ -38,13 +26,7 @@
         </ul>
       </div>
       <div
-        class="
-          feather-col-xl-2
-          feather-col-l-2
-          feather-col-m-2
-          feather-col-s-2
-          feather-col-xs-4
-        "
+        class="feather-col-xl-2 feather-col-l-2 feather-col-m-2 feather-col-s-2 feather-col-xs-4"
       >
         <ul>
           <li>xl col 2</li>
@@ -58,14 +40,7 @@
     <h2>Columns at different breakpoints with offset</h2>
     <div class="feather-row">
       <div
-        class="
-          feather-col-xl-8
-          feather-col-l-8
-          feather-col-m-4
-          feather-col-s-4
-          feather-col-xs-2
-          offset-xl-2 offset-l-2 offset-m-2 offset-s-2 offset-xs-1
-        "
+        class="feather-col-xl-8 feather-col-l-8 feather-col-m-4 feather-col-s-4 feather-col-xs-2 offset-xl-2 offset-l-2 offset-m-2 offset-s-2 offset-xs-1"
       >
         <ul>
           <li>xl col 8, offset 2</li>
@@ -76,13 +51,7 @@
         </ul>
       </div>
       <div
-        class="
-          feather-col-xl-2
-          feather-col-l-2
-          feather-col-m-2
-          feather-col-s-2
-          feather-col-xs-4
-        "
+        class="feather-col-xl-2 feather-col-l-2 feather-col-m-2 feather-col-s-2 feather-col-xs-4"
       >
         <ul>
           <li>xl col 2</li>
@@ -118,13 +87,7 @@
     <h2>Nested Columns at different breakpoints</h2>
     <div class="feather-row">
       <div
-        class="
-          feather-col-xl-2
-          feather-col-l-2
-          feather-col-m-2
-          feather-col-s-2
-          feather-col-xs-1
-        "
+        class="feather-col-xl-2 feather-col-l-2 feather-col-m-2 feather-col-s-2 feather-col-xs-1"
       >
         <ul>
           <li>xl col 2</li>
@@ -135,23 +98,11 @@
         </ul>
       </div>
       <div
-        class="
-          feather-col-xl-8
-          feather-col-l-8
-          feather-col-m-4
-          feather-col-s-4
-          feather-col-xs-2
-        "
+        class="feather-col-xl-8 feather-col-l-8 feather-col-m-4 feather-col-s-4 feather-col-xs-2"
       >
         <div class="feather-row">
           <div
-            class="
-              feather-col-xl-2
-              feather-col-l-2
-              feather-col-m-2
-              feather-col-s-2
-              feather-col-xs-1
-            "
+            class="feather-col-xl-2 feather-col-l-2 feather-col-m-2 feather-col-s-2 feather-col-xs-1"
           >
             <ul>
               <li>xl col 2</li>
@@ -162,13 +113,7 @@
             </ul>
           </div>
           <div
-            class="
-              feather-col-xl-8
-              feather-col-l-8
-              feather-col-m-4
-              feather-col-s-4
-              feather-col-xs-2
-            "
+            class="feather-col-xl-8 feather-col-l-8 feather-col-m-4 feather-col-s-4 feather-col-xs-2"
           >
             <ul>
               <li>xl col 8</li>
@@ -179,13 +124,7 @@
             </ul>
           </div>
           <div
-            class="
-              feather-col-xl-2
-              feather-col-l-2
-              feather-col-m-2
-              feather-col-s-2
-              feather-col-xs-4
-            "
+            class="feather-col-xl-2 feather-col-l-2 feather-col-m-2 feather-col-s-2 feather-col-xs-4"
           >
             <ul>
               <li>xl col 2</li>
@@ -198,13 +137,7 @@
         </div>
       </div>
       <div
-        class="
-          feather-col-xl-2
-          feather-col-l-2
-          feather-col-m-2
-          feather-col-s-2
-          feather-col-xs-4
-        "
+        class="feather-col-xl-2 feather-col-l-2 feather-col-m-2 feather-col-s-2 feather-col-xs-4"
       >
         <ul>
           <li>xl col 2</li>

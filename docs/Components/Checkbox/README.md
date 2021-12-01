@@ -4,7 +4,7 @@ pre: "@featherds/checkbox"
 description: "Allows users to select one or many options."
 lang: en-US
 tags: ["Checkbox", "component"]
-layout: ComponentLayout
+menu: components
 ---
 
 ## Design
@@ -87,4 +87,3 @@ Instead use:
 ### Attributes
 
 Specifying a `class` or `data-ref-id` attribute will cause them to be applied to the component root container `div`. All other attributes are passed to the `input` where it makes sense. Some will be ignored if they conflict with attributes we need to use for accessibility.
-

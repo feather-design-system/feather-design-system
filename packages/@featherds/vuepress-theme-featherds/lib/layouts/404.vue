@@ -3,13 +3,13 @@
     <section>
       <div class="section-wrapper">
         <div class="not-found">
-          <AtomError />
+          <component :is="errorLogo" v-if="errorLogo" />
           <span>
             <span class="overline">Error 404</span>
-            <h3>
-              Sorry! We can't find the page you're looking for.
-            </h3>
-            <FeatherButton as-anchor :href="$withBase('/')" primary>Return Home</FeatherButton>
+            <h3>Sorry! We can't find the page you're looking for.</h3>
+            <FeatherButton as-anchor :href="$withBase('/')" primary
+              >Return Home</FeatherButton
+            >
           </span>
         </div>
       </div>
@@ -18,20 +18,18 @@
 </template>
 <script>
 import FeatherPage from "./FeatherPage.vue";
-import AtomError from "../components/AtomError.vue";
 import { FeatherButton } from "@featherds/button";
-
+import { computed } from "vue";
+import { useThemeLocaleData } from "@vuepress/plugin-theme-data/lib/client";
 export default {
+  setup() {
+    const theme = useThemeLocaleData();
+    const errorLogo = computed(() => theme.value.errorLogoComponent);
+    return { errorLogo };
+  },
   components: {
     FeatherPage,
-    AtomError,
-    FeatherButton
-  },
-  mounted() {
-  },
-  unmounted() {
-  },
-  methods: {
+    FeatherButton,
   },
 };
 </script>

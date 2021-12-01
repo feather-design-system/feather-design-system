@@ -1,7 +1,7 @@
 <template>
-  <FeatherPage class="layout" :class="class">
+  <FeatherPage class="layout" :class="cls">
     <template v-slot:rail>
-      <slot name="rail"></slot>
+      <NavMenu :menu="menu" v-if="menu" />
     </template>
     <div class="title-container">
       <div class="title-section center feather-container">
@@ -18,7 +18,7 @@
       <div
         class="toc"
         :class="{ fixed: fixed }"
-        v-if="sidebarItems.length"
+        v-if="sidebarItems.length && showToc"
         ref="toc"
       >
         <Sidebar :items="sidebarItems" title="Contents" />
@@ -32,6 +32,7 @@
 <script>
 import FeatherPage from "./FeatherPage";
 import Sidebar from "../components/Sidebar.vue";
+import NavMenu from "../components/NavMenu.vue";
 import { useScroll } from "@featherds/composables/events/Scroll";
 import { ref, watch, onMounted } from "vue";
 export default {
@@ -63,14 +64,23 @@ export default {
     description() {
       return this.$page.frontmatter.description;
     },
-    class() {
+    cls() {
       return this.$page.frontmatter.class;
     },
     preText() {
       return this.$page.frontmatter.pre;
     },
+    menu() {
+      return this.$page.frontmatter.menu;
+    },
+    showToc() {
+      if (!this.$page.frontmatter.toc) {
+        return true;
+      }
+      return this.$page.frontmatter.toc;
+    },
     sidebarItems() {
-      if (this.$page && this.$page.headers) {
+      if (this.$page && this.$page.headers && this.showToc) {
         return this.$page.headers
           .filter((h) => h.level === 2)
           .map((h) => ({
@@ -84,6 +94,7 @@ export default {
   components: {
     FeatherPage,
     Sidebar,
+    NavMenu,
   },
 };
 </script>

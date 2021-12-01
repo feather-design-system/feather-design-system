@@ -4,7 +4,7 @@ pre: "@featherds/back-button"
 description: "A generic button that allows the user to go back to a previous page."
 lang: en-US
 tags: ["BackButton", "Back-Button", "component"]
-layout: ComponentLayout
+menu: components
 ---
 
 ## Design
@@ -21,9 +21,9 @@ The Back Button has been designed to provide a persistent control for reverse na
 
 ### Props
 
-| Name      | Description                                      | Type     | Required | Default |
-| --------- | ------------------------------------------------ | -------- | -------- | ------- |
-| longHover | number of milliseconds to qualify as long hover  | `Number` | `false`  | `500`   |
+| Name      | Description                                     | Type     | Required | Default |
+| --------- | ----------------------------------------------- | -------- | -------- | ------- |
+| longHover | number of milliseconds to qualify as long hover | `Number` | `false`  | `500`   |
 
 ### Slots
 

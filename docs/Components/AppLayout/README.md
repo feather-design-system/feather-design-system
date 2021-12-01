@@ -4,8 +4,7 @@ pre: "@featherds/app-layout"
 description: "Provides common application layouts to quickly get started."
 lang: en-US
 tags: ["AppLayout", "App-Layout", "component"]
-layout: ComponentLayout
-
+menu: components
 ---
 
 ## Getting Started

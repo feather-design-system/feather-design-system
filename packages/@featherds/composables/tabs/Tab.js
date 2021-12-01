@@ -25,7 +25,7 @@ const useTab = (props) => {
   let thisEl, parent, childNodes, index;
   onMounted(() => {
     thisEl = tab.value.parentElement;
-    parent = (thisEl && thisEl.parentNode) ? thisEl.parentNode : [];
+    parent = thisEl && thisEl.parentNode ? thisEl.parentNode : [];
     childNodes = [].filter.call(parent.children, function (el) {
       return el.querySelectorAll("[role=tab]").length;
     });

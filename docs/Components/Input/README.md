@@ -4,7 +4,7 @@ pre: "@featherds/input"
 description: "Allows users to enter and edit text."
 lang: en-US
 tags: ["Input", "component"]
-layout: ComponentLayout
+menu: components
 ---
 
 ## Design
@@ -37,18 +37,18 @@ Inputs can be used as a singular object in a layout, or they can be paired toget
 
 ### Props
 
-| Name       | Description                                                                                       | Type      | Required | Default      |
-| ---------- | ------------------------------------------------------------------------------------------------- | --------- | -------- | ------------ |
-| modelValue | value to be placed in the Input                                                                   | `String`  | `false`  | -            |
-| label      | text label for the Input                                                                          | `String`  | `true`   | -            |
-| hint       | hint text to be displayed below the Input                                                         | `String`  | `false`  | -            |
-| error      | error text to be displayed below the Input                                                        | `String`  | `false`  | -            |
-| clear      | label for the clear link that will appear at the end of the Input when it has a value             | `String`  | `false`  | `""`         |
-| type       | type of underlying Input                                                                          | `String`  | `false`  | `"text"`     |
-| background | sets the label background color to `$background`. Use this if control is on a background surface  | `Boolean` | `false`  | `false`      |
-| disabled   | puts the Input into a disabled state                                                              | `Boolean` | `false`  | `false`      |
-| maxlength  | maximum amount of characters this Input will accept                                               | `Number`  | `false`  | 0 - no limit |
-| hideLabel  | hides the label for the Input in scenarios like tables where it would get in the way              | `Boolean` | `false`  | -            |
+| Name       | Description                                                                                      | Type      | Required | Default      |
+| ---------- | ------------------------------------------------------------------------------------------------ | --------- | -------- | ------------ |
+| modelValue | value to be placed in the Input                                                                  | `String`  | `false`  | -            |
+| label      | text label for the Input                                                                         | `String`  | `true`   | -            |
+| hint       | hint text to be displayed below the Input                                                        | `String`  | `false`  | -            |
+| error      | error text to be displayed below the Input                                                       | `String`  | `false`  | -            |
+| clear      | label for the clear link that will appear at the end of the Input when it has a value            | `String`  | `false`  | `""`         |
+| type       | type of underlying Input                                                                         | `String`  | `false`  | `"text"`     |
+| background | sets the label background color to `$background`. Use this if control is on a background surface | `Boolean` | `false`  | `false`      |
+| disabled   | puts the Input into a disabled state                                                             | `Boolean` | `false`  | `false`      |
+| maxlength  | maximum amount of characters this Input will accept                                              | `Number`  | `false`  | 0 - no limit |
+| hideLabel  | hides the label for the Input in scenarios like tables where it would get in the way             | `Boolean` | `false`  | -            |
 
 ### Events
 
@@ -70,4 +70,3 @@ Inputs can be used as a singular object in a layout, or they can be paired toget
 ### Attributes
 
 Specifying an `class` or `data-ref-id` attribute will cause them to be applied to the component root container `div`. All other attributes are inherited to the `input` where applicable. Some will be ignored if they conflict with attributes used for accessibility.
-

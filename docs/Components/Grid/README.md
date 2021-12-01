@@ -4,7 +4,7 @@ pre: "@featherds/styles"
 description: "Tools and presets for scaffolding your application layout."
 lang: en-US
 tags: ["Grid", "component"]
-layout: ComponentLayout
+menu: components
 ---
 
 ## Mixins

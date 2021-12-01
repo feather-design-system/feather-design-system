@@ -4,7 +4,7 @@ lang: en-US
 pre: "styles"
 description: "Used to establish tone, identity and impact in a beautiful and accessible manner."
 tags: ["Foundation", "Color"]
-layout: DesignLayout
+menu: foundation
 ---
 
 ## Overview

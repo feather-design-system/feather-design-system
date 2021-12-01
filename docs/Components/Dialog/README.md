@@ -4,7 +4,7 @@ pre: "@featherds/dialog"
 description: "Dialogs present additional information or make requests for input."
 lang: en-US
 tags: ["Dialog", "component"]
-layout: ComponentLayout
+menu: components
 ---
 
 ## Design

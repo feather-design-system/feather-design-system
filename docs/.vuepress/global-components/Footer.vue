@@ -41,26 +41,17 @@
             <a href="https://nanthealth.com/careers/">Careers</a>
           </li>
         </ul>
-        <span class="blurb">
-
-        </span>
+        <span class="blurb"> </span>
       </div>
       <div class="branding">
-        <a :href="$withBase('/')"
-          ><FeatherLogoFull title="Feather DS" />
-        </a>
+        <a :href="$withBase('/')"><FeatherLogoFull title="Feather DS" /> </a>
       </div>
     </div>
   </footer>
 </template>
 <script>
-import { FeatherIcon } from "@featherds/icon";
-import FeatherLogoFull from "../components/FeatherLogoFull.vue";
 export default {
-  components: {
-    FeatherIcon,
-    FeatherLogoFull
-  },
+  components: {},
 };
 </script>
 <style lang="scss" scoped>

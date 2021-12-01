@@ -4,7 +4,7 @@ lang: en-US
 pre: "@featherds/icon"
 description: "Rich iconography to help make your content engage and inspire."
 tags: ["Icon", "component"]
-layout: ComponentLayout
+menu: components
 ---
 
 ## Examples

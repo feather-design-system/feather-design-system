@@ -4,8 +4,7 @@ lang: en-US
 pre: "@featherds/utils"
 description: "Handy utilities for common use cases."
 tags: ["Utils", "component"]
-layout: ComponentLayout
-
+menu: components
 ---
 
 ## id

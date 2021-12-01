@@ -4,7 +4,7 @@ pre: "@featherds/radio"
 description: "Enables a user to choose one option from a group of options."
 lang: en-US
 tags: ["Radio", "component"]
-layout: ComponentLayout
+menu: components
 ---
 
 ## Design
@@ -74,4 +74,3 @@ Radio buttons should be used in a [RadioGroup](#RadioGroup). The Radio Group wil
 ### Attributes
 
 Specifying an `class` or `data-ref-id` attribute will cause them to be applied to the component root container `div`. All other attributes are inherited to the `input` where applicable. Some will be ignored if they conflict with attributes used for accessibility.
-

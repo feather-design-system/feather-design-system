@@ -4,7 +4,7 @@ pre: "@featherds/styles"
 description: "Powerful theming and customisation."
 lang: en-US
 tags: ["Variables", "component"]
-layout: ComponentLayout
+menu: components
 ---
 
 `@featherds/styles` exposes SASS variables through `@featherds/styles/themes/variables`. These variables are used to build the themes and used across all the components. They are also exported as CSS variables at runtime.

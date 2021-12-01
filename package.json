@@ -60,7 +60,7 @@
     "@featherds/tabs": "file:packages/@featherds/tabs",
     "@featherds/textarea": "file:packages/@featherds/textarea",
     "@featherds/utils": "file:packages/@featherds/utils",
-    "conventional-changelog-cli": "^2.1.1"
+    "@featherds/vuepress-theme-featherds": "file:packages/@featherds/vuepress-theme-featherds"
   },
   "devDependencies": {
     "@babel/node": "^7.8.7",
@@ -78,10 +78,7 @@
     "@vue/eslint-config-prettier": "^6.0.0",
     "@vue/server-test-utils": "^1.0.2",
     "@vue/test-utils": "^2.0.0-rc.14",
-    "@vuepress/plugin-active-header-links": "^v2.0.0-beta.26",
-    "@vuepress/plugin-container": "^v2.0.0-beta.26",
-    "@vuepress/plugin-prismjs": "^v2.0.0-beta.26",
-    "@vuepress/plugin-register-components": "^v2.0.0-beta.26",
+    "@vuepress/plugin-register-components": "^v2.0.0-beta.27",
     "@wdio/cli": "^7.0.0",
     "@wdio/local-runner": "^7.0.0",
     "@wdio/mocha-framework": "^7.0.0",
@@ -121,7 +118,7 @@
     "vue-i18n": "^8.17.6",
     "vue-jest": "^5.0.0-alpha.10",
     "vue-router": "^4.0.0",
-    "vuepress-vite": "^2.0.0-beta.26",
+    "vuepress-vite": "^2.0.0-beta.27",
     "wdio-lambdatest-service": "1.0.3",
     "webdriverio": "^7.0.0",
     "yup": "^0.32.10"

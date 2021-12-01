@@ -4,7 +4,7 @@ pre: "@featherds/date-input"
 description: "Date Inputs allow users to select a date from the past, present or future."
 lang: en-US
 tags: ["DateInput", "component"]
-layout: ComponentLayout
+menu: components
 ---
 
 ## Design

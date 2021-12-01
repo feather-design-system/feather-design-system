@@ -12,7 +12,6 @@
   </form>
 </template>
 <script>
-
 import { useForm, useField } from "vee-validate";
 import { ref, computed } from "vue";
 import * as components from "./../src";

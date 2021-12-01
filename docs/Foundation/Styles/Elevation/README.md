@@ -4,7 +4,7 @@ lang: en-US
 pre: "styles"
 description: "Used to define the distance between any two elements on the z-axis."
 tags: ["Foundation", "Elevation"]
-layout: DesignLayout
+menu: foundation
 ---
 
 ## Overview
