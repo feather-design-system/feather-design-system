@@ -9,15 +9,9 @@ layout: ComponentLayout
 
 ## Design
 
-Autocomplete consists of three components:
+Autocomplete is designed so that as the user types into a text box, a list of matching answers is shown in a drop-down menu below the text box. The user can then choose one or more items from the list instead of typing the whole answer.
 
-- a text input field
-- a drop-down select menu
-- one or more chips
-
-The hover and focus states for the autocomplete pattern are inherited from [Input](/Components/Input/).<br />
-The hover, select and focus states for the menu are inherited from [Dropdown](/Components/Dropdown/).<br />
-Chips are used directly from [Chips](/Components/Chips/).
+Autocomplete is a compilation of three components: a text [Input](/Components/Input/) field, a [Dropdown](/Components/Dropdown/) menu and [Chips](/Components/Chips/). The hover and focus states for an Autocomplete pattern are inherited from the text Input field component. The hover, select and focus states for the menu are inherited from the Dropdown menu. The Chip component hover and focus states apply as well.
 
 ## Examples
 

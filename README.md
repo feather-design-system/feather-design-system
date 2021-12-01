@@ -6,7 +6,7 @@ Feather Design System is a Vue-based design system for creating consistent web U
 
 ## Documentation
 
-Documentation is currently available here: https://prsv.z13.web.core.windows.net/ NOTE: this location is temporary, just be careful if bookmarking.
+Full documentation can be found at https://feather.nanthealth.com/
 
 ## Install
 

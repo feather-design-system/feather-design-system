@@ -1,7 +1,7 @@
 ---
 title: "Radio"
 pre: "@featherds/radio"
-description: "Radio buttons allow users to choose one option from a list of mutually exclusive alternatives."
+description: "Enables a user to choose one option from a group of options."
 lang: en-US
 tags: ["Radio", "component"]
 layout: ComponentLayout
@@ -9,11 +9,15 @@ layout: ComponentLayout
 
 ## Design
 
-The Radio button design has been kept minimal, while the animation during interaction provides another level of visual interest. As the Radio button is selected, the inner-circle grows from the center and the radio button may inherit the product color. Radio buttons are closely aligned with Google’s Material Design standards.
+The Radio button design has been kept minimal – understanding that the component will likely be used in a form with other components. The animation, however, has been built-in the add visual interest and to more importantly convey important feedback to the user.
 
 ## Example
 
 <Radio-Examples />
+
+## Usage
+
+Radio buttons enable a user to make a single selection among a group of options. When using a Radio, it’s recommended to list options in a logical order (alphabetically, numerically, etc.) and include at least 2 or more options. By default, it’s recommended to have no Radio selected unless there is a most likely or recommended selection.
 
 ## Radio
 

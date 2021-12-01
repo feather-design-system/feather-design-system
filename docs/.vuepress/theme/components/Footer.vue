@@ -35,6 +35,9 @@
             >
           </li>
           <li>
+            <a href="https://www.opennms.com/careers/">OpenNPM Careers</a>
+          </li>
+          <li>
             <a href="https://nanthealth.com/careers/">Careers</a>
           </li>
         </ul>
