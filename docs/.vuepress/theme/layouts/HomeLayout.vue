@@ -139,16 +139,14 @@
 
 <script>
 import { FeatherButton } from "@featherds/button";
-import FeatherPage from "./FeatherPage.vue";
 import AtomBranded from "../components/AtomBranded.vue";
+import FeatherPage from "@featherds/vuepress-theme-featherds/lib/layouts/FeatherPage.vue";
 import icon from "@featherds/icon/action/Help";
-import FeatherLogoMotif from "../components/FeatherLogoMotif.vue";
 export default {
   components: {
     FeatherButton,
     FeatherPage,
     AtomBranded,
-    FeatherLogoMotif
   },
   computed: {
     icon() {
@@ -511,10 +509,7 @@ div.feather-styles.homepage.layout {
     padding-left: 40px;
     padding-right: 40px;
   }
-  .feather-styles.homepage
-    section
-    .section-wrapper.story
-    svg {
+  .feather-styles.homepage section .section-wrapper.story svg {
     position: relative;
     margin-left: 0;
     margin-bottom: 8px;

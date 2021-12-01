@@ -1,21 +1,29 @@
 // .vuepress/config.js
+
 const path = require("path");
-const utils = require("../../scripts/utils");
 const { sassImports } = require("../../scripts/vite/alias");
 const { noopDirectiveTransform } = require("@vue/compiler-dom");
 const vueSourcePlugin = require("./plugins/vueSourcePlugin");
 module.exports = {
-  title: "Feather",
-  templateDev: path.resolve(__dirname, "./theme/templates/dev.html"),
-  templateSSR: path.resolve(__dirname, "./theme/templates/ssr.html"),
+  title: "Feather DS",
   theme: path.resolve(__dirname, "./theme"),
-  patterns: [
-    "README.md",
-    "Components/**/*.md",
-    "Patterns/**/*.md",
-    "Packages/**/*.md",
-    "Help/**/*.md",
-  ],
+  themeConfig: {
+    footerComponent: "Footer",
+    brandLogoLargeComponent: "FeatherLogoFull",
+    brandLogoSmallComponent: "FeatherLogoMotif",
+    errorLogoComponent: "AtomError",
+    menus: {
+      header: [
+        { name: "Foundation", url: "/Foundation/Styles/Color" },
+        { name: "Components", url: "/Components/" },
+      ],
+      foundation: require("./menus/foundation"),
+      components: require("./menus/components"),
+    },
+  },
+  templateDev: path.resolve(__dirname, "./templates/dev.html"),
+  templateSSR: path.resolve(__dirname, "./templates/ssr.html"),
+  patterns: ["README.md", "Components/**/*.md", "Foundation/**/*.md"],
   markdown: { code: { lineNumbers: false } },
   bundler: "@vuepress/vite",
   bundlerConfig: {

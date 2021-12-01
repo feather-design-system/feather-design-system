@@ -4,7 +4,7 @@ pre: "@featherds/dropdown"
 description: "A small container for menus and options."
 lang: en-US
 tags: ["Dropdown", "component"]
-layout: ComponentLayout
+menu: components
 ---
 
 ## Examples

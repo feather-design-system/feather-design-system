@@ -4,7 +4,7 @@ pre: "@featherds/styles"
 description: "Rich type and powerful messaging."
 lang: en-US
 tags: ["Typography", "component"]
-layout: ComponentLayout
+menu: components
 ---
 
 Typography styles are applied to some [elements](#elements) by default when including `@featherds/styles`. All typography styles are exposed through `SCSS` mixins and should be how all typography styles are consumed.

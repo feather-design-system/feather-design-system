@@ -4,7 +4,7 @@ pre: "@featherds/pdf-viewer"
 description: "Designed to view documents within the existing context and provide access to controls."
 lang: en-US
 tags: ["PdfViewer", "component"]
-layout: ComponentLayout
+menu: components
 ---
 
 ## Design

@@ -4,7 +4,7 @@ pre: "@featherds/list"
 description: "Lists are convenient ways to group data elements."
 lang: en-US
 tags: ["List", "component"]
-layout: ComponentLayout
+menu: components
 ---
 
 ## Design

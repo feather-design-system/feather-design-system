@@ -4,7 +4,7 @@ pre: "@featherds/tabs"
 description: "Used to organize content and allow users to toggle between different page views and content within the same page."
 lang: en-US
 tags: ["Tabs", "component"]
-layout: ComponentLayout
+menu: components
 ---
 
 ## Design
@@ -32,10 +32,10 @@ Additional Guidance:
 
 ### Props
 
-| Name       | Description                                            | Type      | Required | Default |
-| ---------- | ------------------------------------------------------ | --------- | -------- | ------- |
-| modelValue | can be set if you want to open a specific tab          | `Number`  | `false`  | `0`     |
-| vertical   | toggles vertical rather than default horizontal tabs   | `Boolean` | `False`  | `False` |
+| Name       | Description                                          | Type      | Required | Default |
+| ---------- | ---------------------------------------------------- | --------- | -------- | ------- |
+| modelValue | can be set if you want to open a specific tab        | `Number`  | `false`  | `0`     |
+| vertical   | toggles vertical rather than default horizontal tabs | `Boolean` | `False`  | `False` |
 
 ### Events
 

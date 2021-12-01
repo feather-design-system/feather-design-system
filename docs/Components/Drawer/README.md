@@ -4,7 +4,7 @@ pre: "@featherds/drawer"
 description: "An alternative pattern to Dialogs, Drawers allow displaying additional content or requests for information."
 lang: en-US
 tags: ["Drawer", "component"]
-layout: ComponentLayout
+menu: components
 ---
 
 ## Design
@@ -102,12 +102,12 @@ A wrapper for Tab Content, designed to be used in the `default` slot of a `Drawe
 
 ### Props
 
-| Name      | Description                                                                                    | Type      | Required | Default |
-| --------- | ---------------------------------------------------------------------------------------------- | --------- | -------- | ------- |
-| header    | text that will be displayed as the header of the content aea unless the `header` slot is used  | `String`  | `false`  | -       |
-| contentId | id of the content that the tab controls                                                        | `String`  | `false`  | -       |
-| tabId     | id tab                                                                                         | `String`  | `false`  | -       |
-| disabled  | true when the tab is disabled                                                                  | `Boolean` | `false`  | `false` |
+| Name      | Description                                                                                   | Type      | Required | Default |
+| --------- | --------------------------------------------------------------------------------------------- | --------- | -------- | ------- |
+| header    | text that will be displayed as the header of the content aea unless the `header` slot is used | `String`  | `false`  | -       |
+| contentId | id of the content that the tab controls                                                       | `String`  | `false`  | -       |
+| tabId     | id tab                                                                                        | `String`  | `false`  | -       |
+| disabled  | true when the tab is disabled                                                                 | `Boolean` | `false`  | `false` |
 
 ### Slots
 

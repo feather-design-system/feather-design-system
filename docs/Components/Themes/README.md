@@ -4,7 +4,7 @@ pre: "@featherds/styles"
 description: "How to use themes to style your application"
 lang: en-US
 tags: ["Themes", "component"]
-layout: ComponentLayout
+menu: components
 ---
 
 `@featherds/styles` exposes 2 default themes that can be used. They are located in the package at `@featherds/styles/themes` in the following CSS files:
@@ -18,7 +18,7 @@ Each theme file provides a set of CSS Variables for the `:root` element in the H
 
 <Styles-ExampleThemeRender theme="open-light"/>
 
-##  Dark Theme
+## Dark Theme
 
 <Styles-ExampleThemeRender theme="open-dark"/>
 
@@ -30,12 +30,10 @@ To get started using our themes you will want to import `@featherds/styles` dire
 import { createApp } from "vue";
 import App from "./App.vue";
 
-import "@featherds/styles";//loads base level typography and minor reset
+import "@featherds/styles"; //loads base level typography and minor reset
 import "@featherds/styles/themes/open-light.css"; // load CSS theme directly
 
-createApp(App)
-  .mount("#app");
-
+createApp(App).mount("#app");
 ```
 
 If you're building a component or want to use styles elsewhere in your application, it's simple to utilise the variables. Import the variables file in your SASS/SCSS and you can use the variables directly.
@@ -54,15 +52,15 @@ element {
 
 The base themes are light and dark variants of the same core set of values. To facilitate this, they are created in the following structure;
 
-* `styles/themes/_variables.scss`<br/>
+- `styles/themes/_variables.scss`<br/>
   Defines all the variable names that can be assigned
-* `styles/themes/_base-light.scss` / `styles/themes/_base-dark.scss`<br/>
+- `styles/themes/_base-light.scss` / `styles/themes/_base-dark.scss`<br/>
   Inherits the variables and primarily defines colors and opacity values
-* `styles/themes/_base-theme_.scss`<br/>
+- `styles/themes/_base-theme_.scss`<br/>
   Defines typography and layout values
-* `styles/themes/_open-mixins.scss`<br/>
+- `styles/themes/_open-mixins.scss`<br/>
   Takes all of the above, alters a few specific values and creates a dark and light mixin for consumption
-* `styles/themes/open-light.scss` / `styles/themes/open-dark.scss`<br/>
+- `styles/themes/open-light.scss` / `styles/themes/open-dark.scss`<br/>
   Simply consume the mixins created above and are the files used by the build process
 
 You can create your own themes in your project in whatever method you prefer, but we recommend you set values for all the defined variables, otherwise you may find issues with some components.

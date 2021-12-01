@@ -4,7 +4,7 @@ pre: "@featherds/protected-input"
 design: "For scenarios where sensitive user information must be entered into a computer interface discreetly."
 lang: en-US
 tags: ["ProtectedInput", "component"]
-layout: ComponentLayout
+menu: components
 ---
 
 ## Example

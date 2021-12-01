@@ -4,7 +4,7 @@ lang: en-US
 pre: "styles"
 description: "Used to define information hierarchy"
 tags: ["Foundation", "Typography"]
-layout: DesignLayout
+menu: foundation
 ---
 
 ## Overview

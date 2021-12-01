@@ -4,7 +4,7 @@ pre: "@featherds/footer"
 description: "Provides important links, licensing details and copyright information."
 lang: en-US
 tags: ["Footer", "component"]
-layout: ComponentLayout
+menu: components
 ---
 
 ## Design
@@ -40,7 +40,7 @@ Links should be used minimally and should never exceed 5 total links.
 ### Slots
 
 - `contact` - contact information; displayed as the first row
-- `links` -  content will be displayed in a list. Should be `FooterLink`s
+- `links` - content will be displayed in a list. Should be `FooterLink`s
 
 ### data-ref-ids
 

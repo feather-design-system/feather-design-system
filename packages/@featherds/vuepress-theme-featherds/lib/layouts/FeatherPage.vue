@@ -11,29 +11,33 @@
         <template v-slot:left>
           <div class="header-title">
             <a :href="$withBase('/')"
-              ><FeatherLogoFull
+              ><component
+                v-if="logoLarge && logoSmall"
+                :is="logoLarge"
                 class="full-header-icon"
-              /><FeatherLogoMotif
+                :title="title"
+              /><component
+                v-if="logoLarge && logoSmall"
+                :is="logoSmall"
+                :title="title"
                 class="small-header-icon"
               />
+              <span v-if="!logoLarge || !logoSmall">{{ title }}</span>
             </a>
             &nbsp;
           </div>
         </template>
         <template v-slot:center>
-          <!-- Patterns -->
-          <AppBarLink title="Foundation" :url="$withBase('/Foundation/Styles/Color')"
-            >Foundation</AppBarLink
-          >
-          <!-- Packages -->
-          <AppBarLink title="Components" :url="$withBase('/Components/')"
-            >Components</AppBarLink
-          >
+          <template v-for="item in menus" :key="item.name">
+            <AppBarLink :title="item.name" :url="$withBase(item.url)">{{
+              item.name
+            }}</AppBarLink>
+          </template>
         </template>
         <template v-slot:right>
           <div class="right-container">
             <PageThemeChange class="theme-changer" />
-            <DocSearch />
+            <NavbarSearch />
           </div>
         </template> </FeatherAppBar
     ></template>
@@ -41,23 +45,32 @@
     <div id="main">
       <slot />
     </div>
-    <Footer />
+    <component :is="footer" v-if="footer" class="footer" />
   </FeatherAppLayout>
 </template>
 <script>
 import { FeatherIcon } from "@featherds/icon";
 import KeyboardArrowDown from "@featherds/icon/navigation/ExpandMore";
-import FeatherLogoFull from "../components/FeatherLogoFull.vue";
-import FeatherLogoMotif from "../components/FeatherLogoMotif.vue";
-import { FeatherMegaMenu } from "@featherds/megamenu";
 import { FeatherAppBarLink, FeatherAppBar } from "@featherds/app-bar";
 import { FeatherAppLayout } from "@featherds/app-layout";
 import AppBarLink from "../components/AppBarLink.vue";
 import PageThemeChange from "../components/PageThemeChange";
-import Footer from "../components/Footer";
-import DocSearch from "../components/DocSearch";
+import NavbarSearch from "../components/NavbarSearch";
+import { computed } from "vue";
+import { useThemeLocaleData } from "@vuepress/plugin-theme-data/lib/client";
+import { useSiteLocaleData } from "@vuepress/client";
 
 export default {
+  setup() {
+    const theme = useThemeLocaleData();
+    const footer = computed(() => theme.value.footerComponent);
+    const menus = computed(() => theme.value.menus.header);
+    const logoLarge = computed(() => theme.value.brandLogoLargeComponent);
+    const logoSmall = computed(() => theme.value.brandLogoSmallComponent);
+    const title = computed(() => useSiteLocaleData().value.title);
+
+    return { footer, menus, title, logoLarge, logoSmall };
+  },
   data() {
     return {
       appbarLabels: {
@@ -70,15 +83,10 @@ export default {
   components: {
     PageThemeChange,
     FeatherIcon,
-    FeatherMegaMenu,
-    FeatherAppBarLink,
     FeatherAppBar,
     AppBarLink,
-    Footer,
     FeatherAppLayout,
-    DocSearch,
-    FeatherLogoFull,
-    FeatherLogoMotif
+    NavbarSearch,
   },
 };
 </script>
@@ -103,9 +111,8 @@ export default {
   display: inline-block;
   margin-right: 24px;
   a {
-    @include headline4();
+    @include headline3();
     color: var($surface);
-    line-height: 63px;
     text-decoration: none;
     text-transform: uppercase;
     &:hover,
@@ -129,7 +136,7 @@ export default {
     display: flex;
     flex-direction: column;
   }
-  :deep(footer) {
+  :deep(.footer) {
     flex: none;
   }
 }

@@ -4,7 +4,7 @@ lang: en-US
 pre: "@featherds/ripple"
 description: "Provides feedback on clickable elements that is both useful and beautiful."
 tags: ["Ripple", "component"]
-layout: ComponentLayout
+menu: components
 ---
 
 `Ripple` applies a material style ripple to it's parent element when it is clicked.
@@ -28,6 +28,6 @@ When using a ripple it will force its direct parent to have `overflow:hidden` in
 
 ### Props
 
-| Name   | Description                                   | Type      | Required | Default |
-| ------ | --------------------------------------------- | --------- | -------- | ------- |
-| center | will center the ripple on the parent element  | `Boolean` | `false`  | -       |
+| Name   | Description                                  | Type      | Required | Default |
+| ------ | -------------------------------------------- | --------- | -------- | ------- |
+| center | will center the ripple on the parent element | `Boolean` | `false`  | -       |

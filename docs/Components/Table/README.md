@@ -4,7 +4,7 @@ pre: "@featherds/table"
 description: "Tables display a matrix of data with functionality to assist in sorting and filtering of information."
 lang: en-US
 tags: ["Table", "component"]
-layout: ComponentLayout
+menu: components
 ---
 
 ## Design
@@ -165,11 +165,11 @@ Similarly, if your cell only contains a checkbox, you can have it styled accordi
 
 ### Props
 
-| Name     | Description                                                                                                                              | Type                   | Required | Default                       |
-| -------- | ---------------------------------------------------------------------------------------------------------------------------------------- | ---------------------- | -------- | ----------------------------- |
-| sort     | current applied sort to the column                                                                                                       | `asc`, `desc`, ` none` | `true`   | -                             |
-| property | should be the name of the property that is to be sorted. This is only used to help you identify the sorting in the `sort-changed` event  | `String`               | `true`   | -                             |
-| labels   | object containing labels to be used by this component. Mainly used for i18n or customization of labels. See [Labels](#labels) example    | `Object`               | `false`  | See [Labels](#labels) example |
+| Name     | Description                                                                                                                             | Type                   | Required | Default                       |
+| -------- | --------------------------------------------------------------------------------------------------------------------------------------- | ---------------------- | -------- | ----------------------------- |
+| sort     | current applied sort to the column                                                                                                      | `asc`, `desc`, ` none` | `true`   | -                             |
+| property | should be the name of the property that is to be sorted. This is only used to help you identify the sorting in the `sort-changed` event | `String`               | `true`   | -                             |
+| labels   | object containing labels to be used by this component. Mainly used for i18n or customization of labels. See [Labels](#labels) example   | `Object`               | `false`  | See [Labels](#labels) example |
 
 ### Labels
 

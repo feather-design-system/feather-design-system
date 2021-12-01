@@ -4,7 +4,7 @@ pre: "@featherds/chips"
 description: "Chips are delicious."
 lang: en-US
 tags: ["FeatherChip", "component"]
-layout: ComponentLayout
+menu: components
 ---
 
 ## Design
@@ -40,7 +40,6 @@ There are 3 fundamental types, specified in the Chip List component. All lists c
 
 - `feather-chip-list` - list element
 
-
 ## Chip
 
 ### Props
@@ -54,4 +53,4 @@ There are 3 fundamental types, specified in the Chip List component. All lists c
 ### Slots
 
 - `default` - the text displayed in the Chip
-- `icon` -  icon to display on the left side if appropriate
+- `icon` - icon to display on the left side if appropriate

@@ -1,17 +1,24 @@
 <template>
   <div class="all-components">
-    <PrettyCard v-for="item in items" :href="item.url" :img-url="item.image"
+    <PrettyCard
+      v-for="item in items"
+      :href="$withBase(item.url)"
+      :img-url="item.image"
       >{{ item.name }}
     </PrettyCard>
   </div>
 </template>
 <script>
-import items from "../components/components";
+import { useThemeLocaleData } from "@vuepress/plugin-theme-data/lib/client";
+import { computed } from "vue";
 export default {
-  data() {
-    return {
-      items,
-    };
+  setup() {
+    const items = computed(() => {
+      return useThemeLocaleData()
+        .value.menus.components.find((x) => x.components)
+        .items.filter((x) => !!x.image);
+    });
+    return { items };
   },
 };
 </script>

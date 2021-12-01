@@ -4,7 +4,7 @@ pre: "@featherds/app-bar"
 description: "A header component that is anchored to the top of the application window and provides screen-specific information and actions to the user."
 lang: en-US
 tags: ["AppBar", "App-Bar", "component"]
-layout: ComponentLayout
+menu: components
 ---
 
 ## Design

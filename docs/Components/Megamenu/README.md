@@ -4,7 +4,7 @@ lang: en-US
 pre: "@featherds/megamenu"
 description: "An enhanced dropdown type menu but for more complex content."
 tags: ["Megamenu", "component"]
-layout: ComponentLayout
+menu: components
 ---
 
 ## Examples
@@ -17,11 +17,11 @@ Behaves like a dropdown menu except it takes up full width of screen. Typically 
 
 ### Props
 
-| Name        | Description                                                                                                          | Type     | Required | Default |
-| ----------- | -------------------------------------------------------------------------------------------------------------------- | -------- | -------- | ------- |
-| name        | this name is used to populate the large title to the LHS of the mega menu when it is opened                          | `String` | `true`   | -       |
-| closeText   | text for the close icon                                                                                              | `String` | `true`   | -       |
-| role        | determines the role of the content. If there is advanced controls such as `input` can be better to use role `region` | `String` | `false`  | `menu`  |
+| Name      | Description                                                                                                          | Type     | Required | Default |
+| --------- | -------------------------------------------------------------------------------------------------------------------- | -------- | -------- | ------- |
+| name      | this name is used to populate the large title to the LHS of the mega menu when it is opened                          | `String` | `true`   | -       |
+| closeText | text for the close icon                                                                                              | `String` | `true`   | -       |
+| role      | determines the role of the content. If there is advanced controls such as `input` can be better to use role `region` | `String` | `false`  | `menu`  |
 
 ### Events
 

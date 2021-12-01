@@ -4,7 +4,7 @@ pre: "@featherds/select"
 description: "Presents the user with a list of options allowing them to select a single option from the menu."
 lang: en-US
 tags: ["Select", "component"]
-layout: ComponentLayout
+menu: components
 ---
 
 ## Examples
@@ -48,17 +48,17 @@ The following example allows `10` items to be displayed before scrolling.
 
 ### Props
 
-| Name       | Description                                                                              | Type            | Required | Default     |
-| ---------- | ---------------------------------------------------------------------------------------- | --------------- | -------- | ----------- |
-| label      | label for the select                                                                     | `String`        | `true`   | -           |
-| modelValue | current value selected by select                                                         | `Object`        | `false`  | `undefined` |
-| text-prop  | property name that is used to get the display text from `value` and `options`            | `String`        | `false`  | `_text`     |
-| options    | array of options to display in the dropdown                                              | `Array<Object>` | `false`  | `[]`        |
-| error      | error string to display under select                                                     | `String`        | `false`  | -           |
-| clear      | label for the clear link that will appear at the end of the input when this has a value  | `String`        | `false`  | `""`        |
-| hint       | hint string to display under select                                                      | `String`        | `false`  | -           |
-| background | sets label background color to `background`                                              | `Boolean`       | `false`  | `false`     |
-| hideLabel  | hides the label for the input in scenarios like tables where it would get in the way     | `Boolean`       | `false`  | -           |
+| Name       | Description                                                                             | Type            | Required | Default     |
+| ---------- | --------------------------------------------------------------------------------------- | --------------- | -------- | ----------- |
+| label      | label for the select                                                                    | `String`        | `true`   | -           |
+| modelValue | current value selected by select                                                        | `Object`        | `false`  | `undefined` |
+| text-prop  | property name that is used to get the display text from `value` and `options`           | `String`        | `false`  | `_text`     |
+| options    | array of options to display in the dropdown                                             | `Array<Object>` | `false`  | `[]`        |
+| error      | error string to display under select                                                    | `String`        | `false`  | -           |
+| clear      | label for the clear link that will appear at the end of the input when this has a value | `String`        | `false`  | `""`        |
+| hint       | hint string to display under select                                                     | `String`        | `false`  | -           |
+| background | sets label background color to `background`                                             | `Boolean`       | `false`  | `false`     |
+| hideLabel  | hides the label for the input in scenarios like tables where it would get in the way    | `Boolean`       | `false`  | -           |
 
 ### Events
 

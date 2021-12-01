@@ -4,7 +4,7 @@ pre: "@featherds/pagination"
 description: "Pagination elements display information about the number of pages that exist of a list of items and provide controls to navigate through them."
 lang: en-US
 tags: ["Pagination", "component"]
-layout: ComponentLayout
+menu: components
 ---
 
 ## Design

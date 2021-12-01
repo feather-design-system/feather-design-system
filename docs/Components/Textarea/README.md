@@ -4,7 +4,7 @@ pre: "@featherds/textarea"
 description: "A text field area is meant to provide users with a suitable field size to accomodate more than a single line of text."
 lang: en-US
 tags: ["Textarea", "component"]
-layout: ComponentLayout
+menu: components
 ---
 
 ## Example
@@ -34,18 +34,18 @@ By default text field areas should be static, providing a scrollbar to users if 
 
 ### Props
 
-| Name       | Description                                                                                       | Type      | Required | Default      |
-| ---------- | ------------------------------------------------------------------------------------------------- | --------- | -------- | ------------ |
-| modelValue | value to be placed in the textarea                                                                | `String`  | `false`  | -            |
-| label      | text label for the textarea                                                                       | `String`  | `true`   | -            |
-| hint       | hint text to be displayed below the textarea                                                      | `String`  | `false`  | -            |
-| error      | error text to be displayed below the textarea                                                     | `String`  | `false`  | -            |
-| clear      | label for the clear link that will appear at the end of the textarea when this has a value        | `String`  | `false`  | `""`         |
-| background | sets the label background color to `$background`. Use this if control is on a background surface  | `Boolean` | `false`  | `false`      |
-| disabled   | puts the textarea into a disabled state                                                           | `Boolean` | `false`  | `false`      |
-| maxlength  | maximum amount of characters this textarea will accept                                            | `Number`  | `false`  | 0 - no limit |
-| auto       | when true the textarea will automatically grow                                                    | `Boolean` | `false`  | `false`      |
-| hideLabel  | hides the label for the input in scenarios like tables where it would get in the way              | `Boolean` | `false`  | -            |
+| Name       | Description                                                                                      | Type      | Required | Default      |
+| ---------- | ------------------------------------------------------------------------------------------------ | --------- | -------- | ------------ |
+| modelValue | value to be placed in the textarea                                                               | `String`  | `false`  | -            |
+| label      | text label for the textarea                                                                      | `String`  | `true`   | -            |
+| hint       | hint text to be displayed below the textarea                                                     | `String`  | `false`  | -            |
+| error      | error text to be displayed below the textarea                                                    | `String`  | `false`  | -            |
+| clear      | label for the clear link that will appear at the end of the textarea when this has a value       | `String`  | `false`  | `""`         |
+| background | sets the label background color to `$background`. Use this if control is on a background surface | `Boolean` | `false`  | `false`      |
+| disabled   | puts the textarea into a disabled state                                                          | `Boolean` | `false`  | `false`      |
+| maxlength  | maximum amount of characters this textarea will accept                                           | `Number`  | `false`  | 0 - no limit |
+| auto       | when true the textarea will automatically grow                                                   | `Boolean` | `false`  | `false`      |
+| hideLabel  | hides the label for the input in scenarios like tables where it would get in the way             | `Boolean` | `false`  | -            |
 
 ### Events
 
