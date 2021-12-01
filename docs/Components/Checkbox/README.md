@@ -1,7 +1,7 @@
 ---
 title: "Checkbox"
 pre: "@featherds/checkbox"
-description: "Checkboxes are ideal for selection of items or indication of state."
+description: "Allows users to select one or many options."
 lang: en-US
 tags: ["Checkbox", "component"]
 layout: ComponentLayout
@@ -9,7 +9,7 @@ layout: ComponentLayout
 
 ## Design
 
-WIP
+Checkbox allows a user to select one or many options. There are multiple design variations available to be used based on application needs.
 
 ## Examples
 
@@ -17,7 +17,20 @@ WIP
 
 ## Usage
 
-Checkboxes are used when a user must make a selection from one or more options in a list of information. Checkboxes can be used as binary controls, allowing users to toggle specific options or functions. Indeterminate Checkboxes can be used to present a parent object in a list of child Checkboxes.
+Checkboxes are used in scenarios where the user has the option and need to select multiple values from a list of options. When using a Checkbox, it’s recommended to list options in a logical order (alphabetically, numerically, etc.) and include at least 2 or more options.
+
+**When to use**
+
+Do not use Checkbox in scenarios where a user has more than 5 options.
+
+Instead use:
+[Select](/Components/Select/)
+
+Do not use Checkbox when a user can only choose one option out of 2 options.
+
+Instead use:
+[Radio](/Components/Radio/)
+
 
 ## Checkbox
 

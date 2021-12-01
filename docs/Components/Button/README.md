@@ -2,14 +2,24 @@
 title: "Button"
 lang: en-US
 pre: "@featherds/button"
-description: "Buttons help users initiate actions or navigate through your application."
+description: "An interaction point to help users initiate actions or navigate through your application."
 tags: ["Button", "component"]
 layout: ComponentLayout
 ---
 
 ## Design
 
-Buttons act as primary interaction points for users. Buttons can be extremely high priority items, or they can be diminished when paired with information or other interaction points that require a users full attention.
+There are 4 types of Buttons, each styled to reflect a level in the visual hierarchy;
+
+* **Primary**<br />
+  filled shapes with "knockout text" to ensure that they have the most contrast of any Button
+* **Secondary**<br />
+  consist of a stroked shape with colored text, implying that the button has a parent container without being visually dominant
+* **Text button**<br />
+  uses an "invisible" shape, relying on the styling of the text to convey the importance of the component
+* **Icon button**<br />
+  uses an icon to communicate an action to the user
+
 
 <OverlineLinks title="Related Components">
 <OverlineLink href="#icon-button">Icon Button</OverlineLink>
@@ -22,7 +32,7 @@ Buttons act as primary interaction points for users. Buttons can be extremely hi
 
 ## Usage
 
-Buttons indicate 'action points' to a user. They can exist as optional interaction points that have an effect on one or more parts of the application, or interaction may be required to proceed farther into the experience. Buttons may be used in the following examples:
+Choose the type of Button based on the importance of the action. They can exist as optional interaction points that have an effect on one or more parts of the application, or interaction may be required to proceed farther into the experience. Buttons may be used in the following examples:
 
 1. Dialogs
 2. Modal Windows

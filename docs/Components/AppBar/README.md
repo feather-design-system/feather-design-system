@@ -9,7 +9,7 @@ layout: ComponentLayout
 
 ## Design
 
-The App Bar is designed to help anchor the user and can provide key interaction points. It is a prime location for brand and product identity. As a consistent component throughout the application, the App Bar is where company logos and product names are typically displayed. In addition to company logos, the App Bar also inherits primary theme colors to help visually anchor users on any page within the application.
+The app bar is designed to help anchor the user and can provide key interaction points. It is a prime location for brand and product identity. As a consistent component throughout the application, the app bar is where company logos and product names are typically displayed. In addition to company logos, the app bar also inherits primary theme colors to help visually anchor users on any page within the application.
 
 ## Example
 
@@ -17,7 +17,7 @@ The App Bar is designed to help anchor the user and can provide key interaction 
 
 ## Usage
 
-App Bars are used on all applications at the highest level of hierarchy. The App Bar can serve as the top level of navigation in an application through the use of a “menu” button and can become a “contextual” App Bar to better serve user needs based on required functionality for a given application context.
+App bars are used on all applications at the highest level of hierarchy. The app bar can serve as the top level of navigation in an application through the use of a “menu” button and can become a “contextual” app bar to better serve user needs based on required functionality for a given application context.
 
 ## AppBar
 

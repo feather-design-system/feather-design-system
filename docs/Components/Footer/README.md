@@ -1,15 +1,33 @@
 ---
 title: "Footer"
 pre: "@featherds/footer"
-description: "A global Footer component that can contain various content, including copyright."
+description: "Provides important links, licensing details and copyright information."
 lang: en-US
 tags: ["Footer", "component"]
 layout: ComponentLayout
 ---
 
+## Design
+
+Footer is designed as the bottom-most element of an interface. It is a global element found across all screens and pages. In order to not overwhelm the page and take attention away from more important user tasks within any page, the Footer is designed with the balance of being essential yet minimal.
+
 ## Examples
 
 <Footer-Examples />
+
+## Usage
+
+The Footer primarily serves as a container for important application-wide information such as legal links, copyright information and licensing details.
+
+The Footer should be built with application appropriate links like:
+
+* Terms of Use
+* Privacy Policy
+* Cookies
+* Terms and Conditions
+* Contact Details
+
+Links should be used minimally and should never exceed 5 total links.
 
 ## Footer
 

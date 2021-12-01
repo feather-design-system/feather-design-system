@@ -1,15 +1,29 @@
 ---
 title: "Tabs"
 pre: "@featherds/tabs"
-description: "Tabs provide an easy way for users to navigate through information that shares a common context or theme at the same level of the application hierarchy."
+description: "Used to organize content and allow users to toggle between different page views and content within the same page."
 lang: en-US
 tags: ["Tabs", "component"]
 layout: ComponentLayout
 ---
 
+## Design
+
+Tabs allow users to quickly navigate between different views within one page. Tabs are helpful when organizing large amounts of related content. Tabs are designed so that each state is clearly visible in order to let users know where they are within the tabbed experience.
+
 ## Example
 
 <Tabs-Examples />
+
+## Usage
+
+Tabs should be used to section off and organize related content. When using Tabs, it’s important to consider labels. It’s recommended that labels should not exceed 2 words and consideration should be given to how the number of Tabs and length of label will scale on smaller screens.
+
+Additional Guidance:
+
+* to reduce clutter, avoid using multiple word labels - avoid using more than 5 tabs
+* never force users to switch between tabs in order to complete a task
+* tabs should not be used as a primary form of navigation
 
 ## TabContainer
 
