@@ -17,7 +17,7 @@ The Radio button design has been kept minimal – understanding that the compone
 
 ## Usage
 
-Radio buttons enable a user to make a single selection among a group of options. When using a Radio, it’s recommended to list options in a logical order (alphabetically, numerically, etc.) and include at least 2 or more options. By default, it’s recommended to have no Radio selected unless there is a most likely or recommended selection.
+Radio buttons enable a user to make a single selection among a group of options. When using a Radio, it's recommended to list options in a logical order (alphabetically, numerically, etc.) and include at least 2 or more options. By default, it's recommended to have no Radio selected unless there is a most likely or recommended selection.
 
 ## Radio
 

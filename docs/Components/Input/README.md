@@ -1,7 +1,7 @@
 ---
 title: "Input"
 pre: "@featherds/input"
-description: "Text fields provide a way for users to enter and edit text. They can exist as singular objects in a layout, or they can be paired together to form a 'field-set' where users need to enter lots of related information."
+description: "Allows users to enter and edit text."
 lang: en-US
 tags: ["Input", "component"]
 layout: ComponentLayout
@@ -9,13 +9,29 @@ layout: ComponentLayout
 
 ## Design
 
-As of now, there is only one type of text field: The outlined text field.
-
-The modern design trend with text fields is meant to promote minimalism. It’s very common to see text fields represented as either a shaded volume or an empty volume with a defined bottom border or 'stroke' meant to signify the line on which the user will enter information. User testing has shown that users tend to get confused by this as it doesn’t provide a strong enough visual affordance for an interactive text input element. The solution utilizes a border around the perimeter of the text field to draw on design cues from the past - ensuring optimal recognition, while respecting the modern push for minimalism.
+Input consists of a label and an input field. Inputs follow a minimal design with stronger visual affordance given when a user is interacting with the field. For example, active state utilizes a strong border around the perimeter of the Input to provide strong contrast if being used within a field set or form. This ensures optimal recognition while respecting the modern push for minimalism.
 
 ## Examples
 
 <Input-Examples />
+
+## Usage
+
+Inputs can be used as a singular object in a layout, or they can be paired together to form a “field-set” where information is closely related. For example, a field-set might include an Input for ‘first name’ and an Input for ‘last name.’
+
+**Label Guidelines:**
+
+* keep label text descriptive, unambiguous and concise
+* be consistent with capitalization of label text (title case or sentence case)
+* labels should fit on a single line
+* use natural language if necessary (e.g. instead of “Issued by” consider “Which bank issued your card?”)
+* asterisks should be used on required fields
+
+**Field Guidelines:**
+
+* keep field sizes consistent within a page
+* one field per row unless the fields are closely related (e.g. First Name and Last Name or City, State)
+* where appropriate a max field size and character limit should be included
 
 ## Input
 

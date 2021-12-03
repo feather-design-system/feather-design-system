@@ -21,7 +21,8 @@ Tabs should be used to section off and organize related content. When using Tabs
 
 Additional Guidance:
 
-* to reduce clutter, avoid using multiple word labels - avoid using more than 5 tabs
+* to reduce clutter, avoid using multiple word labels
+* avoid using more than 5 tabs
 * never force users to switch between tabs in order to complete a task
 * tabs should not be used as a primary form of navigation
 

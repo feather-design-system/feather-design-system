@@ -17,20 +17,25 @@ Checkbox allows a user to select one or many options. There are multiple design 
 
 ## Usage
 
-Checkboxes are used in scenarios where the user has the option and need to select multiple values from a list of options. When using a Checkbox, it’s recommended to list options in a logical order (alphabetically, numerically, etc.) and include at least 2 or more options.
+Checkboxes are used in scenarios where either a binary state is to be represented or multiple discrete values can be selected from a list of options. When using a Checkbox, it’s recommended to list options in a logical order (alphabetically, numerically, etc.) and clearly set out the expectations for selection.
 
-**When to use**
+**Do** use a Checkbox when you have an obvious opposing binary state (Opt in/Opt out questions, On/Off toggles etc).
 
-Do not use Checkbox in scenarios where a user has more than 5 options.
+**Do** use a Checkbox when you have a small (5 or fewer) set of options that can have multiple selected.
 
+**When not to use**
+
+**Do not** use Checkbox in scenarios where a user has more than 5 options.<br />
 Instead use:
 [Select](/Components/Select/)
 
-Do not use Checkbox when a user can only choose one option out of 2 options.
-
+**Do not** use Checkbox when a user can only choose one option out of 2 options.<br />
 Instead use:
 [Radio](/Components/Radio/)
 
+**Do not** use Checkbox when the selection is exclusive (there is only one allowed).<br />
+Instead use:
+[Radio](/Components/Radio/)
 
 ## Checkbox
 

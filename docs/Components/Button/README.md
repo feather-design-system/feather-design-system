@@ -14,7 +14,7 @@ There are 4 types of Buttons, each styled to reflect a level in the visual hiera
 * **Primary**<br />
   filled shapes with "knockout text" to ensure that they have the most contrast of any Button
 * **Secondary**<br />
-  consist of a stroked shape with colored text, implying that the button has a parent container without being visually dominant
+  consists of a stroked shape with colored text, implying that the button has a parent container without being visually dominant
 * **Text button**<br />
   uses an "invisible" shape, relying on the styling of the text to convey the importance of the component
 * **Icon button**<br />
@@ -34,11 +34,11 @@ There are 4 types of Buttons, each styled to reflect a level in the visual hiera
 
 Choose the type of Button based on the importance of the action. They can exist as optional interaction points that have an effect on one or more parts of the application, or interaction may be required to proceed farther into the experience. Buttons may be used in the following examples:
 
-1. Dialogs
-2. Modal Windows
-3. Forms
-4. Cards
-5. Toolbars
+* Dialogs
+* Modal Windows
+* Forms
+* Cards
+* Toolbars
 
 ## Button
 
