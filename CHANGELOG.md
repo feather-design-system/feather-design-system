@@ -1,3 +1,20 @@
+## [0.9.2](https://github.com/feather-design-system/feather-design-system/compare/v0.9.1...v0.9.2) (2021-12-03)
+
+
+### Bug Fixes
+
+* adjusted all p margin-bottom on mobile to 24px instead of 8 ([f40ed2a](https://github.com/feather-design-system/feather-design-system/commit/f40ed2ac02304f2daf38e7bc9f231090f5fd2627))
+* docs issues ([46c5706](https://github.com/feather-design-system/feather-design-system/commit/46c5706a844af7ce74684bde1653fae694d19696))
+* line height for body-small adjusted to 1.5rem. Minor adjustment made to spacing for H3 in cards ([9df8bd2](https://github.com/feather-design-system/feather-design-system/commit/9df8bd2de8e086b07369294cfadf899fdd055d6b))
+* refactored SVGs for docs to not be included in the featherds/styles repo ([88f9471](https://github.com/feather-design-system/feather-design-system/commit/88f94717e77248c46b9b2d9a6ad99f084604b669))
+
+
+### Features
+
+* added Generate Docs GitHub action ([d8f1b47](https://github.com/feather-design-system/feather-design-system/commit/d8f1b47d281b737293803880813eb3abd2cf8d22))
+
+
+
 ## [0.9.1](https://github.com/feather-design-system/feather-design-system/compare/v0.2.12...v0.9.1) (2021-11-23)
 
 
