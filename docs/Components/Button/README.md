@@ -22,7 +22,6 @@ There are 4 types of Buttons, each styled to reflect a level in the visual hiera
 
 
 <OverlineLinks title="Related Components">
-<OverlineLink href="#icon-button">Icon Button</OverlineLink>
 <OverlineLink :href="$withBase('/Components/BackButton/')">Back Button</OverlineLink>
 </OverlineLinks>
 

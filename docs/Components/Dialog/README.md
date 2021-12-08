@@ -1,7 +1,7 @@
 ---
 title: "Dialog"
 pre: "@featherds/dialog"
-description: "Dialogs present additional information or make requests for input."
+description: "Provides easy access to important information and/or limits focus to the interaction required for a user to complete a given task."
 lang: en-US
 tags: ["Dialog", "component"]
 menu: components
@@ -9,11 +9,15 @@ menu: components
 
 ## Design
 
-Our Dialogs allow for the use of both raised and flat button styles within the button bar at the bottom of the dialogs. The more complex workflows of the healthcare space necessitate the use of multiple styles with our buttons in order to communicate the priority of the buttons/functions within our dialogs. For example, the primary action within a dialog may be called out using our primary button style, while lower priority functions such as “Cancel” use our more muted tertiary button styles.
+Dialogs consist of a scrim/lightbox, an optional header, an optional close button, body content, at least one action button and an optional illustration. For Dialogs that require user action, the tertiary button style should be used by default. Complex workflows or destructive actions may require the use of the primary button style to communicate high priority actions. When Buttons are used on a dialog, they are always found at the bottom of the Dialog surface.
 
 ## Examples
 
 <Dialog-Examples />
+
+## Usage
+
+This component appears when the application needs to give the user information in a manner that involves interruption, such as when an error occurs, or the program needs input or decision from the user.
 
 ## Dialog
 

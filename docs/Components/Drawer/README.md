@@ -1,7 +1,7 @@
 ---
 title: "Drawer"
 pre: "@featherds/drawer"
-description: "An alternative pattern to Dialogs, Drawers allow displaying additional content or requests for information."
+description: "Used to provide relevant information or simple tasks on top of one or more pages in an application."
 lang: en-US
 tags: ["Drawer", "component"]
 menu: components
@@ -9,14 +9,15 @@ menu: components
 
 ## Design
 
-Simplifies the user interface by
-
-- providing navigation options
-- providing easy access to additional information related to the current action without having to leave the current page
+Drawers consist of a background overlay (scrim), a surface, a header, an optional close icon and main content, which can consist of a variety of controls and text styles. Examples include text blocks, Menus, Checkboxes and Radio buttons.
 
 ## Examples
 
 <Drawer-Examples />
+
+## Usage
+
+Drawers are used to provide a user with additional information or allow the user to perform simple tasks while never fully leaving the page. Drawer size can vary depending on the content needed but generally cover 40-60% of the page. A Drawer is placed on top of the existing page usually on the right, but they can exist on top or below. Drawers can be used for smaller forms or tasks with fewer than 5 form fields.
 
 ## Drawer
 

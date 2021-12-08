@@ -1,7 +1,7 @@
 ---
 title: "Date Input"
 pre: "@featherds/date-input"
-description: "Date Inputs allow users to select a date from the past, present or future."
+description: "Allows users to select a date from the past, present or future."
 lang: en-US
 tags: ["DateInput", "component"]
 menu: components
@@ -9,9 +9,15 @@ menu: components
 
 ## Design
 
+A Date Input consists of two primary methods of interaction: the text field Date Input and the calendar picker Date Input. The text field Date Input is best used when the user needs to enter a date from the distant past or far in the future. The text field Date Input allows for faster input thanks to the minimal number of clicks involved and the speed with which users can type. The calendar input involves more clicks on the user’s behalf, but it is more accurate and more visually engaging for users, breaking the repetitive nature of data entry. Each of the two Date Input controls has their own set of child elements and sub-components.
+
 ## Examples
 
 <DateInput-Examples />
+
+## Usage
+
+These components are often found in the form of workflows where data entry is the primary user objective. The text input Date Input does not work well on a mobile experience. The date entry field may take the form of a text field Date Input, but upon interaction, the user should be presented with either a spinner or a calendar Date Input. Any reconfiguration of the Date Input component on a mobile interface must refactor the area of the interactive elements to accommodate touch interactions.
 
 ## DateInput
 

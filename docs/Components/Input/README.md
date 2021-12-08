@@ -17,7 +17,7 @@ Input consists of a label and an input field. Inputs follow a minimal design wit
 
 ## Usage
 
-Inputs can be used as a singular object in a layout, or they can be paired together to form a “field-set” where information is closely related. For example, a field-set might include an Input for ‘first name’ and an Input for ‘last name.’
+Inputs can be used as a singular object in a layout, or they can be paired together to form a “field-set” where information is closely related. For example, a field set might include an Input for ‘first name’ and an Input for ‘last name.’
 
 **Label Guidelines:**
 
