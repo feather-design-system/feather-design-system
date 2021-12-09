@@ -85,9 +85,13 @@ body {
   }
 
   blockquote {
-    border-left: 2px solid var($shade-2);
-    margin: 1.5em 10px;
-    padding: 0.5em 10px;
+    border-left: 2px solid var($secondary);
+    margin: 0;
+    padding: 0px 16px;
+    p {
+      @include headline2;
+      margin-bottom: 32px;
+    }
   }
   hr {
     border-top: 1px solid var($border-on-surface);

@@ -14,7 +14,7 @@ module.exports = {
     errorLogoComponent: "AtomError",
     menus: {
       header: [
-        { name: "Foundation", url: "/Foundation/Styles/Color" },
+        { name: "Foundation", url: "/Foundation/Story/Philosophy" },
         { name: "Components", url: "/Components/" },
       ],
       foundation: require("./menus/foundation"),
