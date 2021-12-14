@@ -17,7 +17,7 @@ menu: components
 
 | Name  | Description                                         | Type      | Required | Default |
 | ----- | --------------------------------------------------- | --------- | -------- | ------- |
-| icon  | should be Icon componet to be rendered              | `Object`  | `true`   | -       |
+| icon  | should be Icon component to be rendered             | `Object`  | `true`   | -       |
 | flex  | should be used when Icon is inside a flex container | `Boolean` | `false`  | `false` |
 | title | set this when you want to give a label to the Icon  | `String`  | `false`  | -       |
 
