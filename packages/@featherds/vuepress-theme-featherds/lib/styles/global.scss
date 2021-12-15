@@ -88,10 +88,7 @@ body {
     border-left: 2px solid var($secondary);
     margin: 0;
     padding: 0px 16px;
-    p {
-      @include headline2;
-      margin-bottom: 32px;
-    }
+    @include headline2;
   }
   hr {
     border-top: 1px solid var($border-on-surface);
