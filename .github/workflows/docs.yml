@@ -4,6 +4,7 @@ on: workflow_dispatch
 
 env:
   GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+  GA: ${{ secrets.GA }}
 
 jobs:
   release:
