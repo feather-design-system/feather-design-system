@@ -37,7 +37,7 @@ Feather DS is comprised of many layers of design and technology. As the design a
 
 ### Atoms
 
-**Elements**: The basic building blocks of components.
+**Elements**: The basic building blocks of components
 
 </figcaption>
 </figure>
@@ -48,7 +48,7 @@ Feather DS is comprised of many layers of design and technology. As the design a
 
 ### Molecules
 
-**Components**: The basic functional unit of Feather DS.
+**Components**: The basic functional unit of Feather DS
 
 </figcaption>
 </figure></div>
