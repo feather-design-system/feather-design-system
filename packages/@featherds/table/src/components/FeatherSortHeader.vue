@@ -167,6 +167,11 @@ th .header-flex-container {
   .sort-cell-label {
     display: inline-block;
     user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    -o-user-select: none;
+    -webkit-user-select: none;
   }
 
   &:focus {

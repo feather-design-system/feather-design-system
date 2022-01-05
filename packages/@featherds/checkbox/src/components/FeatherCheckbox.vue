@@ -212,6 +212,11 @@ $boxHeight: math.div($height, 2);
     padding-right: 16px;
     min-width: 56px;
     user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    -o-user-select: none;
+    -webkit-user-select: none;
     cursor: pointer;
   }
 }

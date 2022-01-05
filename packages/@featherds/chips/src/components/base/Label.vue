@@ -41,5 +41,10 @@ export default {
   white-space: nowrap;
   overflow-x: hidden;
   user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  -o-user-select: none;
+  -webkit-user-select: none;
 }
 </style>
