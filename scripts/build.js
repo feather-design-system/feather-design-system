@@ -5,12 +5,15 @@ const fs = require("fs-extra");
 const { getFilter } = require("./utils");
 (async () => {
   const filter = getFilter();
-  const files = await globby(`packages/@featherds/${filter}/src/index.js`, {
+  const files = await globby(`packages/@featherds/${filter}/src/index.[jt]s`, {
     cwd: process.cwd(),
   });
-  const postFiles = await globby(`packages/@featherds/${filter}/build/post.js`, {
-    cwd: process.cwd(),
-  });
+  const postFiles = await globby(
+    `packages/@featherds/${filter}/build/post.js`,
+    {
+      cwd: process.cwd(),
+    }
+  );
   await files
     .reduce(
       (promise, entry) =>

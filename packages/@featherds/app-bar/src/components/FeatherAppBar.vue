@@ -28,42 +28,56 @@
     </header>
   </div>
 </template>
-<script>
+<script lang="ts">
 import { useLabelProperty } from "@featherds/composables/LabelProperty";
-import FeatherAppBarLink from "./FeatherAppBarLink";
+import FeatherAppBarLink from "./FeatherAppBarLink.vue";
 import { useScroll } from "@featherds/composables/events/Scroll";
 import Menu from "@featherds/icon/navigation/Menu";
-import { toRef, inject, ref, onMounted } from "vue";
+import {
+  toRef,
+  inject,
+  ref,
+  onMounted,
+  defineComponent,
+  PropType,
+  Ref,
+} from "vue";
+
 const LABELS = {
   skip: "REQUIRED",
   expand: "Click to expand",
 };
-export default {
-  props: {
-    content: {
-      type: String,
-      required: true,
+export const props = {
+  content: {
+    type: String,
+    required: true,
+  },
+  labels: {
+    type: Object as PropType<typeof LABELS>,
+    default: () => {
+      return LABELS;
     },
-    labels: {
-      type: Object,
-      default() {
-        return LABELS;
-      },
-      validator(v) {
-        return !!v.skip;
-      },
-    },
-    fullWidth: {
-      type: Boolean,
-      default: false,
-    },
-    scrollHide: {
-      type: Boolean,
-      default: false,
+    validator: (v: typeof LABELS) => {
+      return !!v.skip;
     },
   },
-  setup(props) {
-    const labels = useLabelProperty(toRef(props, "labels"), LABELS);
+  fullWidth: {
+    type: Boolean,
+    default: false,
+  },
+  scrollHide: {
+    type: Boolean,
+    default: false,
+  },
+};
+
+export default defineComponent({
+  props,
+  setup: (props) => {
+    const labels = useLabelProperty<typeof LABELS>(
+      toRef(props, "labels"),
+      LABELS
+    );
     const full = inject("feather-app-layout-full-width", props.fullWidth);
 
     //scroll hiding
@@ -105,9 +119,16 @@ export default {
     }
 
     const useExpander = () => {
+      interface IExpander {
+        active: Ref<boolean>;
+        expand: () => void;
+      }
       //expand button
-      const expander = inject("feather-app-layout-expander", false);
-      if (expander) {
+      const expander = inject<boolean | (() => IExpander)>(
+        "feather-app-layout-expander",
+        false
+      );
+      if (typeof expander === "function") {
         const { active: canShowExpand, expand } = expander();
         return { canShowExpand, expand };
       }
@@ -135,7 +156,7 @@ export default {
   components: {
     FeatherAppBarLink,
   },
-};
+});
 </script>
 
 <style lang="scss" scoped>

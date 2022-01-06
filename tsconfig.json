@@ -1,0 +1,27 @@
+{
+  "compilerOptions": {
+    "baseUrl": ".",
+    "allowJs": true,
+    "target": "esnext",
+    "useDefineForClassFields": true,
+    "module": "esnext",
+    "moduleResolution": "node",
+    "strict": true,
+    "jsx": "preserve",
+    "sourceMap": true,
+    "resolveJsonModule": true,
+    "esModuleInterop": true,
+    "lib": ["esnext", "dom"],
+    "typeRoots": ["./node_modules/@types/", "./packages/@featherds/"],
+    "types": ["jest"]
+  },
+  "include": [
+    "packages/@featherds/*/src/**/*.ts",
+    "shims/*.d.ts",
+    "packages/@featherds/**/*.d.ts",
+    "packages/@featherds/*/src/**/*.d.ts",
+    "packages/@featherds/*/src/**/*.tsx",
+    "packages/@featherds/*/src/**/*.vue"
+  ],
+  "exclude": ["./node_modules/"]
+}

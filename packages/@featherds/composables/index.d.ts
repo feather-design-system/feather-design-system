@@ -1,23 +1,20 @@
-import { Ref, ComputedRef } from "vue";
-
 declare module "@featherds/composables/events/Scroll" {
+  import { Ref } from "vue";
   const useScroll: (
-    ref: Ref<HTMLElement>,
-    callback: () => void,
-    threshold: number
+    ref: Ref<HTMLElement | Document>,
+    callback: () => void
   ) => Ref<boolean>;
   export { useScroll };
 }
 
 declare module "@featherds/composables/events/Resize" {
-  const useResize: (
-    callback: () => void,
-    threshold: number
-  ) => Ref<boolean>;
+  import { Ref } from "vue";
+  const useResize: (callback: () => void) => Ref<boolean>;
   export { useResize };
 }
 
 declare module "@featherds/composables/events/OutsideClick" {
+  import { Ref } from "vue";
   const useOutsideClick: (
     ref: Ref<HTMLElement>,
     callback: () => void
@@ -27,20 +24,26 @@ declare module "@featherds/composables/events/OutsideClick" {
 }
 
 declare module "@featherds/composables/LabelProperty" {
-  const useLabelProperty: (
-    label: Ref<Record<string, string>>,
-    defaults: Record<string, string>
-  ) => ComputedRef<string>[];
+  import { Ref, ComputedRef } from "vue";
+  type Labels<Type> = {
+    [Property in keyof Type as `${string & Property}Label`]: ComputedRef<
+      Type[Property]
+    >;
+  };
+
+  const useLabelProperty: <T>(label: Ref<T>, defaults: T) => Labels<T>;
 
   export { useLabelProperty };
 }
 
 declare module "@featherds/composables/modal/CloseOnEsc" {
+  import { Ref } from "vue";
   const useCloseOnEsc: (ref: Ref<boolean>) => Ref<boolean>;
   export { useCloseOnEsc };
 }
 
 declare module "@featherds/composables/modal/HideOverflow" {
+  import { Ref } from "vue";
   const useHideBodyOverflow: (ref: Ref<boolean>) => void;
   const useHideRelativeOverflow: (
     ref: Ref<boolean>,
@@ -50,6 +53,7 @@ declare module "@featherds/composables/modal/HideOverflow" {
 }
 
 declare module "@featherds/composables/modal/RestoreFocus" {
+  import { Ref } from "vue";
   const useRestoreFocus: (ref: Ref<boolean>) => void;
   export { useRestoreFocus };
 }
