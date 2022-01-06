@@ -10,10 +10,7 @@ const sassImports = [
 const moduleImport = [
   {
     find: new RegExp(`^${scope}/([a-z-]+)$`),
-    replacement: path.resolve(
-      process.cwd(),
-      `./packages/${folder}/$1/src/index.js`
-    ),
+    replacement: path.resolve(process.cwd(), `./packages/${folder}/$1/src/`),
   },
 ];
 

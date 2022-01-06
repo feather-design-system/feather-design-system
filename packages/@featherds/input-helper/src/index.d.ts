@@ -1,4 +1,5 @@
 declare module "@featherds/input-helper" {
+
   import { DefineComponent, Ref } from "vue";
   const ActionIcon: DefineComponent;
   const InputWrapper: DefineComponent;
@@ -29,6 +30,7 @@ declare module "@featherds/input-helper" {
       label: string;
     };
   };
+
   export {
     ActionIcon,
     InputWrapper,
@@ -36,7 +38,8 @@ declare module "@featherds/input-helper" {
     InputSubText,
     InputSubTextMixin,
     InputInheritAttrsMixin,
+    ValidationHeader,
     useForm,
-    useValidation,
+    useValidation
   };
 }

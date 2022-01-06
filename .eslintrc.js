@@ -11,7 +11,12 @@ module.exports = {
     $: "readonly",
     $$: "readonly",
   },
-  extends: ["plugin:vue/vue3-essential", "@vue/prettier", "prettier"],
+  extends: [
+    "plugin:vue/vue3-essential",
+    "@vue/eslint-config-typescript",
+    "@vue/prettier",
+    "prettier",
+  ],
 
   parserOptions: {
     ecmaVersion: 2021,
