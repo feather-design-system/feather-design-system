@@ -175,8 +175,8 @@ describe("FeatherTextarea.vue", () => {
       },
     });
 
-    wrapper.find("textarea").element.focus();
-    wrapper.find("textarea").element.blur();
+    wrapper.find("textarea").trigger("blur");
+
     expect(fn).toHaveBeenCalled();
     expect(wrapper.element).toMatchSnapshot();
   });

@@ -56,7 +56,7 @@ describe("DrawerTab.vue", () => {
     it("should call clear timeout, reset showLabelTimeout and hide label", async () => {
       const wrapper = getWrapper();
       wrapper.vm.showLabelTimeout = 1000;
-      spyOn(window, "clearTimeout");
+      jest.spyOn(window, "clearTimeout");
       wrapper.vm.mouseLeave();
       expect(clearTimeout).toHaveBeenCalled();
       expect(wrapper.vm.showLabel).toBe(false);

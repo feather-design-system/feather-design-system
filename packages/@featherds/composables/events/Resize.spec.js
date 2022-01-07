@@ -31,7 +31,7 @@ describe("Resize composable", () => {
   });
 
   it("should only add event listener when active is set to true", async () => {
-    const spy = spyOn(window, "addEventListener");
+    const spy = jest.spyOn(window, "addEventListener");
     const listener = jest.fn();
 
     let active;
@@ -46,7 +46,7 @@ describe("Resize composable", () => {
     expect(spy).toHaveBeenCalled();
   });
   it("should remove events on unmount", async () => {
-    const spy = spyOn(window, "removeEventListener");
+    const spy = jest.spyOn(window, "removeEventListener");
     const wrapper = createWrapper(() => {
       const active = useResize(jest.fn());
       active.value = true;

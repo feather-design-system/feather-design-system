@@ -23,6 +23,7 @@
           aria-modal="true"
           data-ref-id="feather-drawer"
           tabindex="-1"
+          first-focus
         >
           <div class="slot">
             <slot></slot>

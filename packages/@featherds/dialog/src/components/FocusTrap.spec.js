@@ -28,8 +28,8 @@ describe("FocusTrap.vue", () => {
   });
   it("should add/remove events when enable changes", async () => {
     wrapper = getWrapper({ props: { enable: false }, slots });
-    const addEvents = spyOn(wrapper.vm, "addFocusTrapEvents");
-    const removeEvents = spyOn(wrapper.vm, "removeFocusTrapEvents");
+    const addEvents = jest.spyOn(wrapper.vm, "addFocusTrapEvents");
+    const removeEvents = jest.spyOn(wrapper.vm, "removeFocusTrapEvents");
     await wrapper.setProps({ enable: true });
     expect(addEvents).toHaveBeenCalled();
     await wrapper.setProps({ enable: false });
@@ -37,13 +37,13 @@ describe("FocusTrap.vue", () => {
   });
   it("should try and focus first descendant when enable changes to true", async () => {
     wrapper = getWrapper({ props: { enable: false }, slots });
-    const focusFirst = spyOn(wrapper.vm, "focusFirstDescendant");
+    const focusFirst = jest.spyOn(wrapper.vm, "focusFirstDescendant");
     await wrapper.setProps({ enable: true });
     expect(focusFirst).toHaveBeenCalled();
   });
   it("should remove events when unmounted", () => {
     wrapper = getWrapper({ props: { enable: false }, slots });
-    const removeEvents = spyOn(wrapper.vm, "removeFocusTrapEvents");
+    const removeEvents = jest.spyOn(wrapper.vm, "removeFocusTrapEvents");
     wrapper.unmount();
     expect(removeEvents).toHaveBeenCalled();
   });
@@ -86,26 +86,74 @@ describe("FocusTrap.vue", () => {
       });
     });
     describe("trapFocus", () => {
-      it("should set lastFocus to event.target if it's inside content element", () => {
+      it("should set lastFocus to event.target if it's inside content element", (done) => {
         wrapper = getWrapper({ props, slots, attachTo: document.body });
         const vm = wrapper.vm;
         const first = wrapper.find("#first").element;
         vm.trapFocus({ target: first });
-        expect(vm.lastFocus).toBe(first);
+        setTimeout(() => {
+          expect(vm.lastFocus).toBe(first);
+          done();
+        }, 1);
       });
-      it("should loop focus back to last element", () => {
+      it("should loop focus back to last element if focusing before", () => {
+        jest.useFakeTimers();
         wrapper = getWrapper({ props, slots });
         const vm = wrapper.vm;
+
+        //add an element before
+        var button = document.createElement("BUTTON");
+        button.id = "pre-button";
+        var t = document.createTextNode("Test Button");
+        button.appendChild(t);
+        document.body.appendChild(button);
+
         document.body.appendChild(wrapper.element);
         //focus first element
         const first = wrapper.find("#first").element;
         vm.lastFocus = first;
+        const butt = document.getElementById("pre-button");
         const last = wrapper.find("#last").element;
-        //try to focus something outside of element
-        vm.trapFocus({ target: document.body });
+
+        //try to focus something before the trap
+        butt.focus();
+        vm.trapFocus();
+
         //should set focus to last
+        jest.runAllTimers();
         expect(vm.lastFocus).toBe(last);
         document.body.removeChild(wrapper.element);
+        document.body.removeChild(butt);
+      });
+      it("should loop focus back to first element if focusing after", () => {
+        jest.useFakeTimers();
+        wrapper = getWrapper({ props, slots });
+        const vm = wrapper.vm;
+
+        document.body.appendChild(wrapper.element);
+
+        //add an element after
+        var button = document.createElement("BUTTON");
+        button.id = "post-button";
+        var t = document.createTextNode("Test Button");
+        button.appendChild(t);
+        document.body.appendChild(button);
+
+        //focus last element
+        const first = wrapper.find("#first").element;
+        const butt = document.getElementById("post-button");
+        const last = wrapper.find("#last").element;
+        vm.lastFocus = last;
+
+        //try to focus something after the trap
+        butt.focus();
+        vm.trapFocus();
+
+        //should set focus to first
+        jest.runAllTimers();
+        expect(vm.lastFocus).toBe(first);
+        document.body.removeChild(wrapper.element);
+        document.body.removeChild(butt);
       });
     });
     describe("focusFirstDescendant", () => {

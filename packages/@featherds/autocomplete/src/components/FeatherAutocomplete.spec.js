@@ -775,6 +775,7 @@ describe("Feather Autocomplete", () => {
         await wrapper.find(".feather-autocomplete-input").trigger("focus");
         expect(wrapper.vm.showSelectionLimit).toBe(true);
         wrapper.vm.removeFromValue(modelValue[0]);
+        await nextTick();
         expect(wrapper.wrapperElement).toMatchSnapshot();
         expect(wrapper.vm.showSelectionLimit).toBe(false);
       });

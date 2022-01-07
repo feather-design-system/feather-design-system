@@ -44,7 +44,7 @@ export default {
     },
 
     addFocusTrapEvents() {
-      document.addEventListener("focus", this.trapFocus, true);
+      document.addEventListener("blur", this.trapFocus, true);
       if (this.$refs.content) {
         this.attemptToFocusFirst(this.$refs.content);
       } else {
@@ -58,14 +58,16 @@ export default {
     attemptToFocusFirst(el) {
       const firstFocus = el.querySelector("[first-focus]");
       if (firstFocus && firstFocus.focus) {
-        firstFocus.focus();
+        this.$nextTick(() => {
+          firstFocus.focus();
+        });
       } else {
         this.focusFirstDescendant(el);
       }
     },
     removeFocusTrapEvents() {
       if (typeof document !== "undefined")
-        document.removeEventListener("focus", this.trapFocus, true);
+        document.removeEventListener("blur", this.trapFocus, true);
     },
     focusFirstDescendant(element) {
       for (var i = 0; i < element.childNodes.length; i++) {
@@ -97,19 +99,57 @@ export default {
       this.ignoreUtilFocusChanges = false;
       return document.activeElement === element;
     },
-    trapFocus(event) {
+    trapFocus() {
       if (this.ignoreUtilFocusChanges) {
         return;
       }
-      if (this.$refs.content.contains(event.target)) {
-        this.lastFocus = event.target;
-      } else {
-        this.focusFirstDescendant(this.$refs.content);
-        if (this.lastFocus === document.activeElement) {
-          this.focusLastDescendant(this.$refs.content);
+
+      //FF will focus body first before selecting the next el
+      //This setTimeout allows us to wait until that has occurred
+      setTimeout(() => {
+        //if the item of focus is within the trap
+        var target = document.activeElement;
+        if (this.$refs.content.contains(target)) {
+          this.lastFocus = target;
+        } else {
+          //if the item is not within the trap
+          let position = this.comparePositionInDOM(this.$refs.content, target);
+          switch (position) {
+            case "before":
+              this.focusLastDescendant(this.$refs.content);
+              break;
+            case "after":
+              this.focusFirstDescendant(this.$refs.content);
+              break;
+            case "parent":
+              this.attemptToFocusFirst(this.$refs.content);
+              break;
+          }
+
+          this.lastFocus = document.activeElement;
         }
-        this.lastFocus = document.activeElement;
-      }
+      }, 0);
+    },
+    comparePositionInDOM(a, b) {
+      //See https://johnresig.com/blog/comparing-document-position/
+      let result = a.compareDocumentPosition
+        ? a.compareDocumentPosition(b)
+        : a.contains
+        ? (a != b && a.contains(b) && 16) +
+          (a != b && b.contains(a) && 8) +
+          (a.sourceIndex >= 0 && b.sourceIndex >= 0
+            ? (a.sourceIndex < b.sourceIndex && 4) +
+              (a.sourceIndex > b.sourceIndex && 2)
+            : 1) +
+          0
+        : 0;
+      if (result === 0x02) return "before";
+      if (result === 0x04) return "after";
+      //The bitmask returned is additive, so if b is a child it is one of the above
+      //plus 'document_position_contains' which is '8', so in this case a parent can
+      //be 8 + before/after which means 10 or potentially 12.
+      //see https://developer.mozilla.org/en-US/docs/Web/API/Node/compareDocumentPosition#return_value
+      if (result === 0x0a || result === 0x0c) return "parent";
     },
     isFocusable(element) {
       if (
@@ -131,6 +171,7 @@ export default {
         case "BUTTON":
         case "SELECT":
         case "TEXTAREA":
+        case "IFRAME":
           return true;
         default:
           return false;

@@ -6,7 +6,7 @@ exports[`FeatherProtectedInput.vue should change input type when show password i
   data-v-787e0b58=""
 >
   <div
-    class="feather-input-wrapper-container raised focused feather-input-content focused"
+    class="feather-input-wrapper-container feather-input-content"
     data-v-051667c2=""
     data-v-787e0b58=""
   >
@@ -26,7 +26,7 @@ exports[`FeatherProtectedInput.vue should change input type when show password i
       data-ref-id="feather-form-element-label"
       data-v-051667c2=""
       for="feather-input-label"
-      style="left: 12px;"
+      style="left: 16px;"
     >
       TEST
     </label>

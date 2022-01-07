@@ -11,8 +11,8 @@ const createWrapper = (setup) => {
 
 describe("Scroll composable", () => {
   it("should only attach listeners when element and active", async () => {
-    const windowSpy = spyOn(window, "addEventListener");
-    const documentSpy = spyOn(document, "addEventListener");
+    const windowSpy = jest.spyOn(window, "addEventListener");
+    const documentSpy = jest.spyOn(document, "addEventListener");
     const elRef = ref(false);
     let active;
     const wrapper = createWrapper(() => {
@@ -54,8 +54,8 @@ describe("Scroll composable", () => {
     expect(listener).toHaveBeenCalled();
   });
   it("should remove listeners when active is false", async () => {
-    const windowSpy = spyOn(window, "removeEventListener");
-    const documentSpy = spyOn(document, "removeEventListener");
+    const windowSpy = jest.spyOn(window, "removeEventListener");
+    const documentSpy = jest.spyOn(document, "removeEventListener");
     const elRef = ref(true);
     let active;
     const wrapper = createWrapper(() => {
@@ -71,8 +71,8 @@ describe("Scroll composable", () => {
     expect(documentSpy).toHaveBeenCalled();
   });
   it("should remove listeners on unmount", async () => {
-    const windowSpy = spyOn(window, "removeEventListener");
-    const documentSpy = spyOn(document, "removeEventListener");
+    const windowSpy = jest.spyOn(window, "removeEventListener");
+    const documentSpy = jest.spyOn(document, "removeEventListener");
     const elRef = ref(true);
     let active;
     const wrapper = createWrapper(() => {
