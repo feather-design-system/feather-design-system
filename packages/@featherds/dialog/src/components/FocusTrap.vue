@@ -101,15 +101,46 @@ export default {
       if (this.ignoreUtilFocusChanges) {
         return;
       }
-      if (this.$refs.content.contains(event.target)) {
-        this.lastFocus = event.target;
-      } else {
-        this.focusFirstDescendant(this.$refs.content);
-        if (this.lastFocus === document.activeElement) {
-          this.focusLastDescendant(this.$refs.content);
+
+      //FF will focus body first before selecting the next el
+      //This setTimeout allows us to wait until that has occurred
+      setTimeout(() => {
+        //if the item of focus is within the trap
+        if (this.$refs.content.contains(event.target)) {
+          this.lastFocus = event.target;
+        } else {
+          //if the item is not within the trap
+          let position = this.comparePositionInDOM(
+            this.$refs.content,
+            event.target
+          );
+          switch (position) {
+            case "before":
+              this.focusLastDescendant(this.$refs.content);
+              break;
+            case "after":
+              this.focusFirstDescendant(this.$refs.content);
+              break;
+          }
+          this.lastFocus = document.activeElement;
         }
-        this.lastFocus = document.activeElement;
-      }
+      }, 0);
+    },
+    comparePositionInDOM(a, b) {
+      //See https://johnresig.com/blog/comparing-document-position/
+      let result = a.compareDocumentPosition
+        ? a.compareDocumentPosition(b)
+        : a.contains
+        ? (a != b && a.contains(b) && 16) +
+          (a != b && b.contains(a) && 8) +
+          (a.sourceIndex >= 0 && b.sourceIndex >= 0
+            ? (a.sourceIndex < b.sourceIndex && 4) +
+              (a.sourceIndex > b.sourceIndex && 2)
+            : 1) +
+          0
+        : 0;
+      if (result === 0x04) return "after";
+      if (result === 0x02) return "before";
     },
     isFocusable(element) {
       if (
@@ -131,6 +162,7 @@ export default {
         case "BUTTON":
         case "SELECT":
         case "TEXTAREA":
+        case "IFRAME":
           return true;
         default:
           return false;
