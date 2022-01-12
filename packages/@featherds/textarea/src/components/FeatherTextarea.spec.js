@@ -163,7 +163,7 @@ describe("FeatherTextarea.vue", () => {
     expect(wrapper.element).toMatchSnapshot();
   });
 
-  fit("should allow custom blur events", () => {
+  it("should allow custom blur events", () => {
     const fn = jest.fn();
     const wrapper = getWrapper({
       props: {
