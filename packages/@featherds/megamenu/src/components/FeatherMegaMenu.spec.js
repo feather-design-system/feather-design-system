@@ -136,7 +136,8 @@ describe("FeatherMegaMenu.vue", () => {
     expect(name.text()).toContain(menuName);
     expect(name.attributes().role).toBe("presentation");
   });
-  it("should focus the first item after opening", async (done) => {
+  it("should focus the first item after opening", async () => {
+    jest.useFakeTimers();
     const slots = {
       default: templateWithColumnsLinks,
       button: "<button>Test</button>",
@@ -148,10 +149,10 @@ describe("FeatherMegaMenu.vue", () => {
     await nextTick();
 
     wrapper.vm.afterEnter();
-    setTimeout(() => {
-      expect(document.activeElement).toEqual(wrapper.find("li a").element);
-      done();
-    }, 300);
+    jest.runAllTimers();
+
+    await nextTick();
+    expect(document.activeElement).toEqual(wrapper.find("li a").element);
   });
 
   it("should close the menu and focus menu button when ESC is pressed", async () => {

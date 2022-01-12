@@ -28,8 +28,8 @@ describe("FocusTrap.vue", () => {
   });
   it("should add/remove events when enable changes", async () => {
     wrapper = getWrapper({ props: { enable: false }, slots });
-    const addEvents = spyOn(wrapper.vm, "addFocusTrapEvents");
-    const removeEvents = spyOn(wrapper.vm, "removeFocusTrapEvents");
+    const addEvents = jest.spyOn(wrapper.vm, "addFocusTrapEvents");
+    const removeEvents = jest.spyOn(wrapper.vm, "removeFocusTrapEvents");
     await wrapper.setProps({ enable: true });
     expect(addEvents).toHaveBeenCalled();
     await wrapper.setProps({ enable: false });
@@ -37,13 +37,13 @@ describe("FocusTrap.vue", () => {
   });
   it("should try and focus first descendant when enable changes to true", async () => {
     wrapper = getWrapper({ props: { enable: false }, slots });
-    const focusFirst = spyOn(wrapper.vm, "focusFirstDescendant");
+    const focusFirst = jest.spyOn(wrapper.vm, "focusFirstDescendant");
     await wrapper.setProps({ enable: true });
     expect(focusFirst).toHaveBeenCalled();
   });
   it("should remove events when unmounted", () => {
     wrapper = getWrapper({ props: { enable: false }, slots });
-    const removeEvents = spyOn(wrapper.vm, "removeFocusTrapEvents");
+    const removeEvents = jest.spyOn(wrapper.vm, "removeFocusTrapEvents");
     wrapper.unmount();
     expect(removeEvents).toHaveBeenCalled();
   });
@@ -96,7 +96,8 @@ describe("FocusTrap.vue", () => {
           done();
         }, 1);
       });
-      it("should loop focus back to last element if focusing before", (done) => {
+      it("should loop focus back to last element if focusing before", () => {
+        jest.useFakeTimers();
         wrapper = getWrapper({ props, slots });
         const vm = wrapper.vm;
 
@@ -115,17 +116,17 @@ describe("FocusTrap.vue", () => {
         const last = wrapper.find("#last").element;
 
         //try to focus something before the trap
-        vm.trapFocus({ target: butt });
+        butt.focus();
+        vm.trapFocus();
 
         //should set focus to last
-        setTimeout(() => {
-          expect(vm.lastFocus).toBe(last);
-          document.body.removeChild(wrapper.element);
-          document.body.removeChild(butt);
-          done();
-        }, 1);
+        jest.runAllTimers();
+        expect(vm.lastFocus).toBe(last);
+        document.body.removeChild(wrapper.element);
+        document.body.removeChild(butt);
       });
-      it("should loop focus back to first element if focusing after", (done) => {
+      it("should loop focus back to first element if focusing after", () => {
+        jest.useFakeTimers();
         wrapper = getWrapper({ props, slots });
         const vm = wrapper.vm;
 
@@ -145,15 +146,14 @@ describe("FocusTrap.vue", () => {
         vm.lastFocus = last;
 
         //try to focus something after the trap
-        vm.trapFocus({ target: butt });
+        butt.focus();
+        vm.trapFocus();
 
         //should set focus to first
-        setTimeout(() => {
-          expect(vm.lastFocus).toBe(first);
-          document.body.removeChild(wrapper.element);
-          document.body.removeChild(butt);
-          done();
-        }, 1);
+        jest.runAllTimers();
+        expect(vm.lastFocus).toBe(first);
+        document.body.removeChild(wrapper.element);
+        document.body.removeChild(butt);
       });
     });
     describe("focusFirstDescendant", () => {

@@ -12,7 +12,7 @@ const createWrapper = (setup) => {
 
 describe("Close On Escape composable", () => {
   it("should only attach listeners when visible", async () => {
-    const documentSpy = spyOn(document, "addEventListener");
+    const documentSpy = jest.spyOn(document, "addEventListener");
     const visible = ref(false);
     const wrapper = createWrapper(() => {
       useCloseOnEsc(visible);
@@ -25,7 +25,7 @@ describe("Close On Escape composable", () => {
     expect(documentSpy).toHaveBeenCalled();
   });
   it("should remove listeners when visible is false", async () => {
-    const documentSpy = spyOn(document, "removeEventListener");
+    const documentSpy = jest.spyOn(document, "removeEventListener");
     const visible = ref(true);
     const wrapper = createWrapper(() => {
       useCloseOnEsc(visible);
@@ -61,7 +61,7 @@ describe("Close On Escape composable", () => {
   });
 
   it("should remove listeners on unmount", async () => {
-    const documentSpy = spyOn(document, "removeEventListener");
+    const documentSpy = jest.spyOn(document, "removeEventListener");
     const visible = ref(true);
     const wrapper = createWrapper(() => {
       useCloseOnEsc(visible);

@@ -97,7 +97,7 @@ export default {
       this.ignoreUtilFocusChanges = false;
       return document.activeElement === element;
     },
-    trapFocus(event) {
+    trapFocus() {
       if (this.ignoreUtilFocusChanges) {
         return;
       }
@@ -108,7 +108,7 @@ export default {
         //if the item of focus is within the trap
         var target = document.activeElement;
         if (this.$refs.content.contains(target)) {
-          this.lastFocus = event.target;
+          this.lastFocus = target;
         } else {
           //if the item is not within the trap
           let position = this.comparePositionInDOM(this.$refs.content, target);
@@ -123,6 +123,7 @@ export default {
               this.attemptToFocusFirst(this.$refs.content);
               break;
           }
+
           this.lastFocus = document.activeElement;
         }
       }, 0);

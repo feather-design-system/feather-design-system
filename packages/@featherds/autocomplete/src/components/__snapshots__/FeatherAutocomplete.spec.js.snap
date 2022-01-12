@@ -4807,7 +4807,7 @@ exports[`Feather Autocomplete multi:specific selection limit should clear warnin
             class="feather-autocomplete-input"
             data-ref-id="feather-input"
             id="feather-autocomplete-input"
-            style="height: 26px; flex-basis: 40px; white-space: nowrap;"
+            style="height: 0px; flex-basis: 100%; white-space: normal;"
             tabindex="0"
           />
         </div>
@@ -4821,7 +4821,7 @@ exports[`Feather Autocomplete multi:specific selection limit should clear warnin
           
           <svg
             aria-hidden="true"
-            class="feather-autocomplete-dropdown-icon rotate feather-icon feather-autocomplete-dropdown-icon rotate"
+            class="feather-autocomplete-dropdown-icon feather-icon feather-autocomplete-dropdown-icon"
             data-v-0aa06a12=""
             focusable="false"
             role="img"
@@ -4841,7 +4841,7 @@ exports[`Feather Autocomplete multi:specific selection limit should clear warnin
       class="feather-menu-dropdown bottom-left"
       data-v-6a69cac4=""
       id="feather-menu-dropdown"
-      style=""
+      style="display: none;"
     >
       
       <ul
@@ -4861,57 +4861,7 @@ exports[`Feather Autocomplete multi:specific selection limit should clear warnin
       </ul>
       <!--v-if-->
       <!--v-if-->
-      <ul
-        class="feather-list result-list selection-limit-warning"
-        data-v-4ef0e6d6=""
-      >
-        
-        <li
-          class="feather-list-item hover focus"
-          data-v-1737b7da=""
-          style="overflow: hidden; position: relative;"
-        >
-          <!---->
-          <span
-            class="feather-list-item-text"
-            data-v-1737b7da=""
-          >
-            
-            <svg
-              aria-hidden="true"
-              class="feather-icon"
-              data-v-0aa06a12=""
-              focusable="false"
-              role="img"
-              viewBox="0 0 24 24"
-              xmlns="http://www.w3.org/2000/svg"
-            >
-              <path
-                d="M12,10a1,1,0,0,0-1,1v5a1,1,0,0,0,2,0V11A1,1,0,0,0,12,10Z"
-              />
-              <rect
-                height="2"
-                rx="0.65"
-                width="2"
-                x="11"
-                y="7"
-              />
-              <path
-                d="M12,2A10,10,0,1,0,22,12,10,10,0,0,0,12,2Zm0,18a8,8,0,1,1,8-8A8,8,0,0,1,12,20Z"
-              />
-            </svg>
-            <span
-              data-ref-id="feather-autocomplete-selection-limit"
-            >
-              Selection limit reached
-            </span>
-            
-          </span>
-          <!---->
-          <!---->
-        </li>
-        
-      </ul>
+      <!--v-if-->
       <!--v-if-->
       <!--v-if-->
       
