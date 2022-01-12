@@ -3257,7 +3257,7 @@ exports[`FeatherDateInput.vue should render disabled 1`] = `
             <td>
               <button
                 aria-disabled="false"
-                aria-label="Sunday, 26 January 2020"
+                aria-label="Sunday, January 26, 2020"
                 aria-pressed="false"
                 class="cell day hover focus blank"
                 data-ref-id=""
@@ -3270,7 +3270,7 @@ exports[`FeatherDateInput.vue should render disabled 1`] = `
             <td>
               <button
                 aria-disabled="false"
-                aria-label="Monday, 27 January 2020"
+                aria-label="Monday, January 27, 2020"
                 aria-pressed="false"
                 class="cell day hover focus blank"
                 data-ref-id=""
@@ -3283,7 +3283,7 @@ exports[`FeatherDateInput.vue should render disabled 1`] = `
             <td>
               <button
                 aria-disabled="false"
-                aria-label="Tuesday, 28 January 2020"
+                aria-label="Tuesday, January 28, 2020"
                 aria-pressed="false"
                 class="cell day hover focus blank"
                 data-ref-id=""
@@ -3296,7 +3296,7 @@ exports[`FeatherDateInput.vue should render disabled 1`] = `
             <td>
               <button
                 aria-disabled="false"
-                aria-label="Wednesday, 29 January 2020"
+                aria-label="Wednesday, January 29, 2020"
                 aria-pressed="false"
                 class="cell day hover focus blank"
                 data-ref-id=""
@@ -3309,7 +3309,7 @@ exports[`FeatherDateInput.vue should render disabled 1`] = `
             <td>
               <button
                 aria-disabled="false"
-                aria-label="Thursday, 30 January 2020"
+                aria-label="Thursday, January 30, 2020"
                 aria-pressed="false"
                 class="cell day hover focus blank"
                 data-ref-id=""
@@ -3322,7 +3322,7 @@ exports[`FeatherDateInput.vue should render disabled 1`] = `
             <td>
               <button
                 aria-disabled="false"
-                aria-label="Friday, 31 January 2020"
+                aria-label="Friday, January 31, 2020"
                 aria-pressed="false"
                 class="cell day hover focus blank"
                 data-ref-id=""
@@ -3335,7 +3335,7 @@ exports[`FeatherDateInput.vue should render disabled 1`] = `
             <td>
               <button
                 aria-disabled="false"
-                aria-label="Saturday, 1 February 2020"
+                aria-label="Saturday, February 1, 2020"
                 aria-pressed="true"
                 class="cell day hover focus selected highlighted"
                 data-ref-id="feather-calendar-highlighted-day"
@@ -3352,7 +3352,7 @@ exports[`FeatherDateInput.vue should render disabled 1`] = `
             <td>
               <button
                 aria-disabled="false"
-                aria-label="Sunday, 2 February 2020"
+                aria-label="Sunday, February 2, 2020"
                 aria-pressed="false"
                 class="cell day hover focus"
                 data-ref-id=""
@@ -3365,7 +3365,7 @@ exports[`FeatherDateInput.vue should render disabled 1`] = `
             <td>
               <button
                 aria-disabled="false"
-                aria-label="Monday, 3 February 2020"
+                aria-label="Monday, February 3, 2020"
                 aria-pressed="false"
                 class="cell day hover focus"
                 data-ref-id=""
@@ -3378,7 +3378,7 @@ exports[`FeatherDateInput.vue should render disabled 1`] = `
             <td>
               <button
                 aria-disabled="false"
-                aria-label="Tuesday, 4 February 2020"
+                aria-label="Tuesday, February 4, 2020"
                 aria-pressed="false"
                 class="cell day hover focus"
                 data-ref-id=""
@@ -3391,7 +3391,7 @@ exports[`FeatherDateInput.vue should render disabled 1`] = `
             <td>
               <button
                 aria-disabled="false"
-                aria-label="Wednesday, 5 February 2020"
+                aria-label="Wednesday, February 5, 2020"
                 aria-pressed="false"
                 class="cell day hover focus"
                 data-ref-id=""
@@ -3404,7 +3404,7 @@ exports[`FeatherDateInput.vue should render disabled 1`] = `
             <td>
               <button
                 aria-disabled="false"
-                aria-label="Thursday, 6 February 2020"
+                aria-label="Thursday, February 6, 2020"
                 aria-pressed="false"
                 class="cell day hover focus"
                 data-ref-id=""
@@ -3417,7 +3417,7 @@ exports[`FeatherDateInput.vue should render disabled 1`] = `
             <td>
               <button
                 aria-disabled="false"
-                aria-label="Friday, 7 February 2020"
+                aria-label="Friday, February 7, 2020"
                 aria-pressed="false"
                 class="cell day hover focus"
                 data-ref-id=""
@@ -3430,7 +3430,7 @@ exports[`FeatherDateInput.vue should render disabled 1`] = `
             <td>
               <button
                 aria-disabled="false"
-                aria-label="Saturday, 8 February 2020"
+                aria-label="Saturday, February 8, 2020"
                 aria-pressed="false"
                 class="cell day hover focus"
                 data-ref-id=""
@@ -3447,7 +3447,7 @@ exports[`FeatherDateInput.vue should render disabled 1`] = `
             <td>
               <button
                 aria-disabled="false"
-                aria-label="Sunday, 9 February 2020"
+                aria-label="Sunday, February 9, 2020"
                 aria-pressed="false"
                 class="cell day hover focus"
                 data-ref-id=""
@@ -3460,7 +3460,7 @@ exports[`FeatherDateInput.vue should render disabled 1`] = `
             <td>
               <button
                 aria-disabled="false"
-                aria-label="Monday, 10 February 2020"
+                aria-label="Monday, February 10, 2020"
                 aria-pressed="false"
                 class="cell day hover focus"
                 data-ref-id=""
@@ -3473,7 +3473,7 @@ exports[`FeatherDateInput.vue should render disabled 1`] = `
             <td>
               <button
                 aria-disabled="false"
-                aria-label="Tuesday, 11 February 2020"
+                aria-label="Tuesday, February 11, 2020"
                 aria-pressed="false"
                 class="cell day hover focus"
                 data-ref-id=""
@@ -3486,7 +3486,7 @@ exports[`FeatherDateInput.vue should render disabled 1`] = `
             <td>
               <button
                 aria-disabled="false"
-                aria-label="Wednesday, 12 February 2020"
+                aria-label="Wednesday, February 12, 2020"
                 aria-pressed="false"
                 class="cell day hover focus"
                 data-ref-id=""
@@ -3499,7 +3499,7 @@ exports[`FeatherDateInput.vue should render disabled 1`] = `
             <td>
               <button
                 aria-disabled="false"
-                aria-label="Thursday, 13 February 2020"
+                aria-label="Thursday, February 13, 2020"
                 aria-pressed="false"
                 class="cell day hover focus"
                 data-ref-id=""
@@ -3512,7 +3512,7 @@ exports[`FeatherDateInput.vue should render disabled 1`] = `
             <td>
               <button
                 aria-disabled="false"
-                aria-label="Friday, 14 February 2020"
+                aria-label="Friday, February 14, 2020"
                 aria-pressed="false"
                 class="cell day hover focus"
                 data-ref-id=""
@@ -3525,7 +3525,7 @@ exports[`FeatherDateInput.vue should render disabled 1`] = `
             <td>
               <button
                 aria-disabled="false"
-                aria-label="Saturday, 15 February 2020"
+                aria-label="Saturday, February 15, 2020"
                 aria-pressed="false"
                 class="cell day hover focus"
                 data-ref-id=""
@@ -3542,7 +3542,7 @@ exports[`FeatherDateInput.vue should render disabled 1`] = `
             <td>
               <button
                 aria-disabled="false"
-                aria-label="Sunday, 16 February 2020"
+                aria-label="Sunday, February 16, 2020"
                 aria-pressed="false"
                 class="cell day hover focus"
                 data-ref-id=""
@@ -3555,7 +3555,7 @@ exports[`FeatherDateInput.vue should render disabled 1`] = `
             <td>
               <button
                 aria-disabled="false"
-                aria-label="Monday, 17 February 2020"
+                aria-label="Monday, February 17, 2020"
                 aria-pressed="false"
                 class="cell day hover focus"
                 data-ref-id=""
@@ -3568,7 +3568,7 @@ exports[`FeatherDateInput.vue should render disabled 1`] = `
             <td>
               <button
                 aria-disabled="false"
-                aria-label="Tuesday, 18 February 2020"
+                aria-label="Tuesday, February 18, 2020"
                 aria-pressed="false"
                 class="cell day hover focus"
                 data-ref-id=""
@@ -3581,7 +3581,7 @@ exports[`FeatherDateInput.vue should render disabled 1`] = `
             <td>
               <button
                 aria-disabled="false"
-                aria-label="Wednesday, 19 February 2020"
+                aria-label="Wednesday, February 19, 2020"
                 aria-pressed="false"
                 class="cell day hover focus"
                 data-ref-id=""
@@ -3594,7 +3594,7 @@ exports[`FeatherDateInput.vue should render disabled 1`] = `
             <td>
               <button
                 aria-disabled="false"
-                aria-label="Thursday, 20 February 2020"
+                aria-label="Thursday, February 20, 2020"
                 aria-pressed="false"
                 class="cell day hover focus"
                 data-ref-id=""
@@ -3607,7 +3607,7 @@ exports[`FeatherDateInput.vue should render disabled 1`] = `
             <td>
               <button
                 aria-disabled="false"
-                aria-label="Friday, 21 February 2020"
+                aria-label="Friday, February 21, 2020"
                 aria-pressed="false"
                 class="cell day hover focus"
                 data-ref-id=""
@@ -3620,7 +3620,7 @@ exports[`FeatherDateInput.vue should render disabled 1`] = `
             <td>
               <button
                 aria-disabled="false"
-                aria-label="Saturday, 22 February 2020"
+                aria-label="Saturday, February 22, 2020"
                 aria-pressed="false"
                 class="cell day hover focus"
                 data-ref-id=""
@@ -3637,7 +3637,7 @@ exports[`FeatherDateInput.vue should render disabled 1`] = `
             <td>
               <button
                 aria-disabled="false"
-                aria-label="Sunday, 23 February 2020"
+                aria-label="Sunday, February 23, 2020"
                 aria-pressed="false"
                 class="cell day hover focus"
                 data-ref-id=""
@@ -3650,7 +3650,7 @@ exports[`FeatherDateInput.vue should render disabled 1`] = `
             <td>
               <button
                 aria-disabled="false"
-                aria-label="Monday, 24 February 2020"
+                aria-label="Monday, February 24, 2020"
                 aria-pressed="false"
                 class="cell day hover focus"
                 data-ref-id=""
@@ -3663,7 +3663,7 @@ exports[`FeatherDateInput.vue should render disabled 1`] = `
             <td>
               <button
                 aria-disabled="false"
-                aria-label="Tuesday, 25 February 2020"
+                aria-label="Tuesday, February 25, 2020"
                 aria-pressed="false"
                 class="cell day hover focus"
                 data-ref-id=""
@@ -3676,7 +3676,7 @@ exports[`FeatherDateInput.vue should render disabled 1`] = `
             <td>
               <button
                 aria-disabled="false"
-                aria-label="Wednesday, 26 February 2020"
+                aria-label="Wednesday, February 26, 2020"
                 aria-pressed="false"
                 class="cell day hover focus"
                 data-ref-id=""
@@ -3689,7 +3689,7 @@ exports[`FeatherDateInput.vue should render disabled 1`] = `
             <td>
               <button
                 aria-disabled="false"
-                aria-label="Thursday, 27 February 2020"
+                aria-label="Thursday, February 27, 2020"
                 aria-pressed="false"
                 class="cell day hover focus"
                 data-ref-id=""
@@ -3702,7 +3702,7 @@ exports[`FeatherDateInput.vue should render disabled 1`] = `
             <td>
               <button
                 aria-disabled="false"
-                aria-label="Friday, 28 February 2020"
+                aria-label="Friday, February 28, 2020"
                 aria-pressed="false"
                 class="cell day hover focus"
                 data-ref-id=""
@@ -3715,7 +3715,7 @@ exports[`FeatherDateInput.vue should render disabled 1`] = `
             <td>
               <button
                 aria-disabled="false"
-                aria-label="Saturday, 29 February 2020"
+                aria-label="Saturday, February 29, 2020"
                 aria-pressed="false"
                 class="cell day hover focus"
                 data-ref-id=""
