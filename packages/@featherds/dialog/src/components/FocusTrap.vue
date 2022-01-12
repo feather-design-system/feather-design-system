@@ -58,7 +58,9 @@ export default {
     attemptToFocusFirst(el) {
       const firstFocus = el.querySelector("[first-focus]");
       if (firstFocus && firstFocus.focus) {
-        firstFocus.focus();
+        this.$nextTick(() => {
+          firstFocus.focus();
+        });
       } else {
         this.focusFirstDescendant(el);
       }
