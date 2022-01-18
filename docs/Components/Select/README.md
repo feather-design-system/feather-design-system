@@ -1,15 +1,37 @@
 ---
 title: "Select"
 pre: "@featherds/select"
-description: "Presents the user with a list of options allowing them to select a single option from the menu."
+description: "A dropdown list control that presents the user with a list of options allowing them to select a single option from the menu. "
 lang: en-US
 tags: ["Select", "component"]
 menu: components
 ---
 
+## Design
+
+The Select component consists of a label, helper text, and input field and a drop-down arrow. The menu consists of a leading icon, a menu item label, and a menu item row.
+
 ## Examples
 
 <Select-Examples />
+
+## Usage
+
+Use the select dropdown as a form element where the user can choose one item of more than 5 predefined options.
+
+**When to consider something else:**
+
+A user can choose one option from a set of 2 options
+
+- Instead use [Radio](/Components/Radio/)
+
+A user can choose more than one option
+
+- Instead use [Checkbox](/Components/Checkbox/)
+
+A user has more than 20 predefined options
+
+- Instead use [Autocomplete](/Components/Autocomplete/)
 
 ## Select
 

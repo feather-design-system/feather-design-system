@@ -1,15 +1,23 @@
 ---
 title: "Protected Input"
 pre: "@featherds/protected-input"
-design: "For scenarios where sensitive user information must be entered into a computer interface discreetly."
+design: "A variation of the standard text input field but used for discreet and confidential information."
 lang: en-US
 tags: ["ProtectedInput", "component"]
 menu: components
 ---
 
+## Design
+
+Protected Input consist of a protected text string, a [Input](/Components/Input/) component, and an [Icon Button](/Components/Button/#icon-button) that acts as a toggle between protected and unprotected states. They should inherit all states as well as both internal and external padding specifications from the standard text input field.
+
 ## Example
 
 <ProtectedInput-Examples />
+
+## Usage
+
+Used in scenarios where sensitive user information must be entered into a computer interface discreetly. Protected input components should primarily focus on keeping user information private.
 
 ## ProtectedInput
 

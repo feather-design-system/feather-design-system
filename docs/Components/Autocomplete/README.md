@@ -17,6 +17,19 @@ Autocomplete is a compilation of three components: a text [Input](/Components/In
 
 <Autocomplete-Examples />
 
+## Usage
+
+Autocomplete should be used where users need to find information from across many different categories and locations. The autocomplete component provides a speed benefit for users looking for a specific, known topic and a context benefit to users that know some, but not all of the search criteria. Autocomplete may be used in many locations where a standard search would be suitable. Autocomplete is not recommended for filtering data or for searching a limited number of known items.
+
+**When not to use:**
+
+**Do not** use autocomplete where information has a very limited scope and few options.
+
+**Instead use:**
+
+- [Select](/Components/Select/) (when there are more than 5 options)
+- [Radio Buttons](/Components/Radio/) / [Checkbox](/Components/Checkbox/) (when there are more than 5 options)
+
 ## Getting Started
 
 ### Item Display Text

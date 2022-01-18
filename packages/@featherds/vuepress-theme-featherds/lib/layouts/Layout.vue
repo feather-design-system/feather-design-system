@@ -7,7 +7,14 @@
       <div class="title-section center feather-container">
         <div class="content-container">
           <p class="pre-text">{{ preText }}</p>
-          <h1 class="title">{{ title }}</h1>
+          <h1 class="title" :id="idSafeTitle">
+            <a
+              class="header-anchor"
+              :href="'#' + idSafeTitle"
+              aria-hidden="true"
+              >#</a
+            >{{ title }}
+          </h1>
           <p class="title-description">
             {{ description }}
           </p>
@@ -58,6 +65,9 @@ export default {
     return { toc, fixed };
   },
   computed: {
+    idSafeTitle() {
+      return this.title.toLowerCase().replace(/ /g, "-");
+    },
     title() {
       return this.$page.title;
     },
