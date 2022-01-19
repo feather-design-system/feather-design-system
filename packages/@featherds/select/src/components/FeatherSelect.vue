@@ -66,6 +66,7 @@ import { FeatherMenu } from "@featherds/menu";
 import { getSafeId } from "@featherds/utils/id";
 import { KEYCODES } from "@featherds/utils/keys";
 import List from "./List";
+import { useValidation } from "@featherds/input/src/components/useValidation";
 
 export default {
   mixins: [InputWrapperMixin, InputSubTextMixin, InputInheritAttrsMixin],
@@ -89,6 +90,29 @@ export default {
         return [];
       },
     },
+    schema: {
+      type: Object,
+      required: false,
+    },
+  },
+  setup(props) {
+    const incomingId = toRef(props, "id");
+    const inputId = computed(() => {
+      if (incomingId.value) {
+        return incomingId.value;
+      }
+      return getSafeId("feather-select-label");
+    });
+    const internalValue = ref(modelValue);
+
+    const { validate } = useValidation(
+      inputId,
+      internalValue,
+      props.label,
+      props.schema
+    );
+
+    return { inputId, internalValue, validate };
   },
   data() {
     return {
@@ -183,6 +207,7 @@ export default {
       }
     },
     handleInputBlur() {
+      this.validate();
       if (this.hasFocus && !this.showMenu) {
         this.hasFocus = false;
       }
