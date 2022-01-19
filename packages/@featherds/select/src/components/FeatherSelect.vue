@@ -95,6 +95,8 @@ export default {
       hasFocus: false,
       showMenu: false,
       charsSoFar: "",
+      internalValue: this.modelValue,
+      delayTimeout: 0,
     };
   },
   computed: {
@@ -127,22 +129,21 @@ export default {
         focus: this.handleInputFocus,
         blur: this.handleInputBlur,
         keydown: this.handleKeyDown,
-        delayTimeout: 0,
       };
     },
     raised() {
-      return !!this.modelValue || this.hasFocus;
+      return !!this.internalValue || this.hasFocus;
     },
     valueText() {
-      if (this.modelValue && this.modelValue[this.textProp]) {
-        return this.modelValue[this.textProp];
+      if (this.internalValue && this.internalValue[this.textProp]) {
+        return this.internalValue[this.textProp];
       }
       return "";
     },
     activeIndex() {
-      if (this.modelValue && this.modelValue[this.textProp]) {
+      if (this.internalValue && this.internalValue[this.textProp]) {
         const found = this.options.filter(
-          (x) => x[this.textProp] === this.modelValue[this.textProp]
+          (x) => x[this.textProp] === this.internalValue[this.textProp]
         );
         if (found && found.length) {
           return this.options.indexOf(found[0]);
@@ -155,13 +156,18 @@ export default {
   watch: {
     showMenu(v) {
       if (v) {
-        if (!this.modelValue) {
+        if (!this.internalValue) {
           this.select(this.options[0]);
         }
         this.$nextTick(() => {
           this.$refs.list.$el.focus();
         });
+      } else {
+        this.emitSelection();
       }
+    },
+    modelValue(v) {
+      this.internalValue = v;
     },
   },
   methods: {
@@ -198,7 +204,10 @@ export default {
       this.$refs.input.focus();
     },
     select(option) {
-      this.$emit("update:modelValue", option);
+      this.internalValue = option;
+    },
+    emitSelection() {
+      this.$emit("update:modelValue", this.internalValue);
     },
     handleKeyDown(e) {
       //enter

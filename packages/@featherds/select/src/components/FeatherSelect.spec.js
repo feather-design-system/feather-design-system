@@ -78,7 +78,7 @@ describe("FeatherSelect.vue", () => {
     await wrapper.find("input").trigger("keydown.enter");
     expect(wrapper.vm.showMenu).toBe(true);
   });
-  it("should close the menu on esc", async () => {
+  it("should close the menu on esc and emit update:modelValue", async () => {
     const wrapper = getFullWrapper({
       props: {
         options,
@@ -88,6 +88,9 @@ describe("FeatherSelect.vue", () => {
     await wrapper.find("input").trigger("keydown.enter");
     await wrapper.find("input").trigger("keydown.esc");
     expect(wrapper.vm.showMenu).toBe(false);
+    expect(wrapper.emitted("update:modelValue")[0][0]).toStrictEqual(
+      options[0]
+    );
   });
   it("should open and select first item on first down", async () => {
     const wrapper = getFullWrapper({
@@ -98,9 +101,7 @@ describe("FeatherSelect.vue", () => {
     await wrapper.find("input").trigger("focus");
     await wrapper.find("input").trigger("keydown.down");
     expect(wrapper.vm.showMenu).toBe(true);
-    expect(wrapper.emitted("update:modelValue")[0][0]).toStrictEqual(
-      options[0]
-    );
+    expect(wrapper.vm.internalValue).toStrictEqual(options[0]);
   });
   it("should open and select first item on first up", async () => {
     const wrapper = getFullWrapper({
@@ -111,9 +112,7 @@ describe("FeatherSelect.vue", () => {
     await wrapper.find("input").trigger("focus");
     await wrapper.find("input").trigger("keydown.up");
     expect(wrapper.vm.showMenu).toBe(true);
-    expect(wrapper.emitted("update:modelValue")[0][0]).toStrictEqual(
-      options[0]
-    );
+    expect(wrapper.vm.internalValue).toStrictEqual(options[0]);
   });
   it("should move selection down when down arrow is pressed and menu is open", async () => {
     const wrapper = getFullWrapper({
@@ -125,6 +124,20 @@ describe("FeatherSelect.vue", () => {
     await wrapper.find("input").trigger("focus");
     await wrapper.find("input").trigger("keydown.down");
     expect(wrapper.vm.showMenu).toBe(true);
+    expect(wrapper.vm.internalValue).toStrictEqual(options[1]);
+  });
+  it("should not emit update:model till menu is closed", async () => {
+    const wrapper = getFullWrapper({
+      props: {
+        options,
+        modelValue: options[0],
+      },
+    });
+    await wrapper.find("input").trigger("focus");
+    await wrapper.find("input").trigger("keydown.down");
+    expect(wrapper.vm.showMenu).toBe(true);
+    await wrapper.find("input").trigger("keydown.esc");
+    expect(wrapper.vm.showMenu).toBe(false);
     expect(wrapper.emitted("update:modelValue")[0][0]).toStrictEqual(
       options[1]
     );
@@ -139,7 +152,7 @@ describe("FeatherSelect.vue", () => {
     await wrapper.find("input").trigger("focus");
     await wrapper.find("input").trigger("keydown.down");
     expect(wrapper.vm.showMenu).toBe(true);
-    expect(wrapper.emitted("update:modelValue")).toBeUndefined();
+    expect(wrapper.vm.internalValue).toStrictEqual(options[options.length - 1]);
   });
   it("should move selection up when up arrow is pressed and menu is open", async () => {
     const wrapper = getFullWrapper({
@@ -151,9 +164,7 @@ describe("FeatherSelect.vue", () => {
     await wrapper.find("input").trigger("focus");
     await wrapper.find("input").trigger("keydown.up");
     expect(wrapper.vm.showMenu).toBe(true);
-    expect(wrapper.emitted("update:modelValue")[0][0]).toStrictEqual(
-      options[options.length - 2]
-    );
+    expect(wrapper.vm.internalValue).toStrictEqual(options[options.length - 2]);
   });
   it("should not wrap to the bottom when up is pressed on the first option", async () => {
     const wrapper = getFullWrapper({
@@ -165,7 +176,7 @@ describe("FeatherSelect.vue", () => {
     await wrapper.find("input").trigger("focus");
     await wrapper.find("input").trigger("keydown.up");
     expect(wrapper.vm.showMenu).toBe(true);
-    expect(wrapper.emitted("update:modelValue")).toBeUndefined();
+    expect(wrapper.vm.internalValue).toStrictEqual(options[0]);
   });
   it("should move selection to first item  when home is pressed and menu is open", async () => {
     const wrapper = getFullWrapper({
@@ -178,9 +189,7 @@ describe("FeatherSelect.vue", () => {
     await wrapper.find("input").trigger("keydown.home");
     await nextTick();
     expect(wrapper.vm.showMenu).toBe(true);
-    expect(wrapper.emitted("update:modelValue")[0][0]).toStrictEqual(
-      options[0]
-    );
+    expect(wrapper.vm.internalValue).toStrictEqual(options[0]);
   });
   it("should move selection to last item when end is pressed and menu is open", async () => {
     const wrapper = getFullWrapper({
@@ -192,11 +201,9 @@ describe("FeatherSelect.vue", () => {
     await wrapper.find("input").trigger("focus");
     await wrapper.find("input").trigger("keydown.end");
     expect(wrapper.vm.showMenu).toBe(true);
-    expect(wrapper.emitted("update:modelValue")[0][0]).toStrictEqual(
-      options[options.length - 1]
-    );
+    expect(wrapper.vm.internalValue).toStrictEqual(options[options.length - 1]);
   });
-  it("should remain focused when item is selected via click", async () => {
+  it("should remain focused when item is selected via click and emit update:modelValue", async () => {
     const wrapper = getFullWrapper({
       props: {
         options,
@@ -205,8 +212,12 @@ describe("FeatherSelect.vue", () => {
     await wrapper.find("input").trigger("focus");
     await wrapper.find("input").trigger("keydown.enter"); //open menu
     wrapper.findComponent({ ref: "list" }).vm.$emit("select", options[0]);
+    await wrapper.vm.$nextTick();
     expect(wrapper.vm.showMenu).toBe(false);
     expect(document.activeElement).toBe(wrapper.find("input").element);
+    expect(wrapper.emitted("update:modelValue")[0][0]).toStrictEqual(
+      options[0]
+    );
   });
   it("should not open menu when focused (tabbed to)", async () => {
     const wrapper = getFullWrapper({
@@ -234,9 +245,7 @@ describe("FeatherSelect.vue", () => {
       keyCode: 66,
     });
     jest.runAllTimers();
-    expect(wrapper.emitted("update:modelValue")[1][0]._text.indexOf("ab")).toBe(
-      0
-    );
+    expect(wrapper.vm.internalValue._text.indexOf("ab")).toBe(0);
   });
   describe("accessibility", () => {
     it("should be accessible in normal state", async () => {
