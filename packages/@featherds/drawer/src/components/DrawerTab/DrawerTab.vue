@@ -137,7 +137,7 @@ span.tab-label {
   border-radius: 0 3px 3px 0px;
 
   & > span.content {
-    padding: 0 16px;
+    padding: 0 1rem;
     display: inline-block;
     height: $tab-width;
     line-height: $tab-width;

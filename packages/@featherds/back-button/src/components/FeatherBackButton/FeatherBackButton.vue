@@ -120,7 +120,7 @@ button {
   border: 1px solid var($primary);
   color: var($primary);
 
-  height: 36px;
+  height: 2.25rem;
   margin: 0;
   padding: 0;
   display: flex;
@@ -147,12 +147,12 @@ button {
   width: 0;
 }
 .text {
-  padding-right: 16px;
-  padding-left: 8px;
+  padding-right: 1rem;
+  padding-left: 0.5rem;
   @include button();
   color: var($primary);
-  height: 34px;
-  line-height: 34px;
+  height: 2.25rem;
+  line-height: 2.25rem;
   white-space: nowrap;
   overflow: hidden;
 }
@@ -162,11 +162,11 @@ button {
   align-items: center;
   justify-content: center;
   background-color: transparent;
-  height: 20px;
-  width: 20px;
-  font-size: 20px;
-  margin-left: 8px;
-  margin-right: 8px;
+  height: 1.25rem;
+  width: 1.25rem;
+  font-size: 1.25rem;
+  margin-left: 0.5rem;
+  margin-right: 0.5rem;
 }
 .slide-enter-from,
 .slide-leave-to {

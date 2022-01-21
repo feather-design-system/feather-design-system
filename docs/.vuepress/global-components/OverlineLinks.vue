@@ -25,10 +25,10 @@ export default {
 .overline-links-title {
   @include body-large();
   font-weight: var($font-bold);
-  margin-bottom: 8px;
+  margin-bottom: 0.5rem;
 }
 .overline-links {
-  margin-bottom: 32px;
+  margin-bottom: 2rem;
   ul {
     padding: 0;
   }

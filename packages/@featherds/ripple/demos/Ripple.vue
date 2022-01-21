@@ -19,8 +19,8 @@ export default {
 <style lang="scss" scoped>
 @import "@featherds/styles/themes/variables";
 .ripple-container {
-  height: 200px;
-  width: 200px;
+  height: 12.5rem;
+  width: 12.5rem;
   position: relative;
   border: 1px solid var($border-on-surface);
   background-color: var($surface);

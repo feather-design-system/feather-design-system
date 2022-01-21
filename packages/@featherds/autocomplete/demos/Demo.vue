@@ -123,6 +123,6 @@ export default {
 </script>
 <style lang="scss" scoped>
 .my-autocomplete {
-  width: 400px !important;
+  width: 25rem !important;
 }
 </style>

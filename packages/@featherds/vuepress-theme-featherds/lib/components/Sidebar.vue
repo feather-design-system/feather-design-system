@@ -23,7 +23,7 @@ export default {
 .sidebar .title {
   @include overline();
   text-transform: uppercase;
-  margin-bottom: 16px;
+  margin-bottom: 1rem;
   display: inline-block;
   color: var($primary-text-on-surface);
 }

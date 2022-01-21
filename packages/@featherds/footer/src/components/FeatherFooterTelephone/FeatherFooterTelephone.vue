@@ -42,13 +42,13 @@ export default {
   align-items: center;
   justify-content: center;
   .icon {
-    font-size: 20px;
+    font-size: 1.25rem;
     color: var($secondary-text-on-surface);
-    margin-right: 4px;
+    margin-right: 0.25rem;
   }
   a {
     @include body-small();
-    height: 20px;
+    height: 1.25rem;
     &:hover {
       text-decoration: none;
     }

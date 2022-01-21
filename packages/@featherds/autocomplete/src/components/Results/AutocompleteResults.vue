@@ -125,16 +125,16 @@ export default {
   li {
     &.hr {
       height: 0;
-      margin: 8px 0;
+      margin: 0.5rem 0;
       border-bottom: 1px solid var($border-light-on-surface);
     }
   }
   .autocomplete-item-new-label {
     background-color: var($border-on-surface);
     color: var($primary);
-    padding: 4px 8px;
+    padding: 0.25rem 0.5rem;
     display: inline-block;
-    margin-left: 6px;
+    margin-left: 0.25rem;
   }
 }
 </style>

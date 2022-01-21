@@ -16,7 +16,6 @@ exports[`InputWrapper.vue should hide the label when hideLabel is true 1`] = `
     class="feather-input-label"
     data-ref-id="feather-form-element-label"
     for="test"
-    style="left: 16px;"
   >
     test
   </label>
@@ -85,7 +84,6 @@ exports[`InputWrapper.vue should render a focused border & raised label 1`] = `
     class="feather-input-label"
     data-ref-id="feather-form-element-label"
     for="test"
-    style="left: 16px;"
   >
     test
   </label>
@@ -154,7 +152,6 @@ exports[`InputWrapper.vue should render a normal wrapper 1`] = `
     class="feather-input-label"
     data-ref-id="feather-form-element-label"
     for="test"
-    style="left: 16px;"
   >
     test
   </label>
@@ -223,7 +220,6 @@ exports[`InputWrapper.vue should render a raised label 1`] = `
     class="feather-input-label"
     data-ref-id="feather-form-element-label"
     for="test"
-    style="left: 12px;"
   >
     test
   </label>
@@ -292,7 +288,6 @@ exports[`InputWrapper.vue should render clear and error icons 1`] = `
     class="feather-input-label"
     data-ref-id="feather-form-element-label"
     for="test"
-    style="left: 16px;"
   >
     test
   </label>
@@ -379,7 +374,6 @@ exports[`InputWrapper.vue should render clear icon when clear and show clear is 
     class="feather-input-label"
     data-ref-id="feather-form-element-label"
     for="test"
-    style="left: 16px;"
   >
     test
   </label>
@@ -466,7 +460,6 @@ exports[`InputWrapper.vue should render in an error state 1`] = `
     class="feather-input-label"
     data-ref-id="feather-form-element-label"
     for="test"
-    style="left: 16px;"
   >
     test
   </label>
@@ -535,7 +528,6 @@ exports[`InputWrapper.vue should render in disabled state 1`] = `
     class="feather-input-label"
     data-ref-id="feather-form-element-label"
     for="test"
-    style="left: 16px;"
   >
     test
   </label>
@@ -604,7 +596,6 @@ exports[`InputWrapper.vue should take into account any prefix elements when not 
     class="feather-input-label"
     data-ref-id="feather-form-element-label"
     for="test"
-    style="left: 16px;"
   >
     test
   </label>

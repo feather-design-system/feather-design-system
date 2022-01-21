@@ -13,7 +13,7 @@ A Date Input consists of two primary methods of interaction:
 
 The Date Input is a “spinner” control that appears as a text field and allows for a granular level of keyboard control with the arrow keys. The text field Date Input is best used when the user needs to enter a date from the distant past or far in the future. The text field date input allows for faster input thanks to the minimal number of clicks involved and the speed with which users can type.
 
-The Date picker is a graphical calendar that involves more clicks on the user’s behalf but provides a spatial context for the individual day and its relationship to all other days in each month. This can provide more context for a user but requires more cognitive overhead when used
+The date picker is a graphical calendar that involves more clicks on the user’s behalf but provides a spatial context for the individual day and its relationship to all other days in each month. This can provide more context for a user but requires more cognitive overhead when used
 
 ## Examples
 

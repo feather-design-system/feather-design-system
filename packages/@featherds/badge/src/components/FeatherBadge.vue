@@ -55,7 +55,7 @@ export default {
 
     .badges {
       position: static;
-      margin-left: 4px;
+      margin-left: 0.25rem;
     }
   }
   .badges {

@@ -26,18 +26,18 @@ export default {
 .all-components {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
-  row-gap: 20px;
-  column-gap: 20px;
+  row-gap: 1.25rem;
+  column-gap: 1.25rem;
   justify-items: center;
   justify-content: center;
 }
 
-@media screen and (max-width: 1300px) {
+@media screen and (max-width: 81.25rem) {
   .all-components {
     grid-template-columns: 1fr 1fr;
   }
 }
-@media screen and (max-width: 680px) {
+@media screen and (max-width: 42.5rem) {
   .all-components {
     grid-template-columns: 1fr;
   }

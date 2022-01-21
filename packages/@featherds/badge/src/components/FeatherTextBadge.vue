@@ -13,15 +13,15 @@ export default {
 @import "@featherds/styles/themes/utils";
 @import "@featherds/styles/mixins/typography";
 .feather-text-badge {
-  height: 20px;
-  padding: 2px 8px;
+  height: 1.25rem;
+  padding: 0.125rem 0.5rem;
   display: inline-flex;
   align-items: center;
   border-radius: 2px;
   @include caption;
   text-transform: uppercase;
   font-weight: var($font-bold);
-  margin-left: 8px;
+  margin-left: 0.5rem;
   &.error {
     color: var($error);
     background-color: alpha($error, 0.12);

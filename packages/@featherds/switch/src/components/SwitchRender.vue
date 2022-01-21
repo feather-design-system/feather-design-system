@@ -39,15 +39,15 @@ export default {
 @import "@featherds/styles/mixins/elevation";
 @import "@featherds/styles/mixins/flex";
 @import "@featherds/styles/themes/utils";
-$circleHeight: 20px;
-$height: 36px;
-$trackHeight: 14px;
-$trackLength: 34px;
+$circleHeight: 1.25rem;
+$height: 2.25rem;
+$trackHeight: 0.875rem;
+$trackLength: 2.125rem;
 
 .switch-container {
   position: relative;
   height: $height;
-  padding: 0 3px;
+  padding: 0 0.1875rem;
 
   display: inline-flex;
   cursor: pointer;
@@ -59,7 +59,7 @@ $trackLength: 34px;
       border: 1px solid transparent;
     }
     .switcher {
-      transform: translateX(14px);
+      transform: translateX(0.875rem);
     }
     .track {
       background-color: alpha($primary, 0.4);
@@ -90,7 +90,7 @@ $trackLength: 34px;
   border: 2px solid transparent;
   position: absolute;
   top: 0;
-  left: -5px;
+  left: -0.375rem;
   transition: all 280ms ease-in-out;
 }
 .track {

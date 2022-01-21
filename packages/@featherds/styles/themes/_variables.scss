@@ -247,54 +247,54 @@ $zindex-modal: prefix(zindex-modal);
 $zindex-popover: prefix(zindex-popover);
 $zindex-tooltip: prefix(zindex-tooltip);
 
-$xl-gutter: 24px;
-$l-gutter: 24px;
-$m-gutter: 24px;
-$s-gutter: 24px;
-$xs-gutter: 24px;
-$xxs-gutter: 16px;
+$spacing-xxs: prefix(spacing-xxs);
+$spacing-xs: prefix(spacing-xs);
+$spacing-s: prefix(spacing-s);
+$spacing-m: prefix(spacing-m);
+$spacing-l: prefix(spacing-l);
+$spacing-xl: prefix(spacing-xl);
+$spacing-xxl: prefix(spacing-xxl);
+
+$xl-gutter: 1.5rem;
+$l-gutter: 1.5rem;
+$m-gutter: 1.5rem;
+$s-gutter: 1.5rem;
+$xs-gutter: 1.5rem;
+$xxs-gutter: 1rem;
 
 $grid: (
   xl: (
-    min: 1441px,
+    min: 90.0625rem,
     col: 12,
     gutter: $xl-gutter,
   ),
   l: (
-    min: 1261px,
-    max: 1440px,
+    min: 78.8125rem,
+    max: 90rem,
     col: 12,
     gutter: $l-gutter,
   ),
   m: (
-    min: 1065px,
-    max: 1260px,
+    min: 66.5625rem,
+    max: 78.75rem,
     col: 12,
     gutter: $m-gutter,
   ),
   s: (
-    min: 761px,
-    max: 1064px,
+    min: 47.5625rem,
+    max: 66.5rem,
     col: 8,
     gutter: $s-gutter,
   ),
   xs: (
-    min: 521px,
-    max: 760px,
+    min: 32.5625rem,
+    max: 47.5rem,
     col: 8,
     gutter: $xs-gutter,
   ),
   xxs: (
-    max: 520px,
+    max: 32.5rem,
     col: 4,
     gutter: $xxs-gutter,
   ),
 );
-
-$spacing-xxs: 4px;
-$spacing-xs: 8px;
-$spacing-s: 12px;
-$spacing-m: 16px;
-$spacing-l: 20px;
-$spacing-xl: 24px;
-$spacing-xxl: 48px;

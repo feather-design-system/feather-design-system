@@ -2,7 +2,7 @@
 
 exports[`FeatherDateInput.vue should render disabled 1`] = `
 <div
-  class="feather-input-container"
+  class="feather-date-input-container"
 >
   <div
     class="feather-menu feather-date-input-menu-container"
@@ -23,7 +23,6 @@ exports[`FeatherDateInput.vue should render disabled 1`] = `
         class="feather-input-label"
         data-ref-id="feather-form-element-label"
         for="feather-date-input-label"
-        style="left: 12px;"
       >
         Test
       </label>
@@ -218,7 +217,6 @@ exports[`FeatherDateInput.vue should render disabled 1`] = `
                   class="feather-input-label"
                   data-ref-id="feather-form-element-label"
                   for="feather-select-input"
-                  style="left: 12px;"
                 >
                   Select month
                 </label>
@@ -481,16 +479,7 @@ exports[`FeatherDateInput.vue should render disabled 1`] = `
                 
               </div>
             </div>
-            <div
-              class="feather-input-sub-text"
-              id="feather-select-description"
-              style="display: none;"
-            >
-              <!---->
-              <!---->
-              
-              
-            </div>
+            <!---->
           </div>
           <div
             class="inline-select year feather-select-container"
@@ -516,7 +505,6 @@ exports[`FeatherDateInput.vue should render disabled 1`] = `
                   class="feather-input-label"
                   data-ref-id="feather-form-element-label"
                   for="feather-select-input"
-                  style="left: 12px;"
                 >
                   Select year
                 </label>
@@ -2683,16 +2671,7 @@ exports[`FeatherDateInput.vue should render disabled 1`] = `
                 
               </div>
             </div>
-            <div
-              class="feather-input-sub-text"
-              id="feather-select-description"
-              style="display: none;"
-            >
-              <!---->
-              <!---->
-              
-              
-            </div>
+            <!---->
           </div>
           <button
             aria-label="Next month"
@@ -3248,8 +3227,12 @@ exports[`FeatherDateInput.vue should render disabled 1`] = `
   <div
     class="feather-input-sub-text"
     id="feather-date-input-description"
-    style="display: none;"
   >
+    <div
+      class="feather-input-spacer"
+    >
+       
+    </div>
     <!---->
     <!---->
     

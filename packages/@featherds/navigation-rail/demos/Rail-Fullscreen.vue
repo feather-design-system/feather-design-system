@@ -95,10 +95,10 @@ export default {
   align-items: center;
 
   .user-icon {
-    height: 32px;
-    width: 32px;
+    height: 2rem;
+    width: 2rem;
     color: var($primary);
-    margin-right: 16px;
+    margin-right: 1rem;
   }
   .user-name {
     @include subtitle1;

@@ -1,0 +1,48 @@
+//utility classes
+$spacing: (
+  "xxs": $spacing-xxs,
+  "xs": $spacing-xs,
+  "s": $spacing-s,
+  "m": $spacing-m,
+  "l": $spacing-l,
+  "xl": $spacing-xl,
+  "xxl": $spacing-xxl
+);
+$directions: (top, bottom, left, right);
+
+@each $size, $value in $spacing {
+  @each $direction in $directions {
+    .m#{str-slice($direction, 0, 1)}-#{$size} {
+      margin-#{$direction}: var($value);
+    }
+
+    .p#{str-slice($direction, 0, 1)}-#{$size} {
+      padding-#{$direction}: var($value);
+    }
+  }
+  //x
+  .mx-#{$size} {
+    margin-left: var($value);
+    margin-right: var($value);
+  }
+  .px-#{$size} {
+    padding-left: var($value);
+    padding-right: var($value);
+  }
+  //y
+  .my-#{$size} {
+    margin-top: var($value);
+    margin-bottom: var($value);
+  }
+  .py-#{$size} {
+    padding-top: var($value);
+    padding-bottom: var($value);
+  }
+  //blank
+  .m-#{$size} {
+    margin: var($value);
+  }
+  .p-#{$size} {
+    padding: var($value);
+  }
+}

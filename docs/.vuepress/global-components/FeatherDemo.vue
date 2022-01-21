@@ -126,7 +126,7 @@ export default {
   border: 1px solid var($shade-4);
   background-color: var($background);
   border-radius: 4px;
-  margin-bottom: 16px;
+  margin-bottom: 1rem;
   :deep(pre[class*="language-"]) {
     margin: 0;
     border-radius: 0;
@@ -149,8 +149,8 @@ export default {
 }
 .demo-toolbar {
   background-color: var($background);
-  height: 64px;
-  padding: 0 16px;
+  height: 4rem;
+  padding: 0 1rem;
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -164,23 +164,23 @@ export default {
       width: 80%;
     }
     .btn-text {
-      margin: 8px 0;
+      margin: 0.5rem 0;
     }
   }
 }
 .demo {
   background-color: var($surface);
-  padding: 8px 20px;
+  padding: 0.5rem 1.25rem;
   border-radius: 0 0 4px 4px;
 }
 .theme-changer {
-  margin-right: 8px;
+  margin-right: 0.5rem;
 }
 .theme-select {
   display: inline-block;
-  width: 280px;
+  width: 17.5rem;
   &:deep(.feather-select-container) {
-    padding: 4px;
+    padding: 0.25rem;
   }
 }
 

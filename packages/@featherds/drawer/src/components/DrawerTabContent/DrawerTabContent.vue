@@ -40,7 +40,7 @@ export default {
   display: flex;
   flex-direction: column;
   height: 100%;
-  min-width: 266px;
+  min-width: 16.625rem;
   .contents {
     flex: 1;
     padding: 0;
@@ -54,14 +54,14 @@ export default {
     @include headline3();
     background-color: var($surface);
     color: var($primary-text-on-surface);
-    padding-left: 16px;
-    padding-right: 40px;
+    padding-left: 1rem;
+    padding-right: 2.5rem;
     flex: none;
 
     &,
     & > span {
-      height: 56px;
-      line-height: 56px;
+      height: 3.5rem;
+      line-height: 3.5rem;
     }
   }
 }

@@ -50,12 +50,12 @@ export default {
 </script>
 <style>
 .fixed-width {
-  width: 400px;
+  width: 25rem;
 }
 .relative {
   position: relative;
   overflow-y: auto;
-  max-height: 200px;
+  max-height: 12.5rem;
 }
 .long {
   height: 100vh;

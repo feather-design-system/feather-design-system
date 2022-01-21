@@ -62,13 +62,13 @@ section {
   .section-wrapper {
     display: flex;
     flex-wrap: wrap;
-    padding: 40px;
-    max-width: 600px;
+    padding: 2.5rem;
+    max-width: 37.5rem;
 
     span.overline {
       @include overline();
       color: var($secondary-variant);
-      margin-bottom: 12px;
+      margin-bottom: 0.75rem;
     }
 
     h3 {
@@ -76,7 +76,7 @@ section {
     }
 
     .not-found {
-      padding: 40px 0;
+      padding: 2.5rem 0;
       display: flex;
       flex-basis: 0;
       flex-shrink: 0;
@@ -92,13 +92,13 @@ section {
         display: flex;
         align-items: flex-start;
         justify-content: center;
-        padding-left: 40px;
-        padding-right: 20px;
-        min-width: 380px;
+        padding-left: 2.5rem;
+        padding-right: 1.25rem;
+        min-width: 23.75rem;
 
         p {
           padding-top: 0;
-          margin-top: 5px;
+          margin-top: 0.25rem;
           @include body-large();
           color: var($secondary-text-on-surface);
         }
@@ -107,7 +107,7 @@ section {
           margin-bottom: 0;
         }
       }
-      @media screen and (max-width: 599px) {
+      @media screen and (max-width: 37.4375rem) {
         flex-direction: column;
         text-align: center;
 
@@ -117,11 +117,11 @@ section {
           min-width: auto;
         }
         :deep(svg) {
-          flex-basis: 140px;
-          margin-bottom: 32px;
+          flex-basis: 8.75rem;
+          margin-bottom: 2rem;
         }
         h2 {
-          margin-bottom: 24px;
+          margin-bottom: 1.5rem;
         }
         p {
           margin-top: 0;

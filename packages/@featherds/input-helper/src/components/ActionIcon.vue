@@ -32,8 +32,8 @@ export default {
   &:active {
     color: var($secondary-text-on-surface);
   }
-  font-size: 20px;
-  height: 20px;
+  font-size: 1.25rem;
+  height: 1.25rem;
   cursor: pointer;
   &:hover {
     color: var($primary-text-on-surface);

@@ -69,9 +69,9 @@ Navigation rails should only be used on desktop and tablet devices (not smaller 
 
 The `NavigationRail` has 2 states; expanded and collapsed. When expanded all menu items are visible and can be interacted with. When it is collapsed only the `main` group is visible. When using `NavigationRail` please only populate the `main` and `default` slot with `RailGroup` and `RailItem` components.
 
-The `header` content should not exceed `40px` in height.
+The `header` content should not exceed `2.5rem` in height.
 
-When collapsed the `NavigationRail` will take up `52px` in width, when expanded it will not move any content on the page due to its `fixed` position. Therefore you don't need to worry about page content shifting.
+When collapsed the `NavigationRail` will take up `3.25rem` in width, when expanded it will not move any content on the page due to its `fixed` position. Therefore you don't need to worry about page content shifting.
 
 ### Props
 

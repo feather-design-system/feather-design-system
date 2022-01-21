@@ -182,16 +182,11 @@ export default {
 
 .feather-expansion {
   width: 100%;
-  margin-top: $spacing-xl;
-  margin-bottom: $spacing-xl;
-  + .feather-expansion {
-    margin-top: 0;
-  }
   @include elevation(2);
   [role="region"] {
     will-change: height;
     .panel-content {
-      padding: 0 24px 32px 24px;
+      padding: 0 1.5rem 2rem 1.5rem;
     }
   }
 
@@ -200,9 +195,9 @@ export default {
     align-items: center;
     background: transparent;
     border: 0;
-    padding: 0 24px;
+    padding: 0 1.5rem;
     position: relative;
-    height: 48px;
+    height: 3rem;
     text-align: left;
     width: 100%;
     transition: height 280ms ease-in-out;
@@ -213,7 +208,7 @@ export default {
       text-decoration: none;
     }
     &.expanded {
-      height: 64px;
+      height: 4rem;
     }
     &.disabled {
       color: var($disabled-text-on-surface);
@@ -229,9 +224,9 @@ export default {
     display: flex;
     align-items: center;
     justify-items: center;
-    height: 18px;
-    width: 18px;
-    font-size: 18px;
+    height: 1.125rem;
+    width: 1.125rem;
+    font-size: 1.125rem;
     color: var($secondary-text-on-surface);
     &.disabled {
       color: var($disabled-text-on-surface);

@@ -6,7 +6,7 @@
         primary
         @click="visible = true"
         :aria-expanded="visible ? 'true' : 'false'"
-        style="margin-bottom: 1200px"
+        style="margin-bottom: 75rem"
         >Open Dialog</FeatherButton
       >
       <p>Dialog Is Open: {{ visible }}</p>

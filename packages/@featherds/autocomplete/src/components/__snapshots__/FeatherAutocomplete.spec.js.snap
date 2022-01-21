@@ -13,7 +13,7 @@ exports[`FeatherAutocomplete base functionality multi disabled state should rend
       aria-haspopup="listbox"
       aria-label="Users"
       aria-owns="feather-autocomplete-input-results"
-      class="feather-input-wrapper-container raised disabled"
+      class="feather-input-wrapper-container raised disabled has-prefix"
       menu-trigger=""
       role="combobox"
     >
@@ -29,12 +29,11 @@ exports[`FeatherAutocomplete base functionality multi disabled state should rend
         class="feather-input-label"
         data-ref-id="feather-form-element-label"
         for="feather-autocomplete-input"
-        style="left: 12px;"
       >
         Users
       </label>
       <div
-        class="feather-input-wrapper has-prefix"
+        class="feather-input-wrapper"
       >
         <div
           class="prefix"
@@ -127,7 +126,7 @@ exports[`FeatherAutocomplete base functionality multi disabled state should rend
             disabled=""
             id="feather-autocomplete-input"
             readonly=""
-            style="height: 26px; flex-basis: 40px; white-space: nowrap;"
+            style="height: 1.625rem; flex-basis: 40px; white-space: nowrap;"
             tabindex="-1"
           />
         </div>
@@ -186,8 +185,12 @@ exports[`FeatherAutocomplete base functionality multi disabled state should rend
   <div
     class="feather-input-sub-text"
     id="feather-autocomplete-description"
-    style="display: none;"
   >
+    <div
+      class="feather-input-spacer"
+    >
+       
+    </div>
     <!---->
     <!---->
     
@@ -209,7 +212,7 @@ exports[`FeatherAutocomplete base functionality multi disabled state should rend
       aria-haspopup="listbox"
       aria-label="Users"
       aria-owns="feather-autocomplete-input-results"
-      class="feather-input-wrapper-container disabled"
+      class="feather-input-wrapper-container disabled has-prefix"
       menu-trigger=""
       role="combobox"
     >
@@ -225,12 +228,11 @@ exports[`FeatherAutocomplete base functionality multi disabled state should rend
         class="feather-input-label"
         data-ref-id="feather-form-element-label"
         for="feather-autocomplete-input"
-        style="left: 16px;"
       >
         Users
       </label>
       <div
-        class="feather-input-wrapper has-prefix"
+        class="feather-input-wrapper"
       >
         <div
           class="prefix"
@@ -283,7 +285,7 @@ exports[`FeatherAutocomplete base functionality multi disabled state should rend
             disabled=""
             id="feather-autocomplete-input"
             readonly=""
-            style="height: 26px; flex-basis: 40px; white-space: nowrap;"
+            style="height: 1.625rem; flex-basis: 40px; white-space: nowrap;"
             tabindex="-1"
           />
         </div>
@@ -342,8 +344,12 @@ exports[`FeatherAutocomplete base functionality multi disabled state should rend
   <div
     class="feather-input-sub-text"
     id="feather-autocomplete-description"
-    style="display: none;"
   >
+    <div
+      class="feather-input-spacer"
+    >
+       
+    </div>
     <!---->
     <!---->
     
@@ -365,7 +371,7 @@ exports[`FeatherAutocomplete base functionality multi should lower label when th
       aria-haspopup="listbox"
       aria-label="Users"
       aria-owns="feather-autocomplete-input-results"
-      class="feather-input-wrapper-container"
+      class="feather-input-wrapper-container has-prefix"
       menu-trigger=""
       role="combobox"
     >
@@ -381,12 +387,11 @@ exports[`FeatherAutocomplete base functionality multi should lower label when th
         class="feather-input-label"
         data-ref-id="feather-form-element-label"
         for="feather-autocomplete-input"
-        style="left: 16px;"
       >
         Users
       </label>
       <div
-        class="feather-input-wrapper has-prefix"
+        class="feather-input-wrapper"
       >
         <div
           class="prefix"
@@ -437,7 +442,7 @@ exports[`FeatherAutocomplete base functionality multi should lower label when th
             class="feather-autocomplete-input"
             data-ref-id="feather-input"
             id="feather-autocomplete-input"
-            style="height: 26px; flex-basis: 40px; white-space: nowrap;"
+            style="height: 1.625rem; flex-basis: 40px; white-space: nowrap;"
             tabindex="0"
           />
         </div>
@@ -496,8 +501,12 @@ exports[`FeatherAutocomplete base functionality multi should lower label when th
   <div
     class="feather-input-sub-text"
     id="feather-autocomplete-description"
-    style="display: none;"
   >
+    <div
+      class="feather-input-spacer"
+    >
+       
+    </div>
     <!---->
     <!---->
     
@@ -520,7 +529,7 @@ exports[`FeatherAutocomplete base functionality multi should not leave previous 
       aria-haspopup="true"
       aria-label="Users"
       aria-owns="feather-autocomplete-input-results"
-      class="feather-input-wrapper-container raised focused"
+      class="feather-input-wrapper-container raised focused has-prefix"
       id="feather-menu-trigger"
       menu-trigger=""
       role="combobox"
@@ -537,12 +546,11 @@ exports[`FeatherAutocomplete base functionality multi should not leave previous 
         class="feather-input-label"
         data-ref-id="feather-form-element-label"
         for="feather-autocomplete-input"
-        style="left: 12px;"
       >
         Users
       </label>
       <div
-        class="feather-input-wrapper has-prefix"
+        class="feather-input-wrapper"
       >
         <div
           class="prefix"
@@ -726,8 +734,12 @@ exports[`FeatherAutocomplete base functionality multi should not leave previous 
   <div
     class="feather-input-sub-text"
     id="feather-autocomplete-description"
-    style="display: none;"
   >
+    <div
+      class="feather-input-spacer"
+    >
+       
+    </div>
     <!---->
     <!---->
     
@@ -749,7 +761,7 @@ exports[`FeatherAutocomplete base functionality multi should raise the label whe
       aria-haspopup="listbox"
       aria-label="Users"
       aria-owns="feather-autocomplete-input-results"
-      class="feather-input-wrapper-container raised"
+      class="feather-input-wrapper-container raised has-prefix"
       menu-trigger=""
       role="combobox"
     >
@@ -765,12 +777,11 @@ exports[`FeatherAutocomplete base functionality multi should raise the label whe
         class="feather-input-label"
         data-ref-id="feather-form-element-label"
         for="feather-autocomplete-input"
-        style="left: 12px;"
       >
         Users
       </label>
       <div
-        class="feather-input-wrapper has-prefix"
+        class="feather-input-wrapper"
       >
         <div
           class="prefix"
@@ -901,7 +912,7 @@ exports[`FeatherAutocomplete base functionality multi should raise the label whe
             class="feather-autocomplete-input"
             data-ref-id="feather-input"
             id="feather-autocomplete-input"
-            style="height: 26px; flex-basis: 40px; white-space: nowrap;"
+            style="height: 1.625rem; flex-basis: 40px; white-space: nowrap;"
             tabindex="0"
           />
         </div>
@@ -960,8 +971,12 @@ exports[`FeatherAutocomplete base functionality multi should raise the label whe
   <div
     class="feather-input-sub-text"
     id="feather-autocomplete-description"
-    style="display: none;"
   >
+    <div
+      class="feather-input-spacer"
+    >
+       
+    </div>
     <!---->
     <!---->
     
@@ -984,7 +999,7 @@ exports[`FeatherAutocomplete base functionality multi should show loading spinne
       aria-haspopup="true"
       aria-label="Users"
       aria-owns="feather-autocomplete-input-results"
-      class="feather-input-wrapper-container raised focused"
+      class="feather-input-wrapper-container raised focused has-prefix"
       id="feather-menu-trigger"
       menu-trigger=""
       role="combobox"
@@ -1001,12 +1016,11 @@ exports[`FeatherAutocomplete base functionality multi should show loading spinne
         class="feather-input-label"
         data-ref-id="feather-form-element-label"
         for="feather-autocomplete-input"
-        style="left: 12px;"
       >
         Users
       </label>
       <div
-        class="feather-input-wrapper has-prefix"
+        class="feather-input-wrapper"
       >
         <div
           class="prefix"
@@ -1134,8 +1148,12 @@ exports[`FeatherAutocomplete base functionality multi should show loading spinne
   <div
     class="feather-input-sub-text"
     id="feather-autocomplete-description"
-    style="display: none;"
   >
+    <div
+      class="feather-input-spacer"
+    >
+       
+    </div>
     <!---->
     <!---->
     
@@ -1158,7 +1176,7 @@ exports[`FeatherAutocomplete base functionality multi should show no results tex
       aria-haspopup="true"
       aria-label="Users"
       aria-owns="feather-autocomplete-input-results"
-      class="feather-input-wrapper-container raised focused"
+      class="feather-input-wrapper-container raised focused has-prefix"
       id="feather-menu-trigger"
       menu-trigger=""
       role="combobox"
@@ -1175,12 +1193,11 @@ exports[`FeatherAutocomplete base functionality multi should show no results tex
         class="feather-input-label"
         data-ref-id="feather-form-element-label"
         for="feather-autocomplete-input"
-        style="left: 12px;"
       >
         Users
       </label>
       <div
-        class="feather-input-wrapper has-prefix"
+        class="feather-input-wrapper"
       >
         <div
           class="prefix"
@@ -1314,8 +1331,12 @@ exports[`FeatherAutocomplete base functionality multi should show no results tex
   <div
     class="feather-input-sub-text"
     id="feather-autocomplete-description"
-    style="display: none;"
   >
+    <div
+      class="feather-input-spacer"
+    >
+       
+    </div>
     <!---->
     <!---->
     
@@ -1337,7 +1358,7 @@ exports[`FeatherAutocomplete base functionality single disabled state should ren
       aria-haspopup="listbox"
       aria-label="Users"
       aria-owns="feather-autocomplete-input-results"
-      class="feather-input-wrapper-container raised disabled"
+      class="feather-input-wrapper-container raised disabled has-prefix"
       menu-trigger=""
       role="combobox"
     >
@@ -1353,12 +1374,11 @@ exports[`FeatherAutocomplete base functionality single disabled state should ren
         class="feather-input-label"
         data-ref-id="feather-form-element-label"
         for="feather-autocomplete-input"
-        style="left: 12px;"
       >
         Users
       </label>
       <div
-        class="feather-input-wrapper has-prefix"
+        class="feather-input-wrapper"
       >
         <div
           class="prefix"
@@ -1411,7 +1431,7 @@ exports[`FeatherAutocomplete base functionality single disabled state should ren
             disabled=""
             id="feather-autocomplete-input"
             readonly=""
-            style="height: 26px; flex-basis: 40px; white-space: nowrap;"
+            style="height: 1.625rem; flex-basis: 40px; white-space: nowrap;"
             tabindex="-1"
           />
         </div>
@@ -1488,8 +1508,12 @@ exports[`FeatherAutocomplete base functionality single disabled state should ren
   <div
     class="feather-input-sub-text"
     id="feather-autocomplete-description"
-    style="display: none;"
   >
+    <div
+      class="feather-input-spacer"
+    >
+       
+    </div>
     <!---->
     <!---->
     
@@ -1511,7 +1535,7 @@ exports[`FeatherAutocomplete base functionality single disabled state should ren
       aria-haspopup="listbox"
       aria-label="Users"
       aria-owns="feather-autocomplete-input-results"
-      class="feather-input-wrapper-container disabled"
+      class="feather-input-wrapper-container disabled has-prefix"
       menu-trigger=""
       role="combobox"
     >
@@ -1527,12 +1551,11 @@ exports[`FeatherAutocomplete base functionality single disabled state should ren
         class="feather-input-label"
         data-ref-id="feather-form-element-label"
         for="feather-autocomplete-input"
-        style="left: 16px;"
       >
         Users
       </label>
       <div
-        class="feather-input-wrapper has-prefix"
+        class="feather-input-wrapper"
       >
         <div
           class="prefix"
@@ -1585,7 +1608,7 @@ exports[`FeatherAutocomplete base functionality single disabled state should ren
             disabled=""
             id="feather-autocomplete-input"
             readonly=""
-            style="height: 26px; flex-basis: 40px; white-space: nowrap;"
+            style="height: 1.625rem; flex-basis: 40px; white-space: nowrap;"
             tabindex="-1"
           />
         </div>
@@ -1644,8 +1667,12 @@ exports[`FeatherAutocomplete base functionality single disabled state should ren
   <div
     class="feather-input-sub-text"
     id="feather-autocomplete-description"
-    style="display: none;"
   >
+    <div
+      class="feather-input-spacer"
+    >
+       
+    </div>
     <!---->
     <!---->
     
@@ -1667,7 +1694,7 @@ exports[`FeatherAutocomplete base functionality single should lower label when t
       aria-haspopup="listbox"
       aria-label="Users"
       aria-owns="feather-autocomplete-input-results"
-      class="feather-input-wrapper-container"
+      class="feather-input-wrapper-container has-prefix"
       menu-trigger=""
       role="combobox"
     >
@@ -1683,12 +1710,11 @@ exports[`FeatherAutocomplete base functionality single should lower label when t
         class="feather-input-label"
         data-ref-id="feather-form-element-label"
         for="feather-autocomplete-input"
-        style="left: 16px;"
       >
         Users
       </label>
       <div
-        class="feather-input-wrapper has-prefix"
+        class="feather-input-wrapper"
       >
         <div
           class="prefix"
@@ -1739,7 +1765,7 @@ exports[`FeatherAutocomplete base functionality single should lower label when t
             class="feather-autocomplete-input"
             data-ref-id="feather-input"
             id="feather-autocomplete-input"
-            style="height: 26px; flex-basis: 40px; white-space: nowrap;"
+            style="height: 1.625rem; flex-basis: 40px; white-space: nowrap;"
             tabindex="0"
           />
         </div>
@@ -1798,8 +1824,12 @@ exports[`FeatherAutocomplete base functionality single should lower label when t
   <div
     class="feather-input-sub-text"
     id="feather-autocomplete-description"
-    style="display: none;"
   >
+    <div
+      class="feather-input-spacer"
+    >
+       
+    </div>
     <!---->
     <!---->
     
@@ -1822,7 +1852,7 @@ exports[`FeatherAutocomplete base functionality single should not leave previous
       aria-haspopup="true"
       aria-label="Users"
       aria-owns="feather-autocomplete-input-results"
-      class="feather-input-wrapper-container raised focused"
+      class="feather-input-wrapper-container raised focused has-prefix"
       id="feather-menu-trigger"
       menu-trigger=""
       role="combobox"
@@ -1839,12 +1869,11 @@ exports[`FeatherAutocomplete base functionality single should not leave previous
         class="feather-input-label"
         data-ref-id="feather-form-element-label"
         for="feather-autocomplete-input"
-        style="left: 12px;"
       >
         Users
       </label>
       <div
-        class="feather-input-wrapper has-prefix"
+        class="feather-input-wrapper"
       >
         <div
           class="prefix"
@@ -2027,8 +2056,12 @@ exports[`FeatherAutocomplete base functionality single should not leave previous
   <div
     class="feather-input-sub-text"
     id="feather-autocomplete-description"
-    style="display: none;"
   >
+    <div
+      class="feather-input-spacer"
+    >
+       
+    </div>
     <!---->
     <!---->
     
@@ -2050,7 +2083,7 @@ exports[`FeatherAutocomplete base functionality single should raise the label wh
       aria-haspopup="listbox"
       aria-label="Users"
       aria-owns="feather-autocomplete-input-results"
-      class="feather-input-wrapper-container raised"
+      class="feather-input-wrapper-container raised has-prefix"
       menu-trigger=""
       role="combobox"
     >
@@ -2066,12 +2099,11 @@ exports[`FeatherAutocomplete base functionality single should raise the label wh
         class="feather-input-label"
         data-ref-id="feather-form-element-label"
         for="feather-autocomplete-input"
-        style="left: 12px;"
       >
         Users
       </label>
       <div
-        class="feather-input-wrapper has-prefix"
+        class="feather-input-wrapper"
       >
         <div
           class="prefix"
@@ -2122,7 +2154,7 @@ exports[`FeatherAutocomplete base functionality single should raise the label wh
             class="feather-autocomplete-input"
             data-ref-id="feather-input"
             id="feather-autocomplete-input"
-            style="height: 26px; flex-basis: 40px; white-space: nowrap;"
+            style="height: 1.625rem; flex-basis: 40px; white-space: nowrap;"
             tabindex="0"
           />
         </div>
@@ -2199,8 +2231,12 @@ exports[`FeatherAutocomplete base functionality single should raise the label wh
   <div
     class="feather-input-sub-text"
     id="feather-autocomplete-description"
-    style="display: none;"
   >
+    <div
+      class="feather-input-spacer"
+    >
+       
+    </div>
     <!---->
     <!---->
     
@@ -2223,7 +2259,7 @@ exports[`FeatherAutocomplete base functionality single should show loading spinn
       aria-haspopup="true"
       aria-label="Users"
       aria-owns="feather-autocomplete-input-results"
-      class="feather-input-wrapper-container raised focused"
+      class="feather-input-wrapper-container raised focused has-prefix"
       id="feather-menu-trigger"
       menu-trigger=""
       role="combobox"
@@ -2240,12 +2276,11 @@ exports[`FeatherAutocomplete base functionality single should show loading spinn
         class="feather-input-label"
         data-ref-id="feather-form-element-label"
         for="feather-autocomplete-input"
-        style="left: 12px;"
       >
         Users
       </label>
       <div
-        class="feather-input-wrapper has-prefix"
+        class="feather-input-wrapper"
       >
         <div
           class="prefix"
@@ -2373,8 +2408,12 @@ exports[`FeatherAutocomplete base functionality single should show loading spinn
   <div
     class="feather-input-sub-text"
     id="feather-autocomplete-description"
-    style="display: none;"
   >
+    <div
+      class="feather-input-spacer"
+    >
+       
+    </div>
     <!---->
     <!---->
     
@@ -2397,7 +2436,7 @@ exports[`FeatherAutocomplete base functionality single should show no results te
       aria-haspopup="true"
       aria-label="Users"
       aria-owns="feather-autocomplete-input-results"
-      class="feather-input-wrapper-container raised focused"
+      class="feather-input-wrapper-container raised focused has-prefix"
       id="feather-menu-trigger"
       menu-trigger=""
       role="combobox"
@@ -2414,12 +2453,11 @@ exports[`FeatherAutocomplete base functionality single should show no results te
         class="feather-input-label"
         data-ref-id="feather-form-element-label"
         for="feather-autocomplete-input"
-        style="left: 12px;"
       >
         Users
       </label>
       <div
-        class="feather-input-wrapper has-prefix"
+        class="feather-input-wrapper"
       >
         <div
           class="prefix"
@@ -2553,8 +2591,12 @@ exports[`FeatherAutocomplete base functionality single should show no results te
   <div
     class="feather-input-sub-text"
     id="feather-autocomplete-description"
-    style="display: none;"
   >
+    <div
+      class="feather-input-spacer"
+    >
+       
+    </div>
     <!---->
     <!---->
     
@@ -2577,7 +2619,7 @@ exports[`FeatherAutocomplete multi:specific chip selection should move chip sele
       aria-haspopup="true"
       aria-label="Users"
       aria-owns="feather-autocomplete-input-results"
-      class="feather-input-wrapper-container raised"
+      class="feather-input-wrapper-container raised has-prefix"
       id="feather-menu-trigger"
       menu-trigger=""
       role="combobox"
@@ -2594,12 +2636,11 @@ exports[`FeatherAutocomplete multi:specific chip selection should move chip sele
         class="feather-input-label"
         data-ref-id="feather-form-element-label"
         for="feather-autocomplete-input"
-        style="left: 12px;"
       >
         Users
       </label>
       <div
-        class="feather-input-wrapper has-prefix"
+        class="feather-input-wrapper"
       >
         <div
           class="prefix"
@@ -2790,8 +2831,12 @@ exports[`FeatherAutocomplete multi:specific chip selection should move chip sele
   <div
     class="feather-input-sub-text"
     id="feather-autocomplete-description"
-    style="display: none;"
   >
+    <div
+      class="feather-input-spacer"
+    >
+       
+    </div>
     <!---->
     <!---->
     
@@ -2814,7 +2859,7 @@ exports[`FeatherAutocomplete multi:specific chip selection should move chip sele
       aria-haspopup="true"
       aria-label="Users"
       aria-owns="feather-autocomplete-input-results"
-      class="feather-input-wrapper-container raised"
+      class="feather-input-wrapper-container raised has-prefix"
       id="feather-menu-trigger"
       menu-trigger=""
       role="combobox"
@@ -2831,12 +2876,11 @@ exports[`FeatherAutocomplete multi:specific chip selection should move chip sele
         class="feather-input-label"
         data-ref-id="feather-form-element-label"
         for="feather-autocomplete-input"
-        style="left: 12px;"
       >
         Users
       </label>
       <div
-        class="feather-input-wrapper has-prefix"
+        class="feather-input-wrapper"
       >
         <div
           class="prefix"
@@ -3027,8 +3071,12 @@ exports[`FeatherAutocomplete multi:specific chip selection should move chip sele
   <div
     class="feather-input-sub-text"
     id="feather-autocomplete-description"
-    style="display: none;"
   >
+    <div
+      class="feather-input-spacer"
+    >
+       
+    </div>
     <!---->
     <!---->
     
@@ -3051,7 +3099,7 @@ exports[`FeatherAutocomplete multi:specific chip selection should not move chip 
       aria-haspopup="true"
       aria-label="Users"
       aria-owns="feather-autocomplete-input-results"
-      class="feather-input-wrapper-container raised"
+      class="feather-input-wrapper-container raised has-prefix"
       id="feather-menu-trigger"
       menu-trigger=""
       role="combobox"
@@ -3068,12 +3116,11 @@ exports[`FeatherAutocomplete multi:specific chip selection should not move chip 
         class="feather-input-label"
         data-ref-id="feather-form-element-label"
         for="feather-autocomplete-input"
-        style="left: 12px;"
       >
         Users
       </label>
       <div
-        class="feather-input-wrapper has-prefix"
+        class="feather-input-wrapper"
       >
         <div
           class="prefix"
@@ -3264,8 +3311,12 @@ exports[`FeatherAutocomplete multi:specific chip selection should not move chip 
   <div
     class="feather-input-sub-text"
     id="feather-autocomplete-description"
-    style="display: none;"
   >
+    <div
+      class="feather-input-spacer"
+    >
+       
+    </div>
     <!---->
     <!---->
     
@@ -3288,7 +3339,7 @@ exports[`FeatherAutocomplete multi:specific chip selection should not perform an
       aria-haspopup="true"
       aria-label="Users"
       aria-owns="feather-autocomplete-input-results"
-      class="feather-input-wrapper-container raised"
+      class="feather-input-wrapper-container raised has-prefix"
       id="feather-menu-trigger"
       menu-trigger=""
       role="combobox"
@@ -3305,12 +3356,11 @@ exports[`FeatherAutocomplete multi:specific chip selection should not perform an
         class="feather-input-label"
         data-ref-id="feather-form-element-label"
         for="feather-autocomplete-input"
-        style="left: 12px;"
       >
         Users
       </label>
       <div
-        class="feather-input-wrapper has-prefix"
+        class="feather-input-wrapper"
       >
         <div
           class="prefix"
@@ -3500,8 +3550,12 @@ exports[`FeatherAutocomplete multi:specific chip selection should not perform an
   <div
     class="feather-input-sub-text"
     id="feather-autocomplete-description"
-    style="display: none;"
   >
+    <div
+      class="feather-input-spacer"
+    >
+       
+    </div>
     <!---->
     <!---->
     
@@ -3524,7 +3578,7 @@ exports[`FeatherAutocomplete multi:specific chip selection should select rightmo
       aria-haspopup="true"
       aria-label="Users"
       aria-owns="feather-autocomplete-input-results"
-      class="feather-input-wrapper-container raised focused"
+      class="feather-input-wrapper-container raised focused has-prefix"
       id="feather-menu-trigger"
       menu-trigger=""
       role="combobox"
@@ -3541,12 +3595,11 @@ exports[`FeatherAutocomplete multi:specific chip selection should select rightmo
         class="feather-input-label"
         data-ref-id="feather-form-element-label"
         for="feather-autocomplete-input"
-        style="left: 12px;"
       >
         Users
       </label>
       <div
-        class="feather-input-wrapper has-prefix"
+        class="feather-input-wrapper"
       >
         <div
           class="prefix"
@@ -3792,8 +3845,12 @@ exports[`FeatherAutocomplete multi:specific chip selection should select rightmo
   <div
     class="feather-input-sub-text"
     id="feather-autocomplete-description"
-    style="display: none;"
   >
+    <div
+      class="feather-input-spacer"
+    >
+       
+    </div>
     <!---->
     <!---->
     
@@ -3816,7 +3873,7 @@ exports[`FeatherAutocomplete multi:specific chip selection should select the rig
       aria-haspopup="true"
       aria-label="Users"
       aria-owns="feather-autocomplete-input-results"
-      class="feather-input-wrapper-container raised"
+      class="feather-input-wrapper-container raised has-prefix"
       id="feather-menu-trigger"
       menu-trigger=""
       role="combobox"
@@ -3833,12 +3890,11 @@ exports[`FeatherAutocomplete multi:specific chip selection should select the rig
         class="feather-input-label"
         data-ref-id="feather-form-element-label"
         for="feather-autocomplete-input"
-        style="left: 12px;"
       >
         Users
       </label>
       <div
-        class="feather-input-wrapper has-prefix"
+        class="feather-input-wrapper"
       >
         <div
           class="prefix"
@@ -4029,8 +4085,12 @@ exports[`FeatherAutocomplete multi:specific chip selection should select the rig
   <div
     class="feather-input-sub-text"
     id="feather-autocomplete-description"
-    style="display: none;"
   >
+    <div
+      class="feather-input-spacer"
+    >
+       
+    </div>
     <!---->
     <!---->
     
@@ -4053,7 +4113,7 @@ exports[`FeatherAutocomplete multi:specific chip selection should should deselec
       aria-haspopup="true"
       aria-label="Users"
       aria-owns="feather-autocomplete-input-results"
-      class="feather-input-wrapper-container raised"
+      class="feather-input-wrapper-container raised has-prefix"
       id="feather-menu-trigger"
       menu-trigger=""
       role="combobox"
@@ -4070,12 +4130,11 @@ exports[`FeatherAutocomplete multi:specific chip selection should should deselec
         class="feather-input-label"
         data-ref-id="feather-form-element-label"
         for="feather-autocomplete-input"
-        style="left: 12px;"
       >
         Users
       </label>
       <div
-        class="feather-input-wrapper has-prefix"
+        class="feather-input-wrapper"
       >
         <div
           class="prefix"
@@ -4265,8 +4324,12 @@ exports[`FeatherAutocomplete multi:specific chip selection should should deselec
   <div
     class="feather-input-sub-text"
     id="feather-autocomplete-description"
-    style="display: none;"
   >
+    <div
+      class="feather-input-spacer"
+    >
+       
+    </div>
     <!---->
     <!---->
     
@@ -4289,7 +4352,7 @@ exports[`FeatherAutocomplete multi:specific selection limit should clear warning
       aria-haspopup="true"
       aria-label="Users"
       aria-owns="feather-autocomplete-input-results"
-      class="feather-input-wrapper-container raised focused"
+      class="feather-input-wrapper-container raised focused has-prefix"
       id="feather-menu-trigger"
       menu-trigger=""
       role="combobox"
@@ -4306,12 +4369,11 @@ exports[`FeatherAutocomplete multi:specific selection limit should clear warning
         class="feather-input-label"
         data-ref-id="feather-form-element-label"
         for="feather-autocomplete-input"
-        style="left: 12px;"
       >
         Users
       </label>
       <div
-        class="feather-input-wrapper has-prefix"
+        class="feather-input-wrapper"
       >
         <div
           class="prefix"
@@ -4501,8 +4563,12 @@ exports[`FeatherAutocomplete multi:specific selection limit should clear warning
   <div
     class="feather-input-sub-text"
     id="feather-autocomplete-description"
-    style="display: none;"
   >
+    <div
+      class="feather-input-spacer"
+    >
+       
+    </div>
     <!---->
     <!---->
     
@@ -4525,7 +4591,7 @@ exports[`FeatherAutocomplete multi:specific selection limit should display a war
       aria-haspopup="true"
       aria-label="Users"
       aria-owns="feather-autocomplete-input-results"
-      class="feather-input-wrapper-container raised focused"
+      class="feather-input-wrapper-container raised focused has-prefix"
       id="feather-menu-trigger"
       menu-trigger=""
       role="combobox"
@@ -4542,12 +4608,11 @@ exports[`FeatherAutocomplete multi:specific selection limit should display a war
         class="feather-input-label"
         data-ref-id="feather-form-element-label"
         for="feather-autocomplete-input"
-        style="left: 12px;"
       >
         Users
       </label>
       <div
-        class="feather-input-wrapper has-prefix"
+        class="feather-input-wrapper"
       >
         <div
           class="prefix"
@@ -4783,8 +4848,12 @@ exports[`FeatherAutocomplete multi:specific selection limit should display a war
   <div
     class="feather-input-sub-text"
     id="feather-autocomplete-description"
-    style="display: none;"
   >
+    <div
+      class="feather-input-spacer"
+    >
+       
+    </div>
     <!---->
     <!---->
     
@@ -4807,7 +4876,7 @@ exports[`FeatherAutocomplete multi:specific selection limit should display a war
       aria-haspopup="true"
       aria-label="Users"
       aria-owns="feather-autocomplete-input-results"
-      class="feather-input-wrapper-container raised focused"
+      class="feather-input-wrapper-container raised focused has-prefix"
       id="feather-menu-trigger"
       menu-trigger=""
       role="combobox"
@@ -4824,12 +4893,11 @@ exports[`FeatherAutocomplete multi:specific selection limit should display a war
         class="feather-input-label"
         data-ref-id="feather-form-element-label"
         for="feather-autocomplete-input"
-        style="left: 12px;"
       >
         Users
       </label>
       <div
-        class="feather-input-wrapper has-prefix"
+        class="feather-input-wrapper"
       >
         <div
           class="prefix"
@@ -5067,8 +5135,12 @@ exports[`FeatherAutocomplete multi:specific selection limit should display a war
   <div
     class="feather-input-sub-text"
     id="feather-autocomplete-description"
-    style="display: none;"
   >
+    <div
+      class="feather-input-spacer"
+    >
+       
+    </div>
     <!---->
     <!---->
     
@@ -5091,7 +5163,7 @@ exports[`FeatherAutocomplete multi:specific selection limit should display a war
       aria-haspopup="true"
       aria-label="Users"
       aria-owns="feather-autocomplete-input-results"
-      class="feather-input-wrapper-container raised focused"
+      class="feather-input-wrapper-container raised focused has-prefix"
       id="feather-menu-trigger"
       menu-trigger=""
       role="combobox"
@@ -5108,12 +5180,11 @@ exports[`FeatherAutocomplete multi:specific selection limit should display a war
         class="feather-input-label"
         data-ref-id="feather-form-element-label"
         for="feather-autocomplete-input"
-        style="left: 12px;"
       >
         Users
       </label>
       <div
-        class="feather-input-wrapper has-prefix"
+        class="feather-input-wrapper"
       >
         <div
           class="prefix"
@@ -5327,8 +5398,12 @@ exports[`FeatherAutocomplete multi:specific selection limit should display a war
   <div
     class="feather-input-sub-text"
     id="feather-autocomplete-description"
-    style="display: none;"
   >
+    <div
+      class="feather-input-spacer"
+    >
+       
+    </div>
     <!---->
     <!---->
     
@@ -5351,7 +5426,7 @@ exports[`FeatherAutocomplete multi:specific should hide/reset menu and clear tex
       aria-haspopup="true"
       aria-label="Users"
       aria-owns="feather-autocomplete-input-results"
-      class="feather-input-wrapper-container"
+      class="feather-input-wrapper-container has-prefix"
       id="feather-menu-trigger"
       menu-trigger=""
       role="combobox"
@@ -5368,12 +5443,11 @@ exports[`FeatherAutocomplete multi:specific should hide/reset menu and clear tex
         class="feather-input-label"
         data-ref-id="feather-form-element-label"
         for="feather-autocomplete-input"
-        style="left: 16px;"
       >
         Users
       </label>
       <div
-        class="feather-input-wrapper has-prefix"
+        class="feather-input-wrapper"
       >
         <div
           class="prefix"
@@ -5483,8 +5557,12 @@ exports[`FeatherAutocomplete multi:specific should hide/reset menu and clear tex
   <div
     class="feather-input-sub-text"
     id="feather-autocomplete-description"
-    style="display: none;"
   >
+    <div
+      class="feather-input-spacer"
+    >
+       
+    </div>
     <!---->
     <!---->
     
@@ -5507,7 +5585,7 @@ exports[`FeatherAutocomplete single:specific should close menu when enter is pre
       aria-haspopup="true"
       aria-label="Users"
       aria-owns="feather-autocomplete-input-results"
-      class="feather-input-wrapper-container raised focused"
+      class="feather-input-wrapper-container raised focused has-prefix"
       id="feather-menu-trigger"
       menu-trigger=""
       role="combobox"
@@ -5524,12 +5602,11 @@ exports[`FeatherAutocomplete single:specific should close menu when enter is pre
         class="feather-input-label"
         data-ref-id="feather-form-element-label"
         for="feather-autocomplete-input"
-        style="left: 12px;"
       >
         Users
       </label>
       <div
-        class="feather-input-wrapper has-prefix"
+        class="feather-input-wrapper"
       >
         <div
           class="prefix"
@@ -5694,8 +5771,12 @@ exports[`FeatherAutocomplete single:specific should close menu when enter is pre
   <div
     class="feather-input-sub-text"
     id="feather-autocomplete-description"
-    style="display: none;"
   >
+    <div
+      class="feather-input-spacer"
+    >
+       
+    </div>
     <!---->
     <!---->
     
@@ -5717,7 +5798,7 @@ exports[`FeatherAutocomplete single:specific should handle a null property on va
       aria-haspopup="listbox"
       aria-label="Users"
       aria-owns="feather-autocomplete-input-results"
-      class="feather-input-wrapper-container raised"
+      class="feather-input-wrapper-container raised has-prefix"
       menu-trigger=""
       role="combobox"
     >
@@ -5733,12 +5814,11 @@ exports[`FeatherAutocomplete single:specific should handle a null property on va
         class="feather-input-label"
         data-ref-id="feather-form-element-label"
         for="feather-autocomplete-input"
-        style="left: 12px;"
       >
         Users
       </label>
       <div
-        class="feather-input-wrapper has-prefix"
+        class="feather-input-wrapper"
       >
         <div
           class="prefix"
@@ -5791,7 +5871,7 @@ exports[`FeatherAutocomplete single:specific should handle a null property on va
             class="feather-autocomplete-input"
             data-ref-id="feather-input"
             id="feather-autocomplete-input"
-            style="height: 26px; flex-basis: 40px; white-space: nowrap;"
+            style="height: 1.625rem; flex-basis: 40px; white-space: nowrap;"
             tabindex="0"
           />
         </div>
@@ -5868,8 +5948,12 @@ exports[`FeatherAutocomplete single:specific should handle a null property on va
   <div
     class="feather-input-sub-text"
     id="feather-autocomplete-description"
-    style="display: none;"
   >
+    <div
+      class="feather-input-spacer"
+    >
+       
+    </div>
     <!---->
     <!---->
     
@@ -5892,7 +5976,7 @@ exports[`FeatherAutocomplete single:specific should show add new element when in
       aria-haspopup="true"
       aria-label="Users"
       aria-owns="feather-autocomplete-input-results"
-      class="feather-input-wrapper-container raised focused"
+      class="feather-input-wrapper-container raised focused has-prefix"
       id="feather-menu-trigger"
       menu-trigger=""
       role="combobox"
@@ -5909,12 +5993,11 @@ exports[`FeatherAutocomplete single:specific should show add new element when in
         class="feather-input-label"
         data-ref-id="feather-form-element-label"
         for="feather-autocomplete-input"
-        style="left: 12px;"
       >
         Users
       </label>
       <div
-        class="feather-input-wrapper has-prefix"
+        class="feather-input-wrapper"
       >
         <div
           class="prefix"
@@ -6057,8 +6140,12 @@ exports[`FeatherAutocomplete single:specific should show add new element when in
   <div
     class="feather-input-sub-text"
     id="feather-autocomplete-description"
-    style="display: none;"
   >
+    <div
+      class="feather-input-spacer"
+    >
+       
+    </div>
     <!---->
     <!---->
     

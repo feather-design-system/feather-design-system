@@ -13,8 +13,8 @@ menu: foundation
   }
   .img-container{
     display:flex;
-    margin-bottom:32px;
-    height:144px;
+    margin-bottom:2rem;
+    height:9rem;
   }
   .img-container.img-right{
     flex-direction: row-reverse;
@@ -38,7 +38,7 @@ menu: foundation
     color:var(--feather-primary);
   }
 
-  @media (max-width:820px){
+  @media (max-width:51.25rem){
     .banner-image{
       display:none;
     }

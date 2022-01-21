@@ -32,7 +32,7 @@ export default {
 @import "@featherds/styles/mixins/typography";
 @import "@featherds/styles/themes/variables";
 @import "@featherds/styles/themes/utils";
-$height: 48px;
+$height: 3rem;
 li .tab {
   @include button();
   text-align: center;
@@ -40,7 +40,7 @@ li .tab {
   cursor: pointer;
   border: none;
   display: inline-block;
-  padding: 0 16px;
+  padding: 0 1rem;
   height: $height;
   display: inline-flex;
   align-items: center;

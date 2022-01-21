@@ -3,7 +3,7 @@
     <div>
       Content of the page
       <button @click="toggleLinks">Toggle footer links</button>
-      <div style="height: 10px"></div>
+      <div style="height: 1rem"></div>
       <feather-footer :copyright="copyright" v-if="render">
         <template v-slot:links>
           <feather-footer-link

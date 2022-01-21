@@ -103,21 +103,21 @@ export default {
 @import "@featherds/styles/mixins/elevation";
 @import "@featherds/styles/mixins/flex";
 @import "@featherds/styles/themes/utils";
-$width: 264px;
-$condensed: 52px;
-$header-size: 40px;
+$width: 16.5rem;
+$condensed: 3.25rem;
+$header-size: 2.5rem;
 .nav-header {
   @include flex;
   justify-content: flex-end;
   align-items: center;
   border-bottom: 1px solid var($border-on-surface);
-  padding: 8px 6px 8px 12px;
+  padding: 0.5rem 0.375rem 0.5rem 0.75rem;
   .expand-link {
     @include flex;
     @include center;
     @include none;
     cursor: pointer;
-    font-size: 20px;
+    font-size: 1.25rem;
     width: $header-size;
     height: $header-size;
     color: var($secondary-text-on-surface);
@@ -170,8 +170,8 @@ $header-size: 40px;
   position: fixed;
   width: $width;
   left: 0;
-  top: 60px;
-  height: calc(100vh - 60px);
+  top: var($header-height);
+  height: calc(100vh - var($header-height));
   background: var($background);
   color: var($primary-text-on-surface);
   @include elevation(2);

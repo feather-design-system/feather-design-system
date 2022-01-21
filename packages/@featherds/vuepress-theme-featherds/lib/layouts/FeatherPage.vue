@@ -109,7 +109,7 @@ export default {
 .header-title {
   height: 100%;
   display: inline-block;
-  margin-right: 24px;
+  margin-right: 1.5rem;
   a {
     @include headline3();
     color: var($surface);
@@ -148,16 +148,16 @@ export default {
   & .search-container {
     & .search-icon {
       color: var($secondary-text-on-color);
-      font-size: 24px;
+      font-size: 1.5rem;
       position: relative;
       top: 3px;
       left: 45px;
-      margin-left: -24px;
+      margin-left: -1.5rem;
     }
   }
 }
 .theme-changer {
-  margin-right: 12px;
+  margin-right: 0.75rem;
 }
 :deep(div.header-content) {
   div.center-horiz {
@@ -192,12 +192,12 @@ export default {
 }
 @include media-query-below(s) {
   :deep(div.feather-app-bar-wrapper) {
-    --feather-header-height: 120px;
+    --feather-header-height: 7.5rem;
     .header-content {
       flex-wrap: wrap;
     }
     div.center-horiz {
-      height: 60px;
+      height: 3.75rem;
       &.left,
       &.right {
         flex-grow: 0;

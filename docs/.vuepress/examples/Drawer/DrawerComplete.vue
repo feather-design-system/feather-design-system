@@ -219,6 +219,6 @@ export default {
 </script>
 <style>
 .fixed-width {
-  width: 400px;
+  width: 25rem;
 }
 </style>

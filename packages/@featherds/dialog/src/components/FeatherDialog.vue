@@ -176,7 +176,7 @@ export default {
   border-radius: 2px;
   @include elevation(24);
   position: relative;
-  margin: 0 $spacing-xl;
+  margin: 0 var($spacing-xl);
 }
 
 //fixing UISPRT-171 - removing focus outlines
@@ -188,12 +188,12 @@ export default {
 }
 
 .dialog-body {
-  padding: 24px;
+  padding: 1.5rem;
   color: var($secondary-text-on-surface);
   header {
     color: var($primary-text-on-surface);
     @include headline4();
-    margin-bottom: 24px;
+    margin-bottom: 1.5rem;
     line-height: 1.25em;
   }
   p {
@@ -201,13 +201,13 @@ export default {
   }
 }
 .dialog-footer {
-  padding: 8px;
+  padding: 0.5rem;
   text-align: right;
   :deep(.btn) {
     margin: 0;
   }
   :deep(.btn + .btn) {
-    margin-left: 8px;
+    margin-left: 0.5rem;
   }
 }
 
@@ -216,8 +216,8 @@ export default {
 }
 
 :deep(.closeButton) {
-  margin-top: 13px;
-  margin-right: 13px;
+  margin-top: 0.8125rem;
+  margin-right: 0.8125rem;
 }
 
 .trap {

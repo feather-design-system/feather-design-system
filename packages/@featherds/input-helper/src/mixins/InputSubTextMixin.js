@@ -6,6 +6,10 @@ export default {
     error: {
       type: String,
     },
+    inline: {
+      type: Boolean,
+      default: false,
+    },
   },
   provide() {
     return {

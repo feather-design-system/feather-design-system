@@ -36,6 +36,6 @@ export default {
 </script>
 <style lang="scss" scoped>
 .my-content {
-  width: 400px;
+  width: 25rem;
 }
 </style>

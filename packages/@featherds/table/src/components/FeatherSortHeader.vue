@@ -178,9 +178,9 @@ th .header-flex-container {
     outline: 0;
   }
   span.icon {
-    margin-left: 4px;
-    width: 24px;
-    height: 24px;
+    margin-left: 0.25rem;
+    width: 1.5rem;
+    height: 1.5rem;
     border-radius: 100%;
     position: relative;
     display: inline-flex;
@@ -190,7 +190,7 @@ th .header-flex-container {
     flex: none;
     :deep(.feather-icon) {
       vertical-align: text-top;
-      font-size: 18px;
+      font-size: 1.125rem;
     }
     &:before,
     &:after {

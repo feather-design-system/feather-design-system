@@ -16,9 +16,4 @@ export default {
 li.feather-list-item {
   padding: 0;
 }
-hr {
-  border: none;
-  padding: 8px 0;
-  margin: 0;
-}
 </style>

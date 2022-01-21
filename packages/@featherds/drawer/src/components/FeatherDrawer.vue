@@ -132,12 +132,12 @@ export default {
   height: 100%;
   z-index: var($zindex-modal);
   background-color: var($surface);
-  margin-left: 56px;
+  margin-left: 3.5rem;
   @include elevation(8);
   &.left {
     right: unset;
     left: 0;
-    margin-right: 56px;
+    margin-right: 3.5rem;
     margin-left: 0px;
   }
   :deep(.focus-trap-content) {
