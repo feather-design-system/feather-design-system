@@ -122,24 +122,24 @@ export default {
 @import "@featherds/styles/themes/variables";
 
 .typography-container {
-  margin-bottom: 24px;
+  margin-bottom: 1.5rem;
   .typography-example {
     display: flex;
-    margin-bottom: 40px;
+    margin-bottom: 2.5rem;
     .alpha {
-      width: 200px;
+      width: 12.5rem;
       flex: none;
       .aa {
         border-bottom: 1px solid var($border-on-surface);
       }
     }
     .example {
-      padding-left: 60px;
+      padding-left: 3.75rem;
     }
     .name,
     .aa {
-      margin-bottom: 16px;
-      padding-bottom: 16px;
+      margin-bottom: 1rem;
+      padding-bottom: 1rem;
       border-bottom: 1px solid transparent;
     }
     .subtext {

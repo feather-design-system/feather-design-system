@@ -66,12 +66,12 @@ footer {
     flex-direction: column;
     max-width: var($content-width);
     margin: 0 auto;
-    padding: 40px 40px;
+    padding: 2.5rem 2.5rem;
 
     .links {
       display: flex;
       flex-wrap: wrap;
-      padding-bottom: 40px;
+      padding-bottom: 2.5rem;
       border-bottom: 2px solid var($shade-1);
 
       ul {
@@ -79,11 +79,10 @@ footer {
         list-style: none;
         padding: 0;
         margin: 0;
-        margin-right: 180px;
+        margin-right: 11.25rem;
         columns: 2;
-        //margin-bottom: 28px;
         li {
-          margin-bottom: 16px;
+          margin-bottom: 1rem;
         }
         a {
           color: var($primary-text-on-surface);
@@ -91,21 +90,21 @@ footer {
       }
       ul,
       span.blurb {
-        flex-basis: 320px;
+        flex-basis: 20rem;
         flex-shrink: 0;
       }
     }
 
-    @media screen and (max-width: 899px) {
+    @media screen and (max-width: 56.1875rem) {
       .links {
         justify-content: space-between;
         ul {
-          margin-right: 40px;
+          margin-right: 2.5rem;
           flex-basis: auto;
         }
       }
     }
-    @media screen and (max-width: 680px) {
+    @media screen and (max-width: 42.5rem) {
       .links {
         ul {
           margin-right: 0;
@@ -115,7 +114,7 @@ footer {
         }
       }
     }
-    @media screen and (max-width: 360px) {
+    @media screen and (max-width: 22.5rem) {
       .links {
         ul {
           columns: 1;
@@ -123,7 +122,7 @@ footer {
       }
     }
     .branding {
-      margin-top: 40px;
+      margin-top: 2.5rem;
 
       svg {
         height: auto;

@@ -9,24 +9,12 @@
           </template>
           <div class="feather-row">
             <div
-              class="
-                feather-col-xl-4
-                feather-col-l-4
-                feather-col-m-4
-                feather-col-s-4
-                feather-col-xs-4
-              "
+              class="feather-col-xl-4 feather-col-l-4 feather-col-m-4 feather-col-s-4 feather-col-xs-4"
             >
               <FeatherListItem href="#Regimen">Regimen Search</FeatherListItem>
             </div>
             <div
-              class="
-                feather-col-xl-4
-                feather-col-l-4
-                feather-col-m-4
-                feather-col-s-4
-                feather-col-xs-4
-              "
+              class="feather-col-xl-4 feather-col-l-4 feather-col-m-4 feather-col-s-4 feather-col-xs-4"
             >
               <FeatherListItem href="#Disease"
                 >Disease Management</FeatherListItem
@@ -39,13 +27,7 @@
               >
             </div>
             <div
-              class="
-                feather-col-xl-4
-                feather-col-l-4
-                feather-col-m-4
-                feather-col-s-4
-                feather-col-xs-4
-              "
+              class="feather-col-xl-4 feather-col-l-4 feather-col-m-4 feather-col-s-4 feather-col-xs-4"
             >
               <FeatherListItem href="#Templates"
                 >Create New Template</FeatherListItem
@@ -93,10 +75,10 @@ export default {
   }
 }
 section {
-  height: 200px;
+  height: 12.5rem;
   position: relative;
 }
 #test {
-  height: 300px;
+  height: 18.75rem;
 }
 </style>

@@ -5,16 +5,17 @@
   --docsearch-searchbox-background: transparent;
   --docsearch-muted-color: var(--feather-secondary-text-on-color);
   --docsearch-text-color: var(--feather-secondary-text-on-color);
-  --docsearch-searchbox-height: 40px;
+  --docsearch-searchbox-height: 2.5rem;
   color: var($secondary-text-on-color);
   .DocSearch-Button-Keys {
     display: none;
   }
   &.DocSearch-Button {
     border-radius: 4px;
-    height: 40px;
+    height: 2.5rem;
     border: 1px solid var($secondary-text-on-color);
-    padding: 0 16px 1px 12px;
+    padding: 0 1rem 1px 0.75rem;
+    margin: 0 0 0 1rem;
     position: relative;
     &:hover,
     &:focus,
@@ -27,8 +28,8 @@
         content: "";
         width: 3px;
         background-color: var($surface);
-        top: 8px;
-        bottom: 8px;
+        top: 0.5rem;
+        bottom: 0.5rem;
         left: 0px;
         position: absolute;
         transition: all 280ms ease-in-out;
@@ -44,11 +45,11 @@
 
     .DocSearch-Button-Placeholder {
       font-size: 0.875rem;
-      padding: 0 16px 0 8px;
+      padding: 0 1rem 0 0.5rem;
     }
     svg {
-      height: 18px;
-      width: 18px;
+      height: 1.125rem;
+      width: 1.125rem;
     }
   }
 
@@ -79,8 +80,8 @@
       font-size: 0.875rem;
     }
     svg {
-      height: 18px;
-      width: 18px;
+      height: 1.125rem;
+      width: 1.125rem;
       color: var($secondary-text-on-surface);
     }
   }

@@ -71,8 +71,8 @@ export default {
 @import "../../scss/mixins";
 .chip-list {
   margin: 0;
-  margin-top: 12px;
-  margin-bottom: 4px;
+  margin-top: 0.75rem;
+  margin-bottom: 0.125rem;
   padding: 0;
   list-style: none;
   display: flex;
@@ -81,7 +81,7 @@ export default {
   flex-wrap: wrap;
 
   & + .chip-list {
-    margin-top: 28px;
+    margin-top: 1.75rem;
   }
   &.condensed {
     :deep(.chip) {

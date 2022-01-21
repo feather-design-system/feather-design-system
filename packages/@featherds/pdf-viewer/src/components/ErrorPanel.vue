@@ -83,12 +83,12 @@ export default {
 .error-text {
   @include headline3;
   color: var($secondary-text-on-surface);
-  margin-top: 32px;
-  margin-bottom: 8px;
+  margin-top: 2rem;
+  margin-bottom: 0.5rem;
 }
 .error-icon {
-  height: 280px;
-  width: 180px;
+  height: 17.5rem;
+  width: 11.25rem;
   svg {
     fill: var($primary-text-on-surface);
   }

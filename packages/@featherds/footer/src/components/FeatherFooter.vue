@@ -52,8 +52,8 @@ export default {
 @import "@featherds/styles/themes/variables";
 @import "@featherds/styles/mixins/typography";
 footer {
-  margin-top: 64px;
-  padding: 32px 0;
+  margin-top: 4rem;
+  padding: 2rem 0;
   text-align: center;
   border-top: 1px solid var($border-on-surface);
   .footer-content {
@@ -61,7 +61,7 @@ footer {
     margin: 0 auto;
   }
   .footer-row {
-    margin-bottom: 16px;
+    margin-bottom: 1rem;
     &:last-child {
       margin-bottom: 0;
     }

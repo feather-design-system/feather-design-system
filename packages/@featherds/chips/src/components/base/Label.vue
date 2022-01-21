@@ -35,8 +35,8 @@ export default {
 .label {
   @include body-small();
   color: var($secondary-text-on-surface);
-  margin-right: 12px;
-  margin-left: 12px;
+  margin-right: 0.75rem;
+  margin-left: 0.75rem;
   text-overflow: ellipsis;
   white-space: nowrap;
   overflow-x: hidden;

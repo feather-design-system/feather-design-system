@@ -45,11 +45,11 @@ export default {
 </script>
 <style>
 .my-content {
-  width: 400px;
+  width: 25rem;
 }
 .relative {
-  width: 600px;
-  height: 600px;
+  width: 37.5rem;
+  height: 37.5rem;
   position: relative;
   overflow-y: auto;
 }

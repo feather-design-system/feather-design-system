@@ -22,6 +22,6 @@ export default {
 </script>
 <style lang="scss" scoped>
 .my-password-input {
-  width: 400px;
+  width: 25rem;
 }
 </style>

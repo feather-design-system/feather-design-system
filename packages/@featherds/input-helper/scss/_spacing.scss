@@ -1,31 +1,34 @@
 @import "@featherds/styles/themes/variables";
 
-@mixin input-spacing() {
-  padding-top: $spacing-s;
-  padding-bottom: $spacing-s;
+@mixin form-spacing() {
+  :deep(.feather-autocomplete-container),
+  :deep(.feather-date-input-container),
+  :deep(.feather-input-container),
+  :deep(.feather-select-container),
+  :deep(.feather-textarea-container) {
+    padding-top: var($spacing-s);
+    padding-bottom: var($spacing-s);
+  }
 }
 
 @mixin group-spacing {
-  padding-top: $spacing-s;
-  padding-bottom: $spacing-s;
   line-height: 0;
 
   :deep(.layout-container) {
-    margin-right: $spacing-xxl;
+    margin-right: var($spacing-xxl);
     &:last-of-type {
       margin-right: 0;
     }
   }
   &.vertical :deep(.layout-container) {
     display: block;
-    margin-bottom: $spacing-m;
+    margin-bottom: var($spacing-m);
     margin-right: 0;
   }
   label {
-    margin-bottom: $spacing-m;
+    margin-bottom: var($spacing-m);
   }
-
   .feather-input-sub-text {
-    padding: $spacing-m 0 0 0;
+    padding: var($spacing-m) 0 0 0;
   }
 }

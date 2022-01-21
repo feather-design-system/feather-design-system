@@ -65,8 +65,8 @@ export default {
 <style lang="scss" scoped>
 @import "@featherds/chips/scss/mixins";
 .autocomplete-chip.chip {
-  margin: 4px 0;
-  margin-right: 8px;
+  margin: 0.25rem 0;
+  margin-right: 0.5rem;
 }
 
 .chip-delete {

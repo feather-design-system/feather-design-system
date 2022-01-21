@@ -22,7 +22,7 @@ export default {
 @import "@featherds/styles/themes/variables";
 .my-icon,
 .my-primary-icon {
-  font-size: 18px;
+  font-size: 1.5rem;
   color: var($secondary-text-on-surface);
 }
 

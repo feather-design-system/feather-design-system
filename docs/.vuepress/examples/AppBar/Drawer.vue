@@ -16,7 +16,7 @@
       class="demo-drawer"
       v-model="drawerOpen"
       :labels="{ close: 'close', title: 'Support' }"
-      width="300px"
+      width="18.75rem"
     >
       A Support Drawer
     </FeatherDrawer>
@@ -75,6 +75,6 @@ section {
   overflow: hidden;
 }
 #test {
-  height: 300px;
+  height: 18.75rem;
 }
 </style>

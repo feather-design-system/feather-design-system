@@ -6,15 +6,10 @@
     <label
       class="feather-input-label"
       :for="inputId"
-      :style="{ left: labelLeft + 'px' }"
       data-ref-id="feather-form-element-label"
       >{{ label }}</label
     >
-    <div
-      class="feather-input-wrapper"
-      @click="handleWrapperClick"
-      :class="{ 'has-prefix': hasPre }"
-    >
+    <div class="feather-input-wrapper" @click="handleWrapperClick">
       <div class="prefix">
         <slot name="pre" />
       </div>
@@ -125,15 +120,10 @@ export default {
       if (this.inline) {
         cls.push("inline");
       }
-      return cls;
-    },
-
-    labelLeft() {
-      if (this.raised) {
-        return 12;
-      } else {
-        return this.prefixWidth > 0 ? this.prefixWidth + 16 + 4 : 16;
+      if (this.hasPre) {
+        cls.push("has-prefix");
       }
+      return cls;
     },
   },
   methods: {
@@ -175,14 +165,12 @@ export default {
 @import "@featherds/styles/mixins/typography";
 
 @mixin raised-label() {
-  top: -10px;
+  top: -0.625rem;
   transform: scale(0.75);
   padding: 0 5.3333333333333333333333px;
-  left: 8px;
 }
 
 .feather-input-wrapper-container {
-  margin-top: 12px;
   position: relative;
   width: 100%;
   &.background {
@@ -212,8 +200,8 @@ export default {
         content: "";
         width: 3px;
         background-color: var($primary);
-        top: 8px;
-        bottom: 8px;
+        top: 0.5rem;
+        bottom: 0.5rem;
         left: 0px;
         position: absolute;
         transition: all 280ms ease-in-out;
@@ -297,6 +285,7 @@ export default {
   &.raised {
     .feather-input-label {
       @include raised-label();
+      left: 0.75rem;
     }
   }
   &.inline {
@@ -307,10 +296,26 @@ export default {
       }
     }
   }
+
   &.hide-label {
     label {
       @include screen-reader;
       left: -99999px !important;
+    }
+  }
+  &.has-prefix {
+    .feather-input-wrapper {
+      .prefix {
+        margin-right: 0.75rem;
+      }
+    }
+    .feather-input-label {
+      left: 3rem;
+    }
+    &.raised {
+      .feather-input-label {
+        left: 1rem;
+      }
     }
   }
 }
@@ -322,39 +327,33 @@ export default {
   color: var($secondary-text-on-surface);
 
   :deep(svg) {
-    width: 20px;
-    height: 20px;
+    width: 1.25rem;
+    height: 1.25rem;
   }
 }
 .post {
   :deep(> *) {
-    margin-right: 4px;
+    margin-right: 0.25rem;
     &:last-child {
       margin-right: 0px;
     }
   }
 }
 .feather-input-wrapper {
-  min-height: 40px;
+  min-height: 2.5rem;
   overflow-y: auto;
-  padding: 0 12px;
+  padding: 0 0.75rem;
   position: relative;
   flex: 1;
   display: -ms-flex;
   display: flex;
   flex-wrap: wrap;
   align-items: center;
-  padding-left: 16px;
+  padding-left: 1rem;
   &:after {
     content: "";
     min-height: inherit;
     font-size: 0;
-  }
-  &.has-prefix {
-    padding-left: 12px;
-    .prefix {
-      margin-right: 8px;
-    }
   }
 }
 .feather-input-label {
@@ -362,12 +361,13 @@ export default {
   color: var($secondary-text-on-surface);
   background-color: var($surface);
   line-height: 1.2rem;
+  top: 0.625rem;
   cursor: text;
   position: absolute;
-  top: 11px;
   transition: all 280ms ease-in-out;
   transition-property: top, left, transform, padding;
   transform-origin: center left;
   z-index: 1;
+  left: 1rem;
 }
 </style>

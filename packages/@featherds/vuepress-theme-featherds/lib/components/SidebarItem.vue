@@ -23,8 +23,8 @@ export default {
 @import "@featherds/styles/mixins/typography";
 
 li a {
-  height: 32px;
-  padding-left: 16px;
+  height: 2rem;
+  padding-left: 1rem;
   display: flex;
   align-items: center;
   border-left: 2px solid var($shade-4);

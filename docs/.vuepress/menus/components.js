@@ -13,6 +13,9 @@ module.exports = [
         url: "/Components/Variables/",
       },
       {
+        name: "Spacing",
+        url: "/Components/Spacing/",
+      },      {
         name: "Form Validation",
         url: "/Components/FormValidation/",
       },

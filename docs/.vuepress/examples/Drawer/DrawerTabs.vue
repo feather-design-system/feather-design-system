@@ -74,9 +74,9 @@ export default {
 </script>
 <style>
 .fixed-width {
-  width: 400px;
+  width: 25rem;
 }
 .drawer-tab-container {
-  min-height: 200px;
+  min-height: 12.5rem;
 }
 </style>

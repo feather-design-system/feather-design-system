@@ -141,12 +141,12 @@ export default {
   padding: 0;
 }
 .feather-dropdown.standard {
-  width: 320px;
+  width: 20rem;
 }
 .feather-dropdown {
-  min-width: 112px;
+  min-width: 7rem;
   overflow-y: auto;
-  padding: 8px 0;
+  padding: 0.5rem 0;
   margin: 0;
 }
 </style>

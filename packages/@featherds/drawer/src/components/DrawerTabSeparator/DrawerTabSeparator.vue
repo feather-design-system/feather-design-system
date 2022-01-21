@@ -7,8 +7,7 @@
 @import "@featherds/styles/themes/variables";
 hr {
   position: relative;
-  margin: 7px 3px;
-  border-top: none;
+  margin: 0.4375rem 0.1875rem;
   border-color: var($border-on-color);
 }
 </style>

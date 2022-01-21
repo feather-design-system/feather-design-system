@@ -55,6 +55,8 @@
           >
             <FeatherIcon :icon="nextIcon" />
           </FeatherButton>
+        </li>
+        <li>
           <FeatherButton
             class="action"
             as-anchor
@@ -231,12 +233,12 @@ export default {
   display: flex;
   border: 1px solid var($border-on-surface);
   color: var($secondary-text-on-surface);
-  height: 56px;
+  min-height: 3.5rem;
+  padding-left: 1rem;
   align-items: center;
   justify-content: flex-end;
-  margin-bottom: $spacing-l;
   .action {
-    margin: 0 $spacing-m;
+    margin: 0 var($spacing-m);
   }
   ul {
     padding: 0;
@@ -248,13 +250,16 @@ export default {
   }
 }
 .page-size-select {
-  width: 76px;
-  margin-right: 38px;
-  margin-left: 8px;
+  width: 4.75rem;
+  margin-right: 2.375rem;
+  margin-left: 0.5rem;
   display: flex;
+  &.feather-select-container {
+    padding: 0;
+  }
 }
 .range-text {
-  margin-right: 50px;
-  min-width: 110px;
+  margin-right: 3.125rem;
+  min-width: 6.875rem;
 }
 </style>

@@ -94,7 +94,7 @@ Be aware when including this import in a `scoped` `scss` style tag in a SFC. It 
 
 ### Containers
 
-Containers are restricted to a max-width of `1200px`. They also have a padding (left and right) applied around the element that matches the current gutter for the given screen size. See [Grid Breakpoints](#grid-breakpoints) for details on the gutter sizing. **NOTE** the padding will be half the size of the gutter. Containers are useful for grid layouts though not required. Please consult with us on the best approach.
+Containers are restricted to a max-width of `75rem`. They also have a padding (left and right) applied around the element that matches the current gutter for the given screen size. See [Grid Breakpoints](#grid-breakpoints) for details on the gutter sizing. **NOTE** the padding will be half the size of the gutter. Containers are useful for grid layouts though not required. Please consult with us on the best approach.
 
 ```html
 <div class="feather-container">
@@ -156,13 +156,14 @@ Our grid supports different column widths at different screen widths. As breakpo
 
 | Class Label | Max Screen Width | Min Screen Width | Number of Columns | Size of Gutter |
 | ----------- | ---------------- | ---------------- | ----------------- | -------------- |
-| xl          | `undefined`      | 960px            | 12                | 24px           |
-| l           | 959px            | 840px            | 12                | 24px           |
-| m           | 839px            | 720px            | 8                 | 24px           |
-| s           | 719px            | 600px            | 8                 | 16px           |
-| xs          | 599px            | 0px              | 4                 | 16px           |
+| xl          | `undefined`      | >90rem           | 12                | 1.5rem         |
+| l           | 90rem            | >78.75rem        | 12                | 1.5rem         |
+| m           | 78.75rem         | >66.5rem         | 12                | 1.5rem         |
+| s           | 66.5rem          | >47.5rem         | 8                 | 1.5rem         |
+| xs          | 47.5rem          | >32.5rem         | 8                 | 1.5rem         |
+| xxs         | 32.5rem          | 0                | 4                 | 1rem           |
 
-`xl` has no max as it works on everything larger than `960px`.
+`xl` has no max as it works on everything larger than `90rem`.
 
 ### Using Column Breakpoints
 
@@ -170,7 +171,7 @@ To specify different column widths at a given breakpoints you can use a mixin or
 
 ## Generic Columns
 
-If your application is not concerned with being responsive under `960px` you can use a column class which doesn't require a label. The format is `.feather-col-{number}`. There is always 12 of the generic columns. You can also use the mixin without specifying the a breakpoint. `@include col(4);` this will produce a generic column of width `4` See the examples below for more details.
+If your application is not concerned with being responsive under `90rem` you can use a column class which doesn't require a label. The format is `.feather-col-{number}`. There is always 12 of the generic columns. You can also use the mixin without specifying the a breakpoint. `@include col(4);` this will produce a generic column of width `4` See the examples below for more details.
 
 ## Examples
 

@@ -78,6 +78,6 @@ export default {
 
 <style lang="scss" scoped>
 .icon {
-  font-size: 24px;
+  font-size: 1.5rem;
 }
 </style>

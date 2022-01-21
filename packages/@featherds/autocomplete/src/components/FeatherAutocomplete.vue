@@ -703,7 +703,7 @@ export default {
       if (!tx) {
         return;
       }
-      tx.style.height = "26px";
+      tx.style.height = "1.625rem";
       tx.style.flexBasis = "40px";
       tx.style.whiteSpace = "nowrap";
 
@@ -779,10 +779,6 @@ export default {
 <style lang="scss" scoped>
 @import "@featherds/styles/mixins/typography";
 @import "@featherds/styles/themes/variables";
-@import "@featherds/input-helper/scss/spacing";
-.feather-autocomplete-container {
-  @include input-spacing;
-}
 
 .alert,
 .description {
@@ -791,13 +787,13 @@ export default {
 
 .feather-autocomplete-container {
   :deep(.post) {
-    min-width: 80px;
+    min-width: 5rem;
     justify-content: flex-end;
   }
   :deep(.prefix),
   :deep(.post) {
     align-self: flex-start;
-    margin-top: 10px;
+    margin-top: 0.625rem;
   }
 }
 
@@ -805,8 +801,8 @@ export default {
 .selection-limit-warning {
   :deep(.feather-icon) {
     color: var($primary);
-    font-size: 20px;
-    margin-right: 12px;
+    font-size: 1.25rem;
+    margin-right: 0.75rem;
   }
 }
 .chip-list {
@@ -814,13 +810,13 @@ export default {
 }
 .feather-autocomplete-input {
   border: none;
-  margin: 3px 0;
+  margin: 0.1875rem 0;
   display: inline-block;
   vertical-align: middle;
-  height: 26px;
+  height: 1.625rem;
   resize: none;
   background-color: transparent;
-  flex: 1 1 40px;
+  flex: 1 1 2.5rem;
   width: 0;
   @include body-small();
   line-height: 1.5em; //IE has an issue with the mixin lineheight when typing
@@ -852,7 +848,7 @@ export default {
   color: var($secondary-text-on-surface);
   transition: transform 280ms ease-in-out;
   transform-origin: center center;
-  font-size: 20px;
+  font-size: 1.25rem;
   cursor: pointer;
   &.rotate {
     transform: rotate(180deg);
@@ -876,7 +872,7 @@ export default {
   align-items: flex-start;
   flex-wrap: wrap;
   min-width: 0;
-  margin-top: 4px;
-  margin-bottom: 2px;
+  margin-top: 0.25rem;
+  margin-bottom: 0.125rem;
 }
 </style>

@@ -35,10 +35,10 @@ export default {
 <style lang="scss" scoped>
 @import "@featherds/styles/themes/variables";
 .icons {
-  font-size: 20px;
+  font-size: 1.25rem;
   color: var($primary);
   svg {
-    margin: 12px;
+    margin: 0.75rem;
   }
 }
 </style>

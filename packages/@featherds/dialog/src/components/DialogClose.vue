@@ -42,14 +42,14 @@ export default {
 
 <style lang="scss" scoped>
 @import "@featherds/styles/themes/variables";
-$close-width: 48px;
-$small-width: 40px;
+$close-width: 3rem;
+$small-width: 2.5rem;
 a.closeButton {
   position: absolute;
   top: 0px;
   right: 0px;
   cursor: pointer;
-  font-size: 18px;
+  font-size: 1.125rem;
   color: var($secondary-text-on-surface);
   text-decoration: none;
   display: flex;

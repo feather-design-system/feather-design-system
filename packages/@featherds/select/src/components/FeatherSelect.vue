@@ -309,18 +309,15 @@ export default {
 <style lang="scss" scoped>
 @import "@featherds/styles/mixins/typography";
 @import "@featherds/styles/themes/variables";
-@import "@featherds/input-helper/scss/spacing";
-.feather-select-container {
-  @include input-spacing;
-}
+
 .feather-select-input {
   border: none;
   padding: 0;
-  padding-left: 4px;
-  margin: 3px 0;
+  padding-left: 0.25rem;
+  margin: 0;
   display: inline-block;
   vertical-align: middle;
-  height: 26px;
+  height: 100%;
   background-color: transparent;
   @include body-small();
   line-height: 1.5em; //IE has an issue with the mixin lineheight when typing
@@ -340,9 +337,9 @@ export default {
 }
 .feather-select-icon {
   flex: none;
-  font-size: 20px;
-  height: 20px;
-  width: 20px;
+  font-size: 1.25rem;
+  height: 1.25rem;
+  width: 1.25rem;
   align-self: center;
   color: var($secondary-text-on-surface);
   transition: transform 280ms ease-in-out;

@@ -5,8 +5,8 @@
 <style lang="scss" scoped>
 @import "@featherds/styles/themes/variables";
 .chip-icon {
-  height: 24px;
-  width: 24px;
+  height: 1.5rem;
+  width: 1.5rem;
   border-radius: 100%;
   display: inline-flex;
   flex-shrink: 0;
@@ -14,8 +14,8 @@
   justify-content: center;
   background-color: var($border-on-surface);
   :deep(.feather-icon) {
-    font-size: 18px;
-    height: 18px;
+    font-size: 1.125rem;
+    height: 1.125rem;
     color: var($secondary-text-on-surface);
   }
 }

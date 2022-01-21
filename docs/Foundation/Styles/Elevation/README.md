@@ -19,7 +19,7 @@ Elevation is simulated by the generation of a drop-shadow on component surfaces.
 <picture>
 
 <source :srcset="$withBase('/assets/foundation/elevation/LightModeMobile.png')"
-            media="(max-width: 520px)">
+            media="(max-width: 32.5rem)">
 <img :src="$withBase('/assets/foundation/elevation/LightMode.png')" alt="Image of elevation progression in light mode" />
 </picture>
 
@@ -33,7 +33,7 @@ Elevation in dark most is calculated differently due to the low contrast of a dr
 <picture>
 
 <source :srcset="$withBase('/assets/foundation/elevation/DarkModeMobile.png')"
-            media="(max-width: 520px)">
+            media="(max-width: 32.5rem)">
 <img :src="$withBase('/assets/foundation/elevation/DarkMode.png')" alt="Image of elevation progression in dark mode" />
 </picture>
 

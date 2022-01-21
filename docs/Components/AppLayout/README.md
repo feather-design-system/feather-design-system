@@ -17,7 +17,7 @@ In the following examples `AppHeader`, `AppFooter` and `AppRail` are all applica
 
 ### Centered Layout
 
-This layout has the header and main content centered on the page. Max width of the content section is `1200px`.
+This layout has the header and main content centered on the page. Max width of the content section is `75rem`.
 
 ```html
 <FeatherAppLayout>

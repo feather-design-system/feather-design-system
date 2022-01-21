@@ -22,9 +22,9 @@ export default {
 <style lang="scss" scoped>
 @import "@featherds/styles/themes/variables";
 .fake-header {
-  height: 60px;
+  height: 3.75rem;
   background-color: var($background);
-  padding-left: 10px;
+  padding-left: 1rem;
   display: flex;
   align-items: center;
 }

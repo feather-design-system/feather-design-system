@@ -123,7 +123,7 @@ export default {
   @include subtitle1();
   display: block;
   color: var($primary-text-on-surface);
-  min-width: 24px;
+  min-width: 1.5rem;
 }
 .feather-checkbox-group-container {
   @include group-spacing;

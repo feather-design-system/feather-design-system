@@ -38,7 +38,7 @@ ul {
 }
 li {
   list-style: none;
-  padding: 8px;
+  padding: 0.5rem;
   color: var($primary-text-on-color);
   &.bg-surface,
   &.bg-background {

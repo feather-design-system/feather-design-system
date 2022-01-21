@@ -18,14 +18,14 @@ Extended palettes help to define our color theming for Feather DS. For the examp
 <ClientOnly>
 <picture>
   <source :srcset="$withBase('/assets/foundation/styles/SkyBlueMobile.png')"
-              media="(max-width: 520px)">
+              media="(max-width: 32.5rem)">
   <img :src="$withBase('/assets/foundation/styles/SkyBlue.png')" alt="Image of Sky blue colors" />
 </picture>
 
 <figure>
     <picture>
       <source :srcset="$withBase('/assets/foundation/styles/DarkBlueMobile.png')"
-                  media="(max-width: 520px)">
+                  media="(max-width: 32.5rem)">
       <img :src="$withBase('/assets/foundation/styles/DarkBlue.png')" alt="Image of Dark blue colors" />
     </picture>
     <figcaption>Toggle between dark and light mode to view contrast shifts between all values.</figcaption>
@@ -39,14 +39,14 @@ Theming will consist of 4 brand centric colors - primary, primary variant, secon
 <picture>
 
 <source :srcset="$withBase('/assets/foundation/styles/DarkModeMobile.png')"
-            media="(max-width: 520px)">
+            media="(max-width: 32.5rem)">
 <img :src="$withBase('/assets/foundation/styles/DarkMode.png')" alt="image of dark mode colors" />
 </picture>
 
 <picture>
 
 <source :srcset="$withBase('/assets/foundation/styles/LightModeMobile.png')"
-            media="(max-width: 520px)">
+            media="(max-width: 32.5rem)">
 <img :src="$withBase('/assets/foundation/styles/LightMode.png')" alt="image of light mode colors" />
 </picture>
 </ClientOnly>

@@ -1,5 +1,10 @@
 <template>
-  <div class="feather-input-sub-text" :id="id" v-show="hasContent">
+  <div
+    class="feather-input-sub-text"
+    :id="id"
+    v-if="!inline || hint || error.length"
+  >
+    <div class="feather-input-spacer" v-if="!hint && !error.length">&nbsp;</div>
     <div
       class="feather-input-hint"
       v-if="hint && !error.length"
@@ -21,16 +26,6 @@
 <script>
 import { inject, computed } from "vue";
 export default {
-  computed: {
-    hasContent() {
-      const hasRightSlot =
-        this.$slots.right &&
-        this.$slots
-          .right()
-          .findIndex((o) => o.children && o.children.length !== 0) !== -1;
-      return !!this.error || !!this.hint || hasRightSlot;
-    },
-  },
   props: {
     id: {
       type: String,
@@ -58,7 +53,8 @@ export default {
 @import "@featherds/styles/mixins/typography";
 .feather-input-sub-text {
   display: flex;
-  padding: 4px 12px 4px 16px;
+  min-height: 1.5rem;
+  padding: 0.25rem 0.75rem 0.25rem 1rem;
 }
 .feather-input-hint {
   @include caption();
@@ -67,6 +63,9 @@ export default {
 .feather-input-error {
   @include caption();
   color: var($error);
+}
+.feather-input-spacer {
+  @include caption();
 }
 
 .feather-input-hint,

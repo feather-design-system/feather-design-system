@@ -159,7 +159,7 @@ a.skip {
   @include button();
 
   background-color: var($surface);
-  padding: 2px 4px;
+  padding: 0.25rem;
   position: absolute;
   top: 0px;
   left: 0px;
@@ -228,14 +228,14 @@ header {
 
 .left {
   & *:first-child {
-    margin-right: 10px;
+    margin-right: 0.625rem;
   }
 }
 
 .right {
   justify-content: flex-end;
-  margin-right: -8px;
-  padding-left: 8px;
+  margin-right: -0.5rem;
+  padding-left: 0.5rem;
 }
 
 .center {

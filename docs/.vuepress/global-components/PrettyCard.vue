@@ -43,8 +43,8 @@ export default {
 a.pretty-card {
   display: inline-block;
   position: relative;
-  width: 317px;
-  flex: 0 1 317px;
+  width: 19.8125rem;
+  flex: 0 1 19.8125rem;
   border: 1px solid var($secondary);
   background-color: var($surface);
   border-bottom-right-radius: 16px;
@@ -70,7 +70,7 @@ a.pretty-card {
   }
   div.card-inner {
     position: relative;
-    padding: 24px 24px 40px 24px;
+    padding: 1.5rem 1.5rem 2.5rem 1.5rem;
   }
   span.overline {
     @include overline();
@@ -81,18 +81,18 @@ a.pretty-card {
   h3 {
     margin-top: 0;
     margin-bottom: 0;
-    margin-right: 16px;
+    margin-right: 1rem;
     line-height: var($headline3-font-size);
   }
   .feather-icon {
     color: var($primary);
     position: absolute;
-    font-size: 40px;
+    font-size: 2.5rem;
     bottom: 0;
     right: 0;
     transform: rotate(180deg);
-    font-size: 40px;
-    margin: 0 8px 8px 0;
+    font-size: 2.5rem;
+    margin: 0 0.5rem 0.5rem 0;
   }
 }
 </style>

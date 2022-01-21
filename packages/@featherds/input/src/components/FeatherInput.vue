@@ -241,10 +241,6 @@ export default {
 <style lang="scss" scoped>
 @import "@featherds/styles/themes/variables";
 @import "@featherds/styles/mixins/typography";
-@import "@featherds/input-helper/scss/spacing";
-.feather-input-container {
-  @include input-spacing;
-}
 .feather-input-content {
   &.error {
     .feather-input {
@@ -262,10 +258,9 @@ export default {
 .feather-input {
   border: none;
   padding: 0;
-  margin: 3px 0;
+  margin: 0;
   width: 0;
-  height: 26px;
-  min-width: 40px;
+  min-width: 2.5rem;
   background-color: transparent;
   @include body-small();
   line-height: 1.5em; //IE has an issue with the mixin lineheight when typing
@@ -285,7 +280,7 @@ export default {
 }
 
 .feather-input-count {
-  padding-left: 16px;
+  padding-left: 1rem;
   align-self: flex-start;
   margin-left: auto;
   @include caption();

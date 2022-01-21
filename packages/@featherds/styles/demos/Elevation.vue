@@ -26,16 +26,16 @@ $elevations: 0, 1, 2, 3, 4, 6, 8, 12, 16, 24;
   }
 }
 .item {
-  width: 150px;
-  height: 150px;
-  margin: 25px;
+  width: 9.375rem;
+  height: 9.375rem;
+  margin: 1.5rem;
   display: inline-flex;
   align-items: center;
   justify-content: center;
 }
 section {
   background: var($background);
-  margin: -8px;
+  margin: -0.5rem;
   color: var($primary-text-on-surface);
 }
 </style>

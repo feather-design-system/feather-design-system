@@ -48,7 +48,7 @@ button.btn-menu {
   box-shadow: none;
   margin-top: 0;
   margin-bottom: 0;
-  padding: 0 16px;
+  padding: 0 1rem;
   position: relative;
   cursor: pointer;
   @include state-on-color($secondary);

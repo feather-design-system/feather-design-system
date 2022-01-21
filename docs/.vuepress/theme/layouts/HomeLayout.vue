@@ -233,7 +233,7 @@ div.feather-styles.homepage.layout {
     }
   }
   &.gradient-1 > .section-wrapper {
-    padding-top: 140px;
+    padding-top: 8.75rem;
   }
   &.gradient-1:before {
     background: var($hero-gradient-1-1), var($hero-gradient-1-2),
@@ -247,7 +247,7 @@ div.feather-styles.homepage.layout {
   .section-wrapper {
     h1 {
       @include headline1();
-      margin-bottom: 16px;
+      margin-bottom: 1rem;
     }
     h2 {
       @include headline2();
@@ -258,21 +258,21 @@ div.feather-styles.homepage.layout {
     margin: 0 auto;
     max-width: var($content-width);
     text-align: left;
-    padding: 80px 40px;
+    padding: 5rem 2.5rem;
 
     &.center {
       text-align: center;
 
       p.body-large {
-        max-width: 500px;
+        max-width: 31.25rem;
         margin: 0 auto;
       }
 
       .space-between {
-        margin: 32px 0 16px 0;
+        margin: 2rem 0 1rem 0;
 
         button {
-          margin: 4px;
+          margin: 0.25rem;
         }
       }
     }
@@ -290,11 +290,11 @@ div.feather-styles.homepage.layout {
     &.philosophy {
       display: flex;
       flex-wrap: wrap;
-      padding: 40px;
+      padding: 2.5rem;
 
       .left,
       .right {
-        padding: 40px 0;
+        padding: 2.5rem 0;
         display: flex;
         flex-basis: 0;
         flex-shrink: 0;
@@ -304,21 +304,21 @@ div.feather-styles.homepage.layout {
       .left {
         & > svg {
           flex: 0 0;
-          flex-basis: 140px;
+          flex-basis: 8.75rem;
         }
         & > span {
           flex-direction: column;
           display: flex;
           align-items: flex-start;
           justify-content: center;
-          padding-left: 40px;
-          padding-right: 20px;
+          padding-left: 2.5rem;
+          padding-right: 1.25rem;
 
           border-right: 2px solid var($shade-1);
 
           p {
             padding-top: 0;
-            margin-top: 5px;
+            margin-top: 0.25rem;
             @include body-large();
             color: var($secondary-text-on-surface);
           }
@@ -326,7 +326,7 @@ div.feather-styles.homepage.layout {
       }
       .right {
         ol {
-          padding-left: calc(40px + 4em);
+          padding-left: calc(2.5rem + 4em);
           list-style-type: decimal-leading-zero;
         }
         li::marker {
@@ -335,7 +335,7 @@ div.feather-styles.homepage.layout {
           font-weight: bold;
         }
         dl {
-          margin-bottom: 24px;
+          margin-bottom: 1.5rem;
         }
         dt {
           @include headline2();
@@ -343,7 +343,7 @@ div.feather-styles.homepage.layout {
         dd {
           @include body-small();
           margin-inline-start: 0;
-          margin-top: 8px;
+          margin-top: 0.5rem;
         }
         li:first-of-type dl {
           margin-top: 0;
@@ -358,13 +358,13 @@ div.feather-styles.homepage.layout {
       display: flex;
       justify-content: center;
       position: relative;
-      padding: 40px 48px 48px 48px;
+      padding: 2.5rem 3rem 3rem 3rem;
 
       svg {
         fill: var($primary);
         position: absolute;
-        font-size: 30px;
-        margin-left: -46px;
+        font-size: 1.875rem;
+        margin-left: -2.875rem;
         opacity: 0.2;
       }
       .title,
@@ -375,7 +375,7 @@ div.feather-styles.homepage.layout {
         @include overline();
         line-height: var($overline-font-size);
         color: var($primary);
-        padding-bottom: 8px;
+        padding-bottom: 0.5rem;
       }
       .title {
         @include title();
@@ -389,14 +389,14 @@ div.feather-styles.homepage.layout {
   }
 
   div.card-group {
-    margin-top: 36px;
+    margin-top: 2.25rem;
     display: flex;
     justify-content: space-between;
   }
 }
 
 //responsive adjustments
-@media screen and (min-width: 719px) {
+@media screen and (min-width: 44.9375rem) {
   body div.feather-styles.layout.homepage header.banner {
     background-color: transparent;
     box-shadow: none;
@@ -425,7 +425,7 @@ div.feather-styles.homepage.layout {
     }
   }
 }
-@media screen and (max-width: 750px) {
+@media screen and (max-width: 46.875rem) {
   .feather-styles.homepage section .section-wrapper.philosophy {
     flex-direction: column;
     .left,
@@ -436,7 +436,7 @@ div.feather-styles.homepage.layout {
       span {
         border-right: none;
       }
-      @media screen and (max-width: 599px) {
+      @media screen and (max-width: 37.4375rem) {
         flex-direction: column;
         text-align: center;
 
@@ -445,11 +445,11 @@ div.feather-styles.homepage.layout {
           display: block;
         }
         svg {
-          height: 140px;
-          margin-bottom: 32px;
+          height: 8.75rem;
+          margin-bottom: 2rem;
         }
         h2 {
-          margin-bottom: 24px;
+          margin-bottom: 1.5rem;
         }
         p {
           margin-top: 0;
@@ -457,9 +457,9 @@ div.feather-styles.homepage.layout {
       }
     }
     .right {
-      margin-top: 40px;
+      margin-top: 2.5rem;
       ol {
-        padding-left: 50px;
+        padding-left: 3.125rem;
       }
     }
   }
@@ -471,13 +471,13 @@ div.feather-styles.homepage.layout {
   }
 }
 
-@media screen and (max-width: 960px) {
+@media screen and (max-width: 60rem) {
   .feather-styles.homepage section div.card-group {
     h3 {
       @include headline4();
-      margin-top: 8px;
+      margin-top: 0.5rem;
       margin-bottom: 0;
-      margin-right: 16px;
+      margin-right: 1rem;
       line-height: var($headline3-font-size);
     }
     a.pretty-card {
@@ -486,7 +486,7 @@ div.feather-styles.homepage.layout {
     }
   }
 }
-@media screen and (max-width: 599px) {
+@media screen and (max-width: 37.4375rem) {
   .feather-styles.homepage section {
     .learn h2,
     .learn p {
@@ -497,22 +497,22 @@ div.feather-styles.homepage.layout {
       flex-wrap: wrap;
       a.pretty-card {
         flex: 0 0 100%;
-        max-width: 317px;
-        margin-bottom: 24px;
+        max-width: 19.8125rem;
+        margin-bottom: 1.5rem;
       }
     }
   }
 }
 
-@media screen and (max-width: 899px) {
+@media screen and (max-width: 56.1875rem) {
   .feather-styles.homepage section .section-wrapper.story {
-    padding-left: 40px;
-    padding-right: 40px;
+    padding-left: 2.5rem;
+    padding-right: 2.5rem;
   }
   .feather-styles.homepage section .section-wrapper.story svg {
     position: relative;
     margin-left: 0;
-    margin-bottom: 8px;
+    margin-bottom: 0.5rem;
   }
 }
 </style>
