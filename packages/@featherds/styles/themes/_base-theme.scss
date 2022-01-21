@@ -164,6 +164,15 @@ $layout: (
   $zindex-popover: 1060,
   $zindex-tooltip: 1070,
 );
+$spacing: (
+  $spacing-xxs: 4px,
+  $spacing-xs: 8px,
+  $spacing-s: 12px,
+  $spacing-m: 16px,
+  $spacing-l: 20px,
+  $spacing-xl: 24px,
+  $spacing-xxl: 48px,
+);
 
 $base-theme: map-collect(
   $display1,
@@ -179,8 +188,9 @@ $base-theme: map-collect(
   $body-large,
   $body-small,
   $button,
-  $caption,
   $overline,
+  $caption,
   $typography,
-  $layout
+  $layout,
+  $spacing
 );

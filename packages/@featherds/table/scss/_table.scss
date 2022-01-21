@@ -131,21 +131,19 @@
 }
 @mixin table() {
   border-spacing: 0px;
-  margin-top: $spacing-l;
-  margin-bottom: $spacing-l;
   @include body-small();
   color: var($secondary-text-on-surface);
 
   + .feather-pagination {
     //use paginations bottom margin for spacing.
-    margin-top: -$spacing-l;
+    margin-top: var($spacing-l);
   }
 
   caption {
     text-align: left;
     @include subtitle1();
     color: var($primary-text-on-surface);
-    margin-bottom: $spacing-m;
+    margin-bottom: var($spacing-m);
   }
   th {
     padding: 0 16px;

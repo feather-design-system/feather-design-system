@@ -1,5 +1,5 @@
 <template>
-  <div v-bind="inherittedAttrs" class="feather-select-container">
+  <div v-bind="inherittedAttrs">
     <FeatherMenu
       no-expand
       :open="showMenu"
@@ -289,10 +289,7 @@ export default {
 <style lang="scss" scoped>
 @import "@featherds/styles/mixins/typography";
 @import "@featherds/styles/themes/variables";
-@import "@featherds/input-helper/scss/spacing";
-.feather-select-container {
-  @include input-spacing;
-}
+
 .feather-select-input {
   border: none;
   padding: 0;

@@ -176,7 +176,7 @@ export default {
   border-radius: 2px;
   @include elevation(24);
   position: relative;
-  margin: 0 $spacing-xl;
+  margin: 0 var($spacing-xl);
 }
 
 //fixing UISPRT-171 - removing focus outlines

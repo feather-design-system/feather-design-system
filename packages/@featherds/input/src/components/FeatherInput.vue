@@ -1,5 +1,5 @@
 <template>
-  <div v-bind="inherittedAttrs" class="feather-input-container">
+  <div v-bind="inherittedAttrs">
     <InputWrapper
       :for="inputId"
       :raised="isRaised"
@@ -214,10 +214,7 @@ export default {
 <style lang="scss" scoped>
 @import "@featherds/styles/themes/variables";
 @import "@featherds/styles/mixins/typography";
-@import "@featherds/input-helper/scss/spacing";
-.feather-input-container {
-  @include input-spacing;
-}
+
 .feather-input-content {
   &.error {
     .feather-input {

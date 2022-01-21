@@ -155,8 +155,6 @@ export default {
   height: 36px;
   padding: 0 16px;
   border-radius: 4px;
-  margin-top: $spacing-xl;
-  margin-bottom: $spacing-xl;
   display: inline-block;
   border: none;
   cursor: pointer;
@@ -181,7 +179,7 @@ export default {
   }
 
   + .btn {
-    margin-left: $spacing-xs;
+    margin-left: var($spacing-xs);
   }
 }
 .btn-content {
@@ -210,7 +208,7 @@ export default {
   }
   + .btn-primary,
   + .btn-secondary {
-    margin-left: $spacing-m;
+    margin-left: var($spacing-m);
   }
 }
 
@@ -261,7 +259,7 @@ export default {
   }
   + .btn-primary,
   + .btn-secondary {
-    margin-left: $spacing-m;
+    margin-left: var($spacing-m);
   }
 }
 .btn-text {

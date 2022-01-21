@@ -182,11 +182,6 @@ export default {
 
 .feather-expansion {
   width: 100%;
-  margin-top: $spacing-xl;
-  margin-bottom: $spacing-xl;
-  + .feather-expansion {
-    margin-top: 0;
-  }
   @include elevation(2);
   [role="region"] {
     will-change: height;

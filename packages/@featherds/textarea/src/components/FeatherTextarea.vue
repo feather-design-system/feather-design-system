@@ -1,5 +1,5 @@
 <template>
-  <div v-bind="inherittedAttrs" class="feather-textarea-container">
+  <div v-bind="inherittedAttrs">
     <InputWrapper
       :for="inputId"
       :raised="isRaised"
@@ -241,10 +241,7 @@ export default defineComponent({
 <style lang="scss" scoped>
 @import "@featherds/styles/themes/variables";
 @import "@featherds/styles/mixins/typography";
-@import "@featherds/input-helper/scss/spacing";
-.feather-textarea-container {
-  @include input-spacing;
-}
+
 .feather-textarea {
   border: none;
   margin: 7px 0;

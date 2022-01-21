@@ -247,6 +247,14 @@ $zindex-modal: prefix(zindex-modal);
 $zindex-popover: prefix(zindex-popover);
 $zindex-tooltip: prefix(zindex-tooltip);
 
+$spacing-xxs: prefix(spacing-xxs);
+$spacing-xs: prefix(spacing-xs);
+$spacing-s: prefix(spacing-s);
+$spacing-m: prefix(spacing-m);
+$spacing-l: prefix(spacing-l);
+$spacing-xl: prefix(spacing-xl);
+$spacing-xxl: prefix(spacing-xxl);
+
 $xl-gutter: 24px;
 $l-gutter: 24px;
 $m-gutter: 24px;
@@ -290,11 +298,3 @@ $grid: (
     gutter: $xxs-gutter,
   ),
 );
-
-$spacing-xxs: 4px;
-$spacing-xs: 8px;
-$spacing-s: 12px;
-$spacing-m: 16px;
-$spacing-l: 20px;
-$spacing-xl: 24px;
-$spacing-xxl: 48px;

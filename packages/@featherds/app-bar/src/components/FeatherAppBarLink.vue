@@ -95,7 +95,7 @@ a.round {
     border-radius: 100%;
   }
   + a.round {
-    margin-left: $spacing-xs;
+    margin-left: var($spacing-xs);
   }
 }
 

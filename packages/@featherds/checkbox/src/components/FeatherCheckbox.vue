@@ -142,7 +142,7 @@ export default {
 }
 .layout-container {
   display: inline-block;
-  margin-bottom: $spacing-xs;
+  margin-bottom: var($spacing-xs);
 }
 
 $height: 36px;
