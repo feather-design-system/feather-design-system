@@ -244,12 +244,12 @@ export default defineComponent({
 
 .feather-textarea {
   border: none;
-  margin: 7px 0;
+  margin: 0.5rem 0;
   display: inline-block;
   vertical-align: middle;
   resize: none;
   background-color: transparent;
-  flex: 1 1 40px;
+  flex: 1 1 2.5rem;
   width: 0;
   @include body-small();
   line-height: 1.5em; //IE has an issue with the mixin lineheight when typing
@@ -271,7 +271,7 @@ export default defineComponent({
 }
 
 .feather-input-count {
-  padding-left: 16px;
+  padding-left: 1rem;
   align-self: flex-start;
   margin-left: auto;
   @include caption();
@@ -282,7 +282,7 @@ export default defineComponent({
   :deep(.prefix),
   :deep(.post) {
     align-self: flex-start;
-    margin-top: 10px;
+    margin-top: 0.625rem;
   }
 }
 </style>

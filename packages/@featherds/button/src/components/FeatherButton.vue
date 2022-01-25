@@ -152,17 +152,17 @@ export default {
 }
 
 .btn {
-  height: 36px;
-  padding: 0 16px;
-  border-radius: 4px;
+  height: 2.25rem;
+  padding: 0 1rem;
+  border-radius: 0.25rem;
   display: inline-block;
   border: none;
   cursor: pointer;
   position: relative;
   @include button();
-  line-height: 32px;
+  line-height: 2rem;
   vertical-align: middle;
-  min-width: 64px;
+  min-width: 4rem;
   white-space: nowrap;
   &:hover {
     text-decoration: none;
@@ -266,7 +266,7 @@ export default {
   color: var($primary);
   background-color: transparent;
   border: 2px solid transparent;
-  padding: 0 8px;
+  padding: 0 0.5rem;
   @include state-on-surface();
   @include disabled-styles();
   &:hover {
@@ -310,30 +310,30 @@ export default {
 .btn.btn-icon {
   padding: 0;
   display: inline-flex;
-  height: 36px;
-  width: 36px;
-  min-width: 36px;
+  height: 2.25rem;
+  width: 2.25rem;
+  min-width: 2.25rem;
   border-radius: 100%;
   @include center();
   :deep(svg) {
-    width: 24px;
-    font-size: 24px;
+    width: 1.5rem;
+    font-size: 1.5rem;
     vertical-align: middle;
   }
 }
 .btn.has-icon {
-  padding: 0 16px 0 12px;
+  padding: 0 1rem 0 0.75rem;
   display: inline-flex;
   align-items: center;
   &.btn-text {
-    padding: 0 8px;
+    padding: 0 0.5rem;
   }
 }
 .btn.has-icon :deep(svg) {
-  width: 18px;
-  height: 18px;
-  font-size: 18px;
+  width: 1.125rem;
+  height: 1.125rem;
+  font-size: 1.125rem;
   display: inline-block;
-  margin-right: 8px;
+  margin-right: 0.5rem;
 }
 </style>

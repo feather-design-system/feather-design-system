@@ -393,7 +393,7 @@ export default {
 .feather-date-input-menu-container {
   width: 100%;
   :deep(.feather-menu-dropdown) {
-    border-radius: 4px;
+    border-radius: 0.25rem;
   }
 }
 </style>

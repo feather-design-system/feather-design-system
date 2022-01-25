@@ -48,6 +48,6 @@ export default {
 </script>
 <style lang="scss" scoped>
 .wrap:deep(.feather-checkbox) {
-  width: 100px;
+  width: 6.25rem;
 }
 </style>

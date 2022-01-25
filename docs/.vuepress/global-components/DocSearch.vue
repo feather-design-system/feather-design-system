@@ -36,11 +36,11 @@ export default {
 @import "@featherds/styles/themes/variables";
 .search-icon {
   color: var($secondary-text-on-color);
-  font-size: 24px;
+  font-size: 1.5rem;
   position: relative;
   top: 0px;
-  left: 48px;
-  margin-left: -24px;
+  left: 3rem;
+  margin-left: -1.5rem;
 }
 #search-container {
   :deep(.DocSearch-Search-Icon) {

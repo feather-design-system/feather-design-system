@@ -78,16 +78,6 @@ export default {
 @import "@featherds/styles/themes/variables";
 .surface {
   background-color: var($surface);
-  padding: 20px;
-}
-.chip {
-  background-color: var($border-on-surface);
-  height: 26px;
-  margin-left: 4px;
-  padding: 0 4px;
-  border-radius: 4px;
-  display: inline-block;
-  margin-top: 3px;
-  margin-bottom: 3px;
+  padding: 1.25rem;
 }
 </style>

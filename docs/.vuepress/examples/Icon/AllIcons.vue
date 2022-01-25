@@ -78,14 +78,14 @@ ul {
   list-style: none;
   li {
     display: inline-block;
-    font-size: 24px;
+    font-size: 1.5rem;
     color: var($secondary-text-on-surface);
     text-align: center;
-    width: 150px;
-    padding: 8px;
+    width: 9.375rem;
+    padding: 0.5rem;
     img {
-      height: 48px;
-      width: 48px;
+      height: 3rem;
+      width: 3rem;
     }
     .icon-name {
       @include caption();

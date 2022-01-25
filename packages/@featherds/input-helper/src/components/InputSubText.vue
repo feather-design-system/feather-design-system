@@ -49,7 +49,7 @@ export default {
 @import "@featherds/styles/mixins/typography";
 .feather-input-sub-text {
   display: flex;
-  padding: 4px 12px 4px 16px;
+  padding: 0.25rem 0.75rem 0.25rem 1rem;
 }
 .feather-input-hint {
   @include caption();

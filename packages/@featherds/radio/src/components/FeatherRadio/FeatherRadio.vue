@@ -14,8 +14,14 @@
     >
       <div class="radio hover focus">
         <div class="icon" aria-hidden="true">
-          <svg height="16" width="16" class="dot">
-            <circle cx="8" cy="8" r="5" stroke="black" stroke-width="0" />
+          <svg class="dot">
+            <circle
+              cx="50%"
+              cy="50%"
+              r="0.3125rem"
+              stroke="black"
+              stroke-width="0"
+            />
           </svg>
         </div>
         <feather-ripple center v-if="!disabled" />
@@ -108,17 +114,17 @@ export default {
   cursor: pointer;
   display: inline-flex;
   align-items: center;
-  margin-left: -8px;
+  margin-left: -0.5rem;
   .radio {
-    height: 36px;
-    width: 36px;
+    height: 2.25rem;
+    width: 2.25rem;
     display: inline-block;
-    padding: 8px;
+    padding: 0.5rem;
     border-radius: 100%;
   }
   .icon {
-    height: 20px;
-    width: 20px;
+    height: 1.25rem;
+    width: 1.25rem;
     border: 2px solid var($secondary-text-on-surface);
     background-color: transparent;
     border-radius: 100%;
@@ -126,8 +132,8 @@ export default {
   }
   .dot {
     position: absolute;
-    height: 16px;
-    width: 16px;
+    height: 100%;
+    width: 100%;
     fill: var($primary);
     border-radius: 100%;
     opacity: 0;
@@ -136,9 +142,9 @@ export default {
   .label {
     @include body-small();
     color: var($primary-text-on-surface);
-    min-width: 24px;
-    padding-right: 12px;
-    padding-left: 4px;
+    min-width: 1.5rem;
+    padding-right: 0.75rem;
+    padding-left: 0.25rem;
   }
 }
 

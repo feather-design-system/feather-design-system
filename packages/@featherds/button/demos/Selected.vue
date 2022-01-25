@@ -19,7 +19,7 @@ export default {
 </script>
 <style lang="scss" scoped>
 section :deep(button) {
-  margin-bottom: 8px;
-  margin-left: 8px;
+  margin-bottom: 0.5rem;
+  margin-left: 0.5rem;
 }
 </style>

@@ -79,6 +79,8 @@ exports[`FeatherPagination.vue should disable first and previous buttons on firs
             icon="[object Object]"
           />
         </feather-button-stub>
+      </li>
+      <li>
         <feather-button-stub
           asanchor="true"
           class="action"
@@ -180,6 +182,8 @@ exports[`FeatherPagination.vue should disable last and next buttons on last page
             icon="[object Object]"
           />
         </feather-button-stub>
+      </li>
+      <li>
         <feather-button-stub
           asanchor="true"
           class="action"

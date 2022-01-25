@@ -145,11 +145,11 @@ export default {
   margin-bottom: var($spacing-xs);
 }
 
-$height: 36px;
+$height: 2.25rem;
 $boxHeight: math.div($height, 2);
 .feather-checkbox {
   display: inline-flex;
-  margin-left: -8px;
+  margin-left: -0.5rem;
   cursor: pointer;
   align-items: center;
   .checkbox {
@@ -208,9 +208,9 @@ $boxHeight: math.div($height, 2);
   label {
     @include body-small();
     color: var($primary-text-on-surface);
-    padding-left: 4px;
-    padding-right: 16px;
-    min-width: 56px;
+    padding-left: 0.25rem;
+    padding-right: 1rem;
+    min-width: 3.5rem;
     user-select: none;
     -khtml-user-select: none;
     -moz-user-select: none;

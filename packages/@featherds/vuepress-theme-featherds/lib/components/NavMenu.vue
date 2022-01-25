@@ -67,12 +67,12 @@ export default {
 @import "@featherds/styles/themes/variables";
 @import "@featherds/styles/mixins/elevation";
 @import "@featherds/styles/mixins/typography";
-$width: 264px;
+$width: 16.5rem;
 .fake-header {
   display: flex;
   align-items: center;
   height: var($header-height);
-  padding-left: 16px;
+  padding-left: 1rem;
   flex: none;
   border-bottom: 1px solid var($border-on-surface);
   a {
@@ -108,7 +108,7 @@ $width: 264px;
       @include body-large;
     }
     :deep(.feather-list-item) {
-      height: 48px !important;
+      height: 3rem !important;
     }
   }
 }

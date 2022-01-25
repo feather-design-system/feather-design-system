@@ -1,9 +1,7 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`FeatherDateInput.vue should render disabled 1`] = `
-<div
-  class="feather-input-container"
->
+<div>
   <div
     class="feather-menu feather-date-input-menu-container"
     data-v-6a69cac4=""
@@ -11,15 +9,15 @@ exports[`FeatherDateInput.vue should render disabled 1`] = `
     
     <div
       class="feather-input-wrapper-container raised disabled"
-      data-v-051667c2=""
+      data-v-9ec5a652=""
     >
       <fieldset
         aria-hidden="true"
         class="feather-input-border"
-        data-v-051667c2=""
+        data-v-9ec5a652=""
       >
         <legend
-          data-v-051667c2=""
+          data-v-9ec5a652=""
         >
           Test
         </legend>
@@ -27,19 +25,18 @@ exports[`FeatherDateInput.vue should render disabled 1`] = `
       <label
         class="feather-input-label"
         data-ref-id="feather-form-element-label"
-        data-v-051667c2=""
+        data-v-9ec5a652=""
         for="feather-input-label"
-        style="left: 12px;"
       >
         Test
       </label>
       <div
         class="feather-input-wrapper"
-        data-v-051667c2=""
+        data-v-9ec5a652=""
       >
         <div
           class="prefix"
-          data-v-051667c2=""
+          data-v-9ec5a652=""
         >
           
           
@@ -102,13 +99,13 @@ exports[`FeatherDateInput.vue should render disabled 1`] = `
         
         <div
           class="post"
-          data-v-051667c2=""
+          data-v-9ec5a652=""
         >
           <a
             class="action-icon hide-when-disabled"
             data-ref-id="feather-form-element-clear"
-            data-v-051667c2=""
-            data-v-d1dfbdf8=""
+            data-v-5ae6c940=""
+            data-v-9ec5a652=""
             href="#"
             title="Clear date"
           >
@@ -116,7 +113,7 @@ exports[`FeatherDateInput.vue should render disabled 1`] = `
               aria-hidden="true"
               class="feather-icon"
               data-v-0aa06a12=""
-              data-v-d1dfbdf8=""
+              data-v-5ae6c940=""
               focusable="false"
               role="img"
               viewBox="0 0 24 24"
@@ -186,7 +183,7 @@ exports[`FeatherDateInput.vue should render disabled 1`] = `
             aria-label="Previous month"
             class="chevron left btn hover focus btn-text btn-icon btn-icon-table"
             data-ref-id="feather-calendar-prev-month"
-            data-v-f808d47e=""
+            data-v-4e5359d6=""
             link=""
             style="overflow: hidden; position: relative;"
             title="Previous month"
@@ -210,29 +207,29 @@ exports[`FeatherDateInput.vue should render disabled 1`] = `
             <!---->
           </button>
           <div
-            class="inline-select feather-select-container"
+            class="inline-select"
             data-ref-id="feather-calendar-select-month"
-            data-v-29a9e56c=""
+            data-v-2b9b095e=""
           >
             <div
               class="feather-menu feather-select-menu-container"
-              data-v-29a9e56c=""
+              data-v-2b9b095e=""
               data-v-6a69cac4=""
             >
               
               <div
                 class="feather-input-wrapper-container raised inline feather-select-wrapper"
-                data-v-051667c2=""
-                data-v-29a9e56c=""
+                data-v-2b9b095e=""
+                data-v-9ec5a652=""
                 menu-trigger=""
               >
                 <fieldset
                   aria-hidden="true"
                   class="feather-input-border"
-                  data-v-051667c2=""
+                  data-v-9ec5a652=""
                 >
                   <legend
-                    data-v-051667c2=""
+                    data-v-9ec5a652=""
                   >
                     Select month
                   </legend>
@@ -240,19 +237,18 @@ exports[`FeatherDateInput.vue should render disabled 1`] = `
                 <label
                   class="feather-input-label"
                   data-ref-id="feather-form-element-label"
-                  data-v-051667c2=""
+                  data-v-9ec5a652=""
                   for="feather-select-input"
-                  style="left: 12px;"
                 >
                   Select month
                 </label>
                 <div
                   class="feather-input-wrapper"
-                  data-v-051667c2=""
+                  data-v-9ec5a652=""
                 >
                   <div
                     class="prefix"
-                    data-v-051667c2=""
+                    data-v-9ec5a652=""
                   >
                     
                     
@@ -265,14 +261,14 @@ exports[`FeatherDateInput.vue should render disabled 1`] = `
                     aria-invalid="false"
                     class="feather-select-input"
                     data-ref-id="feather-input"
-                    data-v-29a9e56c=""
+                    data-v-2b9b095e=""
                     id="feather-select-input"
                     readonly=""
                   />
                   
                   <div
                     class="post"
-                    data-v-051667c2=""
+                    data-v-9ec5a652=""
                   >
                     <!---->
                     <!---->
@@ -281,7 +277,7 @@ exports[`FeatherDateInput.vue should render disabled 1`] = `
                       aria-hidden="true"
                       class="feather-select-icon feather-icon feather-select-icon"
                       data-v-0aa06a12=""
-                      data-v-29a9e56c=""
+                      data-v-2b9b095e=""
                       focusable="false"
                       role="img"
                       viewBox="0 0 24 24"
@@ -308,9 +304,9 @@ exports[`FeatherDateInput.vue should render disabled 1`] = `
                   aria-label="Select month"
                   class="feather-list feather-select-options-list"
                   data-ref-id="feather-select-list"
-                  data-v-29a9e56c=""
+                  data-v-2b9b095e=""
                   data-v-32bd1d76=""
-                  data-v-4ef0e6d6=""
+                  data-v-941a1d50=""
                   role="listbox"
                   tabindex="-1"
                 >
@@ -319,8 +315,8 @@ exports[`FeatherDateInput.vue should render disabled 1`] = `
                   <li
                     aria-selected="false"
                     class="feather-list-item hover focus result-item"
-                    data-v-1737b7da=""
                     data-v-32bd1d76=""
+                    data-v-fafdd3cc=""
                     role="option"
                     style="overflow: hidden; position: relative;"
                     tabindex="-1"
@@ -328,7 +324,7 @@ exports[`FeatherDateInput.vue should render disabled 1`] = `
                     <!---->
                     <span
                       class="feather-list-item-text"
-                      data-v-1737b7da=""
+                      data-v-fafdd3cc=""
                     >
                       January
                     </span>
@@ -338,8 +334,8 @@ exports[`FeatherDateInput.vue should render disabled 1`] = `
                   <li
                     aria-selected="true"
                     class="feather-list-item hover focus selected result-item"
-                    data-v-1737b7da=""
                     data-v-32bd1d76=""
+                    data-v-fafdd3cc=""
                     id="feather-select-active"
                     role="option"
                     style="overflow: hidden; position: relative;"
@@ -348,7 +344,7 @@ exports[`FeatherDateInput.vue should render disabled 1`] = `
                     <!---->
                     <span
                       class="feather-list-item-text"
-                      data-v-1737b7da=""
+                      data-v-fafdd3cc=""
                     >
                       February
                     </span>
@@ -358,8 +354,8 @@ exports[`FeatherDateInput.vue should render disabled 1`] = `
                   <li
                     aria-selected="false"
                     class="feather-list-item hover focus result-item"
-                    data-v-1737b7da=""
                     data-v-32bd1d76=""
+                    data-v-fafdd3cc=""
                     role="option"
                     style="overflow: hidden; position: relative;"
                     tabindex="-1"
@@ -367,7 +363,7 @@ exports[`FeatherDateInput.vue should render disabled 1`] = `
                     <!---->
                     <span
                       class="feather-list-item-text"
-                      data-v-1737b7da=""
+                      data-v-fafdd3cc=""
                     >
                       March
                     </span>
@@ -377,8 +373,8 @@ exports[`FeatherDateInput.vue should render disabled 1`] = `
                   <li
                     aria-selected="false"
                     class="feather-list-item hover focus result-item"
-                    data-v-1737b7da=""
                     data-v-32bd1d76=""
+                    data-v-fafdd3cc=""
                     role="option"
                     style="overflow: hidden; position: relative;"
                     tabindex="-1"
@@ -386,7 +382,7 @@ exports[`FeatherDateInput.vue should render disabled 1`] = `
                     <!---->
                     <span
                       class="feather-list-item-text"
-                      data-v-1737b7da=""
+                      data-v-fafdd3cc=""
                     >
                       April
                     </span>
@@ -396,8 +392,8 @@ exports[`FeatherDateInput.vue should render disabled 1`] = `
                   <li
                     aria-selected="false"
                     class="feather-list-item hover focus result-item"
-                    data-v-1737b7da=""
                     data-v-32bd1d76=""
+                    data-v-fafdd3cc=""
                     role="option"
                     style="overflow: hidden; position: relative;"
                     tabindex="-1"
@@ -405,7 +401,7 @@ exports[`FeatherDateInput.vue should render disabled 1`] = `
                     <!---->
                     <span
                       class="feather-list-item-text"
-                      data-v-1737b7da=""
+                      data-v-fafdd3cc=""
                     >
                       May
                     </span>
@@ -415,8 +411,8 @@ exports[`FeatherDateInput.vue should render disabled 1`] = `
                   <li
                     aria-selected="false"
                     class="feather-list-item hover focus result-item"
-                    data-v-1737b7da=""
                     data-v-32bd1d76=""
+                    data-v-fafdd3cc=""
                     role="option"
                     style="overflow: hidden; position: relative;"
                     tabindex="-1"
@@ -424,7 +420,7 @@ exports[`FeatherDateInput.vue should render disabled 1`] = `
                     <!---->
                     <span
                       class="feather-list-item-text"
-                      data-v-1737b7da=""
+                      data-v-fafdd3cc=""
                     >
                       June
                     </span>
@@ -434,8 +430,8 @@ exports[`FeatherDateInput.vue should render disabled 1`] = `
                   <li
                     aria-selected="false"
                     class="feather-list-item hover focus result-item"
-                    data-v-1737b7da=""
                     data-v-32bd1d76=""
+                    data-v-fafdd3cc=""
                     role="option"
                     style="overflow: hidden; position: relative;"
                     tabindex="-1"
@@ -443,7 +439,7 @@ exports[`FeatherDateInput.vue should render disabled 1`] = `
                     <!---->
                     <span
                       class="feather-list-item-text"
-                      data-v-1737b7da=""
+                      data-v-fafdd3cc=""
                     >
                       July
                     </span>
@@ -453,8 +449,8 @@ exports[`FeatherDateInput.vue should render disabled 1`] = `
                   <li
                     aria-selected="false"
                     class="feather-list-item hover focus result-item"
-                    data-v-1737b7da=""
                     data-v-32bd1d76=""
+                    data-v-fafdd3cc=""
                     role="option"
                     style="overflow: hidden; position: relative;"
                     tabindex="-1"
@@ -462,7 +458,7 @@ exports[`FeatherDateInput.vue should render disabled 1`] = `
                     <!---->
                     <span
                       class="feather-list-item-text"
-                      data-v-1737b7da=""
+                      data-v-fafdd3cc=""
                     >
                       August
                     </span>
@@ -472,8 +468,8 @@ exports[`FeatherDateInput.vue should render disabled 1`] = `
                   <li
                     aria-selected="false"
                     class="feather-list-item hover focus result-item"
-                    data-v-1737b7da=""
                     data-v-32bd1d76=""
+                    data-v-fafdd3cc=""
                     role="option"
                     style="overflow: hidden; position: relative;"
                     tabindex="-1"
@@ -481,7 +477,7 @@ exports[`FeatherDateInput.vue should render disabled 1`] = `
                     <!---->
                     <span
                       class="feather-list-item-text"
-                      data-v-1737b7da=""
+                      data-v-fafdd3cc=""
                     >
                       September
                     </span>
@@ -491,8 +487,8 @@ exports[`FeatherDateInput.vue should render disabled 1`] = `
                   <li
                     aria-selected="false"
                     class="feather-list-item hover focus result-item"
-                    data-v-1737b7da=""
                     data-v-32bd1d76=""
+                    data-v-fafdd3cc=""
                     role="option"
                     style="overflow: hidden; position: relative;"
                     tabindex="-1"
@@ -500,7 +496,7 @@ exports[`FeatherDateInput.vue should render disabled 1`] = `
                     <!---->
                     <span
                       class="feather-list-item-text"
-                      data-v-1737b7da=""
+                      data-v-fafdd3cc=""
                     >
                       October
                     </span>
@@ -510,8 +506,8 @@ exports[`FeatherDateInput.vue should render disabled 1`] = `
                   <li
                     aria-selected="false"
                     class="feather-list-item hover focus result-item"
-                    data-v-1737b7da=""
                     data-v-32bd1d76=""
+                    data-v-fafdd3cc=""
                     role="option"
                     style="overflow: hidden; position: relative;"
                     tabindex="-1"
@@ -519,7 +515,7 @@ exports[`FeatherDateInput.vue should render disabled 1`] = `
                     <!---->
                     <span
                       class="feather-list-item-text"
-                      data-v-1737b7da=""
+                      data-v-fafdd3cc=""
                     >
                       November
                     </span>
@@ -529,8 +525,8 @@ exports[`FeatherDateInput.vue should render disabled 1`] = `
                   <li
                     aria-selected="false"
                     class="feather-list-item hover focus result-item"
-                    data-v-1737b7da=""
                     data-v-32bd1d76=""
+                    data-v-fafdd3cc=""
                     role="option"
                     style="overflow: hidden; position: relative;"
                     tabindex="-1"
@@ -538,7 +534,7 @@ exports[`FeatherDateInput.vue should render disabled 1`] = `
                     <!---->
                     <span
                       class="feather-list-item-text"
-                      data-v-1737b7da=""
+                      data-v-fafdd3cc=""
                     >
                       December
                     </span>
@@ -553,8 +549,8 @@ exports[`FeatherDateInput.vue should render disabled 1`] = `
             </div>
             <div
               class="feather-input-sub-text"
-              data-v-29a9e56c=""
-              data-v-cef1410a=""
+              data-v-11692aa4=""
+              data-v-2b9b095e=""
               id="feather-select-description"
               style="display: none;"
             >
@@ -565,29 +561,29 @@ exports[`FeatherDateInput.vue should render disabled 1`] = `
             </div>
           </div>
           <div
-            class="inline-select year feather-select-container"
+            class="inline-select year"
             data-ref-id="feather-calendar-select-year"
-            data-v-29a9e56c=""
+            data-v-2b9b095e=""
           >
             <div
               class="feather-menu feather-select-menu-container"
-              data-v-29a9e56c=""
+              data-v-2b9b095e=""
               data-v-6a69cac4=""
             >
               
               <div
                 class="feather-input-wrapper-container raised inline feather-select-wrapper"
-                data-v-051667c2=""
-                data-v-29a9e56c=""
+                data-v-2b9b095e=""
+                data-v-9ec5a652=""
                 menu-trigger=""
               >
                 <fieldset
                   aria-hidden="true"
                   class="feather-input-border"
-                  data-v-051667c2=""
+                  data-v-9ec5a652=""
                 >
                   <legend
-                    data-v-051667c2=""
+                    data-v-9ec5a652=""
                   >
                     Select year
                   </legend>
@@ -595,19 +591,18 @@ exports[`FeatherDateInput.vue should render disabled 1`] = `
                 <label
                   class="feather-input-label"
                   data-ref-id="feather-form-element-label"
-                  data-v-051667c2=""
+                  data-v-9ec5a652=""
                   for="feather-select-input"
-                  style="left: 12px;"
                 >
                   Select year
                 </label>
                 <div
                   class="feather-input-wrapper"
-                  data-v-051667c2=""
+                  data-v-9ec5a652=""
                 >
                   <div
                     class="prefix"
-                    data-v-051667c2=""
+                    data-v-9ec5a652=""
                   >
                     
                     
@@ -620,14 +615,14 @@ exports[`FeatherDateInput.vue should render disabled 1`] = `
                     aria-invalid="false"
                     class="feather-select-input"
                     data-ref-id="feather-input"
-                    data-v-29a9e56c=""
+                    data-v-2b9b095e=""
                     id="feather-select-input"
                     readonly=""
                   />
                   
                   <div
                     class="post"
-                    data-v-051667c2=""
+                    data-v-9ec5a652=""
                   >
                     <!---->
                     <!---->
@@ -636,7 +631,7 @@ exports[`FeatherDateInput.vue should render disabled 1`] = `
                       aria-hidden="true"
                       class="feather-select-icon feather-icon feather-select-icon"
                       data-v-0aa06a12=""
-                      data-v-29a9e56c=""
+                      data-v-2b9b095e=""
                       focusable="false"
                       role="img"
                       viewBox="0 0 24 24"
@@ -663,9 +658,9 @@ exports[`FeatherDateInput.vue should render disabled 1`] = `
                   aria-label="Select year"
                   class="feather-list feather-select-options-list"
                   data-ref-id="feather-select-list"
-                  data-v-29a9e56c=""
+                  data-v-2b9b095e=""
                   data-v-32bd1d76=""
-                  data-v-4ef0e6d6=""
+                  data-v-941a1d50=""
                   role="listbox"
                   tabindex="-1"
                 >
@@ -674,8 +669,8 @@ exports[`FeatherDateInput.vue should render disabled 1`] = `
                   <li
                     aria-selected="false"
                     class="feather-list-item hover focus result-item"
-                    data-v-1737b7da=""
                     data-v-32bd1d76=""
+                    data-v-fafdd3cc=""
                     role="option"
                     style="overflow: hidden; position: relative;"
                     tabindex="-1"
@@ -683,7 +678,7 @@ exports[`FeatherDateInput.vue should render disabled 1`] = `
                     <!---->
                     <span
                       class="feather-list-item-text"
-                      data-v-1737b7da=""
+                      data-v-fafdd3cc=""
                     >
                       2030
                     </span>
@@ -693,8 +688,8 @@ exports[`FeatherDateInput.vue should render disabled 1`] = `
                   <li
                     aria-selected="false"
                     class="feather-list-item hover focus result-item"
-                    data-v-1737b7da=""
                     data-v-32bd1d76=""
+                    data-v-fafdd3cc=""
                     role="option"
                     style="overflow: hidden; position: relative;"
                     tabindex="-1"
@@ -702,7 +697,7 @@ exports[`FeatherDateInput.vue should render disabled 1`] = `
                     <!---->
                     <span
                       class="feather-list-item-text"
-                      data-v-1737b7da=""
+                      data-v-fafdd3cc=""
                     >
                       2029
                     </span>
@@ -712,8 +707,8 @@ exports[`FeatherDateInput.vue should render disabled 1`] = `
                   <li
                     aria-selected="false"
                     class="feather-list-item hover focus result-item"
-                    data-v-1737b7da=""
                     data-v-32bd1d76=""
+                    data-v-fafdd3cc=""
                     role="option"
                     style="overflow: hidden; position: relative;"
                     tabindex="-1"
@@ -721,7 +716,7 @@ exports[`FeatherDateInput.vue should render disabled 1`] = `
                     <!---->
                     <span
                       class="feather-list-item-text"
-                      data-v-1737b7da=""
+                      data-v-fafdd3cc=""
                     >
                       2028
                     </span>
@@ -731,8 +726,8 @@ exports[`FeatherDateInput.vue should render disabled 1`] = `
                   <li
                     aria-selected="false"
                     class="feather-list-item hover focus result-item"
-                    data-v-1737b7da=""
                     data-v-32bd1d76=""
+                    data-v-fafdd3cc=""
                     role="option"
                     style="overflow: hidden; position: relative;"
                     tabindex="-1"
@@ -740,7 +735,7 @@ exports[`FeatherDateInput.vue should render disabled 1`] = `
                     <!---->
                     <span
                       class="feather-list-item-text"
-                      data-v-1737b7da=""
+                      data-v-fafdd3cc=""
                     >
                       2027
                     </span>
@@ -750,8 +745,8 @@ exports[`FeatherDateInput.vue should render disabled 1`] = `
                   <li
                     aria-selected="false"
                     class="feather-list-item hover focus result-item"
-                    data-v-1737b7da=""
                     data-v-32bd1d76=""
+                    data-v-fafdd3cc=""
                     role="option"
                     style="overflow: hidden; position: relative;"
                     tabindex="-1"
@@ -759,7 +754,7 @@ exports[`FeatherDateInput.vue should render disabled 1`] = `
                     <!---->
                     <span
                       class="feather-list-item-text"
-                      data-v-1737b7da=""
+                      data-v-fafdd3cc=""
                     >
                       2026
                     </span>
@@ -769,8 +764,8 @@ exports[`FeatherDateInput.vue should render disabled 1`] = `
                   <li
                     aria-selected="false"
                     class="feather-list-item hover focus result-item"
-                    data-v-1737b7da=""
                     data-v-32bd1d76=""
+                    data-v-fafdd3cc=""
                     role="option"
                     style="overflow: hidden; position: relative;"
                     tabindex="-1"
@@ -778,7 +773,7 @@ exports[`FeatherDateInput.vue should render disabled 1`] = `
                     <!---->
                     <span
                       class="feather-list-item-text"
-                      data-v-1737b7da=""
+                      data-v-fafdd3cc=""
                     >
                       2025
                     </span>
@@ -788,8 +783,8 @@ exports[`FeatherDateInput.vue should render disabled 1`] = `
                   <li
                     aria-selected="false"
                     class="feather-list-item hover focus result-item"
-                    data-v-1737b7da=""
                     data-v-32bd1d76=""
+                    data-v-fafdd3cc=""
                     role="option"
                     style="overflow: hidden; position: relative;"
                     tabindex="-1"
@@ -797,7 +792,7 @@ exports[`FeatherDateInput.vue should render disabled 1`] = `
                     <!---->
                     <span
                       class="feather-list-item-text"
-                      data-v-1737b7da=""
+                      data-v-fafdd3cc=""
                     >
                       2024
                     </span>
@@ -807,8 +802,8 @@ exports[`FeatherDateInput.vue should render disabled 1`] = `
                   <li
                     aria-selected="false"
                     class="feather-list-item hover focus result-item"
-                    data-v-1737b7da=""
                     data-v-32bd1d76=""
+                    data-v-fafdd3cc=""
                     role="option"
                     style="overflow: hidden; position: relative;"
                     tabindex="-1"
@@ -816,7 +811,7 @@ exports[`FeatherDateInput.vue should render disabled 1`] = `
                     <!---->
                     <span
                       class="feather-list-item-text"
-                      data-v-1737b7da=""
+                      data-v-fafdd3cc=""
                     >
                       2023
                     </span>
@@ -826,8 +821,8 @@ exports[`FeatherDateInput.vue should render disabled 1`] = `
                   <li
                     aria-selected="false"
                     class="feather-list-item hover focus result-item"
-                    data-v-1737b7da=""
                     data-v-32bd1d76=""
+                    data-v-fafdd3cc=""
                     role="option"
                     style="overflow: hidden; position: relative;"
                     tabindex="-1"
@@ -835,7 +830,7 @@ exports[`FeatherDateInput.vue should render disabled 1`] = `
                     <!---->
                     <span
                       class="feather-list-item-text"
-                      data-v-1737b7da=""
+                      data-v-fafdd3cc=""
                     >
                       2022
                     </span>
@@ -845,8 +840,8 @@ exports[`FeatherDateInput.vue should render disabled 1`] = `
                   <li
                     aria-selected="false"
                     class="feather-list-item hover focus result-item"
-                    data-v-1737b7da=""
                     data-v-32bd1d76=""
+                    data-v-fafdd3cc=""
                     role="option"
                     style="overflow: hidden; position: relative;"
                     tabindex="-1"
@@ -854,7 +849,7 @@ exports[`FeatherDateInput.vue should render disabled 1`] = `
                     <!---->
                     <span
                       class="feather-list-item-text"
-                      data-v-1737b7da=""
+                      data-v-fafdd3cc=""
                     >
                       2021
                     </span>
@@ -864,8 +859,8 @@ exports[`FeatherDateInput.vue should render disabled 1`] = `
                   <li
                     aria-selected="true"
                     class="feather-list-item hover focus selected result-item"
-                    data-v-1737b7da=""
                     data-v-32bd1d76=""
+                    data-v-fafdd3cc=""
                     id="feather-select-active"
                     role="option"
                     style="overflow: hidden; position: relative;"
@@ -874,7 +869,7 @@ exports[`FeatherDateInput.vue should render disabled 1`] = `
                     <!---->
                     <span
                       class="feather-list-item-text"
-                      data-v-1737b7da=""
+                      data-v-fafdd3cc=""
                     >
                       2020
                     </span>
@@ -884,8 +879,8 @@ exports[`FeatherDateInput.vue should render disabled 1`] = `
                   <li
                     aria-selected="false"
                     class="feather-list-item hover focus result-item"
-                    data-v-1737b7da=""
                     data-v-32bd1d76=""
+                    data-v-fafdd3cc=""
                     role="option"
                     style="overflow: hidden; position: relative;"
                     tabindex="-1"
@@ -893,7 +888,7 @@ exports[`FeatherDateInput.vue should render disabled 1`] = `
                     <!---->
                     <span
                       class="feather-list-item-text"
-                      data-v-1737b7da=""
+                      data-v-fafdd3cc=""
                     >
                       2019
                     </span>
@@ -903,8 +898,8 @@ exports[`FeatherDateInput.vue should render disabled 1`] = `
                   <li
                     aria-selected="false"
                     class="feather-list-item hover focus result-item"
-                    data-v-1737b7da=""
                     data-v-32bd1d76=""
+                    data-v-fafdd3cc=""
                     role="option"
                     style="overflow: hidden; position: relative;"
                     tabindex="-1"
@@ -912,7 +907,7 @@ exports[`FeatherDateInput.vue should render disabled 1`] = `
                     <!---->
                     <span
                       class="feather-list-item-text"
-                      data-v-1737b7da=""
+                      data-v-fafdd3cc=""
                     >
                       2018
                     </span>
@@ -922,8 +917,8 @@ exports[`FeatherDateInput.vue should render disabled 1`] = `
                   <li
                     aria-selected="false"
                     class="feather-list-item hover focus result-item"
-                    data-v-1737b7da=""
                     data-v-32bd1d76=""
+                    data-v-fafdd3cc=""
                     role="option"
                     style="overflow: hidden; position: relative;"
                     tabindex="-1"
@@ -931,7 +926,7 @@ exports[`FeatherDateInput.vue should render disabled 1`] = `
                     <!---->
                     <span
                       class="feather-list-item-text"
-                      data-v-1737b7da=""
+                      data-v-fafdd3cc=""
                     >
                       2017
                     </span>
@@ -941,8 +936,8 @@ exports[`FeatherDateInput.vue should render disabled 1`] = `
                   <li
                     aria-selected="false"
                     class="feather-list-item hover focus result-item"
-                    data-v-1737b7da=""
                     data-v-32bd1d76=""
+                    data-v-fafdd3cc=""
                     role="option"
                     style="overflow: hidden; position: relative;"
                     tabindex="-1"
@@ -950,7 +945,7 @@ exports[`FeatherDateInput.vue should render disabled 1`] = `
                     <!---->
                     <span
                       class="feather-list-item-text"
-                      data-v-1737b7da=""
+                      data-v-fafdd3cc=""
                     >
                       2016
                     </span>
@@ -960,8 +955,8 @@ exports[`FeatherDateInput.vue should render disabled 1`] = `
                   <li
                     aria-selected="false"
                     class="feather-list-item hover focus result-item"
-                    data-v-1737b7da=""
                     data-v-32bd1d76=""
+                    data-v-fafdd3cc=""
                     role="option"
                     style="overflow: hidden; position: relative;"
                     tabindex="-1"
@@ -969,7 +964,7 @@ exports[`FeatherDateInput.vue should render disabled 1`] = `
                     <!---->
                     <span
                       class="feather-list-item-text"
-                      data-v-1737b7da=""
+                      data-v-fafdd3cc=""
                     >
                       2015
                     </span>
@@ -979,8 +974,8 @@ exports[`FeatherDateInput.vue should render disabled 1`] = `
                   <li
                     aria-selected="false"
                     class="feather-list-item hover focus result-item"
-                    data-v-1737b7da=""
                     data-v-32bd1d76=""
+                    data-v-fafdd3cc=""
                     role="option"
                     style="overflow: hidden; position: relative;"
                     tabindex="-1"
@@ -988,7 +983,7 @@ exports[`FeatherDateInput.vue should render disabled 1`] = `
                     <!---->
                     <span
                       class="feather-list-item-text"
-                      data-v-1737b7da=""
+                      data-v-fafdd3cc=""
                     >
                       2014
                     </span>
@@ -998,8 +993,8 @@ exports[`FeatherDateInput.vue should render disabled 1`] = `
                   <li
                     aria-selected="false"
                     class="feather-list-item hover focus result-item"
-                    data-v-1737b7da=""
                     data-v-32bd1d76=""
+                    data-v-fafdd3cc=""
                     role="option"
                     style="overflow: hidden; position: relative;"
                     tabindex="-1"
@@ -1007,7 +1002,7 @@ exports[`FeatherDateInput.vue should render disabled 1`] = `
                     <!---->
                     <span
                       class="feather-list-item-text"
-                      data-v-1737b7da=""
+                      data-v-fafdd3cc=""
                     >
                       2013
                     </span>
@@ -1017,8 +1012,8 @@ exports[`FeatherDateInput.vue should render disabled 1`] = `
                   <li
                     aria-selected="false"
                     class="feather-list-item hover focus result-item"
-                    data-v-1737b7da=""
                     data-v-32bd1d76=""
+                    data-v-fafdd3cc=""
                     role="option"
                     style="overflow: hidden; position: relative;"
                     tabindex="-1"
@@ -1026,7 +1021,7 @@ exports[`FeatherDateInput.vue should render disabled 1`] = `
                     <!---->
                     <span
                       class="feather-list-item-text"
-                      data-v-1737b7da=""
+                      data-v-fafdd3cc=""
                     >
                       2012
                     </span>
@@ -1036,8 +1031,8 @@ exports[`FeatherDateInput.vue should render disabled 1`] = `
                   <li
                     aria-selected="false"
                     class="feather-list-item hover focus result-item"
-                    data-v-1737b7da=""
                     data-v-32bd1d76=""
+                    data-v-fafdd3cc=""
                     role="option"
                     style="overflow: hidden; position: relative;"
                     tabindex="-1"
@@ -1045,7 +1040,7 @@ exports[`FeatherDateInput.vue should render disabled 1`] = `
                     <!---->
                     <span
                       class="feather-list-item-text"
-                      data-v-1737b7da=""
+                      data-v-fafdd3cc=""
                     >
                       2011
                     </span>
@@ -1055,8 +1050,8 @@ exports[`FeatherDateInput.vue should render disabled 1`] = `
                   <li
                     aria-selected="false"
                     class="feather-list-item hover focus result-item"
-                    data-v-1737b7da=""
                     data-v-32bd1d76=""
+                    data-v-fafdd3cc=""
                     role="option"
                     style="overflow: hidden; position: relative;"
                     tabindex="-1"
@@ -1064,7 +1059,7 @@ exports[`FeatherDateInput.vue should render disabled 1`] = `
                     <!---->
                     <span
                       class="feather-list-item-text"
-                      data-v-1737b7da=""
+                      data-v-fafdd3cc=""
                     >
                       2010
                     </span>
@@ -1074,8 +1069,8 @@ exports[`FeatherDateInput.vue should render disabled 1`] = `
                   <li
                     aria-selected="false"
                     class="feather-list-item hover focus result-item"
-                    data-v-1737b7da=""
                     data-v-32bd1d76=""
+                    data-v-fafdd3cc=""
                     role="option"
                     style="overflow: hidden; position: relative;"
                     tabindex="-1"
@@ -1083,7 +1078,7 @@ exports[`FeatherDateInput.vue should render disabled 1`] = `
                     <!---->
                     <span
                       class="feather-list-item-text"
-                      data-v-1737b7da=""
+                      data-v-fafdd3cc=""
                     >
                       2009
                     </span>
@@ -1093,8 +1088,8 @@ exports[`FeatherDateInput.vue should render disabled 1`] = `
                   <li
                     aria-selected="false"
                     class="feather-list-item hover focus result-item"
-                    data-v-1737b7da=""
                     data-v-32bd1d76=""
+                    data-v-fafdd3cc=""
                     role="option"
                     style="overflow: hidden; position: relative;"
                     tabindex="-1"
@@ -1102,7 +1097,7 @@ exports[`FeatherDateInput.vue should render disabled 1`] = `
                     <!---->
                     <span
                       class="feather-list-item-text"
-                      data-v-1737b7da=""
+                      data-v-fafdd3cc=""
                     >
                       2008
                     </span>
@@ -1112,8 +1107,8 @@ exports[`FeatherDateInput.vue should render disabled 1`] = `
                   <li
                     aria-selected="false"
                     class="feather-list-item hover focus result-item"
-                    data-v-1737b7da=""
                     data-v-32bd1d76=""
+                    data-v-fafdd3cc=""
                     role="option"
                     style="overflow: hidden; position: relative;"
                     tabindex="-1"
@@ -1121,7 +1116,7 @@ exports[`FeatherDateInput.vue should render disabled 1`] = `
                     <!---->
                     <span
                       class="feather-list-item-text"
-                      data-v-1737b7da=""
+                      data-v-fafdd3cc=""
                     >
                       2007
                     </span>
@@ -1131,8 +1126,8 @@ exports[`FeatherDateInput.vue should render disabled 1`] = `
                   <li
                     aria-selected="false"
                     class="feather-list-item hover focus result-item"
-                    data-v-1737b7da=""
                     data-v-32bd1d76=""
+                    data-v-fafdd3cc=""
                     role="option"
                     style="overflow: hidden; position: relative;"
                     tabindex="-1"
@@ -1140,7 +1135,7 @@ exports[`FeatherDateInput.vue should render disabled 1`] = `
                     <!---->
                     <span
                       class="feather-list-item-text"
-                      data-v-1737b7da=""
+                      data-v-fafdd3cc=""
                     >
                       2006
                     </span>
@@ -1150,8 +1145,8 @@ exports[`FeatherDateInput.vue should render disabled 1`] = `
                   <li
                     aria-selected="false"
                     class="feather-list-item hover focus result-item"
-                    data-v-1737b7da=""
                     data-v-32bd1d76=""
+                    data-v-fafdd3cc=""
                     role="option"
                     style="overflow: hidden; position: relative;"
                     tabindex="-1"
@@ -1159,7 +1154,7 @@ exports[`FeatherDateInput.vue should render disabled 1`] = `
                     <!---->
                     <span
                       class="feather-list-item-text"
-                      data-v-1737b7da=""
+                      data-v-fafdd3cc=""
                     >
                       2005
                     </span>
@@ -1169,8 +1164,8 @@ exports[`FeatherDateInput.vue should render disabled 1`] = `
                   <li
                     aria-selected="false"
                     class="feather-list-item hover focus result-item"
-                    data-v-1737b7da=""
                     data-v-32bd1d76=""
+                    data-v-fafdd3cc=""
                     role="option"
                     style="overflow: hidden; position: relative;"
                     tabindex="-1"
@@ -1178,7 +1173,7 @@ exports[`FeatherDateInput.vue should render disabled 1`] = `
                     <!---->
                     <span
                       class="feather-list-item-text"
-                      data-v-1737b7da=""
+                      data-v-fafdd3cc=""
                     >
                       2004
                     </span>
@@ -1188,8 +1183,8 @@ exports[`FeatherDateInput.vue should render disabled 1`] = `
                   <li
                     aria-selected="false"
                     class="feather-list-item hover focus result-item"
-                    data-v-1737b7da=""
                     data-v-32bd1d76=""
+                    data-v-fafdd3cc=""
                     role="option"
                     style="overflow: hidden; position: relative;"
                     tabindex="-1"
@@ -1197,7 +1192,7 @@ exports[`FeatherDateInput.vue should render disabled 1`] = `
                     <!---->
                     <span
                       class="feather-list-item-text"
-                      data-v-1737b7da=""
+                      data-v-fafdd3cc=""
                     >
                       2003
                     </span>
@@ -1207,8 +1202,8 @@ exports[`FeatherDateInput.vue should render disabled 1`] = `
                   <li
                     aria-selected="false"
                     class="feather-list-item hover focus result-item"
-                    data-v-1737b7da=""
                     data-v-32bd1d76=""
+                    data-v-fafdd3cc=""
                     role="option"
                     style="overflow: hidden; position: relative;"
                     tabindex="-1"
@@ -1216,7 +1211,7 @@ exports[`FeatherDateInput.vue should render disabled 1`] = `
                     <!---->
                     <span
                       class="feather-list-item-text"
-                      data-v-1737b7da=""
+                      data-v-fafdd3cc=""
                     >
                       2002
                     </span>
@@ -1226,8 +1221,8 @@ exports[`FeatherDateInput.vue should render disabled 1`] = `
                   <li
                     aria-selected="false"
                     class="feather-list-item hover focus result-item"
-                    data-v-1737b7da=""
                     data-v-32bd1d76=""
+                    data-v-fafdd3cc=""
                     role="option"
                     style="overflow: hidden; position: relative;"
                     tabindex="-1"
@@ -1235,7 +1230,7 @@ exports[`FeatherDateInput.vue should render disabled 1`] = `
                     <!---->
                     <span
                       class="feather-list-item-text"
-                      data-v-1737b7da=""
+                      data-v-fafdd3cc=""
                     >
                       2001
                     </span>
@@ -1245,8 +1240,8 @@ exports[`FeatherDateInput.vue should render disabled 1`] = `
                   <li
                     aria-selected="false"
                     class="feather-list-item hover focus result-item"
-                    data-v-1737b7da=""
                     data-v-32bd1d76=""
+                    data-v-fafdd3cc=""
                     role="option"
                     style="overflow: hidden; position: relative;"
                     tabindex="-1"
@@ -1254,7 +1249,7 @@ exports[`FeatherDateInput.vue should render disabled 1`] = `
                     <!---->
                     <span
                       class="feather-list-item-text"
-                      data-v-1737b7da=""
+                      data-v-fafdd3cc=""
                     >
                       2000
                     </span>
@@ -1264,8 +1259,8 @@ exports[`FeatherDateInput.vue should render disabled 1`] = `
                   <li
                     aria-selected="false"
                     class="feather-list-item hover focus result-item"
-                    data-v-1737b7da=""
                     data-v-32bd1d76=""
+                    data-v-fafdd3cc=""
                     role="option"
                     style="overflow: hidden; position: relative;"
                     tabindex="-1"
@@ -1273,7 +1268,7 @@ exports[`FeatherDateInput.vue should render disabled 1`] = `
                     <!---->
                     <span
                       class="feather-list-item-text"
-                      data-v-1737b7da=""
+                      data-v-fafdd3cc=""
                     >
                       1999
                     </span>
@@ -1283,8 +1278,8 @@ exports[`FeatherDateInput.vue should render disabled 1`] = `
                   <li
                     aria-selected="false"
                     class="feather-list-item hover focus result-item"
-                    data-v-1737b7da=""
                     data-v-32bd1d76=""
+                    data-v-fafdd3cc=""
                     role="option"
                     style="overflow: hidden; position: relative;"
                     tabindex="-1"
@@ -1292,7 +1287,7 @@ exports[`FeatherDateInput.vue should render disabled 1`] = `
                     <!---->
                     <span
                       class="feather-list-item-text"
-                      data-v-1737b7da=""
+                      data-v-fafdd3cc=""
                     >
                       1998
                     </span>
@@ -1302,8 +1297,8 @@ exports[`FeatherDateInput.vue should render disabled 1`] = `
                   <li
                     aria-selected="false"
                     class="feather-list-item hover focus result-item"
-                    data-v-1737b7da=""
                     data-v-32bd1d76=""
+                    data-v-fafdd3cc=""
                     role="option"
                     style="overflow: hidden; position: relative;"
                     tabindex="-1"
@@ -1311,7 +1306,7 @@ exports[`FeatherDateInput.vue should render disabled 1`] = `
                     <!---->
                     <span
                       class="feather-list-item-text"
-                      data-v-1737b7da=""
+                      data-v-fafdd3cc=""
                     >
                       1997
                     </span>
@@ -1321,8 +1316,8 @@ exports[`FeatherDateInput.vue should render disabled 1`] = `
                   <li
                     aria-selected="false"
                     class="feather-list-item hover focus result-item"
-                    data-v-1737b7da=""
                     data-v-32bd1d76=""
+                    data-v-fafdd3cc=""
                     role="option"
                     style="overflow: hidden; position: relative;"
                     tabindex="-1"
@@ -1330,7 +1325,7 @@ exports[`FeatherDateInput.vue should render disabled 1`] = `
                     <!---->
                     <span
                       class="feather-list-item-text"
-                      data-v-1737b7da=""
+                      data-v-fafdd3cc=""
                     >
                       1996
                     </span>
@@ -1340,8 +1335,8 @@ exports[`FeatherDateInput.vue should render disabled 1`] = `
                   <li
                     aria-selected="false"
                     class="feather-list-item hover focus result-item"
-                    data-v-1737b7da=""
                     data-v-32bd1d76=""
+                    data-v-fafdd3cc=""
                     role="option"
                     style="overflow: hidden; position: relative;"
                     tabindex="-1"
@@ -1349,7 +1344,7 @@ exports[`FeatherDateInput.vue should render disabled 1`] = `
                     <!---->
                     <span
                       class="feather-list-item-text"
-                      data-v-1737b7da=""
+                      data-v-fafdd3cc=""
                     >
                       1995
                     </span>
@@ -1359,8 +1354,8 @@ exports[`FeatherDateInput.vue should render disabled 1`] = `
                   <li
                     aria-selected="false"
                     class="feather-list-item hover focus result-item"
-                    data-v-1737b7da=""
                     data-v-32bd1d76=""
+                    data-v-fafdd3cc=""
                     role="option"
                     style="overflow: hidden; position: relative;"
                     tabindex="-1"
@@ -1368,7 +1363,7 @@ exports[`FeatherDateInput.vue should render disabled 1`] = `
                     <!---->
                     <span
                       class="feather-list-item-text"
-                      data-v-1737b7da=""
+                      data-v-fafdd3cc=""
                     >
                       1994
                     </span>
@@ -1378,8 +1373,8 @@ exports[`FeatherDateInput.vue should render disabled 1`] = `
                   <li
                     aria-selected="false"
                     class="feather-list-item hover focus result-item"
-                    data-v-1737b7da=""
                     data-v-32bd1d76=""
+                    data-v-fafdd3cc=""
                     role="option"
                     style="overflow: hidden; position: relative;"
                     tabindex="-1"
@@ -1387,7 +1382,7 @@ exports[`FeatherDateInput.vue should render disabled 1`] = `
                     <!---->
                     <span
                       class="feather-list-item-text"
-                      data-v-1737b7da=""
+                      data-v-fafdd3cc=""
                     >
                       1993
                     </span>
@@ -1397,8 +1392,8 @@ exports[`FeatherDateInput.vue should render disabled 1`] = `
                   <li
                     aria-selected="false"
                     class="feather-list-item hover focus result-item"
-                    data-v-1737b7da=""
                     data-v-32bd1d76=""
+                    data-v-fafdd3cc=""
                     role="option"
                     style="overflow: hidden; position: relative;"
                     tabindex="-1"
@@ -1406,7 +1401,7 @@ exports[`FeatherDateInput.vue should render disabled 1`] = `
                     <!---->
                     <span
                       class="feather-list-item-text"
-                      data-v-1737b7da=""
+                      data-v-fafdd3cc=""
                     >
                       1992
                     </span>
@@ -1416,8 +1411,8 @@ exports[`FeatherDateInput.vue should render disabled 1`] = `
                   <li
                     aria-selected="false"
                     class="feather-list-item hover focus result-item"
-                    data-v-1737b7da=""
                     data-v-32bd1d76=""
+                    data-v-fafdd3cc=""
                     role="option"
                     style="overflow: hidden; position: relative;"
                     tabindex="-1"
@@ -1425,7 +1420,7 @@ exports[`FeatherDateInput.vue should render disabled 1`] = `
                     <!---->
                     <span
                       class="feather-list-item-text"
-                      data-v-1737b7da=""
+                      data-v-fafdd3cc=""
                     >
                       1991
                     </span>
@@ -1435,8 +1430,8 @@ exports[`FeatherDateInput.vue should render disabled 1`] = `
                   <li
                     aria-selected="false"
                     class="feather-list-item hover focus result-item"
-                    data-v-1737b7da=""
                     data-v-32bd1d76=""
+                    data-v-fafdd3cc=""
                     role="option"
                     style="overflow: hidden; position: relative;"
                     tabindex="-1"
@@ -1444,7 +1439,7 @@ exports[`FeatherDateInput.vue should render disabled 1`] = `
                     <!---->
                     <span
                       class="feather-list-item-text"
-                      data-v-1737b7da=""
+                      data-v-fafdd3cc=""
                     >
                       1990
                     </span>
@@ -1454,8 +1449,8 @@ exports[`FeatherDateInput.vue should render disabled 1`] = `
                   <li
                     aria-selected="false"
                     class="feather-list-item hover focus result-item"
-                    data-v-1737b7da=""
                     data-v-32bd1d76=""
+                    data-v-fafdd3cc=""
                     role="option"
                     style="overflow: hidden; position: relative;"
                     tabindex="-1"
@@ -1463,7 +1458,7 @@ exports[`FeatherDateInput.vue should render disabled 1`] = `
                     <!---->
                     <span
                       class="feather-list-item-text"
-                      data-v-1737b7da=""
+                      data-v-fafdd3cc=""
                     >
                       1989
                     </span>
@@ -1473,8 +1468,8 @@ exports[`FeatherDateInput.vue should render disabled 1`] = `
                   <li
                     aria-selected="false"
                     class="feather-list-item hover focus result-item"
-                    data-v-1737b7da=""
                     data-v-32bd1d76=""
+                    data-v-fafdd3cc=""
                     role="option"
                     style="overflow: hidden; position: relative;"
                     tabindex="-1"
@@ -1482,7 +1477,7 @@ exports[`FeatherDateInput.vue should render disabled 1`] = `
                     <!---->
                     <span
                       class="feather-list-item-text"
-                      data-v-1737b7da=""
+                      data-v-fafdd3cc=""
                     >
                       1988
                     </span>
@@ -1492,8 +1487,8 @@ exports[`FeatherDateInput.vue should render disabled 1`] = `
                   <li
                     aria-selected="false"
                     class="feather-list-item hover focus result-item"
-                    data-v-1737b7da=""
                     data-v-32bd1d76=""
+                    data-v-fafdd3cc=""
                     role="option"
                     style="overflow: hidden; position: relative;"
                     tabindex="-1"
@@ -1501,7 +1496,7 @@ exports[`FeatherDateInput.vue should render disabled 1`] = `
                     <!---->
                     <span
                       class="feather-list-item-text"
-                      data-v-1737b7da=""
+                      data-v-fafdd3cc=""
                     >
                       1987
                     </span>
@@ -1511,8 +1506,8 @@ exports[`FeatherDateInput.vue should render disabled 1`] = `
                   <li
                     aria-selected="false"
                     class="feather-list-item hover focus result-item"
-                    data-v-1737b7da=""
                     data-v-32bd1d76=""
+                    data-v-fafdd3cc=""
                     role="option"
                     style="overflow: hidden; position: relative;"
                     tabindex="-1"
@@ -1520,7 +1515,7 @@ exports[`FeatherDateInput.vue should render disabled 1`] = `
                     <!---->
                     <span
                       class="feather-list-item-text"
-                      data-v-1737b7da=""
+                      data-v-fafdd3cc=""
                     >
                       1986
                     </span>
@@ -1530,8 +1525,8 @@ exports[`FeatherDateInput.vue should render disabled 1`] = `
                   <li
                     aria-selected="false"
                     class="feather-list-item hover focus result-item"
-                    data-v-1737b7da=""
                     data-v-32bd1d76=""
+                    data-v-fafdd3cc=""
                     role="option"
                     style="overflow: hidden; position: relative;"
                     tabindex="-1"
@@ -1539,7 +1534,7 @@ exports[`FeatherDateInput.vue should render disabled 1`] = `
                     <!---->
                     <span
                       class="feather-list-item-text"
-                      data-v-1737b7da=""
+                      data-v-fafdd3cc=""
                     >
                       1985
                     </span>
@@ -1549,8 +1544,8 @@ exports[`FeatherDateInput.vue should render disabled 1`] = `
                   <li
                     aria-selected="false"
                     class="feather-list-item hover focus result-item"
-                    data-v-1737b7da=""
                     data-v-32bd1d76=""
+                    data-v-fafdd3cc=""
                     role="option"
                     style="overflow: hidden; position: relative;"
                     tabindex="-1"
@@ -1558,7 +1553,7 @@ exports[`FeatherDateInput.vue should render disabled 1`] = `
                     <!---->
                     <span
                       class="feather-list-item-text"
-                      data-v-1737b7da=""
+                      data-v-fafdd3cc=""
                     >
                       1984
                     </span>
@@ -1568,8 +1563,8 @@ exports[`FeatherDateInput.vue should render disabled 1`] = `
                   <li
                     aria-selected="false"
                     class="feather-list-item hover focus result-item"
-                    data-v-1737b7da=""
                     data-v-32bd1d76=""
+                    data-v-fafdd3cc=""
                     role="option"
                     style="overflow: hidden; position: relative;"
                     tabindex="-1"
@@ -1577,7 +1572,7 @@ exports[`FeatherDateInput.vue should render disabled 1`] = `
                     <!---->
                     <span
                       class="feather-list-item-text"
-                      data-v-1737b7da=""
+                      data-v-fafdd3cc=""
                     >
                       1983
                     </span>
@@ -1587,8 +1582,8 @@ exports[`FeatherDateInput.vue should render disabled 1`] = `
                   <li
                     aria-selected="false"
                     class="feather-list-item hover focus result-item"
-                    data-v-1737b7da=""
                     data-v-32bd1d76=""
+                    data-v-fafdd3cc=""
                     role="option"
                     style="overflow: hidden; position: relative;"
                     tabindex="-1"
@@ -1596,7 +1591,7 @@ exports[`FeatherDateInput.vue should render disabled 1`] = `
                     <!---->
                     <span
                       class="feather-list-item-text"
-                      data-v-1737b7da=""
+                      data-v-fafdd3cc=""
                     >
                       1982
                     </span>
@@ -1606,8 +1601,8 @@ exports[`FeatherDateInput.vue should render disabled 1`] = `
                   <li
                     aria-selected="false"
                     class="feather-list-item hover focus result-item"
-                    data-v-1737b7da=""
                     data-v-32bd1d76=""
+                    data-v-fafdd3cc=""
                     role="option"
                     style="overflow: hidden; position: relative;"
                     tabindex="-1"
@@ -1615,7 +1610,7 @@ exports[`FeatherDateInput.vue should render disabled 1`] = `
                     <!---->
                     <span
                       class="feather-list-item-text"
-                      data-v-1737b7da=""
+                      data-v-fafdd3cc=""
                     >
                       1981
                     </span>
@@ -1625,8 +1620,8 @@ exports[`FeatherDateInput.vue should render disabled 1`] = `
                   <li
                     aria-selected="false"
                     class="feather-list-item hover focus result-item"
-                    data-v-1737b7da=""
                     data-v-32bd1d76=""
+                    data-v-fafdd3cc=""
                     role="option"
                     style="overflow: hidden; position: relative;"
                     tabindex="-1"
@@ -1634,7 +1629,7 @@ exports[`FeatherDateInput.vue should render disabled 1`] = `
                     <!---->
                     <span
                       class="feather-list-item-text"
-                      data-v-1737b7da=""
+                      data-v-fafdd3cc=""
                     >
                       1980
                     </span>
@@ -1644,8 +1639,8 @@ exports[`FeatherDateInput.vue should render disabled 1`] = `
                   <li
                     aria-selected="false"
                     class="feather-list-item hover focus result-item"
-                    data-v-1737b7da=""
                     data-v-32bd1d76=""
+                    data-v-fafdd3cc=""
                     role="option"
                     style="overflow: hidden; position: relative;"
                     tabindex="-1"
@@ -1653,7 +1648,7 @@ exports[`FeatherDateInput.vue should render disabled 1`] = `
                     <!---->
                     <span
                       class="feather-list-item-text"
-                      data-v-1737b7da=""
+                      data-v-fafdd3cc=""
                     >
                       1979
                     </span>
@@ -1663,8 +1658,8 @@ exports[`FeatherDateInput.vue should render disabled 1`] = `
                   <li
                     aria-selected="false"
                     class="feather-list-item hover focus result-item"
-                    data-v-1737b7da=""
                     data-v-32bd1d76=""
+                    data-v-fafdd3cc=""
                     role="option"
                     style="overflow: hidden; position: relative;"
                     tabindex="-1"
@@ -1672,7 +1667,7 @@ exports[`FeatherDateInput.vue should render disabled 1`] = `
                     <!---->
                     <span
                       class="feather-list-item-text"
-                      data-v-1737b7da=""
+                      data-v-fafdd3cc=""
                     >
                       1978
                     </span>
@@ -1682,8 +1677,8 @@ exports[`FeatherDateInput.vue should render disabled 1`] = `
                   <li
                     aria-selected="false"
                     class="feather-list-item hover focus result-item"
-                    data-v-1737b7da=""
                     data-v-32bd1d76=""
+                    data-v-fafdd3cc=""
                     role="option"
                     style="overflow: hidden; position: relative;"
                     tabindex="-1"
@@ -1691,7 +1686,7 @@ exports[`FeatherDateInput.vue should render disabled 1`] = `
                     <!---->
                     <span
                       class="feather-list-item-text"
-                      data-v-1737b7da=""
+                      data-v-fafdd3cc=""
                     >
                       1977
                     </span>
@@ -1701,8 +1696,8 @@ exports[`FeatherDateInput.vue should render disabled 1`] = `
                   <li
                     aria-selected="false"
                     class="feather-list-item hover focus result-item"
-                    data-v-1737b7da=""
                     data-v-32bd1d76=""
+                    data-v-fafdd3cc=""
                     role="option"
                     style="overflow: hidden; position: relative;"
                     tabindex="-1"
@@ -1710,7 +1705,7 @@ exports[`FeatherDateInput.vue should render disabled 1`] = `
                     <!---->
                     <span
                       class="feather-list-item-text"
-                      data-v-1737b7da=""
+                      data-v-fafdd3cc=""
                     >
                       1976
                     </span>
@@ -1720,8 +1715,8 @@ exports[`FeatherDateInput.vue should render disabled 1`] = `
                   <li
                     aria-selected="false"
                     class="feather-list-item hover focus result-item"
-                    data-v-1737b7da=""
                     data-v-32bd1d76=""
+                    data-v-fafdd3cc=""
                     role="option"
                     style="overflow: hidden; position: relative;"
                     tabindex="-1"
@@ -1729,7 +1724,7 @@ exports[`FeatherDateInput.vue should render disabled 1`] = `
                     <!---->
                     <span
                       class="feather-list-item-text"
-                      data-v-1737b7da=""
+                      data-v-fafdd3cc=""
                     >
                       1975
                     </span>
@@ -1739,8 +1734,8 @@ exports[`FeatherDateInput.vue should render disabled 1`] = `
                   <li
                     aria-selected="false"
                     class="feather-list-item hover focus result-item"
-                    data-v-1737b7da=""
                     data-v-32bd1d76=""
+                    data-v-fafdd3cc=""
                     role="option"
                     style="overflow: hidden; position: relative;"
                     tabindex="-1"
@@ -1748,7 +1743,7 @@ exports[`FeatherDateInput.vue should render disabled 1`] = `
                     <!---->
                     <span
                       class="feather-list-item-text"
-                      data-v-1737b7da=""
+                      data-v-fafdd3cc=""
                     >
                       1974
                     </span>
@@ -1758,8 +1753,8 @@ exports[`FeatherDateInput.vue should render disabled 1`] = `
                   <li
                     aria-selected="false"
                     class="feather-list-item hover focus result-item"
-                    data-v-1737b7da=""
                     data-v-32bd1d76=""
+                    data-v-fafdd3cc=""
                     role="option"
                     style="overflow: hidden; position: relative;"
                     tabindex="-1"
@@ -1767,7 +1762,7 @@ exports[`FeatherDateInput.vue should render disabled 1`] = `
                     <!---->
                     <span
                       class="feather-list-item-text"
-                      data-v-1737b7da=""
+                      data-v-fafdd3cc=""
                     >
                       1973
                     </span>
@@ -1777,8 +1772,8 @@ exports[`FeatherDateInput.vue should render disabled 1`] = `
                   <li
                     aria-selected="false"
                     class="feather-list-item hover focus result-item"
-                    data-v-1737b7da=""
                     data-v-32bd1d76=""
+                    data-v-fafdd3cc=""
                     role="option"
                     style="overflow: hidden; position: relative;"
                     tabindex="-1"
@@ -1786,7 +1781,7 @@ exports[`FeatherDateInput.vue should render disabled 1`] = `
                     <!---->
                     <span
                       class="feather-list-item-text"
-                      data-v-1737b7da=""
+                      data-v-fafdd3cc=""
                     >
                       1972
                     </span>
@@ -1796,8 +1791,8 @@ exports[`FeatherDateInput.vue should render disabled 1`] = `
                   <li
                     aria-selected="false"
                     class="feather-list-item hover focus result-item"
-                    data-v-1737b7da=""
                     data-v-32bd1d76=""
+                    data-v-fafdd3cc=""
                     role="option"
                     style="overflow: hidden; position: relative;"
                     tabindex="-1"
@@ -1805,7 +1800,7 @@ exports[`FeatherDateInput.vue should render disabled 1`] = `
                     <!---->
                     <span
                       class="feather-list-item-text"
-                      data-v-1737b7da=""
+                      data-v-fafdd3cc=""
                     >
                       1971
                     </span>
@@ -1815,8 +1810,8 @@ exports[`FeatherDateInput.vue should render disabled 1`] = `
                   <li
                     aria-selected="false"
                     class="feather-list-item hover focus result-item"
-                    data-v-1737b7da=""
                     data-v-32bd1d76=""
+                    data-v-fafdd3cc=""
                     role="option"
                     style="overflow: hidden; position: relative;"
                     tabindex="-1"
@@ -1824,7 +1819,7 @@ exports[`FeatherDateInput.vue should render disabled 1`] = `
                     <!---->
                     <span
                       class="feather-list-item-text"
-                      data-v-1737b7da=""
+                      data-v-fafdd3cc=""
                     >
                       1970
                     </span>
@@ -1834,8 +1829,8 @@ exports[`FeatherDateInput.vue should render disabled 1`] = `
                   <li
                     aria-selected="false"
                     class="feather-list-item hover focus result-item"
-                    data-v-1737b7da=""
                     data-v-32bd1d76=""
+                    data-v-fafdd3cc=""
                     role="option"
                     style="overflow: hidden; position: relative;"
                     tabindex="-1"
@@ -1843,7 +1838,7 @@ exports[`FeatherDateInput.vue should render disabled 1`] = `
                     <!---->
                     <span
                       class="feather-list-item-text"
-                      data-v-1737b7da=""
+                      data-v-fafdd3cc=""
                     >
                       1969
                     </span>
@@ -1853,8 +1848,8 @@ exports[`FeatherDateInput.vue should render disabled 1`] = `
                   <li
                     aria-selected="false"
                     class="feather-list-item hover focus result-item"
-                    data-v-1737b7da=""
                     data-v-32bd1d76=""
+                    data-v-fafdd3cc=""
                     role="option"
                     style="overflow: hidden; position: relative;"
                     tabindex="-1"
@@ -1862,7 +1857,7 @@ exports[`FeatherDateInput.vue should render disabled 1`] = `
                     <!---->
                     <span
                       class="feather-list-item-text"
-                      data-v-1737b7da=""
+                      data-v-fafdd3cc=""
                     >
                       1968
                     </span>
@@ -1872,8 +1867,8 @@ exports[`FeatherDateInput.vue should render disabled 1`] = `
                   <li
                     aria-selected="false"
                     class="feather-list-item hover focus result-item"
-                    data-v-1737b7da=""
                     data-v-32bd1d76=""
+                    data-v-fafdd3cc=""
                     role="option"
                     style="overflow: hidden; position: relative;"
                     tabindex="-1"
@@ -1881,7 +1876,7 @@ exports[`FeatherDateInput.vue should render disabled 1`] = `
                     <!---->
                     <span
                       class="feather-list-item-text"
-                      data-v-1737b7da=""
+                      data-v-fafdd3cc=""
                     >
                       1967
                     </span>
@@ -1891,8 +1886,8 @@ exports[`FeatherDateInput.vue should render disabled 1`] = `
                   <li
                     aria-selected="false"
                     class="feather-list-item hover focus result-item"
-                    data-v-1737b7da=""
                     data-v-32bd1d76=""
+                    data-v-fafdd3cc=""
                     role="option"
                     style="overflow: hidden; position: relative;"
                     tabindex="-1"
@@ -1900,7 +1895,7 @@ exports[`FeatherDateInput.vue should render disabled 1`] = `
                     <!---->
                     <span
                       class="feather-list-item-text"
-                      data-v-1737b7da=""
+                      data-v-fafdd3cc=""
                     >
                       1966
                     </span>
@@ -1910,8 +1905,8 @@ exports[`FeatherDateInput.vue should render disabled 1`] = `
                   <li
                     aria-selected="false"
                     class="feather-list-item hover focus result-item"
-                    data-v-1737b7da=""
                     data-v-32bd1d76=""
+                    data-v-fafdd3cc=""
                     role="option"
                     style="overflow: hidden; position: relative;"
                     tabindex="-1"
@@ -1919,7 +1914,7 @@ exports[`FeatherDateInput.vue should render disabled 1`] = `
                     <!---->
                     <span
                       class="feather-list-item-text"
-                      data-v-1737b7da=""
+                      data-v-fafdd3cc=""
                     >
                       1965
                     </span>
@@ -1929,8 +1924,8 @@ exports[`FeatherDateInput.vue should render disabled 1`] = `
                   <li
                     aria-selected="false"
                     class="feather-list-item hover focus result-item"
-                    data-v-1737b7da=""
                     data-v-32bd1d76=""
+                    data-v-fafdd3cc=""
                     role="option"
                     style="overflow: hidden; position: relative;"
                     tabindex="-1"
@@ -1938,7 +1933,7 @@ exports[`FeatherDateInput.vue should render disabled 1`] = `
                     <!---->
                     <span
                       class="feather-list-item-text"
-                      data-v-1737b7da=""
+                      data-v-fafdd3cc=""
                     >
                       1964
                     </span>
@@ -1948,8 +1943,8 @@ exports[`FeatherDateInput.vue should render disabled 1`] = `
                   <li
                     aria-selected="false"
                     class="feather-list-item hover focus result-item"
-                    data-v-1737b7da=""
                     data-v-32bd1d76=""
+                    data-v-fafdd3cc=""
                     role="option"
                     style="overflow: hidden; position: relative;"
                     tabindex="-1"
@@ -1957,7 +1952,7 @@ exports[`FeatherDateInput.vue should render disabled 1`] = `
                     <!---->
                     <span
                       class="feather-list-item-text"
-                      data-v-1737b7da=""
+                      data-v-fafdd3cc=""
                     >
                       1963
                     </span>
@@ -1967,8 +1962,8 @@ exports[`FeatherDateInput.vue should render disabled 1`] = `
                   <li
                     aria-selected="false"
                     class="feather-list-item hover focus result-item"
-                    data-v-1737b7da=""
                     data-v-32bd1d76=""
+                    data-v-fafdd3cc=""
                     role="option"
                     style="overflow: hidden; position: relative;"
                     tabindex="-1"
@@ -1976,7 +1971,7 @@ exports[`FeatherDateInput.vue should render disabled 1`] = `
                     <!---->
                     <span
                       class="feather-list-item-text"
-                      data-v-1737b7da=""
+                      data-v-fafdd3cc=""
                     >
                       1962
                     </span>
@@ -1986,8 +1981,8 @@ exports[`FeatherDateInput.vue should render disabled 1`] = `
                   <li
                     aria-selected="false"
                     class="feather-list-item hover focus result-item"
-                    data-v-1737b7da=""
                     data-v-32bd1d76=""
+                    data-v-fafdd3cc=""
                     role="option"
                     style="overflow: hidden; position: relative;"
                     tabindex="-1"
@@ -1995,7 +1990,7 @@ exports[`FeatherDateInput.vue should render disabled 1`] = `
                     <!---->
                     <span
                       class="feather-list-item-text"
-                      data-v-1737b7da=""
+                      data-v-fafdd3cc=""
                     >
                       1961
                     </span>
@@ -2005,8 +2000,8 @@ exports[`FeatherDateInput.vue should render disabled 1`] = `
                   <li
                     aria-selected="false"
                     class="feather-list-item hover focus result-item"
-                    data-v-1737b7da=""
                     data-v-32bd1d76=""
+                    data-v-fafdd3cc=""
                     role="option"
                     style="overflow: hidden; position: relative;"
                     tabindex="-1"
@@ -2014,7 +2009,7 @@ exports[`FeatherDateInput.vue should render disabled 1`] = `
                     <!---->
                     <span
                       class="feather-list-item-text"
-                      data-v-1737b7da=""
+                      data-v-fafdd3cc=""
                     >
                       1960
                     </span>
@@ -2024,8 +2019,8 @@ exports[`FeatherDateInput.vue should render disabled 1`] = `
                   <li
                     aria-selected="false"
                     class="feather-list-item hover focus result-item"
-                    data-v-1737b7da=""
                     data-v-32bd1d76=""
+                    data-v-fafdd3cc=""
                     role="option"
                     style="overflow: hidden; position: relative;"
                     tabindex="-1"
@@ -2033,7 +2028,7 @@ exports[`FeatherDateInput.vue should render disabled 1`] = `
                     <!---->
                     <span
                       class="feather-list-item-text"
-                      data-v-1737b7da=""
+                      data-v-fafdd3cc=""
                     >
                       1959
                     </span>
@@ -2043,8 +2038,8 @@ exports[`FeatherDateInput.vue should render disabled 1`] = `
                   <li
                     aria-selected="false"
                     class="feather-list-item hover focus result-item"
-                    data-v-1737b7da=""
                     data-v-32bd1d76=""
+                    data-v-fafdd3cc=""
                     role="option"
                     style="overflow: hidden; position: relative;"
                     tabindex="-1"
@@ -2052,7 +2047,7 @@ exports[`FeatherDateInput.vue should render disabled 1`] = `
                     <!---->
                     <span
                       class="feather-list-item-text"
-                      data-v-1737b7da=""
+                      data-v-fafdd3cc=""
                     >
                       1958
                     </span>
@@ -2062,8 +2057,8 @@ exports[`FeatherDateInput.vue should render disabled 1`] = `
                   <li
                     aria-selected="false"
                     class="feather-list-item hover focus result-item"
-                    data-v-1737b7da=""
                     data-v-32bd1d76=""
+                    data-v-fafdd3cc=""
                     role="option"
                     style="overflow: hidden; position: relative;"
                     tabindex="-1"
@@ -2071,7 +2066,7 @@ exports[`FeatherDateInput.vue should render disabled 1`] = `
                     <!---->
                     <span
                       class="feather-list-item-text"
-                      data-v-1737b7da=""
+                      data-v-fafdd3cc=""
                     >
                       1957
                     </span>
@@ -2081,8 +2076,8 @@ exports[`FeatherDateInput.vue should render disabled 1`] = `
                   <li
                     aria-selected="false"
                     class="feather-list-item hover focus result-item"
-                    data-v-1737b7da=""
                     data-v-32bd1d76=""
+                    data-v-fafdd3cc=""
                     role="option"
                     style="overflow: hidden; position: relative;"
                     tabindex="-1"
@@ -2090,7 +2085,7 @@ exports[`FeatherDateInput.vue should render disabled 1`] = `
                     <!---->
                     <span
                       class="feather-list-item-text"
-                      data-v-1737b7da=""
+                      data-v-fafdd3cc=""
                     >
                       1956
                     </span>
@@ -2100,8 +2095,8 @@ exports[`FeatherDateInput.vue should render disabled 1`] = `
                   <li
                     aria-selected="false"
                     class="feather-list-item hover focus result-item"
-                    data-v-1737b7da=""
                     data-v-32bd1d76=""
+                    data-v-fafdd3cc=""
                     role="option"
                     style="overflow: hidden; position: relative;"
                     tabindex="-1"
@@ -2109,7 +2104,7 @@ exports[`FeatherDateInput.vue should render disabled 1`] = `
                     <!---->
                     <span
                       class="feather-list-item-text"
-                      data-v-1737b7da=""
+                      data-v-fafdd3cc=""
                     >
                       1955
                     </span>
@@ -2119,8 +2114,8 @@ exports[`FeatherDateInput.vue should render disabled 1`] = `
                   <li
                     aria-selected="false"
                     class="feather-list-item hover focus result-item"
-                    data-v-1737b7da=""
                     data-v-32bd1d76=""
+                    data-v-fafdd3cc=""
                     role="option"
                     style="overflow: hidden; position: relative;"
                     tabindex="-1"
@@ -2128,7 +2123,7 @@ exports[`FeatherDateInput.vue should render disabled 1`] = `
                     <!---->
                     <span
                       class="feather-list-item-text"
-                      data-v-1737b7da=""
+                      data-v-fafdd3cc=""
                     >
                       1954
                     </span>
@@ -2138,8 +2133,8 @@ exports[`FeatherDateInput.vue should render disabled 1`] = `
                   <li
                     aria-selected="false"
                     class="feather-list-item hover focus result-item"
-                    data-v-1737b7da=""
                     data-v-32bd1d76=""
+                    data-v-fafdd3cc=""
                     role="option"
                     style="overflow: hidden; position: relative;"
                     tabindex="-1"
@@ -2147,7 +2142,7 @@ exports[`FeatherDateInput.vue should render disabled 1`] = `
                     <!---->
                     <span
                       class="feather-list-item-text"
-                      data-v-1737b7da=""
+                      data-v-fafdd3cc=""
                     >
                       1953
                     </span>
@@ -2157,8 +2152,8 @@ exports[`FeatherDateInput.vue should render disabled 1`] = `
                   <li
                     aria-selected="false"
                     class="feather-list-item hover focus result-item"
-                    data-v-1737b7da=""
                     data-v-32bd1d76=""
+                    data-v-fafdd3cc=""
                     role="option"
                     style="overflow: hidden; position: relative;"
                     tabindex="-1"
@@ -2166,7 +2161,7 @@ exports[`FeatherDateInput.vue should render disabled 1`] = `
                     <!---->
                     <span
                       class="feather-list-item-text"
-                      data-v-1737b7da=""
+                      data-v-fafdd3cc=""
                     >
                       1952
                     </span>
@@ -2176,8 +2171,8 @@ exports[`FeatherDateInput.vue should render disabled 1`] = `
                   <li
                     aria-selected="false"
                     class="feather-list-item hover focus result-item"
-                    data-v-1737b7da=""
                     data-v-32bd1d76=""
+                    data-v-fafdd3cc=""
                     role="option"
                     style="overflow: hidden; position: relative;"
                     tabindex="-1"
@@ -2185,7 +2180,7 @@ exports[`FeatherDateInput.vue should render disabled 1`] = `
                     <!---->
                     <span
                       class="feather-list-item-text"
-                      data-v-1737b7da=""
+                      data-v-fafdd3cc=""
                     >
                       1951
                     </span>
@@ -2195,8 +2190,8 @@ exports[`FeatherDateInput.vue should render disabled 1`] = `
                   <li
                     aria-selected="false"
                     class="feather-list-item hover focus result-item"
-                    data-v-1737b7da=""
                     data-v-32bd1d76=""
+                    data-v-fafdd3cc=""
                     role="option"
                     style="overflow: hidden; position: relative;"
                     tabindex="-1"
@@ -2204,7 +2199,7 @@ exports[`FeatherDateInput.vue should render disabled 1`] = `
                     <!---->
                     <span
                       class="feather-list-item-text"
-                      data-v-1737b7da=""
+                      data-v-fafdd3cc=""
                     >
                       1950
                     </span>
@@ -2214,8 +2209,8 @@ exports[`FeatherDateInput.vue should render disabled 1`] = `
                   <li
                     aria-selected="false"
                     class="feather-list-item hover focus result-item"
-                    data-v-1737b7da=""
                     data-v-32bd1d76=""
+                    data-v-fafdd3cc=""
                     role="option"
                     style="overflow: hidden; position: relative;"
                     tabindex="-1"
@@ -2223,7 +2218,7 @@ exports[`FeatherDateInput.vue should render disabled 1`] = `
                     <!---->
                     <span
                       class="feather-list-item-text"
-                      data-v-1737b7da=""
+                      data-v-fafdd3cc=""
                     >
                       1949
                     </span>
@@ -2233,8 +2228,8 @@ exports[`FeatherDateInput.vue should render disabled 1`] = `
                   <li
                     aria-selected="false"
                     class="feather-list-item hover focus result-item"
-                    data-v-1737b7da=""
                     data-v-32bd1d76=""
+                    data-v-fafdd3cc=""
                     role="option"
                     style="overflow: hidden; position: relative;"
                     tabindex="-1"
@@ -2242,7 +2237,7 @@ exports[`FeatherDateInput.vue should render disabled 1`] = `
                     <!---->
                     <span
                       class="feather-list-item-text"
-                      data-v-1737b7da=""
+                      data-v-fafdd3cc=""
                     >
                       1948
                     </span>
@@ -2252,8 +2247,8 @@ exports[`FeatherDateInput.vue should render disabled 1`] = `
                   <li
                     aria-selected="false"
                     class="feather-list-item hover focus result-item"
-                    data-v-1737b7da=""
                     data-v-32bd1d76=""
+                    data-v-fafdd3cc=""
                     role="option"
                     style="overflow: hidden; position: relative;"
                     tabindex="-1"
@@ -2261,7 +2256,7 @@ exports[`FeatherDateInput.vue should render disabled 1`] = `
                     <!---->
                     <span
                       class="feather-list-item-text"
-                      data-v-1737b7da=""
+                      data-v-fafdd3cc=""
                     >
                       1947
                     </span>
@@ -2271,8 +2266,8 @@ exports[`FeatherDateInput.vue should render disabled 1`] = `
                   <li
                     aria-selected="false"
                     class="feather-list-item hover focus result-item"
-                    data-v-1737b7da=""
                     data-v-32bd1d76=""
+                    data-v-fafdd3cc=""
                     role="option"
                     style="overflow: hidden; position: relative;"
                     tabindex="-1"
@@ -2280,7 +2275,7 @@ exports[`FeatherDateInput.vue should render disabled 1`] = `
                     <!---->
                     <span
                       class="feather-list-item-text"
-                      data-v-1737b7da=""
+                      data-v-fafdd3cc=""
                     >
                       1946
                     </span>
@@ -2290,8 +2285,8 @@ exports[`FeatherDateInput.vue should render disabled 1`] = `
                   <li
                     aria-selected="false"
                     class="feather-list-item hover focus result-item"
-                    data-v-1737b7da=""
                     data-v-32bd1d76=""
+                    data-v-fafdd3cc=""
                     role="option"
                     style="overflow: hidden; position: relative;"
                     tabindex="-1"
@@ -2299,7 +2294,7 @@ exports[`FeatherDateInput.vue should render disabled 1`] = `
                     <!---->
                     <span
                       class="feather-list-item-text"
-                      data-v-1737b7da=""
+                      data-v-fafdd3cc=""
                     >
                       1945
                     </span>
@@ -2309,8 +2304,8 @@ exports[`FeatherDateInput.vue should render disabled 1`] = `
                   <li
                     aria-selected="false"
                     class="feather-list-item hover focus result-item"
-                    data-v-1737b7da=""
                     data-v-32bd1d76=""
+                    data-v-fafdd3cc=""
                     role="option"
                     style="overflow: hidden; position: relative;"
                     tabindex="-1"
@@ -2318,7 +2313,7 @@ exports[`FeatherDateInput.vue should render disabled 1`] = `
                     <!---->
                     <span
                       class="feather-list-item-text"
-                      data-v-1737b7da=""
+                      data-v-fafdd3cc=""
                     >
                       1944
                     </span>
@@ -2328,8 +2323,8 @@ exports[`FeatherDateInput.vue should render disabled 1`] = `
                   <li
                     aria-selected="false"
                     class="feather-list-item hover focus result-item"
-                    data-v-1737b7da=""
                     data-v-32bd1d76=""
+                    data-v-fafdd3cc=""
                     role="option"
                     style="overflow: hidden; position: relative;"
                     tabindex="-1"
@@ -2337,7 +2332,7 @@ exports[`FeatherDateInput.vue should render disabled 1`] = `
                     <!---->
                     <span
                       class="feather-list-item-text"
-                      data-v-1737b7da=""
+                      data-v-fafdd3cc=""
                     >
                       1943
                     </span>
@@ -2347,8 +2342,8 @@ exports[`FeatherDateInput.vue should render disabled 1`] = `
                   <li
                     aria-selected="false"
                     class="feather-list-item hover focus result-item"
-                    data-v-1737b7da=""
                     data-v-32bd1d76=""
+                    data-v-fafdd3cc=""
                     role="option"
                     style="overflow: hidden; position: relative;"
                     tabindex="-1"
@@ -2356,7 +2351,7 @@ exports[`FeatherDateInput.vue should render disabled 1`] = `
                     <!---->
                     <span
                       class="feather-list-item-text"
-                      data-v-1737b7da=""
+                      data-v-fafdd3cc=""
                     >
                       1942
                     </span>
@@ -2366,8 +2361,8 @@ exports[`FeatherDateInput.vue should render disabled 1`] = `
                   <li
                     aria-selected="false"
                     class="feather-list-item hover focus result-item"
-                    data-v-1737b7da=""
                     data-v-32bd1d76=""
+                    data-v-fafdd3cc=""
                     role="option"
                     style="overflow: hidden; position: relative;"
                     tabindex="-1"
@@ -2375,7 +2370,7 @@ exports[`FeatherDateInput.vue should render disabled 1`] = `
                     <!---->
                     <span
                       class="feather-list-item-text"
-                      data-v-1737b7da=""
+                      data-v-fafdd3cc=""
                     >
                       1941
                     </span>
@@ -2385,8 +2380,8 @@ exports[`FeatherDateInput.vue should render disabled 1`] = `
                   <li
                     aria-selected="false"
                     class="feather-list-item hover focus result-item"
-                    data-v-1737b7da=""
                     data-v-32bd1d76=""
+                    data-v-fafdd3cc=""
                     role="option"
                     style="overflow: hidden; position: relative;"
                     tabindex="-1"
@@ -2394,7 +2389,7 @@ exports[`FeatherDateInput.vue should render disabled 1`] = `
                     <!---->
                     <span
                       class="feather-list-item-text"
-                      data-v-1737b7da=""
+                      data-v-fafdd3cc=""
                     >
                       1940
                     </span>
@@ -2404,8 +2399,8 @@ exports[`FeatherDateInput.vue should render disabled 1`] = `
                   <li
                     aria-selected="false"
                     class="feather-list-item hover focus result-item"
-                    data-v-1737b7da=""
                     data-v-32bd1d76=""
+                    data-v-fafdd3cc=""
                     role="option"
                     style="overflow: hidden; position: relative;"
                     tabindex="-1"
@@ -2413,7 +2408,7 @@ exports[`FeatherDateInput.vue should render disabled 1`] = `
                     <!---->
                     <span
                       class="feather-list-item-text"
-                      data-v-1737b7da=""
+                      data-v-fafdd3cc=""
                     >
                       1939
                     </span>
@@ -2423,8 +2418,8 @@ exports[`FeatherDateInput.vue should render disabled 1`] = `
                   <li
                     aria-selected="false"
                     class="feather-list-item hover focus result-item"
-                    data-v-1737b7da=""
                     data-v-32bd1d76=""
+                    data-v-fafdd3cc=""
                     role="option"
                     style="overflow: hidden; position: relative;"
                     tabindex="-1"
@@ -2432,7 +2427,7 @@ exports[`FeatherDateInput.vue should render disabled 1`] = `
                     <!---->
                     <span
                       class="feather-list-item-text"
-                      data-v-1737b7da=""
+                      data-v-fafdd3cc=""
                     >
                       1938
                     </span>
@@ -2442,8 +2437,8 @@ exports[`FeatherDateInput.vue should render disabled 1`] = `
                   <li
                     aria-selected="false"
                     class="feather-list-item hover focus result-item"
-                    data-v-1737b7da=""
                     data-v-32bd1d76=""
+                    data-v-fafdd3cc=""
                     role="option"
                     style="overflow: hidden; position: relative;"
                     tabindex="-1"
@@ -2451,7 +2446,7 @@ exports[`FeatherDateInput.vue should render disabled 1`] = `
                     <!---->
                     <span
                       class="feather-list-item-text"
-                      data-v-1737b7da=""
+                      data-v-fafdd3cc=""
                     >
                       1937
                     </span>
@@ -2461,8 +2456,8 @@ exports[`FeatherDateInput.vue should render disabled 1`] = `
                   <li
                     aria-selected="false"
                     class="feather-list-item hover focus result-item"
-                    data-v-1737b7da=""
                     data-v-32bd1d76=""
+                    data-v-fafdd3cc=""
                     role="option"
                     style="overflow: hidden; position: relative;"
                     tabindex="-1"
@@ -2470,7 +2465,7 @@ exports[`FeatherDateInput.vue should render disabled 1`] = `
                     <!---->
                     <span
                       class="feather-list-item-text"
-                      data-v-1737b7da=""
+                      data-v-fafdd3cc=""
                     >
                       1936
                     </span>
@@ -2480,8 +2475,8 @@ exports[`FeatherDateInput.vue should render disabled 1`] = `
                   <li
                     aria-selected="false"
                     class="feather-list-item hover focus result-item"
-                    data-v-1737b7da=""
                     data-v-32bd1d76=""
+                    data-v-fafdd3cc=""
                     role="option"
                     style="overflow: hidden; position: relative;"
                     tabindex="-1"
@@ -2489,7 +2484,7 @@ exports[`FeatherDateInput.vue should render disabled 1`] = `
                     <!---->
                     <span
                       class="feather-list-item-text"
-                      data-v-1737b7da=""
+                      data-v-fafdd3cc=""
                     >
                       1935
                     </span>
@@ -2499,8 +2494,8 @@ exports[`FeatherDateInput.vue should render disabled 1`] = `
                   <li
                     aria-selected="false"
                     class="feather-list-item hover focus result-item"
-                    data-v-1737b7da=""
                     data-v-32bd1d76=""
+                    data-v-fafdd3cc=""
                     role="option"
                     style="overflow: hidden; position: relative;"
                     tabindex="-1"
@@ -2508,7 +2503,7 @@ exports[`FeatherDateInput.vue should render disabled 1`] = `
                     <!---->
                     <span
                       class="feather-list-item-text"
-                      data-v-1737b7da=""
+                      data-v-fafdd3cc=""
                     >
                       1934
                     </span>
@@ -2518,8 +2513,8 @@ exports[`FeatherDateInput.vue should render disabled 1`] = `
                   <li
                     aria-selected="false"
                     class="feather-list-item hover focus result-item"
-                    data-v-1737b7da=""
                     data-v-32bd1d76=""
+                    data-v-fafdd3cc=""
                     role="option"
                     style="overflow: hidden; position: relative;"
                     tabindex="-1"
@@ -2527,7 +2522,7 @@ exports[`FeatherDateInput.vue should render disabled 1`] = `
                     <!---->
                     <span
                       class="feather-list-item-text"
-                      data-v-1737b7da=""
+                      data-v-fafdd3cc=""
                     >
                       1933
                     </span>
@@ -2537,8 +2532,8 @@ exports[`FeatherDateInput.vue should render disabled 1`] = `
                   <li
                     aria-selected="false"
                     class="feather-list-item hover focus result-item"
-                    data-v-1737b7da=""
                     data-v-32bd1d76=""
+                    data-v-fafdd3cc=""
                     role="option"
                     style="overflow: hidden; position: relative;"
                     tabindex="-1"
@@ -2546,7 +2541,7 @@ exports[`FeatherDateInput.vue should render disabled 1`] = `
                     <!---->
                     <span
                       class="feather-list-item-text"
-                      data-v-1737b7da=""
+                      data-v-fafdd3cc=""
                     >
                       1932
                     </span>
@@ -2556,8 +2551,8 @@ exports[`FeatherDateInput.vue should render disabled 1`] = `
                   <li
                     aria-selected="false"
                     class="feather-list-item hover focus result-item"
-                    data-v-1737b7da=""
                     data-v-32bd1d76=""
+                    data-v-fafdd3cc=""
                     role="option"
                     style="overflow: hidden; position: relative;"
                     tabindex="-1"
@@ -2565,7 +2560,7 @@ exports[`FeatherDateInput.vue should render disabled 1`] = `
                     <!---->
                     <span
                       class="feather-list-item-text"
-                      data-v-1737b7da=""
+                      data-v-fafdd3cc=""
                     >
                       1931
                     </span>
@@ -2575,8 +2570,8 @@ exports[`FeatherDateInput.vue should render disabled 1`] = `
                   <li
                     aria-selected="false"
                     class="feather-list-item hover focus result-item"
-                    data-v-1737b7da=""
                     data-v-32bd1d76=""
+                    data-v-fafdd3cc=""
                     role="option"
                     style="overflow: hidden; position: relative;"
                     tabindex="-1"
@@ -2584,7 +2579,7 @@ exports[`FeatherDateInput.vue should render disabled 1`] = `
                     <!---->
                     <span
                       class="feather-list-item-text"
-                      data-v-1737b7da=""
+                      data-v-fafdd3cc=""
                     >
                       1930
                     </span>
@@ -2594,8 +2589,8 @@ exports[`FeatherDateInput.vue should render disabled 1`] = `
                   <li
                     aria-selected="false"
                     class="feather-list-item hover focus result-item"
-                    data-v-1737b7da=""
                     data-v-32bd1d76=""
+                    data-v-fafdd3cc=""
                     role="option"
                     style="overflow: hidden; position: relative;"
                     tabindex="-1"
@@ -2603,7 +2598,7 @@ exports[`FeatherDateInput.vue should render disabled 1`] = `
                     <!---->
                     <span
                       class="feather-list-item-text"
-                      data-v-1737b7da=""
+                      data-v-fafdd3cc=""
                     >
                       1929
                     </span>
@@ -2613,8 +2608,8 @@ exports[`FeatherDateInput.vue should render disabled 1`] = `
                   <li
                     aria-selected="false"
                     class="feather-list-item hover focus result-item"
-                    data-v-1737b7da=""
                     data-v-32bd1d76=""
+                    data-v-fafdd3cc=""
                     role="option"
                     style="overflow: hidden; position: relative;"
                     tabindex="-1"
@@ -2622,7 +2617,7 @@ exports[`FeatherDateInput.vue should render disabled 1`] = `
                     <!---->
                     <span
                       class="feather-list-item-text"
-                      data-v-1737b7da=""
+                      data-v-fafdd3cc=""
                     >
                       1928
                     </span>
@@ -2632,8 +2627,8 @@ exports[`FeatherDateInput.vue should render disabled 1`] = `
                   <li
                     aria-selected="false"
                     class="feather-list-item hover focus result-item"
-                    data-v-1737b7da=""
                     data-v-32bd1d76=""
+                    data-v-fafdd3cc=""
                     role="option"
                     style="overflow: hidden; position: relative;"
                     tabindex="-1"
@@ -2641,7 +2636,7 @@ exports[`FeatherDateInput.vue should render disabled 1`] = `
                     <!---->
                     <span
                       class="feather-list-item-text"
-                      data-v-1737b7da=""
+                      data-v-fafdd3cc=""
                     >
                       1927
                     </span>
@@ -2651,8 +2646,8 @@ exports[`FeatherDateInput.vue should render disabled 1`] = `
                   <li
                     aria-selected="false"
                     class="feather-list-item hover focus result-item"
-                    data-v-1737b7da=""
                     data-v-32bd1d76=""
+                    data-v-fafdd3cc=""
                     role="option"
                     style="overflow: hidden; position: relative;"
                     tabindex="-1"
@@ -2660,7 +2655,7 @@ exports[`FeatherDateInput.vue should render disabled 1`] = `
                     <!---->
                     <span
                       class="feather-list-item-text"
-                      data-v-1737b7da=""
+                      data-v-fafdd3cc=""
                     >
                       1926
                     </span>
@@ -2670,8 +2665,8 @@ exports[`FeatherDateInput.vue should render disabled 1`] = `
                   <li
                     aria-selected="false"
                     class="feather-list-item hover focus result-item"
-                    data-v-1737b7da=""
                     data-v-32bd1d76=""
+                    data-v-fafdd3cc=""
                     role="option"
                     style="overflow: hidden; position: relative;"
                     tabindex="-1"
@@ -2679,7 +2674,7 @@ exports[`FeatherDateInput.vue should render disabled 1`] = `
                     <!---->
                     <span
                       class="feather-list-item-text"
-                      data-v-1737b7da=""
+                      data-v-fafdd3cc=""
                     >
                       1925
                     </span>
@@ -2689,8 +2684,8 @@ exports[`FeatherDateInput.vue should render disabled 1`] = `
                   <li
                     aria-selected="false"
                     class="feather-list-item hover focus result-item"
-                    data-v-1737b7da=""
                     data-v-32bd1d76=""
+                    data-v-fafdd3cc=""
                     role="option"
                     style="overflow: hidden; position: relative;"
                     tabindex="-1"
@@ -2698,7 +2693,7 @@ exports[`FeatherDateInput.vue should render disabled 1`] = `
                     <!---->
                     <span
                       class="feather-list-item-text"
-                      data-v-1737b7da=""
+                      data-v-fafdd3cc=""
                     >
                       1924
                     </span>
@@ -2708,8 +2703,8 @@ exports[`FeatherDateInput.vue should render disabled 1`] = `
                   <li
                     aria-selected="false"
                     class="feather-list-item hover focus result-item"
-                    data-v-1737b7da=""
                     data-v-32bd1d76=""
+                    data-v-fafdd3cc=""
                     role="option"
                     style="overflow: hidden; position: relative;"
                     tabindex="-1"
@@ -2717,7 +2712,7 @@ exports[`FeatherDateInput.vue should render disabled 1`] = `
                     <!---->
                     <span
                       class="feather-list-item-text"
-                      data-v-1737b7da=""
+                      data-v-fafdd3cc=""
                     >
                       1923
                     </span>
@@ -2727,8 +2722,8 @@ exports[`FeatherDateInput.vue should render disabled 1`] = `
                   <li
                     aria-selected="false"
                     class="feather-list-item hover focus result-item"
-                    data-v-1737b7da=""
                     data-v-32bd1d76=""
+                    data-v-fafdd3cc=""
                     role="option"
                     style="overflow: hidden; position: relative;"
                     tabindex="-1"
@@ -2736,7 +2731,7 @@ exports[`FeatherDateInput.vue should render disabled 1`] = `
                     <!---->
                     <span
                       class="feather-list-item-text"
-                      data-v-1737b7da=""
+                      data-v-fafdd3cc=""
                     >
                       1922
                     </span>
@@ -2746,8 +2741,8 @@ exports[`FeatherDateInput.vue should render disabled 1`] = `
                   <li
                     aria-selected="false"
                     class="feather-list-item hover focus result-item"
-                    data-v-1737b7da=""
                     data-v-32bd1d76=""
+                    data-v-fafdd3cc=""
                     role="option"
                     style="overflow: hidden; position: relative;"
                     tabindex="-1"
@@ -2755,7 +2750,7 @@ exports[`FeatherDateInput.vue should render disabled 1`] = `
                     <!---->
                     <span
                       class="feather-list-item-text"
-                      data-v-1737b7da=""
+                      data-v-fafdd3cc=""
                     >
                       1921
                     </span>
@@ -2765,8 +2760,8 @@ exports[`FeatherDateInput.vue should render disabled 1`] = `
                   <li
                     aria-selected="false"
                     class="feather-list-item hover focus result-item"
-                    data-v-1737b7da=""
                     data-v-32bd1d76=""
+                    data-v-fafdd3cc=""
                     role="option"
                     style="overflow: hidden; position: relative;"
                     tabindex="-1"
@@ -2774,7 +2769,7 @@ exports[`FeatherDateInput.vue should render disabled 1`] = `
                     <!---->
                     <span
                       class="feather-list-item-text"
-                      data-v-1737b7da=""
+                      data-v-fafdd3cc=""
                     >
                       1920
                     </span>
@@ -2784,8 +2779,8 @@ exports[`FeatherDateInput.vue should render disabled 1`] = `
                   <li
                     aria-selected="false"
                     class="feather-list-item hover focus result-item"
-                    data-v-1737b7da=""
                     data-v-32bd1d76=""
+                    data-v-fafdd3cc=""
                     role="option"
                     style="overflow: hidden; position: relative;"
                     tabindex="-1"
@@ -2793,7 +2788,7 @@ exports[`FeatherDateInput.vue should render disabled 1`] = `
                     <!---->
                     <span
                       class="feather-list-item-text"
-                      data-v-1737b7da=""
+                      data-v-fafdd3cc=""
                     >
                       1919
                     </span>
@@ -2803,8 +2798,8 @@ exports[`FeatherDateInput.vue should render disabled 1`] = `
                   <li
                     aria-selected="false"
                     class="feather-list-item hover focus result-item"
-                    data-v-1737b7da=""
                     data-v-32bd1d76=""
+                    data-v-fafdd3cc=""
                     role="option"
                     style="overflow: hidden; position: relative;"
                     tabindex="-1"
@@ -2812,7 +2807,7 @@ exports[`FeatherDateInput.vue should render disabled 1`] = `
                     <!---->
                     <span
                       class="feather-list-item-text"
-                      data-v-1737b7da=""
+                      data-v-fafdd3cc=""
                     >
                       1918
                     </span>
@@ -2822,8 +2817,8 @@ exports[`FeatherDateInput.vue should render disabled 1`] = `
                   <li
                     aria-selected="false"
                     class="feather-list-item hover focus result-item"
-                    data-v-1737b7da=""
                     data-v-32bd1d76=""
+                    data-v-fafdd3cc=""
                     role="option"
                     style="overflow: hidden; position: relative;"
                     tabindex="-1"
@@ -2831,7 +2826,7 @@ exports[`FeatherDateInput.vue should render disabled 1`] = `
                     <!---->
                     <span
                       class="feather-list-item-text"
-                      data-v-1737b7da=""
+                      data-v-fafdd3cc=""
                     >
                       1917
                     </span>
@@ -2841,8 +2836,8 @@ exports[`FeatherDateInput.vue should render disabled 1`] = `
                   <li
                     aria-selected="false"
                     class="feather-list-item hover focus result-item"
-                    data-v-1737b7da=""
                     data-v-32bd1d76=""
+                    data-v-fafdd3cc=""
                     role="option"
                     style="overflow: hidden; position: relative;"
                     tabindex="-1"
@@ -2850,7 +2845,7 @@ exports[`FeatherDateInput.vue should render disabled 1`] = `
                     <!---->
                     <span
                       class="feather-list-item-text"
-                      data-v-1737b7da=""
+                      data-v-fafdd3cc=""
                     >
                       1916
                     </span>
@@ -2860,8 +2855,8 @@ exports[`FeatherDateInput.vue should render disabled 1`] = `
                   <li
                     aria-selected="false"
                     class="feather-list-item hover focus result-item"
-                    data-v-1737b7da=""
                     data-v-32bd1d76=""
+                    data-v-fafdd3cc=""
                     role="option"
                     style="overflow: hidden; position: relative;"
                     tabindex="-1"
@@ -2869,7 +2864,7 @@ exports[`FeatherDateInput.vue should render disabled 1`] = `
                     <!---->
                     <span
                       class="feather-list-item-text"
-                      data-v-1737b7da=""
+                      data-v-fafdd3cc=""
                     >
                       1915
                     </span>
@@ -2879,8 +2874,8 @@ exports[`FeatherDateInput.vue should render disabled 1`] = `
                   <li
                     aria-selected="false"
                     class="feather-list-item hover focus result-item"
-                    data-v-1737b7da=""
                     data-v-32bd1d76=""
+                    data-v-fafdd3cc=""
                     role="option"
                     style="overflow: hidden; position: relative;"
                     tabindex="-1"
@@ -2888,7 +2883,7 @@ exports[`FeatherDateInput.vue should render disabled 1`] = `
                     <!---->
                     <span
                       class="feather-list-item-text"
-                      data-v-1737b7da=""
+                      data-v-fafdd3cc=""
                     >
                       1914
                     </span>
@@ -2898,8 +2893,8 @@ exports[`FeatherDateInput.vue should render disabled 1`] = `
                   <li
                     aria-selected="false"
                     class="feather-list-item hover focus result-item"
-                    data-v-1737b7da=""
                     data-v-32bd1d76=""
+                    data-v-fafdd3cc=""
                     role="option"
                     style="overflow: hidden; position: relative;"
                     tabindex="-1"
@@ -2907,7 +2902,7 @@ exports[`FeatherDateInput.vue should render disabled 1`] = `
                     <!---->
                     <span
                       class="feather-list-item-text"
-                      data-v-1737b7da=""
+                      data-v-fafdd3cc=""
                     >
                       1913
                     </span>
@@ -2917,8 +2912,8 @@ exports[`FeatherDateInput.vue should render disabled 1`] = `
                   <li
                     aria-selected="false"
                     class="feather-list-item hover focus result-item"
-                    data-v-1737b7da=""
                     data-v-32bd1d76=""
+                    data-v-fafdd3cc=""
                     role="option"
                     style="overflow: hidden; position: relative;"
                     tabindex="-1"
@@ -2926,7 +2921,7 @@ exports[`FeatherDateInput.vue should render disabled 1`] = `
                     <!---->
                     <span
                       class="feather-list-item-text"
-                      data-v-1737b7da=""
+                      data-v-fafdd3cc=""
                     >
                       1912
                     </span>
@@ -2936,8 +2931,8 @@ exports[`FeatherDateInput.vue should render disabled 1`] = `
                   <li
                     aria-selected="false"
                     class="feather-list-item hover focus result-item"
-                    data-v-1737b7da=""
                     data-v-32bd1d76=""
+                    data-v-fafdd3cc=""
                     role="option"
                     style="overflow: hidden; position: relative;"
                     tabindex="-1"
@@ -2945,7 +2940,7 @@ exports[`FeatherDateInput.vue should render disabled 1`] = `
                     <!---->
                     <span
                       class="feather-list-item-text"
-                      data-v-1737b7da=""
+                      data-v-fafdd3cc=""
                     >
                       1911
                     </span>
@@ -2955,8 +2950,8 @@ exports[`FeatherDateInput.vue should render disabled 1`] = `
                   <li
                     aria-selected="false"
                     class="feather-list-item hover focus result-item"
-                    data-v-1737b7da=""
                     data-v-32bd1d76=""
+                    data-v-fafdd3cc=""
                     role="option"
                     style="overflow: hidden; position: relative;"
                     tabindex="-1"
@@ -2964,7 +2959,7 @@ exports[`FeatherDateInput.vue should render disabled 1`] = `
                     <!---->
                     <span
                       class="feather-list-item-text"
-                      data-v-1737b7da=""
+                      data-v-fafdd3cc=""
                     >
                       1910
                     </span>
@@ -2974,8 +2969,8 @@ exports[`FeatherDateInput.vue should render disabled 1`] = `
                   <li
                     aria-selected="false"
                     class="feather-list-item hover focus result-item"
-                    data-v-1737b7da=""
                     data-v-32bd1d76=""
+                    data-v-fafdd3cc=""
                     role="option"
                     style="overflow: hidden; position: relative;"
                     tabindex="-1"
@@ -2983,7 +2978,7 @@ exports[`FeatherDateInput.vue should render disabled 1`] = `
                     <!---->
                     <span
                       class="feather-list-item-text"
-                      data-v-1737b7da=""
+                      data-v-fafdd3cc=""
                     >
                       1909
                     </span>
@@ -2993,8 +2988,8 @@ exports[`FeatherDateInput.vue should render disabled 1`] = `
                   <li
                     aria-selected="false"
                     class="feather-list-item hover focus result-item"
-                    data-v-1737b7da=""
                     data-v-32bd1d76=""
+                    data-v-fafdd3cc=""
                     role="option"
                     style="overflow: hidden; position: relative;"
                     tabindex="-1"
@@ -3002,7 +2997,7 @@ exports[`FeatherDateInput.vue should render disabled 1`] = `
                     <!---->
                     <span
                       class="feather-list-item-text"
-                      data-v-1737b7da=""
+                      data-v-fafdd3cc=""
                     >
                       1908
                     </span>
@@ -3012,8 +3007,8 @@ exports[`FeatherDateInput.vue should render disabled 1`] = `
                   <li
                     aria-selected="false"
                     class="feather-list-item hover focus result-item"
-                    data-v-1737b7da=""
                     data-v-32bd1d76=""
+                    data-v-fafdd3cc=""
                     role="option"
                     style="overflow: hidden; position: relative;"
                     tabindex="-1"
@@ -3021,7 +3016,7 @@ exports[`FeatherDateInput.vue should render disabled 1`] = `
                     <!---->
                     <span
                       class="feather-list-item-text"
-                      data-v-1737b7da=""
+                      data-v-fafdd3cc=""
                     >
                       1907
                     </span>
@@ -3031,8 +3026,8 @@ exports[`FeatherDateInput.vue should render disabled 1`] = `
                   <li
                     aria-selected="false"
                     class="feather-list-item hover focus result-item"
-                    data-v-1737b7da=""
                     data-v-32bd1d76=""
+                    data-v-fafdd3cc=""
                     role="option"
                     style="overflow: hidden; position: relative;"
                     tabindex="-1"
@@ -3040,7 +3035,7 @@ exports[`FeatherDateInput.vue should render disabled 1`] = `
                     <!---->
                     <span
                       class="feather-list-item-text"
-                      data-v-1737b7da=""
+                      data-v-fafdd3cc=""
                     >
                       1906
                     </span>
@@ -3050,8 +3045,8 @@ exports[`FeatherDateInput.vue should render disabled 1`] = `
                   <li
                     aria-selected="false"
                     class="feather-list-item hover focus result-item"
-                    data-v-1737b7da=""
                     data-v-32bd1d76=""
+                    data-v-fafdd3cc=""
                     role="option"
                     style="overflow: hidden; position: relative;"
                     tabindex="-1"
@@ -3059,7 +3054,7 @@ exports[`FeatherDateInput.vue should render disabled 1`] = `
                     <!---->
                     <span
                       class="feather-list-item-text"
-                      data-v-1737b7da=""
+                      data-v-fafdd3cc=""
                     >
                       1905
                     </span>
@@ -3069,8 +3064,8 @@ exports[`FeatherDateInput.vue should render disabled 1`] = `
                   <li
                     aria-selected="false"
                     class="feather-list-item hover focus result-item"
-                    data-v-1737b7da=""
                     data-v-32bd1d76=""
+                    data-v-fafdd3cc=""
                     role="option"
                     style="overflow: hidden; position: relative;"
                     tabindex="-1"
@@ -3078,7 +3073,7 @@ exports[`FeatherDateInput.vue should render disabled 1`] = `
                     <!---->
                     <span
                       class="feather-list-item-text"
-                      data-v-1737b7da=""
+                      data-v-fafdd3cc=""
                     >
                       1904
                     </span>
@@ -3088,8 +3083,8 @@ exports[`FeatherDateInput.vue should render disabled 1`] = `
                   <li
                     aria-selected="false"
                     class="feather-list-item hover focus result-item"
-                    data-v-1737b7da=""
                     data-v-32bd1d76=""
+                    data-v-fafdd3cc=""
                     role="option"
                     style="overflow: hidden; position: relative;"
                     tabindex="-1"
@@ -3097,7 +3092,7 @@ exports[`FeatherDateInput.vue should render disabled 1`] = `
                     <!---->
                     <span
                       class="feather-list-item-text"
-                      data-v-1737b7da=""
+                      data-v-fafdd3cc=""
                     >
                       1903
                     </span>
@@ -3107,8 +3102,8 @@ exports[`FeatherDateInput.vue should render disabled 1`] = `
                   <li
                     aria-selected="false"
                     class="feather-list-item hover focus result-item"
-                    data-v-1737b7da=""
                     data-v-32bd1d76=""
+                    data-v-fafdd3cc=""
                     role="option"
                     style="overflow: hidden; position: relative;"
                     tabindex="-1"
@@ -3116,7 +3111,7 @@ exports[`FeatherDateInput.vue should render disabled 1`] = `
                     <!---->
                     <span
                       class="feather-list-item-text"
-                      data-v-1737b7da=""
+                      data-v-fafdd3cc=""
                     >
                       1902
                     </span>
@@ -3126,8 +3121,8 @@ exports[`FeatherDateInput.vue should render disabled 1`] = `
                   <li
                     aria-selected="false"
                     class="feather-list-item hover focus result-item"
-                    data-v-1737b7da=""
                     data-v-32bd1d76=""
+                    data-v-fafdd3cc=""
                     role="option"
                     style="overflow: hidden; position: relative;"
                     tabindex="-1"
@@ -3135,7 +3130,7 @@ exports[`FeatherDateInput.vue should render disabled 1`] = `
                     <!---->
                     <span
                       class="feather-list-item-text"
-                      data-v-1737b7da=""
+                      data-v-fafdd3cc=""
                     >
                       1901
                     </span>
@@ -3145,8 +3140,8 @@ exports[`FeatherDateInput.vue should render disabled 1`] = `
                   <li
                     aria-selected="false"
                     class="feather-list-item hover focus result-item"
-                    data-v-1737b7da=""
                     data-v-32bd1d76=""
+                    data-v-fafdd3cc=""
                     role="option"
                     style="overflow: hidden; position: relative;"
                     tabindex="-1"
@@ -3154,7 +3149,7 @@ exports[`FeatherDateInput.vue should render disabled 1`] = `
                     <!---->
                     <span
                       class="feather-list-item-text"
-                      data-v-1737b7da=""
+                      data-v-fafdd3cc=""
                     >
                       1900
                     </span>
@@ -3169,8 +3164,8 @@ exports[`FeatherDateInput.vue should render disabled 1`] = `
             </div>
             <div
               class="feather-input-sub-text"
-              data-v-29a9e56c=""
-              data-v-cef1410a=""
+              data-v-11692aa4=""
+              data-v-2b9b095e=""
               id="feather-select-description"
               style="display: none;"
             >
@@ -3184,7 +3179,7 @@ exports[`FeatherDateInput.vue should render disabled 1`] = `
             aria-label="Next month"
             class="chevron btn hover focus btn-text btn-icon btn-icon-table"
             data-ref-id="feather-calendar-next-month"
-            data-v-f808d47e=""
+            data-v-4e5359d6=""
             link=""
             style="overflow: hidden; position: relative;"
             title="Next month"
@@ -3735,7 +3730,7 @@ exports[`FeatherDateInput.vue should render disabled 1`] = `
   </div>
   <div
     class="feather-input-sub-text"
-    data-v-cef1410a=""
+    data-v-11692aa4=""
     id="feather-input-description"
     style="display: none;"
   >

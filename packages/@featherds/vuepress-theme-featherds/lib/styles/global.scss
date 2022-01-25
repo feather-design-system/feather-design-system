@@ -28,7 +28,7 @@ body,
 }
 
 code {
-  padding: 0px 4px;
+  padding: 0px 0.25rem;
   color: #3a4bd3;
   background-color: #eef4ff;
 }
@@ -56,12 +56,12 @@ body {
   main > {
     ul,
     ol {
-      padding-left: 20px;
-      margin-bottom: 40px;
+      padding-left: 1.25rem;
+      margin-bottom: 2.5rem;
       @include body-small;
     }
     li {
-      margin-bottom: 16px;
+      margin-bottom: 1rem;
       &::marker {
         color: var($secondary-text-on-surface);
       }
@@ -69,11 +69,11 @@ body {
   }
   pre[class*="language-"] {
     margin: 0;
-    margin-bottom: 24px;
+    margin-bottom: 1.5rem;
   }
   table:not([class]) {
     margin-top: 0;
-    margin-bottom: 24px;
+    margin-bottom: 1.5rem;
     width: 100%;
   }
   @include media-query-below(m) {
@@ -87,46 +87,46 @@ body {
   blockquote {
     border-left: 2px solid var($secondary);
     margin: 0;
-    padding: 0px 16px;
+    padding: 0px 1rem;
     @include headline2;
   }
   hr {
     border-top: 1px solid var($border-on-surface);
     border-bottom: none;
-    margin: 32px 8px;
+    margin: 2rem 0.5rem;
   }
   figure {
     margin: 0;
-    margin-bottom: 24px;
+    margin-bottom: 1.5rem;
     & img {
       margin-bottom: 0;
     }
   }
   h1 {
     @include display2();
-    margin-bottom: 8px;
+    margin-bottom: 0.5rem;
   }
   h2 {
     @include headline1();
-    margin-bottom: 24px;
+    margin-bottom: 1.5rem;
   }
   * + h2 {
-    margin-top: 56px;
+    margin-top: 3.5rem;
   }
   h3 {
-    margin-bottom: 16px;
+    margin-bottom: 1rem;
     @include headline2();
   }
   h4 {
     @include headline3();
-    margin-bottom: 16px;
+    margin-bottom: 1rem;
   }
   p {
     @include body-large();
-    margin-bottom: 24px;
+    margin-bottom: 1.5rem;
   }
   img {
-    margin-bottom: 24px;
+    margin-bottom: 1.5rem;
   }
 }
 
@@ -143,30 +143,30 @@ body {
     }
     h2 {
       @include headline2();
-      margin-bottom: 8px;
+      margin-bottom: 0.5rem;
     }
     h3 {
-      margin-bottom: 8px;
+      margin-bottom: 0.5rem;
       @include headline3();
     }
     h4 {
       @include headline4();
-      margin-bottom: 8px;
+      margin-bottom: 0.5rem;
     }
     h5 {
       @include subtitle1();
-      margin-bottom: 8px;
+      margin-bottom: 0.5rem;
     }
     h6 {
       @include subtitle2();
-      margin-bottom: 8px;
+      margin-bottom: 0.5rem;
     }
     p {
       @include body-small();
-      margin-bottom: 24px;
+      margin-bottom: 1.5rem;
     }
     ul {
-      margin-bottom: 8px;
+      margin-bottom: 0.5rem;
     }
   }
 }

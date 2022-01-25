@@ -4,23 +4,23 @@
 
 @mixin table-condensed {
   tr {
-    height: 40px;
+    height: 2.5rem;
   }
   thead tr th {
-    height: 48px;
+    height: 3rem;
   }
 
   thead {
     .checkbox-cell,
     .icon-cell {
-      width: 48px;
+      width: 3rem;
       padding: 0;
     }
   }
   tbody {
     .checkbox-cell,
     .icon-cell {
-      width: 48px;
+      width: 3rem;
       padding: 0;
     }
   }
@@ -146,19 +146,19 @@
     margin-bottom: var($spacing-m);
   }
   th {
-    padding: 0 16px;
+    padding: 0 1rem;
     align-items: center;
     font-weight: bold;
     text-align: left;
     border-bottom: 1px solid var($disabled-text-on-surface);
     & a {
       display: inline-block;
-      padding: 9px 0px;
+      padding: 0.5rem 0px;
     }
   }
 
   td {
-    padding: 0px 16px;
+    padding: 0px 1rem;
     box-shadow: 0 1px 0 0 var($border-on-surface);
     text-align: left;
     .btn {
@@ -167,12 +167,12 @@
     }
   }
   th :deep(.btn.btn-icon-table) {
-    height: 24px;
-    width: 24px;
+    height: 1.5rem;
+    width: 1.5rem;
     border-width: 1px;
     svg {
-      width: 18px;
-      font-size: 18px;
+      width: 1.125rem;
+      font-size: 1.125rem;
       vertical-align: middle;
     }
   }
@@ -196,12 +196,12 @@
     }
   }
   .icon-cell {
-    font-size: 18px;
+    font-size: 1.125rem;
   }
   thead {
     .checkbox-cell,
     .icon-cell {
-      width: 56px;
+      width: 3.5rem;
       padding: 0;
       & > * {
         vertical-align: middle;
@@ -211,7 +211,7 @@
   tbody {
     .checkbox-cell,
     .icon-cell {
-      width: 52px;
+      width: 3.25rem;
       padding: 0;
       & > * {
         vertical-align: middle;
@@ -220,11 +220,11 @@
   }
 
   thead tr th {
-    height: 56px;
+    height: 3.5rem;
   }
   //need for selection and hover
   tr {
-    height: 52px;
+    height: 3.25rem;
   }
   tbody > tr {
     position: relative;

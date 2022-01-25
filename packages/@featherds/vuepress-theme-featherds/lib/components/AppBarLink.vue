@@ -41,8 +41,8 @@ export default {
 a.link {
   @include header();
   height: 100%;
-  padding: 8px;
-  margin: 0 12px;
+  padding: 0.5rem;
+  margin: 0 0.75rem;
   display: flex;
   justify-content: center;
   align-content: center;
@@ -67,7 +67,7 @@ a.link {
   }
 
   &.active {
-    box-shadow: 0px -4px 0px 0px var($primary-variant) inset;
+    box-shadow: 0px -0.25rem 0px 0px var($primary-variant) inset;
   }
 }
 </style>

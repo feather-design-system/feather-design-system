@@ -23,13 +23,11 @@ exports[`FeatherRadio.vue should set aria-checked based on data 1`] = `
       >
         <svg
           class="dot"
-          height="16"
-          width="16"
         >
           <circle
-            cx="8"
-            cy="8"
-            r="5"
+            cx="50%"
+            cy="50%"
+            r="0.3125rem"
             stroke="black"
             stroke-width="0"
           />
@@ -73,13 +71,11 @@ exports[`FeatherRadio.vue should set aria-checked based on data 2`] = `
       >
         <svg
           class="dot"
-          height="16"
-          width="16"
         >
           <circle
-            cx="8"
-            cy="8"
-            r="5"
+            cx="50%"
+            cy="50%"
+            r="0.3125rem"
             stroke="black"
             stroke-width="0"
           />
@@ -122,13 +118,11 @@ exports[`FeatherRadio.vue should set aria-disabled based on property 1`] = `
       >
         <svg
           class="dot"
-          height="16"
-          width="16"
         >
           <circle
-            cx="8"
-            cy="8"
-            r="5"
+            cx="50%"
+            cy="50%"
+            r="0.3125rem"
             stroke="black"
             stroke-width="0"
           />
@@ -172,13 +166,11 @@ exports[`FeatherRadio.vue should set aria-disabled based on property 2`] = `
       >
         <svg
           class="dot"
-          height="16"
-          width="16"
         >
           <circle
-            cx="8"
-            cy="8"
-            r="5"
+            cx="50%"
+            cy="50%"
+            r="0.3125rem"
             stroke="black"
             stroke-width="0"
           />

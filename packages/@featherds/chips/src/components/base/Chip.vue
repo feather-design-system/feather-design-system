@@ -69,18 +69,18 @@ export default {
 
 .chip {
   margin: 0;
-  margin-right: 8px;
-  margin-bottom: 8px;
-  height: 32px;
+  margin-right: 0.5rem;
+  margin-bottom: 0.5rem;
+  height: 2rem;
   list-style: none;
   display: inline-flex;
   align-items: center;
   background-color: var($border-light-on-surface);
-  border-radius: 16px;
+  border-radius: 1rem;
   border: 1px solid transparent;
   min-width: 0;
-  max-width: 288px;
-  padding: 0 4px;
+  max-width: 18rem;
+  padding: 0 0.25rem;
   @include state-on-neutral($border-light-on-surface);
   &:focus {
     outline: none;

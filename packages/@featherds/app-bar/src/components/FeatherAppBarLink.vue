@@ -53,8 +53,8 @@ export default {
 a.round {
   display: flex;
   align-items: center;
-  height: 40px;
-  width: 40px;
+  height: 2.5rem;
+  width: 2.5rem;
   border-radius: 100%;
   display: flex;
   align-items: center;
@@ -86,7 +86,7 @@ a.round {
   svg.feather-icon {
     color: var($surface);
 
-    height: 24px;
+    height: 1.5rem;
     width: auto;
   }
   .ripple {
@@ -101,7 +101,7 @@ a.round {
 
 a.home {
   height: auto;
-  padding: 4px;
+  padding: 0.25rem;
   &:focus {
     background: linear-gradient(
       alpha($state-color-on-color, var($state-opacity-focus-on-color)),
@@ -111,7 +111,7 @@ a.home {
   :deep(svg.feather-icon) {
     color: var($surface);
 
-    height: 32px;
+    height: 2rem;
     width: auto;
   }
 }

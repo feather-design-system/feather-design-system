@@ -2,7 +2,7 @@
 @import "@featherds/styles/themes/variables";
 @import "@featherds/styles/mixins/typography";
 @import "@featherds/styles/themes/utils";
-$width: 30px;
+$width: 1.875rem;
 .sr-only {
   @include screen-reader;
 }
@@ -18,20 +18,20 @@ $width: 30px;
   align-items: center;
   padding: 0px var($spacing-m);
   .chevron {
-    width: 36px;
+    width: 2.25rem;
     margin: 0;
     &.left {
       margin-right: var($spacing-m);
     }
   }
   .inline-select {
-    width: 130px;
+    width: 8.125rem;
     margin: var($spacing-xxs) 0;
     display: inline-block;
     margin-right: var($spacing-s);
     &.year {
       margin-right: var($spacing-m);
-      width: 85px;
+      width: 5.3125rem;
     }
   }
 }
@@ -56,7 +56,7 @@ $width: 30px;
     margin-right: var($spacing-xxs);
     margin-bottom: var($spacing-xxs);
     height: $width;
-    width: 44px;
+    width: 2.75rem;
     @include body-small;
     border-radius: 2px;
     border: 2px solid transparent;

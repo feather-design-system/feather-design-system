@@ -147,11 +147,11 @@ exports[`FeatherExpansionPanel.vue should render loading 1`] = `
       >
         <div
           class="spinner-container"
-          data-v-5ad3cece=""
+          data-v-2263be39=""
         >
           <svg
             class="spinner"
-            data-v-5ad3cece=""
+            data-v-2263be39=""
             viewBox="0 0 66 66"
             xmlns="http://www.w3.org/2000/svg"
           >
@@ -159,7 +159,7 @@ exports[`FeatherExpansionPanel.vue should render loading 1`] = `
               class="path"
               cx="33"
               cy="33"
-              data-v-5ad3cece=""
+              data-v-2263be39=""
               fill="none"
               r="30"
               stroke-linecap="round"

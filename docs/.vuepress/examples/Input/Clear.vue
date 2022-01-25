@@ -18,6 +18,6 @@ export default {
 <style lang="scss" scoped>
 @import "@featherds/styles/themes/variables";
 .my-text-input {
-  width: 400px;
+  width: 25rem;
 }
 </style>

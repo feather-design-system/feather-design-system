@@ -20,10 +20,10 @@ export default {
 @import "@featherds/styles/mixins/typography";
 
 .menu-name {
-  width: 238px;
-  margin: 24px 0;
-  padding-left: 22px;
-  padding-right: 24px;
+  width: 14rem;
+  margin: 1.5rem 0;
+  padding-left: 1.375rem;
+  padding-right: 1.5rem;
   border-right: 1px solid var($border-on-surface);
   @include flex;
   @include horizontal;

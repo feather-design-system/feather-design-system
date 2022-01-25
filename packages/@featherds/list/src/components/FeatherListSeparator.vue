@@ -18,7 +18,7 @@ li.feather-list-item {
 }
 hr {
   border: none;
-  padding: 8px 0;
+  padding: 0.5rem 0;
   margin: 0;
 }
 </style>

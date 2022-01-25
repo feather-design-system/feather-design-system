@@ -12,8 +12,8 @@ Feather DS is comprised of many layers of design and technology. As the design a
 <style>
   .figures{
     display: grid;
-    grid-gap: 24px;
-    grid-template-columns: repeat(auto-fill, 237px);
+    grid-gap: 1.5rem;
+    grid-template-columns: repeat(auto-fill, 14.8125rem);
     justify-content: center;
   }
 </style>

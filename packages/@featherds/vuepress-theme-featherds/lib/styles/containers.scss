@@ -4,27 +4,27 @@
 
 .feather-styles .custom-container {
   @include elevation(2);
-  border-radius: 4px;
-  padding: 8px 12px;
-  margin: 32px;
+  border-radius: 0.25rem;
+  padding: 0.5rem 0.75rem;
+  margin: 2rem;
   color: var($primary-text-on-surface);
 
   .custom-container-title {
     @include subtitle2();
     margin: 0;
-    margin-bottom: 8px;
+    margin-bottom: 0.5rem;
   }
   p {
     margin: 0;
   }
   &.tip {
-    border-left: 8px solid var($primary);
+    border-left: 0.5rem solid var($primary);
     .custom-container-title {
       color: var($primary);
     }
   }
   &.warning {
-    border-left: 8px solid var($warning);
+    border-left: 0.5rem solid var($warning);
     .custom-container-title {
       color: var($warning);
     }

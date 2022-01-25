@@ -51,13 +51,13 @@ export default {
 </script>
 <style lang="scss" scoped>
 .scroll {
-  max-width: 500px;
-  max-height: 500px;
+  max-width: 30rem;
+  max-height: 30rem;
   overflow: auto;
 }
 .center-content {
-  width: 1000px;
-  height: 1000px;
+  width: 60rem;
+  height: 60rem;
   display: flex;
   align-items: center;
   justify-content: center;

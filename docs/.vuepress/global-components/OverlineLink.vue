@@ -20,7 +20,7 @@ export default {
 @import "@featherds/styles/mixins/typography";
 .overline-link {
   list-style: none;
-  margin-bottom: 8px;
+  margin-bottom: 0.5rem;
 }
 .overline-link a {
   @include overline();

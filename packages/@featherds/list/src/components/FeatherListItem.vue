@@ -101,7 +101,7 @@ li {
   @include body-small();
   color: var($secondary-text-on-surface);
   height: $feather-list-height;
-  padding: 0 16px;
+  padding: 0 1rem;
   display: flex;
   align-items: center;
   cursor: pointer;
@@ -125,8 +125,8 @@ li {
     display: flex;
     align-items: center;
     justify-content: center;
-    margin-right: 12px;
-    font-size: 18px;
+    margin-right: 0.75rem;
+    font-size: 1.125rem;
     color: var($secondary-text-on-surface);
     width: 1em;
   }

@@ -162,8 +162,3 @@ export default {
   },
 };
 </script>
-<style>
-.fixed-width {
-  width: 266px;
-}
-</style>

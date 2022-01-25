@@ -40,9 +40,9 @@ export default {
   align-items: center;
   justify-content: center;
   color: var($secondary-text-on-surface);
-  font-size: 20px;
-  height: 26px;
-  width: 26px;
+  font-size: 1.25rem;
+  height: 1.625rem;
+  width: 1.625rem;
   border-radius: 100%;
   cursor: pointer;
   border: 1px solid transparent;

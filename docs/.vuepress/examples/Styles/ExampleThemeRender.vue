@@ -58,22 +58,22 @@ export default {
 @import "@featherds/styles/mixins/typography";
 
 .theme-render {
-  padding: 8px 32px;
+  padding: 0.5rem 2rem;
   background-color: var($background);
 }
 .outer-row {
   display: flex;
   flex-direction: row;
-  margin-bottom: 24px;
+  margin-bottom: 1.5rem;
 }
 
 .col {
-  min-height: 100px;
+  min-height: 6.25rem;
   flex: 1;
   display: flex;
   flex-direction: column;
   @include body-large();
-  padding: 4px;
+  padding: 0.25rem;
 }
 </style>
 

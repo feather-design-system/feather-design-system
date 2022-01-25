@@ -317,12 +317,12 @@ export default {
     background-color: var($secondary);
     @include subtitle1;
     color: var($primary-text-on-color);
-    height: 60px;
+    height: 3.75rem;
     display: flex;
     align-items: center;
     justify-content: space-between;
-    padding: 0 24px;
-    padding-left: 24px + 36px + 16px;
+    padding: 0 1.5rem;
+    padding-left: 1.5rem + 2.25rem + 1rem;
   }
 
   .focus-area {
@@ -343,8 +343,8 @@ export default {
 
     .close-icon {
       position: absolute;
-      left: 24px;
-      top: 12px;
+      left: 1.5rem;
+      top: 0.75rem;
       margin: 0;
     }
   }
@@ -366,7 +366,7 @@ export default {
   .lhs-panel {
     vertical-align: top;
     width: 25%;
-    min-width: 180px;
+    min-width: 11.25rem;
     height: 100%;
     + .main-panel {
       width: 75%;
@@ -387,7 +387,7 @@ export default {
 }
 
 .loading {
-  padding-top: 48px;
+  padding-top: 3rem;
 }
 .file-error {
   height: auto;

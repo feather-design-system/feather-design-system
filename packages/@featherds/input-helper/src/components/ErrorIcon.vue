@@ -20,6 +20,6 @@ export default {
 @import "@featherds/styles/themes/variables";
 .error-icon {
   color: var($error);
-  font-size: 20px;
+  font-size: 1.25rem;
 }
 </style>

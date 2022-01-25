@@ -14,19 +14,57 @@ $colors: (
   $state-color-on-color: #fff,
   $state-color-on-neutral: #000,
   //added here so RGB is added
-  $primary-text-on-surface: rgba(10, 12, 27, 0.9)
+  $primary-text-on-surface: rgba(10, 12, 27, 0.9),
 );
 
 $colors: add-RGB($colors);
 
 $hero-gradients: (
-  $hero-gradient-1-1: radial-gradient(ellipse 200% 500% at -90% 0%, rgba(#DB2973, .5) 0%, #14D1DF00 100%) 0% 0% no-repeat padding-box,
-  $hero-gradient-1-2: radial-gradient(ellipse 100% 250% at 130% 180%, rgba(#32E7F3, .5) 0%, #14D1DF00 100%) 0% 0% no-repeat padding-box,
-  $hero-gradient-1-3: radial-gradient(ellipse 0% 0% at 0% 0%, transparent 0%, transparent 100%) 0% 0% no-repeat padding-box,
-  $hero-gradient-2-1: radial-gradient(ellipse 200% 200% at -100% -110%, rgba(#DB2973, .5) 0%, #14D1DF00 100%) 0% 0% no-repeat padding-box,
-  $hero-gradient-2-2: radial-gradient(ellipse 100% 250% at 130% -115%, rgba(#32E7F3, .5) 0%, #14D1DF00 100%) 0% 0% no-repeat padding-box,
-  $hero-gradient-2-3: radial-gradient(ellipse 100% 250% at 110% 250%, rgba(#3A4BD3, .5) 0%, #14D1DF00 100%) 0% 0% no-repeat padding-box,
-  $hero-gradient-2-4: radial-gradient(ellipse 200% 200% at -90% 160%, rgba(#3D50C5, .5) 0%, #14D1DF00 100%) 0% 0% no-repeat padding-box,
+  $hero-gradient-1-1:
+    radial-gradient(
+      ellipse 200% 500% at -90% 0%,
+      rgba(#db2973, 0.5) 0%,
+      #14d1df00 100%
+    )
+    0% 0% no-repeat padding-box,
+  $hero-gradient-1-2:
+    radial-gradient(
+      ellipse 100% 250% at 130% 180%,
+      rgba(#32e7f3, 0.5) 0%,
+      #14d1df00 100%
+    )
+    0% 0% no-repeat padding-box,
+  $hero-gradient-1-3:
+    radial-gradient(ellipse 0% 0% at 0% 0%, transparent 0%, transparent 100%) 0%
+    0% no-repeat padding-box,
+  $hero-gradient-2-1:
+    radial-gradient(
+      ellipse 200% 200% at -100% -110%,
+      rgba(#db2973, 0.5) 0%,
+      #14d1df00 100%
+    )
+    0% 0% no-repeat padding-box,
+  $hero-gradient-2-2:
+    radial-gradient(
+      ellipse 100% 250% at 130% -115%,
+      rgba(#32e7f3, 0.5) 0%,
+      #14d1df00 100%
+    )
+    0% 0% no-repeat padding-box,
+  $hero-gradient-2-3:
+    radial-gradient(
+      ellipse 100% 250% at 110% 250%,
+      rgba(#3a4bd3, 0.5) 0%,
+      #14d1df00 100%
+    )
+    0% 0% no-repeat padding-box,
+  $hero-gradient-2-4:
+    radial-gradient(
+      ellipse 200% 200% at -90% 160%,
+      rgba(#3d50c5, 0.5) 0%,
+      #14d1df00 100%
+    )
+    0% 0% no-repeat padding-box,
 );
 
 $on-color: (
@@ -123,7 +161,7 @@ $shadows: (
   0 5px 22px 4px rgba(0, 0, 0, 0.12)},
   $shadow-13: #{0 7px 8px -4px rgba(0, 0, 0, 0.2),
   0 13px 19px 2px rgba(0, 0, 0, 0.14),
-  0 5px 24px 4px rgba(0, 0, 0, 0.12)},
+  0 5px 1.5rem 4px rgba(0, 0, 0, 0.12)},
   $shadow-14: #{0 7px 9px -4px rgba(0, 0, 0, 0.2),
   0 14px 21px 2px rgba(0, 0, 0, 0.14),
   0 5px 26px 4px rgba(0, 0, 0, 0.12)},
@@ -131,7 +169,7 @@ $shadows: (
   0 15px 22px 2px rgba(0, 0, 0, 0.14),
   0 6px 28px 5px rgba(0, 0, 0, 0.12)},
   $shadow-16: #{0 8px 10px -5px rgba(0, 0, 0, 0.2),
-  0 16px 24px 2px rgba(0, 0, 0, 0.14),
+  0 16px 1.5rem 2px rgba(0, 0, 0, 0.14),
   0 6px 30px 5px rgba(0, 0, 0, 0.12)},
   $shadow-17: #{0 8px 11px -5px rgba(0, 0, 0, 0.2),
   0 17px 26px 2px rgba(0, 0, 0, 0.14),
@@ -155,7 +193,7 @@ $shadows: (
   0 23px 36px 3px rgba(0, 0, 0, 0.14),
   0 9px 44px 8px rgba(0, 0, 0, 0.12)},
   $shadow-24: #{0 11px 15px -7px rgba(0, 0, 0, 0.2),
-  0 24px 38px 3px rgba(0, 0, 0, 0.14),
+  0 1.5rem 38px 3px rgba(0, 0, 0, 0.14),
   0 9px 46px 8px rgba(0, 0, 0, 0.12)},
 );
 

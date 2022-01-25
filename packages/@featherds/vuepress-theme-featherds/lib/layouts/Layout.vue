@@ -114,7 +114,7 @@ export default {
 @import "@featherds/styles/mixins/typography";
 @import "@featherds/styles/mixins/responsive";
 
-$contentWidth: 760px;
+$contentWidth: 47.5rem;
 .content-container {
   max-width: $contentWidth;
 }
@@ -135,7 +135,7 @@ $contentWidth: 760px;
   position: relative;
 }
 .main-content {
-  margin-bottom: 60px;
+  margin-bottom: 3.75rem;
 }
 :deep(.smaller) {
   font-size: 0.6em;
@@ -143,49 +143,49 @@ $contentWidth: 760px;
 }
 
 .title-container {
-  margin-bottom: 40px;
-  padding: 40px 0;
+  margin-bottom: 2.5rem;
+  padding: 2.5rem 0;
   background: var($background);
   .pre-text {
     @include overline();
     color: var($primary);
     margin: 0;
-    margin-bottom: 8px;
+    margin-bottom: 0.5rem;
   }
   .title-description {
     margin: 0;
   }
 }
-$gutterwidth: 150px;
+$gutterwidth: 9.375rem;
 div.toc {
-  padding-left: 16px;
+  padding-left: 1rem;
   position: absolute;
-  left: calc(50% + 248px);
+  left: calc(50% + 15.5rem);
   &.fixed {
     position: fixed;
     top: 84px;
-    left: calc(50% + 379px);
+    left: calc(50% + 23.6875rem);
   }
 }
 
 @include media-query-below(xl) {
   div.toc.fixed {
-    left: calc(50% + 248px);
+    left: calc(50% + 15.5rem);
   }
 }
 @include media-query-below(l) {
   div.toc {
     position: static;
-    margin: 16px;
+    margin: 1rem;
     margin-top: 0px;
-    margin-bottom: 56px;
-    width: 200px;
+    margin-bottom: 3.5rem;
+    width: 12.5rem;
     &.fixed {
       position: static;
-      margin: 16px;
+      margin: 1rem;
       margin-top: 0px;
-      margin-bottom: 56px;
-      width: 200px;
+      margin-bottom: 3.5rem;
+      width: 12.5rem;
     }
   }
 }

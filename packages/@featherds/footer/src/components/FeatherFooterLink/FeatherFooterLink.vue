@@ -20,6 +20,6 @@ export default {
 <style lang="scss" scoped>
 li {
   list-style: none;
-  margin: 0 16px;
+  margin: 0 1rem;
 }
 </style>

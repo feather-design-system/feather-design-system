@@ -42,10 +42,10 @@ export default {
   }
 }
 section {
-  height: 200px;
+  height: 12.5rem;
   position: relative;
 }
 #test {
-  height: 300px;
+  height: 18.75rem;
 }
 </style>

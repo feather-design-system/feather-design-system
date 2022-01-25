@@ -1,8 +1,3 @@
-// <- 960px 12 col 24px but row max width is 1200px
-// 959 - 840px 12 col 24px row 100%
-// 839 - 720px 8 col 24px row 100%
-// 719 - 600px 8 col 16px row 100%
-// 599 -> 4 col 16px row 100%
 @use "sass:math";
 @import "../themes/variables";
 
@@ -36,7 +31,7 @@
   }
 }
 
-@mixin col($breakpoint, $col-number:0) {
+@mixin col($breakpoint, $col-number: 0) {
   //if breakpoint is a number then breakpoint defaults to xl
   @if type-of($breakpoint) == number {
     $col-number: $breakpoint;
@@ -57,7 +52,7 @@
   }
 }
 
-@mixin offset($breakpoint, $offset:0) {
+@mixin offset($breakpoint, $offset: 0) {
   //if breakpoint is a number then breakpoint defaults to xl
   @if type-of($breakpoint) == number {
     $offset: $breakpoint;

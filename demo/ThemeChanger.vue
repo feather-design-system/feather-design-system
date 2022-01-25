@@ -33,7 +33,7 @@ export default {
 <style lang="scss" scoped>
 .theme-container {
   text-align: right;
-  padding-bottom: 20px;
+  padding-bottom: 1.25rem;
 }
 </style>
 <style lang="scss">

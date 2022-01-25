@@ -40,7 +40,7 @@ export default {
 <style lang="scss" scoped>
 @import "@featherds/styles/themes/variables";
 @import "@featherds/styles/mixins/elevation";
-$width: 264px;
+$width: 16.5rem;
 .fake-header {
   height: var($header-height);
 }

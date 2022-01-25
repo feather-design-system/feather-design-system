@@ -155,14 +155,14 @@ export default {
   }
   .menu-content {
     max-height: 100vh;
-    margin-top: 32px;
-    margin-left: 32px;
-    margin-right: 10px;
-    margin-bottom: 24px;
+    margin-top: 2rem;
+    margin-left: 2rem;
+    margin-right: 0.75rem;
+    margin-bottom: 1.5rem;
     width: 100%;
     @include fill;
     & :deep(li > a) {
-      border-radius: 4px;
+      border-radius: 0.25rem;
     }
   }
   &.animate {

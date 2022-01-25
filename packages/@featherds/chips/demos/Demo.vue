@@ -180,6 +180,6 @@ export default {
 </script>
 <style lang="scss">
 div.chip-list:first-of-type {
-  max-width: 300px;
+  max-width: 18.75rem;
 }
 </style>
