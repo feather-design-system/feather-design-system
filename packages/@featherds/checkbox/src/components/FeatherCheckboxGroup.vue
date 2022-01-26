@@ -28,9 +28,15 @@ import {
   InputSubTextMixin,
 } from "@featherds/input-helper";
 import { computed, toRef } from "vue";
+import { useValidation } from "@featherds/input/src/components/useValidation";
+
 export default {
   mixins: [InputInheritAttrsMixin, InputSubTextMixin],
   props: {
+    modelValue: {
+      type: [Array, Object],
+      required: false,
+    },
     label: {
       type: String,
       required: true,
@@ -39,6 +45,15 @@ export default {
       type: Boolean,
       default: false,
     },
+    schema: {
+      type: Object,
+      required: false,
+    },
+  },
+  provide() {
+    return {
+      registerCheckbox: this.registerCheckbox,
+    };
   },
   setup(props, context) {
     const error = toRef(props, "error");
@@ -66,11 +81,27 @@ export default {
       };
     });
 
+    //setting default
+    let validate = useValidation().validate;
+
+    const registerCheckbox = (inputId) => {
+      if ("" + validate == "" + useValidation().validate) {
+        ({ validate } = useValidation(
+          inputId,
+          toRef(props, "modelValue"),
+          props.label,
+          props.schema
+        ));
+      }
+    };
+
     return {
       groupId,
       descriptionId,
       labelId,
       attrs,
+      validate,
+      registerCheckbox,
     };
   },
   components: {

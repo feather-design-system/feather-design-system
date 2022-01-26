@@ -30,6 +30,7 @@
           </template>
           <div v-bind="attrs" role="group" class="feather-date-input-group">
             <SpinButton
+              :id="monthId"
               :tabindex="disabled ? -1 : 0"
               :label="monthLabel"
               ref="monthButton"
@@ -175,16 +176,15 @@ export default {
     const menu = ref();
     const showClear = ref(false);
 
-    const incomingId = toRef(props, "id");
     const inputId = computed(() => {
-      if (incomingId.value) {
-        return incomingId.value;
-      }
       return getSafeId("feather-date-input-label");
+    });
+    const monthId = computed(() => {
+      return getSafeId("feather-date-input-month");
     });
 
     const { validate } = useValidation(
-      inputId,
+      ref(monthId),
       value,
       props.label,
       props.schema
@@ -372,6 +372,7 @@ export default {
       menu,
       calendar,
       inputId,
+      monthId,
       descriptionId,
       attrs,
       closeCalendar,

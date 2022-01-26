@@ -1,6 +1,7 @@
 import { ref, watch, watchEffect, computed, provide } from "vue";
+import { useValidation } from "@featherds/input/src/components/useValidation";
 import { useSelection } from "./Selection";
-const useRadioGroup = (modelValue, emit) => {
+const useRadioGroup = (modelValue, emit, label, schema) => {
   const radios = ref([]);
   const currentSelected = ref();
   const firstElement = ref();
@@ -53,8 +54,14 @@ const useRadioGroup = (modelValue, emit) => {
   });
   const selection = useSelection(currentHighlight, radios, select);
 
+  let validate = ref(useValidation().validate);
+
   const register = (radio) => {
     radios.value = [...radios.value, radio];
+    //lets try and instance validation
+    if ("" + validate.value == "" + useValidation().validate) {
+      ({ validate } = useValidation(radio.id, modelValue, label, schema));
+    }
   };
   provide("register", register);
   provide("select", select);
@@ -96,6 +103,7 @@ const useRadioGroup = (modelValue, emit) => {
     keydown,
     ...selection,
     focus,
+    validate,
   };
 };
 

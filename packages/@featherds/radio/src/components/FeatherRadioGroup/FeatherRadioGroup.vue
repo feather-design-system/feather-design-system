@@ -27,6 +27,7 @@ import {
 } from "@featherds/input-helper";
 import { computed, toRef } from "vue";
 import { useRadioGroup } from "@featherds/composables/radio/RadioGroup";
+
 export default {
   model: {
     prop: "modelValue",
@@ -45,13 +46,14 @@ export default {
       type: Boolean,
       default: false,
     },
+    schema: {
+      type: Object,
+      required: false,
+    },
   },
   setup(props, context) {
     const error = toRef(props, "error");
     const modelValue = toRef(props, "modelValue");
-    const groupId = computed(() => {
-      return getSafeId("feather-radio-group");
-    });
     const descriptionId = computed(() => {
       return getSafeId("feather-input-description");
     });
@@ -69,11 +71,15 @@ export default {
       return _attrs;
     });
 
+    const groupId = computed(() => {
+      return getSafeId("feather-radio-group");
+    });
+
     return {
       groupId,
       descriptionId,
       attrs,
-      ...useRadioGroup(modelValue, context.emit),
+      ...useRadioGroup(modelValue, context.emit, props.label, props.schema),
     };
   },
   components: {

@@ -81,12 +81,14 @@
 
     <FeatherCheckboxGroup
       label="Please select your favourite pizza toppings *"
-      hint="Pineapple is not allowed."
+      hint="Pick at least one. Pineapple is not allowed."
+      v-model="toppings"
+      :schema="toppingsV"
     >
-      <FeatherCheckbox v-model="pepperoni"> Pepperoni </FeatherCheckbox>
-      <FeatherCheckbox v-model="chicken"> Chicken </FeatherCheckbox>
-      <FeatherCheckbox v-model="olives"> Olives </FeatherCheckbox>
-      <FeatherCheckbox v-model="pineapple"> Pineapple </FeatherCheckbox>
+      <FeatherCheckbox v-model="toppings.pepperoni" :schema="toppingsV"> Pepperoni </FeatherCheckbox>
+      <FeatherCheckbox v-model="toppings.chicken" :schema="toppingsV"> Chicken </FeatherCheckbox>
+      <FeatherCheckbox v-model="toppings.olives" :schema="toppingsV"> Olives </FeatherCheckbox>
+      <FeatherCheckbox v-model="toppings.pineapple" :schema="toppingsV"> Pineapple </FeatherCheckbox>
     </FeatherCheckboxGroup>
 
     <FeatherTextarea
@@ -110,7 +112,7 @@
   </form>
 </template>
 <script>
-import { string, array, date } from "yup";
+import { string, array, date, object, boolean, ValidationError } from "yup";
 import { ref, computed, provide, nextTick } from "vue";
 import { FeatherAutocomplete } from "@featherds/autocomplete";
 import { FeatherCheckbox, FeatherCheckboxGroup } from "@featherds/checkbox";
@@ -144,15 +146,71 @@ export default {
     const pass = ref("");
     const passV = string().required("Required");
     const pass2 = ref("");
-    const pass2V = string().required("Required");
+    const pass2V = string().required("Required")
+    .test(
+      'passwordTest',
+      null,
+      () => {
+        if ( pass.value !== pass2.value ) {
+          return new ValidationError(
+            'Please ensure both passwords match',
+            null,
+            ''
+          );
+        }
+        if ( pass2.value.length < 10 ) {
+          return new ValidationError(
+            'Please ensure your password is at least 10 characters long',
+            null,
+            ''
+          );
+        }
+        //... etc
+        return true; // everything is fine
+
+      }
+    );
 
     const dob = ref();
-    const dobV = date().required("Required").max(new Date(Date.now() - 86400000));
+    const oneday = 60 * 60 * 24 * 1000;
+    const dobV = date().required("Required").max(new Date(Date.now() - oneday))
+    .test(
+      'dobTest',
+      null,
+      (obj) => {
+        if ( obj > new Date(Date.now() - oneday*7) ) {
+          return new ValidationError(
+            'Are you telling me you were born last week?',
+            null,
+            ''
+          );
+        }
+        return true; // everything is fine
+
+      }
+    );;
     const dobDisabled = { from: new Date() };
 
     const countries = allCountries;
     const country = ref();
-    const countryV = string().required("Required");
+    const countryV = object({
+      _text: string().required("You must make a selection to continue")
+    })
+    .test(
+      'countryTest',
+      null,
+      (obj) => {
+        debugger;
+        if ( obj._text?.includes("Narnia") ) {
+          return new ValidationError(
+            'Narnia residents are not allowed to use computers',
+            null,
+            ''
+          );
+        }
+        return true; // everything is fine
+      }
+    );
 
     const sexes = [
         {
@@ -191,10 +249,40 @@ export default {
       }, 500);
     };
 
-    const pepperoni = ref(false);
-    const chicken = ref(false);
-    const olives = ref(false);
-    const pineapple = ref(false);
+    const toppings = ref({
+      pepperoni: false,
+      chicken: false,
+      olives: false,
+      pineapple: false
+    });
+    const toppingsV = object({
+      pepperoni: boolean(),
+      chicken: boolean(),
+      olives: boolean(),
+      pineapple: boolean()
+    })
+    .test(
+      'toppingsTest',
+      null,
+      (obj) => {
+        if ( obj.pineapple ) {
+          return new ValidationError(
+            'Pineapple? Eww, whats wrong with you? Try again!',
+            null,
+            'myCustomFieldName'
+          );
+        }
+        if ( obj.pepperoni || obj.chicken || obj.olives ) {
+          return true; // everything is fine
+        }
+
+        return new ValidationError(
+          'Please check one checkbox',
+          null,
+          'myCustomFieldName'
+        );
+      }
+    );
 
     const comment = ref("");
     const commentV = string().required("Required");
@@ -264,10 +352,8 @@ export default {
       filmsLoading,
       filmsResults,
       filmsSearch,
-      pepperoni,
-      chicken,
-      olives,
-      pineapple,
+      toppings,
+      toppingsV,
       comment,
       commentV,
       onSubmit,

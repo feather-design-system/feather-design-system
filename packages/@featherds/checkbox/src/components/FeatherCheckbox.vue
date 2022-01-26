@@ -47,6 +47,7 @@
 import { getSafeId } from "@featherds/utils/id";
 import { KEYCODES } from "@featherds/utils/keys";
 import { FeatherRipple } from "@featherds/ripple";
+import { ref } from "vue";
 
 export default {
   model: {
@@ -54,6 +55,7 @@ export default {
     event: "update:modelValue",
   },
   emits: ["click", "update:modelValue", "indeterminate"],
+  inject: ["registerCheckbox"],
   props: {
     disabled: {
       type: Boolean,
@@ -74,6 +76,11 @@ export default {
       type: Boolean,
       default: false,
     },
+  },
+  mounted() {
+    if (this.registerCheckbox) {
+      this.registerCheckbox(ref(this.inputId));
+    }
   },
   computed: {
     inputId() {

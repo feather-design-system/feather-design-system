@@ -67,6 +67,7 @@ import { getSafeId } from "@featherds/utils/id";
 import { KEYCODES } from "@featherds/utils/keys";
 import List from "./List";
 import { useValidation } from "@featherds/input/src/components/useValidation";
+import { computed, toRef } from "vue";
 
 export default {
   mixins: [InputWrapperMixin, InputSubTextMixin, InputInheritAttrsMixin],
@@ -103,16 +104,15 @@ export default {
       }
       return getSafeId("feather-select-label");
     });
-    const internalValue = ref(modelValue);
 
     const { validate } = useValidation(
       inputId,
-      internalValue,
+      toRef(props, "modelValue"),
       props.label,
       props.schema
     );
 
-    return { inputId, internalValue, validate };
+    return { inputId, incomingId, validate };
   },
   data() {
     return {
@@ -129,9 +129,6 @@ export default {
     },
     subTextId() {
       return getSafeId("feather-select-description");
-    },
-    inputId() {
-      return getSafeId("feather-select-input");
     },
     inputAttrs() {
       return {
