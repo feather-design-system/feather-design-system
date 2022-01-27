@@ -5,6 +5,7 @@ const useRadioGroup = (modelValue, emit, label, schema) => {
   const radios = ref([]);
   const currentSelected = ref();
   const firstElement = ref();
+  const firstElementId = ref();
 
   watchEffect(() => {
     if (!radios.value.length) {
@@ -57,10 +58,16 @@ const useRadioGroup = (modelValue, emit, label, schema) => {
   let validate = ref(useValidation().validate);
 
   const register = (radio) => {
+    firstElementId.value = radio.id;
     radios.value = [...radios.value, radio];
     //lets try and instance validation
     if ("" + validate.value == "" + useValidation().validate) {
-      ({ validate } = useValidation(radio.id, modelValue, label, schema));
+      ({ validate } = useValidation(
+        firstElementId.value,
+        modelValue,
+        label,
+        schema
+      ));
     }
   };
   provide("register", register);
@@ -104,6 +111,7 @@ const useRadioGroup = (modelValue, emit, label, schema) => {
     ...selection,
     focus,
     validate,
+    firstElementId,
   };
 };
 

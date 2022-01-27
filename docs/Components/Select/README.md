@@ -81,6 +81,7 @@ The following example allows `10` items to be displayed before scrolling.
 | hint       | hint string to display under select                                                     | `String`        | `false`  | -           |
 | background | sets label background color to `background`                                             | `Boolean`       | `false`  | `false`     |
 | hideLabel  | hides the label for the input in scenarios like tables where it would get in the way    | `Boolean`       | `false`  | -           |
+| schema     | a schema for use in validation                                                          | `Object`        | `false`  | -           |
 
 ### Events
 

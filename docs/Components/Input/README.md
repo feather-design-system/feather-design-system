@@ -49,6 +49,8 @@ Inputs can be used as a singular object in a layout, or they can be paired toget
 | disabled   | puts the Input into a disabled state                                                             | `Boolean` | `false`  | `false`      |
 | maxlength  | maximum amount of characters this Input will accept                                              | `Number`  | `false`  | 0 - no limit |
 | hideLabel  | hides the label for the Input in scenarios like tables where it would get in the way             | `Boolean` | `false`  | -            |
+| id         | an ID that can be will be assigned to the input element                                          | `String`  | `false`  | -            |
+| schema     | a schema for use in validation                                                                   | `Object`  | `false`  | -            |
 
 ### Events
 

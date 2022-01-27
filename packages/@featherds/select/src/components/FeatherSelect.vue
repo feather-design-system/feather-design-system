@@ -97,11 +97,7 @@ export default {
     },
   },
   setup(props) {
-    const incomingId = toRef(props, "id");
     const inputId = computed(() => {
-      if (incomingId.value) {
-        return incomingId.value;
-      }
       return getSafeId("feather-select-label");
     });
 

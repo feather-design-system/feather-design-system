@@ -35,6 +35,7 @@ Text areas should be used on forms, dialogs, background, and foreground surfaces
 | maxlength  | maximum amount of characters this textarea will accept                                           | `Number`  | `false`  | 0 - no limit |
 | auto       | when true the textarea will automatically grow                                                   | `Boolean` | `false`  | `false`      |
 | hideLabel  | hides the label for the input in scenarios like tables where it would get in the way             | `Boolean` | `false`  | -            |
+| schema     | a schema for use in validation                                                                   | `Object`  | `false`  | -            |
 
 ### Events
 
