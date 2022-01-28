@@ -16,6 +16,10 @@ module.exports = [
         name: "Form Validation",
         url: "/Components/FormValidation/",
       },
+      {
+        name: "Typescript",
+        url: "/Components/Typescript/",
+      },
     ],
   },
   {
