@@ -281,7 +281,7 @@ export default {
       let errors = 0;
       errors = validateheader.value.runValidation();
 
-      if (!errors.length) {
+      if (!errors) {
         submitting.value = true;
         alert.value.textContent = "Submitting form, please wait";
 

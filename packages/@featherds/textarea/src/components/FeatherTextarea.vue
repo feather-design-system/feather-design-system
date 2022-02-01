@@ -202,6 +202,7 @@ export default defineComponent({
       this.focused = true;
     },
     handleBlur() {
+      this.validate();
       this.focused = false;
     },
     handleInput(e) {
