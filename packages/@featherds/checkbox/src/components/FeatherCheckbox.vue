@@ -79,7 +79,7 @@ export default {
   },
   mounted() {
     if (this.registerCheckbox) {
-      this.registerCheckbox(ref(this.inputId));
+      this.registerCheckbox(this.inputId);
     }
   },
   computed: {

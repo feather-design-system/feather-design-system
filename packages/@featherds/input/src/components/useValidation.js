@@ -1,4 +1,4 @@
-import { inject, ref, provide } from "vue";
+import { inject, ref, provide, watch } from "vue";
 const useValidation = (inputId, value, label, schema) => {
   const form = inject("featherForm", false);
   if (schema && form && inputId.value) {
@@ -20,6 +20,13 @@ const useValidation = (inputId, value, label, schema) => {
       }
     };
     form.register(inputId.value, validate);
+    watch(inputId, (curr, old) => {
+      if (curr) {
+        form.reregister(old, curr);
+      } else {
+        form.deregister(old);
+      }
+    });
     return { validate };
   }
   return { validate: () => true };

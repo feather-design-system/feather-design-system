@@ -1,6 +1,7 @@
 import { ref, watch, watchEffect, computed, provide } from "vue";
 import { useValidation } from "@featherds/input/src/components/useValidation";
 import { useSelection } from "./Selection";
+import { getSafeId } from "@featherds/utils/id";
 const useRadioGroup = (modelValue, emit, label, schema) => {
   const radios = ref([]);
   const currentSelected = ref();
@@ -55,19 +56,19 @@ const useRadioGroup = (modelValue, emit, label, schema) => {
   });
   const selection = useSelection(currentHighlight, radios, select);
 
-  let validate = ref(useValidation().validate);
+  const groupId = computed(() => {
+    return getSafeId("feather-radio-group");
+  });
+
+  firstElementId.value = groupId.value;
+
+  let validate = useValidation(firstElementId, modelValue, label, schema);
 
   const register = (radio) => {
-    firstElementId.value = radio.id;
     radios.value = [...radios.value, radio];
     //lets try and instance validation
-    if ("" + validate.value == "" + useValidation().validate) {
-      ({ validate } = useValidation(
-        firstElementId.value,
-        modelValue,
-        label,
-        schema
-      ));
+    if (firstElementId.value === groupId.value) {
+      firstElementId.value = radio.id;
     }
   };
   provide("register", register);
@@ -112,6 +113,7 @@ const useRadioGroup = (modelValue, emit, label, schema) => {
     focus,
     validate,
     firstElementId,
+    groupId,
   };
 };
 

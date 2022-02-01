@@ -71,12 +71,7 @@ export default {
       return _attrs;
     });
 
-    const groupId = computed(() => {
-      return getSafeId("feather-radio-group");
-    });
-
     return {
-      groupId,
       descriptionId,
       attrs,
       ...useRadioGroup(modelValue, context.emit, props.label, props.schema),

@@ -108,7 +108,7 @@ export default {
       props.schema
     );
 
-    return { inputId, incomingId, validate };
+    return { inputId, validate };
   },
   data() {
     return {

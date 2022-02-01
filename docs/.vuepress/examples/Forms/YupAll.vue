@@ -1,18 +1,7 @@
 <template>
   <form @submit="onSubmit" novalidate>
     * indicates required
-    <div class="errors" v-if="errors.length">
-      <div class="error-heading" tabindex="-1" ref="heading">
-        {{ errorsHeading }}
-      </div>
-      <ul>
-        <li v-for="item in errors" :key="item.inputId">
-          <a href="#" @click.prevent="focusElement(item.inputId)">{{
-            item.fullMessage
-          }}</a>
-        </li>
-      </ul>
-    </div>
+    <ValidationHeader ref="validateheader" />
     <FeatherInput
       label="Email *"
       :modelValue="email"
@@ -113,16 +102,17 @@
 </template>
 <script>
 import { string, array, date, object, boolean, ValidationError } from "yup";
-import { ref, computed, provide, nextTick } from "vue";
+import { ref, computed, nextTick, inject } from "vue";
 import { FeatherAutocomplete } from "@featherds/autocomplete";
 import { FeatherCheckbox, FeatherCheckboxGroup } from "@featherds/checkbox";
 import { FeatherDateInput } from "@featherds/date-input";
 import { FeatherDropdown } from "@featherds/dropdown";
-import { FeatherInput } from "@featherds/input";
+import { FeatherInput, ValidationHeader } from "@featherds/input";
 import { FeatherProtectedInput } from "@featherds/protected-input";
 import { FeatherRadio, FeatherRadioGroup } from "@featherds/radio";
 import { FeatherSelect } from "@featherds/select";
 import { FeatherTextarea } from "@featherds/textarea";
+import { useForm } from "@featherds/input/src/components/useForm";
 
 import { FeatherSpinner } from "@featherds/progress";
 
@@ -130,12 +120,7 @@ import allCountries from "./countries.js";
 
 export default {
   setup() {
-    const controls = {};
-    provide("featherForm", {
-      register: (input, validate) => {
-        controls[input] = validate;
-      },
-    });
+    useForm();
     //Field values and validation rules
     const name = ref("");
     const nameV = string().required("Required");
@@ -188,7 +173,7 @@ export default {
         return true; // everything is fine
 
       }
-    );;
+    );
     const dobDisabled = { from: new Date() };
 
     const countries = allCountries;
@@ -200,7 +185,6 @@ export default {
       'countryTest',
       null,
       (obj) => {
-        debugger;
         if ( obj._text?.includes("Narnia") ) {
           return new ValidationError(
             'Narnia residents are not allowed to use computers',
@@ -288,36 +272,16 @@ export default {
     const commentV = string().required("Required");
 
     //General Error variables
-    const errors = ref([]);
-    const errorsHeading = ref("");
-    const heading = ref();
+    const form = inject("featherForm", false);
     const submitting = ref();
+    const validateheader = ref();
     const alert = ref();
-    const removeAsteriks = (str) => {
-      return str.replace(/ \*$/, "");
-    };
-    const focusElement = (id) => {
-      document.getElementById(id).focus();
-    };
     const onSubmit = (e) => {
-      errors.value = [];
       e.preventDefault();
-      const validation = Object.keys(controls).map((key) => {
-        return controls[key]();
-      });
-      errors.value = validation
-        .filter((x) => x.success === false)
-        .map((v) => {
-          v.fullMessage = `${removeAsteriks(v.label)} - ${v.message}`;
-          return v;
-        });
+      let errors = 0;
+      errors = validateheader.value.runValidation();
 
-      if (errors.value.length) {
-        errorsHeading.value = errors.value
-          ? errors.value.length + " errors"
-          : "";
-        nextTick(() => heading.value.focus());
-      } else {
+      if (!errors.length) {
         submitting.value = true;
         alert.value.textContent = "Submitting form, please wait";
 
@@ -357,13 +321,10 @@ export default {
       comment,
       commentV,
       onSubmit,
-      errors,
-      errorsHeading,
-      heading,
       addHash,
-      focusElement,
       submitting,
       alert,
+      validateheader
     };
   },
   components: {
@@ -378,7 +339,8 @@ export default {
     FeatherRadioGroup,
     FeatherSelect,
     FeatherSpinner,
-    FeatherTextarea
+    FeatherTextarea,
+    ValidationHeader
   },
 };
 </script>
