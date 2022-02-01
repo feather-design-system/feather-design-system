@@ -11,6 +11,11 @@ const getWrapper = function (options = {}) {
     ...options,
     ...getSlot(),
   };
+  options.global = {
+    provide: {
+      registerCheckbox: jest.fn(),
+    },
+  };
   return mount(FeatherCheckbox, options);
 };
 const getSlot = () => ({

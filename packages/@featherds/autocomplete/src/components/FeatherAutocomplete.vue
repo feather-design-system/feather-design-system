@@ -654,7 +654,7 @@ export default {
       this.$refs.input.focus();
     },
     handleInputBlur() {
-      validate();
+      this.validate();
       this.strategy.handleInputBlur();
       if (this.forceCloseResults || !this.showMenu) {
         this.handleOutsideClick();

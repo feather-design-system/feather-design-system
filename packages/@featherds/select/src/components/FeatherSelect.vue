@@ -98,7 +98,7 @@ export default {
   },
   setup(props) {
     const inputId = computed(() => {
-      return getSafeId("feather-select-label");
+      return getSafeId("feather-select-input");
     });
 
     const { validate } = useValidation(

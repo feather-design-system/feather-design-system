@@ -20,7 +20,7 @@ import { useResize } from "@featherds/composables/events/Resize";
 import { useScroll } from "@featherds/composables/events/Scroll";
 
 export default {
-  emits: ["outside-click", "trigger-click"],
+  emits: ["outside-click", "trigger-click", "close"],
   props: {
     open: {
       type: Boolean,

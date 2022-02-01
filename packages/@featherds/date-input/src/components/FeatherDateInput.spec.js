@@ -8,6 +8,12 @@ import { mount, config } from "@vue/test-utils";
 import "@featherds/input-helper/test/MutationObserver";
 import axe from "@featherds/utils/test/axe";
 
+Date.prototype.toLocaleDateStringDefault = Date.prototype.toLocaleDateString;
+Date.prototype.toLocaleDateString = function (locale, options) {
+  var result = this.toLocaleDateStringDefault("en-US", options);
+  return result;
+};
+
 config.renderStubDefaultSlot = true;
 
 const getWrapper = function (options = {}) {
