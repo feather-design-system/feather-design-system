@@ -1,7 +1,7 @@
 <template>
   <form @submit="onSubmit" novalidate>
     * indicates required
-    <ValidationHeader ref="validateheader" />
+    <ValidationHeader :errorList="errorMessages" />
     <FeatherInput
       label="Email *"
       :modelValue="email"
@@ -120,7 +120,7 @@ import allCountries from "./countries.js";
 
 export default {
   setup() {
-    useForm();
+    const form = useForm();
     //Field values and validation rules
     const name = ref("");
     const nameV = string().required("Required");
@@ -272,16 +272,14 @@ export default {
     const commentV = string().required("Required");
 
     //General Error variables
-    const form = inject("featherForm", false);
+    const errorMessages = ref([]);
     const submitting = ref();
-    const validateheader = ref();
     const alert = ref();
     const onSubmit = (e) => {
       e.preventDefault();
-      let errors = 0;
-      errors = validateheader.value.runValidation();
+      errorMessages.value = form.validate();
 
-      if (!errors) {
+      if (!errorMessages.value.length) {
         submitting.value = true;
         alert.value.textContent = "Submitting form, please wait";
 
@@ -292,7 +290,6 @@ export default {
       }
     };
 
-    const addHash = (str) => `#${str}`;
     return {
       email,
       emailV,
@@ -321,10 +318,10 @@ export default {
       comment,
       commentV,
       onSubmit,
-      addHash,
       submitting,
       alert,
-      validateheader
+      form,
+      errorMessages
     };
   },
   components: {

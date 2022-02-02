@@ -1,5 +1,9 @@
 <template>
-  <div class="errors" v-if="errors.length">
+  <div
+    class="errors"
+    v-if="errors.length"
+    data-ref-id="feather-validation-header"
+  >
     <div class="error-heading" tabindex="-1" ref="heading">
       {{ errorsHeading }}
     </div>
@@ -13,33 +17,32 @@
   </div>
 </template>
 <script>
-import { ref, computed, nextTick, inject } from "vue";
+import { ref, computed, nextTick } from "vue";
 
 export default {
-  props: {},
-  setup() {
-    const form = inject("featherForm", false);
-    const errorList = ref([]);
+  props: {
+    errorList: {
+      type: Array,
+      default: () => [],
+    },
+  },
+  setup(props) {
     const focusElement = (id) => {
       document.getElementById(id).focus();
     };
     const removeAsteriks = (str) => {
       return str.replace(/ \*$/, "");
     };
-    const runValidation = () => {
-      errorList.value = form.runValidation();
-      return errorList.value.length;
-    };
     const heading = ref();
 
     const errors = computed(() => {
-      return errorList.value.map((v) => {
+      return props.errorList.map((v) => {
         v.fullMessage = `${removeAsteriks(v.label)} - ${v.message}`;
         return v;
       });
     });
     const errorsHeading = computed(() => {
-      if (errorList.value.length) {
+      if (props.errorList.length) {
         nextTick(() => heading.value.focus());
       }
       return errors.value ? errors.value.length + " errors" : "";
@@ -50,7 +53,6 @@ export default {
       errorsHeading,
       heading,
       focusElement,
-      runValidation,
     };
   },
 };

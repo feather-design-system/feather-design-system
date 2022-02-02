@@ -1,6 +1,12 @@
 import { provide } from "vue";
 const useForm = () => {
   let controls = {};
+  const _validate = () => {
+    const validation = Object.keys(controls).map((key) => {
+      return controls[key]();
+    });
+    return validation.filter((x) => x.success === false);
+  };
 
   provide("featherForm", {
     register: (input, validate) => {
@@ -22,13 +28,10 @@ const useForm = () => {
 
       controls = newControls;
     },
-    runValidation: () => {
-      const validation = Object.keys(controls).map((key) => {
-        return controls[key]();
-      });
-      return validation.filter((x) => x.success === false);
-    },
+    runValidation: _validate,
   });
+
+  return { validate: _validate };
 };
 
 export { useForm };
