@@ -1,6 +1,9 @@
 {
   "name": "@featherds/vuepress-theme-featherds",
   "version": "0.9.1",
+  "publishConfig": {
+    "access": "public"
+  },
   "description": "",
   "main": "lib/index.js",
   "keywords": [
