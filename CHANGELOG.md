@@ -1,3 +1,21 @@
+## [0.9.4](https://github.com/feather-design-system/feather-design-system/compare/v0.9.2...v0.9.4) (2022-02-02)
+
+
+### Bug Fixes
+
+* **focus-trap:** refactored to resolve quirks in some browsers where order wasn't maintained ([a6c5b9b](https://github.com/feather-design-system/feather-design-system/commit/a6c5b9b8901a6b4cbe5b32ec8d5282858d3ad896))
+* resolved buid issue with vuepress theme ([91ae9ca](https://github.com/feather-design-system/feather-design-system/commit/91ae9ca4c5cb2139aeffd78021ab331661d492ce))
+* **select:** only emitting update on click and close of menu [#23](https://github.com/feather-design-system/feather-design-system/issues/23) ([50dc0b2](https://github.com/feather-design-system/feather-design-system/commit/50dc0b26329a07c188bbed0284193e3a9d0586a0))
+* updated instances using 'user-select: none' in CSS to also include vendor prefixes ([90de488](https://github.com/feather-design-system/feather-design-system/commit/90de488af3ec08e209b73b01dffd0a8090d571ab))
+
+
+### Features
+
+* ensuring schema/validation support for all form controls and building validation examples ([65bc2fb](https://github.com/feather-design-system/feather-design-system/commit/65bc2fbb88f665b8eb559ecd874fae31b891fa6f))
+* **vuepress-theme:** adding new vuepress theme package ([fd893b1](https://github.com/feather-design-system/feather-design-system/commit/fd893b1a7b8d64115aaa641e7d65755232c908ea))
+
+
+
 ## [0.9.2](https://github.com/feather-design-system/feather-design-system/compare/v0.9.1...v0.9.2) (2021-12-03)
 
 

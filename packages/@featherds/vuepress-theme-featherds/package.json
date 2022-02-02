@@ -1,6 +1,6 @@
 {
   "name": "@featherds/vuepress-theme-featherds",
-  "version": "0.9.1",
+  "version": "0.9.4",
   "publishConfig": {
     "access": "public"
   },
@@ -14,21 +14,21 @@
     "lib"
   ],
   "dependencies": {
+    "@featherds/app-bar": "file:../app-bar",
+    "@featherds/app-layout": "file:../app-layout",
     "@featherds/button": "file:../button",
     "@featherds/composables": "file:../composables",
-    "@featherds/app-layout": "file:../app-layout",
-    "@featherds/app-bar": "file:../app-bar",
     "@featherds/icon": "file:../icon",
-    "@featherds/styles": "file:../styles",
-    "@featherds/table": "file:../table",
     "@featherds/list": "file:../list",
     "@featherds/ripple": "file:../ripple",
+    "@featherds/styles": "file:../styles",
+    "@featherds/table": "file:../table",
+    "@vuepress/client": "^2.0.0-beta.27",
+    "@vuepress/core": "2.0.0-beta.27",
     "@vuepress/plugin-active-header-links": "^v2.0.0-beta.27",
     "@vuepress/plugin-container": "^v2.0.0-beta.27",
     "@vuepress/plugin-prismjs": "^v2.0.0-beta.27",
-    "@vuepress/plugin-theme-data": "^2.0.0-beta.27",
-    "@vuepress/client": "^2.0.0-beta.27",
-    "@vuepress/core": "2.0.0-beta.27"
+    "@vuepress/plugin-theme-data": "^2.0.0-beta.27"
   },
   "author": "NantHealth",
   "license": "Apache-2.0"
