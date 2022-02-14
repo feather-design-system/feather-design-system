@@ -1,3 +1,12 @@
+## [0.9.5](https://github.com/feather-design-system/feather-design-system/compare/v0.9.4...v0.9.5) (2022-02-14)
+
+
+### Bug Fixes
+
+* adding data-ref-id to autocomplete and error icon ([f2ef596](https://github.com/feather-design-system/feather-design-system/commit/f2ef59694b09772b6cdc437ff169182fefb9e86e))
+
+
+
 ## [0.9.4](https://github.com/feather-design-system/feather-design-system/compare/v0.9.2...v0.9.4) (2022-02-02)
 
 
