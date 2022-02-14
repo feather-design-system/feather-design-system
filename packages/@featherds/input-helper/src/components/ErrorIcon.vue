@@ -1,5 +1,9 @@
 <template>
-  <FeatherIcon :icon="errorIcon" class="error-icon hide-when-disabled" />
+  <FeatherIcon
+    :icon="errorIcon"
+    class="error-icon hide-when-disabled"
+    data-ref-id="error-icon"
+  />
 </template>
 <script>
 import { FeatherIcon } from "@featherds/icon";

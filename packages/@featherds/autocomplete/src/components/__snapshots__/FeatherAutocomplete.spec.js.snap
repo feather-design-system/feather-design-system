@@ -77,6 +77,7 @@ exports[`FeatherAutocomplete base functionality multi disabled state should rend
           />
           <div
             class="description"
+            data-ref-id="feather-autocomplete-input-selected"
             id="feather-autocomplete-input-selected"
           >
             Item 1, Item 2
@@ -290,6 +291,7 @@ exports[`FeatherAutocomplete base functionality multi disabled state should rend
           />
           <div
             class="description"
+            data-ref-id="feather-autocomplete-input-selected"
             id="feather-autocomplete-input-selected"
           />
           
@@ -459,6 +461,7 @@ exports[`FeatherAutocomplete base functionality multi should lower label when th
           />
           <div
             class="description"
+            data-ref-id="feather-autocomplete-input-selected"
             id="feather-autocomplete-input-selected"
           />
           
@@ -628,6 +631,7 @@ exports[`FeatherAutocomplete base functionality multi should not leave previous 
           />
           <div
             class="description"
+            data-ref-id="feather-autocomplete-input-selected"
             id="feather-autocomplete-input-selected"
           />
           
@@ -873,6 +877,7 @@ exports[`FeatherAutocomplete base functionality multi should raise the label whe
           />
           <div
             class="description"
+            data-ref-id="feather-autocomplete-input-selected"
             id="feather-autocomplete-input-selected"
           >
             Item 1, Item 2
@@ -1128,6 +1133,7 @@ exports[`FeatherAutocomplete base functionality multi should show loading spinne
           />
           <div
             class="description"
+            data-ref-id="feather-autocomplete-input-selected"
             id="feather-autocomplete-input-selected"
           />
           
@@ -1315,6 +1321,7 @@ exports[`FeatherAutocomplete base functionality multi should show no results tex
           />
           <div
             class="description"
+            data-ref-id="feather-autocomplete-input-selected"
             id="feather-autocomplete-input-selected"
           />
           
@@ -1509,6 +1516,7 @@ exports[`FeatherAutocomplete base functionality single disabled state should ren
           />
           <div
             class="description"
+            data-ref-id="feather-autocomplete-input-selected"
             id="feather-autocomplete-input-selected"
           />
           
@@ -1700,6 +1708,7 @@ exports[`FeatherAutocomplete base functionality single disabled state should ren
           />
           <div
             class="description"
+            data-ref-id="feather-autocomplete-input-selected"
             id="feather-autocomplete-input-selected"
           />
           
@@ -1869,6 +1878,7 @@ exports[`FeatherAutocomplete base functionality single should lower label when t
           />
           <div
             class="description"
+            data-ref-id="feather-autocomplete-input-selected"
             id="feather-autocomplete-input-selected"
           />
           
@@ -2038,6 +2048,7 @@ exports[`FeatherAutocomplete base functionality single should not leave previous
           />
           <div
             class="description"
+            data-ref-id="feather-autocomplete-input-selected"
             id="feather-autocomplete-input-selected"
           />
           
@@ -2282,6 +2293,7 @@ exports[`FeatherAutocomplete base functionality single should raise the label wh
           />
           <div
             class="description"
+            data-ref-id="feather-autocomplete-input-selected"
             id="feather-autocomplete-input-selected"
           />
           
@@ -2473,6 +2485,7 @@ exports[`FeatherAutocomplete base functionality single should show loading spinn
           />
           <div
             class="description"
+            data-ref-id="feather-autocomplete-input-selected"
             id="feather-autocomplete-input-selected"
           />
           
@@ -2660,6 +2673,7 @@ exports[`FeatherAutocomplete base functionality single should show no results te
           />
           <div
             class="description"
+            data-ref-id="feather-autocomplete-input-selected"
             id="feather-autocomplete-input-selected"
           />
           
@@ -2856,6 +2870,7 @@ exports[`FeatherAutocomplete multi:specific chip selection should move chip sele
           />
           <div
             class="description"
+            data-ref-id="feather-autocomplete-input-selected"
             id="feather-autocomplete-input-selected"
           >
             Test1, Test2
@@ -3112,6 +3127,7 @@ exports[`FeatherAutocomplete multi:specific chip selection should move chip sele
           />
           <div
             class="description"
+            data-ref-id="feather-autocomplete-input-selected"
             id="feather-autocomplete-input-selected"
           >
             Test1, Test2
@@ -3368,6 +3384,7 @@ exports[`FeatherAutocomplete multi:specific chip selection should not move chip 
           />
           <div
             class="description"
+            data-ref-id="feather-autocomplete-input-selected"
             id="feather-autocomplete-input-selected"
           >
             Test1, Test2
@@ -3624,6 +3641,7 @@ exports[`FeatherAutocomplete multi:specific chip selection should not perform an
           />
           <div
             class="description"
+            data-ref-id="feather-autocomplete-input-selected"
             id="feather-autocomplete-input-selected"
           >
             Test1, Test2
@@ -3879,6 +3897,7 @@ exports[`FeatherAutocomplete multi:specific chip selection should select rightmo
           />
           <div
             class="description"
+            data-ref-id="feather-autocomplete-input-selected"
             id="feather-autocomplete-input-selected"
           >
             Test11, Test21
@@ -4194,6 +4213,7 @@ exports[`FeatherAutocomplete multi:specific chip selection should select the rig
           />
           <div
             class="description"
+            data-ref-id="feather-autocomplete-input-selected"
             id="feather-autocomplete-input-selected"
           >
             Test1, Test2
@@ -4450,6 +4470,7 @@ exports[`FeatherAutocomplete multi:specific chip selection should should deselec
           />
           <div
             class="description"
+            data-ref-id="feather-autocomplete-input-selected"
             id="feather-autocomplete-input-selected"
           >
             Test1, Test2
@@ -4705,6 +4726,7 @@ exports[`FeatherAutocomplete multi:specific selection limit should clear warning
           />
           <div
             class="description"
+            data-ref-id="feather-autocomplete-input-selected"
             id="feather-autocomplete-input-selected"
           >
             Item 1, Item 2
@@ -4960,6 +4982,7 @@ exports[`FeatherAutocomplete multi:specific selection limit should display a war
           />
           <div
             class="description"
+            data-ref-id="feather-autocomplete-input-selected"
             id="feather-autocomplete-input-selected"
           >
             Item 1, Item 2
@@ -5267,6 +5290,7 @@ exports[`FeatherAutocomplete multi:specific selection limit should display a war
           </div>
           <div
             class="description"
+            data-ref-id="feather-autocomplete-input-selected"
             id="feather-autocomplete-input-selected"
           >
             Item 1, Item 2
@@ -5574,6 +5598,7 @@ exports[`FeatherAutocomplete multi:specific selection limit should display a war
           </div>
           <div
             class="description"
+            data-ref-id="feather-autocomplete-input-selected"
             id="feather-autocomplete-input-selected"
           />
           
@@ -5853,6 +5878,7 @@ exports[`FeatherAutocomplete multi:specific should hide/reset menu and clear tex
           />
           <div
             class="description"
+            data-ref-id="feather-autocomplete-input-selected"
             id="feather-autocomplete-input-selected"
           />
           
@@ -6022,6 +6048,7 @@ exports[`FeatherAutocomplete single:specific should close menu when enter is pre
           />
           <div
             class="description"
+            data-ref-id="feather-autocomplete-input-selected"
             id="feather-autocomplete-input-selected"
           />
           
@@ -6248,6 +6275,7 @@ exports[`FeatherAutocomplete single:specific should handle a null property on va
           />
           <div
             class="description"
+            data-ref-id="feather-autocomplete-input-selected"
             id="feather-autocomplete-input-selected"
           >
             Item 1, Item 2
@@ -6441,6 +6469,7 @@ exports[`FeatherAutocomplete single:specific should show add new element when in
           />
           <div
             class="description"
+            data-ref-id="feather-autocomplete-input-selected"
             id="feather-autocomplete-input-selected"
           />
           

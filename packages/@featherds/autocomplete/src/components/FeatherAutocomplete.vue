@@ -37,7 +37,11 @@
               aria-atomic="true"
               ref="alert"
             ></div>
-            <div class="description" :id="selectedDescriptionId">
+            <div
+              class="description"
+              :id="selectedDescriptionId"
+              data-ref-id="feather-autocomplete-input-selected"
+            >
               {{ selectedDescribedByText }}
             </div>
             <Chip

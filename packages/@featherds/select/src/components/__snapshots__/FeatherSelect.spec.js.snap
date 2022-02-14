@@ -420,9 +420,10 @@ exports[`FeatherSelect.vue should render in error state 1`] = `
           <svg
             aria-hidden="true"
             class="error-icon hide-when-disabled feather-icon error-icon hide-when-disabled"
+            data-ref-id="error-icon"
             data-v-0aa06a12=""
             data-v-3828e91d=""
-            data-v-41337cd6=""
+            data-v-49fd357e=""
             focusable="false"
             role="img"
             viewBox="0 0 24 24"

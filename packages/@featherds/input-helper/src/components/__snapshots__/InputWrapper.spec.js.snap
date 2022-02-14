@@ -38,6 +38,7 @@ exports[`InputWrapper.vue should hide the label when hideLabel is true 1`] = `
       <svg
         aria-hidden="true"
         class="error-icon hide-when-disabled feather-icon error-icon hide-when-disabled"
+        data-ref-id="error-icon"
         data-v-0aa06a12=""
         focusable="false"
         role="img"
@@ -107,6 +108,7 @@ exports[`InputWrapper.vue should render a focused border & raised label 1`] = `
       <svg
         aria-hidden="true"
         class="error-icon hide-when-disabled feather-icon error-icon hide-when-disabled"
+        data-ref-id="error-icon"
         data-v-0aa06a12=""
         focusable="false"
         role="img"
@@ -176,6 +178,7 @@ exports[`InputWrapper.vue should render a normal wrapper 1`] = `
       <svg
         aria-hidden="true"
         class="error-icon hide-when-disabled feather-icon error-icon hide-when-disabled"
+        data-ref-id="error-icon"
         data-v-0aa06a12=""
         focusable="false"
         role="img"
@@ -245,6 +248,7 @@ exports[`InputWrapper.vue should render a raised label 1`] = `
       <svg
         aria-hidden="true"
         class="error-icon hide-when-disabled feather-icon error-icon hide-when-disabled"
+        data-ref-id="error-icon"
         data-v-0aa06a12=""
         focusable="false"
         role="img"
@@ -333,6 +337,7 @@ exports[`InputWrapper.vue should render clear and error icons 1`] = `
       <svg
         aria-hidden="true"
         class="error-icon hide-when-disabled feather-icon error-icon hide-when-disabled"
+        data-ref-id="error-icon"
         data-v-0aa06a12=""
         focusable="false"
         role="img"
@@ -421,6 +426,7 @@ exports[`InputWrapper.vue should render clear icon when clear and show clear is 
       <svg
         aria-hidden="true"
         class="error-icon hide-when-disabled feather-icon error-icon hide-when-disabled"
+        data-ref-id="error-icon"
         data-v-0aa06a12=""
         focusable="false"
         role="img"
@@ -490,6 +496,7 @@ exports[`InputWrapper.vue should render in an error state 1`] = `
       <svg
         aria-hidden="true"
         class="error-icon hide-when-disabled feather-icon error-icon hide-when-disabled"
+        data-ref-id="error-icon"
         data-v-0aa06a12=""
         focusable="false"
         role="img"
@@ -559,6 +566,7 @@ exports[`InputWrapper.vue should render in disabled state 1`] = `
       <svg
         aria-hidden="true"
         class="error-icon hide-when-disabled feather-icon error-icon hide-when-disabled"
+        data-ref-id="error-icon"
         data-v-0aa06a12=""
         focusable="false"
         role="img"
@@ -635,6 +643,7 @@ exports[`InputWrapper.vue should take into account any prefix elements when not 
       <svg
         aria-hidden="true"
         class="error-icon hide-when-disabled feather-icon error-icon hide-when-disabled"
+        data-ref-id="error-icon"
         data-v-0aa06a12=""
         focusable="false"
         role="img"
