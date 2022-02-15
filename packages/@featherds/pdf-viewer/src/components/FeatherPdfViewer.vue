@@ -75,7 +75,7 @@
               href="#"
               :icon="closeLabel"
               class="close-icon"
-              @click="close"
+              @click.prevent="close"
               data-ref-id="feather-pdfviewer-close"
             >
               <FeatherIcon :icon="closeIcon"></FeatherIcon>

@@ -4,7 +4,7 @@
     data-ref-id="feather-date-input-icon"
     class="action-icon hide-when-disabled hover focus"
     href="#"
-    @click.prevent.stop="swallow"
+    @click.stop.prevent="swallow"
   >
     <FeatherIcon :icon="icon" />
   </a>

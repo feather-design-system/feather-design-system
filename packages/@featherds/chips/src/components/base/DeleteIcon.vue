@@ -15,7 +15,6 @@
 <script>
 import { FeatherIcon } from "@featherds/icon";
 import Cancel from "@featherds/icon/navigation/Cancel";
-import { computed } from "vue";
 export default {
   emits: ["delete"],
   props: {
