@@ -213,18 +213,18 @@ exports[`FeatherDateInput.vue should render disabled 1`] = `
           <div
             class="inline-select feather-select-container"
             data-ref-id="feather-calendar-select-month"
-            data-v-5fe91e94=""
+            data-v-7141a6db=""
           >
             <div
               class="feather-menu feather-select-menu-container"
               data-v-0e29b938=""
-              data-v-5fe91e94=""
+              data-v-7141a6db=""
             >
               
               <div
                 class="feather-input-wrapper-container raised inline feather-select-wrapper"
                 data-v-3828e91d=""
-                data-v-5fe91e94=""
+                data-v-7141a6db=""
                 menu-trigger=""
               >
                 <fieldset
@@ -266,7 +266,7 @@ exports[`FeatherDateInput.vue should render disabled 1`] = `
                     aria-invalid="false"
                     class="feather-select-input"
                     data-ref-id="feather-input"
-                    data-v-5fe91e94=""
+                    data-v-7141a6db=""
                     id="feather-select-input"
                     readonly=""
                   />
@@ -282,7 +282,7 @@ exports[`FeatherDateInput.vue should render disabled 1`] = `
                       aria-hidden="true"
                       class="feather-select-icon feather-icon feather-select-icon"
                       data-v-0aa06a12=""
-                      data-v-5fe91e94=""
+                      data-v-7141a6db=""
                       focusable="false"
                       role="img"
                       viewBox="0 0 24 24"
@@ -311,7 +311,7 @@ exports[`FeatherDateInput.vue should render disabled 1`] = `
                   data-ref-id="feather-select-list"
                   data-v-32bd1d76=""
                   data-v-4ef0e6d6=""
-                  data-v-5fe91e94=""
+                  data-v-7141a6db=""
                   role="listbox"
                   tabindex="-1"
                 >
@@ -555,7 +555,7 @@ exports[`FeatherDateInput.vue should render disabled 1`] = `
             <div
               class="feather-input-sub-text"
               data-v-51d97390=""
-              data-v-5fe91e94=""
+              data-v-7141a6db=""
               id="feather-select-description"
               style="display: none;"
             >
@@ -568,18 +568,18 @@ exports[`FeatherDateInput.vue should render disabled 1`] = `
           <div
             class="inline-select year feather-select-container"
             data-ref-id="feather-calendar-select-year"
-            data-v-5fe91e94=""
+            data-v-7141a6db=""
           >
             <div
               class="feather-menu feather-select-menu-container"
               data-v-0e29b938=""
-              data-v-5fe91e94=""
+              data-v-7141a6db=""
             >
               
               <div
                 class="feather-input-wrapper-container raised inline feather-select-wrapper"
                 data-v-3828e91d=""
-                data-v-5fe91e94=""
+                data-v-7141a6db=""
                 menu-trigger=""
               >
                 <fieldset
@@ -621,7 +621,7 @@ exports[`FeatherDateInput.vue should render disabled 1`] = `
                     aria-invalid="false"
                     class="feather-select-input"
                     data-ref-id="feather-input"
-                    data-v-5fe91e94=""
+                    data-v-7141a6db=""
                     id="feather-select-input"
                     readonly=""
                   />
@@ -637,7 +637,7 @@ exports[`FeatherDateInput.vue should render disabled 1`] = `
                       aria-hidden="true"
                       class="feather-select-icon feather-icon feather-select-icon"
                       data-v-0aa06a12=""
-                      data-v-5fe91e94=""
+                      data-v-7141a6db=""
                       focusable="false"
                       role="img"
                       viewBox="0 0 24 24"
@@ -666,7 +666,7 @@ exports[`FeatherDateInput.vue should render disabled 1`] = `
                   data-ref-id="feather-select-list"
                   data-v-32bd1d76=""
                   data-v-4ef0e6d6=""
-                  data-v-5fe91e94=""
+                  data-v-7141a6db=""
                   role="listbox"
                   tabindex="-1"
                 >
@@ -3171,7 +3171,7 @@ exports[`FeatherDateInput.vue should render disabled 1`] = `
             <div
               class="feather-input-sub-text"
               data-v-51d97390=""
-              data-v-5fe91e94=""
+              data-v-7141a6db=""
               id="feather-select-description"
               style="display: none;"
             >
