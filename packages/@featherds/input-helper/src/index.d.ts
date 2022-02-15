@@ -1,17 +1,42 @@
 declare module "@featherds/input-helper" {
-  import { VueConstructor, default as Vue, ComponentOptions } from "vue";
-  const ActionIcon: ReturnType<typeof defineComponent>;
-  const InputWrapper: ReturnType<typeof defineComponent>;
-  const InputWrapperMixin: ReturnType<typeof defineComponent>;
-  const InputSubText: ReturnType<typeof defineComponent>;
-  const InputSubTextMixin: ReturnType<typeof defineComponent>;
-  const InputInheritAttrsMixin: ReturnType<typeof defineComponent>;
+  import { DefineComponent, Ref } from "vue";
+  const ActionIcon: DefineComponent;
+  const InputWrapper: DefineComponent;
+  const InputWrapperMixin: DefineComponent;
+  const InputSubText: DefineComponent;
+  const InputSubTextMixin: DefineComponent;
+  const InputInheritAttrsMixin: DefineComponent;
+  const ValidationHeader: DefineComponent;
+  const useForm: () => {
+    validation: () => {
+      success: boolean;
+      message: string;
+      inputId: string;
+      label: string;
+    }[];
+  };
+  const useValidation: (
+    inputId: Ref<string>,
+    value: Ref<unknown>,
+    label: string,
+    schema: Object,
+    error?: Ref<string>
+  ) => {
+    validate: () => {
+      success: boolean;
+      message: string;
+      inputId: string;
+      label: string;
+    };
+  };
   export {
     ActionIcon,
     InputWrapper,
     InputWrapperMixin,
     InputSubText,
     InputSubTextMixin,
-    InputInheritAttrsMixin
+    InputInheritAttrsMixin,
+    useForm,
+    useValidation,
   };
 }

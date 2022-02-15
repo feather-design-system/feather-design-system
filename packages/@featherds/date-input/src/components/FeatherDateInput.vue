@@ -98,7 +98,7 @@
 import { ref, computed, watch, toRef } from "vue";
 import { getSafeId } from "@featherds/utils/id";
 import { KEYCODES } from "@featherds/utils/keys";
-import { useValidation } from "@featherds/input/src/components/useValidation";
+import { useValidation } from "@featherds/input-helper";
 
 import { useLabelProperty } from "@featherds/composables/LabelProperty";
 import {
@@ -187,7 +187,8 @@ export default {
       ref(monthId),
       value,
       props.label,
-      props.schema
+      props.schema,
+      toRef(props, "error")
     );
 
     watch(

@@ -74,7 +74,13 @@ export default {
     return {
       descriptionId,
       attrs,
-      ...useRadioGroup(modelValue, context.emit, props.label, props.schema),
+      ...useRadioGroup(
+        modelValue,
+        context.emit,
+        props.label,
+        props.schema,
+        toRef(props, "error")
+      ),
     };
   },
   components: {

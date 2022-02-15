@@ -26,8 +26,8 @@
 <script>
 import { string } from "yup";
 import { ref } from "vue";
-import { FeatherInput, ValidationHeader } from "@featherds/input";
-import { useForm } from "@featherds/input/src/components/useForm";
+import { FeatherInput } from "@featherds/input";
+import { useForm, ValidationHeader } from "@featherds/input-helper";
 
 import { FeatherSpinner } from "@featherds/progress";
 
@@ -68,13 +68,13 @@ export default {
       submitting,
       alert,
       form,
-      errorMessages
+      errorMessages,
     };
   },
   components: {
     FeatherInput,
     FeatherSpinner,
-    ValidationHeader
+    ValidationHeader,
   },
 };
 </script>

@@ -9,12 +9,7 @@
       required
     />
 
-    <FeatherInput
-      label="Name *"
-      :modelValue="name"
-      :schema="nameV"
-      required
-    />
+    <FeatherInput label="Name *" :modelValue="name" :schema="nameV" required />
 
     <FeatherProtectedInput
       label="Password *"
@@ -47,7 +42,11 @@
     >
     </FeatherSelect>
 
-    <FeatherRadioGroup :label="'What is your sex? *'" v-model="sexSelected" :schema="sexV">
+    <FeatherRadioGroup
+      :label="'What is your sex? *'"
+      v-model="sexSelected"
+      :schema="sexV"
+    >
       <FeatherRadio
         v-for="item in sexes"
         :value="item.value"
@@ -74,10 +73,18 @@
       v-model="toppings"
       :schema="toppingsV"
     >
-      <FeatherCheckbox v-model="toppings.pepperoni" :schema="toppingsV"> Pepperoni </FeatherCheckbox>
-      <FeatherCheckbox v-model="toppings.chicken" :schema="toppingsV"> Chicken </FeatherCheckbox>
-      <FeatherCheckbox v-model="toppings.olives" :schema="toppingsV"> Olives </FeatherCheckbox>
-      <FeatherCheckbox v-model="toppings.pineapple" :schema="toppingsV"> Pineapple </FeatherCheckbox>
+      <FeatherCheckbox v-model="toppings.pepperoni" :schema="toppingsV">
+        Pepperoni
+      </FeatherCheckbox>
+      <FeatherCheckbox v-model="toppings.chicken" :schema="toppingsV">
+        Chicken
+      </FeatherCheckbox>
+      <FeatherCheckbox v-model="toppings.olives" :schema="toppingsV">
+        Olives
+      </FeatherCheckbox>
+      <FeatherCheckbox v-model="toppings.pineapple" :schema="toppingsV">
+        Pineapple
+      </FeatherCheckbox>
     </FeatherCheckboxGroup>
 
     <FeatherTextarea
@@ -107,12 +114,12 @@ import { FeatherAutocomplete } from "@featherds/autocomplete";
 import { FeatherCheckbox, FeatherCheckboxGroup } from "@featherds/checkbox";
 import { FeatherDateInput } from "@featherds/date-input";
 import { FeatherDropdown } from "@featherds/dropdown";
-import { FeatherInput, ValidationHeader } from "@featherds/input";
+import { FeatherInput } from "@featherds/input";
 import { FeatherProtectedInput } from "@featherds/protected-input";
 import { FeatherRadio, FeatherRadioGroup } from "@featherds/radio";
 import { FeatherSelect } from "@featherds/select";
 import { FeatherTextarea } from "@featherds/textarea";
-import { useForm } from "@featherds/input/src/components/useForm";
+import { useForm, ValidationHeader } from "@featherds/input-helper";
 
 import { FeatherSpinner } from "@featherds/progress";
 
@@ -131,85 +138,73 @@ export default {
     const pass = ref("");
     const passV = string().required("Required");
     const pass2 = ref("");
-    const pass2V = string().required("Required")
-    .test(
-      'passwordTest',
-      null,
-      () => {
-        if ( pass.value !== pass2.value ) {
+    const pass2V = string()
+      .required("Required")
+      .test("passwordTest", null, () => {
+        if (pass.value !== pass2.value) {
           return new ValidationError(
-            'Please ensure both passwords match',
+            "Please ensure both passwords match",
             null,
-            ''
+            ""
           );
         }
-        if ( pass2.value.length < 10 ) {
+        if (pass2.value.length < 10) {
           return new ValidationError(
-            'Please ensure your password is at least 10 characters long',
+            "Please ensure your password is at least 10 characters long",
             null,
-            ''
+            ""
           );
         }
         //... etc
         return true; // everything is fine
-
-      }
-    );
+      });
 
     const dob = ref();
     const oneday = 60 * 60 * 24 * 1000;
-    const dobV = date().required("Required").max(new Date(Date.now() - oneday))
-    .test(
-      'dobTest',
-      null,
-      (obj) => {
-        if ( obj > new Date(Date.now() - oneday*7) ) {
+    const dobV = date()
+      .required("Required")
+      .max(new Date(Date.now() - oneday))
+      .test("dobTest", null, (obj) => {
+        if (obj > new Date(Date.now() - oneday * 7)) {
           return new ValidationError(
-            'Are you telling me you were born last week?',
+            "Are you telling me you were born last week?",
             null,
-            ''
+            ""
           );
         }
         return true; // everything is fine
-
-      }
-    );
+      });
     const dobDisabled = { from: new Date() };
 
     const countries = allCountries;
     const country = ref();
     const countryV = object({
-      _text: string().required("You must make a selection to continue")
-    })
-    .test(
-      'countryTest',
-      null,
-      (obj) => {
-        if ( obj._text?.includes("Narnia") ) {
-          return new ValidationError(
-            'Narnia residents are not allowed to use computers',
-            null,
-            ''
-          );
-        }
-        return true; // everything is fine
+      _text: string().required("You must make a selection to continue"),
+    }).test("countryTest", null, (obj) => {
+      if (obj._text?.includes("Narnia")) {
+        return new ValidationError(
+          "Narnia residents are not allowed to use computers",
+          null,
+          ""
+        );
       }
-    );
+      return true; // everything is fine
+    });
 
     const sexes = [
-        {
-          name: "Male",
-          value: "m",
-        },
-        {
-          name: "Female",
-          value: "f",
-        },
-        {
-          name: "Other",
-          value: "?",
-        },
-      ];
+      {
+        name: "Male",
+        value: "m",
+      },
+      {
+        name: "Female",
+        value: "f",
+      },
+      {
+        name: "Other",
+        value: "?",
+      },
+    ];
     const sexSelected = ref();
     const sexCustom = ref("");
     const sexV = string().required("Required");
@@ -218,9 +213,19 @@ export default {
     const filmsV = array().required("Required").length(3);
     let filmsTimeout = -1;
     const filmsLoading = ref(false);
-    const allFilms = ["Terminator 2", "True Lies", "Eraser", "Last Action Hero", "Commando", "Predator", "Total Recall", "Twins", "Kung Fury 2"];
+    const allFilms = [
+      "Terminator 2",
+      "True Lies",
+      "Eraser",
+      "Last Action Hero",
+      "Commando",
+      "Predator",
+      "Total Recall",
+      "Twins",
+      "Kung Fury 2",
+    ];
     const filmsResults = ref([]);
-    const filmsSearch = function(q) {
+    const filmsSearch = function (q) {
       filmsLoading.value = true;
       clearTimeout(filmsTimeout);
       filmsTimeout = setTimeout(() => {
@@ -237,36 +242,31 @@ export default {
       pepperoni: false,
       chicken: false,
       olives: false,
-      pineapple: false
+      pineapple: false,
     });
     const toppingsV = object({
       pepperoni: boolean(),
       chicken: boolean(),
       olives: boolean(),
-      pineapple: boolean()
-    })
-    .test(
-      'toppingsTest',
-      null,
-      (obj) => {
-        if ( obj.pineapple ) {
-          return new ValidationError(
-            'Pineapple? Eww, whats wrong with you? Try again!',
-            null,
-            'myCustomFieldName'
-          );
-        }
-        if ( obj.pepperoni || obj.chicken || obj.olives ) {
-          return true; // everything is fine
-        }
-
+      pineapple: boolean(),
+    }).test("toppingsTest", null, (obj) => {
+      if (obj.pineapple) {
         return new ValidationError(
-          'Please check one checkbox',
+          "Pineapple? Eww, whats wrong with you? Try again!",
           null,
-          'myCustomFieldName'
+          "myCustomFieldName"
         );
       }
-    );
+      if (obj.pepperoni || obj.chicken || obj.olives) {
+        return true; // everything is fine
+      }
+
+      return new ValidationError(
+        "Please check one checkbox",
+        null,
+        "myCustomFieldName"
+      );
+    });
 
     const comment = ref("");
     const commentV = string().required("Required");
@@ -321,7 +321,7 @@ export default {
       submitting,
       alert,
       form,
-      errorMessages
+      errorMessages,
     };
   },
   components: {
@@ -337,7 +337,7 @@ export default {
     FeatherSelect,
     FeatherSpinner,
     FeatherTextarea,
-    ValidationHeader
+    ValidationHeader,
   },
 };
 </script>

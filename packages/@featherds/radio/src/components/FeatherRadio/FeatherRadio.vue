@@ -70,7 +70,7 @@ export default {
       disabled: props.disabled,
       value: props.value,
       checked,
-      id,
+      id: id.value,
     };
     register(vm);
     const click = () => {
