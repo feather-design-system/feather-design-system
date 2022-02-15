@@ -315,7 +315,7 @@ export default {
 
   header {
     background-color: var($secondary);
-    @include subtitle1;
+    @include subtitle2;
     color: var($primary-text-on-color);
     height: 60px;
     display: flex;

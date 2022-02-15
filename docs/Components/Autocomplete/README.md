@@ -203,6 +203,7 @@ Highlighting can be used to showcase what part of the string matched the search 
 - `feather-autocomplete-min-char` - on the min char element
 - `feather-autocomplete-no-results` - on the no results element
 - `feather-autocomplete-selection-limit` - on the selection limit element
+- `feather-autocomplete-input-selected` - on the div that holds the selected element names for screen readers
 
 ### Attributes
 
