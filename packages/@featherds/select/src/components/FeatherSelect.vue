@@ -190,6 +190,7 @@ export default {
   methods: {
     handleClear() {
       this.handleSelect(undefined);
+      this.emitSelection();
     },
     handleInputFocus() {
       if (this.disabled) {

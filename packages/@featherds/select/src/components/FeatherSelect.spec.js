@@ -92,6 +92,22 @@ describe("FeatherSelect.vue", () => {
       options[0]
     );
   });
+
+  it("should clear the value when clear icon is clicked", async () => {
+    const modelValue = {
+      _text: "Test1",
+    };
+    const wrapper = getFullWrapper({
+      props: {
+        modelValue,
+        clear: "Clear Value",
+      },
+    });
+    await wrapper
+      .find("[data-ref-id='feather-form-element-clear']")
+      .trigger("click");
+    expect(wrapper.emitted("update:modelValue")[0][0]).toBeUndefined();
+  });
   it("should open and select first item on first down", async () => {
     const wrapper = getFullWrapper({
       props: {
