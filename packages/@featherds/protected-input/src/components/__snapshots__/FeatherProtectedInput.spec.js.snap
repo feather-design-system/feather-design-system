@@ -7,16 +7,16 @@ exports[`FeatherProtectedInput.vue should change input type when show password i
 >
   <div
     class="feather-input-wrapper-container feather-input-content"
-    data-v-3828e91d=""
+    data-v-0de63cb2=""
     data-v-756d6a1a=""
   >
     <fieldset
       aria-hidden="true"
       class="feather-input-border"
-      data-v-3828e91d=""
+      data-v-0de63cb2=""
     >
       <legend
-        data-v-3828e91d=""
+        data-v-0de63cb2=""
       >
         TEST
       </legend>
@@ -24,7 +24,7 @@ exports[`FeatherProtectedInput.vue should change input type when show password i
     <label
       class="feather-input-label"
       data-ref-id="feather-form-element-label"
-      data-v-3828e91d=""
+      data-v-0de63cb2=""
       for="feather-input-label"
       style="left: 16px;"
     >
@@ -32,11 +32,11 @@ exports[`FeatherProtectedInput.vue should change input type when show password i
     </label>
     <div
       class="feather-input-wrapper"
-      data-v-3828e91d=""
+      data-v-0de63cb2=""
     >
       <div
         class="prefix"
-        data-v-3828e91d=""
+        data-v-0de63cb2=""
       >
         
         
@@ -57,7 +57,7 @@ exports[`FeatherProtectedInput.vue should change input type when show password i
       
       <div
         class="post"
-        data-v-3828e91d=""
+        data-v-0de63cb2=""
       >
         <!---->
         <!---->
@@ -116,16 +116,16 @@ exports[`FeatherProtectedInput.vue should render with show password icon by defa
 >
   <div
     class="feather-input-wrapper-container feather-input-content"
-    data-v-3828e91d=""
+    data-v-0de63cb2=""
     data-v-756d6a1a=""
   >
     <fieldset
       aria-hidden="true"
       class="feather-input-border"
-      data-v-3828e91d=""
+      data-v-0de63cb2=""
     >
       <legend
-        data-v-3828e91d=""
+        data-v-0de63cb2=""
       >
         TEST
       </legend>
@@ -133,7 +133,7 @@ exports[`FeatherProtectedInput.vue should render with show password icon by defa
     <label
       class="feather-input-label"
       data-ref-id="feather-form-element-label"
-      data-v-3828e91d=""
+      data-v-0de63cb2=""
       for="feather-input-label"
       style="left: 16px;"
     >
@@ -141,11 +141,11 @@ exports[`FeatherProtectedInput.vue should render with show password icon by defa
     </label>
     <div
       class="feather-input-wrapper"
-      data-v-3828e91d=""
+      data-v-0de63cb2=""
     >
       <div
         class="prefix"
-        data-v-3828e91d=""
+        data-v-0de63cb2=""
       >
         
         
@@ -166,7 +166,7 @@ exports[`FeatherProtectedInput.vue should render with show password icon by defa
       
       <div
         class="post"
-        data-v-3828e91d=""
+        data-v-0de63cb2=""
       >
         <!---->
         <!---->

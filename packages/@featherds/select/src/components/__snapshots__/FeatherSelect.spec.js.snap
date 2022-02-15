@@ -11,16 +11,16 @@ exports[`FeatherSelect.vue should not raise the label when its empty 1`] = `
     
     <div
       class="feather-input-wrapper-container feather-select-wrapper"
-      data-v-3828e91d=""
+      data-v-0de63cb2=""
       menu-trigger=""
     >
       <fieldset
         aria-hidden="true"
         class="feather-input-border"
-        data-v-3828e91d=""
+        data-v-0de63cb2=""
       >
         <legend
-          data-v-3828e91d=""
+          data-v-0de63cb2=""
         >
           Users
         </legend>
@@ -28,7 +28,7 @@ exports[`FeatherSelect.vue should not raise the label when its empty 1`] = `
       <label
         class="feather-input-label"
         data-ref-id="feather-form-element-label"
-        data-v-3828e91d=""
+        data-v-0de63cb2=""
         for="feather-select-input"
         style="left: 16px;"
       >
@@ -36,11 +36,11 @@ exports[`FeatherSelect.vue should not raise the label when its empty 1`] = `
       </label>
       <div
         class="feather-input-wrapper"
-        data-v-3828e91d=""
+        data-v-0de63cb2=""
       >
         <div
           class="prefix"
-          data-v-3828e91d=""
+          data-v-0de63cb2=""
         >
           
           
@@ -59,7 +59,7 @@ exports[`FeatherSelect.vue should not raise the label when its empty 1`] = `
         
         <div
           class="post"
-          data-v-3828e91d=""
+          data-v-0de63cb2=""
         >
           <!---->
           <!---->
@@ -129,16 +129,16 @@ exports[`FeatherSelect.vue should raise the label when it has a value 1`] = `
     
     <div
       class="feather-input-wrapper-container raised feather-select-wrapper"
-      data-v-3828e91d=""
+      data-v-0de63cb2=""
       menu-trigger=""
     >
       <fieldset
         aria-hidden="true"
         class="feather-input-border"
-        data-v-3828e91d=""
+        data-v-0de63cb2=""
       >
         <legend
-          data-v-3828e91d=""
+          data-v-0de63cb2=""
         >
           Users
         </legend>
@@ -146,7 +146,7 @@ exports[`FeatherSelect.vue should raise the label when it has a value 1`] = `
       <label
         class="feather-input-label"
         data-ref-id="feather-form-element-label"
-        data-v-3828e91d=""
+        data-v-0de63cb2=""
         for="feather-select-input"
         style="left: 12px;"
       >
@@ -154,11 +154,11 @@ exports[`FeatherSelect.vue should raise the label when it has a value 1`] = `
       </label>
       <div
         class="feather-input-wrapper"
-        data-v-3828e91d=""
+        data-v-0de63cb2=""
       >
         <div
           class="prefix"
-          data-v-3828e91d=""
+          data-v-0de63cb2=""
         >
           
           
@@ -177,7 +177,7 @@ exports[`FeatherSelect.vue should raise the label when it has a value 1`] = `
         
         <div
           class="post"
-          data-v-3828e91d=""
+          data-v-0de63cb2=""
         >
           <!---->
           <!---->
@@ -247,16 +247,16 @@ exports[`FeatherSelect.vue should render in disabled state 1`] = `
     
     <div
       class="feather-input-wrapper-container disabled feather-select-wrapper"
-      data-v-3828e91d=""
+      data-v-0de63cb2=""
       menu-trigger=""
     >
       <fieldset
         aria-hidden="true"
         class="feather-input-border"
-        data-v-3828e91d=""
+        data-v-0de63cb2=""
       >
         <legend
-          data-v-3828e91d=""
+          data-v-0de63cb2=""
         >
           Users
         </legend>
@@ -264,7 +264,7 @@ exports[`FeatherSelect.vue should render in disabled state 1`] = `
       <label
         class="feather-input-label"
         data-ref-id="feather-form-element-label"
-        data-v-3828e91d=""
+        data-v-0de63cb2=""
         for="feather-select-input"
         style="left: 16px;"
       >
@@ -272,11 +272,11 @@ exports[`FeatherSelect.vue should render in disabled state 1`] = `
       </label>
       <div
         class="feather-input-wrapper"
-        data-v-3828e91d=""
+        data-v-0de63cb2=""
       >
         <div
           class="prefix"
-          data-v-3828e91d=""
+          data-v-0de63cb2=""
         >
           
           
@@ -296,7 +296,7 @@ exports[`FeatherSelect.vue should render in disabled state 1`] = `
         
         <div
           class="post"
-          data-v-3828e91d=""
+          data-v-0de63cb2=""
         >
           <!---->
           <!---->
@@ -366,16 +366,16 @@ exports[`FeatherSelect.vue should render in error state 1`] = `
     
     <div
       class="feather-input-wrapper-container error feather-select-wrapper"
-      data-v-3828e91d=""
+      data-v-0de63cb2=""
       menu-trigger=""
     >
       <fieldset
         aria-hidden="true"
         class="feather-input-border"
-        data-v-3828e91d=""
+        data-v-0de63cb2=""
       >
         <legend
-          data-v-3828e91d=""
+          data-v-0de63cb2=""
         >
           Users
         </legend>
@@ -383,7 +383,7 @@ exports[`FeatherSelect.vue should render in error state 1`] = `
       <label
         class="feather-input-label"
         data-ref-id="feather-form-element-label"
-        data-v-3828e91d=""
+        data-v-0de63cb2=""
         for="feather-select-input"
         style="left: 16px;"
       >
@@ -391,11 +391,11 @@ exports[`FeatherSelect.vue should render in error state 1`] = `
       </label>
       <div
         class="feather-input-wrapper"
-        data-v-3828e91d=""
+        data-v-0de63cb2=""
       >
         <div
           class="prefix"
-          data-v-3828e91d=""
+          data-v-0de63cb2=""
         >
           
           
@@ -414,7 +414,7 @@ exports[`FeatherSelect.vue should render in error state 1`] = `
         
         <div
           class="post"
-          data-v-3828e91d=""
+          data-v-0de63cb2=""
         >
           <!---->
           <svg
@@ -422,7 +422,7 @@ exports[`FeatherSelect.vue should render in error state 1`] = `
             class="error-icon hide-when-disabled feather-icon error-icon hide-when-disabled"
             data-ref-id="error-icon"
             data-v-0aa06a12=""
-            data-v-3828e91d=""
+            data-v-0de63cb2=""
             data-v-49fd357e=""
             focusable="false"
             role="img"

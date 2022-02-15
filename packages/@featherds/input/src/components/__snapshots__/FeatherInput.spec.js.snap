@@ -6,15 +6,15 @@ exports[`FeatherInput.vue should allow custom blur events 1`] = `
 >
   <div
     class="feather-input-wrapper-container raised feather-input-content"
-    data-v-3828e91d=""
+    data-v-0de63cb2=""
   >
     <fieldset
       aria-hidden="true"
       class="feather-input-border"
-      data-v-3828e91d=""
+      data-v-0de63cb2=""
     >
       <legend
-        data-v-3828e91d=""
+        data-v-0de63cb2=""
       >
         label
       </legend>
@@ -22,7 +22,7 @@ exports[`FeatherInput.vue should allow custom blur events 1`] = `
     <label
       class="feather-input-label"
       data-ref-id="feather-form-element-label"
-      data-v-3828e91d=""
+      data-v-0de63cb2=""
       for="feather-input-label"
       style="left: 12px;"
     >
@@ -30,11 +30,11 @@ exports[`FeatherInput.vue should allow custom blur events 1`] = `
     </label>
     <div
       class="feather-input-wrapper"
-      data-v-3828e91d=""
+      data-v-0de63cb2=""
     >
       <div
         class="prefix"
-        data-v-3828e91d=""
+        data-v-0de63cb2=""
       >
         
         
@@ -54,7 +54,7 @@ exports[`FeatherInput.vue should allow custom blur events 1`] = `
       
       <div
         class="post"
-        data-v-3828e91d=""
+        data-v-0de63cb2=""
       >
         <!---->
         <!---->
@@ -82,15 +82,15 @@ exports[`FeatherInput.vue should allow custom focus events 1`] = `
 >
   <div
     class="feather-input-wrapper-container raised focused feather-input-content focused"
-    data-v-3828e91d=""
+    data-v-0de63cb2=""
   >
     <fieldset
       aria-hidden="true"
       class="feather-input-border"
-      data-v-3828e91d=""
+      data-v-0de63cb2=""
     >
       <legend
-        data-v-3828e91d=""
+        data-v-0de63cb2=""
       >
         label
       </legend>
@@ -98,7 +98,7 @@ exports[`FeatherInput.vue should allow custom focus events 1`] = `
     <label
       class="feather-input-label"
       data-ref-id="feather-form-element-label"
-      data-v-3828e91d=""
+      data-v-0de63cb2=""
       for="feather-input-label"
       style="left: 12px;"
     >
@@ -106,11 +106,11 @@ exports[`FeatherInput.vue should allow custom focus events 1`] = `
     </label>
     <div
       class="feather-input-wrapper"
-      data-v-3828e91d=""
+      data-v-0de63cb2=""
     >
       <div
         class="prefix"
-        data-v-3828e91d=""
+        data-v-0de63cb2=""
       >
         
         
@@ -130,7 +130,7 @@ exports[`FeatherInput.vue should allow custom focus events 1`] = `
       
       <div
         class="post"
-        data-v-3828e91d=""
+        data-v-0de63cb2=""
       >
         <!---->
         <!---->
@@ -158,15 +158,15 @@ exports[`FeatherInput.vue should clear input when clear-icon is clicked 1`] = `
 >
   <div
     class="feather-input-wrapper-container feather-input-content"
-    data-v-3828e91d=""
+    data-v-0de63cb2=""
   >
     <fieldset
       aria-hidden="true"
       class="feather-input-border"
-      data-v-3828e91d=""
+      data-v-0de63cb2=""
     >
       <legend
-        data-v-3828e91d=""
+        data-v-0de63cb2=""
       >
         label
       </legend>
@@ -174,7 +174,7 @@ exports[`FeatherInput.vue should clear input when clear-icon is clicked 1`] = `
     <label
       class="feather-input-label"
       data-ref-id="feather-form-element-label"
-      data-v-3828e91d=""
+      data-v-0de63cb2=""
       for="feather-input-label"
       style="left: 16px;"
     >
@@ -182,11 +182,11 @@ exports[`FeatherInput.vue should clear input when clear-icon is clicked 1`] = `
     </label>
     <div
       class="feather-input-wrapper"
-      data-v-3828e91d=""
+      data-v-0de63cb2=""
     >
       <div
         class="prefix"
-        data-v-3828e91d=""
+        data-v-0de63cb2=""
       >
         
         
@@ -206,7 +206,7 @@ exports[`FeatherInput.vue should clear input when clear-icon is clicked 1`] = `
       
       <div
         class="post"
-        data-v-3828e91d=""
+        data-v-0de63cb2=""
       >
         <!---->
         <!---->
@@ -234,15 +234,15 @@ exports[`FeatherInput.vue should not render a clear icon when the input doesn't 
 >
   <div
     class="feather-input-wrapper-container feather-input-content"
-    data-v-3828e91d=""
+    data-v-0de63cb2=""
   >
     <fieldset
       aria-hidden="true"
       class="feather-input-border"
-      data-v-3828e91d=""
+      data-v-0de63cb2=""
     >
       <legend
-        data-v-3828e91d=""
+        data-v-0de63cb2=""
       >
         label
       </legend>
@@ -250,7 +250,7 @@ exports[`FeatherInput.vue should not render a clear icon when the input doesn't 
     <label
       class="feather-input-label"
       data-ref-id="feather-form-element-label"
-      data-v-3828e91d=""
+      data-v-0de63cb2=""
       for="feather-input-label"
       style="left: 16px;"
     >
@@ -258,11 +258,11 @@ exports[`FeatherInput.vue should not render a clear icon when the input doesn't 
     </label>
     <div
       class="feather-input-wrapper"
-      data-v-3828e91d=""
+      data-v-0de63cb2=""
     >
       <div
         class="prefix"
-        data-v-3828e91d=""
+        data-v-0de63cb2=""
       >
         
         
@@ -282,7 +282,7 @@ exports[`FeatherInput.vue should not render a clear icon when the input doesn't 
       
       <div
         class="post"
-        data-v-3828e91d=""
+        data-v-0de63cb2=""
       >
         <!---->
         <!---->
@@ -310,15 +310,15 @@ exports[`FeatherInput.vue should render a clear icon when clear has a value and 
 >
   <div
     class="feather-input-wrapper-container raised feather-input-content"
-    data-v-3828e91d=""
+    data-v-0de63cb2=""
   >
     <fieldset
       aria-hidden="true"
       class="feather-input-border"
-      data-v-3828e91d=""
+      data-v-0de63cb2=""
     >
       <legend
-        data-v-3828e91d=""
+        data-v-0de63cb2=""
       >
         label
       </legend>
@@ -326,7 +326,7 @@ exports[`FeatherInput.vue should render a clear icon when clear has a value and 
     <label
       class="feather-input-label"
       data-ref-id="feather-form-element-label"
-      data-v-3828e91d=""
+      data-v-0de63cb2=""
       for="feather-input-label"
       style="left: 12px;"
     >
@@ -334,11 +334,11 @@ exports[`FeatherInput.vue should render a clear icon when clear has a value and 
     </label>
     <div
       class="feather-input-wrapper"
-      data-v-3828e91d=""
+      data-v-0de63cb2=""
     >
       <div
         class="prefix"
-        data-v-3828e91d=""
+        data-v-0de63cb2=""
       >
         
         
@@ -358,12 +358,12 @@ exports[`FeatherInput.vue should render a clear icon when clear has a value and 
       
       <div
         class="post"
-        data-v-3828e91d=""
+        data-v-0de63cb2=""
       >
         <a
           class="action-icon hide-when-disabled"
           data-ref-id="feather-form-element-clear"
-          data-v-3828e91d=""
+          data-v-0de63cb2=""
           data-v-d1dfbdf8=""
           href="#"
           title="clear"
@@ -408,15 +408,15 @@ exports[`FeatherInput.vue should render a maxlength attribute and character coun
 >
   <div
     class="feather-input-wrapper-container raised feather-input-content"
-    data-v-3828e91d=""
+    data-v-0de63cb2=""
   >
     <fieldset
       aria-hidden="true"
       class="feather-input-border"
-      data-v-3828e91d=""
+      data-v-0de63cb2=""
     >
       <legend
-        data-v-3828e91d=""
+        data-v-0de63cb2=""
       >
         label
       </legend>
@@ -424,7 +424,7 @@ exports[`FeatherInput.vue should render a maxlength attribute and character coun
     <label
       class="feather-input-label"
       data-ref-id="feather-form-element-label"
-      data-v-3828e91d=""
+      data-v-0de63cb2=""
       for="feather-input-label"
       style="left: 12px;"
     >
@@ -432,11 +432,11 @@ exports[`FeatherInput.vue should render a maxlength attribute and character coun
     </label>
     <div
       class="feather-input-wrapper"
-      data-v-3828e91d=""
+      data-v-0de63cb2=""
     >
       <div
         class="prefix"
-        data-v-3828e91d=""
+        data-v-0de63cb2=""
       >
         
         
@@ -456,7 +456,7 @@ exports[`FeatherInput.vue should render a maxlength attribute and character coun
       
       <div
         class="post"
-        data-v-3828e91d=""
+        data-v-0de63cb2=""
       >
         <!---->
         <!---->
@@ -490,15 +490,15 @@ exports[`FeatherInput.vue should render an input error input 1`] = `
 >
   <div
     class="feather-input-wrapper-container error feather-input-content error"
-    data-v-3828e91d=""
+    data-v-0de63cb2=""
   >
     <fieldset
       aria-hidden="true"
       class="feather-input-border"
-      data-v-3828e91d=""
+      data-v-0de63cb2=""
     >
       <legend
-        data-v-3828e91d=""
+        data-v-0de63cb2=""
       >
         label
       </legend>
@@ -506,7 +506,7 @@ exports[`FeatherInput.vue should render an input error input 1`] = `
     <label
       class="feather-input-label"
       data-ref-id="feather-form-element-label"
-      data-v-3828e91d=""
+      data-v-0de63cb2=""
       for="feather-input-label"
       style="left: 16px;"
     >
@@ -514,11 +514,11 @@ exports[`FeatherInput.vue should render an input error input 1`] = `
     </label>
     <div
       class="feather-input-wrapper"
-      data-v-3828e91d=""
+      data-v-0de63cb2=""
     >
       <div
         class="prefix"
-        data-v-3828e91d=""
+        data-v-0de63cb2=""
       >
         
         
@@ -538,7 +538,7 @@ exports[`FeatherInput.vue should render an input error input 1`] = `
       
       <div
         class="post"
-        data-v-3828e91d=""
+        data-v-0de63cb2=""
       >
         <!---->
         <svg
@@ -546,7 +546,7 @@ exports[`FeatherInput.vue should render an input error input 1`] = `
           class="error-icon hide-when-disabled feather-icon error-icon hide-when-disabled"
           data-ref-id="error-icon"
           data-v-0aa06a12=""
-          data-v-3828e91d=""
+          data-v-0de63cb2=""
           data-v-49fd357e=""
           focusable="false"
           role="img"
@@ -602,15 +602,15 @@ exports[`FeatherInput.vue should render an input error input and has a value 1`]
 >
   <div
     class="feather-input-wrapper-container raised error feather-input-content error"
-    data-v-3828e91d=""
+    data-v-0de63cb2=""
   >
     <fieldset
       aria-hidden="true"
       class="feather-input-border"
-      data-v-3828e91d=""
+      data-v-0de63cb2=""
     >
       <legend
-        data-v-3828e91d=""
+        data-v-0de63cb2=""
       >
         label
       </legend>
@@ -618,7 +618,7 @@ exports[`FeatherInput.vue should render an input error input and has a value 1`]
     <label
       class="feather-input-label"
       data-ref-id="feather-form-element-label"
-      data-v-3828e91d=""
+      data-v-0de63cb2=""
       for="feather-input-label"
       style="left: 12px;"
     >
@@ -626,11 +626,11 @@ exports[`FeatherInput.vue should render an input error input and has a value 1`]
     </label>
     <div
       class="feather-input-wrapper"
-      data-v-3828e91d=""
+      data-v-0de63cb2=""
     >
       <div
         class="prefix"
-        data-v-3828e91d=""
+        data-v-0de63cb2=""
       >
         
         
@@ -650,7 +650,7 @@ exports[`FeatherInput.vue should render an input error input and has a value 1`]
       
       <div
         class="post"
-        data-v-3828e91d=""
+        data-v-0de63cb2=""
       >
         <!---->
         <svg
@@ -658,7 +658,7 @@ exports[`FeatherInput.vue should render an input error input and has a value 1`]
           class="error-icon hide-when-disabled feather-icon error-icon hide-when-disabled"
           data-ref-id="error-icon"
           data-v-0aa06a12=""
-          data-v-3828e91d=""
+          data-v-0de63cb2=""
           data-v-49fd357e=""
           focusable="false"
           role="img"
@@ -714,15 +714,15 @@ exports[`FeatherInput.vue should render an input error input and has focus 1`] =
 >
   <div
     class="feather-input-wrapper-container raised focused error feather-input-content error focused"
-    data-v-3828e91d=""
+    data-v-0de63cb2=""
   >
     <fieldset
       aria-hidden="true"
       class="feather-input-border"
-      data-v-3828e91d=""
+      data-v-0de63cb2=""
     >
       <legend
-        data-v-3828e91d=""
+        data-v-0de63cb2=""
       >
         label
       </legend>
@@ -730,7 +730,7 @@ exports[`FeatherInput.vue should render an input error input and has focus 1`] =
     <label
       class="feather-input-label"
       data-ref-id="feather-form-element-label"
-      data-v-3828e91d=""
+      data-v-0de63cb2=""
       for="feather-input-label"
       style="left: 12px;"
     >
@@ -738,11 +738,11 @@ exports[`FeatherInput.vue should render an input error input and has focus 1`] =
     </label>
     <div
       class="feather-input-wrapper"
-      data-v-3828e91d=""
+      data-v-0de63cb2=""
     >
       <div
         class="prefix"
-        data-v-3828e91d=""
+        data-v-0de63cb2=""
       >
         
         
@@ -762,7 +762,7 @@ exports[`FeatherInput.vue should render an input error input and has focus 1`] =
       
       <div
         class="post"
-        data-v-3828e91d=""
+        data-v-0de63cb2=""
       >
         <!---->
         <svg
@@ -770,7 +770,7 @@ exports[`FeatherInput.vue should render an input error input and has focus 1`] =
           class="error-icon hide-when-disabled feather-icon error-icon hide-when-disabled"
           data-ref-id="error-icon"
           data-v-0aa06a12=""
-          data-v-3828e91d=""
+          data-v-0de63cb2=""
           data-v-49fd357e=""
           focusable="false"
           role="img"
@@ -826,15 +826,15 @@ exports[`FeatherInput.vue should render an input with a label 1`] = `
 >
   <div
     class="feather-input-wrapper-container feather-input-content"
-    data-v-3828e91d=""
+    data-v-0de63cb2=""
   >
     <fieldset
       aria-hidden="true"
       class="feather-input-border"
-      data-v-3828e91d=""
+      data-v-0de63cb2=""
     >
       <legend
-        data-v-3828e91d=""
+        data-v-0de63cb2=""
       >
         label
       </legend>
@@ -842,7 +842,7 @@ exports[`FeatherInput.vue should render an input with a label 1`] = `
     <label
       class="feather-input-label"
       data-ref-id="feather-form-element-label"
-      data-v-3828e91d=""
+      data-v-0de63cb2=""
       for="feather-input-label"
       style="left: 16px;"
     >
@@ -850,11 +850,11 @@ exports[`FeatherInput.vue should render an input with a label 1`] = `
     </label>
     <div
       class="feather-input-wrapper"
-      data-v-3828e91d=""
+      data-v-0de63cb2=""
     >
       <div
         class="prefix"
-        data-v-3828e91d=""
+        data-v-0de63cb2=""
       >
         
         
@@ -874,7 +874,7 @@ exports[`FeatherInput.vue should render an input with a label 1`] = `
       
       <div
         class="post"
-        data-v-3828e91d=""
+        data-v-0de63cb2=""
       >
         <!---->
         <!---->
@@ -902,15 +902,15 @@ exports[`FeatherInput.vue should render an input with a label and hint text 1`] 
 >
   <div
     class="feather-input-wrapper-container feather-input-content"
-    data-v-3828e91d=""
+    data-v-0de63cb2=""
   >
     <fieldset
       aria-hidden="true"
       class="feather-input-border"
-      data-v-3828e91d=""
+      data-v-0de63cb2=""
     >
       <legend
-        data-v-3828e91d=""
+        data-v-0de63cb2=""
       >
         label
       </legend>
@@ -918,7 +918,7 @@ exports[`FeatherInput.vue should render an input with a label and hint text 1`] 
     <label
       class="feather-input-label"
       data-ref-id="feather-form-element-label"
-      data-v-3828e91d=""
+      data-v-0de63cb2=""
       for="feather-input-label"
       style="left: 16px;"
     >
@@ -926,11 +926,11 @@ exports[`FeatherInput.vue should render an input with a label and hint text 1`] 
     </label>
     <div
       class="feather-input-wrapper"
-      data-v-3828e91d=""
+      data-v-0de63cb2=""
     >
       <div
         class="prefix"
-        data-v-3828e91d=""
+        data-v-0de63cb2=""
       >
         
         
@@ -950,7 +950,7 @@ exports[`FeatherInput.vue should render an input with a label and hint text 1`] 
       
       <div
         class="post"
-        data-v-3828e91d=""
+        data-v-0de63cb2=""
       >
         <!---->
         <!---->
@@ -984,15 +984,15 @@ exports[`FeatherInput.vue should render an input with a preset value 1`] = `
 >
   <div
     class="feather-input-wrapper-container raised feather-input-content"
-    data-v-3828e91d=""
+    data-v-0de63cb2=""
   >
     <fieldset
       aria-hidden="true"
       class="feather-input-border"
-      data-v-3828e91d=""
+      data-v-0de63cb2=""
     >
       <legend
-        data-v-3828e91d=""
+        data-v-0de63cb2=""
       >
         label
       </legend>
@@ -1000,7 +1000,7 @@ exports[`FeatherInput.vue should render an input with a preset value 1`] = `
     <label
       class="feather-input-label"
       data-ref-id="feather-form-element-label"
-      data-v-3828e91d=""
+      data-v-0de63cb2=""
       for="feather-input-label"
       style="left: 12px;"
     >
@@ -1008,11 +1008,11 @@ exports[`FeatherInput.vue should render an input with a preset value 1`] = `
     </label>
     <div
       class="feather-input-wrapper"
-      data-v-3828e91d=""
+      data-v-0de63cb2=""
     >
       <div
         class="prefix"
-        data-v-3828e91d=""
+        data-v-0de63cb2=""
       >
         
         
@@ -1032,7 +1032,7 @@ exports[`FeatherInput.vue should render an input with a preset value 1`] = `
       
       <div
         class="post"
-        data-v-3828e91d=""
+        data-v-0de63cb2=""
       >
         <!---->
         <!---->
@@ -1066,15 +1066,15 @@ exports[`FeatherInput.vue should render an input with raised label when focused 
 >
   <div
     class="feather-input-wrapper-container raised focused feather-input-content focused"
-    data-v-3828e91d=""
+    data-v-0de63cb2=""
   >
     <fieldset
       aria-hidden="true"
       class="feather-input-border"
-      data-v-3828e91d=""
+      data-v-0de63cb2=""
     >
       <legend
-        data-v-3828e91d=""
+        data-v-0de63cb2=""
       >
         label
       </legend>
@@ -1082,7 +1082,7 @@ exports[`FeatherInput.vue should render an input with raised label when focused 
     <label
       class="feather-input-label"
       data-ref-id="feather-form-element-label"
-      data-v-3828e91d=""
+      data-v-0de63cb2=""
       for="feather-input-label"
       style="left: 12px;"
     >
@@ -1090,11 +1090,11 @@ exports[`FeatherInput.vue should render an input with raised label when focused 
     </label>
     <div
       class="feather-input-wrapper"
-      data-v-3828e91d=""
+      data-v-0de63cb2=""
     >
       <div
         class="prefix"
-        data-v-3828e91d=""
+        data-v-0de63cb2=""
       >
         
         
@@ -1114,7 +1114,7 @@ exports[`FeatherInput.vue should render an input with raised label when focused 
       
       <div
         class="post"
-        data-v-3828e91d=""
+        data-v-0de63cb2=""
       >
         <!---->
         <!---->
@@ -1142,15 +1142,15 @@ exports[`FeatherInput.vue should render an input with raised label when focused 
 >
   <div
     class="feather-input-wrapper-container raised focused feather-input-content focused"
-    data-v-3828e91d=""
+    data-v-0de63cb2=""
   >
     <fieldset
       aria-hidden="true"
       class="feather-input-border"
-      data-v-3828e91d=""
+      data-v-0de63cb2=""
     >
       <legend
-        data-v-3828e91d=""
+        data-v-0de63cb2=""
       >
         label
       </legend>
@@ -1158,7 +1158,7 @@ exports[`FeatherInput.vue should render an input with raised label when focused 
     <label
       class="feather-input-label"
       data-ref-id="feather-form-element-label"
-      data-v-3828e91d=""
+      data-v-0de63cb2=""
       for="feather-input-label"
       style="left: 12px;"
     >
@@ -1166,11 +1166,11 @@ exports[`FeatherInput.vue should render an input with raised label when focused 
     </label>
     <div
       class="feather-input-wrapper"
-      data-v-3828e91d=""
+      data-v-0de63cb2=""
     >
       <div
         class="prefix"
-        data-v-3828e91d=""
+        data-v-0de63cb2=""
       >
         
         
@@ -1190,7 +1190,7 @@ exports[`FeatherInput.vue should render an input with raised label when focused 
       
       <div
         class="post"
-        data-v-3828e91d=""
+        data-v-0de63cb2=""
       >
         <!---->
         <!---->
