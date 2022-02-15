@@ -95,6 +95,7 @@ export default {
     event: "update:modelValue",
   },
   emits: ["update:modelValue", "close"],
+  provide: { validationErrorMessage: undefined },
   props: {
     modelValue: {
       validator: (val) =>

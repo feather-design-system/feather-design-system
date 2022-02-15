@@ -1,8 +1,8 @@
 import { ref, watch, watchEffect, computed, provide } from "vue";
-import { useValidation } from "@featherds/input/src/components/useValidation";
+import { useValidation } from "@featherds/input-helper";
 import { useSelection } from "./Selection";
 import { getSafeId } from "@featherds/utils/id";
-const useRadioGroup = (modelValue, emit, label, schema) => {
+const useRadioGroup = (modelValue, emit, label, schema, errorFromInput) => {
   const radios = ref([]);
   const currentSelected = ref();
   const firstElement = ref();
@@ -62,7 +62,13 @@ const useRadioGroup = (modelValue, emit, label, schema) => {
 
   firstElementId.value = groupId.value;
 
-  let validate = useValidation(firstElementId, modelValue, label, schema);
+  let validate = useValidation(
+    firstElementId,
+    modelValue,
+    label,
+    schema,
+    errorFromInput
+  );
 
   const register = (radio) => {
     radios.value = [...radios.value, radio];

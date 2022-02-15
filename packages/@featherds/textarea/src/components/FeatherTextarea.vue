@@ -35,7 +35,7 @@
 <script>
 import { defineComponent } from "vue";
 import { getSafeId } from "@featherds/utils/id";
-import { useValidation } from "@featherds/input/src/components/useValidation";
+import { useValidation } from "@featherds/input-helper";
 import { computed, toRef } from "vue";
 
 import {
@@ -185,7 +185,8 @@ export default defineComponent({
       inputId,
       toRef(props, "modelValue"),
       props.label,
-      props.schema
+      props.schema,
+      toRef(props, "error")
     );
 
     return { inputId, incomingId, validate };

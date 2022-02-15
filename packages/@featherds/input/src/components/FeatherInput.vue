@@ -37,7 +37,7 @@
 </template>
 <script>
 import { getSafeId } from "@featherds/utils/id";
-import { useValidation } from "./useValidation";
+import { useValidation } from "@featherds/input-helper";
 import { ref, toRef, computed } from "vue";
 import {
   InputWrapper,
@@ -90,7 +90,8 @@ export default {
       inputId,
       internalValue,
       props.label,
-      props.schema
+      props.schema,
+      toRef(props, "error")
     );
 
     return { inputId, internalValue, validate };

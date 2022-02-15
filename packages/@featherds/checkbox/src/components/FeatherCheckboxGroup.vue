@@ -28,7 +28,7 @@ import {
   InputSubTextMixin,
 } from "@featherds/input-helper";
 import { computed, toRef, ref } from "vue";
-import { useValidation } from "@featherds/input/src/components/useValidation";
+import { useValidation } from "@featherds/input-helper";
 
 export default {
   mixins: [InputInheritAttrsMixin, InputSubTextMixin],
@@ -88,7 +88,8 @@ export default {
       inputId,
       toRef(props, "modelValue"),
       props.label,
-      props.schema
+      props.schema,
+      toRef(props, "error")
     );
 
     const registerCheckbox = (id) => {

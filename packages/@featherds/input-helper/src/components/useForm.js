@@ -1,12 +1,16 @@
-import { provide } from "vue";
+import { provide, ref } from "vue";
 const useForm = () => {
   let controls = {};
+  const errorMessages = ref([]);
   const _validate = () => {
     const validation = Object.keys(controls).map((key) => {
       return controls[key]();
     });
-    return validation.filter((x) => x.success === false);
+    errorMessages.value = validation.filter((x) => x.success === false);
+    return errorMessages.value;
   };
+
+  provide("featherFormErrors", errorMessages);
 
   provide("featherForm", {
     register: (input, validate) => {

@@ -66,7 +66,7 @@ import { FeatherMenu } from "@featherds/menu";
 import { getSafeId } from "@featherds/utils/id";
 import { KEYCODES } from "@featherds/utils/keys";
 import List from "./List";
-import { useValidation } from "@featherds/input/src/components/useValidation";
+import { useValidation } from "@featherds/input-helper";
 import { computed, toRef } from "vue";
 
 export default {
@@ -105,7 +105,8 @@ export default {
       inputId,
       toRef(props, "modelValue"),
       props.label,
-      props.schema
+      props.schema,
+      toRef(props, "error")
     );
 
     return { inputId, validate };

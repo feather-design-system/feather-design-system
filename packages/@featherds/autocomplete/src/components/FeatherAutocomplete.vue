@@ -164,7 +164,7 @@ import { toView } from "@featherds/utils/scroll";
 import { useLabelProperty } from "@featherds/composables/LabelProperty";
 import { useResultList } from "./Results/ResultList";
 import { useResultGrid } from "./Results/ResultGrid";
-import { useValidation } from "@featherds/input/src/components/useValidation";
+import { useValidation } from "@featherds/input-helper";
 import HighlightMixin from "./Highlight/HighlightMixin";
 import { ref, computed, toRef, markRaw } from "vue";
 
