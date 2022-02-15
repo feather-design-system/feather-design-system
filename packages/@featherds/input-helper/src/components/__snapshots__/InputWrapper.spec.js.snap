@@ -2,7 +2,7 @@
 
 exports[`InputWrapper.vue should hide the label when hideLabel is true 1`] = `
 <div
-  class="feather-input-wrapper-container error"
+  class="feather-input-wrapper-container hide-label error"
 >
   <fieldset
     aria-hidden="true"
@@ -16,7 +16,7 @@ exports[`InputWrapper.vue should hide the label when hideLabel is true 1`] = `
     class="feather-input-label"
     data-ref-id="feather-form-element-label"
     for="test"
-    style="left: 16px; display: none;"
+    style="left: 16px;"
   >
     test
   </label>

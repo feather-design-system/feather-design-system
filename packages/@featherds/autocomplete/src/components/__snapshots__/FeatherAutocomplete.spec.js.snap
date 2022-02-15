@@ -15,17 +15,17 @@ exports[`FeatherAutocomplete base functionality multi disabled state should rend
       aria-label="Users"
       aria-owns="feather-autocomplete-input-results"
       class="feather-input-wrapper-container raised disabled"
-      data-v-3828e91d=""
+      data-v-0de63cb2=""
       menu-trigger=""
       role="combobox"
     >
       <fieldset
         aria-hidden="true"
         class="feather-input-border"
-        data-v-3828e91d=""
+        data-v-0de63cb2=""
       >
         <legend
-          data-v-3828e91d=""
+          data-v-0de63cb2=""
         >
           Users
         </legend>
@@ -33,7 +33,7 @@ exports[`FeatherAutocomplete base functionality multi disabled state should rend
       <label
         class="feather-input-label"
         data-ref-id="feather-form-element-label"
-        data-v-3828e91d=""
+        data-v-0de63cb2=""
         for="feather-autocomplete-input"
         style="left: 12px;"
       >
@@ -41,11 +41,11 @@ exports[`FeatherAutocomplete base functionality multi disabled state should rend
       </label>
       <div
         class="feather-input-wrapper has-prefix"
-        data-v-3828e91d=""
+        data-v-0de63cb2=""
       >
         <div
           class="prefix"
-          data-v-3828e91d=""
+          data-v-0de63cb2=""
         >
           
           
@@ -147,7 +147,7 @@ exports[`FeatherAutocomplete base functionality multi disabled state should rend
         
         <div
           class="post"
-          data-v-3828e91d=""
+          data-v-0de63cb2=""
         >
           <!---->
           <!---->
@@ -229,17 +229,17 @@ exports[`FeatherAutocomplete base functionality multi disabled state should rend
       aria-label="Users"
       aria-owns="feather-autocomplete-input-results"
       class="feather-input-wrapper-container disabled"
-      data-v-3828e91d=""
+      data-v-0de63cb2=""
       menu-trigger=""
       role="combobox"
     >
       <fieldset
         aria-hidden="true"
         class="feather-input-border"
-        data-v-3828e91d=""
+        data-v-0de63cb2=""
       >
         <legend
-          data-v-3828e91d=""
+          data-v-0de63cb2=""
         >
           Users
         </legend>
@@ -247,7 +247,7 @@ exports[`FeatherAutocomplete base functionality multi disabled state should rend
       <label
         class="feather-input-label"
         data-ref-id="feather-form-element-label"
-        data-v-3828e91d=""
+        data-v-0de63cb2=""
         for="feather-autocomplete-input"
         style="left: 16px;"
       >
@@ -255,11 +255,11 @@ exports[`FeatherAutocomplete base functionality multi disabled state should rend
       </label>
       <div
         class="feather-input-wrapper has-prefix"
-        data-v-3828e91d=""
+        data-v-0de63cb2=""
       >
         <div
           class="prefix"
-          data-v-3828e91d=""
+          data-v-0de63cb2=""
         >
           
           
@@ -317,7 +317,7 @@ exports[`FeatherAutocomplete base functionality multi disabled state should rend
         
         <div
           class="post"
-          data-v-3828e91d=""
+          data-v-0de63cb2=""
         >
           <!---->
           <!---->
@@ -399,17 +399,17 @@ exports[`FeatherAutocomplete base functionality multi should lower label when th
       aria-label="Users"
       aria-owns="feather-autocomplete-input-results"
       class="feather-input-wrapper-container"
-      data-v-3828e91d=""
+      data-v-0de63cb2=""
       menu-trigger=""
       role="combobox"
     >
       <fieldset
         aria-hidden="true"
         class="feather-input-border"
-        data-v-3828e91d=""
+        data-v-0de63cb2=""
       >
         <legend
-          data-v-3828e91d=""
+          data-v-0de63cb2=""
         >
           Users
         </legend>
@@ -417,7 +417,7 @@ exports[`FeatherAutocomplete base functionality multi should lower label when th
       <label
         class="feather-input-label"
         data-ref-id="feather-form-element-label"
-        data-v-3828e91d=""
+        data-v-0de63cb2=""
         for="feather-autocomplete-input"
         style="left: 16px;"
       >
@@ -425,11 +425,11 @@ exports[`FeatherAutocomplete base functionality multi should lower label when th
       </label>
       <div
         class="feather-input-wrapper has-prefix"
-        data-v-3828e91d=""
+        data-v-0de63cb2=""
       >
         <div
           class="prefix"
-          data-v-3828e91d=""
+          data-v-0de63cb2=""
         >
           
           
@@ -485,7 +485,7 @@ exports[`FeatherAutocomplete base functionality multi should lower label when th
         
         <div
           class="post"
-          data-v-3828e91d=""
+          data-v-0de63cb2=""
         >
           <!---->
           <!---->
@@ -568,7 +568,7 @@ exports[`FeatherAutocomplete base functionality multi should not leave previous 
       aria-label="Users"
       aria-owns="feather-autocomplete-input-results"
       class="feather-input-wrapper-container raised focused"
-      data-v-3828e91d=""
+      data-v-0de63cb2=""
       id="feather-menu-trigger"
       menu-trigger=""
       role="combobox"
@@ -576,10 +576,10 @@ exports[`FeatherAutocomplete base functionality multi should not leave previous 
       <fieldset
         aria-hidden="true"
         class="feather-input-border"
-        data-v-3828e91d=""
+        data-v-0de63cb2=""
       >
         <legend
-          data-v-3828e91d=""
+          data-v-0de63cb2=""
         >
           Users
         </legend>
@@ -587,7 +587,7 @@ exports[`FeatherAutocomplete base functionality multi should not leave previous 
       <label
         class="feather-input-label"
         data-ref-id="feather-form-element-label"
-        data-v-3828e91d=""
+        data-v-0de63cb2=""
         for="feather-autocomplete-input"
         style="left: 12px;"
       >
@@ -595,11 +595,11 @@ exports[`FeatherAutocomplete base functionality multi should not leave previous 
       </label>
       <div
         class="feather-input-wrapper has-prefix"
-        data-v-3828e91d=""
+        data-v-0de63cb2=""
       >
         <div
           class="prefix"
-          data-v-3828e91d=""
+          data-v-0de63cb2=""
         >
           
           
@@ -655,7 +655,7 @@ exports[`FeatherAutocomplete base functionality multi should not leave previous 
         
         <div
           class="post"
-          data-v-3828e91d=""
+          data-v-0de63cb2=""
         >
           <!---->
           <!---->
@@ -815,17 +815,17 @@ exports[`FeatherAutocomplete base functionality multi should raise the label whe
       aria-label="Users"
       aria-owns="feather-autocomplete-input-results"
       class="feather-input-wrapper-container raised"
-      data-v-3828e91d=""
+      data-v-0de63cb2=""
       menu-trigger=""
       role="combobox"
     >
       <fieldset
         aria-hidden="true"
         class="feather-input-border"
-        data-v-3828e91d=""
+        data-v-0de63cb2=""
       >
         <legend
-          data-v-3828e91d=""
+          data-v-0de63cb2=""
         >
           Users
         </legend>
@@ -833,7 +833,7 @@ exports[`FeatherAutocomplete base functionality multi should raise the label whe
       <label
         class="feather-input-label"
         data-ref-id="feather-form-element-label"
-        data-v-3828e91d=""
+        data-v-0de63cb2=""
         for="feather-autocomplete-input"
         style="left: 12px;"
       >
@@ -841,11 +841,11 @@ exports[`FeatherAutocomplete base functionality multi should raise the label whe
       </label>
       <div
         class="feather-input-wrapper has-prefix"
-        data-v-3828e91d=""
+        data-v-0de63cb2=""
       >
         <div
           class="prefix"
-          data-v-3828e91d=""
+          data-v-0de63cb2=""
         >
           
           
@@ -987,7 +987,7 @@ exports[`FeatherAutocomplete base functionality multi should raise the label whe
         
         <div
           class="post"
-          data-v-3828e91d=""
+          data-v-0de63cb2=""
         >
           <!---->
           <!---->
@@ -1070,7 +1070,7 @@ exports[`FeatherAutocomplete base functionality multi should show loading spinne
       aria-label="Users"
       aria-owns="feather-autocomplete-input-results"
       class="feather-input-wrapper-container raised focused"
-      data-v-3828e91d=""
+      data-v-0de63cb2=""
       id="feather-menu-trigger"
       menu-trigger=""
       role="combobox"
@@ -1078,10 +1078,10 @@ exports[`FeatherAutocomplete base functionality multi should show loading spinne
       <fieldset
         aria-hidden="true"
         class="feather-input-border"
-        data-v-3828e91d=""
+        data-v-0de63cb2=""
       >
         <legend
-          data-v-3828e91d=""
+          data-v-0de63cb2=""
         >
           Users
         </legend>
@@ -1089,7 +1089,7 @@ exports[`FeatherAutocomplete base functionality multi should show loading spinne
       <label
         class="feather-input-label"
         data-ref-id="feather-form-element-label"
-        data-v-3828e91d=""
+        data-v-0de63cb2=""
         for="feather-autocomplete-input"
         style="left: 12px;"
       >
@@ -1097,11 +1097,11 @@ exports[`FeatherAutocomplete base functionality multi should show loading spinne
       </label>
       <div
         class="feather-input-wrapper has-prefix"
-        data-v-3828e91d=""
+        data-v-0de63cb2=""
       >
         <div
           class="prefix"
-          data-v-3828e91d=""
+          data-v-0de63cb2=""
         >
           
           
@@ -1157,7 +1157,7 @@ exports[`FeatherAutocomplete base functionality multi should show loading spinne
         
         <div
           class="post"
-          data-v-3828e91d=""
+          data-v-0de63cb2=""
         >
           <!---->
           <!---->
@@ -1258,7 +1258,7 @@ exports[`FeatherAutocomplete base functionality multi should show no results tex
       aria-label="Users"
       aria-owns="feather-autocomplete-input-results"
       class="feather-input-wrapper-container raised focused"
-      data-v-3828e91d=""
+      data-v-0de63cb2=""
       id="feather-menu-trigger"
       menu-trigger=""
       role="combobox"
@@ -1266,10 +1266,10 @@ exports[`FeatherAutocomplete base functionality multi should show no results tex
       <fieldset
         aria-hidden="true"
         class="feather-input-border"
-        data-v-3828e91d=""
+        data-v-0de63cb2=""
       >
         <legend
-          data-v-3828e91d=""
+          data-v-0de63cb2=""
         >
           Users
         </legend>
@@ -1277,7 +1277,7 @@ exports[`FeatherAutocomplete base functionality multi should show no results tex
       <label
         class="feather-input-label"
         data-ref-id="feather-form-element-label"
-        data-v-3828e91d=""
+        data-v-0de63cb2=""
         for="feather-autocomplete-input"
         style="left: 12px;"
       >
@@ -1285,11 +1285,11 @@ exports[`FeatherAutocomplete base functionality multi should show no results tex
       </label>
       <div
         class="feather-input-wrapper has-prefix"
-        data-v-3828e91d=""
+        data-v-0de63cb2=""
       >
         <div
           class="prefix"
-          data-v-3828e91d=""
+          data-v-0de63cb2=""
         >
           
           
@@ -1345,7 +1345,7 @@ exports[`FeatherAutocomplete base functionality multi should show no results tex
         
         <div
           class="post"
-          data-v-3828e91d=""
+          data-v-0de63cb2=""
         >
           <!---->
           <!---->
@@ -1454,17 +1454,17 @@ exports[`FeatherAutocomplete base functionality single disabled state should ren
       aria-label="Users"
       aria-owns="feather-autocomplete-input-results"
       class="feather-input-wrapper-container raised disabled"
-      data-v-3828e91d=""
+      data-v-0de63cb2=""
       menu-trigger=""
       role="combobox"
     >
       <fieldset
         aria-hidden="true"
         class="feather-input-border"
-        data-v-3828e91d=""
+        data-v-0de63cb2=""
       >
         <legend
-          data-v-3828e91d=""
+          data-v-0de63cb2=""
         >
           Users
         </legend>
@@ -1472,7 +1472,7 @@ exports[`FeatherAutocomplete base functionality single disabled state should ren
       <label
         class="feather-input-label"
         data-ref-id="feather-form-element-label"
-        data-v-3828e91d=""
+        data-v-0de63cb2=""
         for="feather-autocomplete-input"
         style="left: 12px;"
       >
@@ -1480,11 +1480,11 @@ exports[`FeatherAutocomplete base functionality single disabled state should ren
       </label>
       <div
         class="feather-input-wrapper has-prefix"
-        data-v-3828e91d=""
+        data-v-0de63cb2=""
       >
         <div
           class="prefix"
-          data-v-3828e91d=""
+          data-v-0de63cb2=""
         >
           
           
@@ -1542,12 +1542,12 @@ exports[`FeatherAutocomplete base functionality single disabled state should ren
         
         <div
           class="post"
-          data-v-3828e91d=""
+          data-v-0de63cb2=""
         >
           <a
             class="action-icon hide-when-disabled"
             data-ref-id="feather-form-element-clear"
-            data-v-3828e91d=""
+            data-v-0de63cb2=""
             data-v-d1dfbdf8=""
             href="#"
             title="Clear value"
@@ -1646,17 +1646,17 @@ exports[`FeatherAutocomplete base functionality single disabled state should ren
       aria-label="Users"
       aria-owns="feather-autocomplete-input-results"
       class="feather-input-wrapper-container disabled"
-      data-v-3828e91d=""
+      data-v-0de63cb2=""
       menu-trigger=""
       role="combobox"
     >
       <fieldset
         aria-hidden="true"
         class="feather-input-border"
-        data-v-3828e91d=""
+        data-v-0de63cb2=""
       >
         <legend
-          data-v-3828e91d=""
+          data-v-0de63cb2=""
         >
           Users
         </legend>
@@ -1664,7 +1664,7 @@ exports[`FeatherAutocomplete base functionality single disabled state should ren
       <label
         class="feather-input-label"
         data-ref-id="feather-form-element-label"
-        data-v-3828e91d=""
+        data-v-0de63cb2=""
         for="feather-autocomplete-input"
         style="left: 16px;"
       >
@@ -1672,11 +1672,11 @@ exports[`FeatherAutocomplete base functionality single disabled state should ren
       </label>
       <div
         class="feather-input-wrapper has-prefix"
-        data-v-3828e91d=""
+        data-v-0de63cb2=""
       >
         <div
           class="prefix"
-          data-v-3828e91d=""
+          data-v-0de63cb2=""
         >
           
           
@@ -1734,7 +1734,7 @@ exports[`FeatherAutocomplete base functionality single disabled state should ren
         
         <div
           class="post"
-          data-v-3828e91d=""
+          data-v-0de63cb2=""
         >
           <!---->
           <!---->
@@ -1816,17 +1816,17 @@ exports[`FeatherAutocomplete base functionality single should lower label when t
       aria-label="Users"
       aria-owns="feather-autocomplete-input-results"
       class="feather-input-wrapper-container"
-      data-v-3828e91d=""
+      data-v-0de63cb2=""
       menu-trigger=""
       role="combobox"
     >
       <fieldset
         aria-hidden="true"
         class="feather-input-border"
-        data-v-3828e91d=""
+        data-v-0de63cb2=""
       >
         <legend
-          data-v-3828e91d=""
+          data-v-0de63cb2=""
         >
           Users
         </legend>
@@ -1834,7 +1834,7 @@ exports[`FeatherAutocomplete base functionality single should lower label when t
       <label
         class="feather-input-label"
         data-ref-id="feather-form-element-label"
-        data-v-3828e91d=""
+        data-v-0de63cb2=""
         for="feather-autocomplete-input"
         style="left: 16px;"
       >
@@ -1842,11 +1842,11 @@ exports[`FeatherAutocomplete base functionality single should lower label when t
       </label>
       <div
         class="feather-input-wrapper has-prefix"
-        data-v-3828e91d=""
+        data-v-0de63cb2=""
       >
         <div
           class="prefix"
-          data-v-3828e91d=""
+          data-v-0de63cb2=""
         >
           
           
@@ -1902,7 +1902,7 @@ exports[`FeatherAutocomplete base functionality single should lower label when t
         
         <div
           class="post"
-          data-v-3828e91d=""
+          data-v-0de63cb2=""
         >
           <!---->
           <!---->
@@ -1985,7 +1985,7 @@ exports[`FeatherAutocomplete base functionality single should not leave previous
       aria-label="Users"
       aria-owns="feather-autocomplete-input-results"
       class="feather-input-wrapper-container raised focused"
-      data-v-3828e91d=""
+      data-v-0de63cb2=""
       id="feather-menu-trigger"
       menu-trigger=""
       role="combobox"
@@ -1993,10 +1993,10 @@ exports[`FeatherAutocomplete base functionality single should not leave previous
       <fieldset
         aria-hidden="true"
         class="feather-input-border"
-        data-v-3828e91d=""
+        data-v-0de63cb2=""
       >
         <legend
-          data-v-3828e91d=""
+          data-v-0de63cb2=""
         >
           Users
         </legend>
@@ -2004,7 +2004,7 @@ exports[`FeatherAutocomplete base functionality single should not leave previous
       <label
         class="feather-input-label"
         data-ref-id="feather-form-element-label"
-        data-v-3828e91d=""
+        data-v-0de63cb2=""
         for="feather-autocomplete-input"
         style="left: 12px;"
       >
@@ -2012,11 +2012,11 @@ exports[`FeatherAutocomplete base functionality single should not leave previous
       </label>
       <div
         class="feather-input-wrapper has-prefix"
-        data-v-3828e91d=""
+        data-v-0de63cb2=""
       >
         <div
           class="prefix"
-          data-v-3828e91d=""
+          data-v-0de63cb2=""
         >
           
           
@@ -2072,7 +2072,7 @@ exports[`FeatherAutocomplete base functionality single should not leave previous
         
         <div
           class="post"
-          data-v-3828e91d=""
+          data-v-0de63cb2=""
         >
           <!---->
           <!---->
@@ -2231,17 +2231,17 @@ exports[`FeatherAutocomplete base functionality single should raise the label wh
       aria-label="Users"
       aria-owns="feather-autocomplete-input-results"
       class="feather-input-wrapper-container raised"
-      data-v-3828e91d=""
+      data-v-0de63cb2=""
       menu-trigger=""
       role="combobox"
     >
       <fieldset
         aria-hidden="true"
         class="feather-input-border"
-        data-v-3828e91d=""
+        data-v-0de63cb2=""
       >
         <legend
-          data-v-3828e91d=""
+          data-v-0de63cb2=""
         >
           Users
         </legend>
@@ -2249,7 +2249,7 @@ exports[`FeatherAutocomplete base functionality single should raise the label wh
       <label
         class="feather-input-label"
         data-ref-id="feather-form-element-label"
-        data-v-3828e91d=""
+        data-v-0de63cb2=""
         for="feather-autocomplete-input"
         style="left: 12px;"
       >
@@ -2257,11 +2257,11 @@ exports[`FeatherAutocomplete base functionality single should raise the label wh
       </label>
       <div
         class="feather-input-wrapper has-prefix"
-        data-v-3828e91d=""
+        data-v-0de63cb2=""
       >
         <div
           class="prefix"
-          data-v-3828e91d=""
+          data-v-0de63cb2=""
         >
           
           
@@ -2317,12 +2317,12 @@ exports[`FeatherAutocomplete base functionality single should raise the label wh
         
         <div
           class="post"
-          data-v-3828e91d=""
+          data-v-0de63cb2=""
         >
           <a
             class="action-icon hide-when-disabled"
             data-ref-id="feather-form-element-clear"
-            data-v-3828e91d=""
+            data-v-0de63cb2=""
             data-v-d1dfbdf8=""
             href="#"
             title="Clear value"
@@ -2422,7 +2422,7 @@ exports[`FeatherAutocomplete base functionality single should show loading spinn
       aria-label="Users"
       aria-owns="feather-autocomplete-input-results"
       class="feather-input-wrapper-container raised focused"
-      data-v-3828e91d=""
+      data-v-0de63cb2=""
       id="feather-menu-trigger"
       menu-trigger=""
       role="combobox"
@@ -2430,10 +2430,10 @@ exports[`FeatherAutocomplete base functionality single should show loading spinn
       <fieldset
         aria-hidden="true"
         class="feather-input-border"
-        data-v-3828e91d=""
+        data-v-0de63cb2=""
       >
         <legend
-          data-v-3828e91d=""
+          data-v-0de63cb2=""
         >
           Users
         </legend>
@@ -2441,7 +2441,7 @@ exports[`FeatherAutocomplete base functionality single should show loading spinn
       <label
         class="feather-input-label"
         data-ref-id="feather-form-element-label"
-        data-v-3828e91d=""
+        data-v-0de63cb2=""
         for="feather-autocomplete-input"
         style="left: 12px;"
       >
@@ -2449,11 +2449,11 @@ exports[`FeatherAutocomplete base functionality single should show loading spinn
       </label>
       <div
         class="feather-input-wrapper has-prefix"
-        data-v-3828e91d=""
+        data-v-0de63cb2=""
       >
         <div
           class="prefix"
-          data-v-3828e91d=""
+          data-v-0de63cb2=""
         >
           
           
@@ -2509,7 +2509,7 @@ exports[`FeatherAutocomplete base functionality single should show loading spinn
         
         <div
           class="post"
-          data-v-3828e91d=""
+          data-v-0de63cb2=""
         >
           <!---->
           <!---->
@@ -2610,7 +2610,7 @@ exports[`FeatherAutocomplete base functionality single should show no results te
       aria-label="Users"
       aria-owns="feather-autocomplete-input-results"
       class="feather-input-wrapper-container raised focused"
-      data-v-3828e91d=""
+      data-v-0de63cb2=""
       id="feather-menu-trigger"
       menu-trigger=""
       role="combobox"
@@ -2618,10 +2618,10 @@ exports[`FeatherAutocomplete base functionality single should show no results te
       <fieldset
         aria-hidden="true"
         class="feather-input-border"
-        data-v-3828e91d=""
+        data-v-0de63cb2=""
       >
         <legend
-          data-v-3828e91d=""
+          data-v-0de63cb2=""
         >
           Users
         </legend>
@@ -2629,7 +2629,7 @@ exports[`FeatherAutocomplete base functionality single should show no results te
       <label
         class="feather-input-label"
         data-ref-id="feather-form-element-label"
-        data-v-3828e91d=""
+        data-v-0de63cb2=""
         for="feather-autocomplete-input"
         style="left: 12px;"
       >
@@ -2637,11 +2637,11 @@ exports[`FeatherAutocomplete base functionality single should show no results te
       </label>
       <div
         class="feather-input-wrapper has-prefix"
-        data-v-3828e91d=""
+        data-v-0de63cb2=""
       >
         <div
           class="prefix"
-          data-v-3828e91d=""
+          data-v-0de63cb2=""
         >
           
           
@@ -2697,7 +2697,7 @@ exports[`FeatherAutocomplete base functionality single should show no results te
         
         <div
           class="post"
-          data-v-3828e91d=""
+          data-v-0de63cb2=""
         >
           <!---->
           <!---->
@@ -2807,7 +2807,7 @@ exports[`FeatherAutocomplete multi:specific chip selection should move chip sele
       aria-label="Users"
       aria-owns="feather-autocomplete-input-results"
       class="feather-input-wrapper-container raised"
-      data-v-3828e91d=""
+      data-v-0de63cb2=""
       id="feather-menu-trigger"
       menu-trigger=""
       role="combobox"
@@ -2815,10 +2815,10 @@ exports[`FeatherAutocomplete multi:specific chip selection should move chip sele
       <fieldset
         aria-hidden="true"
         class="feather-input-border"
-        data-v-3828e91d=""
+        data-v-0de63cb2=""
       >
         <legend
-          data-v-3828e91d=""
+          data-v-0de63cb2=""
         >
           Users
         </legend>
@@ -2826,7 +2826,7 @@ exports[`FeatherAutocomplete multi:specific chip selection should move chip sele
       <label
         class="feather-input-label"
         data-ref-id="feather-form-element-label"
-        data-v-3828e91d=""
+        data-v-0de63cb2=""
         for="feather-autocomplete-input"
         style="left: 12px;"
       >
@@ -2834,11 +2834,11 @@ exports[`FeatherAutocomplete multi:specific chip selection should move chip sele
       </label>
       <div
         class="feather-input-wrapper has-prefix"
-        data-v-3828e91d=""
+        data-v-0de63cb2=""
       >
         <div
           class="prefix"
-          data-v-3828e91d=""
+          data-v-0de63cb2=""
         >
           
           
@@ -2981,7 +2981,7 @@ exports[`FeatherAutocomplete multi:specific chip selection should move chip sele
         
         <div
           class="post"
-          data-v-3828e91d=""
+          data-v-0de63cb2=""
         >
           <!---->
           <!---->
@@ -3064,7 +3064,7 @@ exports[`FeatherAutocomplete multi:specific chip selection should move chip sele
       aria-label="Users"
       aria-owns="feather-autocomplete-input-results"
       class="feather-input-wrapper-container raised"
-      data-v-3828e91d=""
+      data-v-0de63cb2=""
       id="feather-menu-trigger"
       menu-trigger=""
       role="combobox"
@@ -3072,10 +3072,10 @@ exports[`FeatherAutocomplete multi:specific chip selection should move chip sele
       <fieldset
         aria-hidden="true"
         class="feather-input-border"
-        data-v-3828e91d=""
+        data-v-0de63cb2=""
       >
         <legend
-          data-v-3828e91d=""
+          data-v-0de63cb2=""
         >
           Users
         </legend>
@@ -3083,7 +3083,7 @@ exports[`FeatherAutocomplete multi:specific chip selection should move chip sele
       <label
         class="feather-input-label"
         data-ref-id="feather-form-element-label"
-        data-v-3828e91d=""
+        data-v-0de63cb2=""
         for="feather-autocomplete-input"
         style="left: 12px;"
       >
@@ -3091,11 +3091,11 @@ exports[`FeatherAutocomplete multi:specific chip selection should move chip sele
       </label>
       <div
         class="feather-input-wrapper has-prefix"
-        data-v-3828e91d=""
+        data-v-0de63cb2=""
       >
         <div
           class="prefix"
-          data-v-3828e91d=""
+          data-v-0de63cb2=""
         >
           
           
@@ -3238,7 +3238,7 @@ exports[`FeatherAutocomplete multi:specific chip selection should move chip sele
         
         <div
           class="post"
-          data-v-3828e91d=""
+          data-v-0de63cb2=""
         >
           <!---->
           <!---->
@@ -3321,7 +3321,7 @@ exports[`FeatherAutocomplete multi:specific chip selection should not move chip 
       aria-label="Users"
       aria-owns="feather-autocomplete-input-results"
       class="feather-input-wrapper-container raised"
-      data-v-3828e91d=""
+      data-v-0de63cb2=""
       id="feather-menu-trigger"
       menu-trigger=""
       role="combobox"
@@ -3329,10 +3329,10 @@ exports[`FeatherAutocomplete multi:specific chip selection should not move chip 
       <fieldset
         aria-hidden="true"
         class="feather-input-border"
-        data-v-3828e91d=""
+        data-v-0de63cb2=""
       >
         <legend
-          data-v-3828e91d=""
+          data-v-0de63cb2=""
         >
           Users
         </legend>
@@ -3340,7 +3340,7 @@ exports[`FeatherAutocomplete multi:specific chip selection should not move chip 
       <label
         class="feather-input-label"
         data-ref-id="feather-form-element-label"
-        data-v-3828e91d=""
+        data-v-0de63cb2=""
         for="feather-autocomplete-input"
         style="left: 12px;"
       >
@@ -3348,11 +3348,11 @@ exports[`FeatherAutocomplete multi:specific chip selection should not move chip 
       </label>
       <div
         class="feather-input-wrapper has-prefix"
-        data-v-3828e91d=""
+        data-v-0de63cb2=""
       >
         <div
           class="prefix"
-          data-v-3828e91d=""
+          data-v-0de63cb2=""
         >
           
           
@@ -3495,7 +3495,7 @@ exports[`FeatherAutocomplete multi:specific chip selection should not move chip 
         
         <div
           class="post"
-          data-v-3828e91d=""
+          data-v-0de63cb2=""
         >
           <!---->
           <!---->
@@ -3578,7 +3578,7 @@ exports[`FeatherAutocomplete multi:specific chip selection should not perform an
       aria-label="Users"
       aria-owns="feather-autocomplete-input-results"
       class="feather-input-wrapper-container raised"
-      data-v-3828e91d=""
+      data-v-0de63cb2=""
       id="feather-menu-trigger"
       menu-trigger=""
       role="combobox"
@@ -3586,10 +3586,10 @@ exports[`FeatherAutocomplete multi:specific chip selection should not perform an
       <fieldset
         aria-hidden="true"
         class="feather-input-border"
-        data-v-3828e91d=""
+        data-v-0de63cb2=""
       >
         <legend
-          data-v-3828e91d=""
+          data-v-0de63cb2=""
         >
           Users
         </legend>
@@ -3597,7 +3597,7 @@ exports[`FeatherAutocomplete multi:specific chip selection should not perform an
       <label
         class="feather-input-label"
         data-ref-id="feather-form-element-label"
-        data-v-3828e91d=""
+        data-v-0de63cb2=""
         for="feather-autocomplete-input"
         style="left: 12px;"
       >
@@ -3605,11 +3605,11 @@ exports[`FeatherAutocomplete multi:specific chip selection should not perform an
       </label>
       <div
         class="feather-input-wrapper has-prefix"
-        data-v-3828e91d=""
+        data-v-0de63cb2=""
       >
         <div
           class="prefix"
-          data-v-3828e91d=""
+          data-v-0de63cb2=""
         >
           
           
@@ -3751,7 +3751,7 @@ exports[`FeatherAutocomplete multi:specific chip selection should not perform an
         
         <div
           class="post"
-          data-v-3828e91d=""
+          data-v-0de63cb2=""
         >
           <!---->
           <!---->
@@ -3834,7 +3834,7 @@ exports[`FeatherAutocomplete multi:specific chip selection should select rightmo
       aria-label="Users"
       aria-owns="feather-autocomplete-input-results"
       class="feather-input-wrapper-container raised focused"
-      data-v-3828e91d=""
+      data-v-0de63cb2=""
       id="feather-menu-trigger"
       menu-trigger=""
       role="combobox"
@@ -3842,10 +3842,10 @@ exports[`FeatherAutocomplete multi:specific chip selection should select rightmo
       <fieldset
         aria-hidden="true"
         class="feather-input-border"
-        data-v-3828e91d=""
+        data-v-0de63cb2=""
       >
         <legend
-          data-v-3828e91d=""
+          data-v-0de63cb2=""
         >
           Users
         </legend>
@@ -3853,7 +3853,7 @@ exports[`FeatherAutocomplete multi:specific chip selection should select rightmo
       <label
         class="feather-input-label"
         data-ref-id="feather-form-element-label"
-        data-v-3828e91d=""
+        data-v-0de63cb2=""
         for="feather-autocomplete-input"
         style="left: 12px;"
       >
@@ -3861,11 +3861,11 @@ exports[`FeatherAutocomplete multi:specific chip selection should select rightmo
       </label>
       <div
         class="feather-input-wrapper has-prefix"
-        data-v-3828e91d=""
+        data-v-0de63cb2=""
       >
         <div
           class="prefix"
-          data-v-3828e91d=""
+          data-v-0de63cb2=""
         >
           
           
@@ -4008,7 +4008,7 @@ exports[`FeatherAutocomplete multi:specific chip selection should select rightmo
         
         <div
           class="post"
-          data-v-3828e91d=""
+          data-v-0de63cb2=""
         >
           <!---->
           <!---->
@@ -4150,7 +4150,7 @@ exports[`FeatherAutocomplete multi:specific chip selection should select the rig
       aria-label="Users"
       aria-owns="feather-autocomplete-input-results"
       class="feather-input-wrapper-container raised"
-      data-v-3828e91d=""
+      data-v-0de63cb2=""
       id="feather-menu-trigger"
       menu-trigger=""
       role="combobox"
@@ -4158,10 +4158,10 @@ exports[`FeatherAutocomplete multi:specific chip selection should select the rig
       <fieldset
         aria-hidden="true"
         class="feather-input-border"
-        data-v-3828e91d=""
+        data-v-0de63cb2=""
       >
         <legend
-          data-v-3828e91d=""
+          data-v-0de63cb2=""
         >
           Users
         </legend>
@@ -4169,7 +4169,7 @@ exports[`FeatherAutocomplete multi:specific chip selection should select the rig
       <label
         class="feather-input-label"
         data-ref-id="feather-form-element-label"
-        data-v-3828e91d=""
+        data-v-0de63cb2=""
         for="feather-autocomplete-input"
         style="left: 12px;"
       >
@@ -4177,11 +4177,11 @@ exports[`FeatherAutocomplete multi:specific chip selection should select the rig
       </label>
       <div
         class="feather-input-wrapper has-prefix"
-        data-v-3828e91d=""
+        data-v-0de63cb2=""
       >
         <div
           class="prefix"
-          data-v-3828e91d=""
+          data-v-0de63cb2=""
         >
           
           
@@ -4324,7 +4324,7 @@ exports[`FeatherAutocomplete multi:specific chip selection should select the rig
         
         <div
           class="post"
-          data-v-3828e91d=""
+          data-v-0de63cb2=""
         >
           <!---->
           <!---->
@@ -4407,7 +4407,7 @@ exports[`FeatherAutocomplete multi:specific chip selection should should deselec
       aria-label="Users"
       aria-owns="feather-autocomplete-input-results"
       class="feather-input-wrapper-container raised"
-      data-v-3828e91d=""
+      data-v-0de63cb2=""
       id="feather-menu-trigger"
       menu-trigger=""
       role="combobox"
@@ -4415,10 +4415,10 @@ exports[`FeatherAutocomplete multi:specific chip selection should should deselec
       <fieldset
         aria-hidden="true"
         class="feather-input-border"
-        data-v-3828e91d=""
+        data-v-0de63cb2=""
       >
         <legend
-          data-v-3828e91d=""
+          data-v-0de63cb2=""
         >
           Users
         </legend>
@@ -4426,7 +4426,7 @@ exports[`FeatherAutocomplete multi:specific chip selection should should deselec
       <label
         class="feather-input-label"
         data-ref-id="feather-form-element-label"
-        data-v-3828e91d=""
+        data-v-0de63cb2=""
         for="feather-autocomplete-input"
         style="left: 12px;"
       >
@@ -4434,11 +4434,11 @@ exports[`FeatherAutocomplete multi:specific chip selection should should deselec
       </label>
       <div
         class="feather-input-wrapper has-prefix"
-        data-v-3828e91d=""
+        data-v-0de63cb2=""
       >
         <div
           class="prefix"
-          data-v-3828e91d=""
+          data-v-0de63cb2=""
         >
           
           
@@ -4580,7 +4580,7 @@ exports[`FeatherAutocomplete multi:specific chip selection should should deselec
         
         <div
           class="post"
-          data-v-3828e91d=""
+          data-v-0de63cb2=""
         >
           <!---->
           <!---->
@@ -4663,7 +4663,7 @@ exports[`FeatherAutocomplete multi:specific selection limit should clear warning
       aria-label="Users"
       aria-owns="feather-autocomplete-input-results"
       class="feather-input-wrapper-container raised focused"
-      data-v-3828e91d=""
+      data-v-0de63cb2=""
       id="feather-menu-trigger"
       menu-trigger=""
       role="combobox"
@@ -4671,10 +4671,10 @@ exports[`FeatherAutocomplete multi:specific selection limit should clear warning
       <fieldset
         aria-hidden="true"
         class="feather-input-border"
-        data-v-3828e91d=""
+        data-v-0de63cb2=""
       >
         <legend
-          data-v-3828e91d=""
+          data-v-0de63cb2=""
         >
           Users
         </legend>
@@ -4682,7 +4682,7 @@ exports[`FeatherAutocomplete multi:specific selection limit should clear warning
       <label
         class="feather-input-label"
         data-ref-id="feather-form-element-label"
-        data-v-3828e91d=""
+        data-v-0de63cb2=""
         for="feather-autocomplete-input"
         style="left: 12px;"
       >
@@ -4690,11 +4690,11 @@ exports[`FeatherAutocomplete multi:specific selection limit should clear warning
       </label>
       <div
         class="feather-input-wrapper has-prefix"
-        data-v-3828e91d=""
+        data-v-0de63cb2=""
       >
         <div
           class="prefix"
-          data-v-3828e91d=""
+          data-v-0de63cb2=""
         >
           
           
@@ -4836,7 +4836,7 @@ exports[`FeatherAutocomplete multi:specific selection limit should clear warning
         
         <div
           class="post"
-          data-v-3828e91d=""
+          data-v-0de63cb2=""
         >
           <!---->
           <!---->
@@ -4919,7 +4919,7 @@ exports[`FeatherAutocomplete multi:specific selection limit should display a war
       aria-label="Users"
       aria-owns="feather-autocomplete-input-results"
       class="feather-input-wrapper-container raised focused"
-      data-v-3828e91d=""
+      data-v-0de63cb2=""
       id="feather-menu-trigger"
       menu-trigger=""
       role="combobox"
@@ -4927,10 +4927,10 @@ exports[`FeatherAutocomplete multi:specific selection limit should display a war
       <fieldset
         aria-hidden="true"
         class="feather-input-border"
-        data-v-3828e91d=""
+        data-v-0de63cb2=""
       >
         <legend
-          data-v-3828e91d=""
+          data-v-0de63cb2=""
         >
           Users
         </legend>
@@ -4938,7 +4938,7 @@ exports[`FeatherAutocomplete multi:specific selection limit should display a war
       <label
         class="feather-input-label"
         data-ref-id="feather-form-element-label"
-        data-v-3828e91d=""
+        data-v-0de63cb2=""
         for="feather-autocomplete-input"
         style="left: 12px;"
       >
@@ -4946,11 +4946,11 @@ exports[`FeatherAutocomplete multi:specific selection limit should display a war
       </label>
       <div
         class="feather-input-wrapper has-prefix"
-        data-v-3828e91d=""
+        data-v-0de63cb2=""
       >
         <div
           class="prefix"
-          data-v-3828e91d=""
+          data-v-0de63cb2=""
         >
           
           
@@ -5092,7 +5092,7 @@ exports[`FeatherAutocomplete multi:specific selection limit should display a war
         
         <div
           class="post"
-          data-v-3828e91d=""
+          data-v-0de63cb2=""
         >
           <!---->
           <!---->
@@ -5225,7 +5225,7 @@ exports[`FeatherAutocomplete multi:specific selection limit should display a war
       aria-label="Users"
       aria-owns="feather-autocomplete-input-results"
       class="feather-input-wrapper-container raised focused"
-      data-v-3828e91d=""
+      data-v-0de63cb2=""
       id="feather-menu-trigger"
       menu-trigger=""
       role="combobox"
@@ -5233,10 +5233,10 @@ exports[`FeatherAutocomplete multi:specific selection limit should display a war
       <fieldset
         aria-hidden="true"
         class="feather-input-border"
-        data-v-3828e91d=""
+        data-v-0de63cb2=""
       >
         <legend
-          data-v-3828e91d=""
+          data-v-0de63cb2=""
         >
           Users
         </legend>
@@ -5244,7 +5244,7 @@ exports[`FeatherAutocomplete multi:specific selection limit should display a war
       <label
         class="feather-input-label"
         data-ref-id="feather-form-element-label"
-        data-v-3828e91d=""
+        data-v-0de63cb2=""
         for="feather-autocomplete-input"
         style="left: 12px;"
       >
@@ -5252,11 +5252,11 @@ exports[`FeatherAutocomplete multi:specific selection limit should display a war
       </label>
       <div
         class="feather-input-wrapper has-prefix"
-        data-v-3828e91d=""
+        data-v-0de63cb2=""
       >
         <div
           class="prefix"
-          data-v-3828e91d=""
+          data-v-0de63cb2=""
         >
           
           
@@ -5400,7 +5400,7 @@ exports[`FeatherAutocomplete multi:specific selection limit should display a war
         
         <div
           class="post"
-          data-v-3828e91d=""
+          data-v-0de63cb2=""
         >
           <!---->
           <!---->
@@ -5533,7 +5533,7 @@ exports[`FeatherAutocomplete multi:specific selection limit should display a war
       aria-label="Users"
       aria-owns="feather-autocomplete-input-results"
       class="feather-input-wrapper-container raised focused"
-      data-v-3828e91d=""
+      data-v-0de63cb2=""
       id="feather-menu-trigger"
       menu-trigger=""
       role="combobox"
@@ -5541,10 +5541,10 @@ exports[`FeatherAutocomplete multi:specific selection limit should display a war
       <fieldset
         aria-hidden="true"
         class="feather-input-border"
-        data-v-3828e91d=""
+        data-v-0de63cb2=""
       >
         <legend
-          data-v-3828e91d=""
+          data-v-0de63cb2=""
         >
           Users
         </legend>
@@ -5552,7 +5552,7 @@ exports[`FeatherAutocomplete multi:specific selection limit should display a war
       <label
         class="feather-input-label"
         data-ref-id="feather-form-element-label"
-        data-v-3828e91d=""
+        data-v-0de63cb2=""
         for="feather-autocomplete-input"
         style="left: 12px;"
       >
@@ -5560,11 +5560,11 @@ exports[`FeatherAutocomplete multi:specific selection limit should display a war
       </label>
       <div
         class="feather-input-wrapper has-prefix"
-        data-v-3828e91d=""
+        data-v-0de63cb2=""
       >
         <div
           class="prefix"
-          data-v-3828e91d=""
+          data-v-0de63cb2=""
         >
           
           
@@ -5622,7 +5622,7 @@ exports[`FeatherAutocomplete multi:specific selection limit should display a war
         
         <div
           class="post"
-          data-v-3828e91d=""
+          data-v-0de63cb2=""
         >
           <!---->
           <!---->
@@ -5815,7 +5815,7 @@ exports[`FeatherAutocomplete multi:specific should hide/reset menu and clear tex
       aria-label="Users"
       aria-owns="feather-autocomplete-input-results"
       class="feather-input-wrapper-container"
-      data-v-3828e91d=""
+      data-v-0de63cb2=""
       id="feather-menu-trigger"
       menu-trigger=""
       role="combobox"
@@ -5823,10 +5823,10 @@ exports[`FeatherAutocomplete multi:specific should hide/reset menu and clear tex
       <fieldset
         aria-hidden="true"
         class="feather-input-border"
-        data-v-3828e91d=""
+        data-v-0de63cb2=""
       >
         <legend
-          data-v-3828e91d=""
+          data-v-0de63cb2=""
         >
           Users
         </legend>
@@ -5834,7 +5834,7 @@ exports[`FeatherAutocomplete multi:specific should hide/reset menu and clear tex
       <label
         class="feather-input-label"
         data-ref-id="feather-form-element-label"
-        data-v-3828e91d=""
+        data-v-0de63cb2=""
         for="feather-autocomplete-input"
         style="left: 16px;"
       >
@@ -5842,11 +5842,11 @@ exports[`FeatherAutocomplete multi:specific should hide/reset menu and clear tex
       </label>
       <div
         class="feather-input-wrapper has-prefix"
-        data-v-3828e91d=""
+        data-v-0de63cb2=""
       >
         <div
           class="prefix"
-          data-v-3828e91d=""
+          data-v-0de63cb2=""
         >
           
           
@@ -5902,7 +5902,7 @@ exports[`FeatherAutocomplete multi:specific should hide/reset menu and clear tex
         
         <div
           class="post"
-          data-v-3828e91d=""
+          data-v-0de63cb2=""
         >
           <!---->
           <!---->
@@ -5985,7 +5985,7 @@ exports[`FeatherAutocomplete single:specific should close menu when enter is pre
       aria-label="Users"
       aria-owns="feather-autocomplete-input-results"
       class="feather-input-wrapper-container raised focused"
-      data-v-3828e91d=""
+      data-v-0de63cb2=""
       id="feather-menu-trigger"
       menu-trigger=""
       role="combobox"
@@ -5993,10 +5993,10 @@ exports[`FeatherAutocomplete single:specific should close menu when enter is pre
       <fieldset
         aria-hidden="true"
         class="feather-input-border"
-        data-v-3828e91d=""
+        data-v-0de63cb2=""
       >
         <legend
-          data-v-3828e91d=""
+          data-v-0de63cb2=""
         >
           Users
         </legend>
@@ -6004,7 +6004,7 @@ exports[`FeatherAutocomplete single:specific should close menu when enter is pre
       <label
         class="feather-input-label"
         data-ref-id="feather-form-element-label"
-        data-v-3828e91d=""
+        data-v-0de63cb2=""
         for="feather-autocomplete-input"
         style="left: 12px;"
       >
@@ -6012,11 +6012,11 @@ exports[`FeatherAutocomplete single:specific should close menu when enter is pre
       </label>
       <div
         class="feather-input-wrapper has-prefix"
-        data-v-3828e91d=""
+        data-v-0de63cb2=""
       >
         <div
           class="prefix"
-          data-v-3828e91d=""
+          data-v-0de63cb2=""
         >
           
           
@@ -6072,7 +6072,7 @@ exports[`FeatherAutocomplete single:specific should close menu when enter is pre
         
         <div
           class="post"
-          data-v-3828e91d=""
+          data-v-0de63cb2=""
         >
           <!---->
           <!---->
@@ -6213,17 +6213,17 @@ exports[`FeatherAutocomplete single:specific should handle a null property on va
       aria-label="Users"
       aria-owns="feather-autocomplete-input-results"
       class="feather-input-wrapper-container raised"
-      data-v-3828e91d=""
+      data-v-0de63cb2=""
       menu-trigger=""
       role="combobox"
     >
       <fieldset
         aria-hidden="true"
         class="feather-input-border"
-        data-v-3828e91d=""
+        data-v-0de63cb2=""
       >
         <legend
-          data-v-3828e91d=""
+          data-v-0de63cb2=""
         >
           Users
         </legend>
@@ -6231,7 +6231,7 @@ exports[`FeatherAutocomplete single:specific should handle a null property on va
       <label
         class="feather-input-label"
         data-ref-id="feather-form-element-label"
-        data-v-3828e91d=""
+        data-v-0de63cb2=""
         for="feather-autocomplete-input"
         style="left: 12px;"
       >
@@ -6239,11 +6239,11 @@ exports[`FeatherAutocomplete single:specific should handle a null property on va
       </label>
       <div
         class="feather-input-wrapper has-prefix"
-        data-v-3828e91d=""
+        data-v-0de63cb2=""
       >
         <div
           class="prefix"
-          data-v-3828e91d=""
+          data-v-0de63cb2=""
         >
           
           
@@ -6301,12 +6301,12 @@ exports[`FeatherAutocomplete single:specific should handle a null property on va
         
         <div
           class="post"
-          data-v-3828e91d=""
+          data-v-0de63cb2=""
         >
           <a
             class="action-icon hide-when-disabled"
             data-ref-id="feather-form-element-clear"
-            data-v-3828e91d=""
+            data-v-0de63cb2=""
             data-v-d1dfbdf8=""
             href="#"
             title="Clear value"
@@ -6406,7 +6406,7 @@ exports[`FeatherAutocomplete single:specific should show add new element when in
       aria-label="Users"
       aria-owns="feather-autocomplete-input-results"
       class="feather-input-wrapper-container raised focused"
-      data-v-3828e91d=""
+      data-v-0de63cb2=""
       id="feather-menu-trigger"
       menu-trigger=""
       role="combobox"
@@ -6414,10 +6414,10 @@ exports[`FeatherAutocomplete single:specific should show add new element when in
       <fieldset
         aria-hidden="true"
         class="feather-input-border"
-        data-v-3828e91d=""
+        data-v-0de63cb2=""
       >
         <legend
-          data-v-3828e91d=""
+          data-v-0de63cb2=""
         >
           Users
         </legend>
@@ -6425,7 +6425,7 @@ exports[`FeatherAutocomplete single:specific should show add new element when in
       <label
         class="feather-input-label"
         data-ref-id="feather-form-element-label"
-        data-v-3828e91d=""
+        data-v-0de63cb2=""
         for="feather-autocomplete-input"
         style="left: 12px;"
       >
@@ -6433,11 +6433,11 @@ exports[`FeatherAutocomplete single:specific should show add new element when in
       </label>
       <div
         class="feather-input-wrapper has-prefix"
-        data-v-3828e91d=""
+        data-v-0de63cb2=""
       >
         <div
           class="prefix"
-          data-v-3828e91d=""
+          data-v-0de63cb2=""
         >
           
           
@@ -6493,7 +6493,7 @@ exports[`FeatherAutocomplete single:specific should show add new element when in
         
         <div
           class="post"
-          data-v-3828e91d=""
+          data-v-0de63cb2=""
         >
           <!---->
           <!---->

@@ -4,7 +4,6 @@
       <legend>{{ label }}</legend>
     </fieldset>
     <label
-      v-show="!hideLabel"
       class="feather-input-label"
       :for="inputId"
       :style="{ left: labelLeft + 'px' }"
@@ -102,6 +101,9 @@ export default {
     },
     containerCls() {
       const cls = [];
+      if (this.hideLabel) {
+        cls.push("hide-label");
+      }
       if (this.raised) {
         cls.push("raised");
       }
@@ -303,6 +305,12 @@ export default {
       .feather-input-label {
         display: none;
       }
+    }
+  }
+  &.hide-label {
+    label {
+      @include screen-reader;
+      left: -99999px !important;
     }
   }
 }

@@ -221,6 +221,15 @@ describe("FeatherInput.vue", () => {
         },
       });
     });
+    it("should be accessible with no label", async () => {
+      await accessibilityTest({
+        props: {
+          label: "label",
+          modelValue: "YEET",
+          hideLabel: true,
+        },
+      });
+    });
     it("should be accessible with hint", async () => {
       await accessibilityTest({
         props: {
