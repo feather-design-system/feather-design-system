@@ -113,7 +113,6 @@ exports[`GridChip should render a removable chip 1`] = `
       <svg
         aria-hidden="true"
         class="feather-icon feather-icon-flex"
-        data-v-0aa06a12=""
         focusable="false"
         role="img"
         viewBox="0 0 24 24"

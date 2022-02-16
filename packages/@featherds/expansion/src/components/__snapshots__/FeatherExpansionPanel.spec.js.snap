@@ -29,7 +29,6 @@ exports[`FeatherExpansionPanel.vue should have correct HTML structure 1`] = `
       <svg
         aria-hidden="true"
         class="feather-expansion-header-button-icon feather-icon feather-expansion-header-button-icon"
-        data-v-0aa06a12=""
         focusable="false"
         role="img"
         viewBox="0 0 24 24"
@@ -76,7 +75,6 @@ exports[`FeatherExpansionPanel.vue should not toggle expanded when disabled 1`] 
       <svg
         aria-hidden="true"
         class="feather-expansion-header-button-icon disabled feather-icon feather-expansion-header-button-icon disabled"
-        data-v-0aa06a12=""
         focusable="false"
         role="img"
         viewBox="0 0 24 24"
@@ -123,7 +121,6 @@ exports[`FeatherExpansionPanel.vue should render loading 1`] = `
       <svg
         aria-hidden="true"
         class="feather-expansion-header-button-icon rotated feather-icon feather-expansion-header-button-icon rotated"
-        data-v-0aa06a12=""
         focusable="false"
         role="img"
         viewBox="0 0 24 24"
@@ -147,11 +144,9 @@ exports[`FeatherExpansionPanel.vue should render loading 1`] = `
       >
         <div
           class="spinner-container"
-          data-v-5ad3cece=""
         >
           <svg
             class="spinner"
-            data-v-5ad3cece=""
             viewBox="0 0 66 66"
             xmlns="http://www.w3.org/2000/svg"
           >
@@ -159,7 +154,6 @@ exports[`FeatherExpansionPanel.vue should render loading 1`] = `
               class="path"
               cx="33"
               cy="33"
-              data-v-5ad3cece=""
               fill="none"
               r="30"
               stroke-linecap="round"
