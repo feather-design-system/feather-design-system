@@ -277,6 +277,11 @@ export default {
         }
         yearButton.value.focus();
       };
+      const clear = () => {
+        dayButton.value.clear();
+        monthButton.value.clear();
+        yearButton.value.clear();
+      };
 
       const deselectAllSpinButtons = () => {
         dayButton.value.deselect();
@@ -292,6 +297,7 @@ export default {
         focusMonth,
         focusYear,
         deselectAllSpinButtons,
+        clear,
       };
     })();
 
@@ -336,7 +342,9 @@ export default {
       day.value = undefined;
       year.value = undefined;
       month.value = undefined;
+
       context.emit("update:modelValue", undefined);
+      spinbuttons.clear();
       spinbuttons.focusMonth();
     };
     let calendarActivator;
