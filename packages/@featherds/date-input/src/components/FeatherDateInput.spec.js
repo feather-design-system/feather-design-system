@@ -66,6 +66,24 @@ describe("FeatherDateInput.vue", () => {
     await nextTick();
     expect(stubFocus).toHaveBeenCalled();
   });
+
+  it.only("should clear spin buttons when value is typed in", async () => {
+    const wrapper = getWrapper();
+
+    const day = wrapper.findComponent({ ref: "dayButton" });
+    const month = wrapper.findComponent({ ref: "monthButton" });
+    const year = wrapper.findComponent({ ref: "yearButton" });
+    await month.trigger("keydown", { key: "3" });
+    await day.trigger("keydown", { key: "2" });
+    await day.trigger("keydown", { key: "8" });
+    await nextTick();
+    await wrapper
+      .find("[data-ref-id='feather-form-element-clear']")
+      .trigger("click");
+    expect(month.text().toLowerCase()).toBe("mm");
+    expect(day.text().toLowerCase()).toBe("dd");
+    expect(year.text().toLowerCase()).toBe("yyyy");
+  });
   it("should open menu when calendar is clicked", async () => {
     const wrapper = getWrapper();
 

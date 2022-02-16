@@ -80,6 +80,9 @@ export default {
     },
   },
   methods: {
+    clear() {
+      this.input = undefined;
+    },
     focus() {
       this.$refs.spinner.focus();
     },
