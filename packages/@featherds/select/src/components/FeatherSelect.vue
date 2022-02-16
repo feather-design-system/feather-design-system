@@ -202,9 +202,9 @@ export default {
       }
     },
     handleInputBlur() {
-      this.validate();
       if (this.hasFocus && !this.showMenu) {
         this.hasFocus = false;
+        this.validate();
       }
     },
     handleTriggerClick() {
