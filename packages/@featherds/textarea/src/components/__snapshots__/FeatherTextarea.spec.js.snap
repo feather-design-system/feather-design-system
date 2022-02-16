@@ -6,23 +6,18 @@ exports[`FeatherTextarea.vue should allow custom blur events 1`] = `
 >
   <div
     class="feather-input-wrapper-container raised feather-input-content"
-    data-v-0de63cb2=""
   >
     <fieldset
       aria-hidden="true"
       class="feather-input-border"
-      data-v-0de63cb2=""
     >
-      <legend
-        data-v-0de63cb2=""
-      >
+      <legend>
         label
       </legend>
     </fieldset>
     <label
       class="feather-input-label"
       data-ref-id="feather-form-element-label"
-      data-v-0de63cb2=""
       for="feather-textarea-label"
       style="left: 12px;"
     >
@@ -30,11 +25,9 @@ exports[`FeatherTextarea.vue should allow custom blur events 1`] = `
     </label>
     <div
       class="feather-input-wrapper"
-      data-v-0de63cb2=""
     >
       <div
         class="prefix"
-        data-v-0de63cb2=""
       >
         
         
@@ -53,7 +46,6 @@ exports[`FeatherTextarea.vue should allow custom blur events 1`] = `
       
       <div
         class="post"
-        data-v-0de63cb2=""
       >
         <!---->
         <!---->
@@ -64,7 +56,6 @@ exports[`FeatherTextarea.vue should allow custom blur events 1`] = `
   </div>
   <div
     class="feather-input-sub-text"
-    data-v-51d97390=""
     id="feather-textarea-description"
   >
     <!---->
@@ -81,23 +72,18 @@ exports[`FeatherTextarea.vue should allow custom focus events 1`] = `
 >
   <div
     class="feather-input-wrapper-container raised focused feather-input-content focused"
-    data-v-0de63cb2=""
   >
     <fieldset
       aria-hidden="true"
       class="feather-input-border"
-      data-v-0de63cb2=""
     >
-      <legend
-        data-v-0de63cb2=""
-      >
+      <legend>
         label
       </legend>
     </fieldset>
     <label
       class="feather-input-label"
       data-ref-id="feather-form-element-label"
-      data-v-0de63cb2=""
       for="feather-textarea-label"
       style="left: 12px;"
     >
@@ -105,11 +91,9 @@ exports[`FeatherTextarea.vue should allow custom focus events 1`] = `
     </label>
     <div
       class="feather-input-wrapper"
-      data-v-0de63cb2=""
     >
       <div
         class="prefix"
-        data-v-0de63cb2=""
       >
         
         
@@ -128,7 +112,6 @@ exports[`FeatherTextarea.vue should allow custom focus events 1`] = `
       
       <div
         class="post"
-        data-v-0de63cb2=""
       >
         <!---->
         <!---->
@@ -139,7 +122,6 @@ exports[`FeatherTextarea.vue should allow custom focus events 1`] = `
   </div>
   <div
     class="feather-input-sub-text"
-    data-v-51d97390=""
     id="feather-textarea-description"
   >
     <!---->
@@ -156,23 +138,18 @@ exports[`FeatherTextarea.vue should clear textarea when clear-icon is clicked 1`
 >
   <div
     class="feather-input-wrapper-container feather-input-content"
-    data-v-0de63cb2=""
   >
     <fieldset
       aria-hidden="true"
       class="feather-input-border"
-      data-v-0de63cb2=""
     >
-      <legend
-        data-v-0de63cb2=""
-      >
+      <legend>
         label
       </legend>
     </fieldset>
     <label
       class="feather-input-label"
       data-ref-id="feather-form-element-label"
-      data-v-0de63cb2=""
       for="feather-textarea-label"
       style="left: 16px;"
     >
@@ -180,11 +157,9 @@ exports[`FeatherTextarea.vue should clear textarea when clear-icon is clicked 1`
     </label>
     <div
       class="feather-input-wrapper"
-      data-v-0de63cb2=""
     >
       <div
         class="prefix"
-        data-v-0de63cb2=""
       >
         
         
@@ -203,7 +178,6 @@ exports[`FeatherTextarea.vue should clear textarea when clear-icon is clicked 1`
       
       <div
         class="post"
-        data-v-0de63cb2=""
       >
         <!---->
         <!---->
@@ -214,7 +188,6 @@ exports[`FeatherTextarea.vue should clear textarea when clear-icon is clicked 1`
   </div>
   <div
     class="feather-input-sub-text"
-    data-v-51d97390=""
     id="feather-textarea-description"
   >
     <!---->
@@ -231,23 +204,18 @@ exports[`FeatherTextarea.vue should not render a clear icon when the textarea do
 >
   <div
     class="feather-input-wrapper-container feather-input-content"
-    data-v-0de63cb2=""
   >
     <fieldset
       aria-hidden="true"
       class="feather-input-border"
-      data-v-0de63cb2=""
     >
-      <legend
-        data-v-0de63cb2=""
-      >
+      <legend>
         label
       </legend>
     </fieldset>
     <label
       class="feather-input-label"
       data-ref-id="feather-form-element-label"
-      data-v-0de63cb2=""
       for="feather-textarea-label"
       style="left: 16px;"
     >
@@ -255,11 +223,9 @@ exports[`FeatherTextarea.vue should not render a clear icon when the textarea do
     </label>
     <div
       class="feather-input-wrapper"
-      data-v-0de63cb2=""
     >
       <div
         class="prefix"
-        data-v-0de63cb2=""
       >
         
         
@@ -278,7 +244,6 @@ exports[`FeatherTextarea.vue should not render a clear icon when the textarea do
       
       <div
         class="post"
-        data-v-0de63cb2=""
       >
         <!---->
         <!---->
@@ -289,7 +254,6 @@ exports[`FeatherTextarea.vue should not render a clear icon when the textarea do
   </div>
   <div
     class="feather-input-sub-text"
-    data-v-51d97390=""
     id="feather-textarea-description"
   >
     <!---->
@@ -306,23 +270,18 @@ exports[`FeatherTextarea.vue should render a clear icon when clear has a value a
 >
   <div
     class="feather-input-wrapper-container raised feather-input-content"
-    data-v-0de63cb2=""
   >
     <fieldset
       aria-hidden="true"
       class="feather-input-border"
-      data-v-0de63cb2=""
     >
-      <legend
-        data-v-0de63cb2=""
-      >
+      <legend>
         label
       </legend>
     </fieldset>
     <label
       class="feather-input-label"
       data-ref-id="feather-form-element-label"
-      data-v-0de63cb2=""
       for="feather-textarea-label"
       style="left: 12px;"
     >
@@ -330,11 +289,9 @@ exports[`FeatherTextarea.vue should render a clear icon when clear has a value a
     </label>
     <div
       class="feather-input-wrapper"
-      data-v-0de63cb2=""
     >
       <div
         class="prefix"
-        data-v-0de63cb2=""
       >
         
         
@@ -353,21 +310,16 @@ exports[`FeatherTextarea.vue should render a clear icon when clear has a value a
       
       <div
         class="post"
-        data-v-0de63cb2=""
       >
         <a
           class="action-icon hide-when-disabled"
           data-ref-id="feather-form-element-clear"
-          data-v-0de63cb2=""
-          data-v-d1dfbdf8=""
           href="#"
           title="clear"
         >
           <svg
             aria-hidden="true"
             class="feather-icon"
-            data-v-0aa06a12=""
-            data-v-d1dfbdf8=""
             focusable="false"
             role="img"
             viewBox="0 0 24 24"
@@ -386,7 +338,6 @@ exports[`FeatherTextarea.vue should render a clear icon when clear has a value a
   </div>
   <div
     class="feather-input-sub-text"
-    data-v-51d97390=""
     id="feather-textarea-description"
   >
     <!---->
@@ -403,23 +354,18 @@ exports[`FeatherTextarea.vue should render a maxlength attribute and character c
 >
   <div
     class="feather-input-wrapper-container raised feather-input-content"
-    data-v-0de63cb2=""
   >
     <fieldset
       aria-hidden="true"
       class="feather-input-border"
-      data-v-0de63cb2=""
     >
-      <legend
-        data-v-0de63cb2=""
-      >
+      <legend>
         label
       </legend>
     </fieldset>
     <label
       class="feather-input-label"
       data-ref-id="feather-form-element-label"
-      data-v-0de63cb2=""
       for="feather-textarea-label"
       style="left: 12px;"
     >
@@ -427,11 +373,9 @@ exports[`FeatherTextarea.vue should render a maxlength attribute and character c
     </label>
     <div
       class="feather-input-wrapper"
-      data-v-0de63cb2=""
     >
       <div
         class="prefix"
-        data-v-0de63cb2=""
       >
         
         
@@ -450,7 +394,6 @@ exports[`FeatherTextarea.vue should render a maxlength attribute and character c
       
       <div
         class="post"
-        data-v-0de63cb2=""
       >
         <!---->
         <!---->
@@ -461,7 +404,6 @@ exports[`FeatherTextarea.vue should render a maxlength attribute and character c
   </div>
   <div
     class="feather-input-sub-text"
-    data-v-51d97390=""
     id="feather-textarea-description"
   >
     <!---->
@@ -484,23 +426,18 @@ exports[`FeatherTextarea.vue should render an textarea error 1`] = `
 >
   <div
     class="feather-input-wrapper-container error feather-input-content error"
-    data-v-0de63cb2=""
   >
     <fieldset
       aria-hidden="true"
       class="feather-input-border"
-      data-v-0de63cb2=""
     >
-      <legend
-        data-v-0de63cb2=""
-      >
+      <legend>
         label
       </legend>
     </fieldset>
     <label
       class="feather-input-label"
       data-ref-id="feather-form-element-label"
-      data-v-0de63cb2=""
       for="feather-textarea-label"
       style="left: 16px;"
     >
@@ -508,11 +445,9 @@ exports[`FeatherTextarea.vue should render an textarea error 1`] = `
     </label>
     <div
       class="feather-input-wrapper"
-      data-v-0de63cb2=""
     >
       <div
         class="prefix"
-        data-v-0de63cb2=""
       >
         
         
@@ -531,16 +466,12 @@ exports[`FeatherTextarea.vue should render an textarea error 1`] = `
       
       <div
         class="post"
-        data-v-0de63cb2=""
       >
         <!---->
         <svg
           aria-hidden="true"
           class="error-icon hide-when-disabled feather-icon error-icon hide-when-disabled"
           data-ref-id="error-icon"
-          data-v-0aa06a12=""
-          data-v-0de63cb2=""
-          data-v-49fd357e=""
           focusable="false"
           role="img"
           viewBox="0 0 24 24"
@@ -571,7 +502,6 @@ exports[`FeatherTextarea.vue should render an textarea error 1`] = `
   </div>
   <div
     class="feather-input-sub-text"
-    data-v-51d97390=""
     id="feather-textarea-description"
   >
     <!---->
@@ -579,7 +509,6 @@ exports[`FeatherTextarea.vue should render an textarea error 1`] = `
       aria-live="assertive"
       class="feather-input-error"
       data-ref-id="feather-form-element-error"
-      data-v-51d97390=""
     >
       Error text
     </div>
@@ -595,23 +524,18 @@ exports[`FeatherTextarea.vue should render an textarea error and has a value 1`]
 >
   <div
     class="feather-input-wrapper-container raised error feather-input-content error"
-    data-v-0de63cb2=""
   >
     <fieldset
       aria-hidden="true"
       class="feather-input-border"
-      data-v-0de63cb2=""
     >
-      <legend
-        data-v-0de63cb2=""
-      >
+      <legend>
         label
       </legend>
     </fieldset>
     <label
       class="feather-input-label"
       data-ref-id="feather-form-element-label"
-      data-v-0de63cb2=""
       for="feather-textarea-label"
       style="left: 12px;"
     >
@@ -619,11 +543,9 @@ exports[`FeatherTextarea.vue should render an textarea error and has a value 1`]
     </label>
     <div
       class="feather-input-wrapper"
-      data-v-0de63cb2=""
     >
       <div
         class="prefix"
-        data-v-0de63cb2=""
       >
         
         
@@ -642,16 +564,12 @@ exports[`FeatherTextarea.vue should render an textarea error and has a value 1`]
       
       <div
         class="post"
-        data-v-0de63cb2=""
       >
         <!---->
         <svg
           aria-hidden="true"
           class="error-icon hide-when-disabled feather-icon error-icon hide-when-disabled"
           data-ref-id="error-icon"
-          data-v-0aa06a12=""
-          data-v-0de63cb2=""
-          data-v-49fd357e=""
           focusable="false"
           role="img"
           viewBox="0 0 24 24"
@@ -682,7 +600,6 @@ exports[`FeatherTextarea.vue should render an textarea error and has a value 1`]
   </div>
   <div
     class="feather-input-sub-text"
-    data-v-51d97390=""
     id="feather-textarea-description"
   >
     <!---->
@@ -690,7 +607,6 @@ exports[`FeatherTextarea.vue should render an textarea error and has a value 1`]
       aria-live="assertive"
       class="feather-input-error"
       data-ref-id="feather-form-element-error"
-      data-v-51d97390=""
     >
       Error text
     </div>
@@ -706,23 +622,18 @@ exports[`FeatherTextarea.vue should render an textarea error and has focus 1`] =
 >
   <div
     class="feather-input-wrapper-container raised focused error feather-input-content error focused"
-    data-v-0de63cb2=""
   >
     <fieldset
       aria-hidden="true"
       class="feather-input-border"
-      data-v-0de63cb2=""
     >
-      <legend
-        data-v-0de63cb2=""
-      >
+      <legend>
         label
       </legend>
     </fieldset>
     <label
       class="feather-input-label"
       data-ref-id="feather-form-element-label"
-      data-v-0de63cb2=""
       for="feather-textarea-label"
       style="left: 12px;"
     >
@@ -730,11 +641,9 @@ exports[`FeatherTextarea.vue should render an textarea error and has focus 1`] =
     </label>
     <div
       class="feather-input-wrapper"
-      data-v-0de63cb2=""
     >
       <div
         class="prefix"
-        data-v-0de63cb2=""
       >
         
         
@@ -753,16 +662,12 @@ exports[`FeatherTextarea.vue should render an textarea error and has focus 1`] =
       
       <div
         class="post"
-        data-v-0de63cb2=""
       >
         <!---->
         <svg
           aria-hidden="true"
           class="error-icon hide-when-disabled feather-icon error-icon hide-when-disabled"
           data-ref-id="error-icon"
-          data-v-0aa06a12=""
-          data-v-0de63cb2=""
-          data-v-49fd357e=""
           focusable="false"
           role="img"
           viewBox="0 0 24 24"
@@ -793,7 +698,6 @@ exports[`FeatherTextarea.vue should render an textarea error and has focus 1`] =
   </div>
   <div
     class="feather-input-sub-text"
-    data-v-51d97390=""
     id="feather-textarea-description"
   >
     <!---->
@@ -801,7 +705,6 @@ exports[`FeatherTextarea.vue should render an textarea error and has focus 1`] =
       aria-live="assertive"
       class="feather-input-error"
       data-ref-id="feather-form-element-error"
-      data-v-51d97390=""
     >
       Error text
     </div>
@@ -817,23 +720,18 @@ exports[`FeatherTextarea.vue should render an textarea with a label 1`] = `
 >
   <div
     class="feather-input-wrapper-container feather-input-content"
-    data-v-0de63cb2=""
   >
     <fieldset
       aria-hidden="true"
       class="feather-input-border"
-      data-v-0de63cb2=""
     >
-      <legend
-        data-v-0de63cb2=""
-      >
+      <legend>
         label
       </legend>
     </fieldset>
     <label
       class="feather-input-label"
       data-ref-id="feather-form-element-label"
-      data-v-0de63cb2=""
       for="feather-textarea-label"
       style="left: 16px;"
     >
@@ -841,11 +739,9 @@ exports[`FeatherTextarea.vue should render an textarea with a label 1`] = `
     </label>
     <div
       class="feather-input-wrapper"
-      data-v-0de63cb2=""
     >
       <div
         class="prefix"
-        data-v-0de63cb2=""
       >
         
         
@@ -864,7 +760,6 @@ exports[`FeatherTextarea.vue should render an textarea with a label 1`] = `
       
       <div
         class="post"
-        data-v-0de63cb2=""
       >
         <!---->
         <!---->
@@ -875,7 +770,6 @@ exports[`FeatherTextarea.vue should render an textarea with a label 1`] = `
   </div>
   <div
     class="feather-input-sub-text"
-    data-v-51d97390=""
     id="feather-textarea-description"
   >
     <!---->
@@ -892,23 +786,18 @@ exports[`FeatherTextarea.vue should render an textarea with a label and hint tex
 >
   <div
     class="feather-input-wrapper-container feather-input-content"
-    data-v-0de63cb2=""
   >
     <fieldset
       aria-hidden="true"
       class="feather-input-border"
-      data-v-0de63cb2=""
     >
-      <legend
-        data-v-0de63cb2=""
-      >
+      <legend>
         label
       </legend>
     </fieldset>
     <label
       class="feather-input-label"
       data-ref-id="feather-form-element-label"
-      data-v-0de63cb2=""
       for="feather-textarea-label"
       style="left: 16px;"
     >
@@ -916,11 +805,9 @@ exports[`FeatherTextarea.vue should render an textarea with a label and hint tex
     </label>
     <div
       class="feather-input-wrapper"
-      data-v-0de63cb2=""
     >
       <div
         class="prefix"
-        data-v-0de63cb2=""
       >
         
         
@@ -939,7 +826,6 @@ exports[`FeatherTextarea.vue should render an textarea with a label and hint tex
       
       <div
         class="post"
-        data-v-0de63cb2=""
       >
         <!---->
         <!---->
@@ -950,13 +836,11 @@ exports[`FeatherTextarea.vue should render an textarea with a label and hint tex
   </div>
   <div
     class="feather-input-sub-text"
-    data-v-51d97390=""
     id="feather-textarea-description"
   >
     <div
       class="feather-input-hint"
       data-ref-id="feather-form-element-hint"
-      data-v-51d97390=""
     >
       hint text
     </div>
@@ -973,23 +857,18 @@ exports[`FeatherTextarea.vue should render an textarea with a preset value 1`] =
 >
   <div
     class="feather-input-wrapper-container raised feather-input-content"
-    data-v-0de63cb2=""
   >
     <fieldset
       aria-hidden="true"
       class="feather-input-border"
-      data-v-0de63cb2=""
     >
-      <legend
-        data-v-0de63cb2=""
-      >
+      <legend>
         label
       </legend>
     </fieldset>
     <label
       class="feather-input-label"
       data-ref-id="feather-form-element-label"
-      data-v-0de63cb2=""
       for="feather-textarea-label"
       style="left: 12px;"
     >
@@ -997,11 +876,9 @@ exports[`FeatherTextarea.vue should render an textarea with a preset value 1`] =
     </label>
     <div
       class="feather-input-wrapper"
-      data-v-0de63cb2=""
     >
       <div
         class="prefix"
-        data-v-0de63cb2=""
       >
         
         
@@ -1020,7 +897,6 @@ exports[`FeatherTextarea.vue should render an textarea with a preset value 1`] =
       
       <div
         class="post"
-        data-v-0de63cb2=""
       >
         <!---->
         <!---->
@@ -1031,13 +907,11 @@ exports[`FeatherTextarea.vue should render an textarea with a preset value 1`] =
   </div>
   <div
     class="feather-input-sub-text"
-    data-v-51d97390=""
     id="feather-textarea-description"
   >
     <div
       class="feather-input-hint"
       data-ref-id="feather-form-element-hint"
-      data-v-51d97390=""
     >
       hint text
     </div>
@@ -1054,23 +928,18 @@ exports[`FeatherTextarea.vue should render an textarea with raised label when fo
 >
   <div
     class="feather-input-wrapper-container raised focused feather-input-content focused"
-    data-v-0de63cb2=""
   >
     <fieldset
       aria-hidden="true"
       class="feather-input-border"
-      data-v-0de63cb2=""
     >
-      <legend
-        data-v-0de63cb2=""
-      >
+      <legend>
         label
       </legend>
     </fieldset>
     <label
       class="feather-input-label"
       data-ref-id="feather-form-element-label"
-      data-v-0de63cb2=""
       for="feather-textarea-label"
       style="left: 12px;"
     >
@@ -1078,11 +947,9 @@ exports[`FeatherTextarea.vue should render an textarea with raised label when fo
     </label>
     <div
       class="feather-input-wrapper"
-      data-v-0de63cb2=""
     >
       <div
         class="prefix"
-        data-v-0de63cb2=""
       >
         
         
@@ -1101,7 +968,6 @@ exports[`FeatherTextarea.vue should render an textarea with raised label when fo
       
       <div
         class="post"
-        data-v-0de63cb2=""
       >
         <!---->
         <!---->
@@ -1112,7 +978,6 @@ exports[`FeatherTextarea.vue should render an textarea with raised label when fo
   </div>
   <div
     class="feather-input-sub-text"
-    data-v-51d97390=""
     id="feather-textarea-description"
   >
     <!---->
@@ -1129,23 +994,18 @@ exports[`FeatherTextarea.vue should render an textarea with raised label when fo
 >
   <div
     class="feather-input-wrapper-container raised focused feather-input-content focused"
-    data-v-0de63cb2=""
   >
     <fieldset
       aria-hidden="true"
       class="feather-input-border"
-      data-v-0de63cb2=""
     >
-      <legend
-        data-v-0de63cb2=""
-      >
+      <legend>
         label
       </legend>
     </fieldset>
     <label
       class="feather-input-label"
       data-ref-id="feather-form-element-label"
-      data-v-0de63cb2=""
       for="feather-textarea-label"
       style="left: 12px;"
     >
@@ -1153,11 +1013,9 @@ exports[`FeatherTextarea.vue should render an textarea with raised label when fo
     </label>
     <div
       class="feather-input-wrapper"
-      data-v-0de63cb2=""
     >
       <div
         class="prefix"
-        data-v-0de63cb2=""
       >
         
         
@@ -1176,7 +1034,6 @@ exports[`FeatherTextarea.vue should render an textarea with raised label when fo
       
       <div
         class="post"
-        data-v-0de63cb2=""
       >
         <!---->
         <!---->
@@ -1187,7 +1044,6 @@ exports[`FeatherTextarea.vue should render an textarea with raised label when fo
   </div>
   <div
     class="feather-input-sub-text"
-    data-v-51d97390=""
     id="feather-textarea-description"
   >
     <!---->
