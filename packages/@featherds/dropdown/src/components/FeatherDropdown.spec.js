@@ -9,7 +9,7 @@ jest.spyOn(id, "getSafeId").mockImplementation((x) => x);
 const getWrapper = (options = {}) => mount(FeatherDropdown, options);
 
 const getTrigger = () => ({
-  template: "<a menu-trigger>TEST</a>",
+  template: "<button menu-trigger>TEST</button>",
   methods: {
     focus: () => {},
   },

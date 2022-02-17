@@ -10,7 +10,7 @@ const getWrapper = async (options = {}) => {
 };
 
 const getTrigger = (id = "") => ({
-  template: `<a menu-trigger id="${id}">TEST</a>`,
+  template: `<button menu-trigger id="${id}">TEST</button>`,
   methods: {
     focus: () => {},
   },
