@@ -82,6 +82,7 @@ Text labels for Date Input can be customized via the `labels` property. The defa
 - `feather-date-input-month` - month spin button
 - `feather-date-input-year` - year spin button
 - `feather-date-input-button` - button to open calendar
+- `feather-date-input-group` - the container around the spin buttons in the input
 - `feather-calendar-prev-month` - previous month button in calendar
 - `feather-calendar-next-month` - next month button in calendar
 - `feather-calendar-select-month` - month select element. It is a [FeatherSelect](/Components/Select/)
