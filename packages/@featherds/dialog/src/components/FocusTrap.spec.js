@@ -1,7 +1,5 @@
-import { mount, config } from "@vue/test-utils";
+import { mount } from "@vue/test-utils";
 import FocusTrap from "./FocusTrap.vue";
-
-config.renderStubDefaultSlot = true;
 
 const slots = {
   default: {
@@ -37,7 +35,7 @@ describe("FocusTrap.vue", () => {
   });
   it("should try and focus first descendant when enable changes to true", async () => {
     wrapper = getWrapper({ props: { enable: false }, slots });
-    const focusFirst = jest.spyOn(wrapper.vm, "focusFirstDescendant");
+    const focusFirst = jest.spyOn(wrapper.vm, "attemptToFocusFirst");
     await wrapper.setProps({ enable: true });
     expect(focusFirst).toHaveBeenCalled();
   });

@@ -1,11 +1,9 @@
 import FeatherSelect from "./FeatherSelect.vue";
-import { shallowMount, mount, config } from "@vue/test-utils";
+import { shallowMount, mount } from "@vue/test-utils";
 import * as id from "@featherds/utils/id";
 import axe from "@featherds/utils/test/axe";
 import "@featherds/input-helper/test/MutationObserver";
 import { nextTick } from "vue";
-
-config.renderStubDefaultSlot = true;
 
 jest.spyOn(id, "getSafeId").mockImplementation((x) => x);
 

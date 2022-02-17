@@ -5,6 +5,7 @@
       :open="showMenu"
       @outside-click="handleOutsideClick"
       @trigger-click="handleTriggerClick"
+      @close="closeMenu"
       class="feather-select-menu-container"
     >
       <template v-slot:trigger>
@@ -139,6 +140,7 @@ export default {
         "aria-describedby": (this.$attrs["aria-describedby"] || "")
           .split(" ")
           .concat([this.subTextId])
+          .filter(Boolean)
           .join(" "),
       };
     },
@@ -189,6 +191,12 @@ export default {
     },
   },
   methods: {
+    closeMenu() {
+      this.showMenu = false;
+      this.$nextTick(() => {
+        this.$refs.input.focus();
+      });
+    },
     handleClear() {
       this.handleSelect(undefined);
       this.emitSelection();
@@ -243,10 +251,8 @@ export default {
       }
       //esc
       else if (e.keyCode === KEYCODES.ESCAPE) {
-        this.showMenu = false;
-        this.$nextTick(() => {
-          this.$refs.input.focus();
-        });
+        this.closeMenu();
+        e.stopPropagation();
       } else if (e.keyCode === KEYCODES.DOWN) {
         //down
         e.preventDefault();

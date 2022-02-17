@@ -5,6 +5,9 @@ exports[`FeatherRailGroup.vue should render the component open with a label 1`] 
   aria-label="Test"
   class="nav-rail-group"
 >
-  <feather-list-stub />
+  <feather-list-stub>
+    
+    
+  </feather-list-stub>
 </nav>
 `;

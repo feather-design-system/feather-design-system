@@ -3,7 +3,6 @@
     class="feather-dialog"
     :class="{ relative: relative }"
     v-show="modelValue"
-    ref="element"
   >
     <transition name="fade">
       <div class="backdrop" v-show="modelValue"></div>
@@ -13,13 +12,19 @@
       v-on:after-enter="shown = true"
       v-on:after-leave="shown = false"
     >
-      <FocusTrap :enable="shown && modelValue" class="trap" v-show="modelValue">
+      <FocusTrap
+        :enable="shown && modelValue"
+        class="trap"
+        v-show="modelValue"
+        :layer="layer"
+      >
         <div
           class="content"
           role="dialog"
           aria-modal="true"
           :aria-labelledby="headerId"
           data-ref-id="feather-dialog"
+          ref="element"
         >
           <div class="focus-area" tabindex="-1" first-focus>
             <div class="dialog-body">
@@ -66,6 +71,7 @@ import {
 } from "@featherds/composables/modal/HideOverflow";
 import { useLabelProperty } from "@featherds/composables/LabelProperty";
 import { computed, toRef, ref, watch } from "vue";
+import { removeLayer, addLayer } from "@featherds/composables/modal/Layers";
 const LABELS = {
   title: "REQUIRED",
   close: "Close Dialog",
@@ -128,15 +134,18 @@ export default {
     });
 
     const shown = ref(props.modelValue);
+    const layer = ref();
     watch(shown, (v) => {
       if (v) {
         context.emit("shown");
+        layer.value = addLayer(element, "modal");
       } else {
         context.emit("hidden");
+        removeLayer(layer.value);
       }
     });
 
-    return { close, hasFooter, headerId, element, shown, ...labels };
+    return { close, hasFooter, headerId, element, shown, layer, ...labels };
   },
   components: {
     FocusTrap,

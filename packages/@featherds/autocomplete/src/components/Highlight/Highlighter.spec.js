@@ -1,7 +1,5 @@
 import Highlighter from "./Highlighter.vue";
-import { shallowMount, config } from "@vue/test-utils";
-
-config.renderStubDefaultSlot = true;
+import { shallowMount } from "@vue/test-utils";
 
 const getWrapper = function (options = {}) {
   return shallowMount(Highlighter, options);

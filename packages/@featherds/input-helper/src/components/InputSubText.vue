@@ -2,7 +2,7 @@
   <div
     class="feather-input-sub-text"
     :id="id"
-    v-if="!inline || hint || error.length"
+    v-show="!inline || hint || error.length"
   >
     <div class="feather-input-spacer" v-if="!hint && !error.length">&nbsp;</div>
     <div

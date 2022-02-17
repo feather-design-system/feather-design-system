@@ -36,6 +36,17 @@
           <template v-slot:header>
             <span>My Account</span>
           </template>
+          <div style="margin: 0 8px">
+            <FeatherDateInput
+              label="Appointment Date"
+              class="my-date"
+            ></FeatherDateInput>
+            <FeatherSelect
+              label="Simple"
+              :options="[{ _text: 'yes' }, { _text: 'no' }]"
+            ></FeatherSelect>
+          </div>
+
           <FeatherList>
             <FeatherListItem href="#" tab-index="0" title="Mange Profile">
               Manage Profile
@@ -193,6 +204,8 @@
 <script>
 import * as components from "@featherds/drawer";
 import { FeatherIcon } from "@featherds/icon";
+import { FeatherDateInput } from "@featherds/date-input";
+import { FeatherSelect } from "@featherds/select";
 import AccountCircle from "@featherds/icon/action/AccountCircle";
 import Notifications from "@featherds/icon/action/Notifications";
 import Settings from "@featherds/icon/action/Settings";
@@ -207,6 +220,8 @@ export default {
     ...components,
     ...listComponents,
     FeatherIcon,
+    FeatherDateInput,
+    FeatherSelect,
   },
   data: () => ({
     visible: false,

@@ -1,5 +1,4 @@
 @import "../themes/variables";
-
 @mixin elevation($i) {
   @if $i >= 0 and $i <= 24 {
     box-shadow: var(#{"--feather-shadow-" + $i});
@@ -25,4 +24,9 @@
   } @else if $i == 24 {
     background-color: var($elevation-background-24);
   }
+}
+
+@mixin z-index($name) {
+  --feather-current-zindex: calc(var(--feather-current-zindex, 0) + var($name));
+  z-index: var(--feather-current-zindex);
 }

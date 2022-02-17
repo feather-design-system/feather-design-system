@@ -65,9 +65,9 @@ export default {
     );
     watch(localOpen, (open) => {
       if (open) {
-        const items = Array.from(menu.value.menu.querySelectorAll("a"));
-        dropdownService.setItems(items);
         nextTick(() => {
+          const items = Array.from(menu.value.menu.querySelectorAll("a"));
+          dropdownService.setItems(items);
           dropdownService.selectFirst();
         });
       } else {
@@ -75,7 +75,6 @@ export default {
       }
       context.emit("update:modelValue", open);
     });
-
     const handleClose = () => {
       localOpen.value = false;
       if (menu.value.trigger && menu.value.trigger.focus) {

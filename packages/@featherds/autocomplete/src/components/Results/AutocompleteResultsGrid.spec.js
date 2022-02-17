@@ -1,7 +1,5 @@
 import AutocompleteResultsGrid from "./AutocompleteResultsGrid.vue";
-import { shallowMount, config as testUtilsConfig } from "@vue/test-utils";
-
-testUtilsConfig.renderStubDefaultSlot = true;
+import { shallowMount } from "@vue/test-utils";
 
 const activeId = "ACTIVE";
 const items = [

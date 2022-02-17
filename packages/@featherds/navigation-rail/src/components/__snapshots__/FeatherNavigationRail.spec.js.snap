@@ -42,7 +42,10 @@ exports[`FeatherNavigationRail.vue should render the component closed when initi
         class="primary-menu"
         data-ref-id="feather-navigation-rail-main"
       >
-        <feather-list-stub />
+        <feather-list-stub>
+          
+          
+        </feather-list-stub>
       </nav>
       <transition-stub>
         <!--v-if-->
@@ -94,7 +97,10 @@ exports[`FeatherNavigationRail.vue should render the component open when initial
         class="primary-menu"
         data-ref-id="feather-navigation-rail-main"
       >
-        <feather-list-stub />
+        <feather-list-stub>
+          
+          
+        </feather-list-stub>
       </nav>
       <transition-stub>
         <div
@@ -151,7 +157,10 @@ exports[`FeatherNavigationRail.vue should toggle state when chevron clicked 1`] 
         class="primary-menu"
         data-ref-id="feather-navigation-rail-main"
       >
-        <feather-list-stub />
+        <feather-list-stub>
+          
+          
+        </feather-list-stub>
       </nav>
       <transition-stub>
         <!--v-if-->
@@ -203,7 +212,10 @@ exports[`FeatherNavigationRail.vue should toggle state when chevron clicked 2`] 
         class="primary-menu"
         data-ref-id="feather-navigation-rail-main"
       >
-        <feather-list-stub />
+        <feather-list-stub>
+          
+          
+        </feather-list-stub>
       </nav>
       <transition-stub>
         <div

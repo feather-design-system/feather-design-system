@@ -1,11 +1,9 @@
 import { nextTick } from "vue";
 import axe from "@featherds/utils/test/axe";
 import FeatherTextarea from "./FeatherTextarea.vue";
-import { mount, config } from "@vue/test-utils";
+import { mount } from "@vue/test-utils";
 import * as id from "@featherds/utils/id";
 import "@featherds/input-helper/test/MutationObserver";
-
-config.renderStubDefaultSlot = true;
 
 jest.spyOn(id, "getSafeId").mockImplementation((x) => x);
 

@@ -27,6 +27,7 @@ describe("InputSubText.vue", () => {
         provide: {
           hint: "HINT",
           error: "",
+          inline: false,
         },
       },
     });
@@ -41,6 +42,7 @@ describe("InputSubText.vue", () => {
         provide: {
           hint: "",
           error: "HINT",
+          inline: false,
         },
       },
     });

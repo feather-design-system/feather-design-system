@@ -87,4 +87,7 @@ export default {
 .my-select {
   width: 25rem;
 }
+section {
+  height: 120vh;
+}
 </style>

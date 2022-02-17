@@ -95,16 +95,7 @@ describe("FeatherMenu.vue", () => {
     wrapper.unmount();
     expect(documentRemove).toHaveBeenCalled();
   });
-  it("should add covered class for cover property", async () => {
-    const slots = {
-      trigger: getTrigger(),
-      default: [getContent()],
-    };
-    const wrapper = await getWrapper({ slots, props: { cover: true } });
-    expect(
-      wrapper.find(".feather-menu-dropdown").classes().includes("covered")
-    ).toBe(true);
-  });
+
   describe("calculatePosition", () => {
     describe("right", () => {
       it("should stay bottom right if space allows", async () => {
@@ -122,10 +113,7 @@ describe("FeatherMenu.vue", () => {
             };
           });
         jest
-          .spyOn(
-            wrapper.find("[menu-trigger]").element,
-            "getBoundingClientRect"
-          )
+          .spyOn(wrapper.vm.$refs.root, "getBoundingClientRect")
           .mockImplementation(() => {
             return {
               top: 50,
@@ -136,7 +124,7 @@ describe("FeatherMenu.vue", () => {
           });
         wrapper.vm.calculatePosition();
         await nextTick();
-        expect(wrapper.vm.position).toBe("bottom-right");
+        expect(wrapper.vm.position).toBe("translate(20px, 60px)");
       });
       it("should flip to top right if not bottom space and enough top space", async () => {
         const slots = {
@@ -156,10 +144,7 @@ describe("FeatherMenu.vue", () => {
             };
           });
         jest
-          .spyOn(
-            wrapper.find("[menu-trigger]").element,
-            "getBoundingClientRect"
-          )
+          .spyOn(wrapper.vm.$refs.root, "getBoundingClientRect")
           .mockImplementation(() => {
             return {
               top: windowHeight - height,
@@ -170,7 +155,7 @@ describe("FeatherMenu.vue", () => {
           });
         wrapper.vm.calculatePosition();
         await nextTick();
-        expect(wrapper.vm.position).toBe("top-right");
+        expect(wrapper.vm.position).toBe("translate(20px, 568px)");
       });
       it("should flip to bottom left if not right space and enough left space", async () => {
         const slots = {
@@ -189,10 +174,7 @@ describe("FeatherMenu.vue", () => {
             };
           });
         jest
-          .spyOn(
-            wrapper.find("[menu-trigger]").element,
-            "getBoundingClientRect"
-          )
+          .spyOn(wrapper.vm.$refs.root, "getBoundingClientRect")
           .mockImplementation(() => {
             return {
               top: 50,
@@ -203,7 +185,7 @@ describe("FeatherMenu.vue", () => {
           });
         wrapper.vm.calculatePosition();
         await nextTick();
-        expect(wrapper.vm.position).toBe("bottom-left");
+        expect(wrapper.vm.position).toBe("translate(10px, 60px)");
       });
       it("should stay bottom right if not enough room anywhere", async () => {
         const slots = {
@@ -224,10 +206,7 @@ describe("FeatherMenu.vue", () => {
             };
           });
         jest
-          .spyOn(
-            wrapper.find("[menu-trigger]").element,
-            "getBoundingClientRect"
-          )
+          .spyOn(wrapper.vm.$refs.root, "getBoundingClientRect")
           .mockImplementation(() => {
             return {
               top: 50,
@@ -238,7 +217,7 @@ describe("FeatherMenu.vue", () => {
           });
         wrapper.vm.calculatePosition();
         await nextTick();
-        expect(wrapper.vm.position).toBe("bottom-right");
+        expect(wrapper.vm.position).toBe("translate(874px, 718px)");
       });
       it("should flip to top left if there is no space right and bottom but enough top and left", async () => {
         const slots = {
@@ -259,10 +238,7 @@ describe("FeatherMenu.vue", () => {
             };
           });
         jest
-          .spyOn(
-            wrapper.find("[menu-trigger]").element,
-            "getBoundingClientRect"
-          )
+          .spyOn(wrapper.vm.$refs.root, "getBoundingClientRect")
           .mockImplementation(() => {
             return {
               top: windowHeight - height,
@@ -273,7 +249,7 @@ describe("FeatherMenu.vue", () => {
           });
         wrapper.vm.calculatePosition();
         await nextTick();
-        expect(wrapper.vm.position).toBe("top-left");
+        expect(wrapper.vm.position).toBe("translate(10px, 568px)");
       });
     });
     describe("left", () => {
@@ -292,10 +268,7 @@ describe("FeatherMenu.vue", () => {
             };
           });
         jest
-          .spyOn(
-            wrapper.find("[menu-trigger]").element,
-            "getBoundingClientRect"
-          )
+          .spyOn(wrapper.vm.$refs.root, "getBoundingClientRect")
           .mockImplementation(() => {
             return {
               top: 50,
@@ -306,7 +279,7 @@ describe("FeatherMenu.vue", () => {
           });
         wrapper.vm.calculatePosition();
         await nextTick();
-        expect(wrapper.vm.position).toBe("bottom-left");
+        expect(wrapper.vm.position).toBe("translate(50px, 60px)");
       });
       it("should flip to top left if not bottom space and enough top space", async () => {
         const slots = {
@@ -326,10 +299,7 @@ describe("FeatherMenu.vue", () => {
             };
           });
         jest
-          .spyOn(
-            wrapper.find("[menu-trigger]").element,
-            "getBoundingClientRect"
-          )
+          .spyOn(wrapper.vm.$refs.root, "getBoundingClientRect")
           .mockImplementation(() => {
             return {
               top: windowHeight - height,
@@ -340,7 +310,7 @@ describe("FeatherMenu.vue", () => {
           });
         wrapper.vm.calculatePosition();
         await nextTick();
-        expect(wrapper.vm.position).toBe("top-left");
+        expect(wrapper.vm.position).toBe("translate(50px, 568px)");
       });
       it("should flip to bottom right if not right space and enough right space", async () => {
         const slots = {
@@ -360,10 +330,7 @@ describe("FeatherMenu.vue", () => {
             };
           });
         jest
-          .spyOn(
-            wrapper.find("[menu-trigger]").element,
-            "getBoundingClientRect"
-          )
+          .spyOn(wrapper.vm.$refs.root, "getBoundingClientRect")
           .mockImplementation(() => {
             return {
               top: 50,
@@ -374,7 +341,7 @@ describe("FeatherMenu.vue", () => {
           });
         wrapper.vm.calculatePosition();
         await nextTick();
-        expect(wrapper.vm.position).toBe("bottom-right");
+        expect(wrapper.vm.position).toBe("translate(924px, 60px)");
       });
       it("should stay bottom left if not enough room anywhere", async () => {
         const slots = {
@@ -395,10 +362,7 @@ describe("FeatherMenu.vue", () => {
             };
           });
         jest
-          .spyOn(
-            wrapper.find("[menu-trigger]").element,
-            "getBoundingClientRect"
-          )
+          .spyOn(wrapper.vm.$refs.root, "getBoundingClientRect")
           .mockImplementation(() => {
             return {
               top: 50,
@@ -409,7 +373,7 @@ describe("FeatherMenu.vue", () => {
           });
         wrapper.vm.calculatePosition();
         await nextTick();
-        expect(wrapper.vm.position).toBe("bottom-left");
+        expect(wrapper.vm.position).toBe("translate(50px, 718px)");
       });
       it("should flip to top right if there is no space right and bottom but enough top and left", async () => {
         const slots = {
@@ -430,10 +394,7 @@ describe("FeatherMenu.vue", () => {
             };
           });
         jest
-          .spyOn(
-            wrapper.find("[menu-trigger]").element,
-            "getBoundingClientRect"
-          )
+          .spyOn(wrapper.vm.$refs.root, "getBoundingClientRect")
           .mockImplementation(() => {
             return {
               top: windowHeight - height,
@@ -444,7 +405,7 @@ describe("FeatherMenu.vue", () => {
           });
         wrapper.vm.calculatePosition();
         await nextTick();
-        expect(wrapper.vm.position).toBe("top-right");
+        expect(wrapper.vm.position).toBe("translate(924px, 568px)");
       });
     });
   });

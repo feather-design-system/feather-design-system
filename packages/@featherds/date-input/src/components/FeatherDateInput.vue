@@ -7,10 +7,11 @@
     class="feather-date-input-container"
   >
     <FeatherMenu
-      :open="showMenu"
       right
+      :open="showMenu"
       @outside-click="handleOutsideClick"
       @trigger-click="handleTriggerClick"
+      @close="showMenu = false"
       class="feather-date-input-menu-container"
       ref="menu"
     >
@@ -18,7 +19,7 @@
         <InputWrapper
           :for="inputId"
           raised
-          :focused="focused"
+          :focused="hasFocus"
           :show-clear="showClear"
           :clear-text="clearLabel"
           @wrapper-click="handleWrapperClick"
@@ -87,7 +88,7 @@
         ref="calendar"
         :modelValue="modelValue"
         @update:modelValue="handleCalendarSelection"
-        @close="closeCalendar"
+        @close="showMenu = false"
         :max-year="maxYear"
         :min-year="minYear"
         :disabled="disabledDates"
@@ -100,7 +101,7 @@
   </div>
 </template>
 <script>
-import { ref, computed, watch, toRef } from "vue";
+import { ref, computed, watch, toRef, nextTick } from "vue";
 import { getSafeId } from "@featherds/utils/id";
 import { KEYCODES } from "@featherds/utils/keys";
 import { useValidation } from "@featherds/input-helper";
@@ -226,7 +227,7 @@ export default {
 
     const handleCalendarSelection = (_value) => {
       context.emit("update:modelValue", _value);
-      closeCalendar();
+      showMenu.value = false;
     };
 
     const focused = ref(false);
@@ -246,7 +247,7 @@ export default {
         "aria-describedby": (context.attrs["aria-describedby"] || "")
           .split(" ")
           .concat([descriptionId.value])
-          .filter((x) => x.length > 0)
+          .filter(Boolean)
           .join(" "),
       };
       delete _attrs.placeholder;
@@ -314,11 +315,24 @@ export default {
       focused.value = true;
     };
     const handleBlur = () => {
-      validate();
-      focused.value = false;
-      context.emit("blur");
-      spinbuttons.deselectAllSpinButtons();
+      if (!showMenu.value) {
+        validate();
+        focused.value = false;
+        context.emit("blur");
+        spinbuttons.deselectAllSpinButtons();
+      }
     };
+    const hasFocus = computed(() => {
+      return focused.value || showMenu.value;
+    });
+
+    watch(hasFocus, (v) => {
+      if (!v) {
+        validate();
+        context.emit("blur");
+        showMenu.value = false;
+      }
+    });
 
     const handleKeyDown = (e) => {
       if (e.keyCode === KEYCODES.ENTER || e.keyCode === KEYCODES.SPACE) {
@@ -343,6 +357,7 @@ export default {
     const handleOutsideClick = () => {
       showMenu.value = false;
     };
+
     const handleClear = () => {
       showMenu.value = false;
       day.value = undefined;
@@ -360,19 +375,23 @@ export default {
       }
       calendarActivator = document.activeElement;
       showMenu.value = true;
-      calendar.value.focus();
+      nextTick(() => {
+        calendar.value.focus();
+      });
     };
 
-    const closeCalendar = () => {
-      if (props.disabled) {
-        return;
+    watch(showMenu, (v) => {
+      if (!v) {
+        if (props.disabled) {
+          return;
+        }
+        if (calendarActivator) {
+          calendarActivator.focus();
+        }
+        calendarActivator = undefined;
       }
-      showMenu.value = false;
-      if (calendarActivator) {
-        calendarActivator.focus();
-      }
-      calendarActivator = undefined;
-    };
+    });
+
     const labels = useLabelProperty(toRef(props, "labels"), LABELS);
     return {
       validate,
@@ -381,6 +400,7 @@ export default {
       year,
       showClear,
       focused,
+      hasFocus,
       showMenu,
       icon,
       menu,
@@ -389,14 +409,13 @@ export default {
       monthId,
       descriptionId,
       attrs,
-      closeCalendar,
       handleClear,
       handleFocus,
       handleBlur,
       handleKeyDown,
       handleWrapperClick,
-      handleTriggerClick,
       handleOutsideClick,
+      handleTriggerClick,
       handleCalendarSelection,
       ...labels,
       ...spinbuttons,

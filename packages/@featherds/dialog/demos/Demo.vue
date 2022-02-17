@@ -21,11 +21,17 @@
           class="fill"
         />
       </template>
-      <p class="my-content">
+      <div class="my-content">
         Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean a urna
         ut orci congue eleifend porttitor ut lorem. Phasellus non commodo est.
         Pellentesque ullamcorper dolor purus, sed semper ipsum scelerisque vel.
-      </p>
+        <FeatherDateInput
+          v-model="test"
+          label="Appointment Date"
+          background
+          class="my-date"
+        ></FeatherDateInput>
+      </div>
       <template v-slot:footer>
         <FeatherButton text @click="visible = false">Cancel</FeatherButton>
         <FeatherButton primary @click="visible = false">Save</FeatherButton>
@@ -39,10 +45,12 @@ import { FeatherButton } from "@featherds/button";
 import { FeatherIcon } from "@featherds/icon";
 import Warning from "@featherds/icon/notification/Warning";
 import { markRaw } from "vue";
+import { FeatherDateInput } from "@featherds/date-input";
 
 export default {
   data: () => ({
     visible: false,
+    test: undefined,
     labels: {
       title: "A Dialog",
       close: "Close",
@@ -62,6 +70,7 @@ export default {
     ...components,
     FeatherButton,
     FeatherIcon,
+    FeatherDateInput,
   },
 };
 </script>

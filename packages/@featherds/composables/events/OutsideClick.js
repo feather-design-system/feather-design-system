@@ -8,23 +8,30 @@ const useOutsideClick = (elementRef, listener) => {
     }
   };
   const outSideClick = (e) => {
-    if (!elementRef.value.contains(e.target)) {
+    let elementRefs = [elementRef];
+    if (Array.isArray(elementRef.value)) {
+      elementRefs = elementRef.value;
+    }
+    const contained = elementRefs.some(
+      (elRef) => elRef && elRef.contains(e.target)
+    );
+    if (!contained) {
       listener(e);
     }
   };
   const removeEvents = () => {
     if (document && window) {
-      document.removeEventListener("click", outSideClick);
+      document.removeEventListener("click", outSideClick, true);
       document.removeEventListener("focus", outSideClick, true);
       window.removeEventListener("blur", windowBlurChecker);
     }
   };
   onMounted(() => {
     const unwatch = watch(
-      [elementRef, active],
-      ([el, enabled]) => {
-        if (el && document && window && enabled) {
-          document.addEventListener("click", outSideClick);
+      active,
+      (enabled) => {
+        if (document && window && enabled) {
+          document.addEventListener("click", outSideClick, true);
           document.addEventListener("focus", outSideClick, true);
           window.addEventListener("blur", windowBlurChecker);
         } else {

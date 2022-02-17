@@ -16,7 +16,6 @@ const getWrapper = function (options = {}) {
       viewerTitle: "Test2",
     },
   };
-  options.global = { renderStubDefaultSlot: true };
   return shallowMount(FeatherPdfViewer, options);
 };
 
