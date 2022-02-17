@@ -87,6 +87,12 @@ jobs:
           inlineScript: |
             az storage blob upload-batch --account-name prsv -d '$web' -s ./docs/.vuepress/dist
 
+      - name: Purge CDN
+        uses: azure/CLI@v1
+        with:
+          inlineScript: |
+            az cdn endpoint purge -n ${{ secrets.AZURE_CDN_ENDPOINT }} --profile-name ${{ secrets.AZURE_CDN_PROFILE_NAME }} --content-paths "/*" --resource-group ${{ secrets.AZURE_RESOURCE_GROUP }} --no-wait
+
       - name: Azure logout
         run: |
           az logout
