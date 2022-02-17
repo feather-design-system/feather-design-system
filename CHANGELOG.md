@@ -1,3 +1,27 @@
+## [0.9.6](https://github.com/feather-design-system/feather-design-system/compare/v0.9.5...v0.9.6) (2022-02-17)
+
+
+### Bug Fixes
+
+* **#35:** feather PDF Viewer changes the route when the back button is clicked ([06fd9a5](https://github.com/feather-design-system/feather-design-system/commit/06fd9a54b226205eceb0b3d7f0b67a1493f6f894)), closes [#35](https://github.com/feather-design-system/feather-design-system/issues/35)
+* **#39:** date input clear button works when value is typed in ([f73645f](https://github.com/feather-design-system/feather-design-system/commit/f73645f41d08d4c59d17d62f3555a802ee77721f)), closes [#39](https://github.com/feather-design-system/feather-design-system/issues/39)
+* **build:** adding CDN purge to the 'docs' action ([151309f](https://github.com/feather-design-system/feather-design-system/commit/151309f4e6a618b218d88114cf6e23e495f8a2f2))
+* date input tests now fully running ([74e2ab2](https://github.com/feather-design-system/feather-design-system/commit/74e2ab2b35ce693c78820f54b10356556a01aef6))
+* **date-input:** preventing data-ref-id duplication. fixes [#51](https://github.com/feather-design-system/feather-design-system/issues/51) ([945a660](https://github.com/feather-design-system/feather-design-system/commit/945a6605fb50e827a3ef13a17be6a65dc8d08e7e))
+* **input:** hide label should now be accessible with axe wcag standards,  fixes [#36](https://github.com/feather-design-system/feather-design-system/issues/36) ([b735b67](https://github.com/feather-design-system/feather-design-system/commit/b735b67ac19abb553e7712af0d0deca667b10684))
+* **select:** clicking clear icon now behaves as expected [#33](https://github.com/feather-design-system/feather-design-system/issues/33) ([2dd719f](https://github.com/feather-design-system/feather-design-system/commit/2dd719f124e377c94143b14da064a3e77cc573a1))
+* **select:** fixing validation on keyboard navigation, fix [#44](https://github.com/feather-design-system/feather-design-system/issues/44) ([9cec288](https://github.com/feather-design-system/feather-design-system/commit/9cec288938f3ef434094b0f8a7c54e47b0fee588))
+* updating PDF viewer titles and updated missed Readme for Autocomplete ([2c9e4cd](https://github.com/feather-design-system/feather-design-system/commit/2c9e4cdd7741fd83487e191110af279821987674))
+
+
+### Features
+
+* **algolia:** updating algolia  and fixing skipped urls, closing [#52](https://github.com/feather-design-system/feather-design-system/issues/52) ([bc22cc0](https://github.com/feather-design-system/feather-design-system/commit/bc22cc0ca3015ca7b452c172990cc370d6791f51))
+* **validation:** review ideas ([27979a9](https://github.com/feather-design-system/feather-design-system/commit/27979a97cd4461535746e2ba805d4da9a36240d7))
+* **vuepress:** upgrading vuepress beta, closing [#52](https://github.com/feather-design-system/feather-design-system/issues/52) ([5bf8b2e](https://github.com/feather-design-system/feather-design-system/commit/5bf8b2ed9d5f58b13a9105add4e0902ee732d2a4))
+
+
+
 ## [0.9.5](https://github.com/feather-design-system/feather-design-system/compare/v0.9.4...v0.9.5) (2022-02-14)
 
 
