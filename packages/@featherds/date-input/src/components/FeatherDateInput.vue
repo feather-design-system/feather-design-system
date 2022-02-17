@@ -28,7 +28,12 @@
           <template v-slot:pre>
             <slot name="pre" />
           </template>
-          <div v-bind="attrs" role="group" class="feather-date-input-group">
+          <div
+            v-bind="attrs"
+            role="group"
+            class="feather-date-input-group"
+            data-ref-id="feather-date-input-group"
+          >
             <SpinButton
               :id="monthId"
               :tabindex="disabled ? -1 : 0"

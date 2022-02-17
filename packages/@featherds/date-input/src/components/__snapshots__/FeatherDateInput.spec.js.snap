@@ -43,6 +43,7 @@ exports[`FeatherDateInput.vue should render disabled 1`] = `
           aria-invalid="false"
           aria-label="Test"
           class="disabled feather-date-input-group"
+          data-ref-id="feather-date-input-group"
           id="feather-date-input-label"
           role="group"
         >
@@ -3264,6 +3265,7 @@ exports[`FeatherDateInput.vue should select date initially passed in as value 1`
   aria-invalid="false"
   aria-label="Test"
   class="feather-date-input-group"
+  data-ref-id="feather-date-input-group"
   id="feather-date-input-label"
   role="group"
 >
