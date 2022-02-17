@@ -4,7 +4,7 @@ import FeatherDateInput from "./FeatherDateInput.vue";
 import * as id from "@featherds/utils/id";
 jest.spyOn(id, "getSafeId").mockImplementation((x) => x);
 
-import { mount, config } from "@vue/test-utils";
+import { mount } from "@vue/test-utils";
 import "@featherds/input-helper/test/MutationObserver";
 import axe from "@featherds/utils/test/axe";
 
@@ -14,13 +14,15 @@ Date.prototype.toLocaleDateString = function (locale, options) {
   return result;
 };
 
-config.renderStubDefaultSlot = true;
-
 const getWrapper = function (options = {}) {
-  options.attachTo = document.body;
   options.props = {
     ...options.props,
     label: "Test",
+  };
+  options.global = {
+    stubs: {
+      "feather-menu": { template: "<div><slot name='trigger'/><slot/></div>" },
+    },
   };
   return mount(FeatherDateInput, options);
 };
@@ -30,7 +32,6 @@ describe("FeatherDateInput.vue", () => {
     const wrapper = getWrapper();
     const stubFocusDay = jest.fn();
     wrapper.vm.dayButton.focus = stubFocusDay;
-
     const month = wrapper.findComponent({ ref: "monthButton" });
     month.vm.$emit("next");
     await nextTick();
@@ -171,7 +172,7 @@ describe("FeatherDateInput.vue", () => {
   });
   it("should be accessible", async () => {
     id.getSafeId.mockRestore();
-    const wrapper = mount(FeatherDateInput, {
+    const wrapper = getWrapper({
       props: {
         label: "Test",
       },

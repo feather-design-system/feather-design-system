@@ -5,6 +5,7 @@
       :open="showMenu"
       @outside-click="handleOutsideClick"
       @trigger-click="handleTriggerClick"
+      @close="handleClose"
       class="feather-autocomplete-menu-container"
       :class="{ grid: gridConfig }"
       ref="menu"
@@ -359,7 +360,7 @@ export default {
       return markRaw(KeyboardArrowDown);
     },
     inputAttrs() {
-      const describedby = [this.selectedDescriptionId, this.subTextId];
+      const describedby = [this.selectedDescriptionId, this.subTextId].filter(Boolean);
 
       let activeDescendant = "";
       if (this.activeChipIndex > -1) {
@@ -663,6 +664,11 @@ export default {
       if (this.forceCloseResults || !this.showMenu) {
         this.handleOutsideClick();
       }
+    },
+    handleClose() {
+      this.forceCloseResults = true;
+      this.resetResultIndex();
+      this.activeChipIndex = -1;
     },
     handleOutsideClick() {
       this.hasFocus = false;

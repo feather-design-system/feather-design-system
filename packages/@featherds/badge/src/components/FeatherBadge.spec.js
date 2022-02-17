@@ -1,8 +1,6 @@
 import FeatherBadge from "./FeatherBadge.vue";
 import TYPES from "../types/Types";
-import { shallowMount, config } from "@vue/test-utils";
-
-config.renderStubDefaultSlot = true;
+import { shallowMount } from "@vue/test-utils";
 
 const getWrapper = function (options) {
   return shallowMount(FeatherBadge, options);

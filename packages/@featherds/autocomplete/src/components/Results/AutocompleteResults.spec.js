@@ -1,8 +1,6 @@
 import AutocompleteResults from "./AutocompleteResults.vue";
 import { FeatherListItem } from "@featherds/list";
-import { shallowMount, config } from "@vue/test-utils";
-
-config.renderStubDefaultSlot = true;
+import { shallowMount } from "@vue/test-utils";
 
 const activeId = "ACTIVE";
 const items = [

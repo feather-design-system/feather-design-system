@@ -161,7 +161,7 @@ export default {
         "aria-describedby": (attrs["aria-describedby"] || "")
           .split(" ")
           .concat([this.descriptionId])
-          .filter((x) => x.length > 0)
+          .filter(Boolean)
           .join(" "),
         value: this.internalValue,
       };

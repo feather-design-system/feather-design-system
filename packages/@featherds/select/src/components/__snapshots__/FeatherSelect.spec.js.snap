@@ -38,7 +38,7 @@ exports[`FeatherSelect.vue should not raise the label when its empty 1`] = `
         </div>
         
         <input
-          aria-describedby=" feather-select-description"
+          aria-describedby="feather-select-description"
           aria-disabled="false"
           aria-haspopup="listbox"
           aria-invalid="false"
@@ -71,25 +71,33 @@ exports[`FeatherSelect.vue should not raise the label when its empty 1`] = `
       </div>
     </div>
     
-    <div
-      class="feather-menu-dropdown bottom-left"
-      id="feather-menu-dropdown"
-      style="display: none;"
-    >
-      
-      <ul
-        aria-activedescendant="feather-select-active"
-        aria-label="Users"
-        class="feather-list feather-select-options-list"
-        data-ref-id="feather-select-list"
-        role="listbox"
-        tabindex="-1"
+    <teleport-stub>
+      <div
+        class="feather-menu-dropdown"
+        id="feather-menu-dropdown"
+        style="width: auto; display: none;"
       >
+        <div
+          tabindex="0"
+        />
         
+        <ul
+          aria-activedescendant="feather-select-active"
+          aria-label="Users"
+          class="feather-list feather-select-options-list"
+          data-ref-id="feather-select-list"
+          role="listbox"
+          tabindex="-1"
+        >
+          
+          
+        </ul>
         
-      </ul>
-      
-    </div>
+        <div
+          tabindex="0"
+        />
+      </div>
+    </teleport-stub>
   </div>
   <div
     class="feather-input-sub-text"
@@ -146,7 +154,7 @@ exports[`FeatherSelect.vue should raise the label when it has a value 1`] = `
         </div>
         
         <input
-          aria-describedby=" feather-select-description"
+          aria-describedby="feather-select-description"
           aria-disabled="false"
           aria-haspopup="listbox"
           aria-invalid="false"
@@ -179,25 +187,33 @@ exports[`FeatherSelect.vue should raise the label when it has a value 1`] = `
       </div>
     </div>
     
-    <div
-      class="feather-menu-dropdown bottom-left"
-      id="feather-menu-dropdown"
-      style="display: none;"
-    >
-      
-      <ul
-        aria-activedescendant="feather-select-active"
-        aria-label="Users"
-        class="feather-list feather-select-options-list"
-        data-ref-id="feather-select-list"
-        role="listbox"
-        tabindex="-1"
+    <teleport-stub>
+      <div
+        class="feather-menu-dropdown"
+        id="feather-menu-dropdown"
+        style="width: auto; display: none;"
       >
+        <div
+          tabindex="0"
+        />
         
+        <ul
+          aria-activedescendant="feather-select-active"
+          aria-label="Users"
+          class="feather-list feather-select-options-list"
+          data-ref-id="feather-select-list"
+          role="listbox"
+          tabindex="-1"
+        >
+          
+          
+        </ul>
         
-      </ul>
-      
-    </div>
+        <div
+          tabindex="0"
+        />
+      </div>
+    </teleport-stub>
   </div>
   <div
     class="feather-input-sub-text"
@@ -254,7 +270,7 @@ exports[`FeatherSelect.vue should render in disabled state 1`] = `
         </div>
         
         <input
-          aria-describedby=" feather-select-description"
+          aria-describedby="feather-select-description"
           aria-disabled="true"
           aria-haspopup="listbox"
           aria-invalid="false"
@@ -288,25 +304,33 @@ exports[`FeatherSelect.vue should render in disabled state 1`] = `
       </div>
     </div>
     
-    <div
-      class="feather-menu-dropdown bottom-left"
-      id="feather-menu-dropdown"
-      style="display: none;"
-    >
-      
-      <ul
-        aria-activedescendant="feather-select-active"
-        aria-label="Users"
-        class="feather-list feather-select-options-list"
-        data-ref-id="feather-select-list"
-        role="listbox"
-        tabindex="-1"
+    <teleport-stub>
+      <div
+        class="feather-menu-dropdown"
+        id="feather-menu-dropdown"
+        style="width: auto; display: none;"
       >
+        <div
+          tabindex="0"
+        />
         
+        <ul
+          aria-activedescendant="feather-select-active"
+          aria-label="Users"
+          class="feather-list feather-select-options-list"
+          data-ref-id="feather-select-list"
+          role="listbox"
+          tabindex="-1"
+        >
+          
+          
+        </ul>
         
-      </ul>
-      
-    </div>
+        <div
+          tabindex="0"
+        />
+      </div>
+    </teleport-stub>
   </div>
   <div
     class="feather-input-sub-text"
@@ -363,7 +387,7 @@ exports[`FeatherSelect.vue should render in error state 1`] = `
         </div>
         
         <input
-          aria-describedby=" feather-select-description"
+          aria-describedby="feather-select-description"
           aria-disabled="false"
           aria-haspopup="listbox"
           aria-invalid="true"
@@ -422,25 +446,33 @@ exports[`FeatherSelect.vue should render in error state 1`] = `
       </div>
     </div>
     
-    <div
-      class="feather-menu-dropdown bottom-left"
-      id="feather-menu-dropdown"
-      style="display: none;"
-    >
-      
-      <ul
-        aria-activedescendant="feather-select-active"
-        aria-label="Users"
-        class="feather-list feather-select-options-list"
-        data-ref-id="feather-select-list"
-        role="listbox"
-        tabindex="-1"
+    <teleport-stub>
+      <div
+        class="feather-menu-dropdown"
+        id="feather-menu-dropdown"
+        style="width: auto; display: none;"
       >
+        <div
+          tabindex="0"
+        />
         
+        <ul
+          aria-activedescendant="feather-select-active"
+          aria-label="Users"
+          class="feather-list feather-select-options-list"
+          data-ref-id="feather-select-list"
+          role="listbox"
+          tabindex="-1"
+        >
+          
+          
+        </ul>
         
-      </ul>
-      
-    </div>
+        <div
+          tabindex="0"
+        />
+      </div>
+    </teleport-stub>
   </div>
   <div
     class="feather-input-sub-text"

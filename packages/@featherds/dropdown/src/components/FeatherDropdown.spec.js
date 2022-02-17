@@ -1,12 +1,14 @@
 import { nextTick } from "vue";
-import { mount } from "@vue/test-utils";
+import { mount, config } from "@vue/test-utils";
 import FeatherDropdown from "./FeatherDropdown.vue";
 import axe from "@featherds/utils/test/axe";
 
 import * as id from "@featherds/utils/id";
 
 jest.spyOn(id, "getSafeId").mockImplementation((x) => x);
-const getWrapper = (options = {}) => mount(FeatherDropdown, options);
+const getWrapper = (options = {}) => {
+  return mount(FeatherDropdown, options);
+};
 
 const getTrigger = () => ({
   template: "<button menu-trigger>TEST</button>",

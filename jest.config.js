@@ -2,7 +2,7 @@ module.exports = {
   testEnvironment: "jsdom",
   snapshotSerializers: ["<rootDir>/jest/serializer"],
   moduleFileExtensions: ["js", "jsx", "json", "vue"],
-
+  setupFiles: ["<rootDir>/jest/setup"],
   transform: {
     "^.+\\.vue$": "@vue/vue3-jest",
     ".+\\.(css|styl|less|sass|scss|svg|png|jpg|ttf|woff|woff2)$":
@@ -30,7 +30,7 @@ module.exports = {
   ],
 
   testResultsProcessor: "jest-teamcity-reporter",
-  collectCoverage: true,
+  collectCoverage: false,
 
   collectCoverageFrom: [
     "**/@featherds/*/src/**/*.{js,ts,vue}",

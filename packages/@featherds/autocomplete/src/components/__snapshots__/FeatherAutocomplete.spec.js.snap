@@ -154,33 +154,41 @@ exports[`FeatherAutocomplete base functionality multi disabled state should rend
       </div>
     </div>
     
-    <div
-      class="feather-menu-dropdown bottom-left"
-      id="feather-menu-dropdown"
-      style="display: none;"
-    >
-      
-      <ul
-        aria-hidden="false"
-        aria-label="Users"
-        aria-live="polite"
-        aria-multiselectable="true"
-        class="feather-list feather-autocomplete-results-list autocomplete-results"
-        id="feather-autocomplete-input-results"
-        role="listbox"
-        style="display: none;"
-        tabindex="-1"
+    <teleport-stub>
+      <div
+        class="feather-menu-dropdown"
+        id="feather-menu-dropdown"
+        style="width: auto; display: none;"
       >
+        <div
+          tabindex="0"
+        />
         
+        <ul
+          aria-hidden="false"
+          aria-label="Users"
+          aria-live="polite"
+          aria-multiselectable="true"
+          class="feather-list feather-autocomplete-results-list autocomplete-results"
+          id="feather-autocomplete-input-results"
+          role="listbox"
+          style="display: none;"
+          tabindex="-1"
+        >
+          
+          
+        </ul>
+        <!--v-if-->
+        <!--v-if-->
+        <!--v-if-->
+        <!--v-if-->
+        <!--v-if-->
         
-      </ul>
-      <!--v-if-->
-      <!--v-if-->
-      <!--v-if-->
-      <!--v-if-->
-      <!--v-if-->
-      
-    </div>
+        <div
+          tabindex="0"
+        />
+      </div>
+    </teleport-stub>
   </div>
   <div
     class="feather-input-sub-text"
@@ -313,33 +321,41 @@ exports[`FeatherAutocomplete base functionality multi disabled state should rend
       </div>
     </div>
     
-    <div
-      class="feather-menu-dropdown bottom-left"
-      id="feather-menu-dropdown"
-      style="display: none;"
-    >
-      
-      <ul
-        aria-hidden="false"
-        aria-label="Users"
-        aria-live="polite"
-        aria-multiselectable="true"
-        class="feather-list feather-autocomplete-results-list autocomplete-results"
-        id="feather-autocomplete-input-results"
-        role="listbox"
-        style="display: none;"
-        tabindex="-1"
+    <teleport-stub>
+      <div
+        class="feather-menu-dropdown"
+        id="feather-menu-dropdown"
+        style="width: auto; display: none;"
       >
+        <div
+          tabindex="0"
+        />
         
+        <ul
+          aria-hidden="false"
+          aria-label="Users"
+          aria-live="polite"
+          aria-multiselectable="true"
+          class="feather-list feather-autocomplete-results-list autocomplete-results"
+          id="feather-autocomplete-input-results"
+          role="listbox"
+          style="display: none;"
+          tabindex="-1"
+        >
+          
+          
+        </ul>
+        <!--v-if-->
+        <!--v-if-->
+        <!--v-if-->
+        <!--v-if-->
+        <!--v-if-->
         
-      </ul>
-      <!--v-if-->
-      <!--v-if-->
-      <!--v-if-->
-      <!--v-if-->
-      <!--v-if-->
-      
-    </div>
+        <div
+          tabindex="0"
+        />
+      </div>
+    </teleport-stub>
   </div>
   <div
     class="feather-input-sub-text"
@@ -470,33 +486,41 @@ exports[`FeatherAutocomplete base functionality multi should lower label when th
       </div>
     </div>
     
-    <div
-      class="feather-menu-dropdown bottom-left"
-      id="feather-menu-dropdown"
-      style="display: none;"
-    >
-      
-      <ul
-        aria-hidden="false"
-        aria-label="Users"
-        aria-live="polite"
-        aria-multiselectable="true"
-        class="feather-list feather-autocomplete-results-list autocomplete-results"
-        id="feather-autocomplete-input-results"
-        role="listbox"
-        style="display: none;"
-        tabindex="-1"
+    <teleport-stub>
+      <div
+        class="feather-menu-dropdown"
+        id="feather-menu-dropdown"
+        style="width: auto; display: none;"
       >
+        <div
+          tabindex="0"
+        />
         
+        <ul
+          aria-hidden="false"
+          aria-label="Users"
+          aria-live="polite"
+          aria-multiselectable="true"
+          class="feather-list feather-autocomplete-results-list autocomplete-results"
+          id="feather-autocomplete-input-results"
+          role="listbox"
+          style="display: none;"
+          tabindex="-1"
+        >
+          
+          
+        </ul>
+        <!--v-if-->
+        <!--v-if-->
+        <!--v-if-->
+        <!--v-if-->
+        <!--v-if-->
         
-      </ul>
-      <!--v-if-->
-      <!--v-if-->
-      <!--v-if-->
-      <!--v-if-->
-      <!--v-if-->
-      
-    </div>
+        <div
+          tabindex="0"
+        />
+      </div>
+    </teleport-stub>
   </div>
   <div
     class="feather-input-sub-text"
@@ -629,107 +653,115 @@ exports[`FeatherAutocomplete base functionality multi should not leave previous 
       </div>
     </div>
     
-    <div
-      class="feather-menu-dropdown bottom-left"
-      id="feather-menu-dropdown"
-      style=""
-    >
-      
-      <ul
-        aria-hidden="false"
-        aria-label="Users"
-        aria-live="polite"
-        aria-multiselectable="true"
-        class="feather-list feather-autocomplete-results-list autocomplete-results"
-        id="feather-autocomplete-input-results"
-        role="listbox"
-        style="display: none;"
-        tabindex="-1"
-      >
-        
-        <!-- eslint-disable -->
-        
-        
-        <li
-          aria-selected="false"
-          class="feather-list-item hover focus highlighted result-item hover"
-          id="result-item"
-          role="option"
-          style="overflow: hidden; position: relative;"
-          tabindex="-1"
-        >
-          <!---->
-          <span
-            class="feather-list-item-text"
-          >
-            <span>
-              <span>
-                Item 1
-              </span>
-              <!--v-if-->
-              <!--v-if-->
-            </span>
-            <!--v-if-->
-          </span>
-          <!---->
-          <!---->
-        </li>
-        <!--v-if-->
-        
-        
-        <li
-          aria-selected="false"
-          class="feather-list-item hover focus result-item hover"
-          role="option"
-          style="overflow: hidden; position: relative;"
-          tabindex="-1"
-        >
-          <!---->
-          <span
-            class="feather-list-item-text"
-          >
-            <span>
-              <span>
-                Item 2
-              </span>
-              <!--v-if-->
-              <!--v-if-->
-            </span>
-            <!--v-if-->
-          </span>
-          <!---->
-          <!---->
-        </li>
-        <!--v-if-->
-        
-        
-        
-      </ul>
-      <!--v-if-->
-      <!--v-if-->
-      <!--v-if-->
-      <!--v-if-->
+    <teleport-stub>
       <div
-        class="spinner-container"
+        class="feather-menu-dropdown"
+        id="feather-menu-dropdown"
+        style="transform: translate(0px, 0px); width: 0px; z-index: 0;"
       >
-        <svg
-          class="spinner"
-          viewBox="0 0 66 66"
-          xmlns="http://www.w3.org/2000/svg"
+        <div
+          tabindex="0"
+        />
+        
+        <ul
+          aria-hidden="false"
+          aria-label="Users"
+          aria-live="polite"
+          aria-multiselectable="true"
+          class="feather-list feather-autocomplete-results-list autocomplete-results"
+          id="feather-autocomplete-input-results"
+          role="listbox"
+          style="display: none;"
+          tabindex="-1"
         >
-          <circle
-            class="path"
-            cx="33"
-            cy="33"
-            fill="none"
-            r="30"
-            stroke-linecap="round"
-            stroke-width="6"
-          />
-        </svg>
+          
+          <!-- eslint-disable -->
+          
+          
+          <li
+            aria-selected="false"
+            class="feather-list-item hover focus highlighted result-item hover"
+            id="result-item"
+            role="option"
+            style="overflow: hidden; position: relative;"
+            tabindex="-1"
+          >
+            <!---->
+            <span
+              class="feather-list-item-text"
+            >
+              <span>
+                <span>
+                  Item 1
+                </span>
+                <!--v-if-->
+                <!--v-if-->
+              </span>
+              <!--v-if-->
+            </span>
+            <!---->
+            <!---->
+          </li>
+          <!--v-if-->
+          
+          
+          <li
+            aria-selected="false"
+            class="feather-list-item hover focus result-item hover"
+            role="option"
+            style="overflow: hidden; position: relative;"
+            tabindex="-1"
+          >
+            <!---->
+            <span
+              class="feather-list-item-text"
+            >
+              <span>
+                <span>
+                  Item 2
+                </span>
+                <!--v-if-->
+                <!--v-if-->
+              </span>
+              <!--v-if-->
+            </span>
+            <!---->
+            <!---->
+          </li>
+          <!--v-if-->
+          
+          
+          
+        </ul>
+        <!--v-if-->
+        <!--v-if-->
+        <!--v-if-->
+        <!--v-if-->
+        <div
+          class="spinner-container"
+        >
+          <svg
+            class="spinner"
+            viewBox="0 0 66 66"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <circle
+              class="path"
+              cx="33"
+              cy="33"
+              fill="none"
+              r="30"
+              stroke-linecap="round"
+              stroke-width="6"
+            />
+          </svg>
+        </div>
+        
+        <div
+          tabindex="0"
+        />
       </div>
-      
-    </div>
+    </teleport-stub>
   </div>
   <div
     class="feather-input-sub-text"
@@ -940,33 +972,41 @@ exports[`FeatherAutocomplete base functionality multi should raise the label whe
       </div>
     </div>
     
-    <div
-      class="feather-menu-dropdown bottom-left"
-      id="feather-menu-dropdown"
-      style="display: none;"
-    >
-      
-      <ul
-        aria-hidden="false"
-        aria-label="Users"
-        aria-live="polite"
-        aria-multiselectable="true"
-        class="feather-list feather-autocomplete-results-list autocomplete-results"
-        id="feather-autocomplete-input-results"
-        role="listbox"
-        style="display: none;"
-        tabindex="-1"
+    <teleport-stub>
+      <div
+        class="feather-menu-dropdown"
+        id="feather-menu-dropdown"
+        style="width: auto; display: none;"
       >
+        <div
+          tabindex="0"
+        />
         
+        <ul
+          aria-hidden="false"
+          aria-label="Users"
+          aria-live="polite"
+          aria-multiselectable="true"
+          class="feather-list feather-autocomplete-results-list autocomplete-results"
+          id="feather-autocomplete-input-results"
+          role="listbox"
+          style="display: none;"
+          tabindex="-1"
+        >
+          
+          
+        </ul>
+        <!--v-if-->
+        <!--v-if-->
+        <!--v-if-->
+        <!--v-if-->
+        <!--v-if-->
         
-      </ul>
-      <!--v-if-->
-      <!--v-if-->
-      <!--v-if-->
-      <!--v-if-->
-      <!--v-if-->
-      
-    </div>
+        <div
+          tabindex="0"
+        />
+      </div>
+    </teleport-stub>
   </div>
   <div
     class="feather-input-sub-text"
@@ -1099,51 +1139,59 @@ exports[`FeatherAutocomplete base functionality multi should show loading spinne
       </div>
     </div>
     
-    <div
-      class="feather-menu-dropdown bottom-left"
-      id="feather-menu-dropdown"
-      style=""
-    >
-      
-      <ul
-        aria-hidden="false"
-        aria-label="Users"
-        aria-live="polite"
-        aria-multiselectable="true"
-        class="feather-list feather-autocomplete-results-list autocomplete-results"
-        id="feather-autocomplete-input-results"
-        role="listbox"
-        style="display: none;"
-        tabindex="-1"
-      >
-        
-        
-      </ul>
-      <!--v-if-->
-      <!--v-if-->
-      <!--v-if-->
-      <!--v-if-->
+    <teleport-stub>
       <div
-        class="spinner-container"
+        class="feather-menu-dropdown"
+        id="feather-menu-dropdown"
+        style="width: auto; z-index: 0;"
       >
-        <svg
-          class="spinner"
-          viewBox="0 0 66 66"
-          xmlns="http://www.w3.org/2000/svg"
+        <div
+          tabindex="0"
+        />
+        
+        <ul
+          aria-hidden="false"
+          aria-label="Users"
+          aria-live="polite"
+          aria-multiselectable="true"
+          class="feather-list feather-autocomplete-results-list autocomplete-results"
+          id="feather-autocomplete-input-results"
+          role="listbox"
+          style="display: none;"
+          tabindex="-1"
         >
-          <circle
-            class="path"
-            cx="33"
-            cy="33"
-            fill="none"
-            r="30"
-            stroke-linecap="round"
-            stroke-width="6"
-          />
-        </svg>
+          
+          
+        </ul>
+        <!--v-if-->
+        <!--v-if-->
+        <!--v-if-->
+        <!--v-if-->
+        <div
+          class="spinner-container"
+        >
+          <svg
+            class="spinner"
+            viewBox="0 0 66 66"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <circle
+              class="path"
+              cx="33"
+              cy="33"
+              fill="none"
+              r="30"
+              stroke-linecap="round"
+              stroke-width="6"
+            />
+          </svg>
+        </div>
+        
+        <div
+          tabindex="0"
+        />
       </div>
-      
-    </div>
+    </teleport-stub>
   </div>
   <div
     class="feather-input-sub-text"
@@ -1276,57 +1324,65 @@ exports[`FeatherAutocomplete base functionality multi should show no results tex
       </div>
     </div>
     
-    <div
-      class="feather-menu-dropdown bottom-left"
-      id="feather-menu-dropdown"
-      style=""
-    >
-      
-      <ul
-        aria-hidden="false"
-        aria-label="Users"
-        aria-live="polite"
-        aria-multiselectable="true"
-        class="feather-list feather-autocomplete-results-list autocomplete-results"
-        id="feather-autocomplete-input-results"
-        role="listbox"
-        style="display: none;"
-        tabindex="-1"
+    <teleport-stub>
+      <div
+        class="feather-menu-dropdown"
+        id="feather-menu-dropdown"
+        style="transform: translate(0px, 0px); width: 0px; z-index: 0;"
       >
+        <div
+          tabindex="0"
+        />
         
-        
-      </ul>
-      <!--v-if-->
-      <ul
-        class="feather-list result-list"
-      >
-        
-        <li
-          class="feather-list-item hover focus"
-          style="overflow: hidden; position: relative;"
+        <ul
+          aria-hidden="false"
+          aria-label="Users"
+          aria-live="polite"
+          aria-multiselectable="true"
+          class="feather-list feather-autocomplete-results-list autocomplete-results"
+          id="feather-autocomplete-input-results"
+          role="listbox"
+          style="display: none;"
+          tabindex="-1"
         >
-          <!---->
-          <span
-            class="feather-list-item-text"
+          
+          
+        </ul>
+        <!--v-if-->
+        <ul
+          class="feather-list result-list"
+        >
+          
+          <li
+            class="feather-list-item hover focus"
+            style="overflow: hidden; position: relative;"
           >
-            
+            <!---->
             <span
-              data-ref-id="feather-autocomplete-no-results"
+              class="feather-list-item-text"
             >
-              No results found
+              
+              <span
+                data-ref-id="feather-autocomplete-no-results"
+              >
+                No results found
+              </span>
+              
             </span>
-            
-          </span>
-          <!---->
-          <!---->
-        </li>
+            <!---->
+            <!---->
+          </li>
+          
+        </ul>
+        <!--v-if-->
+        <!--v-if-->
+        <!--v-if-->
         
-      </ul>
-      <!--v-if-->
-      <!--v-if-->
-      <!--v-if-->
-      
-    </div>
+        <div
+          tabindex="0"
+        />
+      </div>
+    </teleport-stub>
   </div>
   <div
     class="feather-input-sub-text"
@@ -1477,33 +1533,41 @@ exports[`FeatherAutocomplete base functionality single disabled state should ren
       </div>
     </div>
     
-    <div
-      class="feather-menu-dropdown bottom-left"
-      id="feather-menu-dropdown"
-      style="display: none;"
-    >
-      
-      <ul
-        aria-hidden="false"
-        aria-label="Users"
-        aria-live="polite"
-        aria-multiselectable="false"
-        class="feather-list feather-autocomplete-results-list autocomplete-results"
-        id="feather-autocomplete-input-results"
-        role="listbox"
-        style="display: none;"
-        tabindex="-1"
+    <teleport-stub>
+      <div
+        class="feather-menu-dropdown"
+        id="feather-menu-dropdown"
+        style="width: auto; display: none;"
       >
+        <div
+          tabindex="0"
+        />
         
+        <ul
+          aria-hidden="false"
+          aria-label="Users"
+          aria-live="polite"
+          aria-multiselectable="false"
+          class="feather-list feather-autocomplete-results-list autocomplete-results"
+          id="feather-autocomplete-input-results"
+          role="listbox"
+          style="display: none;"
+          tabindex="-1"
+        >
+          
+          
+        </ul>
+        <!--v-if-->
+        <!--v-if-->
+        <!--v-if-->
+        <!--v-if-->
+        <!--v-if-->
         
-      </ul>
-      <!--v-if-->
-      <!--v-if-->
-      <!--v-if-->
-      <!--v-if-->
-      <!--v-if-->
-      
-    </div>
+        <div
+          tabindex="0"
+        />
+      </div>
+    </teleport-stub>
   </div>
   <div
     class="feather-input-sub-text"
@@ -1636,33 +1700,41 @@ exports[`FeatherAutocomplete base functionality single disabled state should ren
       </div>
     </div>
     
-    <div
-      class="feather-menu-dropdown bottom-left"
-      id="feather-menu-dropdown"
-      style="display: none;"
-    >
-      
-      <ul
-        aria-hidden="false"
-        aria-label="Users"
-        aria-live="polite"
-        aria-multiselectable="false"
-        class="feather-list feather-autocomplete-results-list autocomplete-results"
-        id="feather-autocomplete-input-results"
-        role="listbox"
-        style="display: none;"
-        tabindex="-1"
+    <teleport-stub>
+      <div
+        class="feather-menu-dropdown"
+        id="feather-menu-dropdown"
+        style="width: auto; display: none;"
       >
+        <div
+          tabindex="0"
+        />
         
+        <ul
+          aria-hidden="false"
+          aria-label="Users"
+          aria-live="polite"
+          aria-multiselectable="false"
+          class="feather-list feather-autocomplete-results-list autocomplete-results"
+          id="feather-autocomplete-input-results"
+          role="listbox"
+          style="display: none;"
+          tabindex="-1"
+        >
+          
+          
+        </ul>
+        <!--v-if-->
+        <!--v-if-->
+        <!--v-if-->
+        <!--v-if-->
+        <!--v-if-->
         
-      </ul>
-      <!--v-if-->
-      <!--v-if-->
-      <!--v-if-->
-      <!--v-if-->
-      <!--v-if-->
-      
-    </div>
+        <div
+          tabindex="0"
+        />
+      </div>
+    </teleport-stub>
   </div>
   <div
     class="feather-input-sub-text"
@@ -1793,33 +1865,41 @@ exports[`FeatherAutocomplete base functionality single should lower label when t
       </div>
     </div>
     
-    <div
-      class="feather-menu-dropdown bottom-left"
-      id="feather-menu-dropdown"
-      style="display: none;"
-    >
-      
-      <ul
-        aria-hidden="false"
-        aria-label="Users"
-        aria-live="polite"
-        aria-multiselectable="false"
-        class="feather-list feather-autocomplete-results-list autocomplete-results"
-        id="feather-autocomplete-input-results"
-        role="listbox"
-        style="display: none;"
-        tabindex="-1"
+    <teleport-stub>
+      <div
+        class="feather-menu-dropdown"
+        id="feather-menu-dropdown"
+        style="width: auto; display: none;"
       >
+        <div
+          tabindex="0"
+        />
         
+        <ul
+          aria-hidden="false"
+          aria-label="Users"
+          aria-live="polite"
+          aria-multiselectable="false"
+          class="feather-list feather-autocomplete-results-list autocomplete-results"
+          id="feather-autocomplete-input-results"
+          role="listbox"
+          style="display: none;"
+          tabindex="-1"
+        >
+          
+          
+        </ul>
+        <!--v-if-->
+        <!--v-if-->
+        <!--v-if-->
+        <!--v-if-->
+        <!--v-if-->
         
-      </ul>
-      <!--v-if-->
-      <!--v-if-->
-      <!--v-if-->
-      <!--v-if-->
-      <!--v-if-->
-      
-    </div>
+        <div
+          tabindex="0"
+        />
+      </div>
+    </teleport-stub>
   </div>
   <div
     class="feather-input-sub-text"
@@ -1952,106 +2032,114 @@ exports[`FeatherAutocomplete base functionality single should not leave previous
       </div>
     </div>
     
-    <div
-      class="feather-menu-dropdown bottom-left"
-      id="feather-menu-dropdown"
-      style=""
-    >
-      
-      <ul
-        aria-hidden="false"
-        aria-label="Users"
-        aria-live="polite"
-        aria-multiselectable="false"
-        class="feather-list feather-autocomplete-results-list autocomplete-results"
-        id="feather-autocomplete-input-results"
-        role="listbox"
-        style="display: none;"
-        tabindex="-1"
-      >
-        
-        <!-- eslint-disable -->
-        
-        
-        <li
-          aria-selected="false"
-          class="feather-list-item hover focus result-item hover"
-          role="option"
-          style="overflow: hidden; position: relative;"
-          tabindex="-1"
-        >
-          <!---->
-          <span
-            class="feather-list-item-text"
-          >
-            <span>
-              <span>
-                Item 1
-              </span>
-              <!--v-if-->
-              <!--v-if-->
-            </span>
-            <!--v-if-->
-          </span>
-          <!---->
-          <!---->
-        </li>
-        <!--v-if-->
-        
-        
-        <li
-          aria-selected="false"
-          class="feather-list-item hover focus result-item hover"
-          role="option"
-          style="overflow: hidden; position: relative;"
-          tabindex="-1"
-        >
-          <!---->
-          <span
-            class="feather-list-item-text"
-          >
-            <span>
-              <span>
-                Item 2
-              </span>
-              <!--v-if-->
-              <!--v-if-->
-            </span>
-            <!--v-if-->
-          </span>
-          <!---->
-          <!---->
-        </li>
-        <!--v-if-->
-        
-        
-        
-      </ul>
-      <!--v-if-->
-      <!--v-if-->
-      <!--v-if-->
-      <!--v-if-->
+    <teleport-stub>
       <div
-        class="spinner-container"
+        class="feather-menu-dropdown"
+        id="feather-menu-dropdown"
+        style="transform: translate(0px, 0px); width: 0px; z-index: 0;"
       >
-        <svg
-          class="spinner"
-          viewBox="0 0 66 66"
-          xmlns="http://www.w3.org/2000/svg"
+        <div
+          tabindex="0"
+        />
+        
+        <ul
+          aria-hidden="false"
+          aria-label="Users"
+          aria-live="polite"
+          aria-multiselectable="false"
+          class="feather-list feather-autocomplete-results-list autocomplete-results"
+          id="feather-autocomplete-input-results"
+          role="listbox"
+          style="display: none;"
+          tabindex="-1"
         >
-          <circle
-            class="path"
-            cx="33"
-            cy="33"
-            fill="none"
-            r="30"
-            stroke-linecap="round"
-            stroke-width="6"
-          />
-        </svg>
+          
+          <!-- eslint-disable -->
+          
+          
+          <li
+            aria-selected="false"
+            class="feather-list-item hover focus result-item hover"
+            role="option"
+            style="overflow: hidden; position: relative;"
+            tabindex="-1"
+          >
+            <!---->
+            <span
+              class="feather-list-item-text"
+            >
+              <span>
+                <span>
+                  Item 1
+                </span>
+                <!--v-if-->
+                <!--v-if-->
+              </span>
+              <!--v-if-->
+            </span>
+            <!---->
+            <!---->
+          </li>
+          <!--v-if-->
+          
+          
+          <li
+            aria-selected="false"
+            class="feather-list-item hover focus result-item hover"
+            role="option"
+            style="overflow: hidden; position: relative;"
+            tabindex="-1"
+          >
+            <!---->
+            <span
+              class="feather-list-item-text"
+            >
+              <span>
+                <span>
+                  Item 2
+                </span>
+                <!--v-if-->
+                <!--v-if-->
+              </span>
+              <!--v-if-->
+            </span>
+            <!---->
+            <!---->
+          </li>
+          <!--v-if-->
+          
+          
+          
+        </ul>
+        <!--v-if-->
+        <!--v-if-->
+        <!--v-if-->
+        <!--v-if-->
+        <div
+          class="spinner-container"
+        >
+          <svg
+            class="spinner"
+            viewBox="0 0 66 66"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <circle
+              class="path"
+              cx="33"
+              cy="33"
+              fill="none"
+              r="30"
+              stroke-linecap="round"
+              stroke-width="6"
+            />
+          </svg>
+        </div>
+        
+        <div
+          tabindex="0"
+        />
       </div>
-      
-    </div>
+    </teleport-stub>
   </div>
   <div
     class="feather-input-sub-text"
@@ -2200,33 +2288,41 @@ exports[`FeatherAutocomplete base functionality single should raise the label wh
       </div>
     </div>
     
-    <div
-      class="feather-menu-dropdown bottom-left"
-      id="feather-menu-dropdown"
-      style="display: none;"
-    >
-      
-      <ul
-        aria-hidden="false"
-        aria-label="Users"
-        aria-live="polite"
-        aria-multiselectable="false"
-        class="feather-list feather-autocomplete-results-list autocomplete-results"
-        id="feather-autocomplete-input-results"
-        role="listbox"
-        style="display: none;"
-        tabindex="-1"
+    <teleport-stub>
+      <div
+        class="feather-menu-dropdown"
+        id="feather-menu-dropdown"
+        style="width: auto; display: none;"
       >
+        <div
+          tabindex="0"
+        />
         
+        <ul
+          aria-hidden="false"
+          aria-label="Users"
+          aria-live="polite"
+          aria-multiselectable="false"
+          class="feather-list feather-autocomplete-results-list autocomplete-results"
+          id="feather-autocomplete-input-results"
+          role="listbox"
+          style="display: none;"
+          tabindex="-1"
+        >
+          
+          
+        </ul>
+        <!--v-if-->
+        <!--v-if-->
+        <!--v-if-->
+        <!--v-if-->
+        <!--v-if-->
         
-      </ul>
-      <!--v-if-->
-      <!--v-if-->
-      <!--v-if-->
-      <!--v-if-->
-      <!--v-if-->
-      
-    </div>
+        <div
+          tabindex="0"
+        />
+      </div>
+    </teleport-stub>
   </div>
   <div
     class="feather-input-sub-text"
@@ -2359,51 +2455,59 @@ exports[`FeatherAutocomplete base functionality single should show loading spinn
       </div>
     </div>
     
-    <div
-      class="feather-menu-dropdown bottom-left"
-      id="feather-menu-dropdown"
-      style=""
-    >
-      
-      <ul
-        aria-hidden="false"
-        aria-label="Users"
-        aria-live="polite"
-        aria-multiselectable="false"
-        class="feather-list feather-autocomplete-results-list autocomplete-results"
-        id="feather-autocomplete-input-results"
-        role="listbox"
-        style="display: none;"
-        tabindex="-1"
-      >
-        
-        
-      </ul>
-      <!--v-if-->
-      <!--v-if-->
-      <!--v-if-->
-      <!--v-if-->
+    <teleport-stub>
       <div
-        class="spinner-container"
+        class="feather-menu-dropdown"
+        id="feather-menu-dropdown"
+        style="width: auto; z-index: 0;"
       >
-        <svg
-          class="spinner"
-          viewBox="0 0 66 66"
-          xmlns="http://www.w3.org/2000/svg"
+        <div
+          tabindex="0"
+        />
+        
+        <ul
+          aria-hidden="false"
+          aria-label="Users"
+          aria-live="polite"
+          aria-multiselectable="false"
+          class="feather-list feather-autocomplete-results-list autocomplete-results"
+          id="feather-autocomplete-input-results"
+          role="listbox"
+          style="display: none;"
+          tabindex="-1"
         >
-          <circle
-            class="path"
-            cx="33"
-            cy="33"
-            fill="none"
-            r="30"
-            stroke-linecap="round"
-            stroke-width="6"
-          />
-        </svg>
+          
+          
+        </ul>
+        <!--v-if-->
+        <!--v-if-->
+        <!--v-if-->
+        <!--v-if-->
+        <div
+          class="spinner-container"
+        >
+          <svg
+            class="spinner"
+            viewBox="0 0 66 66"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <circle
+              class="path"
+              cx="33"
+              cy="33"
+              fill="none"
+              r="30"
+              stroke-linecap="round"
+              stroke-width="6"
+            />
+          </svg>
+        </div>
+        
+        <div
+          tabindex="0"
+        />
       </div>
-      
-    </div>
+    </teleport-stub>
   </div>
   <div
     class="feather-input-sub-text"
@@ -2536,57 +2640,65 @@ exports[`FeatherAutocomplete base functionality single should show no results te
       </div>
     </div>
     
-    <div
-      class="feather-menu-dropdown bottom-left"
-      id="feather-menu-dropdown"
-      style=""
-    >
-      
-      <ul
-        aria-hidden="false"
-        aria-label="Users"
-        aria-live="polite"
-        aria-multiselectable="false"
-        class="feather-list feather-autocomplete-results-list autocomplete-results"
-        id="feather-autocomplete-input-results"
-        role="listbox"
-        style="display: none;"
-        tabindex="-1"
+    <teleport-stub>
+      <div
+        class="feather-menu-dropdown"
+        id="feather-menu-dropdown"
+        style="transform: translate(0px, 0px); width: 0px; z-index: 0;"
       >
+        <div
+          tabindex="0"
+        />
         
-        
-      </ul>
-      <!--v-if-->
-      <ul
-        class="feather-list result-list"
-      >
-        
-        <li
-          class="feather-list-item hover focus"
-          style="overflow: hidden; position: relative;"
+        <ul
+          aria-hidden="false"
+          aria-label="Users"
+          aria-live="polite"
+          aria-multiselectable="false"
+          class="feather-list feather-autocomplete-results-list autocomplete-results"
+          id="feather-autocomplete-input-results"
+          role="listbox"
+          style="display: none;"
+          tabindex="-1"
         >
-          <!---->
-          <span
-            class="feather-list-item-text"
+          
+          
+        </ul>
+        <!--v-if-->
+        <ul
+          class="feather-list result-list"
+        >
+          
+          <li
+            class="feather-list-item hover focus"
+            style="overflow: hidden; position: relative;"
           >
-            
+            <!---->
             <span
-              data-ref-id="feather-autocomplete-no-results"
+              class="feather-list-item-text"
             >
-              No results found
+              
+              <span
+                data-ref-id="feather-autocomplete-no-results"
+              >
+                No results found
+              </span>
+              
             </span>
-            
-          </span>
-          <!---->
-          <!---->
-        </li>
+            <!---->
+            <!---->
+          </li>
+          
+        </ul>
+        <!--v-if-->
+        <!--v-if-->
+        <!--v-if-->
         
-      </ul>
-      <!--v-if-->
-      <!--v-if-->
-      <!--v-if-->
-      
-    </div>
+        <div
+          tabindex="0"
+        />
+      </div>
+    </teleport-stub>
   </div>
   <div
     class="feather-input-sub-text"
@@ -2800,33 +2912,41 @@ exports[`FeatherAutocomplete multi:specific chip selection should move chip sele
       </div>
     </div>
     
-    <div
-      class="feather-menu-dropdown bottom-left"
-      id="feather-menu-dropdown"
-      style="display: none;"
-    >
-      
-      <ul
-        aria-hidden="false"
-        aria-label="Users"
-        aria-live="polite"
-        aria-multiselectable="true"
-        class="feather-list feather-autocomplete-results-list autocomplete-results"
-        id="feather-autocomplete-input-results"
-        role="listbox"
-        style="display: none;"
-        tabindex="-1"
+    <teleport-stub>
+      <div
+        class="feather-menu-dropdown"
+        id="feather-menu-dropdown"
+        style="width: auto; display: none;"
       >
+        <div
+          tabindex="0"
+        />
         
+        <ul
+          aria-hidden="false"
+          aria-label="Users"
+          aria-live="polite"
+          aria-multiselectable="true"
+          class="feather-list feather-autocomplete-results-list autocomplete-results"
+          id="feather-autocomplete-input-results"
+          role="listbox"
+          style="display: none;"
+          tabindex="-1"
+        >
+          
+          
+        </ul>
+        <!--v-if-->
+        <!--v-if-->
+        <!--v-if-->
+        <!--v-if-->
+        <!--v-if-->
         
-      </ul>
-      <!--v-if-->
-      <!--v-if-->
-      <!--v-if-->
-      <!--v-if-->
-      <!--v-if-->
-      
-    </div>
+        <div
+          tabindex="0"
+        />
+      </div>
+    </teleport-stub>
   </div>
   <div
     class="feather-input-sub-text"
@@ -3040,33 +3160,41 @@ exports[`FeatherAutocomplete multi:specific chip selection should move chip sele
       </div>
     </div>
     
-    <div
-      class="feather-menu-dropdown bottom-left"
-      id="feather-menu-dropdown"
-      style="display: none;"
-    >
-      
-      <ul
-        aria-hidden="false"
-        aria-label="Users"
-        aria-live="polite"
-        aria-multiselectable="true"
-        class="feather-list feather-autocomplete-results-list autocomplete-results"
-        id="feather-autocomplete-input-results"
-        role="listbox"
-        style="display: none;"
-        tabindex="-1"
+    <teleport-stub>
+      <div
+        class="feather-menu-dropdown"
+        id="feather-menu-dropdown"
+        style="width: auto; display: none;"
       >
+        <div
+          tabindex="0"
+        />
         
+        <ul
+          aria-hidden="false"
+          aria-label="Users"
+          aria-live="polite"
+          aria-multiselectable="true"
+          class="feather-list feather-autocomplete-results-list autocomplete-results"
+          id="feather-autocomplete-input-results"
+          role="listbox"
+          style="display: none;"
+          tabindex="-1"
+        >
+          
+          
+        </ul>
+        <!--v-if-->
+        <!--v-if-->
+        <!--v-if-->
+        <!--v-if-->
+        <!--v-if-->
         
-      </ul>
-      <!--v-if-->
-      <!--v-if-->
-      <!--v-if-->
-      <!--v-if-->
-      <!--v-if-->
-      
-    </div>
+        <div
+          tabindex="0"
+        />
+      </div>
+    </teleport-stub>
   </div>
   <div
     class="feather-input-sub-text"
@@ -3280,33 +3408,41 @@ exports[`FeatherAutocomplete multi:specific chip selection should not move chip 
       </div>
     </div>
     
-    <div
-      class="feather-menu-dropdown bottom-left"
-      id="feather-menu-dropdown"
-      style="display: none;"
-    >
-      
-      <ul
-        aria-hidden="false"
-        aria-label="Users"
-        aria-live="polite"
-        aria-multiselectable="true"
-        class="feather-list feather-autocomplete-results-list autocomplete-results"
-        id="feather-autocomplete-input-results"
-        role="listbox"
-        style="display: none;"
-        tabindex="-1"
+    <teleport-stub>
+      <div
+        class="feather-menu-dropdown"
+        id="feather-menu-dropdown"
+        style="width: auto; display: none;"
       >
+        <div
+          tabindex="0"
+        />
         
+        <ul
+          aria-hidden="false"
+          aria-label="Users"
+          aria-live="polite"
+          aria-multiselectable="true"
+          class="feather-list feather-autocomplete-results-list autocomplete-results"
+          id="feather-autocomplete-input-results"
+          role="listbox"
+          style="display: none;"
+          tabindex="-1"
+        >
+          
+          
+        </ul>
+        <!--v-if-->
+        <!--v-if-->
+        <!--v-if-->
+        <!--v-if-->
+        <!--v-if-->
         
-      </ul>
-      <!--v-if-->
-      <!--v-if-->
-      <!--v-if-->
-      <!--v-if-->
-      <!--v-if-->
-      
-    </div>
+        <div
+          tabindex="0"
+        />
+      </div>
+    </teleport-stub>
   </div>
   <div
     class="feather-input-sub-text"
@@ -3519,33 +3655,41 @@ exports[`FeatherAutocomplete multi:specific chip selection should not perform an
       </div>
     </div>
     
-    <div
-      class="feather-menu-dropdown bottom-left"
-      id="feather-menu-dropdown"
-      style="display: none;"
-    >
-      
-      <ul
-        aria-hidden="false"
-        aria-label="Users"
-        aria-live="polite"
-        aria-multiselectable="true"
-        class="feather-list feather-autocomplete-results-list autocomplete-results"
-        id="feather-autocomplete-input-results"
-        role="listbox"
-        style="display: none;"
-        tabindex="-1"
+    <teleport-stub>
+      <div
+        class="feather-menu-dropdown"
+        id="feather-menu-dropdown"
+        style="width: auto; display: none;"
       >
+        <div
+          tabindex="0"
+        />
         
+        <ul
+          aria-hidden="false"
+          aria-label="Users"
+          aria-live="polite"
+          aria-multiselectable="true"
+          class="feather-list feather-autocomplete-results-list autocomplete-results"
+          id="feather-autocomplete-input-results"
+          role="listbox"
+          style="display: none;"
+          tabindex="-1"
+        >
+          
+          
+        </ul>
+        <!--v-if-->
+        <!--v-if-->
+        <!--v-if-->
+        <!--v-if-->
+        <!--v-if-->
         
-      </ul>
-      <!--v-if-->
-      <!--v-if-->
-      <!--v-if-->
-      <!--v-if-->
-      <!--v-if-->
-      
-    </div>
+        <div
+          tabindex="0"
+        />
+      </div>
+    </teleport-stub>
   </div>
   <div
     class="feather-input-sub-text"
@@ -3759,88 +3903,95 @@ exports[`FeatherAutocomplete multi:specific chip selection should select rightmo
       </div>
     </div>
     
-    <div
-      class="feather-menu-dropdown bottom-left"
-      id="feather-menu-dropdown"
-      style=""
-    >
-      
-      <ul
-        aria-hidden="false"
-        aria-label="Users"
-        aria-live="polite"
-        aria-multiselectable="true"
-        class="feather-list feather-autocomplete-results-list autocomplete-results"
-        id="feather-autocomplete-input-results"
-        role="listbox"
-        style=""
-        tabindex="-1"
+    <teleport-stub>
+      <div
+        class="feather-menu-dropdown"
+        id="feather-menu-dropdown"
+        style="transform: translate(0px, 0px); width: 0px; z-index: 0;"
       >
+        <div
+          tabindex="0"
+        />
         
-        <!-- eslint-disable -->
-        
-        
-        <li
-          aria-selected="false"
-          class="feather-list-item hover focus result-item hover"
-          role="option"
-          style="overflow: hidden; position: relative;"
+        <ul
+          aria-hidden="false"
+          aria-label="Users"
+          aria-live="polite"
+          aria-multiselectable="true"
+          class="feather-list feather-autocomplete-results-list autocomplete-results"
+          id="feather-autocomplete-input-results"
+          role="listbox"
           tabindex="-1"
         >
-          <!---->
-          <span
-            class="feather-list-item-text"
+          
+          <!-- eslint-disable -->
+          
+          
+          <li
+            aria-selected="false"
+            class="feather-list-item hover focus result-item hover"
+            role="option"
+            style="overflow: hidden; position: relative;"
+            tabindex="-1"
           >
-            <span>
+            <!---->
+            <span
+              class="feather-list-item-text"
+            >
               <span>
-                Test1
+                <span>
+                  Test1
+                </span>
+                <!--v-if-->
+                <!--v-if-->
               </span>
               <!--v-if-->
-              <!--v-if-->
             </span>
-            <!--v-if-->
-          </span>
-          <!---->
-          <!---->
-        </li>
-        <!--v-if-->
-        
-        
-        <li
-          aria-selected="false"
-          class="feather-list-item hover focus result-item hover"
-          role="option"
-          style="overflow: hidden; position: relative;"
-          tabindex="-1"
-        >
-          <!---->
-          <span
-            class="feather-list-item-text"
+            <!---->
+            <!---->
+          </li>
+          <!--v-if-->
+          
+          
+          <li
+            aria-selected="false"
+            class="feather-list-item hover focus result-item hover"
+            role="option"
+            style="overflow: hidden; position: relative;"
+            tabindex="-1"
           >
-            <span>
+            <!---->
+            <span
+              class="feather-list-item-text"
+            >
               <span>
-                Test2
+                <span>
+                  Test2
+                </span>
+                <!--v-if-->
+                <!--v-if-->
               </span>
               <!--v-if-->
-              <!--v-if-->
             </span>
-            <!--v-if-->
-          </span>
-          <!---->
-          <!---->
-        </li>
+            <!---->
+            <!---->
+          </li>
+          <!--v-if-->
+          
+          
+          
+        </ul>
+        <!--v-if-->
+        <!--v-if-->
+        <!--v-if-->
+        <!--v-if-->
         <!--v-if-->
         
-        
-        
-      </ul>
-      <!--v-if-->
-      <!--v-if-->
-      <!--v-if-->
-      <!--v-if-->
-      <!--v-if-->
-      
-    </div>
+        <div
+          tabindex="0"
+        />
+      </div>
+    </teleport-stub>
   </div>
   <div
     class="feather-input-sub-text"
@@ -4054,33 +4205,41 @@ exports[`FeatherAutocomplete multi:specific chip selection should select the rig
       </div>
     </div>
     
-    <div
-      class="feather-menu-dropdown bottom-left"
-      id="feather-menu-dropdown"
-      style="display: none;"
-    >
-      
-      <ul
-        aria-hidden="false"
-        aria-label="Users"
-        aria-live="polite"
-        aria-multiselectable="true"
-        class="feather-list feather-autocomplete-results-list autocomplete-results"
-        id="feather-autocomplete-input-results"
-        role="listbox"
-        style="display: none;"
-        tabindex="-1"
+    <teleport-stub>
+      <div
+        class="feather-menu-dropdown"
+        id="feather-menu-dropdown"
+        style="width: auto; display: none;"
       >
+        <div
+          tabindex="0"
+        />
         
+        <ul
+          aria-hidden="false"
+          aria-label="Users"
+          aria-live="polite"
+          aria-multiselectable="true"
+          class="feather-list feather-autocomplete-results-list autocomplete-results"
+          id="feather-autocomplete-input-results"
+          role="listbox"
+          style="display: none;"
+          tabindex="-1"
+        >
+          
+          
+        </ul>
+        <!--v-if-->
+        <!--v-if-->
+        <!--v-if-->
+        <!--v-if-->
+        <!--v-if-->
         
-      </ul>
-      <!--v-if-->
-      <!--v-if-->
-      <!--v-if-->
-      <!--v-if-->
-      <!--v-if-->
-      
-    </div>
+        <div
+          tabindex="0"
+        />
+      </div>
+    </teleport-stub>
   </div>
   <div
     class="feather-input-sub-text"
@@ -4293,33 +4452,41 @@ exports[`FeatherAutocomplete multi:specific chip selection should should deselec
       </div>
     </div>
     
-    <div
-      class="feather-menu-dropdown bottom-left"
-      id="feather-menu-dropdown"
-      style="display: none;"
-    >
-      
-      <ul
-        aria-hidden="false"
-        aria-label="Users"
-        aria-live="polite"
-        aria-multiselectable="true"
-        class="feather-list feather-autocomplete-results-list autocomplete-results"
-        id="feather-autocomplete-input-results"
-        role="listbox"
-        style="display: none;"
-        tabindex="-1"
+    <teleport-stub>
+      <div
+        class="feather-menu-dropdown"
+        id="feather-menu-dropdown"
+        style="width: auto; display: none;"
       >
+        <div
+          tabindex="0"
+        />
         
+        <ul
+          aria-hidden="false"
+          aria-label="Users"
+          aria-live="polite"
+          aria-multiselectable="true"
+          class="feather-list feather-autocomplete-results-list autocomplete-results"
+          id="feather-autocomplete-input-results"
+          role="listbox"
+          style="display: none;"
+          tabindex="-1"
+        >
+          
+          
+        </ul>
+        <!--v-if-->
+        <!--v-if-->
+        <!--v-if-->
+        <!--v-if-->
+        <!--v-if-->
         
-      </ul>
-      <!--v-if-->
-      <!--v-if-->
-      <!--v-if-->
-      <!--v-if-->
-      <!--v-if-->
-      
-    </div>
+        <div
+          tabindex="0"
+        />
+      </div>
+    </teleport-stub>
   </div>
   <div
     class="feather-input-sub-text"
@@ -4532,33 +4699,41 @@ exports[`FeatherAutocomplete multi:specific selection limit should clear warning
       </div>
     </div>
     
-    <div
-      class="feather-menu-dropdown bottom-left"
-      id="feather-menu-dropdown"
-      style="display: none;"
-    >
-      
-      <ul
-        aria-hidden="false"
-        aria-label="Users"
-        aria-live="polite"
-        aria-multiselectable="true"
-        class="feather-list feather-autocomplete-results-list autocomplete-results"
-        id="feather-autocomplete-input-results"
-        role="listbox"
-        style="display: none;"
-        tabindex="-1"
+    <teleport-stub>
+      <div
+        class="feather-menu-dropdown"
+        id="feather-menu-dropdown"
+        style="transform: translate(0px, 0px); width: 0px; display: none;"
       >
+        <div
+          tabindex="0"
+        />
         
+        <ul
+          aria-hidden="false"
+          aria-label="Users"
+          aria-live="polite"
+          aria-multiselectable="true"
+          class="feather-list feather-autocomplete-results-list autocomplete-results"
+          id="feather-autocomplete-input-results"
+          role="listbox"
+          style="display: none;"
+          tabindex="-1"
+        >
+          
+          
+        </ul>
+        <!--v-if-->
+        <!--v-if-->
+        <!--v-if-->
+        <!--v-if-->
+        <!--v-if-->
         
-      </ul>
-      <!--v-if-->
-      <!--v-if-->
-      <!--v-if-->
-      <!--v-if-->
-      <!--v-if-->
-      
-    </div>
+        <div
+          tabindex="0"
+        />
+      </div>
+    </teleport-stub>
   </div>
   <div
     class="feather-input-sub-text"
@@ -4743,7 +4918,7 @@ exports[`FeatherAutocomplete multi:specific selection limit should display a war
             class="feather-autocomplete-input"
             data-ref-id="feather-input"
             id="feather-autocomplete-input"
-            style="height: 0px; flex-basis: 100%; white-space: normal;"
+            style="height: 1.625rem; flex-basis: 100%; white-space: normal;"
             tabindex="0"
           />
         </div>
@@ -4771,79 +4946,87 @@ exports[`FeatherAutocomplete multi:specific selection limit should display a war
       </div>
     </div>
     
-    <div
-      class="feather-menu-dropdown bottom-left"
-      id="feather-menu-dropdown"
-      style=""
-    >
-      
-      <ul
-        aria-hidden="false"
-        aria-label="Users"
-        aria-live="polite"
-        aria-multiselectable="true"
-        class="feather-list feather-autocomplete-results-list autocomplete-results"
-        id="feather-autocomplete-input-results"
-        role="listbox"
-        style="display: none;"
-        tabindex="-1"
+    <teleport-stub>
+      <div
+        class="feather-menu-dropdown"
+        id="feather-menu-dropdown"
+        style="transform: translate(0px, 0px); width: 0px; z-index: 0;"
       >
+        <div
+          tabindex="0"
+        />
         
-        
-      </ul>
-      <!--v-if-->
-      <!--v-if-->
-      <ul
-        class="feather-list result-list selection-limit-warning"
-      >
-        
-        <li
-          class="feather-list-item hover focus"
-          style="overflow: hidden; position: relative;"
+        <ul
+          aria-hidden="false"
+          aria-label="Users"
+          aria-live="polite"
+          aria-multiselectable="true"
+          class="feather-list feather-autocomplete-results-list autocomplete-results"
+          id="feather-autocomplete-input-results"
+          role="listbox"
+          style="display: none;"
+          tabindex="-1"
         >
-          <!---->
-          <span
-            class="feather-list-item-text"
+          
+          
+        </ul>
+        <!--v-if-->
+        <!--v-if-->
+        <ul
+          class="feather-list result-list selection-limit-warning"
+        >
+          
+          <li
+            class="feather-list-item hover focus"
+            style="overflow: hidden; position: relative;"
           >
-            
-            <svg
-              aria-hidden="true"
-              class="feather-icon"
-              focusable="false"
-              role="img"
-              viewBox="0 0 24 24"
-              xmlns="http://www.w3.org/2000/svg"
-            >
-              <path
-                d="M12,10a1,1,0,0,0-1,1v5a1,1,0,0,0,2,0V11A1,1,0,0,0,12,10Z"
-              />
-              <rect
-                height="2"
-                rx="0.65"
-                width="2"
-                x="11"
-                y="7"
-              />
-              <path
-                d="M12,2A10,10,0,1,0,22,12,10,10,0,0,0,12,2Zm0,18a8,8,0,1,1,8-8A8,8,0,0,1,12,20Z"
-              />
-            </svg>
+            <!---->
             <span
-              data-ref-id="feather-autocomplete-selection-limit"
+              class="feather-list-item-text"
             >
-              Selection limit reached
+              
+              <svg
+                aria-hidden="true"
+                class="feather-icon"
+                focusable="false"
+                role="img"
+                viewBox="0 0 24 24"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M12,10a1,1,0,0,0-1,1v5a1,1,0,0,0,2,0V11A1,1,0,0,0,12,10Z"
+                />
+                <rect
+                  height="2"
+                  rx="0.65"
+                  width="2"
+                  x="11"
+                  y="7"
+                />
+                <path
+                  d="M12,2A10,10,0,1,0,22,12,10,10,0,0,0,12,2Zm0,18a8,8,0,1,1,8-8A8,8,0,0,1,12,20Z"
+                />
+              </svg>
+              <span
+                data-ref-id="feather-autocomplete-selection-limit"
+              >
+                Selection limit reached
+              </span>
+              
             </span>
-            
-          </span>
-          <!---->
-          <!---->
-        </li>
+            <!---->
+            <!---->
+          </li>
+          
+        </ul>
+        <!--v-if-->
+        <!--v-if-->
         
-      </ul>
-      <!--v-if-->
-      <!--v-if-->
-      
-    </div>
+        <div
+          tabindex="0"
+        />
+      </div>
+    </teleport-stub>
   </div>
   <div
     class="feather-input-sub-text"
@@ -5058,79 +5241,87 @@ exports[`FeatherAutocomplete multi:specific selection limit should display a war
       </div>
     </div>
     
-    <div
-      class="feather-menu-dropdown bottom-left"
-      id="feather-menu-dropdown"
-      style=""
-    >
-      
-      <ul
-        aria-hidden="false"
-        aria-label="Users"
-        aria-live="polite"
-        aria-multiselectable="true"
-        class="feather-list feather-autocomplete-results-list autocomplete-results"
-        id="feather-autocomplete-input-results"
-        role="listbox"
-        style="display: none;"
-        tabindex="-1"
+    <teleport-stub>
+      <div
+        class="feather-menu-dropdown"
+        id="feather-menu-dropdown"
+        style="width: auto; z-index: 0;"
       >
+        <div
+          tabindex="0"
+        />
         
-        
-      </ul>
-      <!--v-if-->
-      <!--v-if-->
-      <ul
-        class="feather-list result-list selection-limit-warning"
-      >
-        
-        <li
-          class="feather-list-item hover focus"
-          style="overflow: hidden; position: relative;"
+        <ul
+          aria-hidden="false"
+          aria-label="Users"
+          aria-live="polite"
+          aria-multiselectable="true"
+          class="feather-list feather-autocomplete-results-list autocomplete-results"
+          id="feather-autocomplete-input-results"
+          role="listbox"
+          style="display: none;"
+          tabindex="-1"
         >
-          <!---->
-          <span
-            class="feather-list-item-text"
+          
+          
+        </ul>
+        <!--v-if-->
+        <!--v-if-->
+        <ul
+          class="feather-list result-list selection-limit-warning"
+        >
+          
+          <li
+            class="feather-list-item hover focus"
+            style="overflow: hidden; position: relative;"
           >
-            
-            <svg
-              aria-hidden="true"
-              class="feather-icon"
-              focusable="false"
-              role="img"
-              viewBox="0 0 24 24"
-              xmlns="http://www.w3.org/2000/svg"
-            >
-              <path
-                d="M12,10a1,1,0,0,0-1,1v5a1,1,0,0,0,2,0V11A1,1,0,0,0,12,10Z"
-              />
-              <rect
-                height="2"
-                rx="0.65"
-                width="2"
-                x="11"
-                y="7"
-              />
-              <path
-                d="M12,2A10,10,0,1,0,22,12,10,10,0,0,0,12,2Zm0,18a8,8,0,1,1,8-8A8,8,0,0,1,12,20Z"
-              />
-            </svg>
+            <!---->
             <span
-              data-ref-id="feather-autocomplete-selection-limit"
+              class="feather-list-item-text"
             >
-              Selection limit reached
+              
+              <svg
+                aria-hidden="true"
+                class="feather-icon"
+                focusable="false"
+                role="img"
+                viewBox="0 0 24 24"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M12,10a1,1,0,0,0-1,1v5a1,1,0,0,0,2,0V11A1,1,0,0,0,12,10Z"
+                />
+                <rect
+                  height="2"
+                  rx="0.65"
+                  width="2"
+                  x="11"
+                  y="7"
+                />
+                <path
+                  d="M12,2A10,10,0,1,0,22,12,10,10,0,0,0,12,2Zm0,18a8,8,0,1,1,8-8A8,8,0,0,1,12,20Z"
+                />
+              </svg>
+              <span
+                data-ref-id="feather-autocomplete-selection-limit"
+              >
+                Selection limit reached
+              </span>
+              
             </span>
-            
-          </span>
-          <!---->
-          <!---->
-        </li>
+            <!---->
+            <!---->
+          </li>
+          
+        </ul>
+        <!--v-if-->
+        <!--v-if-->
         
-      </ul>
-      <!--v-if-->
-      <!--v-if-->
-      
-    </div>
+        <div
+          tabindex="0"
+        />
+      </div>
+    </teleport-stub>
   </div>
   <div
     class="feather-input-sub-text"
@@ -5265,135 +5456,143 @@ exports[`FeatherAutocomplete multi:specific selection limit should display a war
       </div>
     </div>
     
-    <div
-      class="feather-menu-dropdown bottom-left"
-      id="feather-menu-dropdown"
-      style=""
-    >
-      
-      <ul
-        aria-hidden="false"
-        aria-label="Users"
-        aria-live="polite"
-        aria-multiselectable="true"
-        class="feather-list feather-autocomplete-results-list autocomplete-results"
-        id="feather-autocomplete-input-results"
-        role="listbox"
-        style="display: none;"
-        tabindex="-1"
+    <teleport-stub>
+      <div
+        class="feather-menu-dropdown"
+        id="feather-menu-dropdown"
+        style="transform: translate(0px, 0px); width: 0px; z-index: 0;"
       >
+        <div
+          tabindex="0"
+        />
         
-        <!-- eslint-disable -->
-        
-        
-        <li
-          aria-selected="false"
-          class="feather-list-item hover focus highlighted result-item hover"
-          id="result-item"
-          role="option"
-          style="overflow: hidden; position: relative;"
+        <ul
+          aria-hidden="false"
+          aria-label="Users"
+          aria-live="polite"
+          aria-multiselectable="true"
+          class="feather-list feather-autocomplete-results-list autocomplete-results"
+          id="feather-autocomplete-input-results"
+          role="listbox"
+          style="display: none;"
           tabindex="-1"
         >
-          <!---->
-          <span
-            class="feather-list-item-text"
+          
+          <!-- eslint-disable -->
+          
+          
+          <li
+            aria-selected="false"
+            class="feather-list-item hover focus highlighted result-item hover"
+            id="result-item"
+            role="option"
+            style="overflow: hidden; position: relative;"
+            tabindex="-1"
           >
-            <span>
-              <span>
-                Item 1
-              </span>
-              <!--v-if-->
-              <!--v-if-->
-            </span>
-            <!--v-if-->
-          </span>
-          <!---->
-          <!---->
-        </li>
-        <!--v-if-->
-        
-        
-        <li
-          aria-selected="false"
-          class="feather-list-item hover focus result-item hover"
-          role="option"
-          style="overflow: hidden; position: relative;"
-          tabindex="-1"
-        >
-          <!---->
-          <span
-            class="feather-list-item-text"
-          >
-            <span>
-              <span>
-                Item 2
-              </span>
-              <!--v-if-->
-              <!--v-if-->
-            </span>
-            <!--v-if-->
-          </span>
-          <!---->
-          <!---->
-        </li>
-        <!--v-if-->
-        
-        
-        
-      </ul>
-      <!--v-if-->
-      <!--v-if-->
-      <ul
-        class="feather-list result-list selection-limit-warning"
-      >
-        
-        <li
-          class="feather-list-item hover focus"
-          style="overflow: hidden; position: relative;"
-        >
-          <!---->
-          <span
-            class="feather-list-item-text"
-          >
-            
-            <svg
-              aria-hidden="true"
-              class="feather-icon"
-              focusable="false"
-              role="img"
-              viewBox="0 0 24 24"
-              xmlns="http://www.w3.org/2000/svg"
-            >
-              <path
-                d="M12,10a1,1,0,0,0-1,1v5a1,1,0,0,0,2,0V11A1,1,0,0,0,12,10Z"
-              />
-              <rect
-                height="2"
-                rx="0.65"
-                width="2"
-                x="11"
-                y="7"
-              />
-              <path
-                d="M12,2A10,10,0,1,0,22,12,10,10,0,0,0,12,2Zm0,18a8,8,0,1,1,8-8A8,8,0,0,1,12,20Z"
-              />
-            </svg>
+            <!---->
             <span
-              data-ref-id="feather-autocomplete-selection-limit"
+              class="feather-list-item-text"
             >
-              Selection limit reached
+              <span>
+                <span>
+                  Item 1
+                </span>
+                <!--v-if-->
+                <!--v-if-->
+              </span>
+              <!--v-if-->
             </span>
-            
-          </span>
-          <!---->
-          <!---->
-        </li>
+            <!---->
+            <!---->
+          </li>
+          <!--v-if-->
+          
+          
+          <li
+            aria-selected="false"
+            class="feather-list-item hover focus result-item hover"
+            role="option"
+            style="overflow: hidden; position: relative;"
+            tabindex="-1"
+          >
+            <!---->
+            <span
+              class="feather-list-item-text"
+            >
+              <span>
+                <span>
+                  Item 2
+                </span>
+                <!--v-if-->
+                <!--v-if-->
+              </span>
+              <!--v-if-->
+            </span>
+            <!---->
+            <!---->
+          </li>
+          <!--v-if-->
+          
+          
+          
+        </ul>
+        <!--v-if-->
+        <!--v-if-->
+        <ul
+          class="feather-list result-list selection-limit-warning"
+        >
+          
+          <li
+            class="feather-list-item hover focus"
+            style="overflow: hidden; position: relative;"
+          >
+            <!---->
+            <span
+              class="feather-list-item-text"
+            >
+              
+              <svg
+                aria-hidden="true"
+                class="feather-icon"
+                focusable="false"
+                role="img"
+                viewBox="0 0 24 24"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M12,10a1,1,0,0,0-1,1v5a1,1,0,0,0,2,0V11A1,1,0,0,0,12,10Z"
+                />
+                <rect
+                  height="2"
+                  rx="0.65"
+                  width="2"
+                  x="11"
+                  y="7"
+                />
+                <path
+                  d="M12,2A10,10,0,1,0,22,12,10,10,0,0,0,12,2Zm0,18a8,8,0,1,1,8-8A8,8,0,0,1,12,20Z"
+                />
+              </svg>
+              <span
+                data-ref-id="feather-autocomplete-selection-limit"
+              >
+                Selection limit reached
+              </span>
+              
+            </span>
+            <!---->
+            <!---->
+          </li>
+          
+        </ul>
+        <!--v-if-->
+        <!--v-if-->
         
-      </ul>
-      <!--v-if-->
-      <!--v-if-->
-      
-    </div>
+        <div
+          tabindex="0"
+        />
+      </div>
+    </teleport-stub>
   </div>
   <div
     class="feather-input-sub-text"
@@ -5526,33 +5725,41 @@ exports[`FeatherAutocomplete multi:specific should hide/reset menu and clear tex
       </div>
     </div>
     
-    <div
-      class="feather-menu-dropdown bottom-left"
-      id="feather-menu-dropdown"
-      style="display: none;"
-    >
-      
-      <ul
-        aria-hidden="false"
-        aria-label="Users"
-        aria-live="polite"
-        aria-multiselectable="true"
-        class="feather-list feather-autocomplete-results-list autocomplete-results"
-        id="feather-autocomplete-input-results"
-        role="listbox"
-        style="display: none;"
-        tabindex="-1"
+    <teleport-stub>
+      <div
+        class="feather-menu-dropdown"
+        id="feather-menu-dropdown"
+        style="width: auto; display: none;"
       >
+        <div
+          tabindex="0"
+        />
         
+        <ul
+          aria-hidden="false"
+          aria-label="Users"
+          aria-live="polite"
+          aria-multiselectable="true"
+          class="feather-list feather-autocomplete-results-list autocomplete-results"
+          id="feather-autocomplete-input-results"
+          role="listbox"
+          style="display: none;"
+          tabindex="-1"
+        >
+          
+          
+        </ul>
+        <!--v-if-->
+        <!--v-if-->
+        <!--v-if-->
+        <!--v-if-->
+        <!--v-if-->
         
-      </ul>
-      <!--v-if-->
-      <!--v-if-->
-      <!--v-if-->
-      <!--v-if-->
-      <!--v-if-->
-      
-    </div>
+        <div
+          tabindex="0"
+        />
+      </div>
+    </teleport-stub>
   </div>
   <div
     class="feather-input-sub-text"
@@ -5685,88 +5892,95 @@ exports[`FeatherAutocomplete single:specific should close menu when enter is pre
       </div>
     </div>
     
-    <div
-      class="feather-menu-dropdown bottom-left"
-      id="feather-menu-dropdown"
-      style=""
-    >
-      
-      <ul
-        aria-hidden="false"
-        aria-label="Users"
-        aria-live="polite"
-        aria-multiselectable="false"
-        class="feather-list feather-autocomplete-results-list autocomplete-results"
-        id="feather-autocomplete-input-results"
-        role="listbox"
-        style=""
-        tabindex="-1"
+    <teleport-stub>
+      <div
+        class="feather-menu-dropdown"
+        id="feather-menu-dropdown"
+        style="transform: translate(0px, 0px); width: 0px; z-index: 0;"
       >
+        <div
+          tabindex="0"
+        />
         
-        <!-- eslint-disable -->
-        
-        
-        <li
-          aria-selected="false"
-          class="feather-list-item hover focus result-item hover"
-          role="option"
-          style="overflow: hidden; position: relative;"
+        <ul
+          aria-hidden="false"
+          aria-label="Users"
+          aria-live="polite"
+          aria-multiselectable="false"
+          class="feather-list feather-autocomplete-results-list autocomplete-results"
+          id="feather-autocomplete-input-results"
+          role="listbox"
           tabindex="-1"
         >
-          <!---->
-          <span
-            class="feather-list-item-text"
+          
+          <!-- eslint-disable -->
+          
+          
+          <li
+            aria-selected="false"
+            class="feather-list-item hover focus result-item hover"
+            role="option"
+            style="overflow: hidden; position: relative;"
+            tabindex="-1"
           >
-            <span>
+            <!---->
+            <span
+              class="feather-list-item-text"
+            >
               <span>
-                Item 1
+                <span>
+                  Item 1
+                </span>
+                <!--v-if-->
+                <!--v-if-->
               </span>
               <!--v-if-->
-              <!--v-if-->
             </span>
-            <!--v-if-->
-          </span>
-          <!---->
-          <!---->
-        </li>
-        <!--v-if-->
-        
-        
-        <li
-          aria-selected="false"
-          class="feather-list-item hover focus result-item hover"
-          role="option"
-          style="overflow: hidden; position: relative;"
-          tabindex="-1"
-        >
-          <!---->
-          <span
-            class="feather-list-item-text"
+            <!---->
+            <!---->
+          </li>
+          <!--v-if-->
+          
+          
+          <li
+            aria-selected="false"
+            class="feather-list-item hover focus result-item hover"
+            role="option"
+            style="overflow: hidden; position: relative;"
+            tabindex="-1"
           >
-            <span>
+            <!---->
+            <span
+              class="feather-list-item-text"
+            >
               <span>
-                Item 2
+                <span>
+                  Item 2
+                </span>
+                <!--v-if-->
+                <!--v-if-->
               </span>
               <!--v-if-->
-              <!--v-if-->
             </span>
-            <!--v-if-->
-          </span>
-          <!---->
-          <!---->
-        </li>
+            <!---->
+            <!---->
+          </li>
+          <!--v-if-->
+          
+          
+          
+        </ul>
+        <!--v-if-->
+        <!--v-if-->
+        <!--v-if-->
+        <!--v-if-->
         <!--v-if-->
         
-        
-        
-      </ul>
-      <!--v-if-->
-      <!--v-if-->
-      <!--v-if-->
-      <!--v-if-->
-      <!--v-if-->
-      
-    </div>
+        <div
+          tabindex="0"
+        />
+      </div>
+    </teleport-stub>
   </div>
   <div
     class="feather-input-sub-text"
@@ -5917,33 +6131,41 @@ exports[`FeatherAutocomplete single:specific should handle a null property on va
       </div>
     </div>
     
-    <div
-      class="feather-menu-dropdown bottom-left"
-      id="feather-menu-dropdown"
-      style="display: none;"
-    >
-      
-      <ul
-        aria-hidden="false"
-        aria-label="Users"
-        aria-live="polite"
-        aria-multiselectable="false"
-        class="feather-list feather-autocomplete-results-list autocomplete-results"
-        id="feather-autocomplete-input-results"
-        role="listbox"
-        style="display: none;"
-        tabindex="-1"
+    <teleport-stub>
+      <div
+        class="feather-menu-dropdown"
+        id="feather-menu-dropdown"
+        style="width: auto; display: none;"
       >
+        <div
+          tabindex="0"
+        />
         
+        <ul
+          aria-hidden="false"
+          aria-label="Users"
+          aria-live="polite"
+          aria-multiselectable="false"
+          class="feather-list feather-autocomplete-results-list autocomplete-results"
+          id="feather-autocomplete-input-results"
+          role="listbox"
+          style="display: none;"
+          tabindex="-1"
+        >
+          
+          
+        </ul>
+        <!--v-if-->
+        <!--v-if-->
+        <!--v-if-->
+        <!--v-if-->
+        <!--v-if-->
         
-      </ul>
-      <!--v-if-->
-      <!--v-if-->
-      <!--v-if-->
-      <!--v-if-->
-      <!--v-if-->
-      
-    </div>
+        <div
+          tabindex="0"
+        />
+      </div>
+    </teleport-stub>
   </div>
   <div
     class="feather-input-sub-text"
@@ -6076,66 +6298,73 @@ exports[`FeatherAutocomplete single:specific should show add new element when in
       </div>
     </div>
     
-    <div
-      class="feather-menu-dropdown bottom-left"
-      id="feather-menu-dropdown"
-      style=""
-    >
-      
-      <ul
-        aria-hidden="false"
-        aria-label="Users"
-        aria-live="polite"
-        aria-multiselectable="false"
-        class="feather-list feather-autocomplete-results-list autocomplete-results"
-        id="feather-autocomplete-input-results"
-        role="listbox"
-        style=""
-        tabindex="-1"
+    <teleport-stub>
+      <div
+        class="feather-menu-dropdown"
+        id="feather-menu-dropdown"
+        style="width: auto; z-index: 0;"
       >
+        <div
+          tabindex="0"
+        />
         
-        <!-- eslint-disable -->
-        
-        
-        <li
-          aria-selected="false"
-          class="feather-list-item hover focus result-item hover"
-          role="option"
-          style="overflow: hidden; position: relative;"
+        <ul
+          aria-hidden="false"
+          aria-label="Users"
+          aria-live="polite"
+          aria-multiselectable="false"
+          class="feather-list feather-autocomplete-results-list autocomplete-results"
+          id="feather-autocomplete-input-results"
+          role="listbox"
           tabindex="-1"
         >
-          <!---->
-          <span
-            class="feather-list-item-text"
+          
+          <!-- eslint-disable -->
+          
+          
+          <li
+            aria-selected="false"
+            class="feather-list-item hover focus result-item hover"
+            role="option"
+            style="overflow: hidden; position: relative;"
+            tabindex="-1"
           >
-            <span>
-              <span>
-                j
-              </span>
-              <!--v-if-->
-              <!--v-if-->
-            </span>
+            <!---->
             <span
-              class="autocomplete-item-new-label"
+              class="feather-list-item-text"
             >
-              New
+              <span>
+                <span>
+                  j
+                </span>
+                <!--v-if-->
+                <!--v-if-->
+              </span>
+              <span
+                class="autocomplete-item-new-label"
+              >
+                New
+              </span>
             </span>
-          </span>
-          <!---->
-          <!---->
-        </li>
+            <!---->
+            <!---->
+          </li>
+          <!--v-if-->
+          
+          
+          
+        </ul>
+        <!--v-if-->
+        <!--v-if-->
+        <!--v-if-->
+        <!--v-if-->
         <!--v-if-->
         
-        
-        
-      </ul>
-      <!--v-if-->
-      <!--v-if-->
-      <!--v-if-->
-      <!--v-if-->
-      <!--v-if-->
-      
-    </div>
+        <div
+          tabindex="0"
+        />
+      </div>
+    </teleport-stub>
   </div>
   <div
     class="feather-input-sub-text"

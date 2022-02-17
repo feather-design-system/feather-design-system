@@ -2,31 +2,31 @@ import { watch, onBeforeUnmount, ref } from "vue";
 const useScroll = (elementRef, listener) => {
   const active = ref(false);
   let ticking = false;
-  const scrollHandler = () => {
-    listener();
+  const scrollHandler = (e) => {
+    listener(e);
     ticking = false;
   };
 
-  function requestTick() {
+  function requestTick(e) {
     if (!ticking) {
-      requestAnimationFrame(scrollHandler);
+      requestAnimationFrame(() => scrollHandler(e));
       ticking = true;
     }
   }
 
   const removeEvents = () => {
     if (elementRef.value) {
-      elementRef.value.removeEventListener("scroll", requestTick);
+      elementRef.value.removeEventListener("scroll", requestTick, true);
     }
   };
   const unwatch = watch(
     [elementRef, active],
     ([el, enabled], previous) => {
       if (previous && previous.length && previous[0]) {
-        previous[0].removeEventListener("scroll", requestTick);
+        previous[0].removeEventListener("scroll", requestTick, true);
       }
       if (enabled && el) {
-        el.addEventListener("scroll", requestTick, { passive: true });
+        el.addEventListener("scroll", requestTick, true);
       } else {
         removeEvents();
       }

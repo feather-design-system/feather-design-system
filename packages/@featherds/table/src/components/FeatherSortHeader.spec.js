@@ -1,9 +1,7 @@
-import { shallowMount, config } from "@vue/test-utils";
+import { shallowMount } from "@vue/test-utils";
 import FeatherSortHeader from "./FeatherSortHeader.vue";
 import { SORT } from "../types/types";
 import * as id from "@featherds/utils/id";
-
-config.renderStubDefaultSlot = true;
 
 jest.spyOn(id, "getSafeId").mockImplementation((x) => x);
 const PROPERTY = "test";

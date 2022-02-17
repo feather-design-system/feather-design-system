@@ -1,8 +1,6 @@
 import Calendar from "./Calendar";
-import { shallowMount, config } from "@vue/test-utils";
+import { shallowMount } from "@vue/test-utils";
 import utils from "./DateUtils";
-
-config.renderStubDefaultSlot = true;
 
 const LABELS = {
   day: "Day",

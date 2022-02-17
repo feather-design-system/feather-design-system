@@ -11,9 +11,11 @@
       <focus-trap
         v-show="modelValue"
         :enable="modelValue"
+        :layer="layer"
         :style="{ width: width }"
         :key="'sect'"
         class="content"
+        ref="element"
         :class="{ left: left }"
       >
         <div
@@ -41,7 +43,8 @@ import { useCloseOnEsc } from "@featherds/composables/modal/CloseOnEsc";
 import { useRestoreFocus } from "@featherds/composables/modal/RestoreFocus";
 import { useHideBodyOverflow } from "@featherds/composables/modal/HideOverflow";
 import { useLabelProperty } from "@featherds/composables/LabelProperty";
-import { toRef, watch } from "vue";
+import { removeLayer, addLayer } from "@featherds/composables/modal/Layers";
+import { toRef, watch, ref } from "vue";
 const LABELS = {
   title: "REQUIRED",
   close: "Close Dialog",
@@ -95,15 +98,19 @@ export default {
     watch(useCloseOnEsc(isShown), () => {
       close();
     });
-
-    watch(isShown, (v) => {
+    const layer = ref();
+    const element = ref();
+    const shown = ref(false);
+    watch(shown, (v) => {
       if (v) {
         context.emit("shown");
+        layer.value = addLayer(element, "modal");
       } else {
         context.emit("hidden");
+        removeLayer(layer.value);
       }
     });
-    return { close, isShown, ...labels };
+    return { close, shown, isShown, layer, element, ...labels };
   },
   components: {
     DialogClose,

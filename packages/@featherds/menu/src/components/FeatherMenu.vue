@@ -1,26 +1,36 @@
 <template>
   <div class="feather-menu" ref="root">
     <slot name="trigger"></slot>
-    <div
-      class="feather-menu-dropdown"
-      ref="menu"
-      v-show="open"
-      :id="menuId"
-      :class="[position, covered]"
-    >
-      <slot v-bind:labelId="triggerId" />
-    </div>
+    <Teleport to="body">
+      <div
+        class="feather-menu-dropdown"
+        ref="menu"
+        v-show="open"
+        :id="menuId"
+        :style="{ transform: position, width: menuWidth }"
+      >
+        <div tabindex="0" @focus="handleFocusOut"></div>
+        <slot v-bind:labelId="triggerId" />
+        <div tabindex="0" @focus="handleFocusOut"></div>
+      </div>
+    </Teleport>
   </div>
 </template>
 <script>
 import { getSafeId } from "@featherds/utils/id";
-import { ref, computed, watch, nextTick } from "vue";
-import { useOutsideClick } from "@featherds/composables/events/OutsideClick";
+import { ref, watch, nextTick, computed } from "vue";
 import { useResize } from "@featherds/composables/events/Resize";
+import { useOutsideClick } from "@featherds/composables/events/OutsideClick";
 import { useScroll } from "@featherds/composables/events/Scroll";
+import {
+  addLayer,
+  getElements,
+  removeLayer,
+} from "@featherds/composables/modal/Layers";
 
 export default {
-  emits: ["outside-click", "trigger-click", "close"],
+  emits: ["trigger-click", "close", "outside-click"],
+
   props: {
     open: {
       type: Boolean,
@@ -38,132 +48,115 @@ export default {
       type: Boolean,
       default: false,
     },
+    hasFocus: {
+      type: Boolean,
+      default: false,
+    },
   },
   setup(props, context) {
     const root = ref(null);
     const trigger = ref(null);
     const menu = ref(null);
-    const scrollX = ref(null);
-    const scrollY = ref(null);
+    const menuWidth = ref("auto");
+    const windowRef = ref(window);
     const triggerId = ref(getSafeId("feather-menu-trigger"));
     const menuId = ref(getSafeId("feather-menu-dropdown"));
-    const position = ref(`bottom-${props.right ? "right" : "left"}`);
-    const covered = computed(() => (props.cover ? "covered" : ""));
-    const updateScrollElements = () => {
-      let node = root.value.parentNode;
-      scrollX.value = null;
-      scrollY.value = null;
-      while (node) {
-        if (node === document.body) {
-          if (!scrollX.value) {
-            scrollX.value = document;
-          }
-          if (!scrollY.value) {
-            scrollY.value = document;
-          }
-          return;
-        }
-        if (!scrollY.value && node.scrollHeight > node.clientHeight) {
-          const overflowYStyle = window.getComputedStyle(node).overflowY;
-          if (
-            overflowYStyle.indexOf("hidden") === -1 &&
-            overflowYStyle.indexOf("visible") === -1
-          ) {
-            scrollY.value = node;
-          }
-        }
-        if (!scrollX.value && node.scrollWidth > node.clientWidth) {
-          const overflowXStyle = window.getComputedStyle(node).overflowX;
-          if (
-            overflowXStyle.indexOf("hidden") === -1 &&
-            overflowXStyle.indexOf("visible") === -1
-          ) {
-            scrollX.value = node;
-          }
-        }
+    const position = ref("");
 
-        if (scrollY.value && scrollX.value) {
-          return;
-        }
-        node = node.parentNode;
-      }
-    };
-    const getScrollRect = (element) => {
-      if (element && element.getBoundingClientRect) {
-        return element.getBoundingClientRect();
-      }
+    const getScrollRect = () => {
       return {
-        height: window.innerHeight,
-        width: window.innerWidth,
+        height: windowRef.value.innerHeight,
+        width: windowRef.value.innerWidth,
         left: 0,
         top: 0,
       };
     };
 
     const calculatePosition = () => {
-      updateScrollElements();
-      const rect = trigger.value.getBoundingClientRect();
+      if (!menu.value) {
+        return;
+      }
+      const containerRect = root.value.getBoundingClientRect();
       nextTick(() => {
-        const { height, width } = menu.value.getBoundingClientRect();
-        const scrollYRect = getScrollRect(scrollY.value);
-        let scrollXRect = scrollYRect;
-        if (scrollY.value !== scrollX.value) {
-          scrollXRect = getScrollRect(scrollX.value);
+        let { height, width } = menu.value.getBoundingClientRect();
+        const windowRect = getScrollRect();
+        const scrollHeight = windowRect.height;
+        const scrollWidth = windowRect.width;
+
+        if (width < containerRect.width) {
+          menuWidth.value = containerRect.width + "px";
+          width = containerRect.width;
+        } else {
+          menuWidth.value = width + "px";
         }
-        const scrollHeight = scrollYRect.height;
-        const scrollWidth = scrollXRect.width;
-        const adjustedRect = {
-          bottom: rect.bottom - scrollYRect.top,
-          top: rect.top - scrollYRect.top,
-          left: rect.left - scrollXRect.left,
-          right: rect.right - scrollXRect.left,
-        };
-        let vertical = "bottom";
+
+        let top = 0;
         if (
-          scrollHeight - adjustedRect.bottom < height &&
-          adjustedRect.top >= height
+          scrollHeight - containerRect.bottom < height &&
+          containerRect.top >= height
         ) {
-          vertical = "top";
+          top = containerRect.top - height;
+          if (props.cover) {
+            top += containerRect.height;
+          }
+        } else {
+          top = containerRect.bottom;
+          if (props.cover) {
+            top -= containerRect.height;
+          }
         }
-        let horizontal = props.right ? "right" : "left";
+        let left = props.right
+          ? containerRect.right - width
+          : containerRect.left;
 
         if (
           !props.right &&
-          adjustedRect.right >= width &&
-          scrollWidth - adjustedRect.left < width
+          containerRect.right >= width &&
+          scrollWidth - containerRect.left < width
         ) {
-          horizontal = "right";
+          left = containerRect.right - width;
         }
         if (
           props.right &&
-          adjustedRect.right <= width &&
-          scrollWidth - adjustedRect.left > width
+          containerRect.right <= width &&
+          scrollWidth - containerRect.left > width
         ) {
-          horizontal = "left";
+          left = containerRect.left;
         }
-        position.value = `${vertical}-${horizontal}`;
+        position.value = `translate(${left}px, ${top}px)`;
       });
+    };
+    const close = (e) => {
+      //dont close if we are scrolling a layer itself
+      if (layers.value.some((el) => el.contains(e.target))) {
+        return;
+      }
+      context.emit("close", false);
     };
     const outsideElementEvent = (e) => {
       context.emit("outside-click", e);
     };
-    const activateOutsideClick = useOutsideClick(root, outsideElementEvent);
-    const activateResize = useResize(calculatePosition);
-    const activateScrollX = useScroll(scrollX, calculatePosition);
-    const activateScrollY = useScroll(scrollY, calculatePosition);
-
-    watch(
-      () => props.open,
-      (v) => {
-        if (v) {
-          calculatePosition();
-        }
-        activateOutsideClick.value = v;
-        activateResize.value = v;
-        activateScrollX.value = v;
-        activateScrollY.value = v;
+    const layer = ref();
+    const layers = computed(() => {
+      if (layer.value) {
+        return [root.value, ...getElements(layer.value).value];
       }
-    );
+      return [root.value];
+    });
+    const activateOutsideClick = useOutsideClick(layers, outsideElementEvent);
+    const activateResize = useResize(close);
+    const activateScrollY = useScroll(windowRef, close);
+    watch([() => props.open, menu], ([v, m]) => {
+      if (v && m) {
+        calculatePosition();
+        layer.value = addLayer(menu, "dropdown");
+      } else if (layer.value) {
+        removeLayer(layer.value);
+      }
+      activateOutsideClick.value = v;
+      activateResize.value = v;
+      activateScrollY.value = v;
+    });
 
     //set expanded on the trigger element for accessibility
     watch(
@@ -191,51 +184,25 @@ export default {
       v.setAttribute("aria-controls", menuId.value);
     });
 
+    const handleFocusOut = () => {
+      context.emit("close");
+    };
+
     return {
       position,
-      covered,
       triggerId,
       menuId,
       menu,
+      menuWidth,
       root,
       trigger,
       calculatePosition,
+      handleFocusOut,
     };
   },
 };
 </script>
-<style lang="scss">
-.feather-menu-dropdown {
-  &.bottom-right {
-    top: 100%;
-    right: 0;
-    &.covered {
-      top: 0;
-    }
-  }
-  &.bottom-left {
-    top: 100%;
-    left: 0;
-    &.covered {
-      top: 0;
-    }
-  }
-  &.top-left {
-    bottom: 100%;
-    left: 0;
-    &.covered {
-      bottom: 0;
-    }
-  }
-  &.top-right {
-    bottom: 100%;
-    right: 0;
-    &.covered {
-      bottom: 0;
-    }
-  }
-}
-</style>
+
 <style lang="scss" scoped>
 @import "@featherds/styles/mixins/elevation";
 @import "@featherds/styles/themes/variables";
@@ -246,6 +213,8 @@ export default {
 .feather-menu-dropdown {
   @include elevation(8);
   position: absolute;
-  z-index: var($zindex-dropdown);
+  left: 0;
+  top: 0;
+  z-index: var(--feather-current-zindex, var($zindex-dropdown));
 }
 </style>
