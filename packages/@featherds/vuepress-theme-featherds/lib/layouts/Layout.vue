@@ -66,7 +66,7 @@ export default {
   },
   computed: {
     idSafeTitle() {
-      return this.title.toLowerCase().replace(/ /g, "-");
+      return "page-title-" + this.title.toLowerCase().replace(/ /g, "-");
     },
     title() {
       return this.$page.title;

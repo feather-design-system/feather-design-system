@@ -106,7 +106,7 @@
                 >Getting Started
               </PrettyCard>
               <PrettyCard
-                href="/Design/Foundation/"
+                href="/Foundation/Story/Philosophy/"
                 img-url="/assets/branding/home-foundation.png"
                 overline="Foundation"
                 >Design Principles
