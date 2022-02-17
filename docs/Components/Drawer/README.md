@@ -95,7 +95,7 @@ A tab component, designed to be used in the `tabs` slot of a `DrawerTabContainer
 
 ### Slots
 
-- `default` - content to be placed inside the tab, typically an [Icon](/components/icon)
+- `default` - content to be placed inside the tab, typically an [Icon](/Components/Icon)
 
 ## DrawerContent
 

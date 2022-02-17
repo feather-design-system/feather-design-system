@@ -89,7 +89,7 @@ The following example allows `10` items to be displayed before scrolling.
 
 ### Slots
 
-- `pre` - use to insert an [Icon](/components/icon)
+- `pre` - use to insert an [Icon](/Components/Icon)
 
 ### data-ref-ids
 
