@@ -67,7 +67,7 @@ describe("FeatherDateInput.vue", () => {
     expect(stubFocus).toHaveBeenCalled();
   });
 
-  it.only("should clear spin buttons when value is typed in", async () => {
+  it("should clear spin buttons when value is typed in", async () => {
     const wrapper = getWrapper();
 
     const day = wrapper.findComponent({ ref: "dayButton" });
