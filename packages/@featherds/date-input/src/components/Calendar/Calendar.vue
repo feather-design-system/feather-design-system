@@ -331,6 +331,7 @@ export default {
       };
       switch (e.keyCode) {
         case KEYCODES.ESCAPE: //esc
+          e.stopPropagation();
           this.$emit("close");
           break;
         case KEYCODES.ENTER:
