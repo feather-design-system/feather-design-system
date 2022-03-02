@@ -76,6 +76,10 @@ export default {
     data.on = {
       onClick: (e) => {
         if (this.disabled) {
+          if (this.asAnchor) {
+            e.preventDefault();
+          }
+
           this.$emit("disabled-click", e);
         } else {
           this.$emit("click", e);
