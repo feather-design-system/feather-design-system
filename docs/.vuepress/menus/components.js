@@ -106,7 +106,11 @@ module.exports = [
           url: "/Components/Select/",
           image: "/assets/components/Select.png",
         },
-
+        {
+          name: "Snackbar",
+          url: "/Components/Snackbar/",
+          image: "/assets/components/Snackbar.png",
+        },
         {
           name: "Drawer",
           url: "/Components/Drawer/",
@@ -127,7 +131,6 @@ module.exports = [
           url: "/Components/Megamenu/",
           image: "/assets/components/MegaMenu.png",
         },
-
         {
           name: "Table",
           url: "/Components/Table/",
@@ -148,7 +151,6 @@ module.exports = [
           url: "/Components/Chips/",
           image: "/assets/components/Chips.png",
         },
-
         {
           name: "Tabs",
           url: "/Components/Tabs/",
@@ -175,7 +177,6 @@ module.exports = [
           url: "/Components/Icon/",
           image: "/assets/components/Icon.png",
         },
-
         {
           name: "Badge",
           url: "/Components/Badge/",
