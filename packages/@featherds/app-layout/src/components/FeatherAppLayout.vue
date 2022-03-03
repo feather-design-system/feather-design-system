@@ -40,13 +40,13 @@ import { useOutsideClick } from "@featherds/composables/events/OutsideClick";
 import { ref, provide, computed, watch, defineComponent, PropType } from "vue";
 type LayoutType = "center" | "full";
 export const props = {
-  contentLayout: {
+    contentLayout: {
     type: String as PropType<LayoutType>,
-    default: "center",
+      default: "center",
     validator: (v: string) => {
-      return ["full", "center"].indexOf(v) > -1;
+        return ["full", "center"].indexOf(v) > -1;
+      },
     },
-  },
 };
 export default defineComponent({
   props,

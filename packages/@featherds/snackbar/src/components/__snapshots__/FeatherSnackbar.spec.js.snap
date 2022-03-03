@@ -1,0 +1,37 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`FeatherSnackbar.vue should show snackbar and auto-close 1`] = `
+<div
+  class="feather-snackbar-wrapper"
+>
+  <div
+    class="feather-snackbar fade-in"
+    data-ref-id="feather-snackbar"
+  >
+    <div
+      aria-live="polite"
+      class="content-wrapper"
+      role="status"
+    >
+      <div
+        class="content"
+        data-ref-id="feather-snackbar-content"
+      >
+        
+        This is a test
+        
+      </div>
+    </div>
+    <div
+      class="button"
+      data-ref-id="feather-snackbar-button"
+    >
+      
+      <button>
+        Click me
+      </button>
+      
+    </div>
+  </div>
+</div>
+`;
