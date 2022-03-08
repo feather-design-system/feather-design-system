@@ -1,0 +1,781 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Autocomplete Results Grid should mark items as selected that appear in value array 1`] = `
+<div
+  class="feather-autocomplete-results-grid"
+>
+  <table
+    aria-hidden="false"
+    aria-live="polite"
+    aria-multiselectable="true"
+    class="feather-autocomplete-results-grid-container tl1 tr2"
+    role="grid"
+    tabindex="-1"
+  >
+    <thead>
+      <tr
+        role="row"
+      >
+        
+        <th>
+          TEXT
+        </th>
+        <th>
+          NUMBER
+        </th>
+        
+      </tr>
+    </thead>
+    <tbody>
+      
+      <tr
+        aria-selected="true"
+        class="selected"
+        role="row"
+      >
+        
+        <td
+          class=""
+          id=""
+        >
+          <p>
+            Test1
+          </p>
+        </td>
+        <td
+          class=""
+          id=""
+        >
+          <p>
+            1
+          </p>
+        </td>
+        
+      </tr>
+      <tr
+        aria-selected="true"
+        class="selected"
+        role="row"
+      >
+        
+        <td
+          class=""
+          id=""
+        >
+          <p>
+            Test2
+          </p>
+        </td>
+        <td
+          class=""
+          id=""
+        >
+          <p>
+            2
+          </p>
+        </td>
+        
+      </tr>
+      <tr
+        aria-selected="true"
+        class="selected"
+        role="row"
+      >
+        
+        <td
+          class=""
+          id=""
+        >
+          <p>
+            Test3
+          </p>
+        </td>
+        <td
+          class=""
+          id=""
+        >
+          <p>
+            3
+          </p>
+        </td>
+        
+      </tr>
+      <tr
+        aria-selected="true"
+        class="selected"
+        role="row"
+      >
+        
+        <td
+          class=""
+          id=""
+        >
+          <p>
+            Test4
+          </p>
+        </td>
+        <td
+          class=""
+          id=""
+        >
+          <p>
+            4
+          </p>
+        </td>
+        
+      </tr>
+      
+    </tbody>
+  </table>
+</div>
+`;
+
+exports[`Autocomplete Results Grid should mark items as selected that appear in value array and active when active index is set. 1`] = `
+<div
+  class="feather-autocomplete-results-grid"
+>
+  <table
+    aria-hidden="false"
+    aria-live="polite"
+    aria-multiselectable="true"
+    class="feather-autocomplete-results-grid-container tl1 tr2"
+    role="grid"
+    tabindex="-1"
+  >
+    <thead>
+      <tr
+        role="row"
+      >
+        
+        <th>
+          TEXT
+        </th>
+        <th>
+          NUMBER
+        </th>
+        
+      </tr>
+    </thead>
+    <tbody>
+      
+      <tr
+        aria-selected="true"
+        class="focus selected"
+        role="row"
+      >
+        
+        <td
+          class="focus-cell"
+          id="ACTIVE"
+        >
+          <p>
+            Test1
+          </p>
+        </td>
+        <td
+          class=""
+          id=""
+        >
+          <p>
+            1
+          </p>
+        </td>
+        
+      </tr>
+      <tr
+        aria-selected="true"
+        class="selected"
+        role="row"
+      >
+        
+        <td
+          class=""
+          id=""
+        >
+          <p>
+            Test2
+          </p>
+        </td>
+        <td
+          class=""
+          id=""
+        >
+          <p>
+            2
+          </p>
+        </td>
+        
+      </tr>
+      <tr
+        aria-selected="true"
+        class="selected"
+        role="row"
+      >
+        
+        <td
+          class=""
+          id=""
+        >
+          <p>
+            Test3
+          </p>
+        </td>
+        <td
+          class=""
+          id=""
+        >
+          <p>
+            3
+          </p>
+        </td>
+        
+      </tr>
+      <tr
+        aria-selected="true"
+        class="selected"
+        role="row"
+      >
+        
+        <td
+          class=""
+          id=""
+        >
+          <p>
+            Test4
+          </p>
+        </td>
+        <td
+          class=""
+          id=""
+        >
+          <p>
+            4
+          </p>
+        </td>
+        
+      </tr>
+      
+    </tbody>
+  </table>
+</div>
+`;
+
+exports[`Autocomplete Results Grid should support active index being out of range 1`] = `
+<div
+  class="feather-autocomplete-results-grid"
+>
+  <table
+    aria-hidden="false"
+    aria-live="polite"
+    aria-multiselectable="true"
+    class="feather-autocomplete-results-grid-container tl1 tr2"
+    role="grid"
+    tabindex="-1"
+  >
+    <thead>
+      <tr
+        role="row"
+      >
+        
+        <th>
+          TEXT
+        </th>
+        <th>
+          NUMBER
+        </th>
+        
+      </tr>
+    </thead>
+    <tbody>
+      
+      <tr
+        aria-selected="true"
+        class="selected"
+        role="row"
+      >
+        
+        <td
+          class=""
+          id=""
+        >
+          <p>
+            Test1
+          </p>
+        </td>
+        <td
+          class=""
+          id=""
+        >
+          <p>
+            1
+          </p>
+        </td>
+        
+      </tr>
+      <tr
+        aria-selected="true"
+        class="selected"
+        role="row"
+      >
+        
+        <td
+          class=""
+          id=""
+        >
+          <p>
+            Test2
+          </p>
+        </td>
+        <td
+          class=""
+          id=""
+        >
+          <p>
+            2
+          </p>
+        </td>
+        
+      </tr>
+      <tr
+        aria-selected="true"
+        class="selected"
+        role="row"
+      >
+        
+        <td
+          class=""
+          id=""
+        >
+          <p>
+            Test3
+          </p>
+        </td>
+        <td
+          class=""
+          id=""
+        >
+          <p>
+            3
+          </p>
+        </td>
+        
+      </tr>
+      <tr
+        aria-selected="true"
+        class="selected"
+        role="row"
+      >
+        
+        <td
+          class=""
+          id=""
+        >
+          <p>
+            Test4
+          </p>
+        </td>
+        <td
+          class=""
+          id=""
+        >
+          <p>
+            4
+          </p>
+        </td>
+        
+      </tr>
+      
+    </tbody>
+  </table>
+</div>
+`;
+
+exports[`Autocomplete Results Grid should support active index within results range 1`] = `
+<div
+  class="feather-autocomplete-results-grid"
+>
+  <table
+    aria-hidden="false"
+    aria-live="polite"
+    aria-multiselectable="true"
+    class="feather-autocomplete-results-grid-container tl1 tr2"
+    role="grid"
+    tabindex="-1"
+  >
+    <thead>
+      <tr
+        role="row"
+      >
+        
+        <th>
+          TEXT
+        </th>
+        <th>
+          NUMBER
+        </th>
+        
+      </tr>
+    </thead>
+    <tbody>
+      
+      <tr
+        aria-selected="true"
+        class="focus selected"
+        role="row"
+      >
+        
+        <td
+          class="focus-cell"
+          id="ACTIVE"
+        >
+          <p>
+            Test1
+          </p>
+        </td>
+        <td
+          class=""
+          id=""
+        >
+          <p>
+            1
+          </p>
+        </td>
+        
+      </tr>
+      <tr
+        aria-selected="true"
+        class="selected"
+        role="row"
+      >
+        
+        <td
+          class=""
+          id=""
+        >
+          <p>
+            Test2
+          </p>
+        </td>
+        <td
+          class=""
+          id=""
+        >
+          <p>
+            2
+          </p>
+        </td>
+        
+      </tr>
+      <tr
+        aria-selected="true"
+        class="selected"
+        role="row"
+      >
+        
+        <td
+          class=""
+          id=""
+        >
+          <p>
+            Test3
+          </p>
+        </td>
+        <td
+          class=""
+          id=""
+        >
+          <p>
+            3
+          </p>
+        </td>
+        
+      </tr>
+      <tr
+        aria-selected="true"
+        class="selected"
+        role="row"
+      >
+        
+        <td
+          class=""
+          id=""
+        >
+          <p>
+            Test4
+          </p>
+        </td>
+        <td
+          class=""
+          id=""
+        >
+          <p>
+            4
+          </p>
+        </td>
+        
+      </tr>
+      
+    </tbody>
+  </table>
+</div>
+`;
+
+exports[`Autocomplete Results Grid should support no item active 1`] = `
+<div
+  class="feather-autocomplete-results-grid"
+>
+  <table
+    aria-hidden="false"
+    aria-live="polite"
+    aria-multiselectable="true"
+    class="feather-autocomplete-results-grid-container tl1 tr2"
+    role="grid"
+    tabindex="-1"
+  >
+    <thead>
+      <tr
+        role="row"
+      >
+        
+        <th>
+          TEXT
+        </th>
+        <th>
+          NUMBER
+        </th>
+        
+      </tr>
+    </thead>
+    <tbody>
+      
+      <tr
+        aria-selected="true"
+        class="selected"
+        role="row"
+      >
+        
+        <td
+          class=""
+          id=""
+        >
+          <p>
+            Test1
+          </p>
+        </td>
+        <td
+          class=""
+          id=""
+        >
+          <p>
+            1
+          </p>
+        </td>
+        
+      </tr>
+      <tr
+        aria-selected="true"
+        class="selected"
+        role="row"
+      >
+        
+        <td
+          class=""
+          id=""
+        >
+          <p>
+            Test2
+          </p>
+        </td>
+        <td
+          class=""
+          id=""
+        >
+          <p>
+            2
+          </p>
+        </td>
+        
+      </tr>
+      <tr
+        aria-selected="true"
+        class="selected"
+        role="row"
+      >
+        
+        <td
+          class=""
+          id=""
+        >
+          <p>
+            Test3
+          </p>
+        </td>
+        <td
+          class=""
+          id=""
+        >
+          <p>
+            3
+          </p>
+        </td>
+        
+      </tr>
+      <tr
+        aria-selected="true"
+        class="selected"
+        role="row"
+      >
+        
+        <td
+          class=""
+          id=""
+        >
+          <p>
+            Test4
+          </p>
+        </td>
+        <td
+          class=""
+          id=""
+        >
+          <p>
+            4
+          </p>
+        </td>
+        
+      </tr>
+      
+    </tbody>
+  </table>
+</div>
+`;
+
+exports[`Autocomplete Results Grid should support single select 1`] = `
+<div
+  class="feather-autocomplete-results-grid"
+>
+  <table
+    aria-hidden="false"
+    aria-live="polite"
+    aria-multiselectable="false"
+    class="feather-autocomplete-results-grid-container tl1 tr2"
+    role="grid"
+    tabindex="-1"
+  >
+    <thead>
+      <tr
+        role="row"
+      >
+        
+        <th>
+          TEXT
+        </th>
+        <th>
+          NUMBER
+        </th>
+        
+      </tr>
+    </thead>
+    <tbody>
+      
+      <tr
+        aria-selected="true"
+        class="selected"
+        role="row"
+      >
+        
+        <td
+          class=""
+          id=""
+        >
+          <p>
+            Test1
+          </p>
+        </td>
+        <td
+          class=""
+          id=""
+        >
+          <p>
+            1
+          </p>
+        </td>
+        
+      </tr>
+      <tr
+        aria-selected="true"
+        class="selected"
+        role="row"
+      >
+        
+        <td
+          class=""
+          id=""
+        >
+          <p>
+            Test2
+          </p>
+        </td>
+        <td
+          class=""
+          id=""
+        >
+          <p>
+            2
+          </p>
+        </td>
+        
+      </tr>
+      <tr
+        aria-selected="true"
+        class="selected"
+        role="row"
+      >
+        
+        <td
+          class=""
+          id=""
+        >
+          <p>
+            Test3
+          </p>
+        </td>
+        <td
+          class=""
+          id=""
+        >
+          <p>
+            3
+          </p>
+        </td>
+        
+      </tr>
+      <tr
+        aria-selected="true"
+        class="selected"
+        role="row"
+      >
+        
+        <td
+          class=""
+          id=""
+        >
+          <p>
+            Test4
+          </p>
+        </td>
+        <td
+          class=""
+          id=""
+        >
+          <p>
+            4
+          </p>
+        </td>
+        
+      </tr>
+      
+    </tbody>
+  </table>
+</div>
+`;

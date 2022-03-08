@@ -16,14 +16,20 @@
     </template>
   </FeatherFooter>
 </template>
-<script>
+<script lang="ts">
 import * as components from "@featherds/footer";
-export default {
+import { defineComponent } from "vue";
+export default defineComponent({
   data: () => ({
     copyright: "Copyright © ${year} A COMPANY, Inc.  All Rights Reserved. ",
   }),
+  methods: {
+    log(x: string) {
+      console.log(x);
+    },
+  },
   components: {
     ...components,
   },
-};
+});
 </script>

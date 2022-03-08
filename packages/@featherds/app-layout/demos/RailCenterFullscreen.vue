@@ -12,13 +12,14 @@
     </template>
   </FeatherAppLayout>
 </template>
-<script>
+<script lang="ts">
 import * as components from "./../src";
-import AppHeader from "./components/AppHeader";
-import AppFooter from "./components/AppFooter";
-import AppRail from "./components/AppRail";
-import AppContent from "./components/AppContent";
-export default {
+import AppHeader from "./components/AppHeader.vue";
+import AppFooter from "./components/AppFooter.vue";
+import AppRail from "./components/AppRail.vue";
+import AppContent from "./components/AppContent.vue";
+import { defineComponent } from "vue";
+export default defineComponent({
   components: {
     ...components,
     AppFooter,
@@ -26,5 +27,5 @@ export default {
     AppRail,
     AppContent,
   },
-};
+});
 </script>

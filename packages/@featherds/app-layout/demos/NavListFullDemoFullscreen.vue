@@ -16,14 +16,15 @@
     </FeatherAppLayout>
   </section>
 </template>
-<script>
+<script lang="ts">
 import * as components from "./../src";
-import AppHeader from "./components/AppHeader";
-import AppFooter from "./components/AppFooter";
-import AppNavList from "./components/AppNavList";
-import AppContent from "./components/AppContent";
+import AppHeader from "./components/AppHeader.vue";
+import AppFooter from "./components/AppFooter.vue";
+import AppNavList from "./components/AppNavList.vue";
+import AppContent from "./components/AppContent.vue";
 
-export default {
+import { defineComponent } from "vue";
+export default defineComponent({
   components: {
     ...components,
     AppFooter,
@@ -31,7 +32,7 @@ export default {
     AppNavList,
     AppContent,
   },
-};
+});
 </script>
 <style lang="scss" scoped>
 .content {

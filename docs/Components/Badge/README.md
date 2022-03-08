@@ -28,11 +28,11 @@ The following is a `badges` example:
 
 ```js
 const error = {
-  type: TYPES.ERROR,
+  type: BadgeTypes.error,
   title: "Error has occurred",
 };
 const info = {
-  type: TYPES.INFO,
+  type: BadgeTypes.info,
   title: "Issue has occurred",
 };
 
@@ -41,16 +41,16 @@ const badges = [error, info];
 
 ### Types
 
-Currently there are only two types supported, `INFO` and `ERROR`. You may only have 1 of each type of badge at any given time.
+Currently there are only two types supported, `info` and `error`. You may only have 1 of each type of badge at any given time.
 
 ```js
-import { FeatherBadge, TYPES } from "@featherds/badge";
+import { FeatherBadge, BadgeTypes } from "@featherds/badge";
 const error = {
-  type: TYPES.ERROR,
+  type: BadgeTypes.error,
   title: "Error has occurred",
 };
 const info = {
-  type: TYPES.INFO,
+  type: BadgeTypes.info,
   title: "Issue has occurred",
 };
 ```

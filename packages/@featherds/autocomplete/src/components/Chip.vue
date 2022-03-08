@@ -6,7 +6,7 @@
     :disabled="disabled"
   >
     <BaseChipPreIcon v-if="showPreIcon">
-      <FeatherIcon :icon="pre.icon" :title="pre.title"> </FeatherIcon
+      <FeatherIcon :icon="pre?.icon" :title="pre?.title"> </FeatherIcon
     ></BaseChipPreIcon>
     <BaseChipLabel>{{ text }}</BaseChipLabel>
     <span class="chip-delete" @click.stop="handleClick" v-if="!disabled">
@@ -16,11 +16,14 @@
     </span>
   </BaseChip>
 </template>
-<script>
+<script lang="ts">
 import { FeatherIcon } from "@featherds/icon";
 import Cancel from "@featherds/icon/navigation/Cancel";
+import { IAutocompleteChipIcon } from "./types";
 import { BaseChip, BaseChipLabel, BaseChipPreIcon } from "@featherds/chips";
-export default {
+import { defineComponent, PropType } from "vue";
+
+export default defineComponent({
   name: "Chip",
   emits: ["delete"],
   props: {
@@ -39,7 +42,7 @@ export default {
       type: Boolean,
     },
     pre: {
-      type: Object,
+      type: Object as PropType<IAutocompleteChipIcon>,
     },
   },
   computed: {
@@ -59,7 +62,7 @@ export default {
     BaseChipLabel,
     BaseChipPreIcon,
   },
-};
+});
 </script>
 
 <style lang="scss" scoped>

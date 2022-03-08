@@ -13,18 +13,18 @@
     </div>
   </div>
 </template>
-<script>
+<script lang="ts">
 import {
   FeatherList,
   FeatherListHeader,
   FeatherListSeparator,
   FeatherListItem,
 } from "@featherds/list";
-import { inject } from "vue";
+import { defineComponent, inject } from "vue";
 
-export default {
+export default defineComponent({
   setup() {
-    const register = inject("feather-app-layout-expanded", false);
+    const register = inject("feather-app-layout-expanded", () => {});
     if (register) {
       register();
     }
@@ -35,7 +35,7 @@ export default {
     FeatherListSeparator,
     FeatherListItem,
   },
-};
+});
 </script>
 <style lang="scss" scoped>
 @import "@featherds/styles/themes/variables";

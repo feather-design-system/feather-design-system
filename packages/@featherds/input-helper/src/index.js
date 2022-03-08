@@ -7,3 +7,6 @@ export { default as ActionIcon } from "./components/ActionIcon";
 export { default as ValidationHeader } from "./components/ValidationHeader";
 export { useForm } from "./components/useForm";
 export { useValidation } from "./components/useValidation";
+export * from "./composables/InputInheritAttrs";
+export * from "./composables/InputSubText";
+export * from "./composables/InputWrapper";

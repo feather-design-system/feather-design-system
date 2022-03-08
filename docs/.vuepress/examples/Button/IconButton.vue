@@ -3,11 +3,12 @@
     <FeatherIcon :icon="icon"> </FeatherIcon>
   </FeatherButton>
 </template>
-<script>
+<script lang="ts">
 import { FeatherButton } from "@featherds/button";
 import { FeatherIcon } from "@featherds/icon";
 import icon from "@featherds/icon/action/Add";
-export default {
+import { defineComponent } from "vue";
+export default defineComponent({
   computed: {
     icon() {
       return icon;
@@ -17,5 +18,5 @@ export default {
     FeatherIcon,
     FeatherButton,
   },
-};
+});
 </script>

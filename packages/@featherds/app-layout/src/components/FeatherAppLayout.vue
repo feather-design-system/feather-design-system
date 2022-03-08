@@ -32,22 +32,24 @@
     </div>
   </div>
 </template>
-<script>
+<script lang="ts">
 import { FocusTrap } from "@featherds/dialog";
 import { useCloseOnEsc } from "@featherds/composables/modal/CloseOnEsc";
 import { useRestoreFocus } from "@featherds/composables/modal/RestoreFocus";
 import { useOutsideClick } from "@featherds/composables/events/OutsideClick";
-import { ref, provide, computed, watch, onMounted } from "vue";
-export default {
-  props: {
-    contentLayout: {
-      type: String,
-      default: "center",
-      validator(v) {
-        return ["full", "center"].indexOf(v) > -1;
-      },
+import { ref, provide, computed, watch, defineComponent, PropType } from "vue";
+type LayoutType = "center" | "full";
+export const props = {
+  contentLayout: {
+    type: String as PropType<LayoutType>,
+    default: "center",
+    validator: (v: string) => {
+      return ["full", "center"].indexOf(v) > -1;
     },
   },
+};
+export default defineComponent({
+  props,
   setup(props, context) {
     const full = ref(props.contentLayout === "full");
     const _expand = ref(false);
@@ -92,7 +94,7 @@ export default {
   components: {
     FocusTrap,
   },
-};
+});
 </script>
 
 <style lang="scss" scoped>

@@ -3,14 +3,16 @@
     <div class="badge-icon" :title="title"></div>
   </div>
 </template>
-<script>
-export default {
+<script lang="ts">
+import { defineComponent, PropType } from "vue";
+import { BadgeTypes } from "../types/Types";
+export default defineComponent({
   props: {
-    type: { type: String, required: true },
+    type: { type: String as PropType<keyof typeof BadgeTypes>, required: true },
     title: { type: String, required: true },
     siblings: { type: Boolean, default: false },
   },
-};
+});
 </script>
 <style lang="scss" scoped>
 @import "@featherds/styles/themes/variables";

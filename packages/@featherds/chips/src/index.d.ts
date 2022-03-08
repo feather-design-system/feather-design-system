@@ -1,6 +1,15 @@
 declare module "@featherds/chips" {
-  import { defineComponent } from "vue";
-  const FeatherChip: ReturnType<typeof defineComponent>;
-  const FeatherChipList: ReturnType<typeof defineComponent>;
-  export { FeatherChip, FeatherChipList };
+  import { DefineComponent } from "vue";
+  const FeatherChip: DefineComponent;
+  const FeatherChipList: DefineComponent;
+  const BaseChip: DefineComponent;
+  const BaseChipLabel: DefineComponent;
+  const BaseChipPreIcon: DefineComponent;
+  export {
+    FeatherChip,
+    FeatherChipList,
+    BaseChip,
+    BaseChipLabel,
+    BaseChipPreIcon,
+  };
 }

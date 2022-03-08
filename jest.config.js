@@ -1,13 +1,14 @@
 module.exports = {
   testEnvironment: "jsdom",
   snapshotSerializers: ["<rootDir>/jest/serializer"],
-  moduleFileExtensions: ["js", "jsx", "json", "vue"],
+  moduleFileExtensions: ["js", "jsx", "json", "vue", "ts"],
   setupFiles: ["<rootDir>/jest/setup"],
   transform: {
     "^.+\\.vue$": "@vue/vue3-jest",
     ".+\\.(css|styl|less|sass|scss|svg|png|jpg|ttf|woff|woff2)$":
       "jest-transform-stub",
     "^.+\\.jsx?$": "babel-jest",
+    "^.+\\.tsx?$": "ts-jest",
   },
 
   transformIgnorePatterns: ["/node_modules/"],

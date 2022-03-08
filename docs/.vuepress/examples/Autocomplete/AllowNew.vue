@@ -19,20 +19,24 @@
     ></FeatherAutocomplete>
   </section>
 </template>
-<script>
-import { FeatherAutocomplete } from "@featherds/autocomplete";
+<script lang="ts">
+import {
+  FeatherAutocomplete,
+  IAutocompleteItemType,
+} from "@featherds/autocomplete";
 const tags = ["removed", "release", "add", "update"];
-export default {
+import { defineComponent } from "vue";
+export default defineComponent({
   data() {
     return {
       timeout: -1,
       loading: false,
-      results: [],
-      value: undefined,
+      results: [] as IAutocompleteItemType[],
+      value: undefined as unknown as IAutocompleteItemType,
     };
   },
   methods: {
-    search(q) {
+    search(q: string) {
       this.loading = true;
       clearTimeout(this.timeout);
       this.timeout = setTimeout(() => {
@@ -44,7 +48,7 @@ export default {
         this.loading = false;
       }, 500);
     },
-    addTag(tag) {
+    addTag(tag: string) {
       tags.push(tag);
       this.value = { _text: tag };
     },
@@ -52,7 +56,7 @@ export default {
   components: {
     FeatherAutocomplete,
   },
-};
+});
 </script>
 <style lang="scss" scoped>
 .my-autocomplete {

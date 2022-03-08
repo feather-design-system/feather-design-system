@@ -1,11 +1,13 @@
 {
   "name": "@featherds/composables",
-  "version": "0.9.6",
+  "version": "0.9.2",
   "publishConfig": {
     "access": "public"
   },
   "author": "NantHealth",
-  "scripts": {},
+  "scripts": {
+    "compile": "tsc --declaration"
+  },
   "dependencies": {
     "@featherds/utils": "file:../utils",
     "vue": "^3.1.0-0"
@@ -13,6 +15,5 @@
   "keywords": [
     "vue",
     "FeatherComposables"
-  ],
-  "types": "./index.d.ts"
+  ]
 }

@@ -1,12 +1,15 @@
 <template>
   <span class="feather-text-badge" :class="type"><slot /></span>
 </template>
-<script>
-export default {
-  props: {
-    type: { type: String, required: true },
-  },
+<script lang="ts">
+import { defineComponent, PropType } from "vue";
+import { BadgeTypes } from "../types/Types";
+export const props = {
+  type: { type: String as PropType<keyof typeof BadgeTypes>, required: true },
 };
+export default defineComponent({
+  props,
+});
 </script>
 <style scoped lang="scss">
 @import "@featherds/styles/themes/variables";

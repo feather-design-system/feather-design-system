@@ -5,11 +5,12 @@
     <FeatherButton as-anchor href="#" text>Text Button</FeatherButton>
   </section>
 </template>
-<script>
+<script lang="ts">
 import { FeatherButton } from "@featherds/button";
-export default {
+import { defineComponent } from "vue";
+export default defineComponent({
   components: {
     FeatherButton,
   },
-};
+});
 </script>

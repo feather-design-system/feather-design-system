@@ -1,6 +1,5 @@
 declare module "@featherds/input-helper" {
-
-  import { DefineComponent, Ref } from "vue";
+  import { DefineComponent, Ref, ComputedRef, ExtractPropTypes } from "vue";
   const ActionIcon: DefineComponent;
   const InputWrapper: DefineComponent;
   const InputWrapperMixin: DefineComponent;
@@ -8,6 +7,22 @@ declare module "@featherds/input-helper" {
   const InputSubTextMixin: DefineComponent;
   const InputInheritAttrsMixin: DefineComponent;
   const ValidationHeader: DefineComponent;
+  const useInputInheritAttrs: (attrs: Record<string, unknown>) => {
+    inherittedAttrs: ComputedRef<{
+      class: string;
+      "data-ref-id": string;
+    }>;
+  };
+  type InputSubTextProps =
+    typeof import("./composables/InputSubText").InputSubTextProps;
+  const useInputSubText: (u: ExtractPropTypes<InputSubTextProps>) => void;
+  const InputSubTextProps: InputSubTextProps;
+
+  type InputWrapperProps =
+    typeof import("./composables/InputWrapper").InputWrapperProps;
+  const useInputWrapper: (u: ExtractPropTypes<InputWrapperProps>) => void;
+  const InputWrapperProps: InputWrapperProps;
+
   const useForm: () => {
     validation: () => {
       success: boolean;
@@ -17,7 +32,7 @@ declare module "@featherds/input-helper" {
     }[];
   };
   const useValidation: (
-    inputId: Ref<string>,
+    inputId: Ref<string | undefined>,
     value: Ref<unknown>,
     label: string,
     schema: Object,
@@ -40,6 +55,11 @@ declare module "@featherds/input-helper" {
     InputInheritAttrsMixin,
     ValidationHeader,
     useForm,
-    useValidation
+    useValidation,
+    useInputInheritAttrs,
+    useInputSubText,
+    InputSubTextProps,
+    useInputWrapper,
+    InputWrapperProps,
   };
 }

@@ -1,11 +1,12 @@
 <template>
-  <feather-back-button>Back to Something</feather-back-button>
+  <FeatherBackButton>Back to Something</FeatherBackButton>
 </template>
-<script>
+<script lang="ts">
 import { FeatherBackButton } from "@featherds/back-button";
-export default {
+import { defineComponent } from "vue";
+export default defineComponent({
   components: {
     FeatherBackButton,
   },
-};
+});
 </script>

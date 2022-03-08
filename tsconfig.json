@@ -21,7 +21,9 @@
     "packages/@featherds/**/*.d.ts",
     "packages/@featherds/*/src/**/*.d.ts",
     "packages/@featherds/*/src/**/*.tsx",
-    "packages/@featherds/*/src/**/*.vue"
+    "packages/@featherds/*/src/**/*.vue",
+    "packages/@featherds/*/demos/**/*.vue",
+    "docs/.vuepress/examples/**/*.vue"
   ],
   "exclude": ["./node_modules/"]
 }

@@ -15,8 +15,9 @@
     </div>
   </section>
 </template>
-<script>
+<script lang="ts">
 import * as components from "./../src";
+import { IAutocompleteItemType } from "@featherds/autocomplete";
 import icon from "@featherds/icon/notification/Warning";
 const names = [
   "Liam",
@@ -60,17 +61,18 @@ const names = [
   "Matthew",
   "Scarlettxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
 ];
-export default {
+import { defineComponent } from "vue";
+export default defineComponent({
   data() {
     return {
       timeout: -1,
       loading: false,
-      results: [],
-      value: [],
+      results: [] as IAutocompleteItemType[],
+      value: [] as IAutocompleteItemType[],
     };
   },
   watch: {
-    value(v) {
+    value(v: IAutocompleteItemType[]) {
       v.forEach((item, i) => {
         if (item._text === "Liam" && !item._pre) {
           setTimeout(() => {
@@ -87,7 +89,7 @@ export default {
     },
   },
   methods: {
-    search(q) {
+    search(q: string) {
       this.loading = true;
       clearTimeout(this.timeout);
       this.timeout = setTimeout(() => {
@@ -119,7 +121,7 @@ export default {
   components: {
     ...components,
   },
-};
+});
 </script>
 <style lang="scss" scoped>
 .my-autocomplete {

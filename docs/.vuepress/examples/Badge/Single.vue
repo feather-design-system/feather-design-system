@@ -10,26 +10,26 @@
     </div>
   </section>
 </template>
-<script>
-import { FeatherBadge, TYPES } from "@featherds/badge";
+<script lang="ts">
+import { FeatherBadge, BadgeTypes } from "@featherds/badge";
 import { FeatherIcon } from "@featherds/icon";
 import Drug from "@featherds/icon/medical/Drug";
-import { markRaw } from "vue";
-export default {
+import { defineComponent } from "vue";
+export default defineComponent({
   data() {
     return {
       badge: {
-        type: TYPES.INFO,
+        type: BadgeTypes.info,
         title: "Warning",
       },
-      icon: markRaw(Drug),
+      icon: Drug,
     };
   },
   components: {
     FeatherBadge,
     FeatherIcon,
   },
-};
+});
 </script>
 <style lang="scss" scoped>
 .icon {

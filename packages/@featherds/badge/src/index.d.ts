@@ -1,12 +1,8 @@
-declare module "@featherds/badge" {
-  import { defineComponent } from "vue";
-  const FeatherBadge: ReturnType<typeof defineComponent>;
-  const FeatherTextBadge: ReturnType<typeof defineComponent>;
-
-  export { FeatherBadge, FeatherTextBadge };
-
-  export enum TYPES {
-    INFO = "info",
-    ERROR = "error"
-  }
-}
+import { DefineComponent } from "vue";
+export const FeatherBadge: DefineComponent<
+  typeof import("./components/FeatherBadge.vue").props
+>;
+export const FeatherTextBadge: DefineComponent<
+  typeof import("./components/FeatherTextBadge.vue").props
+>;
+export { BadgeTypes, IBadge } from "./types/Types";

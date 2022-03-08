@@ -22,21 +22,21 @@
     <FeatherRipple />
   </button>
 </template>
-<script>
+<script lang="ts">
 import { FeatherRipple } from "@featherds/ripple";
 import { FeatherIcon } from "@featherds/icon";
 import icon from "@featherds/icon/navigation/ChevronLeft";
 import { getSafeId } from "@featherds/utils/id";
-import { markRaw } from "vue";
-
-export default {
-  emits: ["focus", "blur", "mouseenter", "mouseleave"],
-  props: {
-    longHover: {
-      type: Number,
-      default: 500,
-    },
+import { defineComponent } from "vue";
+export const props = {
+  longHover: {
+    type: Number,
+    default: 500,
   },
+};
+export default defineComponent({
+  emits: ["focus", "blur", "mouseenter", "mouseleave"],
+  props,
   data: () => ({
     longHoverTimeout: -1,
     showText: false,
@@ -45,7 +45,7 @@ export default {
   }),
   computed: {
     icon() {
-      return markRaw(icon);
+      return icon;
     },
     labelId() {
       return getSafeId("back-button-label");
@@ -54,19 +54,19 @@ export default {
       const attrs = {
         ...this.$attrs,
       };
-      attrs.onMouseenter = (e) => {
+      attrs.onMouseenter = (e: MouseEvent) => {
         this.mouseEnter();
         this.$emit("mouseenter", e);
       };
-      attrs.onMouseleave = (e) => {
+      attrs.onMouseleave = (e: MouseEvent) => {
         this.mouseLeave();
         this.$emit("mouseleave", e);
       };
-      attrs.onFocus = (e) => {
+      attrs.onFocus = (e: FocusEvent) => {
         this.mouseEnter();
         this.$emit("focus", e);
       };
-      attrs.onBlur = (e) => {
+      attrs.onBlur = (e: FocusEvent) => {
         this.mouseLeave();
         this.$emit("blur", e);
       };
@@ -94,7 +94,7 @@ export default {
         return;
       }
       this.widthSet = true;
-      const text = this.$refs.text;
+      const text = this.$refs.text as HTMLDivElement;
       const original = text.style.display;
       text.style.display = "block";
       text.style.width = `${text.getBoundingClientRect().width}px`;
@@ -105,7 +105,7 @@ export default {
     FeatherIcon,
     FeatherRipple,
   },
-};
+});
 </script>
 
 <style lang="scss" scoped>

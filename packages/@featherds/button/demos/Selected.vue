@@ -9,13 +9,14 @@
     <feather-button selected text>Text Button</feather-button>
   </section>
 </template>
-<script>
+<script lang="ts">
 import * as components from "./../src";
-export default {
+import { defineComponent } from "vue";
+export default defineComponent({
   components: {
     ...components,
   },
-};
+});
 </script>
 <style lang="scss" scoped>
 section :deep(button) {

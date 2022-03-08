@@ -14,10 +14,11 @@
     <div id="test">Page contents</div>
   </section>
 </template>
-<script>
+<script lang="ts">
 import { FeatherAppBar, FeatherAppBarLink } from "@featherds/app-bar";
 import Support from "@featherds/icon/action/Help";
-export default {
+import { defineComponent } from "vue";
+export default defineComponent({
   data() {
     return {
       labels: {
@@ -31,7 +32,7 @@ export default {
     FeatherAppBar,
     FeatherAppBarLink,
   },
-};
+});
 </script>
 <style lang="scss" scoped>
 .demo-app-bar {
