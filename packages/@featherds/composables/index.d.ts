@@ -31,7 +31,7 @@ declare module "@featherds/composables/LabelProperty" {
     >;
   };
 
-  const useLabelProperty: <T>(label: Ref<T>, defaults: T) => Labels<T>;
+  const useLabelProperty: <T>(label: Ref<Partial<T>>, defaults: T) => Labels<T>;
 
   export { useLabelProperty };
 }

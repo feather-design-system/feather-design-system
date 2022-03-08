@@ -11,17 +11,18 @@
     </FeatherAppLayout>
   </section>
 </template>
-<script>
+<script lang="ts">
 import * as components from "./../src";
-import AppHeader from "./components/AppHeader";
-import AppFooter from "./components/AppFooter";
-import AppContent from "./components/AppContent";
-export default {
+import AppHeader from "./components/AppHeader.vue";
+import AppFooter from "./components/AppFooter.vue";
+import AppContent from "./components/AppContent.vue";
+import { defineComponent } from "vue";
+export default defineComponent({
   components: {
     ...components,
     AppFooter,
     AppHeader,
     AppContent,
   },
-};
+});
 </script>

@@ -13,7 +13,7 @@
     ></FeatherAutocomplete>
   </section>
 </template>
-<script>
+<script lang="ts">
 import * as components from "./../src";
 const names = [
   "Ankylosing",
@@ -34,17 +34,19 @@ const names = [
   "Ulcerative Colitis",
   "Uveitis",
 ];
-export default {
+import { defineComponent } from "vue";
+import { IAutocompleteItemType } from "@featherds/autocomplete";
+export default defineComponent({
   data() {
     return {
       timeout: -1,
       loading: false,
-      results: [],
-      value: undefined,
+      results: [] as IAutocompleteItemType[],
+      value: [] as IAutocompleteItemType[],
     };
   },
   methods: {
-    search(q) {
+    search(q: string) {
       this.loading = true;
       clearTimeout(this.timeout);
       this.timeout = setTimeout(() => {
@@ -60,7 +62,7 @@ export default {
   components: {
     ...components,
   },
-};
+});
 </script>
 <style lang="scss" scoped>
 .my-autocomplete {

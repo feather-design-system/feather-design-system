@@ -6,14 +6,15 @@ k
     </FeatherListItem>
   </FeatherList>
 </template>
-<script>
+<script lang="ts">
 import { FeatherListItem, FeatherList } from "@featherds/list";
-export default {
+import { defineComponent } from "vue";
+export default defineComponent({
   components: {
     FeatherList,
     FeatherListItem,
   },
-};
+});
 </script>
 <style lang="scss" scoped>
 .result-list {

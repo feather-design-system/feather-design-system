@@ -57,26 +57,26 @@
     </p>
   </section>
 </template>
-<script>
+<script lang="ts">
 import { FeatherIcon } from "@featherds/icon";
 import Backup from "@featherds/icon/action/AddComment";
-import { markRaw } from "vue";
 
 import * as components from "./../src";
-export default {
+import { defineComponent } from "vue";
+export default defineComponent({
   data() {
     return {
       disabled: false,
     };
   },
   computed: {
-    backup: () => markRaw(Backup),
+    backup: () => Backup,
   },
   components: {
     ...components,
     FeatherIcon,
   },
-};
+});
 </script>
 <style lang="scss" scoped>
 section :deep(button) {

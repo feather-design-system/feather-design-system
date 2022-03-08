@@ -24,7 +24,7 @@
         <Highlighter
           :highlight="highlight"
           :query="query"
-          :text="item[textProp]"
+          :text="(item[textProp] as string)"
         />
         <span class="autocomplete-item-new-label" v-if="item._new">{{
           newLabel
@@ -39,14 +39,15 @@
     </template>
   </FeatherList>
 </template>
-<script>
+<script lang="ts">
 import { toView } from "@featherds/utils/scroll";
 import { FeatherListItem, FeatherList } from "@featherds/list";
-import Highlighter from "../Highlight/Highlighter";
-import HighlightMixin from "../Highlight/HighlightMixin";
-import HighlighterMixin from "../Highlight/HighlighterMixin";
-export default {
-  mixins: [HighlightMixin, HighlighterMixin],
+import Highlighter from "../Highlight/Highlighter.vue";
+import HighlightProps from "../Highlight/HighlightProps";
+import HighlighterProps from "../Highlight/HighlighterProps";
+import { defineComponent, PropType, ComponentPublicInstance } from "vue";
+import { IAutocompleteItemType } from "../types";
+export default defineComponent({
   emits: ["select"],
   props: {
     activeId: {
@@ -58,15 +59,17 @@ export default {
       required: true,
     },
     items: {
-      type: Array,
+      type: Array as PropType<IAutocompleteItemType[]>,
       required: true,
     },
     value: {
-      type: [Array, Object],
+      type: [Array, Object] as PropType<
+        IAutocompleteItemType[] | IAutocompleteItemType
+      >,
       default: () => [],
     },
     textProp: {
-      type: String,
+      type: String as unknown as PropType<keyof IAutocompleteItemType>,
       default: "_text",
     },
     single: {
@@ -77,33 +80,38 @@ export default {
       type: String,
       default: "new",
     },
+    ...HighlightProps,
+    ...HighlighterProps,
   },
   watch: {
-    activeIndex(index) {
+    activeIndex(index: number) {
       if (index > -1) {
         this.$nextTick(() => {
           const el = Array.prototype.slice.call(
             this.$el.querySelectorAll("li")
           )[index];
-          toView(el, this.$refs.list.$el);
+          const component = this.$refs.list as ComponentPublicInstance;
+          toView(el, component.$el);
         });
       }
     },
   },
   methods: {
-    isSelected(item) {
-      if (this.value && this.value.length) {
-        return this.value.some((x) => x[this.textProp] === item[this.textProp]);
+    isSelected(item: IAutocompleteItemType) {
+      const value = this.value as IAutocompleteItemType[];
+      if (value && value.length) {
+        return value.some((x) => x[this.textProp] === item[this.textProp]);
       }
-      return this.value[this.textProp] === item[this.textProp];
+      const singleValue = this.value as IAutocompleteItemType;
+      return singleValue[this.textProp] === item[this.textProp];
     },
-    isActive(index) {
+    isActive(index: number) {
       return this.activeIndex === index;
     },
-    getId(index) {
+    getId(index: number) {
       return index === this.activeIndex ? this.activeId : null;
     },
-    select(item) {
+    select(item: IAutocompleteItemType) {
       this.$emit("select", item);
     },
   },
@@ -112,7 +120,7 @@ export default {
     FeatherListItem,
     Highlighter,
   },
-};
+});
 </script>
 <style lang="scss" scoped>
 @import "@featherds/styles/mixins/typography";

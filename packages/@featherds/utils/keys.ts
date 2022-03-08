@@ -1,0 +1,17 @@
+const KEYCODES = {
+  PAGEUP: 33,
+  PAGEDOWN: 34,
+  UP: 38,
+  DOWN: 40,
+  LEFT: 37,
+  RIGHT: 39,
+  HOME: 36,
+  END: 35,
+  ENTER: 13,
+  SPACE: 32,
+  ESCAPE: 27,
+  BACKSPACE: 8,
+  DELETE: 46,
+};
+
+export { KEYCODES };

@@ -48,14 +48,14 @@
             <Chip
               v-show="!singleSelect"
               v-for="(item, index) in modelValueList"
-              :key="item[textProp]"
+              :key="(item[textProp] as string)"
               role="button"
               :id="index === activeChipIndex ? activeChipId : null"
               :focused="index === activeChipIndex"
               :disabled="disabled"
-              :text="item[textProp]"
+              :text="(item[textProp] as string)"
               :remove-label="removeLabel"
-              :pre="item._pre"
+              :pre="getPre(item)"
               @delete="removeFromValue(item)"
             />
             <textarea
@@ -105,7 +105,7 @@
         :config="gridConfig"
         :activeId="resultItemId"
         :activeRow="active.row"
-        :activeCol="active.col"
+        :activeCol="(active.col as number)"
         :aria-label="label"
         @select="clickedItem"
         class="autocomplete-results"
@@ -140,25 +140,25 @@
     <InputSubText :id="subTextId"></InputSubText>
   </div>
 </template>
-<script>
+<script lang="ts">
 import {
   InputWrapper,
-  InputWrapperMixin,
+  useInputWrapper,
   InputSubText,
-  InputSubTextMixin,
-  InputInheritAttrsMixin,
+  useInputSubText,
+  useInputInheritAttrs,
 } from "@featherds/input-helper";
 import { FeatherIcon } from "@featherds/icon";
 import { FeatherMenu } from "@featherds/menu";
 import Search from "@featherds/icon/action/Search";
 import Info from "@featherds/icon/action/Info";
 import KeyboardArrowDown from "@featherds/icon/navigation/ExpandMore";
-import AutocompleteResults from "./Results/AutocompleteResults";
-import AutocompleteResultsGrid from "./Results/AutocompleteResultsGrid";
-import MenuMessage from "./MenuMessage";
-import Chip from "./Chip";
-import Spinner from "./Spinner";
-import { createStrategy, TYPES } from "./Strategies";
+import AutocompleteResults from "./Results/AutocompleteResults.vue";
+import AutocompleteResultsGrid from "./Results/AutocompleteResultsGrid.vue";
+import MenuMessage from "./MenuMessage.vue";
+import Chip from "./Chip.vue";
+import Spinner from "./Spinner.vue";
+import { useStrategy } from "./Strategies";
 import { getSafeId } from "@featherds/utils/id";
 import { KEYCODES } from "@featherds/utils/keys";
 import { toView } from "@featherds/utils/scroll";
@@ -166,109 +166,49 @@ import { useLabelProperty } from "@featherds/composables/LabelProperty";
 import { useResultList } from "./Results/ResultList";
 import { useResultGrid } from "./Results/ResultGrid";
 import { useValidation } from "@featherds/input-helper";
-import HighlightMixin from "./Highlight/HighlightMixin";
-import { ref, computed, toRef, markRaw } from "vue";
 
-const LABELS = {
-  noResults: "No results found",
-  minChar: "Enter ${min} characters to search",
-  clear: "Clear value",
-  selectionLimit: "Selection limit reached",
-  new: "New",
-  remove: "Remove",
-};
+import {
+  ref,
+  computed,
+  toRef,
+  toRefs,
+  markRaw,
+  defineComponent,
+  ComponentPublicInstance,
+  Ref,
+} from "vue";
+import {
+  IAutocompleteItemType,
+  AutocompleteTypes,
+  IAutocompleteResultRender,
+  IAutocompleteChipIcon,
+  props,
+  emits,
+  LABELS,
+} from "./types";
 
-export default {
-  mixins: [
-    InputWrapperMixin,
-    InputSubTextMixin,
-    HighlightMixin,
-    InputInheritAttrsMixin,
-  ],
+export default defineComponent({
   model: {
     prop: "modelValue",
     event: "update:modelValue",
   },
-  emits: ["update:modelValue", "search", "new"],
-  props: {
-    modelValue: {
-      type: [Array, Object],
-    },
-    results: {
-      type: Array,
-      default: () => [],
-    },
-    textProp: {
-      type: String,
-      default: "_text",
-    },
-    loading: {
-      type: Boolean,
-      default: false,
-    },
-    minChar: {
-      type: Number,
-      default: 0,
-    },
-    allowNew: {
-      type: Boolean,
-      default: false,
-    },
-    selectionLimit: {
-      type: Number,
-    },
-    newMatcher: {
-      type: Function,
-      default(item, query, comp) {
-        return (
-          item[comp.textProp].toString().toLowerCase() === query.toLowerCase()
-        );
-      },
-    },
-    type: {
-      type: String,
-      required: true,
-      validator(v) {
-        // The value must match either
-        return [TYPES.multi, TYPES.single].indexOf(v) !== -1;
-      },
-    },
-    labels: {
-      type: Object,
-      default() {
-        return LABELS;
-      },
-    },
-    gridConfig: {
-      type: Array,
-    },
-    schema: {
-      type: Object,
-      required: false,
-    },
-  },
+  emits,
+  props,
   data() {
-    const strategy = createStrategy(this, this.type);
     return {
       typingTimeout: -1,
-      query: "",
-      strategy,
-      hasFocus: false,
       activeChipIndex: -1,
-      internalResults: [],
-      forceCloseResults: false,
-      selectionLimitReached: false,
     };
   },
   computed: {
     singleSelect() {
-      return this.type !== TYPES.multi;
+      return this.type !== AutocompleteTypes.multi;
     },
     raised() {
       return this.hasValue || this.hasFocus;
     },
     hasValue() {
-      return this.strategy.hasValue(this.modelValue);
+      return this.strategy?.hasValue();
     },
 
     showMenu() {
@@ -380,12 +320,17 @@ export default {
         "aria-activedescendant": activeDescendant,
         disabled: this.disabled,
         "aria-disabled": this.disabled,
-        "aria-autocomplete": "list",
+        "aria-autocomplete": "list" as
+          | "inline"
+          | "both"
+          | "none"
+          | "list"
+          | undefined,
         autocomplete: "off",
-        readonly: this.disabled ? "readonly" : false,
+        readonly: this.disabled ? true : false,
         tabindex: this.disabled ? -1 : 0,
         "aria-controls": this.resultsId,
-        "aria-invalid": this.$attrs["aria-invalid"] || !!this.error,
+        "aria-invalid": this.$attrs["aria-invalid"] === "true" || !!this.error,
       };
     },
     inputListeners() {
@@ -407,17 +352,19 @@ export default {
     },
 
     scrollContainer() {
-      return this.$refs.scroll.$el.querySelector(".feather-input-wrapper");
+      const scroll = this.$refs.scroll as ComponentPublicInstance;
+      return scroll.$el.querySelector(".feather-input-wrapper");
     },
     computedMinCharText() {
       if (this.minCharLabel) {
-        return this.minCharLabel.replace("${min}", this.minChar);
+        return this.minCharLabel.replace("${min}", this.minChar.toString());
       }
       return "";
     },
     selectedDescribedByText() {
       if (this.modelValue && this.modelValue.length) {
-        return this.modelValue.map((x) => x[this.textProp]).join(", ");
+        const modelValue = this.modelValue as IAutocompleteItemType[];
+        return modelValue.map((x) => x[this.textProp]).join(", ");
       }
       return "";
     },
@@ -426,9 +373,9 @@ export default {
     },
     modelValueList() {
       if (this.singleSelect) {
-        return [];
+        return [] as IAutocompleteItemType[];
       }
-      return this.modelValue;
+      return this.modelValue as IAutocompleteItemType[];
     },
   },
   watch: {
@@ -443,24 +390,23 @@ export default {
       }
     },
     query(v) {
-      if (!this.$refs.input) {
+      if (!this.inputRef) {
         return;
       }
-      if (v === this.$refs.input.value) {
+      if (v === this.inputRef.value) {
         return;
       }
-      this.$refs.input.value = v;
+      this.inputRef.value = v;
     },
     modelValue: {
       handler(v, o) {
         //when a value is added make sure to scroll input into view
         if (v && o && v.length > o.length && this.scrollContainer) {
           this.$nextTick(() => {
-            toView(this.$refs.input, this.scrollContainer);
+            toView(this.inputRef, this.scrollContainer);
           });
         }
-
-        this.strategy.handleModelValueChange(v, o);
+        this.strategy.handleModelValueChange(v);
 
         //adjust if value is updated but not focused
         if (!this.hasFocus) {
@@ -484,7 +430,7 @@ export default {
         this.setAlert(this.noResultsLabel);
       }
       if (this.allowNewEnabled && this.query.length) {
-        const found = v.some((item) => {
+        const found = v.some((item: IAutocompleteItemType) => {
           return this.newMatcher(item, this.query, this);
         });
         if (!found) {
@@ -501,8 +447,9 @@ export default {
       this.internalResults = v;
     },
     showResults(v) {
-      if (v && this.$refs.menu.calculatePosition) {
-        this.$refs.menu.calculatePosition();
+      const menu = this.$refs.menu as { calculatePosition: () => void };
+      if (v && menu.calculatePosition) {
+        menu.calculatePosition();
       }
     },
     selectionLimitReached(v) {
@@ -512,28 +459,20 @@ export default {
     },
   },
   methods: {
-    setAlert(txt) {
-      this.$refs.alert.textContent = txt;
+    getPre(item: IAutocompleteItemType) {
+      return item._pre as IAutocompleteChipIcon;
+    },
+    setAlert(txt: string) {
+      const alert = this.$refs.alert as HTMLElement;
+      alert.textContent = txt;
       setTimeout(() => {
-        this.$refs.alert.textContent = "";
+        alert.textContent = "";
       }, 100);
     },
 
-    emitSearch() {
-      if (this.hasFocus && !this.selectionLimitReached) {
-        if (this.query && this.query.length >= this.minChar) {
-          this.$emit("search", this.query);
-        }
-        if (this.minChar <= 0) {
-          this.$emit("search", this.query || "");
-        }
-        this.internalResults = [];
-        this.resetResultIndex();
-      }
-    },
     handleClear() {
       this.query = "";
-      this.$refs.input.focus();
+      this.inputRef.focus();
       this.emitSearch();
       this.$emit("update:modelValue", undefined);
     },
@@ -548,17 +487,15 @@ export default {
 
       this.hasFocus = true;
       if (this.modelValue && this.singleSelect) {
-        this.$refs.input.select();
+        this.inputRef.select();
       }
-      // this.cursorToEnd(this.type !== TYPES.multi);
-
       this.emitSearch();
     },
 
-    handleTextInput(e) {
+    handleTextInput(e: KeyboardEvent) {
       this.adjustTextArea();
-
-      const str = e.target.value;
+      const target = e.target as HTMLInputElement;
+      const str = target.value;
       if (str === undefined) {
         return;
       }
@@ -568,7 +505,7 @@ export default {
         this.emitSearch();
       }, 250);
     },
-    handleInputKeyDown(e) {
+    handleInputKeyDown(e: KeyboardEvent) {
       const resetChipIndex = () => {
         this.activeChipIndex = -1;
       };
@@ -582,11 +519,7 @@ export default {
 
       //menu navigation
       if (this.internalResults && this.internalResults.length) {
-        const handled = this.handleResultNavigation(
-          e,
-          this.internalResults,
-          (i) => this.selectItem(i)
-        );
+        const handled = this.handleResultNavigation(e, this.internalResults);
         if (handled) {
           resetChipIndex();
           this.forceCloseResults = false;
@@ -596,7 +529,8 @@ export default {
 
       if (e.keyCode === KEYCODES.ENTER && this.activeChipIndex > -1) {
         e.preventDefault();
-        this.removeFromValue(this.modelValue[this.activeChipIndex]);
+        const modelValue = this.modelValue as IAutocompleteItemType[];
+        this.removeFromValue(modelValue[this.activeChipIndex]);
         resetChipIndex();
         return;
       }
@@ -614,13 +548,14 @@ export default {
       }
       //chip navigation
       if (!this.query && this.modelValue && this.modelValue.length) {
+        const modelValue = this.modelValue as IAutocompleteItemType[];
         if (e.keyCode === KEYCODES.LEFT) {
           //left
           //if nothing selected select first (aka last element in array);
           e.preventDefault();
           if (this.activeChipIndex === -1) {
             resetMenuIndex();
-            this.activeChipIndex = this.modelValue.length - 1;
+            this.activeChipIndex = modelValue.length - 1;
           } else if (this.activeChipIndex - 1 >= 0) {
             resetMenuIndex();
             this.activeChipIndex = this.activeChipIndex - 1;
@@ -631,11 +566,11 @@ export default {
           //if in rightmost chip remove activity from chip list
           e.preventDefault();
 
-          if (this.activeChipIndex === this.modelValue.length - 1) {
+          if (this.activeChipIndex === modelValue.length - 1) {
             resetMenuIndex();
             this.activeChipIndex = -1;
           } else if (
-            this.activeChipIndex < this.modelValue.length - 1 &&
+            this.activeChipIndex < modelValue.length - 1 &&
             this.activeChipIndex > -1
           ) {
             resetMenuIndex();
@@ -646,7 +581,7 @@ export default {
           (e.keyCode === KEYCODES.DELETE || e.keyCode === KEYCODES.BACKSPACE) &&
           this.activeChipIndex !== -1
         ) {
-          this.removeFromValue(this.modelValue[this.activeChipIndex]);
+          this.removeFromValue(modelValue[this.activeChipIndex]);
           resetMenuIndex();
           resetChipIndex();
         }
@@ -656,7 +591,7 @@ export default {
       if (this.disabled) {
         return;
       }
-      this.$refs.input.focus();
+      this.inputRef.focus();
     },
     handleInputBlur() {
       this.validate();
@@ -679,18 +614,18 @@ export default {
       this.internalResults = [];
       this.adjustTextArea();
     },
-    clickedItem(item) {
+    clickedItem(item: IAutocompleteItemType) {
       this.selectItem(item);
       //clear everything and re focus
       this.internalResults = [];
-      this.$refs.input.focus();
+      this.inputRef.focus();
       this.strategy.clickedItem();
     },
-    selectItem(item) {
+    selectItem(item: IAutocompleteItemType) {
       this.strategy.selectItem(item);
       this.adjustTextArea();
     },
-    removeFromValue(item) {
+    removeFromValue(item: IAutocompleteItemType) {
       this.strategy.removeItem(item);
     },
     handleDropdownIconClick() {
@@ -704,7 +639,7 @@ export default {
     },
     adjustTextArea() {
       //auto adjust height
-      const tx = this.$refs.input;
+      const tx = this.inputRef;
       //if this is called before mount
       if (!tx) {
         return;
@@ -715,9 +650,11 @@ export default {
 
       this.$nextTick(() => {
         const txWidth = tx.getBoundingClientRect().width;
+        const parent = tx.parentElement;
         if (
           tx.scrollWidth <= tx.clientWidth &&
-          txWidth < tx.parentElement.getBoundingClientRect().width
+          parent &&
+          txWidth < parent.getBoundingClientRect().width
         ) {
           tx.style.whiteSpace = "nowrap";
         } else {
@@ -730,9 +667,11 @@ export default {
       });
     },
   },
-  setup(props) {
+  setup(props, context) {
     const labels = useLabelProperty(toRef(props, "labels"), LABELS);
-    let resultsRender;
+    useInputSubText(props);
+    useInputWrapper(props);
+    let resultsRender: IAutocompleteResultRender;
     if (props.gridConfig) {
       resultsRender = useResultGrid(props.gridConfig);
     } else {
@@ -750,18 +689,72 @@ export default {
     const { validate } = useValidation(
       inputId,
       toRef(props, "modelValue"),
-      props.label,
-      props.schema
+      props.label as string,
+      props.schema as Record<string, any>
+    );
+
+    const { selectionLimit, modelValue, textProp, allowNew, type, minChar } =
+      toRefs(props);
+    const hasFocus = ref(false);
+    const selectionLimitReached = ref(false);
+    const forceCloseResults = ref(false);
+    const query = ref("");
+    const internalResults = ref([] as IAutocompleteItemType[]);
+    const input = ref();
+    const inputRef = computed(() => {
+      return input.value as HTMLInputElement;
+    });
+    const emitSearch = () => {
+      if (hasFocus.value && !selectionLimitReached.value) {
+        if (query.value && query.value.length >= minChar.value) {
+          context.emit("search", query.value);
+        }
+        if (minChar.value <= 0) {
+          context.emit("search", query.value || "");
+        }
+        internalResults.value = [];
+        resultsRender.reset();
+      }
+    };
+
+    const strategy = useStrategy(
+      {
+        selectionLimit: selectionLimit as Ref<number>,
+        selectionLimitReached,
+        modelValue: modelValue as Ref<
+          IAutocompleteItemType | IAutocompleteItemType[]
+        >,
+        textProp: textProp as Ref<string>,
+        allowNew,
+        forceCloseResults,
+        query,
+        internalResults,
+        input: inputRef,
+        emitSearch,
+      },
+      resultsRender,
+      type.value as AutocompleteTypes,
+      context.emit
     );
 
     return {
       ...labels,
+      ...useInputInheritAttrs(context.attrs as Record<string, unknown>),
+      query,
+      internalResults,
+      selectionLimitReached,
+      forceCloseResults,
+      hasFocus,
+      strategy,
+      emitSearch,
       active: resultsRender.active,
       handleResultNavigation: resultsRender.handleKeyPress,
       resetResultIndex: resultsRender.reset,
       selectFirst: resultsRender.first,
       inputId,
+      input,
       incomingId,
+      inputRef,
       validate,
     };
   },
@@ -779,7 +772,7 @@ export default {
     FeatherMenu,
     Spinner,
   },
-};
+});
 </script>
 
 <style lang="scss" scoped>

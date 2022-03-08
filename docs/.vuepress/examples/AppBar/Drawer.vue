@@ -23,12 +23,13 @@
     <div id="test">Page contents</div>
   </section>
 </template>
-<script>
+<script lang="ts">
 import { FeatherAppBar, FeatherAppBarLink } from "@featherds/app-bar";
 import { FeatherDrawer } from "@featherds/drawer";
 import Support from "@featherds/icon/action/Help";
 import { FeatherIcon } from "@featherds/icon";
-export default {
+import { defineComponent } from "vue";
+export default defineComponent({
   data() {
     return {
       labels: {
@@ -45,7 +46,7 @@ export default {
     FeatherDrawer,
     FeatherIcon,
   },
-};
+});
 </script>
 <style lang="scss" scoped>
 // scss to make it all run in container

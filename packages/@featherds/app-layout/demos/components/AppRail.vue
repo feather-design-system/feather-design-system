@@ -40,7 +40,7 @@
     </FeatherRailGroup>
   </FeatherNavigationRail>
 </template>
-<script>
+<script lang="ts">
 import {
   FeatherNavigationRail,
   FeatherRailGroup,
@@ -49,9 +49,9 @@ import {
 import App from "@featherds/icon/medical/Hospital";
 import Account from "@featherds/icon/action/AccountCircle";
 import { FeatherIcon } from "@featherds/icon";
-import { markRaw } from "vue";
+import { defineComponent, markRaw } from "vue";
 
-export default {
+export default defineComponent({
   computed: {
     app() {
       return markRaw(App);
@@ -66,7 +66,7 @@ export default {
     FeatherRailItem,
     FeatherIcon,
   },
-};
+});
 </script>
 <style lang="scss" scoped>
 @import "@featherds/styles/mixins/typography";

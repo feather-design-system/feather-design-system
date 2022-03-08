@@ -17,20 +17,24 @@
     ></FeatherAutocomplete>
   </section>
 </template>
-<script>
-import { FeatherAutocomplete } from "@featherds/autocomplete";
+<script lang="ts">
+import {
+  FeatherAutocomplete,
+  IAutocompleteItemType,
+} from "@featherds/autocomplete";
 import names from "./users";
-export default {
+import { defineComponent } from "vue";
+export default defineComponent({
   data() {
     return {
       timeout: -1,
       loading: false,
-      results: [],
-      value: [],
+      results: [] as IAutocompleteItemType[],
+      value: [] as IAutocompleteItemType[],
     };
   },
   methods: {
-    search(q) {
+    search(q: string) {
       this.loading = true;
       clearTimeout(this.timeout);
       this.timeout = setTimeout(() => {
@@ -46,7 +50,7 @@ export default {
   components: {
     FeatherAutocomplete,
   },
-};
+});
 </script>
 <style lang="scss" scoped>
 .my-autocomplete {

@@ -8,7 +8,9 @@
   "author": "NantHealth",
   "main": "dist/app.js",
   "license": "UNLICENSED",
-  "scripts": {},
+  "scripts": {
+    "compile": "node build/post.js"
+  },
   "keywords": [
     "feather",
     "styles"

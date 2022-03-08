@@ -3,14 +3,14 @@
     <FeatherBadge :badges="badge" inline>Some Text</FeatherBadge>
   </section>
 </template>
-<script>
-import { FeatherBadge, TYPES } from "@featherds/badge";
-
-export default {
+<script lang="ts">
+import { FeatherBadge, BadgeTypes } from "@featherds/badge";
+import { defineComponent } from "vue";
+export default defineComponent({
   data() {
     return {
       badge: {
-        type: TYPES.INFO,
+        type: BadgeTypes.info,
         title: "Warning",
       },
     };
@@ -18,5 +18,5 @@ export default {
   components: {
     FeatherBadge,
   },
-};
+});
 </script>

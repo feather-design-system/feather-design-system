@@ -46,26 +46,26 @@
   </section>
 </template>
 <script>
-import { FeatherBadge, TYPES } from "./../src";
+import { FeatherBadge } from "./../src";
+import { BadgeTypes } from "@featherds/badge";
 import { FeatherIcon } from "@featherds/icon";
 import Icon from "@featherds/icon/medical/Drug";
-import { markRaw } from "vue";
-
-export default {
+import { defineComponent } from "vue";
+export default defineComponent({
   data() {
     const error = {
-      type: TYPES.ERROR,
+      type: BadgeTypes.error,
       title: "Error has occurred",
     };
     const info = {
-      type: TYPES.INFO,
+      type: BadgeTypes.info,
       title: "Issue has occurred",
     };
     return {
       badges: [error, info],
       error,
       info,
-      icon: markRaw(Icon),
+      icon: Icon,
     };
   },
 
@@ -73,7 +73,7 @@ export default {
     FeatherBadge,
     FeatherIcon,
   },
-};
+});
 </script>
 
 <style lang="scss" scoped>

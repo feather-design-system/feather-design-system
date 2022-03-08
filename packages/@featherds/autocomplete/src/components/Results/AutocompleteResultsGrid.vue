@@ -20,14 +20,14 @@
         <tr
           role="row"
           v-for="(item, index) in items"
-          :key="item[textProp]"
+          :key="(item[textProp] as string)"
           :aria-selected="isSelected(item)"
           :class="{ focus: isActive(index), selected: isSelected(item) }"
           @click.stop="select(item)"
         >
           <td
             v-for="(col, colIndex) in config"
-            :key="item[textProp] + col.prop"
+            :key="(item[textProp] as string) + col.prop"
             :id="getId(index, colIndex)"
             :class="{ 'focus-cell': isActiveCell(index, colIndex) }"
           >
@@ -35,7 +35,7 @@
               v-if="col.prop === textProp"
               :highlight="highlight"
               :query="query"
-              :text="item[col.prop]"
+              :text="(item[col.prop] as string)"
             />
             <p v-else>{{ item[col.prop] }}</p>
           </td>
@@ -44,13 +44,14 @@
     </table>
   </div>
 </template>
-<script>
+<script lang="ts">
 import { toView } from "@featherds/utils/scroll";
-import Highlighter from "../Highlight/Highlighter";
-import HighlightMixin from "../Highlight/HighlightMixin";
-import HighlighterMixin from "../Highlight/HighlighterMixin";
-export default {
-  mixins: [HighlightMixin, HighlighterMixin],
+import Highlighter from "../Highlight/Highlighter.vue";
+import HighlightProps from "../Highlight/HighlightProps";
+import HighlighterProps from "../Highlight/HighlighterProps";
+import { defineComponent, PropType } from "vue";
+import { IAutocompleteItemType, IAutocompleteGridColumn } from "../types";
+export default defineComponent({
   emits: ["select"],
   props: {
     activeId: {
@@ -66,15 +67,17 @@ export default {
       required: true,
     },
     items: {
-      type: Array,
+      type: Array as PropType<IAutocompleteItemType[]>,
       required: true,
     },
     value: {
-      type: [Array, Object],
+      type: [Array, Object] as PropType<
+        IAutocompleteItemType[] | IAutocompleteItemType
+      >,
       default: () => [],
     },
     textProp: {
-      type: String,
+      type: String as unknown as PropType<keyof IAutocompleteItemType>,
       default: "_text",
     },
     single: {
@@ -82,18 +85,21 @@ export default {
       default: false,
     },
     config: {
-      type: Array,
+      type: Array as PropType<IAutocompleteGridColumn[]>,
       required: true,
     },
+    ...HighlightProps,
+    ...HighlighterProps,
   },
   watch: {
-    activeRow(index) {
+    activeRow(index: number) {
       if (index > -1) {
         this.$nextTick(() => {
           const el = Array.prototype.slice.call(
             this.$el.querySelectorAll("tr")
           )[index + 1]; //+1 for header
-          toView(el, this.$refs.grid);
+          const component = this.$refs.grid as HTMLElement;
+          toView(el, component);
         });
       }
     },
@@ -112,31 +118,33 @@ export default {
     },
   },
   methods: {
-    isSelected(item) {
+    isSelected(item: IAutocompleteItemType) {
+      const value = this.value as IAutocompleteItemType[];
       if (this.value && this.value.length) {
-        return this.value.some((x) => x[this.textProp] === item[this.textProp]);
+        return value.some((x) => x[this.textProp] === item[this.textProp]);
       }
-      return this.value[this.textProp] === item[this.textProp];
+      const singleValue = this.value as IAutocompleteItemType;
+      return singleValue[this.textProp] === item[this.textProp];
     },
-    isActive(index) {
+    isActive(index: number) {
       return this.activeRow === index;
     },
-    isActiveCell(row, col) {
+    isActiveCell(row: number, col: number) {
       return this.activeRow === row && this.activeCol === col;
     },
-    getId(index, col) {
+    getId(index: number, col: number) {
       return index === this.activeRow && this.activeCol === col
         ? this.activeId
-        : null;
+        : "";
     },
-    select(item) {
+    select(item: IAutocompleteItemType) {
       this.$emit("select", item);
     },
   },
   components: {
     Highlighter,
   },
-};
+});
 </script>
 <style lang="scss" scoped>
 @import "@featherds/styles/mixins/typography";

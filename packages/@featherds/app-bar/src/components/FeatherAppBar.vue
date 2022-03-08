@@ -53,7 +53,7 @@ export const props = {
     required: true,
   },
   labels: {
-    type: Object as PropType<typeof LABELS>,
+    type: Object as PropType<Partial<typeof LABELS>>,
     default: () => {
       return LABELS;
     },

@@ -14,7 +14,7 @@ const { getFilter } = require("./utils");
       cwd: process.cwd(),
     }
   );
-  await files
+  return files
     .reduce(
       (promise, entry) =>
         promise.then(async () => {
@@ -36,18 +36,6 @@ export * from  "./app.es.js";
         }),
       Promise.resolve()
     )
-    .catch((e) => {
-      console.error(e);
-      process.exit(1);
-    });
-  return postFiles
-    .reduce((promise, entry) => {
-      console.log(entry);
-      return promise.then(async () => {
-        console.log(`running post script from ${entry}`);
-        await require(path.resolve(entry))();
-      });
-    }, Promise.resolve())
     .catch((e) => {
       console.error(e);
       process.exit(1);

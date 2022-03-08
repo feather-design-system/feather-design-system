@@ -20,7 +20,7 @@
     </FeatherButton>
   </section>
 </template>
-<script>
+<script lang="ts">
 import { FeatherButton } from "@featherds/button";
 import { FeatherIcon } from "@featherds/icon";
 import Support from "@featherds/icon/action/Help";
@@ -28,18 +28,19 @@ import CheckCircle from "@featherds/icon/action/CheckCircle";
 import AccountCircle from "@featherds/icon/action/AccountCircle";
 import Cancel from "@featherds/icon/action/Cancel";
 
-export default {
+import { defineComponent } from "vue";
+export default defineComponent({
   data() {
     return {
       support: Support,
       check: CheckCircle,
       account: AccountCircle,
-      cancel: Cancel
+      cancel: Cancel,
     };
   },
   components: {
     FeatherButton,
-    FeatherIcon
+    FeatherIcon,
   },
-};
+});
 </script>

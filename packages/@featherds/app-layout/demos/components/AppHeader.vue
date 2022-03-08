@@ -14,10 +14,11 @@
     </template>
   </FeatherAppBar>
 </template>
-<script>
+<script lang="ts">
 import * as components from "@featherds/app-bar";
 import Support from "@featherds/icon/action/Help";
-export default {
+import { defineComponent } from "vue";
+export default defineComponent({
   props: {
     full: {
       type: Boolean,
@@ -40,5 +41,5 @@ export default {
   components: {
     ...components,
   },
-};
+});
 </script>

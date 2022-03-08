@@ -22,9 +22,10 @@
     </p>
   </section>
 </template>
-<script>
+<script lang="ts">
 import * as components from "./../src";
-export default {
+import { defineComponent } from "vue";
+export default defineComponent({
   data() {
     return {
       disabled: false,
@@ -42,7 +43,7 @@ export default {
   components: {
     ...components,
   },
-};
+});
 </script>
 <style lang="scss" scoped>
 @import "@featherds/styles/themes/variables";

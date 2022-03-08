@@ -17,10 +17,11 @@
     <div id="test">Page contents</div>
   </section>
 </template>
-<script>
+<script lang="ts">
 import * as components from "./../src";
 import Support from "@featherds/icon/action/Help";
-export default {
+import { defineComponent } from "vue";
+export default defineComponent({
   data() {
     return {
       labels: {
@@ -33,7 +34,7 @@ export default {
   components: {
     ...components,
   },
-};
+});
 </script>
 <style lang="scss" scoped>
 #test {
