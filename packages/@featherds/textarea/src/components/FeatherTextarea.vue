@@ -36,7 +36,7 @@
 import { defineComponent } from "vue";
 import { getSafeId } from "@featherds/utils/id";
 import { useValidation } from "@featherds/input-helper";
-import { computed, toRef } from "vue";
+import { computed, toRef, onBeforeUnmount } from "vue";
 
 import {
   InputWrapper,
@@ -181,7 +181,11 @@ export default defineComponent({
       return getSafeId("feather-textarea-label");
     });
 
-    const { validate } = useValidation(
+    onBeforeUnmount(() => {
+      removeValidation();
+    });
+
+    const { validate, removeValidation } = useValidation(
       inputId,
       toRef(props, "modelValue"),
       props.label,
