@@ -49,9 +49,10 @@ const useValidation = (inputId, value, label, schema, errorFromInput) => {
       },
       { immediate: true }
     );
-    return { validate };
+    const removeValidation = () => form.deregister(inputId.value, true);
+    return { validate, removeValidation };
   }
-  return { validate: () => true };
+  return { validate: () => true, removeValidation: () => null };
 };
 
 export { useValidation };

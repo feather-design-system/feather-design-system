@@ -16,8 +16,9 @@ const useForm = () => {
     register: (input, validate) => {
       controls[input] = validate;
     },
-    deregister: (input) => {
+    deregister: (input, revalidate = false) => {
       delete controls[input];
+      if (revalidate && errorMessages.value.length) _validate();
     },
     reregister: (old, curr) => {
       const keys = Object.keys(controls);
