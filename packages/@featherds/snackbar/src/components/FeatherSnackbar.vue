@@ -161,6 +161,7 @@ export default {
   right: 0px;
   padding: 24px;
   pointer-events: none;
+  z-index: var(--feather-current-zindex, var($zindex-popover));
 
   .feather-snackbar {
     display: flex;

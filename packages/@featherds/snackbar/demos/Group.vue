@@ -44,7 +44,10 @@
     </div>
   </section>
   <section>
-    <FeatherSnackbarGroup :target="relative ? '#target' : undefined">
+    <FeatherSnackbarGroup
+      :target="relative ? '#target' : undefined"
+      :relative="relative"
+    >
       <FeatherSnackbar v-model="show1" :center="center">
         A notification with some really long text but small button
         <template v-slot:button>

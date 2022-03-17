@@ -3,7 +3,7 @@
     <div
       class="feather-snackbar-group"
       data-ref-id="feather-snackbar-group"
-      :class="{ relative: target }"
+      :class="{ relative: relative }"
     >
       <slot />
     </div>
@@ -15,7 +15,12 @@ export default {
   props: {
     target: {
       type: String,
+      default: "body",
     },
+    relative: {
+      type: Boolean,
+      default: false,
+    }
   },
   setup() {
     let curr = null;
@@ -79,6 +84,7 @@ export default {
   bottom: 0px;
   right: 0px;
   pointer-events: none;
+  z-index: var(--feather-current-zindex, var($zindex-popover));
 
   &.relative {
     position: sticky;

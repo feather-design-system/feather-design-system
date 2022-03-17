@@ -54,9 +54,10 @@ A Snackbar Group is simply a container that organises multiple Snackbars and ena
 
 ### Props
 
-| Name   | Description                                                                                                                                                                                              | Type     | Required | Default |
-| ------ | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | -------- | -------- | ------- |
-| target | an optional DOM selector that determines where the snackbars should be rendered in the DOM. If the target container is `position: relative;` then the Snackbars will be positioned within its boundaries | `String` | `false`  |         |
+| Name     | Description                                                                                                                                                            | Type      | Required | Default |
+| -------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------- | --------- | -------- | ------- |
+| target   | an optional DOM selector that determines where the snackbars should be rendered in the DOM. Can be used with `relative` to constrain snackbars to a specific container | `String`  | `false`  | `body`  |
+| relative | for use in a `position: relative;` container, ensures the Snackbars will be positioned within its boundaries                                                           | `Boolean` | `false`  | `false` |
 
 ### Slots
 
