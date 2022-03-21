@@ -180,7 +180,7 @@ export default {
           this.select(this.options[0]);
         }
         this.$nextTick(() => {
-          this.$refs.list.$el.focus();
+          this.$refs.input.focus();
         });
       } else {
         this.emitSelection();

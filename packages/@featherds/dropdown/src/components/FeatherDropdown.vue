@@ -68,7 +68,10 @@ export default {
         nextTick(() => {
           const items = Array.from(menu.value.menu.querySelectorAll("a"));
           dropdownService.setItems(items);
-          dropdownService.selectFirst();
+          //Waiting for menu - nextTick was not enough
+          setTimeout(() => {
+            dropdownService.selectFirst();
+          }, 0);
         });
       } else {
         dropdownService.blur();

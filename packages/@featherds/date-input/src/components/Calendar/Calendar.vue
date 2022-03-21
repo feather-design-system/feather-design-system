@@ -279,7 +279,10 @@ export default {
       this.$nextTick(() => {
         const focusable = this.$el.querySelector("[tabindex='0']");
         if (focusable) {
-          focusable.focus();
+          this.$nextTick(() => {
+            //another tick to account for the menu
+            focusable.focus();
+          });
         }
       });
     },

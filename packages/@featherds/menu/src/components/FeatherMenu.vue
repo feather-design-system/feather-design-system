@@ -4,6 +4,7 @@
     <Teleport to="body">
       <div
         class="feather-menu-dropdown"
+        :class="{ hidden: calculating }"
         ref="menu"
         v-show="open"
         :id="menuId"
@@ -62,6 +63,15 @@ export default {
     const triggerId = ref(getSafeId("feather-menu-trigger"));
     const menuId = ref(getSafeId("feather-menu-dropdown"));
     const position = ref("");
+    const scrollTop = () => {
+      if (!document) return 0;
+      return (document.documentElement || document.body).scrollTop;
+    };
+    const scrollLeft = () => {
+      if (!document) return 0;
+      return (document.documentElement || document.body).scrollLeft;
+    };
+    const calculating = ref(false);
 
     const getScrollRect = () => {
       return {
@@ -77,6 +87,8 @@ export default {
         return;
       }
       const containerRect = root.value.getBoundingClientRect();
+      calculating.value = true;
+
       nextTick(() => {
         let { height, width } = menu.value.getBoundingClientRect();
         const windowRect = getScrollRect();
@@ -105,6 +117,7 @@ export default {
             top -= containerRect.height;
           }
         }
+        top += scrollTop();
         let left = props.right
           ? containerRect.right - width
           : containerRect.left;
@@ -123,7 +136,9 @@ export default {
         ) {
           left = containerRect.left;
         }
+        left += scrollLeft();
         position.value = `translate(${left}px, ${top}px)`;
+        calculating.value = false;
       });
     };
     const close = (e) => {
@@ -136,7 +151,7 @@ export default {
     const outsideElementEvent = (e) => {
       context.emit("outside-click", e);
     };
-    const layer = ref();
+    const layer = ref(null);
     const layers = computed(() => {
       if (layer.value) {
         return [root.value, ...getElements(layer.value).value];
@@ -147,11 +162,12 @@ export default {
     const activateResize = useResize(close);
     const activateScrollY = useScroll(windowRef, close);
     watch([() => props.open, menu], ([v, m]) => {
-      if (v && m) {
+      if (v && m && !layer.value) {
         calculatePosition();
         layer.value = addLayer(menu, "dropdown");
-      } else if (layer.value) {
+      } else if (!v && layer.value) {
         removeLayer(layer.value);
+        layer.value = null;
       }
       activateOutsideClick.value = v;
       activateResize.value = v;
@@ -198,6 +214,7 @@ export default {
       trigger,
       calculatePosition,
       handleFocusOut,
+      calculating,
     };
   },
 };
@@ -216,5 +233,9 @@ export default {
   left: 0;
   top: 0;
   z-index: var(--feather-current-zindex, var($zindex-dropdown));
+}
+.hidden {
+  position: fixed;
+  visibility: hidden;
 }
 </style>

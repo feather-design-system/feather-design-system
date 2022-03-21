@@ -65,6 +65,7 @@ describe("FeatherDropdown.vue", () => {
   describe("keydown", () => {
     describe("should call select next when", () => {
       it("down is pressed", async () => {
+        jest.useFakeTimers();
         const slots = {
           trigger: getTrigger(),
           default: [getLi(), getLi()],
@@ -76,10 +77,12 @@ describe("FeatherDropdown.vue", () => {
           modelValue: true,
         });
         await nextTick();
+        jest.runAllTimers();
         await wrapper.find("ul").trigger(`keydown.down`);
         expect(wrapper.vm.dropdownService.selectNext).toHaveBeenCalled();
       });
       it("right is pressed", async () => {
+        jest.useFakeTimers();
         const slots = {
           trigger: getTrigger(),
           default: [getLi(), getLi()],
@@ -91,12 +94,14 @@ describe("FeatherDropdown.vue", () => {
           modelValue: true,
         });
         await nextTick();
+        jest.runAllTimers();
         await wrapper.find("ul").trigger(`keydown.right`);
         expect(wrapper.vm.dropdownService.selectNext).toHaveBeenCalled();
       });
     });
     describe("should call select previous when", () => {
       it("left is pressed", async () => {
+        jest.useFakeTimers();
         const slots = {
           trigger: getTrigger(),
           default: [getLi(), getLi()],
@@ -108,10 +113,12 @@ describe("FeatherDropdown.vue", () => {
           modelValue: true,
         });
         await nextTick();
+        jest.runAllTimers();
         await wrapper.find("ul").trigger(`keydown.left`);
         expect(wrapper.vm.dropdownService.selectPrevious).toHaveBeenCalled();
       });
       it("up is pressed", async () => {
+        jest.useFakeTimers();
         const slots = {
           trigger: getTrigger(),
           default: [getLi(), getLi()],
@@ -123,6 +130,7 @@ describe("FeatherDropdown.vue", () => {
           modelValue: true,
         });
         await nextTick();
+        jest.runAllTimers();
         await wrapper.find("ul").trigger(`keydown.up`);
         expect(wrapper.vm.dropdownService.selectPrevious).toHaveBeenCalled();
       });
@@ -139,6 +147,7 @@ describe("FeatherDropdown.vue", () => {
     });
   });
   it("should focus first element when opened", async () => {
+    jest.useFakeTimers();
     const slots = {
       trigger: getTrigger(),
       default: [getLi(), getLi()],
@@ -150,12 +159,14 @@ describe("FeatherDropdown.vue", () => {
       modelValue: true,
     });
     await nextTick();
+    jest.runAllTimers();
 
     expect(wrapper.vm.dropdownService.select).toHaveBeenCalledWith(
       wrapper.vm.dropdownService.items[0]
     );
   });
   it("should close when close event comes from FeatherMenu", async () => {
+    jest.useFakeTimers();
     const slots = {
       trigger: getTrigger(),
       default: [getLi(), getLi()],
@@ -168,12 +179,14 @@ describe("FeatherDropdown.vue", () => {
       modelValue: true,
     });
     await nextTick();
+    jest.runAllTimers();
     await wrapper.findComponent({ ref: "menu" }).vm.$emit("close");
 
     expect(wrapper.vm.localOpen).toBe(false);
     expect(wrapper.emitted("update:modelValue")[1][0]).toBe(false);
   });
   it("should have the correct ids labelling the menu", () => {
+    jest.useRealTimers();
     const slots = {
       trigger: getTrigger(),
       default: [getLi(), getLi()],
@@ -194,6 +207,7 @@ describe("FeatherDropdown.vue", () => {
       await nextTick();
 
       await wrapper.setProps({ modelValue: true });
+      await nextTick();
       expect(await axe(wrapper.element)).toHaveNoViolations();
     });
   });

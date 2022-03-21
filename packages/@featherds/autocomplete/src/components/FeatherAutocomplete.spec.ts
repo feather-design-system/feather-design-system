@@ -148,6 +148,8 @@ const baseFunctionality = (type: AutocompleteTypes) => {
       await wrapper.setProps({
         loading: true,
       });
+      await nextTick();
+      await nextTick();
       expect(wrapper.element).toMatchSnapshot();
     });
     it("should show no results text when search returns no results", async () => {
@@ -163,6 +165,8 @@ const baseFunctionality = (type: AutocompleteTypes) => {
       });
 
       jest.runAllTimers();
+      await nextTick();
+      await nextTick();
       await nextTick();
       expect(wrapper.element).toMatchSnapshot();
       expect(wrapper.vm.showNoResults).toBe(true);
@@ -790,6 +794,8 @@ describe("FeatherAutocomplete", () => {
         await wrapper.setProps({
           modelValue,
         });
+        await nextTick();
+        await nextTick();
         expect(wrapper.element).toMatchSnapshot();
         expect(wrapper.vm.showSelectionLimit).toBe(true);
       });
@@ -990,6 +996,8 @@ describe("FeatherAutocomplete", () => {
       });
 
       jest.runAllTimers();
+      await nextTick();
+      await nextTick();
       await nextTick();
       expect(wrapper.element).toMatchSnapshot();
       expect(wrapper.vm.showNoResults).toBe(false);

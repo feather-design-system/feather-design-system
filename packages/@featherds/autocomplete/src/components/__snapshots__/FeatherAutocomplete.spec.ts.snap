@@ -657,7 +657,7 @@ exports[`FeatherAutocomplete base functionality multi should not leave previous 
       <div
         class="feather-menu-dropdown"
         id="feather-menu-dropdown"
-        style="transform: translate(0px, 0px); width: 0px; z-index: 0;"
+        style="transform: translate(0px, 0px); width: 0px;"
       >
         <div
           tabindex="0"
@@ -1143,7 +1143,7 @@ exports[`FeatherAutocomplete base functionality multi should show loading spinne
       <div
         class="feather-menu-dropdown"
         id="feather-menu-dropdown"
-        style="width: auto; z-index: 0;"
+        style="transform: translate(0px, 0px); width: 0px;"
       >
         <div
           tabindex="0"
@@ -1328,7 +1328,7 @@ exports[`FeatherAutocomplete base functionality multi should show no results tex
       <div
         class="feather-menu-dropdown"
         id="feather-menu-dropdown"
-        style="transform: translate(0px, 0px); width: 0px; z-index: 0;"
+        style="transform: translate(0px, 0px); width: 0px;"
       >
         <div
           tabindex="0"
@@ -2036,7 +2036,7 @@ exports[`FeatherAutocomplete base functionality single should not leave previous
       <div
         class="feather-menu-dropdown"
         id="feather-menu-dropdown"
-        style="transform: translate(0px, 0px); width: 0px; z-index: 0;"
+        style="transform: translate(0px, 0px); width: 0px;"
       >
         <div
           tabindex="0"
@@ -2459,7 +2459,7 @@ exports[`FeatherAutocomplete base functionality single should show loading spinn
       <div
         class="feather-menu-dropdown"
         id="feather-menu-dropdown"
-        style="width: auto; z-index: 0;"
+        style="transform: translate(0px, 0px); width: 0px;"
       >
         <div
           tabindex="0"
@@ -2644,7 +2644,7 @@ exports[`FeatherAutocomplete base functionality single should show no results te
       <div
         class="feather-menu-dropdown"
         id="feather-menu-dropdown"
-        style="transform: translate(0px, 0px); width: 0px; z-index: 0;"
+        style="transform: translate(0px, 0px); width: 0px;"
       >
         <div
           tabindex="0"
@@ -3907,7 +3907,7 @@ exports[`FeatherAutocomplete multi:specific chip selection should select rightmo
       <div
         class="feather-menu-dropdown"
         id="feather-menu-dropdown"
-        style="transform: translate(0px, 0px); width: 0px; z-index: 0;"
+        style="transform: translate(0px, 0px); width: 0px;"
       >
         <div
           tabindex="0"
@@ -4918,7 +4918,7 @@ exports[`FeatherAutocomplete multi:specific selection limit should display a war
             class="feather-autocomplete-input"
             data-ref-id="feather-input"
             id="feather-autocomplete-input"
-            style="height: 1.625rem; flex-basis: 100%; white-space: normal;"
+            style="height: 0px; flex-basis: 100%; white-space: normal;"
             tabindex="0"
           />
         </div>
@@ -4950,7 +4950,7 @@ exports[`FeatherAutocomplete multi:specific selection limit should display a war
       <div
         class="feather-menu-dropdown"
         id="feather-menu-dropdown"
-        style="transform: translate(0px, 0px); width: 0px; z-index: 0;"
+        style="transform: translate(0px, 0px); width: 0px;"
       >
         <div
           tabindex="0"
@@ -5245,7 +5245,7 @@ exports[`FeatherAutocomplete multi:specific selection limit should display a war
       <div
         class="feather-menu-dropdown"
         id="feather-menu-dropdown"
-        style="width: auto; z-index: 0;"
+        style="transform: translate(0px, 0px); width: 0px;"
       >
         <div
           tabindex="0"
@@ -5460,7 +5460,7 @@ exports[`FeatherAutocomplete multi:specific selection limit should display a war
       <div
         class="feather-menu-dropdown"
         id="feather-menu-dropdown"
-        style="transform: translate(0px, 0px); width: 0px; z-index: 0;"
+        style="transform: translate(0px, 0px); width: 0px;"
       >
         <div
           tabindex="0"
@@ -5896,7 +5896,7 @@ exports[`FeatherAutocomplete single:specific should close menu when enter is pre
       <div
         class="feather-menu-dropdown"
         id="feather-menu-dropdown"
-        style="transform: translate(0px, 0px); width: 0px; z-index: 0;"
+        style="transform: translate(0px, 0px); width: 0px;"
       >
         <div
           tabindex="0"
@@ -6300,7 +6300,7 @@ exports[`FeatherAutocomplete single:specific should show add new element when in
       <div
         class="feather-menu-dropdown"
         id="feather-menu-dropdown"
-        style="width: auto; z-index: 0;"
+        style="transform: translate(0px, 0px); width: 0px;"
       >
         <div
           tabindex="0"
