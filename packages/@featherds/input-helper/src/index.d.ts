@@ -24,7 +24,7 @@ declare module "@featherds/input-helper" {
   const InputWrapperProps: InputWrapperProps;
 
   const useForm: () => {
-    validation: () => {
+    validate: () => {
       success: boolean;
       message: string;
       inputId: string;
