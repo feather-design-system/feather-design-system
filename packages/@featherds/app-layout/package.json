@@ -1,6 +1,6 @@
 {
   "name": "@featherds/app-layout",
-  "version": "0.9.6",
+  "version": "0.10.0",
   "publishConfig": {
     "access": "public"
   },
@@ -9,8 +9,8 @@
   "main": "dist/app.js",
   "license": "Apache-2.0",
   "dependencies": {
-    "@featherds/styles": "file:../styles",
     "@featherds/dialog": "file:../dialog",
+    "@featherds/styles": "file:../styles",
     "vue": "^3.1.0-0"
   },
   "keywords": [

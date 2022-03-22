@@ -1,3 +1,27 @@
+# [0.10.0](https://github.com/feather-design-system/feather-design-system/compare/v0.9.6...v0.10.0) (2022-03-22)
+
+
+### Bug Fixes
+
+* **app-layout:** adding dialog dep ([466d0e9](https://github.com/feather-design-system/feather-design-system/commit/466d0e903807d47e242a06486b5d463c4dfff925))
+* **button:** prevent default on disabled btn as anchor tag ([586dc3a](https://github.com/feather-design-system/feather-design-system/commit/586dc3aff1e08332d523d0b63802eda1347008f7))
+* **date-input:** resolving esc key propagating when closing calendar ([f1a9d4a](https://github.com/feather-design-system/feather-design-system/commit/f1a9d4ab42125421834cf2a87140d5d5acac0912))
+* **input-helper:** resolving typo in TS types ([616a840](https://github.com/feather-design-system/feather-design-system/commit/616a840c20f20e44f04d91248810b5124e6747f6))
+* **layers:** various issues with correct focus, positioning and tests resolved ([6f4a671](https://github.com/feather-design-system/feather-design-system/commit/6f4a67123c593085f596483df681a3d043467499))
+* **snackbar:** breaking out Snackbar Group props with better defaults and proper z-index values ([d8756a0](https://github.com/feather-design-system/feather-design-system/commit/d8756a0cba206dcd7e8794ca739d7bafef81b005))
+* **spacing:** removing external spacing from form components, moved to rem [#25](https://github.com/feather-design-system/feather-design-system/issues/25) ([18fb8d5](https://github.com/feather-design-system/feather-design-system/commit/18fb8d5074963fece2e621b4a2964e86d9246357))
+* **validation:** deregister controls from validation when they are unmounted, resolves [#64](https://github.com/feather-design-system/feather-design-system/issues/64) ([cf04bec](https://github.com/feather-design-system/feather-design-system/commit/cf04becdca2983b4f45bfda8768d7a6ff2430f2d))
+
+
+### Features
+
+* **menu:** using teleport/layering system ([141823b](https://github.com/feather-design-system/feather-design-system/commit/141823bbdc348df61c298cb7725cdc36485e87ce))
+* **snackbar:** feather snackbar implementation ([5e9bafb](https://github.com/feather-design-system/feather-design-system/commit/5e9bafbe99684a7ba87991f15e23ed91f17b8c10))
+* **ts:** add better TS support to buttons ([e5afe57](https://github.com/feather-design-system/feather-design-system/commit/e5afe571847a99ed93a7dc51080194a4f3417fdc))
+* **ts:** app-bar converted to have better prop typing ([651d176](https://github.com/feather-design-system/feather-design-system/commit/651d176c6eaf957393185d36e71c15cd00910918))
+
+
+
 ## [0.9.6](https://github.com/feather-design-system/feather-design-system/compare/v0.9.5...v0.9.6) (2022-02-17)
 
 
