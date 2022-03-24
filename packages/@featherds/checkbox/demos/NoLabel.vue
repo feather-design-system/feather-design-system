@@ -5,9 +5,10 @@
     no-focus
   ></feather-checkbox>
 </template>
-<script>
+<script lang="ts">
 import { FeatherCheckbox } from "../src";
-export default {
+import { defineComponent } from "vue";
+export default defineComponent({
   data: function () {
     return {
       noLabel: false,
@@ -16,5 +17,5 @@ export default {
   components: {
     FeatherCheckbox,
   },
-};
+});
 </script>

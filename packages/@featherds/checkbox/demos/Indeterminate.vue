@@ -19,10 +19,11 @@
     </ul>
   </div>
 </template>
-<script>
+<script lang="ts">
 import { FeatherCheckbox } from "../src";
-export default {
-  data: function () {
+import { defineComponent } from "vue";
+export default defineComponent({
+  data: () => {
     return {
       child: false,
       secondChild: false,
@@ -43,7 +44,7 @@ export default {
     },
   },
   methods: {
-    handleParent(v) {
+    handleParent(v: boolean) {
       if (v === undefined) {
         return;
       }
@@ -54,5 +55,5 @@ export default {
   components: {
     FeatherCheckbox,
   },
-};
+});
 </script>

@@ -16,9 +16,10 @@
     </div>
   </div>
 </template>
-<script>
+<script lang="ts">
 import { FeatherCheckbox } from "../src";
-export default {
+import { defineComponent } from "vue";
+export default defineComponent({
   data: function () {
     return {
       subscribe: false,
@@ -33,5 +34,5 @@ export default {
   components: {
     FeatherCheckbox,
   },
-};
+});
 </script>
