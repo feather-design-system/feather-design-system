@@ -43,46 +43,46 @@
     </div>
   </div>
 </template>
-<script>
+<script lang="ts">
 import { getSafeId } from "@featherds/utils/id";
 import { KEYCODES } from "@featherds/utils/keys";
 import { FeatherRipple } from "@featherds/ripple";
-import { inject } from "vue";
-
-export default {
+import { inject, defineComponent } from "vue";
+export const props = {
+  disabled: {
+    type: Boolean,
+    default: false,
+  },
+  modelValue: {
+    type: Boolean,
+    default: false,
+  },
+  indeterminate: {
+    type: Boolean,
+    default: false,
+  },
+  label: {
+    type: String,
+  },
+  noFocus: {
+    type: Boolean,
+    default: false,
+  },
+};
+export default defineComponent({
   model: {
     prop: "modelValue",
     event: "update:modelValue",
   },
   emits: ["click", "update:modelValue", "indeterminate"],
-  props: {
-    disabled: {
-      type: Boolean,
-      default: false,
-    },
-    modelValue: {
-      type: Boolean,
-      default: false,
-    },
-    indeterminate: {
-      type: Boolean,
-      default: false,
-    },
-    label: {
-      type: String,
-    },
-    noFocus: {
-      type: Boolean,
-      default: false,
-    },
-  },
+  props,
   mounted() {
     if (this.registerCheckbox) {
       this.registerCheckbox(this.inputId);
     }
   },
   setup() {
-    const registerCheckbox = inject("registerCheckbox", null);
+    const registerCheckbox = inject("registerCheckbox", (id?: string) => {});
     return {
       registerCheckbox,
     };
@@ -109,7 +109,7 @@ export default {
   },
   methods: {
     focus() {
-      this.$refs.input.focus();
+      (this.$refs.input as HTMLInputElement).focus();
     },
     updateValue() {
       if (!this.disabled) {
@@ -122,12 +122,12 @@ export default {
         }
       }
     },
-    click(e) {
+    click(e: MouseEvent) {
       this.focus();
       this.updateValue();
       this.$emit("click", e);
     },
-    keydown(e) {
+    keydown(e: KeyboardEvent) {
       if (e.keyCode === KEYCODES.SPACE || e.keyCode === KEYCODES.ENTER) {
         this.updateValue();
       }
@@ -140,7 +140,7 @@ export default {
   components: {
     FeatherRipple,
   },
-};
+});
 </script>
 
 <style lang="scss" scoped>
@@ -207,11 +207,10 @@ $boxHeight: math.div($height, 2);
     left: 0px;
     border-width: 1px;
     border-style: solid;
-    border-bottom-color: var($surface);
-    border-top-color: var($surface);
+    border-color: var($surface);
     height: 0;
     width: 100%;
-    margin-top: math.div($boxHeight - 6, 2);
+    margin-top: math.div($boxHeight - 0.375, 2);
     opacity: 0;
     transform: rotateZ(135deg);
     transition: opacity 180ms 0ms cubic-bezier(0, 0, 0.2, 1),

@@ -35,7 +35,7 @@ declare module "@featherds/input-helper" {
     inputId: Ref<string | undefined>,
     value: Ref<unknown>,
     label: string,
-    schema: Object,
+    schema: Record<string, any>,
     error?: Ref<string>
   ) => {
     validate: () => {

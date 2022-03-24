@@ -1,6 +1,7 @@
-declare module "@featherds/checkbox" {
-  import { defineComponent } from "vue";
-  const FeatherCheckbox: ReturnType<typeof defineComponent>;
-  const FeatherCheckboxGroup: ReturnType<typeof defineComponent>;
-  export { FeatherCheckbox, FeatherCheckboxGroup };
-}
+import { DefineComponent } from "vue";
+export const FeatherCheckbox: DefineComponent<
+  typeof import("./components/FeatherCheckbox.vue").props
+>;
+export const FeatherCheckboxGroup: DefineComponent<
+  typeof import("./components/FeatherCheckboxGroup.vue").props
+>;

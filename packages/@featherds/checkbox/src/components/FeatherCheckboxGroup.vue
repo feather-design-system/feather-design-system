@@ -20,42 +20,46 @@
     <InputSubText :id="descriptionId" />
   </div>
 </template>
-<script>
+<script lang="ts">
 import { getSafeId } from "@featherds/utils/id";
 import {
-  InputInheritAttrsMixin,
   InputSubText,
-  InputSubTextMixin,
+  useInputSubText,
+  InputSubTextProps,
+  useInputInheritAttrs,
 } from "@featherds/input-helper";
-import { computed, toRef, ref } from "vue";
-import { useValidation } from "@featherds/input-helper";
+import { computed, toRef, ref, Ref, defineComponent } from "vue";
 
-export default {
-  mixins: [InputInheritAttrsMixin, InputSubTextMixin],
-  props: {
-    modelValue: {
-      type: [Array, Object],
-      required: false,
-    },
-    label: {
-      type: String,
-      required: true,
-    },
-    vertical: {
-      type: Boolean,
-      default: false,
-    },
-    schema: {
-      type: Object,
-      required: false,
-    },
+import { useValidation } from "@featherds/input-helper";
+export const props = {
+  ...InputSubTextProps,
+
+  modelValue: {
+    type: [Array, Object],
+    required: false,
   },
+  label: {
+    type: String,
+    required: true,
+  },
+  vertical: {
+    type: Boolean,
+    default: false,
+  },
+  schema: {
+    type: Object,
+    required: false,
+  },
+};
+export default defineComponent({
+  props,
   provide() {
     return {
       registerCheckbox: this.registerCheckbox,
     };
   },
   setup(props, context) {
+    useInputSubText(props);
     const error = toRef(props, "error");
 
     const groupId = computed(() => {
@@ -87,13 +91,13 @@ export default {
     const { validate } = useValidation(
       inputId,
       toRef(props, "modelValue"),
-      props.label,
-      props.schema,
-      toRef(props, "error")
+      props.label as string,
+      props.schema as Record<string, any>,
+      toRef(props, "error") as Ref<string>
     );
 
-    const registerCheckbox = (id) => {
-      if (inputId.value === groupId.value) {
+    const registerCheckbox = (id?: string) => {
+      if (id && inputId.value === groupId.value) {
         inputId.value = id;
       }
     };
@@ -106,12 +110,13 @@ export default {
       attrs,
       validate,
       registerCheckbox,
+      ...useInputInheritAttrs(context.attrs as Record<string, unknown>),
     };
   },
   components: {
     InputSubText,
   },
-};
+});
 </script>
 
 <style lang="scss" scoped>

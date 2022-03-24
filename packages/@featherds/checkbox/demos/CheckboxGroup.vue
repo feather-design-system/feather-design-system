@@ -30,9 +30,10 @@
     </FeatherCheckboxGroup>
   </div>
 </template>
-<script>
+<script lang="ts">
 import { FeatherCheckbox, FeatherCheckboxGroup } from "../src";
-export default {
+import { defineComponent } from "vue";
+export default defineComponent({
   components: {
     FeatherCheckbox,
     FeatherCheckboxGroup,
@@ -44,7 +45,7 @@ export default {
       ready: true,
     };
   },
-};
+});
 </script>
 <style lang="scss" scoped>
 .wrap:deep(.feather-checkbox) {
