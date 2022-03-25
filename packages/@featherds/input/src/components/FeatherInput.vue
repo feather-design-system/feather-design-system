@@ -38,7 +38,7 @@
 <script>
 import { getSafeId } from "@featherds/utils/id";
 import { useValidation } from "@featherds/input-helper";
-import { ref, toRef, computed, onBeforeUnmount } from "vue";
+import { ref, toRef, computed } from "vue";
 import {
   InputWrapper,
   InputWrapperMixin,
@@ -86,11 +86,7 @@ export default {
     });
     const internalValue = ref();
 
-    onBeforeUnmount(() => {
-      removeValidation();
-    });
-
-    const { validate, removeValidation } = useValidation(
+    const { validate } = useValidation(
       inputId,
       internalValue,
       props.label,

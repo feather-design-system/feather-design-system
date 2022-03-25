@@ -68,7 +68,7 @@ import { getSafeId } from "@featherds/utils/id";
 import { KEYCODES } from "@featherds/utils/keys";
 import List from "./List";
 import { useValidation } from "@featherds/input-helper";
-import { computed, toRef, onBeforeUnmount } from "vue";
+import { computed, toRef } from "vue";
 
 export default {
   mixins: [InputWrapperMixin, InputSubTextMixin, InputInheritAttrsMixin],
@@ -102,11 +102,7 @@ export default {
       return getSafeId("feather-select-input");
     });
 
-    onBeforeUnmount(() => {
-      removeValidation();
-    });
-
-    const { validate, removeValidation } = useValidation(
+    const { validate } = useValidation(
       inputId,
       toRef(props, "modelValue"),
       props.label,

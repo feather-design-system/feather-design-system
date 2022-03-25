@@ -101,7 +101,7 @@
   </div>
 </template>
 <script>
-import { ref, computed, watch, toRef, nextTick, onBeforeUnmount } from "vue";
+import { ref, computed, watch, toRef, nextTick } from "vue";
 import { getSafeId } from "@featherds/utils/id";
 import { KEYCODES } from "@featherds/utils/keys";
 import { useValidation } from "@featherds/input-helper";
@@ -189,17 +189,13 @@ export default {
       return getSafeId("feather-date-input-month");
     });
 
-    const { validate, removeValidation } = useValidation(
+    const { validate } = useValidation(
       ref(monthId),
       value,
       props.label,
       props.schema,
       toRef(props, "error")
     );
-
-    onBeforeUnmount(() => {
-      removeValidation();
-    });
 
     watch(
       value,

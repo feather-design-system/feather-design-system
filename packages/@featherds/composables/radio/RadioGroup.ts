@@ -1,12 +1,4 @@
-import {
-  ref,
-  watch,
-  watchEffect,
-  computed,
-  provide,
-  Ref,
-  onBeforeUnmount,
-} from "vue";
+import { ref, watch, watchEffect, computed, provide, Ref } from "vue";
 import { useSelection, IRadio } from "./Selection";
 import { useValidation } from "@featherds/input-helper";
 import { getSafeId } from "@featherds/utils/id";
@@ -77,11 +69,7 @@ const useRadioGroup = (
 
   firstElementId.value = groupId.value;
 
-  onBeforeUnmount(() => {
-    removeValidation();
-  });
-
-  const { validate, removeValidation } = useValidation(
+  const { validate } = useValidation(
     firstElementId,
     modelValue,
     label,

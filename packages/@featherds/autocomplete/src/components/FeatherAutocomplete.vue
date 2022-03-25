@@ -176,7 +176,6 @@ import {
   defineComponent,
   ComponentPublicInstance,
   Ref,
-  onBeforeUnmount,
 } from "vue";
 import {
   IAutocompleteItemType,
@@ -687,11 +686,7 @@ export default defineComponent({
       return getSafeId("feather-autocomplete-input");
     });
 
-    onBeforeUnmount(() => {
-      removeValidation();
-    });
-
-    const { validate, removeValidation } = useValidation(
+    const { validate } = useValidation(
       inputId,
       toRef(props, "modelValue"),
       props.label as string,

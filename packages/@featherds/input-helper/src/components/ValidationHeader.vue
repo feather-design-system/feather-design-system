@@ -1,11 +1,12 @@
 <template>
   <div
     class="errors"
-    v-if="errors.length"
+    v-if="errors.length || mainError.length"
     data-ref-id="feather-validation-header"
   >
     <div class="error-heading" tabindex="-1" ref="heading">
-      {{ errorsHeading }}
+      <span v-if="errors.length">{{ errorsHeading }}<br /></span>
+      {{ mainError }}
     </div>
     <ul>
       <li v-for="item in errors" :key="item.inputId">
@@ -17,7 +18,7 @@
   </div>
 </template>
 <script>
-import { ref, computed, nextTick, inject } from "vue";
+import { ref, computed, nextTick, inject, watch, toRef } from "vue";
 export default {
   props: {
     headingText: {
@@ -27,9 +28,14 @@ export default {
         return `${errors.length} errors`;
       },
     },
+    generalError: {
+      type: String,
+      default: "",
+    },
   },
   setup(props) {
     const errorList = inject("featherFormErrors", ref([]));
+    const mainError = toRef(props, "generalError");
     const focusElement = (id) => {
       document.getElementById(id).focus();
     };
@@ -51,11 +57,18 @@ export default {
       return props.headingText(errors.value);
     });
 
+    watch(mainError, (v) => {
+      if (v.length) {
+        nextTick(() => heading.value.focus());
+      }
+    });
+
     return {
       errors,
       errorsHeading,
       heading,
       focusElement,
+      mainError,
     };
   },
 };
