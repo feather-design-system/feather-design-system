@@ -44,7 +44,6 @@ declare module "@featherds/input-helper" {
       inputId: string;
       label: string;
     };
-    removeValidation: () => void;
   };
 
   export {

@@ -2,19 +2,9 @@
   <form @submit="onSubmit" novalidate>
     <h1>Register, v2</h1>
     * indicates required
-    <div class="errors" v-if="errors.length">
-      <div class="error-heading" tabindex="-1" ref="heading">
-        {{ errorsHeading }}
-      </div>
-      <ul>
-        <li v-for="item in errors" :key="item.inputId">
-          <a href="#" @click.prevent="focusElement(item.inputId)">{{
-            item.fullMessage
-          }}</a>
-        </li>
-      </ul>
-    </div>
+    <ValidationHeader :errorList="errors" />
     <FeatherInput
+      v-if="test"
       label="Email *"
       :modelValue="email"
       :schema="emailV"
@@ -36,56 +26,38 @@
 </template>
 <script>
 import { string } from "yup";
-import { ref, computed, provide, nextTick } from "vue";
+import { ref } from "vue";
 import * as components from "./../src";
+import { useForm, ValidationHeader } from "@featherds/input-helper";
 
 export default {
   setup() {
-    const controls = {};
-    provide("featherForm", {
-      register: (input, validate) => {
-        controls[input] = validate;
-      },
-    });
+    const form = useForm();
+    const test = ref(true);
     const name = ref("");
     const nameV = string().required("Required");
 
     const email = ref("");
     const emailV = string().required("Required").email();
     const errors = ref([]);
-    const errorsHeading = ref("");
     const heading = ref();
-    const removeAsteriks = (str) => {
-      return str.replace(/ \*$/, "");
-    };
     const focusElement = (id) => {
       document.getElementById(id).focus();
     };
     const onSubmit = (e) => {
-      errors.value = [];
       e.preventDefault();
-      const validation = Object.keys(controls).map((key) => {
-        return controls[key]();
-      });
-      errors.value = validation
-        .filter((x) => x.success === false)
-        .map((v) => {
-          v.fullMessage = `${removeAsteriks(v.label)} - ${v.message}`;
-          return v;
-        });
-      errorsHeading.value = errors.value ? errors.value.length + " errors" : "";
-      nextTick(() => heading.value.focus());
+      errors.value = form.validate();
     };
 
     const addHash = (str) => `#${str}`;
     return {
+      test,
       email,
       emailV,
       name,
       nameV,
       onSubmit,
       errors,
-      errorsHeading,
       heading,
       addHash,
       focusElement,
@@ -93,6 +65,7 @@ export default {
   },
   components: {
     ...components,
+    ValidationHeader,
   },
 };
 </script>

@@ -27,7 +27,7 @@ import {
   InputSubText,
   InputSubTextMixin,
 } from "@featherds/input-helper";
-import { computed, toRef, ref, onBeforeUnmount } from "vue";
+import { computed, toRef, ref } from "vue";
 import { useValidation } from "@featherds/input-helper";
 
 export default {
@@ -83,12 +83,8 @@ export default {
 
     const inputId = ref(groupId.value);
 
-    onBeforeUnmount(() => {
-      removeValidation();
-    });
-
     //setting default
-    const { validate, removeValidation } = useValidation(
+    const { validate } = useValidation(
       inputId,
       toRef(props, "modelValue"),
       props.label,

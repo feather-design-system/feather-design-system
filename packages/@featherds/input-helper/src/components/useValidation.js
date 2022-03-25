@@ -1,4 +1,4 @@
-import { inject, ref, provide, watch, isRef } from "vue";
+import { inject, ref, provide, watch, isRef, onBeforeUnmount } from "vue";
 const useValidation = (inputId, value, label, schema, errorFromInput) => {
   const form = inject("featherForm", false);
   if (schema && form && inputId.value) {
@@ -49,10 +49,12 @@ const useValidation = (inputId, value, label, schema, errorFromInput) => {
       },
       { immediate: true }
     );
-    const removeValidation = () => form.deregister(inputId.value, true);
-    return { validate, removeValidation };
+    onBeforeUnmount(() => {
+      form.deregister(inputId.value, true);
+    });
+    return { validate };
   }
-  return { validate: () => true, removeValidation: () => null };
+  return { validate: () => true };
 };
 
 export { useValidation };

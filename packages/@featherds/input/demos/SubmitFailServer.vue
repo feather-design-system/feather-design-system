@@ -2,19 +2,7 @@
   <form @submit="onSubmit" novalidate>
     <h1>Register, v2</h1>
     * indicates required
-    <div class="errors" v-if="errors.length || headingText.length">
-      <div class="error-heading" tabindex="-1" ref="heading">
-        {{ errorsHeading }}
-        {{ headingText }}
-      </div>
-      <ul>
-        <li v-for="item in errors" :key="item.inputId">
-          <a href="#" @click.prevent="focusElement(item.inputId)">{{
-            item.fullMessage
-          }}</a>
-        </li>
-      </ul>
-    </div>
+    <ValidationHeader :errorList="errors" :generalError="headingText" />
     <FeatherInput
       label="Email *"
       :modelValue="email"
@@ -46,19 +34,15 @@
 </template>
 <script>
 import { string } from "yup";
-import { ref, computed, provide, nextTick } from "vue";
+import { ref, computed } from "vue";
 import * as components from "./../src";
+import { useForm, ValidationHeader } from "@featherds/input-helper";
 
 import { FeatherSpinner } from "@featherds/progress";
 
 export default {
   setup() {
-    const controls = {};
-    provide("featherForm", {
-      register: (input, validate) => {
-        controls[input] = validate;
-      },
-    });
+    const form = useForm();
     const name = ref("");
     const nameV = string().required("Required");
 
@@ -66,12 +50,6 @@ export default {
     const emailV = string().required("Required").email();
     const submitting = ref();
     const alert = ref();
-    const removeAsteriks = (str) => {
-      return str.replace(/ \*$/, "");
-    };
-    const focusElement = (id) => {
-      document.getElementById(id).focus();
-    };
     const errors = ref([]);
     const heading = ref();
 
@@ -80,34 +58,20 @@ export default {
     });
     const headingText = ref("");
     const onSubmit = (e) => {
-      headingText.value = "";
-      errors.value = [];
       e.preventDefault();
-      const validation = Object.keys(controls).map((key) => {
-        return controls[key]();
-      });
-      errors.value = validation
-        .filter((x) => x.success === false)
-        .map((v) => {
-          v.fullMessage = `${removeAsteriks(v.label)} - ${v.message}`;
-          return v;
-        });
-
-      if (errors.value.length) {
-        nextTick(() => heading.value.focus());
-      } else {
+      errors.value = form.validate();
+      headingText.value = "";
+      if (!errors.value.length) {
         submitting.value = true;
         alert.value.textContent = "Submitting form, please wait";
 
         setTimeout(() => {
           submitting.value = false;
           headingText.value = "Server error occured. Please try again later.";
-          nextTick(() => heading.value.focus());
         }, 3000);
       }
     };
 
-    const addHash = (str) => `#${str}`;
     return {
       email,
       emailV,
@@ -118,8 +82,6 @@ export default {
       errorsHeading,
       heading,
       headingText,
-      addHash,
-      focusElement,
       submitting,
       alert,
     };
@@ -127,6 +89,7 @@ export default {
   components: {
     ...components,
     FeatherSpinner,
+    ValidationHeader,
   },
 };
 </script>
