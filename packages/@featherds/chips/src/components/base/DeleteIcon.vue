@@ -12,25 +12,27 @@
     </a>
   </span>
 </template>
-<script>
+<script lang="ts">
 import { FeatherIcon } from "@featherds/icon";
 import Cancel from "@featherds/icon/navigation/Cancel";
-export default {
-  emits: ["delete"],
-  props: {
-    disabled: {
-      type: Boolean,
-      default: false,
-    },
-    textId: {
-      type: String,
-      required: true,
-    },
-    label: {
-      type: String,
-      required: true,
-    },
+import { defineComponent } from "vue";
+export const props = {
+  disabled: {
+    type: Boolean,
+    default: false,
   },
+  textId: {
+    type: String,
+    required: true,
+  },
+  label: {
+    type: String,
+    required: true,
+  },
+};
+export default defineComponent({
+  emits: ["delete"],
+  props,
   setup(props, context) {
     const handleDelete = () => {
       if (props.disabled) {
@@ -46,7 +48,7 @@ export default {
   components: {
     FeatherIcon,
   },
-};
+});
 </script>
 <style lang="scss" scoped>
 @import "../../../scss/mixins";

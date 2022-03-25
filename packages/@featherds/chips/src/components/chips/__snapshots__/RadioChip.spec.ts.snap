@@ -15,7 +15,6 @@ exports[`RadioChip radio button should set aria-checked based on data 1`] = `
   <span
     class="label"
     id="chip-label-id"
-    title="false"
   >
     
     
@@ -43,7 +42,6 @@ exports[`RadioChip radio button should set aria-checked based on data 2`] = `
   <span
     class="label"
     id="chip-label-id"
-    title="false"
   >
     
     
@@ -71,7 +69,6 @@ exports[`RadioChip radio button should set aria-disabled based on property 1`] =
   <span
     class="label"
     id="chip-label-id"
-    title="false"
   >
     
     
@@ -99,7 +96,6 @@ exports[`RadioChip radio button should set aria-disabled based on property 2`] =
   <span
     class="label"
     id="chip-label-id"
-    title="false"
   >
     
     
@@ -127,7 +123,6 @@ exports[`RadioChip should render a disabled chip 1`] = `
   <span
     class="label"
     id="chip-label-id"
-    title="false"
   >
     
     
@@ -155,7 +150,6 @@ exports[`RadioChip should render a standard chip 1`] = `
   <span
     class="label"
     id="chip-label-id"
-    title="false"
   >
     
     
@@ -194,7 +188,6 @@ exports[`RadioChip should render a standard chip with icon 1`] = `
   <span
     class="label"
     id="chip-label-id"
-    title="false"
   >
     
     
@@ -222,7 +215,6 @@ exports[`RadioChip should render condensed 1`] = `
   <span
     class="label"
     id="chip-label-id"
-    title="false"
   >
     
     
@@ -250,7 +242,6 @@ exports[`RadioChip should render condensed from a group 1`] = `
   <span
     class="label"
     id="chip-label-id"
-    title="false"
   >
     
     

@@ -151,15 +151,15 @@
     </FeatherChipList>
   </div>
 </template>
-<script>
+<script lang="ts">
 import map from "@featherds/icon/action/Location";
 import { FeatherIcon } from "@featherds/icon";
 import * as components from "./../src";
-import { markRaw } from "vue";
-export default {
+import { defineComponent } from "vue";
+export default defineComponent({
   data() {
     return {
-      map: markRaw(map),
+      map: map,
       locations: ["Belfast", "Boston", "Madrid", "Moscow"],
       selected: undefined,
     };
@@ -176,7 +176,7 @@ export default {
     ...components,
     FeatherIcon,
   },
-};
+});
 </script>
 <style lang="scss">
 div.chip-list:first-of-type {

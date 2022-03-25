@@ -17,11 +17,16 @@ const mockProvide = () => {
   };
 };
 
-const getWrapper = function (options = {}, addIcon = false) {
-  options = {
-    ...options,
-    ...getSlots(addIcon),
+const getWrapper = function (
+  options: Record<string, unknown> = {},
+  addIcon = false
+) {
+  const props = options.props ? (options.props as Object) : {};
+  options.props = {
+    ...props,
+    value: "" as unknown,
   };
+  options.slots = getSlots(addIcon).slots;
 
   return mount(RadioChip, options);
 };
@@ -30,6 +35,11 @@ const getSlots = (withIcon = false) => {
     slots: {
       default: "Test",
     },
+  } as {
+    slots: {
+      default: string;
+      icon?: { template: string };
+    };
   };
   if (withIcon) {
     slots.slots.icon = { template: "<span>*</span>" };
@@ -92,10 +102,10 @@ describe("RadioChip", () => {
       });
       wrapper.vm.checked = true;
       await nextTick();
-      expect(wrapper.wrapperElement).toMatchSnapshot();
+      expect(wrapper.element).toMatchSnapshot();
       wrapper.vm.checked = false;
       await nextTick();
-      expect(wrapper.wrapperElement).toMatchSnapshot();
+      expect(wrapper.element).toMatchSnapshot();
     });
     it("should set aria-disabled based on property", async () => {
       const wrapper = getWrapper({
@@ -104,20 +114,20 @@ describe("RadioChip", () => {
         },
         global: mockProvide(),
       });
-      expect(wrapper.wrapperElement).toMatchSnapshot();
+      expect(wrapper.element).toMatchSnapshot();
       await wrapper.setProps({
         disabled: false,
       });
-      expect(wrapper.wrapperElement).toMatchSnapshot();
+      expect(wrapper.element).toMatchSnapshot();
     });
   });
   it("should render a standard chip", () => {
     const wrapper = getWrapper({ global: mockProvide() });
-    expect(wrapper.wrapperElement).toMatchSnapshot();
+    expect(wrapper.element).toMatchSnapshot();
   });
   it("should render a standard chip with icon", () => {
     const wrapper = getWrapper({ global: mockProvide() }, true);
-    expect(wrapper.wrapperElement).toMatchSnapshot();
+    expect(wrapper.element).toMatchSnapshot();
   });
 
   it("should render a disabled chip", () => {
@@ -125,7 +135,7 @@ describe("RadioChip", () => {
       disabled: true,
     };
     const wrapper = getWrapper({ props, global: mockProvide() });
-    expect(wrapper.wrapperElement).toMatchSnapshot();
+    expect(wrapper.element).toMatchSnapshot();
   });
 
   it("should render condensed", () => {
@@ -133,7 +143,7 @@ describe("RadioChip", () => {
       condensed: true,
     };
     const wrapper = getWrapper({ props, global: mockProvide() });
-    expect(wrapper.wrapperElement).toMatchSnapshot();
+    expect(wrapper.element).toMatchSnapshot();
   });
   it("should render condensed from a group", () => {
     const { provide: radioProvide } = mockProvide();
@@ -142,6 +152,6 @@ describe("RadioChip", () => {
       global: { provide: radioProvide },
     };
     const wrapper = getWrapper(provide);
-    expect(wrapper.wrapperElement).toMatchSnapshot();
+    expect(wrapper.element).toMatchSnapshot();
   });
 });

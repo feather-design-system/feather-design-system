@@ -14,25 +14,25 @@
     <FeatherRipple v-if="clickable" />
   </div>
 </template>
-<script>
-import { ref, inject, computed } from "vue";
+<script lang="ts">
+import { ref, inject, computed, defineComponent } from "vue";
 import { FeatherRipple } from "@featherds/ripple";
-export default {
-  props: {
-    disabled: {
-      type: Boolean,
-      default: false,
-    },
-    condensed: {
-      type: Boolean,
-      default: false,
-    },
-    clickable: {
-      type: Boolean,
-      default: false,
-    },
+export const props = {
+  disabled: {
+    type: Boolean,
+    default: false,
   },
-
+  condensed: {
+    type: Boolean,
+    default: false,
+  },
+  clickable: {
+    type: Boolean,
+    default: false,
+  },
+};
+export default defineComponent({
+  props,
   setup(props) {
     const groupCondensed = inject("isCondensed", null);
     const isCondensed = computed(() => {
@@ -58,7 +58,7 @@ export default {
   components: {
     FeatherRipple,
   },
-};
+});
 </script>
 
 <style lang="scss" scoped>

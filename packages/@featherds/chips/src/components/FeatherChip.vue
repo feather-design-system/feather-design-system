@@ -1,32 +1,36 @@
-<script>
-import { inject, h } from "vue";
-import GridChip from "./chips/GridChip";
-import ReadonlyChip from "./chips/ReadonlyChip";
-import RadioChip from "./chips/RadioChip";
-
-export default {
-  props: {
-    disabled: {
-      type: Boolean,
-      default: false,
-    },
-    labels: {
-      type: Object,
-    },
-    condensed: {
-      type: Boolean,
-      default: false,
-    },
-    value: undefined,
+<script lang="ts">
+import { inject, h, defineComponent, DefineComponent, PropType } from "vue";
+import GridChip from "./chips/GridChip.vue";
+import ReadonlyChip from "./chips/ReadonlyChip.vue";
+import RadioChip from "./chips/RadioChip.vue";
+export const props = {
+  disabled: {
+    type: Boolean,
+    default: false,
   },
+  labels: {
+    type: Object,
+  },
+  condensed: {
+    type: Boolean,
+    default: false,
+  },
+  value: {
+    type: [String, Object, Number, Array] as PropType<
+      string | unknown | number | []
+    >,
+  },
+};
+export default defineComponent({
+  props,
   setup() {
-    const format = inject("chipListFormat", false);
+    const format = inject("chipListFormat", "");
     return { format };
   },
   render() {
-    const renderChip = (component) => {
+    const renderChip = (component: unknown) => {
       return h(
-        component,
+        component as DefineComponent,
         {
           ...this.$props,
           ...this.$attrs,
@@ -45,5 +49,5 @@ export default {
     }
     return renderChip(ReadonlyChip);
   },
-};
+});
 </script>

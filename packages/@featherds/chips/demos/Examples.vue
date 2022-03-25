@@ -69,15 +69,15 @@
     </FeatherChipList>
   </div>
 </template>
-<script>
+<script lang="ts">
 import map from "@featherds/icon/action/Location";
 import { FeatherIcon } from "@featherds/icon";
 import * as components from "./../src";
-import { markRaw } from "vue";
-export default {
+import { defineComponent } from "vue";
+export default defineComponent({
   data() {
     return {
-      map: markRaw(map),
+      map: map,
       locations: ["Belfast", "Boston", "Madrid", "Moscow"],
       locations2: ["Belfast", "Boston", "Madrid", "Moscow"],
       locations3: ["Belfast", "Boston", "Madrid", "Moscow"],
@@ -85,11 +85,11 @@ export default {
     };
   },
   methods: {
-    onDelete(item) {
+    onDelete(item: string) {
       const index = this.locations2.indexOf(item);
       this.locations2.splice(index, 1);
     },
-    onDelete3(item) {
+    onDelete3(item: string) {
       const index = this.locations3.indexOf(item);
       this.locations3.splice(index, 1);
     },
@@ -101,7 +101,7 @@ export default {
     ...components,
     FeatherIcon,
   },
-};
+});
 </script>
 <style lang="scss">
 div.chip-list:first-of-type {
