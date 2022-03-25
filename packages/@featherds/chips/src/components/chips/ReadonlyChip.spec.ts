@@ -16,6 +16,11 @@ const getSlots = (withIcon = false) => {
     slots: {
       default: "Test",
     },
+  } as {
+    slots: {
+      default: string;
+      icon?: { template: string };
+    };
   };
   if (withIcon) {
     slots.slots.icon = { template: "<span>*</span>" };
@@ -26,18 +31,18 @@ const getSlots = (withIcon = false) => {
 describe("ReadOnlyChip", () => {
   it("should render a standard chip", () => {
     const wrapper = getWrapper();
-    expect(wrapper.wrapperElement).toMatchSnapshot();
+    expect(wrapper.element).toMatchSnapshot();
   });
   it("should render a standard chip with icon", () => {
     const wrapper = getWrapper({}, true);
-    expect(wrapper.wrapperElement).toMatchSnapshot();
+    expect(wrapper.element).toMatchSnapshot();
   });
   it("should render a disabled chip", () => {
     const props = {
       disabled: true,
     };
     const wrapper = getWrapper({ props });
-    expect(wrapper.wrapperElement).toMatchSnapshot();
+    expect(wrapper.element).toMatchSnapshot();
   });
 
   it("should render condensed", () => {
@@ -45,13 +50,13 @@ describe("ReadOnlyChip", () => {
       condensed: true,
     };
     const wrapper = getWrapper({ props });
-    expect(wrapper.wrapperElement).toMatchSnapshot();
+    expect(wrapper.element).toMatchSnapshot();
   });
   it("should render condensed from a group", () => {
     const provide = {
       condensed: true,
     };
     const wrapper = getWrapper({ global: { provide: provide } });
-    expect(wrapper.wrapperElement).toMatchSnapshot();
+    expect(wrapper.element).toMatchSnapshot();
   });
 });

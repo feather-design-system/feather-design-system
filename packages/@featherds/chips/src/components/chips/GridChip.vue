@@ -23,19 +23,19 @@
     />
   </Chip>
 </template>
-<script>
+<script lang="ts">
 import { getSafeId } from "@featherds/utils/id";
 import { useLabelProperty } from "@featherds/composables/LabelProperty";
-import { toRef, computed } from "vue";
-import Chip from "../base/Chip";
-import DeleteIcon from "../base/DeleteIcon";
-import Label from "../base/Label";
-import PreIcon from "../base/PreIcon";
+import { toRef, computed, defineComponent, PropType } from "vue";
+import Chip from "../base/Chip.vue";
+import DeleteIcon from "../base/DeleteIcon.vue";
+import Label from "../base/Label.vue";
+import PreIcon from "../base/PreIcon.vue";
 
 const LABELS = {
   delete: "Remove",
 };
-export default {
+export default defineComponent({
   inheritAttrs: false,
   props: {
     disabled: {
@@ -43,8 +43,8 @@ export default {
       default: false,
     },
     labels: {
-      type: Object,
-      default() {
+      type: Object as PropType<typeof LABELS>,
+      default: () => {
         return LABELS;
       },
     },
@@ -112,7 +112,7 @@ export default {
     Label,
     PreIcon,
   },
-};
+});
 </script>
 
 <style lang="scss" scoped>

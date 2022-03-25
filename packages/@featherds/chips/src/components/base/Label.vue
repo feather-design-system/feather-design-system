@@ -1,24 +1,26 @@
 <template>
   <span class="label" :title="titleText" ref="container"><slot /></span>
 </template>
-<script>
-export default {
+<script lang="ts">
+import { defineComponent } from "vue";
+
+export default defineComponent({
   data() {
     return {
-      titleText: false,
+      titleText: undefined as string | undefined,
     };
   },
   methods: {
     ellipsisActive() {
       return (
-        this.$refs["container"].offsetWidth <
-        this.$refs["container"].scrollWidth
+        (this.$refs["container"] as HTMLElement).offsetWidth <
+        (this.$refs["container"] as HTMLElement).scrollWidth
       );
     },
     updateTitle() {
       this.titleText = this.ellipsisActive()
-        ? this.$slots.default()[0].text
-        : false;
+        ? ((this.$refs["container"] as HTMLElement).textContent as string)
+        : undefined;
     },
   },
   mounted() {
@@ -27,7 +29,7 @@ export default {
   beforeUpdate() {
     this.updateTitle();
   },
-};
+});
 </script>
 <style lang="scss" scoped>
 @import "@featherds/styles/mixins/typography";

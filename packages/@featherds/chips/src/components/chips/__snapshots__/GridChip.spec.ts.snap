@@ -1,6 +1,42 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`ReadOnlyChip should render a disabled chip 1`] = `
+exports[`GridChip should emit a click event 1`] = `
+<div
+  aria-disabled="false"
+  class="chip hover focus"
+  role="row"
+  style="overflow: hidden; position: relative;"
+>
+  
+  <span
+    aria-disabled="false"
+    role="gridcell"
+  >
+    <span
+      class="chip-label-button"
+      role="button"
+      tabindex="0"
+    >
+      <!--v-if-->
+      <span
+        class="label"
+        id="chip-text"
+      >
+        
+        
+        Test
+        
+        
+      </span>
+    </span>
+  </span>
+  <!--v-if-->
+  
+  <!---->
+</div>
+`;
+
+exports[`GridChip should render a disabled chip 1`] = `
 <div
   aria-disabled="true"
   class="chip disabled"
@@ -18,7 +54,6 @@ exports[`ReadOnlyChip should render a disabled chip 1`] = `
       <span
         class="label"
         id="chip-text"
-        title="false"
       >
         
         
@@ -34,7 +69,64 @@ exports[`ReadOnlyChip should render a disabled chip 1`] = `
 </div>
 `;
 
-exports[`ReadOnlyChip should render a standard chip 1`] = `
+exports[`GridChip should render a removable chip 1`] = `
+<div
+  aria-disabled="false"
+  class="chip focus"
+  role="row"
+>
+  
+  <span
+    aria-disabled="false"
+    role="gridcell"
+  >
+    <span
+      class="chip-label-button"
+    >
+      <!--v-if-->
+      <span
+        class="label"
+        id="chip-text"
+      >
+        
+        
+        Test
+        
+        
+      </span>
+    </span>
+  </span>
+  <span
+    class="chip-delete"
+    role="gridcell"
+  >
+    <a
+      aria-describedby="chip-text"
+      aria-label="Remove"
+      class="delete-icon"
+      href="#"
+      role="button"
+    >
+      <svg
+        aria-hidden="true"
+        class="feather-icon feather-icon-flex"
+        focusable="false"
+        role="img"
+        viewBox="0 0 24 24"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <path
+          d="M19,17.55,13.43,12,19,6.4A1,1,0,1,0,17.58,5L12,10.58,6.42,5A1,1,0,0,0,5,6.42L10.6,12,5,17.6A1,1,0,0,0,5,19a1,1,0,0,0,.71.29,1,1,0,0,0,.71-.3L12,13.41,17.6,19a1,1,0,0,0,.71.29A1,1,0,0,0,19,19,1,1,0,0,0,19,17.55Z"
+        />
+      </svg>
+    </a>
+  </span>
+  
+  <!--v-if-->
+</div>
+`;
+
+exports[`GridChip should render a standard chip 1`] = `
 <div
   aria-disabled="false"
   class="chip"
@@ -52,7 +144,6 @@ exports[`ReadOnlyChip should render a standard chip 1`] = `
       <span
         class="label"
         id="chip-text"
-        title="false"
       >
         
         
@@ -68,7 +159,7 @@ exports[`ReadOnlyChip should render a standard chip 1`] = `
 </div>
 `;
 
-exports[`ReadOnlyChip should render a standard chip with icon 1`] = `
+exports[`GridChip should render a standard chip with icon 1`] = `
 <div
   aria-disabled="false"
   class="chip"
@@ -97,7 +188,6 @@ exports[`ReadOnlyChip should render a standard chip with icon 1`] = `
       <span
         class="label"
         id="chip-text"
-        title="false"
       >
         
         
@@ -113,7 +203,7 @@ exports[`ReadOnlyChip should render a standard chip with icon 1`] = `
 </div>
 `;
 
-exports[`ReadOnlyChip should render condensed 1`] = `
+exports[`GridChip should render condensed 1`] = `
 <div
   aria-disabled="false"
   class="chip condensed"
@@ -131,7 +221,6 @@ exports[`ReadOnlyChip should render condensed 1`] = `
       <span
         class="label"
         id="chip-text"
-        title="false"
       >
         
         
@@ -147,7 +236,7 @@ exports[`ReadOnlyChip should render condensed 1`] = `
 </div>
 `;
 
-exports[`ReadOnlyChip should render condensed from a group 1`] = `
+exports[`GridChip should render condensed from a group 1`] = `
 <div
   aria-disabled="false"
   class="chip"
@@ -165,7 +254,6 @@ exports[`ReadOnlyChip should render condensed from a group 1`] = `
       <span
         class="label"
         id="chip-text"
-        title="false"
       >
         
         

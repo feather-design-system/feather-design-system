@@ -18,15 +18,28 @@
     <Label :id="labelId"><slot /></Label>
   </Chip>
 </template>
-<script>
-import Chip from "../base/Chip";
-import Label from "../base/Label";
-import PreIcon from "../base/PreIcon";
+<script lang="ts">
+import Chip from "../base/Chip.vue";
+import Label from "../base/Label.vue";
+import PreIcon from "../base/PreIcon.vue";
 import { getSafeId } from "@featherds/utils/id";
-import { computed, inject, ref } from "vue";
-export default {
+import {
+  computed,
+  inject,
+  ref,
+  Ref,
+  defineComponent,
+  PropType,
+  ComponentPublicInstance,
+} from "vue";
+export default defineComponent({
   props: {
-    value: undefined,
+    value: {
+      type: [String, Object, Number, Array] as PropType<
+        string | unknown | number | []
+      >,
+      required: true,
+    },
     disabled: {
       type: Boolean,
       default: false,
@@ -47,14 +60,14 @@ export default {
       return checked.value ? 0 : -1;
     });
 
-    const input = ref(null);
+    const input = ref() as Ref<ComponentPublicInstance>;
     const focus = () => {
       input.value.$el.focus();
     };
     //register
-    const register = inject("register");
-    const blur = inject("blur");
-    const select = inject("select");
+    const register = inject("register", (t?: unknown) => {});
+    const blur = inject("blur", (t?: unknown) => {});
+    const select = inject("select", (t?: unknown) => {});
 
     const vm = {
       first,
@@ -96,7 +109,7 @@ export default {
     Label,
     PreIcon,
   },
-};
+});
 </script>
 <style lang="scss" scoped>
 @import "@featherds/styles/themes/variables";

@@ -11,12 +11,13 @@
     </span>
   </Chip>
 </template>
-<script>
-import Chip from "../base/Chip";
-import Label from "../base/Label";
-import PreIcon from "../base/PreIcon";
+<script lang="ts">
+import { defineComponent } from "vue";
+import Chip from "../base/Chip.vue";
+import Label from "../base/Label.vue";
+import PreIcon from "../base/PreIcon.vue";
 
-export default {
+export default defineComponent({
   props: {
     disabled: {
       type: Boolean,
@@ -47,7 +48,7 @@ export default {
     Label,
     PreIcon,
   },
-};
+});
 </script>
 <style lang="scss" scoped>
 [role="gridcell"] {

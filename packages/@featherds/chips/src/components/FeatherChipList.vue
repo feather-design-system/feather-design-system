@@ -10,35 +10,36 @@
     <slot />
   </div>
 </template>
-<script>
-import { provide, toRef } from "vue";
+<script lang="ts">
+import { provide, toRef, defineComponent, ref } from "vue";
 import { useRadioGroup } from "@featherds/composables/radio/RadioGroup";
-export default {
+export const props = {
+  label: {
+    type: String,
+    required: true,
+  },
+  mode: {
+    type: String,
+    default: "list",
+    validator: (v: string) => {
+      // The value must match either
+      return ["list", "radio", "single"].indexOf(v) !== -1;
+    },
+  },
+  modelValue: {
+    type: [String, Number, Boolean, Array, Object, Date, Function],
+  },
+  condensed: {
+    type: Boolean,
+    default: false,
+  },
+};
+export default defineComponent({
   model: {
     prop: "modelValue",
     event: "update:modelValue",
   },
-  props: {
-    label: {
-      type: String,
-      required: true,
-    },
-    mode: {
-      type: String,
-      default: "list",
-      validator(v) {
-        // The value must match either
-        return ["list", "radio", "single"].indexOf(v) !== -1;
-      },
-    },
-    modelValue: {
-      type: [String, Number, Boolean, Array, Object, Date, Function],
-    },
-    condensed: {
-      type: Boolean,
-      default: false,
-    },
-  },
+  props,
   setup(props, context) {
     const format = props.mode === "list" ? "grid" : props.mode;
     provide("chipListFormat", format);
@@ -51,20 +52,25 @@ export default {
       };
       return {
         attrs,
-        ...useRadioGroup(modelValue, context.emit),
+        ...useRadioGroup(
+          modelValue,
+          context.emit,
+          props.label as string,
+          {},
+          ref("")
+        ),
         single,
       };
     }
-    if (format === "grid" || format === "single") {
-      const attrs = {
-        role: "grid",
-      };
-      const keydown = () => {};
+    // if (format === "grid" || format === "single") {
+    const attrs = {
+      role: "grid",
+    };
+    const keydown = () => {};
 
-      return { attrs, keydown, single };
-    }
+    return { attrs, keydown, single };
   },
-};
+});
 </script>
 
 <style lang="scss" scoped>
