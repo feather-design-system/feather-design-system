@@ -236,6 +236,5 @@ export default {
 }
 .hidden {
   position: fixed;
-  visibility: hidden;
 }
 </style>
