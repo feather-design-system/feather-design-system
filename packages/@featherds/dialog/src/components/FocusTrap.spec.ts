@@ -14,11 +14,11 @@ const props = {
   enable: true,
 };
 
-const getWrapper = function (options) {
+const getWrapper = function (options: Record<string, unknown>) {
   return mount(FocusTrap, options);
 };
 describe("FocusTrap.vue", () => {
-  let wrapper;
+  let wrapper: ReturnType<typeof getWrapper>;
   afterEach(() => {
     if (wrapper && wrapper.unmount) {
       wrapper.unmount();
@@ -50,18 +50,9 @@ describe("FocusTrap.vue", () => {
       it("should return true for focusable elements", () => {
         wrapper = getWrapper({ props, slots });
         const vm = wrapper.vm;
-        expect(vm.isFocusable(document.createElement("input"))).toBe(
-          true,
-          "Input"
-        );
-        expect(vm.isFocusable(document.createElement("button"))).toBe(
-          true,
-          "Button"
-        );
-        expect(vm.isFocusable(document.createElement("select"))).toBe(
-          true,
-          "Select"
-        );
+        expect(vm.isFocusable(document.createElement("input"))).toBe(true);
+        expect(vm.isFocusable(document.createElement("button"))).toBe(true);
+        expect(vm.isFocusable(document.createElement("select"))).toBe(true);
         expect(vm.isFocusable(document.createElement("a"))).toBe(false);
         const a = document.createElement("a");
         a.href = "/hello";
@@ -88,7 +79,7 @@ describe("FocusTrap.vue", () => {
         wrapper = getWrapper({ props, slots, attachTo: document.body });
         const vm = wrapper.vm;
         const first = wrapper.find("#first").element;
-        vm.trapFocus({ target: first });
+        vm.trapFocus();
         setTimeout(() => {
           expect(vm.lastFocus).toBe(first);
           done();
@@ -100,9 +91,9 @@ describe("FocusTrap.vue", () => {
         const vm = wrapper.vm;
 
         //add an element before
-        var button = document.createElement("BUTTON");
+        const button = document.createElement("BUTTON");
         button.id = "pre-button";
-        var t = document.createTextNode("Test Button");
+        const t = document.createTextNode("Test Button");
         button.appendChild(t);
         document.body.appendChild(button);
 
@@ -110,7 +101,7 @@ describe("FocusTrap.vue", () => {
         //focus first element
         const first = wrapper.find("#first").element;
         vm.lastFocus = first;
-        const butt = document.getElementById("pre-button");
+        const butt = document.getElementById("pre-button") as HTMLElement;
         const last = wrapper.find("#last").element;
 
         //try to focus something before the trap
@@ -131,15 +122,15 @@ describe("FocusTrap.vue", () => {
         document.body.appendChild(wrapper.element);
 
         //add an element after
-        var button = document.createElement("BUTTON");
+        const button = document.createElement("BUTTON");
         button.id = "post-button";
-        var t = document.createTextNode("Test Button");
+        const t = document.createTextNode("Test Button");
         button.appendChild(t);
         document.body.appendChild(button);
 
         //focus last element
         const first = wrapper.find("#first").element;
-        const butt = document.getElementById("post-button");
+        const butt = document.getElementById("post-button") as HTMLElement;
         const last = wrapper.find("#last").element;
         vm.lastFocus = last;
 
@@ -159,8 +150,11 @@ describe("FocusTrap.vue", () => {
         wrapper = getWrapper({ props, slots });
         const vm = wrapper.vm;
         document.body.appendChild(wrapper.element);
-        expect(vm.focusFirstDescendant(vm.$refs.content)).toBe(true);
-        expect(document.activeElement.id).toBe("first");
+        expect(vm.focusFirstDescendant(vm.$refs.content as HTMLElement)).toBe(
+          true
+        );
+        const active = document.activeElement as HTMLElement;
+        expect(active.id).toBe("first");
         document.body.removeChild(wrapper.element);
       });
       it("should return false if nothing was focused", () => {
@@ -176,8 +170,11 @@ describe("FocusTrap.vue", () => {
         wrapper = getWrapper({ props, slots });
         const vm = wrapper.vm;
         document.body.appendChild(wrapper.element);
-        expect(vm.focusLastDescendant(vm.$refs.content)).toBe(true);
-        expect(document.activeElement.id).toBe("last");
+        expect(vm.focusLastDescendant(vm.$refs.content as HTMLElement)).toBe(
+          true
+        );
+        const active = document.activeElement as HTMLElement;
+        expect(active.id).toBe("last");
         document.body.removeChild(wrapper.element);
       });
       it("should return false if nothing was focused", () => {

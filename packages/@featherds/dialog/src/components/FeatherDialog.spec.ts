@@ -1,6 +1,7 @@
 import { mount } from "@vue/test-utils";
 import axe from "axe-core";
 import FeatherDialog from "./FeatherDialog.vue";
+import { getCalls } from "@featherds/utils/test/calls";
 const slots = {
   default: {
     template: `<div><h1>Dialog content</h1>
@@ -16,7 +17,7 @@ const focusTrap = {
 const title = "test";
 const close = "close";
 
-const getprops = (visible) => ({
+const getprops = (visible: boolean) => ({
   visible,
   labels: {
     title,
@@ -24,12 +25,13 @@ const getprops = (visible) => ({
   },
 });
 
-const getWrapper = function (options) {
-  if (!options.global) {
-    options.global = {};
-  }
-  options.global.stubs = {
-    "focus-trap": focusTrap,
+const getWrapper = function (options: Record<string, unknown>) {
+  const global = (options.global as Object) || {};
+  options.global = {
+    ...global,
+    stubs: {
+      "focus-trap": focusTrap,
+    },
   };
   return mount(FeatherDialog, options);
 };
@@ -48,14 +50,18 @@ describe("FeatherDialog.vue", () => {
     it("should trigger change event with false", () => {
       const wrapper = getWrapper({ props: getprops(true), slots });
       wrapper.vm.close();
-      expect(wrapper.emitted("update:modelValue")[0][0]).toBe(false);
+      expect(getCalls<[boolean]>(wrapper, "update:modelValue")[0][0]).toBe(
+        false
+      );
     });
   });
   describe("close icon", () => {
     it("should close dialog when close is clicked", async () => {
       const wrapper = getWrapper({ props: getprops(true), slots });
       await wrapper.find(".closeButton").trigger("click");
-      expect(wrapper.emitted("update:modelValue")[0][0]).toBe(false);
+      expect(getCalls<[boolean]>(wrapper, "update:modelValue")[0][0]).toBe(
+        false
+      );
     });
     it("should not display a close icon when disabled", async () => {
       const wrapper = getWrapper({ props: getprops(true), slots });

@@ -7,19 +7,21 @@
     <div tabindex="0"></div>
   </div>
 </template>
-<script>
-import { ref, nextTick, defineComponent, toRef, computed } from "vue";
-import { getElements } from "@featherds/composables/modal/Layers";
-export default defineComponent({
-  props: {
-    enable: {
-      type: Boolean,
-      required: true,
-    },
-    layer: {
-      type: Object,
-    },
+<script lang="ts">
+import { ref, nextTick, defineComponent, toRef, computed, PropType } from "vue";
+import { getElements, ILayer } from "@featherds/composables/modal/Layers";
+export const props = {
+  enable: {
+    type: Boolean,
+    required: true,
   },
+  layer: {
+    type: Object as PropType<ILayer>,
+  },
+};
+
+export default defineComponent({
+  props,
   data() {
     return {
       rendered: false,
@@ -40,19 +42,10 @@ export default defineComponent({
       return result;
     });
 
-    const comparePositionInDOM = (a, b) => {
+    const comparePositionInDOM = (a: HTMLElement, b: HTMLElement) => {
       //See https://johnresig.com/blog/comparing-document-position/
-      let result = a.compareDocumentPosition
-        ? a.compareDocumentPosition(b)
-        : a.contains
-        ? (a != b && a.contains(b) && 16) +
-          (a != b && b.contains(a) && 8) +
-          (a.sourceIndex >= 0 && b.sourceIndex >= 0
-            ? (a.sourceIndex < b.sourceIndex && 4) +
-              (a.sourceIndex > b.sourceIndex && 2)
-            : 1) +
-          0
-        : 0;
+      let result = a.compareDocumentPosition(b);
+
       if (result === 0x02) return "before";
       if (result === 0x04) return "after";
       //The bitmask returned is additive, so if b is a child it is one of the above
@@ -62,25 +55,31 @@ export default defineComponent({
       if (result === 0x0a || result === 0x0c) return "parent";
     };
 
-    const focusFirstDescendant = (element) => {
+    const focusFirstDescendant = (element: HTMLElement) => {
       for (var i = 0; i < element.childNodes.length; i++) {
         var child = element.childNodes[i];
-        if (attemptFocus(child) || focusFirstDescendant(child)) {
+        if (
+          attemptFocus(child as HTMLElement) ||
+          focusFirstDescendant(child as HTMLElement)
+        ) {
           return true;
         }
       }
       return false;
     };
-    const focusLastDescendant = (element) => {
+    const focusLastDescendant = (element: HTMLElement) => {
       for (var i = element.childNodes.length - 1; i >= 0; i--) {
         var child = element.childNodes[i];
-        if (attemptFocus(child) || focusLastDescendant(child)) {
+        if (
+          attemptFocus(child as HTMLElement) ||
+          focusLastDescendant(child as HTMLElement)
+        ) {
           return true;
         }
       }
       return false;
     };
-    const attemptFocus = (element) => {
+    const attemptFocus = (element: HTMLElement) => {
       if (!isFocusable(element)) {
         return false;
       }
@@ -93,23 +92,25 @@ export default defineComponent({
       return document.activeElement === element;
     };
 
-    const isFocusable = (element) => {
+    const isFocusable = (element: HTMLElement) => {
       if (
         element.tabIndex > 0 ||
         (element.tabIndex === 0 && element.getAttribute("tabIndex") !== null)
       ) {
         return true;
       }
-
-      if (element.disabled || element.tabIndex === -1) {
+      const button = element as HTMLButtonElement;
+      if (button.disabled || button.tabIndex === -1) {
         return false;
       }
 
       switch (element.nodeName) {
         case "A":
-          return !!element.href && element.rel !== "ignore";
+          const anchor = element as HTMLAnchorElement;
+          return !!anchor.href && anchor.rel !== "ignore";
         case "INPUT":
-          return element.type !== "hidden" && element.type !== "file";
+          const el = element as HTMLInputElement;
+          return el.type !== "hidden" && el.type !== "file";
         case "BUTTON":
         case "SELECT":
         case "TEXTAREA":
@@ -120,8 +121,8 @@ export default defineComponent({
       }
     };
 
-    const attemptToFocusFirst = (el) => {
-      const firstFocus = el.querySelector("[first-focus]");
+    const attemptToFocusFirst = (el: HTMLElement) => {
+      const firstFocus = el.querySelector("[first-focus]") as HTMLElement;
       if (firstFocus && firstFocus.focus) {
         nextTick(() => {
           firstFocus.focus();
@@ -147,7 +148,10 @@ export default defineComponent({
           return;
         } else {
           //if the item is not within the trap
-          let position = comparePositionInDOM(content.value, target);
+          let position = comparePositionInDOM(
+            content.value,
+            target as HTMLElement
+          );
           switch (position) {
             case "before":
               focusLastDescendant(content.value);
@@ -187,7 +191,7 @@ export default defineComponent({
   },
 
   methods: {
-    enableTrap(nv) {
+    enableTrap(nv: boolean) {
       if (nv) {
         this.addFocusTrapEvents();
       } else {
