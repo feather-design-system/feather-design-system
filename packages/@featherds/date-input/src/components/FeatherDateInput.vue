@@ -100,8 +100,17 @@
     <InputSubText :id="descriptionId"> </InputSubText>
   </div>
 </template>
-<script>
-import { ref, computed, watch, toRef, nextTick } from "vue";
+<script lang="ts">
+import {
+  ref,
+  computed,
+  watch,
+  toRef,
+  nextTick,
+  defineComponent,
+  Ref,
+  PropType,
+} from "vue";
 import { getSafeId } from "@featherds/utils/id";
 import { KEYCODES } from "@featherds/utils/keys";
 import { useValidation } from "@featherds/input-helper";
@@ -109,72 +118,70 @@ import { useValidation } from "@featherds/input-helper";
 import { useLabelProperty } from "@featherds/composables/LabelProperty";
 import {
   InputWrapper,
-  InputWrapperMixin,
   InputSubText,
-  InputSubTextMixin,
-  InputInheritAttrsMixin,
+  InputWrapperProps,
+  InputSubTextProps,
+  useInputWrapper,
+  useInputSubText,
+  useInputInheritAttrs,
 } from "@featherds/input-helper";
-import SpinButton from "./SpinButton";
-import DateIcon from "./Calendar/DateIcon";
-import Calendar from "./Calendar/Calendar";
+import SpinButton from "./SpinButton.vue";
+import DateIcon from "./Calendar/DateIcon.vue";
+import Calendar from "./Calendar/Calendar.vue";
+import { IDateDisabledConfig, LABELS } from "./types";
 import { FeatherMenu } from "@featherds/menu";
 
-const LABELS = {
-  day: "Day",
-  month: "Month",
-  year: "Year",
-  prevMonth: "Previous month",
-  nextMonth: "Next month",
-  selectMonth: "Select month",
-  selectYear: "Select year",
-  inCalendar: "In calendar",
-  calendar: "Click for calendar",
-  clear: "Clear date",
-  menu: "Use arrow keys to navigate dates. Page down and page up will navigate by month. Shift page down and shift page up will navigate by year. Press escape to exit the calendar.",
+export const props = {
+  ...InputWrapperProps,
+  ...InputSubTextProps,
+  modelValue: {
+    type: Date,
+    required: false,
+  },
+  minYear: {
+    type: Number,
+    default: 1900,
+  },
+  maxYear: {
+    type: Number,
+    default: 2030,
+  },
+  disabledDates: {
+    type: Object as PropType<IDateDisabledConfig>,
+  },
+  mondayFirst: {
+    type: Boolean,
+    default: false,
+  },
+  labels: {
+    type: Object as PropType<typeof LABELS>,
+    default: () => {
+      return LABELS;
+    },
+  },
+  schema: {
+    type: Object,
+    required: false,
+  },
 };
-
-export default {
+export const emits = {
+  "update:modelValue": (value: Date | undefined) => true,
+  blur: () => true,
+};
+export default defineComponent({
   model: {
     prop: "modelValue",
     event: "update:modelValue",
   },
   emits: ["update:modelValue", "blur"],
-  props: {
-    modelValue: {
-      type: Date,
-      required: false,
-    },
-    minYear: {
-      type: Number,
-      default: 1900,
-    },
-    maxYear: {
-      type: Number,
-      default: 2030,
-    },
-    disabledDates: {
-      type: Object,
-    },
-    mondayFirst: {
-      type: Boolean,
-      default: false,
-    },
-    labels: {
-      type: Object,
-      default() {
-        return LABELS;
-      },
-    },
-    schema: {
-      type: Object,
-      required: false,
-    },
-  },
-  mixins: [InputWrapperMixin, InputSubTextMixin, InputInheritAttrsMixin],
+  props,
   setup(props, context) {
-    const day = ref(undefined);
-    const month = ref(undefined);
-    const year = ref(undefined);
+    useInputSubText(props);
+    useInputWrapper(props);
+
+    const day = ref() as Ref<number | undefined>;
+    const month = ref() as Ref<number | undefined>;
+    const year = ref() as Ref<number | undefined>;
 
     const value = toRef(props, "modelValue");
     const label = toRef(props, "label");
@@ -192,9 +199,9 @@ export default {
     const { validate } = useValidation(
       ref(monthId),
       value,
-      props.label,
-      props.schema,
-      toRef(props, "error")
+      props.label as string,
+      props.schema as Record<string, any>,
+      toRef(props, "error") as Ref<string>
     );
 
     watch(
@@ -225,7 +232,7 @@ export default {
       { immediate: true }
     );
 
-    const handleCalendarSelection = (_value) => {
+    const handleCalendarSelection = (_value: Date | undefined) => {
       context.emit("update:modelValue", _value);
       showMenu.value = false;
     };
@@ -244,12 +251,14 @@ export default {
         id: inputId.value,
         "aria-label": label.value,
         "aria-disabled": disabled.value,
-        "aria-describedby": (context.attrs["aria-describedby"] || "")
+        "aria-describedby": (
+          (context.attrs["aria-describedby"] as string) || ""
+        )
           .split(" ")
           .concat([descriptionId.value])
           .filter(Boolean)
           .join(" "),
-      };
+      } as Record<string, unknown>;
       delete _attrs.placeholder;
 
       //use aria-invalid if passed in (some validation libraries will specify this)
@@ -334,7 +343,7 @@ export default {
       }
     });
 
-    const handleKeyDown = (e) => {
+    const handleKeyDown = (e: KeyboardEvent) => {
       if (e.keyCode === KEYCODES.ENTER || e.keyCode === KEYCODES.SPACE) {
         openCalendar();
       }
@@ -344,7 +353,7 @@ export default {
     const icon = ref();
     const calendar = ref();
 
-    const handleWrapperClick = (e) => {
+    const handleWrapperClick = (e: MouseEvent) => {
       if (icon.value.$el.contains(e.target)) {
         spinbuttons.deselectAllSpinButtons();
         return;
@@ -368,12 +377,12 @@ export default {
       spinbuttons.clear();
       spinbuttons.focusMonth();
     };
-    let calendarActivator;
+    let calendarActivator: HTMLElement | undefined;
     const openCalendar = () => {
       if (props.disabled) {
         return;
       }
-      calendarActivator = document.activeElement;
+      calendarActivator = document.activeElement as HTMLElement;
       showMenu.value = true;
       nextTick(() => {
         calendar.value.focus();
@@ -419,6 +428,7 @@ export default {
       handleCalendarSelection,
       ...labels,
       ...spinbuttons,
+      ...useInputInheritAttrs(context.attrs as Record<string, unknown>),
     };
   },
 
@@ -430,7 +440,7 @@ export default {
     DateIcon,
     Calendar,
   },
-};
+});
 </script>
 
 <style lang="scss" scoped>

@@ -9,9 +9,10 @@
     ></FeatherDateInput>
   </section>
 </template>
-<script>
+<script lang="ts">
 import * as components from "./../src";
-export default {
+import { defineComponent } from "vue";
+export default defineComponent({
   data() {
     return {
       test: undefined,
@@ -23,7 +24,7 @@ export default {
   components: {
     ...components,
   },
-};
+});
 </script>
 <style lang="scss" scoped>
 .my-date {

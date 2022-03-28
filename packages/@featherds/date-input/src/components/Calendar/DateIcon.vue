@@ -9,10 +9,11 @@
     <FeatherIcon :icon="icon" />
   </a>
 </template>
-<script>
+<script lang="ts">
 import DateIcon from "@featherds/icon/action/CalendarStartDate";
 import { FeatherIcon } from "@featherds/icon";
-export default {
+import { defineComponent } from "vue";
+export default defineComponent({
   props: {
     title: {
       type: String,
@@ -30,7 +31,7 @@ export default {
   components: {
     FeatherIcon,
   },
-};
+});
 </script>
 <style lang="scss" scoped>
 @import "@featherds/styles/themes/variables";

@@ -53,7 +53,7 @@
     </div>
     <table class="calendar" role="presentation">
       <tr>
-        <th class="cell day-header" v-for="d in daysOfWeek" :key="d.timestamp">
+        <th class="cell day-header" v-for="d in daysOfWeek" :key="d">
           {{ d }}
         </th>
       </tr>
@@ -80,7 +80,7 @@
     </table>
   </div>
 </template>
-<script>
+<script lang="ts">
 import { KEYCODES } from "@featherds/utils/keys";
 import { FeatherButton } from "@featherds/button";
 import { FeatherSelect } from "@featherds/select";
@@ -88,8 +88,19 @@ import { FeatherIcon } from "@featherds/icon";
 import prevIcon from "@featherds/icon/navigation/ChevronLeft";
 import nextIcon from "@featherds/icon/navigation/ChevronRight";
 import utils from "./DateUtils";
-import { markRaw } from "vue";
-export default {
+import { defineComponent, PropType } from "vue";
+import { IDateDisabledConfig, LABELS } from "../types";
+interface ICalendarDay {
+  date: number;
+  timestamp: number;
+  label: string;
+  isDisabled: boolean;
+  isBlank?: boolean;
+  isSelected?: boolean;
+  isHighlighted?: boolean;
+  isToday?: boolean;
+}
+export default defineComponent({
   model: {
     prop: "modelValue",
     event: "update:modelValue",
@@ -98,8 +109,10 @@ export default {
   provide: { validationErrorMessage: undefined },
   props: {
     modelValue: {
-      validator: (val) =>
-        val === null || val === undefined || val instanceof Date,
+      type: Date,
+      validator: (val: Date | null | undefined) => {
+        return !!(val === null || val === undefined || val instanceof Date);
+      },
     },
     minYear: {
       type: Number,
@@ -109,24 +122,27 @@ export default {
       type: Number,
       required: true,
     },
-    mondayFirst: Boolean,
-    disabled: Object,
+    mondayFirst: { type: Boolean, default: false },
+    disabled: {
+      type: Object as PropType<IDateDisabledConfig>,
+      required: false,
+    },
     labels: {
-      type: Object,
+      type: Object as PropType<typeof LABELS>,
       required: true,
     },
   },
   data() {
     return {
       currentlyHighlighted: utils.isValidDate(this.modelValue)
-        ? this.modelValue
+        ? (this.modelValue as Date)
         : new Date(),
       localValue: utils.isValidDate(this.modelValue)
-        ? this.modelValue
+        ? (this.modelValue as Date)
         : undefined,
       alertText: "",
-      nextIcon: markRaw(nextIcon),
-      prevIcon: markRaw(prevIcon),
+      nextIcon: nextIcon,
+      prevIcon: prevIcon,
     };
   },
   watch: {
@@ -187,19 +203,19 @@ export default {
       });
       if (this.mondayFirst) {
         const tempDays = translations.slice();
-        tempDays.push(tempDays.shift());
+        tempDays.push(tempDays.shift() as string);
         return tempDays;
       }
       return translations;
     },
-    startBlankDays() {
+    startBlankDays(): ICalendarDay[] {
       const d = this.currentlyHighlighted;
       const dObj = new Date(d.getFullYear(), d.getMonth(), 1);
-      let count = utils.getDay(dObj);
+      let count = utils.getDay(dObj) as number;
       if (this.mondayFirst) {
         count = utils.getDay(dObj) > 0 ? utils.getDay(dObj) - 1 : 6;
       }
-      const days = [];
+      const days: ICalendarDay[] = [];
       let date = dObj;
       for (let i = 0; i < count; i++) {
         date = utils.subDays(date, 1);
@@ -213,10 +229,10 @@ export default {
       }
       return days;
     },
-    endBlankDays() {
+    endBlankDays(): ICalendarDay[] {
       const d = new Date(this.days[this.days.length - 1].timestamp);
       const dObj = new Date(d.getFullYear(), d.getMonth(), d.getDate());
-      let count = utils.getDay(dObj);
+      let count = utils.getDay(dObj) as number;
       if (this.mondayFirst) {
         count = utils.getDay(dObj) > 0 ? utils.getDay(dObj) - 1 : 6;
       }
@@ -235,9 +251,9 @@ export default {
       }
       return days;
     },
-    days() {
+    days(): ICalendarDay[] {
       const d = this.currentlyHighlighted;
-      const days = [];
+      const days: ICalendarDay[] = [];
       // set up a new date object to the beginning of the current 'page'
       let dObj = new Date(d.getFullYear(), d.getMonth(), 1);
       const daysInMonth = utils.getDaysInMonth(dObj);
@@ -247,7 +263,7 @@ export default {
           date: utils.getDate(dObj),
           timestamp: dObj.getTime(),
           label: this.getAriaLabel(dObj),
-          isSelected: utils.isSameDay(dObj, this.localValue),
+          isSelected: utils.isSameDay(dObj, this.localValue as Date),
           isHighlighted: utils.isSameDay(dObj, this.currentlyHighlighted),
           isToday: utils.isSameDay(dObj, new Date()),
           isDisabled: disabled,
@@ -257,10 +273,12 @@ export default {
       return days;
     },
     weeks() {
-      const allDays = []
-        .concat(this.startBlankDays)
-        .concat(this.days)
-        .concat(this.endBlankDays);
+      const allDays: ICalendarDay[] = [
+        ...this.startBlankDays,
+        ...this.days,
+        ...this.endBlankDays,
+      ];
+
       const weeks = [];
       while (allDays.length > 0) {
         weeks.push(allDays.splice(0, 7));
@@ -302,17 +320,23 @@ export default {
       this.highlightDate(utils.subYears(this.currentlyHighlighted, 1));
       this.focus();
     },
-    yearChanged(e) {
+    yearChanged(e: { _text: number; value: number }) {
       this.highlightDate(
-        utils.setYear(this.currentlyHighlighted, parseInt(e.value, 10))
+        utils.setYear(
+          this.currentlyHighlighted,
+          parseInt(e.value.toString(), 10)
+        )
       );
     },
-    monthChanged(e) {
+    monthChanged(e: { _text: string; value: number }) {
       this.highlightDate(
-        utils.setMonth(this.currentlyHighlighted, parseInt(e.value, 10))
+        utils.setMonth(
+          this.currentlyHighlighted,
+          parseInt(e.value.toString(), 10)
+        )
       );
     },
-    getAriaLabel(date) {
+    getAriaLabel(date: Date) {
       return date.toLocaleDateString(undefined, {
         weekday: "long",
         year: "numeric",
@@ -320,15 +344,15 @@ export default {
         day: "numeric",
       });
     },
-    onClick(day) {
+    onClick(day: ICalendarDay) {
       if (day.isDisabled) {
         return;
       }
       this.selectDate(new Date(day.timestamp));
       this.$emit("close");
     },
-    onKeydown(e) {
-      const highlightDay = (date) => {
+    onKeydown(e: KeyboardEvent) {
+      const highlightDay = (date: Date) => {
         this.highlightDate(date);
         this.focus();
       };
@@ -340,7 +364,7 @@ export default {
         case KEYCODES.ENTER:
         case KEYCODES.SPACE:
           e.preventDefault();
-          if (!e.target.classList.contains("disabled")) {
+          if (!(e.target as HTMLElement).classList.contains("disabled")) {
             this.selectDate(this.currentlyHighlighted);
             this.$emit("close");
           }
@@ -388,17 +412,17 @@ export default {
           break;
       }
     },
-    highlightDate(date) {
+    highlightDate(date: Date) {
       this.currentlyHighlighted = date instanceof Date ? date : new Date();
     },
-    selectDate(date) {
+    selectDate(date: Date) {
       if (utils.isDateDisabled(this.disabled, date)) {
         return;
       }
       this.$emit("update:modelValue", date);
     },
 
-    dayClasses(day) {
+    dayClasses(day: ICalendarDay) {
       return {
         selected: day.isSelected,
         highlighted: day.isHighlighted,
@@ -413,7 +437,7 @@ export default {
     FeatherIcon,
     FeatherSelect,
   },
-};
+});
 </script>
 
 <style lang="scss" scoped>

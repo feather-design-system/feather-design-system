@@ -14,8 +14,12 @@ import addWeeks from "date-fns/addWeeks";
 import subDays from "date-fns/subDays";
 import subWeeks from "date-fns/subWeeks";
 import getDaysInMonth from "date-fns/getDaysInMonth";
+import { IDateDisabledConfig } from "../types";
 
-const isDateDisabled = (config, date) => {
+const isDateDisabled = (
+  config: IDateDisabledConfig | undefined,
+  date: Date
+) => {
   if (!config) {
     return false;
   }
@@ -68,8 +72,8 @@ const isDateDisabled = (config, date) => {
   return false;
 };
 
-const isValidDate = function (d) {
-  return d instanceof Date && !isNaN(d);
+const isValidDate = function (d: Date | undefined) {
+  return d instanceof Date && !isNaN(d as unknown as number);
 };
 
 export default {

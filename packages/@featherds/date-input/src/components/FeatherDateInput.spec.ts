@@ -2,21 +2,30 @@ import { nextTick } from "vue";
 import FeatherDateInput from "./FeatherDateInput.vue";
 
 import * as id from "@featherds/utils/id";
-jest.spyOn(id, "getSafeId").mockImplementation((x) => x);
+const idSpy = jest.spyOn(id, "getSafeId").mockImplementation((x) => x);
 
 import { mount } from "@vue/test-utils";
 import "@featherds/input-helper/test/MutationObserver";
 import axe from "@featherds/utils/test/axe";
-
+import { getCalls } from "@featherds/utils/test/calls";
+declare global {
+  interface Date {
+    toLocaleDateStringDefault: (locale: string, opts: unknown) => string;
+  }
+}
 Date.prototype.toLocaleDateStringDefault = Date.prototype.toLocaleDateString;
-Date.prototype.toLocaleDateString = function (locale, options) {
-  var result = this.toLocaleDateStringDefault("en-US", options);
+Date.prototype.toLocaleDateString = function (
+  locale?: string | string[] | undefined,
+  options?: Intl.DateTimeFormatOptions | undefined
+) {
+  const result = this.toLocaleDateStringDefault("en-US", options);
   return result;
 };
 
-const getWrapper = function (options = {}) {
+const getWrapper = function (options: Record<string, unknown> = {}) {
+  const props = (options.props as Object) || {};
   options.props = {
-    ...options.props,
+    ...props,
     label: "Test",
   };
   options.global = {
@@ -102,7 +111,7 @@ describe("FeatherDateInput.vue", () => {
     const stubFocus = jest.fn();
     wrapper.vm.monthButton.focus = stubFocus;
     const inputWrapper = wrapper.findComponent({ ref: "wrapper" });
-    inputWrapper.vm.$emit("wrapper-click", { target: inputWrapper.$el });
+    inputWrapper.vm.$emit("wrapper-click", { target: inputWrapper.vm.$el });
     await nextTick();
 
     expect(stubFocus).toHaveBeenCalled();
@@ -131,7 +140,7 @@ describe("FeatherDateInput.vue", () => {
     const date = new Date(2020, 1, 1);
     calendar.vm.$emit("update:modelValue", date);
     await nextTick();
-    expect(wrapper.emitted("update:modelValue")[0][0]).toBe(date);
+    expect(getCalls<[Date]>(wrapper, "update:modelValue")[0][0]).toBe(date);
   });
   it("should select date initially passed in as value", async () => {
     const wrapper = getWrapper({
@@ -171,7 +180,7 @@ describe("FeatherDateInput.vue", () => {
     expect(wrapper.vm.showClear).toBe(true);
   });
   it("should be accessible", async () => {
-    id.getSafeId.mockRestore();
+    idSpy.mockRestore();
     const wrapper = getWrapper({
       props: {
         label: "Test",
