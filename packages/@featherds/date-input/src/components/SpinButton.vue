@@ -7,7 +7,7 @@
     :aria-valuemin="min"
     :aria-valuemax="max"
     :aria-valuenow="modelValue || 0"
-    :aria-valuetext="modelValue || placeholder"
+    :aria-valuetext="modelValueText || placeholder"
     :aria-disabled="disabled"
     :class="{ disabled: disabled }"
     @keydown="handleKeyDown"
@@ -17,9 +17,10 @@
   >
 </template>
 
-<script>
+<script lang="ts">
 import { KEYCODES } from "@featherds/utils/keys";
-export default {
+import { defineComponent } from "vue";
+export default defineComponent({
   model: {
     prop: "modelValue",
     event: "update:modelValue",
@@ -56,8 +57,11 @@ export default {
     };
   },
   computed: {
+    modelValueText() {
+      return this.modelValue?.toString();
+    },
     displayText() {
-      const pad = (value) => {
+      const pad = (value: number | string) => {
         let paddingLength =
           this.max.toString().length - value.toString().length;
         let padding = "";
@@ -81,17 +85,18 @@ export default {
   },
   methods: {
     clear() {
-      this.input = undefined;
+      this.input = "";
     },
     focus() {
-      this.$refs.spinner.focus();
+      (this.$refs.spinner as HTMLElement).focus();
     },
     deselect() {
       if (window.getSelection) {
-        window.getSelection().removeAllRanges();
+        const selection = window.getSelection();
+        selection?.removeAllRanges();
       }
     },
-    parseValue(str) {
+    parseValue(str: string) {
       const value = parseInt(str, 10);
       if (isNaN(value) || value < this.min || value > this.max) {
         this.$emit("update:modelValue", undefined);
@@ -108,33 +113,34 @@ export default {
         this.$emit("next");
       }
     },
-    handleFocus(e) {
+    handleFocus(e: FocusEvent) {
       if (this.disabled) {
         return;
       }
-      this.highlight(e.target);
+      this.highlight(e.target as HTMLInputElement);
       this.input = "";
     },
-    highlight(el) {
+    highlight(el: HTMLElement) {
       if (document.createRange) {
         var range = document.createRange();
         range.selectNode(el);
-        window.getSelection().removeAllRanges();
-        window.getSelection().addRange(range);
+        const selection = window.getSelection();
+        selection?.removeAllRanges();
+        selection?.addRange(range);
       }
     },
-    handleKeyDown(e) {
+    handleKeyDown(e: KeyboardEvent) {
       if (this.disabled) {
         return;
       }
-      const isModifiedKeyPress = (_ev) => {
+      const isModifiedKeyPress = (_ev: KeyboardEvent) => {
         return _ev.shiftKey || _ev.ctrlKey || _ev.metaKey || _ev.altKey;
       };
 
       if (isModifiedKeyPress(e)) {
         return;
       }
-      const stop = (_ev) => {
+      const stop = (_ev: KeyboardEvent) => {
         _ev.stopPropagation();
         _ev.preventDefault();
       };
@@ -166,7 +172,7 @@ export default {
           stop(e);
           break;
         case KEYCODES.UP:
-          if (this.modelValue < this.max) {
+          if (this.modelValue !== undefined && this.modelValue < this.max) {
             this.$emit("update:modelValue", this.modelValue + 1);
           }
           if (this.modelValue === undefined || this.modelValue === 0) {
@@ -175,7 +181,7 @@ export default {
           stop(e);
           break;
         case KEYCODES.DOWN:
-          if (this.modelValue > this.min) {
+          if (this.modelValue !== undefined && this.modelValue > this.min) {
             this.$emit("update:modelValue", this.modelValue - 1);
           }
           if (this.modelValue === undefined || this.modelValue === 0) {
@@ -199,7 +205,7 @@ export default {
       }
     },
   },
-};
+});
 </script>
 <style lang="scss" scoped>
 @import "@featherds/styles/themes/variables";

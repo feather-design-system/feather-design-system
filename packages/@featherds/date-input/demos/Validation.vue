@@ -1,63 +1,43 @@
 <template>
   <form @submit="onSubmit">
     <FeatherDateInput
-      v-model="date"
+      v-model="dateField"
       :label="label"
-      :error="dateError"
+      :schema="dateV"
       background
       class="my-date"
     ></FeatherDateInput>
 
-    <button @mousedown="setSubmitted" type="submit">Submit</button>
+    <button type="submit">Submit</button>
   </form>
 </template>
-<script>
-import { useForm, useField } from "vee-validate";
-import { ref, computed } from "vue";
+<script lang="ts">
+import { useForm } from "@featherds/input-helper";
+import { date } from "yup";
+import { ref, defineComponent, Ref } from "vue";
 import * as components from "./../src";
-export default {
+export default defineComponent({
   setup() {
-    const submitted = ref(false);
-    const schema = computed(() => {
-      return {
-        date(v) {
-          if (submitted.value) {
-            if (v) {
-              return true;
-            }
-            return "Required";
-          }
-          return true;
-        },
-      };
-    });
-    // Create a form context with the validation schema
-    const { handleSubmit } = useForm({
-      validationSchema: schema,
-    });
+    const form = useForm();
+    const dateField: Ref<Date | undefined> = ref();
+    const dateV = date().required("required");
 
-    const { value: date, errorMessage: dateError } = useField("date");
-
-    const onSubmit = handleSubmit((values) => {
-      console.log(values);
-    });
-    const setSubmitted = () => {
-      submitted.value = true;
+    const onSubmit = (e: Event) => {
+      form.validate();
     };
 
     const label = "Date of Birth or something";
     return {
-      date,
-      dateError,
+      dateField,
+      dateV,
       label,
-      setSubmitted,
       onSubmit,
     };
   },
   components: {
     ...components,
   },
-};
+});
 </script>
 <style lang="scss" scoped>
 .my-date {
