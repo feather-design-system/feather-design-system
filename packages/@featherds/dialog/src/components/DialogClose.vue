@@ -15,11 +15,11 @@
     />
   </a>
 </template>
-<script>
+<script lang="ts">
 import { FeatherIcon } from "@featherds/icon";
 import Close from "@featherds/icon/navigation/Cancel";
-
-export default {
+import { defineComponent } from "vue";
+export default defineComponent({
   emits: ["close"],
   props: {
     closeText: {
@@ -37,7 +37,7 @@ export default {
   components: {
     FeatherIcon,
   },
-};
+});
 </script>
 
 <style lang="scss" scoped>

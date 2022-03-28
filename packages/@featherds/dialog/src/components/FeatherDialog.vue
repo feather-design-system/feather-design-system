@@ -59,9 +59,9 @@
     </transition>
   </div>
 </template>
-<script>
-import FocusTrap from "./FocusTrap";
-import DialogClose from "./DialogClose";
+<script lang="ts">
+import FocusTrap from "./FocusTrap.vue";
+import DialogClose from "./DialogClose.vue";
 import { getSafeId } from "@featherds/utils/id";
 import { useCloseOnEsc } from "@featherds/composables/modal/CloseOnEsc";
 import { useRestoreFocus } from "@featherds/composables/modal/RestoreFocus";
@@ -70,44 +70,62 @@ import {
   useHideRelativeOverflow,
 } from "@featherds/composables/modal/HideOverflow";
 import { useLabelProperty } from "@featherds/composables/LabelProperty";
-import { computed, toRef, ref, watch } from "vue";
-import { removeLayer, addLayer } from "@featherds/composables/modal/Layers";
+import {
+  computed,
+  toRef,
+  ref,
+  watch,
+  defineComponent,
+  PropType,
+  Ref,
+} from "vue";
+import {
+  removeLayer,
+  addLayer,
+  ILayer,
+} from "@featherds/composables/modal/Layers";
 const LABELS = {
   title: "REQUIRED",
   close: "Close Dialog",
 };
-export default {
+export const props = {
+  modelValue: {
+    type: Boolean,
+  },
+  relative: {
+    type: Boolean,
+    default: false,
+  },
+  hideTitle: {
+    type: Boolean,
+    default: false,
+  },
+  hideClose: {
+    type: Boolean,
+    default: false,
+  },
+  labels: {
+    type: Object as PropType<typeof LABELS>,
+    default: () => {
+      return LABELS;
+    },
+    validator: (v: Partial<typeof LABELS>) => {
+      return !!v.title;
+    },
+  },
+};
+export const emits = {
+  "update:modelValue": (value: boolean) => true,
+  shown: () => true,
+  hidden: () => true,
+};
+export default defineComponent({
   model: {
     prop: "modelValue",
     event: "update:modelValue",
   },
-  emits: ["update:modelValue", "shown", "hidden"],
-  props: {
-    modelValue: {
-      type: Boolean,
-    },
-    relative: {
-      type: Boolean,
-      default: false,
-    },
-    hideTitle: {
-      type: Boolean,
-      default: false,
-    },
-    hideClose: {
-      type: Boolean,
-      default: false,
-    },
-    labels: {
-      type: Object,
-      default() {
-        return LABELS;
-      },
-      validator(v) {
-        return !!v.title;
-      },
-    },
-  },
+  emits,
+  props,
   setup(props, context) {
     const labels = useLabelProperty(toRef(props, "labels"), LABELS);
     const visible = toRef(props, "modelValue");
@@ -134,7 +152,7 @@ export default {
     });
 
     const shown = ref(props.modelValue);
-    const layer = ref();
+    const layer = ref() as Ref<ILayer>;
     watch(shown, (v) => {
       if (v) {
         context.emit("shown");
@@ -151,7 +169,7 @@ export default {
     FocusTrap,
     DialogClose,
   },
-};
+});
 </script>
 
 <style lang="scss" scoped>

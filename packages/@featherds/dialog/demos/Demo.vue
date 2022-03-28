@@ -39,15 +39,15 @@
     </FeatherDialog>
   </div>
 </template>
-<script>
+<script lang="ts">
 import * as components from "../src";
 import { FeatherButton } from "@featherds/button";
 import { FeatherIcon } from "@featherds/icon";
 import Warning from "@featherds/icon/notification/Warning";
-import { markRaw } from "vue";
+import { defineComponent } from "vue";
 import { FeatherDateInput } from "@featherds/date-input";
 
-export default {
+export default defineComponent({
   data: () => ({
     visible: false,
     test: undefined,
@@ -63,7 +63,7 @@ export default {
   },
   computed: {
     icon() {
-      return markRaw(Warning);
+      return Warning;
     },
   },
   components: {
@@ -72,5 +72,5 @@ export default {
     FeatherIcon,
     FeatherDateInput,
   },
-};
+});
 </script>
