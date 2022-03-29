@@ -1,7 +1,7 @@
 import { useDropdownService } from "./DropdownService";
 const getItems = (disabled = false) =>
   [1, 2, 3, 4].map((i) => {
-    var a = document.createElement("a");
+    const a = document.createElement("a");
     a.title = `Item ${i}`;
     if (disabled) {
       a.classList.add("disabled");
@@ -9,7 +9,11 @@ const getItems = (disabled = false) =>
     a.focus = jest.fn();
     return a;
   });
-const checkSelected = (service, items, index) => {
+const checkSelected = (
+  service: ReturnType<typeof useDropdownService>,
+  items: HTMLElement[],
+  index: number
+) => {
   expect(items[index].focus).toHaveBeenCalled();
   expect(service.currentItem).toBe(items[index]);
 };

@@ -24,36 +24,39 @@
     </template>
   </FeatherMenu>
 </template>
-<script>
-import { ref, watch, nextTick } from "vue";
+<script lang="ts">
+import { ref, watch, nextTick, defineComponent } from "vue";
 import { FeatherMenu } from "@featherds/menu";
 import { KEYCODES } from "@featherds/utils/keys";
 import { useDropdownService } from "../composables/DropdownService";
-
-export default {
+export const props = {
+  modelValue: {
+    type: Boolean,
+    default: false,
+  },
+  cover: {
+    type: Boolean,
+    default: false,
+  },
+  right: {
+    type: Boolean,
+    default: false,
+  },
+  standard: {
+    type: Boolean,
+    default: false,
+  },
+};
+export const emits = {
+  "update:modelValue": (v: boolean) => true,
+};
+export default defineComponent({
   model: {
     prop: "modelValue",
     event: "update:modelValue",
   },
-  emits: ["update:modelValue"],
-  props: {
-    modelValue: {
-      type: Boolean,
-      default: false,
-    },
-    cover: {
-      type: Boolean,
-      default: false,
-    },
-    right: {
-      type: Boolean,
-      default: false,
-    },
-    standard: {
-      type: Boolean,
-      default: false,
-    },
-  },
+  emits,
+  props,
   setup(props, context) {
     const menu = ref(null);
     const localOpen = ref(props.modelValue);
@@ -66,7 +69,8 @@ export default {
     watch(localOpen, (open) => {
       if (open) {
         nextTick(() => {
-          const items = Array.from(menu.value.menu.querySelectorAll("a"));
+          const menuComponent = menu.value as unknown as { menu: HTMLElement };
+          const items = Array.from(menuComponent.menu.querySelectorAll("a"));
           dropdownService.setItems(items);
           dropdownService.selectFirst();
         });
@@ -77,8 +81,9 @@ export default {
     });
     const handleClose = () => {
       localOpen.value = false;
-      if (menu.value.trigger && menu.value.trigger.focus) {
-        menu.value.trigger.focus();
+      const menuComponent = menu.value as unknown as { trigger: HTMLElement };
+      if (menuComponent.trigger && menuComponent.trigger.focus) {
+        menuComponent.trigger.focus();
       }
     };
     const handleTriggerClick = () => {
@@ -87,7 +92,7 @@ export default {
     const handleOutsideClick = () => {
       localOpen.value = false;
     };
-    const handleKeydown = (e) => {
+    const handleKeydown = (e: KeyboardEvent) => {
       switch (e.keyCode) {
         //next
         case KEYCODES.DOWN:
@@ -102,10 +107,7 @@ export default {
           e.preventDefault();
           break;
         case KEYCODES.ESCAPE: //ESC
-          localOpen.value = false;
-          if (menu.value.trigger && menu.value.trigger.focus) {
-            menu.value.trigger.focus();
-          }
+          handleClose();
           break;
         default:
           break;
@@ -125,7 +127,7 @@ export default {
   components: {
     FeatherMenu,
   },
-};
+});
 </script>
 
 <style lang="scss" scoped>

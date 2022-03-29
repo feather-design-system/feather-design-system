@@ -1,11 +1,13 @@
-export default {
-  props: {
-    disabled: {
-      type: Boolean,
-      required: false,
-      default: false,
-    },
+import { defineComponent } from "vue";
+export const props = {
+  disabled: {
+    type: Boolean,
+    required: false,
+    default: false,
   },
+};
+export default defineComponent({
+  props,
   data() {
     return {
       active: false,
@@ -22,4 +24,4 @@ export default {
       return true;
     },
   },
-};
+});

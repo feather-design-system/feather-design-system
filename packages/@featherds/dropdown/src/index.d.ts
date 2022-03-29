@@ -1,6 +1,21 @@
-declare module "@featherds/dropdown" {
-  import { defineComponent } from "vue";
-  const FeatherDropdown: ReturnType<typeof defineComponent>;
-  const FeatherDropdownItem: ReturnType<typeof defineComponent>;
-  export { FeatherDropdown, FeatherDropdownItem };
-}
+import { DefineComponent } from "vue";
+export const FeatherDropdown: DefineComponent<
+  typeof import("./components/FeatherDropdown.vue").props,
+  {},
+  {},
+  {},
+  {},
+  {},
+  {},
+  typeof import("./components/FeatherDropdown.vue").emits
+>;
+export const FeatherDropdownItem: DefineComponent<
+  typeof import("./mixins/DropdownItem").props,
+  {},
+  {},
+  {},
+  {},
+  {},
+  {},
+  typeof import("./components/FeatherDropdownItem.vue").emits
+>;

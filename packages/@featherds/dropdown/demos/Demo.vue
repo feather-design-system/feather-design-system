@@ -65,7 +65,7 @@
     <p>{{ logText }}</p>
   </section>
 </template>
-<script>
+<script lang="ts">
 import { FeatherButton } from "@featherds/button";
 import { FeatherCheckbox } from "@featherds/checkbox";
 import { FeatherIcon } from "@featherds/icon";
@@ -74,15 +74,15 @@ import EditIcon from "@featherds/icon/action/DownloadFile";
 import FilterIcon from "@featherds/icon/action/FilterAlt";
 import MenuIcon from "@featherds/icon/navigation/MoreHoriz";
 import * as components from "../src";
-import { markRaw } from "vue";
-export default {
+import { defineComponent } from "vue";
+export default defineComponent({
   data() {
     return {
       logText: "",
-      search: markRaw(SearchIcon),
-      edit: markRaw(EditIcon),
-      filter: markRaw(FilterIcon),
-      menu: markRaw(MenuIcon),
+      search: SearchIcon,
+      edit: EditIcon,
+      filter: FilterIcon,
+      menu: MenuIcon,
       right: false,
       cover: false,
       standard: false,
@@ -98,8 +98,8 @@ export default {
     },
   },
   methods: {
-    log(e) {
-      this.logText = e.target.innerText;
+    log(e: MouseEvent) {
+      this.logText = (e.target as HTMLElement).innerText;
     },
   },
   components: {
@@ -108,7 +108,7 @@ export default {
     FeatherIcon,
     FeatherCheckbox,
   },
-};
+});
 </script>
 <style lang="scss" scoped>
 section {
