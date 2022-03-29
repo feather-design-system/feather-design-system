@@ -8,7 +8,7 @@
     "prepare": "husky install",
     "serve": "node scripts/serve.js",
     "demo:build": "node scripts/demoBuild.js",
-    "compile": "lerna run compile",
+    "compile": "lerna run compile --parallel",
     "pretypecheck": "npm run compile",
     "typecheck": "vue-tsc --noEmit",
     "typecheck:only": "vue-tsc --noEmit",

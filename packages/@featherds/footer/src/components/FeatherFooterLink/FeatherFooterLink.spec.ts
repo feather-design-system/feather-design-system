@@ -1,7 +1,7 @@
 import FeatherFooterLink from "./FeatherFooterLink.vue";
 import { mount } from "@vue/test-utils";
 const href = "test";
-const getWrapper = function (options = {}) {
+const getWrapper = function (options: Record<string, unknown> = {}) {
   options.props = {
     href,
   };

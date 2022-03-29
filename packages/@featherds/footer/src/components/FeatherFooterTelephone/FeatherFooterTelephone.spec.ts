@@ -1,7 +1,7 @@
 import FeatherFooterTelephone from "./FeatherFooterTelephone.vue";
 import { mount } from "@vue/test-utils";
 const number = "1-(800)-2828-2 0";
-const getWrapper = function (options = {}) {
+const getWrapper = function (options: Record<string, unknown> = {}) {
   options.props = {
     number,
   };

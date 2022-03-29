@@ -1,7 +1,11 @@
-declare module "@featherds/footer" {
-  import { defineComponent } from "vue";
-  const FeatherFooter: ReturnType<typeof defineComponent>;
-  const FeatherFooterLink: ReturnType<typeof defineComponent>;
-  const FeatherFooterTelephone: ReturnType<typeof defineComponent>;
-  export { FeatherFooter, FeatherFooterTelephone, FeatherFooterLink };
-}
+import { DefineComponent } from "vue";
+
+export const FeatherFooter: DefineComponent<
+  typeof import("./components/FeatherFooter.vue").props
+>;
+export const FeatherFooterLink: DefineComponent<
+  typeof import("./components/FeatherFooterLink/FeatherFooterLink.vue").props
+>;
+export const FeatherFooterTelephone: DefineComponent<
+  typeof import("./components/FeatherFooterTelephone/FeatherFooterTelephone.vue").props
+>;

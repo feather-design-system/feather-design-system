@@ -32,8 +32,9 @@
   </div>
 </template>
 <script>
+import { defineComponent } from "vue";
 import * as components from "../src";
-export default {
+export default defineComponent({
   data: () => ({
     linkVisible: true,
     copyright: "Copyright © ${year} A COMPANY, Inc.  All Rights Reserved.  ",
@@ -57,5 +58,5 @@ export default {
   components: {
     ...components,
   },
-};
+});
 </script>
