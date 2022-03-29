@@ -11,14 +11,15 @@
   </FeatherList>
 </template>
 
-<script>
+<script lang="ts">
+import { defineComponent } from "vue";
 import * as components from "./../src";
-export default {
-  data() {
+export default defineComponent({
+  data: () => {
     return { checked: true };
   },
   components: {
     ...components,
   },
-};
+});
 </script>
