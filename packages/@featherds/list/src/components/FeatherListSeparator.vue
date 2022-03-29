@@ -3,13 +3,14 @@
     <hr />
   </feather-list-item>
 </template>
-<script>
+<script lang="ts">
+import { defineComponent } from "vue";
 import FeatherListItem from "./FeatherListItem.vue";
-export default {
+export default defineComponent({
   components: {
     FeatherListItem,
   },
-};
+});
 </script>
 <style lang="scss" scoped>
 @import "@featherds/styles/themes/variables";

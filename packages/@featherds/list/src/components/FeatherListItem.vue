@@ -1,26 +1,27 @@
-<script>
+<script lang="ts">
 import { FeatherRipple } from "@featherds/ripple";
-import { h } from "vue";
-export default {
-  inheritAttrs: false,
-  props: {
-    asLi: {
-      type: Boolean,
-      default: false,
-    },
-    disabled: {
-      type: Boolean,
-      default: false,
-    },
-    selected: {
-      type: Boolean,
-      default: false,
-    },
-    highlighted: {
-      type: Boolean,
-      default: false,
-    },
+import { defineComponent, h } from "vue";
+export const props = {
+  asLi: {
+    type: Boolean,
+    default: false,
   },
+  disabled: {
+    type: Boolean,
+    default: false,
+  },
+  selected: {
+    type: Boolean,
+    default: false,
+  },
+  highlighted: {
+    type: Boolean,
+    default: false,
+  },
+};
+export default defineComponent({
+  inheritAttrs: false,
+  props,
   render() {
     let icon;
     const hasIcon =
@@ -29,7 +30,8 @@ export default {
         .icon()
         .findIndex(
           (o) =>
-            (o.children && o.children.length !== 0) || (o.type && o.type.render)
+            (o.children && o.children.length !== 0) ||
+            (o.type && (o.type as any).render)
         ) !== -1;
     if (hasIcon) {
       icon = h(
@@ -85,7 +87,7 @@ export default {
     );
     return h("li", {}, [anchor]);
   },
-};
+});
 </script>
 <style lang="scss" scoped>
 @import "@featherds/styles/mixins/typography";

@@ -21,27 +21,35 @@
     </template>
   </FeatherListItem>
 </template>
-<script>
+<script lang="ts">
 import { getSafeId } from "@featherds/utils/id";
 import { KEYCODES } from "@featherds/utils/keys";
 import { SwitchRender } from "@featherds/switch";
-import FeatherListItem from "./FeatherListItem";
-export default {
+import FeatherListItem from "./FeatherListItem.vue";
+import { defineComponent, ComponentPublicInstance } from "vue";
+
+export const emits = {
+  "update:modelValue": (value: boolean) => true,
+  click: (e: MouseEvent) => true,
+  keydown: (e: KeyboardEvent) => true,
+};
+export const props = {
+  disabled: {
+    type: Boolean,
+    default: false,
+  },
+  modelValue: {
+    type: Boolean,
+    default: false,
+  },
+};
+export default defineComponent({
   model: {
     prop: "modelValue",
     event: "update:modelValue",
   },
-  emits: ["update:modelValue", "click"],
-  props: {
-    disabled: {
-      type: Boolean,
-      default: false,
-    },
-    modelValue: {
-      type: Boolean,
-      default: false,
-    },
-  },
+  emits,
+  props,
   computed: {
     labelId() {
       return getSafeId("switch-label");
@@ -49,19 +57,19 @@ export default {
   },
   methods: {
     focus() {
-      this.$refs.input.$el.focus();
+      (this.$refs.input as ComponentPublicInstance).$el.focus();
     },
     updateValue() {
       if (!this.disabled) {
         this.$emit("update:modelValue", !this.modelValue);
       }
     },
-    click(e) {
+    click(e: MouseEvent) {
       this.focus();
       this.updateValue();
       this.$emit("click", e);
     },
-    keydown(e) {
+    keydown(e: KeyboardEvent) {
       if (e.keyCode === KEYCODES.SPACE || e.keyCode === KEYCODES.ENTER) {
         this.updateValue();
       }
@@ -73,5 +81,5 @@ export default {
     },
   },
   components: { SwitchRender, FeatherListItem },
-};
+});
 </script>
