@@ -1,9 +1,10 @@
 import { openBlock, createElementBlock, createElementVNode } from "vue";
 var _export_sfc = (sfc, props) => {
+  const target = sfc.__vccOpts || sfc;
   for (const [key, val] of props) {
-    sfc[key] = val;
+    target[key] = val;
   }
-  return sfc;
+  return target;
 };
 const _sfc_main = {};
 const _hoisted_1 = {

@@ -92,22 +92,31 @@ const moveIconsToDocs = (srcRoot, suffix) => async (icons) => {
 const moveFeatherIconsToDocs = moveIconsToDocs(FEATHER_DEST_DIR, "Feather");
 
 const generateTypeDefinitions = async (feather) => {
-  const getIconModuleDefinition = (icon) =>
-    `declare module "@featherds/icon/${icon.group}/${icon.name}" {
-  import { defineComponent } from "vue";
-  const compModule: ReturnType<typeof defineComponent>;
-  export = compModule;
+  const createIconModuleDefinition = (icon) => {
+    const declaration = `declare module "@featherds/icon/${icon.group}/${icon.name}" {
+  import { DefineComponent } from "vue";
+  const compModule: DefineComponent;
+  export { compModule as default };
 }
 `;
+    console.log(`Generating definition ${icon.group}/${icon.name}.d.ts`);
+    return fs.outputFile(
+      `${PACKAGE_DIR}/${icon.group}/${icon.name}.d.ts`,
+      declaration
+    );
+  };
+  await feather.reduce((p, icon) => {
+    return p.then(() => {
+      return createIconModuleDefinition(icon);
+    });
+  }, Promise.resolve());
   const defintionTemplate = `declare module "@featherds/icon" {
-  import { defineComponent } from "vue";
-  const FeatherIcon: ReturnType<typeof defineComponent>;
+  import { DefineComponent } from "vue";
+  const FeatherIcon: DefineComponent<typeof import("./components/FeatherIcon.vue").props>;
   export { FeatherIcon };
 }
-${feather.map(getIconModuleDefinition).join(`
-`)}
 `;
-  console.log("Generating Defintions");
+  console.log("Generating definition index.d.ts");
   return fs.outputFile(`${PACKAGE_DIR}/src/index.d.ts`, defintionTemplate);
 };
 
