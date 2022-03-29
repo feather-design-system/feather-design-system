@@ -16,8 +16,8 @@ export const props = {
     default: false,
   },
   value: {
-    type: [String, Object, Number, Array] as PropType<
-      string | unknown | number | []
+    type: [String, Object, Number, Array, Boolean] as PropType<
+      string | unknown | number | [] | boolean
     >,
   },
 };

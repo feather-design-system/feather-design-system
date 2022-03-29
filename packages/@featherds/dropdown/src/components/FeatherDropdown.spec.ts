@@ -1,12 +1,13 @@
-import { nextTick } from "vue";
-import { mount, config } from "@vue/test-utils";
+import { defineComponent, nextTick } from "vue";
+import { mount } from "@vue/test-utils";
 import FeatherDropdown from "./FeatherDropdown.vue";
 import axe from "@featherds/utils/test/axe";
+import { getCalls } from "@featherds/utils/test/calls";
 
 import * as id from "@featherds/utils/id";
 
 jest.spyOn(id, "getSafeId").mockImplementation((x) => x);
-const getWrapper = (options = {}) => {
+const getWrapper = (options: Record<string, unknown> = {}) => {
   return mount(FeatherDropdown, options);
 };
 
@@ -16,24 +17,25 @@ const getTrigger = () => ({
     focus: () => {},
   },
 });
-const getLi = (disabled = false) => ({
-  template: `<li>
+const getLi = (disabled = false) =>
+  defineComponent({
+    template: `<li>
     <a>TEST</a>
   </li>`,
-  data() {
-    return { disabled: disabled, focused: false };
-  },
-  computed: {
-    _dropdownItem() {
-      return true;
+    data() {
+      return { disabled: disabled, focused: false };
     },
-  },
-  methods: {
-    focus() {
-      this.focused = true;
+    computed: {
+      _dropdownItem() {
+        return true;
+      },
     },
-  },
-});
+    methods: {
+      focus() {
+        this.focused = true;
+      },
+    },
+  });
 
 describe("FeatherDropdown.vue", () => {
   it("should pass through cover property", () => {
@@ -47,7 +49,7 @@ describe("FeatherDropdown.vue", () => {
         cover: true,
       },
     });
-    expect(wrapper.wrapperElement).toMatchSnapshot();
+    expect(wrapper.element).toMatchSnapshot();
   });
   it("should pass through right property", () => {
     const slots = {
@@ -60,7 +62,7 @@ describe("FeatherDropdown.vue", () => {
         right: true,
       },
     });
-    expect(wrapper.wrapperElement).toMatchSnapshot();
+    expect(wrapper.element).toMatchSnapshot();
   });
   describe("keydown", () => {
     describe("should call select next when", () => {
@@ -171,7 +173,7 @@ describe("FeatherDropdown.vue", () => {
     await wrapper.findComponent({ ref: "menu" }).vm.$emit("close");
 
     expect(wrapper.vm.localOpen).toBe(false);
-    expect(wrapper.emitted("update:modelValue")[1][0]).toBe(false);
+    expect(getCalls<[boolean]>(wrapper, "update:modelValue")[1][0]).toBe(false);
   });
   it("should have the correct ids labelling the menu", () => {
     const slots = {
@@ -181,7 +183,7 @@ describe("FeatherDropdown.vue", () => {
     const wrapper = getWrapper({ slots });
     const menu = wrapper.find("ul");
     expect(menu.attributes()["aria-labelledby"]).toBe(
-      wrapper.vm.$refs.menu.triggerId
+      (wrapper.vm.$refs.menu as { triggerId: string }).triggerId
     );
   });
   describe("a11y", () => {

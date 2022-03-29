@@ -14,25 +14,33 @@
     <slot />
   </FeatherListItem>
 </template>
-<script>
+<script lang="ts">
 import DropdownItem from "../mixins/DropdownItem";
 import { FeatherListItem } from "@featherds/list";
-export default {
+import { ComponentPublicInstance, defineComponent } from "vue";
+export const emits = {
+  click: (e: MouseEvent) => true,
+};
+export default defineComponent({
   mixins: [DropdownItem],
-  emits: ["click"],
+  emits,
   methods: {
-    handleClick(e) {
+    handleClick(e: MouseEvent) {
       if (!this.disabled) {
-        this.$parent.$emit("close"); //call close
+        if (this.$parent) {
+          this.$parent.$emit("close"); //call close
+        }
         this.$emit("click", e);
       }
     },
     focus() {
-      this.$refs.link.$el.querySelector("a").focus();
+      (this.$refs.link as ComponentPublicInstance).$el
+        .querySelector("a")
+        .focus();
     },
   },
   components: {
     FeatherListItem,
   },
-};
+});
 </script>

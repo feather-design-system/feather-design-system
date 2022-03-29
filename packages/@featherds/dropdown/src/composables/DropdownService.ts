@@ -2,10 +2,12 @@ const useDropdownService = () => {
   return new DropdownService();
 };
 class DropdownService {
-  setItems(incoming) {
+  items: HTMLElement[] = [];
+  currentItem?: HTMLElement = undefined;
+  setItems(incoming: HTMLElement[]) {
     this.items = incoming;
   }
-  select(item) {
+  select(item: HTMLElement) {
     this.currentItem = item;
     item.focus();
   }
@@ -29,6 +31,9 @@ class DropdownService {
     this.select(enabled[enabled.length - 1]);
   }
   selectPrevious() {
+    if (!this.currentItem) {
+      return;
+    }
     const current = this.currentItem;
     const notDisabled = Array.from(this.items).filter(
       (x) => !x.classList.contains("disabled")
@@ -42,6 +47,9 @@ class DropdownService {
     }
   }
   selectNext() {
+    if (!this.currentItem) {
+      return;
+    }
     const current = this.currentItem;
     const notDisabled = Array.from(this.items).filter(
       (x) => !x.classList.contains("disabled")

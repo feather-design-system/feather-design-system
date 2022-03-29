@@ -43,7 +43,6 @@ export default defineComponent({
     });
 
     const comparePositionInDOM = (a: HTMLElement, b: HTMLElement) => {
-      //See https://johnresig.com/blog/comparing-document-position/
       let result = a.compareDocumentPosition(b);
 
       if (result === 0x02) return "before";
