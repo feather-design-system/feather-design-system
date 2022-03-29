@@ -1,3 +1,14 @@
+## [0.10.2](https://github.com/feather-design-system/feather-design-system/compare/v0.10.1...v0.10.2) (2022-03-29)
+
+
+### Bug Fixes
+
+* **build:** resolved [#70](https://github.com/feather-design-system/feather-design-system/issues/70) - featherds/styles theme CSS files not being generated ([06d9367](https://github.com/feather-design-system/feather-design-system/commit/06d9367446f88b3b21b347c22ffe6fb285fb6d0e))
+* **layers:** removing the visibility:hidden from the calculating portion ([af8db3c](https://github.com/feather-design-system/feather-design-system/commit/af8db3c1dc6354c78340999560822b8589d6db98))
+* **validation:** refactored validation unmounting pattern and some demos ([d97eb6c](https://github.com/feather-design-system/feather-design-system/commit/d97eb6cc1eaa3e25463e793c2b59b69e8bd53d0e))
+
+
+
 ## [0.10.1](https://github.com/feather-design-system/feather-design-system/compare/v0.10.0...v0.10.1) (2022-03-22)
 
 
