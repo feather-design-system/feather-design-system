@@ -24,13 +24,13 @@
     <button type="submit">Submit</button>
   </form>
 </template>
-<script>
+<script lang="ts">
 import { string } from "yup";
-import { ref } from "vue";
+import { defineComponent, ref } from "vue";
 import * as components from "./../src";
 import { useForm, ValidationHeader } from "@featherds/input-helper";
 
-export default {
+export default defineComponent({
   setup() {
     const form = useForm();
     const test = ref(true);
@@ -39,17 +39,24 @@ export default {
 
     const email = ref("");
     const emailV = string().required("Required").email();
-    const errors = ref([]);
+    const errors = ref(
+      [] as {
+        success: boolean;
+        message: string;
+        inputId: string;
+        label: string;
+      }[]
+    );
     const heading = ref();
-    const focusElement = (id) => {
-      document.getElementById(id).focus();
+    const focusElement = (id: string) => {
+      (document.getElementById(id) as HTMLElement).focus();
     };
-    const onSubmit = (e) => {
+    const onSubmit = (e: Event) => {
       e.preventDefault();
       errors.value = form.validate();
     };
 
-    const addHash = (str) => `#${str}`;
+    const addHash = (str: string) => `#${str}`;
     return {
       test,
       email,
@@ -67,5 +74,5 @@ export default {
     ...components,
     ValidationHeader,
   },
-};
+});
 </script>

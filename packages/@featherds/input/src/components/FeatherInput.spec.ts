@@ -1,5 +1,6 @@
 import { nextTick } from "vue";
 import axe from "@featherds/utils/test/axe";
+import { getCalls } from "@featherds/utils/test/calls";
 import FeatherInput from "./FeatherInput.vue";
 import { mount } from "@vue/test-utils";
 import * as id from "@featherds/utils/id";
@@ -7,7 +8,7 @@ import "@featherds/input-helper/test/MutationObserver";
 
 jest.spyOn(id, "getSafeId").mockImplementation((x) => x);
 
-const getWrapper = function (options) {
+const getWrapper = function (options: Record<string, unknown>) {
   document.body.innerHTML = "";
   options.attachTo = document.body;
   return mount(FeatherInput, options);
@@ -20,7 +21,7 @@ describe("FeatherInput.vue", () => {
         label: "label",
       },
     });
-    expect(wrapper.wrapperElement).toMatchSnapshot();
+    expect(wrapper.element).toMatchSnapshot();
   });
   it("should render an input with a label and hint text", () => {
     const wrapper = getWrapper({
@@ -29,7 +30,7 @@ describe("FeatherInput.vue", () => {
         hint: "hint text",
       },
     });
-    expect(wrapper.wrapperElement).toMatchSnapshot();
+    expect(wrapper.element).toMatchSnapshot();
   });
   it("should render an input with a preset value", () => {
     const wrapper = getWrapper({
@@ -39,7 +40,7 @@ describe("FeatherInput.vue", () => {
         modelValue: "YEET",
       },
     });
-    expect(wrapper.wrapperElement).toMatchSnapshot();
+    expect(wrapper.element).toMatchSnapshot();
   });
   it("should render an input with raised label when focused", async () => {
     const wrapper = getWrapper({
@@ -48,7 +49,7 @@ describe("FeatherInput.vue", () => {
       },
     });
     await wrapper.find("input").trigger("focus");
-    expect(wrapper.wrapperElement).toMatchSnapshot();
+    expect(wrapper.element).toMatchSnapshot();
   });
   it("should render an input with raised label when focused and has a value", async () => {
     const wrapper = getWrapper({
@@ -58,7 +59,7 @@ describe("FeatherInput.vue", () => {
       },
     });
     await wrapper.find("input").trigger("focus");
-    expect(wrapper.wrapperElement).toMatchSnapshot();
+    expect(wrapper.element).toMatchSnapshot();
   });
 
   it("should trigger input event when something is typed", () => {
@@ -71,7 +72,9 @@ describe("FeatherInput.vue", () => {
     const expected = "TEEST";
     input.element.value = expected;
     input.trigger("input");
-    expect(wrapper.emitted("update:modelValue")[1][0]).toBe(expected);
+    expect(getCalls<[string]>(wrapper, "update:modelValue")[1][0]).toBe(
+      expected
+    );
   });
 
   it("should render an input error input", () => {
@@ -81,7 +84,7 @@ describe("FeatherInput.vue", () => {
         error: "Error text",
       },
     });
-    expect(wrapper.wrapperElement).toMatchSnapshot();
+    expect(wrapper.element).toMatchSnapshot();
   });
   it("should render an input error input and has focus", async () => {
     const wrapper = getWrapper({
@@ -91,7 +94,7 @@ describe("FeatherInput.vue", () => {
       },
     });
     await wrapper.find("input").trigger("focus");
-    expect(wrapper.wrapperElement).toMatchSnapshot();
+    expect(wrapper.element).toMatchSnapshot();
   });
   it("should render an input error input and has a value", () => {
     const wrapper = getWrapper({
@@ -101,7 +104,7 @@ describe("FeatherInput.vue", () => {
         modelValue: "Test",
       },
     });
-    expect(wrapper.wrapperElement).toMatchSnapshot();
+    expect(wrapper.element).toMatchSnapshot();
   });
   it("should render a clear icon when clear has a value and input also has a value", () => {
     const wrapper = getWrapper({
@@ -111,7 +114,7 @@ describe("FeatherInput.vue", () => {
         modelValue: "Test",
       },
     });
-    expect(wrapper.wrapperElement).toMatchSnapshot();
+    expect(wrapper.element).toMatchSnapshot();
   });
 
   it("should not render a clear icon when the input doesn't have a value", () => {
@@ -121,7 +124,7 @@ describe("FeatherInput.vue", () => {
         clear: "clear",
       },
     });
-    expect(wrapper.wrapperElement).toMatchSnapshot();
+    expect(wrapper.element).toMatchSnapshot();
   });
   it("should render a maxlength attribute and character count when maxlength specified", () => {
     const wrapper = getWrapper({
@@ -131,7 +134,7 @@ describe("FeatherInput.vue", () => {
         maxlength: 5,
       },
     });
-    expect(wrapper.wrapperElement).toMatchSnapshot();
+    expect(wrapper.element).toMatchSnapshot();
   });
   it("should clear input when clear-icon is clicked", async () => {
     const wrapper = getWrapper({
@@ -143,8 +146,8 @@ describe("FeatherInput.vue", () => {
     });
     wrapper.vm.handleClear();
     await nextTick();
-    expect(wrapper.wrapperElement).toMatchSnapshot();
-    expect(wrapper.emitted("update:modelValue")[1][0]).toBe("");
+    expect(wrapper.element).toMatchSnapshot();
+    expect(getCalls<[string]>(wrapper, "update:modelValue")[1][0]).toBe("");
   });
 
   it("should allow custom focus events", async () => {
@@ -161,7 +164,7 @@ describe("FeatherInput.vue", () => {
 
     await wrapper.find("input").trigger("focus");
     expect(fn).toHaveBeenCalled();
-    expect(wrapper.wrapperElement).toMatchSnapshot();
+    expect(wrapper.element).toMatchSnapshot();
   });
 
   it("should allow custom blur events", () => {
@@ -179,7 +182,7 @@ describe("FeatherInput.vue", () => {
     wrapper.find("input").element.focus();
     wrapper.find("input").element.blur();
     expect(fn).toHaveBeenCalled();
-    expect(wrapper.wrapperElement).toMatchSnapshot();
+    expect(wrapper.element).toMatchSnapshot();
   });
   describe("e2e elements, data-refs", () => {
     it("should have an input data-ref", () => {
@@ -207,7 +210,7 @@ describe("FeatherInput.vue", () => {
     });
   });
   describe("a11y", () => {
-    const accessibilityTest = async (options) => {
+    const accessibilityTest = async (options: Record<string, unknown>) => {
       const wrapper = mount(FeatherInput, options);
       expect(await axe(wrapper.element)).toHaveNoViolations();
     };
