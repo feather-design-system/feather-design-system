@@ -2,6 +2,7 @@ import FeatherExpansionPanel from "./FeatherExpansionPanel.vue";
 import { mount } from "@vue/test-utils";
 
 import axe from "@featherds/utils/test/axe";
+import { getCalls } from "@featherds/utils/test/calls";
 import * as id from "@featherds/utils/id";
 jest.spyOn(id, "getSafeId").mockImplementation((x) => x);
 
@@ -26,10 +27,10 @@ describe("FeatherExpansionPanel.vue", () => {
     );
     await button.trigger("click");
     expect(button.attributes("aria-expanded")).toBe("true");
-    expect(wrapper.emitted("update:modelValue")[0][0]).toBe(true);
+    expect(getCalls<[boolean]>(wrapper, "update:modelValue")[0][0]).toBe(true);
     await button.trigger("click");
     expect(button.attributes("aria-expanded")).toBe("false");
-    expect(wrapper.emitted("update:modelValue")[1][0]).toBe(false);
+    expect(getCalls<[boolean]>(wrapper, "update:modelValue")[1][0]).toBe(false);
   });
 
   it("should not toggle expanded when disabled", async () => {
@@ -41,7 +42,7 @@ describe("FeatherExpansionPanel.vue", () => {
     await button.trigger("click");
     expect(button.attributes("aria-expanded")).toBe("false");
     expect(wrapper.emitted("update:modelValue")).toBeUndefined();
-    expect(wrapper.wrapperElement).toMatchSnapshot();
+    expect(wrapper.element).toMatchSnapshot();
   });
   it("should render content when expanded", async () => {
     const wrapper = getWrapper();
@@ -54,12 +55,12 @@ describe("FeatherExpansionPanel.vue", () => {
   it("should render loading", async () => {
     const wrapper = getWrapper();
     await wrapper.setProps({ modelValue: true, loading: true });
-    expect(wrapper.wrapperElement).toMatchSnapshot();
+    expect(wrapper.element).toMatchSnapshot();
   });
   it("should have correct HTML structure", () => {
     const wrapper = getWrapper();
 
-    expect(wrapper.wrapperElement).toMatchSnapshot();
+    expect(wrapper.element).toMatchSnapshot();
   });
 
   it("should be accessible", async () => {

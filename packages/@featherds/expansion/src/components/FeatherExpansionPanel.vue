@@ -50,52 +50,60 @@
   </div>
 </template>
 
-<script>
+<script lang="ts">
 import { FeatherIcon } from "@featherds/icon";
 import { FeatherSpinner } from "@featherds/progress";
 import DownArrow from "@featherds/icon/navigation/ExpandMore";
 import { getSafeId } from "@featherds/utils/id";
-import { markRaw } from "vue";
-
-export default {
+import { defineComponent } from "vue";
+export const props = {
+  modelValue: {
+    type: Boolean,
+    default: false,
+    required: false,
+  },
+  level: {
+    type: Number,
+    default: 4,
+    required: false,
+  },
+  title: {
+    type: String,
+    required: false,
+  },
+  disabled: {
+    type: Boolean,
+    default: false,
+    required: false,
+  },
+  loading: {
+    type: Boolean,
+    default: false,
+    required: false,
+  },
+};
+export const emits = {
+  "update:modelValue": (v: boolean) => true,
+};
+export default defineComponent({
   name: "FeatherExpansionPanel",
   model: {
     prop: "modelValue",
     event: "update:modelValue",
   },
-  emits: ["update:modelValue"],
-  props: {
-    modelValue: {
-      type: Boolean,
-      default: false,
-    },
-    level: {
-      type: Number,
-      default: 4,
-    },
-    title: {
-      type: String,
-    },
-    disabled: {
-      type: Boolean,
-      default: false,
-    },
-    loading: {
-      type: Boolean,
-      default: false,
-    },
-  },
+  emits,
+  props,
   watch: {
     modelValue: {
       immediate: true,
-      handler(v) {
+      handler(v: boolean) {
         this.internalState = v;
       },
     },
   },
   data() {
     return {
-      internalState: this.value,
+      internalState: this.modelValue,
     };
   },
   computed: {
@@ -106,7 +114,7 @@ export default {
       return this.internalState;
     },
     downIcon() {
-      return markRaw(DownArrow);
+      return DownArrow;
     },
     contentId() {
       return getSafeId("feather-expansion-panel");
@@ -123,7 +131,8 @@ export default {
       this.internalState = !this.internalState;
       this.$emit("update:modelValue", this.internalState);
     },
-    enter(element) {
+    enter(el: Element) {
+      const element = el as HTMLElement;
       const width = getComputedStyle(element).width;
 
       element.style.width = width;
@@ -136,7 +145,7 @@ export default {
       element.style.width = "";
       element.style.position = "";
       element.style.visibility = "";
-      element.style.height = 0;
+      element.style.height = "0";
 
       // Force repaint to make sure the
       // animation is triggered correctly.
@@ -151,10 +160,12 @@ export default {
         element.style.height = height;
       });
     },
-    afterEnter(element) {
+    afterEnter(el: Element) {
+      const element = el as HTMLElement;
       element.style.height = "auto";
     },
-    leave(element) {
+    leave(el: Element) {
+      const element = el as HTMLElement;
       const height = getComputedStyle(element).height;
 
       element.style.height = height;
@@ -164,7 +175,7 @@ export default {
       getComputedStyle(element).height;
 
       setTimeout(() => {
-        element.style.height = 0;
+        element.style.height = "0";
       });
     },
   },
@@ -172,7 +183,7 @@ export default {
     FeatherIcon,
     FeatherSpinner,
   },
-};
+});
 </script>
 
 <style lang="scss" scoped>
