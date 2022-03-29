@@ -82,16 +82,16 @@
     </FeatherExpansionPanel>
   </section>
 </template>
-<script>
+<script lang="ts">
 import * as components from "./../src";
 import { FeatherIcon } from "@featherds/icon";
 import { FeatherButton } from "@featherds/button";
 import Icon from "@featherds/icon/navigation/ChevronRight";
-import { markRaw } from "vue";
-export default {
+import { defineComponent } from "vue";
+export default defineComponent({
   data() {
     return {
-      icon: markRaw(Icon),
+      icon: Icon,
     };
   },
   components: {
@@ -99,7 +99,7 @@ export default {
     FeatherIcon,
     FeatherButton,
   },
-};
+});
 </script>
 <style lang="scss" scoped>
 @import "@featherds/table/scss/table";
