@@ -1,7 +1,7 @@
 import DrawerTab from "./DrawerTab.vue";
 import { mount } from "@vue/test-utils";
 const label = "LABEL";
-const getWrapper = (options = {}) => {
+const getWrapper = (options: Record<string, unknown> = {}) => {
   options.slots = {
     default: { template: "<span>X</span>" },
   };

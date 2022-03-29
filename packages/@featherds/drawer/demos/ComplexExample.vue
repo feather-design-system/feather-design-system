@@ -201,7 +201,7 @@
     </feather-drawer>
   </div>
 </template>
-<script>
+<script lang="ts">
 import * as components from "@featherds/drawer";
 import { FeatherIcon } from "@featherds/icon";
 import { FeatherDateInput } from "@featherds/date-input";
@@ -214,8 +214,9 @@ import Lock from "@featherds/icon/action/Lock";
 import Key from "@featherds/icon/action/Build";
 import ExitToApp from "@featherds/icon/action/ExitToApp";
 import * as listComponents from "@featherds/list";
+import { defineComponent } from "vue";
 
-export default {
+export default defineComponent({
   components: {
     ...components,
     ...listComponents,
@@ -236,7 +237,7 @@ export default {
     close: ExitToApp,
     key: Key,
   }),
-};
+});
 </script>
 <style>
 .fixed-width {

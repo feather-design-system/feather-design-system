@@ -30,10 +30,11 @@
     </div>
   </div>
 </template>
-<script>
+<script lang="ts">
+import { defineComponent } from "vue";
 import * as components from "../src";
 
-export default {
+export default defineComponent({
   components: {
     ...components,
   },
@@ -46,7 +47,7 @@ export default {
       console.log("shown");
     },
   },
-};
+});
 </script>
 <style>
 .fixed-width {

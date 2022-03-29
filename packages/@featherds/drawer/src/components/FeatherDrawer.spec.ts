@@ -1,7 +1,7 @@
 import { mount } from "@vue/test-utils";
 import axe from "axe-core";
 import FeatherDrawer from "./FeatherDrawer.vue";
-
+import { getCalls } from "@featherds/utils/test/calls";
 const slots = {
   default: {
     template: `<div><h1>Drawer content</h1>
@@ -20,20 +20,21 @@ const DialogClose = {
   template: '<a href="#" class="menu-close">Close</a>',
 };
 
-const getprops = (modelValue) => ({
+const getprops = (modelValue: boolean) => ({
   modelValue,
   width: "30%",
   closeText,
   titleText,
 });
 
-const getWrapper = (options = {}) => {
-  if (!options.global) {
-    options.global = {};
-  }
-  options.global.stubs = {
-    "focus-trap": FocusTrap,
-    "dialog-close": DialogClose,
+const getWrapper = function (options: Record<string, unknown>) {
+  const global = (options.global as Object) || {};
+  options.global = {
+    ...global,
+    stubs: {
+      "focus-trap": FocusTrap,
+      "dialog-close": DialogClose,
+    },
   };
   return mount(FeatherDrawer, options);
 };
@@ -51,7 +52,9 @@ describe("FeatherDrawer.vue", () => {
     it("should trigger change event with false", () => {
       const wrapper = getWrapper({ props: getprops(true), slots });
       wrapper.vm.close();
-      expect(wrapper.emitted("update:modelValue")[0][0]).toBe(false);
+      expect(getCalls<[boolean]>(wrapper, "update:modelValue")[0][0]).toBe(
+        false
+      );
     });
   });
 

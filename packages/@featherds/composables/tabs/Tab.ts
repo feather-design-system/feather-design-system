@@ -52,9 +52,9 @@ const useTab = (props: ExtractPropTypes<typeof stockProps>) => {
       ref: "tab",
       tabindex: selected.value ? 0 : -1,
       id: _id.value,
-      "aria-selected": selected.value ? "true" : "false",
+      "aria-selected": selected.value,
       "aria-controls": _controls.value,
-      "aria-disabled": props.disabled ? "true" : "false",
+      "aria-disabled": props.disabled,
       "data-ref-id": "feather-tab",
     };
   });

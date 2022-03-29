@@ -12,25 +12,26 @@
   </div>
 </template>
 
-<script>
+<script lang="ts">
 import { useTabPanel, stockProps } from "@featherds/composables/tabs/TabPanel";
 import { MenuFocusLoop } from "@featherds/menu";
-
-export default {
-  name: "DrawerTabContent",
-  props: {
-    header: {
-      type: String,
-    },
-    ...stockProps,
+import { defineComponent } from "vue";
+export const props = {
+  header: {
+    type: String,
   },
+  ...stockProps,
+};
+export default defineComponent({
+  name: "DrawerTabContent",
+  props,
   setup(props) {
     return useTabPanel(props);
   },
   directives: {
     MenuFocusLoop,
   },
-};
+});
 </script>
 
 <style lang="scss" scoped>

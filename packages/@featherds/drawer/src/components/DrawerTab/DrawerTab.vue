@@ -20,19 +20,20 @@
     </a>
   </li>
 </template>
-<script>
+<script lang="ts">
 import { useTab, stockProps } from "@featherds/composables/tabs/Tab";
 import { FeatherRipple } from "@featherds/ripple";
-
-export default {
-  name: "DrawerTab",
-  props: {
-    label: {
-      type: String,
-      required: true,
-    },
-    ...stockProps,
+import { defineComponent } from "vue";
+export const props = {
+  label: {
+    type: String,
+    required: true,
   },
+  ...stockProps,
+};
+export default defineComponent({
+  name: "DrawerTab",
+  props,
   data() {
     return {
       showLabel: false,
@@ -68,7 +69,7 @@ export default {
   components: {
     FeatherRipple,
   },
-};
+});
 </script>
 <style lang="scss" scoped>
 @import "@featherds/styles/themes/variables";

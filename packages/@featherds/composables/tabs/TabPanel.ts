@@ -41,7 +41,7 @@ const useTabPanel = (props: ExtractPropTypes<typeof stockProps>) => {
       id: _id.value,
       ref: "panel",
       tabindex: "0",
-      "aria-expanded": selected.value ? "true" : "false",
+      "aria-expanded": selected.value,
       "aria-labelledby": _tab.value,
       "data-ref-id": "feather-tab-panel",
     };
