@@ -15,18 +15,20 @@
     </div>
   </footer>
 </template>
-<script>
-export default {
-  props: {
-    copyright: {
-      type: String,
-      required: true,
-    },
+<script lang="ts">
+import { defineComponent } from "vue";
+export const props = {
+  copyright: {
+    type: String,
+    required: true,
   },
+};
+export default defineComponent({
+  props,
   computed: {
     copyrightMessage() {
       const year = new Date().getFullYear();
-      return this.copyright.replace(/\$\{year\}/g, year);
+      return this.copyright?.replace(/\$\{year\}/g, year.toString());
     },
     hasContact() {
       const hasContact =
@@ -45,7 +47,7 @@ export default {
       return hasLinks;
     },
   },
-};
+});
 </script>
 
 <style lang="scss" scoped>

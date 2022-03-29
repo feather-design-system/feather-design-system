@@ -5,16 +5,18 @@
     </a>
   </li>
 </template>
-<script>
-export default {
-  inheritAttrs: false,
-  props: {
-    href: {
-      type: String,
-      required: true,
-    },
+<script lang="ts">
+import { defineComponent } from "vue";
+export const props = {
+  href: {
+    type: String,
+    required: true,
   },
 };
+export default defineComponent({
+  inheritAttrs: false,
+  props,
+});
 </script>
 
 <style lang="scss" scoped>

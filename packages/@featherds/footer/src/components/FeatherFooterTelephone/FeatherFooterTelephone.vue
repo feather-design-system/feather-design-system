@@ -6,30 +6,31 @@
     }}</a>
   </div>
 </template>
-<script>
+<script lang="ts">
 import { FeatherIcon } from "@featherds/icon";
 import Call from "@featherds/icon/communication/Phone";
-import { markRaw } from "vue";
-export default {
-  props: {
-    number: {
-      type: String,
-      required: true,
-    },
+import { defineComponent } from "vue";
+export const props = {
+  number: {
+    type: String,
+    required: true,
   },
+};
+export default defineComponent({
+  props,
   computed: {
     icon() {
-      return markRaw(Call);
+      return Call;
     },
     formattedNumber() {
-      const num = this.number.replace(/[()-\s]/g, "");
+      const num = this.number?.replace(/[()-\s]/g, "");
       return `tel:+${num}`;
     },
   },
   components: {
     FeatherIcon,
   },
-};
+});
 </script>
 
 <style lang="scss" scoped>
