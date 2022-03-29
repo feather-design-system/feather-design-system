@@ -17,7 +17,7 @@
         ref="input"
         v-on="listeners"
         data-ref-id="feather-input"
-        :maxlength="maxlength > 0 ? maxlength : false"
+        :maxlength="maxlength > 0 ? maxlength : 'false'"
       />
 
       <template v-slot:post><slot name="post" /></template>
@@ -35,48 +35,58 @@
     </InputSubText>
   </div>
 </template>
-<script>
+<script lang="ts">
 import { getSafeId } from "@featherds/utils/id";
 import { useValidation } from "@featherds/input-helper";
-import { ref, toRef, computed } from "vue";
+import { ref, toRef, computed, defineComponent, PropType, Ref } from "vue";
 import {
   InputWrapper,
-  InputWrapperMixin,
   InputSubText,
-  InputSubTextMixin,
-  InputInheritAttrsMixin,
+  InputWrapperProps,
+  InputSubTextProps,
+  useInputWrapper,
+  useInputSubText,
+  useInputInheritAttrs,
 } from "@featherds/input-helper";
-export default {
+export const props = {
+  ...InputWrapperProps,
+  ...InputSubTextProps,
+  type: {
+    type: String,
+    default: "text",
+  },
+  modelValue: {
+    type: [String, Number],
+  },
+  maxlength: {
+    type: Number,
+    required: false,
+    default: 0,
+  },
+  schema: {
+    type: Object as PropType<Record<string, any>>,
+    required: false,
+  },
+  id: {
+    type: String,
+    required: false,
+  },
+};
+
+export const emits = {
+  "update:modelValue": (value: string | undefined | number) => true,
+};
+export default defineComponent({
   model: {
     prop: "modelValue",
     event: "update:modelValue",
   },
-  mixins: [InputWrapperMixin, InputSubTextMixin, InputInheritAttrsMixin],
-  emits: ["update:modelValue"],
-  props: {
-    type: {
-      type: String,
-      default: "text",
-    },
-    modelValue: {
-      type: [String, Number],
-    },
-    maxlength: {
-      type: Number,
-      required: false,
-      default: 0,
-    },
-    schema: {
-      type: Object,
-      required: false,
-    },
-    id: {
-      type: String,
-      required: false,
-    },
-  },
+  emits,
+  props,
 
-  setup(props) {
+  setup(props, context) {
+    useInputSubText(props);
+    useInputWrapper(props);
     const incomingId = toRef(props, "id");
     const inputId = computed(() => {
       if (incomingId.value) {
@@ -84,17 +94,22 @@ export default {
       }
       return getSafeId("feather-input-label");
     });
-    const internalValue = ref();
+    const internalValue = ref() as Ref<string>;
 
     const { validate } = useValidation(
       inputId,
       internalValue,
-      props.label,
-      props.schema,
-      toRef(props, "error")
+      props.label as string,
+      props.schema as Record<string, any>,
+      toRef(props, "error") as Ref<string>
     );
 
-    return { inputId, internalValue, validate };
+    return {
+      inputId,
+      internalValue,
+      validate,
+      ...useInputInheritAttrs(context.attrs as Record<string, unknown>),
+    };
   },
   data() {
     return {
@@ -158,7 +173,7 @@ export default {
         name: this.inputId,
         disabled: this.disabled,
         "aria-disabled": this.disabled,
-        "aria-describedby": (attrs["aria-describedby"] || "")
+        "aria-describedby": ((attrs["aria-describedby"] as string) || "")
           .split(" ")
           .concat([this.descriptionId])
           .filter(Boolean)
@@ -168,20 +183,20 @@ export default {
     },
     listeners() {
       return {
-        onFocus: (e) => {
+        onFocus: (e: FocusEvent) => {
           this.handleFocus();
           if (this.$attrs.onFocus) {
-            this.$attrs.onFocus(e);
+            (this.$attrs.onFocus as (e: FocusEvent) => void)(e);
           }
         },
-        onBlur: (e) => {
+        onBlur: (e: FocusEvent) => {
           this.validate();
           this.handleBlur();
           if (this.$attrs.onBlur) {
-            this.$attrs.onBlur(e);
+            (this.$attrs.onBlur as (e: FocusEvent) => void)(e);
           }
         },
-        onInput: (e) => {
+        onInput: (e: Event) => {
           this.handleInput(e);
         },
       };
@@ -212,7 +227,7 @@ export default {
       this.focus();
     },
     handleWrapperClick() {
-      this.$refs.input.focus();
+      (this.$refs.input as HTMLInputElement).focus();
     },
     handleFocus() {
       this.focused = true;
@@ -220,13 +235,13 @@ export default {
     handleBlur() {
       this.focused = false;
     },
-    handleInput(e) {
-      this.internalValue = e.target.value;
+    handleInput(e: Event) {
+      this.internalValue = (e.target as HTMLInputElement).value;
       this.$emit("update:modelValue", this.internalValue);
     },
     focus() {
       this.$nextTick(() => {
-        this.$refs.input.focus();
+        (this.$refs.input as HTMLInputElement).focus();
       });
     },
   },
@@ -235,7 +250,7 @@ export default {
     InputSubText,
     InputWrapper,
   },
-};
+});
 </script>
 
 <style lang="scss" scoped>

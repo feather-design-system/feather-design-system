@@ -46,13 +46,13 @@
     </FeatherInput>
   </section>
 </template>
-<script>
+<script lang="ts">
 import * as components from "./../src";
 import { FeatherIcon } from "@featherds/icon";
 import Search from "@featherds/icon/action/Search";
-import { markRaw } from "vue";
-export default {
-  data() {
+import { defineComponent } from "vue";
+export default defineComponent({
+  data: () => {
     return {
       label: "First Name",
       hint: "Input yo",
@@ -62,7 +62,7 @@ export default {
   },
   computed: {
     searchIcon() {
-      return markRaw(Search);
+      return Search;
     },
     typeOfNum() {
       return typeof this.num;
@@ -72,7 +72,7 @@ export default {
     ...components,
     FeatherIcon,
   },
-};
+});
 </script>
 <style lang="scss" scoped>
 @import "@featherds/styles/themes/variables";

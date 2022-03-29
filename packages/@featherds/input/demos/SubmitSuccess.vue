@@ -32,15 +32,15 @@
     ></div>
   </form>
 </template>
-<script>
+<script lang="ts">
 import { string } from "yup";
-import { ref } from "vue";
+import { ref, defineComponent } from "vue";
 import * as components from "./../src";
 import { useForm, ValidationHeader } from "@featherds/input-helper";
 
 import { FeatherSpinner } from "@featherds/progress";
 
-export default {
+export default defineComponent({
   setup() {
     const form = useForm();
     const name = ref("");
@@ -48,14 +48,21 @@ export default {
 
     const email = ref("");
     const emailV = string().required("Required").email();
-    const errors = ref([]);
+    const errors = ref(
+      [] as {
+        success: boolean;
+        message: string;
+        inputId: string;
+        label: string;
+      }[]
+    );
     const errorsHeading = ref("");
     const heading = ref();
     const submitting = ref();
     const alert = ref();
     const headingText = ref("");
 
-    const onSubmit = (e) => {
+    const onSubmit = (e: Event) => {
       e.preventDefault();
       errors.value = form.validate();
       headingText.value = "";
@@ -89,7 +96,7 @@ export default {
     FeatherSpinner,
     ValidationHeader,
   },
-};
+});
 </script>
 <style lang="scss" scoped>
 @import "@featherds/styles/mixins/typography";
