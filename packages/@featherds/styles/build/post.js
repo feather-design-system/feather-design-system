@@ -2,37 +2,31 @@ const sass = require("sass");
 const path = require("path");
 const fs = require("fs-extra");
 
-const importer = (url, prev, done) => {
-  if (url[0] === "~") {
-    url = path.resolve("node_modules", url.substr(1));
-  }
-
-  return done({ file: url });
+const importer = {
+  findFileUrl(url) {
+    if (!url.startsWith("~")) return null;
+    return new URL(url.substring(1), pathToFileURL("node_modules"));
+  },
 };
 
-const render = (input, output) =>
-  sass.render(
-    {
-      file: input,
-      importer,
-      outFile: output,
-    },
-    function (err, result) {
-      if (err) {
-        console.error(err);
-        process.exit(1);
-      }
+const render = (input, output) => {
+  sass
+    .compileAsync(input, { importers: [importer] })
+    .then((result) => {
       fs.outputFileSync(output, result.css, { flag: "w" }, (err) => {
         if (err) {
           console.error(err);
           process.exit(1);
         }
-        console.log("Successful");
       });
-    }
-  );
+    })
+    .catch((err) => {
+      console.error(err);
+      process.exit(1);
+    });
+};
 
-module.exports = () =>
+(() =>
   Promise.resolve(
     ["open-light", "open-dark"].map((file) => {
       render(
@@ -40,4 +34,4 @@ module.exports = () =>
         path.resolve(__dirname, `../themes/${file}.css`)
       );
     })
-  );
+  ))();

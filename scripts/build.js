@@ -8,12 +8,6 @@ const { getFilter } = require("./utils");
   const files = await globby(`packages/@featherds/${filter}/src/index.[jt]s`, {
     cwd: process.cwd(),
   });
-  const postFiles = await globby(
-    `packages/@featherds/${filter}/build/post.js`,
-    {
-      cwd: process.cwd(),
-    }
-  );
   return files
     .reduce(
       (promise, entry) =>
