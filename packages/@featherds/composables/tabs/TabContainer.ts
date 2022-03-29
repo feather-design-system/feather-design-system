@@ -14,7 +14,9 @@ const model = {
   prop: "modelValue",
   event: "update:modelValue",
 };
-const emits = ["update:modelValue"];
+const emits = {
+  "update:modelValue": (value: number | undefined) => true,
+};
 const stockProps = {
   modelValue: {
     type: Number,
@@ -69,7 +71,7 @@ export interface ITabPair {
 
 const useTabContainer = (
   props: ExtractPropTypes<typeof stockProps>,
-  context: SetupContext
+  context: SetupContext<typeof emits>
 ) => {
   const value = toRef(props, "modelValue");
   const localSelected = ref(props.modelValue);

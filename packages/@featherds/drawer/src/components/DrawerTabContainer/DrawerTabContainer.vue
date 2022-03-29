@@ -12,24 +12,26 @@
   </div>
 </template>
 
-<script>
+<script lang="ts">
 import {
   useTabContainer,
   model,
   stockProps,
-  emits,
+  emits as emitsFromTabs,
 } from "@featherds/composables/tabs/TabContainer";
-
-export default {
-  emits: emits,
-  model: model,
-  props: {
-    ...stockProps,
-  },
+import { defineComponent } from "vue";
+export const props = {
+  ...stockProps,
+};
+export const emits = emitsFromTabs;
+export default defineComponent({
+  emits,
+  model,
+  props,
   setup(props, context) {
     return useTabContainer(props, context);
   },
-};
+});
 </script>
 
 <style lang="scss" scoped>

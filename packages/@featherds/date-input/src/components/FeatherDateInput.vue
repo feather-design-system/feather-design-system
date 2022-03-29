@@ -173,7 +173,7 @@ export default defineComponent({
     prop: "modelValue",
     event: "update:modelValue",
   },
-  emits: ["update:modelValue", "blur"],
+  emits,
   props,
   setup(props, context) {
     useInputSubText(props);

@@ -135,13 +135,14 @@
     </feather-drawer>
   </div>
 </template>
-<script>
+<script lang="ts">
 import * as components from "../src";
 import { FeatherIcon } from "@featherds/icon";
 import Support from "@featherds/icon/action/Help";
 import * as listComponents from "@featherds/list";
+import { defineComponent } from "vue";
 
-export default {
+export default defineComponent({
   components: {
     ...components,
     ...listComponents,
@@ -160,7 +161,7 @@ export default {
       console.log("shown");
     },
   },
-};
+});
 </script>
 <style lang="scss" scoped>
 .drawer-container .drawer-tab-content[role="tabpanel"] :deep(div.header) {
