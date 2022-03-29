@@ -1,30 +1,30 @@
-<script>
-import { h, toRaw } from "vue";
-export default {
-  props: {
-    icon: {
-      type: Object,
-      required: false,
-    },
-    flex: {
-      type: Boolean,
-      default: false,
-    },
-    title: {
-      type: String,
-      required: false,
-    },
+<script lang="ts">
+import { defineComponent, h, toRaw, PropType, DefineComponent } from "vue";
+export const props = {
+  icon: {
+    type: Object as PropType<unknown>,
+    required: false,
   },
-
-  render(){
+  flex: {
+    type: Boolean,
+    default: false,
+  },
+  title: {
+    type: String,
+    required: false,
+  },
+};
+export default defineComponent({
+  props,
+  render() {
     const attrs = this.$attrs;
     const cls = attrs["class"]
-      ? attrs["class"].split(" ").reduce((o, key) => {
+      ? (attrs["class"] as string).split(" ").reduce((o, key) => {
           o[key] = true;
           return o;
-        }, {})
+        }, {} as Record<string, boolean>)
       : {};
-    const _attrs = {};
+    const _attrs: Record<string, unknown> = {};
     cls["feather-icon"] = true;
     if (this.flex) {
       cls["feather-icon-flex"] = true;
@@ -38,22 +38,22 @@ export default {
     _attrs["focusable"] = "false";
     _attrs["role"] = "img";
 
-    let icon = toRaw(this.icon);
+    let icon = toRaw(this.icon) as DefineComponent<{}>;
     if (this.$slots.default) {
       return h("span", { class: "feather-icon-container" }, [
-          h(this.$slots.default()[0], {
-            class: cls,
-            ..._attrs,
-          }),
-        ]);
+        h(this.$slots.default()[0], {
+          class: cls,
+          ..._attrs,
+        }),
+      ]);
     }
 
     return h(icon, {
-        class: cls,
-        ..._attrs,
-      });
-  }
-};
+      class: cls,
+      ..._attrs,
+    });
+  },
+});
 </script>
 
 <style lang="scss" scoped>

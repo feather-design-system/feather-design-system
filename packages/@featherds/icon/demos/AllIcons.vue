@@ -1,18 +1,89 @@
-<template>
+
+  <template>
   <section>
     <h2>Feather</h2>
     <section class="icons">
-      <FeatherIcon
-        v-for="icon in featherIcons"
-        :icon="icon.icon"
-        :key="icon.key"
-      ></FeatherIcon>
+      <FeatherIcon v-for="icon in featherIcons" :icon="icon.icon" :key="icon.key"></FeatherIcon>
     </section>
   </section>
 </template>
 
-<script>
-import * as components from "./../src";
+  <script>
+  import * as components from "./../src";
+import communicationCertificate from "@featherds/icon/communication/Certificate";
+
+import communicationCertificateAlt from "@featherds/icon/communication/CertificateAlt";
+
+import communicationChat from "@featherds/icon/communication/Chat";
+
+import communicationContacts from "@featherds/icon/communication/Contacts";
+
+import communicationDocumentation from "@featherds/icon/communication/Documentation";
+
+import communicationIdCard from "@featherds/icon/communication/IdCard";
+
+import communicationPhone from "@featherds/icon/communication/Phone";
+
+import contentBlogArticle from "@featherds/icon/content/BlogArticle";
+
+import contentVideo from "@featherds/icon/content/Video";
+
+import fileAttachment from "@featherds/icon/file/Attachment";
+
+import fileFolder from "@featherds/icon/file/Folder";
+
+import fileFolderAdd from "@featherds/icon/file/FolderAdd";
+
+import fileFolderLocked from "@featherds/icon/file/FolderLocked";
+
+import fileFolderOpen from "@featherds/icon/file/FolderOpen";
+
+import fileGeneric from "@featherds/icon/file/Generic";
+
+import fileImage from "@featherds/icon/file/Image";
+
+import filePdf from "@featherds/icon/file/Pdf";
+
+import fileText from "@featherds/icon/file/Text";
+
+import fileWordDoc from "@featherds/icon/file/WordDoc";
+
+import fileXls from "@featherds/icon/file/Xls";
+
+import fileZip from "@featherds/icon/file/Zip";
+
+import hardwareAppliances from "@featherds/icon/hardware/Appliances";
+
+import hardwareAppliancesAlt from "@featherds/icon/hardware/AppliancesAlt";
+
+import hardwareApplianceProfiles from "@featherds/icon/hardware/ApplianceProfiles";
+
+import hardwareDesktopWindows from "@featherds/icon/hardware/DesktopWindows";
+
+import hardwareInstances from "@featherds/icon/hardware/Instances";
+
+import hardwareKeyboardArrowDown from "@featherds/icon/hardware/KeyboardArrowDown";
+
+import hardwareKeyboardArrowUp from "@featherds/icon/hardware/KeyboardArrowUp";
+
+import hardwareLaptop from "@featherds/icon/hardware/Laptop";
+
+import hardwareMinionProfiles from "@featherds/icon/hardware/MinionProfiles";
+
+import hardwareNetwork from "@featherds/icon/hardware/Network";
+
+import hardwareNetworkProfiles from "@featherds/icon/hardware/NetworkProfiles";
+
+import hardwareRouter from "@featherds/icon/hardware/Router";
+
+import hardwareSecurity from "@featherds/icon/hardware/Security";
+
+import hardwareServer from "@featherds/icon/hardware/Server";
+
+import hardwareVirtualMachine from "@featherds/icon/hardware/VirtualMachine";
+
+import hardwareVirtualMachineAlt from "@featherds/icon/hardware/VirtualMachineAlt";
+
 import actionAccountCircle from "@featherds/icon/action/AccountCircle";
 
 import actionAdd from "@featherds/icon/action/Add";
@@ -191,80 +262,6 @@ import actionViewDetails from "@featherds/icon/action/ViewDetails";
 
 import actionWorkflow from "@featherds/icon/action/Workflow";
 
-import contentBlogArticle from "@featherds/icon/content/BlogArticle";
-
-import contentVideo from "@featherds/icon/content/Video";
-
-import communicationCertificate from "@featherds/icon/communication/Certificate";
-
-import communicationCertificateAlt from "@featherds/icon/communication/CertificateAlt";
-
-import communicationChat from "@featherds/icon/communication/Chat";
-
-import communicationContacts from "@featherds/icon/communication/Contacts";
-
-import communicationDocumentation from "@featherds/icon/communication/Documentation";
-
-import communicationIdCard from "@featherds/icon/communication/IdCard";
-
-import communicationPhone from "@featherds/icon/communication/Phone";
-
-import fileAttachment from "@featherds/icon/file/Attachment";
-
-import fileFolder from "@featherds/icon/file/Folder";
-
-import fileFolderAdd from "@featherds/icon/file/FolderAdd";
-
-import fileFolderLocked from "@featherds/icon/file/FolderLocked";
-
-import fileFolderOpen from "@featherds/icon/file/FolderOpen";
-
-import fileGeneric from "@featherds/icon/file/Generic";
-
-import fileImage from "@featherds/icon/file/Image";
-
-import filePdf from "@featherds/icon/file/Pdf";
-
-import fileText from "@featherds/icon/file/Text";
-
-import fileWordDoc from "@featherds/icon/file/WordDoc";
-
-import fileXls from "@featherds/icon/file/Xls";
-
-import fileZip from "@featherds/icon/file/Zip";
-
-import hardwareAppliances from "@featherds/icon/hardware/Appliances";
-
-import hardwareAppliancesAlt from "@featherds/icon/hardware/AppliancesAlt";
-
-import hardwareApplianceProfiles from "@featherds/icon/hardware/ApplianceProfiles";
-
-import hardwareDesktopWindows from "@featherds/icon/hardware/DesktopWindows";
-
-import hardwareInstances from "@featherds/icon/hardware/Instances";
-
-import hardwareKeyboardArrowDown from "@featherds/icon/hardware/KeyboardArrowDown";
-
-import hardwareKeyboardArrowUp from "@featherds/icon/hardware/KeyboardArrowUp";
-
-import hardwareLaptop from "@featherds/icon/hardware/Laptop";
-
-import hardwareMinionProfiles from "@featherds/icon/hardware/MinionProfiles";
-
-import hardwareNetwork from "@featherds/icon/hardware/Network";
-
-import hardwareNetworkProfiles from "@featherds/icon/hardware/NetworkProfiles";
-
-import hardwareRouter from "@featherds/icon/hardware/Router";
-
-import hardwareSecurity from "@featherds/icon/hardware/Security";
-
-import hardwareServer from "@featherds/icon/hardware/Server";
-
-import hardwareVirtualMachine from "@featherds/icon/hardware/VirtualMachine";
-
-import hardwareVirtualMachineAlt from "@featherds/icon/hardware/VirtualMachineAlt";
-
 import medicalAmbulance from "@featherds/icon/medical/Ambulance";
 
 import medicalCostSavings from "@featherds/icon/medical/CostSavings";
@@ -357,10 +354,48 @@ import notificationWifiSignalBad from "@featherds/icon/notification/WifiSignalBa
 
 import notificationWifiStatusBar from "@featherds/icon/notification/WifiStatusBar";
 
+
+
 export default {
-  data() {
+  data(){
     return {
-      featherIcons: [
+      featherIcons:[{ icon: communicationCertificate, key: "communicationCertificate" },
+        { icon: communicationCertificateAlt, key: "communicationCertificateAlt" },
+        { icon: communicationChat, key: "communicationChat" },
+        { icon: communicationContacts, key: "communicationContacts" },
+        { icon: communicationDocumentation, key: "communicationDocumentation" },
+        { icon: communicationIdCard, key: "communicationIdCard" },
+        { icon: communicationPhone, key: "communicationPhone" },
+        { icon: contentBlogArticle, key: "contentBlogArticle" },
+        { icon: contentVideo, key: "contentVideo" },
+        { icon: fileAttachment, key: "fileAttachment" },
+        { icon: fileFolder, key: "fileFolder" },
+        { icon: fileFolderAdd, key: "fileFolderAdd" },
+        { icon: fileFolderLocked, key: "fileFolderLocked" },
+        { icon: fileFolderOpen, key: "fileFolderOpen" },
+        { icon: fileGeneric, key: "fileGeneric" },
+        { icon: fileImage, key: "fileImage" },
+        { icon: filePdf, key: "filePdf" },
+        { icon: fileText, key: "fileText" },
+        { icon: fileWordDoc, key: "fileWordDoc" },
+        { icon: fileXls, key: "fileXls" },
+        { icon: fileZip, key: "fileZip" },
+        { icon: hardwareAppliances, key: "hardwareAppliances" },
+        { icon: hardwareAppliancesAlt, key: "hardwareAppliancesAlt" },
+        { icon: hardwareApplianceProfiles, key: "hardwareApplianceProfiles" },
+        { icon: hardwareDesktopWindows, key: "hardwareDesktopWindows" },
+        { icon: hardwareInstances, key: "hardwareInstances" },
+        { icon: hardwareKeyboardArrowDown, key: "hardwareKeyboardArrowDown" },
+        { icon: hardwareKeyboardArrowUp, key: "hardwareKeyboardArrowUp" },
+        { icon: hardwareLaptop, key: "hardwareLaptop" },
+        { icon: hardwareMinionProfiles, key: "hardwareMinionProfiles" },
+        { icon: hardwareNetwork, key: "hardwareNetwork" },
+        { icon: hardwareNetworkProfiles, key: "hardwareNetworkProfiles" },
+        { icon: hardwareRouter, key: "hardwareRouter" },
+        { icon: hardwareSecurity, key: "hardwareSecurity" },
+        { icon: hardwareServer, key: "hardwareServer" },
+        { icon: hardwareVirtualMachine, key: "hardwareVirtualMachine" },
+        { icon: hardwareVirtualMachineAlt, key: "hardwareVirtualMachineAlt" },
         { icon: actionAccountCircle, key: "actionAccountCircle" },
         { icon: actionAdd, key: "actionAdd" },
         { icon: actionAddCircleAlt, key: "actionAddCircleAlt" },
@@ -415,10 +450,7 @@ export default {
         { icon: actionLocation, key: "actionLocation" },
         { icon: actionLocationCity, key: "actionLocationCity" },
         { icon: actionLock, key: "actionLock" },
-        {
-          icon: actionLockPasswordProtected,
-          key: "actionLockPasswordProtected",
-        },
+        { icon: actionLockPasswordProtected, key: "actionLockPasswordProtected" },
         { icon: actionLoggerConfigs, key: "actionLoggerConfigs" },
         { icon: actionLogIn, key: "actionLogIn" },
         { icon: actionLogOut, key: "actionLogOut" },
@@ -453,46 +485,6 @@ export default {
         { icon: actionView, key: "actionView" },
         { icon: actionViewDetails, key: "actionViewDetails" },
         { icon: actionWorkflow, key: "actionWorkflow" },
-        { icon: contentBlogArticle, key: "contentBlogArticle" },
-        { icon: contentVideo, key: "contentVideo" },
-        { icon: communicationCertificate, key: "communicationCertificate" },
-        {
-          icon: communicationCertificateAlt,
-          key: "communicationCertificateAlt",
-        },
-        { icon: communicationChat, key: "communicationChat" },
-        { icon: communicationContacts, key: "communicationContacts" },
-        { icon: communicationDocumentation, key: "communicationDocumentation" },
-        { icon: communicationIdCard, key: "communicationIdCard" },
-        { icon: communicationPhone, key: "communicationPhone" },
-        { icon: fileAttachment, key: "fileAttachment" },
-        { icon: fileFolder, key: "fileFolder" },
-        { icon: fileFolderAdd, key: "fileFolderAdd" },
-        { icon: fileFolderLocked, key: "fileFolderLocked" },
-        { icon: fileFolderOpen, key: "fileFolderOpen" },
-        { icon: fileGeneric, key: "fileGeneric" },
-        { icon: fileImage, key: "fileImage" },
-        { icon: filePdf, key: "filePdf" },
-        { icon: fileText, key: "fileText" },
-        { icon: fileWordDoc, key: "fileWordDoc" },
-        { icon: fileXls, key: "fileXls" },
-        { icon: fileZip, key: "fileZip" },
-        { icon: hardwareAppliances, key: "hardwareAppliances" },
-        { icon: hardwareAppliancesAlt, key: "hardwareAppliancesAlt" },
-        { icon: hardwareApplianceProfiles, key: "hardwareApplianceProfiles" },
-        { icon: hardwareDesktopWindows, key: "hardwareDesktopWindows" },
-        { icon: hardwareInstances, key: "hardwareInstances" },
-        { icon: hardwareKeyboardArrowDown, key: "hardwareKeyboardArrowDown" },
-        { icon: hardwareKeyboardArrowUp, key: "hardwareKeyboardArrowUp" },
-        { icon: hardwareLaptop, key: "hardwareLaptop" },
-        { icon: hardwareMinionProfiles, key: "hardwareMinionProfiles" },
-        { icon: hardwareNetwork, key: "hardwareNetwork" },
-        { icon: hardwareNetworkProfiles, key: "hardwareNetworkProfiles" },
-        { icon: hardwareRouter, key: "hardwareRouter" },
-        { icon: hardwareSecurity, key: "hardwareSecurity" },
-        { icon: hardwareServer, key: "hardwareServer" },
-        { icon: hardwareVirtualMachine, key: "hardwareVirtualMachine" },
-        { icon: hardwareVirtualMachineAlt, key: "hardwareVirtualMachineAlt" },
         { icon: medicalAmbulance, key: "medicalAmbulance" },
         { icon: medicalCostSavings, key: "medicalCostSavings" },
         { icon: medicalDrug, key: "medicalDrug" },
@@ -526,14 +518,8 @@ export default {
         { icon: navigationMoreHoriz, key: "navigationMoreHoriz" },
         { icon: navigationMoreVert, key: "navigationMoreVert" },
         { icon: navigationRefresh, key: "navigationRefresh" },
-        {
-          icon: navigationSubdirectoryArrowLeft,
-          key: "navigationSubdirectoryArrowLeft",
-        },
-        {
-          icon: navigationSubdirectoryArrowRight,
-          key: "navigationSubdirectoryArrowRight",
-        },
+        { icon: navigationSubdirectoryArrowLeft, key: "navigationSubdirectoryArrowLeft" },
+        { icon: navigationSubdirectoryArrowRight, key: "navigationSubdirectoryArrowRight" },
         { icon: navigationUnfoldLess, key: "navigationUnfoldLess" },
         { icon: navigationUnfoldMore, key: "navigationUnfoldMore" },
         { icon: notificationConnected, key: "notificationConnected" },
@@ -541,19 +527,15 @@ export default {
         { icon: notificationUnconnected, key: "notificationUnconnected" },
         { icon: notificationWarning, key: "notificationWarning" },
         { icon: notificationWifi, key: "notificationWifi" },
-        {
-          icon: notificationWifiNoConnection,
-          key: "notificationWifiNoConnection",
-        },
+        { icon: notificationWifiNoConnection, key: "notificationWifiNoConnection" },
         { icon: notificationWifiOff, key: "notificationWifiOff" },
         { icon: notificationWifiSignalBad, key: "notificationWifiSignalBad" },
-        { icon: notificationWifiStatusBar, key: "notificationWifiStatusBar" },
-      ],
+        { icon: notificationWifiStatusBar, key: "notificationWifiStatusBar" }]
     };
   },
   components: {
-    ...components,
-  },
+    ...components
+  }
 };
 </script>
 
