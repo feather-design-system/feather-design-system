@@ -31,9 +31,9 @@ const capabilities = [
   {
     build: build,
     maxInstances: 1,
-    platform: "MacOS Catalina",
+    platform: "MacOS Monterey",
     browserName: "Safari",
-    version: "13.0",
+    version: "15.0",
     resolution: "1280x1024",
   },
   {
