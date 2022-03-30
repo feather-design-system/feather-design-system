@@ -5,18 +5,19 @@
     </FeatherList>
   </nav>
 </template>
-<script>
+<script lang="ts">
 import { FeatherList } from "@featherds/list";
-
-export default {
-  props: {
-    label: {
-      type: String,
-      required: true,
-    },
+import { defineComponent } from "vue";
+export const props = {
+  label: {
+    type: String,
+    required: true,
   },
+};
+export default defineComponent({
+  props,
   components: {
     FeatherList,
   },
-};
+});
 </script>

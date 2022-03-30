@@ -49,15 +49,15 @@
     </div>
   </section>
 </template>
-<script>
+<script lang="ts">
 import * as components from "./../src";
-import { FeatherAppBar, FeatherAppBarLink } from "@featherds/app-bar";
+import { FeatherAppBar } from "@featherds/app-bar";
 import App from "@featherds/icon/medical/Hospital";
 import Account from "@featherds/icon/action/AccountCircle";
 import { FeatherIcon } from "@featherds/icon";
-import { markRaw } from "vue";
+import { defineComponent } from "vue";
 
-export default {
+export default defineComponent({
   data() {
     return {
       labels: {
@@ -68,10 +68,10 @@ export default {
   },
   computed: {
     app() {
-      return markRaw(App);
+      return App;
     },
     account() {
-      return markRaw(Account);
+      return Account;
     },
   },
   components: {
@@ -79,7 +79,7 @@ export default {
     FeatherIcon,
     FeatherAppBar,
   },
-};
+});
 </script>
 <style lang="scss" scoped>
 @import "@featherds/styles/mixins/typography";

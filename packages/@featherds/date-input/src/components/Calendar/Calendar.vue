@@ -85,10 +85,11 @@ import { KEYCODES } from "@featherds/utils/keys";
 import { FeatherButton } from "@featherds/button";
 import { FeatherSelect } from "@featherds/select";
 import { FeatherIcon } from "@featherds/icon";
+import { useLabelProperty } from "@featherds/composables/LabelProperty";
 import prevIcon from "@featherds/icon/navigation/ChevronLeft";
 import nextIcon from "@featherds/icon/navigation/ChevronRight";
 import utils from "./DateUtils";
-import { defineComponent, PropType } from "vue";
+import { defineComponent, PropType, toRef } from "vue";
 import { IDateDisabledConfig, LABELS } from "../types";
 interface ICalendarDay {
   date: number;
@@ -128,7 +129,7 @@ export default defineComponent({
       required: false,
     },
     labels: {
-      type: Object as PropType<typeof LABELS>,
+      type: Object as PropType<Partial<typeof LABELS>>,
       required: true,
     },
   },
@@ -144,6 +145,9 @@ export default defineComponent({
       nextIcon: nextIcon,
       prevIcon: prevIcon,
     };
+  },
+  setup(props) {
+    return useLabelProperty<typeof LABELS>(toRef(props, "labels"), LABELS);
   },
   watch: {
     modelValue(v) {
@@ -291,7 +295,7 @@ export default defineComponent({
       this.alertText = "";
     },
     setAlertText() {
-      this.alertText = this.labels.inCalendar;
+      this.alertText = this.inCalendarLabel;
     },
     focus() {
       this.$nextTick(() => {

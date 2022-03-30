@@ -2,8 +2,9 @@ import FeatherNavigationRail from "./FeatherNavigationRail.vue";
 import FeatherRailItem from "./FeatherRailItem.vue";
 import { shallowMount, mount } from "@vue/test-utils";
 import axe from "@featherds/utils/test/axe";
+import { getCalls } from "@featherds/utils/test/calls";
 
-const getWrapper = function (options) {
+const getWrapper = function (options: Record<string, unknown>) {
   return shallowMount(FeatherNavigationRail, options);
 };
 
@@ -33,7 +34,7 @@ describe("FeatherNavigationRail.vue", () => {
     expect(wrapper.element).toMatchSnapshot();
     await wrapper.find(".expand-link").trigger("click");
     expect(wrapper.element).toMatchSnapshot();
-    expect(wrapper.emitted("update:modelValue")[0][0]).toBe(true);
+    expect(getCalls<[boolean]>(wrapper, "update:modelValue")[0][0]).toBe(true);
   });
   it("should be accessible", async () => {
     const wrapper = mount(FeatherNavigationRail, {
