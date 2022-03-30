@@ -1,7 +1,7 @@
 import FeatherRailGroup from "./FeatherRailGroup.vue";
 import { shallowMount } from "@vue/test-utils";
 
-const getWrapper = function (options) {
+const getWrapper = function (options: Record<string, unknown>) {
   return shallowMount(FeatherRailGroup, options);
 };
 

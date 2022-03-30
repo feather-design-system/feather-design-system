@@ -36,10 +36,10 @@
     </div>
   </div>
 </template>
-<script>
+<script lang="ts">
 import Chevron from "@featherds/icon/navigation/ChevronLeft";
 import { FeatherIcon } from "@featherds/icon";
-import { ref, toRef, watch } from "vue";
+import { defineComponent, PropType, ref, toRef, watch } from "vue";
 import { FeatherList } from "@featherds/list";
 import { FeatherRipple } from "@featherds/ripple";
 import { markRaw } from "vue";
@@ -49,39 +49,43 @@ const LABELS = {
   main: "Main Navigation",
   expand: "Show full menu",
 };
-export default {
+export const props = {
+  modelValue: {
+    type: Boolean,
+    default: false,
+  },
+  labels: {
+    type: Object as PropType<Partial<typeof LABELS>>,
+    default: () => {
+      return LABELS;
+    },
+    validator: (v: Partial<typeof LABELS>) => {
+      return !!v.main && !!v.expand;
+    },
+  },
+};
+export default defineComponent({
   model: {
     prop: "modelValue",
     event: "update:modelValue",
   },
-  props: {
-    modelValue: {
-      type: Boolean,
-      default: false,
-    },
-    labels: {
-      type: Object,
-      default() {
-        return LABELS;
-      },
-      validator(v) {
-        return !!v.main && !!v.expand;
-      },
-    },
-  },
+  props,
   setup(props, context) {
     const expanded = ref(props.modelValue);
     const modelValue = toRef(props, "modelValue");
     watch(modelValue, (nv) => {
       expanded.value = nv;
     });
-    const toggle = (e) => {
+    const toggle = (e: MouseEvent) => {
       e.preventDefault();
       expanded.value = !expanded.value;
       context.emit("update:modelValue", expanded.value);
     };
 
-    const labels = useLabelProperty(toRef(props, "labels"), LABELS);
+    const labels = useLabelProperty<typeof LABELS>(
+      toRef(props, "labels"),
+      LABELS
+    );
 
     return { toggle, expanded, ...labels };
   },
@@ -96,7 +100,7 @@ export default {
     FeatherList,
     FeatherRipple,
   },
-};
+});
 </script>
 <style lang="scss" scoped>
 @import "@featherds/styles/themes/variables";

@@ -82,11 +82,11 @@ export const props = {
     default: false,
   },
   labels: {
-    type: Object as PropType<typeof LABELS>,
+    type: Object as PropType<Partial<typeof LABELS>>,
     default: () => {
       return LABELS;
     },
-    validator: (v: typeof LABELS) => {
+    validator: (v: Partial<typeof LABELS>) => {
       return !!v.title;
     },
   },

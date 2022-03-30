@@ -123,7 +123,7 @@ export const props = {
   },
   labels: {
     type: Object as PropType<Partial<typeof LABELS>>,
-    default() {
+    default: () => {
       return LABELS;
     },
   },

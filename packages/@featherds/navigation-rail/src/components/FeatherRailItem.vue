@@ -6,23 +6,25 @@
     <slot>{{ title }}</slot>
   </FeatherListItem>
 </template>
-<script>
+<script lang="ts">
 import { FeatherIcon } from "@featherds/icon";
 import { FeatherListItem } from "@featherds/list";
-export default {
-  props: {
-    icon: {
-      type: Object,
-    },
-    href: {
-      type: String,
-      required: true,
-    },
-    title: {
-      type: String,
-      required: true,
-    },
+import { defineComponent } from "vue";
+export const props = {
+  icon: {
+    type: Object,
   },
+  href: {
+    type: String,
+    required: true,
+  },
+  title: {
+    type: String,
+    required: true,
+  },
+};
+export default defineComponent({
+  props,
   computed: {
     hasIcon() {
       return !!this.icon;
@@ -32,5 +34,5 @@ export default {
     FeatherIcon,
     FeatherListItem,
   },
-};
+});
 </script>

@@ -1,7 +1,4 @@
-declare module "@featherds/navigation-rail" {
-  import { defineComponent } from "vue";
-  const FeatherNavigationRail: ReturnType<typeof defineComponent>;
-  const FeatherRailGroup: ReturnType<typeof defineComponent>;
-  const FeatherRailItem: ReturnType<typeof defineComponent>;
-  export { FeatherNavigationRail, FeatherRailGroup, FeatherRailItem }
-}
+import { DefineComponent } from "vue";
+export const FeatherNavigationRail: DefineComponent<typeof import("./components/FeatherNavigationRail.vue").props>;
+export const FeatherRailGroup: DefineComponent<typeof import("./components/FeatherRailGroup.vue").props>;
+export const FeatherRailItem: DefineComponent<typeof import("./components/FeatherRailItem.vue").props>;
