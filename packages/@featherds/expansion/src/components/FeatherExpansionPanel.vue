@@ -81,7 +81,7 @@ export const props = {
     default: false,
     required: false,
   },
-};
+} as const;
 export const emits = {
   "update:modelValue": (v: boolean) => true,
 };

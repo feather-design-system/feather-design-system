@@ -48,15 +48,14 @@ import {
   useInputSubText,
   useInputInheritAttrs,
 } from "@featherds/input-helper";
+
 export const props = {
-  ...InputWrapperProps,
-  ...InputSubTextProps,
   type: {
     type: String,
     default: "text",
   },
   modelValue: {
-    type: [String, Number],
+    type: [String, Number] as PropType<string | number>,
   },
   maxlength: {
     type: Number,
@@ -71,8 +70,9 @@ export const props = {
     type: String,
     required: false,
   },
-};
-
+  ...InputWrapperProps,
+  ...InputSubTextProps,
+} as const;
 export const emits = {
   "update:modelValue": (value: string | undefined | number) => true,
 };

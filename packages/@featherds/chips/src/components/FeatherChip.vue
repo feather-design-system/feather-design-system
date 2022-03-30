@@ -20,7 +20,7 @@ export const props = {
       string | unknown | number | [] | boolean
     >,
   },
-};
+} as const;
 export default defineComponent({
   props,
   setup() {

@@ -13,7 +13,7 @@ export const props = {
     type: String,
     required: false,
   },
-};
+} as const;
 export default defineComponent({
   props,
   render() {

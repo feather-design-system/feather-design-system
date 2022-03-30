@@ -29,7 +29,7 @@ export const props = {
     type: String,
     required: true,
   },
-};
+} as const;
 export default defineComponent({
   emits: ["delete"],
   props,

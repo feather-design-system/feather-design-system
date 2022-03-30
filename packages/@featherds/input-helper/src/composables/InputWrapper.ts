@@ -28,7 +28,7 @@ export const InputWrapperProps = {
     type: Boolean,
     default: false,
   },
-} as const;
+};
 
 export const useInputWrapper = (
   u: ExtractPropTypes<typeof InputWrapperProps>

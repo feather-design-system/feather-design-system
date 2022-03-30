@@ -30,7 +30,7 @@ export const props = {
     required: true,
   },
   ...stockProps,
-};
+} as const;
 export default defineComponent({
   name: "DrawerTab",
   props,

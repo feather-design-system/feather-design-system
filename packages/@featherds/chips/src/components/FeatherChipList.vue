@@ -11,7 +11,7 @@
   </div>
 </template>
 <script lang="ts">
-import { provide, toRef, defineComponent, ref } from "vue";
+import { provide, toRef, defineComponent, ref, PropType } from "vue";
 import { useRadioGroup } from "@featherds/composables/radio/RadioGroup";
 export const props = {
   label: {
@@ -27,13 +27,15 @@ export const props = {
     },
   },
   modelValue: {
-    type: [String, Number, Boolean, Array, Object, Date, Function],
+    type: [String, Number, Boolean, Array, Object, Date, Function] as PropType<
+      string | number | boolean | unknown[] | unknown | Date | Function
+    >,
   },
   condensed: {
     type: Boolean,
     default: false,
   },
-};
+} as const;
 export default defineComponent({
   model: {
     prop: "modelValue",

@@ -113,7 +113,7 @@ export const props = {
       return !!v.title;
     },
   },
-};
+} as const;
 export const emits = {
   "update:modelValue": (value: boolean) => true,
   shown: () => true,

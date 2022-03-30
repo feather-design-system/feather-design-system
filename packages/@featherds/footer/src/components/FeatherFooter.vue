@@ -22,7 +22,7 @@ export const props = {
     type: String,
     required: true,
   },
-};
+} as const;
 export default defineComponent({
   props,
   computed: {

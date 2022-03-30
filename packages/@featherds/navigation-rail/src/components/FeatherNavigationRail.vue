@@ -63,7 +63,7 @@ export const props = {
       return !!v.main && !!v.expand;
     },
   },
-};
+} as const;
 export default defineComponent({
   model: {
     prop: "modelValue",

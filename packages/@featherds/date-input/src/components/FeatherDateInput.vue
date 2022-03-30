@@ -163,7 +163,7 @@ export const props = {
     type: Object,
     required: false,
   },
-};
+} as const;
 export const emits = {
   "update:modelValue": (value: Date | undefined) => true,
   blur: () => true,

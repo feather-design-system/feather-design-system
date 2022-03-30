@@ -33,7 +33,7 @@ export const props = {
     type: Number,
     default: 500,
   },
-};
+} as const;
 export default defineComponent({
   emits: ["focus", "blur", "mouseenter", "mouseleave"],
   props,

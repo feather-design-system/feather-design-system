@@ -22,7 +22,7 @@ import {
 import { defineComponent } from "vue";
 export const props = {
   ...stockProps,
-};
+} as const;
 export const emits = emitsFromTabs;
 export default defineComponent({
   emits,

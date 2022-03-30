@@ -25,5 +25,5 @@
     "packages/@featherds/*/demos/**/*.vue",
     "docs/.vuepress/examples/**/*.vue"
   ],
-  "exclude": ["./node_modules/", "packages/@featherds/*/src/**/*.spec.ts"]
+  "exclude": ["./node_modules/", ]
 }

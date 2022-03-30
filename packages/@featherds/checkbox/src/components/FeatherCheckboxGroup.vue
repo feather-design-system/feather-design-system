@@ -28,14 +28,14 @@ import {
   InputSubTextProps,
   useInputInheritAttrs,
 } from "@featherds/input-helper";
-import { computed, toRef, ref, Ref, defineComponent } from "vue";
+import { computed, toRef, ref, Ref, defineComponent, PropType } from "vue";
 
 import { useValidation } from "@featherds/input-helper";
 export const props = {
   ...InputSubTextProps,
 
   modelValue: {
-    type: [Array, Object],
+    type: [Array, Object] as PropType<unknown[] | Record<string, unknown>>,
     required: false,
   },
   label: {
@@ -50,7 +50,7 @@ export const props = {
     type: Object,
     required: false,
   },
-};
+} as const;
 export default defineComponent({
   props,
   provide() {

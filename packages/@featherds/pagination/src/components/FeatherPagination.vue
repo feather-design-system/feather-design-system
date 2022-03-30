@@ -73,7 +73,7 @@
     </nav>
   </div>
 </template>
-<script>
+<script lang="ts">
 import { FeatherSelect } from "@featherds/select";
 import { FeatherButton } from "@featherds/button";
 import { FeatherIcon } from "@featherds/icon";
@@ -81,8 +81,36 @@ import ChevronLeft from "@featherds/icon/navigation/ChevronLeft";
 import ChevronRight from "@featherds/icon/navigation/ChevronRight";
 import FirstPage from "@featherds/icon/navigation/FirstPage";
 import LastPage from "@featherds/icon/navigation/LastPage";
-import { markRaw } from "vue";
-
+import { defineComponent, PropType } from "vue";
+export const props = {
+  labels: {
+    type: Object as PropType<Partial<typeof LABELS>>,
+    default: () => {
+      return LABELS;
+    },
+  },
+  modelValue: {
+    type: Number,
+    required: true,
+  },
+  total: {
+    type: Number,
+    required: true,
+  },
+  pageSizes: {
+    type: Array,
+    default: () => [10, 20, 50],
+  },
+  pageSize: {
+    type: Number,
+    required: true,
+    default: 10,
+  },
+} as const;
+export const emits = {
+  "update:modelValue": (page: number) => true,
+  "update:pageSize": (pageSize: number) => true,
+};
 const LABELS = {
   rowsPerPage: "Rows per page",
   range: "${start} - ${end} of ${total}",
@@ -92,61 +120,37 @@ const LABELS = {
   previous: "Go to previous page",
   paginationLabel: "Pagination controls",
 };
-export default {
-  emits: ["update:modelValue", "update:pageSize"],
+export default defineComponent({
   model: {
     prop: "modelValue",
     event: "update:modelValue",
   },
-  props: {
-    labels: {
-      type: Object,
-      default: () => {
-        return LABELS;
-      },
-    },
-    modelValue: {
-      type: Number,
-      required: true,
-    },
-    total: {
-      type: Number,
-      required: true,
-    },
-    pageSizes: {
-      type: Array,
-      default: () => [10, 20, 50],
-    },
-    pageSize: {
-      type: Number,
-      required: true,
-      default: 10,
-    },
-  },
+  props,
+  emits,
   computed: {
     firstText() {
       return this.labels.first ? this.labels.first : LABELS.first;
     },
     firstIcon() {
-      return markRaw(FirstPage);
+      return FirstPage;
     },
     lastText() {
       return this.labels.last ? this.labels.last : LABELS.last;
     },
     lastIcon() {
-      return markRaw(LastPage);
+      return LastPage;
     },
     nextText() {
       return this.labels.next ? this.labels.next : LABELS.next;
     },
     nextIcon() {
-      return markRaw(ChevronRight);
+      return ChevronRight;
     },
     previousText() {
       return this.labels.previous ? this.labels.previous : LABELS.previous;
     },
     previousIcon() {
-      return markRaw(ChevronLeft);
+      return ChevronLeft;
     },
     perPageText() {
       return this.labels.rowsPerPage
@@ -169,17 +173,17 @@ export default {
     },
     rangeText() {
       let result = this.labels.range ? this.labels.range : LABELS.range;
-      result = result.replace("${total}", this.total);
+      result = result.replace("${total}", this.total.toString());
       const start = this.modelValue * this.pageSize - this.pageSize + 1;
       if (start < 0 || start > this.total) {
         return "ERROR calculating start";
       }
-      result = result.replace("${start}", start);
+      result = result.replace("${start}", start.toString());
       let end = start + this.pageSize - 1;
       if (end > this.total) {
         end = this.total;
       }
-      result = result.replace("${end}", end);
+      result = result.replace("${end}", end.toString());
       return result;
     },
     _pageSize() {
@@ -194,7 +198,7 @@ export default {
     },
   },
   methods: {
-    updatePageSize(e) {
+    updatePageSize(e: { _text: string }) {
       this.$emit("update:pageSize", parseInt(e._text, 10));
       this.first();
     },
@@ -224,7 +228,7 @@ export default {
     FeatherButton,
     FeatherIcon,
   },
-};
+});
 </script>
 
 <style lang="scss" scoped>

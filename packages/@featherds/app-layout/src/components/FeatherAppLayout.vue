@@ -47,7 +47,7 @@ export const props = {
       return ["full", "center"].indexOf(v) > -1;
     },
   },
-};
+} as const;
 export default defineComponent({
   props,
   setup(props, context) {
