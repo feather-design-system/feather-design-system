@@ -26,7 +26,7 @@ const stockProps = {
     type: Boolean,
     default: true,
   },
-};
+} as const;
 
 export interface ITabVM {
   el: HTMLElement;

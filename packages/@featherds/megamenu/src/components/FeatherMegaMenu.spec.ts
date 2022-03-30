@@ -1,5 +1,6 @@
 import { nextTick } from "vue";
 import { mount } from "@vue/test-utils";
+import { getCalls } from "@featherds/utils/test/calls";
 import FeatherMegaMenu from "./FeatherMegaMenu.vue";
 import { MenuFocusLoop } from "@featherds/menu";
 
@@ -19,25 +20,27 @@ const DialogClose = {
 };
 
 let menuOpen = false;
-let menuToggle = () => {
+const menuToggle = () => {
   menuOpen = !menuOpen;
 };
 
-const getWrapper = function (options = {}) {
-  if (!options.global) {
-    options.global = {};
-  }
-  options.global.directives = {
+const getWrapper = function (options: Record<string, unknown> = {}) {
+  const global: Record<string, unknown> = options.global as Record<string, unknown> || {};
+  global.directives = {
     MenuFocusLoop,
   };
+  global.stubs = {
+    "dialog-close": DialogClose,
+  };
+
+  options.global = global;
+
   options.props = {
     name: menuName,
     closeText: "Close",
   };
 
-  options.global.stubs = {
-    "dialog-close": DialogClose,
-  };
+
   options.provide = {
     "menu-open": () => {
       return menuOpen;
@@ -48,7 +51,7 @@ const getWrapper = function (options = {}) {
   return mount(FeatherMegaMenu, options);
 };
 
-const checkMenu = (open, wrapper) => {
+const checkMenu = (open: boolean, wrapper: ReturnType<typeof getWrapper>) => {
   const menuvm = wrapper.find(".menu");
 
   expect(menuvm.exists()).toBe(open);
@@ -69,7 +72,7 @@ describe("FeatherMegaMenu.vue", () => {
     await nextTick();
 
     checkMenu(true, wrapper);
-    expect(wrapper.emitted("opened").length).toBe(1);
+    expect(getCalls<[boolean]>(wrapper, "opened").length).toBe(1);
   });
   it("should close a menu when X clicked", async () => {
     const slots = {
@@ -86,7 +89,7 @@ describe("FeatherMegaMenu.vue", () => {
     wrapper.vm.closeMenu();
     await nextTick();
     checkMenu(false, wrapper);
-    expect(wrapper.emitted("closed").length).toBe(1);
+    expect(getCalls<[boolean]>(wrapper, "closed").length).toBe(1);
   });
 
   it("should give the menu the correct role", async () => {
@@ -102,7 +105,7 @@ describe("FeatherMegaMenu.vue", () => {
   it("should hide menu on outside click", () => {
     const wrapper = getWrapper();
     wrapper.vm.open = true;
-    wrapper.vm.outsideElementEvent({ target: document });
+    wrapper.vm.outsideElementEvent({ target: document } as unknown as Event);
     expect(wrapper.vm.open).toBe(false);
   });
   it("should add and remove document level event listeners", async () => {

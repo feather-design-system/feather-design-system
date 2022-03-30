@@ -11,7 +11,7 @@ export const InputSubTextProps = {
     type: Boolean,
     default: false,
   },
-};
+} as const;
 
 export const useInputSubText = (
   u: ExtractPropTypes<typeof InputSubTextProps>

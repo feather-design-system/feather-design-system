@@ -5,7 +5,7 @@ export const props = {
     required: false,
     default: false,
   },
-};
+} as const;
 export default defineComponent({
   props,
   data() {
@@ -17,7 +17,7 @@ export default defineComponent({
     focus() {
       this.$el.querySelector("[tabindex]:not([tabindex='-1'])").focus();
     },
-    blur() {},
+    blur() { },
   },
   computed: {
     _dropdownItem() {
