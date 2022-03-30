@@ -50,7 +50,7 @@ export const props = {
     type: Boolean,
     default: false,
   },
-};
+} as const;
 export const emits = {
   "trigger-click": (e: MouseEvent) => true,
   close: (v?: boolean) => true,

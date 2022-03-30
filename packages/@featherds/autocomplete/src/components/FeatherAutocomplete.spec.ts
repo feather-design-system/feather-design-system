@@ -15,13 +15,13 @@ jest.spyOn(id, "getSafeId").mockImplementation((x) => x);
 
 const getProps =
   (type: AutocompleteTypes) =>
-  (props: Record<string, unknown> = {}) => {
-    return {
-      label: "Users",
-      type,
-      ...props,
+    (props: Record<string, unknown> = {}) => {
+      return {
+        label: "Users",
+        type,
+        ...props,
+      };
     };
-  };
 
 const getResultsType = (type: AutocompleteTypes) => () => {
   return [
@@ -48,31 +48,25 @@ const getValueType = (type: AutocompleteTypes) => () => {
 };
 const handleUpdateValueType =
   (type: AutocompleteTypes) =>
-  (args: (IAutocompleteItemType | IAutocompleteItemType[])[]) => {
-    if (type === AutocompleteTypes.multi) {
-      const items = args as Array<IAutocompleteItemType[]>;
-      return items[0][0];
-    }
-    const items = args as IAutocompleteItemType[];
-    return items[0];
-  };
+    (args: (IAutocompleteItemType | IAutocompleteItemType[])[]) => {
+      if (type === AutocompleteTypes.multi) {
+        const items = args as Array<IAutocompleteItemType[]>;
+        return items[0][0];
+      }
+      const items = args as IAutocompleteItemType[];
+      return items[0];
+    };
 const getWrapperType = (type: AutocompleteTypes) =>
-  function (
-    options: {
-      props?: Record<string, unknown>;
-    } = {}
-  ) {
-    options.props = getProps(type)(options.props);
+  function (options: Record<string, unknown> = {}) {
+    const props = options.props as Record<string, unknown>;
+    options.props = getProps(type)(props);
     return shallowMount(FeatherAutocomplete, options);
   };
 
 const getFullWrapperType = (type: AutocompleteTypes) =>
-  function (
-    options: {
-      props?: Record<string, unknown>;
-    } = {}
-  ) {
-    options.props = getProps(type)(options.props);
+  function (options: Record<string, unknown> = {}) {
+    const props = options.props as Record<string, unknown>;
+    options.props = getProps(type)(props);
     return mount(FeatherAutocomplete, options);
   };
 

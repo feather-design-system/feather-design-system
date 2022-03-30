@@ -28,7 +28,7 @@ export const props = {
       return ["round", "home"].indexOf(v) > -1;
     },
   },
-};
+} as const;
 export default defineComponent({
   props,
   setup(props) {

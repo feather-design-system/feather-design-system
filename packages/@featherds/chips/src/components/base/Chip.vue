@@ -30,7 +30,7 @@ export const props = {
     type: Boolean,
     default: false,
   },
-};
+} as const;
 export default defineComponent({
   props,
   setup(props) {

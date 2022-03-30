@@ -12,7 +12,7 @@ const stockProps = {
     type: Boolean,
     default: false,
   },
-} as const;
+};
 
 const useTab = (props: ExtractPropTypes<typeof stockProps>) => {
   const selected = ref(false);

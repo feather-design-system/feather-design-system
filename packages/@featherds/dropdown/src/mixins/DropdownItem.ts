@@ -5,7 +5,7 @@ export const props = {
     required: false,
     default: false,
   },
-} as const;
+};
 export default defineComponent({
   props,
   data() {

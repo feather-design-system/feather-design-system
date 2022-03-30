@@ -18,7 +18,7 @@ export const props = {
   layer: {
     type: Object as PropType<ILayer>,
   },
-};
+} as const;
 
 export default defineComponent({
   props,

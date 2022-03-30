@@ -11,9 +11,10 @@
     </p>
   </section>
 </template>
-<script>
+<script lang="ts">
+import { defineComponent } from "vue";
 import * as components from "./../src";
-export default {
+export default defineComponent({
   data() {
     return {
       page: 1,
@@ -22,12 +23,12 @@ export default {
     };
   },
   methods: {
-    updatePageSize(v) {
+    updatePageSize(v: number) {
       this.pageSize = v;
     },
   },
   components: {
     ...components,
   },
-};
+});
 </script>

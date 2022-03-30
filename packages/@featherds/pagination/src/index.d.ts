@@ -1,5 +1,11 @@
-declare module "@featherds/pagination" {
-  import { defineComponent } from "vue";
-  const FeatherPagination: ReturnType<typeof defineComponent>;
-  export { FeatherPagination }
-}
+import { DefineComponent } from "vue";
+export const FeatherPagination: DefineComponent<
+  typeof import("./components/FeatherPagination.vue").props,
+  {},
+  {},
+  {},
+  {},
+  {},
+  {},
+  typeof import("./components/FeatherPagination.vue").emits
+>;

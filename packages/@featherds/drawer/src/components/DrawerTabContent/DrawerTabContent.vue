@@ -21,7 +21,7 @@ export const props = {
     type: String,
   },
   ...stockProps,
-};
+} as const;
 export default defineComponent({
   name: "DrawerTabContent",
   props,
