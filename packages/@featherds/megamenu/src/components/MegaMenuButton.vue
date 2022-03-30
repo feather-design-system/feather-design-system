@@ -9,9 +9,10 @@
     <FeatherRipple />
   </button>
 </template>
-<script>
+<script lang="ts">
 import { FeatherRipple } from "@featherds/ripple";
-export default {
+import { defineComponent } from "vue";
+export default defineComponent({
   emits: ["click"],
   props: {
     open: {
@@ -27,7 +28,7 @@ export default {
   components: {
     FeatherRipple,
   },
-};
+});
 </script>
 
 <style lang="scss" scoped>

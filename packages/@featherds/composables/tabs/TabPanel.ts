@@ -8,7 +8,7 @@ const stockProps = {
   tab: {
     type: String,
   },
-};
+} as const;
 
 const useTabPanel = (props: ExtractPropTypes<typeof stockProps>) => {
   const selected = ref(false);

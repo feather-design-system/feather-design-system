@@ -7,4 +7,4 @@ export default {
       return ["off", "ignore-case"].indexOf(v) !== -1;
     },
   },
-};
+} as const;

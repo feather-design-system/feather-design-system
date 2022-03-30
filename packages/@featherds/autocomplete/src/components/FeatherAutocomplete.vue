@@ -300,7 +300,9 @@ export default defineComponent({
       return markRaw(KeyboardArrowDown);
     },
     inputAttrs() {
-      const describedby = [this.selectedDescriptionId, this.subTextId].filter(Boolean);
+      const describedby = [this.selectedDescriptionId, this.subTextId].filter(
+        Boolean
+      );
 
       let activeDescendant = "";
       if (this.activeChipIndex > -1) {
@@ -668,7 +670,10 @@ export default defineComponent({
     },
   },
   setup(props, context) {
-    const labels = useLabelProperty(toRef(props, "labels"), LABELS);
+    const labels = useLabelProperty<typeof LABELS>(
+      toRef(props, "labels"),
+      LABELS
+    );
     useInputSubText(props);
     useInputWrapper(props);
     let resultsRender: IAutocompleteResultRender;

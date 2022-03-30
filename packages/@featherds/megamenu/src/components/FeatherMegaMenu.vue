@@ -28,19 +28,18 @@
     </transition>
   </div>
 </template>
-<script>
+<script lang="ts">
 import { DialogClose } from "@featherds/dialog";
 import { MenuFocusLoop } from "@featherds/menu";
-import MenuName from "./MenuName/MenuName";
-import MegaMenuButton from "./MegaMenuButton";
-import { ref } from "vue";
+import MenuName from "./MenuName/MenuName.vue";
+import MegaMenuButton from "./MegaMenuButton.vue";
+import { defineComponent, ref } from "vue";
 import { KEYCODES } from "@featherds/utils/keys";
-
-export default {
+export default defineComponent({
   setup() {
     const open = ref(false);
     const focusEl = ref();
-    const menuButtonClicked = (e) => {
+    const menuButtonClicked = (e?: MouseEvent) => {
       if (e && e.srcElement) focusEl.value = e.srcElement;
       open.value = !open.value;
     };
@@ -97,17 +96,17 @@ export default {
     }
   },
   methods: {
-    menuLinkClicked(e) {
-      if (e.target.getAttribute("href").length) {
+    menuLinkClicked(e: MouseEvent) {
+      if (e.target && (e.target as HTMLElement).getAttribute("href")) {
         this.closeMenu();
       }
     },
-    outsideElementEvent(e) {
+    outsideElementEvent(e: Event) {
       if (!this.$el.contains(e.target)) {
         this.open = false;
       }
     },
-    keyPressed(e) {
+    keyPressed(e: KeyboardEvent) {
       if (e.keyCode === KEYCODES.ESCAPE) {
         this.closeMenu();
       }
@@ -124,7 +123,7 @@ export default {
       }
     },
   },
-};
+});
 </script>
 
 <style lang="scss" scoped>

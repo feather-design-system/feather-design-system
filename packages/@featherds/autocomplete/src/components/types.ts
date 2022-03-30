@@ -137,7 +137,7 @@ export const props = {
   ...HighlightProps,
   ...InputSubTextProps,
   ...InputWrapperProps,
-};
+} as const;
 
 export const emits = {
   "update:modelValue": (
