@@ -17,9 +17,9 @@
     </Teleport>
   </div>
 </template>
-<script>
+<script lang="ts">
 import { getSafeId } from "@featherds/utils/id";
-import { ref, watch, nextTick, computed } from "vue";
+import { ref, watch, nextTick, computed, defineComponent, Ref } from "vue";
 import { useResize } from "@featherds/composables/events/Resize";
 import { useOutsideClick } from "@featherds/composables/events/OutsideClick";
 import { useScroll } from "@featherds/composables/events/Scroll";
@@ -27,37 +27,42 @@ import {
   addLayer,
   getElements,
   removeLayer,
+  ILayer,
 } from "@featherds/composables/modal/Layers";
-
-export default {
-  emits: ["trigger-click", "close", "outside-click"],
-
-  props: {
-    open: {
-      type: Boolean,
-      default: false,
-    },
-    noExpand: {
-      type: Boolean,
-      default: false,
-    },
-    cover: {
-      type: Boolean,
-      default: false,
-    },
-    right: {
-      type: Boolean,
-      default: false,
-    },
-    hasFocus: {
-      type: Boolean,
-      default: false,
-    },
+export const props = {
+  open: {
+    type: Boolean,
+    default: false,
   },
+  noExpand: {
+    type: Boolean,
+    default: false,
+  },
+  cover: {
+    type: Boolean,
+    default: false,
+  },
+  right: {
+    type: Boolean,
+    default: false,
+  },
+  hasFocus: {
+    type: Boolean,
+    default: false,
+  },
+};
+export const emits = {
+  "trigger-click": (e: MouseEvent) => true,
+  close: (v?: boolean) => true,
+  "outside-click": (e?: Event) => true,
+};
+export default defineComponent({
+  emits,
+  props,
   setup(props, context) {
-    const root = ref(null);
-    const trigger = ref(null);
-    const menu = ref(null);
+    const root = ref() as Ref<HTMLElement>;
+    const trigger = ref() as Ref<HTMLElement>;
+    const menu = ref() as Ref<HTMLElement>;
     const menuWidth = ref("auto");
     const windowRef = ref(window);
     const triggerId = ref(getSafeId("feather-menu-trigger"));
@@ -141,17 +146,17 @@ export default {
         calculating.value = false;
       });
     };
-    const close = (e) => {
+    const close = (e: UIEvent | Event) => {
       //dont close if we are scrolling a layer itself
-      if (layers.value.some((el) => el.contains(e.target))) {
+      if (layers.value.some((el) => el.contains(e.target as HTMLElement))) {
         return;
       }
       context.emit("close", false);
     };
-    const outsideElementEvent = (e) => {
+    const outsideElementEvent = (e?: Event) => {
       context.emit("outside-click", e);
     };
-    const layer = ref(null);
+    const layer = ref() as Ref<ILayer | null>;
     const layers = computed(() => {
       if (layer.value) {
         return [root.value, ...getElements(layer.value).value];
@@ -185,7 +190,7 @@ export default {
     );
 
     watch(root, (v) => {
-      trigger.value = v.querySelector("[menu-trigger]");
+      trigger.value = v.querySelector("[menu-trigger]") as HTMLElement;
       trigger.value.addEventListener("click", (e) => {
         context.emit("trigger-click", e);
       });
@@ -217,7 +222,7 @@ export default {
       calculating,
     };
   },
-};
+});
 </script>
 
 <style lang="scss" scoped>

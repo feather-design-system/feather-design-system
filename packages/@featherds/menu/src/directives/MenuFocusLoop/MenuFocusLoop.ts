@@ -1,13 +1,24 @@
+interface IBindingModifier {
+  dir: {
+    contentKeyPressed: () => void;
+  };
+}
+
 export default {
-  mounted(el, binding) {
+  mounted(el: HTMLElement, binding: IBindingModifier) {
     el.addEventListener("keydown", binding.dir.contentKeyPressed);
   },
-  unmounted(el, binding) {
+  unmounted(el: HTMLElement, binding: IBindingModifier) {
     el.removeEventListener("keydown", binding.dir.contentKeyPressed);
   },
-  contentKeyPressed(e) {
-    const focusableELements = e.currentTarget.querySelectorAll("li a");
-    let index = [].indexOf.call(focusableELements, e.target);
+  contentKeyPressed(e: KeyboardEvent) {
+    const focusableELements = (e.currentTarget as HTMLElement).querySelectorAll(
+      "li a"
+    );
+    let index = ([] as HTMLElement[]).indexOf.call(
+      focusableELements,
+      e.target as unknown as HTMLElement
+    );
     if (index < 0) {
       return;
     }
@@ -29,6 +40,6 @@ export default {
     }
     e.preventDefault(); // stop page scroll;
     // we have gotten this far let's focus the element.
-    focusableELements[index].focus();
+    (focusableELements[index] as HTMLElement).focus();
   },
 };

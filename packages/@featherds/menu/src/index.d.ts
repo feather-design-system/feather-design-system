@@ -1,9 +1,3 @@
-declare module "@featherds/menu" {
-  import { defineComponent, Directive, } from "vue";
-  const FeatherMenu: ReturnType<typeof defineComponent>;
-  let MenuFocusLoop: Directive;
-  export {
-    FeatherMenu,
-    MenuFocusLoop
-  };
-}
+import { DefineComponent, Directive, } from "vue";
+export const FeatherMenu: DefineComponent<typeof import("./components/FeatherMenu.vue").props>;
+export const MenuFocusLoop: Directive;

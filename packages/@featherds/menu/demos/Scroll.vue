@@ -24,13 +24,14 @@
     </div>
   </section>
 </template>
-<script>
-import * as components from "./../src";
+<script lang="ts">
+import { FeatherMenu } from "./../src";
 import * as listComponents from "@featherds/list";
 import { FeatherButton } from "@featherds/button";
 import { FeatherCheckbox } from "@featherds/checkbox";
-export default {
-  data() {
+import { defineComponent } from "vue";
+export default defineComponent({
+  data: () => {
     return { open: false, right: false, pageScroll: false };
   },
   methods: {
@@ -42,12 +43,12 @@ export default {
     },
   },
   components: {
-    ...components,
+    FeatherMenu,
     ...listComponents,
     FeatherButton,
     FeatherCheckbox,
   },
-};
+});
 </script>
 <style lang="scss" scoped>
 .scroll {

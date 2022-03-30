@@ -104,7 +104,10 @@ export default defineComponent({
   emits,
   props,
   setup(props, context) {
-    const labels = useLabelProperty(toRef(props, "labels"), LABELS);
+    const labels = useLabelProperty<typeof LABELS>(
+      toRef(props, "labels"),
+      LABELS
+    );
     const isShown = toRef(props, "modelValue");
     const close = () => {
       context.emit("update:modelValue", false);

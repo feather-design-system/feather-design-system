@@ -1,15 +1,15 @@
 import { watch, onBeforeUnmount, ref, onMounted } from "vue";
-const useResize = (listener: () => void) => {
+const useResize = (listener: (e: UIEvent) => void) => {
   const active = ref(false);
   let ticking = false;
-  const resizeHandler = () => {
-    listener();
+  const resizeHandler = (e: UIEvent) => {
+    listener(e);
     ticking = false;
   };
 
-  function requestTick() {
+  function requestTick(e: UIEvent) {
     if (!ticking) {
-      requestAnimationFrame(resizeHandler);
+      requestAnimationFrame(() => resizeHandler(e));
       ticking = true;
     }
   }

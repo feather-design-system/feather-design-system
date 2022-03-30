@@ -15,11 +15,12 @@
     </feather-menu>
   </section>
 </template>
-<script>
-import * as components from "./../src";
+<script lang="ts">
+import { FeatherMenu } from "./../src";
 import { FeatherButton } from "@featherds/button";
-export default {
-  data() {
+import { defineComponent } from "vue";
+export default defineComponent({
+  data: () => {
     return { open: false };
   },
   methods: {
@@ -31,8 +32,8 @@ export default {
     },
   },
   components: {
-    ...components,
+    FeatherMenu,
     FeatherButton,
   },
-};
+});
 </script>
