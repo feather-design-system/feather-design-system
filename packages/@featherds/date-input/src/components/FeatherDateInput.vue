@@ -401,7 +401,10 @@ export default defineComponent({
       }
     });
 
-    const labels = useLabelProperty(toRef(props, "labels"), LABELS);
+    const labels = useLabelProperty<typeof LABELS>(
+      toRef(props, "labels"),
+      LABELS
+    );
     return {
       validate,
       day,

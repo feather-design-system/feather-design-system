@@ -127,7 +127,10 @@ export default defineComponent({
   emits,
   props,
   setup(props, context) {
-    const labels = useLabelProperty(toRef(props, "labels"), LABELS);
+    const labels = useLabelProperty<typeof LABELS>(
+      toRef(props, "labels"),
+      LABELS
+    );
     const visible = toRef(props, "modelValue");
     const element = ref();
     const close = () => {

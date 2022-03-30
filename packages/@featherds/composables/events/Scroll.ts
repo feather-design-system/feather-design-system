@@ -1,6 +1,6 @@
 import { watch, onBeforeUnmount, ref, Ref } from "vue";
 const useScroll = (
-  elementRef: Ref<HTMLElement | Document>,
+  elementRef: Ref<HTMLElement | Document | Window>,
   listener: (e: Event) => void
 ) => {
   const active = ref(false);

@@ -54,7 +54,10 @@ export default defineComponent({
     },
   },
   setup(props, context) {
-    const labels = useLabelProperty(toRef(props, "labels"), LABELS);
+    const labels = useLabelProperty<typeof LABELS>(
+      toRef(props, "labels"),
+      LABELS
+    );
     const chipTextId = computed(() => getSafeId("chip-text"));
 
     const handleClick = () => {
