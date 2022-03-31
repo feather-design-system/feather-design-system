@@ -20,11 +20,12 @@
     </FeatherPdfViewer>
   </div>
 </template>
-<script>
+<script lang="ts">
 import * as components from "../src";
 import { FeatherButton } from "@featherds/button";
+import { defineComponent } from "vue";
 
-export default {
+export default defineComponent({
   data: () => ({
     visible: false,
     labels: {
@@ -36,5 +37,5 @@ export default {
     ...components,
     FeatherButton,
   },
-};
+});
 </script>
