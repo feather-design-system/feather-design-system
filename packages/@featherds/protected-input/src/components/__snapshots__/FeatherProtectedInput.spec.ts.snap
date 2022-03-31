@@ -3,6 +3,7 @@
 exports[`FeatherProtectedInput.vue should change input type when show password is clicked 1`] = `
 <div
   class="feather-input-container"
+  labels="[object Object]"
 >
   <div
     class="feather-input-wrapper-container feather-input-content"
@@ -101,6 +102,7 @@ exports[`FeatherProtectedInput.vue should change input type when show password i
 exports[`FeatherProtectedInput.vue should render with show password icon by default 1`] = `
 <div
   class="feather-input-container"
+  labels="[object Object]"
 >
   <div
     class="feather-input-wrapper-container feather-input-content"

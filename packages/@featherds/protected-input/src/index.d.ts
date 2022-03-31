@@ -1,5 +1,13 @@
-declare module "@featherds/protected-input" {
-  import { defineComponent } from "vue";
-  const FeatherProtectedInput: ReturnType<typeof defineComponent>;
-  export { FeatherProtectedInput }
-}
+
+
+import { DefineComponent } from "vue";
+export const FeatherProtectedInput: DefineComponent<
+  typeof import("./components/FeatherProtectedInput.vue").props,
+  {},
+  {},
+  {},
+  {},
+  {},
+  {},
+  typeof import("./components/FeatherProtectedInput.vue").emits
+>;
