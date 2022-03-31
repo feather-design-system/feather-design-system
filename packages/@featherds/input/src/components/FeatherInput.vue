@@ -38,44 +38,15 @@
 <script lang="ts">
 import { getSafeId } from "@featherds/utils/id";
 import { useValidation } from "@featherds/input-helper";
-import { ref, toRef, computed, defineComponent, PropType, Ref } from "vue";
+import { ref, toRef, computed, defineComponent, Ref } from "vue";
 import {
   InputWrapper,
   InputSubText,
-  InputWrapperProps,
-  InputSubTextProps,
   useInputWrapper,
   useInputSubText,
   useInputInheritAttrs,
 } from "@featherds/input-helper";
-
-export const props = {
-  type: {
-    type: String,
-    default: "text",
-  },
-  modelValue: {
-    type: [String, Number] as PropType<string | number>,
-  },
-  maxlength: {
-    type: Number,
-    required: false,
-    default: 0,
-  },
-  schema: {
-    type: Object as PropType<Record<string, any>>,
-    required: false,
-  },
-  id: {
-    type: String,
-    required: false,
-  },
-  ...InputWrapperProps,
-  ...InputSubTextProps,
-} as const;
-export const emits = {
-  "update:modelValue": (value: string | undefined | number) => true,
-};
+import { props, emits } from "./types";
 export default defineComponent({
   model: {
     prop: "modelValue",
@@ -83,7 +54,6 @@ export default defineComponent({
   },
   emits,
   props,
-
   setup(props, context) {
     useInputSubText(props);
     useInputWrapper(props);

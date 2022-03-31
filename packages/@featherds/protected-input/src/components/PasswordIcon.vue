@@ -9,30 +9,35 @@
     <FeatherIcon :icon="icon" />
   </a>
 </template>
-<script>
+<script lang="ts">
 import { FeatherIcon } from "@featherds/icon";
 import passwordHide from "@featherds/icon/action/Hide";
 import passwordShow from "@featherds/icon/action/View";
-export default {
+import { defineComponent } from "vue";
+export const props = {
+  modelValue: {
+    type: Boolean,
+    required: true,
+  },
+  show: {
+    type: String,
+    required: true,
+  },
+  hide: {
+    type: String,
+    required: true,
+  },
+} as const;
+export const emits = {
+  "update:modelValue": (v: boolean) => true,
+};
+export default defineComponent({
   model: {
     prop: "modelValue",
     event: "update:modelValue",
   },
-  emits: ["update:modelValue"],
-  props: {
-    modelValue: {
-      type: Boolean,
-      required: true,
-    },
-    show: {
-      type: String,
-      required: true,
-    },
-    hide: {
-      type: String,
-      required: true,
-    },
-  },
+  emits,
+  props,
   computed: {
     title() {
       if (this.modelValue) {
@@ -57,7 +62,7 @@ export default {
   components: {
     FeatherIcon,
   },
-};
+});
 </script>
 <style lang="scss" scoped>
 @import "@featherds/styles/themes/variables";
