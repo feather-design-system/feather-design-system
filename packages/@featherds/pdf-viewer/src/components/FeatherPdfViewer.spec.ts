@@ -1,16 +1,18 @@
 import FeatherPdfViewer from "./FeatherPdfViewer.vue";
 import { shallowMount } from "@vue/test-utils";
+import { getCalls } from "@featherds/utils/test/calls";
 
 const focusTrap = {
   template: "<div><slot /></div>",
 };
 
-const getWrapper = function (options = {}) {
+const getWrapper = function (options: Record<string, unknown> = {}) {
   options.stubs = {
     "focus-trap": focusTrap,
   };
-  options.propsData = {
-    ...options.propsData,
+  const props = (options.props as Record<string, unknown>) || {};
+  options.props = {
+    ...props,
     labels: {
       title: "Test",
       viewerTitle: "Test2",
@@ -24,11 +26,13 @@ describe("FeatherPdfViewer.vue", () => {
     open: jest.fn(),
     send: jest.fn(),
     status: 200,
+    onload: () => { }
   };
+  const xhrRequestMock = xhrMock as unknown as XMLHttpRequest;
   beforeEach(() => {
     xhrMock.open.mockReset();
     xhrMock.send.mockReset();
-    jest.spyOn(window, "XMLHttpRequest").mockImplementation(() => xhrMock);
+    jest.spyOn(window, "XMLHttpRequest").mockImplementation(() => xhrRequestMock);
   });
   it("should use document url when extension is pdf", () => {
     const url = "test.pdf";
@@ -129,7 +133,7 @@ describe("FeatherPdfViewer.vue", () => {
       },
     });
     await wrapper.find(".close-icon").trigger("click");
-    expect(wrapper.emitted("update:modelValue")[0][0]).toBe(false);
+    expect(getCalls<[boolean]>(wrapper, "update:modelValue")[0][0]).toBe(false);
   });
 
   it("should always show error state when force-error is true and can preview", async () => {

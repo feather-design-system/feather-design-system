@@ -41,13 +41,14 @@
     </FeatherButton>
   </div>
 </template>
-<script>
+<script lang="ts">
 import { FeatherButton } from "@featherds/button";
 import { FeatherIcon } from "@featherds/icon";
 
 import icon from "@featherds/icon/action/DownloadFile";
+import { defineComponent } from "vue";
 
-export default {
+export default defineComponent({
   props: {
     text: {
       type: String,
@@ -69,7 +70,7 @@ export default {
     FeatherButton,
     FeatherIcon,
   },
-};
+});
 </script>
 <style lang="scss" scoped>
 @import "@featherds/styles/mixins/typography";

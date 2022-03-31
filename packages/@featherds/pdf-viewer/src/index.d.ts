@@ -1,5 +1,11 @@
-declare module "@featherds/pdf-viewer" {
-  import { defineComponent } from "vue";
-  const FeatherPdfViewer: ReturnType<typeof defineComponent>;
-  export { FeatherPdfViewer };
-}
+import { DefineComponent } from "vue";
+export const FeatherPdfViewer: DefineComponent<
+  typeof import("./components/FeatherPdfViewer.vue").props,
+  {},
+  {},
+  {},
+  {},
+  {},
+  {},
+  typeof import("./components/FeatherPdfViewer.vue").emits
+>;

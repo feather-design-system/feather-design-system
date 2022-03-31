@@ -86,7 +86,7 @@
     </transition>
   </div>
 </template>
-<script>
+<script lang="ts">
 import { FocusTrap } from "@featherds/dialog";
 import { FeatherSpinner } from "@featherds/progress";
 import { FeatherButton } from "@featherds/button";
@@ -97,8 +97,8 @@ import { useCloseOnEsc } from "@featherds/composables/modal/CloseOnEsc";
 import { useRestoreFocus } from "@featherds/composables/modal/RestoreFocus";
 import { useHideBodyOverflow } from "@featherds/composables/modal/HideOverflow";
 import { useLabelProperty } from "@featherds/composables/LabelProperty";
-import ErrorPanel from "./ErrorPanel";
-import { computed, toRef, ref, watch } from "vue";
+import ErrorPanel from "./ErrorPanel.vue";
+import { computed, toRef, ref, watch, defineComponent, PropType } from "vue";
 const LABELS = {
   title: "REQUIRED",
   download: "download ${ext}",
@@ -107,59 +107,72 @@ const LABELS = {
   noPreviewFile: "OOPS! Preview failed to load!",
   viewerTitle: "PDF Viewer - ${docname}",
 };
-export default {
+export const props = {
+  modelValue: {
+    type: Boolean,
+    default: false,
+  },
+  forceError: {
+    type: Boolean,
+    default: false,
+  },
+  hideActions: {
+    type: Boolean,
+    default: false,
+  },
+  documentExtension: {
+    type: String,
+    required: true,
+  },
+  documentUrl: {
+    type: String,
+    required: true,
+  },
+  previewUrl: {
+    type: String,
+  },
+  labels: {
+    type: Object as PropType<Partial<typeof LABELS>>,
+    default: () => {
+      return LABELS;
+    },
+    validator: (v: Partial<typeof LABELS>) => {
+      return !!(
+        v &&
+        v.title &&
+        v.title !== LABELS.title &&
+        v.viewerTitle &&
+        v.viewerTitle.length
+      );
+    },
+  },
+} as const;
+export const emits = {
+  "update:modelValue": (v: boolean) => true,
+  shown: () => true,
+  hidden: () => true,
+  "check-request": (v: XMLHttpRequest) => true,
+};
+export default defineComponent({
   model: {
     prop: "modelValue",
     event: "update:modelValue",
   },
-  emits: ["update:modelValue", "shown", "hidden", "check-request"],
-  props: {
-    modelValue: {
-      type: Boolean,
-    },
-    forceError: {
-      type: Boolean,
-      default: false,
-    },
-    hideActions: {
-      type: Boolean,
-      default: false,
-    },
-    documentExtension: {
-      type: String,
-      required: true,
-    },
-    documentUrl: {
-      type: String,
-      required: true,
-    },
-    previewUrl: {
-      type: String,
-    },
-    labels: {
-      type: Object,
-      default() {
-        return LABELS;
-      },
-      validator(v) {
-        return (
-          v &&
-          v.title &&
-          v.title !== LABELS.title &&
-          v.viewerTitle &&
-          v.viewerTitle.length
-        );
-      },
-    },
-  },
+  emits,
+  props,
   setup(props, context) {
-    const LOADING = 0;
-    const NOPREVIEW = 1;
-    const ERROR = 2;
-    const PREVIEW = 3;
-    const state = ref(LOADING);
+    enum STATE {
+      LOADING = 0,
+      NOPREVIEW = 1,
+      ERROR = 2,
+      PREVIEW = 3,
+    }
+    const state = ref(STATE.LOADING);
 
-    const labels = useLabelProperty(toRef(props, "labels"), LABELS);
+    const labels = useLabelProperty<typeof LABELS>(
+      toRef(props, "labels"),
+      LABELS
+    );
     const visible = toRef(props, "modelValue");
     const previewUrl = toRef(props, "previewUrl");
     const ext = toRef(props, "documentExtension");
@@ -197,15 +210,15 @@ export default {
     if (msie >= 0) {
       try {
         //eslint-disable-next-line
-        new window.ActiveXObject("AcroPDF.PDF");
+        new (window as any).ActiveXObject("AcroPDF.PDF");
       } catch (e) {
         hasPreviewer = false;
       }
     }
 
-    const updateState = (incoming) => {
+    const updateState = (incoming: STATE) => {
       if (forceError.value) {
-        state.value = ERROR;
+        state.value = STATE.ERROR;
       } else {
         state.value = incoming;
       }
@@ -216,26 +229,26 @@ export default {
       [visible, preview, ext, docUrl],
       ([vis, url, extension, docUrl]) => {
         if (vis && ((url && url.length) || (docUrl && docUrl.length))) {
-          updateState(LOADING);
+          updateState(STATE.LOADING);
           var http = new window.XMLHttpRequest();
           let requestUrl = url ? url : docUrl;
           http.open("HEAD", requestUrl);
           http.onload = function () {
             context.emit("check-request", http);
             if (http.status !== 200) {
-              updateState(ERROR);
+              updateState(STATE.ERROR);
             } else {
               if (url === requestUrl && hasPreviewer) {
                 //preview url is good
-                updateState(PREVIEW);
+                updateState(STATE.PREVIEW);
               } else {
-                updateState(NOPREVIEW);
+                updateState(STATE.NOPREVIEW);
               }
             }
           };
           http.onerror = function () {
             context.emit("check-request", http);
-            updateState(ERROR);
+            updateState(STATE.ERROR);
           };
 
           http.send();
@@ -294,7 +307,7 @@ export default {
     FeatherSpinner,
     ErrorPanel,
   },
-};
+});
 </script>
 
 <style lang="scss" scoped>
