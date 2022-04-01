@@ -6,7 +6,13 @@ import { nextTick } from "vue";
 
 jest.spyOn(id, "getSafeId").mockImplementation((x) => x);
 
-const getWrapper = function (options = {}) {
+const getWrapper = function (options: Record<string, unknown> = {}) {
+  const props = (options.props as Record<string, unknown>) || {};
+
+  options.props = {
+    ...props,
+    value: true,
+  };
   return mount(FeatherRadio, options);
 };
 const getSlot = () => ({
@@ -35,14 +41,14 @@ describe("FeatherRadio.vue", () => {
   });
   it("should be focusable when first is set even if not checked", async () => {
     const wrapper = getWrapper({ ...getSlot(), global: { ...mockProvide() } });
-    wrapper.vm.first = true;
+    wrapper.vm.vm.first = true;
     await nextTick();
     expect(wrapper.vm.tabindex).toBe(0);
   });
   it("should call blur", () => {
     const { provide } = mockProvide();
     const wrapper = getWrapper({ ...getSlot(), global: { provide } });
-    wrapper.vm.blur();
+    (wrapper.vm as unknown as { blur: () => void }).blur();
     expect(provide.blur).toHaveBeenCalled();
   });
 
@@ -80,12 +86,12 @@ describe("FeatherRadio.vue", () => {
       ...getSlot(),
       global: { ...mockProvide() },
     });
-    wrapper.vm.checked = true;
+    wrapper.vm.vm.checked = true;
     await nextTick();
-    expect(wrapper.wrapperElement).toMatchSnapshot();
-    wrapper.vm.checked = false;
+    expect(wrapper.element).toMatchSnapshot();
+    wrapper.vm.vm.checked = false;
     await nextTick();
-    expect(wrapper.wrapperElement).toMatchSnapshot();
+    expect(wrapper.element).toMatchSnapshot();
   });
   it("should set aria-disabled based on property", async () => {
     const wrapper = getWrapper({
@@ -95,11 +101,11 @@ describe("FeatherRadio.vue", () => {
       },
       global: { ...mockProvide() },
     });
-    expect(wrapper.wrapperElement).toMatchSnapshot();
+    expect(wrapper.element).toMatchSnapshot();
     await wrapper.setProps({
       disabled: false,
     });
-    expect(wrapper.wrapperElement).toMatchSnapshot();
+    expect(wrapper.element).toMatchSnapshot();
   });
   describe("a11y", () => {
     it("be accessible when unchecked and enabled", async () => {
@@ -107,7 +113,7 @@ describe("FeatherRadio.vue", () => {
         ...getSlot(),
         global: { ...mockProvide() },
       });
-      wrapper.vm.checked = false;
+      wrapper.vm.vm.checked = false;
       await nextTick();
       expect(await axe(wrapper.element)).toHaveNoViolations();
     });
@@ -116,7 +122,7 @@ describe("FeatherRadio.vue", () => {
         ...getSlot(),
         global: { ...mockProvide() },
       });
-      wrapper.vm.checked = true;
+      wrapper.vm.vm.checked = true;
       await nextTick();
       expect(await axe(wrapper.element)).toHaveNoViolations();
     });
@@ -127,7 +133,7 @@ describe("FeatherRadio.vue", () => {
         props,
         global: { ...mockProvide() },
       });
-      wrapper.vm.checked = true;
+      wrapper.vm.vm.checked = true;
       await nextTick();
       expect(await axe(wrapper.element)).toHaveNoViolations();
     });
@@ -138,7 +144,7 @@ describe("FeatherRadio.vue", () => {
         props,
         global: { ...mockProvide() },
       });
-      wrapper.vm.checked = false;
+      wrapper.vm.vm.checked = false;
       await nextTick();
       expect(await axe(wrapper.element)).toHaveNoViolations();
     });

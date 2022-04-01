@@ -5,8 +5,8 @@
       role="radio"
       ref="input"
       :id="id"
-      :aria-checked="checked ? 'true' : 'false'"
-      :aria-disabled="disabled ? 'true' : 'false'"
+      :aria-checked="vm.checked ? 'true' : 'false'"
+      :aria-disabled="vm.disabled ? 'true' : 'false'"
       :aria-labelledby="labelId"
       :tabindex="tabindex"
       @click="click"
@@ -25,7 +25,7 @@
             />
           </svg>
         </div>
-        <feather-ripple center v-if="!disabled" />
+        <feather-ripple center v-if="!vm.disabled" />
       </div>
 
       <span class="label" data-ref-id="feather-radio-label" :id="labelId">
@@ -34,50 +34,78 @@
     </div>
   </div>
 </template>
-<script>
+<script lang="ts">
 import { getSafeId } from "@featherds/utils/id";
 import { FeatherRipple } from "@featherds/ripple";
-import { computed, inject, ref } from "vue";
-export default {
-  props: {
-    value: undefined,
-    disabled: {
-      type: Boolean,
-      default: false,
-    },
+import {
+  computed,
+  defineComponent,
+  inject,
+  PropType,
+  reactive,
+  Ref,
+  ref,
+  watch,
+} from "vue";
+import { IRadio } from "@featherds/composables/radio/Selection";
+export const props = {
+  value: {
+    type: [String, Number, Boolean, Array, Object, Date, Function] as PropType<
+      string | number | boolean | unknown[] | unknown | Date | Function
+    >,
+    required: true,
   },
+  disabled: {
+    type: Boolean,
+    default: false,
+  },
+} as const;
+export default defineComponent({
+  props,
   setup(props) {
-    const first = ref(false);
-    const checked = ref(false);
-    const labelId = computed(() => getSafeId("radio-label-id"));
-    const tabindex = computed(() => {
-      if (first.value) {
-        return 0;
-      }
-      return checked.value ? 0 : -1;
-    });
-
-    const input = ref(null);
+    const input = ref() as Ref<HTMLElement>;
     const focus = () => {
       input.value.focus();
     };
     const id = computed(() => {
       return getSafeId("feather-radio-button");
     });
-
-    //register
-    const register = inject("register");
-    const blur = inject("blur");
-    const select = inject("select");
-
-    const vm = {
-      first,
+    const vm = reactive({
+      first: false,
       focus,
       disabled: props.disabled,
       value: props.value,
-      checked,
+      checked: false,
       id: id.value,
-    };
+    }) as IRadio;
+
+    const labelId = computed(() => getSafeId("radio-label-id"));
+    const tabindex = computed(() => {
+      if (vm.first) {
+        return 0;
+      }
+      return vm.checked ? 0 : -1;
+    });
+    watch(
+      () => props.disabled,
+      (v) => {
+        vm.disabled = v;
+      },
+      { immediate: true }
+    );
+    watch(
+      () => props.value,
+      (v) => {
+        vm.value = v;
+      },
+      { immediate: true }
+    );
+
+    //register
+    const register = inject("register", (radio: IRadio) => {});
+    const blur = inject("blur", (e: FocusEvent) => {});
+    const select = inject("select", (radio: IRadio) => {});
+
     register(vm);
     const click = () => {
       select(vm);
@@ -86,18 +114,17 @@ export default {
     return {
       labelId,
       tabindex,
-      first,
+      vm,
       blur,
       click,
       input,
-      checked,
       id,
     };
   },
   components: {
     FeatherRipple,
   },
-};
+});
 </script>
 
 <style lang="scss" scoped>

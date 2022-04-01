@@ -18,40 +18,49 @@
     <InputSubText :id="descriptionId" />
   </div>
 </template>
-<script>
+<script lang="ts">
 import { getSafeId } from "@featherds/utils/id";
 import {
-  InputInheritAttrsMixin,
   InputSubText,
-  InputSubTextMixin,
+  useInputSubText,
+  InputSubTextProps,
+  useInputInheritAttrs,
 } from "@featherds/input-helper";
-import { computed, toRef } from "vue";
+import { computed, defineComponent, PropType, toRef, Ref } from "vue";
 import { useRadioGroup } from "@featherds/composables/radio/RadioGroup";
-
-export default {
+export const props = {
+  ...InputSubTextProps,
+  label: {
+    type: String,
+    required: true,
+  },
+  modelValue: {
+    type: [String, Number, Boolean, Array, Object, Date, Function] as PropType<
+      string | number | boolean | unknown[] | unknown | Date | Function
+    >,
+  },
+  vertical: {
+    type: Boolean,
+    default: false,
+  },
+  schema: {
+    type: Object as PropType<Record<string, any>>,
+    required: false,
+  },
+} as const;
+export const emits = {
+  "update:modelValue": (v: unknown) => true,
+  blur: (v: FocusEvent) => true,
+};
+export default defineComponent({
   model: {
     prop: "modelValue",
     event: "update:modelValue",
   },
-  mixins: [InputInheritAttrsMixin, InputSubTextMixin],
-  props: {
-    label: {
-      type: String,
-      required: true,
-    },
-    modelValue: {
-      type: [String, Number, Boolean, Array, Object, Date, Function],
-    },
-    vertical: {
-      type: Boolean,
-      default: false,
-    },
-    schema: {
-      type: Object,
-      required: false,
-    },
-  },
+  props,
+  emits,
   setup(props, context) {
+    useInputSubText(props);
     const error = toRef(props, "error");
     const modelValue = toRef(props, "modelValue");
     const descriptionId = computed(() => {
@@ -62,7 +71,7 @@ export default {
         ...context.attrs,
         class: "",
         "aria-describedby": descriptionId.value,
-      };
+      } as Record<string, unknown>;
       //use aria-invalid if passed in (some validation libraries will specify this)
       //otherwise base it off this.error
       if (!_attrs["aria-invalid"]) {
@@ -78,15 +87,16 @@ export default {
         modelValue,
         context.emit,
         props.label,
-        props.schema,
-        toRef(props, "error")
+        props.schema as Record<string, unknown>,
+        toRef(props, "error") as Ref<string>
       ),
+      ...useInputInheritAttrs(context.attrs as Record<string, unknown>),
     };
   },
   components: {
     InputSubText,
   },
-};
+});
 </script>
 
 <style lang="scss" scoped>

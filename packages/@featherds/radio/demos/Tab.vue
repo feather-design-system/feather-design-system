@@ -35,9 +35,10 @@
     </feather-radio-group>
   </div>
 </template>
-<script>
+<script lang="ts">
+import { defineComponent } from "vue";
 import { FeatherRadio, FeatherRadioGroup } from "../src";
-export default {
+export default defineComponent({
   components: {
     FeatherRadio,
     FeatherRadioGroup,
@@ -50,5 +51,5 @@ export default {
       disabledSelectedC: "yes",
     };
   },
-};
+});
 </script>

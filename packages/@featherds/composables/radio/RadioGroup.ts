@@ -5,7 +5,8 @@ import { getSafeId } from "@featherds/utils/id";
 
 const useRadioGroup = (
   modelValue: Ref<unknown>,
-  emit: (type: string, value: unknown) => void,
+  emit: ((event: "update:modelValue", v: unknown) => void) &
+    ((event: "blur", v: FocusEvent) => void),
   label: string,
   schema: Record<string, unknown>,
   errorFromInput: Ref<string>

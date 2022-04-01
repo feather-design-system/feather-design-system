@@ -16,16 +16,16 @@
     <div>Your favourite type can have a value of {{ selected }}</div>
   </div>
 </template>
-<script>
+<script lang="ts">
 import { FeatherRadioGroup, FeatherRadio } from "../src";
-import { ref, onMounted } from "vue";
-export default {
+import { ref, onMounted, defineComponent } from "vue";
+export default defineComponent({
   components: {
     FeatherRadio,
     FeatherRadioGroup,
   },
   setup() {
-    const items = ref([]);
+    const items = ref([] as { name: string; value: unknown }[]);
     const selected = ref();
     onMounted(() => {
       setTimeout(() => {
@@ -48,5 +48,5 @@ export default {
 
     return { items, selected };
   },
-};
+});
 </script>
