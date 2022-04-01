@@ -21,11 +21,13 @@
     </template>
   </FeatherList>
 </template>
-<script>
+<script lang="ts">
 import { FeatherList, FeatherListItem } from "@featherds/list";
 import { getSafeId } from "@featherds/utils/id";
 import { toView } from "@featherds/utils/scroll";
-export default {
+import { ComponentPublicInstance, defineComponent, PropType } from "vue";
+import { ISelectItemType } from "./types";
+export default defineComponent({
   inheritAttrs: true,
   emits: ["select"],
   props: {
@@ -34,9 +36,9 @@ export default {
       required: true,
     },
     options: {
-      type: Array,
-      default() {
-        return [];
+      type: Array as PropType<ISelectItemType[]>,
+      default: () => {
+        return [] as ISelectItemType[];
       },
     },
     textProp: {
@@ -68,19 +70,19 @@ export default {
           const el = Array.prototype.slice.call(
             this.$el.querySelectorAll("li")
           )[index];
-          toView(el, this.$refs.list.$el);
+          toView(el, (this.$refs.list as ComponentPublicInstance).$el);
         });
       }
     },
   },
   methods: {
-    isSelected(index) {
+    isSelected(index: number) {
       return this.activeIndex === index;
     },
-    getId(index) {
+    getId(index: number) {
       return index === this.activeIndex ? this.activeId : null;
     },
-    select(item) {
+    select(item: ISelectItemType) {
       this.$emit("select", item);
     },
   },
@@ -88,7 +90,7 @@ export default {
     FeatherList,
     FeatherListItem,
   },
-};
+});
 </script>
 <style lang="scss" scoped>
 @import "@featherds/styles/mixins/typography";

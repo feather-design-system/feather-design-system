@@ -62,14 +62,21 @@
     </div>
   </section>
 </template>
-<script>
+<script lang="ts">
 import states from "./states";
 import { FeatherIcon } from "@featherds/icon";
 import Place from "@featherds/icon/action/Location";
 import * as components from "./../src";
-export default {
+import { defineComponent } from "vue";
+import { ISelectItem } from "../src/components/types";
+export default defineComponent({
   data() {
-    return { states, state: undefined, error: undefined, icon: Place };
+    return {
+      states,
+      state: undefined as ISelectItem | undefined,
+      error: undefined as string | undefined,
+      icon: Place,
+    };
   },
   mounted() {
     setTimeout(() => {
@@ -81,7 +88,7 @@ export default {
     ...components,
     FeatherIcon,
   },
-};
+});
 </script>
 <style lang="scss" scoped>
 .my-select {

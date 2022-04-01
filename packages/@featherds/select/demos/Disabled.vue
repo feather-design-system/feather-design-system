@@ -22,17 +22,23 @@
     </FeatherSelect>
   </section>
 </template>
-<script>
+<script lang="ts">
 import states from "./states";
 import * as components from "./../src";
-export default {
+import { defineComponent } from "vue";
+import { ISelectItem } from "../src/components/types";
+export default defineComponent({
   data() {
-    return { states, state: undefined, state2: states[1] };
+    return {
+      states,
+      state: undefined as ISelectItem | undefined,
+      state2: states[1],
+    };
   },
   components: {
     ...components,
   },
-};
+});
 </script>
 <style lang="scss" scoped>
 .my-select {
