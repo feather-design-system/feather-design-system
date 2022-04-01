@@ -29,7 +29,7 @@ import { string } from "yup";
 import { defineComponent, ref } from "vue";
 import * as components from "./../src";
 import {
-  IValidationResult,
+  IValidationFailure,
   useForm,
   ValidationHeader,
 } from "@featherds/input-helper";
@@ -43,7 +43,7 @@ export default defineComponent({
 
     const email = ref("");
     const emailV = string().required("Required").email();
-    const errors = ref([] as IValidationResult[]);
+    const errors = ref([] as IValidationFailure[]);
     const heading = ref();
     const focusElement = (id: string) => {
       (document.getElementById(id) as HTMLElement).focus();

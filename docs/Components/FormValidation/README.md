@@ -51,6 +51,9 @@ See the `Validation Setup` example above for a working implementation of the bel
 ### Components
 
 Simply add `schema` props to any inputs you need to validate and configure the rules in your code. We provide a basic `ValidationHeader` component from the [Input](/Components/Input/) package for convenience, should you require it.
+If a parent component is using the `useForm` composable detailed below, then the `ValidationHeader` component will automatically receive the errors, no props are required.
+
+Alternatively, you can pass the error messages directly to the `ValidationHeader` using the `errorList` prop should your use-case require it.
 
 ```html
 <ValidationHeader :errorList="errorMessages" />

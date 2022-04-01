@@ -37,6 +37,11 @@ export const props = {
       return `${errors.length} errors`;
     },
   },
+
+  errorList: {
+    type: Array as PropType<IValidationFailure[]>,
+    default: () => [],
+  },
   generalError: {
     type: String,
     default: "",
@@ -45,7 +50,14 @@ export const props = {
 export default defineComponent({
   props,
   setup(props) {
-    const errors = inject("featherFormErrors", ref([] as IValidationFailure[]));
+    const formErrors = inject(
+      "featherFormErrors",
+      ref([] as IValidationFailure[])
+    );
+    const propErrors = toRef(props, "errorList");
+    const errors = computed(() => {
+      return propErrors.value?.length ? propErrors.value : formErrors.value;
+    });
     const mainError = toRef(props, "generalError");
     const focusElement = (id: string) => {
       (document.getElementById(id) as HTMLAnchorElement).focus();
