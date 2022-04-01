@@ -1,12 +1,13 @@
-<script>
-import { h } from "vue";
-export default {
-  props: {
-    center: {
-      type: Boolean,
-      default: false,
-    },
+<script lang="ts">
+import { defineComponent, h } from "vue";
+export const props = {
+  center: {
+    type: Boolean,
+    default: false,
   },
+} as const;
+export default defineComponent({
+  props,
   data() {
     return {
       pressed: false,
@@ -21,7 +22,7 @@ export default {
     },
   },
   methods: {
-    onClick($event) {
+    onClick($event: MouseEvent) {
       //reset on every click
       this.pressed = false;
       this.active = false;
@@ -104,7 +105,7 @@ export default {
   unmounted() {
     this.parent.removeEventListener("click", this.onClick);
   },
-};
+});
 </script>
 <style lang="scss" scoped>
 .ripple {
