@@ -1,5 +1,4 @@
-declare module "@featherds/ripple" {
-  import { defineComponent } from "vue";
-  const FeatherRipple: ReturnType<typeof defineComponent>;
-  export { FeatherRipple };
-}
+import { DefineComponent } from "vue";
+export const FeatherRipple: DefineComponent<
+  typeof import("./components/FeatherRipple.vue").props
+>;

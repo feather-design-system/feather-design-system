@@ -8,13 +8,14 @@
     </div>
   </section>
 </template>
-<script>
+<script lang="ts">
+import { defineComponent } from "vue";
 import * as components from "./../src";
-export default {
+export default defineComponent({
   components: {
     ...components,
   },
-};
+});
 </script>
 <style lang="scss" scoped>
 @import "@featherds/styles/themes/variables";
