@@ -53,51 +53,57 @@
     <InputSubText :id="subTextId"></InputSubText>
   </div>
 </template>
-<script>
+<script lang="ts">
 import {
   InputWrapper,
-  InputWrapperMixin,
   InputSubText,
-  InputSubTextMixin,
-  InputInheritAttrsMixin,
+  InputWrapperProps,
+  InputSubTextProps,
+  useInputWrapper,
+  useInputSubText,
+  useInputInheritAttrs,
 } from "@featherds/input-helper";
 import { FeatherIcon } from "@featherds/icon";
 import KeyboardArrowDown from "@featherds/icon/navigation/ExpandMore";
 import { FeatherMenu } from "@featherds/menu";
 import { getSafeId } from "@featherds/utils/id";
 import { KEYCODES } from "@featherds/utils/keys";
-import List from "./List";
+import List from "./List.vue";
 import { useValidation } from "@featherds/input-helper";
-import { computed, toRef } from "vue";
-
-export default {
-  mixins: [InputWrapperMixin, InputSubTextMixin, InputInheritAttrsMixin],
+import { computed, defineComponent, PropType, Ref, toRef } from "vue";
+import { ISelectItemType } from "./types";
+export const props = {
+  ...InputWrapperProps,
+  ...InputSubTextProps,
+  modelValue: {
+    type: Object as PropType<ISelectItemType>,
+    required: false,
+  },
+  textProp: {
+    type: String,
+    default: "_text",
+  },
+  options: {
+    type: Array as PropType<ISelectItemType[]>,
+    default: () => {
+      return [] as ISelectItemType[];
+    },
+  },
+  schema: {
+    type: Object,
+    required: false,
+  },
+} as const;
+export default defineComponent({
   model: {
     prop: "modelValue",
     event: "update:modelValue",
   },
   emits: ["update:modelValue"],
-  props: {
-    modelValue: {
-      type: [String, Number, Boolean, Object],
-      required: false,
-    },
-    textProp: {
-      type: String,
-      default: "_text",
-    },
-    options: {
-      type: Array,
-      default() {
-        return [];
-      },
-    },
-    schema: {
-      type: Object,
-      required: false,
-    },
-  },
-  setup(props) {
+  props,
+  setup(props, context) {
+    useInputSubText(props);
+    useInputWrapper(props);
     const inputId = computed(() => {
       return getSafeId("feather-select-input");
     });
@@ -106,11 +112,15 @@ export default {
       inputId,
       toRef(props, "modelValue"),
       props.label,
-      props.schema,
-      toRef(props, "error")
+      props.schema as Record<string, unknown>,
+      toRef(props, "error") as Ref<string>
     );
 
-    return { inputId, validate };
+    return {
+      inputId,
+      validate,
+      ...useInputInheritAttrs(context.attrs as Record<string, unknown>),
+    };
   },
   data() {
     return {
@@ -131,13 +141,23 @@ export default {
     inputAttrs() {
       return {
         id: this.inputId,
-        "aria-haspopup": "listbox",
-        "aria-invalid": this.$attrs["aria-invalid"] || !!this.error,
+        "aria-haspopup": "listbox" as
+          | "grid"
+          | "dialog"
+          | "menu"
+          | "listbox"
+          | "tree"
+          | undefined
+          | boolean
+          | "true"
+          | "false",
+        "aria-invalid":
+          (this.$attrs["aria-invalid"] as boolean) || !!this.error,
         value: this.valueText,
         readonly: true,
         disabled: this.disabled,
         "aria-disabled": this.disabled,
-        "aria-describedby": (this.$attrs["aria-describedby"] || "")
+        "aria-describedby": ((this.$attrs["aria-describedby"] as string) || "")
           .split(" ")
           .concat([this.subTextId])
           .filter(Boolean)
@@ -156,14 +176,15 @@ export default {
     },
     valueText() {
       if (this.internalValue && this.internalValue[this.textProp]) {
-        return this.internalValue[this.textProp];
+        return this.internalValue[this.textProp] as string;
       }
       return "";
     },
     activeIndex() {
       if (this.internalValue && this.internalValue[this.textProp]) {
+        const iv = this.internalValue as ISelectItemType;
         const found = this.options.filter(
-          (x) => x[this.textProp] === this.internalValue[this.textProp]
+          (x) => x[this.textProp] === iv[this.textProp]
         );
         if (found && found.length) {
           return this.options.indexOf(found[0]);
@@ -180,7 +201,7 @@ export default {
           this.select(this.options[0]);
         }
         this.$nextTick(() => {
-          this.$refs.input.focus();
+          (this.$refs.input as HTMLInputElement).focus();
         });
       } else {
         this.emitSelection();
@@ -194,7 +215,7 @@ export default {
     closeMenu() {
       this.showMenu = false;
       this.$nextTick(() => {
-        this.$refs.input.focus();
+        (this.$refs.input as HTMLInputElement).focus();
       });
     },
     handleClear() {
@@ -226,18 +247,18 @@ export default {
       this.showMenu = false;
       this.hasFocus = false;
     },
-    handleSelect(option) {
+    handleSelect(option: ISelectItemType | undefined) {
       this.select(option);
       this.showMenu = false;
-      this.$refs.input.focus();
+      (this.$refs.input as HTMLInputElement).focus();
     },
-    select(option) {
+    select(option: ISelectItemType | undefined) {
       this.internalValue = option;
     },
     emitSelection() {
       this.$emit("update:modelValue", this.internalValue);
     },
-    handleKeyDown(e) {
+    handleKeyDown(e: KeyboardEvent) {
       //enter
       if (e.keyCode === KEYCODES.ENTER) {
         e.preventDefault();
@@ -245,7 +266,7 @@ export default {
         //if hidden focus button
         if (!this.showMenu) {
           this.$nextTick(() => {
-            this.$refs.input.focus();
+            (this.$refs.input as HTMLInputElement).focus();
           });
         }
       }
@@ -291,7 +312,7 @@ export default {
         const found = this.options.filter(
           (x) =>
             x[this.textProp] &&
-            x[this.textProp]
+            (x[this.textProp] as string)
               .toLowerCase()
               .indexOf(this.charsSoFar.toLowerCase()) === 0
         );
@@ -309,7 +330,7 @@ export default {
     List,
     FeatherIcon,
   },
-};
+});
 </script>
 
 <style lang="scss" scoped>
