@@ -1,7 +1,7 @@
 <template>
   <form @submit="onSubmit" novalidate>
     * indicates required
-    <ValidationHeader :errorList="errorMessages" />
+    <ValidationHeader />
     <FeatherInput
       label="Email *"
       :modelValue="email"
@@ -272,14 +272,12 @@ export default {
     const commentV = string().required("Required");
 
     //General Error variables
-    const errorMessages = ref([]);
     const submitting = ref();
     const alert = ref();
     const onSubmit = (e) => {
       e.preventDefault();
-      errorMessages.value = form.validate();
 
-      if (!errorMessages.value.length) {
+      if (!form.validate().length) {
         submitting.value = true;
         alert.value.textContent = "Submitting form, please wait";
 
@@ -321,7 +319,6 @@ export default {
       submitting,
       alert,
       form,
-      errorMessages,
     };
   },
   components: {
