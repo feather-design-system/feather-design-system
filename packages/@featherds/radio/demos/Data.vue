@@ -8,9 +8,10 @@
       data-ref-id="test"
     >
       <feather-radio
-        v-for="item in itemsC"
+        v-for="(item, index) in itemsC"
         :value="item.value"
         :key="item.name"
+        :disabled="index === disabled"
         >{{ item.name }}</feather-radio
       >
     </feather-radio-group>
@@ -32,9 +33,10 @@
     <div>Your favourite type can have a value of {{ selectedC }}</div>
   </div>
 </template>
-<script>
+<script lang="ts">
+import { defineComponent } from "vue";
 import { FeatherRadioGroup, FeatherRadio } from "../src";
-export default {
+export default defineComponent({
   components: {
     FeatherRadio,
     FeatherRadioGroup,
@@ -56,7 +58,8 @@ export default {
         },
       ],
       selectedC: 5,
+      disabled: 1,
     };
   },
-};
+});
 </script>
