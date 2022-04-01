@@ -2,15 +2,17 @@ import FeatherSelect from "./FeatherSelect.vue";
 import { shallowMount, mount } from "@vue/test-utils";
 import * as id from "@featherds/utils/id";
 import axe from "@featherds/utils/test/axe";
+import { getCalls } from "@featherds/utils/test/calls";
 import "@featherds/input-helper/test/MutationObserver";
 import { nextTick } from "vue";
+import { ISelectItem, ISelectItemType } from "./types";
 
 jest.spyOn(id, "getSafeId").mockImplementation((x) => x);
 
-const getProps = (props) => {
+const getProps = (props: unknown) => {
   return {
     label: "Users",
-    ...props,
+    ...(props as Record<string, unknown>),
   };
 };
 
@@ -21,13 +23,8 @@ const options = [
   {
     _text: "Item 2",
   },
-];
-const getWrapper = function (options = {}) {
-  options.props = getProps(options.props || {});
-  options.attachTo = document.body;
-  return shallowMount(FeatherSelect, options);
-};
-const getFullWrapper = function (options = {}) {
+] as ISelectItemType[];
+const getFullWrapper = function (options: Record<string, unknown> = {}) {
   document.body.innerHTML = "";
   options.props = getProps(options.props || {});
   options.attachTo = document.body;
@@ -44,11 +41,11 @@ describe("FeatherSelect.vue", () => {
         modelValue,
       },
     });
-    expect(wrapper.wrapperElement).toMatchSnapshot();
+    expect(wrapper.element).toMatchSnapshot();
   });
   it("should not raise the label when its empty", () => {
     const wrapper = getFullWrapper();
-    expect(wrapper.wrapperElement).toMatchSnapshot();
+    expect(wrapper.element).toMatchSnapshot();
   });
   it("should render in error state", () => {
     const wrapper = getFullWrapper({
@@ -56,7 +53,7 @@ describe("FeatherSelect.vue", () => {
         error: "ERROR",
       },
     });
-    expect(wrapper.wrapperElement).toMatchSnapshot();
+    expect(wrapper.element).toMatchSnapshot();
   });
   it("should render in disabled state", () => {
     const wrapper = getFullWrapper({
@@ -64,7 +61,7 @@ describe("FeatherSelect.vue", () => {
         disabled: true,
       },
     });
-    expect(wrapper.wrapperElement).toMatchSnapshot();
+    expect(wrapper.element).toMatchSnapshot();
   });
   it("should open the menu on enter", async () => {
     const wrapper = getFullWrapper({
@@ -86,9 +83,9 @@ describe("FeatherSelect.vue", () => {
     await wrapper.find("input").trigger("keydown.enter");
     await wrapper.find("input").trigger("keydown.esc");
     expect(wrapper.vm.showMenu).toBe(false);
-    expect(wrapper.emitted("update:modelValue")[0][0]).toStrictEqual(
-      options[0]
-    );
+    expect(
+      getCalls<[ISelectItemType]>(wrapper, "update:modelValue")[0][0]
+    ).toStrictEqual(options[0]);
   });
 
   it("should clear the value when clear icon is clicked", async () => {
@@ -104,7 +101,9 @@ describe("FeatherSelect.vue", () => {
     await wrapper
       .find("[data-ref-id='feather-form-element-clear']")
       .trigger("click");
-    expect(wrapper.emitted("update:modelValue")[0][0]).toBeUndefined();
+    expect(
+      getCalls<[ISelectItemType]>(wrapper, "update:modelValue")[0][0]
+    ).toBeUndefined();
   });
   it("should open and select first item on first down", async () => {
     const wrapper = getFullWrapper({
@@ -152,9 +151,9 @@ describe("FeatherSelect.vue", () => {
     expect(wrapper.vm.showMenu).toBe(true);
     await wrapper.find("input").trigger("keydown.esc");
     expect(wrapper.vm.showMenu).toBe(false);
-    expect(wrapper.emitted("update:modelValue")[0][0]).toStrictEqual(
-      options[1]
-    );
+    expect(
+      getCalls<[ISelectItemType]>(wrapper, "update:modelValue")[0][0]
+    ).toStrictEqual(options[1]);
   });
   it("should not wrap to the top when down is pressed on the last option", async () => {
     const wrapper = getFullWrapper({
@@ -229,9 +228,9 @@ describe("FeatherSelect.vue", () => {
     await wrapper.vm.$nextTick();
     expect(wrapper.vm.showMenu).toBe(false);
     expect(document.activeElement).toBe(wrapper.find("input").element);
-    expect(wrapper.emitted("update:modelValue")[0][0]).toStrictEqual(
-      options[0]
-    );
+    expect(
+      getCalls<[ISelectItemType]>(wrapper, "update:modelValue")[0][0]
+    ).toStrictEqual(options[0]);
   });
   it("should not open menu when focused (tabbed to)", async () => {
     const wrapper = getFullWrapper({
@@ -259,7 +258,9 @@ describe("FeatherSelect.vue", () => {
       keyCode: 66,
     });
     jest.runAllTimers();
-    expect(wrapper.vm.internalValue._text.indexOf("ab")).toBe(0);
+    expect((wrapper.vm.internalValue as ISelectItem)._text.indexOf("ab")).toBe(
+      0
+    );
   });
   describe("accessibility", () => {
     it("should be accessible in normal state", async () => {

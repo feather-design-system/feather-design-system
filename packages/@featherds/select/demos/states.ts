@@ -1,3 +1,5 @@
+import { ISelectItem } from "../src/components/types";
+
 export default [
   { _text: "Alabama" },
   { _text: "Alaska" },
@@ -49,4 +51,4 @@ export default [
   { _text: "West Virginia" },
   { _text: "Wisconsin" },
   { _text: "Wyoming" },
-];
+] as ISelectItem[];

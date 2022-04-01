@@ -24,9 +24,9 @@
     ></div>
   </form>
 </template>
-<script>
+<script lang="ts">
 import { string, object, ValidationError } from "yup";
-import { ref } from "vue";
+import { defineComponent, ref } from "vue";
 
 import { FeatherSelect } from "@featherds/select";
 import { useForm, ValidationHeader } from "@featherds/input-helper";
@@ -35,7 +35,7 @@ import { FeatherSpinner } from "@featherds/progress";
 
 import allCountries from "./countries.js";
 
-export default {
+export default defineComponent({
   setup() {
     const form = useForm();
 
@@ -43,7 +43,7 @@ export default {
     const country = ref();
     const countryV = object({
       _text: string().required("You must make a selection to continue"),
-    }).test("countryTest", null, (obj) => {
+    }).test("countryTest", (obj) => {
       if (obj._text?.includes("Narnia")) {
         return new ValidationError(
           "Narnia residents are not allowed to use computers",
@@ -55,10 +55,10 @@ export default {
     });
 
     //General Error variables
-    const errorMessages = ref([]);
+    const errorMessages = ref([] as unknown[]);
     const submitting = ref();
     const alert = ref();
-    const onSubmit = (e) => {
+    const onSubmit = (e: Event) => {
       e.preventDefault();
       errorMessages.value = form.validate();
 
@@ -90,7 +90,7 @@ export default {
     FeatherSpinner,
     ValidationHeader,
   },
-};
+});
 </script>
 <style lang="scss" scoped>
 @import "@featherds/styles/mixins/typography";
