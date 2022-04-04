@@ -4,14 +4,14 @@
   </div>
 </template>
 
-<script>
+<script lang="ts">
 import { useTabPanel, stockProps } from "@featherds/composables/tabs/TabPanel";
-export default {
-  props: {
-    ...stockProps,
-  },
+import { defineComponent } from "vue";
+export const props = stockProps;
+export default defineComponent({
+  props,
   setup(props) {
     return useTabPanel(props);
   },
-};
+});
 </script>

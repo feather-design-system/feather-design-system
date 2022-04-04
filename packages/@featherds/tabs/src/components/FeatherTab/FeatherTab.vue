@@ -12,21 +12,22 @@
     </button>
   </li>
 </template>
-<script>
+<script lang="ts">
 import { useTab, stockProps } from "@featherds/composables/tabs/Tab";
 import { FeatherRipple } from "@featherds/ripple";
+import { defineComponent } from "vue";
 
-export default {
-  props: {
-    ...stockProps,
-  },
+export const props = stockProps;
+
+export default defineComponent({
+  props,
   setup(props) {
     return useTab(props);
   },
   components: {
     FeatherRipple,
   },
-};
+});
 </script>
 <style lang="scss" scoped>
 @import "@featherds/styles/mixins/typography";
