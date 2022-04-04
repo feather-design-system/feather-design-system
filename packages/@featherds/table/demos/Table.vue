@@ -137,18 +137,18 @@
     </tbody>
   </table>
 </template>
-<script>
+<script lang="ts">
 import { FeatherIcon } from "@featherds/icon";
 import Face from "@featherds/icon/action/AccountCircle";
-import { markRaw } from "vue";
+import { defineComponent } from "vue";
 
 import { FeatherCheckbox } from "@featherds/checkbox";
 import { FeatherSortHeader, SORT } from "../src";
 
-export default {
+export default defineComponent({
   data: function () {
     return {
-      icon: markRaw(Face),
+      icon: Face,
       checkbox1: true,
       checkbox2: false,
       checkbox3: true,
@@ -159,7 +159,7 @@ export default {
     };
   },
   methods: {
-    sortChanged: function (sortObj) {
+    sortChanged: function (sortObj: { value: SORT; property: string }) {
       /*
         sortObj returned will be of format;
         {
@@ -169,7 +169,8 @@ export default {
       */
 
       //You will want to do any actual data sorting here
-      this[`sort${sortObj.property}`] = sortObj.value;
+      (this as unknown as Record<string, unknown>)[`sort${sortObj.property}`] =
+        sortObj.value;
     },
   },
   components: {
@@ -177,7 +178,7 @@ export default {
     FeatherCheckbox,
     FeatherSortHeader,
   },
-};
+});
 </script>
 <style lang="scss" scoped>
 @import "../scss/table";

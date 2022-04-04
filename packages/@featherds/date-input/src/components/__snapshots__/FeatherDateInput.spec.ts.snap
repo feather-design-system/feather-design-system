@@ -191,7 +191,7 @@ exports[`FeatherDateInput.vue should render disabled 1`] = `
           <!---->
         </button>
         <div
-          class="inline-select feather-select-container"
+          class="inline-select feather-select-container inline-select"
           data-ref-id="feather-calendar-select-month"
         >
           <div
@@ -489,7 +489,7 @@ exports[`FeatherDateInput.vue should render disabled 1`] = `
           </div>
         </div>
         <div
-          class="inline-select year feather-select-container"
+          class="inline-select year feather-select-container inline-select year"
           data-ref-id="feather-calendar-select-year"
         >
           <div
