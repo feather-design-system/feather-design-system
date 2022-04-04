@@ -8,9 +8,10 @@
     >
   </section>
 </template>
-<script>
+<script lang="ts">
+import { defineComponent } from "vue";
 import * as components from "./../src";
-export default {
+export default defineComponent({
   data() {
     return {
       checked: false,
@@ -28,5 +29,5 @@ export default {
   components: {
     ...components,
   },
-};
+});
 </script>
