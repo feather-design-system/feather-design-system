@@ -18,27 +18,30 @@
     </div>
   </div>
 </template>
-<script>
+<script lang="ts">
 import {
   useTabContainer,
   model,
   stockProps,
-  emits,
+  emits as stockEmits,
+  ITabPair,
 } from "@featherds/composables/tabs/TabContainer";
-export default {
+import { defineComponent } from "vue";
+export const props = stockProps;
+export const emits = stockEmits;
+export default defineComponent({
   model: model,
-  emits: emits,
-  props: {
-    ...stockProps,
-  },
+  emits,
+  props,
   setup(props, context) {
     return useTabContainer(props, context);
   },
-  data() {
+  data: () => {
     return {
       transform: "",
       durationNumber: 250,
       width: "1px",
+      ro: undefined as unknown as ResizeObserver,
     };
   },
   watch: {
@@ -46,7 +49,7 @@ export default {
       this.updateSlider();
     },
     pairs: {
-      handler(v) {
+      handler(v: ITabPair[]) {
         if (v && v.length && this.ro) {
           v.forEach((pair) => {
             if (pair.tab) {
@@ -65,7 +68,9 @@ export default {
   },
   methods: {
     updateSlider() {
-      if (this.$refs.slider.getBoundingClientRect().width < 5) {
+      if (
+        (this.$refs.slider as HTMLElement).getBoundingClientRect().width < 5
+      ) {
         this.durationNumber = 0;
       } else {
         this.durationNumber = 250;
@@ -76,7 +81,7 @@ export default {
           .querySelector("[aria-selected='true']")
           .getBoundingClientRect();
         const x = end.left - start.left;
-        const y = end.height - (this.raised ? 4 : 2);
+        const y = end.height - 2;
         this.width = `${end.width}px`;
         this.transform = `translateX(${x}px) translateY(${y}px)`;
       });
@@ -91,7 +96,7 @@ export default {
   unmounted() {
     this.ro.disconnect();
   },
-};
+});
 </script>
 
 <style lang="scss" scoped>

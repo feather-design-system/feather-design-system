@@ -9,14 +9,15 @@
     </FeatherTabContainer>
   </section>
 </template>
-<script>
+<script lang="ts">
+import { defineComponent } from "vue";
 import * as components from "./../src";
-export default {
+export default defineComponent({
   data() {
     return { index: 1 };
   },
   components: {
     ...components,
   },
-};
+});
 </script>
