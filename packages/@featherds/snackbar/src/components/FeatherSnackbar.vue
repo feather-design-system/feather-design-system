@@ -31,48 +31,58 @@
     </div>
   </div>
 </template>
-<script>
-import { ref, inject, watch, toRef, nextTick } from "vue";
+<script lang="ts">
+import { ref, inject, watch, toRef, nextTick, defineComponent, Ref } from "vue";
 import { KEYCODES } from "@featherds/utils/keys";
-
-export default {
-  emits: ["update:modelValue", "closed"],
-  props: {
-    modelValue: {
-      type: Boolean,
-      default: false,
-    },
-    center: {
-      type: Boolean,
-      default: false,
-    },
-    timeout: {
-      type: Number,
-      default: 4000,
-    },
-    error: {
-      type: Boolean,
-      default: false,
-    },
+export const props = {
+  modelValue: {
+    type: Boolean,
+    default: false,
   },
+  center: {
+    type: Boolean,
+    default: false,
+  },
+  timeout: {
+    type: Number,
+    default: 4000,
+  },
+  error: {
+    type: Boolean,
+    default: false,
+  },
+} as const;
+export const emits = {
+  "update:modelValue": (v: boolean) => true,
+  closed: () => true,
+};
+export default defineComponent({
+  emits,
+  props,
   setup(props, context) {
-    const hideTimeout = ref(null);
+    const hideTimeout = ref() as Ref<ITimer>;
     const contentShow = ref(false);
     const internalValue = ref(false);
     const id = Date.now() + Math.floor(Math.random() * 1000);
     const incomingValue = toRef(props, "modelValue");
-    const queueSnackbar = inject("queueSnackbar", null);
-    const unqueueSnackbar = inject("unqueueSnackbar", null);
-    const nextSnackbar = inject("nextSnackbar", null);
-
-    const timer = function (callback, duration) {
-      var id,
-        start,
+    const queueSnackbar = inject(
+      "queueSnackbar",
+      (id: number, internalVal: Ref<boolean>) => {}
+    );
+    const unqueueSnackbar = inject("unqueueSnackbar", (id: number) => {});
+    const nextSnackbar = inject("nextSnackbar", () => {});
+    interface ITimer {
+      pause: () => void;
+      resume: () => void;
+    }
+    const timer = (callback: () => void, duration: number): ITimer => {
+      let id: number,
+        start: number,
         remaining = duration;
       const pause = () => {
         if (!id) return;
         window.clearTimeout(id);
-        id = null;
+        id = -1;
         remaining -= Date.now() - start;
       };
       const resume = () => {
@@ -90,7 +100,7 @@ export default {
       if (nextSnackbar) nextSnackbar();
     };
 
-    const keyPressed = (e) => {
+    const keyPressed = (e: KeyboardEvent) => {
       if (e.keyCode === KEYCODES.ESCAPE) {
         internalValue.value = false;
       }
@@ -144,7 +154,7 @@ export default {
       resumeTimer,
     };
   },
-};
+});
 </script>
 
 <style lang="scss" scoped>

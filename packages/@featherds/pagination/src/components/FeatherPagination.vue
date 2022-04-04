@@ -82,6 +82,7 @@ import ChevronRight from "@featherds/icon/navigation/ChevronRight";
 import FirstPage from "@featherds/icon/navigation/FirstPage";
 import LastPage from "@featherds/icon/navigation/LastPage";
 import { defineComponent, PropType } from "vue";
+import { ISelectItemType } from "@featherds/select/src/components/types";
 export const props = {
   labels: {
     type: Object as PropType<Partial<typeof LABELS>>,
@@ -198,9 +199,11 @@ export default defineComponent({
     },
   },
   methods: {
-    updatePageSize(e: { _text: string }) {
-      this.$emit("update:pageSize", parseInt(e._text, 10));
-      this.first();
+    updatePageSize(e: ISelectItemType | undefined) {
+      if (e) {
+        this.$emit("update:pageSize", parseInt(e["_text"] as string, 10));
+        this.first();
+      }
     },
     first() {
       this.$emit("update:modelValue", 1);

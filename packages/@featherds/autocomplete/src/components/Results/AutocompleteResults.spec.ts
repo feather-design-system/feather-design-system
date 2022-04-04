@@ -2,7 +2,6 @@ import AutocompleteResults from "./AutocompleteResults.vue";
 import { FeatherListItem } from "@featherds/list";
 import { shallowMount } from "@vue/test-utils";
 import { getCalls } from "@featherds/utils/test/calls";
-import { IAutocompleteItem } from "../types";
 
 const activeId = "ACTIVE";
 const items = [
@@ -92,7 +91,7 @@ describe("Autocomplete Results", () => {
       },
     });
     await wrapper.findComponent(FeatherListItem).trigger("click");
-    expect(getCalls<IAutocompleteItem[]>(wrapper, "select")[0][0]._text).toBe(
+    expect(getCalls<[{ _text: string }]>(wrapper, "select")[0][0]._text).toBe(
       items[0]._text
     );
   });

@@ -1,11 +1,7 @@
 import { Ref, PropType } from "vue";
 import HighlightProps from "./Highlight/HighlightProps";
 import { InputWrapperProps, InputSubTextProps } from "@featherds/input-helper";
-interface IAutocompleteItem extends IAutocompleteItemType {
-  _new?: string;
-  _text: string;
-  _pre?: IAutocompleteChipIcon;
-}
+
 interface IAutocompleteItemType {
   [k: string]: unknown;
 }
@@ -55,7 +51,6 @@ export type {
   IStrategyOptions,
   IAutocompleteGridColumn,
   IAutocompleteItemType,
-  IAutocompleteItem,
   IAutocompleteChipIcon,
   IAutocompleteResultRender,
 };

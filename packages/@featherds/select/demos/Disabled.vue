@@ -26,12 +26,12 @@
 import states from "./states";
 import * as components from "./../src";
 import { defineComponent } from "vue";
-import { ISelectItem } from "../src/components/types";
+import { ISelectItemType } from "../src/components/types";
 export default defineComponent({
   data() {
     return {
       states,
-      state: undefined as ISelectItem | undefined,
+      state: undefined as ISelectItemType | undefined,
       state2: states[1],
     };
   },

@@ -1,9 +1,5 @@
 import FeatherAutocomplete from "./FeatherAutocomplete.vue";
-import {
-  IAutocompleteItem,
-  IAutocompleteItemType,
-  AutocompleteTypes,
-} from "./types";
+import { IAutocompleteItemType, AutocompleteTypes } from "./types";
 import { shallowMount, mount } from "@vue/test-utils";
 import * as id from "@featherds/utils/id";
 import axe from "@featherds/utils/test/axe";
@@ -15,13 +11,13 @@ jest.spyOn(id, "getSafeId").mockImplementation((x) => x);
 
 const getProps =
   (type: AutocompleteTypes) =>
-    (props: Record<string, unknown> = {}) => {
-      return {
-        label: "Users",
-        type,
-        ...props,
-      };
+  (props: Record<string, unknown> = {}) => {
+    return {
+      label: "Users",
+      type,
+      ...props,
     };
+  };
 
 const getResultsType = (type: AutocompleteTypes) => () => {
   return [
@@ -48,14 +44,14 @@ const getValueType = (type: AutocompleteTypes) => () => {
 };
 const handleUpdateValueType =
   (type: AutocompleteTypes) =>
-    (args: (IAutocompleteItemType | IAutocompleteItemType[])[]) => {
-      if (type === AutocompleteTypes.multi) {
-        const items = args as Array<IAutocompleteItemType[]>;
-        return items[0][0];
-      }
-      const items = args as IAutocompleteItemType[];
-      return items[0];
-    };
+  (args: (IAutocompleteItemType | IAutocompleteItemType[])[]) => {
+    if (type === AutocompleteTypes.multi) {
+      const items = args as Array<IAutocompleteItemType[]>;
+      return items[0][0];
+    }
+    const items = args as IAutocompleteItemType[];
+    return items[0];
+  };
 const getWrapperType = (type: AutocompleteTypes) =>
   function (options: Record<string, unknown> = {}) {
     const props = options.props as Record<string, unknown>;
@@ -886,7 +882,7 @@ describe("FeatherAutocomplete", () => {
     });
     it("should display the current selected value if no new selection is made", async () => {
       jest.useFakeTimers();
-      const modelValue = getValue() as IAutocompleteItem;
+      const modelValue = getValue() as IAutocompleteItemType;
       const wrapper = getFullWrapper({
         props: {
           modelValue,

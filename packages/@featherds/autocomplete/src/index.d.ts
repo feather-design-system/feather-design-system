@@ -10,7 +10,6 @@ export const FeatherAutocomplete: DefineComponent<
   typeof import("./components/types").emits
 >;
 export {
-  IAutocompleteItem,
   IAutocompleteItemType,
   IAutocompleteGridColumn,
   AutocompleteTypes,
