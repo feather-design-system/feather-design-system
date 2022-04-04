@@ -139,18 +139,18 @@
     <FeatherPagination :total="100" :page-size="10" :modelValue="1" />
   </div>
 </template>
-<script>
+<script lang="ts">
 import { FeatherIcon } from "@featherds/icon";
 import { FeatherPagination } from "@featherds/pagination";
 import Face from "@featherds/icon/action/AccountCircle";
 import MoreVert from "@featherds/icon/navigation/MoreVert";
-import { markRaw } from "vue";
+import { defineComponent } from "vue";
 
 import { FeatherCheckbox } from "@featherds/checkbox";
 import { FeatherButton } from "@featherds/button";
 import { FeatherSortHeader, SORT, RowAction } from "../../src";
 
-export default {
+export default defineComponent({
   directives: { RowAction },
   props: {
     condensed: {
@@ -170,10 +170,10 @@ export default {
       default: false,
     },
   },
-  data: function () {
+  data: () => {
     return {
-      icon: markRaw(Face),
-      ellipsis: markRaw(MoreVert),
+      icon: Face,
+      ellipsis: MoreVert,
       checkbox1: true,
       all: false,
       checkbox2: false,
@@ -186,9 +186,10 @@ export default {
     };
   },
   methods: {
-    sortChanged: function (sortObj) {
+    sortChanged: function (sortObj: { value: SORT; property: string }) {
       //You will want to do any actual data sorting here
-      this[`sort${sortObj.property}`] = sortObj.value;
+      (this as unknown as Record<string, unknown>)[`sort${sortObj.property}`] =
+        sortObj.value;
     },
     alert() {
       console.log("heheheh");
@@ -204,7 +205,7 @@ export default {
     FeatherButton,
     FeatherPagination,
   },
-};
+});
 </script>
 <style lang="scss" scoped>
 @import "../../scss/table";

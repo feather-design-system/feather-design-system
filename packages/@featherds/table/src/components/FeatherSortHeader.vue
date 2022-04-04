@@ -27,53 +27,52 @@
     ></span>
   </th>
 </template>
-<script>
+<script lang="ts">
 import { FeatherIcon } from "@featherds/icon";
 import { FeatherRipple } from "@featherds/ripple";
 import ExpandLess from "@featherds/icon/navigation/ExpandLess";
 import ExpandMore from "@featherds/icon/navigation/ExpandMore";
 import UnfoldMore from "@featherds/icon/navigation/UnfoldMore";
-import { SORT } from "../types/types.js";
+import { SORT } from "../types/types";
 import { getSafeId } from "@featherds/utils/id";
 import { useLabelProperty } from "@featherds/composables/LabelProperty";
-import { toRef } from "vue";
-import { markRaw } from "vue";
+import { defineComponent, PropType, toRef } from "vue";
 const LABELS = {
   sortAscending: "Sorted Ascending",
   sortDescending: "Sorted Descending",
   sortNone: "Sorted None",
   clickSort: "Click to Sort",
 };
-
-export default {
+export const props = {
+  sort: {
+    type: String as PropType<SORT>,
+    validator: function (value: SORT) {
+      // The value must match either
+      return (
+        [SORT.ASCENDING, SORT.DESCENDING, SORT.NONE, "", undefined].indexOf(
+          value
+        ) !== -1
+      );
+    },
+    required: true,
+  },
+  property: {
+    type: String,
+    required: true,
+  },
+  labels: {
+    type: Object as PropType<Partial<typeof LABELS>>,
+    default: () => {
+      return LABELS;
+    },
+  },
+} as const;
+export const emits = {
+  "sort-changed": (v: { property: string; value: SORT }) => true,
+};
+export default defineComponent({
   emits: ["sort-changed"],
-  props: {
-    sort: {
-      type: String,
-      validator: function (value) {
-        // The value must match either
-        return (
-          [SORT.ASCENDING, SORT.DESCENDING, SORT.NONE, "", undefined].indexOf(
-            value
-          ) !== -1
-        );
-      },
-      required: true,
-    },
-    property: {
-      type: String,
-      required: true,
-    },
-    labels: {
-      type: Object,
-      default() {
-        return LABELS;
-      },
-    },
-  },
-  data() {
-    return {};
-  },
+  props,
   computed: {
     descriptionId() {
       return getSafeId("feather-sort-header-description");
@@ -86,7 +85,7 @@ export default {
       if (this.sort === SORT.DESCENDING) {
         result = ExpandMore;
       }
-      return markRaw(result);
+      return result;
     },
     ariaSort() {
       if (this.sort === SORT.ASCENDING) {
@@ -105,14 +104,16 @@ export default {
     },
   },
   setup(props) {
-    return { ...useLabelProperty(toRef(props, "labels"), LABELS) };
+    return {
+      ...useLabelProperty<typeof LABELS>(toRef(props, "labels"), LABELS),
+    };
   },
   components: {
     FeatherIcon,
     FeatherRipple,
   },
   methods: {
-    linkClicked: function (e) {
+    linkClicked: function (e: MouseEvent) {
       e.preventDefault();
       e.stopPropagation();
       // this is run when only the sort is to change
@@ -133,7 +134,7 @@ export default {
       });
       this.announceSort(sortDir);
     },
-    announceSort(dir) {
+    announceSort(dir: SORT) {
       let label = this.sortNoneLabel;
 
       if (dir === SORT.ASCENDING) {
@@ -142,13 +143,13 @@ export default {
         label = this.sortDescendingLabel;
       }
 
-      this.$refs.alert.textContent = label;
+      (this.$refs.alert as HTMLElement).textContent = label;
       setTimeout(() => {
-        this.$refs.alert.textContent = "";
+        (this.$refs.alert as HTMLElement).textContent = "";
       }, 100);
     },
   },
-};
+});
 </script>
 
 <style lang="scss" scoped>

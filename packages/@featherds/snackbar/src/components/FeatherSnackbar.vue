@@ -67,9 +67,12 @@ export default defineComponent({
     const incomingValue = toRef(props, "modelValue");
     const queueSnackbar = inject(
       "queueSnackbar",
-      (id: number, internalVal: Ref<boolean>) => {}
+      false as false | ((id: number, internalVal: Ref<boolean>) => void)
     );
-    const unqueueSnackbar = inject("unqueueSnackbar", (id: number) => {});
+    const unqueueSnackbar = inject(
+      "unqueueSnackbar",
+      false as false | ((id: number) => void)
+    );
     const nextSnackbar = inject("nextSnackbar", () => {});
     interface ITimer {
       pause: () => void;
@@ -119,12 +122,14 @@ export default defineComponent({
       (v) => {
         if (v) {
           nextTick(() => {
-            queueSnackbar
-              ? queueSnackbar(id, internalValue)
-              : (internalValue.value = v);
+            queueSnackbar === false
+              ? (internalValue.value = v)
+              : queueSnackbar(id, internalValue);
           });
         } else {
-          unqueueSnackbar ? unqueueSnackbar(id) : (internalValue.value = v);
+          unqueueSnackbar === false
+            ? (internalValue.value = v)
+            : unqueueSnackbar(id);
         }
       },
       { immediate: true }
@@ -136,6 +141,7 @@ export default defineComponent({
         hideTimeout.value = timer(() => {
           internalValue.value = false;
         }, props.timeout);
+        console.log("setting timer");
       } else {
         context.emit("update:modelValue", false);
         stopTimer();
