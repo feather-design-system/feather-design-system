@@ -2,6 +2,7 @@ import { mount } from "@vue/test-utils";
 import { nextTick } from "vue";
 import FeatherSnackbar from "./FeatherSnackbar.vue";
 import axe from "@featherds/utils/test/axe";
+import { getCalls } from "@featherds/utils/test/calls";
 
 const slots = {
   default: {
@@ -12,13 +13,13 @@ const slots = {
   },
 };
 
-const getprops = (modelValue, center = false, error = false) => ({
+const getprops = (modelValue: boolean, center = false, error = false) => ({
   modelValue,
   center,
   error,
 });
 
-const getWrapper = function (options) {
+const getWrapper = function (options: Record<string, unknown>) {
   return mount(FeatherSnackbar, options);
 };
 
@@ -38,7 +39,7 @@ describe("FeatherSnackbar.vue", () => {
     jest.runAllTimers();
     await nextTick();
     expect(wrapper.vm.internalValue).toBe(false);
-    const events = wrapper.emitted("update:modelValue");
+    const events = getCalls<[boolean]>(wrapper, "update:modelValue");
     expect(events.length).toBe(1);
   });
 
@@ -52,7 +53,7 @@ describe("FeatherSnackbar.vue", () => {
     await nextTick();
 
     expect(wrapper.vm.internalValue).toBe(false);
-    const events = wrapper.emitted("update:modelValue");
+    const events = getCalls<[boolean]>(wrapper, "update:modelValue");
     expect(events.length).toBe(1);
   });
 

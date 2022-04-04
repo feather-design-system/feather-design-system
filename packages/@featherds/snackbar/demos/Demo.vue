@@ -12,11 +12,12 @@
     </FeatherSnackbar>
   </section>
 </template>
-<script>
+<script lang="ts">
 import * as components from "./../src";
 import { FeatherButton } from "@featherds/button";
 import { FeatherCheckbox } from "@featherds/checkbox";
-export default {
+import { defineComponent } from "vue";
+export default defineComponent({
   data() {
     return {
       show1: false,
@@ -29,5 +30,5 @@ export default {
     FeatherButton,
     FeatherCheckbox,
   },
-};
+});
 </script>

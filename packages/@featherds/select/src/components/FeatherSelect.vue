@@ -94,12 +94,15 @@ export const props = {
     required: false,
   },
 } as const;
+export const emits = {
+  "update:modelValue": (v: ISelectItemType | undefined) => true,
+};
 export default defineComponent({
   model: {
     prop: "modelValue",
     event: "update:modelValue",
   },
-  emits: ["update:modelValue"],
+  emits,
   props,
   setup(props, context) {
     useInputSubText(props);

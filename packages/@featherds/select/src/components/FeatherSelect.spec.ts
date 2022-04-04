@@ -5,7 +5,7 @@ import axe from "@featherds/utils/test/axe";
 import { getCalls } from "@featherds/utils/test/calls";
 import "@featherds/input-helper/test/MutationObserver";
 import { nextTick } from "vue";
-import { ISelectItem, ISelectItemType } from "./types";
+import { ISelectItemType } from "./types";
 
 jest.spyOn(id, "getSafeId").mockImplementation((x) => x);
 
@@ -258,9 +258,11 @@ describe("FeatherSelect.vue", () => {
       keyCode: 66,
     });
     jest.runAllTimers();
-    expect((wrapper.vm.internalValue as ISelectItem)._text.indexOf("ab")).toBe(
-      0
-    );
+    expect(
+      (
+        wrapper.vm.internalValue as ISelectItemType as { _text: string }
+      )._text.indexOf("ab")
+    ).toBe(0);
   });
   describe("accessibility", () => {
     it("should be accessible in normal state", async () => {
