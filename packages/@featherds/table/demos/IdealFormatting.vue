@@ -15,12 +15,13 @@
     ></IdealTable>
   </section>
 </template>
-<script>
-import IdealTable from "./components/IdealTable";
+<script lang="ts">
+import IdealTable from "./components/IdealTable.vue";
 import { FeatherCheckbox } from "@featherds/checkbox";
+import { defineComponent } from "vue";
 
-export default {
-  data() {
+export default defineComponent({
+  data: function () {
     return {
       striped: false,
       condensed: false,
@@ -32,5 +33,5 @@ export default {
     IdealTable,
     FeatherCheckbox,
   },
-};
+});
 </script>

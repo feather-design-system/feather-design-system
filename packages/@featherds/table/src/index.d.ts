@@ -1,12 +1,15 @@
-declare module "@featherds/table" {
-  import { defineComponent, Directive } from "vue";
-  const FeatherSortHeader: ReturnType<typeof defineComponent>;
-  let RowAction: Directive;
-  export { FeatherSortHeader, RowAction };
+import { DefineComponent, Directive } from "vue";
+export const FeatherSortHeader: DefineComponent<
+  typeof import("./components/FeatherSortHeader.vue").props,
+  {},
+  {},
+  {},
+  {},
+  {},
+  {},
+  typeof import("./components/FeatherSortHeader.vue").emits
+>;
 
-  export enum SORT {
-    ASCENDING = "asc",
-    DESCENDING = "desc",
-    NONE = "none"
-  }
-}
+export const RowAction: Directive;
+
+export { SORT } from "./types/types";
