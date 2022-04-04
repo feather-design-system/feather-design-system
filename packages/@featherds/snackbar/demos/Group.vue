@@ -73,12 +73,12 @@
     </FeatherSnackbarGroup>
   </section>
 </template>
-<script>
+<script lang="ts">
 import * as components from "./../src";
 import { FeatherButton } from "@featherds/button";
 import { FeatherCheckbox } from "@featherds/checkbox";
-import FeatherSnackbarGroup from "../src/components/FeatherSnackbarGroup.vue";
-export default {
+import { defineComponent } from "vue";
+export default defineComponent({
   data() {
     return {
       show1: false,
@@ -93,9 +93,8 @@ export default {
     ...components,
     FeatherButton,
     FeatherCheckbox,
-    FeatherSnackbarGroup,
   },
-};
+});
 </script>
 <style lang="scss">
 @import "@featherds/styles/themes/variables";

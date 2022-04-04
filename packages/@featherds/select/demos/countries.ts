@@ -1,4 +1,4 @@
-import { ISelectItem } from "../src/components/types";
+import { ISelectItemType } from "../src/components/types";
 
 export default [
   { _text: "Antarctica" },
@@ -6,4 +6,4 @@ export default [
   { _text: "Narnia" },
   { _text: "United States of America" },
   { _text: "United Kingdom" },
-] as ISelectItem[];
+] as ISelectItemType[];

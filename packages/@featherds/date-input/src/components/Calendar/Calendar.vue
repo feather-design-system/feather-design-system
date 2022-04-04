@@ -22,7 +22,7 @@
       <FeatherSelect
         :model-value="currentMonth"
         @update:modelValue="monthChanged"
-        :label="labels.selectMonth"
+        :label="(labels.selectMonth as string)"
         :options="months"
         inline
         ref="select-month"
@@ -32,7 +32,7 @@
       <FeatherSelect
         :model-value="currentYear"
         @update:modelValue="yearChanged"
-        :label="labels.selectYear"
+        :label="(labels.selectYear as string)"
         :options="years"
         inline
         ref="select-year"
@@ -83,7 +83,7 @@
 <script lang="ts">
 import { KEYCODES } from "@featherds/utils/keys";
 import { FeatherButton } from "@featherds/button";
-import { FeatherSelect } from "@featherds/select";
+import { FeatherSelect, ISelectItemType } from "@featherds/select";
 import { FeatherIcon } from "@featherds/icon";
 import { useLabelProperty } from "@featherds/composables/LabelProperty";
 import prevIcon from "@featherds/icon/navigation/ChevronLeft";
@@ -324,21 +324,27 @@ export default defineComponent({
       this.highlightDate(utils.subYears(this.currentlyHighlighted, 1));
       this.focus();
     },
-    yearChanged(e: { _text: number; value: number }) {
-      this.highlightDate(
-        utils.setYear(
-          this.currentlyHighlighted,
-          parseInt(e.value.toString(), 10)
-        )
-      );
+    yearChanged(e: ISelectItemType | undefined) {
+      if (e) {
+        const val = e as { _text: number; value: number };
+        this.highlightDate(
+          utils.setYear(
+            this.currentlyHighlighted,
+            parseInt(val.value.toString(), 10)
+          )
+        );
+      }
     },
-    monthChanged(e: { _text: string; value: number }) {
-      this.highlightDate(
-        utils.setMonth(
-          this.currentlyHighlighted,
-          parseInt(e.value.toString(), 10)
-        )
-      );
+    monthChanged(e: ISelectItemType | undefined) {
+      if (e) {
+        const val = e as { _text: number; value: number };
+        this.highlightDate(
+          utils.setMonth(
+            this.currentlyHighlighted,
+            parseInt(val.value.toString(), 10)
+          )
+        );
+      }
     },
     getAriaLabel(date: Date) {
       return date.toLocaleDateString(undefined, {

@@ -9,36 +9,43 @@
     </div>
   </Teleport>
 </template>
-<script>
-import { provide } from "vue";
-export default {
-  props: {
-    target: {
-      type: String,
-      default: "body",
-    },
-    relative: {
-      type: Boolean,
-      default: false,
-    }
+<script lang="ts">
+import { defineComponent, provide, Ref } from "vue";
+export const props = {
+  target: {
+    type: String,
+    default: "body",
   },
+  relative: {
+    type: Boolean,
+    default: false,
+  },
+};
+export default defineComponent({
+  props,
   setup() {
-    let curr = null;
-    let queue = [];
+    interface ISnackbarQueueItem {
+      id: number;
+      val: Ref<boolean>;
+    }
+    let curr: ISnackbarQueueItem | undefined;
+    let queue = [] as ISnackbarQueueItem[];
 
     const showSnackbar = () => {
-      curr.val.value = true;
+      if (curr) {
+        curr.val.value = true;
+      }
     };
-    const queueSnackbar = (id, internalVal) => {
+    const queueSnackbar = (id: number, internalVal: Ref<boolean>): void => {
       const item = { id: id, val: internalVal };
-      if (curr == null) {
+      if (!curr) {
         curr = item;
         showSnackbar();
       } else {
         queue.push(item);
       }
     };
-    const unqueueSnackbar = (id) => {
+    const unqueueSnackbar = (id: number) => {
       if (curr?.id === id) {
         curr.val.value = false;
       } else {
@@ -49,10 +56,10 @@ export default {
     };
     const shiftItem = () => {
       if (queue.length) {
-        curr = queue.shift();
+        curr = queue.shift() as ISnackbarQueueItem;
         showSnackbar();
       } else {
-        curr = null;
+        curr = undefined;
       }
     };
     provide("queueSnackbar", queueSnackbar);
@@ -67,7 +74,7 @@ export default {
       unqueueSnackbar,
     };
   },
-};
+});
 </script>
 
 <style lang="scss" scoped>
