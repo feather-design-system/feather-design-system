@@ -10,27 +10,32 @@
     </div>
   </div>
 </template>
-<script>
-export default {
-  emits: ["click"],
-  props: {
-    disabled: {
-      type: Boolean,
-      default: false,
-    },
-    checked: {
-      type: Boolean,
-      default: false,
-    },
+<script lang="ts">
+import { defineComponent } from "vue";
+export const props = {
+  disabled: {
+    type: Boolean,
+    default: false,
   },
+  checked: {
+    type: Boolean,
+    default: false,
+  },
+};
+export const emits = {
+  click: (e: MouseEvent) => true,
+};
+export default defineComponent({
+  emits,
+  props,
   methods: {
-    handleClick(e) {
+    handleClick(e: MouseEvent) {
       if (!this.disabled) {
         this.$emit("click", e);
       }
     },
   },
-};
+});
 </script>
 
 <style lang="scss" scoped>
