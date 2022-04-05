@@ -3,7 +3,7 @@ import { mount } from "@vue/test-utils";
 import "../../test/MutationObserver";
 import { ref } from "vue";
 
-const provide = (opts) => {
+const provide = (opts: unknown) => {
   return {
     wrapperOptions: {
       label: ref("test"),
@@ -13,24 +13,24 @@ const provide = (opts) => {
       disabled: ref(false),
       inline: ref(false),
       hideLabel: ref(false),
-      ...opts,
+      ...(opts as Record<string, unknown>),
     },
   };
 };
-const getWrapper = function (options = {}) {
+const getWrapper = function (options: Record<string, unknown> = {}) {
+  const props = (options.props as Record<string, unknown>) || {};
   options.props = {
-    ...options.props,
+    ...props,
     for: "test",
   };
-  options.global = {};
-  options.global.provide = provide(options.provide);
+  options.global = { provide: provide(options.provide) };
   return mount(InputWrapper, options);
 };
 
 describe("InputWrapper.vue", () => {
   it("should render a normal wrapper", () => {
     const wrapper = getWrapper();
-    expect(wrapper.wrapperElement).toMatchSnapshot();
+    expect(wrapper.element).toMatchSnapshot();
   });
 
   it("should render a raised label", () => {
@@ -39,7 +39,7 @@ describe("InputWrapper.vue", () => {
         raised: true,
       },
     });
-    expect(wrapper.wrapperElement).toMatchSnapshot();
+    expect(wrapper.element).toMatchSnapshot();
   });
   it("should render a focused border & raised label", () => {
     const wrapper = getWrapper({
@@ -47,7 +47,7 @@ describe("InputWrapper.vue", () => {
         focused: true,
       },
     });
-    expect(wrapper.wrapperElement).toMatchSnapshot();
+    expect(wrapper.element).toMatchSnapshot();
   });
   it("should take into account any prefix elements when not raised", () => {
     const wrapper = getWrapper({
@@ -56,7 +56,7 @@ describe("InputWrapper.vue", () => {
           "<div class='prefix' style='width:10px; display:inline-block;'></div><span>CONTENT</span>",
       },
     });
-    expect(wrapper.wrapperElement).toMatchSnapshot();
+    expect(wrapper.element).toMatchSnapshot();
   });
   it("should render in an error state", () => {
     const wrapper = getWrapper({
@@ -64,7 +64,7 @@ describe("InputWrapper.vue", () => {
         error: ref("test"),
       },
     });
-    expect(wrapper.wrapperElement).toMatchSnapshot();
+    expect(wrapper.element).toMatchSnapshot();
   });
 
   it("should render in disabled state", () => {
@@ -73,7 +73,7 @@ describe("InputWrapper.vue", () => {
         disabled: ref(true),
       },
     });
-    expect(wrapper.wrapperElement).toMatchSnapshot();
+    expect(wrapper.element).toMatchSnapshot();
   });
 
   it("should render clear icon when clear and show clear is set", () => {
@@ -85,7 +85,7 @@ describe("InputWrapper.vue", () => {
         clear: ref("Clear Text"),
       },
     });
-    expect(wrapper.wrapperElement).toMatchSnapshot();
+    expect(wrapper.element).toMatchSnapshot();
   });
   it("should render clear and error icons", () => {
     const wrapper = getWrapper({
@@ -97,7 +97,7 @@ describe("InputWrapper.vue", () => {
         clear: ref("Clear Text"),
       },
     });
-    expect(wrapper.wrapperElement).toMatchSnapshot();
+    expect(wrapper.element).toMatchSnapshot();
   });
   it("should have an label data-ref", () => {
     const wrapper = getWrapper({

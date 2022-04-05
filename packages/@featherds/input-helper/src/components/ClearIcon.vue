@@ -6,11 +6,12 @@
     data-ref-id="feather-form-element-clear"
   />
 </template>
-<script>
+<script lang="ts">
 import ActionIcon from "./ActionIcon.vue";
 
 import Cancel from "@featherds/icon/navigation/Cancel";
-export default {
+import { defineComponent } from "vue";
+export default defineComponent({
   emits: ["clear"],
   props: {
     clear: {
@@ -26,5 +27,5 @@ export default {
   components: {
     ActionIcon,
   },
-};
+});
 </script>

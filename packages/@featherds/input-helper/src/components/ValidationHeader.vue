@@ -10,46 +10,54 @@
     </div>
     <ul>
       <li v-for="item in errors" :key="item.inputId">
-        <a href="#" @click.prevent="focusElement(item.inputId)">{{
-          item.fullMessage
+        <a href="#" @click.prevent="focusElement(item.inputId as string)">{{
+          getFullMessage(item)
         }}</a>
       </li>
     </ul>
   </div>
 </template>
-<script>
-import { ref, computed, nextTick, inject, watch, toRef } from "vue";
-export default {
-  props: {
-    headingText: {
-      type: Function,
-      default: (errors) => {
-        if (errors.length && errors.length === 1) return "1 error";
-        return `${errors.length} errors`;
-      },
-    },
-    generalError: {
-      type: String,
-      default: "",
+<script lang="ts">
+import {
+  ref,
+  computed,
+  nextTick,
+  inject,
+  watch,
+  toRef,
+  PropType,
+  defineComponent,
+} from "vue";
+import { IValidationResult } from "../composables/useForm";
+export const props = {
+  headingText: {
+    type: Function as PropType<(s: unknown[]) => string>,
+    default: (errors: unknown[]) => {
+      if (errors.length && errors.length === 1) return "1 error";
+      return `${errors.length} errors`;
     },
   },
+  generalError: {
+    type: String,
+    default: "",
+  },
+};
+export default defineComponent({
+  props,
   setup(props) {
-    const errorList = inject("featherFormErrors", ref([]));
+    const errors = inject("featherFormErrors", ref([] as IValidationResult[]));
     const mainError = toRef(props, "generalError");
-    const focusElement = (id) => {
-      document.getElementById(id).focus();
+    const focusElement = (id: string) => {
+      (document.getElementById(id) as HTMLAnchorElement).focus();
     };
-    const removeAsteriks = (str) => {
+    const removeAsteriks = (str: string) => {
       return str.replace(/ \*$/, "");
     };
     const heading = ref();
 
-    const errors = computed(() => {
-      return errorList.value.map((v) => {
-        v.fullMessage = `${removeAsteriks(v.label)} - ${v.message}`;
-        return v;
-      });
-    });
+    const getFullMessage = (v: IValidationResult) => {
+      return `${removeAsteriks(v.label as string)} - ${v.message}`;
+    };
     const errorsHeading = computed(() => {
       if (errors.value.length) {
         nextTick(() => heading.value.focus());
@@ -69,8 +77,9 @@ export default {
       heading,
       focusElement,
       mainError,
+      getFullMessage,
     };
   },
-};
+});
 </script>
 <style lang="scss" scoped></style>
