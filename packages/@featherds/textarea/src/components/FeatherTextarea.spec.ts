@@ -1,5 +1,6 @@
 import { nextTick } from "vue";
 import axe from "@featherds/utils/test/axe";
+import { getCalls } from "@featherds/utils/test/calls";
 import FeatherTextarea from "./FeatherTextarea.vue";
 import { mount } from "@vue/test-utils";
 import * as id from "@featherds/utils/id";
@@ -7,7 +8,7 @@ import "@featherds/input-helper/test/MutationObserver";
 
 jest.spyOn(id, "getSafeId").mockImplementation((x) => x);
 
-const getWrapper = function (options) {
+const getWrapper = function (options: Record<string, unknown>) {
   return mount(FeatherTextarea, options);
 };
 
@@ -68,7 +69,9 @@ describe("FeatherTextarea.vue", () => {
     const expected = "TEEST";
     textarea.element.value = expected;
     textarea.trigger("input");
-    expect(wrapper.emitted("update:modelValue")[1][0]).toBe(expected);
+    expect(getCalls<[string]>(wrapper, "update:modelValue")[1][0]).toBe(
+      expected
+    );
   });
 
   it("should render an textarea error", () => {
@@ -141,7 +144,7 @@ describe("FeatherTextarea.vue", () => {
     wrapper.vm.handleClear();
     await nextTick();
     expect(wrapper.element).toMatchSnapshot();
-    expect(wrapper.emitted("update:modelValue")[1][0]).toBe("");
+    expect(getCalls<[string]>(wrapper, "update:modelValue")[1][0]).toBe("");
   });
 
   it("should allow custom focus events", async () => {
@@ -180,7 +183,7 @@ describe("FeatherTextarea.vue", () => {
   });
 
   describe("a11y", () => {
-    const accessibilityTest = async (options) => {
+    const accessibilityTest = async (options: Record<string, unknown>) => {
       const wrapper = mount(FeatherTextarea, options);
       expect(await axe(wrapper.element)).toHaveNoViolations();
     };

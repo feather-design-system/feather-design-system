@@ -3,6 +3,6 @@
   "compilerOptions": {
     "sourceMap": false
   },
-  "include": ["./**/*.ts"],
+  "include": ["./**/*.ts", "../../../shims/*.d.ts",],
   "exclude": ["**/*.spec.ts"]
 }

@@ -3,23 +3,25 @@
     <FeatherIcon :icon="icon" />
   </a>
 </template>
-<script>
+<script lang="ts">
 import { FeatherIcon } from "@featherds/icon";
-export default {
-  props: {
-    title: {
-      type: String,
-      default: "",
-    },
-    icon: {
-      type: Object,
-      required: true,
-    },
+import { defineComponent, PropType } from "vue";
+export const props = {
+  title: {
+    type: String,
+    default: "",
   },
+  icon: {
+    type: Object as PropType<unknown>,
+    required: true,
+  },
+};
+export default defineComponent({
+  props,
   components: {
     FeatherIcon,
   },
-};
+});
 </script>
 <style lang="scss" scoped>
 @import "@featherds/styles/themes/variables";

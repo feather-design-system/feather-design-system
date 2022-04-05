@@ -1,65 +1,35 @@
-declare module "@featherds/input-helper" {
-  import { DefineComponent, Ref, ComputedRef, ExtractPropTypes } from "vue";
-  const ActionIcon: DefineComponent;
-  const InputWrapper: DefineComponent;
-  const InputWrapperMixin: DefineComponent;
-  const InputSubText: DefineComponent;
-  const InputSubTextMixin: DefineComponent;
-  const InputInheritAttrsMixin: DefineComponent;
-  const ValidationHeader: DefineComponent;
-  const useInputInheritAttrs: (attrs: Record<string, unknown>) => {
-    inherittedAttrs: ComputedRef<{
-      class: string;
-      "data-ref-id": string;
-    }>;
-  };
-  type InputSubTextProps =
-    typeof import("./composables/InputSubText").InputSubTextProps;
-  const useInputSubText: (u: ExtractPropTypes<InputSubTextProps>) => void;
-  const InputSubTextProps: InputSubTextProps;
+import { DefineComponent, ExtractPropTypes } from "vue";
+export const InputWrapper: DefineComponent<
+  typeof import("./components/InputWrapper.vue").props,
+  {},
+  {},
+  {},
+  {},
+  {},
+  {},
+  typeof import("./components/InputWrapper.vue").emits
+>;
 
-  type InputWrapperProps =
-    typeof import("./composables/InputWrapper").InputWrapperProps;
-  const useInputWrapper: (u: ExtractPropTypes<InputWrapperProps>) => void;
-  const InputWrapperProps: InputWrapperProps;
+export const ActionIcon: DefineComponent<
+  typeof import("./components/ActionIcon.vue").props
+>;
 
-  const useForm: () => {
-    validate: () => {
-      success: boolean;
-      message: string;
-      inputId: string;
-      label: string;
-    }[];
-  };
-  const useValidation: (
-    inputId: Ref<string | undefined>,
-    value: Ref<unknown>,
-    label: string,
-    schema: Record<string, any>,
-    error?: Ref<string>
-  ) => {
-    validate: () => {
-      success: boolean;
-      message: string;
-      inputId: string;
-      label: string;
-    };
-  };
+export const InputSubText: DefineComponent;
+export const ValidationHeader: DefineComponent<
+  typeof import("./components/ValidationHeader.vue").props
+>;
 
-  export {
-    ActionIcon,
-    InputWrapper,
-    InputWrapperMixin,
-    InputSubText,
-    InputSubTextMixin,
-    InputInheritAttrsMixin,
-    ValidationHeader,
-    useForm,
-    useValidation,
-    useInputInheritAttrs,
-    useInputSubText,
-    InputSubTextProps,
-    useInputWrapper,
-    InputWrapperProps,
-  };
-}
+export const useInputInheritAttrs: typeof import("./composables/InputInheritAttrs").useInputInheritAttrs;
+
+export const InputSubTextProps: typeof import("./composables/InputSubText").InputSubTextProps;
+export const useInputSubText: (
+  u: ExtractPropTypes<typeof InputSubTextProps>
+) => void;
+
+export const InputWrapperProps: typeof import("./composables/InputWrapper").InputWrapperProps;
+export const useInputWrapper: (
+  u: ExtractPropTypes<typeof InputWrapperProps>
+) => void;
+export const useForm: typeof import("./composables/useForm").useForm;
+export const useValidation: typeof import("./composables/useValidation").useValidation;
+export { IValidationResult } from "./composables/useForm";

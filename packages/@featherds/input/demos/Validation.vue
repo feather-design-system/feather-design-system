@@ -28,7 +28,11 @@
 import { string } from "yup";
 import { defineComponent, ref } from "vue";
 import * as components from "./../src";
-import { useForm, ValidationHeader } from "@featherds/input-helper";
+import {
+  IValidationResult,
+  useForm,
+  ValidationHeader,
+} from "@featherds/input-helper";
 
 export default defineComponent({
   setup() {
@@ -39,14 +43,7 @@ export default defineComponent({
 
     const email = ref("");
     const emailV = string().required("Required").email();
-    const errors = ref(
-      [] as {
-        success: boolean;
-        message: string;
-        inputId: string;
-        label: string;
-      }[]
-    );
+    const errors = ref([] as IValidationResult[]);
     const heading = ref();
     const focusElement = (id: string) => {
       (document.getElementById(id) as HTMLElement).focus();

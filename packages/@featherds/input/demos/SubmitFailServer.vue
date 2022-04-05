@@ -36,7 +36,11 @@
 import { string } from "yup";
 import { ref, computed, defineComponent } from "vue";
 import * as components from "./../src";
-import { useForm, ValidationHeader } from "@featherds/input-helper";
+import {
+  IValidationResult,
+  useForm,
+  ValidationHeader,
+} from "@featherds/input-helper";
 
 import { FeatherSpinner } from "@featherds/progress";
 
@@ -50,14 +54,7 @@ export default defineComponent({
     const emailV = string().required("Required").email();
     const submitting = ref();
     const alert = ref();
-    const errors = ref(
-      [] as {
-        success: boolean;
-        message: string;
-        inputId: string;
-        label: string;
-      }[]
-    );
+    const errors = ref([] as IValidationResult[]);
     const heading = ref();
 
     const errorsHeading = computed(() => {
