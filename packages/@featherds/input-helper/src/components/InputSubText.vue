@@ -1,9 +1,5 @@
 <template>
-  <div
-    class="feather-input-sub-text"
-    :id="id"
-    v-show="!inline || hint || error.length"
-  >
+  <div class="feather-input-sub-text" v-show="!inline || hint || error.length">
     <div class="feather-input-spacer" v-if="!hint && !error.length">&nbsp;</div>
     <div
       class="feather-input-hint"
@@ -23,18 +19,20 @@
     <slot name="right"></slot>
   </div>
 </template>
-<script>
-import { inject, computed } from "vue";
-export default {
-  props: {
-    id: {
-      type: String,
-      required: true,
-    },
-  },
+<script lang="ts">
+import { inject, computed, defineComponent, ExtractPropTypes, Ref } from "vue";
+import { InputSubTextProps } from "../composables/InputSubText";
+
+export default defineComponent({
   setup() {
-    const options = inject("subTextOptions");
-    const errorMessage = inject("validationErrorMessage", false);
+    const options = inject(
+      "subTextOptions",
+      {} as ExtractPropTypes<typeof InputSubTextProps>
+    );
+    const errorMessage = inject(
+      "validationErrorMessage",
+      false as false | Ref<string>
+    );
     const error = computed(() => {
       if (options.error) {
         return options.error;
@@ -46,7 +44,7 @@ export default {
     });
     return { ...options, error };
   },
-};
+});
 </script>
 <style lang="scss" scoped>
 @import "@featherds/styles/themes/variables";

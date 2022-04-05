@@ -39,7 +39,6 @@ exports[`FeatherTextarea.vue should allow custom blur events 1`] = `
         class="feather-textarea"
         data-ref-id="feather-input"
         id="feather-textarea-label"
-        maxlength="false"
         name="feather-textarea-label"
       />
       
@@ -109,7 +108,6 @@ exports[`FeatherTextarea.vue should allow custom focus events 1`] = `
         class="feather-textarea"
         data-ref-id="feather-input"
         id="feather-textarea-label"
-        maxlength="false"
         name="feather-textarea-label"
       />
       
@@ -179,7 +177,6 @@ exports[`FeatherTextarea.vue should clear textarea when clear-icon is clicked 1`
         class="feather-textarea"
         data-ref-id="feather-input"
         id="feather-textarea-label"
-        maxlength="false"
         name="feather-textarea-label"
       />
       
@@ -249,7 +246,6 @@ exports[`FeatherTextarea.vue should not render a clear icon when the textarea do
         class="feather-textarea"
         data-ref-id="feather-input"
         id="feather-textarea-label"
-        maxlength="false"
         name="feather-textarea-label"
       />
       
@@ -319,7 +315,6 @@ exports[`FeatherTextarea.vue should render a clear icon when clear has a value a
         class="feather-textarea"
         data-ref-id="feather-input"
         id="feather-textarea-label"
-        maxlength="false"
         name="feather-textarea-label"
       />
       
@@ -483,7 +478,6 @@ exports[`FeatherTextarea.vue should render an textarea error 1`] = `
         class="feather-textarea error"
         data-ref-id="feather-input"
         id="feather-textarea-label"
-        maxlength="false"
         name="feather-textarea-label"
       />
       
@@ -581,7 +575,6 @@ exports[`FeatherTextarea.vue should render an textarea error and has a value 1`]
         class="feather-textarea error"
         data-ref-id="feather-input"
         id="feather-textarea-label"
-        maxlength="false"
         name="feather-textarea-label"
       />
       
@@ -679,7 +672,6 @@ exports[`FeatherTextarea.vue should render an textarea error and has focus 1`] =
         class="feather-textarea error"
         data-ref-id="feather-input"
         id="feather-textarea-label"
-        maxlength="false"
         name="feather-textarea-label"
       />
       
@@ -777,7 +769,6 @@ exports[`FeatherTextarea.vue should render an textarea with a label 1`] = `
         class="feather-textarea"
         data-ref-id="feather-input"
         id="feather-textarea-label"
-        maxlength="false"
         name="feather-textarea-label"
       />
       
@@ -847,7 +838,6 @@ exports[`FeatherTextarea.vue should render an textarea with a label and hint tex
         class="feather-textarea"
         data-ref-id="feather-input"
         id="feather-textarea-label"
-        maxlength="false"
         name="feather-textarea-label"
       />
       
@@ -918,7 +908,6 @@ exports[`FeatherTextarea.vue should render an textarea with a preset value 1`] =
         class="feather-textarea"
         data-ref-id="feather-input"
         id="feather-textarea-label"
-        maxlength="false"
         name="feather-textarea-label"
       />
       
@@ -989,7 +978,6 @@ exports[`FeatherTextarea.vue should render an textarea with raised label when fo
         class="feather-textarea"
         data-ref-id="feather-input"
         id="feather-textarea-label"
-        maxlength="false"
         name="feather-textarea-label"
       />
       
@@ -1059,7 +1047,6 @@ exports[`FeatherTextarea.vue should render an textarea with raised label when fo
         class="feather-textarea"
         data-ref-id="feather-input"
         id="feather-textarea-label"
-        maxlength="false"
         name="feather-textarea-label"
       />
       

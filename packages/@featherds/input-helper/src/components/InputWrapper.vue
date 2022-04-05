@@ -26,42 +26,54 @@
     </div>
   </div>
 </template>
-<script>
-import ClearIcon from "./ClearIcon";
-import ErrorIcon from "./ErrorIcon";
-import { inject, computed } from "vue";
-export default {
-  emits: ["clear", "wrapper-click"],
-  props: {
-    for: {
-      type: String,
-      required: true,
-    },
-    focused: {
-      type: Boolean,
-      default: false,
-    },
-    showClear: {
-      type: Boolean,
-      default: false,
-    },
-    clearText: {
-      type: String,
-    },
-    raised: {
-      type: Boolean,
-      default: false,
-    },
+<script lang="ts">
+import ClearIcon from "./ClearIcon.vue";
+import ErrorIcon from "./ErrorIcon.vue";
+import { inject, computed, defineComponent, ExtractPropTypes, Ref } from "vue";
+import { InputWrapperProps } from "../composables/InputWrapper";
+export const props = {
+  for: {
+    type: String,
+    required: true,
   },
+  focused: {
+    type: Boolean,
+    default: false,
+  },
+  showClear: {
+    type: Boolean,
+    default: false,
+  },
+  clearText: {
+    type: String,
+  },
+  raised: {
+    type: Boolean,
+    default: false,
+  },
+};
+export const emits = {
+  clear: () => true,
+  "wrapper-click": (e: MouseEvent) => true,
+};
+export default defineComponent({
+  emits,
+  props,
   data() {
     return {
       prefixWidth: 0,
-      prefixObserver: null,
+      prefixObserver: undefined as unknown as MutationObserver,
     };
   },
   setup() {
-    const options = inject("wrapperOptions");
-    const errorMessage = inject("validationErrorMessage", false);
+    const options = inject(
+      "wrapperOptions",
+      {} as ExtractPropTypes<typeof InputWrapperProps>
+    );
+    const errorMessage = inject(
+      "validationErrorMessage",
+      false as false | Ref<string>
+    );
     const error = computed(() => {
       if (options.error) {
         return options.error;
@@ -127,7 +139,7 @@ export default {
     },
   },
   methods: {
-    handleWrapperClick(e) {
+    handleWrapperClick(e: MouseEvent) {
       if (!this.disabled) {
         this.$emit("wrapper-click", e);
       }
@@ -157,7 +169,7 @@ export default {
     ClearIcon,
     ErrorIcon,
   },
-};
+});
 </script>
 
 <style lang="scss" scoped>

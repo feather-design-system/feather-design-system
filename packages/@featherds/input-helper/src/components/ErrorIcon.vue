@@ -5,20 +5,20 @@
     data-ref-id="error-icon"
   />
 </template>
-<script>
+<script lang="ts">
 import { FeatherIcon } from "@featherds/icon";
 import Error from "@featherds/icon/notification/Warning";
-import { markRaw } from "vue";
-export default {
+import { defineComponent } from "vue";
+export default defineComponent({
   computed: {
     errorIcon() {
-      return markRaw(Error);
+      return Error;
     },
   },
   components: {
     FeatherIcon,
   },
-};
+});
 </script>
 <style lang="scss" scoped>
 @import "@featherds/styles/themes/variables";

@@ -1,6 +1,13 @@
-import { inject, ref, provide, watch, isRef, onBeforeUnmount } from "vue";
-const useValidation = (inputId, value, label, schema, errorFromInput) => {
-  const form = inject("featherForm", false);
+import { inject, ref, provide, watch, isRef, onBeforeUnmount, Ref } from "vue";
+import { IFeatherForm } from "./useForm";
+const useValidation = (
+  inputId: Ref<string>,
+  value: Ref<unknown>,
+  label: string,
+  schema?: Record<string, any>,
+  errorFromInput?: Ref<string>
+) => {
+  const form = inject("featherForm", false as false | IFeatherForm);
   if (schema && form && inputId.value) {
     const errorMessage = ref("");
     provide("validationErrorMessage", errorMessage);
@@ -20,11 +27,12 @@ const useValidation = (inputId, value, label, schema, errorFromInput) => {
         schema.validateSync(value.value);
         errorMessage.value = "";
         return { success: true };
-      } catch (e) {
-        errorMessage.value = e.errors[0];
+      } catch (e: unknown) {
+        const err = e as { errors: string[] };
+        errorMessage.value = err.errors[0];
         return {
           success: false,
-          message: e.errors[0],
+          message: err.errors[0],
           inputId: inputId.value,
           label: label,
         };
@@ -40,10 +48,10 @@ const useValidation = (inputId, value, label, schema, errorFromInput) => {
     watch(
       inputId,
       (curr, old) => {
-        if (curr) {
+        if (curr && form) {
           form.register(curr, validate);
         }
-        if (old) {
+        if (old && form) {
           form.deregister(old);
         }
       },

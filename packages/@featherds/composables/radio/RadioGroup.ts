@@ -71,7 +71,7 @@ const useRadioGroup = (
   firstElementId.value = groupId.value;
 
   const { validate } = useValidation(
-    firstElementId,
+    firstElementId as Ref<string>,
     modelValue,
     label,
     schema,

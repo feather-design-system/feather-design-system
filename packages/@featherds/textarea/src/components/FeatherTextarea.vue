@@ -15,7 +15,7 @@
         class="feather-textarea"
         data-ref-id="feather-input"
         :class="{ error: error }"
-        :maxlength="maxlength > 0 ? maxlength : false"
+        :maxlength="maxlength > 0 ? maxlength : undefined"
         ref="input"
       ></textarea>
     </InputWrapper>
@@ -32,48 +32,59 @@
     </InputSubText>
   </div>
 </template>
-<script>
-import { defineComponent } from "vue";
+<script lang="ts">
+import { defineComponent, PropType, Ref } from "vue";
 import { getSafeId } from "@featherds/utils/id";
 import { useValidation } from "@featherds/input-helper";
 import { computed, toRef } from "vue";
 
 import {
   InputWrapper,
-  InputWrapperMixin,
+  InputWrapperProps,
   InputSubText,
-  InputSubTextMixin,
-  InputInheritAttrsMixin,
+  InputSubTextProps,
+  useInputWrapper,
+  useInputSubText,
+  useInputInheritAttrs,
 } from "@featherds/input-helper";
+export const props = {
+  ...InputWrapperProps,
+  ...InputSubTextProps,
+  modelValue: {
+    type: String,
+  },
+  maxlength: {
+    type: Number,
+    required: false,
+    default: 0,
+  },
+  auto: {
+    type: Boolean,
+    default: false,
+  },
+  schema: {
+    type: Object as PropType<Record<string, any>>,
+    required: false,
+  },
+  id: {
+    type: String,
+    required: false,
+  },
+} as const;
+export const emits = {
+  "update:modelValue": (v: string) => true,
+};
 export default defineComponent({
   model: {
     prop: "modelValue",
     event: "update:modelValue",
   },
-  emits: ["update:modelValue"],
-  mixins: [InputWrapperMixin, InputSubTextMixin, InputInheritAttrsMixin],
-  props: {
-    modelValue: {
-      type: String,
-    },
-    maxlength: {
-      type: Number,
-      required: false,
-      default: 0,
-    },
-    auto: {
-      type: Boolean,
-      default: false,
-    },
-    schema: {
-      type: Object,
-      required: false,
-    },
-  },
-  data() {
+  emits,
+  props,
+  data: () => {
     return {
       focused: false,
-      internalValue: undefined,
+      internalValue: "",
       initialHeight: 0,
     };
   },
@@ -123,7 +134,7 @@ export default defineComponent({
         name: this.inputId,
         disabled: this.disabled,
         "aria-disabled": this.disabled,
-        "aria-describedby": (attrs["aria-describedby"] || "")
+        "aria-describedby": ((attrs["aria-describedby"] as string) || "")
           .split(" ")
           .concat([this.descriptionId])
           .filter(Boolean)
@@ -133,19 +144,19 @@ export default defineComponent({
     },
     listeners() {
       return {
-        onFocus: (e) => {
+        onFocus: (e: FocusEvent) => {
           this.handleFocus();
           if (this.$attrs.onFocus) {
-            this.$attrs.onFocus(e);
+            (this.$attrs.onFocus as (e: FocusEvent) => void)(e);
           }
         },
-        onBlur: (e) => {
+        onBlur: (e: FocusEvent) => {
           this.handleBlur();
           if (this.$attrs.onBlur) {
-            this.$attrs.onBlur(e);
+            (this.$attrs.onBlur as (e: FocusEvent) => void)(e);
           }
         },
-        onInput: (e) => {
+        onInput: (e: Event) => {
           this.adjustTextArea();
           this.handleInput(e);
         },
@@ -172,7 +183,9 @@ export default defineComponent({
       },
     },
   },
-  setup(props) {
+  setup(props, context) {
+    useInputSubText(props);
+    useInputWrapper(props);
     const incomingId = toRef(props, "id");
     const inputId = computed(() => {
       if (incomingId.value) {
@@ -185,11 +198,16 @@ export default defineComponent({
       inputId,
       toRef(props, "modelValue"),
       props.label,
-      props.schema,
-      toRef(props, "error")
+      props.schema as Record<string, any>,
+      toRef(props, "error") as Ref<string>
     );
 
-    return { inputId, incomingId, validate };
+    return {
+      inputId,
+      incomingId,
+      validate,
+      ...useInputInheritAttrs(context.attrs as Record<string, unknown>),
+    };
   },
   methods: {
     handleClear() {
@@ -197,7 +215,7 @@ export default defineComponent({
       this.focus();
     },
     handleWrapperClick() {
-      this.$refs.input.focus();
+      (this.$refs.input as HTMLTextAreaElement).focus();
     },
     handleFocus() {
       this.focused = true;
@@ -206,13 +224,13 @@ export default defineComponent({
       this.validate();
       this.focused = false;
     },
-    handleInput(e) {
-      this.internalValue = e.target.value;
+    handleInput(e: Event) {
+      this.internalValue = (e.target as HTMLTextAreaElement).value;
       this.$emit("update:modelValue", this.internalValue);
     },
     focus() {
       this.$nextTick(() => {
-        this.$refs.input.focus();
+        (this.$refs.input as HTMLTextAreaElement).focus();
       });
     },
     adjustTextArea() {
@@ -220,7 +238,7 @@ export default defineComponent({
         return;
       }
       //auto adjust height
-      const tx = this.$refs.input;
+      const tx = this.$refs.input as HTMLTextAreaElement;
       //if this is called before mount
       if (!tx) {
         return;
@@ -233,7 +251,8 @@ export default defineComponent({
         const txWidth = tx.getBoundingClientRect().width;
         if (
           tx.scrollWidth <= tx.clientWidth &&
-          txWidth < tx.parentElement.getBoundingClientRect().width
+          txWidth <
+            (tx.parentElement as HTMLElement).getBoundingClientRect().width
         ) {
           tx.style.whiteSpace = "nowrap";
         } else {
@@ -251,7 +270,7 @@ export default defineComponent({
     },
   },
   mounted() {
-    const tx = this.$refs.input;
+    const tx = this.$refs.input as HTMLTextAreaElement;
     this.initialHeight = tx.getBoundingClientRect().height;
   },
   components: {

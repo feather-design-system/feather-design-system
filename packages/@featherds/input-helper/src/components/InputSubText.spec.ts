@@ -1,21 +1,21 @@
 import InputSubText from "./InputSubText.vue";
 import { mount } from "@vue/test-utils";
-import { ref } from "vue";
 
-const provide = (opts) => {
+const provide = (opts: unknown) => {
   return {
     subTextOptions: {
-      ...opts,
+      ...(opts as Record<string, unknown>),
     },
   };
 };
-const getWrapper = function (options = {}) {
+const getWrapper = function (options: Record<string, unknown> = {}) {
+  const props = (options.props as Record<string, unknown>) || {};
   options.props = {
-    ...options.props,
+    ...props,
     id: "test",
   };
   options.global = {
-    provide: provide(options.global.provide),
+    provide: provide((options.global as Record<string, unknown>).provide),
   };
   return mount(InputSubText, options);
 };
