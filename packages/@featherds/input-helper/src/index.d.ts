@@ -32,4 +32,8 @@ export const useInputWrapper: (
 ) => void;
 export const useForm: typeof import("./composables/useForm").useForm;
 export const useValidation: typeof import("./composables/useValidation").useValidation;
-export { IValidationResult } from "./composables/useForm";
+export {
+  IValidationResult,
+  IValidationFailure,
+  IValidationSuccess,
+} from "./composables/useForm";

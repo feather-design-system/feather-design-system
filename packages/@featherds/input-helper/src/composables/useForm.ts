@@ -1,9 +1,13 @@
 import { provide, ref } from "vue";
-export interface IValidationResult {
-  success: boolean;
-  message?: string;
-  inputId?: string;
-  label?: string;
+export type IValidationResult = IValidationFailure | IValidationSuccess;
+export interface IValidationFailure {
+  success: false;
+  message: string;
+  inputId: string;
+  label: string;
+}
+export interface IValidationSuccess {
+  success: true;
 }
 export interface IFeatherForm {
   register: (input: string, validate: () => IValidationResult) => void;
@@ -18,12 +22,14 @@ export interface IFeatherForm {
 }
 const useForm = () => {
   let controls = {} as Record<string, () => IValidationResult>;
-  const errorMessages = ref([] as IValidationResult[]);
+  const errorMessages = ref([] as IValidationFailure[]);
   const _validate = () => {
     const validation = Object.keys(controls).map((key) => {
       return controls[key]();
     });
-    errorMessages.value = validation.filter((x) => x.success === false);
+    errorMessages.value = validation.filter(
+      (x) => x.success === false
+    ) as IValidationFailure[];
     return errorMessages.value;
   };
 
