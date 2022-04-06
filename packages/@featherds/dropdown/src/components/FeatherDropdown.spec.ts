@@ -136,6 +136,10 @@ describe("FeatherDropdown.vue", () => {
         default: [getLi(), getLi()],
       };
       const wrapper = getWrapper({ slots });
+      await wrapper.setProps({
+        modelValue: true,
+      });
+      await nextTick();
       await wrapper.find("ul").trigger("keydown.esc");
       expect(wrapper.vm.localOpen).toBe(false);
     });
@@ -175,12 +179,14 @@ describe("FeatherDropdown.vue", () => {
     expect(wrapper.vm.localOpen).toBe(false);
     expect(getCalls<[boolean]>(wrapper, "update:modelValue")[1][0]).toBe(false);
   });
-  it("should have the correct ids labelling the menu", () => {
+  it("should have the correct ids labelling the menu", async () => {
     const slots = {
       trigger: getTrigger(),
       default: [getLi(), getLi()],
     };
     const wrapper = getWrapper({ slots });
+    await wrapper.setProps({ modelValue: true });
+    await nextTick();
     const menu = wrapper.find("ul");
     expect(menu.attributes()["aria-labelledby"]).toBe(
       (wrapper.vm.$refs.menu as { triggerId: string }).triggerId

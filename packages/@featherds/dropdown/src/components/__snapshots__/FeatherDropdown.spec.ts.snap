@@ -14,37 +14,7 @@ exports[`FeatherDropdown.vue should pass through cover property 1`] = `
   
   
   <teleport-stub>
-    <div
-      class="feather-menu-dropdown"
-      id="feather-menu-dropdown"
-      style="width: auto; display: none;"
-    >
-      <div
-        tabindex="0"
-      />
-      
-      <ul
-        aria-labelledby="feather-menu-trigger"
-        class="feather-dropdown"
-      >
-        
-        <li>
-          <a>
-            TEST
-          </a>
-        </li>
-        <li>
-          <a>
-            TEST
-          </a>
-        </li>
-        
-      </ul>
-      
-      <div
-        tabindex="0"
-      />
-    </div>
+    <!---->
   </teleport-stub>
 </div>
 `;
@@ -63,37 +33,7 @@ exports[`FeatherDropdown.vue should pass through right property 1`] = `
   
   
   <teleport-stub>
-    <div
-      class="feather-menu-dropdown"
-      id="feather-menu-dropdown"
-      style="width: auto; display: none;"
-    >
-      <div
-        tabindex="0"
-      />
-      
-      <ul
-        aria-labelledby="feather-menu-trigger"
-        class="feather-dropdown"
-      >
-        
-        <li>
-          <a>
-            TEST
-          </a>
-        </li>
-        <li>
-          <a>
-            TEST
-          </a>
-        </li>
-        
-      </ul>
-      
-      <div
-        tabindex="0"
-      />
-    </div>
+    <!---->
   </teleport-stub>
 </div>
 `;

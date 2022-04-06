@@ -72,31 +72,7 @@ exports[`FeatherSelect.vue should not raise the label when its empty 1`] = `
     </div>
     
     <teleport-stub>
-      <div
-        class="feather-menu-dropdown"
-        id="feather-menu-dropdown"
-        style="width: auto; display: none;"
-      >
-        <div
-          tabindex="0"
-        />
-        
-        <ul
-          aria-activedescendant="feather-select-active"
-          aria-label="Users"
-          class="feather-list feather-select-options-list"
-          data-ref-id="feather-select-list"
-          role="listbox"
-          tabindex="-1"
-        >
-          
-          
-        </ul>
-        
-        <div
-          tabindex="0"
-        />
-      </div>
+      <!---->
     </teleport-stub>
   </div>
   <div
@@ -188,31 +164,7 @@ exports[`FeatherSelect.vue should raise the label when it has a value 1`] = `
     </div>
     
     <teleport-stub>
-      <div
-        class="feather-menu-dropdown"
-        id="feather-menu-dropdown"
-        style="width: auto; display: none;"
-      >
-        <div
-          tabindex="0"
-        />
-        
-        <ul
-          aria-activedescendant="feather-select-active"
-          aria-label="Users"
-          class="feather-list feather-select-options-list"
-          data-ref-id="feather-select-list"
-          role="listbox"
-          tabindex="-1"
-        >
-          
-          
-        </ul>
-        
-        <div
-          tabindex="0"
-        />
-      </div>
+      <!---->
     </teleport-stub>
   </div>
   <div
@@ -305,31 +257,7 @@ exports[`FeatherSelect.vue should render in disabled state 1`] = `
     </div>
     
     <teleport-stub>
-      <div
-        class="feather-menu-dropdown"
-        id="feather-menu-dropdown"
-        style="width: auto; display: none;"
-      >
-        <div
-          tabindex="0"
-        />
-        
-        <ul
-          aria-activedescendant="feather-select-active"
-          aria-label="Users"
-          class="feather-list feather-select-options-list"
-          data-ref-id="feather-select-list"
-          role="listbox"
-          tabindex="-1"
-        >
-          
-          
-        </ul>
-        
-        <div
-          tabindex="0"
-        />
-      </div>
+      <!---->
     </teleport-stub>
   </div>
   <div
@@ -447,31 +375,7 @@ exports[`FeatherSelect.vue should render in error state 1`] = `
     </div>
     
     <teleport-stub>
-      <div
-        class="feather-menu-dropdown"
-        id="feather-menu-dropdown"
-        style="width: auto; display: none;"
-      >
-        <div
-          tabindex="0"
-        />
-        
-        <ul
-          aria-activedescendant="feather-select-active"
-          aria-label="Users"
-          class="feather-list feather-select-options-list"
-          data-ref-id="feather-select-list"
-          role="listbox"
-          tabindex="-1"
-        >
-          
-          
-        </ul>
-        
-        <div
-          tabindex="0"
-        />
-      </div>
+      <!---->
     </teleport-stub>
   </div>
   <div

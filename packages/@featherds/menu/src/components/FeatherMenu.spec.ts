@@ -12,7 +12,7 @@ const getWrapper = async (options: Record<string, unknown> = {}) => {
 const getTrigger = (id = "") => ({
   template: `<button menu-trigger id="${id}">TEST</button>`,
   methods: {
-    focus: () => { },
+    focus: () => {},
   },
 });
 const getContent = () => ({
@@ -103,7 +103,10 @@ describe("FeatherMenu.vue", () => {
           trigger: getTrigger(),
           default: [getContent()],
         };
-        const wrapper = await getWrapper({ slots, props: { right: true } });
+        const wrapper = await getWrapper({
+          slots,
+          props: { right: true, open: true },
+        });
         jest
           .spyOn(wrapper.vm.$refs.menu as HTMLElement, "getBoundingClientRect")
           .mockImplementation(() => {
@@ -131,7 +134,10 @@ describe("FeatherMenu.vue", () => {
           trigger: getTrigger(),
           default: [getContent()],
         };
-        const wrapper = await getWrapper({ slots, props: { right: true } });
+        const wrapper = await getWrapper({
+          slots,
+          props: { right: true, open: true },
+        });
         const height = 100;
         const width = 100;
         const windowHeight = window.innerHeight;
@@ -162,7 +168,10 @@ describe("FeatherMenu.vue", () => {
           trigger: getTrigger(),
           default: [getContent()],
         };
-        const wrapper = await getWrapper({ slots, props: { right: true } });
+        const wrapper = await getWrapper({
+          slots,
+          props: { right: true, open: true },
+        });
         const height = 100;
         const width = 100;
         jest
@@ -192,7 +201,10 @@ describe("FeatherMenu.vue", () => {
           trigger: getTrigger(),
           default: [getContent()],
         };
-        const wrapper = await getWrapper({ slots, props: { right: true } });
+        const wrapper = await getWrapper({
+          slots,
+          props: { right: true, open: true },
+        });
         const height = 100;
         const width = 100;
         const windowWidth = window.innerWidth;
@@ -224,7 +236,7 @@ describe("FeatherMenu.vue", () => {
           trigger: getTrigger(),
           default: [getContent()],
         };
-        const wrapper = await getWrapper({ slots });
+        const wrapper = await getWrapper({ slots, props: { open: true } });
         const height = 100;
         const width = 100;
         const windowWidth = window.innerWidth;
@@ -258,7 +270,7 @@ describe("FeatherMenu.vue", () => {
           trigger: getTrigger(),
           default: [getContent()],
         };
-        const wrapper = await getWrapper({ slots });
+        const wrapper = await getWrapper({ slots, props: { open: true } });
         jest
           .spyOn(wrapper.vm.$refs.menu as HTMLElement, "getBoundingClientRect")
           .mockImplementation(() => {
@@ -286,7 +298,7 @@ describe("FeatherMenu.vue", () => {
           trigger: getTrigger(),
           default: [getContent()],
         };
-        const wrapper = await getWrapper({ slots });
+        const wrapper = await getWrapper({ slots, props: { open: true } });
         const height = 100;
         const width = 100;
         const windowHeight = window.innerHeight;
@@ -317,7 +329,7 @@ describe("FeatherMenu.vue", () => {
           trigger: getTrigger(),
           default: [getContent()],
         };
-        const wrapper = await getWrapper({ slots });
+        const wrapper = await getWrapper({ slots, props: { open: true } });
         const height = 100;
         const width = 100;
         const windowWidth = window.innerWidth;
@@ -348,7 +360,7 @@ describe("FeatherMenu.vue", () => {
           trigger: getTrigger(),
           default: [getContent()],
         };
-        const wrapper = await getWrapper({ slots });
+        const wrapper = await getWrapper({ slots, props: { open: true } });
         const height = 100;
         const width = 100;
         const windowWidth = window.innerWidth;
@@ -380,7 +392,7 @@ describe("FeatherMenu.vue", () => {
           trigger: getTrigger(),
           default: [getContent()],
         };
-        const wrapper = await getWrapper({ slots });
+        const wrapper = await getWrapper({ slots, props: { open: true } });
         const height = 100;
         const width = 100;
         const windowWidth = window.innerWidth;
@@ -415,7 +427,7 @@ describe("FeatherMenu.vue", () => {
         trigger: getTrigger(),
         default: [getContent()],
       };
-      const wrapper = await getWrapper({ slots });
+      const wrapper = await getWrapper({ slots, props: { open: true } });
       wrapper.setProps({ open: true });
       expect(await axe(wrapper.element)).toHaveNoViolations();
     });
