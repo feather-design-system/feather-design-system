@@ -15,7 +15,8 @@ $width: 1.875rem;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 0px var($spacing-m);
+  padding: var($spacing-m);
+  padding-top: var($spacing-xl);
   .chevron {
     width: 2.25rem;
     margin: 0;
@@ -25,7 +26,7 @@ $width: 1.875rem;
   }
   .inline-select {
     width: 8.125rem;
-    margin: var($spacing-xxs) 0;
+    margin: 0;
     display: inline-block;
     margin-right: var($spacing-s);
     &.year {
@@ -40,6 +41,7 @@ $width: 1.875rem;
   td,
   tr {
     padding: 0;
+    text-align: center;
   }
   tr:last-child {
     .cell {
@@ -52,7 +54,6 @@ $width: 1.875rem;
     }
   }
   .cell {
-    margin-right: var($spacing-xxs);
     margin-bottom: var($spacing-xxs);
     height: $width;
     width: 2.75rem;
