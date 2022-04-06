@@ -10,7 +10,7 @@
     </div>
     <ul>
       <li v-for="item in errors" :key="item.inputId">
-        <a href="#" @click.prevent="focusElement(item.inputId as string)">{{
+        <a href="#" @click.prevent="focusElement(item.inputId)">{{
           getFullMessage(item)
         }}</a>
       </li>
@@ -28,7 +28,7 @@ import {
   PropType,
   defineComponent,
 } from "vue";
-import { IValidationResult } from "../composables/useForm";
+import { IValidationFailure } from "../composables/useForm";
 export const props = {
   headingText: {
     type: Function as PropType<(s: unknown[]) => string>,
@@ -45,7 +45,7 @@ export const props = {
 export default defineComponent({
   props,
   setup(props) {
-    const errors = inject("featherFormErrors", ref([] as IValidationResult[]));
+    const errors = inject("featherFormErrors", ref([] as IValidationFailure[]));
     const mainError = toRef(props, "generalError");
     const focusElement = (id: string) => {
       (document.getElementById(id) as HTMLAnchorElement).focus();
@@ -55,8 +55,8 @@ export default defineComponent({
     };
     const heading = ref();
 
-    const getFullMessage = (v: IValidationResult) => {
-      return `${removeAsteriks(v.label as string)} - ${v.message}`;
+    const getFullMessage = (v: IValidationFailure) => {
+      return `${removeAsteriks(v.label)} - ${v.message}`;
     };
     const errorsHeading = computed(() => {
       if (errors.value.length) {
