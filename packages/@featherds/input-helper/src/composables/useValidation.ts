@@ -1,5 +1,9 @@
 import { inject, ref, provide, watch, isRef, onBeforeUnmount, Ref } from "vue";
-import { IFeatherForm } from "./useForm";
+import {
+  IFeatherForm,
+  IValidationFailure,
+  IValidationSuccess,
+} from "./useForm";
 const useValidation = (
   inputId: Ref<string>,
   value: Ref<unknown>,
@@ -21,12 +25,12 @@ const useValidation = (
           message: errorFromInput.value,
           inputId: inputId.value,
           label: label,
-        };
+        } as IValidationFailure;
       }
       try {
         schema.validateSync(value.value);
         errorMessage.value = "";
-        return { success: true };
+        return { success: true } as IValidationSuccess;
       } catch (e: unknown) {
         const err = e as { errors: string[] };
         errorMessage.value = err.errors[0];
@@ -35,7 +39,7 @@ const useValidation = (
           message: err.errors[0],
           inputId: inputId.value,
           label: label,
-        };
+        } as IValidationFailure;
       }
     };
     //watch for error from input
