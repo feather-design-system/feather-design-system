@@ -331,7 +331,7 @@ export default defineComponent({
         autocomplete: "off",
         readonly: this.disabled ? true : false,
         tabindex: this.disabled ? -1 : 0,
-        "aria-controls": this.resultsId,
+        "aria-controls": this.showResults ? this.resultsId : "",
         "aria-invalid": this.$attrs["aria-invalid"] === "true" || !!this.error,
       };
     },

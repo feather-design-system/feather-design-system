@@ -114,7 +114,7 @@ exports[`FeatherAutocomplete base functionality multi disabled state should rend
             aria-activedescendant=""
             aria-autocomplete="list"
             aria-busy="false"
-            aria-controls="feather-autocomplete-input-results"
+            aria-controls=""
             aria-describedby="feather-autocomplete-input-selected feather-autocomplete-description"
             aria-disabled="true"
             aria-invalid="false"
@@ -153,39 +153,7 @@ exports[`FeatherAutocomplete base functionality multi disabled state should rend
     </div>
     
     <teleport-stub>
-      <div
-        class="feather-menu-dropdown"
-        id="feather-menu-dropdown"
-        style="width: auto; display: none;"
-      >
-        <div
-          tabindex="0"
-        />
-        
-        <ul
-          aria-hidden="false"
-          aria-label="Users"
-          aria-live="polite"
-          aria-multiselectable="true"
-          class="feather-list feather-autocomplete-results-list autocomplete-results"
-          id="feather-autocomplete-input-results"
-          role="listbox"
-          style="display: none;"
-          tabindex="-1"
-        >
-          
-          
-        </ul>
-        <!--v-if-->
-        <!--v-if-->
-        <!--v-if-->
-        <!--v-if-->
-        <!--v-if-->
-        
-        <div
-          tabindex="0"
-        />
-      </div>
+      <!---->
     </teleport-stub>
   </div>
   <div
@@ -281,7 +249,7 @@ exports[`FeatherAutocomplete base functionality multi disabled state should rend
             aria-activedescendant=""
             aria-autocomplete="list"
             aria-busy="false"
-            aria-controls="feather-autocomplete-input-results"
+            aria-controls=""
             aria-describedby="feather-autocomplete-input-selected feather-autocomplete-description"
             aria-disabled="true"
             aria-invalid="false"
@@ -320,39 +288,7 @@ exports[`FeatherAutocomplete base functionality multi disabled state should rend
     </div>
     
     <teleport-stub>
-      <div
-        class="feather-menu-dropdown"
-        id="feather-menu-dropdown"
-        style="width: auto; display: none;"
-      >
-        <div
-          tabindex="0"
-        />
-        
-        <ul
-          aria-hidden="false"
-          aria-label="Users"
-          aria-live="polite"
-          aria-multiselectable="true"
-          class="feather-list feather-autocomplete-results-list autocomplete-results"
-          id="feather-autocomplete-input-results"
-          role="listbox"
-          style="display: none;"
-          tabindex="-1"
-        >
-          
-          
-        </ul>
-        <!--v-if-->
-        <!--v-if-->
-        <!--v-if-->
-        <!--v-if-->
-        <!--v-if-->
-        
-        <div
-          tabindex="0"
-        />
-      </div>
+      <!---->
     </teleport-stub>
   </div>
   <div
@@ -448,7 +384,7 @@ exports[`FeatherAutocomplete base functionality multi should lower label when th
             aria-activedescendant=""
             aria-autocomplete="list"
             aria-busy="false"
-            aria-controls="feather-autocomplete-input-results"
+            aria-controls=""
             aria-describedby="feather-autocomplete-input-selected feather-autocomplete-description"
             aria-disabled="false"
             aria-invalid="false"
@@ -485,39 +421,7 @@ exports[`FeatherAutocomplete base functionality multi should lower label when th
     </div>
     
     <teleport-stub>
-      <div
-        class="feather-menu-dropdown"
-        id="feather-menu-dropdown"
-        style="width: auto; display: none;"
-      >
-        <div
-          tabindex="0"
-        />
-        
-        <ul
-          aria-hidden="false"
-          aria-label="Users"
-          aria-live="polite"
-          aria-multiselectable="true"
-          class="feather-list feather-autocomplete-results-list autocomplete-results"
-          id="feather-autocomplete-input-results"
-          role="listbox"
-          style="display: none;"
-          tabindex="-1"
-        >
-          
-          
-        </ul>
-        <!--v-if-->
-        <!--v-if-->
-        <!--v-if-->
-        <!--v-if-->
-        <!--v-if-->
-        
-        <div
-          tabindex="0"
-        />
-      </div>
+      <!---->
     </teleport-stub>
   </div>
   <div
@@ -615,7 +519,7 @@ exports[`FeatherAutocomplete base functionality multi should not leave previous 
             aria-activedescendant=""
             aria-autocomplete="list"
             aria-busy="true"
-            aria-controls="feather-autocomplete-input-results"
+            aria-controls=""
             aria-describedby="feather-autocomplete-input-selected feather-autocomplete-description"
             aria-disabled="false"
             aria-invalid="false"
@@ -932,7 +836,7 @@ exports[`FeatherAutocomplete base functionality multi should raise the label whe
             aria-activedescendant=""
             aria-autocomplete="list"
             aria-busy="false"
-            aria-controls="feather-autocomplete-input-results"
+            aria-controls=""
             aria-describedby="feather-autocomplete-input-selected feather-autocomplete-description"
             aria-disabled="false"
             aria-invalid="false"
@@ -969,39 +873,7 @@ exports[`FeatherAutocomplete base functionality multi should raise the label whe
     </div>
     
     <teleport-stub>
-      <div
-        class="feather-menu-dropdown"
-        id="feather-menu-dropdown"
-        style="width: auto; display: none;"
-      >
-        <div
-          tabindex="0"
-        />
-        
-        <ul
-          aria-hidden="false"
-          aria-label="Users"
-          aria-live="polite"
-          aria-multiselectable="true"
-          class="feather-list feather-autocomplete-results-list autocomplete-results"
-          id="feather-autocomplete-input-results"
-          role="listbox"
-          style="display: none;"
-          tabindex="-1"
-        >
-          
-          
-        </ul>
-        <!--v-if-->
-        <!--v-if-->
-        <!--v-if-->
-        <!--v-if-->
-        <!--v-if-->
-        
-        <div
-          tabindex="0"
-        />
-      </div>
+      <!---->
     </teleport-stub>
   </div>
   <div
@@ -1099,7 +971,7 @@ exports[`FeatherAutocomplete base functionality multi should show loading spinne
             aria-activedescendant=""
             aria-autocomplete="list"
             aria-busy="true"
-            aria-controls="feather-autocomplete-input-results"
+            aria-controls=""
             aria-describedby="feather-autocomplete-input-selected feather-autocomplete-description"
             aria-disabled="false"
             aria-invalid="false"
@@ -1284,7 +1156,7 @@ exports[`FeatherAutocomplete base functionality multi should show no results tex
             aria-activedescendant=""
             aria-autocomplete="list"
             aria-busy="false"
-            aria-controls="feather-autocomplete-input-results"
+            aria-controls=""
             aria-describedby="feather-autocomplete-input-selected feather-autocomplete-description"
             aria-disabled="false"
             aria-invalid="false"
@@ -1473,7 +1345,7 @@ exports[`FeatherAutocomplete base functionality single disabled state should ren
             aria-activedescendant=""
             aria-autocomplete="list"
             aria-busy="false"
-            aria-controls="feather-autocomplete-input-results"
+            aria-controls=""
             aria-describedby="feather-autocomplete-input-selected feather-autocomplete-description"
             aria-disabled="true"
             aria-invalid="false"
@@ -1530,39 +1402,7 @@ exports[`FeatherAutocomplete base functionality single disabled state should ren
     </div>
     
     <teleport-stub>
-      <div
-        class="feather-menu-dropdown"
-        id="feather-menu-dropdown"
-        style="width: auto; display: none;"
-      >
-        <div
-          tabindex="0"
-        />
-        
-        <ul
-          aria-hidden="false"
-          aria-label="Users"
-          aria-live="polite"
-          aria-multiselectable="false"
-          class="feather-list feather-autocomplete-results-list autocomplete-results"
-          id="feather-autocomplete-input-results"
-          role="listbox"
-          style="display: none;"
-          tabindex="-1"
-        >
-          
-          
-        </ul>
-        <!--v-if-->
-        <!--v-if-->
-        <!--v-if-->
-        <!--v-if-->
-        <!--v-if-->
-        
-        <div
-          tabindex="0"
-        />
-      </div>
+      <!---->
     </teleport-stub>
   </div>
   <div
@@ -1658,7 +1498,7 @@ exports[`FeatherAutocomplete base functionality single disabled state should ren
             aria-activedescendant=""
             aria-autocomplete="list"
             aria-busy="false"
-            aria-controls="feather-autocomplete-input-results"
+            aria-controls=""
             aria-describedby="feather-autocomplete-input-selected feather-autocomplete-description"
             aria-disabled="true"
             aria-invalid="false"
@@ -1697,39 +1537,7 @@ exports[`FeatherAutocomplete base functionality single disabled state should ren
     </div>
     
     <teleport-stub>
-      <div
-        class="feather-menu-dropdown"
-        id="feather-menu-dropdown"
-        style="width: auto; display: none;"
-      >
-        <div
-          tabindex="0"
-        />
-        
-        <ul
-          aria-hidden="false"
-          aria-label="Users"
-          aria-live="polite"
-          aria-multiselectable="false"
-          class="feather-list feather-autocomplete-results-list autocomplete-results"
-          id="feather-autocomplete-input-results"
-          role="listbox"
-          style="display: none;"
-          tabindex="-1"
-        >
-          
-          
-        </ul>
-        <!--v-if-->
-        <!--v-if-->
-        <!--v-if-->
-        <!--v-if-->
-        <!--v-if-->
-        
-        <div
-          tabindex="0"
-        />
-      </div>
+      <!---->
     </teleport-stub>
   </div>
   <div
@@ -1825,7 +1633,7 @@ exports[`FeatherAutocomplete base functionality single should lower label when t
             aria-activedescendant=""
             aria-autocomplete="list"
             aria-busy="false"
-            aria-controls="feather-autocomplete-input-results"
+            aria-controls=""
             aria-describedby="feather-autocomplete-input-selected feather-autocomplete-description"
             aria-disabled="false"
             aria-invalid="false"
@@ -1862,39 +1670,7 @@ exports[`FeatherAutocomplete base functionality single should lower label when t
     </div>
     
     <teleport-stub>
-      <div
-        class="feather-menu-dropdown"
-        id="feather-menu-dropdown"
-        style="width: auto; display: none;"
-      >
-        <div
-          tabindex="0"
-        />
-        
-        <ul
-          aria-hidden="false"
-          aria-label="Users"
-          aria-live="polite"
-          aria-multiselectable="false"
-          class="feather-list feather-autocomplete-results-list autocomplete-results"
-          id="feather-autocomplete-input-results"
-          role="listbox"
-          style="display: none;"
-          tabindex="-1"
-        >
-          
-          
-        </ul>
-        <!--v-if-->
-        <!--v-if-->
-        <!--v-if-->
-        <!--v-if-->
-        <!--v-if-->
-        
-        <div
-          tabindex="0"
-        />
-      </div>
+      <!---->
     </teleport-stub>
   </div>
   <div
@@ -1992,7 +1768,7 @@ exports[`FeatherAutocomplete base functionality single should not leave previous
             aria-activedescendant=""
             aria-autocomplete="list"
             aria-busy="true"
-            aria-controls="feather-autocomplete-input-results"
+            aria-controls=""
             aria-describedby="feather-autocomplete-input-selected feather-autocomplete-description"
             aria-disabled="false"
             aria-invalid="false"
@@ -2230,7 +2006,7 @@ exports[`FeatherAutocomplete base functionality single should raise the label wh
             aria-activedescendant=""
             aria-autocomplete="list"
             aria-busy="false"
-            aria-controls="feather-autocomplete-input-results"
+            aria-controls=""
             aria-describedby="feather-autocomplete-input-selected feather-autocomplete-description"
             aria-disabled="false"
             aria-invalid="false"
@@ -2285,39 +2061,7 @@ exports[`FeatherAutocomplete base functionality single should raise the label wh
     </div>
     
     <teleport-stub>
-      <div
-        class="feather-menu-dropdown"
-        id="feather-menu-dropdown"
-        style="width: auto; display: none;"
-      >
-        <div
-          tabindex="0"
-        />
-        
-        <ul
-          aria-hidden="false"
-          aria-label="Users"
-          aria-live="polite"
-          aria-multiselectable="false"
-          class="feather-list feather-autocomplete-results-list autocomplete-results"
-          id="feather-autocomplete-input-results"
-          role="listbox"
-          style="display: none;"
-          tabindex="-1"
-        >
-          
-          
-        </ul>
-        <!--v-if-->
-        <!--v-if-->
-        <!--v-if-->
-        <!--v-if-->
-        <!--v-if-->
-        
-        <div
-          tabindex="0"
-        />
-      </div>
+      <!---->
     </teleport-stub>
   </div>
   <div
@@ -2415,7 +2159,7 @@ exports[`FeatherAutocomplete base functionality single should show loading spinn
             aria-activedescendant=""
             aria-autocomplete="list"
             aria-busy="true"
-            aria-controls="feather-autocomplete-input-results"
+            aria-controls=""
             aria-describedby="feather-autocomplete-input-selected feather-autocomplete-description"
             aria-disabled="false"
             aria-invalid="false"
@@ -2600,7 +2344,7 @@ exports[`FeatherAutocomplete base functionality single should show no results te
             aria-activedescendant=""
             aria-autocomplete="list"
             aria-busy="false"
-            aria-controls="feather-autocomplete-input-results"
+            aria-controls=""
             aria-describedby="feather-autocomplete-input-selected feather-autocomplete-description"
             aria-disabled="false"
             aria-invalid="false"
@@ -2870,7 +2614,7 @@ exports[`FeatherAutocomplete multi:specific chip selection should move chip sele
             aria-activedescendant="active-chip"
             aria-autocomplete="list"
             aria-busy="false"
-            aria-controls="feather-autocomplete-input-results"
+            aria-controls=""
             aria-describedby="feather-autocomplete-input-selected feather-autocomplete-description"
             aria-disabled="false"
             aria-invalid="false"
@@ -2907,39 +2651,7 @@ exports[`FeatherAutocomplete multi:specific chip selection should move chip sele
     </div>
     
     <teleport-stub>
-      <div
-        class="feather-menu-dropdown"
-        id="feather-menu-dropdown"
-        style="width: auto; display: none;"
-      >
-        <div
-          tabindex="0"
-        />
-        
-        <ul
-          aria-hidden="false"
-          aria-label="Users"
-          aria-live="polite"
-          aria-multiselectable="true"
-          class="feather-list feather-autocomplete-results-list autocomplete-results"
-          id="feather-autocomplete-input-results"
-          role="listbox"
-          style="display: none;"
-          tabindex="-1"
-        >
-          
-          
-        </ul>
-        <!--v-if-->
-        <!--v-if-->
-        <!--v-if-->
-        <!--v-if-->
-        <!--v-if-->
-        
-        <div
-          tabindex="0"
-        />
-      </div>
+      <!---->
     </teleport-stub>
   </div>
   <div
@@ -3116,7 +2828,7 @@ exports[`FeatherAutocomplete multi:specific chip selection should move chip sele
             aria-activedescendant="active-chip"
             aria-autocomplete="list"
             aria-busy="false"
-            aria-controls="feather-autocomplete-input-results"
+            aria-controls=""
             aria-describedby="feather-autocomplete-input-selected feather-autocomplete-description"
             aria-disabled="false"
             aria-invalid="false"
@@ -3153,39 +2865,7 @@ exports[`FeatherAutocomplete multi:specific chip selection should move chip sele
     </div>
     
     <teleport-stub>
-      <div
-        class="feather-menu-dropdown"
-        id="feather-menu-dropdown"
-        style="width: auto; display: none;"
-      >
-        <div
-          tabindex="0"
-        />
-        
-        <ul
-          aria-hidden="false"
-          aria-label="Users"
-          aria-live="polite"
-          aria-multiselectable="true"
-          class="feather-list feather-autocomplete-results-list autocomplete-results"
-          id="feather-autocomplete-input-results"
-          role="listbox"
-          style="display: none;"
-          tabindex="-1"
-        >
-          
-          
-        </ul>
-        <!--v-if-->
-        <!--v-if-->
-        <!--v-if-->
-        <!--v-if-->
-        <!--v-if-->
-        
-        <div
-          tabindex="0"
-        />
-      </div>
+      <!---->
     </teleport-stub>
   </div>
   <div
@@ -3362,7 +3042,7 @@ exports[`FeatherAutocomplete multi:specific chip selection should not move chip 
             aria-activedescendant="active-chip"
             aria-autocomplete="list"
             aria-busy="false"
-            aria-controls="feather-autocomplete-input-results"
+            aria-controls=""
             aria-describedby="feather-autocomplete-input-selected feather-autocomplete-description"
             aria-disabled="false"
             aria-invalid="false"
@@ -3399,39 +3079,7 @@ exports[`FeatherAutocomplete multi:specific chip selection should not move chip 
     </div>
     
     <teleport-stub>
-      <div
-        class="feather-menu-dropdown"
-        id="feather-menu-dropdown"
-        style="width: auto; display: none;"
-      >
-        <div
-          tabindex="0"
-        />
-        
-        <ul
-          aria-hidden="false"
-          aria-label="Users"
-          aria-live="polite"
-          aria-multiselectable="true"
-          class="feather-list feather-autocomplete-results-list autocomplete-results"
-          id="feather-autocomplete-input-results"
-          role="listbox"
-          style="display: none;"
-          tabindex="-1"
-        >
-          
-          
-        </ul>
-        <!--v-if-->
-        <!--v-if-->
-        <!--v-if-->
-        <!--v-if-->
-        <!--v-if-->
-        
-        <div
-          tabindex="0"
-        />
-      </div>
+      <!---->
     </teleport-stub>
   </div>
   <div
@@ -3607,7 +3255,7 @@ exports[`FeatherAutocomplete multi:specific chip selection should not perform an
             aria-activedescendant=""
             aria-autocomplete="list"
             aria-busy="false"
-            aria-controls="feather-autocomplete-input-results"
+            aria-controls=""
             aria-describedby="feather-autocomplete-input-selected feather-autocomplete-description"
             aria-disabled="false"
             aria-invalid="false"
@@ -3644,39 +3292,7 @@ exports[`FeatherAutocomplete multi:specific chip selection should not perform an
     </div>
     
     <teleport-stub>
-      <div
-        class="feather-menu-dropdown"
-        id="feather-menu-dropdown"
-        style="width: auto; display: none;"
-      >
-        <div
-          tabindex="0"
-        />
-        
-        <ul
-          aria-hidden="false"
-          aria-label="Users"
-          aria-live="polite"
-          aria-multiselectable="true"
-          class="feather-list feather-autocomplete-results-list autocomplete-results"
-          id="feather-autocomplete-input-results"
-          role="listbox"
-          style="display: none;"
-          tabindex="-1"
-        >
-          
-          
-        </ul>
-        <!--v-if-->
-        <!--v-if-->
-        <!--v-if-->
-        <!--v-if-->
-        <!--v-if-->
-        
-        <div
-          tabindex="0"
-        />
-      </div>
+      <!---->
     </teleport-stub>
   </div>
   <div
@@ -4153,7 +3769,7 @@ exports[`FeatherAutocomplete multi:specific chip selection should select the rig
             aria-activedescendant="active-chip"
             aria-autocomplete="list"
             aria-busy="false"
-            aria-controls="feather-autocomplete-input-results"
+            aria-controls=""
             aria-describedby="feather-autocomplete-input-selected feather-autocomplete-description"
             aria-disabled="false"
             aria-invalid="false"
@@ -4190,39 +3806,7 @@ exports[`FeatherAutocomplete multi:specific chip selection should select the rig
     </div>
     
     <teleport-stub>
-      <div
-        class="feather-menu-dropdown"
-        id="feather-menu-dropdown"
-        style="width: auto; display: none;"
-      >
-        <div
-          tabindex="0"
-        />
-        
-        <ul
-          aria-hidden="false"
-          aria-label="Users"
-          aria-live="polite"
-          aria-multiselectable="true"
-          class="feather-list feather-autocomplete-results-list autocomplete-results"
-          id="feather-autocomplete-input-results"
-          role="listbox"
-          style="display: none;"
-          tabindex="-1"
-        >
-          
-          
-        </ul>
-        <!--v-if-->
-        <!--v-if-->
-        <!--v-if-->
-        <!--v-if-->
-        <!--v-if-->
-        
-        <div
-          tabindex="0"
-        />
-      </div>
+      <!---->
     </teleport-stub>
   </div>
   <div
@@ -4398,7 +3982,7 @@ exports[`FeatherAutocomplete multi:specific chip selection should should deselec
             aria-activedescendant=""
             aria-autocomplete="list"
             aria-busy="false"
-            aria-controls="feather-autocomplete-input-results"
+            aria-controls=""
             aria-describedby="feather-autocomplete-input-selected feather-autocomplete-description"
             aria-disabled="false"
             aria-invalid="false"
@@ -4435,39 +4019,7 @@ exports[`FeatherAutocomplete multi:specific chip selection should should deselec
     </div>
     
     <teleport-stub>
-      <div
-        class="feather-menu-dropdown"
-        id="feather-menu-dropdown"
-        style="width: auto; display: none;"
-      >
-        <div
-          tabindex="0"
-        />
-        
-        <ul
-          aria-hidden="false"
-          aria-label="Users"
-          aria-live="polite"
-          aria-multiselectable="true"
-          class="feather-list feather-autocomplete-results-list autocomplete-results"
-          id="feather-autocomplete-input-results"
-          role="listbox"
-          style="display: none;"
-          tabindex="-1"
-        >
-          
-          
-        </ul>
-        <!--v-if-->
-        <!--v-if-->
-        <!--v-if-->
-        <!--v-if-->
-        <!--v-if-->
-        
-        <div
-          tabindex="0"
-        />
-      </div>
+      <!---->
     </teleport-stub>
   </div>
   <div
@@ -4643,7 +4195,7 @@ exports[`FeatherAutocomplete multi:specific selection limit should clear warning
             aria-activedescendant=""
             aria-autocomplete="list"
             aria-busy="false"
-            aria-controls="feather-autocomplete-input-results"
+            aria-controls=""
             aria-describedby="feather-autocomplete-input-selected feather-autocomplete-description"
             aria-disabled="false"
             aria-invalid="false"
@@ -4680,39 +4232,7 @@ exports[`FeatherAutocomplete multi:specific selection limit should clear warning
     </div>
     
     <teleport-stub>
-      <div
-        class="feather-menu-dropdown"
-        id="feather-menu-dropdown"
-        style="transform: translate(0px, 0px); width: 0px; display: none;"
-      >
-        <div
-          tabindex="0"
-        />
-        
-        <ul
-          aria-hidden="false"
-          aria-label="Users"
-          aria-live="polite"
-          aria-multiselectable="true"
-          class="feather-list feather-autocomplete-results-list autocomplete-results"
-          id="feather-autocomplete-input-results"
-          role="listbox"
-          style="display: none;"
-          tabindex="-1"
-        >
-          
-          
-        </ul>
-        <!--v-if-->
-        <!--v-if-->
-        <!--v-if-->
-        <!--v-if-->
-        <!--v-if-->
-        
-        <div
-          tabindex="0"
-        />
-      </div>
+      <!---->
     </teleport-stub>
   </div>
   <div
@@ -4888,7 +4408,7 @@ exports[`FeatherAutocomplete multi:specific selection limit should display a war
             aria-activedescendant=""
             aria-autocomplete="list"
             aria-busy="false"
-            aria-controls="feather-autocomplete-input-results"
+            aria-controls=""
             aria-describedby="feather-autocomplete-input-selected feather-autocomplete-description"
             aria-disabled="false"
             aria-invalid="false"
@@ -4896,7 +4416,7 @@ exports[`FeatherAutocomplete multi:specific selection limit should display a war
             class="feather-autocomplete-input"
             data-ref-id="feather-input"
             id="feather-autocomplete-input"
-            style="height: 0px; flex-basis: 100%; white-space: normal;"
+            style="height: 1.625rem; flex-basis: 100%; white-space: normal;"
             tabindex="0"
           />
         </div>
@@ -5181,7 +4701,7 @@ exports[`FeatherAutocomplete multi:specific selection limit should display a war
             aria-activedescendant=""
             aria-autocomplete="list"
             aria-busy="false"
-            aria-controls="feather-autocomplete-input-results"
+            aria-controls=""
             aria-describedby="feather-autocomplete-input-selected feather-autocomplete-description"
             aria-disabled="false"
             aria-invalid="false"
@@ -5396,7 +4916,7 @@ exports[`FeatherAutocomplete multi:specific selection limit should display a war
             aria-activedescendant=""
             aria-autocomplete="list"
             aria-busy="false"
-            aria-controls="feather-autocomplete-input-results"
+            aria-controls=""
             aria-describedby="feather-autocomplete-input-selected feather-autocomplete-description"
             aria-disabled="false"
             aria-invalid="false"
@@ -5665,7 +5185,7 @@ exports[`FeatherAutocomplete multi:specific should hide/reset menu and clear tex
             aria-activedescendant=""
             aria-autocomplete="list"
             aria-busy="false"
-            aria-controls="feather-autocomplete-input-results"
+            aria-controls=""
             aria-describedby="feather-autocomplete-input-selected feather-autocomplete-description"
             aria-disabled="false"
             aria-invalid="false"
@@ -5702,39 +5222,7 @@ exports[`FeatherAutocomplete multi:specific should hide/reset menu and clear tex
     </div>
     
     <teleport-stub>
-      <div
-        class="feather-menu-dropdown"
-        id="feather-menu-dropdown"
-        style="transform: translate(0px, 0px); width: 0px; display: none;"
-      >
-        <div
-          tabindex="0"
-        />
-        
-        <ul
-          aria-hidden="false"
-          aria-label="Users"
-          aria-live="polite"
-          aria-multiselectable="true"
-          class="feather-list feather-autocomplete-results-list autocomplete-results"
-          id="feather-autocomplete-input-results"
-          role="listbox"
-          style="display: none;"
-          tabindex="-1"
-        >
-          
-          
-        </ul>
-        <!--v-if-->
-        <!--v-if-->
-        <!--v-if-->
-        <!--v-if-->
-        <!--v-if-->
-        
-        <div
-          tabindex="0"
-        />
-      </div>
+      <!---->
     </teleport-stub>
   </div>
   <div
@@ -6051,7 +5539,7 @@ exports[`FeatherAutocomplete single:specific should handle a null property on va
             aria-activedescendant=""
             aria-autocomplete="list"
             aria-busy="false"
-            aria-controls="feather-autocomplete-input-results"
+            aria-controls=""
             aria-describedby="feather-autocomplete-input-selected feather-autocomplete-description"
             aria-disabled="false"
             aria-invalid="false"
@@ -6106,39 +5594,7 @@ exports[`FeatherAutocomplete single:specific should handle a null property on va
     </div>
     
     <teleport-stub>
-      <div
-        class="feather-menu-dropdown"
-        id="feather-menu-dropdown"
-        style="width: auto; display: none;"
-      >
-        <div
-          tabindex="0"
-        />
-        
-        <ul
-          aria-hidden="false"
-          aria-label="Users"
-          aria-live="polite"
-          aria-multiselectable="false"
-          class="feather-list feather-autocomplete-results-list autocomplete-results"
-          id="feather-autocomplete-input-results"
-          role="listbox"
-          style="display: none;"
-          tabindex="-1"
-        >
-          
-          
-        </ul>
-        <!--v-if-->
-        <!--v-if-->
-        <!--v-if-->
-        <!--v-if-->
-        <!--v-if-->
-        
-        <div
-          tabindex="0"
-        />
-      </div>
+      <!---->
     </teleport-stub>
   </div>
   <div
