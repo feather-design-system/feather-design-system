@@ -62,7 +62,7 @@ export default defineComponent({
         single,
       };
     }
-    // if (format === "grid" || format === "single") {
+    // if format is single or grid
     const attrs = {
       role: "grid",
     };

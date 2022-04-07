@@ -6,7 +6,7 @@
     >
       <FeatherCheckbox v-model="subscribe"> Subscribe </FeatherCheckbox>
       <FeatherCheckbox v-model="ready"> Ready </FeatherCheckbox>
-      <FeatherCheckbox v-model="approve"> Approvde </FeatherCheckbox>
+      <FeatherCheckbox v-model="approve"> Approved </FeatherCheckbox>
     </FeatherCheckboxGroup>
     <FeatherCheckboxGroup
       label="Some random label"
@@ -15,7 +15,7 @@
     >
       <FeatherCheckbox v-model="subscribe"> Subscribe </FeatherCheckbox>
       <FeatherCheckbox v-model="ready"> Ready </FeatherCheckbox>
-      <FeatherCheckbox v-model="approve"> Approvde </FeatherCheckbox>
+      <FeatherCheckbox v-model="approve"> Approved </FeatherCheckbox>
     </FeatherCheckboxGroup>
     <FeatherCheckboxGroup
       class="wrap"
@@ -24,9 +24,9 @@
     >
       <FeatherCheckbox v-model="subscribe"> subscribe </FeatherCheckbox>
       <FeatherCheckbox v-model="ready"> Ready </FeatherCheckbox>
-      <FeatherCheckbox v-model="approve"> Approvde </FeatherCheckbox>
-      <FeatherCheckbox v-model="approve"> Approvde </FeatherCheckbox>
-      <FeatherCheckbox v-model="approve"> Approvde </FeatherCheckbox>
+      <FeatherCheckbox v-model="approve"> Approved </FeatherCheckbox>
+      <FeatherCheckbox v-model="approve"> Approved </FeatherCheckbox>
+      <FeatherCheckbox v-model="approve"> Approved </FeatherCheckbox>
     </FeatherCheckboxGroup>
   </div>
 </template>
