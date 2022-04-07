@@ -103,7 +103,7 @@ export default defineComponent({
       }
       const containerRect = root.value.getBoundingClientRect();
       calculating.value = true;
-
+      menuWidth.value = "auto";
       nextTick(() => {
         let { height, width } = menu.value.getBoundingClientRect();
         const windowRect = getScrollRect();
