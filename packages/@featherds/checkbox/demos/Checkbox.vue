@@ -28,7 +28,7 @@ export default defineComponent({
   },
   methods: {
     alert() {
-      alert("test");
+      console.log("test");
     },
   },
   components: {
