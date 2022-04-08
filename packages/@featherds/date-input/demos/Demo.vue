@@ -4,6 +4,7 @@
       v-model="test"
       label="Appointment Date"
       background
+      ref="dateInput"
       class="my-date"
     ></FeatherDateInput>
     <FeatherDateInput
@@ -14,9 +15,10 @@
       class="my-date"
     ></FeatherDateInput>
   </section>
+  <button @click="clearAll">Clear</button>
 </template>
 <script lang="ts">
-import * as components from "./../src";
+import { FeatherDateInput } from "./../src";
 import { defineComponent } from "vue";
 export default defineComponent({
   data() {
@@ -24,8 +26,14 @@ export default defineComponent({
       test: undefined,
     };
   },
+  methods: {
+    clearAll() {
+      this.test = undefined;
+      (this.$refs.dateInput as typeof FeatherDateInput).reset();
+    },
+  },
   components: {
-    ...components,
+    FeatherDateInput,
   },
 });
 </script>

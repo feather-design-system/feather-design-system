@@ -71,6 +71,18 @@ Text labels for Date Input can be customized via the `labels` property. The defa
 
 - `update:modelValue` - triggered with new value
 - `blur` - triggered when control loses focus
+-
+### Exposes
+
+- `reset` - resets the Date Input to its default state
+
+This method is useful for example when clearing a form, you can use it within a clear method like the following;
+```
+clearAll() {
+  this.dateInputModel = undefined;
+  (this.$refs.dateInput as typeof FeatherDateInput).reset();
+}
+```
 
 ### Slots
 
