@@ -89,7 +89,7 @@ exports[`FeatherAutocomplete base functionality multi disabled state should rend
             </span>
             <!--v-if-->
             
-            <!---->
+            <!--v-if-->
           </div>
           <div
             aria-disabled="true"
@@ -107,7 +107,7 @@ exports[`FeatherAutocomplete base functionality multi disabled state should rend
             </span>
             <!--v-if-->
             
-            <!---->
+            <!--v-if-->
           </div>
           
           <textarea
@@ -132,8 +132,8 @@ exports[`FeatherAutocomplete base functionality multi disabled state should rend
         <div
           class="post"
         >
-          <!---->
-          <!---->
+          <!--v-if-->
+          <!--v-if-->
           
           <svg
             aria-hidden="true"
@@ -153,7 +153,7 @@ exports[`FeatherAutocomplete base functionality multi disabled state should rend
     </div>
     
     <teleport-stub>
-      <!---->
+      <!--v-if-->
     </teleport-stub>
   </div>
   <div
@@ -165,8 +165,8 @@ exports[`FeatherAutocomplete base functionality multi disabled state should rend
     >
        
     </div>
-    <!---->
-    <!---->
+    <!--v-if-->
+    <!--v-if-->
     
     
   </div>
@@ -267,8 +267,8 @@ exports[`FeatherAutocomplete base functionality multi disabled state should rend
         <div
           class="post"
         >
-          <!---->
-          <!---->
+          <!--v-if-->
+          <!--v-if-->
           
           <svg
             aria-hidden="true"
@@ -288,7 +288,7 @@ exports[`FeatherAutocomplete base functionality multi disabled state should rend
     </div>
     
     <teleport-stub>
-      <!---->
+      <!--v-if-->
     </teleport-stub>
   </div>
   <div
@@ -300,8 +300,8 @@ exports[`FeatherAutocomplete base functionality multi disabled state should rend
     >
        
     </div>
-    <!---->
-    <!---->
+    <!--v-if-->
+    <!--v-if-->
     
     
   </div>
@@ -400,8 +400,8 @@ exports[`FeatherAutocomplete base functionality multi should lower label when th
         <div
           class="post"
         >
-          <!---->
-          <!---->
+          <!--v-if-->
+          <!--v-if-->
           
           <svg
             aria-hidden="true"
@@ -421,7 +421,7 @@ exports[`FeatherAutocomplete base functionality multi should lower label when th
     </div>
     
     <teleport-stub>
-      <!---->
+      <!--v-if-->
     </teleport-stub>
   </div>
   <div
@@ -433,8 +433,8 @@ exports[`FeatherAutocomplete base functionality multi should lower label when th
     >
        
     </div>
-    <!---->
-    <!---->
+    <!--v-if-->
+    <!--v-if-->
     
     
   </div>
@@ -535,8 +535,8 @@ exports[`FeatherAutocomplete base functionality multi should not leave previous 
         <div
           class="post"
         >
-          <!---->
-          <!---->
+          <!--v-if-->
+          <!--v-if-->
           
           <svg
             aria-hidden="true"
@@ -674,8 +674,8 @@ exports[`FeatherAutocomplete base functionality multi should not leave previous 
     >
        
     </div>
-    <!---->
-    <!---->
+    <!--v-if-->
+    <!--v-if-->
     
     
   </div>
@@ -791,7 +791,7 @@ exports[`FeatherAutocomplete base functionality multi should raise the label whe
               </span>
             </span>
             
-            <!---->
+            <!--v-if-->
           </div>
           <div
             aria-disabled="false"
@@ -829,7 +829,7 @@ exports[`FeatherAutocomplete base functionality multi should raise the label whe
               </span>
             </span>
             
-            <!---->
+            <!--v-if-->
           </div>
           
           <textarea
@@ -852,8 +852,8 @@ exports[`FeatherAutocomplete base functionality multi should raise the label whe
         <div
           class="post"
         >
-          <!---->
-          <!---->
+          <!--v-if-->
+          <!--v-if-->
           
           <svg
             aria-hidden="true"
@@ -873,7 +873,7 @@ exports[`FeatherAutocomplete base functionality multi should raise the label whe
     </div>
     
     <teleport-stub>
-      <!---->
+      <!--v-if-->
     </teleport-stub>
   </div>
   <div
@@ -885,8 +885,8 @@ exports[`FeatherAutocomplete base functionality multi should raise the label whe
     >
        
     </div>
-    <!---->
-    <!---->
+    <!--v-if-->
+    <!--v-if-->
     
     
   </div>
@@ -987,8 +987,8 @@ exports[`FeatherAutocomplete base functionality multi should show loading spinne
         <div
           class="post"
         >
-          <!---->
-          <!---->
+          <!--v-if-->
+          <!--v-if-->
           
           <svg
             aria-hidden="true"
@@ -1070,8 +1070,8 @@ exports[`FeatherAutocomplete base functionality multi should show loading spinne
     >
        
     </div>
-    <!---->
-    <!---->
+    <!--v-if-->
+    <!--v-if-->
     
     
   </div>
@@ -1172,8 +1172,8 @@ exports[`FeatherAutocomplete base functionality multi should show no results tex
         <div
           class="post"
         >
-          <!---->
-          <!---->
+          <!--v-if-->
+          <!--v-if-->
           
           <svg
             aria-hidden="true"
@@ -1261,8 +1261,8 @@ exports[`FeatherAutocomplete base functionality multi should show no results tex
     >
        
     </div>
-    <!---->
-    <!---->
+    <!--v-if-->
+    <!--v-if-->
     
     
   </div>
@@ -1382,7 +1382,7 @@ exports[`FeatherAutocomplete base functionality single disabled state should ren
               />
             </svg>
           </a>
-          <!---->
+          <!--v-if-->
           
           <svg
             aria-hidden="true"
@@ -1402,7 +1402,7 @@ exports[`FeatherAutocomplete base functionality single disabled state should ren
     </div>
     
     <teleport-stub>
-      <!---->
+      <!--v-if-->
     </teleport-stub>
   </div>
   <div
@@ -1414,8 +1414,8 @@ exports[`FeatherAutocomplete base functionality single disabled state should ren
     >
        
     </div>
-    <!---->
-    <!---->
+    <!--v-if-->
+    <!--v-if-->
     
     
   </div>
@@ -1516,8 +1516,8 @@ exports[`FeatherAutocomplete base functionality single disabled state should ren
         <div
           class="post"
         >
-          <!---->
-          <!---->
+          <!--v-if-->
+          <!--v-if-->
           
           <svg
             aria-hidden="true"
@@ -1537,7 +1537,7 @@ exports[`FeatherAutocomplete base functionality single disabled state should ren
     </div>
     
     <teleport-stub>
-      <!---->
+      <!--v-if-->
     </teleport-stub>
   </div>
   <div
@@ -1549,8 +1549,8 @@ exports[`FeatherAutocomplete base functionality single disabled state should ren
     >
        
     </div>
-    <!---->
-    <!---->
+    <!--v-if-->
+    <!--v-if-->
     
     
   </div>
@@ -1649,8 +1649,8 @@ exports[`FeatherAutocomplete base functionality single should lower label when t
         <div
           class="post"
         >
-          <!---->
-          <!---->
+          <!--v-if-->
+          <!--v-if-->
           
           <svg
             aria-hidden="true"
@@ -1670,7 +1670,7 @@ exports[`FeatherAutocomplete base functionality single should lower label when t
     </div>
     
     <teleport-stub>
-      <!---->
+      <!--v-if-->
     </teleport-stub>
   </div>
   <div
@@ -1682,8 +1682,8 @@ exports[`FeatherAutocomplete base functionality single should lower label when t
     >
        
     </div>
-    <!---->
-    <!---->
+    <!--v-if-->
+    <!--v-if-->
     
     
   </div>
@@ -1784,8 +1784,8 @@ exports[`FeatherAutocomplete base functionality single should not leave previous
         <div
           class="post"
         >
-          <!---->
-          <!---->
+          <!--v-if-->
+          <!--v-if-->
           
           <svg
             aria-hidden="true"
@@ -1922,8 +1922,8 @@ exports[`FeatherAutocomplete base functionality single should not leave previous
     >
        
     </div>
-    <!---->
-    <!---->
+    <!--v-if-->
+    <!--v-if-->
     
     
   </div>
@@ -2041,7 +2041,7 @@ exports[`FeatherAutocomplete base functionality single should raise the label wh
               />
             </svg>
           </a>
-          <!---->
+          <!--v-if-->
           
           <svg
             aria-hidden="true"
@@ -2061,7 +2061,7 @@ exports[`FeatherAutocomplete base functionality single should raise the label wh
     </div>
     
     <teleport-stub>
-      <!---->
+      <!--v-if-->
     </teleport-stub>
   </div>
   <div
@@ -2073,8 +2073,8 @@ exports[`FeatherAutocomplete base functionality single should raise the label wh
     >
        
     </div>
-    <!---->
-    <!---->
+    <!--v-if-->
+    <!--v-if-->
     
     
   </div>
@@ -2175,8 +2175,8 @@ exports[`FeatherAutocomplete base functionality single should show loading spinn
         <div
           class="post"
         >
-          <!---->
-          <!---->
+          <!--v-if-->
+          <!--v-if-->
           
           <svg
             aria-hidden="true"
@@ -2258,8 +2258,8 @@ exports[`FeatherAutocomplete base functionality single should show loading spinn
     >
        
     </div>
-    <!---->
-    <!---->
+    <!--v-if-->
+    <!--v-if-->
     
     
   </div>
@@ -2360,8 +2360,8 @@ exports[`FeatherAutocomplete base functionality single should show no results te
         <div
           class="post"
         >
-          <!---->
-          <!---->
+          <!--v-if-->
+          <!--v-if-->
           
           <svg
             aria-hidden="true"
@@ -2449,8 +2449,8 @@ exports[`FeatherAutocomplete base functionality single should show no results te
     >
        
     </div>
-    <!---->
-    <!---->
+    <!--v-if-->
+    <!--v-if-->
     
     
   </div>
@@ -2569,7 +2569,7 @@ exports[`FeatherAutocomplete multi:specific chip selection should move chip sele
               </span>
             </span>
             
-            <!---->
+            <!--v-if-->
           </div>
           <div
             aria-disabled="false"
@@ -2607,7 +2607,7 @@ exports[`FeatherAutocomplete multi:specific chip selection should move chip sele
               </span>
             </span>
             
-            <!---->
+            <!--v-if-->
           </div>
           
           <textarea
@@ -2630,8 +2630,8 @@ exports[`FeatherAutocomplete multi:specific chip selection should move chip sele
         <div
           class="post"
         >
-          <!---->
-          <!---->
+          <!--v-if-->
+          <!--v-if-->
           
           <svg
             aria-hidden="true"
@@ -2651,7 +2651,7 @@ exports[`FeatherAutocomplete multi:specific chip selection should move chip sele
     </div>
     
     <teleport-stub>
-      <!---->
+      <!--v-if-->
     </teleport-stub>
   </div>
   <div
@@ -2663,8 +2663,8 @@ exports[`FeatherAutocomplete multi:specific chip selection should move chip sele
     >
        
     </div>
-    <!---->
-    <!---->
+    <!--v-if-->
+    <!--v-if-->
     
     
   </div>
@@ -2782,7 +2782,7 @@ exports[`FeatherAutocomplete multi:specific chip selection should move chip sele
               </span>
             </span>
             
-            <!---->
+            <!--v-if-->
           </div>
           <div
             aria-disabled="false"
@@ -2821,7 +2821,7 @@ exports[`FeatherAutocomplete multi:specific chip selection should move chip sele
               </span>
             </span>
             
-            <!---->
+            <!--v-if-->
           </div>
           
           <textarea
@@ -2844,8 +2844,8 @@ exports[`FeatherAutocomplete multi:specific chip selection should move chip sele
         <div
           class="post"
         >
-          <!---->
-          <!---->
+          <!--v-if-->
+          <!--v-if-->
           
           <svg
             aria-hidden="true"
@@ -2865,7 +2865,7 @@ exports[`FeatherAutocomplete multi:specific chip selection should move chip sele
     </div>
     
     <teleport-stub>
-      <!---->
+      <!--v-if-->
     </teleport-stub>
   </div>
   <div
@@ -2877,8 +2877,8 @@ exports[`FeatherAutocomplete multi:specific chip selection should move chip sele
     >
        
     </div>
-    <!---->
-    <!---->
+    <!--v-if-->
+    <!--v-if-->
     
     
   </div>
@@ -2997,7 +2997,7 @@ exports[`FeatherAutocomplete multi:specific chip selection should not move chip 
               </span>
             </span>
             
-            <!---->
+            <!--v-if-->
           </div>
           <div
             aria-disabled="false"
@@ -3035,7 +3035,7 @@ exports[`FeatherAutocomplete multi:specific chip selection should not move chip 
               </span>
             </span>
             
-            <!---->
+            <!--v-if-->
           </div>
           
           <textarea
@@ -3058,8 +3058,8 @@ exports[`FeatherAutocomplete multi:specific chip selection should not move chip 
         <div
           class="post"
         >
-          <!---->
-          <!---->
+          <!--v-if-->
+          <!--v-if-->
           
           <svg
             aria-hidden="true"
@@ -3079,7 +3079,7 @@ exports[`FeatherAutocomplete multi:specific chip selection should not move chip 
     </div>
     
     <teleport-stub>
-      <!---->
+      <!--v-if-->
     </teleport-stub>
   </div>
   <div
@@ -3091,8 +3091,8 @@ exports[`FeatherAutocomplete multi:specific chip selection should not move chip 
     >
        
     </div>
-    <!---->
-    <!---->
+    <!--v-if-->
+    <!--v-if-->
     
     
   </div>
@@ -3210,7 +3210,7 @@ exports[`FeatherAutocomplete multi:specific chip selection should not perform an
               </span>
             </span>
             
-            <!---->
+            <!--v-if-->
           </div>
           <div
             aria-disabled="false"
@@ -3248,7 +3248,7 @@ exports[`FeatherAutocomplete multi:specific chip selection should not perform an
               </span>
             </span>
             
-            <!---->
+            <!--v-if-->
           </div>
           
           <textarea
@@ -3271,8 +3271,8 @@ exports[`FeatherAutocomplete multi:specific chip selection should not perform an
         <div
           class="post"
         >
-          <!---->
-          <!---->
+          <!--v-if-->
+          <!--v-if-->
           
           <svg
             aria-hidden="true"
@@ -3292,7 +3292,7 @@ exports[`FeatherAutocomplete multi:specific chip selection should not perform an
     </div>
     
     <teleport-stub>
-      <!---->
+      <!--v-if-->
     </teleport-stub>
   </div>
   <div
@@ -3304,8 +3304,8 @@ exports[`FeatherAutocomplete multi:specific chip selection should not perform an
     >
        
     </div>
-    <!---->
-    <!---->
+    <!--v-if-->
+    <!--v-if-->
     
     
   </div>
@@ -3423,7 +3423,7 @@ exports[`FeatherAutocomplete multi:specific chip selection should select rightmo
               </span>
             </span>
             
-            <!---->
+            <!--v-if-->
           </div>
           <div
             aria-disabled="false"
@@ -3462,7 +3462,7 @@ exports[`FeatherAutocomplete multi:specific chip selection should select rightmo
               </span>
             </span>
             
-            <!---->
+            <!--v-if-->
           </div>
           
           <textarea
@@ -3485,8 +3485,8 @@ exports[`FeatherAutocomplete multi:specific chip selection should select rightmo
         <div
           class="post"
         >
-          <!---->
-          <!---->
+          <!--v-if-->
+          <!--v-if-->
           
           <svg
             aria-hidden="true"
@@ -3604,8 +3604,8 @@ exports[`FeatherAutocomplete multi:specific chip selection should select rightmo
     >
        
     </div>
-    <!---->
-    <!---->
+    <!--v-if-->
+    <!--v-if-->
     
     
   </div>
@@ -3723,7 +3723,7 @@ exports[`FeatherAutocomplete multi:specific chip selection should select the rig
               </span>
             </span>
             
-            <!---->
+            <!--v-if-->
           </div>
           <div
             aria-disabled="false"
@@ -3762,7 +3762,7 @@ exports[`FeatherAutocomplete multi:specific chip selection should select the rig
               </span>
             </span>
             
-            <!---->
+            <!--v-if-->
           </div>
           
           <textarea
@@ -3785,8 +3785,8 @@ exports[`FeatherAutocomplete multi:specific chip selection should select the rig
         <div
           class="post"
         >
-          <!---->
-          <!---->
+          <!--v-if-->
+          <!--v-if-->
           
           <svg
             aria-hidden="true"
@@ -3806,7 +3806,7 @@ exports[`FeatherAutocomplete multi:specific chip selection should select the rig
     </div>
     
     <teleport-stub>
-      <!---->
+      <!--v-if-->
     </teleport-stub>
   </div>
   <div
@@ -3818,8 +3818,8 @@ exports[`FeatherAutocomplete multi:specific chip selection should select the rig
     >
        
     </div>
-    <!---->
-    <!---->
+    <!--v-if-->
+    <!--v-if-->
     
     
   </div>
@@ -3937,7 +3937,7 @@ exports[`FeatherAutocomplete multi:specific chip selection should should deselec
               </span>
             </span>
             
-            <!---->
+            <!--v-if-->
           </div>
           <div
             aria-disabled="false"
@@ -3975,7 +3975,7 @@ exports[`FeatherAutocomplete multi:specific chip selection should should deselec
               </span>
             </span>
             
-            <!---->
+            <!--v-if-->
           </div>
           
           <textarea
@@ -3998,8 +3998,8 @@ exports[`FeatherAutocomplete multi:specific chip selection should should deselec
         <div
           class="post"
         >
-          <!---->
-          <!---->
+          <!--v-if-->
+          <!--v-if-->
           
           <svg
             aria-hidden="true"
@@ -4019,7 +4019,7 @@ exports[`FeatherAutocomplete multi:specific chip selection should should deselec
     </div>
     
     <teleport-stub>
-      <!---->
+      <!--v-if-->
     </teleport-stub>
   </div>
   <div
@@ -4031,8 +4031,8 @@ exports[`FeatherAutocomplete multi:specific chip selection should should deselec
     >
        
     </div>
-    <!---->
-    <!---->
+    <!--v-if-->
+    <!--v-if-->
     
     
   </div>
@@ -4150,7 +4150,7 @@ exports[`FeatherAutocomplete multi:specific selection limit should clear warning
               </span>
             </span>
             
-            <!---->
+            <!--v-if-->
           </div>
           <div
             aria-disabled="false"
@@ -4188,7 +4188,7 @@ exports[`FeatherAutocomplete multi:specific selection limit should clear warning
               </span>
             </span>
             
-            <!---->
+            <!--v-if-->
           </div>
           
           <textarea
@@ -4211,8 +4211,8 @@ exports[`FeatherAutocomplete multi:specific selection limit should clear warning
         <div
           class="post"
         >
-          <!---->
-          <!---->
+          <!--v-if-->
+          <!--v-if-->
           
           <svg
             aria-hidden="true"
@@ -4232,7 +4232,7 @@ exports[`FeatherAutocomplete multi:specific selection limit should clear warning
     </div>
     
     <teleport-stub>
-      <!---->
+      <!--v-if-->
     </teleport-stub>
   </div>
   <div
@@ -4244,8 +4244,8 @@ exports[`FeatherAutocomplete multi:specific selection limit should clear warning
     >
        
     </div>
-    <!---->
-    <!---->
+    <!--v-if-->
+    <!--v-if-->
     
     
   </div>
@@ -4363,7 +4363,7 @@ exports[`FeatherAutocomplete multi:specific selection limit should display a war
               </span>
             </span>
             
-            <!---->
+            <!--v-if-->
           </div>
           <div
             aria-disabled="false"
@@ -4401,7 +4401,7 @@ exports[`FeatherAutocomplete multi:specific selection limit should display a war
               </span>
             </span>
             
-            <!---->
+            <!--v-if-->
           </div>
           
           <textarea
@@ -4424,8 +4424,8 @@ exports[`FeatherAutocomplete multi:specific selection limit should display a war
         <div
           class="post"
         >
-          <!---->
-          <!---->
+          <!--v-if-->
+          <!--v-if-->
           
           <svg
             aria-hidden="true"
@@ -4535,8 +4535,8 @@ exports[`FeatherAutocomplete multi:specific selection limit should display a war
     >
        
     </div>
-    <!---->
-    <!---->
+    <!--v-if-->
+    <!--v-if-->
     
     
   </div>
@@ -4656,7 +4656,7 @@ exports[`FeatherAutocomplete multi:specific selection limit should display a war
               </span>
             </span>
             
-            <!---->
+            <!--v-if-->
           </div>
           <div
             aria-disabled="false"
@@ -4694,7 +4694,7 @@ exports[`FeatherAutocomplete multi:specific selection limit should display a war
               </span>
             </span>
             
-            <!---->
+            <!--v-if-->
           </div>
           
           <textarea
@@ -4717,8 +4717,8 @@ exports[`FeatherAutocomplete multi:specific selection limit should display a war
         <div
           class="post"
         >
-          <!---->
-          <!---->
+          <!--v-if-->
+          <!--v-if-->
           
           <svg
             aria-hidden="true"
@@ -4828,8 +4828,8 @@ exports[`FeatherAutocomplete multi:specific selection limit should display a war
     >
        
     </div>
-    <!---->
-    <!---->
+    <!--v-if-->
+    <!--v-if-->
     
     
   </div>
@@ -4932,8 +4932,8 @@ exports[`FeatherAutocomplete multi:specific selection limit should display a war
         <div
           class="post"
         >
-          <!---->
-          <!---->
+          <!--v-if-->
+          <!--v-if-->
           
           <svg
             aria-hidden="true"
@@ -5099,8 +5099,8 @@ exports[`FeatherAutocomplete multi:specific selection limit should display a war
     >
        
     </div>
-    <!---->
-    <!---->
+    <!--v-if-->
+    <!--v-if-->
     
     
   </div>
@@ -5201,8 +5201,8 @@ exports[`FeatherAutocomplete multi:specific should hide/reset menu and clear tex
         <div
           class="post"
         >
-          <!---->
-          <!---->
+          <!--v-if-->
+          <!--v-if-->
           
           <svg
             aria-hidden="true"
@@ -5222,7 +5222,7 @@ exports[`FeatherAutocomplete multi:specific should hide/reset menu and clear tex
     </div>
     
     <teleport-stub>
-      <!---->
+      <!--v-if-->
     </teleport-stub>
   </div>
   <div
@@ -5234,8 +5234,8 @@ exports[`FeatherAutocomplete multi:specific should hide/reset menu and clear tex
     >
        
     </div>
-    <!---->
-    <!---->
+    <!--v-if-->
+    <!--v-if-->
     
     
   </div>
@@ -5336,8 +5336,8 @@ exports[`FeatherAutocomplete single:specific should close menu when enter is pre
         <div
           class="post"
         >
-          <!---->
-          <!---->
+          <!--v-if-->
+          <!--v-if-->
           
           <svg
             aria-hidden="true"
@@ -5455,8 +5455,8 @@ exports[`FeatherAutocomplete single:specific should close menu when enter is pre
     >
        
     </div>
-    <!---->
-    <!---->
+    <!--v-if-->
+    <!--v-if-->
     
     
   </div>
@@ -5574,7 +5574,7 @@ exports[`FeatherAutocomplete single:specific should handle a null property on va
               />
             </svg>
           </a>
-          <!---->
+          <!--v-if-->
           
           <svg
             aria-hidden="true"
@@ -5594,7 +5594,7 @@ exports[`FeatherAutocomplete single:specific should handle a null property on va
     </div>
     
     <teleport-stub>
-      <!---->
+      <!--v-if-->
     </teleport-stub>
   </div>
   <div
@@ -5606,8 +5606,8 @@ exports[`FeatherAutocomplete single:specific should handle a null property on va
     >
        
     </div>
-    <!---->
-    <!---->
+    <!--v-if-->
+    <!--v-if-->
     
     
   </div>
@@ -5708,8 +5708,8 @@ exports[`FeatherAutocomplete single:specific should show add new element when in
         <div
           class="post"
         >
-          <!---->
-          <!---->
+          <!--v-if-->
+          <!--v-if-->
           
           <svg
             aria-hidden="true"
@@ -5805,8 +5805,8 @@ exports[`FeatherAutocomplete single:specific should show add new element when in
     >
        
     </div>
-    <!---->
-    <!---->
+    <!--v-if-->
+    <!--v-if-->
     
     
   </div>

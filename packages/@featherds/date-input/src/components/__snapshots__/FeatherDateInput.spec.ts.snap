@@ -117,7 +117,7 @@ exports[`FeatherDateInput.vue should render disabled 1`] = `
               />
             </svg>
           </a>
-          <!---->
+          <!--v-if-->
           
           <a
             class="action-icon hide-when-disabled hover focus"
@@ -243,8 +243,8 @@ exports[`FeatherDateInput.vue should render disabled 1`] = `
                 <div
                   class="post"
                 >
-                  <!---->
-                  <!---->
+                  <!--v-if-->
+                  <!--v-if-->
                   
                   <svg
                     aria-hidden="true"
@@ -273,6 +273,7 @@ exports[`FeatherDateInput.vue should render disabled 1`] = `
               tabindex="-1"
             >
               
+              <!-- eslint-disable -->
               
               <li
                 aria-selected="false"
@@ -482,8 +483,8 @@ exports[`FeatherDateInput.vue should render disabled 1`] = `
             >
                
             </div>
-            <!---->
-            <!---->
+            <!--v-if-->
+            <!--v-if-->
             
             
           </div>
@@ -541,8 +542,8 @@ exports[`FeatherDateInput.vue should render disabled 1`] = `
                 <div
                   class="post"
                 >
-                  <!---->
-                  <!---->
+                  <!--v-if-->
+                  <!--v-if-->
                   
                   <svg
                     aria-hidden="true"
@@ -571,6 +572,7 @@ exports[`FeatherDateInput.vue should render disabled 1`] = `
               tabindex="-1"
             >
               
+              <!-- eslint-disable -->
               
               <li
                 aria-selected="false"
@@ -2684,8 +2686,8 @@ exports[`FeatherDateInput.vue should render disabled 1`] = `
             >
                
             </div>
-            <!---->
-            <!---->
+            <!--v-if-->
+            <!--v-if-->
             
             
           </div>
@@ -3249,8 +3251,8 @@ exports[`FeatherDateInput.vue should render disabled 1`] = `
     >
        
     </div>
-    <!---->
-    <!---->
+    <!--v-if-->
+    <!--v-if-->
     
     
   </div>

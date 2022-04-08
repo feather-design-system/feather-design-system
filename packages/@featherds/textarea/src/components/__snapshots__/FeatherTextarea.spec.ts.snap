@@ -45,8 +45,8 @@ exports[`FeatherTextarea.vue should allow custom blur events 1`] = `
       <div
         class="post"
       >
-        <!---->
-        <!---->
+        <!--v-if-->
+        <!--v-if-->
         
         
       </div>
@@ -61,8 +61,8 @@ exports[`FeatherTextarea.vue should allow custom blur events 1`] = `
     >
        
     </div>
-    <!---->
-    <!---->
+    <!--v-if-->
+    <!--v-if-->
     
     
   </div>
@@ -114,8 +114,8 @@ exports[`FeatherTextarea.vue should allow custom focus events 1`] = `
       <div
         class="post"
       >
-        <!---->
-        <!---->
+        <!--v-if-->
+        <!--v-if-->
         
         
       </div>
@@ -130,8 +130,8 @@ exports[`FeatherTextarea.vue should allow custom focus events 1`] = `
     >
        
     </div>
-    <!---->
-    <!---->
+    <!--v-if-->
+    <!--v-if-->
     
     
   </div>
@@ -183,8 +183,8 @@ exports[`FeatherTextarea.vue should clear textarea when clear-icon is clicked 1`
       <div
         class="post"
       >
-        <!---->
-        <!---->
+        <!--v-if-->
+        <!--v-if-->
         
         
       </div>
@@ -199,8 +199,8 @@ exports[`FeatherTextarea.vue should clear textarea when clear-icon is clicked 1`
     >
        
     </div>
-    <!---->
-    <!---->
+    <!--v-if-->
+    <!--v-if-->
     
     
   </div>
@@ -252,8 +252,8 @@ exports[`FeatherTextarea.vue should not render a clear icon when the textarea do
       <div
         class="post"
       >
-        <!---->
-        <!---->
+        <!--v-if-->
+        <!--v-if-->
         
         
       </div>
@@ -268,8 +268,8 @@ exports[`FeatherTextarea.vue should not render a clear icon when the textarea do
     >
        
     </div>
-    <!---->
-    <!---->
+    <!--v-if-->
+    <!--v-if-->
     
     
   </div>
@@ -340,7 +340,7 @@ exports[`FeatherTextarea.vue should render a clear icon when clear has a value a
             />
           </svg>
         </a>
-        <!---->
+        <!--v-if-->
         
         
       </div>
@@ -355,8 +355,8 @@ exports[`FeatherTextarea.vue should render a clear icon when clear has a value a
     >
        
     </div>
-    <!---->
-    <!---->
+    <!--v-if-->
+    <!--v-if-->
     
     
   </div>
@@ -409,8 +409,8 @@ exports[`FeatherTextarea.vue should render a maxlength attribute and character c
       <div
         class="post"
       >
-        <!---->
-        <!---->
+        <!--v-if-->
+        <!--v-if-->
         
         
       </div>
@@ -425,8 +425,8 @@ exports[`FeatherTextarea.vue should render a maxlength attribute and character c
     >
        
     </div>
-    <!---->
-    <!---->
+    <!--v-if-->
+    <!--v-if-->
     
     <div
       class="feather-input-count"
@@ -484,7 +484,7 @@ exports[`FeatherTextarea.vue should render an textarea error 1`] = `
       <div
         class="post"
       >
-        <!---->
+        <!--v-if-->
         <svg
           aria-hidden="true"
           class="error-icon hide-when-disabled feather-icon error-icon hide-when-disabled"
@@ -521,8 +521,8 @@ exports[`FeatherTextarea.vue should render an textarea error 1`] = `
     class="feather-input-sub-text"
     id="feather-textarea-description"
   >
-    <!---->
-    <!---->
+    <!--v-if-->
+    <!--v-if-->
     <div
       aria-live="assertive"
       class="feather-input-error"
@@ -581,7 +581,7 @@ exports[`FeatherTextarea.vue should render an textarea error and has a value 1`]
       <div
         class="post"
       >
-        <!---->
+        <!--v-if-->
         <svg
           aria-hidden="true"
           class="error-icon hide-when-disabled feather-icon error-icon hide-when-disabled"
@@ -618,8 +618,8 @@ exports[`FeatherTextarea.vue should render an textarea error and has a value 1`]
     class="feather-input-sub-text"
     id="feather-textarea-description"
   >
-    <!---->
-    <!---->
+    <!--v-if-->
+    <!--v-if-->
     <div
       aria-live="assertive"
       class="feather-input-error"
@@ -678,7 +678,7 @@ exports[`FeatherTextarea.vue should render an textarea error and has focus 1`] =
       <div
         class="post"
       >
-        <!---->
+        <!--v-if-->
         <svg
           aria-hidden="true"
           class="error-icon hide-when-disabled feather-icon error-icon hide-when-disabled"
@@ -715,8 +715,8 @@ exports[`FeatherTextarea.vue should render an textarea error and has focus 1`] =
     class="feather-input-sub-text"
     id="feather-textarea-description"
   >
-    <!---->
-    <!---->
+    <!--v-if-->
+    <!--v-if-->
     <div
       aria-live="assertive"
       class="feather-input-error"
@@ -775,8 +775,8 @@ exports[`FeatherTextarea.vue should render an textarea with a label 1`] = `
       <div
         class="post"
       >
-        <!---->
-        <!---->
+        <!--v-if-->
+        <!--v-if-->
         
         
       </div>
@@ -791,8 +791,8 @@ exports[`FeatherTextarea.vue should render an textarea with a label 1`] = `
     >
        
     </div>
-    <!---->
-    <!---->
+    <!--v-if-->
+    <!--v-if-->
     
     
   </div>
@@ -844,8 +844,8 @@ exports[`FeatherTextarea.vue should render an textarea with a label and hint tex
       <div
         class="post"
       >
-        <!---->
-        <!---->
+        <!--v-if-->
+        <!--v-if-->
         
         
       </div>
@@ -855,14 +855,14 @@ exports[`FeatherTextarea.vue should render an textarea with a label and hint tex
     class="feather-input-sub-text"
     id="feather-textarea-description"
   >
-    <!---->
+    <!--v-if-->
     <div
       class="feather-input-hint"
       data-ref-id="feather-form-element-hint"
     >
       hint text
     </div>
-    <!---->
+    <!--v-if-->
     
     
   </div>
@@ -914,8 +914,8 @@ exports[`FeatherTextarea.vue should render an textarea with a preset value 1`] =
       <div
         class="post"
       >
-        <!---->
-        <!---->
+        <!--v-if-->
+        <!--v-if-->
         
         
       </div>
@@ -925,14 +925,14 @@ exports[`FeatherTextarea.vue should render an textarea with a preset value 1`] =
     class="feather-input-sub-text"
     id="feather-textarea-description"
   >
-    <!---->
+    <!--v-if-->
     <div
       class="feather-input-hint"
       data-ref-id="feather-form-element-hint"
     >
       hint text
     </div>
-    <!---->
+    <!--v-if-->
     
     
   </div>
@@ -984,8 +984,8 @@ exports[`FeatherTextarea.vue should render an textarea with raised label when fo
       <div
         class="post"
       >
-        <!---->
-        <!---->
+        <!--v-if-->
+        <!--v-if-->
         
         
       </div>
@@ -1000,8 +1000,8 @@ exports[`FeatherTextarea.vue should render an textarea with raised label when fo
     >
        
     </div>
-    <!---->
-    <!---->
+    <!--v-if-->
+    <!--v-if-->
     
     
   </div>
@@ -1053,8 +1053,8 @@ exports[`FeatherTextarea.vue should render an textarea with raised label when fo
       <div
         class="post"
       >
-        <!---->
-        <!---->
+        <!--v-if-->
+        <!--v-if-->
         
         
       </div>
@@ -1069,8 +1069,8 @@ exports[`FeatherTextarea.vue should render an textarea with raised label when fo
     >
        
     </div>
-    <!---->
-    <!---->
+    <!--v-if-->
+    <!--v-if-->
     
     
   </div>
