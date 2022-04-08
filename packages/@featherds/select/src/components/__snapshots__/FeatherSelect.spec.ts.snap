@@ -51,8 +51,8 @@ exports[`FeatherSelect.vue should not raise the label when its empty 1`] = `
         <div
           class="post"
         >
-          <!---->
-          <!---->
+          <!--v-if-->
+          <!--v-if-->
           
           <svg
             aria-hidden="true"
@@ -72,7 +72,7 @@ exports[`FeatherSelect.vue should not raise the label when its empty 1`] = `
     </div>
     
     <teleport-stub>
-      <!---->
+      <!--v-if-->
     </teleport-stub>
   </div>
   <div
@@ -84,8 +84,8 @@ exports[`FeatherSelect.vue should not raise the label when its empty 1`] = `
     >
        
     </div>
-    <!---->
-    <!---->
+    <!--v-if-->
+    <!--v-if-->
     
     
   </div>
@@ -143,8 +143,8 @@ exports[`FeatherSelect.vue should raise the label when it has a value 1`] = `
         <div
           class="post"
         >
-          <!---->
-          <!---->
+          <!--v-if-->
+          <!--v-if-->
           
           <svg
             aria-hidden="true"
@@ -164,7 +164,7 @@ exports[`FeatherSelect.vue should raise the label when it has a value 1`] = `
     </div>
     
     <teleport-stub>
-      <!---->
+      <!--v-if-->
     </teleport-stub>
   </div>
   <div
@@ -176,8 +176,8 @@ exports[`FeatherSelect.vue should raise the label when it has a value 1`] = `
     >
        
     </div>
-    <!---->
-    <!---->
+    <!--v-if-->
+    <!--v-if-->
     
     
   </div>
@@ -236,8 +236,8 @@ exports[`FeatherSelect.vue should render in disabled state 1`] = `
         <div
           class="post"
         >
-          <!---->
-          <!---->
+          <!--v-if-->
+          <!--v-if-->
           
           <svg
             aria-hidden="true"
@@ -257,7 +257,7 @@ exports[`FeatherSelect.vue should render in disabled state 1`] = `
     </div>
     
     <teleport-stub>
-      <!---->
+      <!--v-if-->
     </teleport-stub>
   </div>
   <div
@@ -269,8 +269,8 @@ exports[`FeatherSelect.vue should render in disabled state 1`] = `
     >
        
     </div>
-    <!---->
-    <!---->
+    <!--v-if-->
+    <!--v-if-->
     
     
   </div>
@@ -328,7 +328,7 @@ exports[`FeatherSelect.vue should render in error state 1`] = `
         <div
           class="post"
         >
-          <!---->
+          <!--v-if-->
           <svg
             aria-hidden="true"
             class="error-icon hide-when-disabled feather-icon error-icon hide-when-disabled"
@@ -375,15 +375,15 @@ exports[`FeatherSelect.vue should render in error state 1`] = `
     </div>
     
     <teleport-stub>
-      <!---->
+      <!--v-if-->
     </teleport-stub>
   </div>
   <div
     class="feather-input-sub-text"
     id="feather-select-description"
   >
-    <!---->
-    <!---->
+    <!--v-if-->
+    <!--v-if-->
     <div
       aria-live="assertive"
       class="feather-input-error"

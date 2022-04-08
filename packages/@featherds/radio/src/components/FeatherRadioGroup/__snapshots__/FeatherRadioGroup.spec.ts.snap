@@ -25,8 +25,8 @@ exports[`FeatherRadioGroup.vue should have error text 1`] = `
     class="feather-input-sub-text"
     id="feather-input-description"
   >
-    <!---->
-    <!---->
+    <!--v-if-->
+    <!--v-if-->
     <div
       aria-live="assertive"
       class="feather-input-error"
@@ -65,14 +65,14 @@ exports[`FeatherRadioGroup.vue should have hint text 1`] = `
     class="feather-input-sub-text"
     id="feather-input-description"
   >
-    <!---->
+    <!--v-if-->
     <div
       class="feather-input-hint"
       data-ref-id="feather-form-element-hint"
     >
       TEST HINT
     </div>
-    <!---->
+    <!--v-if-->
     
     
   </div>
@@ -109,8 +109,8 @@ exports[`FeatherRadioGroup.vue should set id and name 1`] = `
     >
        
     </div>
-    <!---->
-    <!---->
+    <!--v-if-->
+    <!--v-if-->
     
     
   </div>
@@ -142,14 +142,14 @@ exports[`FeatherRadioGroup.vue should stack vertically 1`] = `
     class="feather-input-sub-text"
     id="feather-input-description"
   >
-    <!---->
+    <!--v-if-->
     <div
       class="feather-input-hint"
       data-ref-id="feather-form-element-hint"
     >
       TEST HINT
     </div>
-    <!---->
+    <!--v-if-->
     
     
   </div>

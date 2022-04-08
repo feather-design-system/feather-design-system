@@ -14,9 +14,11 @@ module.exports = {
   transformIgnorePatterns: ["/node_modules/"],
 
   moduleNameMapper: {
-    "^@/(.*)$": "<rootDir>/src/$1",
     "^.+.(css|styl|less|sass|scss|png|jpg|ttf|woff|woff2)$":
       "jest-transform-stub",
+    "^@featherds/([a-z-/]+)/(.*)":"<rootDir>/packages/@featherds/$1/$2",
+    "^@featherds/([a-z-]+)$":"<rootDir>/packages/@featherds/$1/src/",
+    "^@featherds/(?!composables)([a-z-/]+)/(.*)":"<rootDir>/packages/@featherds/$1/$2",
   },
 
   testPathIgnorePatterns: ["<rootDir>/(?:.+?)/e2e/"],

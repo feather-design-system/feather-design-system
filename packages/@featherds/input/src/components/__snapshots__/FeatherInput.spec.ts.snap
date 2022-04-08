@@ -47,8 +47,8 @@ exports[`FeatherInput.vue should allow custom blur events 1`] = `
       <div
         class="post"
       >
-        <!---->
-        <!---->
+        <!--v-if-->
+        <!--v-if-->
         
         
       </div>
@@ -63,8 +63,8 @@ exports[`FeatherInput.vue should allow custom blur events 1`] = `
     >
        
     </div>
-    <!---->
-    <!---->
+    <!--v-if-->
+    <!--v-if-->
     
     
   </div>
@@ -118,8 +118,8 @@ exports[`FeatherInput.vue should allow custom focus events 1`] = `
       <div
         class="post"
       >
-        <!---->
-        <!---->
+        <!--v-if-->
+        <!--v-if-->
         
         
       </div>
@@ -134,8 +134,8 @@ exports[`FeatherInput.vue should allow custom focus events 1`] = `
     >
        
     </div>
-    <!---->
-    <!---->
+    <!--v-if-->
+    <!--v-if-->
     
     
   </div>
@@ -189,8 +189,8 @@ exports[`FeatherInput.vue should clear input when clear-icon is clicked 1`] = `
       <div
         class="post"
       >
-        <!---->
-        <!---->
+        <!--v-if-->
+        <!--v-if-->
         
         
       </div>
@@ -205,8 +205,8 @@ exports[`FeatherInput.vue should clear input when clear-icon is clicked 1`] = `
     >
        
     </div>
-    <!---->
-    <!---->
+    <!--v-if-->
+    <!--v-if-->
     
     
   </div>
@@ -260,8 +260,8 @@ exports[`FeatherInput.vue should not render a clear icon when the input doesn't 
       <div
         class="post"
       >
-        <!---->
-        <!---->
+        <!--v-if-->
+        <!--v-if-->
         
         
       </div>
@@ -276,8 +276,8 @@ exports[`FeatherInput.vue should not render a clear icon when the input doesn't 
     >
        
     </div>
-    <!---->
-    <!---->
+    <!--v-if-->
+    <!--v-if-->
     
     
   </div>
@@ -350,7 +350,7 @@ exports[`FeatherInput.vue should render a clear icon when clear has a value and 
             />
           </svg>
         </a>
-        <!---->
+        <!--v-if-->
         
         
       </div>
@@ -365,8 +365,8 @@ exports[`FeatherInput.vue should render a clear icon when clear has a value and 
     >
        
     </div>
-    <!---->
-    <!---->
+    <!--v-if-->
+    <!--v-if-->
     
     
   </div>
@@ -420,8 +420,8 @@ exports[`FeatherInput.vue should render a maxlength attribute and character coun
       <div
         class="post"
       >
-        <!---->
-        <!---->
+        <!--v-if-->
+        <!--v-if-->
         
         
       </div>
@@ -436,8 +436,8 @@ exports[`FeatherInput.vue should render a maxlength attribute and character coun
     >
        
     </div>
-    <!---->
-    <!---->
+    <!--v-if-->
+    <!--v-if-->
     
     <div
       class="feather-input-count"
@@ -497,7 +497,7 @@ exports[`FeatherInput.vue should render an input error input 1`] = `
       <div
         class="post"
       >
-        <!---->
+        <!--v-if-->
         <svg
           aria-hidden="true"
           class="error-icon hide-when-disabled feather-icon error-icon hide-when-disabled"
@@ -534,8 +534,8 @@ exports[`FeatherInput.vue should render an input error input 1`] = `
     class="feather-input-sub-text"
     id="feather-input-description"
   >
-    <!---->
-    <!---->
+    <!--v-if-->
+    <!--v-if-->
     <div
       aria-live="assertive"
       class="feather-input-error"
@@ -596,7 +596,7 @@ exports[`FeatherInput.vue should render an input error input and has a value 1`]
       <div
         class="post"
       >
-        <!---->
+        <!--v-if-->
         <svg
           aria-hidden="true"
           class="error-icon hide-when-disabled feather-icon error-icon hide-when-disabled"
@@ -633,8 +633,8 @@ exports[`FeatherInput.vue should render an input error input and has a value 1`]
     class="feather-input-sub-text"
     id="feather-input-description"
   >
-    <!---->
-    <!---->
+    <!--v-if-->
+    <!--v-if-->
     <div
       aria-live="assertive"
       class="feather-input-error"
@@ -695,7 +695,7 @@ exports[`FeatherInput.vue should render an input error input and has focus 1`] =
       <div
         class="post"
       >
-        <!---->
+        <!--v-if-->
         <svg
           aria-hidden="true"
           class="error-icon hide-when-disabled feather-icon error-icon hide-when-disabled"
@@ -732,8 +732,8 @@ exports[`FeatherInput.vue should render an input error input and has focus 1`] =
     class="feather-input-sub-text"
     id="feather-input-description"
   >
-    <!---->
-    <!---->
+    <!--v-if-->
+    <!--v-if-->
     <div
       aria-live="assertive"
       class="feather-input-error"
@@ -794,8 +794,8 @@ exports[`FeatherInput.vue should render an input with a label 1`] = `
       <div
         class="post"
       >
-        <!---->
-        <!---->
+        <!--v-if-->
+        <!--v-if-->
         
         
       </div>
@@ -810,8 +810,8 @@ exports[`FeatherInput.vue should render an input with a label 1`] = `
     >
        
     </div>
-    <!---->
-    <!---->
+    <!--v-if-->
+    <!--v-if-->
     
     
   </div>
@@ -865,8 +865,8 @@ exports[`FeatherInput.vue should render an input with a label and hint text 1`] 
       <div
         class="post"
       >
-        <!---->
-        <!---->
+        <!--v-if-->
+        <!--v-if-->
         
         
       </div>
@@ -876,14 +876,14 @@ exports[`FeatherInput.vue should render an input with a label and hint text 1`] 
     class="feather-input-sub-text"
     id="feather-input-description"
   >
-    <!---->
+    <!--v-if-->
     <div
       class="feather-input-hint"
       data-ref-id="feather-form-element-hint"
     >
       hint text
     </div>
-    <!---->
+    <!--v-if-->
     
     
   </div>
@@ -937,8 +937,8 @@ exports[`FeatherInput.vue should render an input with a preset value 1`] = `
       <div
         class="post"
       >
-        <!---->
-        <!---->
+        <!--v-if-->
+        <!--v-if-->
         
         
       </div>
@@ -948,14 +948,14 @@ exports[`FeatherInput.vue should render an input with a preset value 1`] = `
     class="feather-input-sub-text"
     id="feather-input-description"
   >
-    <!---->
+    <!--v-if-->
     <div
       class="feather-input-hint"
       data-ref-id="feather-form-element-hint"
     >
       hint text
     </div>
-    <!---->
+    <!--v-if-->
     
     
   </div>
@@ -1009,8 +1009,8 @@ exports[`FeatherInput.vue should render an input with raised label when focused 
       <div
         class="post"
       >
-        <!---->
-        <!---->
+        <!--v-if-->
+        <!--v-if-->
         
         
       </div>
@@ -1025,8 +1025,8 @@ exports[`FeatherInput.vue should render an input with raised label when focused 
     >
        
     </div>
-    <!---->
-    <!---->
+    <!--v-if-->
+    <!--v-if-->
     
     
   </div>
@@ -1080,8 +1080,8 @@ exports[`FeatherInput.vue should render an input with raised label when focused 
       <div
         class="post"
       >
-        <!---->
-        <!---->
+        <!--v-if-->
+        <!--v-if-->
         
         
       </div>
@@ -1096,8 +1096,8 @@ exports[`FeatherInput.vue should render an input with raised label when focused 
     >
        
     </div>
-    <!---->
-    <!---->
+    <!--v-if-->
+    <!--v-if-->
     
     
   </div>

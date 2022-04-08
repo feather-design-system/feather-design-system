@@ -48,8 +48,8 @@ exports[`FeatherProtectedInput.vue should change input type when show password i
       <div
         class="post"
       >
-        <!---->
-        <!---->
+        <!--v-if-->
+        <!--v-if-->
         
         
         <a
@@ -91,8 +91,8 @@ exports[`FeatherProtectedInput.vue should change input type when show password i
     >
        
     </div>
-    <!---->
-    <!---->
+    <!--v-if-->
+    <!--v-if-->
     
     
   </div>
@@ -147,8 +147,8 @@ exports[`FeatherProtectedInput.vue should render with show password icon by defa
       <div
         class="post"
       >
-        <!---->
-        <!---->
+        <!--v-if-->
+        <!--v-if-->
         
         
         <a
@@ -189,8 +189,8 @@ exports[`FeatherProtectedInput.vue should render with show password icon by defa
     >
        
     </div>
-    <!---->
-    <!---->
+    <!--v-if-->
+    <!--v-if-->
     
     
   </div>
