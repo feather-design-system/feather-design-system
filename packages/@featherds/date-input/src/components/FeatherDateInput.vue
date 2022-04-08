@@ -205,23 +205,6 @@ export default defineComponent({
     );
 
     watch(
-      value,
-      (nv) => {
-        if (nv instanceof Date) {
-          day.value = nv.getDate();
-          year.value = nv.getFullYear();
-          month.value = nv.getMonth() + 1;
-        }
-        if (nv === undefined) {
-          day.value = undefined;
-          year.value = undefined;
-          month.value = undefined;
-        }
-      },
-      { immediate: true }
-    );
-
-    watch(
       [day, month, year],
       ([_day, _month, _year]) => {
         if (_day !== undefined && _month !== undefined && _year !== undefined) {
@@ -294,15 +277,15 @@ export default defineComponent({
         yearButton.value.focus();
       };
       const clear = () => {
-        dayButton.value.clear();
-        monthButton.value.clear();
-        yearButton.value.clear();
+        dayButton.value?.clear();
+        monthButton.value?.clear();
+        yearButton.value?.clear();
       };
 
       const deselectAllSpinButtons = () => {
-        dayButton.value.deselect();
-        monthButton.value.deselect();
-        yearButton.value.deselect();
+        dayButton.value?.deselect();
+        monthButton.value?.deselect();
+        yearButton.value?.deselect();
       };
 
       return {
@@ -367,7 +350,7 @@ export default defineComponent({
       showMenu.value = false;
     };
 
-    const handleClear = () => {
+    const reset = () => {
       showMenu.value = false;
       day.value = undefined;
       year.value = undefined;
@@ -375,6 +358,10 @@ export default defineComponent({
 
       context.emit("update:modelValue", undefined);
       spinbuttons.clear();
+    };
+
+    const handleClear = () => {
+      reset();
       spinbuttons.focusMonth();
     };
     let calendarActivator: HTMLElement | undefined;
@@ -388,6 +375,21 @@ export default defineComponent({
         calendar.value.focus();
       });
     };
+
+    watch(
+      value,
+      (nv, ov) => {
+        if (nv instanceof Date) {
+          day.value = nv.getDate();
+          year.value = nv.getFullYear();
+          month.value = nv.getMonth() + 1;
+        }
+        if (ov !== undefined && nv === undefined) {
+          reset();
+        }
+      },
+      { immediate: true }
+    );
 
     watch(showMenu, (v) => {
       if (!v) {
@@ -405,6 +407,7 @@ export default defineComponent({
       toRef(props, "labels"),
       LABELS
     );
+    context.expose({ reset });
     return {
       validate,
       day,
@@ -422,6 +425,7 @@ export default defineComponent({
       descriptionId,
       attrs,
       handleClear,
+      reset,
       handleFocus,
       handleBlur,
       handleKeyDown,
