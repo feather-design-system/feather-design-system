@@ -306,11 +306,13 @@ export default defineComponent({
       }
       focused.value = true;
     };
-    const handleBlur = () => {
-      if (!showMenu.value) {
+    const handleBlur = (e: FocusEvent) => {
+      if (!menu.value.$el.contains(e.relatedTarget) && !showMenu.value) {
         validate();
         focused.value = false;
         context.emit("blur");
+        spinbuttons.deselectAllSpinButtons();
+      } else {
         spinbuttons.deselectAllSpinButtons();
       }
     };
