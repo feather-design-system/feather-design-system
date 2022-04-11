@@ -74,13 +74,14 @@ Text labels for Date Input can be customized via the `labels` property. The defa
 -
 ### Exposes
 
-- `reset` - resets the Date Input to its default state
+- `reset` - clears the value, like the clear icon, but also resets the spinners to their default states
 
 This method is useful for example when clearing a form, you can use it within a clear method like the following;
 ```
 clearAll() {
-  this.dateInputModel = undefined;
+  ...
   (this.$refs.dateInput as typeof FeatherDateInput).reset();
+  ...
 }
 ```
 

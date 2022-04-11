@@ -28,7 +28,6 @@ export default defineComponent({
   },
   methods: {
     clearAll() {
-      this.test = undefined;
       (this.$refs.dateInput as typeof FeatherDateInput).reset();
     },
   },
