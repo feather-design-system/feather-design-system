@@ -1,4 +1,4 @@
-const INPUT = "[data-ref-id='feather-input']";
+const INPUT = "[data-ref-id='feather-autocomplete-input']";
 const MENUITEM = ".result-item";
 const CHIP = ".chip";
 const CHIPDELETE = ".chip-delete";

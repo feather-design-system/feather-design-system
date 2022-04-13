@@ -5,7 +5,7 @@ exports[`FeatherTextarea.vue should allow custom blur events 1`] = `
   class="feather-textarea-container"
 >
   <div
-    class="feather-input-wrapper-container raised feather-input-content"
+    class="feather-input-wrapper-container raised feather-textarea-content"
   >
     <fieldset
       aria-hidden="true"
@@ -37,7 +37,7 @@ exports[`FeatherTextarea.vue should allow custom blur events 1`] = `
         aria-disabled="false"
         aria-invalid="false"
         class="feather-textarea"
-        data-ref-id="feather-input"
+        data-ref-id="feather-textarea-input"
         id="feather-textarea-label"
         name="feather-textarea-label"
       />
@@ -74,7 +74,7 @@ exports[`FeatherTextarea.vue should allow custom focus events 1`] = `
   class="feather-textarea-container"
 >
   <div
-    class="feather-input-wrapper-container raised focused feather-input-content focused"
+    class="feather-input-wrapper-container raised focused feather-textarea-content focused"
   >
     <fieldset
       aria-hidden="true"
@@ -106,7 +106,7 @@ exports[`FeatherTextarea.vue should allow custom focus events 1`] = `
         aria-disabled="false"
         aria-invalid="false"
         class="feather-textarea"
-        data-ref-id="feather-input"
+        data-ref-id="feather-textarea-input"
         id="feather-textarea-label"
         name="feather-textarea-label"
       />
@@ -143,7 +143,7 @@ exports[`FeatherTextarea.vue should clear textarea when clear-icon is clicked 1`
   class="feather-textarea-container"
 >
   <div
-    class="feather-input-wrapper-container feather-input-content"
+    class="feather-input-wrapper-container feather-textarea-content"
   >
     <fieldset
       aria-hidden="true"
@@ -175,7 +175,7 @@ exports[`FeatherTextarea.vue should clear textarea when clear-icon is clicked 1`
         aria-disabled="false"
         aria-invalid="false"
         class="feather-textarea"
-        data-ref-id="feather-input"
+        data-ref-id="feather-textarea-input"
         id="feather-textarea-label"
         name="feather-textarea-label"
       />
@@ -212,7 +212,7 @@ exports[`FeatherTextarea.vue should not render a clear icon when the textarea do
   class="feather-textarea-container"
 >
   <div
-    class="feather-input-wrapper-container feather-input-content"
+    class="feather-input-wrapper-container feather-textarea-content"
   >
     <fieldset
       aria-hidden="true"
@@ -244,7 +244,7 @@ exports[`FeatherTextarea.vue should not render a clear icon when the textarea do
         aria-disabled="false"
         aria-invalid="false"
         class="feather-textarea"
-        data-ref-id="feather-input"
+        data-ref-id="feather-textarea-input"
         id="feather-textarea-label"
         name="feather-textarea-label"
       />
@@ -281,7 +281,7 @@ exports[`FeatherTextarea.vue should render a clear icon when clear has a value a
   class="feather-textarea-container"
 >
   <div
-    class="feather-input-wrapper-container raised feather-input-content"
+    class="feather-input-wrapper-container raised feather-textarea-content"
   >
     <fieldset
       aria-hidden="true"
@@ -313,7 +313,7 @@ exports[`FeatherTextarea.vue should render a clear icon when clear has a value a
         aria-disabled="false"
         aria-invalid="false"
         class="feather-textarea"
-        data-ref-id="feather-input"
+        data-ref-id="feather-textarea-input"
         id="feather-textarea-label"
         name="feather-textarea-label"
       />
@@ -368,7 +368,7 @@ exports[`FeatherTextarea.vue should render a maxlength attribute and character c
   class="feather-textarea-container"
 >
   <div
-    class="feather-input-wrapper-container raised feather-input-content"
+    class="feather-input-wrapper-container raised feather-textarea-content"
   >
     <fieldset
       aria-hidden="true"
@@ -400,7 +400,7 @@ exports[`FeatherTextarea.vue should render a maxlength attribute and character c
         aria-disabled="false"
         aria-invalid="false"
         class="feather-textarea"
-        data-ref-id="feather-input"
+        data-ref-id="feather-textarea-input"
         id="feather-textarea-label"
         maxlength="5"
         name="feather-textarea-label"
@@ -429,7 +429,7 @@ exports[`FeatherTextarea.vue should render a maxlength attribute and character c
     <!--v-if-->
     
     <div
-      class="feather-input-count"
+      class="feather-textarea-count"
       data-ref-id="feather-form-element-count"
     >
       4 / 5
@@ -444,7 +444,7 @@ exports[`FeatherTextarea.vue should render an textarea error 1`] = `
   class="feather-textarea-container"
 >
   <div
-    class="feather-input-wrapper-container error feather-input-content error"
+    class="feather-input-wrapper-container error feather-textarea-content error"
   >
     <fieldset
       aria-hidden="true"
@@ -476,7 +476,7 @@ exports[`FeatherTextarea.vue should render an textarea error 1`] = `
         aria-disabled="false"
         aria-invalid="true"
         class="feather-textarea error"
-        data-ref-id="feather-input"
+        data-ref-id="feather-textarea-input"
         id="feather-textarea-label"
         name="feather-textarea-label"
       />
@@ -541,7 +541,7 @@ exports[`FeatherTextarea.vue should render an textarea error and has a value 1`]
   class="feather-textarea-container"
 >
   <div
-    class="feather-input-wrapper-container raised error feather-input-content error"
+    class="feather-input-wrapper-container raised error feather-textarea-content error"
   >
     <fieldset
       aria-hidden="true"
@@ -573,7 +573,7 @@ exports[`FeatherTextarea.vue should render an textarea error and has a value 1`]
         aria-disabled="false"
         aria-invalid="true"
         class="feather-textarea error"
-        data-ref-id="feather-input"
+        data-ref-id="feather-textarea-input"
         id="feather-textarea-label"
         name="feather-textarea-label"
       />
@@ -638,7 +638,7 @@ exports[`FeatherTextarea.vue should render an textarea error and has focus 1`] =
   class="feather-textarea-container"
 >
   <div
-    class="feather-input-wrapper-container raised focused error feather-input-content error focused"
+    class="feather-input-wrapper-container raised focused error feather-textarea-content error focused"
   >
     <fieldset
       aria-hidden="true"
@@ -670,7 +670,7 @@ exports[`FeatherTextarea.vue should render an textarea error and has focus 1`] =
         aria-disabled="false"
         aria-invalid="true"
         class="feather-textarea error"
-        data-ref-id="feather-input"
+        data-ref-id="feather-textarea-input"
         id="feather-textarea-label"
         name="feather-textarea-label"
       />
@@ -735,7 +735,7 @@ exports[`FeatherTextarea.vue should render an textarea with a label 1`] = `
   class="feather-textarea-container"
 >
   <div
-    class="feather-input-wrapper-container feather-input-content"
+    class="feather-input-wrapper-container feather-textarea-content"
   >
     <fieldset
       aria-hidden="true"
@@ -767,7 +767,7 @@ exports[`FeatherTextarea.vue should render an textarea with a label 1`] = `
         aria-disabled="false"
         aria-invalid="false"
         class="feather-textarea"
-        data-ref-id="feather-input"
+        data-ref-id="feather-textarea-input"
         id="feather-textarea-label"
         name="feather-textarea-label"
       />
@@ -804,7 +804,7 @@ exports[`FeatherTextarea.vue should render an textarea with a label and hint tex
   class="feather-textarea-container"
 >
   <div
-    class="feather-input-wrapper-container feather-input-content"
+    class="feather-input-wrapper-container feather-textarea-content"
   >
     <fieldset
       aria-hidden="true"
@@ -836,7 +836,7 @@ exports[`FeatherTextarea.vue should render an textarea with a label and hint tex
         aria-disabled="false"
         aria-invalid="false"
         class="feather-textarea"
-        data-ref-id="feather-input"
+        data-ref-id="feather-textarea-input"
         id="feather-textarea-label"
         name="feather-textarea-label"
       />
@@ -874,7 +874,7 @@ exports[`FeatherTextarea.vue should render an textarea with a preset value 1`] =
   class="feather-textarea-container"
 >
   <div
-    class="feather-input-wrapper-container raised feather-input-content"
+    class="feather-input-wrapper-container raised feather-textarea-content"
   >
     <fieldset
       aria-hidden="true"
@@ -906,7 +906,7 @@ exports[`FeatherTextarea.vue should render an textarea with a preset value 1`] =
         aria-disabled="false"
         aria-invalid="false"
         class="feather-textarea"
-        data-ref-id="feather-input"
+        data-ref-id="feather-textarea-input"
         id="feather-textarea-label"
         name="feather-textarea-label"
       />
@@ -944,7 +944,7 @@ exports[`FeatherTextarea.vue should render an textarea with raised label when fo
   class="feather-textarea-container"
 >
   <div
-    class="feather-input-wrapper-container raised focused feather-input-content focused"
+    class="feather-input-wrapper-container raised focused feather-textarea-content focused"
   >
     <fieldset
       aria-hidden="true"
@@ -976,7 +976,7 @@ exports[`FeatherTextarea.vue should render an textarea with raised label when fo
         aria-disabled="false"
         aria-invalid="false"
         class="feather-textarea"
-        data-ref-id="feather-input"
+        data-ref-id="feather-textarea-input"
         id="feather-textarea-label"
         name="feather-textarea-label"
       />
@@ -1013,7 +1013,7 @@ exports[`FeatherTextarea.vue should render an textarea with raised label when fo
   class="feather-textarea-container"
 >
   <div
-    class="feather-input-wrapper-container raised focused feather-input-content focused"
+    class="feather-input-wrapper-container raised focused feather-textarea-content focused"
   >
     <fieldset
       aria-hidden="true"
@@ -1045,7 +1045,7 @@ exports[`FeatherTextarea.vue should render an textarea with raised label when fo
         aria-disabled="false"
         aria-invalid="false"
         class="feather-textarea"
-        data-ref-id="feather-input"
+        data-ref-id="feather-textarea-input"
         id="feather-textarea-label"
         name="feather-textarea-label"
       />

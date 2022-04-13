@@ -6,6 +6,7 @@ exports[`FeatherDateInput.vue should render disabled 1`] = `
 >
   <div
     class="feather-date-input-menu-container"
+    data-ref-id="feather-date-input-menu-container"
     open="false"
     right=""
   >
@@ -196,6 +197,7 @@ exports[`FeatherDateInput.vue should render disabled 1`] = `
         >
           <div
             class="feather-select-menu-container"
+            data-ref-id="feather-select-menu-container"
             no-expand=""
             open="false"
           >
@@ -235,7 +237,7 @@ exports[`FeatherDateInput.vue should render disabled 1`] = `
                   aria-haspopup="listbox"
                   aria-invalid="false"
                   class="feather-select-input"
-                  data-ref-id="feather-input"
+                  data-ref-id="feather-select-input"
                   id="feather-select-input"
                   readonly=""
                 />
@@ -495,6 +497,7 @@ exports[`FeatherDateInput.vue should render disabled 1`] = `
         >
           <div
             class="feather-select-menu-container"
+            data-ref-id="feather-select-menu-container"
             no-expand=""
             open="false"
           >
@@ -534,7 +537,7 @@ exports[`FeatherDateInput.vue should render disabled 1`] = `
                   aria-haspopup="listbox"
                   aria-invalid="false"
                   class="feather-select-input"
-                  data-ref-id="feather-input"
+                  data-ref-id="feather-select-input"
                   id="feather-select-input"
                   readonly=""
                 />

@@ -6,6 +6,7 @@ exports[`FeatherAutocomplete base functionality multi disabled state should rend
 >
   <div
     class="feather-menu feather-autocomplete-menu-container"
+    data-ref-id="feather-autocomplete-menu-container"
   >
     
     <div
@@ -120,7 +121,7 @@ exports[`FeatherAutocomplete base functionality multi disabled state should rend
             aria-invalid="false"
             autocomplete="off"
             class="feather-autocomplete-input"
-            data-ref-id="feather-input"
+            data-ref-id="feather-autocomplete-input"
             disabled=""
             id="feather-autocomplete-input"
             readonly=""
@@ -179,6 +180,7 @@ exports[`FeatherAutocomplete base functionality multi disabled state should rend
 >
   <div
     class="feather-menu feather-autocomplete-menu-container"
+    data-ref-id="feather-autocomplete-menu-container"
   >
     
     <div
@@ -255,7 +257,7 @@ exports[`FeatherAutocomplete base functionality multi disabled state should rend
             aria-invalid="false"
             autocomplete="off"
             class="feather-autocomplete-input"
-            data-ref-id="feather-input"
+            data-ref-id="feather-autocomplete-input"
             disabled=""
             id="feather-autocomplete-input"
             readonly=""
@@ -314,6 +316,7 @@ exports[`FeatherAutocomplete base functionality multi should lower label when th
 >
   <div
     class="feather-menu feather-autocomplete-menu-container"
+    data-ref-id="feather-autocomplete-menu-container"
   >
     
     <div
@@ -390,7 +393,7 @@ exports[`FeatherAutocomplete base functionality multi should lower label when th
             aria-invalid="false"
             autocomplete="off"
             class="feather-autocomplete-input"
-            data-ref-id="feather-input"
+            data-ref-id="feather-autocomplete-input"
             id="feather-autocomplete-input"
             style="height: 1.625rem; flex-basis: 40px; white-space: nowrap;"
             tabindex="0"
@@ -447,6 +450,7 @@ exports[`FeatherAutocomplete base functionality multi should not leave previous 
 >
   <div
     class="feather-menu feather-autocomplete-menu-container"
+    data-ref-id="feather-autocomplete-menu-container"
   >
     
     <div
@@ -525,7 +529,7 @@ exports[`FeatherAutocomplete base functionality multi should not leave previous 
             aria-invalid="false"
             autocomplete="off"
             class="feather-autocomplete-input"
-            data-ref-id="feather-input"
+            data-ref-id="feather-autocomplete-input"
             id="feather-autocomplete-input"
             style="height: 0px; flex-basis: 100%; white-space: normal;"
             tabindex="0"
@@ -558,6 +562,7 @@ exports[`FeatherAutocomplete base functionality multi should not leave previous 
     <teleport-stub>
       <div
         class="feather-menu-dropdown"
+        data-ref-id="feather-autocomplete-menu-container-dropdown"
         id="feather-menu-dropdown"
         style="transform: translate(0px, 0px); width: 0px;"
       >
@@ -688,6 +693,7 @@ exports[`FeatherAutocomplete base functionality multi should raise the label whe
 >
   <div
     class="feather-menu feather-autocomplete-menu-container"
+    data-ref-id="feather-autocomplete-menu-container"
   >
     
     <div
@@ -842,7 +848,7 @@ exports[`FeatherAutocomplete base functionality multi should raise the label whe
             aria-invalid="false"
             autocomplete="off"
             class="feather-autocomplete-input"
-            data-ref-id="feather-input"
+            data-ref-id="feather-autocomplete-input"
             id="feather-autocomplete-input"
             style="height: 1.625rem; flex-basis: 40px; white-space: nowrap;"
             tabindex="0"
@@ -899,6 +905,7 @@ exports[`FeatherAutocomplete base functionality multi should show loading spinne
 >
   <div
     class="feather-menu feather-autocomplete-menu-container"
+    data-ref-id="feather-autocomplete-menu-container"
   >
     
     <div
@@ -977,7 +984,7 @@ exports[`FeatherAutocomplete base functionality multi should show loading spinne
             aria-invalid="false"
             autocomplete="off"
             class="feather-autocomplete-input"
-            data-ref-id="feather-input"
+            data-ref-id="feather-autocomplete-input"
             id="feather-autocomplete-input"
             style="height: 0px; flex-basis: 100%; white-space: normal;"
             tabindex="0"
@@ -1010,6 +1017,7 @@ exports[`FeatherAutocomplete base functionality multi should show loading spinne
     <teleport-stub>
       <div
         class="feather-menu-dropdown"
+        data-ref-id="feather-autocomplete-menu-container-dropdown"
         id="feather-menu-dropdown"
         style="transform: translate(0px, 0px); width: 0px;"
       >
@@ -1084,6 +1092,7 @@ exports[`FeatherAutocomplete base functionality multi should show no results tex
 >
   <div
     class="feather-menu feather-autocomplete-menu-container"
+    data-ref-id="feather-autocomplete-menu-container"
   >
     
     <div
@@ -1162,7 +1171,7 @@ exports[`FeatherAutocomplete base functionality multi should show no results tex
             aria-invalid="false"
             autocomplete="off"
             class="feather-autocomplete-input"
-            data-ref-id="feather-input"
+            data-ref-id="feather-autocomplete-input"
             id="feather-autocomplete-input"
             style="height: 0px; flex-basis: 100%; white-space: normal;"
             tabindex="0"
@@ -1195,6 +1204,7 @@ exports[`FeatherAutocomplete base functionality multi should show no results tex
     <teleport-stub>
       <div
         class="feather-menu-dropdown"
+        data-ref-id="feather-autocomplete-menu-container-dropdown"
         id="feather-menu-dropdown"
         style="transform: translate(0px, 0px); width: 0px;"
       >
@@ -1275,6 +1285,7 @@ exports[`FeatherAutocomplete base functionality single disabled state should ren
 >
   <div
     class="feather-menu feather-autocomplete-menu-container"
+    data-ref-id="feather-autocomplete-menu-container"
   >
     
     <div
@@ -1351,7 +1362,7 @@ exports[`FeatherAutocomplete base functionality single disabled state should ren
             aria-invalid="false"
             autocomplete="off"
             class="feather-autocomplete-input"
-            data-ref-id="feather-input"
+            data-ref-id="feather-autocomplete-input"
             disabled=""
             id="feather-autocomplete-input"
             readonly=""
@@ -1428,6 +1439,7 @@ exports[`FeatherAutocomplete base functionality single disabled state should ren
 >
   <div
     class="feather-menu feather-autocomplete-menu-container"
+    data-ref-id="feather-autocomplete-menu-container"
   >
     
     <div
@@ -1504,7 +1516,7 @@ exports[`FeatherAutocomplete base functionality single disabled state should ren
             aria-invalid="false"
             autocomplete="off"
             class="feather-autocomplete-input"
-            data-ref-id="feather-input"
+            data-ref-id="feather-autocomplete-input"
             disabled=""
             id="feather-autocomplete-input"
             readonly=""
@@ -1563,6 +1575,7 @@ exports[`FeatherAutocomplete base functionality single should lower label when t
 >
   <div
     class="feather-menu feather-autocomplete-menu-container"
+    data-ref-id="feather-autocomplete-menu-container"
   >
     
     <div
@@ -1639,7 +1652,7 @@ exports[`FeatherAutocomplete base functionality single should lower label when t
             aria-invalid="false"
             autocomplete="off"
             class="feather-autocomplete-input"
-            data-ref-id="feather-input"
+            data-ref-id="feather-autocomplete-input"
             id="feather-autocomplete-input"
             style="height: 1.625rem; flex-basis: 40px; white-space: nowrap;"
             tabindex="0"
@@ -1696,6 +1709,7 @@ exports[`FeatherAutocomplete base functionality single should not leave previous
 >
   <div
     class="feather-menu feather-autocomplete-menu-container"
+    data-ref-id="feather-autocomplete-menu-container"
   >
     
     <div
@@ -1774,7 +1788,7 @@ exports[`FeatherAutocomplete base functionality single should not leave previous
             aria-invalid="false"
             autocomplete="off"
             class="feather-autocomplete-input"
-            data-ref-id="feather-input"
+            data-ref-id="feather-autocomplete-input"
             id="feather-autocomplete-input"
             style="height: 0px; flex-basis: 100%; white-space: normal;"
             tabindex="0"
@@ -1807,6 +1821,7 @@ exports[`FeatherAutocomplete base functionality single should not leave previous
     <teleport-stub>
       <div
         class="feather-menu-dropdown"
+        data-ref-id="feather-autocomplete-menu-container-dropdown"
         id="feather-menu-dropdown"
         style="transform: translate(0px, 0px); width: 0px;"
       >
@@ -1936,6 +1951,7 @@ exports[`FeatherAutocomplete base functionality single should raise the label wh
 >
   <div
     class="feather-menu feather-autocomplete-menu-container"
+    data-ref-id="feather-autocomplete-menu-container"
   >
     
     <div
@@ -2012,7 +2028,7 @@ exports[`FeatherAutocomplete base functionality single should raise the label wh
             aria-invalid="false"
             autocomplete="off"
             class="feather-autocomplete-input"
-            data-ref-id="feather-input"
+            data-ref-id="feather-autocomplete-input"
             id="feather-autocomplete-input"
             style="height: 1.625rem; flex-basis: 40px; white-space: nowrap;"
             tabindex="0"
@@ -2087,6 +2103,7 @@ exports[`FeatherAutocomplete base functionality single should show loading spinn
 >
   <div
     class="feather-menu feather-autocomplete-menu-container"
+    data-ref-id="feather-autocomplete-menu-container"
   >
     
     <div
@@ -2165,7 +2182,7 @@ exports[`FeatherAutocomplete base functionality single should show loading spinn
             aria-invalid="false"
             autocomplete="off"
             class="feather-autocomplete-input"
-            data-ref-id="feather-input"
+            data-ref-id="feather-autocomplete-input"
             id="feather-autocomplete-input"
             style="height: 0px; flex-basis: 100%; white-space: normal;"
             tabindex="0"
@@ -2198,6 +2215,7 @@ exports[`FeatherAutocomplete base functionality single should show loading spinn
     <teleport-stub>
       <div
         class="feather-menu-dropdown"
+        data-ref-id="feather-autocomplete-menu-container-dropdown"
         id="feather-menu-dropdown"
         style="transform: translate(0px, 0px); width: 0px;"
       >
@@ -2272,6 +2290,7 @@ exports[`FeatherAutocomplete base functionality single should show no results te
 >
   <div
     class="feather-menu feather-autocomplete-menu-container"
+    data-ref-id="feather-autocomplete-menu-container"
   >
     
     <div
@@ -2350,7 +2369,7 @@ exports[`FeatherAutocomplete base functionality single should show no results te
             aria-invalid="false"
             autocomplete="off"
             class="feather-autocomplete-input"
-            data-ref-id="feather-input"
+            data-ref-id="feather-autocomplete-input"
             id="feather-autocomplete-input"
             style="height: 0px; flex-basis: 100%; white-space: normal;"
             tabindex="0"
@@ -2383,6 +2402,7 @@ exports[`FeatherAutocomplete base functionality single should show no results te
     <teleport-stub>
       <div
         class="feather-menu-dropdown"
+        data-ref-id="feather-autocomplete-menu-container-dropdown"
         id="feather-menu-dropdown"
         style="transform: translate(0px, 0px); width: 0px;"
       >
@@ -2463,6 +2483,7 @@ exports[`FeatherAutocomplete multi:specific chip selection should move chip sele
 >
   <div
     class="feather-menu feather-autocomplete-menu-container"
+    data-ref-id="feather-autocomplete-menu-container"
   >
     
     <div
@@ -2620,7 +2641,7 @@ exports[`FeatherAutocomplete multi:specific chip selection should move chip sele
             aria-invalid="false"
             autocomplete="off"
             class="feather-autocomplete-input"
-            data-ref-id="feather-input"
+            data-ref-id="feather-autocomplete-input"
             id="feather-autocomplete-input"
             style="height: 0px; flex-basis: 100%; white-space: normal;"
             tabindex="0"
@@ -2677,6 +2698,7 @@ exports[`FeatherAutocomplete multi:specific chip selection should move chip sele
 >
   <div
     class="feather-menu feather-autocomplete-menu-container"
+    data-ref-id="feather-autocomplete-menu-container"
   >
     
     <div
@@ -2834,7 +2856,7 @@ exports[`FeatherAutocomplete multi:specific chip selection should move chip sele
             aria-invalid="false"
             autocomplete="off"
             class="feather-autocomplete-input"
-            data-ref-id="feather-input"
+            data-ref-id="feather-autocomplete-input"
             id="feather-autocomplete-input"
             style="height: 0px; flex-basis: 100%; white-space: normal;"
             tabindex="0"
@@ -2891,6 +2913,7 @@ exports[`FeatherAutocomplete multi:specific chip selection should not move chip 
 >
   <div
     class="feather-menu feather-autocomplete-menu-container"
+    data-ref-id="feather-autocomplete-menu-container"
   >
     
     <div
@@ -3048,7 +3071,7 @@ exports[`FeatherAutocomplete multi:specific chip selection should not move chip 
             aria-invalid="false"
             autocomplete="off"
             class="feather-autocomplete-input"
-            data-ref-id="feather-input"
+            data-ref-id="feather-autocomplete-input"
             id="feather-autocomplete-input"
             style="height: 0px; flex-basis: 100%; white-space: normal;"
             tabindex="0"
@@ -3105,6 +3128,7 @@ exports[`FeatherAutocomplete multi:specific chip selection should not perform an
 >
   <div
     class="feather-menu feather-autocomplete-menu-container"
+    data-ref-id="feather-autocomplete-menu-container"
   >
     
     <div
@@ -3261,7 +3285,7 @@ exports[`FeatherAutocomplete multi:specific chip selection should not perform an
             aria-invalid="false"
             autocomplete="off"
             class="feather-autocomplete-input"
-            data-ref-id="feather-input"
+            data-ref-id="feather-autocomplete-input"
             id="feather-autocomplete-input"
             style="height: 0px; flex-basis: 100%; white-space: normal;"
             tabindex="0"
@@ -3318,6 +3342,7 @@ exports[`FeatherAutocomplete multi:specific chip selection should select rightmo
 >
   <div
     class="feather-menu feather-autocomplete-menu-container"
+    data-ref-id="feather-autocomplete-menu-container"
   >
     
     <div
@@ -3475,7 +3500,7 @@ exports[`FeatherAutocomplete multi:specific chip selection should select rightmo
             aria-invalid="false"
             autocomplete="off"
             class="feather-autocomplete-input"
-            data-ref-id="feather-input"
+            data-ref-id="feather-autocomplete-input"
             id="feather-autocomplete-input"
             style="height: 0px; flex-basis: 100%; white-space: normal;"
             tabindex="0"
@@ -3508,6 +3533,7 @@ exports[`FeatherAutocomplete multi:specific chip selection should select rightmo
     <teleport-stub>
       <div
         class="feather-menu-dropdown"
+        data-ref-id="feather-autocomplete-menu-container-dropdown"
         id="feather-menu-dropdown"
         style="transform: translate(0px, 0px); width: 0px;"
       >
@@ -3618,6 +3644,7 @@ exports[`FeatherAutocomplete multi:specific chip selection should select the rig
 >
   <div
     class="feather-menu feather-autocomplete-menu-container"
+    data-ref-id="feather-autocomplete-menu-container"
   >
     
     <div
@@ -3775,7 +3802,7 @@ exports[`FeatherAutocomplete multi:specific chip selection should select the rig
             aria-invalid="false"
             autocomplete="off"
             class="feather-autocomplete-input"
-            data-ref-id="feather-input"
+            data-ref-id="feather-autocomplete-input"
             id="feather-autocomplete-input"
             style="height: 0px; flex-basis: 100%; white-space: normal;"
             tabindex="0"
@@ -3832,6 +3859,7 @@ exports[`FeatherAutocomplete multi:specific chip selection should should deselec
 >
   <div
     class="feather-menu feather-autocomplete-menu-container"
+    data-ref-id="feather-autocomplete-menu-container"
   >
     
     <div
@@ -3988,7 +4016,7 @@ exports[`FeatherAutocomplete multi:specific chip selection should should deselec
             aria-invalid="false"
             autocomplete="off"
             class="feather-autocomplete-input"
-            data-ref-id="feather-input"
+            data-ref-id="feather-autocomplete-input"
             id="feather-autocomplete-input"
             style="height: 0px; flex-basis: 100%; white-space: normal;"
             tabindex="0"
@@ -4045,6 +4073,7 @@ exports[`FeatherAutocomplete multi:specific selection limit should clear warning
 >
   <div
     class="feather-menu feather-autocomplete-menu-container"
+    data-ref-id="feather-autocomplete-menu-container"
   >
     
     <div
@@ -4201,7 +4230,7 @@ exports[`FeatherAutocomplete multi:specific selection limit should clear warning
             aria-invalid="false"
             autocomplete="off"
             class="feather-autocomplete-input"
-            data-ref-id="feather-input"
+            data-ref-id="feather-autocomplete-input"
             id="feather-autocomplete-input"
             style="height: 0px; flex-basis: 100%; white-space: normal;"
             tabindex="0"
@@ -4258,6 +4287,7 @@ exports[`FeatherAutocomplete multi:specific selection limit should display a war
 >
   <div
     class="feather-menu feather-autocomplete-menu-container"
+    data-ref-id="feather-autocomplete-menu-container"
   >
     
     <div
@@ -4414,7 +4444,7 @@ exports[`FeatherAutocomplete multi:specific selection limit should display a war
             aria-invalid="false"
             autocomplete="off"
             class="feather-autocomplete-input"
-            data-ref-id="feather-input"
+            data-ref-id="feather-autocomplete-input"
             id="feather-autocomplete-input"
             style="height: 1.625rem; flex-basis: 100%; white-space: normal;"
             tabindex="0"
@@ -4447,6 +4477,7 @@ exports[`FeatherAutocomplete multi:specific selection limit should display a war
     <teleport-stub>
       <div
         class="feather-menu-dropdown"
+        data-ref-id="feather-autocomplete-menu-container-dropdown"
         id="feather-menu-dropdown"
         style="transform: translate(0px, 0px); width: 0px;"
       >
@@ -4549,6 +4580,7 @@ exports[`FeatherAutocomplete multi:specific selection limit should display a war
 >
   <div
     class="feather-menu feather-autocomplete-menu-container"
+    data-ref-id="feather-autocomplete-menu-container"
   >
     
     <div
@@ -4707,7 +4739,7 @@ exports[`FeatherAutocomplete multi:specific selection limit should display a war
             aria-invalid="false"
             autocomplete="off"
             class="feather-autocomplete-input"
-            data-ref-id="feather-input"
+            data-ref-id="feather-autocomplete-input"
             id="feather-autocomplete-input"
             style="height: 0px; flex-basis: 100%; white-space: normal;"
             tabindex="0"
@@ -4740,6 +4772,7 @@ exports[`FeatherAutocomplete multi:specific selection limit should display a war
     <teleport-stub>
       <div
         class="feather-menu-dropdown"
+        data-ref-id="feather-autocomplete-menu-container-dropdown"
         id="feather-menu-dropdown"
         style="transform: translate(0px, 0px); width: 0px;"
       >
@@ -4842,6 +4875,7 @@ exports[`FeatherAutocomplete multi:specific selection limit should display a war
 >
   <div
     class="feather-menu feather-autocomplete-menu-container"
+    data-ref-id="feather-autocomplete-menu-container"
   >
     
     <div
@@ -4922,7 +4956,7 @@ exports[`FeatherAutocomplete multi:specific selection limit should display a war
             aria-invalid="false"
             autocomplete="off"
             class="feather-autocomplete-input"
-            data-ref-id="feather-input"
+            data-ref-id="feather-autocomplete-input"
             id="feather-autocomplete-input"
             style="height: 0px; flex-basis: 100%; white-space: normal;"
             tabindex="0"
@@ -4955,6 +4989,7 @@ exports[`FeatherAutocomplete multi:specific selection limit should display a war
     <teleport-stub>
       <div
         class="feather-menu-dropdown"
+        data-ref-id="feather-autocomplete-menu-container-dropdown"
         id="feather-menu-dropdown"
         style="transform: translate(0px, 0px); width: 0px;"
       >
@@ -5113,6 +5148,7 @@ exports[`FeatherAutocomplete multi:specific should hide/reset menu and clear tex
 >
   <div
     class="feather-menu feather-autocomplete-menu-container"
+    data-ref-id="feather-autocomplete-menu-container"
   >
     
     <div
@@ -5191,7 +5227,7 @@ exports[`FeatherAutocomplete multi:specific should hide/reset menu and clear tex
             aria-invalid="false"
             autocomplete="off"
             class="feather-autocomplete-input"
-            data-ref-id="feather-input"
+            data-ref-id="feather-autocomplete-input"
             id="feather-autocomplete-input"
             style="height: 0px; flex-basis: 100%; white-space: normal;"
             tabindex="0"
@@ -5248,6 +5284,7 @@ exports[`FeatherAutocomplete single:specific should close menu when enter is pre
 >
   <div
     class="feather-menu feather-autocomplete-menu-container"
+    data-ref-id="feather-autocomplete-menu-container"
   >
     
     <div
@@ -5326,7 +5363,7 @@ exports[`FeatherAutocomplete single:specific should close menu when enter is pre
             aria-invalid="false"
             autocomplete="off"
             class="feather-autocomplete-input"
-            data-ref-id="feather-input"
+            data-ref-id="feather-autocomplete-input"
             id="feather-autocomplete-input"
             style="height: 0px; flex-basis: 100%; white-space: normal;"
             tabindex="0"
@@ -5359,6 +5396,7 @@ exports[`FeatherAutocomplete single:specific should close menu when enter is pre
     <teleport-stub>
       <div
         class="feather-menu-dropdown"
+        data-ref-id="feather-autocomplete-menu-container-dropdown"
         id="feather-menu-dropdown"
         style="transform: translate(0px, 0px); width: 0px;"
       >
@@ -5469,6 +5507,7 @@ exports[`FeatherAutocomplete single:specific should handle a null property on va
 >
   <div
     class="feather-menu feather-autocomplete-menu-container"
+    data-ref-id="feather-autocomplete-menu-container"
   >
     
     <div
@@ -5545,7 +5584,7 @@ exports[`FeatherAutocomplete single:specific should handle a null property on va
             aria-invalid="false"
             autocomplete="off"
             class="feather-autocomplete-input"
-            data-ref-id="feather-input"
+            data-ref-id="feather-autocomplete-input"
             id="feather-autocomplete-input"
             style="height: 1.625rem; flex-basis: 40px; white-space: nowrap;"
             tabindex="0"
@@ -5620,6 +5659,7 @@ exports[`FeatherAutocomplete single:specific should show add new element when in
 >
   <div
     class="feather-menu feather-autocomplete-menu-container"
+    data-ref-id="feather-autocomplete-menu-container"
   >
     
     <div
@@ -5698,7 +5738,7 @@ exports[`FeatherAutocomplete single:specific should show add new element when in
             aria-invalid="false"
             autocomplete="off"
             class="feather-autocomplete-input"
-            data-ref-id="feather-input"
+            data-ref-id="feather-autocomplete-input"
             id="feather-autocomplete-input"
             style="height: 0px; flex-basis: 100%; white-space: normal;"
             tabindex="0"
@@ -5731,6 +5771,7 @@ exports[`FeatherAutocomplete single:specific should show add new element when in
     <teleport-stub>
       <div
         class="feather-menu-dropdown"
+        data-ref-id="feather-autocomplete-menu-container-dropdown"
         id="feather-menu-dropdown"
         style="transform: translate(0px, 0px); width: 0px;"
       >
