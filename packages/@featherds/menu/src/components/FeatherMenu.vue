@@ -1,10 +1,11 @@
 <template>
-  <div class="feather-menu" ref="root">
+  <div class="feather-menu" :data-ref-id="refId" ref="root">
     <slot name="trigger"></slot>
     <Teleport to="body">
       <div
         class="feather-menu-dropdown"
         :class="{ hidden: calculating }"
+        :data-ref-id="refId + '-dropdown'"
         ref="menu"
         v-if="open"
         :id="menuId"
@@ -58,6 +59,10 @@ export const props = {
     type: Boolean,
     default: false,
   },
+  dataRefId: {
+    type: String,
+    default: "feather-menu",
+  },
 } as const;
 export const emits = {
   "trigger-click": (e: MouseEvent) => true,
@@ -73,11 +78,13 @@ export default defineComponent({
     const menu = ref() as Ref<HTMLElement>;
     const open = toRef(props, "open");
     const noExpand = toRef(props, "noExpand");
+    const refId = toRef(props, "dataRefId");
     const menuWidth = ref("auto");
     const windowRef = ref(window);
     const triggerId = ref(getSafeId("feather-menu-trigger"));
     const menuId = ref(getSafeId("feather-menu-dropdown"));
     const position = ref("");
+
     const scrollTop = () => {
       if (!document) return 0;
       return (document.documentElement || document.body).scrollTop;
@@ -227,6 +234,7 @@ export default defineComponent({
       calculatePosition,
       handleFocusOut,
       calculating,
+      refId,
     };
   },
 });

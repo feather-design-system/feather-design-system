@@ -13,6 +13,7 @@
       @trigger-click="handleTriggerClick"
       @close="showMenu = false"
       class="feather-date-input-menu-container"
+      data-ref-id="feather-date-input-menu-container"
       ref="menu"
     >
       <template v-slot:trigger>

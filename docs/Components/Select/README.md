@@ -93,11 +93,13 @@ The following example allows `10` items to be displayed before scrolling.
 
 ### data-ref-ids
 
-- `feather-input` - on the `input` element
+- `feather-select-input` - on the `input` element
 - `feather-form-element-label` - on the `label` text element
 - `feather-form-element-hint` - on the hint text element
 - `feather-form-element-error` - on the error text element
-- `feather-select-list` - on the list element.
+- `feather-select-list` - on the list element
+- `feather-select-menu-container` - the root div of the select container
+- `feather-select-menu-container-dropdown` - the container div for the select contents, note this uses our layering system and will be present as an immediate child of the `body` tag
 
 ### Attributes
 

@@ -2,6 +2,7 @@
   <FeatherMenu
     ref="menu"
     class="feather-dropdown-container"
+    data-ref-id="feather-dropdown-container"
     :cover="cover"
     :open="localOpen"
     :right="right"

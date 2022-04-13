@@ -101,6 +101,8 @@ clearAll() {
 - `feather-calendar-select-month` - month select element. It is a [FeatherSelect](/Components/Select/)
 - `feather-calendar-select-year` - month select element. It is a [FeatherSelect](/Components/Select/)
 - `feather-calendar-highlighted-day` - current day that is highlighted in the calendar
+- `feather-date-input-menu-container` - the root div of the menu container
+- `feather-date-input-menu-container-dropdown` - the container div for the calendar contents, note this uses our layering system and will be present as an immediate child of the `body` tag
 
 ### Attributes
 

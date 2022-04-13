@@ -31,6 +31,10 @@ menu: components
 - `default` - slot to put Dropdown items in
 - `trigger` - slot to put trigger in, typically a button
 
+### data-ref-ids
+- `feather-dropdown-container` - the root container
+- `feather-dropdown-container-dropdown` - the container div for the dropdown contents, note this uses our layering system and will be present as an immediate child of the `body` tag
+
 ### Dropdown Menu Height
 
 You can configure the Dropdown menu height by setting the height style for `.feather-dropdown`. Out of the box the height is configured to allow up to `6` rows before scrolling. We have provided a mixin for you to easily configure the height of the menu.
