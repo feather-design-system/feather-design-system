@@ -1,8 +1,8 @@
 <template>
   <FeatherMenu
     ref="menu"
-    class="feather-dropdown-container"
-    data-ref-id="feather-dropdown-container"
+    class="feather-dropdown-menu-container"
+    data-ref-id="feather-dropdown-menu-container"
     :cover="cover"
     :open="localOpen"
     :right="right"
@@ -132,7 +132,7 @@ export default defineComponent({
 </script>
 
 <style lang="scss" scoped>
-.feather-dropdown-container {
+.feather-dropdown-menu-container {
   :deep([menu-trigger]) {
     margin-top: 0;
     margin-bottom: 0;

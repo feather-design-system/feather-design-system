@@ -1,4 +1,4 @@
-const INPUT = "[data-ref-id='feather-input']";
+const INPUT = "[data-ref-id='feather-select-input']";
 const OPTION = ".result-item";
 
 const create = async () => {

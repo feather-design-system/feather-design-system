@@ -7,13 +7,13 @@
       :show-clear="showClear"
       @wrapper-click="handleWrapperClick"
       @clear="handleClear"
-      class="feather-input-content"
+      class="feather-textarea-content"
       :class="contentCls"
     >
       <textarea
         v-bind="attrs"
         class="feather-textarea"
-        data-ref-id="feather-input"
+        data-ref-id="feather-textarea-input"
         :class="{ error: error }"
         :maxlength="maxlength > 0 ? maxlength : undefined"
         ref="input"
@@ -22,7 +22,7 @@
     <InputSubText :id="descriptionId">
       <template v-slot:right>
         <div
-          class="feather-input-count"
+          class="feather-textarea-count"
           v-if="maxlength"
           data-ref-id="feather-form-element-count"
         >
@@ -312,7 +312,7 @@ export default defineComponent({
   }
 }
 
-.feather-input-count {
+.feather-textarea-count {
   padding-left: 1rem;
   align-self: flex-start;
   margin-left: auto;

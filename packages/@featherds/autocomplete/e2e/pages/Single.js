@@ -1,4 +1,4 @@
-const INPUT = ".e2e-class [data-ref-id='feather-input']";
+const INPUT = ".e2e-class [data-ref-id='feather-autocomplete-input']";
 const MENUITEM = ".result-item";
 const CLEAR = "[data-ref-id='feather-form-element-clear'] svg";
 

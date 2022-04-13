@@ -43,7 +43,7 @@ Text areas should be used on forms, dialogs, background, and foreground surfaces
 
 ### data-ref-ids
 
-- `feather-input` - on the `textarea` element
+- `feather-textarea-input` - on the `textarea` element
 - `feather-form-element-label` - on the `label` text element
 - `feather-form-element-hint` - on the hint text element
 - `feather-form-element-error` - on the error text element

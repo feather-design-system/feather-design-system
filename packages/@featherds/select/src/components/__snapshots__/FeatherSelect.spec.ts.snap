@@ -6,6 +6,7 @@ exports[`FeatherSelect.vue should not raise the label when its empty 1`] = `
 >
   <div
     class="feather-menu feather-select-menu-container"
+    data-ref-id="feather-select-menu-container"
   >
     
     <div
@@ -43,7 +44,7 @@ exports[`FeatherSelect.vue should not raise the label when its empty 1`] = `
           aria-haspopup="listbox"
           aria-invalid="false"
           class="feather-select-input"
-          data-ref-id="feather-input"
+          data-ref-id="feather-select-input"
           id="feather-select-input"
           readonly=""
         />
@@ -98,6 +99,7 @@ exports[`FeatherSelect.vue should raise the label when it has a value 1`] = `
 >
   <div
     class="feather-menu feather-select-menu-container"
+    data-ref-id="feather-select-menu-container"
   >
     
     <div
@@ -135,7 +137,7 @@ exports[`FeatherSelect.vue should raise the label when it has a value 1`] = `
           aria-haspopup="listbox"
           aria-invalid="false"
           class="feather-select-input"
-          data-ref-id="feather-input"
+          data-ref-id="feather-select-input"
           id="feather-select-input"
           readonly=""
         />
@@ -190,6 +192,7 @@ exports[`FeatherSelect.vue should render in disabled state 1`] = `
 >
   <div
     class="feather-menu feather-select-menu-container"
+    data-ref-id="feather-select-menu-container"
   >
     
     <div
@@ -227,7 +230,7 @@ exports[`FeatherSelect.vue should render in disabled state 1`] = `
           aria-haspopup="listbox"
           aria-invalid="false"
           class="feather-select-input"
-          data-ref-id="feather-input"
+          data-ref-id="feather-select-input"
           disabled=""
           id="feather-select-input"
           readonly=""
@@ -283,6 +286,7 @@ exports[`FeatherSelect.vue should render in error state 1`] = `
 >
   <div
     class="feather-menu feather-select-menu-container"
+    data-ref-id="feather-select-menu-container"
   >
     
     <div
@@ -320,7 +324,7 @@ exports[`FeatherSelect.vue should render in error state 1`] = `
           aria-haspopup="listbox"
           aria-invalid="true"
           class="feather-select-input"
-          data-ref-id="feather-input"
+          data-ref-id="feather-select-input"
           id="feather-select-input"
           readonly=""
         />

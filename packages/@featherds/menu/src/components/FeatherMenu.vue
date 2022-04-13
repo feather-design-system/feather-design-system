@@ -1,11 +1,11 @@
 <template>
-  <div class="feather-menu" :data-ref-id="refId" ref="root">
+  <div class="feather-menu" :data-ref-id="dataRefId" ref="root">
     <slot name="trigger"></slot>
     <Teleport to="body">
       <div
         class="feather-menu-dropdown"
         :class="{ hidden: calculating }"
-        :data-ref-id="refId + '-dropdown'"
+        :data-ref-id="dataRefId + '-dropdown'"
         ref="menu"
         v-if="open"
         :id="menuId"
@@ -78,7 +78,6 @@ export default defineComponent({
     const menu = ref() as Ref<HTMLElement>;
     const open = toRef(props, "open");
     const noExpand = toRef(props, "noExpand");
-    const refId = toRef(props, "dataRefId");
     const menuWidth = ref("auto");
     const windowRef = ref(window);
     const triggerId = ref(getSafeId("feather-menu-trigger"));
@@ -234,7 +233,6 @@ export default defineComponent({
       calculatePosition,
       handleFocusOut,
       calculating,
-      refId,
     };
   },
 });
