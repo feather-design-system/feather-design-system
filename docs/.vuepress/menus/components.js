@@ -186,12 +186,10 @@ module.exports = [
         {
           name: "Grid",
           url: "/Components/Grid/",
-          image: "/assets/components/Grid.png",
         },
         {
           name: "Elevation",
           url: "/Components/Elevation/",
-          image: "/assets/components/Elevation.png",
         },
       ].sort((a, b) => {
         if (a.name > b.name) {
