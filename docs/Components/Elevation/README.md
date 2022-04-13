@@ -7,6 +7,10 @@ tags: ["Elevation", "component"]
 menu: components
 ---
 
+:::warning NOTE
+Generally you should not have to use Elevation directly unless you are creating custom components or objects
+:::
+
 ## Design
 
 Elevation is a method of establishing visual hierarchy in a layout using the perception of depth. Feather DS utilizes Google Material Design across components to show relationships based on the shadows certain objects cast on other objects and their environment.
