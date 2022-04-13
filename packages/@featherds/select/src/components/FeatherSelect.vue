@@ -7,6 +7,7 @@
       @trigger-click="handleTriggerClick"
       @close="closeMenu"
       class="feather-select-menu-container"
+      data-ref-id="feather-select-menu-container"
     >
       <template v-slot:trigger>
         <InputWrapper
@@ -25,7 +26,7 @@
           <input
             v-bind="inputAttrs"
             class="feather-select-input"
-            data-ref-id="feather-input"
+            data-ref-id="feather-select-input"
             v-on="inputListeners"
             ref="input"
           />

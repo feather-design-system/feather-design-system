@@ -7,6 +7,7 @@
       @trigger-click="handleTriggerClick"
       @close="handleClose"
       class="feather-autocomplete-menu-container"
+      data-ref-id="feather-autocomplete-menu-container"
       :class="{ grid: gridConfig }"
       ref="menu"
     >
@@ -61,7 +62,7 @@
             <textarea
               v-bind="inputAttrs"
               class="feather-autocomplete-input"
-              data-ref-id="feather-input"
+              data-ref-id="feather-autocomplete-input"
               :class="{ error: error }"
               v-on="inputListeners"
               ref="input"

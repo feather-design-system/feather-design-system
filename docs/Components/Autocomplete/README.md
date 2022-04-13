@@ -195,7 +195,7 @@ Highlighting can be used to showcase what part of the string matched the search 
 
 ### data-ref-ids
 
-- `feather-input` - on the `input` element
+- `feather-autocomplete-input` - on the `input` element
 - `feather-form-element-label` - on the `label` text element
 - `feather-form-element-hint` - on the hint text element
 - `feather-form-element-error` - on the error text element
@@ -204,6 +204,8 @@ Highlighting can be used to showcase what part of the string matched the search 
 - `feather-autocomplete-no-results` - on the no results element
 - `feather-autocomplete-selection-limit` - on the selection limit element
 - `feather-autocomplete-input-selected` - on the div that holds the selected element names for screen readers
+- `feather-autocomplete-menu-container` - the root div of the menu container
+- `feather-autocomplete-menu-container-dropdown` - the container div for the menu contents, note this uses our layering system and will be present as an immediate child of the `body` tag
 
 ### Attributes
 
