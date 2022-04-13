@@ -15,7 +15,8 @@ module.exports = [
       {
         name: "Spacing",
         url: "/Components/Spacing/",
-      },      {
+      },
+      {
         name: "Form Validation",
         url: "/Components/FormValidation/",
       },
@@ -181,6 +182,16 @@ module.exports = [
           name: "Badge",
           url: "/Components/Badge/",
           image: "/assets/components/Badges.png",
+        },
+        {
+          name: "Grid",
+          url: "/Components/Grid/",
+          image: "/assets/components/Grid.png",
+        },
+        {
+          name: "Elevation",
+          url: "/Components/Elevation/",
+          image: "/assets/components/Elevation.png",
         },
       ].sort((a, b) => {
         if (a.name > b.name) {
