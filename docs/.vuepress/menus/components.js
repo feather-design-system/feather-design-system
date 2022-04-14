@@ -183,14 +183,13 @@ module.exports = [
           url: "/Components/Badge/",
           image: "/assets/components/Badges.png",
         },
+
         {
-          name: "Grid",
-          url: "/Components/Grid/",
+          name: "Tooltip",
+          url: "/Components/Tooltip/",
+          image: "/assets/components/Badges.png",
         },
-        {
-          name: "Elevation",
-          url: "/Components/Elevation/",
-        },
+
       ].sort((a, b) => {
         if (a.name > b.name) {
           return 1;
