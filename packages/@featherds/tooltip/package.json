@@ -1,0 +1,22 @@
+{
+  "name": "@featherds/tooltip",
+  "version": "0.10.2",
+  "publishConfig": {
+    "access": "public"
+  },
+  "author": "NantHealth",
+  "scripts": {},
+  "main": "dist/app.js",
+  "license": "Apache-2.0",
+  "dependencies": {
+    "@featherds/styles": "file:../styles",
+    "@featherds/utils": "file:../utils",
+    "@featherds/composables": "file:../composables",
+    "vue": "^3.1.0"
+  },
+  "keywords": [
+    "vue",
+    "FeatherTooltip"
+  ],
+  "types": "./src/index.d.ts"
+}

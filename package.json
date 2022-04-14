@@ -65,6 +65,7 @@
     "@featherds/table": "file:packages/@featherds/table",
     "@featherds/tabs": "file:packages/@featherds/tabs",
     "@featherds/textarea": "file:packages/@featherds/textarea",
+    "@featherds/tooltip": "file:packages/@featherds/tooltip",
     "@featherds/utils": "file:packages/@featherds/utils",
     "@featherds/vuepress-theme-featherds": "file:packages/@featherds/vuepress-theme-featherds"
   },

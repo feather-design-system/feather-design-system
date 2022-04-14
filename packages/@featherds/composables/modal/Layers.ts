@@ -1,7 +1,9 @@
-import { ref, computed, Ref, ComponentPublicInstance } from "vue";
+import { ref, computed, Ref, ComponentPublicInstance, isRef } from "vue";
 
 const layers: Ref<ILayer[]> = ref([]);
-type IRefElement = Ref<HTMLElement | IFocusTrap | ComponentPublicInstance>;
+type IRefElement =
+  | Ref<HTMLElement | IFocusTrap | ComponentPublicInstance>
+  | HTMLElement;
 interface IFocusTrap {
   trapFocus: boolean;
   content: HTMLElement;
@@ -11,6 +13,9 @@ export interface ILayer {
   z: number;
 }
 const getElement = (refElement: IRefElement) => {
+  if (!isRef(refElement)) {
+    return refElement as HTMLElement;
+  }
   const value = refElement.value;
   if ((value as IFocusTrap).trapFocus) {
     //check for focus trap

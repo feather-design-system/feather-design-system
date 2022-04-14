@@ -1,5 +1,5 @@
 <script lang="ts">
-import { h, defineComponent, VNode } from "vue";
+import { h, defineComponent, VNode, inject } from "vue";
 import { FeatherRipple } from "@featherds/ripple";
 export const props = {
   primary: {
@@ -33,6 +33,10 @@ export const props = {
 export default defineComponent({
   inheritAttrs: false,
   props,
+  setup() {
+    const hasTooltip = inject("feather-has-tooltip", false);
+    return { hasTooltip };
+  },
   render() {
     const getClasses = () => {
       let buttonClass = "";
@@ -66,7 +70,7 @@ export default defineComponent({
       class: string[];
     };
 
-    const _attrs = JSON.parse(JSON.stringify(this.$attrs));
+    const _attrs = { ...this.$attrs };
 
     data.attrs = _attrs || {};
     if (this.asAnchor) {
@@ -107,7 +111,9 @@ export default defineComponent({
     if (this.icon && this.$slots.default) {
       const label = this.icon;
       data.attrs["aria-label"] = label;
-      data.attrs["title"] = label;
+      if (!this.hasTooltip) {
+        data.attrs["title"] = label;
+      }
       return h(tag, { ...data.attrs, ...data.on, class: data.class }, [
         this.$slots.default(),
         this.disabled ? undefined : h(FeatherRipple, { center: true }),

@@ -33,7 +33,7 @@ import { useForm, ValidationHeader } from "@featherds/input-helper";
 
 import { FeatherSpinner } from "@featherds/progress";
 
-import allCountries from "./countries.js";
+import allCountries from "./countries";
 
 export default defineComponent({
   setup() {
