@@ -21,8 +21,9 @@ export default {
       docsearch({
         ...options,
         container: "#search-container",
-        apiKey: "3586ad692e4fd2ca21e8ad06f4181eaf",
+        apiKey: "acee25b8be32816eb05f42385ed1bd07",
         indexName: "feather_design",
+        appId: "5VUTEQZ060",
       });
     });
     return { iconSearch };
