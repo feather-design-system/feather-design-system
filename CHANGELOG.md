@@ -1,3 +1,50 @@
+## [0.10.3](https://github.com/feather-design-system/feather-design-system/compare/v0.10.2...v0.10.3) (2022-04-19)
+
+
+### Bug Fixes
+
+* bringing Textarea in line with naming of data-ref-ids/classes and updating snapshots ([3eaae9d](https://github.com/feather-design-system/feather-design-system/commit/3eaae9d2dc72930c1f76bf4ce958d00e28d84205))
+* **date-input:** no longer fires validation when moving between spinners ([1db8dc1](https://github.com/feather-design-system/feather-design-system/commit/1db8dc1793ecb2c0e601bbc5d00f955f2d8f468e))
+* **date-picker:** resolving a set of spacing issues - closes [#77](https://github.com/feather-design-system/feather-design-system/issues/77) ([4079107](https://github.com/feather-design-system/feather-design-system/commit/4079107aa9eb4df9bc5272a745b1ebbb031a2944))
+* **dropdown:** standard mode now works when being toggled from a different width ([298cbb4](https://github.com/feather-design-system/feather-design-system/commit/298cbb4ac0079c7ebc8e1fadbfa3819a80849844))
+* **menu:** resolves [#73](https://github.com/feather-design-system/feather-design-system/issues/73) - making data-ref-id tags clearer for testing ([28e6069](https://github.com/feather-design-system/feather-design-system/commit/28e60698355839859962e061fb09be4433cdae7c))
+* **menu:** trying to improve initial render performance ([f9fd2cf](https://github.com/feather-design-system/feather-design-system/commit/f9fd2cf3e8ea8397b52ba6ad46075e1f6cea8a0f))
+* **validation:** restored prior errorMessages prop in Validation Header ([fedb1f3](https://github.com/feather-design-system/feather-design-system/commit/fedb1f35937b2387804262705256c3fee045afa8))
+
+
+### Features
+
+* **checkbox:** converted to typescript ([ede65f0](https://github.com/feather-design-system/feather-design-system/commit/ede65f0a8b8b9ce0324a29e7e44c637df8277817))
+* **chip:** adding better TS support ([0ec8b6d](https://github.com/feather-design-system/feather-design-system/commit/0ec8b6d43c8a371c1a0dd1d22ef8936d235acc69))
+* **date-input:** adding an ability to reset back to initial state ([251c160](https://github.com/feather-design-system/feather-design-system/commit/251c160fb1ae3deacc0d478ce6dc557a6e4758b2))
+* **date-input:** update to use TS ([f3331ae](https://github.com/feather-design-system/feather-design-system/commit/f3331aedcfb0320d02b5e18cd3250bcc9bc55c84))
+* **dialog:** updated to TS ([26774ab](https://github.com/feather-design-system/feather-design-system/commit/26774ab6ccc02a102515139712d391bb772f4d5e))
+* **drawer:** upgraded to TS ([808a699](https://github.com/feather-design-system/feather-design-system/commit/808a699efba434d9a291b266e78cf5c575698d08))
+* **dropdown:** update to TS ([b0b97ad](https://github.com/feather-design-system/feather-design-system/commit/b0b97ad4e1e63467ad5b544cf7c71179a04904ec))
+* **expansion:** upgrade to TS ([45f6d79](https://github.com/feather-design-system/feather-design-system/commit/45f6d796bad87b3cc1a77894a709f47fb9a5f342))
+* **footer:** updated to TS ([9dc09fd](https://github.com/feather-design-system/feather-design-system/commit/9dc09fdafbcab67d2f849051e38c8378fd297885))
+* **icon:** updating to ts ([28faf24](https://github.com/feather-design-system/feather-design-system/commit/28faf24c38d5fd62ef5b55970b3386bf54d6e943))
+* **input-helper:** updated to ts ([a970a1c](https://github.com/feather-design-system/feather-design-system/commit/a970a1c658299f619187db3045efec155802f4b8))
+* **input:** update to TS ([f7ac2a7](https://github.com/feather-design-system/feather-design-system/commit/f7ac2a73beaa59a87d045d6c75a48e12cfa91ff8))
+* **list:** updated to TS ([5d8a17f](https://github.com/feather-design-system/feather-design-system/commit/5d8a17fbe5ac49820094fc1af8270e7e2800ab32))
+* **megamenu:** upgraded to TS, ([1e7adaa](https://github.com/feather-design-system/feather-design-system/commit/1e7adaacf9b4c5777146d09e1d131923cecf18d3))
+* **menu:** updating to TS ([d099b71](https://github.com/feather-design-system/feather-design-system/commit/d099b71d2f6b57c86f6ec5d2f5619335a0cd2408))
+* **navigation-rail:** updated to ts ([a59721f](https://github.com/feather-design-system/feather-design-system/commit/a59721f177ea3e97b4c3195e7fbf20c0baf4de56))
+* **pagination:** updated to TS ([e86b742](https://github.com/feather-design-system/feather-design-system/commit/e86b742596e0bb6703ac1047c6105d461a008d5c))
+* **pdf-viewer:** updated to TS ([33368c6](https://github.com/feather-design-system/feather-design-system/commit/33368c6136d7737cd28585a671de8f2b4daa0034))
+* **progress:** updated to TS ([145fa87](https://github.com/feather-design-system/feather-design-system/commit/145fa872526c63f12370eda0831b865a2cc58fa4))
+* **protected-input:** updated to TS ([decc311](https://github.com/feather-design-system/feather-design-system/commit/decc3113656f0650bbfde7a872cb3bb22523ac98))
+* **radio:** updated to TS ([f2e8487](https://github.com/feather-design-system/feather-design-system/commit/f2e848728a98956f73d57c76666a2e1df4499204))
+* **ripple:** updated to TS ([717512d](https://github.com/feather-design-system/feather-design-system/commit/717512d28c4d65ff51a1884656355624406be198))
+* **select:** updated to TS ([5b1309b](https://github.com/feather-design-system/feather-design-system/commit/5b1309bf9d82b2be0faf93f514a3651c2c6a2dae))
+* **snackbar:** updating to TS ([28338aa](https://github.com/feather-design-system/feather-design-system/commit/28338aae8d98689d913f897615b0bc586f2636b3))
+* **switch:** updated to TS ([8cfcbf7](https://github.com/feather-design-system/feather-design-system/commit/8cfcbf7123895bc786c79e843729572e91899ec7))
+* **table:** udpate to TS ([c986cd6](https://github.com/feather-design-system/feather-design-system/commit/c986cd6c5c838689170b62bdc64e12943f2dd905))
+* **tabs:** update to TS ([8036125](https://github.com/feather-design-system/feather-design-system/commit/8036125aeec0a2322341693d4220805aff9a921a))
+* **validation:** improving typing ([ccfaa3c](https://github.com/feather-design-system/feather-design-system/commit/ccfaa3ca1b827efb6ea3195729715daf0959c209))
+
+
+
 ## [0.10.2](https://github.com/feather-design-system/feather-design-system/compare/v0.10.1...v0.10.2) (2022-03-29)
 
 
