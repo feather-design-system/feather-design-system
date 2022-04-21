@@ -27,6 +27,7 @@ import { FeatherRipple } from "@featherds/ripple";
 import { FeatherIcon } from "@featherds/icon";
 import icon from "@featherds/icon/navigation/ChevronLeft";
 import { getSafeId } from "@featherds/utils/id";
+import { _setTimeout } from "@featherds/utils/setTimeout";
 import { defineComponent } from "vue";
 export const props = {
   longHover: {
@@ -75,7 +76,7 @@ export default defineComponent({
   },
   methods: {
     mouseEnter() {
-      this.longHoverTimeout = setTimeout(() => {
+      this.longHoverTimeout = _setTimeout(() => {
         this.showText = true;
       }, this.longHover);
     },

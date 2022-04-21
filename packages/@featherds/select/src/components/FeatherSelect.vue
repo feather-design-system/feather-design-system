@@ -71,6 +71,7 @@ import { getSafeId } from "@featherds/utils/id";
 import { KEYCODES } from "@featherds/utils/keys";
 import List from "./List.vue";
 import { useValidation } from "@featherds/input-helper";
+import { _setTimeout } from "@featherds/utils/setTimeout";
 import { computed, defineComponent, PropType, Ref, toRef } from "vue";
 import { ISelectItemType } from "./types";
 export const props = {
@@ -312,7 +313,7 @@ export default defineComponent({
     },
     searchAfterDelay() {
       clearTimeout(this.delayTimeout);
-      this.delayTimeout = setTimeout(() => {
+      this.delayTimeout = _setTimeout(() => {
         const found = this.options.filter(
           (x) =>
             x[this.textProp] &&

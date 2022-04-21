@@ -34,6 +34,7 @@
 <script lang="ts">
 import { ref, inject, watch, toRef, nextTick, defineComponent, Ref } from "vue";
 import { KEYCODES } from "@featherds/utils/keys";
+import { _setTimeout } from "@featherds/utils/setTimeout";
 export const props = {
   modelValue: {
     type: Boolean,
@@ -84,14 +85,14 @@ export default defineComponent({
         remaining = duration;
       const pause = () => {
         if (!id) return;
-        window.clearTimeout(id);
+        clearTimeout(id);
         id = -1;
         remaining -= Date.now() - start;
       };
       const resume = () => {
         if (id) return;
         start = Date.now();
-        id = window.setTimeout(callback, remaining);
+        id = _setTimeout(callback, remaining);
       };
       resume();
       return { pause: pause, resume: resume };
