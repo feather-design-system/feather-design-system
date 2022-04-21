@@ -23,6 +23,7 @@
 <script lang="ts">
 import { useTab, stockProps } from "@featherds/composables/tabs/Tab";
 import { FeatherRipple } from "@featherds/ripple";
+import { _setTimeout } from "@featherds/utils/setTimeout";
 import { defineComponent } from "vue";
 export const props = {
   label: {
@@ -52,7 +53,7 @@ export default defineComponent({
       //if there isnt a timeout and we aren't selected and we aren't currently showing the label
       //then yeah set a second time out to show it
       if (!this.showLabelTimeout && !this.selected && !this.showLabel) {
-        this.showLabelTimeout = setTimeout(() => {
+        this.showLabelTimeout = _setTimeout(() => {
           this.showLabel = true;
         }, 1000);
       }

@@ -163,6 +163,7 @@ import { useStrategy } from "./Strategies";
 import { getSafeId } from "@featherds/utils/id";
 import { KEYCODES } from "@featherds/utils/keys";
 import { toView } from "@featherds/utils/scroll";
+import { _setTimeout } from "@featherds/utils/setTimeout";
 import { useLabelProperty } from "@featherds/composables/LabelProperty";
 import { useResultList } from "./Results/ResultList";
 import { useResultGrid } from "./Results/ResultGrid";
@@ -503,7 +504,7 @@ export default defineComponent({
         return;
       }
       clearTimeout(this.typingTimeout);
-      this.typingTimeout = setTimeout(() => {
+      this.typingTimeout = _setTimeout(() => {
         this.query = str;
         this.emitSearch();
       }, 250);
