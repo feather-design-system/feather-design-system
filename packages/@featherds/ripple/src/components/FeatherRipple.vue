@@ -1,5 +1,10 @@
 <script lang="ts">
 import { defineComponent, h } from "vue";
+import {
+  _setTimeout,
+  TimeoutResult,
+  _clearTimeout,
+} from "@featherds/utils/setTimeout";
 export const props = {
   center: {
     type: Boolean,
@@ -13,7 +18,7 @@ export default defineComponent({
       pressed: false,
       active: false,
       styles: {},
-      failsafe: 0,
+      failsafe: -1 as unknown as TimeoutResult,
     };
   },
   computed: {
@@ -63,8 +68,8 @@ export default defineComponent({
           this.active = true;
           //in IE transitioncancel doesnt exist
           //failsafe is remove after a given timeout.
-          clearTimeout(this.failsafe);
-          this.failsafe = setTimeout(() => {
+          _clearTimeout(this.failsafe);
+          this.failsafe = _setTimeout(() => {
             this.pressed = false;
             this.active = false;
           }, 380 + 100 + 20);
