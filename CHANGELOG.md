@@ -1,3 +1,12 @@
+## [0.10.5](https://github.com/feather-design-system/feather-design-system/compare/v0.10.3...v0.10.5) (2022-04-22)
+
+
+### Bug Fixes
+
+* addresses [#87](https://github.com/feather-design-system/feather-design-system/issues/87) - TS compile errors 'Timeout' is not assignable to type 'number' ([4e5be62](https://github.com/feather-design-system/feather-design-system/commit/4e5be62ccdc8cc3bd8f5e40473e92bd1ca93827f))
+
+
+
 ## [0.10.3](https://github.com/feather-design-system/feather-design-system/compare/v0.10.2...v0.10.3) (2022-04-19)
 
 
