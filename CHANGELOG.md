@@ -1,3 +1,12 @@
+## [0.10.6](https://github.com/feather-design-system/feather-design-system/compare/v0.10.5...v0.10.6) (2022-04-22)
+
+
+### Bug Fixes
+
+* **ts:** rework of solution for [#87](https://github.com/feather-design-system/feather-design-system/issues/87) ([534341f](https://github.com/feather-design-system/feather-design-system/commit/534341f9b72f299b6ea620e5d4ae8788684ba59b))
+
+
+
 ## [0.10.5](https://github.com/feather-design-system/feather-design-system/compare/v0.10.3...v0.10.5) (2022-04-22)
 
 
