@@ -71,7 +71,11 @@ import { getSafeId } from "@featherds/utils/id";
 import { KEYCODES } from "@featherds/utils/keys";
 import List from "./List.vue";
 import { useValidation } from "@featherds/input-helper";
-import { _setTimeout } from "@featherds/utils/setTimeout";
+import {
+  _setTimeout,
+  TimeoutResult,
+  _clearTimeout,
+} from "@featherds/utils/setTimeout";
 import { computed, defineComponent, PropType, Ref, toRef } from "vue";
 import { ISelectItemType } from "./types";
 export const props = {
@@ -133,7 +137,7 @@ export default defineComponent({
       showMenu: false,
       charsSoFar: "",
       internalValue: this.modelValue,
-      delayTimeout: 0,
+      delayTimeout: -1 as unknown as TimeoutResult,
     };
   },
   computed: {
@@ -312,7 +316,7 @@ export default defineComponent({
       }
     },
     searchAfterDelay() {
-      clearTimeout(this.delayTimeout);
+      _clearTimeout(this.delayTimeout);
       this.delayTimeout = _setTimeout(() => {
         const found = this.options.filter(
           (x) =>

@@ -23,7 +23,11 @@
 <script lang="ts">
 import { useTab, stockProps } from "@featherds/composables/tabs/Tab";
 import { FeatherRipple } from "@featherds/ripple";
-import { _setTimeout } from "@featherds/utils/setTimeout";
+import {
+  _setTimeout,
+  TimeoutResult,
+  _clearTimeout,
+} from "@featherds/utils/setTimeout";
 import { defineComponent } from "vue";
 export const props = {
   label: {
@@ -38,7 +42,7 @@ export default defineComponent({
   data() {
     return {
       showLabel: false,
-      showLabelTimeout: 0,
+      showLabelTimeout: 0 as unknown as TimeoutResult,
     };
   },
   watch: {
@@ -59,7 +63,7 @@ export default defineComponent({
       }
     },
     mouseLeave() {
-      clearTimeout(this.showLabelTimeout);
+      _clearTimeout(this.showLabelTimeout);
       this.showLabelTimeout = 0;
       this.showLabel = false;
     },

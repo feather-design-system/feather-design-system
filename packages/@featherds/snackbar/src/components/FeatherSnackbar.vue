@@ -34,7 +34,11 @@
 <script lang="ts">
 import { ref, inject, watch, toRef, nextTick, defineComponent, Ref } from "vue";
 import { KEYCODES } from "@featherds/utils/keys";
-import { _setTimeout } from "@featherds/utils/setTimeout";
+import {
+  _setTimeout,
+  TimeoutResult,
+  _clearTimeout,
+} from "@featherds/utils/setTimeout";
 export const props = {
   modelValue: {
     type: Boolean,
@@ -80,12 +84,12 @@ export default defineComponent({
       resume: () => void;
     }
     const timer = (callback: () => void, duration: number): ITimer => {
-      let id: number,
+      let id: TimeoutResult,
         start: number,
         remaining = duration;
       const pause = () => {
         if (!id) return;
-        clearTimeout(id);
+        _clearTimeout(id);
         id = -1;
         remaining -= Date.now() - start;
       };

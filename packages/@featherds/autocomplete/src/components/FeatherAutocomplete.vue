@@ -163,7 +163,11 @@ import { useStrategy } from "./Strategies";
 import { getSafeId } from "@featherds/utils/id";
 import { KEYCODES } from "@featherds/utils/keys";
 import { toView } from "@featherds/utils/scroll";
-import { _setTimeout } from "@featherds/utils/setTimeout";
+import {
+  _setTimeout,
+  TimeoutResult,
+  _clearTimeout,
+} from "@featherds/utils/setTimeout";
 import { useLabelProperty } from "@featherds/composables/LabelProperty";
 import { useResultList } from "./Results/ResultList";
 import { useResultGrid } from "./Results/ResultGrid";
@@ -198,7 +202,7 @@ export default defineComponent({
   props,
   data() {
     return {
-      typingTimeout: -1,
+      typingTimeout: -1 as unknown as TimeoutResult,
       activeChipIndex: -1,
     };
   },
@@ -503,7 +507,7 @@ export default defineComponent({
       if (str === undefined) {
         return;
       }
-      clearTimeout(this.typingTimeout);
+      _clearTimeout(this.typingTimeout);
       this.typingTimeout = _setTimeout(() => {
         this.query = str;
         this.emitSearch();

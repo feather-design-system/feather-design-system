@@ -27,7 +27,11 @@ import { FeatherRipple } from "@featherds/ripple";
 import { FeatherIcon } from "@featherds/icon";
 import icon from "@featherds/icon/navigation/ChevronLeft";
 import { getSafeId } from "@featherds/utils/id";
-import { _setTimeout } from "@featherds/utils/setTimeout";
+import {
+  _setTimeout,
+  TimeoutResult,
+  _clearTimeout,
+} from "@featherds/utils/setTimeout";
 import { defineComponent } from "vue";
 export const props = {
   longHover: {
@@ -39,7 +43,7 @@ export default defineComponent({
   emits: ["focus", "blur", "mouseenter", "mouseleave"],
   props,
   data: () => ({
-    longHoverTimeout: -1,
+    longHoverTimeout: -1 as unknown as TimeoutResult,
     showText: false,
     widthSet: false,
     forceHoverClass: false,
@@ -81,7 +85,7 @@ export default defineComponent({
       }, this.longHover);
     },
     mouseLeave() {
-      clearTimeout(this.longHoverTimeout);
+      _clearTimeout(this.longHoverTimeout);
       this.showText = false;
     },
     addHoverClass() {
