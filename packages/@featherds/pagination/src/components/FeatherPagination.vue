@@ -109,8 +109,8 @@ export const props = {
   },
 } as const;
 export const emits = {
-  "update:modelValue": (page: number) => true,
-  "update:pageSize": (pageSize: number) => true,
+  "update:modelValue": (_page: number) => true,
+  "update:pageSize": (_pageSize: number) => true,
 };
 const LABELS = {
   rowsPerPage: "Rows per page",

@@ -68,7 +68,7 @@ export const props = {
   },
 } as const;
 export const emits = {
-  "sort-changed": (v: { property: string; value: SORT }) => true,
+  "sort-changed": (_v: { property: string; value: SORT }) => true,
 };
 export default defineComponent({
   emits: ["sort-changed"],

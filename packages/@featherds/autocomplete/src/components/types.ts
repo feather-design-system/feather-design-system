@@ -136,8 +136,8 @@ export const props = {
 
 export const emits = {
   "update:modelValue": (
-    value: IAutocompleteItemType | IAutocompleteItemType[] | undefined
+    _value: IAutocompleteItemType | IAutocompleteItemType[] | undefined
   ) => true,
-  new: (value: string) => true,
-  search: (value: string) => true,
+  new: (_value: string) => true,
+  search: (_value: string) => true,
 };

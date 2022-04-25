@@ -22,7 +22,7 @@ export default defineComponent({
     const dateField: Ref<Date | undefined> = ref();
     const dateV = date().required("required");
 
-    const onSubmit = (e: Event) => {
+    const onSubmit = (_e: Event) => {
       form.validate();
     };
 

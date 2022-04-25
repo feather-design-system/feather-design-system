@@ -29,9 +29,9 @@ import FeatherListItem from "./FeatherListItem.vue";
 import { defineComponent, ComponentPublicInstance } from "vue";
 
 export const emits = {
-  "update:modelValue": (value: boolean) => true,
-  click: (e: MouseEvent) => true,
-  keydown: (e: KeyboardEvent) => true,
+  "update:modelValue": (_value: boolean) => true,
+  click: (_e: MouseEvent) => true,
+  keydown: (_e: KeyboardEvent) => true,
 };
 export const props = {
   disabled: {

@@ -15,7 +15,7 @@ declare global {
 }
 Date.prototype.toLocaleDateStringDefault = Date.prototype.toLocaleDateString;
 Date.prototype.toLocaleDateString = function (
-  locale?: string | string[] | undefined,
+  _locale?: string | string[] | undefined,
   options?: Intl.DateTimeFormatOptions | undefined
 ) {
   const result = this.toLocaleDateStringDefault("en-US", options);

@@ -19,7 +19,7 @@ const getProps =
     };
   };
 
-const getResultsType = (type: AutocompleteTypes) => () => {
+const getResultsType = (_type: AutocompleteTypes) => () => {
   return [
     {
       _text: "Item 1",

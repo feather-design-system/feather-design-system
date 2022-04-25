@@ -54,7 +54,7 @@ export const props = {
 };
 export const emits = {
   clear: () => true,
-  "wrapper-click": (e: MouseEvent) => true,
+  "wrapper-click": (_e: MouseEvent) => true,
 };
 export default defineComponent({
   emits,

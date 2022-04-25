@@ -65,9 +65,9 @@ export default defineComponent({
       input.value.$el.focus();
     };
     //register
-    const register = inject("register", (t?: unknown) => {});
-    const blur = inject("blur", (t?: unknown) => {});
-    const select = inject("select", (t?: unknown) => {});
+    const register = inject("register", (_t?: unknown) => {});
+    const blur = inject("blur", (_t?: unknown) => {});
+    const select = inject("select", (_t?: unknown) => {});
 
     const vm = {
       first,

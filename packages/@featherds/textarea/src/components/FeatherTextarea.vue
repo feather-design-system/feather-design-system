@@ -72,7 +72,7 @@ export const props = {
   },
 } as const;
 export const emits = {
-  "update:modelValue": (v: string) => true,
+  "update:modelValue": (_v: string) => true,
 };
 export default defineComponent({
   model: {
