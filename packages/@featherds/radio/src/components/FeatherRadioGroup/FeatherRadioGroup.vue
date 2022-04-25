@@ -49,8 +49,8 @@ export const props = {
   },
 } as const;
 export const emits = {
-  "update:modelValue": (v: unknown) => true,
-  blur: (v: FocusEvent) => true,
+  "update:modelValue": (_v: unknown) => true,
+  blur: (_v: FocusEvent) => true,
 };
 export default defineComponent({
   model: {

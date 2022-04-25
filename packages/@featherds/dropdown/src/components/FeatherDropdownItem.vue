@@ -19,7 +19,7 @@ import DropdownItem from "../mixins/DropdownItem";
 import { FeatherListItem } from "@featherds/list";
 import { ComponentPublicInstance, defineComponent } from "vue";
 export const emits = {
-  click: (e: MouseEvent) => true,
+  click: (_e: MouseEvent) => true,
 };
 export default defineComponent({
   mixins: [DropdownItem],

@@ -148,10 +148,10 @@ export const props = {
   },
 } as const;
 export const emits = {
-  "update:modelValue": (v: boolean) => true,
+  "update:modelValue": (_v: boolean) => true,
   shown: () => true,
   hidden: () => true,
-  "check-request": (v: XMLHttpRequest) => true,
+  "check-request": (_v: XMLHttpRequest) => true,
 };
 export default defineComponent({
   model: {
@@ -227,7 +227,7 @@ export default defineComponent({
     //if we dont have a pdf extension and no preview url then show error.
     watch(
       [visible, preview, ext, docUrl],
-      ([vis, url, extension, docUrl]) => {
+      ([vis, url, _extension, docUrl]) => {
         if (vis && ((url && url.length) || (docUrl && docUrl.length))) {
           updateState(STATE.LOADING);
           var http = new window.XMLHttpRequest();

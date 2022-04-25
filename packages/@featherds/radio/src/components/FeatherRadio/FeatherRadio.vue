@@ -102,9 +102,9 @@ export default defineComponent({
     );
 
     //register
-    const register = inject("register", (radio: IRadio) => {});
-    const blur = inject("blur", (e: FocusEvent) => {});
-    const select = inject("select", (radio: IRadio) => {});
+    const register = inject("register", (_radio: IRadio) => {});
+    const blur = inject("blur", (_e: FocusEvent) => {});
+    const select = inject("select", (_radio: IRadio) => {});
 
     register(vm);
     const click = () => {

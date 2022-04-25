@@ -69,12 +69,17 @@ export const props = {
     default: false,
   },
 } as const;
+export const emits = {
+  "update:modelValue": (_value: boolean | undefined) => true,
+  click: (_value: MouseEvent) => true,
+  indeterminate: (_value: boolean) => true,
+};
 export default defineComponent({
   model: {
     prop: "modelValue",
     event: "update:modelValue",
   },
-  emits: ["click", "update:modelValue", "indeterminate"],
+  emits,
   props,
   mounted() {
     if (this.registerCheckbox) {
@@ -82,7 +87,7 @@ export default defineComponent({
     }
   },
   setup() {
-    const registerCheckbox = inject("registerCheckbox", (id?: string) => {});
+    const registerCheckbox = inject("registerCheckbox", (_id?: string) => {});
     return {
       registerCheckbox,
     };

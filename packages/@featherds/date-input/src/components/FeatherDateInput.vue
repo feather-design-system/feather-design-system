@@ -166,7 +166,7 @@ export const props = {
   },
 } as const;
 export const emits = {
-  "update:modelValue": (value: Date | undefined) => true,
+  "update:modelValue": (_value: Date | undefined) => true,
   blur: () => true,
 };
 export default defineComponent({

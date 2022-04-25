@@ -15,7 +15,7 @@ const model = {
   event: "update:modelValue",
 };
 const emits = {
-  "update:modelValue": (value: number | undefined) => true,
+  "update:modelValue": (_value: number | undefined) => true,
 };
 const stockProps = {
   modelValue: {

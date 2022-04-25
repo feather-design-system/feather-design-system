@@ -92,7 +92,7 @@ export const props = {
   },
 } as const;
 export const emits = {
-  "update:modelValue": (value: boolean) => true,
+  "update:modelValue": (_value: boolean) => true,
   shown: () => true,
   hidden: () => true,
 };

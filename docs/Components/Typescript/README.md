@@ -138,7 +138,11 @@ export interface IPerson {
 }
 export default defineComponent({
   emits: {
-    selected: (v: IPerson) => true,
+    selected: (_v: IPerson) => true,
   },
 });
 ```
+
+:::tip NOTE
+When defining the emits object you can prefix the value property with an underscore to avoid the unused parameters error from typescript compliation.
+:::

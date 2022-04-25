@@ -23,7 +23,7 @@ export const props = {
   },
 };
 export const emits = {
-  click: (e: MouseEvent) => true,
+  click: (_e: MouseEvent) => true,
 };
 export default defineComponent({
   emits,

@@ -83,7 +83,7 @@ export const props = {
   },
 } as const;
 export const emits = {
-  "update:modelValue": (v: boolean) => true,
+  "update:modelValue": (_v: boolean) => true,
 };
 export default defineComponent({
   name: "FeatherExpansionPanel",

@@ -44,7 +44,7 @@ export default defineComponent({
     },
   },
   methods: {
-    handleParent(v: boolean) {
+    handleParent(v: boolean | undefined) {
       if (v === undefined) {
         return;
       }

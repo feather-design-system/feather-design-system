@@ -101,7 +101,7 @@ export const props = {
   },
 } as const;
 export const emits = {
-  "update:modelValue": (v: ISelectItemType | undefined) => true,
+  "update:modelValue": (_v: ISelectItemType | undefined) => true,
 };
 export default defineComponent({
   model: {
