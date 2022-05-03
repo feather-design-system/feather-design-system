@@ -34,11 +34,13 @@ Position Tooltips so they don’t block relevant information. Some scenarios, li
 
 ### Props
 
-| Name      | Description                                                     | Type               | Required | Default                   |
-| --------- | --------------------------------------------------------------- | ------------------ | -------- | ------------------------- |
-| title     | text to be displayed in the tooltip                             | `String`           | `true`   | `false`                   |
-| placement | determines the placement of the tooltip around the slot content | `TooltipPlacement` | `false`  | `TooltipPlacement.top`    |
-| alignment | determines the alignment of the pointer on the tooltip          | `TooltipAlignment` | `false`  | `TooltipAlignment.center` |
+| Name       | Description                                                     | Type               | Required | Default                   |
+| ---------- | --------------------------------------------------------------- | ------------------ | -------- | ------------------------- |
+| title      | text to be displayed in the tooltip                             | `String`           | `true`   | `false`                   |
+| placement  | determines the placement of the tooltip around the slot content | `TooltipPlacement` | `false`  | `TooltipPlacement.top`    |
+| alignment  | determines the alignment of the pointer on the tooltip          | `TooltipAlignment` | `false`  | `TooltipAlignment.center` |
+| enterDelay | delay in `ms` before tooltip should appear                      | `number`           | `false`  | `400`                     |
+| exit       | delay in `ms` before tooltip should disappear                   | `number`           | `false`  | `400`                     |
 
 ### Slots
 
