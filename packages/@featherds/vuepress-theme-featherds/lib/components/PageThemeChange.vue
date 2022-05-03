@@ -70,6 +70,6 @@ export default {
 @import "@featherds/styles/themes/variables";
 @import "@featherds/styles/mixins/typography";
 .theme-changer.toggle.btn.btn-text {
-  color: var($primary-text-on-color);
+  color: var($state-color-on-surface-dark);
 }
 </style>

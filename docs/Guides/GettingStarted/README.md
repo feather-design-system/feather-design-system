@@ -3,8 +3,8 @@ title: "Getting Started"
 pre: "Welcome"
 description: "Help and guidance to get you started with Feather DS."
 lang: en-US
-tags: ["Getting Started", "component"]
-menu: components
+tags: ["Getting Started", "guide"]
+menu: guides
 ---
 
 ## Intro

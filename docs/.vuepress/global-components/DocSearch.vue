@@ -36,7 +36,7 @@ export default {
 <style lang="scss" scoped>
 @import "@featherds/styles/themes/variables";
 .search-icon {
-  color: var($secondary-text-on-color);
+  color: var($state-text-color-on-surface-dark);
   font-size: 1.5rem;
   position: relative;
   top: 0px;

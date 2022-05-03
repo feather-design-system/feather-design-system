@@ -8,13 +8,15 @@ $colors: (
   $clickable-visited: #670101,
   $background: #f4f7fc,
   $surface: #ffffff,
+  $surface-dark: #131736,
   $error: #d43d45,
   $success: #0f6e00,
   $warning: #ffac26,
   $state-color-on-color: #fff,
+  $state-color-on-surface-dark: #fff,
   $state-color-on-neutral: #000,
   $high-visibility-on-surface: #333,
-  $high-visibility-text-on-surface: #85D4FF,
+  $high-visibility-text-on-surface: #85d4ff,
   //added here so RGB is added
   $primary-text-on-surface: rgba(10, 12, 27, 0.9),
 );
@@ -105,6 +107,18 @@ $state-on-surface: (
   $state-opacity-pressed-on-surface: 0.32,
   $state-opacity-selected-on-surface: 0.12,
   $state-opacity-focus-on-surface: 0.12,
+);
+$state-on-surface-dark: (
+  $state-text-color-on-surface-dark: alpha($state-color-on-surface-dark, 0.78),
+  $state-opacity-hover-on-surface-dark: 0.08,
+  $state-text-color-hover-on-surface-dark: var($state-color-on-surface-dark),
+  $state-opacity-focus-on-surface-dark: 0.16,
+  $state-border-focus-on-surface-dark: 2px solid
+    var($state-color-on-surface-dark),
+  $state-text-color-focus-on-surface-dark: var($state-color-on-surface-dark),
+  $state-opacity-pressed-on-surface-dark: 0.32,
+  $state-text-color-pressed-on-surface-dark: var($state-color-on-surface-dark),
+  $state-background-selected-on-surface-dark: var($state-color-on-surface-dark),
 );
 $state-on-neutral: (
   $state-opacity-hover-on-neutral: 0.08,
@@ -221,6 +235,7 @@ $base-light: map-collect(
   $state-on-surface,
   $state-on-neutral,
   $state-on-color,
+  $state-on-surface-dark,
   $shades,
   $elevation-background,
   $shadows

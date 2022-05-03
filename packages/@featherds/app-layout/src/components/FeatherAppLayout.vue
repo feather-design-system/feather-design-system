@@ -1,19 +1,19 @@
 <template>
-  <div class="app-layout">
+  <div class="app-layout" :class="navLayout">
     <div class="app-header">
-      <slot name="header"></slot>
+      <slot name="header" v-if="navLayout === 'horizontal'"></slot>
+      <slot name="rail" v-if="navLayout === 'vertical'"></slot>
     </div>
-    <div class="app-main">
-      <div class="app-aside">
-        <slot name="rail"></slot>
-      </div>
-      <div class="app-content">
-        <div
-          class="app-content-container"
-          :class="{ 'full-width': contentLayout === 'full' }"
-        >
-          <slot></slot>
-        </div>
+    <div class="app-aside">
+      <slot name="header" v-if="navLayout === 'vertical'"></slot>
+      <slot name="rail" v-if="navLayout === 'horizontal'"></slot>
+    </div>
+    <div class="app-content">
+      <div
+        class="app-content-container"
+        :class="{ 'full-width': contentLayout === 'full' }"
+      >
+        <slot></slot>
       </div>
     </div>
     <div class="app-footer">
@@ -24,6 +24,7 @@
 <script lang="ts">
 import { ref, provide, computed, defineComponent, PropType } from "vue";
 type LayoutType = "center" | "full";
+type navLayoutType = "vertical" | "horizontal";
 export const props = {
   contentLayout: {
     type: String as PropType<LayoutType>,
@@ -32,11 +33,20 @@ export const props = {
       return ["full", "center"].indexOf(v) > -1;
     },
   },
+
+  navLayout: {
+    type: String as PropType<navLayoutType>,
+    default: "horizontal",
+    validator: (v: string) => {
+      return ["vertical", "horizontal"].indexOf(v) > -1;
+    },
+  },
 } as const;
 export default defineComponent({
   props,
   setup(props, context) {
     const full = ref(props.contentLayout === "full");
+    const navLayout = ref(props.navLayout);
     const _expand = ref(false);
     const active = ref(false);
     const railContent = ref();
@@ -74,19 +84,35 @@ export default defineComponent({
 @import "@featherds/styles/mixins/elevation";
 .app-layout {
   height: 100%;
-  display: flex;
-  flex-direction: column;
+  min-height: 100vh;
+  display: grid;
+  grid-template-areas:
+    "header header"
+    "rail main"
+    "rail footer";
+  grid-template-rows: auto minmax(0, 1fr) auto;
+  grid-template-columns: auto minmax(0, 1fr);
 }
-.app-header,
+.app-layout.vertical {
+  grid-template-areas:
+    "header rail"
+    "header main"
+    "header footer";
+}
+.app-header {
+  grid-area: header;
+}
 .app-footer {
-  flex: none;
-}
-.app-main {
-  flex: 1;
-  display: flex;
+  grid-area: footer;
 }
 .app-content {
-  flex: 1;
+  grid-area: main;
+}
+.app-aside {
+  grid-area: rail;
+}
+
+.app-content {
   display: flex;
   justify-content: center;
   width: 100%;
@@ -97,8 +123,5 @@ export default defineComponent({
       max-width: none;
     }
   }
-}
-.app-aside {
-  flex: none;
 }
 </style>

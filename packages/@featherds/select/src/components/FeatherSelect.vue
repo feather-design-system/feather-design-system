@@ -76,7 +76,16 @@ import {
   TimeoutResult,
   _clearTimeout,
 } from "@featherds/utils/setTimeout";
-import { computed, defineComponent, PropType, Ref, toRef } from "vue";
+import {
+  computed,
+  defineComponent,
+  PropType,
+  Ref,
+  ref,
+  toRef,
+  inject,
+  ExtractPropTypes,
+} from "vue";
 import { ISelectItemType } from "./types";
 export const props = {
   ...InputWrapperProps,
@@ -361,6 +370,7 @@ export default defineComponent({
   flex: 1;
   pointer-events: none;
   cursor: pointer;
+  text-overflow: ellipsis;
   min-width: 0;
   &:focus,
   &:active {

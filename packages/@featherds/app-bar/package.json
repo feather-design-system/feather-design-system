@@ -9,7 +9,9 @@
   "main": "dist/app.js",
   "license": "Apache-2.0",
   "dependencies": {
+    "@featherds/app-layout": "file:../app-layout",
     "@featherds/composables": "file:../composables",
+    "@featherds/list": "file:../list",
     "@featherds/icon": "file:../icon",
     "@featherds/ripple": "file:../ripple",
     "@featherds/styles": "file:../styles",

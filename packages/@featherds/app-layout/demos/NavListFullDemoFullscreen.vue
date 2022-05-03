@@ -1,20 +1,18 @@
 <template>
-  <section>
-    <FeatherAppLayout>
-      <template v-slot:header>
-        <AppHeader scroll-hide />
-      </template>
-      <template v-slot:rail>
-        <AppNavList />
-      </template>
+  <FeatherAppLayout content-layout="full">
+    <template v-slot:header>
+      <AppHeader scroll-hide />
+    </template>
+    <template v-slot:rail>
+      <AppNavList />
+    </template>
 
-      <template v-slot:footer>
-        <AppFooter />
-      </template>
+    <template v-slot:footer>
+      <AppFooter />
+    </template>
 
-      <AppContent class="content" />
-    </FeatherAppLayout>
-  </section>
+    <AppContent class="content full-width" />
+  </FeatherAppLayout>
 </template>
 <script lang="ts">
 import * as components from "./../src";

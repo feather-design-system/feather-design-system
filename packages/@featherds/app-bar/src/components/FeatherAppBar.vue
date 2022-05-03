@@ -1,12 +1,13 @@
 <template>
-  <div
-    class="feather-app-bar-wrapper"
-    ref="wrapper"
-    :class="{ 'full-width': !!full }"
-  >
-    <a class="skip" :href="contentId">{{ skipLabel }}</a>
-    <header class="banner" :class="[displayClass, transitionClass]">
-      <div class="header-content center-horiz">
+  <ScrollHideHeader class="feather-app-bar-wrapper" :scroll-hide="scrollHide">
+    <template #pre>
+      <SkipContentLink :content="content" :skip-label="skipLabel" />
+    </template>
+    <div class="header">
+      <div
+        class="header-content center-horiz"
+        :class="{ 'full-width': !!full }"
+      >
         <div class="left center-horiz">
           <FeatherAppBarLink
             v-if="canShowExpand"
@@ -25,23 +26,15 @@
           <slot name="right"></slot>
         </div>
       </div>
-    </header>
-  </div>
+    </div>
+  </ScrollHideHeader>
 </template>
 <script lang="ts">
 import { useLabelProperty } from "@featherds/composables/LabelProperty";
 import FeatherAppBarLink from "./FeatherAppBarLink.vue";
-import { useScroll } from "@featherds/composables/events/Scroll";
 import Menu from "@featherds/icon/navigation/Menu";
-import {
-  toRef,
-  inject,
-  ref,
-  onMounted,
-  defineComponent,
-  PropType,
-  Ref,
-} from "vue";
+import { SkipContentLink, ScrollHideHeader } from "@featherds/app-layout";
+import { toRef, inject, ref, defineComponent, PropType, Ref } from "vue";
 
 const LABELS = {
   skip: "REQUIRED",
@@ -85,39 +78,6 @@ export default defineComponent({
     const displayClass = ref("show");
     const wrapper = ref();
 
-    if (props.scrollHide) {
-      let previousScrollPosition = 0;
-      let height = 60;
-      const onScroll = () => {
-        height = parseInt(
-          getComputedStyle(wrapper.value).getPropertyValue(
-            "--feather-header-height"
-          ),
-          10
-        );
-        const scrollTop = document.documentElement.scrollTop;
-        const scrollingDown = scrollTop >= previousScrollPosition;
-        previousScrollPosition = scrollTop;
-        if (scrollTop > height && scrollingDown) {
-          displayClass.value = "hide";
-          return;
-        }
-        if (scrollTop > height && !scrollingDown) {
-          displayClass.value = "show";
-          return;
-        }
-        displayClass.value = "show";
-      };
-
-      onMounted(() => {
-        const documentRef = ref(document);
-        const activate = useScroll(documentRef, onScroll);
-        activate.value = true;
-        onScroll();
-        transitionClass.value = "";
-      });
-    }
-
     const useExpander = () => {
       interface IExpander {
         active: Ref<boolean>;
@@ -132,7 +92,7 @@ export default defineComponent({
         const { active: canShowExpand, expand } = expander();
         return { canShowExpand, expand };
       }
-      return { canShowExpand: ref(false) };
+      return { canShowExpand: ref(false), expand: () => {} };
     };
 
     return {
@@ -145,15 +105,13 @@ export default defineComponent({
     };
   },
   computed: {
-    contentId() {
-      return `#${this.content}`;
-    },
-
     menu() {
       return Menu;
     },
   },
   components: {
+    ScrollHideHeader,
+    SkipContentLink,
     FeatherAppBarLink,
   },
 });
@@ -169,46 +127,18 @@ export default defineComponent({
   display: flex;
   align-items: center;
 }
-.feather-app-bar-wrapper,
-.banner {
-  width: 100%;
-  height: var($header-height);
-}
 
-a.skip {
-  @include elevation(2);
-  @include button();
-
-  background-color: var($surface);
-  padding: 0.25rem;
-  position: absolute;
-  top: 0px;
-  left: 0px;
-  border: 1px solid var($primary);
-  &:focus {
-    z-index: var($zindex-tooltip);
-  }
-}
-
-header {
-  color: var($primary-text-on-color);
+.header {
+  color: var($state-text-color-on-surface-dark);
   @include elevation(4);
   position: fixed;
   top: 0;
   left: 0;
   z-index: var($zindex-fixed);
-  background-color: var($secondary);
-
-  transition: transform 280ms ease-in-out;
-  &.show {
-    transform: translateY(0px);
-  }
-  &.hide {
-    transform: translateY(-100%);
-  }
-  &.no-transition {
-    transition: none;
-  }
+  background-color: var($surface-dark);
+  border-bottom: 1px solid var($border-on-surface);
+  width: 100%;
+  height: var($header-height);
 }
 
 .header-content {
@@ -235,7 +165,7 @@ header {
     }
   }
 }
-.full-width .header-content {
+.full-width.header-content {
   max-width: none;
 }
 

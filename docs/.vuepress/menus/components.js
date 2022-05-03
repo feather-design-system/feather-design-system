@@ -1,32 +1,5 @@
 module.exports = [
   {
-    name: "Guides",
-    items: [
-      { name: "Getting Started", url: "/Components/GettingStarted/" },
-      { name: "Themes", url: "/Components/Themes/" },
-      {
-        name: "Typography",
-        url: "/Components/Typography/",
-      },
-      {
-        name: "Variables",
-        url: "/Components/Variables/",
-      },
-      {
-        name: "Spacing",
-        url: "/Components/Spacing/",
-      },
-      {
-        name: "Form Validation",
-        url: "/Components/FormValidation/",
-      },
-      {
-        name: "Typescript",
-        url: "/Components/Typescript/",
-      },
-    ],
-  },
-  {
     name: "Components",
     components: true,
     items: [
@@ -40,6 +13,11 @@ module.exports = [
           name: "App Layout",
           url: "/Components/AppLayout/",
           image: "/assets/components/AppLayout.png",
+        },
+        {
+          name: "App Rail",
+          url: "/Components/AppRail/",
+          image: "/assets/components/AppRail.png",
         },
         {
           name: "App Bar",

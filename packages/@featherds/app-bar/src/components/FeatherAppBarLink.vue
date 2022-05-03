@@ -1,5 +1,5 @@
 <template>
-  <a :href="url" :aria-label="title" :class="type">
+  <a :href="url" :aria-label="title" :class="type" class="hover focus">
     <FeatherIcon :icon="icon" ref="icon" />
     <FeatherRipple v-if="type === 'round'" center />
   </a>
@@ -60,6 +60,7 @@ export default defineComponent({
 @import "@featherds/styles/themes/variables";
 @import "@featherds/styles/themes/utils";
 a.round {
+  @include state-on-surface-dark();
   display: flex;
   align-items: center;
   height: 2.5rem;
@@ -68,41 +69,12 @@ a.round {
   display: flex;
   align-items: center;
   justify-content: center;
-  &:hover {
-    background: linear-gradient(
-      alpha($state-color-on-color, var($state-opacity-hover-on-color)),
-      alpha($state-color-on-color, var($state-opacity-hover-on-color))
-    );
-    &:focus {
-      background: linear-gradient(
-          alpha($state-color-on-color, var($state-opacity-hover-on-color)),
-          alpha($state-color-on-color, var($state-opacity-hover-on-color))
-        ),
-        linear-gradient(
-          alpha($state-color-on-color, var($state-opacity-focus-on-color)),
-          alpha($state-color-on-color, var($state-opacity-focus-on-color))
-        );
-    }
-  }
-  &:focus {
-    background: linear-gradient(
-      alpha($state-color-on-color, var($state-opacity-focus-on-color)),
-      alpha($state-color-on-color, var($state-opacity-focus-on-color))
-    );
-    border: 1px solid var($surface);
-    outline: 0;
-  }
-  svg.feather-icon {
-    color: var($surface);
 
+  svg.feather-icon {
     height: 1.5rem;
     width: auto;
   }
-  .ripple {
-    background-color: var($state-color-on-color);
-    opacity: var($state-opacity-pressed-on-color);
-    border-radius: 100%;
-  }
+
   + a.round {
     margin-left: var($spacing-xs);
   }

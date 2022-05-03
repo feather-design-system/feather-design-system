@@ -3,31 +3,31 @@
   @import "@featherds/styles/lib/reset";
   @import "@featherds/styles/lib/typography";
   --docsearch-searchbox-background: transparent;
-  --docsearch-muted-color: var(--feather-secondary-text-on-color);
-  --docsearch-text-color: var(--feather-secondary-text-on-color);
+  --docsearch-muted-color: var(#{$state-text-color-on-surface-dark});
+  --docsearch-text-color: var(#{$state-text-color-focus-on-surface-dark});
   --docsearch-searchbox-height: 2.5rem;
-  color: var($secondary-text-on-color);
+  color: var($state-color-on-surface-dark);
   .DocSearch-Button-Keys {
     display: none;
   }
   &.DocSearch-Button {
     border-radius: 4px;
     height: 2.5rem;
-    border: 1px solid var($secondary-text-on-color);
+    border: 1px solid var($state-text-color-on-surface-dark);
     padding: 0 1rem 1px 0.75rem;
     margin: 0 0 0 1rem;
     position: relative;
     &:hover,
     &:focus,
     &:active {
-      border: 1px solid var($surface);
+      border: 1px solid var($state-color-on-surface-dark);
       background-color: transparent;
       box-shadow: none;
 
       &:after {
         content: "";
         width: 3px;
-        background-color: var($surface);
+        background-color: var($state-color-on-surface-dark);
         top: 0.5rem;
         bottom: 0.5rem;
         left: 0px;
@@ -39,7 +39,7 @@
         transform-origin: center;
       }
       .DocSearch-Button-Placeholder {
-        color: var($surface);
+        color: var($state-color-on-surface-dark);
       }
     }
 

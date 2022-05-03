@@ -17,7 +17,7 @@ The App Bar is designed to help anchor the user and can provide key interaction 
 
 ## Usage
 
-App Bars are used on all applications at the highest level of hierarchy. The App Bar can serve as the top level of navigation in an application through the use of a “menu” button and can become a “contextual” app bar to better serve user needs based on required functionality for a given application context.
+App Bars are used on all applications at the highest level of hierarchy. The App Bar can serve as the top level of navigation in an application through the use of a “menu” button and can become a “contextual” App Bar to better serve user needs based on required functionality for a given application context.
 
 ## AppBar
 

@@ -278,7 +278,7 @@ export default defineComponent({
   }
 }
 .btn-text {
-  color: var($primary);
+  color: var($text-button-primary, var($primary));
   background-color: transparent;
   border: 2px solid transparent;
   padding: 0 0.5rem;
@@ -291,11 +291,11 @@ export default defineComponent({
     );
   }
   &:focus {
-    border-color: var($primary);
+    border-color: var($text-button-primary, var($primary));
   }
 
   &:visited {
-    color: var($primary);
+    color: var($text-button-primary, var($primary));
   }
 
   &.on-color {

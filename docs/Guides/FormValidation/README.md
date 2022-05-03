@@ -3,8 +3,8 @@ title: "Form Validation"
 pre: "@featherds/input"
 description: "Guidance and support for effective forms."
 lang: en-US
-tags: ["validation", "component"]
-menu: components
+tags: ["validation", "guide"]
+menu: guides
 ---
 
 Web applications are often fundamentally a means to consume or present information. When designing forms, aside from having well-designed controls and sensible layouts, forms should always be clear about their validation.

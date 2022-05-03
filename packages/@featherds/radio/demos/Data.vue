@@ -6,6 +6,7 @@
       hint="Hint Text"
       class="test"
       data-ref-id="test"
+      :error="e"
     >
       <feather-radio
         v-for="(item, index) in itemsC"
@@ -34,12 +35,17 @@
   </div>
 </template>
 <script lang="ts">
-import { defineComponent } from "vue";
+import { defineComponent, ref, Ref } from "vue";
 import { FeatherRadioGroup, FeatherRadio } from "../src";
 export default defineComponent({
   components: {
     FeatherRadio,
     FeatherRadioGroup,
+  },
+  setup() {
+    const e = ref() as Ref<string>;
+    setTimeout(() => (e.value = "errororororororo"), 400);
+    return { e };
   },
   data: function () {
     return {
