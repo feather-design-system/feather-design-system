@@ -3,8 +3,8 @@ title: "Typescript"
 pre: "Guide"
 description: "Guidance around typescript"
 lang: en-US
-tags: ["typescript", "component"]
-menu: components
+tags: ["typescript", "guide"]
+menu: guides
 ---
 
 ## Plugins

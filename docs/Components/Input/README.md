@@ -75,7 +75,7 @@ Specifying an `class` or `data-ref-id` attribute will cause them to be applied t
 
 
 ## ValidationHeader
-This is an element designed to be used in conjunction with forms using the `yup` validation library. This component displays a list of errors and links to the errored fields which helps in best practices for form validation. Please see the examples in the [Form Validation page](/Components/FormValidation/#examples)
+This is an element designed to be used in conjunction with forms using the `yup` validation library. This component displays a list of errors and links to the errored fields which helps in best practices for form validation. Please see the examples in the [Form Validation page](/Guides/FormValidation/#examples)
 
 ### Props
 

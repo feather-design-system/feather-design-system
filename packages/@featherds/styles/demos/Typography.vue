@@ -60,7 +60,7 @@
 .caption-mixin {
   @include caption();
 }
-.overline {
+.overline-mixin {
   @include overline();
 }
 </style>

@@ -92,4 +92,4 @@ Specifying a `class` or `data-ref-id` attribute will cause them to be applied to
 
 ### Notes
 
-The structure of Checkboxes means that their value is atomic and not shared with the CheckboxGroup by default. For convenient validation, you can instead bind Checkbox values to properties of an `Object` and pass in a validation schema. However, this is totally optional and can also be achieved without using an `Object`. Please see the [Form Validation](/Components/FormValidation/) page for a working example.
+The structure of Checkboxes means that their value is atomic and not shared with the CheckboxGroup by default. For convenient validation, you can instead bind Checkbox values to properties of an `Object` and pass in a validation schema. However, this is totally optional and can also be achieved without using an `Object`. Please see the [Form Validation](/Guides/FormValidation/) page for a working example.

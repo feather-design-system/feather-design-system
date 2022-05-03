@@ -53,4 +53,4 @@ Theming will consist of 4 brand centric colors - primary, primary variant, secon
 
 ## Package
 
-To get started using our theme, import `@featherds/styles` directly. For more information on getting started, visit our guides for [theming section](../../../Components/Themes/).
+To get started using our theme, import `@featherds/styles` directly. For more information on getting started, visit our guides for [theming section](../../../Guides/Themes/).

@@ -14,7 +14,7 @@
                 <FeatherButton
                   primary
                   as-anchor
-                  :href="$withBase('/Components/GettingStarted/')"
+                  :href="$withBase('/Guides/GettingStarted/')"
                   >Get Started</FeatherButton
                 >
                 <FeatherButton
@@ -100,7 +100,7 @@
             </p>
             <div class="card-group">
               <PrettyCard
-                href="/Components/GettingStarted/"
+                href="/Guides/GettingStarted/"
                 img-url="/assets/branding/home-components.png"
                 overline="Components"
                 >Getting Started
@@ -181,7 +181,7 @@ export default {
 @import "@featherds/styles/mixins/elevation";
 
 body.pagescroll div.feather-styles.layout.homepage header.banner {
-  background-color: var($secondary);
+  background-color: var($surface-dark);
   transition: all 0.2s linear;
   @include header();
 }
@@ -397,13 +397,14 @@ div.feather-styles.homepage.layout {
 
 //responsive adjustments
 @media screen and (min-width: 44.9375rem) {
-  body div.feather-styles.layout.homepage header.banner {
+  body div.feather-styles.layout.homepage header.banner .header {
     background-color: transparent;
     box-shadow: none;
   }
   //Header tweaks
   body.pagetop div.feather-styles.homepage.layout {
-    & header.banner {
+    & header.banner .header {
+      border-bottom-color: transparent;
       .header-content {
         .header-title a,
         a.link,

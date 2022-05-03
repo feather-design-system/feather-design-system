@@ -3,8 +3,8 @@ title: "Spacing"
 pre: "Guide"
 description: "Help and guidance around spacing, please mind the gap."
 lang: en-US
-tags: ["Spacing", "component"]
-menu: components
+tags: ["Spacing", "guide"]
+menu: guides
 ---
 
 ## Spacing Units

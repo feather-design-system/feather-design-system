@@ -32,6 +32,7 @@
   "dependencies": {
     "@featherds/app-bar": "file:packages/@featherds/app-bar",
     "@featherds/app-layout": "file:packages/@featherds/app-layout",
+    "@featherds/app-rail": "file:packages/@featherds/app-rail",
     "@featherds/autocomplete": "file:packages/@featherds/autocomplete",
     "@featherds/back-button": "file:packages/@featherds/back-button",
     "@featherds/badge": "file:packages/@featherds/badge",
@@ -130,7 +131,7 @@
     "vue": "^3.2.26",
     "vue-i18n": "^8.17.6",
     "vue-router": "^4.0.0",
-    "vue-tsc": "^0.34.15",
+    "vue-tsc": "^0.37.3",
     "vuepress": "^2.0.0-beta.43",
     "wdio-lambdatest-service": "1.0.3",
     "webdriverio": "^7.0.0",

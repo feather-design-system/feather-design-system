@@ -108,16 +108,13 @@ li {
   align-items: center;
   cursor: pointer;
   @include state-on-surface();
-  &.selected .feather-list-item-text {
+  &.selected {
     color: var($primary-text-on-surface);
   }
   &.disabled {
     cursor: default;
     color: var($disabled-text-on-surface);
     @include state-disabled();
-    .feather-list-item-icon {
-      color: var($disabled-text-on-surface);
-    }
   }
   .feather-list-item-text {
     flex: 1;
@@ -129,7 +126,6 @@ li {
     justify-content: center;
     margin-right: 0.75rem;
     font-size: 1.125rem;
-    color: var($secondary-text-on-surface);
     width: 1em;
   }
   .feather-list-item-post {

@@ -53,6 +53,12 @@
     alpha($state-color-on-surface, var($opacity))
   );
 }
+@function surface-dark-gradient($opacity) {
+  @return linear-gradient(
+    alpha($state-color-on-surface-dark, var($opacity)),
+    alpha($state-color-on-surface-dark, var($opacity))
+  );
+}
 
 @function color-gradient($opacity) {
   @return linear-gradient(
@@ -155,6 +161,62 @@
         surface-gradient($state-opacity-hover-on-surface),
         surface-gradient($state-opacity-focus-on-surface),
         linear-grad($background);
+    }
+  }
+}
+@mixin set-color($color) {
+  color: var($color);
+  &:visited {
+    color: var($color);
+  }
+}
+
+@mixin state-on-surface-dark($background: $surface-dark) {
+  @include set-color($state-text-color-on-surface-dark);
+
+  border: 2px solid transparent;
+  .ripple {
+    background-color: var($state-color-on-surface-dark);
+    opacity: var($state-opacity-pressed-on-surface-dark);
+  }
+  &.selected,
+  .selected {
+    background: var($state-background-selected-on-surface-dark);
+    @include set-color($background);
+  }
+
+  &.hover:hover,
+  &:hover .hover {
+    background: surface-dark-gradient($state-opacity-hover-on-surface-dark),
+      linear-grad($background);
+    @include set-color($state-text-color-hover-on-surface-dark);
+
+    &.selected {
+      background: var($state-background-selected-on-surface-dark);
+      @include set-color($background);
+    }
+  }
+  &:focus.focus,
+  &:focus .focus {
+    background: surface-dark-gradient($state-opacity-focus-on-surface-dark),
+      linear-grad($background);
+    @include set-color($state-text-color-focus-on-surface-dark);
+    border: var($state-border-focus-on-surface-dark);
+    &.selected {
+      background: var($state-background-selected-on-surface-dark);
+      @include set-color($background);
+    }
+  }
+  &:hover:focus .focus.hover,
+  &:hover:focus.focus.hover {
+    background: surface-dark-gradient($state-opacity-hover-on-surface-dark),
+      surface-dark-gradient($state-opacity-focus-on-surface-dark),
+      linear-grad($background);
+    @include set-color($state-text-color-focus-on-surface-dark);
+    border: var($state-border-focus-on-surface-dark);
+    &.selected {
+      background: var($state-background-selected-on-surface-dark);
+      @include set-color($background);
     }
   }
 }

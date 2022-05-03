@@ -1,0 +1,25 @@
+{
+  "name": "@featherds/app-rail",
+  "version": "0.10.12",
+  "publishConfig": {
+    "access": "public"
+  },
+  "author": "NantHealth",
+  "scripts": {},
+  "main": "dist/app.js",
+  "license": "Apache-2.0",
+  "dependencies": {
+    "@featherds/app-layout": "file:../app-layout",
+    "@featherds/composables": "file:../composables",
+    "@featherds/list": "file:../list",
+    "@featherds/icon": "file:../icon",
+    "@featherds/ripple": "file:../ripple",
+    "@featherds/styles": "file:../styles",
+    "vue": "^3.1.0-0"
+  },
+  "keywords": [
+    "vue",
+    "FeatherAppRail"
+  ],
+  "types": "./src/index.d.ts"
+}

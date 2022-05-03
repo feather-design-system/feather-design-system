@@ -17,9 +17,11 @@ module.exports = {
       header: [
         { name: "Foundation", url: "/Foundation/Story/Philosophy" },
         { name: "Components", url: "/Components/" },
+        { name: "Guides", url: "/Guides/GettingStarted/" },
       ],
       foundation: require("./menus/foundation"),
       components: require("./menus/components"),
+      guides: require("./menus/guides"),
     },
   }),
   templateDev: path.resolve(__dirname, "./templates/dev.html"),

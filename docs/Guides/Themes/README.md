@@ -3,8 +3,8 @@ title: "Themes"
 pre: "@featherds/styles"
 description: "How to use themes to style your application"
 lang: en-US
-tags: ["Themes", "component"]
-menu: components
+tags: ["Themes", "guide"]
+menu: guides
 ---
 
 `@featherds/styles` exposes 2 default themes that can be used. They are located in the package at `@featherds/styles/themes` in the following CSS files:

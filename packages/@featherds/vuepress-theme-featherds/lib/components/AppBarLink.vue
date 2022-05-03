@@ -51,18 +51,24 @@ a.link {
   &:active,
   &:hover,
   &:visited {
-    color: var($primary-text-on-color);
+    color: var($state-color-on-surface-dark);
     text-decoration: none;
   }
 
   :deep(.ripple) {
-    background-color: var($state-color-on-neutral);
-    opacity: var($state-opacity-pressed-on-neutral);
+    background-color: var($state-color-on-surface-dark);
+    opacity: var($state-opacity-pressed-on-surface-dark);
   }
   &:focus {
     background: linear-gradient(
-      alpha($state-color-on-neutral, var($state-opacity-focus-on-neutral)),
-      alpha($state-color-on-neutral, var($state-opacity-focus-on-neutral))
+      alpha(
+        $state-color-on-surface-dark,
+        var($state-opacity-focus-on-surface-dark)
+      ),
+      alpha(
+        $state-color-on-surface-dark,
+        var($state-opacity-focus-on-surface-dark)
+      )
     );
   }
 

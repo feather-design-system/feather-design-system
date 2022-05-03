@@ -11,6 +11,7 @@ $clickable-selected: prefix(clickable-selected);
 $clickable-visited: prefix(clickable-visited);
 $background: prefix(background);
 $surface: prefix(surface);
+$surface-dark: prefix(surface-dark);
 $error: prefix(error);
 $success: prefix(success);
 $warning: prefix(warning);
@@ -79,6 +80,34 @@ $state-inner-border-color-focus-on-color: prefix(
   state-inner-border-color-focus-on-color
 );
 $state-color-on-color: prefix(state-color-on-color);
+
+$state-text-color-on-surface-dark: prefix(state-text-color-on-surface-dark);
+
+$state-opacity-hover-on-surface-dark: prefix(
+  state-opacity-hover-on-surface-dark
+);
+$state-text-color-hover-on-surface-dark: prefix(
+  state-text-color-hover-on-surface-dark
+);
+
+$state-opacity-focus-on-surface-dark: prefix(
+  state-opacity-focus-on-surface-dark
+);
+$state-text-color-focus-on-surface-dark: prefix(
+  state-text-color-focus-on-surface-dark
+);
+$state-border-focus-on-surface-dark: prefix(state-border-focus-on-surface-dark);
+
+$state-opacity-pressed-on-surface-dark: prefix(
+  state-opacity-pressed-on-surface-dark
+);
+$state-text-color-pressed-on-surface-dark: prefix(
+  state-text-color-pressed-on-surface-dark
+);
+$state-background-selected-on-surface-dark: prefix(
+  state-background-selected-on-surface-dark
+);
+$state-color-on-surface-dark: prefix(state-color-on-surface-dark);
 
 $shadow-0: prefix(shadow-0);
 $shadow-1: prefix(shadow-1);
@@ -300,3 +329,7 @@ $grid: (
     gutter: $xxs-gutter,
   ),
 );
+
+//components
+//button
+$text-button-primary: prefix(text-button-primary);

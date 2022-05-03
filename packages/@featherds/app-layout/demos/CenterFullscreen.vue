@@ -1,15 +1,13 @@
 <template>
-  <section>
-    <FeatherAppLayout>
-      <template v-slot:header>
-        <AppHeader />
-      </template>
-      <AppContent />
-      <template v-slot:footer>
-        <AppFooter />
-      </template>
-    </FeatherAppLayout>
-  </section>
+  <FeatherAppLayout>
+    <template v-slot:header>
+      <AppHeader />
+    </template>
+    <AppContent />
+    <template v-slot:footer>
+      <AppFooter />
+    </template>
+  </FeatherAppLayout>
 </template>
 <script lang="ts">
 import * as components from "./../src";

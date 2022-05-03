@@ -172,6 +172,7 @@ export default {
   background-color: var($surface);
   padding: 0.5rem 1.25rem;
   border-radius: 0 0 4px 4px;
+  position: relative;
 }
 .theme-changer {
   margin-right: 0.5rem;

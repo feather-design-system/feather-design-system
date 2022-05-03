@@ -60,7 +60,7 @@ describe("FeatherRadioGroup.vue", () => {
 
   it("should have error text", async () => {
     const wrapper = getWrapper();
-    wrapper.setProps({
+    await wrapper.setProps({
       error: "TEST HINT",
     });
     await nextTick();
