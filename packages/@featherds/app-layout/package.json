@@ -9,7 +9,6 @@
   "main": "dist/app.js",
   "license": "Apache-2.0",
   "dependencies": {
-    "@featherds/dialog": "file:../dialog",
     "@featherds/styles": "file:../styles",
     "vue": "^3.1.0-0"
   },

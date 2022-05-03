@@ -18,6 +18,7 @@
     "@featherds/app-layout": "file:../app-layout",
     "@featherds/button": "file:../button",
     "@featherds/composables": "file:../composables",
+    "@featherds/dialog": "file:../dialog",
     "@featherds/icon": "file:../icon",
     "@featherds/list": "file:../list",
     "@featherds/ripple": "file:../ripple",
