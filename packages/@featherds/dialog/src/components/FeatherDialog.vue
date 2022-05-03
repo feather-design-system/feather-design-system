@@ -15,7 +15,7 @@
       <FocusTrap
         :enable="shown && modelValue"
         class="trap"
-        v-show="modelValue"
+        v-if="modelValue"
         :layer="layer"
       >
         <div

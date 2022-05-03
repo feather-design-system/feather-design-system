@@ -31,6 +31,7 @@ import {
   PropType,
   nextTick,
   provide,
+  onUnmounted,
 } from "vue";
 import { TooltipAlignment, TooltipPlacement } from "../types";
 import { calculatePlacement } from "./Placement";
@@ -100,7 +101,7 @@ export default defineComponent({
         hideTooltip();
       }
     };
-
+    onUnmounted(() => hideTooltip());
     const getTooltip = () => document.getElementById(tooltipID) as HTMLElement;
     let layer: ILayer | undefined;
     const showTooltip = () => {
@@ -276,7 +277,10 @@ export default defineComponent({
       transform: translateX(-50%) rotate(180deg);
     }
     &.right .tooltip-pointer {
-      right: 0;
+      right: 4px;
+    }
+    &.left .tooltip-pointer {
+      left: 4px;
     }
   }
   &.p-top {
@@ -288,15 +292,18 @@ export default defineComponent({
       transform: translateX(-50%);
     }
     &.right .tooltip-pointer {
-      right: 0;
+      right: 4px;
+    }
+    &.left .tooltip-pointer {
+      left: 4px;
     }
   }
 
   &.p-left {
     .tooltip-pointer {
-      top: 16px;
-      right: -22px;
-      transform: rotate(-90deg);
+      right: -28px;
+      transform: rotate(-90deg) translateY(-50%);
+      top: calc(50% - 5px);
     }
   }
   &.p-right {
@@ -304,9 +311,9 @@ export default defineComponent({
       margin-left: 8px;
     }
     .tooltip-pointer {
-      top: 16px;
-      left: -14px;
-      transform: rotate(90deg);
+      left: -20px;
+      transform: rotate(90deg) translateY(-50%);
+      top: calc(50% - 5px);
     }
   }
 }

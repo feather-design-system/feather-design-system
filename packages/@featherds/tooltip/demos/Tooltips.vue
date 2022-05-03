@@ -15,7 +15,7 @@
       </div>
     </div>
     <FeatherTooltip
-      title="Example tooltip Example tooltip Example tooltip Example tooltip Example tooltip Example tooltip Example tooltip Example tooltip Example tooltip"
+      title="Example tooltip Example tooltip Example tooltip Example tooltip"
       v-slot="{ attrs }"
       :alignment="alignment"
       :placement="placement"
