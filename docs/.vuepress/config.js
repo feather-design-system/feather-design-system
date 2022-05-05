@@ -4,10 +4,11 @@ const path = require("path");
 const { sassImports } = require("../../scripts/vite/alias");
 const { noopDirectiveTransform } = require("@vue/compiler-dom");
 const vueSourcePlugin = require("./plugins/vueSourcePlugin");
+const { viteBundler } = require("vuepress");
+const { theme } = require("./theme");
 module.exports = {
   title: "Feather DS",
-  theme: path.resolve(__dirname, "./theme"),
-  themeConfig: {
+  theme: theme({
     footerComponent: "Footer",
     brandLogoLargeComponent: "FeatherLogoFull",
     brandLogoSmallComponent: "FeatherLogoMotif",
@@ -20,13 +21,12 @@ module.exports = {
       foundation: require("./menus/foundation"),
       components: require("./menus/components"),
     },
-  },
+  }),
   templateDev: path.resolve(__dirname, "./templates/dev.html"),
   templateSSR: path.resolve(__dirname, "./templates/ssr.html"),
   patterns: ["README.md", "Components/**/*.md", "Foundation/**/*.md"],
   markdown: { code: { lineNumbers: false } },
-  bundler: "@vuepress/vite",
-  bundlerConfig: {
+  bundler: viteBundler({
     viteOptions: {
       resolve: {
         extensions: [".mjs", ".js", ".ts", ".jsx", ".tsx", ".json", ".vue"],
@@ -43,5 +43,5 @@ module.exports = {
         },
       },
     },
-  },
+  }),
 };
