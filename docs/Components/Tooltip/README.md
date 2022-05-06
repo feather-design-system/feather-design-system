@@ -34,13 +34,13 @@ Position Tooltips so they don’t block relevant information. Some scenarios, li
 
 ### Props
 
-| Name       | Description                                                     | Type               | Required | Default                   |
-| ---------- | --------------------------------------------------------------- | ------------------ | -------- | ------------------------- |
-| title      | text to be displayed in the tooltip                             | `String`           | `true`   | `false`                   |
-| placement  | determines the placement of the tooltip around the slot content | `TooltipPlacement` | `false`  | `TooltipPlacement.top`    |
-| alignment  | determines the alignment of the pointer on the tooltip          | `TooltipAlignment` | `false`  | `TooltipAlignment.center` |
-| enterDelay | delay in `ms` before tooltip should appear                      | `number`           | `false`  | `400`                     |
-| exit       | delay in `ms` before tooltip should disappear                   | `number`           | `false`  | `400`                     |
+| Name              | Description                                                     | Type               | Required | Default                   |
+| ----------------- | --------------------------------------------------------------- | ------------------ | -------- | ------------------------- |
+| title             | text to be displayed in the tooltip                             | `String`           | `true`   | `false`                   |
+| placement         | determines the placement of the tooltip around the slot content | `TooltipPlacement` | `false`  | `TooltipPlacement.top`    |
+| pointer-alignment | determines the alignment of the pointer on the tooltip          | `PointerAlignment` | `false`  | `PointerAlignment.center` |
+| enterDelay        | delay in `ms` before tooltip should appear                      | `number`           | `false`  | `400`                     |
+| exit              | delay in `ms` before tooltip should disappear                   | `number`           | `false`  | `400`                     |
 
 ### Slots
 
@@ -48,12 +48,12 @@ Position Tooltips so they don’t block relevant information. Some scenarios, li
 
 ### Types
 
-We expose two enums that you can use to define both `placement` and `alignment` props. You can import those enums alongside the `FeatherTooltip` component.
+We expose two enums that you can use to define both `placement` and `pointer-alignment` props. You can import those enums alongside the `FeatherTooltip` component.
 
 ```js
 import {
   FeatherTooltip,
-  TooltipAlignment,
+  PointerAlignment,
   TooltipPlacement,
 } from "@featherds/tooltip";
 ```
@@ -65,7 +65,7 @@ import {
 - `left`, places the tooltip to the left of the triggering element
 - `right`, places the tooltip to the right of the triggering element
 
-`TooltipAlignment` has the following properties:
+`PointerAlignment` has the following properties:
 
 - `center`, the pointer will appear in the center of the tooltip content
 - `left`, the pointer will appear close to the left side of the tooltip content

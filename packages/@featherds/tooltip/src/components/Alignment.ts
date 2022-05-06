@@ -1,22 +1,22 @@
-import { TooltipPlacement, TooltipAlignment } from "../types";
+import { TooltipPlacement, PointerAlignment } from "../types";
 
 export const calculateAlignment = (
   placement: TooltipPlacement,
   triggerBox: DOMRect,
   tooltipBox: DOMRect,
-  preferred: TooltipAlignment,
+  preferred: PointerAlignment,
   arrowOffset = 24
 ) => {
   if (
     placement === TooltipPlacement.left ||
     placement === TooltipPlacement.right
   ) {
-    return TooltipAlignment.center;
+    return PointerAlignment.center;
   }
 
   const triggerCenter = triggerBox.left + triggerBox.width / 2;
   const triggerRight = window.innerWidth - triggerBox.right;
-  const allowedAlignments = [] as TooltipAlignment[];
+  const allowedAlignments = [] as PointerAlignment[];
   const spaceLeft = triggerCenter;
   const spaceRight = triggerRight + triggerBox.width / 2;
   const tooltipWidthWithArrowOffset = tooltipBox.width - arrowOffset;
@@ -25,19 +25,19 @@ export const calculateAlignment = (
   //for half the tooltip, aka is there enough space for center alignment
   const halfTooltip = tooltipBox.width / 2;
   if (spaceLeft >= halfTooltip && spaceRight >= halfTooltip) {
-    allowedAlignments.push(TooltipAlignment.center);
+    allowedAlignments.push(PointerAlignment.center);
   }
 
   //if there is enough space to the right of  trigger center
   //for most of the tooltip then alignment left is allowed
   if (spaceRight >= tooltipWidthWithArrowOffset) {
-    allowedAlignments.push(TooltipAlignment.left);
+    allowedAlignments.push(PointerAlignment.left);
   }
 
   //if there is enough space to the left of the trigger center
   //for most of the tooltip align to the right
   if (spaceLeft >= tooltipWidthWithArrowOffset) {
-    allowedAlignments.push(TooltipAlignment.right);
+    allowedAlignments.push(PointerAlignment.right);
   }
 
   if (allowedAlignments.indexOf(preferred) > -1) {

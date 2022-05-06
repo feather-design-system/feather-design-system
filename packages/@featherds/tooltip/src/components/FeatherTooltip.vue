@@ -33,7 +33,7 @@ import {
   provide,
   onUnmounted,
 } from "vue";
-import { TooltipAlignment, TooltipPlacement } from "../types";
+import { PointerAlignment, TooltipPlacement } from "../types";
 import { calculatePlacement } from "./Placement";
 import { calculateAlignment } from "./Alignment";
 export const props = {
@@ -45,9 +45,9 @@ export const props = {
     type: String as PropType<TooltipPlacement>,
     default: () => TooltipPlacement.top,
   },
-  alignment: {
-    type: String as PropType<TooltipAlignment>,
-    default: () => TooltipAlignment.center,
+  pointerAlignment: {
+    type: String as PropType<PointerAlignment>,
+    default: () => PointerAlignment.center,
   },
   enterDelay: {
     type: Number,
@@ -132,7 +132,7 @@ export default defineComponent({
     };
 
     const placementProp = toRef(props, "placement");
-    const alignmentProp = toRef(props, "alignment");
+    const alignmentProp = toRef(props, "pointerAlignment");
     const arrowHeight = 7;
     const arrowOffset = 24;
     const top = ref("");
@@ -202,15 +202,15 @@ export default defineComponent({
           }
           const triggerBoxCenter = triggerBox.left + triggerBox.width / 2;
           switch (alignment) {
-            case TooltipAlignment.center:
+            case PointerAlignment.center:
               //align centers
               leftCal = triggerBoxCenter - tooltipBox.width / 2;
               break;
-            case TooltipAlignment.left:
+            case PointerAlignment.left:
               //align left but take into consideration arrow offset
               leftCal = triggerBoxCenter - arrowOffset;
               break;
-            case TooltipAlignment.right:
+            case PointerAlignment.right:
               //align to the right and allow space for arrow offset
               leftCal = triggerBoxCenter - tooltipBox.width + arrowOffset;
               break;

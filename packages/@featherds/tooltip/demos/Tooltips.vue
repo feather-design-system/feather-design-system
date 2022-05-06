@@ -8,7 +8,7 @@
         </select>
       </div>
       <div>
-        Alignment
+        Pointer Alignment
         <select name="alignment" id="alignment" v-model="alignment">
           <option v-for="item in alignments" :key="item">{{ item }}</option>
         </select>
@@ -17,7 +17,7 @@
     <FeatherTooltip
       title="Example tooltip Example tooltip Example tooltip Example tooltip"
       v-slot="{ attrs }"
-      :alignment="alignment"
+      :pointer-alignment="alignment"
       :placement="placement"
     >
       <FeatherButton primary v-bind="attrs" icon="Add"
@@ -29,7 +29,7 @@
 <script lang="ts">
 import * as components from "./../src";
 import { FeatherButton } from "@featherds/button";
-import { TooltipAlignment, TooltipPlacement } from "../src/types";
+import { PointerAlignment, TooltipPlacement } from "../src/types";
 import { FeatherIcon } from "@featherds/icon";
 import icon from "@featherds/icon/action/Add";
 import { defineComponent, ref } from "vue";
@@ -42,11 +42,11 @@ export default defineComponent({
       TooltipPlacement.left,
       TooltipPlacement.right,
     ];
-    const alignment = ref(TooltipAlignment.center);
+    const alignment = ref(PointerAlignment.center);
     const alignments = [
-      TooltipAlignment.center,
-      TooltipAlignment.left,
-      TooltipAlignment.right,
+      PointerAlignment.center,
+      PointerAlignment.left,
+      PointerAlignment.right,
     ];
 
     return { placement, placements, alignment, alignments, icon };

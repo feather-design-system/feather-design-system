@@ -1,5 +1,5 @@
 import TooltipsVue from "../../demos/Tooltips.vue";
-import { TooltipPlacement, TooltipAlignment } from "../types";
+import { TooltipPlacement, PointerAlignment } from "../types";
 import { calculateAlignment } from "./Alignment";
 
 const getLayout = (left = true, center = true, right = true) => {
@@ -68,9 +68,9 @@ describe("Alignment", () => {
             TooltipPlacement.top,
             trigger,
             tooltip,
-            TooltipAlignment.center
+            PointerAlignment.center
           )
-        ).toBe(TooltipAlignment.center);
+        ).toBe(PointerAlignment.center);
       });
       it("should align left if there is enough space", () => {
         const { tooltip, trigger } = getLayout(true, false, false);
@@ -80,9 +80,9 @@ describe("Alignment", () => {
             TooltipPlacement.top,
             trigger,
             tooltip,
-            TooltipAlignment.center
+            PointerAlignment.center
           )
-        ).toBe(TooltipAlignment.left);
+        ).toBe(PointerAlignment.left);
       });
 
       it("should align right if there is enough space", () => {
@@ -92,9 +92,9 @@ describe("Alignment", () => {
             TooltipPlacement.top,
             trigger,
             tooltip,
-            TooltipAlignment.center
+            PointerAlignment.center
           )
-        ).toBe(TooltipAlignment.right);
+        ).toBe(PointerAlignment.right);
       });
     });
 
@@ -106,9 +106,9 @@ describe("Alignment", () => {
             TooltipPlacement.top,
             trigger,
             tooltip,
-            TooltipAlignment.left
+            PointerAlignment.left
           )
-        ).toBe(TooltipAlignment.left);
+        ).toBe(PointerAlignment.left);
       });
       it("should align center if there is enough space", () => {
         const { tooltip, trigger } = getLayout(false, true, false);
@@ -117,9 +117,9 @@ describe("Alignment", () => {
             TooltipPlacement.top,
             trigger,
             tooltip,
-            TooltipAlignment.left
+            PointerAlignment.left
           )
-        ).toBe(TooltipAlignment.center);
+        ).toBe(PointerAlignment.center);
       });
 
       it("should align right if there is enough space", () => {
@@ -129,9 +129,9 @@ describe("Alignment", () => {
             TooltipPlacement.top,
             trigger,
             tooltip,
-            TooltipAlignment.left
+            PointerAlignment.left
           )
-        ).toBe(TooltipAlignment.right);
+        ).toBe(PointerAlignment.right);
       });
     });
 
@@ -143,9 +143,9 @@ describe("Alignment", () => {
             TooltipPlacement.top,
             trigger,
             tooltip,
-            TooltipAlignment.right
+            PointerAlignment.right
           )
-        ).toBe(TooltipAlignment.right);
+        ).toBe(PointerAlignment.right);
       });
       it("should align center if there is enough space", () => {
         const { tooltip, trigger } = getLayout(true, true, false);
@@ -154,9 +154,9 @@ describe("Alignment", () => {
             TooltipPlacement.top,
             trigger,
             tooltip,
-            TooltipAlignment.right
+            PointerAlignment.right
           )
-        ).toBe(TooltipAlignment.center);
+        ).toBe(PointerAlignment.center);
       });
 
       it("should align left if there is enough space", () => {
@@ -166,9 +166,9 @@ describe("Alignment", () => {
             TooltipPlacement.top,
             trigger,
             tooltip,
-            TooltipAlignment.right
+            PointerAlignment.right
           )
-        ).toBe(TooltipAlignment.left);
+        ).toBe(PointerAlignment.left);
       });
     });
   });
@@ -179,18 +179,18 @@ describe("Alignment", () => {
           TooltipPlacement.left,
           {} as unknown as DOMRect,
           {} as unknown as DOMRect,
-          TooltipAlignment.right
+          PointerAlignment.right
         )
-      ).toBe(TooltipAlignment.center);
+      ).toBe(PointerAlignment.center);
 
       expect(
         calculateAlignment(
           TooltipPlacement.right,
           {} as unknown as DOMRect,
           {} as unknown as DOMRect,
-          TooltipAlignment.left
+          PointerAlignment.left
         )
-      ).toBe(TooltipAlignment.center);
+      ).toBe(PointerAlignment.center);
     });
   });
 });
