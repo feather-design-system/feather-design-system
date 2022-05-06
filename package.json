@@ -36,6 +36,7 @@
     "@featherds/back-button": "file:packages/@featherds/back-button",
     "@featherds/badge": "file:packages/@featherds/badge",
     "@featherds/button": "file:packages/@featherds/button",
+    "@featherds/card": "file:packages/@featherds/card",
     "@featherds/checkbox": "file:packages/@featherds/checkbox",
     "@featherds/chips": "file:packages/@featherds/chips",
     "@featherds/composables": "file:packages/@featherds/composables",
