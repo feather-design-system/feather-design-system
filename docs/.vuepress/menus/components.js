@@ -189,6 +189,11 @@ module.exports = [
           url: "/Components/Tooltip/",
           image: "/assets/components/Tooltip.png",
         },
+        {
+          name: "Card",
+          url: "/Components/Card/",
+          image: "/assets/components/Card.png",
+        },
       ].sort((a, b) => {
         if (a.name > b.name) {
           return 1;
