@@ -5,7 +5,7 @@ export enum TooltipPlacement {
   right = "right",
 }
 
-export enum TooltipAlignment {
+export enum PointerAlignment {
   center = "center",
   left = "left",
   right = "right",
