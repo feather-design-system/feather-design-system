@@ -7,7 +7,7 @@ import { TooltipPlacement } from "../types";
 jest.spyOn(id, "getSafeId").mockImplementation((x) => x);
 const getDefault = () =>
   `<template #scoped="params">
-  <button v-bind="params.attrs">TOOLTIP BUTTON</button>
+  <button v-bind="params.attrs" v-on="params.on">TOOLTIP BUTTON</button>
   </template>
 `;
 const getWrapper = (placement = TooltipPlacement.top) =>
