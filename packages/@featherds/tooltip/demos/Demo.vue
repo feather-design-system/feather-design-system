@@ -1,11 +1,11 @@
 <template>
   <section>
-    <FeatherTooltip title="Example tooltip" v-slot="{ attrs }">
-      <button type="button" v-bind="attrs">Hellow</button>
+    <FeatherTooltip title="Example tooltip" v-slot="{ attrs, on }">
+      <button type="button" v-bind="attrs" v-on="on">Hellow</button>
     </FeatherTooltip>
 
-    <FeatherTooltip title="Example tooltip" v-slot="{ attrs }">
-      <FeatherButton primary v-bind="attrs">Hellow</FeatherButton>
+    <FeatherTooltip title="Example tooltip" v-slot="{ attrs, on }">
+      <FeatherButton primary v-bind="attrs" v-on="on">Hellow</FeatherButton>
     </FeatherTooltip>
   </section>
 </template>

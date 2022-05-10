@@ -36,9 +36,9 @@
         <FeatherTooltip
           title="Example tooltip"
           :placement="placement"
-          v-slot="{ attrs }"
+          v-slot="{ attrs, on }"
         >
-          <FeatherButton text v-bind="attrs" @click="visible = false"
+          <FeatherButton text v-bind="attrs" v-on="on" @click="visible = false"
             >Cancel</FeatherButton
           >
         </FeatherTooltip>

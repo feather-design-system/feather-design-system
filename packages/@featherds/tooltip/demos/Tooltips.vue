@@ -16,11 +16,11 @@
     </div>
     <FeatherTooltip
       title="Example tooltip Example tooltip Example tooltip Example tooltip"
-      v-slot="{ attrs }"
+      v-slot="{ attrs, on }"
       :pointer-alignment="alignment"
       :placement="placement"
     >
-      <FeatherButton primary v-bind="attrs" icon="Add"
+      <FeatherButton primary v-bind="attrs" v-on="on" icon="Add"
         ><FeatherIcon :icon="icon"> </FeatherIcon
       ></FeatherButton>
     </FeatherTooltip>

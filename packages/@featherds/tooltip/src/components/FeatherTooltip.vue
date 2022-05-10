@@ -12,7 +12,7 @@
         <Pointer class="tooltip-pointer" />
       </div>
     </Transition> </Teleport
-  ><slot :attrs="attrs"> </slot>
+  ><slot :attrs="attrs" :on="listeners"> </slot>
 </template>
 <script lang="ts">
 import {
@@ -20,6 +20,7 @@ import {
   ILayer,
   removeLayer,
 } from "@featherds/composables/modal/Layers";
+import { useScroll } from "@featherds/composables/events/Scroll";
 import { getSafeId } from "@featherds/utils/id";
 import { KEYCODES } from "@featherds/utils/keys";
 import Pointer from "./Pointer.vue";
@@ -67,22 +68,6 @@ export default defineComponent({
     const tooltipID = getSafeId("feather-tooltip");
     const idAttr = "data-feather-tooltip";
     provide("feather-has-tooltip", true);
-    const attrs = computed(() => {
-      return {
-        [idAttr]: triggerID,
-        "aria-describedby": tooltipID,
-        onmouseenter: enter, //for HTMLELEMENT
-        onmouseleave: leave, //for HTMLELEMENT
-        onMouseEnter: enter, //for Component
-        onMouseLeave: leave, //for Component
-        onfocus: enter, //for HTMLELEMENT
-        onblur: leave, //for HTMLELEMENT
-        onFocus: enter, //for Component
-        onBlur: leave, //for Component
-        onkeydown: handleEscape,
-        onKeydown: handleEscape,
-      };
-    });
     let timeout = 0;
     const enter = () => {
       clearTimeout(timeout);
@@ -94,14 +79,30 @@ export default defineComponent({
       clearTimeout(timeout);
       timeout = setTimeout(hideTooltip, props.exitDelay);
     };
-
     const handleEscape = (e: KeyboardEvent) => {
       if (e.keyCode === KEYCODES.ESCAPE) {
         e.preventDefault();
-        hideTooltip();
+        hideTooltip(true);
       }
     };
-    onUnmounted(() => hideTooltip());
+    const attrs = computed(() => {
+      return {
+        [idAttr]: triggerID,
+        "aria-describedby": tooltipID,
+      };
+    });
+    const listeners = {
+      mouseenter: enter,
+      mouseleave: leave,
+      focus: enter,
+      blur: leave,
+      keydown: handleEscape,
+    };
+
+    const documentRef = ref(document);
+    const activateScroll = useScroll(documentRef, () => hideTooltip(true));
+
+    onUnmounted(() => hideTooltip(true));
     const getTooltip = () => document.getElementById(tooltipID) as HTMLElement;
     let layer: ILayer | undefined;
     const showTooltip = () => {
@@ -115,10 +116,11 @@ export default defineComponent({
         nextTick(() => {
           animate.value = true;
           show.value = true; //show and animate now :D
+          activateScroll.value = true;
         });
       });
     };
-    const hideTooltip = () => {
+    const hideTooltip = (force = false) => {
       if (layer) {
         removeLayer(layer);
         layer = undefined;
@@ -128,6 +130,10 @@ export default defineComponent({
         alignmentClass.value = "";
         placementSelected.value = "";
         show.value = false;
+        if (force) {
+          animate.value = false;
+        }
+        activateScroll.value = false;
       }
     };
 
@@ -225,6 +231,7 @@ export default defineComponent({
 
     return {
       attrs,
+      listeners,
       show,
       animate,
       alignmentClass,

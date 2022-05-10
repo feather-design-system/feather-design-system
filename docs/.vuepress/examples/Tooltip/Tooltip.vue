@@ -16,11 +16,11 @@
     </div>
     <FeatherTooltip
       title="Add an item"
-      v-slot="{ attrs }"
+      v-slot="{ attrs, on }"
       :pointer-alignment="alignment"
       :placement="placement"
     >
-      <FeatherButton v-bind="attrs" icon="Add"
+      <FeatherButton v-bind="attrs" v-on="on" icon="Add"
         ><FeatherIcon :icon="icon"> </FeatherIcon
       ></FeatherButton>
     </FeatherTooltip>

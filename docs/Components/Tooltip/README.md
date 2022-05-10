@@ -13,7 +13,9 @@ A tooltip is a highly contextual form of an overlay. Triggered on hover, tooltip
 
 ## Examples
 
+<ClientOnly>
 <Tooltip-Examples />
+</ClientOnly>
 
 ## Usage
 
@@ -44,7 +46,7 @@ Position Tooltips so they don’t block relevant information. Some scenarios, li
 
 ### Slots
 
-- `default` - element that the tooltip should appear around
+- `default` - element that the tooltip should appear around. This slot is scoped, it provides `attrs` and `on` which should be passed to `v-bind` and `v-on` respectively. See the example.
 
 ### Types
 
