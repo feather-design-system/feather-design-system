@@ -1,3 +1,12 @@
+## [0.10.10](https://github.com/feather-design-system/feather-design-system/compare/v0.10.9...v0.10.10) (2022-05-10)
+
+
+### Bug Fixes
+
+* **toolip:** tooltip doc examples broken due to SSR, tracking ticket [#95](https://github.com/feather-design-system/feather-design-system/issues/95), also force close on scroll ([daa3224](https://github.com/feather-design-system/feather-design-system/commit/daa322410188820790836b1530d6e89fd423424f))
+
+
+
 ## [0.10.9](https://github.com/feather-design-system/feather-design-system/compare/v0.10.8...v0.10.9) (2022-05-10)
 
 
