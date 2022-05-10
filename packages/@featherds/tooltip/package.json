@@ -1,6 +1,6 @@
 {
   "name": "@featherds/tooltip",
-  "version": "0.10.2",
+  "version": "0.10.9",
   "publishConfig": {
     "access": "public"
   },
@@ -9,9 +9,9 @@
   "main": "dist/app.js",
   "license": "Apache-2.0",
   "dependencies": {
+    "@featherds/composables": "file:../composables",
     "@featherds/styles": "file:../styles",
     "@featherds/utils": "file:../utils",
-    "@featherds/composables": "file:../composables",
     "vue": "^3.1.0"
   },
   "keywords": [

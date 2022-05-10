@@ -1,3 +1,12 @@
+## [0.10.9](https://github.com/feather-design-system/feather-design-system/compare/v0.10.8...v0.10.9) (2022-05-10)
+
+
+### Features
+
+* **tooltip:** creation of FeatherTooltip ([c932f2e](https://github.com/feather-design-system/feather-design-system/commit/c932f2ea603c3bfd724bbcd54d5c215a6f0c6bf0))
+
+
+
 ## [0.10.8](https://github.com/feather-design-system/feather-design-system/compare/v0.10.7...v0.10.8) (2022-04-26)
 
 
