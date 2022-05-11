@@ -23,7 +23,7 @@ module.exports = {
     },
   }),
   templateDev: path.resolve(__dirname, "./templates/dev.html"),
-  templateSSR: path.resolve(__dirname, "./templates/ssr.html"),
+  templateBuild: path.resolve(__dirname, "./templates/ssr.html"),
   patterns: ["README.md", "Components/**/*.md", "Foundation/**/*.md"],
   markdown: { code: { lineNumbers: false } },
   bundler: viteBundler({
