@@ -4,7 +4,7 @@
       <FeatherAutocomplete
         class="feather-col-6"
         data-ref-id="test"
-        label="Users"
+        label="Select Users"
         v-model="value"
         :loading="loading"
         :results="results"

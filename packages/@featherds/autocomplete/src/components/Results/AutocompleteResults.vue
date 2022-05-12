@@ -3,7 +3,6 @@
     class="feather-autocomplete-results-list"
     tabindex="-1"
     aria-hidden="false"
-    aria-live="polite"
     role="listbox"
     :aria-multiselectable="single ? 'false' : 'true'"
     ref="list"
