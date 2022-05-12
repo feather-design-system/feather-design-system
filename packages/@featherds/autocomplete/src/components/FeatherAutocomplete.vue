@@ -35,7 +35,7 @@
             <div
               class="alert"
               role="alert"
-              aria-live="assertive"
+              aria-live="polite"
               aria-atomic="true"
               ref="alert"
             ></div>
@@ -204,6 +204,7 @@ export default defineComponent({
     return {
       typingTimeout: -1 as unknown as TimeoutResult,
       activeChipIndex: -1,
+      activeChipId: "",
     };
   },
   computed: {
@@ -281,9 +282,6 @@ export default defineComponent({
     resultItemId() {
       return getSafeId("result-item");
     },
-    activeChipId() {
-      return getSafeId("active-chip");
-    },
     minCharWarningId() {
       return getSafeId("min-char-warning");
     },
@@ -346,6 +344,7 @@ export default defineComponent({
         input: this.handleTextInput,
         blur: this.handleInputBlur,
         focus: this.handleInputFocus,
+        click: this.handleInputEnter,
         keydown: this.handleInputKeyDown,
       };
     },
@@ -388,6 +387,9 @@ export default defineComponent({
   },
   watch: {
     activeChipIndex(v) {
+      if (v) {
+        this.genActiveChipId();
+      }
       if (v > -1 && this.scrollContainer) {
         this.$nextTick(() => {
           toView(
@@ -470,6 +472,10 @@ export default defineComponent({
     getPre(item: IAutocompleteItemType) {
       return item._pre as IAutocompleteChipIcon;
     },
+    genActiveChipId() {
+      this.activeChipId = getSafeId("active-chip");
+      return this.activeChipId;
+    },
     setAlert(txt: string) {
       const alert = this.$refs.alert as HTMLElement;
       alert.textContent = txt;
@@ -497,9 +503,11 @@ export default defineComponent({
       if (this.modelValue && this.singleSelect) {
         this.inputRef.select();
       }
+    },
+    handleInputEnter() {
+      this.handleInputFocus();
       this.emitSearch();
     },
-
     handleTextInput(e: KeyboardEvent) {
       this.adjustTextArea();
       const target = e.target as HTMLInputElement;
@@ -545,6 +553,17 @@ export default defineComponent({
       if (e.keyCode === KEYCODES.ENTER && this.active.row > -1) {
         e.preventDefault();
         this.selectItem(this.internalResults[this.active.row]);
+        return;
+      }
+      if (
+        (e.keyCode === KEYCODES.ENTER ||
+          e.keyCode === KEYCODES.SPACE ||
+          e.keyCode === KEYCODES.DOWN) &&
+        this.activeChipIndex == -1 &&
+        !this.showMenu
+      ) {
+        e.preventDefault();
+        this.emitSearch();
         return;
       }
 

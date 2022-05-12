@@ -5,7 +5,6 @@
       :class="cls"
       tabindex="-1"
       aria-hidden="false"
-      aria-live="polite"
       role="grid"
       :aria-multiselectable="single ? 'false' : 'true'"
     >
