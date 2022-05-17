@@ -177,7 +177,7 @@ export default defineComponent({
       clearTimeout(this.timeout);
       this.timeout = setTimeout(() => {
         this.results = people.filter(
-          (x) => x.name.toLowerCase().indexOf(q) > -1
+          (x) => x.name.toLowerCase().indexOf(q.toLowerCase()) > -1
         );
 
         this.loading = false;

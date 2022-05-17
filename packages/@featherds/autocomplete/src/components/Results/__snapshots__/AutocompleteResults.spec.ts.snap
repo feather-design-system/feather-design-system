@@ -3,7 +3,6 @@
 exports[`Autocomplete Results should mark items as selected that appear in value array 1`] = `
 <feather-list-stub
   aria-hidden="false"
-  aria-live="polite"
   aria-multiselectable="true"
   class="feather-autocomplete-results-list"
   role="listbox"
@@ -98,7 +97,6 @@ exports[`Autocomplete Results should mark items as selected that appear in value
 exports[`Autocomplete Results should mark items as selected that appear in value array and active when active index is set. 1`] = `
 <feather-list-stub
   aria-hidden="false"
-  aria-live="polite"
   aria-multiselectable="true"
   class="feather-autocomplete-results-list"
   role="listbox"
@@ -194,7 +192,6 @@ exports[`Autocomplete Results should mark items as selected that appear in value
 exports[`Autocomplete Results should support active index being out of range 1`] = `
 <feather-list-stub
   aria-hidden="false"
-  aria-live="polite"
   aria-multiselectable="true"
   class="feather-autocomplete-results-list"
   role="listbox"
@@ -289,7 +286,6 @@ exports[`Autocomplete Results should support active index being out of range 1`]
 exports[`Autocomplete Results should support active index within results range 1`] = `
 <feather-list-stub
   aria-hidden="false"
-  aria-live="polite"
   aria-multiselectable="true"
   class="feather-autocomplete-results-list"
   role="listbox"
@@ -385,7 +381,6 @@ exports[`Autocomplete Results should support active index within results range 1
 exports[`Autocomplete Results should support no item active 1`] = `
 <feather-list-stub
   aria-hidden="false"
-  aria-live="polite"
   aria-multiselectable="true"
   class="feather-autocomplete-results-list"
   role="listbox"
@@ -480,7 +475,6 @@ exports[`Autocomplete Results should support no item active 1`] = `
 exports[`Autocomplete Results should support single select 1`] = `
 <feather-list-stub
   aria-hidden="false"
-  aria-live="polite"
   aria-multiselectable="false"
   class="feather-autocomplete-results-list"
   role="listbox"

@@ -28,6 +28,7 @@
             v-for="(col, colIndex) in config"
             :key="(item[textProp] as string) + col.prop"
             :id="getId(index, colIndex)"
+            :aria-selected="isSelected(item)"
             :class="{ 'focus-cell': isActiveCell(index, colIndex) }"
           >
             <Highlighter

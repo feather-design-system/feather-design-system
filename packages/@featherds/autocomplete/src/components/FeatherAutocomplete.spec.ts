@@ -79,9 +79,17 @@ const baseFunctionality = (type: AutocompleteTypes) => {
       await wrapper.find(".feather-autocomplete-input").trigger("focus");
       expect(getCalls<string>(wrapper, "search")[0][0]).toBe("");
     });
-    it("should perform search with empty string when focused and min char is 0", async () => {
+    it("should not perform search with empty string when focused and min char is 0", async () => {
       const wrapper = getFullWrapper();
       await wrapper.find(".feather-autocomplete-input").trigger("focus");
+      expect(wrapper.emitted("search")).toBeFalsy();
+    });
+    it("should perform search with empty string when focused and space pressed and min char is 0", async () => {
+      const wrapper = getFullWrapper();
+      await wrapper.find(".feather-autocomplete-input").trigger("focus");
+      await wrapper
+        .find(".feather-autocomplete-input")
+        .trigger("keydown.space");
       expect(getCalls<string>(wrapper, "search")[0][0]).toBe("");
     });
     it("should not search when clicked an min char is >0", async () => {

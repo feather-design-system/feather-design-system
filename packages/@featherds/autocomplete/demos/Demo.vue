@@ -94,7 +94,7 @@ export default defineComponent({
       clearTimeout(this.timeout);
       this.timeout = setTimeout(() => {
         this.results = names
-          .filter((x) => x.toLowerCase().indexOf(q) > -1)
+          .filter((x) => x.toLowerCase().indexOf(q.toLowerCase()) > -1)
           .map((x) => {
             // if (x === "William") {
             //   return {
