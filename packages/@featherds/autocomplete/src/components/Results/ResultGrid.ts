@@ -115,8 +115,8 @@ const useResultGrid = (config: IAutocompleteGridColumn[]) => {
     active.col = -1;
   };
   const first = () => {
-    active.row = 0;
-    active.col = 0;
+    reset();
+    moveRowCol(0, 0);
   };
 
   return { reset, handleKeyPress, active, first } as IAutocompleteResultRender;

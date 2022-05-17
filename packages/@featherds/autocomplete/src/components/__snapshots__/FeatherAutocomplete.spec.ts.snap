@@ -62,7 +62,7 @@ exports[`FeatherAutocomplete base functionality multi disabled state should rend
         >
           <div
             aria-atomic="true"
-            aria-live="assertive"
+            aria-live="polite"
             class="alert"
             role="alert"
           />
@@ -236,7 +236,7 @@ exports[`FeatherAutocomplete base functionality multi disabled state should rend
         >
           <div
             aria-atomic="true"
-            aria-live="assertive"
+            aria-live="polite"
             class="alert"
             role="alert"
           />
@@ -372,7 +372,7 @@ exports[`FeatherAutocomplete base functionality multi should lower label when th
         >
           <div
             aria-atomic="true"
-            aria-live="assertive"
+            aria-live="polite"
             class="alert"
             role="alert"
           />
@@ -508,7 +508,7 @@ exports[`FeatherAutocomplete base functionality multi should not leave previous 
         >
           <div
             aria-atomic="true"
-            aria-live="assertive"
+            aria-live="polite"
             class="alert"
             role="alert"
           />
@@ -573,7 +573,6 @@ exports[`FeatherAutocomplete base functionality multi should not leave previous 
         <ul
           aria-hidden="false"
           aria-label="Users"
-          aria-live="polite"
           aria-multiselectable="true"
           class="feather-list feather-autocomplete-results-list autocomplete-results"
           id="feather-autocomplete-input-results"
@@ -749,7 +748,7 @@ exports[`FeatherAutocomplete base functionality multi should raise the label whe
         >
           <div
             aria-atomic="true"
-            aria-live="assertive"
+            aria-live="polite"
             class="alert"
             role="alert"
           />
@@ -963,7 +962,7 @@ exports[`FeatherAutocomplete base functionality multi should show loading spinne
         >
           <div
             aria-atomic="true"
-            aria-live="assertive"
+            aria-live="polite"
             class="alert"
             role="alert"
           />
@@ -1028,7 +1027,6 @@ exports[`FeatherAutocomplete base functionality multi should show loading spinne
         <ul
           aria-hidden="false"
           aria-label="Users"
-          aria-live="polite"
           aria-multiselectable="true"
           class="feather-list feather-autocomplete-results-list autocomplete-results"
           id="feather-autocomplete-input-results"
@@ -1150,7 +1148,7 @@ exports[`FeatherAutocomplete base functionality multi should show no results tex
         >
           <div
             aria-atomic="true"
-            aria-live="assertive"
+            aria-live="polite"
             class="alert"
             role="alert"
           />
@@ -1215,7 +1213,6 @@ exports[`FeatherAutocomplete base functionality multi should show no results tex
         <ul
           aria-hidden="false"
           aria-label="Users"
-          aria-live="polite"
           aria-multiselectable="true"
           class="feather-list feather-autocomplete-results-list autocomplete-results"
           id="feather-autocomplete-input-results"
@@ -1341,7 +1338,7 @@ exports[`FeatherAutocomplete base functionality single disabled state should ren
         >
           <div
             aria-atomic="true"
-            aria-live="assertive"
+            aria-live="polite"
             class="alert"
             role="alert"
           />
@@ -1495,7 +1492,7 @@ exports[`FeatherAutocomplete base functionality single disabled state should ren
         >
           <div
             aria-atomic="true"
-            aria-live="assertive"
+            aria-live="polite"
             class="alert"
             role="alert"
           />
@@ -1631,7 +1628,7 @@ exports[`FeatherAutocomplete base functionality single should lower label when t
         >
           <div
             aria-atomic="true"
-            aria-live="assertive"
+            aria-live="polite"
             class="alert"
             role="alert"
           />
@@ -1767,7 +1764,7 @@ exports[`FeatherAutocomplete base functionality single should not leave previous
         >
           <div
             aria-atomic="true"
-            aria-live="assertive"
+            aria-live="polite"
             class="alert"
             role="alert"
           />
@@ -1832,7 +1829,6 @@ exports[`FeatherAutocomplete base functionality single should not leave previous
         <ul
           aria-hidden="false"
           aria-label="Users"
-          aria-live="polite"
           aria-multiselectable="false"
           class="feather-list feather-autocomplete-results-list autocomplete-results"
           id="feather-autocomplete-input-results"
@@ -2007,7 +2003,7 @@ exports[`FeatherAutocomplete base functionality single should raise the label wh
         >
           <div
             aria-atomic="true"
-            aria-live="assertive"
+            aria-live="polite"
             class="alert"
             role="alert"
           />
@@ -2161,7 +2157,7 @@ exports[`FeatherAutocomplete base functionality single should show loading spinn
         >
           <div
             aria-atomic="true"
-            aria-live="assertive"
+            aria-live="polite"
             class="alert"
             role="alert"
           />
@@ -2226,7 +2222,6 @@ exports[`FeatherAutocomplete base functionality single should show loading spinn
         <ul
           aria-hidden="false"
           aria-label="Users"
-          aria-live="polite"
           aria-multiselectable="false"
           class="feather-list feather-autocomplete-results-list autocomplete-results"
           id="feather-autocomplete-input-results"
@@ -2348,7 +2343,7 @@ exports[`FeatherAutocomplete base functionality single should show no results te
         >
           <div
             aria-atomic="true"
-            aria-live="assertive"
+            aria-live="polite"
             class="alert"
             role="alert"
           />
@@ -2413,7 +2408,6 @@ exports[`FeatherAutocomplete base functionality single should show no results te
         <ul
           aria-hidden="false"
           aria-label="Users"
-          aria-live="polite"
           aria-multiselectable="false"
           class="feather-list feather-autocomplete-results-list autocomplete-results"
           id="feather-autocomplete-input-results"
@@ -2541,7 +2535,7 @@ exports[`FeatherAutocomplete multi:specific chip selection should move chip sele
         >
           <div
             aria-atomic="true"
-            aria-live="assertive"
+            aria-live="polite"
             class="alert"
             role="alert"
           />
@@ -2756,7 +2750,7 @@ exports[`FeatherAutocomplete multi:specific chip selection should move chip sele
         >
           <div
             aria-atomic="true"
-            aria-live="assertive"
+            aria-live="polite"
             class="alert"
             role="alert"
           />
@@ -2971,7 +2965,7 @@ exports[`FeatherAutocomplete multi:specific chip selection should not move chip 
         >
           <div
             aria-atomic="true"
-            aria-live="assertive"
+            aria-live="polite"
             class="alert"
             role="alert"
           />
@@ -3186,7 +3180,7 @@ exports[`FeatherAutocomplete multi:specific chip selection should not perform an
         >
           <div
             aria-atomic="true"
-            aria-live="assertive"
+            aria-live="polite"
             class="alert"
             role="alert"
           />
@@ -3400,7 +3394,7 @@ exports[`FeatherAutocomplete multi:specific chip selection should select rightmo
         >
           <div
             aria-atomic="true"
-            aria-live="assertive"
+            aria-live="polite"
             class="alert"
             role="alert"
           />
@@ -3544,7 +3538,6 @@ exports[`FeatherAutocomplete multi:specific chip selection should select rightmo
         <ul
           aria-hidden="false"
           aria-label="Users"
-          aria-live="polite"
           aria-multiselectable="true"
           class="feather-list feather-autocomplete-results-list autocomplete-results"
           id="feather-autocomplete-input-results"
@@ -3702,7 +3695,7 @@ exports[`FeatherAutocomplete multi:specific chip selection should select the rig
         >
           <div
             aria-atomic="true"
-            aria-live="assertive"
+            aria-live="polite"
             class="alert"
             role="alert"
           />
@@ -3917,7 +3910,7 @@ exports[`FeatherAutocomplete multi:specific chip selection should should deselec
         >
           <div
             aria-atomic="true"
-            aria-live="assertive"
+            aria-live="polite"
             class="alert"
             role="alert"
           />
@@ -4131,7 +4124,7 @@ exports[`FeatherAutocomplete multi:specific selection limit should clear warning
         >
           <div
             aria-atomic="true"
-            aria-live="assertive"
+            aria-live="polite"
             class="alert"
             role="alert"
           />
@@ -4345,7 +4338,7 @@ exports[`FeatherAutocomplete multi:specific selection limit should display a war
         >
           <div
             aria-atomic="true"
-            aria-live="assertive"
+            aria-live="polite"
             class="alert"
             role="alert"
           />
@@ -4488,7 +4481,6 @@ exports[`FeatherAutocomplete multi:specific selection limit should display a war
         <ul
           aria-hidden="false"
           aria-label="Users"
-          aria-live="polite"
           aria-multiselectable="true"
           class="feather-list feather-autocomplete-results-list autocomplete-results"
           id="feather-autocomplete-input-results"
@@ -4638,7 +4630,7 @@ exports[`FeatherAutocomplete multi:specific selection limit should display a war
         >
           <div
             aria-atomic="true"
-            aria-live="assertive"
+            aria-live="polite"
             class="alert"
             role="alert"
           >
@@ -4783,7 +4775,6 @@ exports[`FeatherAutocomplete multi:specific selection limit should display a war
         <ul
           aria-hidden="false"
           aria-label="Users"
-          aria-live="polite"
           aria-multiselectable="true"
           class="feather-list feather-autocomplete-results-list autocomplete-results"
           id="feather-autocomplete-input-results"
@@ -4933,7 +4924,7 @@ exports[`FeatherAutocomplete multi:specific selection limit should display a war
         >
           <div
             aria-atomic="true"
-            aria-live="assertive"
+            aria-live="polite"
             class="alert"
             role="alert"
           >
@@ -5000,7 +4991,6 @@ exports[`FeatherAutocomplete multi:specific selection limit should display a war
         <ul
           aria-hidden="false"
           aria-label="Users"
-          aria-live="polite"
           aria-multiselectable="true"
           class="feather-list feather-autocomplete-results-list autocomplete-results"
           id="feather-autocomplete-input-results"
@@ -5206,7 +5196,7 @@ exports[`FeatherAutocomplete multi:specific should hide/reset menu and clear tex
         >
           <div
             aria-atomic="true"
-            aria-live="assertive"
+            aria-live="polite"
             class="alert"
             role="alert"
           />
@@ -5342,7 +5332,7 @@ exports[`FeatherAutocomplete single:specific should close menu when enter is pre
         >
           <div
             aria-atomic="true"
-            aria-live="assertive"
+            aria-live="polite"
             class="alert"
             role="alert"
           />
@@ -5407,7 +5397,6 @@ exports[`FeatherAutocomplete single:specific should close menu when enter is pre
         <ul
           aria-hidden="false"
           aria-label="Users"
-          aria-live="polite"
           aria-multiselectable="false"
           class="feather-list feather-autocomplete-results-list autocomplete-results"
           id="feather-autocomplete-input-results"
@@ -5563,7 +5552,7 @@ exports[`FeatherAutocomplete single:specific should handle a null property on va
         >
           <div
             aria-atomic="true"
-            aria-live="assertive"
+            aria-live="polite"
             class="alert"
             role="alert"
           />
@@ -5717,7 +5706,7 @@ exports[`FeatherAutocomplete single:specific should show add new element when in
         >
           <div
             aria-atomic="true"
-            aria-live="assertive"
+            aria-live="polite"
             class="alert"
             role="alert"
           />
@@ -5782,7 +5771,6 @@ exports[`FeatherAutocomplete single:specific should show add new element when in
         <ul
           aria-hidden="false"
           aria-label="Users"
-          aria-live="polite"
           aria-multiselectable="false"
           class="feather-list feather-autocomplete-results-list autocomplete-results"
           id="feather-autocomplete-input-results"

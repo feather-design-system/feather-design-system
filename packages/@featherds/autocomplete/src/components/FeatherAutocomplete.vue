@@ -426,7 +426,7 @@ export default defineComponent({
       immediate: true,
     },
     results(v) {
-      if (!this.singleSelect && !this.gridConfig && v && v.length > 0) {
+      if (!this.singleSelect && v && v.length > 0) {
         this.selectFirst();
       }
       this.forceCloseResults = false; // should no longer force close
@@ -619,6 +619,7 @@ export default defineComponent({
         return;
       }
       this.inputRef.focus();
+      this.handleDropdownIconClick();
     },
     handleInputBlur() {
       this.validate();
@@ -660,7 +661,7 @@ export default defineComponent({
         this.forceCloseResults = true;
         return;
       }
-      if (this.forceCloseResults) {
+      if (!this.forceCloseResults) {
         this.emitSearch();
       }
     },
