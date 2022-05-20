@@ -47,7 +47,7 @@ import HighlighterProps from "../Highlight/HighlighterProps";
 import { defineComponent, PropType, ComponentPublicInstance } from "vue";
 import { IAutocompleteItemType } from "../types";
 export default defineComponent({
-  emits: ["select"],
+  emits: ["select", "deselect"],
   props: {
     activeId: {
       type: String,
@@ -111,7 +111,7 @@ export default defineComponent({
       return index === this.activeIndex ? this.activeId : null;
     },
     select(item: IAutocompleteItemType) {
-      this.$emit("select", item);
+      this.$emit(this.isSelected(item) ? "deselect" : "select", item);
     },
   },
   components: {

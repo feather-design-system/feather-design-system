@@ -89,6 +89,7 @@
         :activeIndex="active.row"
         :aria-label="label"
         @select="clickedItem"
+        @deselect="removeFromValue"
         class="autocomplete-results"
         :id="resultsId"
         :single="singleSelect"
@@ -127,7 +128,8 @@
         ></MenuMessage
       >
       <MenuMessage
-        v-if="showMinCharWarning"
+        v-if="minChar"
+        v-show="showMinCharWarning"
         class="min-char-warning"
         :id="minCharWarningId"
       >
@@ -315,7 +317,7 @@ export default defineComponent({
       if (this.active.row > -1 && this.showResults) {
         activeDescendant = this.resultItemId;
       }
-      if (this.showMinCharWarning) {
+      if (this.minChar) {
         describedby.push(this.minCharWarningId);
       }
 
@@ -426,7 +428,7 @@ export default defineComponent({
       immediate: true,
     },
     results(v) {
-      if (!this.singleSelect && v && v.length > 0) {
+      if (v && v.length > 0) {
         this.selectFirst();
       }
       this.forceCloseResults = false; // should no longer force close

@@ -56,7 +56,9 @@ const useStrategy = (
         setSelectionLimit(result);
       },
       removeItem(item: IAutocompleteItemType) {
-        const index = modelValue.value.indexOf(item);
+        const index = modelValue.value.findIndex((el) => {
+          if (item._text === el._text) return true;
+        });
         if (index > -1) {
           const result = modelValue.value.slice(0);
           result.splice(index, 1);

@@ -837,17 +837,6 @@ describe("FeatherAutocomplete", () => {
     const getFullWrapper = getFullWrapperType(AutocompleteTypes.single);
     const getResults = getResultsType(AutocompleteTypes.single);
     const getValue = getValueType(AutocompleteTypes.single);
-    it("should not activate first item in menu on initial load", async () => {
-      const results = getResults();
-      const wrapper = getFullWrapper();
-      await wrapper.find(".feather-autocomplete-input").trigger("focus");
-
-      await wrapper.setProps({
-        results,
-      });
-
-      expect(wrapper.vm.active.row).toBe(-1);
-    });
     it("should display value text in the input when a value is selected", async () => {
       const wrapper = getFullWrapper();
       const input = wrapper.find<HTMLInputElement>(
@@ -1001,7 +990,7 @@ describe("FeatherAutocomplete", () => {
       expect(wrapper.vm.showNoResults).toBe(false);
       expect(wrapper.vm.showResults).toBe(true);
     });
-    it("should add new item on blur when it is highlighted", async () => {
+    fit("should add new item on blur when it is highlighted", async () => {
       jest.useFakeTimers();
       const results = getResults() as IAutocompleteItemType[];
       const wrapper = getFullWrapper({
@@ -1020,9 +1009,9 @@ describe("FeatherAutocomplete", () => {
       await wrapper.setProps({
         results,
       });
-      await wrapper.find(".feather-autocomplete-input").trigger("keydown.down");
       await input.trigger("blur");
       await nextTick();
+      console.log(wrapper.emitted());
       expect(getCalls<[string]>(wrapper, "new")[0][0]).toBe(query);
     });
   });
