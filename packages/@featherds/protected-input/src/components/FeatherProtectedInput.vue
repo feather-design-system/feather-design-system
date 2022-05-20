@@ -2,7 +2,14 @@
 import { FeatherInput, FeatherInputProps } from "@featherds/input";
 import PasswordIcon from "./PasswordIcon.vue";
 import { useLabelProperty } from "@featherds/composables/LabelProperty";
-import { toRef, h, defineComponent, PropType, DefineComponent } from "vue";
+import {
+  toRef,
+  h,
+  defineComponent,
+  PropType,
+  DefineComponent,
+  ExtractPropTypes,
+} from "vue";
 
 const LABELS = {
   show: "Show password",
@@ -58,11 +65,16 @@ export default defineComponent({
     const attrs = { ...this.$attrs };
     delete attrs.clear; //dont allow clear in password.
     delete attrs.maxlength; //dont allow maxlength in password.
+    //removing the labels property
+    const { labels, ...inputProps } = this.$props;
     return h(
       FeatherInput as unknown as DefineComponent,
       {
         ...attrs,
-        ...this.$props,
+        ...inputProps,
+        "onUpdate:modelValue": (val: string) => {
+          this.$emit("update:modelValue", val);
+        },
         type: this.showPassword ? "input" : "password",
         ref: "input",
       },
