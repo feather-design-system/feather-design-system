@@ -4,7 +4,7 @@ export const calculatePlacement = (
   triggerBox: DOMRect,
   tooltipBox: DOMRect,
   preferred: TooltipPlacement,
-  arrowHeight = 7
+  arrowHeight = 9
 ) => {
   const triggerBottom = window.innerHeight - triggerBox.bottom;
   const triggerRight = window.innerWidth - triggerBox.right;

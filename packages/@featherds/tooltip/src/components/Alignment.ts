@@ -5,7 +5,7 @@ export const calculateAlignment = (
   triggerBox: DOMRect,
   tooltipBox: DOMRect,
   preferred: PointerAlignment,
-  arrowOffset = 24
+  arrowOffset = 28
 ) => {
   if (
     placement === TooltipPlacement.left ||
