@@ -139,7 +139,7 @@ export default defineComponent({
 
     const placementProp = toRef(props, "placement");
     const alignmentProp = toRef(props, "pointerAlignment");
-    const arrowHeight = 7;
+    const arrowHeight = 8;
     const arrowOffset = 24;
     const top = ref("");
     const left = ref("");
@@ -284,10 +284,10 @@ export default defineComponent({
       transform: translateX(-50%) rotate(180deg);
     }
     &.right .tooltip-pointer {
-      right: 4px;
+      right: 8px;
     }
     &.left .tooltip-pointer {
-      left: 4px;
+      left: 8px;
     }
   }
   &.p-top {
@@ -299,16 +299,16 @@ export default defineComponent({
       transform: translateX(-50%);
     }
     &.right .tooltip-pointer {
-      right: 4px;
+      right: 8px;
     }
     &.left .tooltip-pointer {
-      left: 4px;
+      left: 8px;
     }
   }
 
   &.p-left {
     .tooltip-pointer {
-      right: -28px;
+      right: -24px;
       transform: rotate(-90deg) translateY(-50%);
       top: calc(50% - 5px);
     }
@@ -318,7 +318,7 @@ export default defineComponent({
       margin-left: 8px;
     }
     .tooltip-pointer {
-      left: -20px;
+      left: -16px;
       transform: rotate(90deg) translateY(-50%);
       top: calc(50% - 5px);
     }
