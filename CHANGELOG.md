@@ -1,3 +1,12 @@
+## [0.10.11](https://github.com/feather-design-system/feather-design-system/compare/v0.10.10...v0.10.11) (2022-05-23)
+
+
+### Bug Fixes
+
+* **protected-input:** emitting update event and fix type issue ([5fe52d4](https://github.com/feather-design-system/feather-design-system/commit/5fe52d4f9cc405370d8c7cb59c9a7e765d51b686))
+
+
+
 ## [0.10.10](https://github.com/feather-design-system/feather-design-system/compare/v0.10.9...v0.10.10) (2022-05-10)
 
 
