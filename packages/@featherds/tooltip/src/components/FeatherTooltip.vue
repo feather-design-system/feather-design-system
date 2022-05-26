@@ -22,6 +22,11 @@ import {
 } from "@featherds/composables/modal/Layers";
 import { useScroll } from "@featherds/composables/events/Scroll";
 import { getSafeId } from "@featherds/utils/id";
+import {
+  _setTimeout,
+  TimeoutResult,
+  _clearTimeout,
+} from "@featherds/utils/setTimeout";
 import { KEYCODES } from "@featherds/utils/keys";
 import Pointer from "./Pointer.vue";
 import {
@@ -68,16 +73,16 @@ export default defineComponent({
     const tooltipID = getSafeId("feather-tooltip");
     const idAttr = "data-feather-tooltip";
     provide("feather-has-tooltip", true);
-    let timeout = 0;
+    let timeout = 0 as unknown as TimeoutResult;
     const enter = () => {
-      clearTimeout(timeout);
+      _clearTimeout(timeout);
       if (!show.value) {
-        timeout = setTimeout(showTooltip, props.enterDelay);
+        timeout = _setTimeout(showTooltip, props.enterDelay);
       }
     };
     const leave = () => {
-      clearTimeout(timeout);
-      timeout = setTimeout(hideTooltip, props.exitDelay);
+      _clearTimeout(timeout);
+      timeout = _setTimeout(hideTooltip, props.exitDelay);
     };
     const handleEscape = (e: KeyboardEvent) => {
       if (e.keyCode === KEYCODES.ESCAPE) {

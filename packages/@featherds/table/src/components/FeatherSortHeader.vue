@@ -73,6 +73,11 @@ export const emits = {
 export default defineComponent({
   emits: ["sort-changed"],
   props,
+  setup(props) {
+    return {
+      ...useLabelProperty<typeof LABELS>(toRef(props, "labels"), LABELS),
+    };
+  },
   computed: {
     descriptionId() {
       return getSafeId("feather-sort-header-description");
@@ -103,11 +108,7 @@ export default defineComponent({
       return "";
     },
   },
-  setup(props) {
-    return {
-      ...useLabelProperty<typeof LABELS>(toRef(props, "labels"), LABELS),
-    };
-  },
+
   components: {
     FeatherIcon,
     FeatherRipple,

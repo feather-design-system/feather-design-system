@@ -81,7 +81,33 @@ export default defineComponent({
   },
   emits,
   props,
-  data: () => {
+  setup(props, context) {
+    useInputSubText(props);
+    useInputWrapper(props);
+    const incomingId = toRef(props, "id");
+    const inputId = computed(() => {
+      if (incomingId.value) {
+        return incomingId.value;
+      }
+      return getSafeId("feather-textarea-label");
+    });
+
+    const { validate } = useValidation(
+      inputId,
+      toRef(props, "modelValue"),
+      props.label,
+      props.schema as Record<string, any>,
+      toRef(props, "error") as Ref<string>
+    );
+
+    return {
+      inputId,
+      incomingId,
+      validate,
+      ...useInputInheritAttrs(context.attrs as Record<string, unknown>),
+    };
+  },
+  data() {
     return {
       focused: false,
       internalValue: "",
@@ -162,7 +188,7 @@ export default defineComponent({
         },
       };
     },
-    charCount() {
+    charCount(): string {
       return `${(this.internalValue && this.internalValue.length) || "0"} / ${
         this.maxlength
       }`;
@@ -182,32 +208,6 @@ export default defineComponent({
         this.$emit("update:modelValue", v);
       },
     },
-  },
-  setup(props, context) {
-    useInputSubText(props);
-    useInputWrapper(props);
-    const incomingId = toRef(props, "id");
-    const inputId = computed(() => {
-      if (incomingId.value) {
-        return incomingId.value;
-      }
-      return getSafeId("feather-textarea-label");
-    });
-
-    const { validate } = useValidation(
-      inputId,
-      toRef(props, "modelValue"),
-      props.label,
-      props.schema as Record<string, any>,
-      toRef(props, "error") as Ref<string>
-    );
-
-    return {
-      inputId,
-      incomingId,
-      validate,
-      ...useInputInheritAttrs(context.attrs as Record<string, unknown>),
-    };
   },
   methods: {
     handleClear() {
