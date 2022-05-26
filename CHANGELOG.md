@@ -1,3 +1,12 @@
+## [0.10.12](https://github.com/feather-design-system/feather-design-system/compare/v0.10.11...v0.10.12) (2022-05-26)
+
+
+### Bug Fixes
+
+* **typings:** updated to latest deps, fixes [#100](https://github.com/feather-design-system/feather-design-system/issues/100) ([651b299](https://github.com/feather-design-system/feather-design-system/commit/651b2990b93304e5a2bc813098d245163c11e636))
+
+
+
 ## [0.10.11](https://github.com/feather-design-system/feather-design-system/compare/v0.10.10...v0.10.11) (2022-05-23)
 
 
