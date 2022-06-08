@@ -990,7 +990,7 @@ describe("FeatherAutocomplete", () => {
       expect(wrapper.vm.showNoResults).toBe(false);
       expect(wrapper.vm.showResults).toBe(true);
     });
-    fit("should add new item on blur when it is highlighted", async () => {
+    it("should add new item on blur when it is highlighted", async () => {
       jest.useFakeTimers();
       const results = getResults() as IAutocompleteItemType[];
       const wrapper = getFullWrapper({
@@ -1011,7 +1011,6 @@ describe("FeatherAutocomplete", () => {
       });
       await input.trigger("blur");
       await nextTick();
-      console.log(wrapper.emitted());
       expect(getCalls<[string]>(wrapper, "new")[0][0]).toBe(query);
     });
   });

@@ -1842,7 +1842,8 @@ exports[`FeatherAutocomplete base functionality single should not leave previous
           
           <li
             aria-selected="false"
-            class="feather-list-item hover focus result-item hover"
+            class="feather-list-item hover focus highlighted result-item hover"
+            id="result-item"
             role="option"
             style="overflow: hidden; position: relative;"
             tabindex="-1"
@@ -5279,7 +5280,7 @@ exports[`FeatherAutocomplete single:specific should close menu when enter is pre
     
     <div
       aria-controls="feather-menu-dropdown"
-      aria-expanded="true"
+      aria-expanded="false"
       aria-haspopup="true"
       aria-label="Users"
       aria-owns="feather-autocomplete-input-results"
@@ -5347,7 +5348,7 @@ exports[`FeatherAutocomplete single:specific should close menu when enter is pre
             aria-activedescendant=""
             aria-autocomplete="list"
             aria-busy="false"
-            aria-controls="feather-autocomplete-input-results"
+            aria-controls=""
             aria-describedby="feather-autocomplete-input-selected feather-autocomplete-description"
             aria-disabled="false"
             aria-invalid="false"
@@ -5368,7 +5369,7 @@ exports[`FeatherAutocomplete single:specific should close menu when enter is pre
           
           <svg
             aria-hidden="true"
-            class="feather-autocomplete-dropdown-icon rotate feather-icon feather-autocomplete-dropdown-icon rotate"
+            class="feather-autocomplete-dropdown-icon feather-icon feather-autocomplete-dropdown-icon"
             focusable="false"
             role="img"
             viewBox="0 0 24 24"
@@ -5384,93 +5385,7 @@ exports[`FeatherAutocomplete single:specific should close menu when enter is pre
     </div>
     
     <teleport-stub>
-      <div
-        class="feather-menu-dropdown"
-        data-ref-id="feather-autocomplete-menu-container-dropdown"
-        id="feather-menu-dropdown"
-        style="transform: translate(0px, 0px); width: 0px;"
-      >
-        <div
-          tabindex="0"
-        />
-        
-        <ul
-          aria-hidden="false"
-          aria-label="Users"
-          aria-multiselectable="false"
-          class="feather-list feather-autocomplete-results-list autocomplete-results"
-          id="feather-autocomplete-input-results"
-          role="listbox"
-          tabindex="-1"
-        >
-          
-          <!-- eslint-disable -->
-          
-          
-          <li
-            aria-selected="false"
-            class="feather-list-item hover focus result-item hover"
-            role="option"
-            style="overflow: hidden; position: relative;"
-            tabindex="-1"
-          >
-            <!---->
-            <span
-              class="feather-list-item-text"
-            >
-              <span>
-                <span>
-                  Item 1
-                </span>
-                <!--v-if-->
-                <!--v-if-->
-              </span>
-              <!--v-if-->
-            </span>
-            <!---->
-            <!---->
-          </li>
-          <!--v-if-->
-          
-          
-          <li
-            aria-selected="false"
-            class="feather-list-item hover focus result-item hover"
-            role="option"
-            style="overflow: hidden; position: relative;"
-            tabindex="-1"
-          >
-            <!---->
-            <span
-              class="feather-list-item-text"
-            >
-              <span>
-                <span>
-                  Item 2
-                </span>
-                <!--v-if-->
-                <!--v-if-->
-              </span>
-              <!--v-if-->
-            </span>
-            <!---->
-            <!---->
-          </li>
-          <!--v-if-->
-          
-          
-          
-        </ul>
-        <!--v-if-->
-        <!--v-if-->
-        <!--v-if-->
-        <!--v-if-->
-        <!--v-if-->
-        
-        <div
-          tabindex="0"
-        />
-      </div>
+      <!--v-if-->
     </teleport-stub>
   </div>
   <div
