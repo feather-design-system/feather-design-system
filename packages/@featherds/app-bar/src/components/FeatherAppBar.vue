@@ -13,7 +13,7 @@
             class="expand-button"
             :icon="menu"
             :title="expandLabel"
-            @click.stop.prevent="expand"
+            @click.stop.prevent="(expand as () => void)"
             url="#"
           />
           <slot name="left"></slot>
