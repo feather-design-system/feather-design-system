@@ -1,3 +1,17 @@
+## [0.10.13](https://github.com/feather-design-system/feather-design-system/compare/v0.10.12...v0.10.13) (2022-06-13)
+
+
+### Bug Fixes
+
+* **app-bar:** cast to fix type issue for [#103](https://github.com/feather-design-system/feather-design-system/issues/103) ([382a66e](https://github.com/feather-design-system/feather-design-system/commit/382a66ed2b4ebefa00b2faf981f648b1e2dfca78))
+* **autocomplete:** addressing some suggested accessibility fixes ([0d61471](https://github.com/feather-design-system/feather-design-system/commit/0d61471e8c121f1d3b495e9c3b7c9ab8134603f7))
+* **Autocomplete:** attempting to improve autocomplete with screen readers ([4915cf0](https://github.com/feather-design-system/feather-design-system/commit/4915cf0391478fc6f8cb0aaee4be768caafd5223))
+* **Autocomplete:** review comments ([6964816](https://github.com/feather-design-system/feather-design-system/commit/69648160316d5f1318fd8605a82d689ebeada792))
+* **autocomplete:** wip - trying to fix the accessibility issues ([4b73709](https://github.com/feather-design-system/feather-design-system/commit/4b73709413e84dd3c2c2ec0c686dee389a2795c3))
+* **ci:** trying to allow external PR build ([a8942e4](https://github.com/feather-design-system/feather-design-system/commit/a8942e49142fb51c9dc3f365a9f9eabf58a47cdc))
+
+
+
 ## [0.10.12](https://github.com/feather-design-system/feather-design-system/compare/v0.10.11...v0.10.12) (2022-05-26)
 
 
