@@ -72,9 +72,7 @@ exports[`FeatherSelect.vue should not raise the label when its empty 1`] = `
       </div>
     </div>
     
-    <teleport-stub>
-      <!--v-if-->
-    </teleport-stub>
+    <!--v-if-->
   </div>
   <div
     class="feather-input-sub-text"
@@ -165,9 +163,7 @@ exports[`FeatherSelect.vue should raise the label when it has a value 1`] = `
       </div>
     </div>
     
-    <teleport-stub>
-      <!--v-if-->
-    </teleport-stub>
+    <!--v-if-->
   </div>
   <div
     class="feather-input-sub-text"
@@ -259,9 +255,7 @@ exports[`FeatherSelect.vue should render in disabled state 1`] = `
       </div>
     </div>
     
-    <teleport-stub>
-      <!--v-if-->
-    </teleport-stub>
+    <!--v-if-->
   </div>
   <div
     class="feather-input-sub-text"
@@ -378,9 +372,7 @@ exports[`FeatherSelect.vue should render in error state 1`] = `
       </div>
     </div>
     
-    <teleport-stub>
-      <!--v-if-->
-    </teleport-stub>
+    <!--v-if-->
   </div>
   <div
     class="feather-input-sub-text"

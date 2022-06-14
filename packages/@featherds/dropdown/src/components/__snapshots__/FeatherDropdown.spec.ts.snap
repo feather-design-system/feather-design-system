@@ -14,9 +14,7 @@ exports[`FeatherDropdown.vue should pass through cover property 1`] = `
   </button>
   
   
-  <teleport-stub>
-    <!--v-if-->
-  </teleport-stub>
+  <!--v-if-->
 </div>
 `;
 
@@ -34,8 +32,6 @@ exports[`FeatherDropdown.vue should pass through right property 1`] = `
   </button>
   
   
-  <teleport-stub>
-    <!--v-if-->
-  </teleport-stub>
+  <!--v-if-->
 </div>
 `;

@@ -69,7 +69,7 @@ export default {
 <style lang="scss" scoped>
 @import "@featherds/styles/themes/variables";
 @import "@featherds/styles/mixins/typography";
-.toggle {
+.theme-changer.toggle.btn.btn-text {
   color: var($primary-text-on-color);
 }
 </style>
