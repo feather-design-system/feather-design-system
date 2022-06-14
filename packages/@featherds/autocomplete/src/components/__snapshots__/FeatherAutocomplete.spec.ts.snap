@@ -153,9 +153,7 @@ exports[`FeatherAutocomplete base functionality multi disabled state should rend
       </div>
     </div>
     
-    <teleport-stub>
-      <!--v-if-->
-    </teleport-stub>
+    <!--v-if-->
   </div>
   <div
     class="feather-input-sub-text"
@@ -289,9 +287,7 @@ exports[`FeatherAutocomplete base functionality multi disabled state should rend
       </div>
     </div>
     
-    <teleport-stub>
-      <!--v-if-->
-    </teleport-stub>
+    <!--v-if-->
   </div>
   <div
     class="feather-input-sub-text"
@@ -423,9 +419,7 @@ exports[`FeatherAutocomplete base functionality multi should lower label when th
       </div>
     </div>
     
-    <teleport-stub>
-      <!--v-if-->
-    </teleport-stub>
+    <!--v-if-->
   </div>
   <div
     class="feather-input-sub-text"
@@ -877,9 +871,7 @@ exports[`FeatherAutocomplete base functionality multi should raise the label whe
       </div>
     </div>
     
-    <teleport-stub>
-      <!--v-if-->
-    </teleport-stub>
+    <!--v-if-->
   </div>
   <div
     class="feather-input-sub-text"
@@ -1409,9 +1401,7 @@ exports[`FeatherAutocomplete base functionality single disabled state should ren
       </div>
     </div>
     
-    <teleport-stub>
-      <!--v-if-->
-    </teleport-stub>
+    <!--v-if-->
   </div>
   <div
     class="feather-input-sub-text"
@@ -1545,9 +1535,7 @@ exports[`FeatherAutocomplete base functionality single disabled state should ren
       </div>
     </div>
     
-    <teleport-stub>
-      <!--v-if-->
-    </teleport-stub>
+    <!--v-if-->
   </div>
   <div
     class="feather-input-sub-text"
@@ -1679,9 +1667,7 @@ exports[`FeatherAutocomplete base functionality single should lower label when t
       </div>
     </div>
     
-    <teleport-stub>
-      <!--v-if-->
-    </teleport-stub>
+    <!--v-if-->
   </div>
   <div
     class="feather-input-sub-text"
@@ -2073,9 +2059,7 @@ exports[`FeatherAutocomplete base functionality single should raise the label wh
       </div>
     </div>
     
-    <teleport-stub>
-      <!--v-if-->
-    </teleport-stub>
+    <!--v-if-->
   </div>
   <div
     class="feather-input-sub-text"
@@ -2666,9 +2650,7 @@ exports[`FeatherAutocomplete multi:specific chip selection should move chip sele
       </div>
     </div>
     
-    <teleport-stub>
-      <!--v-if-->
-    </teleport-stub>
+    <!--v-if-->
   </div>
   <div
     class="feather-input-sub-text"
@@ -2881,9 +2863,7 @@ exports[`FeatherAutocomplete multi:specific chip selection should move chip sele
       </div>
     </div>
     
-    <teleport-stub>
-      <!--v-if-->
-    </teleport-stub>
+    <!--v-if-->
   </div>
   <div
     class="feather-input-sub-text"
@@ -3096,9 +3076,7 @@ exports[`FeatherAutocomplete multi:specific chip selection should not move chip 
       </div>
     </div>
     
-    <teleport-stub>
-      <!--v-if-->
-    </teleport-stub>
+    <!--v-if-->
   </div>
   <div
     class="feather-input-sub-text"
@@ -3310,9 +3288,7 @@ exports[`FeatherAutocomplete multi:specific chip selection should not perform an
       </div>
     </div>
     
-    <teleport-stub>
-      <!--v-if-->
-    </teleport-stub>
+    <!--v-if-->
   </div>
   <div
     class="feather-input-sub-text"
@@ -3826,9 +3802,7 @@ exports[`FeatherAutocomplete multi:specific chip selection should select the rig
       </div>
     </div>
     
-    <teleport-stub>
-      <!--v-if-->
-    </teleport-stub>
+    <!--v-if-->
   </div>
   <div
     class="feather-input-sub-text"
@@ -4040,9 +4014,7 @@ exports[`FeatherAutocomplete multi:specific chip selection should should deselec
       </div>
     </div>
     
-    <teleport-stub>
-      <!--v-if-->
-    </teleport-stub>
+    <!--v-if-->
   </div>
   <div
     class="feather-input-sub-text"
@@ -4254,9 +4226,7 @@ exports[`FeatherAutocomplete multi:specific selection limit should clear warning
       </div>
     </div>
     
-    <teleport-stub>
-      <!--v-if-->
-    </teleport-stub>
+    <!--v-if-->
   </div>
   <div
     class="feather-input-sub-text"
@@ -5248,9 +5218,7 @@ exports[`FeatherAutocomplete multi:specific should hide/reset menu and clear tex
       </div>
     </div>
     
-    <teleport-stub>
-      <!--v-if-->
-    </teleport-stub>
+    <!--v-if-->
   </div>
   <div
     class="feather-input-sub-text"
@@ -5384,9 +5352,7 @@ exports[`FeatherAutocomplete single:specific should close menu when enter is pre
       </div>
     </div>
     
-    <teleport-stub>
-      <!--v-if-->
-    </teleport-stub>
+    <!--v-if-->
   </div>
   <div
     class="feather-input-sub-text"
@@ -5536,9 +5502,7 @@ exports[`FeatherAutocomplete single:specific should handle a null property on va
       </div>
     </div>
     
-    <teleport-stub>
-      <!--v-if-->
-    </teleport-stub>
+    <!--v-if-->
   </div>
   <div
     class="feather-input-sub-text"

@@ -1,13 +1,12 @@
 <template>
   <div class="feather-menu" :data-ref-id="dataRefId" ref="root">
     <slot name="trigger"></slot>
-    <Teleport to="body">
+    <Teleport to="body" v-if="open">
       <div
         class="feather-menu-dropdown"
         :class="{ hidden: calculating }"
         :data-ref-id="dataRefId + '-dropdown'"
         ref="menu"
-        v-if="open"
         :id="menuId"
         :style="{ transform: position, width: menuWidth }"
       >
