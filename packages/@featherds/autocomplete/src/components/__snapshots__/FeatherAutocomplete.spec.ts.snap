@@ -2466,7 +2466,6 @@ exports[`FeatherAutocomplete multi:specific chip selection should move chip sele
   >
     
     <div
-      aria-controls="feather-menu-dropdown"
       aria-expanded="false"
       aria-haspopup="true"
       aria-label="Users"
@@ -2679,7 +2678,6 @@ exports[`FeatherAutocomplete multi:specific chip selection should move chip sele
   >
     
     <div
-      aria-controls="feather-menu-dropdown"
       aria-expanded="false"
       aria-haspopup="true"
       aria-label="Users"
@@ -2892,7 +2890,6 @@ exports[`FeatherAutocomplete multi:specific chip selection should not move chip 
   >
     
     <div
-      aria-controls="feather-menu-dropdown"
       aria-expanded="false"
       aria-haspopup="true"
       aria-label="Users"
@@ -3105,7 +3102,6 @@ exports[`FeatherAutocomplete multi:specific chip selection should not perform an
   >
     
     <div
-      aria-controls="feather-menu-dropdown"
       aria-expanded="false"
       aria-haspopup="true"
       aria-label="Users"
@@ -3618,7 +3614,6 @@ exports[`FeatherAutocomplete multi:specific chip selection should select the rig
   >
     
     <div
-      aria-controls="feather-menu-dropdown"
       aria-expanded="false"
       aria-haspopup="true"
       aria-label="Users"
@@ -3831,7 +3826,6 @@ exports[`FeatherAutocomplete multi:specific chip selection should should deselec
   >
     
     <div
-      aria-controls="feather-menu-dropdown"
       aria-expanded="false"
       aria-haspopup="true"
       aria-label="Users"
@@ -4043,7 +4037,7 @@ exports[`FeatherAutocomplete multi:specific selection limit should clear warning
   >
     
     <div
-      aria-controls="feather-menu-dropdown"
+      aria-controls=""
       aria-expanded="false"
       aria-haspopup="true"
       aria-label="Users"
@@ -5113,7 +5107,7 @@ exports[`FeatherAutocomplete multi:specific should hide/reset menu and clear tex
   >
     
     <div
-      aria-controls="feather-menu-dropdown"
+      aria-controls=""
       aria-expanded="false"
       aria-haspopup="true"
       aria-label="Users"
@@ -5247,7 +5241,7 @@ exports[`FeatherAutocomplete single:specific should close menu when enter is pre
   >
     
     <div
-      aria-controls="feather-menu-dropdown"
+      aria-controls=""
       aria-expanded="false"
       aria-haspopup="true"
       aria-label="Users"

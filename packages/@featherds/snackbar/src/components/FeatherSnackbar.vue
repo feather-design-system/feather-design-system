@@ -146,7 +146,6 @@ export default defineComponent({
         hideTimeout.value = timer(() => {
           internalValue.value = false;
         }, props.timeout);
-        console.log("setting timer");
       } else {
         context.emit("update:modelValue", false);
         stopTimer();
