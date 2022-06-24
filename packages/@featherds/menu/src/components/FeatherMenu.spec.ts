@@ -29,7 +29,7 @@ describe("FeatherMenu.vue", () => {
 
     const trigger = wrapper.find("[menu-trigger]").element;
     expect(trigger.getAttribute("aria-haspopup")).toBe("true");
-    expect(trigger.getAttribute("aria-controls")).toBe(wrapper.vm.menuId);
+    expect(trigger.getAttribute("aria-controls")).toBe(null);
     expect(trigger.getAttribute("aria-expanded")).toBe("false");
   });
   it("should set trigger attributes but not override id", async () => {
@@ -41,7 +41,7 @@ describe("FeatherMenu.vue", () => {
     const wrapper = await getWrapper({ slots });
     const trigger = wrapper.find("[menu-trigger]").element;
     expect(trigger.getAttribute("aria-haspopup")).toBe("true");
-    expect(trigger.getAttribute("aria-controls")).toBe(wrapper.vm.menuId);
+    expect(trigger.getAttribute("aria-controls")).toBe(null);
     expect(trigger.getAttribute("id")).toBe(id);
     expect(wrapper.find("[menu-trigger]").element.id).toBe(id);
     expect(trigger.getAttribute("aria-expanded")).toBe("false");
@@ -56,6 +56,7 @@ describe("FeatherMenu.vue", () => {
     await nextTick();
     const trigger = wrapper.find("[menu-trigger]").element;
     expect(trigger.getAttribute("aria-expanded")).toBe("true");
+    expect(trigger.getAttribute("aria-controls")).toBe(wrapper.vm.menuId);
   });
   it("should not set expanded when no-expand property is set.", async () => {
     const slots = {

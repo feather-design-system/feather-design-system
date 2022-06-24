@@ -189,6 +189,7 @@ export default defineComponent({
         removeLayer(layer.value);
         layer.value = null;
       }
+      trigger.value?.setAttribute("aria-controls", v ? menuId.value : "");
       activateOutsideClick.value = v;
       activateResize.value = v;
       activateScrollY.value = v;
@@ -214,7 +215,6 @@ export default defineComponent({
         v.id = triggerId.value;
       }
       v.setAttribute("aria-haspopup", "true");
-      v.setAttribute("aria-controls", menuId.value);
     });
 
     const handleFocusOut = () => {
