@@ -27,6 +27,7 @@ import {
   defineComponent,
   Ref,
   toRef,
+  onMounted,
 } from "vue";
 import { useResize } from "@featherds/composables/events/Resize";
 import { useOutsideClick } from "@featherds/composables/events/OutsideClick";
@@ -78,11 +79,13 @@ export default defineComponent({
     const open = toRef(props, "open");
     const noExpand = toRef(props, "noExpand");
     const menuWidth = ref("auto");
-    const windowRef = ref(window);
+    const windowRef = ref() as Ref<Window>;
     const triggerId = ref(getSafeId("feather-menu-trigger"));
     const menuId = ref(getSafeId("feather-menu-dropdown"));
     const position = ref("");
-
+    onMounted(() => {
+      windowRef.value = window;
+    });
     const scrollTop = () => {
       if (!document) return 0;
       return (document.documentElement || document.body).scrollTop;
