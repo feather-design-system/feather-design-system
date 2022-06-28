@@ -35,17 +35,20 @@ import {
   provide,
   onUnmounted,
 } from "vue";
-import { PointerAlignment, TooltipPlacement } from "../types";
-import { calculatePlacement } from "./Placement";
-import { calculateAlignment } from "./Alignment";
+import {
+  PointerAlignment,
+  PopoverPlacement,
+  calculateAlignment,
+  calculatePlacement,
+} from "@featherds/popover";
 export const props = {
   title: {
     type: String,
     required: true,
   },
   placement: {
-    type: String as PropType<TooltipPlacement>,
-    default: () => TooltipPlacement.top,
+    type: String as PropType<PopoverPlacement>,
+    default: () => PopoverPlacement.top,
   },
   pointerAlignment: {
     type: String as PropType<PointerAlignment>,
@@ -160,13 +163,20 @@ export default defineComponent({
           placementProp.value,
           arrowHeight
         );
-        const alignment = calculateAlignment(
-          placement,
-          triggerBox,
-          tooltipBox,
-          alignmentProp.value,
-          arrowOffset
-        );
+        let alignment = PointerAlignment.center;
+
+        if (
+          placement === PopoverPlacement.bottom ||
+          placement === PopoverPlacement.top
+        ) {
+          alignment = calculateAlignment(
+            placement,
+            triggerBox,
+            tooltipBox,
+            alignmentProp.value,
+            arrowOffset
+          );
+        }
         //set the classes so arrow can be positioned
         alignmentClass.value = alignment.toString();
         placementSelected.value = placement.toString();
@@ -175,30 +185,30 @@ export default defineComponent({
         let topCal = 0;
         let leftCal = 0;
         if (
-          placement === TooltipPlacement.left ||
-          placement === TooltipPlacement.right
+          placement === PopoverPlacement.left ||
+          placement === PopoverPlacement.right
         ) {
           //align center points of trigger and tooltip
           //so they can be side by side
           topCal =
             triggerBox.top + triggerBox.height / 2 - tooltipBox.height / 2;
           //find the left spacing
-          if (placement === TooltipPlacement.left) {
+          if (placement === PopoverPlacement.left) {
             leftCal = triggerBox.left - tooltipBox.width - arrowHeight;
           }
-          if (placement === TooltipPlacement.right) {
+          if (placement === PopoverPlacement.right) {
             leftCal = triggerBox.right;
           }
         }
 
         if (
-          placement === TooltipPlacement.top ||
-          placement === TooltipPlacement.bottom
+          placement === PopoverPlacement.top ||
+          placement === PopoverPlacement.bottom
         ) {
           //get vertical position
           //top must take into cosideration arrow
           topCal = triggerBox.top - tooltipBox.height - arrowHeight;
-          if (placement === TooltipPlacement.bottom) {
+          if (placement === PopoverPlacement.bottom) {
             topCal = triggerBox.bottom;
           }
           const triggerBoxCenter = triggerBox.left + triggerBox.width / 2;

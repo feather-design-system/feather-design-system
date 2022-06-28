@@ -20,11 +20,11 @@ import {
   ref,
   watch,
   nextTick,
+  computed,
   defineComponent,
   onMounted,
   Ref,
   toRef,
-  computed,
 } from "vue";
 import { useResize } from "@featherds/composables/events/Resize";
 import { useOutsideClick } from "@featherds/composables/events/OutsideClick";
@@ -55,16 +55,18 @@ export const props = {
     type: String,
     default: "feather-menu",
   },
+  triggerId: {
+    type: String,
+  },
+
   fill: {
     type: Boolean,
     default: false,
   },
-  triggerId: {
-    type: String,
-  },
 } as const;
 export const emits = {
   "trigger-click": (_e: MouseEvent) => true,
+  close: (_v?: boolean) => true,
   "outside-click": (_e?: Event) => true,
 };
 export default defineComponent({
@@ -131,7 +133,6 @@ export default defineComponent({
             top -= containerRect.height;
           }
         }
-
         let left = props.right
           ? containerRect.right - width
           : containerRect.left;
@@ -191,19 +192,18 @@ export default defineComponent({
         context.emit("trigger-click", e);
       },
     }));
-
     return {
       positionTop,
       positionLeft,
       triggerId,
-      triggerAttrs,
-      triggerListeners,
       menuId,
       menu,
       menuWidth,
       root,
       calculatePosition,
       calculating,
+      triggerAttrs,
+      triggerListeners,
     };
   },
 });

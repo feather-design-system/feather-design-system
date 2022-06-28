@@ -3,16 +3,6 @@
     <template v-slot:header>
       <FeatherAppHeader>
         <div class="header-section">
-          <div class="left">
-            <FeatherSelect
-              inline
-              label="Country"
-              :options="countries"
-              v-model="country"
-              class="country-select"
-            >
-            </FeatherSelect>
-          </div>
           <div class="right">
             <FeatherButton icon="Search">
               <FeatherIcon :icon="Search"> </FeatherIcon>
@@ -21,9 +11,19 @@
             <FeatherButton icon="Notifications">
               <FeatherIcon :icon="Notifications"> </FeatherIcon>
             </FeatherButton>
-            <FeatherButton icon="Account">
-              <FeatherIcon :icon="Account"> </FeatherIcon>
-            </FeatherButton>
+            <FeatherPopover :pointer-alignment="right">
+              <template #trigger="{ attrs, on }">
+                <FeatherButton icon="Account" v-on="on" v-bind="attrs">
+                  <FeatherIcon :icon="Account"> </FeatherIcon> </FeatherButton
+              ></template>
+              <template #default>
+                <div>
+                  <h4>Welcome, Rik</h4>
+
+                  <a href="#">Sign out</a>
+                </div>
+              </template>
+            </FeatherPopover>
             <FeatherButton icon="Apps">
               <FeatherIcon :icon="Apps"> </FeatherIcon>
             </FeatherButton>
@@ -102,8 +102,7 @@ import {
   IconTextAnimate,
   FeatherAppHeader,
 } from "@featherds/app-rail";
-import countries from "@featherds/select/demos/countries";
-import { FeatherSelect } from "@featherds/select";
+import { FeatherPopover, PointerAlignment } from "@featherds/popover";
 import AppFooter from "./components/AppFooter.vue";
 import AppContent from "./components/AppContent.vue";
 import App from "@featherds/icon/medical/Hospital";
@@ -120,8 +119,7 @@ export default defineComponent({
       labels: {
         skip: "Skip to main content",
       },
-      countries,
-      country: undefined,
+      right: PointerAlignment.right,
       content: "test",
       Apps,
       Account,
@@ -144,20 +142,24 @@ export default defineComponent({
     IconTextAnimate,
     FeatherIcon,
     FeatherAppHeader,
-    FeatherSelect,
     FeatherButton,
+    FeatherPopover,
   },
 });
 </script>
 
 <style lang="scss" scoped>
 @import "@featherds/styles/mixins/typography";
+@import "@featherds/styles/themes/variables";
 .header-section {
   padding: 0 0.5rem;
   display: flex;
 
   width: 100%;
-  justify-content: space-between;
+  justify-content: flex-end;
+}
+.btn {
+  margin-left: var($spacing-xs);
 }
 .country-select {
   width: 200px;

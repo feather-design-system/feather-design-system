@@ -1,44 +1,45 @@
 import { mount } from "@vue/test-utils";
 import { nextTick } from "vue";
-import FeatherTooltip from "./FeatherTooltip.vue";
+import FeatherPopover from "./FeatherPopover.vue";
 import * as id from "@featherds/utils/id";
-import { PopoverPlacement } from "@featherds/popover";
+import { PopoverPlacement } from "../types";
 import { Code } from "@featherds/utils/keys";
 jest.spyOn(id, "getSafeId").mockImplementation((x) => x);
-const getDefault = () =>
-  `<template #scoped="params">
-  <button v-bind="params.attrs" v-on="params.on">TOOLTIP BUTTON</button>
+const getTrigger = () =>
+  `<template #trigger="params">
+  <button v-bind="params.attrs" v-on="params.on">popover BUTTON</button>
   </template>
 `;
+
+const getDefault = () =>
+  `<p>Hello from a popover</p>
+`;
 const getWrapper = (placement = PopoverPlacement.top) =>
-  mount(FeatherTooltip, {
+  mount(FeatherPopover, {
     props: {
       title: "hello world",
       placement,
     },
     slots: {
       default: getDefault(),
+      trigger: getTrigger(),
     },
     attachTo: "body",
   });
-const hover = async (wrapper: ReturnType<typeof getWrapper>) => {
-  await wrapper.find("button").trigger("mouseenter");
+const click = async (wrapper: ReturnType<typeof getWrapper>) => {
+  await wrapper.find("button").trigger("click");
   await nextTick();
 };
 
-const focus = async (wrapper: ReturnType<typeof getWrapper>) => {
-  await wrapper.find("button").trigger("focus");
-  await nextTick();
-};
-describe("FeatherTooltip", () => {
-  it("should not show a tooltip until hover", () => {
+describe("FeatherPopover", () => {
+  it("should not show a popover until click", () => {
     const wrapper = getWrapper();
     expect(wrapper.element).toMatchSnapshot();
   });
-  it("should show a tooltip on hover", async () => {
+  it("should show a popover on click", async () => {
     jest.useFakeTimers();
     const wrapper = getWrapper();
-    await hover(wrapper);
+    await click(wrapper);
     jest.runAllTimers();
     await nextTick();
     await nextTick();
@@ -46,21 +47,10 @@ describe("FeatherTooltip", () => {
     expect(wrapper.element).toMatchSnapshot();
   });
 
-  it("should show a tooltip on focus", async () => {
+  it("should hide popover on escape", async () => {
     jest.useFakeTimers();
     const wrapper = getWrapper();
-    await focus(wrapper);
-    jest.runAllTimers();
-    await nextTick();
-    await nextTick();
-    await nextTick();
-    expect(wrapper.element).toMatchSnapshot();
-  });
-
-  it("should hide tooltip on escape", async () => {
-    jest.useFakeTimers();
-    const wrapper = getWrapper();
-    await focus(wrapper);
+    await click(wrapper);
     jest.runAllTimers();
     await nextTick();
     await nextTick();
