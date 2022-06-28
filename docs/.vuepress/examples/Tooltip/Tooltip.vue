@@ -30,7 +30,7 @@
 import { FeatherButton } from "@featherds/button";
 import {
   PointerAlignment,
-  TooltipPlacement,
+  PopoverPlacement,
   FeatherTooltip,
 } from "@featherds/tooltip";
 import { FeatherIcon } from "@featherds/icon";
@@ -38,12 +38,12 @@ import icon from "@featherds/icon/action/Add";
 import { defineComponent, ref } from "vue";
 export default defineComponent({
   setup() {
-    const placement = ref(TooltipPlacement.top);
+    const placement = ref(PopoverPlacement.top);
     const placements = [
-      TooltipPlacement.top,
-      TooltipPlacement.bottom,
-      TooltipPlacement.left,
-      TooltipPlacement.right,
+      PopoverPlacement.top,
+      PopoverPlacement.bottom,
+      PopoverPlacement.left,
+      PopoverPlacement.right,
     ];
     const alignment = ref(PointerAlignment.center);
     const alignments = [

@@ -57,6 +57,7 @@
     "@featherds/navigation-rail": "file:packages/@featherds/navigation-rail",
     "@featherds/pagination": "file:packages/@featherds/pagination",
     "@featherds/pdf-viewer": "file:packages/@featherds/pdf-viewer",
+    "@featherds/popover": "file:packages/@featherds/popover",
     "@featherds/progress": "file:packages/@featherds/progress",
     "@featherds/protected-input": "file:packages/@featherds/protected-input",
     "@featherds/radio": "file:packages/@featherds/radio",

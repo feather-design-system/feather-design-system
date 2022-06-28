@@ -14,22 +14,27 @@
         </select>
       </div>
     </div>
-    <FeatherTooltip
-      title="Example tooltip"
-      v-slot="{ attrs, on }"
-      :pointer-alignment="alignment"
-      :placement="placement"
-    >
-      <FeatherButton secondary v-bind="attrs" v-on="on"
-        >Find out more</FeatherButton
-      >
-    </FeatherTooltip>
+    <FeatherPopover :pointer-alignment="alignment" :placement="placement">
+      <template #default>
+        <div>
+          <h4>Test heading</h4>
+
+          <p>lorem ipsum or something</p>
+          <a href="#"> random link i guess</a>
+        </div>
+      </template>
+      <template #trigger="{ attrs, on }">
+        <FeatherButton secondary v-bind="attrs" v-on="on"
+          >Find out more</FeatherButton
+        >
+      </template>
+    </FeatherPopover>
   </section>
 </template>
 <script lang="ts">
-import * as components from "./../src";
+import { FeatherPopover } from "./../src";
 import { FeatherButton } from "@featherds/button";
-import { PointerAlignment, PopoverPlacement } from "@featherds/popover";
+import { PointerAlignment, PopoverPlacement } from "../src/types";
 import { defineComponent, ref } from "vue";
 export default defineComponent({
   setup() {
@@ -50,7 +55,7 @@ export default defineComponent({
     return { placement, placements, alignment, alignments };
   },
   components: {
-    ...components,
+    FeatherPopover,
     FeatherButton,
   },
 });
@@ -60,8 +65,9 @@ section {
   display: flex;
   flex-direction: column;
   align-items: center;
+  height: 150vh;
   .configuration {
-    margin-bottom: 24px;
+    margin-bottom: 240px;
   }
 }
 </style>

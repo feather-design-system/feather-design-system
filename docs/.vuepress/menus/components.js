@@ -172,6 +172,11 @@ export default [
           url: "/Components/Card/",
           image: "/assets/components/CARDS@2x.png",
         },
+        {
+          name: "Popover",
+          url: "/Components/Popover/",
+          image: "/assets/components/POPOVER@2x.png",
+        },
       ].sort((a, b) => {
         if (a.name > b.name) {
           return 1;

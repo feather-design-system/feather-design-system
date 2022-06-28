@@ -1,4 +1,4 @@
-export enum TooltipPlacement {
+export enum PopoverPlacement {
   top = "top",
   bottom = "bottom",
   left = "left",

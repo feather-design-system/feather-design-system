@@ -1,6 +1,6 @@
 {
-  "name": "@featherds/tooltip",
-  "version": "0.12.1",
+  "name": "@featherds/popover",
+  "version": "0.11.2",
   "publishConfig": {
     "access": "public"
   },
@@ -9,7 +9,6 @@
   "main": "dist/app.mjs",
   "license": "Apache-2.0",
   "dependencies": {
-    "@featherds/popover":"file:../popover",
     "@featherds/composables": "file:../composables",
     "@featherds/styles": "file:../styles",
     "@featherds/utils": "file:../utils",
@@ -17,7 +16,7 @@
   },
   "keywords": [
     "vue",
-    "FeatherTooltip"
+    "FeatherPopover"
   ],
   "types": "./src/index.d.ts"
 }

@@ -48,7 +48,7 @@
   </div>
 </template>
 <script lang="ts">
-import { FeatherTooltip, TooltipPlacement } from "../src";
+import { FeatherTooltip, PopoverPlacement } from "../src";
 import { FeatherButton } from "@featherds/button";
 import { FeatherIcon } from "@featherds/icon";
 import { FeatherDialog } from "@featherds/dialog";
@@ -60,7 +60,7 @@ export default defineComponent({
   data: () => ({
     visible: false,
     test: undefined,
-    placement: TooltipPlacement.bottom,
+    placement: PopoverPlacement.bottom,
     labels: {
       title: "A Dialog",
       close: "Close",

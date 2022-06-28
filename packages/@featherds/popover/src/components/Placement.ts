@@ -1,37 +1,57 @@
-import { TooltipPlacement } from "../types";
+import { PopoverPlacement } from "../types";
 
 export const calculatePlacement = (
   triggerBox: DOMRect,
   tooltipBox: DOMRect,
-  preferred: TooltipPlacement,
+  preferred: PopoverPlacement,
   arrowHeight = 9
 ) => {
+  //Check if the trigger element is hidden off the screen
+  //if so just return a known placement value
+  //scroll off the top
+  if (triggerBox.top < 0) {
+    return PopoverPlacement.bottom;
+  }
+  //scroll off bottom
+  if (triggerBox.bottom > window.innerHeight) {
+    return PopoverPlacement.top;
+  }
+
+  //scroll off the left
+  if (triggerBox.left < 0) {
+    return PopoverPlacement.right;
+  }
+  //scroll off right
+  if (triggerBox.right > window.innerWidth) {
+    return PopoverPlacement.left;
+  }
+
   const triggerBottom = window.innerHeight - triggerBox.bottom;
   const triggerRight = window.innerWidth - triggerBox.right;
   //can the tooltip fit top or bottom
-  const allowedX = [] as TooltipPlacement[];
+  const allowedX = [] as PopoverPlacement[];
   if (triggerBox.top >= tooltipBox.height + arrowHeight) {
-    allowedX.push(TooltipPlacement.top);
+    allowedX.push(PopoverPlacement.top);
   }
   if (triggerBottom >= tooltipBox.height + arrowHeight) {
-    allowedX.push(TooltipPlacement.bottom);
+    allowedX.push(PopoverPlacement.bottom);
   }
 
   //can the tooltip fit top or bottom
-  const allowedY = [] as TooltipPlacement[];
+  const allowedY = [] as PopoverPlacement[];
   if (triggerRight >= tooltipBox.width + arrowHeight) {
-    allowedY.push(TooltipPlacement.right);
+    allowedY.push(PopoverPlacement.right);
   }
   if (triggerBox.left >= tooltipBox.width + arrowHeight) {
-    allowedY.push(TooltipPlacement.left);
+    allowedY.push(PopoverPlacement.left);
   }
 
   let allowedPositions = [...allowedY, ...allowedX];
 
   //if top/bottom is selected put allowedX first
   if (
-    preferred === TooltipPlacement.top ||
-    preferred === TooltipPlacement.bottom
+    preferred === PopoverPlacement.top ||
+    preferred === PopoverPlacement.bottom
   ) {
     allowedPositions = [...allowedX, ...allowedY];
   }

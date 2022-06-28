@@ -38,7 +38,7 @@ Position Tooltips so they don’t block relevant information. Some scenarios, li
 | Name              | Description                                                     | Type               | Required | Default                   |
 | ----------------- | --------------------------------------------------------------- | ------------------ | -------- | ------------------------- |
 | title             | text to be displayed in the tooltip                             | `String`           | `true`   | `false`                   |
-| placement         | determines the placement of the tooltip around the slot content | `TooltipPlacement` | `false`  | `TooltipPlacement.top`    |
+| placement         | determines the placement of the tooltip around the slot content | `PopoverPlacement` | `false`  | `PopoverPlacement.top`    |
 | pointer-alignment | determines the alignment of the pointer on the tooltip          | `PointerAlignment` | `false`  | `PointerAlignment.center` |
 | enterDelay        | delay in `ms` before tooltip should appear                      | `number`           | `false`  | `400`                     |
 | exit              | delay in `ms` before tooltip should disappear                   | `number`           | `false`  | `400`                     |
@@ -55,11 +55,11 @@ We expose two enums that you can use to define both `placement` and `pointer-ali
 import {
   FeatherTooltip,
   PointerAlignment,
-  TooltipPlacement,
+  PopoverPlacement,
 } from "@featherds/tooltip";
 ```
 
-`TooltipPlacement` has the following properties:
+`PopoverPlacement` has the following properties:
 
 - `top`, places the tooltip above the triggering element
 - `bottom`, places the tooltip below the triggering element

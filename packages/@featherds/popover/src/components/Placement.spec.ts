@@ -1,4 +1,4 @@
-import { TooltipPlacement } from "../types";
+import { PopoverPlacement } from "../types";
 import { calculatePlacement } from "./Placement";
 //Gives layout with enough space in the areas with true.
 //pass true if you want enough space for the tooltip
@@ -67,26 +67,26 @@ describe("Placement", () => {
   describe("top", () => {
     it("should position top if there is enough space", () => {
       const { tooltip, trigger } = getLayout(true, true, true, true);
-      expect(calculatePlacement(trigger, tooltip, TooltipPlacement.top)).toBe(
-        TooltipPlacement.top
+      expect(calculatePlacement(trigger, tooltip, PopoverPlacement.top)).toBe(
+        PopoverPlacement.top
       );
     });
     it("should position bottom if there is no space up top", () => {
       const { tooltip, trigger } = getLayout(false, true, true, true);
-      expect(calculatePlacement(trigger, tooltip, TooltipPlacement.top)).toBe(
-        TooltipPlacement.bottom
+      expect(calculatePlacement(trigger, tooltip, PopoverPlacement.top)).toBe(
+        PopoverPlacement.bottom
       );
     });
     it("should position right if there is no space up top or below", () => {
       const { tooltip, trigger } = getLayout(false, true, false, true);
-      expect(calculatePlacement(trigger, tooltip, TooltipPlacement.top)).toBe(
-        TooltipPlacement.right
+      expect(calculatePlacement(trigger, tooltip, PopoverPlacement.top)).toBe(
+        PopoverPlacement.right
       );
     });
     it("should position left if there is no space up top, below or right", () => {
       const { tooltip, trigger } = getLayout(false, false, false, true);
-      expect(calculatePlacement(trigger, tooltip, TooltipPlacement.top)).toBe(
-        TooltipPlacement.left
+      expect(calculatePlacement(trigger, tooltip, PopoverPlacement.top)).toBe(
+        PopoverPlacement.left
       );
     });
   });
@@ -95,52 +95,52 @@ describe("Placement", () => {
     it("should position bottom if there is enough space", () => {
       const { tooltip, trigger } = getLayout(true, true, true, true);
       expect(
-        calculatePlacement(trigger, tooltip, TooltipPlacement.bottom)
-      ).toBe(TooltipPlacement.bottom);
+        calculatePlacement(trigger, tooltip, PopoverPlacement.bottom)
+      ).toBe(PopoverPlacement.bottom);
     });
     it("should position top if there is no space below", () => {
       const { tooltip, trigger } = getLayout(true, true, false, true);
       expect(
-        calculatePlacement(trigger, tooltip, TooltipPlacement.bottom)
-      ).toBe(TooltipPlacement.top);
+        calculatePlacement(trigger, tooltip, PopoverPlacement.bottom)
+      ).toBe(PopoverPlacement.top);
     });
     it("should position right if there is no space up top or below", () => {
       const { tooltip, trigger } = getLayout(false, true, false, true);
       expect(
-        calculatePlacement(trigger, tooltip, TooltipPlacement.bottom)
-      ).toBe(TooltipPlacement.right);
+        calculatePlacement(trigger, tooltip, PopoverPlacement.bottom)
+      ).toBe(PopoverPlacement.right);
     });
     it("should position left if there is no space up top, below or right", () => {
       const { tooltip, trigger } = getLayout(false, false, false, true);
       expect(
-        calculatePlacement(trigger, tooltip, TooltipPlacement.bottom)
-      ).toBe(TooltipPlacement.left);
+        calculatePlacement(trigger, tooltip, PopoverPlacement.bottom)
+      ).toBe(PopoverPlacement.left);
     });
   });
 
   describe("left", () => {
     it("should position left if there is enough space", () => {
       const { tooltip, trigger } = getLayout(true, true, true, true);
-      expect(calculatePlacement(trigger, tooltip, TooltipPlacement.left)).toBe(
-        TooltipPlacement.left
+      expect(calculatePlacement(trigger, tooltip, PopoverPlacement.left)).toBe(
+        PopoverPlacement.left
       );
     });
     it("should position right if no space to left", () => {
       const { tooltip, trigger } = getLayout(true, true, true, false);
-      expect(calculatePlacement(trigger, tooltip, TooltipPlacement.left)).toBe(
-        TooltipPlacement.right
+      expect(calculatePlacement(trigger, tooltip, PopoverPlacement.left)).toBe(
+        PopoverPlacement.right
       );
     });
     it("should position top if there is no space left or right", () => {
       const { tooltip, trigger } = getLayout(true, false, true, false);
-      expect(calculatePlacement(trigger, tooltip, TooltipPlacement.left)).toBe(
-        TooltipPlacement.top
+      expect(calculatePlacement(trigger, tooltip, PopoverPlacement.left)).toBe(
+        PopoverPlacement.top
       );
     });
     it("should position bottom if there is no space top, left or right", () => {
       const { tooltip, trigger } = getLayout(false, false, true, false);
-      expect(calculatePlacement(trigger, tooltip, TooltipPlacement.left)).toBe(
-        TooltipPlacement.bottom
+      expect(calculatePlacement(trigger, tooltip, PopoverPlacement.left)).toBe(
+        PopoverPlacement.bottom
       );
     });
   });
@@ -148,26 +148,26 @@ describe("Placement", () => {
   describe("right", () => {
     it("should position right if there is enough space", () => {
       const { tooltip, trigger } = getLayout(true, true, true, true);
-      expect(calculatePlacement(trigger, tooltip, TooltipPlacement.right)).toBe(
-        TooltipPlacement.right
+      expect(calculatePlacement(trigger, tooltip, PopoverPlacement.right)).toBe(
+        PopoverPlacement.right
       );
     });
     it("should position left if no space to right", () => {
       const { tooltip, trigger } = getLayout(true, false, true, true);
-      expect(calculatePlacement(trigger, tooltip, TooltipPlacement.right)).toBe(
-        TooltipPlacement.left
+      expect(calculatePlacement(trigger, tooltip, PopoverPlacement.right)).toBe(
+        PopoverPlacement.left
       );
     });
     it("should position top if there is no space left or right", () => {
       const { tooltip, trigger } = getLayout(true, false, true, false);
-      expect(calculatePlacement(trigger, tooltip, TooltipPlacement.right)).toBe(
-        TooltipPlacement.top
+      expect(calculatePlacement(trigger, tooltip, PopoverPlacement.right)).toBe(
+        PopoverPlacement.top
       );
     });
     it("should position bottom if there is no space top, left or right", () => {
       const { tooltip, trigger } = getLayout(false, false, true, false);
-      expect(calculatePlacement(trigger, tooltip, TooltipPlacement.right)).toBe(
-        TooltipPlacement.bottom
+      expect(calculatePlacement(trigger, tooltip, PopoverPlacement.right)).toBe(
+        PopoverPlacement.bottom
       );
     });
   });
