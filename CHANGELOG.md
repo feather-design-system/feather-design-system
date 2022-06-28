@@ -1,3 +1,13 @@
+## [0.10.14](https://github.com/feather-design-system/feather-design-system/compare/v0.10.13...v0.10.14) (2022-06-28)
+
+
+### Bug Fixes
+
+* **menu:** fixing issues with aria ids ([5810df6](https://github.com/feather-design-system/feather-design-system/commit/5810df6ce1a160246f0ce03a4b62a8b1bf99851a))
+* **menu:** ssr fix, [#110](https://github.com/feather-design-system/feather-design-system/issues/110) ([0c8ff2a](https://github.com/feather-design-system/feather-design-system/commit/0c8ff2ab2f831dd8ccdb141fdb732e5956cbe026))
+
+
+
 ## [0.10.13](https://github.com/feather-design-system/feather-design-system/compare/v0.10.12...v0.10.13) (2022-06-13)
 
 
