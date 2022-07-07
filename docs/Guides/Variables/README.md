@@ -11,7 +11,7 @@ menu: guides
 
 ## Using a variable
 
-To use a variable that is defined as part of a theme, you first need to import the `variables` file into your `scss`. Then you should use the `var` keyword to load the variable for the proerty you want.
+To use a variable that is defined as part of a theme, you first need to import the `variables` file into your `scss`. Then you should use the `var` keyword to load the variable for the property you want.
 
 ```scss
 @import "@featherds/styles/themes/variables";
@@ -107,3 +107,12 @@ Instead of using these variables directly, you should be using the mixins provid
 - `$zindex-modal`
 - `$zindex-popover`
 - `$zindex-tooltip`
+
+## Additional SASS variables
+
+There are a small number of 'internal' SASS variables that can be overriden in the event of an issue. At the moment there are only two;
+
+- `$date-input-calendar-select-width` - specifies the base width of the select element in the `@feather/date-input` calendar control
+- `$date-input-calendar-year-width` - specifies the width of the year select element in the same control
+
+These should be used without the `var()` method in your stylesheet, will not update at runtime and are not intended to be theme specific.

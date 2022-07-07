@@ -25,13 +25,13 @@ $width: 1.875rem;
     }
   }
   .inline-select {
-    width: 8.125rem;
+    width: $date-input-calendar-select-width;
     margin: 0;
     display: inline-block;
     margin-right: var($spacing-s);
     &.year {
       margin-right: var($spacing-m);
-      width: 5.3125rem;
+      width: $date-input-calendar-year-width;
     }
   }
 }
