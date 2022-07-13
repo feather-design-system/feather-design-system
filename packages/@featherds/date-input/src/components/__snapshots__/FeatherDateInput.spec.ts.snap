@@ -180,6 +180,7 @@ exports[`FeatherDateInput.vue should render disabled 1`] = `
           <div
             class="feather-select-menu-container"
             data-ref-id="feather-select-menu-container"
+            fill=""
             no-expand=""
             open="false"
           >
@@ -480,6 +481,7 @@ exports[`FeatherDateInput.vue should render disabled 1`] = `
           <div
             class="feather-select-menu-container"
             data-ref-id="feather-select-menu-container"
+            fill=""
             no-expand=""
             open="false"
           >

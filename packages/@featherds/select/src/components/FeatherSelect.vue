@@ -2,10 +2,10 @@
   <div v-bind="inherittedAttrs" class="feather-select-container">
     <FeatherMenu
       no-expand
+      fill
       :open="showMenu"
       @outside-click="handleOutsideClick"
       @trigger-click="handleTriggerClick"
-      @close="closeMenu"
       class="feather-select-menu-container"
       data-ref-id="feather-select-menu-container"
     >
@@ -397,9 +397,6 @@ export default defineComponent({
 .feather-select-menu-container {
   width: 100%;
   position: relative;
-  :deep(.feather-menu-dropdown) {
-    min-width: 100%;
-  }
 }
 .feather-select-wrapper {
   &.focused .feather-select-input {

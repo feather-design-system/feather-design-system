@@ -11,15 +11,11 @@
         <div class="tooltip" role="tooltip" :id="tooltipID">{{ title }}</div>
         <Pointer class="tooltip-pointer" />
       </div>
-    </Transition> </Teleport
-  ><slot :attrs="attrs" :on="listeners"> </slot>
+    </Transition>
+  </Teleport>
+  <slot :attrs="attrs" :on="listeners"> </slot>
 </template>
 <script lang="ts">
-import {
-  addLayer,
-  ILayer,
-  removeLayer,
-} from "@featherds/composables/modal/Layers";
 import { useScroll } from "@featherds/composables/events/Scroll";
 import { getSafeId } from "@featherds/utils/id";
 import {
@@ -109,13 +105,11 @@ export default defineComponent({
 
     onUnmounted(() => hideTooltip(true));
     const getTooltip = () => document.getElementById(tooltipID) as HTMLElement;
-    let layer: ILayer | undefined;
     const showTooltip = () => {
       animate.value = false;
       show.value = true; //show it but dont animate
       nextTick(() => {
         const tooltip = getTooltip();
-        layer = addLayer(tooltip, "tooltip");
         positionTooltip(tooltip);
         show.value = false;
         nextTick(() => {
@@ -126,20 +120,16 @@ export default defineComponent({
       });
     };
     const hideTooltip = (force = false) => {
-      if (layer) {
-        removeLayer(layer);
-        layer = undefined;
-        //reset transform and alignment class
-        left.value = "";
-        top.value = "";
-        alignmentClass.value = "";
-        placementSelected.value = "";
-        show.value = false;
-        if (force) {
-          animate.value = false;
-        }
-        activateScroll.value = false;
+      //reset transform and alignment class
+      left.value = "";
+      top.value = "";
+      alignmentClass.value = "";
+      placementSelected.value = "";
+      show.value = false;
+      if (force) {
+        animate.value = false;
       }
+      activateScroll.value = false;
     };
 
     const placementProp = toRef(props, "placement");

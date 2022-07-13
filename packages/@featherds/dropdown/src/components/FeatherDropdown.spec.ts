@@ -161,24 +161,6 @@ describe("FeatherDropdown.vue", () => {
       wrapper.vm.dropdownService.items[0]
     );
   });
-  it("should close when close event comes from FeatherMenu", async () => {
-    const slots = {
-      trigger: getTrigger(),
-      default: [getLi(), getLi()],
-    };
-    const wrapper = getWrapper({
-      slots,
-    });
-    await nextTick();
-    await wrapper.setProps({
-      modelValue: true,
-    });
-    await nextTick();
-    await wrapper.findComponent({ ref: "menu" }).vm.$emit("close");
-
-    expect(wrapper.vm.localOpen).toBe(false);
-    expect(getCalls<[boolean]>(wrapper, "update:modelValue")[1][0]).toBe(false);
-  });
   it("should have the correct ids labelling the menu", async () => {
     const slots = {
       trigger: getTrigger(),

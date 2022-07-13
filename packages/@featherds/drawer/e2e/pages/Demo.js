@@ -1,6 +1,6 @@
 const BUTTON = "#button";
-const DRAWER = "#drawer [role='dialog']";
-const CLOSE = "#drawer [data-ref-id='dialog-close']";
+const DRAWER = "#drawer";
+const CLOSE = "[data-ref-id='dialog-close']";
 
 const create = async () => {
   await browser.url(`https://google.com`);
