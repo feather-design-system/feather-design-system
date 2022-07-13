@@ -2,6 +2,8 @@ import { nextTick } from "vue";
 import { mount } from "@vue/test-utils";
 import axe from "@featherds/utils/test/axe";
 import FeatherMenu from "./FeatherMenu.vue";
+import * as id from "@featherds/utils/id";
+jest.spyOn(id, "getSafeId").mockImplementation((x) => x);
 const getWrapper = async (options: Record<string, unknown> = {}) => {
   const wrapper = mount(FeatherMenu, options);
   await nextTick();
@@ -29,7 +31,7 @@ describe("FeatherMenu.vue", () => {
 
     const trigger = wrapper.find("[menu-trigger]").element;
     expect(trigger.getAttribute("aria-haspopup")).toBe("true");
-    expect(trigger.getAttribute("aria-controls")).toBe(null);
+    expect(trigger.getAttribute("aria-controls")).toBe("feather-menu-dropdown");
     expect(trigger.getAttribute("aria-expanded")).toBe("false");
   });
   it("should set trigger attributes but not override id", async () => {
@@ -41,7 +43,7 @@ describe("FeatherMenu.vue", () => {
     const wrapper = await getWrapper({ slots });
     const trigger = wrapper.find("[menu-trigger]").element;
     expect(trigger.getAttribute("aria-haspopup")).toBe("true");
-    expect(trigger.getAttribute("aria-controls")).toBe(null);
+    expect(trigger.getAttribute("aria-controls")).toBe("feather-menu-dropdown");
     expect(trigger.getAttribute("id")).toBe(id);
     expect(wrapper.find("[menu-trigger]").element.id).toBe(id);
     expect(trigger.getAttribute("aria-expanded")).toBe("false");
@@ -97,6 +99,75 @@ describe("FeatherMenu.vue", () => {
     expect(documentRemove).toHaveBeenCalled();
   });
 
+  describe("fill", () => {
+    it("should make the menu match the trigger width if it is smaller", async () => {
+      const slots = {
+        trigger: getTrigger(),
+        default: [getContent()],
+      };
+      const wrapper = await getWrapper({
+        slots,
+        props: { open: true, fill: true },
+      });
+      jest
+        .spyOn(wrapper.vm.$refs.menu as HTMLElement, "getBoundingClientRect")
+        .mockImplementation(() => {
+          return {
+            height: 100,
+            width: 20,
+          } as DOMRect;
+        });
+      jest
+        .spyOn(wrapper.vm.$refs.root as HTMLElement, "getBoundingClientRect")
+        .mockImplementation(() => {
+          return {
+            top: 50,
+            bottom: 60,
+            left: 50,
+            right: 100,
+            width: 50,
+          } as DOMRect;
+        });
+      wrapper.vm.calculatePosition();
+      await nextTick();
+
+      expect(wrapper.vm.menuWidth).toBe("50px");
+    });
+    it("should leave menu with alone when it is wider than the container", async () => {
+      const slots = {
+        trigger: getTrigger(),
+        default: [getContent()],
+      };
+      const wrapper = await getWrapper({
+        slots,
+        props: { open: true, fill: true },
+      });
+      jest
+        .spyOn(wrapper.vm.$refs.menu as HTMLElement, "getBoundingClientRect")
+        .mockImplementation(() => {
+          return {
+            height: 100,
+            width: 200,
+          } as DOMRect;
+        });
+      jest
+        .spyOn(wrapper.vm.$refs.root as HTMLElement, "getBoundingClientRect")
+        .mockImplementation(() => {
+          return {
+            top: 50,
+            bottom: 60,
+            left: 50,
+            right: 100,
+            width: 50,
+          } as DOMRect;
+        });
+      wrapper.vm.calculatePosition();
+      await nextTick();
+
+      expect(wrapper.vm.menuWidth).toBe("200px");
+    });
+  });
+
   describe("calculatePosition", () => {
     describe("right", () => {
       it("should stay bottom right if space allows", async () => {
@@ -128,7 +199,8 @@ describe("FeatherMenu.vue", () => {
           });
         wrapper.vm.calculatePosition();
         await nextTick();
-        expect(wrapper.vm.position).toBe("translate(120px, 60px)");
+        expect(wrapper.vm.positionLeft).toBe("20px");
+        expect(wrapper.vm.positionTop).toBe("60px");
       });
       it("should flip to top right if not bottom space and enough top space", async () => {
         const slots = {
@@ -162,7 +234,8 @@ describe("FeatherMenu.vue", () => {
           });
         wrapper.vm.calculatePosition();
         await nextTick();
-        expect(wrapper.vm.position).toBe("translate(120px, 678px)");
+        expect(wrapper.vm.positionLeft).toBe("20px");
+        expect(wrapper.vm.positionTop).toBe("568px");
       });
       it("should flip to bottom left if not right space and enough left space", async () => {
         const slots = {
@@ -195,7 +268,8 @@ describe("FeatherMenu.vue", () => {
           });
         wrapper.vm.calculatePosition();
         await nextTick();
-        expect(wrapper.vm.position).toBe("translate(30px, 60px)");
+        expect(wrapper.vm.positionLeft).toBe("10px");
+        expect(wrapper.vm.positionTop).toBe("60px");
       });
       it("should stay bottom right if not enough room anywhere", async () => {
         const slots = {
@@ -230,7 +304,8 @@ describe("FeatherMenu.vue", () => {
           });
         wrapper.vm.calculatePosition();
         await nextTick();
-        expect(wrapper.vm.position).toBe("translate(974px, 718px)");
+        expect(wrapper.vm.positionLeft).toBe("874px");
+        expect(wrapper.vm.positionTop).toBe("718px");
       });
       it("should flip to top left if there is no space right and bottom but enough top and left", async () => {
         const slots = {
@@ -262,7 +337,8 @@ describe("FeatherMenu.vue", () => {
           });
         wrapper.vm.calculatePosition();
         await nextTick();
-        expect(wrapper.vm.position).toBe("translate(10px, 678px)");
+        expect(wrapper.vm.positionLeft).toBe("10px");
+        expect(wrapper.vm.positionTop).toBe("568px");
       });
     });
     describe("left", () => {
@@ -292,7 +368,9 @@ describe("FeatherMenu.vue", () => {
           });
         wrapper.vm.calculatePosition();
         await nextTick();
-        expect(wrapper.vm.position).toBe("translate(50px, 60px)");
+
+        expect(wrapper.vm.positionLeft).toBe("50px");
+        expect(wrapper.vm.positionTop).toBe("60px");
       });
       it("should flip to top left if not bottom space and enough top space", async () => {
         const slots = {
@@ -323,7 +401,8 @@ describe("FeatherMenu.vue", () => {
           });
         wrapper.vm.calculatePosition();
         await nextTick();
-        expect(wrapper.vm.position).toBe("translate(50px, 678px)");
+        expect(wrapper.vm.positionLeft).toBe("50px");
+        expect(wrapper.vm.positionTop).toBe("568px");
       });
       it("should flip to bottom right if not right space and enough right space", async () => {
         const slots = {
@@ -354,7 +433,8 @@ describe("FeatherMenu.vue", () => {
           });
         wrapper.vm.calculatePosition();
         await nextTick();
-        expect(wrapper.vm.position).toBe("translate(994px, 60px)");
+        expect(wrapper.vm.positionLeft).toBe("924px");
+        expect(wrapper.vm.positionTop).toBe("60px");
       });
       it("should stay bottom left if not enough room anywhere", async () => {
         const slots = {
@@ -386,7 +466,8 @@ describe("FeatherMenu.vue", () => {
           });
         wrapper.vm.calculatePosition();
         await nextTick();
-        expect(wrapper.vm.position).toBe("translate(50px, 718px)");
+        expect(wrapper.vm.positionLeft).toBe("50px");
+        expect(wrapper.vm.positionTop).toBe("718px");
       });
       it("should flip to top right if there is no space right and bottom but enough top and left", async () => {
         const slots = {
@@ -418,7 +499,8 @@ describe("FeatherMenu.vue", () => {
           });
         wrapper.vm.calculatePosition();
         await nextTick();
-        expect(wrapper.vm.position).toBe("translate(994px, 678px)");
+        expect(wrapper.vm.positionLeft).toBe("924px");
+        expect(wrapper.vm.positionTop).toBe("568px");
       });
     });
   });

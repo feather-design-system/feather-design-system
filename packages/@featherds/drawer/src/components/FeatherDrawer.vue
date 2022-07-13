@@ -1,40 +1,44 @@
 <template>
-  <div class="drawer-container">
-    <transition name="greyOutShim">
-      <div v-if="modelValue" class="greyedOut"></div>
-    </transition>
-    <transition
-      :name="left ? 'drawer-left' : 'drawer'"
-      v-on:after-enter="shown = true"
-      v-on:after-leave="shown = false"
-    >
-      <focus-trap
-        v-show="modelValue"
-        :enable="modelValue"
-        :layer="layer"
-        :style="{ width: width }"
-        :key="'sect'"
-        class="content"
-        ref="element"
-        :class="{ left: left }"
+  <Teleport to="body">
+    <div class="drawer-container feather-styles" v-if="modelValue">
+      <transition name="greyOutShim">
+        <div v-if="modelValue" class="greyedOut"></div>
+      </transition>
+      <transition
+        :name="left ? 'drawer-left' : 'drawer'"
+        v-on:after-enter="shown = true"
+        v-on:after-leave="shown = false"
       >
-        <div
-          :aria-label="titleLabel"
-          ref="drawer"
-          role="dialog"
-          aria-modal="true"
-          data-ref-id="feather-drawer"
-          tabindex="-1"
-          first-focus
+        <focus-trap
+          v-show="modelValue"
+          :enable="modelValue"
+          :style="{ width: width }"
+          :key="'sect'"
+          class="content"
+          ref="element"
+          :class="{ left: left }"
         >
-          <div class="slot">
-            <slot></slot>
+          <div
+            :aria-label="titleLabel"
+            ref="drawer"
+            role="dialog"
+            aria-modal="true"
+            data-ref-id="feather-drawer"
+            tabindex="-1"
+            first-focus
+          >
+            <div class="slot">
+              <slot></slot>
+            </div>
+            <dialog-close
+              :close-text="closeLabel"
+              @close="close"
+            ></dialog-close>
           </div>
-          <dialog-close :close-text="closeLabel" @close="close"></dialog-close>
-        </div>
-      </focus-trap>
-    </transition>
-  </div>
+        </focus-trap>
+      </transition>
+    </div>
+  </Teleport>
 </template>
 
 <script lang="ts">
@@ -43,11 +47,6 @@ import { useCloseOnEsc } from "@featherds/composables/modal/CloseOnEsc";
 import { useRestoreFocus } from "@featherds/composables/modal/RestoreFocus";
 import { useHideBodyOverflow } from "@featherds/composables/modal/HideOverflow";
 import { useLabelProperty } from "@featherds/composables/LabelProperty";
-import {
-  removeLayer,
-  addLayer,
-  ILayer,
-} from "@featherds/composables/modal/Layers";
 import {
   toRef,
   watch,
@@ -118,19 +117,16 @@ export default defineComponent({
     watch(useCloseOnEsc(isShown), () => {
       close();
     });
-    const layer = ref() as Ref<ILayer>;
     const element = ref() as Ref<ComponentPublicInstance>;
     const shown = ref(false);
     watch(shown, (v) => {
       if (v) {
         context.emit("shown");
-        layer.value = addLayer(element, "modal");
       } else {
         context.emit("hidden");
-        removeLayer(layer.value);
       }
     });
-    return { close, shown, isShown, layer, element, ...labels };
+    return { close, shown, isShown, element, ...labels };
   },
   components: {
     DialogClose,

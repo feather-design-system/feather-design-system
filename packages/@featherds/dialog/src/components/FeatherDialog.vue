@@ -1,63 +1,60 @@
 <template>
-  <div
-    class="feather-dialog"
-    :class="{ relative: relative }"
-    v-show="modelValue"
-  >
-    <transition name="fade">
-      <div class="backdrop" v-show="modelValue"></div>
-    </transition>
-    <transition
-      name="delayFade"
-      v-on:after-enter="shown = true"
-      v-on:after-leave="shown = false"
+  <Teleport to="body">
+    <div
+      class="feather-dialog feather-styles"
+      :class="{ relative: relative }"
+      v-show="modelValue"
     >
-      <FocusTrap
-        :enable="shown && modelValue"
-        class="trap"
-        v-if="modelValue"
-        :layer="layer"
+      <transition name="fade">
+        <div class="backdrop" v-show="modelValue"></div>
+      </transition>
+      <transition
+        name="delayFade"
+        v-on:after-enter="shown = true"
+        v-on:after-leave="shown = false"
       >
-        <div
-          class="content"
-          role="dialog"
-          aria-modal="true"
-          :aria-labelledby="headerId"
-          data-ref-id="feather-dialog"
-          ref="element"
-        >
-          <div class="focus-area" tabindex="-1" first-focus>
-            <div class="dialog-body">
-              <header
-                :id="headerId"
-                v-if="!hideTitle"
-                data-ref-id="feather-dialog-header"
-              >
-                {{ titleLabel }}
-              </header>
+        <FocusTrap :enable="shown && modelValue" class="trap" v-if="modelValue">
+          <div
+            class="content"
+            role="dialog"
+            aria-modal="true"
+            :aria-labelledby="headerId"
+            data-ref-id="feather-dialog"
+            ref="element"
+          >
+            <div class="focus-area" tabindex="-1" first-focus>
+              <div class="dialog-body">
+                <header
+                  :id="headerId"
+                  v-if="!hideTitle"
+                  data-ref-id="feather-dialog-header"
+                >
+                  {{ titleLabel }}
+                </header>
 
-              <div class="dialog-content">
-                <slot />
+                <div class="dialog-content">
+                  <slot />
+                </div>
               </div>
+              <div
+                v-if="hasFooter"
+                class="dialog-footer"
+                data-ref-id="feather-dialog-footer"
+              >
+                <slot name="footer" />
+              </div>
+              <DialogClose
+                v-if="!hideClose"
+                :close-text="closeLabel"
+                @close="close"
+                small
+              ></DialogClose>
             </div>
-            <div
-              v-if="hasFooter"
-              class="dialog-footer"
-              data-ref-id="feather-dialog-footer"
-            >
-              <slot name="footer" />
-            </div>
-            <DialogClose
-              v-if="!hideClose"
-              :close-text="closeLabel"
-              @close="close"
-              small
-            ></DialogClose>
           </div>
-        </div>
-      </FocusTrap>
-    </transition>
-  </div>
+        </FocusTrap>
+      </transition>
+    </div>
+  </Teleport>
 </template>
 <script lang="ts">
 import FocusTrap from "./FocusTrap.vue";
@@ -79,11 +76,7 @@ import {
   PropType,
   Ref,
 } from "vue";
-import {
-  removeLayer,
-  addLayer,
-  ILayer,
-} from "@featherds/composables/modal/Layers";
+
 const LABELS = {
   title: "REQUIRED",
   close: "Close Dialog",
@@ -155,18 +148,15 @@ export default defineComponent({
     });
 
     const shown = ref(props.modelValue);
-    const layer = ref() as Ref<ILayer>;
     watch(shown, (v) => {
       if (v) {
         context.emit("shown");
-        layer.value = addLayer(element, "modal");
       } else {
         context.emit("hidden");
-        removeLayer(layer.value);
       }
     });
 
-    return { close, hasFooter, headerId, element, shown, layer, ...labels };
+    return { close, hasFooter, headerId, element, shown, ...labels };
   },
   components: {
     FocusTrap,

@@ -1,20 +1,17 @@
 <template>
   <div class="feather-menu" :data-ref-id="dataRefId" ref="root">
     <slot name="trigger"></slot>
-    <Teleport to="body" v-if="open">
-      <div
-        class="feather-menu-dropdown"
-        :class="{ hidden: calculating }"
-        :data-ref-id="dataRefId + '-dropdown'"
-        ref="menu"
-        :id="menuId"
-        :style="{ transform: position, width: menuWidth }"
-      >
-        <div tabindex="0" @focus="handleFocusOut"></div>
-        <slot v-bind:labelId="triggerId" />
-        <div tabindex="0" @focus="handleFocusOut"></div>
-      </div>
-    </Teleport>
+    <div
+      class="feather-menu-dropdown"
+      :class="{ hidden: calculating }"
+      :data-ref-id="dataRefId + '-dropdown'"
+      ref="menu"
+      :id="menuId"
+      v-if="open"
+      :style="{ left: positionLeft, top: positionTop, width: menuWidth }"
+    >
+      <slot v-bind:labelId="triggerId" />
+    </div>
   </div>
 </template>
 <script lang="ts">
@@ -23,21 +20,15 @@ import {
   ref,
   watch,
   nextTick,
-  computed,
   defineComponent,
+  onMounted,
   Ref,
   toRef,
-  onMounted,
 } from "vue";
 import { useResize } from "@featherds/composables/events/Resize";
 import { useOutsideClick } from "@featherds/composables/events/OutsideClick";
 import { useScroll } from "@featherds/composables/events/Scroll";
-import {
-  addLayer,
-  getElements,
-  removeLayer,
-  ILayer,
-} from "@featherds/composables/modal/Layers";
+
 export const props = {
   open: {
     type: Boolean,
@@ -63,10 +54,13 @@ export const props = {
     type: String,
     default: "feather-menu",
   },
+  fill: {
+    type: Boolean,
+    default: false,
+  },
 } as const;
 export const emits = {
   "trigger-click": (_e: MouseEvent) => true,
-  close: (_v?: boolean) => true,
   "outside-click": (_e?: Event) => true,
 };
 export default defineComponent({
@@ -82,18 +76,12 @@ export default defineComponent({
     const windowRef = ref() as Ref<Window>;
     const triggerId = ref(getSafeId("feather-menu-trigger"));
     const menuId = ref(getSafeId("feather-menu-dropdown"));
-    const position = ref("");
+    const positionTop = ref("");
+    const positionLeft = ref("");
     onMounted(() => {
       windowRef.value = window;
     });
-    const scrollTop = () => {
-      if (!document) return 0;
-      return (document.documentElement || document.body).scrollTop;
-    };
-    const scrollLeft = () => {
-      if (!document) return 0;
-      return (document.documentElement || document.body).scrollLeft;
-    };
+
     const calculating = ref(false);
 
     const getScrollRect = () => {
@@ -118,7 +106,7 @@ export default defineComponent({
         const scrollHeight = windowRect.height;
         const scrollWidth = windowRect.width;
 
-        if (width < containerRect.width) {
+        if (props.fill && width < containerRect.width) {
           menuWidth.value = containerRect.width + "px";
           width = containerRect.width;
         } else {
@@ -140,7 +128,7 @@ export default defineComponent({
             top -= containerRect.height;
           }
         }
-        top += scrollTop();
+
         let left = props.right
           ? containerRect.right - width
           : containerRect.left;
@@ -159,40 +147,23 @@ export default defineComponent({
         ) {
           left = containerRect.left;
         }
-        left += scrollLeft();
-        position.value = `translate(${left}px, ${top}px)`;
+        positionLeft.value = `${left}px`;
+        positionTop.value = `${top}px`;
         calculating.value = false;
       });
     };
-    const close = (e: UIEvent | Event) => {
-      //dont close if we are scrolling a layer itself
-      if (layers.value.some((el) => el.contains(e.target as HTMLElement))) {
-        return;
-      }
-      context.emit("close", false);
-    };
+
     const outsideElementEvent = (e?: Event) => {
       context.emit("outside-click", e);
     };
-    const layer = ref() as Ref<ILayer | null>;
-    const layers = computed(() => {
-      if (layer.value) {
-        return [root.value, ...getElements(layer.value).value];
-      }
-      return [root.value];
-    });
-    const activateOutsideClick = useOutsideClick(layers, outsideElementEvent);
-    const activateResize = useResize(close);
-    const activateScrollY = useScroll(windowRef, close);
+
+    const activateOutsideClick = useOutsideClick(root, outsideElementEvent);
+    const activateResize = useResize(calculatePosition);
+    const activateScrollY = useScroll(windowRef, calculatePosition);
     watch([open, menu], ([v, m]) => {
-      if (v && m && !layer.value) {
+      if (v && m) {
         calculatePosition();
-        layer.value = addLayer(menu, "dropdown");
-      } else if (!v && layer.value) {
-        removeLayer(layer.value);
-        layer.value = null;
       }
-      trigger.value?.setAttribute("aria-controls", v ? menuId.value : "");
       activateOutsideClick.value = v;
       activateResize.value = v;
       activateScrollY.value = v;
@@ -218,14 +189,12 @@ export default defineComponent({
         v.id = triggerId.value;
       }
       v.setAttribute("aria-haspopup", "true");
+      v.setAttribute("aria-controls", menuId.value);
     });
 
-    const handleFocusOut = () => {
-      context.emit("close");
-    };
-
     return {
-      position,
+      positionTop,
+      positionLeft,
       triggerId,
       menuId,
       menu,
@@ -233,7 +202,6 @@ export default defineComponent({
       root,
       trigger,
       calculatePosition,
-      handleFocusOut,
       calculating,
     };
   },
@@ -249,10 +217,10 @@ export default defineComponent({
 }
 .feather-menu-dropdown {
   @include elevation(8);
-  position: absolute;
+  position: fixed;
   left: 0;
   top: 0;
-  z-index: var(--feather-current-zindex, var($zindex-dropdown));
+  z-index: var($zindex-dropdown);
 }
 .hidden {
   position: fixed;

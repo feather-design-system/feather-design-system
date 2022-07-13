@@ -9,14 +9,10 @@
 </template>
 <script lang="ts">
 import { ref, nextTick, defineComponent, toRef, computed, PropType } from "vue";
-import { getElements, ILayer } from "@featherds/composables/modal/Layers";
 export const props = {
   enable: {
     type: Boolean,
     required: true,
-  },
-  layer: {
-    type: Object as PropType<ILayer>,
   },
 } as const;
 
@@ -27,20 +23,9 @@ export default defineComponent({
       rendered: false,
     };
   },
-  setup(props) {
+  setup() {
     const content = ref();
     const ignoreUtilFocusChanges = ref(false);
-    const layer = toRef(props, "layer");
-    const contentAndLayers = computed(() => {
-      const result = [];
-      if (content.value) {
-        result.push(content.value);
-      }
-      if (layer.value) {
-        result.push(...getElements(layer.value).value);
-      }
-      return result;
-    });
 
     const comparePositionInDOM = (a: HTMLElement, b: HTMLElement) => {
       let result = a.compareDocumentPosition(b);
@@ -142,7 +127,7 @@ export default defineComponent({
       setTimeout(() => {
         //if the item of focus is within the trap
         var target = document.activeElement;
-        if (contentAndLayers.value.some((el) => el.contains(target))) {
+        if (content.value.contains(target)) {
           lastFocus.value = target;
           return;
         } else {

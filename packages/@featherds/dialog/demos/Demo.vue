@@ -74,3 +74,8 @@ export default defineComponent({
   },
 });
 </script>
+<style scoped>
+.my-content {
+  width: 25rem;
+}
+</style>

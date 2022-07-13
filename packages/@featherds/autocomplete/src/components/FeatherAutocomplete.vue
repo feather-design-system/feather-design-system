@@ -1,11 +1,11 @@
 <template>
   <div v-bind="inherittedAttrs" class="feather-autocomplete-container">
     <FeatherMenu
+      fill
       no-expand
       :open="showMenu"
       @outside-click="handleOutsideClick"
       @trigger-click="handleTriggerClick"
-      @close="handleClose"
       class="feather-autocomplete-menu-container"
       data-ref-id="feather-autocomplete-menu-container"
       :class="{ grid: gridConfig }"
@@ -629,11 +629,6 @@ export default defineComponent({
       if (this.forceCloseResults || !this.showMenu) {
         this.handleOutsideClick();
       }
-    },
-    handleClose() {
-      this.forceCloseResults = true;
-      this.resetResultIndex();
-      this.activeChipIndex = -1;
     },
     handleOutsideClick() {
       this.hasFocus = false;

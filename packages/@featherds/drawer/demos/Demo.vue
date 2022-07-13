@@ -22,21 +22,19 @@
     </div>
 
     <feather-drawer
-      id="drawer"
       @shown="onShown"
       v-model="visible"
       :labels="{ close: 'close', title: 'Title of the drawer' }"
       width="20em"
     >
       <div class="fixed-width">
-        <h1>I AM DRAWER</h1>
+        <h1 id="drawer">I AM DRAWER</h1>
         <input v-model="message" placeholder="edit me" />
         <p>Tab Trap Status: {{ message }}</p>
       </div>
     </feather-drawer>
 
     <feather-drawer
-      id="left-drawer"
       @shown="onShown"
       :left="true"
       v-model="leftVisible"
@@ -44,7 +42,7 @@
       width="30em"
     >
       <div class="fixed-width">
-        <h1>I AM LEFT DRAWER</h1>
+        <h1 id="left-drawer">I AM LEFT DRAWER</h1>
         <input v-model="message" placeholder="edit me" />
         <p>Tab Trap Status: {{ message }}</p>
       </div>
