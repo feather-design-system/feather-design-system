@@ -1,6 +1,6 @@
 {
   "name": "@featherds/app-bar",
-  "version": "0.10.14",
+  "version": "0.10.15",
   "publishConfig": {
     "access": "public"
   },
@@ -11,8 +11,8 @@
   "dependencies": {
     "@featherds/app-layout": "file:../app-layout",
     "@featherds/composables": "file:../composables",
-    "@featherds/list": "file:../list",
     "@featherds/icon": "file:../icon",
+    "@featherds/list": "file:../list",
     "@featherds/ripple": "file:../ripple",
     "@featherds/styles": "file:../styles",
     "vue": "^3.1.0-0"

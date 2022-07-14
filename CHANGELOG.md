@@ -1,3 +1,19 @@
+## [0.10.15](https://github.com/feather-design-system/feather-design-system/compare/v0.10.14...v0.10.15) (2022-07-14)
+
+
+### Bug Fixes
+
+* **app-layout:** moved mobile logic for rail slot to theme were it is used ([c4991e8](https://github.com/feather-design-system/feather-design-system/commit/c4991e8baf3da59bb989610524f62bfeecc73ee9))
+* **ci:** rolling back external PR change ([2206445](https://github.com/feather-design-system/feather-design-system/commit/220644559a54bdb0bf083389c209b3c23992eee4))
+
+
+### Features
+
+* **app-rail:** adding app rail and app header [#94](https://github.com/feather-design-system/feather-design-system/issues/94) ([9c9d1d2](https://github.com/feather-design-system/feather-design-system/commit/9c9d1d2afc444adf0ab6c12f7826fb1c88c11579))
+* **card:** card implementation ([b480d82](https://github.com/feather-design-system/feather-design-system/commit/b480d82ed6d4d8cccaa0483e4ef9ec0b19cc7539))
+
+
+
 ## [0.10.14](https://github.com/feather-design-system/feather-design-system/compare/v0.10.13...v0.10.14) (2022-06-28)
 
 
