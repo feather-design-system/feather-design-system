@@ -9,6 +9,7 @@
     :aria-valuenow="modelValue || 0"
     :aria-valuetext="modelValueText || placeholder"
     :aria-disabled="disabled"
+    :aria-invalid="!valid"
     :class="{ disabled: disabled }"
     @keydown="handleKeyDown"
     @focus="handleFocus"
@@ -54,6 +55,7 @@ export default defineComponent({
   data() {
     return {
       input: "",
+      valid: true,
     };
   },
   computed: {
@@ -98,18 +100,34 @@ export default defineComponent({
     },
     parseValue(str: string) {
       const value = parseInt(str, 10);
-      if (isNaN(value) || value < this.min || value > this.max) {
+      if (isNaN(value)) {
+        console.log("emit undefined " + value);
         this.$emit("update:modelValue", undefined);
+      } else if (value < this.min) {
+        this.valid = false;
+        this.$emit("update:modelValue", undefined);
+        // console.log("Corrected to min");
+        // this.$emit("update:modelValue", this.min);
+      } else if (value > this.max) {
+        this.valid = false;
+        this.$emit("update:modelValue", undefined);
+        // console.log("Corrected to max");
+        // this.$emit("update:modelValue", this.max);
       } else {
+        this.valid = true;
+        console.log("emit " + value);
         this.$emit("update:modelValue", value);
         //if they type in the string 01 then go to next
         if (this.max.toString().length === str.length) {
+          console.log("next 1");
           this.$emit("next");
           return;
         }
       }
 
-      if (value * 10 >= this.max) {
+      // if valid
+      if (this.valid && value * 10 >= this.max) {
+        console.log("next 2");
         this.$emit("next");
       }
     },

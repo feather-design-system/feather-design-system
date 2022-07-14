@@ -209,6 +209,7 @@ export default defineComponent({
       [day, month, year],
       ([_day, _month, _year]) => {
         if (_day !== undefined && _month !== undefined && _year !== undefined) {
+          console.log(`emitted ${_month}, ${_day}, ${_year}`);
           context.emit("update:modelValue", new Date(_year, _month - 1, _day));
         }
         showClear.value = !!(_day || _month || _year);
@@ -259,23 +260,38 @@ export default defineComponent({
       const monthButton = ref();
       const yearButton = ref();
 
+      const validateButtons = (m = false, d = false, y = false) => {
+        if (m) {
+          monthButton.value?.clear();
+        }
+        if (d) {
+          dayButton.value?.clear();
+        }
+        if (y) {
+          yearButton.value?.clear();
+        }
+      };
+
       const focusMonth = () => {
         if (disabled.value) {
           return;
         }
         monthButton.value.focus();
+        validateButtons(false, true, true);
       };
       const focusDay = () => {
         if (disabled.value) {
           return;
         }
         dayButton.value.focus();
+        validateButtons(true, false, true);
       };
       const focusYear = () => {
         if (disabled.value) {
           return;
         }
         yearButton.value.focus();
+        validateButtons(true, true, false);
       };
       const clear = () => {
         dayButton.value?.clear();
@@ -310,12 +326,18 @@ export default defineComponent({
     const handleBlur = (e: FocusEvent) => {
       if (!menu.value.$el.contains(e.relatedTarget) && !showMenu.value) {
         validate();
+        //reset the spinners
+        if (value.value) {
+          day.value = value.value.getDate();
+          year.value = value.value.getFullYear();
+          month.value = value.value.getMonth() + 1;
+        } else {
+          reset();
+        }
         focused.value = false;
         context.emit("blur");
-        spinbuttons.deselectAllSpinButtons();
-      } else {
-        spinbuttons.deselectAllSpinButtons();
       }
+      spinbuttons.deselectAllSpinButtons();
     };
     const hasFocus = computed(() => {
       return focused.value || showMenu.value;
