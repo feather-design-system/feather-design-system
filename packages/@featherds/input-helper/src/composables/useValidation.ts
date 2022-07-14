@@ -18,7 +18,7 @@ const useValidation = (
     provide("validationErrorMessage", errorMessage);
     const validate = () => {
       //if error comes from input then we always use it as our validation
-      //this accomodates server side error beiung passed to input
+      //this accomodates server side error being passed to input
       if (errorFromInput && isRef(errorFromInput) && errorFromInput.value) {
         errorMessage.value = errorFromInput.value;
         return {

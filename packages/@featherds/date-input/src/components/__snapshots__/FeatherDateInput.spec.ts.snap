@@ -58,6 +58,7 @@ exports[`FeatherDateInput.vue > should render disabled 1`] = `
         >
           <span
             aria-disabled="true"
+            aria-invalid="false"
             aria-label="Month"
             aria-valuemax="12"
             aria-valuemin="1"
@@ -74,6 +75,7 @@ exports[`FeatherDateInput.vue > should render disabled 1`] = `
            / 
           <span
             aria-disabled="true"
+            aria-invalid="false"
             aria-label="Day"
             aria-valuemax="31"
             aria-valuemin="1"
@@ -89,6 +91,7 @@ exports[`FeatherDateInput.vue > should render disabled 1`] = `
            / 
           <span
             aria-disabled="true"
+            aria-invalid="false"
             aria-label="Year"
             aria-valuemax="2030"
             aria-valuemin="1900"
@@ -3277,6 +3280,7 @@ exports[`FeatherDateInput.vue > should select date initially passed in as value 
 >
   <span
     aria-disabled="false"
+    aria-invalid="false"
     aria-label="Month"
     aria-valuemax="12"
     aria-valuemin="1"
@@ -3293,6 +3297,7 @@ exports[`FeatherDateInput.vue > should select date initially passed in as value 
    / 
   <span
     aria-disabled="false"
+    aria-invalid="false"
     aria-label="Day"
     aria-valuemax="31"
     aria-valuemin="1"
@@ -3308,6 +3313,7 @@ exports[`FeatherDateInput.vue > should select date initially passed in as value 
    / 
   <span
     aria-disabled="false"
+    aria-invalid="false"
     aria-label="Year"
     aria-valuemax="2030"
     aria-valuemin="1900"
