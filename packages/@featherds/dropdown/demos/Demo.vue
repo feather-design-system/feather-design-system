@@ -12,11 +12,12 @@
       :standard="standard"
       id="first"
     >
-      <template v-slot:trigger>
+      <template v-slot:trigger="{ attrs, on }">
         <FeatherButton
           link
           href="#"
-          menu-trigger
+          v-bind="attrs"
+          v-on="on"
           icon="More Options"
           id="menu-button"
         >
@@ -45,8 +46,14 @@
     </FeatherDropdown>
 
     <FeatherDropdown :right="right" :cover="cover" :standard="standard">
-      <template v-slot:trigger>
-        <FeatherButton link href="#" menu-trigger icon="No Icons Options">
+      <template v-slot:trigger="{ attrs, on }">
+        <FeatherButton
+          link
+          href="#"
+          v-bind="attrs"
+          v-on="on"
+          icon="No Icons Options"
+        >
           <FeatherIcon :icon="menu" />
         </FeatherButton>
       </template>

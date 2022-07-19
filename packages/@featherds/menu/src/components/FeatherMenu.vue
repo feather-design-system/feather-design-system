@@ -1,6 +1,6 @@
 <template>
   <div class="feather-menu" :data-ref-id="dataRefId" ref="root">
-    <slot name="trigger"></slot>
+    <slot name="trigger" :attrs="triggerAttrs" :on="triggerListeners"></slot>
     <div
       class="feather-menu-dropdown"
       :class="{ hidden: calculating }"
@@ -24,6 +24,7 @@ import {
   onMounted,
   Ref,
   toRef,
+  computed,
 } from "vue";
 import { useResize } from "@featherds/composables/events/Resize";
 import { useOutsideClick } from "@featherds/composables/events/OutsideClick";
@@ -58,6 +59,9 @@ export const props = {
     type: Boolean,
     default: false,
   },
+  triggerId: {
+    type: String,
+  },
 } as const;
 export const emits = {
   "trigger-click": (_e: MouseEvent) => true,
@@ -68,13 +72,12 @@ export default defineComponent({
   props,
   setup(props, context) {
     const root = ref() as Ref<HTMLElement>;
-    const trigger = ref() as Ref<HTMLElement>;
     const menu = ref() as Ref<HTMLElement>;
     const open = toRef(props, "open");
     const noExpand = toRef(props, "noExpand");
     const menuWidth = ref("auto");
     const windowRef = ref() as Ref<Window>;
-    const triggerId = ref(getSafeId("feather-menu-trigger"));
+    const triggerId = ref(props.triggerId || getSafeId("feather-menu-trigger"));
     const menuId = ref(getSafeId("feather-menu-dropdown"));
     const positionTop = ref("");
     const positionLeft = ref("");
@@ -169,38 +172,36 @@ export default defineComponent({
       activateScrollY.value = v;
     });
 
-    //set expanded on the trigger element for accessibility
-    watch([open, noExpand, trigger], ([op, noexpand, trig]) => {
-      if (!noexpand && trig) {
-        trig.setAttribute("aria-expanded", op ? "true" : "false");
+    const triggerAttrs = computed(() => {
+      const attrs = {
+        id: triggerId.value,
+        "aria-haspopup": "true",
+      } as Record<string, string>;
+      if (open.value) {
+        attrs["aria-controls"] = menuId.value;
       }
+      if (!noExpand.value) {
+        attrs["aria-expanded"] = open.value ? "true" : "false";
+      }
+      return attrs;
     });
 
-    watch(root, (v) => {
-      trigger.value = v.querySelector("[menu-trigger]") as HTMLElement;
-      trigger.value.addEventListener("click", (e) => {
+    const triggerListeners = computed(() => ({
+      click: (e: MouseEvent) => {
         context.emit("trigger-click", e);
-      });
-    });
-    watch(trigger, (v) => {
-      if (v.id) {
-        triggerId.value = v.id;
-      } else {
-        v.id = triggerId.value;
-      }
-      v.setAttribute("aria-haspopup", "true");
-      v.setAttribute("aria-controls", menuId.value);
-    });
+      },
+    }));
 
     return {
       positionTop,
       positionLeft,
       triggerId,
+      triggerAttrs,
+      triggerListeners,
       menuId,
       menu,
       menuWidth,
       root,
-      trigger,
       calculatePosition,
       calculating,
     };
