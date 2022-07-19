@@ -106,7 +106,6 @@ exports[`FeatherDateInput.vue should render disabled 1`] = `
             class="action-icon hide-when-disabled hover focus"
             data-ref-id="feather-date-input-button"
             href="#"
-            menu-trigger=""
             title="Click for calendar"
           >
             <svg
@@ -187,7 +186,6 @@ exports[`FeatherDateInput.vue should render disabled 1`] = `
             
             <div
               class="feather-input-wrapper-container raised inline feather-select-wrapper"
-              menu-trigger=""
             >
               <fieldset
                 aria-hidden="true"
@@ -488,7 +486,6 @@ exports[`FeatherDateInput.vue should render disabled 1`] = `
             
             <div
               class="feather-input-wrapper-container raised inline feather-select-wrapper"
-              menu-trigger=""
             >
               <fieldset
                 aria-hidden="true"

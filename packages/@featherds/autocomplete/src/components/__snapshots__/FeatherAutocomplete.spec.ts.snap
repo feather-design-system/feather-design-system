@@ -15,7 +15,7 @@ exports[`FeatherAutocomplete base functionality multi disabled state should rend
       aria-label="Users"
       aria-owns="feather-autocomplete-input-results"
       class="feather-input-wrapper-container raised disabled has-prefix"
-      menu-trigger=""
+      id="feather-menu-trigger"
       role="combobox"
     >
       <fieldset
@@ -187,7 +187,7 @@ exports[`FeatherAutocomplete base functionality multi disabled state should rend
       aria-label="Users"
       aria-owns="feather-autocomplete-input-results"
       class="feather-input-wrapper-container disabled has-prefix"
-      menu-trigger=""
+      id="feather-menu-trigger"
       role="combobox"
     >
       <fieldset
@@ -321,7 +321,7 @@ exports[`FeatherAutocomplete base functionality multi should lower label when th
       aria-label="Users"
       aria-owns="feather-autocomplete-input-results"
       class="feather-input-wrapper-container has-prefix"
-      menu-trigger=""
+      id="feather-menu-trigger"
       role="combobox"
     >
       <fieldset
@@ -450,12 +450,11 @@ exports[`FeatherAutocomplete base functionality multi should not leave previous 
     <div
       aria-controls="feather-menu-dropdown"
       aria-expanded="false"
-      aria-haspopup="true"
+      aria-haspopup="listbox"
       aria-label="Users"
       aria-owns="feather-autocomplete-input-results"
       class="feather-input-wrapper-container raised focused has-prefix"
       id="feather-menu-trigger"
-      menu-trigger=""
       role="combobox"
     >
       <fieldset
@@ -687,7 +686,7 @@ exports[`FeatherAutocomplete base functionality multi should raise the label whe
       aria-label="Users"
       aria-owns="feather-autocomplete-input-results"
       class="feather-input-wrapper-container raised has-prefix"
-      menu-trigger=""
+      id="feather-menu-trigger"
       role="combobox"
     >
       <fieldset
@@ -894,12 +893,11 @@ exports[`FeatherAutocomplete base functionality multi should show loading spinne
     <div
       aria-controls="feather-menu-dropdown"
       aria-expanded="false"
-      aria-haspopup="true"
+      aria-haspopup="listbox"
       aria-label="Users"
       aria-owns="feather-autocomplete-input-results"
       class="feather-input-wrapper-container raised focused has-prefix"
       id="feather-menu-trigger"
-      menu-trigger=""
       role="combobox"
     >
       <fieldset
@@ -1072,12 +1070,11 @@ exports[`FeatherAutocomplete base functionality multi should show no results tex
     <div
       aria-controls="feather-menu-dropdown"
       aria-expanded="false"
-      aria-haspopup="true"
+      aria-haspopup="listbox"
       aria-label="Users"
       aria-owns="feather-autocomplete-input-results"
       class="feather-input-wrapper-container raised focused has-prefix"
       id="feather-menu-trigger"
-      menu-trigger=""
       role="combobox"
     >
       <fieldset
@@ -1259,7 +1256,7 @@ exports[`FeatherAutocomplete base functionality single disabled state should ren
       aria-label="Users"
       aria-owns="feather-autocomplete-input-results"
       class="feather-input-wrapper-container raised disabled has-prefix"
-      menu-trigger=""
+      id="feather-menu-trigger"
       role="combobox"
     >
       <fieldset
@@ -1411,7 +1408,7 @@ exports[`FeatherAutocomplete base functionality single disabled state should ren
       aria-label="Users"
       aria-owns="feather-autocomplete-input-results"
       class="feather-input-wrapper-container disabled has-prefix"
-      menu-trigger=""
+      id="feather-menu-trigger"
       role="combobox"
     >
       <fieldset
@@ -1545,7 +1542,7 @@ exports[`FeatherAutocomplete base functionality single should lower label when t
       aria-label="Users"
       aria-owns="feather-autocomplete-input-results"
       class="feather-input-wrapper-container has-prefix"
-      menu-trigger=""
+      id="feather-menu-trigger"
       role="combobox"
     >
       <fieldset
@@ -1674,12 +1671,11 @@ exports[`FeatherAutocomplete base functionality single should not leave previous
     <div
       aria-controls="feather-menu-dropdown"
       aria-expanded="false"
-      aria-haspopup="true"
+      aria-haspopup="listbox"
       aria-label="Users"
       aria-owns="feather-autocomplete-input-results"
       class="feather-input-wrapper-container raised focused has-prefix"
       id="feather-menu-trigger"
-      menu-trigger=""
       role="combobox"
     >
       <fieldset
@@ -1911,7 +1907,7 @@ exports[`FeatherAutocomplete base functionality single should raise the label wh
       aria-label="Users"
       aria-owns="feather-autocomplete-input-results"
       class="feather-input-wrapper-container raised has-prefix"
-      menu-trigger=""
+      id="feather-menu-trigger"
       role="combobox"
     >
       <fieldset
@@ -2058,12 +2054,11 @@ exports[`FeatherAutocomplete base functionality single should show loading spinn
     <div
       aria-controls="feather-menu-dropdown"
       aria-expanded="false"
-      aria-haspopup="true"
+      aria-haspopup="listbox"
       aria-label="Users"
       aria-owns="feather-autocomplete-input-results"
       class="feather-input-wrapper-container raised focused has-prefix"
       id="feather-menu-trigger"
-      menu-trigger=""
       role="combobox"
     >
       <fieldset
@@ -2236,12 +2231,11 @@ exports[`FeatherAutocomplete base functionality single should show no results te
     <div
       aria-controls="feather-menu-dropdown"
       aria-expanded="false"
-      aria-haspopup="true"
+      aria-haspopup="listbox"
       aria-label="Users"
       aria-owns="feather-autocomplete-input-results"
       class="feather-input-wrapper-container raised focused has-prefix"
       id="feather-menu-trigger"
-      menu-trigger=""
       role="combobox"
     >
       <fieldset
@@ -2418,14 +2412,12 @@ exports[`FeatherAutocomplete multi:specific chip selection should move chip sele
   >
     
     <div
-      aria-controls="feather-menu-dropdown"
       aria-expanded="false"
-      aria-haspopup="true"
+      aria-haspopup="listbox"
       aria-label="Users"
       aria-owns="feather-autocomplete-input-results"
       class="feather-input-wrapper-container raised has-prefix"
       id="feather-menu-trigger"
-      menu-trigger=""
       role="combobox"
     >
       <fieldset
@@ -2631,14 +2623,12 @@ exports[`FeatherAutocomplete multi:specific chip selection should move chip sele
   >
     
     <div
-      aria-controls="feather-menu-dropdown"
       aria-expanded="false"
-      aria-haspopup="true"
+      aria-haspopup="listbox"
       aria-label="Users"
       aria-owns="feather-autocomplete-input-results"
       class="feather-input-wrapper-container raised has-prefix"
       id="feather-menu-trigger"
-      menu-trigger=""
       role="combobox"
     >
       <fieldset
@@ -2844,14 +2834,12 @@ exports[`FeatherAutocomplete multi:specific chip selection should not move chip 
   >
     
     <div
-      aria-controls="feather-menu-dropdown"
       aria-expanded="false"
-      aria-haspopup="true"
+      aria-haspopup="listbox"
       aria-label="Users"
       aria-owns="feather-autocomplete-input-results"
       class="feather-input-wrapper-container raised has-prefix"
       id="feather-menu-trigger"
-      menu-trigger=""
       role="combobox"
     >
       <fieldset
@@ -3057,14 +3045,12 @@ exports[`FeatherAutocomplete multi:specific chip selection should not perform an
   >
     
     <div
-      aria-controls="feather-menu-dropdown"
       aria-expanded="false"
-      aria-haspopup="true"
+      aria-haspopup="listbox"
       aria-label="Users"
       aria-owns="feather-autocomplete-input-results"
       class="feather-input-wrapper-container raised has-prefix"
       id="feather-menu-trigger"
-      menu-trigger=""
       role="combobox"
     >
       <fieldset
@@ -3271,12 +3257,11 @@ exports[`FeatherAutocomplete multi:specific chip selection should select rightmo
     <div
       aria-controls="feather-menu-dropdown"
       aria-expanded="true"
-      aria-haspopup="true"
+      aria-haspopup="listbox"
       aria-label="Users"
       aria-owns="feather-autocomplete-input-results"
       class="feather-input-wrapper-container raised focused has-prefix"
       id="feather-menu-trigger"
-      menu-trigger=""
       role="combobox"
     >
       <fieldset
@@ -3562,14 +3547,12 @@ exports[`FeatherAutocomplete multi:specific chip selection should select the rig
   >
     
     <div
-      aria-controls="feather-menu-dropdown"
       aria-expanded="false"
-      aria-haspopup="true"
+      aria-haspopup="listbox"
       aria-label="Users"
       aria-owns="feather-autocomplete-input-results"
       class="feather-input-wrapper-container raised has-prefix"
       id="feather-menu-trigger"
-      menu-trigger=""
       role="combobox"
     >
       <fieldset
@@ -3775,14 +3758,12 @@ exports[`FeatherAutocomplete multi:specific chip selection should should deselec
   >
     
     <div
-      aria-controls="feather-menu-dropdown"
       aria-expanded="false"
-      aria-haspopup="true"
+      aria-haspopup="listbox"
       aria-label="Users"
       aria-owns="feather-autocomplete-input-results"
       class="feather-input-wrapper-container raised has-prefix"
       id="feather-menu-trigger"
-      menu-trigger=""
       role="combobox"
     >
       <fieldset
@@ -3987,14 +3968,12 @@ exports[`FeatherAutocomplete multi:specific selection limit should clear warning
   >
     
     <div
-      aria-controls="feather-menu-dropdown"
       aria-expanded="false"
-      aria-haspopup="true"
+      aria-haspopup="listbox"
       aria-label="Users"
       aria-owns="feather-autocomplete-input-results"
       class="feather-input-wrapper-container raised focused has-prefix"
       id="feather-menu-trigger"
-      menu-trigger=""
       role="combobox"
     >
       <fieldset
@@ -4201,12 +4180,11 @@ exports[`FeatherAutocomplete multi:specific selection limit should display a war
     <div
       aria-controls="feather-menu-dropdown"
       aria-expanded="false"
-      aria-haspopup="true"
+      aria-haspopup="listbox"
       aria-label="Users"
       aria-owns="feather-autocomplete-input-results"
       class="feather-input-wrapper-container raised focused has-prefix"
       id="feather-menu-trigger"
-      menu-trigger=""
       role="combobox"
     >
       <fieldset
@@ -4485,12 +4463,11 @@ exports[`FeatherAutocomplete multi:specific selection limit should display a war
     <div
       aria-controls="feather-menu-dropdown"
       aria-expanded="false"
-      aria-haspopup="true"
+      aria-haspopup="listbox"
       aria-label="Users"
       aria-owns="feather-autocomplete-input-results"
       class="feather-input-wrapper-container raised focused has-prefix"
       id="feather-menu-trigger"
-      menu-trigger=""
       role="combobox"
     >
       <fieldset
@@ -4771,12 +4748,11 @@ exports[`FeatherAutocomplete multi:specific selection limit should display a war
     <div
       aria-controls="feather-menu-dropdown"
       aria-expanded="false"
-      aria-haspopup="true"
+      aria-haspopup="listbox"
       aria-label="Users"
       aria-owns="feather-autocomplete-input-results"
       class="feather-input-wrapper-container raised focused has-prefix"
       id="feather-menu-trigger"
-      menu-trigger=""
       role="combobox"
     >
       <fieldset
@@ -5033,14 +5009,12 @@ exports[`FeatherAutocomplete multi:specific should hide/reset menu and clear tex
   >
     
     <div
-      aria-controls="feather-menu-dropdown"
       aria-expanded="false"
-      aria-haspopup="true"
+      aria-haspopup="listbox"
       aria-label="Users"
       aria-owns="feather-autocomplete-input-results"
       class="feather-input-wrapper-container has-prefix"
       id="feather-menu-trigger"
-      menu-trigger=""
       role="combobox"
     >
       <fieldset
@@ -5167,14 +5141,12 @@ exports[`FeatherAutocomplete single:specific should close menu when enter is pre
   >
     
     <div
-      aria-controls="feather-menu-dropdown"
       aria-expanded="false"
-      aria-haspopup="true"
+      aria-haspopup="listbox"
       aria-label="Users"
       aria-owns="feather-autocomplete-input-results"
       class="feather-input-wrapper-container raised focused has-prefix"
       id="feather-menu-trigger"
-      menu-trigger=""
       role="combobox"
     >
       <fieldset
@@ -5306,7 +5278,7 @@ exports[`FeatherAutocomplete single:specific should handle a null property on va
       aria-label="Users"
       aria-owns="feather-autocomplete-input-results"
       class="feather-input-wrapper-container raised has-prefix"
-      menu-trigger=""
+      id="feather-menu-trigger"
       role="combobox"
     >
       <fieldset
@@ -5453,12 +5425,11 @@ exports[`FeatherAutocomplete single:specific should show add new element when in
     <div
       aria-controls="feather-menu-dropdown"
       aria-expanded="true"
-      aria-haspopup="true"
+      aria-haspopup="listbox"
       aria-label="Users"
       aria-owns="feather-autocomplete-input-results"
       class="feather-input-wrapper-container raised focused has-prefix"
       id="feather-menu-trigger"
-      menu-trigger=""
       role="combobox"
     >
       <fieldset

@@ -144,6 +144,7 @@ li.feather-list-item.highlighted {
   }
 }
 a.feather-list-item {
+  text-decoration: none;
   &:focus {
     outline: 0;
     box-shadow: inset 0 0 0 1px var($primary);

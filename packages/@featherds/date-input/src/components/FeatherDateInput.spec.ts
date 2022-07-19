@@ -30,7 +30,9 @@ const getWrapper = function (options: Record<string, unknown> = {}) {
   };
   options.global = {
     stubs: {
-      "feather-menu": { template: "<div><slot name='trigger'/><slot/></div>" },
+      "feather-menu": {
+        template: "<div><slot name='trigger' :on='{}'/><slot/></div>",
+      },
     },
   };
   return mount(FeatherDateInput, options);
@@ -98,7 +100,7 @@ describe("FeatherDateInput.vue", () => {
     const wrapper = getWrapper();
 
     const icon = wrapper.findComponent({ ref: "icon" });
-    expect(icon.attributes()["menu-trigger"]).toBeDefined();
+    await icon.trigger("click");
     const stubFocus = jest.fn();
     wrapper.vm.calendar.focus = stubFocus;
     const menu = wrapper.findComponent({ ref: "menu" });

@@ -6,8 +6,8 @@
       @trigger-click="triggerClicked"
       @outside-click="outsideClicked"
     >
-      <template v-slot:trigger>
-        <feather-button style="margin: 0" primary menu-trigger
+      <template v-slot:trigger="{ attrs, on }">
+        <feather-button style="margin: 0" primary v-bind="attrs" v-on="on"
           >Something</feather-button
         >
       </template>

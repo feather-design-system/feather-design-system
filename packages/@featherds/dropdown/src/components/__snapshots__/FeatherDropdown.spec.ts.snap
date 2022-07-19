@@ -8,7 +8,9 @@ exports[`FeatherDropdown.vue should pass through cover property 1`] = `
   
   
   <button
-    menu-trigger=""
+    aria-expanded="false"
+    aria-haspopup="true"
+    id="feather-menu-trigger"
   >
     TEST
   </button>
@@ -26,7 +28,9 @@ exports[`FeatherDropdown.vue should pass through right property 1`] = `
   
   
   <button
-    menu-trigger=""
+    aria-expanded="false"
+    aria-haspopup="true"
+    id="feather-menu-trigger"
   >
     TEST
   </button>

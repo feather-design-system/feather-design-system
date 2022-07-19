@@ -10,8 +10,9 @@ exports[`FeatherSelect.vue should not raise the label when its empty 1`] = `
   >
     
     <div
+      aria-haspopup="true"
       class="feather-input-wrapper-container feather-select-wrapper"
-      menu-trigger=""
+      id="feather-menu-trigger"
     >
       <fieldset
         aria-hidden="true"
@@ -101,8 +102,9 @@ exports[`FeatherSelect.vue should raise the label when it has a value 1`] = `
   >
     
     <div
+      aria-haspopup="true"
       class="feather-input-wrapper-container raised feather-select-wrapper"
-      menu-trigger=""
+      id="feather-menu-trigger"
     >
       <fieldset
         aria-hidden="true"
@@ -192,8 +194,9 @@ exports[`FeatherSelect.vue should render in disabled state 1`] = `
   >
     
     <div
+      aria-haspopup="true"
       class="feather-input-wrapper-container disabled feather-select-wrapper"
-      menu-trigger=""
+      id="feather-menu-trigger"
     >
       <fieldset
         aria-hidden="true"
@@ -284,8 +287,9 @@ exports[`FeatherSelect.vue should render in error state 1`] = `
   >
     
     <div
+      aria-haspopup="true"
       class="feather-input-wrapper-container error feather-select-wrapper"
-      menu-trigger=""
+      id="feather-menu-trigger"
     >
       <fieldset
         aria-hidden="true"
