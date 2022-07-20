@@ -11,12 +11,8 @@ const getWrapper = async (options: Record<string, unknown> = {}) => {
   return wrapper;
 };
 
-const getTrigger = (id = "") => ({
-  template: `<button menu-trigger id="${id}">TEST</button>`,
-  methods: {
-    focus: () => {},
-  },
-});
+const getTrigger = () =>
+  `<template #trigger="triggerProps"><button v-bind="triggerProps.attrs" v-on="triggerProps.on">TEST</button></template>`;
 const getContent = () => ({
   template: "<p>Ich bin ein Content</p>",
 });
@@ -29,23 +25,26 @@ describe("FeatherMenu.vue", () => {
     };
     const wrapper = await getWrapper({ slots });
 
-    const trigger = wrapper.find("[menu-trigger]").element;
+    const trigger = wrapper.find(`#${wrapper.vm.triggerId}`).element;
     expect(trigger.getAttribute("aria-haspopup")).toBe("true");
-    expect(trigger.getAttribute("aria-controls")).toBe("feather-menu-dropdown");
     expect(trigger.getAttribute("aria-expanded")).toBe("false");
   });
-  it("should set trigger attributes but not override id", async () => {
+
+  it("should set trigger attributes and use triggerId property when specified", async () => {
     const id = "preset";
     const slots = {
-      trigger: getTrigger(id),
+      trigger: getTrigger(),
       default: [getContent()],
     };
-    const wrapper = await getWrapper({ slots });
-    const trigger = wrapper.find("[menu-trigger]").element;
+    const wrapper = await getWrapper({
+      slots,
+      props: {
+        triggerId: id,
+      },
+    });
+    const trigger = wrapper.find(`#${id}`).element;
     expect(trigger.getAttribute("aria-haspopup")).toBe("true");
-    expect(trigger.getAttribute("aria-controls")).toBe("feather-menu-dropdown");
     expect(trigger.getAttribute("id")).toBe(id);
-    expect(wrapper.find("[menu-trigger]").element.id).toBe(id);
     expect(trigger.getAttribute("aria-expanded")).toBe("false");
   });
   it("should set trigger attributes after open", async () => {
@@ -56,7 +55,7 @@ describe("FeatherMenu.vue", () => {
     const wrapper = await getWrapper({ slots });
     await wrapper.setProps({ open: true });
     await nextTick();
-    const trigger = wrapper.find("[menu-trigger]").element;
+    const trigger = wrapper.find(`#${wrapper.vm.triggerId}`).element;
     expect(trigger.getAttribute("aria-expanded")).toBe("true");
     expect(trigger.getAttribute("aria-controls")).toBe(wrapper.vm.menuId);
   });
@@ -72,7 +71,7 @@ describe("FeatherMenu.vue", () => {
         noExpand: true,
       },
     });
-    const trigger = wrapper.find("[menu-trigger]").element;
+    const trigger = wrapper.find(`#${wrapper.vm.triggerId}`).element;
     expect(trigger.getAttribute("aria-expanded")).toBe(null);
     wrapper.setProps({ open: true });
     expect(trigger.getAttribute("aria-expanded")).toBe(null);
@@ -83,7 +82,7 @@ describe("FeatherMenu.vue", () => {
       default: [getContent()],
     };
     const wrapper = await getWrapper({ slots });
-    await wrapper.find("[menu-trigger]").trigger("click");
+    await wrapper.find(`#${wrapper.vm.triggerId}`).trigger("click");
     await nextTick();
     expect(wrapper.emitted()["trigger-click"].length).toBe(1);
   });

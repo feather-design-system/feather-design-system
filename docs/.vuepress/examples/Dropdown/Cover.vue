@@ -1,7 +1,7 @@
 <template>
   <FeatherDropdown cover>
-    <template v-slot:trigger>
-      <FeatherButton link href="#" menu-trigger icon="More Options">
+    <template v-slot:trigger="{ attrs, on }">
+      <FeatherButton link href="#" v-bind="attrs" v-on="on" icon="More Options">
         <FeatherIcon :icon="menu" />
       </FeatherButton>
     </template>

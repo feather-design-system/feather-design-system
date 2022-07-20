@@ -11,8 +11,10 @@
           @outside-click="outsideClicked"
           :right="right"
         >
-          <template v-slot:trigger>
-            <FeatherButton primary menu-trigger>Something</FeatherButton>
+          <template v-slot:trigger="{ attrs, on }">
+            <FeatherButton primary v-bind="attrs" v-on="on"
+              >Something</FeatherButton
+            >
           </template>
           <FeatherList>
             <FeatherListItem>Test</FeatherListItem>

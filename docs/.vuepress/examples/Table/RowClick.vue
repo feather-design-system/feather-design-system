@@ -25,8 +25,12 @@
 
           <td>
             <FeatherDropdown>
-              <template v-slot:trigger>
-                <FeatherButton icon="Item Actions for Example 1" menu-trigger>
+              <template v-slot:trigger="{ attrs, on }">
+                <FeatherButton
+                  icon="Item Actions for Example 1"
+                  v-bind="attrs"
+                  v-on="on"
+                >
                   <FeatherIcon :icon="menu" />
                 </FeatherButton>
               </template>
@@ -50,8 +54,12 @@
 
           <td>
             <FeatherDropdown>
-              <template v-slot:trigger>
-                <FeatherButton icon="Item Actions for Example 2" menu-trigger>
+              <template v-slot:trigger="{ attrs, on }">
+                <FeatherButton
+                  icon="Item Actions for Example 2"
+                  v-bind="attrs"
+                  v-on="on"
+                >
                   <FeatherIcon :icon="menu" />
                 </FeatherButton>
               </template>

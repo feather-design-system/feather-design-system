@@ -9,14 +9,15 @@
       class="feather-select-menu-container"
       data-ref-id="feather-select-menu-container"
     >
-      <template v-slot:trigger>
+      <template v-slot:trigger="triggerProps">
         <InputWrapper
           :for="inputId"
           :raised="raised"
           :focused="hasFocus"
           :show-clear="showClear"
           @clear="handleClear"
-          menu-trigger
+          v-bind="triggerProps.attrs"
+          v-on="triggerProps.on"
           class="feather-select-wrapper"
           :class="{ focused: hasFocus }"
         >
@@ -76,16 +77,7 @@ import {
   TimeoutResult,
   _clearTimeout,
 } from "@featherds/utils/setTimeout";
-import {
-  computed,
-  defineComponent,
-  PropType,
-  Ref,
-  ref,
-  toRef,
-  inject,
-  ExtractPropTypes,
-} from "vue";
+import { computed, defineComponent, PropType, Ref, toRef } from "vue";
 import { ISelectItemType } from "./types";
 export const props = {
   ...InputWrapperProps,

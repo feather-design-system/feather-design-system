@@ -11,16 +11,16 @@
       :class="{ grid: gridConfig }"
       ref="menu"
     >
-      <template v-slot:trigger>
+      <template v-slot:trigger="{ attrs: triggerAttrs, on: triggerOn }">
         <InputWrapper
-          v-bind="comboxBoxAttrs"
+          v-bind="{ ...triggerAttrs, ...comboxBoxAttrs }"
           :for="inputId"
           :raised="raised"
           :focused="hasFocus"
           :clear-text="clearLabel"
           :showClear="singleSelect && hasValue"
           @clear="handleClear"
-          menu-trigger
+          v-on="triggerOn"
           ref="scroll"
         >
           <template v-slot:pre>

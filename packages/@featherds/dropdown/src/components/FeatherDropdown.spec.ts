@@ -11,12 +11,8 @@ const getWrapper = (options: Record<string, unknown> = {}) => {
   return mount(FeatherDropdown, options);
 };
 
-const getTrigger = () => ({
-  template: "<button menu-trigger>TEST</button>",
-  methods: {
-    focus: () => {},
-  },
-});
+const getTrigger = () =>
+  `<template #trigger="triggerProps"><button v-bind="triggerProps.attrs" v-on="triggerProps.on">TEST</button></template>`;
 const getLi = (disabled = false) =>
   defineComponent({
     template: `<li>
