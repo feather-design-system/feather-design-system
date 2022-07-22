@@ -60,7 +60,6 @@ const useStrategy = (
           if (item[component.textProp.value] === el[component.textProp.value])
             return true;
         });
-        debugger;
         if (index > -1) {
           const result = modelValue.value.slice(0);
           result.splice(index, 1);

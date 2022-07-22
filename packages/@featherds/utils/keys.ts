@@ -1,17 +1,30 @@
-const KEYCODES = {
-  PAGEUP: 33,
-  PAGEDOWN: 34,
-  UP: 38,
-  DOWN: 40,
-  LEFT: 37,
-  RIGHT: 39,
-  HOME: 36,
-  END: 35,
-  ENTER: 13,
-  SPACE: 32,
-  ESCAPE: 27,
-  BACKSPACE: 8,
-  DELETE: 46,
-};
+/**
+ * KeyboardEvent.code enum
+ */
+enum Code {
+  PAGEUP = "PageUp",
+  PAGEDOWN = "PageDown",
+  UP = "ArrowUp",
+  DOWN = "ArrowDown",
+  LEFT = "ArrowLeft",
+  RIGHT = "ArrowRight",
+  HOME = "Home",
+  END = "End",
+  ENTER = "Enter",
+  SPACE = "Space",
+  ESCAPE = "Escape",
+  BACKSPACE = "Backspace",
+  DELETE = "Delete",
+}
 
-export { KEYCODES };
+/**
+ * KeyboardEvent modifier enum
+ */
+enum Modifier {
+  ALT = "altKey",
+  CTRL = "ctrlKey",
+  META = "metaKey",
+  SHIFT = "shiftKey",
+}
+
+export { Code, Modifier };

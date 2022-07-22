@@ -1,5 +1,5 @@
 import { reactive, nextTick } from "vue";
-import { KEYCODES } from "@featherds/utils/keys";
+import { Code } from "@featherds/utils/keys";
 import {
   IAutocompleteItemType,
   IAutocompleteGridColumn,
@@ -22,7 +22,7 @@ const useResultGrid = (config: IAutocompleteGridColumn[]) => {
     internalResults: IAutocompleteItemType[]
   ) => {
     //menu navigation
-    if (e.keyCode === KEYCODES.DOWN) {
+    if (e.code === Code.DOWN) {
       //down
       e.preventDefault();
       if (active.row === -1) {
@@ -36,7 +36,7 @@ const useResultGrid = (config: IAutocompleteGridColumn[]) => {
       }
       return true;
     }
-    if (e.keyCode === KEYCODES.UP) {
+    if (e.code === Code.UP) {
       //up
       e.preventDefault();
       if (active.row === 0) {
@@ -49,7 +49,7 @@ const useResultGrid = (config: IAutocompleteGridColumn[]) => {
       }
       return true;
     }
-    if (e.keyCode === KEYCODES.RIGHT && active.row !== -1) {
+    if (e.code === Code.RIGHT && active.row !== -1) {
       //right
       e.preventDefault();
       if (active.col + 1 <= config.length - 1) {
@@ -69,7 +69,7 @@ const useResultGrid = (config: IAutocompleteGridColumn[]) => {
       }
       return true;
     }
-    if (e.keyCode === KEYCODES.LEFT && active.row !== -1) {
+    if (e.code === Code.LEFT && active.row !== -1) {
       //left
       e.preventDefault();
       if (active.col === 0 && active.row === 0) {
@@ -88,7 +88,7 @@ const useResultGrid = (config: IAutocompleteGridColumn[]) => {
       }
       return true;
     }
-    if (e.keyCode === KEYCODES.END && active.row !== -1) {
+    if (e.code === Code.END && active.row !== -1) {
       //end
       e.preventDefault();
       const oldRow = active.row;
@@ -99,7 +99,7 @@ const useResultGrid = (config: IAutocompleteGridColumn[]) => {
       );
       return true;
     }
-    if (e.keyCode === KEYCODES.HOME && active.row !== -1) {
+    if (e.code === Code.HOME && active.row !== -1) {
       //end
       e.preventDefault();
       const oldRow = active.row;

@@ -27,7 +27,7 @@ import {
   TimeoutResult,
   _clearTimeout,
 } from "@featherds/utils/setTimeout";
-import { KEYCODES } from "@featherds/utils/keys";
+import { Code } from "@featherds/utils/keys";
 import Pointer from "./Pointer.vue";
 import {
   defineComponent,
@@ -85,7 +85,7 @@ export default defineComponent({
       timeout = _setTimeout(hideTooltip, props.exitDelay);
     };
     const handleEscape = (e: KeyboardEvent) => {
-      if (e.keyCode === KEYCODES.ESCAPE) {
+      if (e.code === Code.ESCAPE) {
         e.preventDefault();
         hideTooltip(true);
       }

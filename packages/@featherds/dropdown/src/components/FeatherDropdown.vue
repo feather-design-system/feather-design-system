@@ -28,7 +28,7 @@
 <script lang="ts">
 import { ref, watch, nextTick, defineComponent } from "vue";
 import { FeatherMenu } from "@featherds/menu";
-import { KEYCODES } from "@featherds/utils/keys";
+import { Code } from "@featherds/utils/keys";
 import { useDropdownService } from "../composables/DropdownService";
 export const props = {
   modelValue: {
@@ -94,20 +94,20 @@ export default defineComponent({
       localOpen.value = false;
     };
     const handleKeydown = (e: KeyboardEvent) => {
-      switch (e.keyCode) {
+      switch (e.code) {
         //next
-        case KEYCODES.DOWN:
-        case KEYCODES.RIGHT:
+        case Code.DOWN:
+        case Code.RIGHT:
           dropdownService.selectNext();
           e.preventDefault();
           break;
         //previous
-        case KEYCODES.UP:
-        case KEYCODES.LEFT:
+        case Code.UP:
+        case Code.LEFT:
           dropdownService.selectPrevious();
           e.preventDefault();
           break;
-        case KEYCODES.ESCAPE: //ESC
+        case Code.ESCAPE: //ESC
           handleClose();
           break;
         default:

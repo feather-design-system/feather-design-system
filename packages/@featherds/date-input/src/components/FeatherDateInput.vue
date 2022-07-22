@@ -113,7 +113,7 @@ import {
   PropType,
 } from "vue";
 import { getSafeId } from "@featherds/utils/id";
-import { KEYCODES } from "@featherds/utils/keys";
+import { Code } from "@featherds/utils/keys";
 import { useValidation } from "@featherds/input-helper";
 
 import { useLabelProperty } from "@featherds/composables/LabelProperty";
@@ -330,7 +330,7 @@ export default defineComponent({
     });
 
     const handleKeyDown = (e: KeyboardEvent) => {
-      if (e.keyCode === KEYCODES.ENTER || e.keyCode === KEYCODES.SPACE) {
+      if (e.code === Code.ENTER || e.code === Code.SPACE) {
         openCalendar();
       }
     };

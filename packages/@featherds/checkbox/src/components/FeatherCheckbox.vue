@@ -45,7 +45,7 @@
 </template>
 <script lang="ts">
 import { getSafeId } from "@featherds/utils/id";
-import { KEYCODES } from "@featherds/utils/keys";
+import { Code } from "@featherds/utils/keys";
 import { FeatherRipple } from "@featherds/ripple";
 import { inject, defineComponent } from "vue";
 export const props = {
@@ -133,11 +133,11 @@ export default defineComponent({
       this.$emit("click", e);
     },
     keydown(e: KeyboardEvent) {
-      if (e.keyCode === KEYCODES.SPACE || e.keyCode === KEYCODES.ENTER) {
+      if (e.code === Code.SPACE || e.code === Code.ENTER) {
         this.updateValue();
       }
       //stop page scrolling
-      if (e.keyCode === KEYCODES.SPACE) {
+      if (e.code === Code.SPACE) {
         e.preventDefault();
       }
     },

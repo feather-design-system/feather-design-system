@@ -3,6 +3,7 @@ import { mount } from "@vue/test-utils";
 import { getCalls } from "@featherds/utils/test/calls";
 import FeatherMegaMenu from "./FeatherMegaMenu.vue";
 import { MenuFocusLoop } from "@featherds/menu";
+import { Code } from "@featherds/utils/keys";
 
 const menuName = "Test";
 const templateWithColumnsLinks = `<div>
@@ -25,7 +26,8 @@ const menuToggle = () => {
 };
 
 const getWrapper = function (options: Record<string, unknown> = {}) {
-  const global: Record<string, unknown> = options.global as Record<string, unknown> || {};
+  const global: Record<string, unknown> =
+    (options.global as Record<string, unknown>) || {};
   global.directives = {
     MenuFocusLoop,
   };
@@ -39,7 +41,6 @@ const getWrapper = function (options: Record<string, unknown> = {}) {
     name: menuName,
     closeText: "Close",
   };
-
 
   options.provide = {
     "menu-open": () => {
@@ -170,8 +171,17 @@ describe("FeatherMegaMenu.vue", () => {
     await nextTick();
 
     wrapper.find("button").element.focus = jest.fn();
-    wrapper.vm.closeMenu();
+    const button = wrapper.find("button");
+    button.element.focus = jest.fn();
+
+    checkMenu(true, wrapper);
+
+    const menu = wrapper.find(".menu-content");
+    await menu.trigger("keydown", { code: Code.ESCAPE });
     await nextTick();
+
+    checkMenu(false, wrapper);
+    // expect(button.element.focus).toHaveBeenCalled();
   });
 
   it("should close menu when a menuitem is clicked", async () => {

@@ -18,7 +18,7 @@
 </template>
 
 <script lang="ts">
-import { KEYCODES } from "@featherds/utils/keys";
+import { Code } from "@featherds/utils/keys";
 import { defineComponent } from "vue";
 export default defineComponent({
   model: {
@@ -162,16 +162,16 @@ export default defineComponent({
       }
 
       //handle arrow keys
-      switch (e.keyCode) {
-        case KEYCODES.LEFT:
+      switch (e.code) {
+        case Code.LEFT:
           this.$emit("previous");
           stop(e);
           break;
-        case KEYCODES.RIGHT:
+        case Code.RIGHT:
           this.$emit("next");
           stop(e);
           break;
-        case KEYCODES.UP:
+        case Code.UP:
           if (this.modelValue !== undefined && this.modelValue < this.max) {
             this.$emit("update:modelValue", this.modelValue + 1);
           }
@@ -180,7 +180,7 @@ export default defineComponent({
           }
           stop(e);
           break;
-        case KEYCODES.DOWN:
+        case Code.DOWN:
           if (this.modelValue !== undefined && this.modelValue > this.min) {
             this.$emit("update:modelValue", this.modelValue - 1);
           }
@@ -189,13 +189,13 @@ export default defineComponent({
           }
           stop(e);
           break;
-        case KEYCODES.DELETE:
+        case Code.DELETE:
           //reset
           this.input = "";
           this.$emit("update:modelValue", undefined);
           stop(e);
           break;
-        case KEYCODES.BACKSPACE:
+        case Code.BACKSPACE:
           this.input = this.input.slice(0, -1);
 
           this.parseValue(this.input);
