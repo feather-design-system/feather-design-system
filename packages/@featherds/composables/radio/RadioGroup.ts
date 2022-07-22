@@ -2,6 +2,7 @@ import { ref, watch, watchEffect, computed, provide, Ref } from "vue";
 import { useSelection, IRadio } from "./Selection";
 import { useValidation } from "@featherds/input-helper";
 import { getSafeId } from "@featherds/utils/id";
+import { Code } from "@featherds/utils/keys";
 
 const useRadioGroup = (
   modelValue: Ref<unknown>,
@@ -97,9 +98,9 @@ const useRadioGroup = (
   };
 
   const keydown = (e: KeyboardEvent) => {
-    switch (e.keyCode) {
-      case 13:
-      case 32:
+    switch (e.code) {
+      case Code.ENTER:
+      case Code.SPACE:
         if (currentSelected.value) {
           select(currentSelected.value);
         } else if (firstElement.value) {
@@ -107,13 +108,13 @@ const useRadioGroup = (
         }
         break;
       //next
-      case 40:
-      case 39:
+      case Code.DOWN:
+      case Code.RIGHT:
         selection.selectNext();
         break;
       //previous
-      case 37:
-      case 38:
+      case Code.LEFT:
+      case Code.UP:
         selection.selectPrevious();
         break;
       default:

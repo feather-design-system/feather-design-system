@@ -1,7 +1,7 @@
 import { useCloseOnEsc } from "./CloseOnEsc";
 import { mount } from "@vue/test-utils";
 import { ref, nextTick } from "vue";
-import { KEYCODES } from "@featherds/utils/keys";
+import { Code } from "@featherds/utils/keys";
 
 const createWrapper = (setup) => {
   return mount({
@@ -47,7 +47,7 @@ describe("Close On Escape composable", () => {
     await nextTick();
 
     const event = new KeyboardEvent("keydown", {
-      keyCode: KEYCODES.ESCAPE,
+      code: Code.ESCAPE,
       view: window,
       bubbles: true,
       cancelable: false,

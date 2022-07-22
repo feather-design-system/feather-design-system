@@ -3,6 +3,7 @@ interface IBindingModifier {
     contentKeyPressed: () => void;
   };
 }
+import { Code } from "@featherds/utils/keys";
 
 export default {
   mounted(el: HTMLElement, binding: IBindingModifier) {
@@ -22,14 +23,14 @@ export default {
     if (index < 0) {
       return;
     }
-    switch (e.keyCode) {
-      case 40: // down
+    switch (e.code) {
+      case Code.DOWN:
         index++;
         if (index === focusableELements.length) {
           index = 0;
         }
         break;
-      case 38: // up
+      case Code.UP:
         index--;
         if (index === -1) {
           index = focusableELements.length - 1;

@@ -23,7 +23,7 @@
 </template>
 <script lang="ts">
 import { getSafeId } from "@featherds/utils/id";
-import { KEYCODES } from "@featherds/utils/keys";
+import { Code } from "@featherds/utils/keys";
 import { SwitchRender } from "@featherds/switch";
 import FeatherListItem from "./FeatherListItem.vue";
 import { defineComponent, ComponentPublicInstance } from "vue";
@@ -70,11 +70,11 @@ export default defineComponent({
       this.$emit("click", e);
     },
     keydown(e: KeyboardEvent) {
-      if (e.keyCode === KEYCODES.SPACE || e.keyCode === KEYCODES.ENTER) {
+      if (e.code === Code.SPACE || e.code === Code.ENTER) {
         this.updateValue();
       }
       //stop page scrolling
-      if (e.keyCode === KEYCODES.SPACE) {
+      if (e.code === Code.SPACE) {
         e.preventDefault();
       }
       this.$emit("keydown", e);

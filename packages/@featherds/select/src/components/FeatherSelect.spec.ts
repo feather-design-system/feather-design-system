@@ -1,11 +1,12 @@
 import FeatherSelect from "./FeatherSelect.vue";
-import { shallowMount, mount } from "@vue/test-utils";
+import { mount } from "@vue/test-utils";
 import * as id from "@featherds/utils/id";
 import axe from "@featherds/utils/test/axe";
 import { getCalls } from "@featherds/utils/test/calls";
 import "@featherds/input-helper/test/MutationObserver";
 import { nextTick } from "vue";
 import { ISelectItemType } from "./types";
+import { Code } from "@featherds/utils/keys";
 
 jest.spyOn(id, "getSafeId").mockImplementation((x) => x);
 
@@ -69,8 +70,10 @@ describe("FeatherSelect.vue", () => {
         options,
       },
     });
-    await wrapper.find("input").trigger("focus");
-    await wrapper.find("input").trigger("keydown.enter");
+    const input = wrapper.find("input");
+    await input.trigger("focus");
+    await input.trigger("keydown", { code: Code.ENTER });
+
     expect(wrapper.vm.showMenu).toBe(true);
   });
   it("should close the menu on esc and emit update:modelValue", async () => {
@@ -79,9 +82,11 @@ describe("FeatherSelect.vue", () => {
         options,
       },
     });
-    await wrapper.find("input").trigger("focus");
-    await wrapper.find("input").trigger("keydown.enter");
-    await wrapper.find("input").trigger("keydown.esc");
+    const input = wrapper.find("input");
+    await input.trigger("focus");
+    await input.trigger("keydown", { code: Code.ENTER });
+    await input.trigger("keydown", { code: Code.ESCAPE });
+
     expect(wrapper.vm.showMenu).toBe(false);
     expect(
       getCalls<[ISelectItemType]>(wrapper, "update:modelValue")[0][0]
@@ -111,8 +116,10 @@ describe("FeatherSelect.vue", () => {
         options,
       },
     });
-    await wrapper.find("input").trigger("focus");
-    await wrapper.find("input").trigger("keydown.down");
+    const input = wrapper.find("input");
+    await input.trigger("focus");
+    await input.trigger("keydown", { code: Code.DOWN });
+
     expect(wrapper.vm.showMenu).toBe(true);
     expect(wrapper.vm.internalValue).toStrictEqual(options[0]);
   });
@@ -122,8 +129,11 @@ describe("FeatherSelect.vue", () => {
         options,
       },
     });
-    await wrapper.find("input").trigger("focus");
-    await wrapper.find("input").trigger("keydown.up");
+
+    const input = wrapper.find("input");
+    await input.trigger("focus");
+    await input.trigger("keydown", { code: Code.UP });
+
     expect(wrapper.vm.showMenu).toBe(true);
     expect(wrapper.vm.internalValue).toStrictEqual(options[0]);
   });
@@ -134,8 +144,11 @@ describe("FeatherSelect.vue", () => {
         modelValue: options[0],
       },
     });
-    await wrapper.find("input").trigger("focus");
-    await wrapper.find("input").trigger("keydown.down");
+
+    const input = wrapper.find("input");
+    await input.trigger("focus");
+    await input.trigger("keydown", { code: Code.DOWN });
+
     expect(wrapper.vm.showMenu).toBe(true);
     expect(wrapper.vm.internalValue).toStrictEqual(options[1]);
   });
@@ -146,10 +159,13 @@ describe("FeatherSelect.vue", () => {
         modelValue: options[0],
       },
     });
-    await wrapper.find("input").trigger("focus");
-    await wrapper.find("input").trigger("keydown.down");
+
+    const input = wrapper.find("input");
+    await input.trigger("focus");
+    await input.trigger("keydown", { code: Code.DOWN });
     expect(wrapper.vm.showMenu).toBe(true);
-    await wrapper.find("input").trigger("keydown.esc");
+
+    await input.trigger("keydown", { code: Code.ESCAPE });
     expect(wrapper.vm.showMenu).toBe(false);
     expect(
       getCalls<[ISelectItemType]>(wrapper, "update:modelValue")[0][0]
@@ -162,8 +178,11 @@ describe("FeatherSelect.vue", () => {
         modelValue: options[options.length - 1],
       },
     });
-    await wrapper.find("input").trigger("focus");
-    await wrapper.find("input").trigger("keydown.down");
+
+    const input = wrapper.find("input");
+    await input.trigger("focus");
+    await input.trigger("keydown", { code: Code.DOWN });
+
     expect(wrapper.vm.showMenu).toBe(true);
     expect(wrapper.vm.internalValue).toStrictEqual(options[options.length - 1]);
   });
@@ -174,8 +193,11 @@ describe("FeatherSelect.vue", () => {
         modelValue: options[options.length - 1],
       },
     });
-    await wrapper.find("input").trigger("focus");
-    await wrapper.find("input").trigger("keydown.up");
+
+    const input = wrapper.find("input");
+    await input.trigger("focus");
+    await input.trigger("keydown", { code: Code.UP });
+
     expect(wrapper.vm.showMenu).toBe(true);
     expect(wrapper.vm.internalValue).toStrictEqual(options[options.length - 2]);
   });
@@ -186,8 +208,11 @@ describe("FeatherSelect.vue", () => {
         modelValue: options[0],
       },
     });
-    await wrapper.find("input").trigger("focus");
-    await wrapper.find("input").trigger("keydown.up");
+
+    const input = wrapper.find("input");
+    await input.trigger("focus");
+    await input.trigger("keydown", { code: Code.UP });
+
     expect(wrapper.vm.showMenu).toBe(true);
     expect(wrapper.vm.internalValue).toStrictEqual(options[0]);
   });
@@ -198,9 +223,12 @@ describe("FeatherSelect.vue", () => {
         modelValue: options[options.length - 1],
       },
     });
-    await wrapper.find("input").trigger("focus");
-    await wrapper.find("input").trigger("keydown.home");
+
+    const input = wrapper.find("input");
+    await input.trigger("focus");
+    await input.trigger("keydown", { code: Code.HOME });
     await nextTick();
+
     expect(wrapper.vm.showMenu).toBe(true);
     expect(wrapper.vm.internalValue).toStrictEqual(options[0]);
   });
@@ -211,8 +239,11 @@ describe("FeatherSelect.vue", () => {
         modelValue: options[0],
       },
     });
-    await wrapper.find("input").trigger("focus");
-    await wrapper.find("input").trigger("keydown.end");
+
+    const input = wrapper.find("input");
+    await input.trigger("focus");
+    await input.trigger("keydown", { code: Code.END });
+
     expect(wrapper.vm.showMenu).toBe(true);
     expect(wrapper.vm.internalValue).toStrictEqual(options[options.length - 1]);
   });
@@ -222,8 +253,11 @@ describe("FeatherSelect.vue", () => {
         options,
       },
     });
-    await wrapper.find("input").trigger("focus");
-    await wrapper.find("input").trigger("keydown.enter"); //open menu
+
+    const input = wrapper.find("input");
+    await input.trigger("focus");
+    await input.trigger("keydown", { code: Code.ENTER }); // open menu
+
     wrapper.findComponent({ ref: "list" }).vm.$emit("select", options[0]);
     await wrapper.vm.$nextTick();
     expect(wrapper.vm.showMenu).toBe(false);
@@ -249,14 +283,14 @@ describe("FeatherSelect.vue", () => {
         options: options.concat([{ _text: "ab" }]),
       },
     });
-    await wrapper.find("input").trigger("focus");
-    await wrapper.find("input").trigger("keydown.enter");
-    await wrapper.find("input").trigger("keydown", {
-      keyCode: 65,
-    });
-    await wrapper.find("input").trigger("keydown", {
-      keyCode: 66,
-    });
+
+    const input = wrapper.find("input");
+    await input.trigger("focus");
+    await input.trigger("keydown", { code: Code.ENTER });
+
+    await input.trigger("keydown", { key: "a" });
+    await input.trigger("keydown", { key: "b" });
+
     jest.runAllTimers();
     expect(
       (
@@ -280,8 +314,11 @@ describe("FeatherSelect.vue", () => {
           modelValue: options[0],
         },
       });
-      await wrapper.find("input").trigger("focus");
-      await wrapper.find("input").trigger("keydown.enter");
+
+      const input = wrapper.find("input");
+      await input.trigger("focus");
+      await input.trigger("keydown", { code: Code.ENTER });
+
       expect(await axe(wrapper.element)).toHaveNoViolations();
     });
   });

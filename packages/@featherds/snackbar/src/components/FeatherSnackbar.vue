@@ -20,7 +20,7 @@
 </template>
 <script lang="ts">
 import { ref, inject, watch, toRef, nextTick, defineComponent, Ref } from "vue";
-import { KEYCODES } from "@featherds/utils/keys";
+import { Code } from "@featherds/utils/keys";
 import {
   _setTimeout,
   TimeoutResult,
@@ -96,7 +96,7 @@ export default defineComponent({
     };
 
     const keyPressed = (e: KeyboardEvent) => {
-      if (e.keyCode === KEYCODES.ESCAPE) {
+      if (e.code === Code.ESCAPE) {
         internalValue.value = false;
       }
     };

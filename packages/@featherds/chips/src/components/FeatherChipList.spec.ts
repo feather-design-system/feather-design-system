@@ -7,6 +7,7 @@ jest.spyOn(id, "getSafeId").mockImplementation((x) => x);
 
 import axe from "@featherds/utils/test/axe";
 import { getCalls } from "@featherds/utils/test/calls";
+import { Code } from "@featherds/utils/keys";
 
 const getRadio = (value: unknown, disabled: boolean) =>
   getChip(disabled, false, false, value);
@@ -177,20 +178,21 @@ describe("Feather Chip List", () => {
       expect(wrapper.emitted("update:modelValue")).toBeUndefined();
     });
     it("should select current radio when space or enter is pressed", async () => {
-      const testSelection = async (code: string) => {
+      const testSelection = async (code: Code) => {
         const wrapper = getWrapper([getRadio(1, false), getRadio(2, false)], {
           props: { mode: "radio", modelValue: -1 },
         });
         await nextTick();
         await nextTick();
-        await wrapper.find(selector).trigger(`keydown.${code}`);
+        const radio = wrapper.find(selector);
+        await radio.trigger("keydown", { code });
         expect(getCalls<[number]>(wrapper, "update:modelValue")[0][0]).toBe(1);
       };
-      await testSelection("enter");
-      await testSelection("space");
+      await testSelection(Code.ENTER);
+      await testSelection(Code.SPACE);
     });
     it("should select next enabled radio when right or down is pressed", async () => {
-      const testNext = async (code: string) => {
+      const testNext = async (code: Code) => {
         const wrapper = getWrapper(
           [getRadio(1, false), getRadio(2, true), getRadio(3, false)],
           {
@@ -199,14 +201,15 @@ describe("Feather Chip List", () => {
         );
         await nextTick();
         await nextTick();
-        await wrapper.find(selector).trigger(`keydown.${code}`);
+        const radio = wrapper.find(selector);
+        await radio.trigger("keydown", { code });
         expect(getCalls<[number]>(wrapper, "update:modelValue")[0][0]).toBe(3);
       };
-      await testNext("down");
-      await testNext("right");
+      await testNext(Code.DOWN);
+      await testNext(Code.RIGHT);
     });
     it("should select first enabled radio when right or down is pressed at the end of the group", async () => {
-      const testNext = async (code: string) => {
+      const testNext = async (code: Code) => {
         const wrapper = getWrapper(
           [getRadio(1, true), getRadio(2, false), getRadio(3, false)],
           {
@@ -215,14 +218,15 @@ describe("Feather Chip List", () => {
         );
         await nextTick();
         await nextTick();
-        await wrapper.find(selector).trigger(`keydown.${code}`);
+        const radio = wrapper.find(selector);
+        await radio.trigger("keydown", { code });
         expect(getCalls<[number]>(wrapper, "update:modelValue")[0][0]).toBe(2);
       };
-      await testNext("down");
-      await testNext("right");
+      await testNext(Code.DOWN);
+      await testNext(Code.RIGHT);
     });
     it("should select previous enabled radio when left or up is pressed", async () => {
-      const testPrev = async (code: string) => {
+      const testPrev = async (code: Code) => {
         const wrapper = getWrapper(
           [getRadio(1, false), getRadio(2, true), getRadio(3, false)],
           {
@@ -232,14 +236,15 @@ describe("Feather Chip List", () => {
 
         await nextTick();
         await nextTick();
-        await wrapper.find(selector).trigger(`keydown.${code}`);
+        const radio = wrapper.find(selector);
+        await radio.trigger("keydown", { code });
         expect(getCalls<[number]>(wrapper, "update:modelValue")[0][0]).toBe(1);
       };
-      await testPrev("left");
-      await testPrev("up");
+      await testPrev(Code.LEFT);
+      await testPrev(Code.UP);
     });
     it("should select last enabled radio when left or up is pressed at the start of the group", async () => {
-      const testPrev = async (code: string) => {
+      const testPrev = async (code: Code) => {
         const wrapper = getWrapper(
           [
             getRadio(1, false),
@@ -254,11 +259,12 @@ describe("Feather Chip List", () => {
 
         await nextTick();
         await nextTick();
-        await wrapper.find(selector).trigger(`keydown.${code}`);
+        const radio = wrapper.find(selector);
+        await radio.trigger("keydown", { code });
         expect(getCalls<[number]>(wrapper, "update:modelValue")[0][0]).toBe(2);
       };
-      await testPrev("left");
-      await testPrev("up");
+      await testPrev(Code.LEFT);
+      await testPrev(Code.UP);
     });
   });
 });
