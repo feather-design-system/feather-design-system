@@ -3,6 +3,8 @@ import { mount } from "@vue/test-utils";
 import FeatherDropdown from "./FeatherDropdown.vue";
 import axe from "@featherds/utils/test/axe";
 import { getCalls } from "@featherds/utils/test/calls";
+import { CODES } from "@featherds/utils/keyboardevents";
+import { triggerKeyboard } from "@featherds/utils/test/events";
 
 import * as id from "@featherds/utils/id";
 
@@ -78,7 +80,8 @@ describe("FeatherDropdown.vue", () => {
           modelValue: true,
         });
         await nextTick();
-        await wrapper.find("ul").trigger(`keydown.down`);
+        const ul = wrapper.find("ul");
+        await triggerKeyboard(ul, CODES.DOWN);
         expect(wrapper.vm.dropdownService.selectNext).toHaveBeenCalled();
       });
       it("right is pressed", async () => {
@@ -93,7 +96,8 @@ describe("FeatherDropdown.vue", () => {
           modelValue: true,
         });
         await nextTick();
-        await wrapper.find("ul").trigger(`keydown.right`);
+        const ul = wrapper.find("ul");
+        await triggerKeyboard(ul, CODES.RIGHT);
         expect(wrapper.vm.dropdownService.selectNext).toHaveBeenCalled();
       });
     });
@@ -110,7 +114,8 @@ describe("FeatherDropdown.vue", () => {
           modelValue: true,
         });
         await nextTick();
-        await wrapper.find("ul").trigger(`keydown.left`);
+        const ul = wrapper.find("ul");
+        await triggerKeyboard(ul, CODES.LEFT);
         expect(wrapper.vm.dropdownService.selectPrevious).toHaveBeenCalled();
       });
       it("up is pressed", async () => {
@@ -125,7 +130,8 @@ describe("FeatherDropdown.vue", () => {
           modelValue: true,
         });
         await nextTick();
-        await wrapper.find("ul").trigger(`keydown.up`);
+        const ul = wrapper.find("ul");
+        await triggerKeyboard(ul, CODES.UP);
         expect(wrapper.vm.dropdownService.selectPrevious).toHaveBeenCalled();
       });
     });
@@ -140,7 +146,8 @@ describe("FeatherDropdown.vue", () => {
         modelValue: true,
       });
       await nextTick();
-      await wrapper.find("ul").trigger("keydown.esc");
+      const ul = wrapper.find("ul");
+      await triggerKeyboard(ul, CODES.ESCAPE);
       expect(wrapper.vm.localOpen).toBe(false);
     });
   });

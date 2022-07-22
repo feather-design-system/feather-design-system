@@ -2,5 +2,6 @@
   "files.associations": {
     "*.css": "postcss"
   },
-  "editor.formatOnSave": true
+  "editor.formatOnSave": true,
+  "todo-tree.tree.showBadges": true
 }

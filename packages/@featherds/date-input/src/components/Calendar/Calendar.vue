@@ -81,7 +81,7 @@
   </div>
 </template>
 <script lang="ts">
-import { KEYCODES } from "@featherds/utils/keys";
+import { CODES } from "@featherds/utils/keyboardevents";
 import { FeatherButton } from "@featherds/button";
 import { FeatherSelect, ISelectItemType } from "@featherds/select";
 import { FeatherIcon } from "@featherds/icon";
@@ -366,13 +366,13 @@ export default defineComponent({
         this.highlightDate(date);
         this.focus();
       };
-      switch (e.keyCode) {
-        case KEYCODES.ESCAPE: //esc
+      switch (e.code) {
+        case CODES.ESCAPE: //esc
           e.stopPropagation();
           this.$emit("close");
           break;
-        case KEYCODES.ENTER:
-        case KEYCODES.SPACE:
+        case CODES.ENTER:
+        case CODES.SPACE:
           e.preventDefault();
           if (!(e.target as HTMLElement).classList.contains("disabled")) {
             this.selectDate(this.currentlyHighlighted);
@@ -380,28 +380,28 @@ export default defineComponent({
           }
           break;
         //down
-        case KEYCODES.DOWN:
+        case CODES.DOWN:
           highlightDay(utils.addWeeks(this.currentlyHighlighted, 1));
           e.preventDefault();
           break;
         //right
-        case KEYCODES.RIGHT:
+        case CODES.RIGHT:
           highlightDay(utils.addDays(this.currentlyHighlighted, 1));
 
           e.preventDefault();
           break;
         //left
-        case KEYCODES.LEFT:
+        case CODES.LEFT:
           highlightDay(utils.subDays(this.currentlyHighlighted, 1));
           e.preventDefault();
           break;
         //up
-        case KEYCODES.UP:
+        case CODES.UP:
           highlightDay(utils.subWeeks(this.currentlyHighlighted, 1));
           e.preventDefault();
           break;
         //page up
-        case KEYCODES.PAGEUP:
+        case CODES.PAGEUP:
           if (e.shiftKey) {
             this.prevYear();
           } else {
@@ -410,7 +410,7 @@ export default defineComponent({
           highlightDay(this.currentlyHighlighted);
           break;
         //pagedown
-        case KEYCODES.PAGEDOWN:
+        case CODES.PAGEDOWN:
           if (e.shiftKey) {
             this.nextYear();
           } else {

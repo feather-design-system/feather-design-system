@@ -1,31 +1,31 @@
 import { useResultGrid } from "./ResultGrid";
-import { KEYCODES } from "@featherds/utils/keys";
+import { CODES } from "@featherds/utils/keyboardevents";
 import { nextTick } from "vue";
 import { mount } from "@vue/test-utils";
 import { IAutocompleteGridColumn } from "../types";
 
 const LEFTEVENT = {
-  keyCode: KEYCODES.LEFT,
+  code: CODES.LEFT,
   preventDefault: () => {},
 } as KeyboardEvent;
 const RIGHTEVENT = {
-  keyCode: KEYCODES.RIGHT,
+  code: CODES.RIGHT,
   preventDefault: () => {},
 } as KeyboardEvent;
 const DOWNEVENT = {
-  keyCode: KEYCODES.DOWN,
+  code: CODES.DOWN,
   preventDefault: () => {},
 } as KeyboardEvent;
 const UPEVENT = {
-  keyCode: KEYCODES.UP,
+  code: CODES.UP,
   preventDefault: () => {},
 } as KeyboardEvent;
 const HOMEEVENT = {
-  keyCode: KEYCODES.HOME,
+  code: CODES.HOME,
   preventDefault: () => {},
 } as KeyboardEvent;
 const ENDEVENT = {
-  keyCode: KEYCODES.END,
+  code: CODES.END,
   preventDefault: () => {},
 } as KeyboardEvent;
 const CTRL = (key: KeyboardEvent) => {

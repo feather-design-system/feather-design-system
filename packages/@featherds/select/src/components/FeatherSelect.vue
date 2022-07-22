@@ -68,7 +68,7 @@ import { FeatherIcon } from "@featherds/icon";
 import KeyboardArrowDown from "@featherds/icon/navigation/ExpandMore";
 import { FeatherMenu } from "@featherds/menu";
 import { getSafeId } from "@featherds/utils/id";
-import { KEYCODES } from "@featherds/utils/keys";
+import { CODES } from "@featherds/utils/keyboardevents";
 import List from "./List.vue";
 import { useValidation } from "@featherds/input-helper";
 import {
@@ -278,7 +278,7 @@ export default defineComponent({
     },
     handleKeyDown(e: KeyboardEvent) {
       //enter
-      if (e.keyCode === KEYCODES.ENTER) {
+      if (e.code === CODES.ENTER) {
         e.preventDefault();
         this.showMenu = !this.showMenu;
         //if hidden focus button
@@ -289,10 +289,10 @@ export default defineComponent({
         }
       }
       //esc
-      else if (e.keyCode === KEYCODES.ESCAPE) {
+      else if (e.code === CODES.ESCAPE) {
         this.closeMenu();
         e.stopPropagation();
-      } else if (e.keyCode === KEYCODES.DOWN) {
+      } else if (e.code === CODES.DOWN) {
         //down
         e.preventDefault();
 
@@ -300,7 +300,7 @@ export default defineComponent({
           this.select(this.options[this.activeIndex + 1]);
         }
         this.showMenu = true;
-      } else if (e.keyCode === KEYCODES.UP) {
+      } else if (e.code === CODES.UP) {
         //up
         e.preventDefault();
 
@@ -308,18 +308,20 @@ export default defineComponent({
           this.select(this.options[this.activeIndex - 1]);
         }
         this.showMenu = true;
-      } else if (e.keyCode === KEYCODES.HOME) {
+      } else if (e.code === CODES.HOME) {
         //home
         e.preventDefault();
         this.select(this.options[0]);
         this.showMenu = true;
-      } else if (e.keyCode === KEYCODES.END) {
+      } else if (e.code === CODES.END) {
         //home
         e.preventDefault();
         this.select(this.options[this.options.length - 1]);
         this.showMenu = true;
       } else if (this.showMenu) {
-        const char = String.fromCharCode(e.keyCode);
+        // DANGER:  need to build search screen without keyCode...
+        // const char = String.fromCharCode(e.keyCode);
+        const char = e.key;
         this.charsSoFar += char;
         this.searchAfterDelay();
       }

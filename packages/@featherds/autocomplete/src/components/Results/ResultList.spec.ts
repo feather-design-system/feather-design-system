@@ -2,13 +2,13 @@ import { useResultList } from "./ResultList";
 import Vue from "vue";
 import { nextTick } from "vue";
 import { mount } from "@vue/test-utils";
-import { KEYCODES } from "@featherds/utils/keys";
+import { CODES } from "@featherds/utils/keyboardevents";
 const DOWNEVENT = {
-  keyCode: KEYCODES.DOWN,
+  code: CODES.DOWN,
   preventDefault: () => {},
 } as KeyboardEvent;
 const UPEVENT = {
-  keyCode: KEYCODES.UP,
+  code: CODES.UP,
   preventDefault: () => {},
 } as KeyboardEvent;
 const getResults = () => [

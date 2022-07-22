@@ -7,6 +7,9 @@ import { nextTick } from "vue";
 
 import "@featherds/input-helper/test/MutationObserver";
 import { getCalls } from "@featherds/utils/test/calls";
+import { CODES } from "@featherds/utils/keyboardevents";
+import { triggerKeyboard } from "@featherds/utils/test/events";
+import { trigger } from "@vue/reactivity";
 jest.spyOn(id, "getSafeId").mockImplementation((x) => x);
 
 const getProps =
@@ -86,10 +89,13 @@ const baseFunctionality = (type: AutocompleteTypes) => {
     });
     it("should perform search with empty string when focused and space pressed and min char is 0", async () => {
       const wrapper = getFullWrapper();
-      await wrapper.find(".feather-autocomplete-input").trigger("focus");
-      await wrapper
-        .find(".feather-autocomplete-input")
-        .trigger("keydown.space");
+      const input = wrapper.find<HTMLInputElement>(
+        ".feather-autocomplete-input"
+      );
+      await input.trigger("focus");
+
+      await triggerKeyboard(input, CODES.SPACE);
+
       expect(getCalls<string>(wrapper, "search")[0][0]).toBe("");
     });
     it("should not search when clicked an min char is >0", async () => {
@@ -303,7 +309,10 @@ const baseFunctionality = (type: AutocompleteTypes) => {
       it("should close the menu when escape key is pressed", async () => {
         const results = getResults();
         const wrapper = getFullWrapper();
-        await wrapper.find(".feather-autocomplete-input").trigger("focus");
+        const input = wrapper.find<HTMLInputElement>(
+          ".feather-autocomplete-input"
+        );
+        await input.trigger("focus");
 
         await wrapper.setProps({
           results,
@@ -312,25 +321,26 @@ const baseFunctionality = (type: AutocompleteTypes) => {
           active: { row: 0 },
         });
 
-        await wrapper
-          .find(".feather-autocomplete-input")
-          .trigger("keydown.esc");
+        await triggerKeyboard(input, CODES.ESCAPE);
+
         expect(wrapper.vm.active.row).toBe(-1);
         expect(wrapper.vm.showMenu).toBe(false);
       });
       it("should select an element when enter is pressed on it", async () => {
         const results = getResults();
         const wrapper = getFullWrapper();
-        await wrapper.find(".feather-autocomplete-input").trigger("focus");
+        const input = wrapper.find<HTMLInputElement>(
+          ".feather-autocomplete-input"
+        );
+        await input.trigger("focus");
 
         await wrapper.setProps({
           results,
         });
         wrapper.vm.active.row = 0;
 
-        await wrapper
-          .find(".feather-autocomplete-input")
-          .trigger("keydown.enter");
+        await triggerKeyboard(input, CODES.ENTER);
+
         const emitted = handleUpdateValue(
           getCalls<[IAutocompleteItemType[]]>(wrapper, "update:modelValue")[0]
         );
@@ -394,19 +404,21 @@ describe("FeatherAutocomplete", () => {
       const results = getResults();
 
       const wrapper = getFullWrapper();
-      const input = wrapper.find<HTMLInputElement>(
-        ".feather-autocomplete-input"
-      );
-      const search = "test";
-      input.element.value = search;
-      await input.trigger("focus");
-
       await wrapper.setProps({
         results,
       });
+      const input = wrapper.find<HTMLInputElement>(
+        ".feather-autocomplete-input"
+      );
+      await input.trigger("focus");
+      const search = "test";
+      input.element.value = search;
 
-      await input.trigger("keydown.down");
-      await input.trigger("keydown.enter");
+      await input.trigger("focus");
+
+      await triggerKeyboard(input, CODES.DOWN);
+      await triggerKeyboard(input, CODES.ENTER);
+
       //should still be at first index.
       expect(wrapper.vm.active.row).toBe(1);
       expect(input.element.value).toBe(search);
@@ -415,7 +427,6 @@ describe("FeatherAutocomplete", () => {
     });
     it("should leave the menu open when enter is used to select an item and minchar set", async () => {
       const results = getResults();
-
       const wrapper = getFullWrapper({
         props: {
           minChar: 2,
@@ -432,8 +443,9 @@ describe("FeatherAutocomplete", () => {
         results,
       });
 
-      await input.trigger("keydown.down");
-      await input.trigger("keydown.enter");
+      await triggerKeyboard(input, CODES.DOWN);
+      await triggerKeyboard(input, CODES.ENTER);
+
       //should still be at first index.
       expect(wrapper.vm.active.row).toBe(1);
       //make sure query isnt being reset
@@ -481,9 +493,11 @@ describe("FeatherAutocomplete", () => {
             modelValue,
           },
         });
-        await wrapper
-          .find(".feather-autocomplete-input")
-          .trigger("keydown.left");
+        const input = wrapper.find<HTMLInputElement>(
+          ".feather-autocomplete-input"
+        );
+        await triggerKeyboard(input, CODES.LEFT);
+
         expect(wrapper.vm.activeChipIndex).toBe(modelValue.length - 1);
         expect(wrapper.element).toMatchSnapshot();
       });
@@ -501,12 +515,13 @@ describe("FeatherAutocomplete", () => {
             modelValue,
           },
         });
-        await wrapper
-          .find(".feather-autocomplete-input")
-          .trigger("keydown.left");
-        await wrapper
-          .find(".feather-autocomplete-input")
-          .trigger("keydown.left");
+        const input = wrapper.find<HTMLInputElement>(
+          ".feather-autocomplete-input"
+        );
+
+        await triggerKeyboard(input, CODES.LEFT);
+        await triggerKeyboard(input, CODES.LEFT);
+
         expect(wrapper.vm.activeChipIndex).toBe(modelValue.length - 2);
         expect(wrapper.element).toMatchSnapshot();
       });
@@ -524,15 +539,13 @@ describe("FeatherAutocomplete", () => {
             modelValue,
           },
         });
-        await wrapper
-          .find(".feather-autocomplete-input")
-          .trigger("keydown.left");
-        await wrapper
-          .find(".feather-autocomplete-input")
-          .trigger("keydown.left");
-        await wrapper
-          .find(".feather-autocomplete-input")
-          .trigger("keydown.right");
+        const input = wrapper.find<HTMLInputElement>(
+          ".feather-autocomplete-input"
+        );
+        await triggerKeyboard(input, CODES.LEFT);
+        await triggerKeyboard(input, CODES.LEFT);
+        await triggerKeyboard(input, CODES.RIGHT);
+
         expect(wrapper.vm.activeChipIndex).toBe(modelValue.length - 1);
         expect(wrapper.element).toMatchSnapshot();
       });
@@ -550,15 +563,13 @@ describe("FeatherAutocomplete", () => {
             modelValue,
           },
         });
-        await wrapper
-          .find(".feather-autocomplete-input")
-          .trigger("keydown.left");
-        await wrapper
-          .find(".feather-autocomplete-input")
-          .trigger("keydown.left");
-        await wrapper
-          .find(".feather-autocomplete-input")
-          .trigger("keydown.left");
+        const input = wrapper.find<HTMLInputElement>(
+          ".feather-autocomplete-input"
+        );
+        await triggerKeyboard(input, CODES.LEFT);
+        await triggerKeyboard(input, CODES.LEFT);
+        await triggerKeyboard(input, CODES.LEFT);
+
         expect(wrapper.vm.activeChipIndex).toBe(0);
         expect(wrapper.element).toMatchSnapshot();
       });
@@ -576,12 +587,12 @@ describe("FeatherAutocomplete", () => {
             modelValue,
           },
         });
-        await wrapper
-          .find(".feather-autocomplete-input")
-          .trigger("keydown.left");
-        await wrapper
-          .find(".feather-autocomplete-input")
-          .trigger("keydown.right");
+        const input = wrapper.find<HTMLInputElement>(
+          ".feather-autocomplete-input"
+        );
+        await triggerKeyboard(input, CODES.LEFT);
+        await triggerKeyboard(input, CODES.RIGHT);
+
         expect(wrapper.vm.activeChipIndex).toBe(-1);
         expect(wrapper.element).toMatchSnapshot();
       });
@@ -606,18 +617,11 @@ describe("FeatherAutocomplete", () => {
         input.element.value = "test";
         await input.trigger("input");
 
-        await wrapper
-          .find(".feather-autocomplete-input")
-          .trigger("keydown.left");
-        await wrapper
-          .find(".feather-autocomplete-input")
-          .trigger("keydown.right");
-        await wrapper
-          .find(".feather-autocomplete-input")
-          .trigger("keydown.delete");
-        await wrapper
-          .find(".feather-autocomplete-input")
-          .trigger("keydown.backspace");
+        await triggerKeyboard(input, CODES.LEFT);
+        await triggerKeyboard(input, CODES.RIGHT);
+        await triggerKeyboard(input, CODES.DELETE);
+        await triggerKeyboard(input, CODES.BACKSPACE);
+
         expect(wrapper.vm.activeChipIndex).toBe(-1);
         expect(wrapper.element).toMatchSnapshot();
       });
@@ -635,12 +639,12 @@ describe("FeatherAutocomplete", () => {
             modelValue,
           },
         });
-        await wrapper
-          .find(".feather-autocomplete-input")
-          .trigger("keydown.left");
-        await wrapper
-          .find(".feather-autocomplete-input")
-          .trigger("keydown.delete");
+        const input = wrapper.find<HTMLInputElement>(
+          ".feather-autocomplete-input"
+        );
+        await triggerKeyboard(input, CODES.LEFT);
+        await triggerKeyboard(input, CODES.DELETE);
+
         const dsds = getCalls<[IAutocompleteItemType[]]>(
           wrapper,
           "update:modelValue"
@@ -667,12 +671,12 @@ describe("FeatherAutocomplete", () => {
             modelValue,
           },
         });
-        await wrapper
-          .find(".feather-autocomplete-input")
-          .trigger("keydown.left");
-        await wrapper
-          .find(".feather-autocomplete-input")
-          .trigger("keydown.backspace");
+        const input = wrapper.find<HTMLInputElement>(
+          ".feather-autocomplete-input"
+        );
+        await triggerKeyboard(input, CODES.LEFT);
+        await triggerKeyboard(input, CODES.BACKSPACE);
+
         expect(
           getCalls<[IAutocompleteItemType[]]>(
             wrapper,
@@ -695,12 +699,13 @@ describe("FeatherAutocomplete", () => {
             modelValue,
           },
         });
-        await wrapper
-          .find(".feather-autocomplete-input")
-          .trigger("keydown.left");
-        await wrapper
-          .find(".feather-autocomplete-input")
-          .trigger("keydown.backspace");
+        const input = wrapper.find<HTMLInputElement>(
+          ".feather-autocomplete-input"
+        );
+
+        await triggerKeyboard(input, CODES.LEFT);
+        await triggerKeyboard(input, CODES.BACKSPACE);
+
         expect(
           getCalls<[IAutocompleteItemType[]]>(
             wrapper,
@@ -753,14 +758,16 @@ describe("FeatherAutocomplete", () => {
             modelValue,
           },
         });
-        await wrapper.find(".feather-autocomplete-input").trigger("focus");
+        const input = wrapper.find<HTMLInputElement>(
+          ".feather-autocomplete-input"
+        );
+        await input.trigger("focus");
 
         await wrapper.setProps({
           results,
         });
-        await wrapper
-          .find(".feather-autocomplete-input")
-          .trigger("keydown.left");
+        await triggerKeyboard(input, CODES.LEFT);
+
         expect(wrapper.vm.activeChipIndex).toBe(modelValue.length - 1);
         expect(wrapper.vm.active.row).toBe(-1);
 
@@ -803,15 +810,17 @@ describe("FeatherAutocomplete", () => {
             selectionLimit: 1,
           },
         });
-        await wrapper.find(".feather-autocomplete-input").trigger("focus");
+        const input = wrapper.find<HTMLInputElement>(
+          ".feather-autocomplete-input"
+        );
+        await input.trigger("focus");
         await wrapper.setProps({
           results: getResults(),
         });
         wrapper.vm.active.row = 0;
 
-        await wrapper
-          .find(".feather-autocomplete-input")
-          .trigger("keydown.enter");
+        await triggerKeyboard(input, CODES.ENTER);
+
         expect(wrapper.element).toMatchSnapshot();
         expect(wrapper.vm.showSelectionLimit).toBe(true);
       });
@@ -870,7 +879,8 @@ describe("FeatherAutocomplete", () => {
         results,
       });
 
-      await input.trigger("keydown.down");
+      await triggerKeyboard(input, CODES.DOWN);
+
       const index = wrapper.vm.active.row;
       await input.trigger("blur");
       expect(
@@ -904,15 +914,17 @@ describe("FeatherAutocomplete", () => {
     it("should close menu when enter is pressed on a menu item to select it", async () => {
       const results = getResults();
       const wrapper = getFullWrapper();
-      await wrapper.find(".feather-autocomplete-input").trigger("focus");
+      const input = wrapper.find<HTMLInputElement>(
+        ".feather-autocomplete-input"
+      );
+      await input.trigger("focus");
 
       await wrapper.setProps({
         results,
       });
 
-      await wrapper
-        .find(".feather-autocomplete-input")
-        .trigger("keydown.enter");
+      await triggerKeyboard(input, CODES.ENTER);
+
       expect(wrapper.element).toMatchSnapshot();
     });
 

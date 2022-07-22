@@ -4,6 +4,8 @@ import FeatherTooltip from "./FeatherTooltip.vue";
 import * as id from "@featherds/utils/id";
 import axe from "@featherds/utils/test/axe";
 import { TooltipPlacement } from "../types";
+import { CODES } from "@featherds/utils/keyboardevents";
+import { triggerKeyboard } from "@featherds/utils/test/events";
 jest.spyOn(id, "getSafeId").mockImplementation((x) => x);
 const getDefault = () =>
   `<template #scoped="params">
@@ -65,7 +67,10 @@ describe("FeatherTooltip", () => {
     await nextTick();
     await nextTick();
     await nextTick();
-    await wrapper.find("button").trigger("keydown.esc");
+
+    const button = wrapper.find("button");
+    await triggerKeyboard(button, CODES.ESCAPE);
+
     expect(wrapper.element).toMatchSnapshot();
   });
 });

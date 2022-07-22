@@ -8,6 +8,8 @@ import { mount } from "@vue/test-utils";
 import "@featherds/input-helper/test/MutationObserver";
 import axe from "@featherds/utils/test/axe";
 import { getCalls } from "@featherds/utils/test/calls";
+import { triggerKeyboard } from "@featherds/utils/test/events";
+import { CODES } from "@featherds/utils/keyboardevents";
 declare global {
   interface Date {
     toLocaleDateStringDefault: (locale: string, opts: unknown) => string;
@@ -121,7 +123,13 @@ describe("FeatherDateInput.vue", () => {
     const wrapper = getWrapper();
     const stubFocus = jest.fn();
     wrapper.vm.calendar.focus = stubFocus;
-    await wrapper.findComponent({ ref: "wrapper" }).trigger("keypress.enter");
+
+    // NOTE:  The event below MUST BE keypress
+    // await wrapper.findComponent({ ref: "wrapper" }).trigger("keypress.enter");
+    // NOTE:  Also, adjusted triggerKeyboard to accept (DOMWrapper | VueWrapper)
+    const calendar = wrapper.findComponent({ ref: "wrapper" });
+    await triggerKeyboard(calendar, CODES.ENTER, null, "keypress");
+
     expect(wrapper.vm.showMenu).toBe(true);
     expect(stubFocus).toHaveBeenCalled();
   });
@@ -130,7 +138,9 @@ describe("FeatherDateInput.vue", () => {
     const wrapper = getWrapper();
     const stubFocus = jest.fn();
     wrapper.vm.calendar.focus = stubFocus;
-    await wrapper.findComponent({ ref: "wrapper" }).trigger("keypress.space");
+    // await wrapper.findComponent({ ref: "wrapper" }).trigger("keypress.space");
+    const calendar = wrapper.findComponent({ ref: "wrapper" });
+    await triggerKeyboard(calendar, CODES.SPACE, null, "keypress");
     expect(wrapper.vm.showMenu).toBe(true);
     expect(stubFocus).toHaveBeenCalled();
   });

@@ -1,7 +1,8 @@
 import SpinButton from "./SpinButton.vue";
 import { mount } from "@vue/test-utils";
-import { KEYCODES } from "@featherds/utils/keys";
+import { CODES } from "@featherds/utils/keyboardevents";
 import { getCalls } from "@featherds/utils/test/calls";
+import { triggerKeyboard } from "@featherds/utils/test/events";
 
 const getWrapper = function (options: Record<string, any>) {
   return mount(SpinButton, options);
@@ -148,9 +149,9 @@ describe("SpinButton.vue", () => {
       },
     });
 
-    await wrapper.find("span").trigger("keydown", {
-      keyCode: KEYCODES.DELETE,
-    });
+    const span = wrapper.find("span");
+    await triggerKeyboard(span, CODES.DELETE);
+
     expect(
       getCalls<[unknown]>(wrapper, "update:modelValue")[0][0]
     ).toBeUndefined();
@@ -170,9 +171,9 @@ describe("SpinButton.vue", () => {
       },
     });
 
-    await wrapper.find("span").trigger("keydown", {
-      keyCode: KEYCODES.BACKSPACE,
-    });
+    const span = wrapper.find("span");
+    await triggerKeyboard(span, CODES.BACKSPACE);
+
     expect(
       getCalls<[unknown]>(wrapper, "update:modelValue")[0][0]
     ).toBeUndefined();
@@ -204,9 +205,9 @@ describe("SpinButton.vue", () => {
 
     expect(getCalls<[number]>(wrapper, "update:modelValue")[2][0]).toBe(119);
 
-    await wrapper.find("span").trigger("keydown", {
-      keyCode: KEYCODES.BACKSPACE,
-    });
+    const span = wrapper.find("span");
+    await triggerKeyboard(span, CODES.BACKSPACE);
+
     expect(getCalls<[number]>(wrapper, "update:modelValue")[3][0]).toBe(11);
     expect(getValue(wrapper)).toBe("0011");
   });

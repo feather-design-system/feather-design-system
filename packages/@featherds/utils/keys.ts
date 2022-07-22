@@ -1,3 +1,7 @@
+// TODO:  DELETE THIS DEPRECATED ENUM
+/**
+ * @deprecated KeyboardEvent.keyCode should no longer be used
+ */
 const KEYCODES = {
   PAGEUP: 33,
   PAGEDOWN: 34,

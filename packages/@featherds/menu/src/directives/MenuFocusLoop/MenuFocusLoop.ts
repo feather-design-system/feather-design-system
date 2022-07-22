@@ -3,6 +3,7 @@ interface IBindingModifier {
     contentKeyPressed: () => void;
   };
 }
+import { CODES } from "@featherds/utils/keyboardevents";
 
 export default {
   mounted(el: HTMLElement, binding: IBindingModifier) {
@@ -22,14 +23,19 @@ export default {
     if (index < 0) {
       return;
     }
-    switch (e.keyCode) {
-      case 40: // down
+    // TODO:  NO direct test of this except to check for errors in
+    // TODO:  FeatherMegaMenu and DrawerTabContinue
+    // switch (e.keyCode) {
+    switch (e.code) {
+      // case 40: // down
+      case CODES.DOWN:
         index++;
         if (index === focusableELements.length) {
           index = 0;
         }
         break;
-      case 38: // up
+      // case 38: // up
+      case CODES.UP:
         index--;
         if (index === -1) {
           index = focusableELements.length - 1;

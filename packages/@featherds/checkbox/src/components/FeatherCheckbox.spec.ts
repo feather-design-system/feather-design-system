@@ -4,6 +4,8 @@ import { mount } from "@vue/test-utils";
 import FeatherCheckbox from "./FeatherCheckbox.vue";
 import * as id from "@featherds/utils/id";
 import { getCalls } from "@featherds/utils/test/calls";
+import { CODES } from "@featherds/utils/keyboardevents";
+import { triggerKeyboard } from "@featherds/utils/test/events";
 jest.spyOn(id, "getSafeId").mockImplementation((x) => x);
 
 const getWrapper = function (options: Record<string, unknown> = {}) {
@@ -66,20 +68,22 @@ describe("FeatherCheckbox.vue", () => {
     expect(getCalls<boolean[]>(wrapper, "update:modelValue")[0][0]).toBe(true);
   });
   it("should toggle the value when enter or space is pressed", async () => {
-    const testKeydown = async (keyCode: string, modelValue: boolean) => {
+    const testKeydown = async (code: string, modelValue: boolean) => {
+      console.log(code, modelValue);
       const wrapper = getWrapper({
         props: { modelValue },
       });
       expect(wrapper.vm.modelValue).toBe(modelValue);
-      await wrapper.find("[role='checkbox']").trigger(`keydown.${keyCode}`);
+      const input = wrapper.find<HTMLElement>("[role='checkbox']");
+      await triggerKeyboard(input, code);
       expect(getCalls<boolean[]>(wrapper, "update:modelValue")[0][0]).toBe(
         !modelValue
       );
     };
-    await testKeydown("space", false);
-    await testKeydown("space", true);
-    await testKeydown("enter", true);
-    await testKeydown("enter", false);
+    await testKeydown(CODES.SPACE, false);
+    await testKeydown(CODES.SPACE, true);
+    await testKeydown(CODES.ENTER, true);
+    await testKeydown(CODES.ENTER, false);
   });
   it("should not display a label when label property is used", () => {
     const label = "test";

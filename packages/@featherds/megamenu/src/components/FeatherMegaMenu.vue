@@ -34,7 +34,7 @@ import { MenuFocusLoop } from "@featherds/menu";
 import MenuName from "./MenuName/MenuName.vue";
 import MegaMenuButton from "./MegaMenuButton.vue";
 import { defineComponent, ref } from "vue";
-import { KEYCODES } from "@featherds/utils/keys";
+import { CODES } from "@featherds/utils/keyboardevents";
 export default defineComponent({
   setup() {
     const open = ref(false);
@@ -107,7 +107,8 @@ export default defineComponent({
       }
     },
     keyPressed(e: KeyboardEvent) {
-      if (e.keyCode === KEYCODES.ESCAPE) {
+      console.log("MEGA MENU CODE:  ", e.code);
+      if (e.code === CODES.ESCAPE) {
         this.closeMenu();
       }
     },

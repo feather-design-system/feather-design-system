@@ -1,10 +1,10 @@
 import { watch, ref, onBeforeUnmount, Ref } from "vue";
-import { KEYCODES } from "@featherds/utils/keys";
+import { CODES } from "@featherds/utils/keyboardevents";
 
 const useCloseOnEsc = (visibleRef: Ref<boolean>) => {
   const result = ref(false);
   const handleEsc = (e: KeyboardEvent) => {
-    if (e.keyCode === KEYCODES.ESCAPE) {
+    if (e.code === CODES.ESCAPE) {
       e.preventDefault();
       result.value = !result.value;
     }

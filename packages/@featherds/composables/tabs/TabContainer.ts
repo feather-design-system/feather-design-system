@@ -8,7 +8,7 @@ import {
   Ref,
 } from "vue";
 import { getSafeId } from "@featherds/utils/id";
-import { KEYCODES } from "@featherds/utils/keys";
+import { CODES } from "@featherds/utils/keyboardevents";
 
 const model = {
   prop: "modelValue",
@@ -100,7 +100,9 @@ const useTabContainer = (
     if (isModifiedKeyPress(evt)) {
       return;
     }
-    const key = evt.keyCode;
+    // DANGER: using keyCode as index
+    // const key = evt.keyCode;
+    const code = evt.code;
     const stop = (e: Event) => {
       e.stopPropagation();
       e.preventDefault();
@@ -112,22 +114,26 @@ const useTabContainer = (
       (pair) => pair.tab && pair.tab.el.contains(document.activeElement)
     );
     let index = focusedIndex !== -1 ? focusedIndex : localSelected.value;
-    const nextKeys = [KEYCODES.RIGHT];
-    const prevKeys = [KEYCODES.LEFT];
-    const selectKeys = [KEYCODES.ENTER, KEYCODES.SPACE];
+    // NOTE:  from keyCode number[] to code string[]
+    const nextKeys = [CODES.RIGHT];
+    const prevKeys = [CODES.LEFT];
+    const selectKeys = [CODES.ENTER, CODES.SPACE];
     if (props.vertical) {
-      nextKeys.push(KEYCODES.DOWN);
-      prevKeys.push(KEYCODES.UP);
+      nextKeys.push(CODES.DOWN);
+      prevKeys.push(CODES.UP);
     }
 
-    if (nextKeys.indexOf(key) > -1) {
+    // NOTE:  using includes since we added code as string
+    // if (nextKeys.indexOf(key) > -1) {
+    if (nextKeys.includes(code)) {
       index++;
       if (index >= notDisabledPairs.length) {
         index = 0;
       }
       stop(evt);
       selectIndex(pairs.value.indexOf(notDisabledPairs[index]));
-    } else if (prevKeys.indexOf(key) > -1) {
+      // } else if (prevKeys.indexOf(key) > -1) {
+    } else if (prevKeys.includes(code)) {
       index--;
       if (index < 0) {
         index = notDisabledPairs.length - 1;
@@ -135,7 +141,7 @@ const useTabContainer = (
       stop(evt);
       selectIndex(pairs.value.indexOf(notDisabledPairs[index]));
     }
-    if (selectKeys.indexOf(key) > -1) {
+    if (selectKeys.includes(code)) {
       activateIndex(index);
     }
   };

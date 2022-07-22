@@ -1,5 +1,5 @@
 import { reactive, nextTick } from "vue";
-import { KEYCODES } from "@featherds/utils/keys";
+import { CODES } from "@featherds/utils/keyboardevents";
 import { IAutocompleteItemType, IAutocompleteResultRender } from "../types";
 const useResultList = () => {
   const active = reactive({
@@ -16,7 +16,7 @@ const useResultList = () => {
     internalResults: IAutocompleteItemType[]
   ) => {
     //menu navigation
-    if (e.keyCode === KEYCODES.DOWN) {
+    if (e.code === CODES.DOWN) {
       //down
       e.preventDefault();
       if (active.row === -1) {
@@ -29,7 +29,7 @@ const useResultList = () => {
       }
       return true;
     }
-    if (e.keyCode === KEYCODES.UP) {
+    if (e.code === CODES.UP) {
       //up
       e.preventDefault();
       if (active.row === 0) {

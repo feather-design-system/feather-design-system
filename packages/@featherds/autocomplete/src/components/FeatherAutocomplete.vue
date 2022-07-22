@@ -163,7 +163,7 @@ import Chip from "./Chip.vue";
 import Spinner from "./Spinner.vue";
 import { useStrategy } from "./Strategies";
 import { getSafeId } from "@featherds/utils/id";
-import { KEYCODES } from "@featherds/utils/keys";
+import { CODES } from "@featherds/utils/keyboardevents";
 import { toView } from "@featherds/utils/scroll";
 import {
   _setTimeout,
@@ -531,7 +531,7 @@ export default defineComponent({
         this.resetResultIndex();
       };
       //stop enter form taking a new line
-      if (e.keyCode === KEYCODES.ENTER) {
+      if (e.code === CODES.ENTER) {
         e.preventDefault();
       }
 
@@ -545,22 +545,23 @@ export default defineComponent({
         }
       }
 
-      if (e.keyCode === KEYCODES.ENTER && this.activeChipIndex > -1) {
+      if (e.code === CODES.ENTER && this.activeChipIndex > -1) {
         e.preventDefault();
         const modelValue = this.modelValue as IAutocompleteItemType[];
         this.removeFromValue(modelValue[this.activeChipIndex]);
         resetChipIndex();
         return;
       }
-      if (e.keyCode === KEYCODES.ENTER && this.active.row > -1) {
+      if (e.code === CODES.ENTER && this.active.row > -1) {
         e.preventDefault();
         this.selectItem(this.internalResults[this.active.row]);
         return;
       }
+
       if (
-        (e.keyCode === KEYCODES.ENTER ||
-          e.keyCode === KEYCODES.SPACE ||
-          e.keyCode === KEYCODES.DOWN) &&
+        (e.code === CODES.ENTER ||
+          e.code === CODES.SPACE ||
+          e.code === CODES.DOWN) &&
         this.activeChipIndex == -1 &&
         !this.showMenu
       ) {
@@ -569,7 +570,7 @@ export default defineComponent({
         return;
       }
 
-      if (e.keyCode === KEYCODES.ESCAPE) {
+      if (e.code === CODES.ESCAPE) {
         this.forceCloseResults = true;
         resetMenuIndex();
         resetChipIndex();
@@ -578,7 +579,7 @@ export default defineComponent({
       //chip navigation
       if (!this.query && this.modelValue && this.modelValue.length) {
         const modelValue = this.modelValue as IAutocompleteItemType[];
-        if (e.keyCode === KEYCODES.LEFT) {
+        if (e.code === CODES.LEFT) {
           //left
           //if nothing selected select first (aka last element in array);
           e.preventDefault();
@@ -590,7 +591,7 @@ export default defineComponent({
             this.activeChipIndex = this.activeChipIndex - 1;
           }
         }
-        if (e.keyCode === KEYCODES.RIGHT) {
+        if (e.code === CODES.RIGHT) {
           //right
           //if in rightmost chip remove activity from chip list
           e.preventDefault();
@@ -607,7 +608,7 @@ export default defineComponent({
           }
         }
         if (
-          (e.keyCode === KEYCODES.DELETE || e.keyCode === KEYCODES.BACKSPACE) &&
+          (e.code === CODES.DELETE || e.code === CODES.BACKSPACE) &&
           this.activeChipIndex !== -1
         ) {
           this.removeFromValue(modelValue[this.activeChipIndex]);

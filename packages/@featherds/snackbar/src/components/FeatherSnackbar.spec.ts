@@ -3,6 +3,8 @@ import { nextTick } from "vue";
 import FeatherSnackbar from "./FeatherSnackbar.vue";
 import axe from "@featherds/utils/test/axe";
 import { getCalls } from "@featherds/utils/test/calls";
+import { CODES } from "@featherds/utils/keyboardevents";
+import { triggerKeyboard } from "@featherds/utils/test/events";
 
 const slots = {
   default: {
@@ -47,7 +49,8 @@ describe("FeatherSnackbar.vue", () => {
     jest.useFakeTimers();
     const wrapper = getWrapper({ props: getprops(true), slots });
     const snackbar = wrapper.find(".feather-snackbar");
-    await snackbar.trigger("keydown.esc");
+
+    await triggerKeyboard(snackbar, CODES.ESCAPE);
 
     jest.runAllTimers();
     await nextTick();

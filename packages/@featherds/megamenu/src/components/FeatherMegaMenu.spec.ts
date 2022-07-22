@@ -3,6 +3,8 @@ import { mount } from "@vue/test-utils";
 import { getCalls } from "@featherds/utils/test/calls";
 import FeatherMegaMenu from "./FeatherMegaMenu.vue";
 import { MenuFocusLoop } from "@featherds/menu";
+import { CODES } from "@featherds/utils/keyboardevents";
+import { triggerKeyboard } from "@featherds/utils/test/events";
 
 const menuName = "Test";
 const templateWithColumnsLinks = `<div>
@@ -25,7 +27,8 @@ const menuToggle = () => {
 };
 
 const getWrapper = function (options: Record<string, unknown> = {}) {
-  const global: Record<string, unknown> = options.global as Record<string, unknown> || {};
+  const global: Record<string, unknown> =
+    (options.global as Record<string, unknown>) || {};
   global.directives = {
     MenuFocusLoop,
   };
@@ -39,7 +42,6 @@ const getWrapper = function (options: Record<string, unknown> = {}) {
     name: menuName,
     closeText: "Close",
   };
-
 
   options.provide = {
     "menu-open": () => {
@@ -170,8 +172,21 @@ describe("FeatherMegaMenu.vue", () => {
     await nextTick();
 
     wrapper.find("button").element.focus = jest.fn();
-    wrapper.vm.closeMenu();
+    const button = wrapper.find("button");
+    // NOTE: Review with Rik
+    // NOTE:  Not sure what focus has to do with testing ESCAPE?
+    button.element.focus = jest.fn();
+    // NOTE:  This seems to be bypassing the ESCAPE key and directly calls the closeMenu function?
+    // wrapper.vm.closeMenu();
+
+    checkMenu(true, wrapper);
+
+    const menu = wrapper.find(".menu-content");
+    await triggerKeyboard(menu, CODES.ESCAPE);
     await nextTick();
+
+    checkMenu(false, wrapper);
+    // expect(button.element.focus).toHaveBeenCalled();
   });
 
   it("should close menu when a menuitem is clicked", async () => {

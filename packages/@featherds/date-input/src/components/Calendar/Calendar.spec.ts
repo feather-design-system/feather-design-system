@@ -3,6 +3,8 @@ import { shallowMount } from "@vue/test-utils";
 import utils from "./DateUtils";
 import { getCalls } from "@featherds/utils/test/calls";
 import { LABELS } from "../types";
+import { CODES, MODIFIERS } from "@featherds/utils/keyboardevents";
+import { IKbMod, triggerKeyboard } from "@featherds/utils/test/events";
 
 const getWrapper = () =>
   shallowMount(Calendar, {
@@ -54,7 +56,7 @@ describe("Calendar", () => {
     it("should highlight previous week with up key", async () => {
       const selected = wrapper.find<HTMLButtonElement>("button.selected");
       selected.element.focus();
-      await selected.trigger("keydown.up");
+      await triggerKeyboard(selected, CODES.UP);
       expect(
         utils.isSameDay(wrapper.vm.currentlyHighlighted, new Date(2018, 2, 17))
       ).toBe(true);
@@ -62,7 +64,7 @@ describe("Calendar", () => {
     it("should highlight next day with right key", async () => {
       const selected = wrapper.find<HTMLButtonElement>("button.selected");
       selected.element.focus();
-      await selected.trigger("keydown.right");
+      await triggerKeyboard(selected, CODES.RIGHT);
       expect(
         utils.isSameDay(wrapper.vm.currentlyHighlighted, new Date(2018, 2, 25))
       ).toBe(true);
@@ -70,7 +72,7 @@ describe("Calendar", () => {
     it("should highlight previous day with left key", async () => {
       const selected = wrapper.find<HTMLButtonElement>("button.selected");
       selected.element.focus();
-      await selected.trigger("keydown.left");
+      await triggerKeyboard(selected, CODES.LEFT);
       expect(
         utils.isSameDay(wrapper.vm.currentlyHighlighted, new Date(2018, 2, 23))
       ).toBe(true);
@@ -78,7 +80,7 @@ describe("Calendar", () => {
     it("should highlight next week with down key", async () => {
       const selected = wrapper.find<HTMLButtonElement>("button.selected");
       selected.element.focus();
-      await selected.trigger("keydown.down");
+      await triggerKeyboard(selected, CODES.DOWN);
       expect(
         utils.isSameDay(wrapper.vm.currentlyHighlighted, new Date(2018, 2, 31))
       ).toBe(true);
@@ -86,7 +88,7 @@ describe("Calendar", () => {
     it("should select current day and emit close with space", async () => {
       const selected = wrapper.find<HTMLButtonElement>("button.selected");
       selected.element.focus();
-      await selected.trigger("keydown.space");
+      await triggerKeyboard(selected, CODES.SPACE);
       expect(
         utils.isSameDay(
           getCalls<[Date]>(wrapper, "update:modelValue")[0][0],
@@ -98,7 +100,7 @@ describe("Calendar", () => {
     it("should select current day and emit close with enter", async () => {
       const selected = wrapper.find<HTMLButtonElement>("button.selected");
       selected.element.focus();
-      await selected.trigger("keydown.enter");
+      await triggerKeyboard(selected, CODES.ENTER);
       expect(
         utils.isSameDay(
           getCalls<[Date]>(wrapper, "update:modelValue")[0][0],
@@ -110,14 +112,14 @@ describe("Calendar", () => {
     it("should emit close with esc", async () => {
       const selected = wrapper.find<HTMLButtonElement>("button.selected");
       selected.element.focus();
-      await selected.trigger("keydown.esc");
+      await triggerKeyboard(selected, CODES.ESCAPE);
       expect(wrapper.emitted("update:modelValue")).not.toBeDefined();
       expect(wrapper.emitted().close).toBeDefined();
     });
     it("should highlight next month with page down", async () => {
       const selected = wrapper.find<HTMLButtonElement>("button.selected");
       selected.element.focus();
-      await selected.trigger("keydown.pagedown");
+      await triggerKeyboard(selected, CODES.PAGEDOWN);
       expect(
         utils.isSameDay(wrapper.vm.currentlyHighlighted, new Date(2018, 3, 24))
       ).toBe(true);
@@ -125,7 +127,7 @@ describe("Calendar", () => {
     it("should highlight previous month with page up", async () => {
       const selected = wrapper.find<HTMLButtonElement>("button.selected");
       selected.element.focus();
-      await selected.trigger("keydown.pageup");
+      await triggerKeyboard(selected, CODES.PAGEUP);
       expect(
         utils.isSameDay(wrapper.vm.currentlyHighlighted, new Date(2018, 1, 24))
       ).toBe(true);
@@ -133,7 +135,8 @@ describe("Calendar", () => {
     it("should highlight next year with shift page down", async () => {
       const selected = wrapper.find<HTMLButtonElement>("button.selected");
       selected.element.focus();
-      await selected.trigger("keydown.pagedown", { shiftKey: true });
+      // TODO:  add optional modifier to triggerKeyboard?
+      await triggerKeyboard(selected, CODES.PAGEDOWN, <IKbMod>MODIFIERS.SHIFT);
       expect(
         utils.isSameDay(wrapper.vm.currentlyHighlighted, new Date(2019, 2, 24))
       ).toBe(true);
@@ -141,7 +144,8 @@ describe("Calendar", () => {
     it("should highlight previous year with shift page up", async () => {
       const selected = wrapper.find<HTMLButtonElement>("button.selected");
       selected.element.focus();
-      await selected.trigger("keydown.pageup", { shiftKey: true });
+      // TODO:  add optional modifier to triggerKeyboard?
+      await triggerKeyboard(selected, CODES.PAGEUP, <IKbMod>MODIFIERS.SHIFT);
       expect(
         utils.isSameDay(wrapper.vm.currentlyHighlighted, new Date(2017, 2, 24))
       ).toBe(true);
