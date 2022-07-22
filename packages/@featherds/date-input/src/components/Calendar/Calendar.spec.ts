@@ -4,7 +4,11 @@ import utils from "./DateUtils";
 import { getCalls } from "@featherds/utils/test/calls";
 import { LABELS } from "../types";
 import { CODES, MODIFIERS } from "@featherds/utils/keyboardevents";
-import { IKeyboardMod, triggerKeyboard } from "@featherds/utils/test/events";
+import {
+  KeyboardMod,
+  IKeyboardMod,
+  triggerKeyboard,
+} from "@featherds/utils/test/events";
 
 const getWrapper = () =>
   shallowMount(Calendar, {
@@ -135,8 +139,7 @@ describe("Calendar", () => {
     it("should highlight next year with shift page down", async () => {
       const selected = wrapper.find<HTMLButtonElement>("button.selected");
       selected.element.focus();
-      // TODO:  add optional modifier to triggerKeyboard?
-      const modifier = <IKeyboardMod>MODIFIERS.SHIFT;
+      const modifier = <KeyboardMod>MODIFIERS.SHIFT;
       await triggerKeyboard(selected, CODES.PAGEDOWN, modifier);
       expect(
         utils.isSameDay(wrapper.vm.currentlyHighlighted, new Date(2019, 2, 24))
@@ -145,8 +148,7 @@ describe("Calendar", () => {
     it("should highlight previous year with shift page up", async () => {
       const selected = wrapper.find<HTMLButtonElement>("button.selected");
       selected.element.focus();
-      // TODO:  add optional modifier to triggerKeyboard?
-      const modifier = <IKeyboardMod>MODIFIERS.SHIFT;
+      const modifier = <KeyboardMod>MODIFIERS.SHIFT;
       await triggerKeyboard(selected, CODES.PAGEUP, modifier);
       expect(
         utils.isSameDay(wrapper.vm.currentlyHighlighted, new Date(2017, 2, 24))

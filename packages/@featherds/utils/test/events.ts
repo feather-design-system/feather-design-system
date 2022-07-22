@@ -1,9 +1,14 @@
 import { DOMWrapper, VueWrapper } from "@vue/test-utils";
 
-// TODO:  This is not exactly doing what I want
+// TODO: Type or interface?
+// TODO:  Neither is exactly behaving the way I want
+type KeyboardMod = "altKey" | "ctrlKey" | "metaKey" | "shiftKey";
 interface IKeyboardMod {
   modifier?: "altKey" | "ctrlKey" | "metaKey" | "shiftKey";
 }
+
+// TODO:  No need in current tests, but SHOULD handle multiple modifiers (i.e. CTRL+ALT)
+// TODO:  modifier should be an array; invoke local function to set multi/single modifiers
 
 /**
  * Trigger a keyboard event
@@ -17,7 +22,7 @@ interface IKeyboardMod {
 function triggerKeyboard(
   target: DOMWrapper<Element> | VueWrapper<any>,
   code: string,
-  modifier?: IKeyboardMod | null,
+  modifier?: KeyboardMod | null,
   event: string = "keydown"
 ): Promise<void> {
   if (modifier) {
@@ -27,4 +32,4 @@ function triggerKeyboard(
   return target.trigger(event, { code });
 }
 
-export { IKeyboardMod, triggerKeyboard };
+export { KeyboardMod, IKeyboardMod, triggerKeyboard };
