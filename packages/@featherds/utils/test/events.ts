@@ -1,7 +1,7 @@
 import { DOMWrapper, VueWrapper } from "@vue/test-utils";
 
-// TODO:  This interface is not exactly doing what I want
-interface IKbMod {
+// TODO:  This is not exactly doing what I want
+interface IKeyboardMod {
   modifier?: "altKey" | "ctrlKey" | "metaKey" | "shiftKey";
 }
 
@@ -17,7 +17,7 @@ interface IKbMod {
 function triggerKeyboard(
   target: DOMWrapper<Element> | VueWrapper<any>,
   code: string,
-  modifier?: IKbMod | null,
+  modifier?: IKeyboardMod | null,
   event: string = "keydown"
 ): Promise<void> {
   if (modifier) {
@@ -27,4 +27,4 @@ function triggerKeyboard(
   return target.trigger(event, { code });
 }
 
-export { IKbMod, triggerKeyboard };
+export { IKeyboardMod, triggerKeyboard };
