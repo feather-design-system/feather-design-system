@@ -26,10 +26,7 @@ export default {
 .all-components {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
-  row-gap: 1.25rem;
-  column-gap: 1.25rem;
-  justify-items: center;
-  justify-content: center;
+  gap: 1.25rem;
 }
 
 @media screen and (max-width: 81.25rem) {

@@ -29,9 +29,10 @@ menu: components
 ### Slots
 
 - `default` - slot to put Dropdown items in
-- `trigger` - slot to put trigger in, typically a button
+- `trigger` - slot to put trigger in, typically a button. This slot is scoped, it provides `attrs` and `on` which should be passed to `v-bind` and `v-on` respectively. See the examples.
 
 ### data-ref-ids
+
 - `feather-dropdown-container` - the root container
 - `feather-dropdown-container-dropdown` - the container div for the dropdown contents, note this uses our layering system and will be present as an immediate child of the `body` tag
 

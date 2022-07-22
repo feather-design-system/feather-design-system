@@ -15,7 +15,7 @@
       data-ref-id="feather-date-input-menu-container"
       ref="menu"
     >
-      <template v-slot:trigger>
+      <template #trigger="triggerProps">
         <InputWrapper
           :for="inputId"
           raised
@@ -76,7 +76,8 @@
           </div>
           <template v-slot:post>
             <DateIcon
-              menu-trigger
+              v-bind="triggerProps.attrs"
+              v-on="triggerProps.on"
               :title="calendarLabel"
               ref="icon"
               data-ref-id="feather-date-input-button"

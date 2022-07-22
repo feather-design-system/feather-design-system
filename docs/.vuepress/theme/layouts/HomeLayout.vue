@@ -101,19 +101,19 @@
             <div class="card-group">
               <PrettyCard
                 href="/Guides/GettingStarted/"
-                img-url="/assets/branding/home-components.png"
+                img-url="/assets/branding/GETTING_STARTED@2x.png"
                 overline="Components"
                 >Getting Started
               </PrettyCard>
               <PrettyCard
                 href="/Foundation/Story/Philosophy/"
-                img-url="/assets/branding/home-foundation.png"
+                img-url="/assets/branding/PRINCIPLES@2x.png"
                 overline="Foundation"
                 >Design Principles
               </PrettyCard>
               <PrettyCard
                 href="/Components/"
-                img-url="/assets/branding/home-typography.png"
+                img-url="/assets/branding/ALL_COMPONENTS@2x.png"
                 overline="Components"
                 >Browse All Components
               </PrettyCard>

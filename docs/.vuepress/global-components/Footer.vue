@@ -66,7 +66,7 @@ footer {
     flex-direction: column;
     max-width: var($content-width);
     margin: 0 auto;
-    padding: 2.5rem 2.5rem;
+    padding: 2.5rem 1.5rem;
 
     .links {
       display: flex;

@@ -20,7 +20,9 @@ Feather DS is comprised of many layers of design and technology. As the design a
 
 <div class="figures">
 <figure >
-<AtomicForces />
+
+![Forces image](./images/FORCES@2x.png)
+
 <figcaption>
 
 ### Forces
@@ -32,7 +34,9 @@ Feather DS is comprised of many layers of design and technology. As the design a
 </figure>
 
 <figure>
-<AtomicAtoms />
+
+![Atoms image](./images/ATOMS@2x.png)
+
 <figcaption>
 
 ### Atoms
@@ -43,7 +47,9 @@ Feather DS is comprised of many layers of design and technology. As the design a
 </figure>
 
 <figure >
-<AtomicMolecules />
+
+![Molecules image](./images/MOLECULES@2x.png)
+
 <figcaption>
 
 ### Molecules

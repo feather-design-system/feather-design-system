@@ -62,8 +62,8 @@
               <FeatherIcon :icon="code" />
             </FeatherButton>
             <FeatherDropdown>
-              <template v-slot:trigger>
-                <FeatherButton icon="Item Actions" menu-trigger>
+              <template v-slot:trigger="{ attrs, on }">
+                <FeatherButton icon="Item Actions" v-bind="attrs" v-on="on">
                   <FeatherIcon :icon="menu" />
                 </FeatherButton>
               </template>

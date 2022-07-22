@@ -6,12 +6,13 @@
     :cover="cover"
     :open="localOpen"
     :right="right"
+    :trigger-id="triggerId"
     @trigger-click="handleTriggerClick"
     @outside-click="handleOutsideClick"
     @close="handleClose"
   >
-    <template v-slot:trigger>
-      <slot name="trigger"></slot>
+    <template v-slot:trigger="{ attrs, on }">
+      <slot name="trigger" :attrs="attrs" :on="on"></slot>
     </template>
     <template v-slot:default="slotProps">
       <ul
@@ -46,6 +47,9 @@ export const props = {
   standard: {
     type: Boolean,
     default: false,
+  },
+  triggerId: {
+    type: String,
   },
 } as const;
 export const emits = {
@@ -132,12 +136,6 @@ export default defineComponent({
 </script>
 
 <style lang="scss" scoped>
-.feather-dropdown-menu-container {
-  :deep([menu-trigger]) {
-    margin-top: 0;
-    margin-bottom: 0;
-  }
-}
 .feather-dropdown {
   margin: 0;
   padding: 0;
