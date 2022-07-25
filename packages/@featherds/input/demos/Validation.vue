@@ -2,7 +2,7 @@
   <form @submit="onSubmit" novalidate>
     <h1>Register, v2</h1>
     * indicates required
-    <ValidationHeader :errorList="errors" />
+    <ValidationHeader />
     <FeatherInput
       v-if="test"
       label="Email *"
@@ -22,17 +22,14 @@
       required
     />
     <button type="submit">Submit</button>
+    <button type="button" @click="clearErrors">Clear</button>
   </form>
 </template>
 <script lang="ts">
 import { string } from "yup";
 import { defineComponent, ref } from "vue";
 import * as components from "./../src";
-import {
-  IValidationFailure,
-  useForm,
-  ValidationHeader,
-} from "@featherds/input-helper";
+import { useForm, ValidationHeader } from "@featherds/input-helper";
 
 export default defineComponent({
   setup() {
@@ -43,15 +40,15 @@ export default defineComponent({
 
     const email = ref("");
     const emailV = string().required("Required").email();
-    const errors = ref([] as IValidationFailure[]);
     const heading = ref();
     const focusElement = (id: string) => {
       (document.getElementById(id) as HTMLElement).focus();
     };
     const onSubmit = (e: Event) => {
       e.preventDefault();
-      errors.value = form.validate();
+      form.validate();
     };
+    const clearErrors = form.clearErrors;
 
     const addHash = (str: string) => `#${str}`;
     return {
@@ -61,10 +58,10 @@ export default defineComponent({
       name,
       nameV,
       onSubmit,
-      errors,
       heading,
       addHash,
       focusElement,
+      clearErrors,
     };
   },
   components: {

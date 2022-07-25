@@ -95,7 +95,7 @@
       required
     ></FeatherTextarea>
 
-    <button type="submit">Submit</button>
+    <FeatherButton type="submit" primary>Submit</FeatherButton>
     <div class="submitting" v-if="submitting">
       <FeatherSpinner />
     </div>
@@ -122,6 +122,7 @@ import { FeatherTextarea } from "@featherds/textarea";
 import { useForm, ValidationHeader } from "@featherds/input-helper";
 
 import { FeatherSpinner } from "@featherds/progress";
+import { FeatherButton } from "@featherds/button";
 
 import allCountries from "./countries.js";
 
@@ -335,6 +336,7 @@ export default {
     FeatherSpinner,
     FeatherTextarea,
     ValidationHeader,
+    FeatherButton,
   },
 };
 </script>

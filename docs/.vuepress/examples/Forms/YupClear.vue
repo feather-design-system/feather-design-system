@@ -11,6 +11,7 @@
       required
     />
     <!--Provide feedback for form submission for sighted and screen reader users-->
+    <FeatherButton type="button" @click="clearErrors" text>Clear</FeatherButton>
     <FeatherButton type="submit" primary>Submit</FeatherButton>
     <div class="submitting" v-if="submitting">
       <FeatherSpinner />
@@ -44,6 +45,7 @@ export default {
     //General Error variables
     const submitting = ref();
     const alert = ref();
+    const clearErrors = form.clearErrors;
     const onSubmit = (e) => {
       e.preventDefault();
       //run validation and pass the messages to the Validation Header component
@@ -68,6 +70,7 @@ export default {
       submitting,
       alert,
       form,
+      clearErrors,
     };
   },
   components: {

@@ -3,6 +3,7 @@ import {
   IFeatherForm,
   IValidationFailure,
   IValidationSuccess,
+  IValidator,
 } from "./useForm";
 const useValidation = (
   inputId: Ref<string>,
@@ -42,6 +43,13 @@ const useValidation = (
         } as IValidationFailure;
       }
     };
+    const clear = () => {
+      errorMessage.value = "";
+    };
+    const validator = {
+      clear,
+      validate,
+    } as IValidator;
     //watch for error from input
     //server side error, run validation when it occurs
     if (errorFromInput && isRef(errorFromInput)) {
@@ -53,7 +61,7 @@ const useValidation = (
       inputId,
       (curr, old) => {
         if (curr && form) {
-          form.register(curr, validate);
+          form.register(curr, validator);
         }
         if (old && form) {
           form.deregister(old);
