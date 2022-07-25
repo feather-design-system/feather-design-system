@@ -75,9 +75,26 @@ export default {
     //...
     const onSubmit = (e) => {
       e.preventDefault();
-      //run validation and assign the error messages to a variable
-      errorMessages.value = form.validate();
+      //run validation
+      form.validate();
       //...
+    };
+  },
+};
+```
+
+If you need to clear the error messages displayed via `useForm` it also provides a `clear` function. It removes all error messages and returns an empty array.
+
+```js
+import { useForm } from "@featherds/input-helper";
+
+export default {
+  setup() {
+    const form = useForm();
+    //...
+    const onClear = (e) => {
+      //clear errors
+      form.clear();
     };
   },
 };
