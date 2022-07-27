@@ -1,27 +1,14 @@
 <template>
   <div class="feather-snackbar-wrapper" v-if="modelValue || contentShow">
-    <div
-      class="feather-snackbar"
-      data-ref-id="feather-snackbar"
-      :class="{
-        'fade-in': internalValue,
-        'fade-out': contentShow && !internalValue,
-        center: center,
-        error: error,
-      }"
-      @animationend="closed"
-      @keydown="keyPressed"
-      @mouseover="stopTimer"
-      @mouseleave="resumeTimer"
-      @focusin="stopTimer"
-      @focusout="resumeTimer"
-    >
+    <div class="feather-snackbar" data-ref-id="feather-snackbar" :class="{
+      'fade-in': internalValue,
+      'fade-out': contentShow && !internalValue,
+      center: center,
+      error: error,
+    }" @animationend="closed" @keydown="keyPressed" @mouseover="stopTimer" @mouseleave="resumeTimer"
+      @focusin="stopTimer" @focusout="resumeTimer">
       <div class="content-wrapper" role="status" aria-live="polite">
-        <div
-          class="content"
-          v-if="contentShow"
-          data-ref-id="feather-snackbar-content"
-        >
+        <div class="content" v-if="contentShow" data-ref-id="feather-snackbar-content">
           <slot />
         </div>
       </div>
@@ -78,7 +65,7 @@ export default defineComponent({
       "unqueueSnackbar",
       false as false | ((id: number) => void)
     );
-    const nextSnackbar = inject("nextSnackbar", () => {});
+    const nextSnackbar = inject("nextSnackbar", () => { });
     interface ITimer {
       pause: () => void;
       resume: () => void;
@@ -90,7 +77,7 @@ export default defineComponent({
       const pause = () => {
         if (!id) return;
         _clearTimeout(id);
-        id = -1;
+        id = 0;
         remaining -= Date.now() - start;
       };
       const resume = () => {
@@ -214,25 +201,32 @@ export default defineComponent({
       max-width: calc(400px + 1rem);
       padding-right: 1rem;
     }
+
     .button {
       margin-left: auto;
       padding: 0 0.5rem 0 0.5rem;
+
       & :deep(.btn-text) {
         color: var($high-visibility-text-on-surface);
+
         &:focus {
           border-color: var($high-visibility-text-on-surface);
         }
       }
+
       color: var($secondary-text-on-color);
     }
 
     &.error {
       background-color: var($error);
+
       .content-wrapper {
         color: var($secondary-text-on-color);
       }
+
       :deep(.btn-text) {
         color: var($primary-text-on-color);
+
         &:focus {
           border-color: var($primary-text-on-color);
         }
@@ -244,15 +238,18 @@ export default defineComponent({
         opacity: 1;
         transform: translateY(0);
       }
+
       99% {
         opacity: 0;
         transform: translateY(0);
       }
+
       to {
         opacity: 0;
         transform: translateY(12px);
       }
     }
+
     &.fade-out {
       animation-duration: 280ms;
       animation-name: fadeout;
@@ -260,6 +257,7 @@ export default defineComponent({
       opacity: 0;
       transform: translateY(12px);
     }
+
     &.fade-in {
       transition: all 280ms;
       transition-timing-function: cubic-bezier(0, 0, 0.2, 1);
