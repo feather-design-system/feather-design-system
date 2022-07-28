@@ -1,3 +1,25 @@
+## [0.10.17](https://github.com/feather-design-system/feather-design-system/compare/v0.10.15...v0.10.17) (2022-07-28)
+
+
+### Bug Fixes
+
+* **snackbar:** timeout not resuming when snackbar is blurred ([188e418](https://github.com/feather-design-system/feather-design-system/commit/188e4188e079ed127ecfbcc1e5c8a33705555ae3))
+
+
+### Features
+
+* adding ability to clear form validation ([bffb2d1](https://github.com/feather-design-system/feather-design-system/commit/bffb2d1b8744aaa52c70e17bb6b8fbc7ba5b5c87)), closes [#121](https://github.com/feather-design-system/feather-design-system/issues/121)
+* **menu:** align to attrs/on api from tooltip ([e2d1425](https://github.com/feather-design-system/feather-design-system/commit/e2d14253cb6269ecbda345b597c10230c554cf28)), closes [#118](https://github.com/feather-design-system/feather-design-system/issues/118)
+
+
+### BREAKING CHANGES
+
+* **menu:** No longer need to use the `menu-trigger` attribute.
+Instead you need to use the `trigger` scoped slot properties `attrs` and `on`.
+This change is a breaking change for FeatherDropdown.
+
+
+
 ## [0.10.15](https://github.com/feather-design-system/feather-design-system/compare/v0.10.14...v0.10.15) (2022-07-14)
 
 

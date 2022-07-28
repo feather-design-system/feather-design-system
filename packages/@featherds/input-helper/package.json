@@ -1,6 +1,6 @@
 {
   "name": "@featherds/input-helper",
-  "version": "0.10.15",
+  "version": "0.10.17",
   "publishConfig": {
     "access": "public"
   },
