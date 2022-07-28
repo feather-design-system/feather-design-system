@@ -1,5 +1,7 @@
 import { nextTick } from "vue";
 import FeatherDateInput from "./FeatherDateInput.vue";
+import format from "date-fns/format";
+import isSameDay from "date-fns/isSameDay";
 
 import * as id from "@featherds/utils/id";
 const idSpy = jest.spyOn(id, "getSafeId").mockImplementation((x) => x);
@@ -40,6 +42,27 @@ const getWrapper = function (options: Record<string, unknown> = {}) {
 };
 
 describe("FeatherDateInput.vue", () => {
+  it("should parse valid date strings pasted into spin button", async () => {
+    const wrapper = getWrapper();
+    const month = wrapper.findComponent({ ref: "monthButton" });
+    const date = new Date(2022, 1, 1);
+
+    month.vm.$emit("paste", format(date, "yyyy-MM-dd"));
+    await nextTick();
+    const emitted = wrapper.emitted<[Date]>("update:modelValue");
+    if (emitted) {
+      expect(isSameDay(emitted[0][0], date)).toBe(true);
+    }
+  });
+  it("should not parse invalid date string pasted into spin button", async () => {
+    const wrapper = getWrapper();
+    const month = wrapper.findComponent({ ref: "monthButton" });
+
+    month.vm.$emit("paste", "not a date");
+    await nextTick();
+    const emitted = wrapper.emitted<[Date]>("update:modelValue");
+    expect(emitted).toBeUndefined();
+  });
   it("should move from month to day with next from month spinner", async () => {
     const wrapper = getWrapper();
     const stubFocusDay = jest.fn();

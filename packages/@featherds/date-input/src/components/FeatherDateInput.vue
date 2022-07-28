@@ -46,6 +46,7 @@
               v-model="month"
               placeholder="mm"
               @next="focusDay"
+              @paste="handlePaste"
               data-ref-id="feather-date-input-month"
             />
             /
@@ -59,6 +60,7 @@
               placeholder="dd"
               @next="focusYear"
               @previous="focusMonth"
+              @paste="handlePaste"
               data-ref-id="feather-date-input-day"
             />
             /
@@ -71,6 +73,7 @@
               v-model="year"
               placeholder="yyyy"
               @previous="focusDay"
+              @paste="handlePaste"
               data-ref-id="feather-date-input-year"
             />
           </div>
@@ -131,6 +134,8 @@ import DateIcon from "./Calendar/DateIcon.vue";
 import Calendar from "./Calendar/Calendar.vue";
 import { IDateDisabledConfig, LABELS } from "./types";
 import { FeatherMenu } from "@featherds/menu";
+import parse from "date-fns/parse";
+import { lastDayOfQuarterWithOptions } from "date-fns/fp";
 
 export const props = {
   ...InputWrapperProps,
@@ -163,6 +168,27 @@ export const props = {
   schema: {
     type: Object,
     required: false,
+  },
+  pasteFormats: {
+    type: Array as PropType<string[]>,
+    required: false,
+    default: () => {
+      return [
+        "yyyy-MM-dd",
+        "MM/dd/yyyy",
+        "MM-dd-yyyy",
+        "MMM/dd/yyyy",
+        "MMM-dd-yyyy",
+        "MM/dd/yy",
+        "MM-dd-yy",
+        "MMM/dd/yy",
+        "MMM-dd-yy",
+        "M/d/yyyy",
+        "M-d-yyyy",
+        "M/d/yy",
+        "M-d-yy",
+      ];
+    },
   },
 } as const;
 export const emits = {
@@ -317,6 +343,20 @@ export default defineComponent({
         spinbuttons.deselectAllSpinButtons();
       }
     };
+    const handlePaste = (pasted: string) => {
+      let date = new Date();
+      const found = props.pasteFormats.some((format) => {
+        try {
+          date = parse(pasted, format, new Date(2022, 0, 1));
+          return !isNaN(date.getTime());
+        } catch (e) {
+          return false;
+        }
+      });
+      if (found) {
+        handleCalendarSelection(date);
+      }
+    };
     const hasFocus = computed(() => {
       return focused.value || showMenu.value;
     });
@@ -430,6 +470,7 @@ export default defineComponent({
       handleClear,
       reset,
       handleFocus,
+      handlePaste,
       handleBlur,
       handleKeyDown,
       handleWrapperClick,

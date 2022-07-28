@@ -27,15 +27,16 @@ These components are often found in the form of workflows where data entry is th
 
 ### Props
 
-| Name          | Description                                                                                                                           | Type      | Required | Default                               |
-| ------------- | ------------------------------------------------------------------------------------------------------------------------------------- | --------- | -------- | ------------------------------------- |
-| modelValue    | value of the input                                                                                                                    | `Date`    | `false`  | -                                     |
-| minYear       | minimum year to show                                                                                                                  | `Number`  | `false`  | `1900`                                |
-| maxYear       | maximum year to show                                                                                                                  | `Number`  | `false`  | `2030`                                |
-| mondayFirst   | should monday be first day of the week.                                                                                               | `Boolean` | `false`  | -                                     |
-| disabledDates | can be used to configure disabled dates. See [Disabled Dates](#disabled-dates)                                                        | `Object`  | `false`  | See [Disabled Dates](#disabled-dates) |
-| labels        | Object containing labels to be used by this component. Mainly used for i18n or customization of labels. See [Labels](#labels) example | `Object`  | `false`  | See [Labels](#labels) example         |
-| schema        | a schema for use in validation                                                                                                        | `Object`  | `false`  | -                                     |
+| Name          | Description                                                                                                                           | Type       | Required | Default                               |
+| ------------- | ------------------------------------------------------------------------------------------------------------------------------------- | ---------- | -------- | ------------------------------------- |
+| modelValue    | value of the input                                                                                                                    | `Date`     | `false`  | -                                     |
+| minYear       | minimum year to show                                                                                                                  | `Number`   | `false`  | `1900`                                |
+| maxYear       | maximum year to show                                                                                                                  | `Number`   | `false`  | `2030`                                |
+| mondayFirst   | should monday be first day of the week.                                                                                               | `Boolean`  | `false`  | -                                     |
+| disabledDates | can be used to configure disabled dates. See [Disabled Dates](#disabled-dates)                                                        | `Object`   | `false`  | See [Disabled Dates](#disabled-dates) |
+| labels        | Object containing labels to be used by this component. Mainly used for i18n or customization of labels. See [Labels](#labels) example | `Object`   | `false`  | See [Labels](#labels) example         |
+| schema        | a schema for use in validation                                                                                                        | `Object`   | `false`  | -                                     |
+| pasteFormats  | checks pasted strings for allowed date formats                                                                                        | `String[]` | `false`  | See [Pasting](#pasting)               |
 
 ### Labels
 
@@ -71,12 +72,35 @@ Text labels for Date Input can be customized via the `labels` property. The defa
 
 - `update:modelValue` - triggered with new value
 - `blur` - triggered when control loses focus
--
+
+### Pasting
+
+When pasting a string to `FeatherDateInput` we will attempt to parse it for a valid date based on the formats specified in the prop `pasteFormats`. The order of the array is important as that is the order they will be checked. We utilize `date-fns/parse` for handling parsing the string therefore all formats adhere to its syntax. Check out [parse](https://date-fns.org/v2.29.1/docs/parse) for details. The default formats are as follows:
+
+```js
+[
+  "yyyy-MM-dd",
+  "MM/dd/yyyy",
+  "MM-dd-yyyy",
+  "MMM/dd/yyyy",
+  "MMM-dd-yyyy",
+  "MM/dd/yy",
+  "MM-dd-yy",
+  "MMM/dd/yy",
+  "MMM-dd-yy",
+  "M/d/yyyy",
+  "M-d-yyyy",
+  "M/d/yy",
+  "M-d-yy",
+];
+```
+
 ### Exposes
 
 - `reset` - clears the value, like the clear icon, but also resets the spinners to their default states
 
 This method is useful for example when clearing a form, you can use it within a clear method like the following;
+
 ```
 clearAll() {
   ...
