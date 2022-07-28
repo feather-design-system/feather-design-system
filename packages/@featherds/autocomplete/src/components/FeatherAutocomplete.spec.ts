@@ -8,7 +8,6 @@ import { nextTick } from "vue";
 import "@featherds/input-helper/test/MutationObserver";
 import { getCalls } from "@featherds/utils/test/calls";
 import { Code } from "@featherds/utils/keys";
-import { trigger } from "@vue/reactivity";
 jest.spyOn(id, "getSafeId").mockImplementation((x) => x);
 
 const getProps =
