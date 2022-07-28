@@ -124,6 +124,10 @@ export default defineComponent({
     handlePaste(e: ClipboardEvent) {
       if (e.clipboardData) {
         const paste = e.clipboardData.getData("text");
+        if (paste.length <= this.max.toString().length) {
+          this.parseValue(paste);
+          return;
+        }
         this.$emit("paste", paste);
       }
     },

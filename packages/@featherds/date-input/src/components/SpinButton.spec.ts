@@ -159,12 +159,28 @@ describe("SpinButton.vue", () => {
     });
     expect(getValue(wrapper)).toBe("dd");
   });
+  it("should parse pasted value if it matches a valid value", async () => {
+    const wrapper = getWrapper({
+      propsData: {
+        min: 1,
+        max: 31,
+        label: "Test",
+        placeholder: "dd",
+      },
+    });
+    const pasted = "28";
+    await wrapper.find("span").trigger("paste", {
+      clipboardData: { getData: () => pasted },
+    });
+    await wrapper.vm.$nextTick();
+    expect(getCalls<[number]>(wrapper, "update:modelValue")[0][0]).toBe(28);
+  });
   it("should trigger paste event when text is pasted", async () => {
     const wrapper = getWrapper({
       propsData: {
         modelValue: 11,
         min: 5,
-        max: 1000,
+        max: 10,
         label: "Test",
         placeholder: "dd",
       },
