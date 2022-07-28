@@ -37,7 +37,7 @@ export default defineComponent({
 <style lang="scss" scoped>
 .demo-app-bar {
   position: absolute !important;
-  :deep(header) {
+  :deep(.header) {
     position: absolute !important;
     z-index: 1 !important;
   }

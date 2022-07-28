@@ -52,7 +52,7 @@ export default defineComponent({
 // scss to make it all run in container
 .demo-app-bar {
   position: absolute !important;
-  :deep(header) {
+  :deep(.header) {
     position: absolute !important;
     z-index: 1 !important;
   }
