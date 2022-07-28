@@ -13,6 +13,7 @@
     @keydown="handleKeyDown"
     @focus="handleFocus"
     @click.stop="handleFocus"
+    @paste.stop.prevent="handlePaste"
     >{{ displayText }}</span
   >
 </template>
@@ -25,7 +26,7 @@ export default defineComponent({
     prop: "modelValue",
     event: "update:modelValue",
   },
-  emits: ["update:modelValue", "next", "previous"],
+  emits: ["update:modelValue", "next", "previous", "paste"],
   props: {
     min: {
       type: Number,
@@ -119,6 +120,12 @@ export default defineComponent({
       }
       this.highlight(e.target as HTMLInputElement);
       this.input = "";
+    },
+    handlePaste(e: ClipboardEvent) {
+      if (e.clipboardData) {
+        const paste = e.clipboardData.getData("text");
+        this.$emit("paste", paste);
+      }
     },
     highlight(el: HTMLElement) {
       if (document.createRange) {

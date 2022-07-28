@@ -159,6 +159,22 @@ describe("SpinButton.vue", () => {
     });
     expect(getValue(wrapper)).toBe("dd");
   });
+  it("should trigger paste event when text is pasted", async () => {
+    const wrapper = getWrapper({
+      propsData: {
+        modelValue: 11,
+        min: 5,
+        max: 1000,
+        label: "Test",
+        placeholder: "dd",
+      },
+    });
+    const pasted = "test";
+    await wrapper.find("span").trigger("paste", {
+      clipboardData: { getData: () => pasted },
+    });
+    expect(getCalls<[string]>(wrapper, "paste")[0][0]).toBe(pasted);
+  });
   it("should clear input when no character is typed", async () => {
     const wrapper = getWrapper({
       propsData: {
