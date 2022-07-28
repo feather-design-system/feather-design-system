@@ -20,7 +20,7 @@ menu: foundation
 
 </style>
 
-![Principles cover image](./images/PRINCIPLES_BANNER%402x.png)
+![Principles cover image](./images/PRINCIPLES_BANNER@2x.png)
 
 ## Simplicity
 
