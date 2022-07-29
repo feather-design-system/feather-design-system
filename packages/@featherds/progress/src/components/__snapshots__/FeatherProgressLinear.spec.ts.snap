@@ -1,0 +1,640 @@
+// Vitest Snapshot v1
+
+exports[`FeatherProgressLinear.vue > Determinate > should NOT show textual status when showPercentage is false 1`] = `
+<div
+  aria-busy="true"
+  class="feather-progress-container determinate"
+>
+  <span
+    class="reduced-motion-caption"
+  >
+    Loading...
+  </span>
+  <div
+    class="feather-progress-linear"
+  >
+    <span
+      class="feather-progress-track"
+    />
+    <span
+      class="feather-progress-indicator"
+      style="width: 0%;"
+    />
+    <span
+      class="feather-progress-indicator2"
+    />
+  </div>
+  
+  <!--v-if-->
+  
+  <span
+    aria-live="assertive"
+    class="announce"
+  />
+  <progress
+    max="100"
+    value="0"
+  />
+</div>
+`;
+
+exports[`FeatherProgressLinear.vue > Determinate > should NOT show textual status when showPercentage is false 2`] = `
+<div
+  aria-busy="true"
+  class="feather-progress-container determinate"
+>
+  <span
+    class="reduced-motion-caption"
+  >
+    Loading...
+  </span>
+  <div
+    class="feather-progress-linear"
+  >
+    <span
+      class="feather-progress-track"
+    />
+    <span
+      class="feather-progress-indicator"
+      style="width: 25%;"
+    />
+    <span
+      class="feather-progress-indicator2"
+    />
+  </div>
+  
+  <!--v-if-->
+  
+  <span
+    aria-live="assertive"
+    class="announce"
+  >
+    25 percent
+  </span>
+  <progress
+    max="100"
+    value="25"
+  />
+</div>
+`;
+
+exports[`FeatherProgressLinear.vue > Determinate > should NOT show textual status when showPercentage is false 3`] = `
+<div
+  aria-busy="true"
+  class="feather-progress-container determinate"
+>
+  <span
+    class="reduced-motion-caption"
+  >
+    Loading...
+  </span>
+  <div
+    class="feather-progress-linear"
+  >
+    <span
+      class="feather-progress-track"
+    />
+    <span
+      class="feather-progress-indicator"
+      style="width: 50%;"
+    />
+    <span
+      class="feather-progress-indicator2"
+    />
+  </div>
+  
+  <!--v-if-->
+  
+  <span
+    aria-live="assertive"
+    class="announce"
+  >
+    50 percent
+  </span>
+  <progress
+    max="100"
+    value="50"
+  />
+</div>
+`;
+
+exports[`FeatherProgressLinear.vue > Determinate > should be classified as determinate 1`] = `
+<div
+  aria-busy="true"
+  class="feather-progress-container determinate"
+>
+  <span
+    class="reduced-motion-caption"
+  >
+    Loading...
+  </span>
+  <div
+    class="feather-progress-linear"
+  >
+    <span
+      class="feather-progress-track"
+    />
+    <span
+      class="feather-progress-indicator"
+      style="width: 0%;"
+    />
+    <span
+      class="feather-progress-indicator2"
+    />
+  </div>
+  
+  <!--v-if-->
+  
+  <span
+    aria-live="assertive"
+    class="announce"
+  />
+  <progress
+    max="100"
+    value="0"
+  />
+</div>
+`;
+
+exports[`FeatherProgressLinear.vue > Determinate > should handle errors 1`] = `
+<div
+  aria-busy="true"
+  class="feather-progress-container determinate"
+>
+  <span
+    class="reduced-motion-caption"
+  >
+    Loading...
+  </span>
+  <div
+    class="feather-progress-linear"
+  >
+    <span
+      class="feather-progress-track"
+    />
+    <span
+      class="feather-progress-indicator"
+      style="width: 0%;"
+    />
+    <span
+      class="feather-progress-indicator2"
+    />
+  </div>
+  
+  <!--v-if-->
+  
+  <span
+    aria-live="assertive"
+    class="announce"
+  />
+  <progress
+    max="100"
+    value="0"
+  />
+</div>
+`;
+
+exports[`FeatherProgressLinear.vue > Determinate > should handle errors 2`] = `
+<div
+  aria-busy="true"
+  class="feather-progress-container completed error"
+>
+  <span
+    class="reduced-motion-caption"
+  >
+    Loading...
+  </span>
+  <div
+    class="feather-progress-linear"
+  >
+    <span
+      class="feather-progress-track"
+    />
+    <span
+      class="feather-progress-indicator"
+      style="width: 0%;"
+    />
+    <span
+      class="feather-progress-indicator2"
+    />
+  </div>
+  <div
+    class="error-message"
+  >
+    
+    Error Message.
+    
+  </div>
+  <span
+    aria-live="assertive"
+    class="announce"
+  >
+    Progress interrupted, Error Message.
+  </span>
+  <progress
+    max="100"
+    value="0"
+  />
+</div>
+`;
+
+exports[`FeatherProgressLinear.vue > Determinate > should present textual status when showPercentage is true 1`] = `
+<div
+  aria-busy="true"
+  class="feather-progress-container determinate"
+>
+  <span
+    class="reduced-motion-caption"
+  >
+    Loading...
+  </span>
+  <div
+    class="feather-progress-linear"
+  >
+    <span
+      class="feather-progress-track"
+    />
+    <span
+      class="feather-progress-indicator"
+      style="width: 0%;"
+    />
+    <span
+      class="feather-progress-indicator2"
+    />
+  </div>
+  
+  <div
+    aria-live="off"
+    class="feather-progress-report"
+  >
+    0%
+  </div>
+  
+  <span
+    aria-live="assertive"
+    class="announce"
+  />
+  <progress
+    max="100"
+    value="0"
+  />
+</div>
+`;
+
+exports[`FeatherProgressLinear.vue > Determinate > should present textual status when showPercentage is true 2`] = `
+<div
+  aria-busy="true"
+  class="feather-progress-container determinate"
+>
+  <span
+    class="reduced-motion-caption"
+  >
+    Loading...
+  </span>
+  <div
+    class="feather-progress-linear"
+  >
+    <span
+      class="feather-progress-track"
+    />
+    <span
+      class="feather-progress-indicator"
+      style="width: 25%;"
+    />
+    <span
+      class="feather-progress-indicator2"
+    />
+  </div>
+  
+  <div
+    aria-live="off"
+    class="feather-progress-report"
+  >
+    25%
+  </div>
+  
+  <span
+    aria-live="assertive"
+    class="announce"
+  >
+    25 percent
+  </span>
+  <progress
+    max="100"
+    value="25"
+  />
+</div>
+`;
+
+exports[`FeatherProgressLinear.vue > Determinate > should present textual status when showPercentage is true 3`] = `
+<div
+  aria-busy="true"
+  class="feather-progress-container determinate"
+>
+  <span
+    class="reduced-motion-caption"
+  >
+    Loading...
+  </span>
+  <div
+    class="feather-progress-linear"
+  >
+    <span
+      class="feather-progress-track"
+    />
+    <span
+      class="feather-progress-indicator"
+      style="width: 50%;"
+    />
+    <span
+      class="feather-progress-indicator2"
+    />
+  </div>
+  
+  <div
+    aria-live="off"
+    class="feather-progress-report"
+  >
+    50%
+  </div>
+  
+  <span
+    aria-live="assertive"
+    class="announce"
+  >
+    50 percent
+  </span>
+  <progress
+    max="100"
+    value="50"
+  />
+</div>
+`;
+
+exports[`FeatherProgressLinear.vue > Determinate > should transition to completed state 1`] = `
+<div
+  aria-busy="true"
+  class="feather-progress-container determinate"
+>
+  <span
+    class="reduced-motion-caption"
+  >
+    Loading...
+  </span>
+  <div
+    class="feather-progress-linear"
+  >
+    <span
+      class="feather-progress-track"
+    />
+    <span
+      class="feather-progress-indicator"
+      style="width: 50%;"
+    />
+    <span
+      class="feather-progress-indicator2"
+    />
+  </div>
+  
+  <!--v-if-->
+  
+  <span
+    aria-live="assertive"
+    class="announce"
+  >
+    50 percent
+  </span>
+  <progress
+    max="100"
+    value="50"
+  />
+</div>
+`;
+
+exports[`FeatherProgressLinear.vue > Determinate > should transition to completed state 2`] = `
+<div
+  aria-busy="false"
+  class="feather-progress-container completed determinate"
+>
+  <span
+    class="reduced-motion-caption"
+  >
+    Loading...
+  </span>
+  <div
+    class="feather-progress-linear"
+  >
+    <span
+      class="feather-progress-track"
+    />
+    <span
+      class="feather-progress-indicator"
+      style="width: 100%;"
+    />
+    <span
+      class="feather-progress-indicator2"
+    />
+  </div>
+  
+  <!--v-if-->
+  
+  <span
+    aria-live="assertive"
+    class="announce"
+  >
+    100 percent, progress complete
+  </span>
+  <progress
+    max="100"
+    value="100"
+  />
+</div>
+`;
+
+exports[`FeatherProgressLinear.vue > Indeterminate > should be classified as indeterminate 1`] = `
+<div
+  aria-busy="true"
+  class="feather-progress-container indeterminate"
+>
+  <span
+    class="reduced-motion-caption"
+  >
+    Loading...
+  </span>
+  <div
+    class="feather-progress-linear"
+  >
+    <span
+      class="feather-progress-track"
+    />
+    <span
+      class="feather-progress-indicator"
+    />
+    <span
+      class="feather-progress-indicator2"
+    />
+  </div>
+  
+  <!--v-if-->
+  
+  <span
+    aria-live="assertive"
+    class="announce"
+  />
+  <progress
+    max="100"
+  />
+</div>
+`;
+
+exports[`FeatherProgressLinear.vue > Indeterminate > should handle errors 1`] = `
+<div
+  aria-busy="true"
+  class="feather-progress-container indeterminate"
+>
+  <span
+    class="reduced-motion-caption"
+  >
+    Loading...
+  </span>
+  <div
+    class="feather-progress-linear"
+  >
+    <span
+      class="feather-progress-track"
+    />
+    <span
+      class="feather-progress-indicator"
+    />
+    <span
+      class="feather-progress-indicator2"
+    />
+  </div>
+  
+  <!--v-if-->
+  
+  <span
+    aria-live="assertive"
+    class="announce"
+  />
+  <progress
+    max="100"
+  />
+</div>
+`;
+
+exports[`FeatherProgressLinear.vue > Indeterminate > should handle errors 2`] = `
+<div
+  aria-busy="true"
+  class="feather-progress-container completed error"
+>
+  <span
+    class="reduced-motion-caption"
+  >
+    Loading...
+  </span>
+  <div
+    class="feather-progress-linear"
+  >
+    <span
+      class="feather-progress-track"
+    />
+    <span
+      class="feather-progress-indicator"
+    />
+    <span
+      class="feather-progress-indicator2"
+    />
+  </div>
+  <div
+    class="error-message"
+  >
+    
+    Error Message.
+    
+  </div>
+  <span
+    aria-live="assertive"
+    class="announce"
+  >
+    Progress interrupted, Error Message.
+  </span>
+  <progress
+    max="100"
+  />
+</div>
+`;
+
+exports[`FeatherProgressLinear.vue > Indeterminate > should ignore textual status when showPercentage is true 1`] = `
+<div
+  aria-busy="true"
+  class="feather-progress-container indeterminate"
+>
+  <span
+    class="reduced-motion-caption"
+  >
+    Loading...
+  </span>
+  <div
+    class="feather-progress-linear"
+  >
+    <span
+      class="feather-progress-track"
+    />
+    <span
+      class="feather-progress-indicator"
+    />
+    <span
+      class="feather-progress-indicator2"
+    />
+  </div>
+  
+  <!--v-if-->
+  
+  <span
+    aria-live="assertive"
+    class="announce"
+  />
+  <progress
+    max="100"
+  />
+</div>
+`;
+
+exports[`FeatherProgressLinear.vue > Indeterminate > should set label for indeterminate announcement 1`] = `
+<div
+  aria-busy="true"
+  class="feather-progress-container indeterminate"
+>
+  <span
+    class="reduced-motion-caption"
+  >
+    Loading...
+  </span>
+  <div
+    class="feather-progress-linear"
+  >
+    <span
+      class="feather-progress-track"
+    />
+    <span
+      class="feather-progress-indicator"
+    />
+    <span
+      class="feather-progress-indicator2"
+    />
+  </div>
+  
+  <!--v-if-->
+  
+  <span
+    aria-live="assertive"
+    class="announce"
+  >
+    In progress, please wait
+  </span>
+  <progress
+    max="100"
+  />
+</div>
+`;

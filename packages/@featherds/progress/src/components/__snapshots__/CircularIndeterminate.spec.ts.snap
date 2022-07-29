@@ -1,0 +1,205 @@
+// Vitest Snapshot v1
+
+exports[`CircularIndeterminate.vue > should support large size by default 1`] = `
+<div
+  class="indeterminate-container lg"
+>
+  <svg
+    viewBox="0 0 100 100"
+  >
+    <clippath
+      id="clip"
+    >
+      <path
+        d="M 50 0 a 50 50 0 0 1 0 100 50 50 0 0 1 1 -100 v 10 a 22 22 0 0 0 0 80 22 22 0 0 0 1 -80"
+      />
+    </clippath>
+    <foreignobject
+      clip-path="url(#clip)"
+      height="100"
+      width="100"
+      x="0"
+      y="0"
+    >
+      <div
+        class="track"
+      />
+    </foreignobject>
+    <g
+      class="indicator"
+    >
+      <foreignobject
+        clip-path="url(#clip)"
+        height="100"
+        width="100"
+        x="0"
+        y="0"
+      >
+        <div
+          class="gradient"
+        />
+      </foreignobject>
+      <!-- &lt;circle class=&quot;tip&quot; r=&quot;5.15&quot; cx=&quot;51&quot; cy=&quot;5&quot;&gt;&lt;/circle&gt; -->
+      <rect
+        class="tip"
+        height="10"
+        width="3"
+        x="50"
+      />
+    </g>
+  </svg>
+</div>
+`;
+
+exports[`CircularIndeterminate.vue > should support various sizes 1`] = `
+<div
+  class="indeterminate-container sm"
+>
+  <svg
+    viewBox="0 0 100 100"
+  >
+    <clippath
+      id="clip"
+    >
+      <path
+        d="M 50 0 a 50 50 0 0 1 0 100 50 50 0 0 1 1 -100 v 10 a 22 22 0 0 0 0 80 22 22 0 0 0 1 -80"
+      />
+    </clippath>
+    <foreignobject
+      clip-path="url(#clip)"
+      height="100"
+      width="100"
+      x="0"
+      y="0"
+    >
+      <div
+        class="track"
+      />
+    </foreignobject>
+    <g
+      class="indicator"
+    >
+      <foreignobject
+        clip-path="url(#clip)"
+        height="100"
+        width="100"
+        x="0"
+        y="0"
+      >
+        <div
+          class="gradient"
+        />
+      </foreignobject>
+      <!-- &lt;circle class=&quot;tip&quot; r=&quot;5.15&quot; cx=&quot;51&quot; cy=&quot;5&quot;&gt;&lt;/circle&gt; -->
+      <rect
+        class="tip"
+        height="10"
+        width="3"
+        x="50"
+      />
+    </g>
+  </svg>
+</div>
+`;
+
+exports[`CircularIndeterminate.vue > should support various sizes 2`] = `
+<div
+  class="indeterminate-container md"
+>
+  <svg
+    viewBox="0 0 100 100"
+  >
+    <clippath
+      id="clip"
+    >
+      <path
+        d="M 50 0 a 50 50 0 0 1 0 100 50 50 0 0 1 1 -100 v 10 a 22 22 0 0 0 0 80 22 22 0 0 0 1 -80"
+      />
+    </clippath>
+    <foreignobject
+      clip-path="url(#clip)"
+      height="100"
+      width="100"
+      x="0"
+      y="0"
+    >
+      <div
+        class="track"
+      />
+    </foreignobject>
+    <g
+      class="indicator"
+    >
+      <foreignobject
+        clip-path="url(#clip)"
+        height="100"
+        width="100"
+        x="0"
+        y="0"
+      >
+        <div
+          class="gradient"
+        />
+      </foreignobject>
+      <!-- &lt;circle class=&quot;tip&quot; r=&quot;5.15&quot; cx=&quot;51&quot; cy=&quot;5&quot;&gt;&lt;/circle&gt; -->
+      <rect
+        class="tip"
+        height="10"
+        width="3"
+        x="50"
+      />
+    </g>
+  </svg>
+</div>
+`;
+
+exports[`CircularIndeterminate.vue > should support various sizes 3`] = `
+<div
+  class="indeterminate-container lg"
+>
+  <svg
+    viewBox="0 0 100 100"
+  >
+    <clippath
+      id="clip"
+    >
+      <path
+        d="M 50 0 a 50 50 0 0 1 0 100 50 50 0 0 1 1 -100 v 10 a 22 22 0 0 0 0 80 22 22 0 0 0 1 -80"
+      />
+    </clippath>
+    <foreignobject
+      clip-path="url(#clip)"
+      height="100"
+      width="100"
+      x="0"
+      y="0"
+    >
+      <div
+        class="track"
+      />
+    </foreignobject>
+    <g
+      class="indicator"
+    >
+      <foreignobject
+        clip-path="url(#clip)"
+        height="100"
+        width="100"
+        x="0"
+        y="0"
+      >
+        <div
+          class="gradient"
+        />
+      </foreignobject>
+      <!-- &lt;circle class=&quot;tip&quot; r=&quot;5.15&quot; cx=&quot;51&quot; cy=&quot;5&quot;&gt;&lt;/circle&gt; -->
+      <rect
+        class="tip"
+        height="10"
+        width="3"
+        x="50"
+      />
+    </g>
+  </svg>
+</div>
+`;
