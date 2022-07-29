@@ -1,5 +1,8 @@
 module.exports.config = {
-  specs: ["./packages/@featherds/**/e2e/**/*.spec.js", "./packages/@featherds/**/wdio/**/*.spec.ts"],
+  specs: [
+    "./packages/@featherds/**/e2e/**/*.spec.js",
+    "./packages/@featherds/**/wdio/**/*.spec.ts",
+  ],
   baseUrl: `${process.env.VUE_DEV_SERVER_URL}`,
   services: ["selenium-standalone"],
   exclude: [],
