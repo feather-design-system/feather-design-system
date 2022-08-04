@@ -1,4 +1,3 @@
-@@ -1,77 +0,0 @@
 <template>
   <FeatherAppLayout content-layout="full" nav-layout="vertical">
     <template v-slot:header>

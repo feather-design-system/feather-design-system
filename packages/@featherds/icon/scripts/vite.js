@@ -45,7 +45,7 @@ const run = (folder, files) => {
           .catch(console.log)
           .then(() =>
             fs.move(
-              path.join(folder, path.basename(f, ".vue") + ".es.js"),
+              path.join(folder, path.basename(f, ".vue") + ".mjs"),
               path.join(folder, path.basename(f, ".vue") + ".js"),
               { overwrite: true }
             )

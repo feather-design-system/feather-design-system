@@ -18,13 +18,13 @@ const { getFilter } = require("./utils");
           await build.run({ entry, dest });
 
           //add new file for single import
-          const newFileName = "app.js";
+          const newFileName = "app.mjs";
           const cssPath = "./style.css";
           const cssExists = fs.existsSync(path.join(dest, cssPath));
           return fs.writeFile(
             path.join(dest, newFileName),
             `${cssExists ? `import "${cssPath}";` : ""}
-export * from  "./app.es.js";
+export * from  "./index.mjs";
     `
           );
         }),
