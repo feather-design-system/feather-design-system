@@ -1,8 +1,9 @@
 ---
 title: "Accessibility"
+pre: "Welcome"
 description: "Creating components for everyone"
 lang: en-US
-layout: "ContentLayout"
+tags: ["Accessibility", "i18n"]
 ---
 
 One of our primary goals with Feather Design System is to have patterns and components that work for everyone. We strive to achieve this goal but understand that accessibility is ever evolving, with updates to technologies and new best practices emerging.

@@ -11,13 +11,13 @@
           </li>
           <li>
             <a
-              href="https://github.com/feather-design-system/feather-design-system/blob/main/CONTRIBUTING.md"
+              href="https://github.com/feather-design-system/feather-design-system/blob/dev/CONTRIBUTING.md"
               >Contributing</a
             >
           </li>
           <li>
             <a
-              href="https://github.com/feather-design-system/feather-design-system/blob/main/LICENSE"
+              href="https://github.com/feather-design-system/feather-design-system/blob/dev/LICENSE"
               >Licenses</a
             >
           </li>
@@ -30,15 +30,15 @@
             >
           </li>
           <li>
+            <a href="https://nanthealth.com/careers/">NantHealth Careers</a>
+          </li>
+          <li>
             <a href="https://www.opennms.com/en/blog/category/blog/"
               >OpenNMS Blog</a
             >
           </li>
           <li>
             <a href="https://www.opennms.com/careers/">OpenNMS Careers</a>
-          </li>
-          <li>
-            <a href="https://nanthealth.com/careers/">Careers</a>
           </li>
         </ul>
         <span class="blurb"> </span>
@@ -90,7 +90,7 @@ footer {
       }
       ul,
       span.blurb {
-        flex-basis: 20rem;
+        //flex-basis: 20rem;
         flex-shrink: 0;
       }
     }

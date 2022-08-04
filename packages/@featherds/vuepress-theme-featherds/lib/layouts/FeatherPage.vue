@@ -112,13 +112,13 @@ export default {
   margin-right: 1.5rem;
   a {
     @include headline3();
-    color: var($state-text-color-on-surface-dark);
+    color: var($state-color-on-surface-dark);
     text-decoration: none;
     text-transform: uppercase;
     &:hover,
     &:visited {
       text-decoration: none;
-      color: var($state-text-color-on-surface-dark);
+      color: var($state-color-on-surface-dark);
     }
   }
   &,

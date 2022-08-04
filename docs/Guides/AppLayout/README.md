@@ -131,7 +131,9 @@ App Rails are meant to provide instant access to various functions of an applica
   <template v-slot:rail>
     <FeatherAppRail ...>
   </template>
+
   <AppContent />
+
   <template v-slot:footer>
     <FeatherFooter ...>
   </template>
@@ -149,10 +151,13 @@ The App Header is a secondary persistent surface in the UI that contains applica
   <template v-slot:rail>
     <FeatherAppRail ...>
   </template>
+
   <template v-slot:header>
     <FeatherAppHeader ...>
   </template>
+
   <AppContent />
+
   <template v-slot:footer>
     <FeatherFooter ...>
   </template>
