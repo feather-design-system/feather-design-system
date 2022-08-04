@@ -7,7 +7,7 @@
   "description": "A wee ripple.",
   "author": "NantHealth",
   "scripts": {},
-  "main": "dist/app.js",
+  "main": "dist/app.mjs",
   "license": "Apache-2.0",
   "dependencies": {
     "vue": "^3.1.0-0"

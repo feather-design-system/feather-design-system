@@ -17,7 +17,7 @@ const run = async ({ entry, dest }) => {
       lib: {
         entry: path.relative(path.resolve(dest, "../"), entry),
         formats: ["es"],
-        fileName: "app",
+        fileName: "index",
       },
       rollupOptions: {
         external(id) {

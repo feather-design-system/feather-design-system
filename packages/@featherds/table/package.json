@@ -6,7 +6,7 @@
   },
   "description": "A collection of styles and components for creating tables",
   "author": "NantHealth",
-  "main": "dist/app.js",
+  "main": "dist/app.mjs",
   "license": "UNLICENSED",
   "scripts": {},
   "dependencies": {

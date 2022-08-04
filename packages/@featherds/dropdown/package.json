@@ -6,7 +6,7 @@
   },
   "author": "NantHealth",
   "scripts": {},
-  "main": "dist/app.js",
+  "main": "dist/app.mjs",
   "license": "Apache-2.0",
   "dependencies": {
     "@featherds/list": "file:../list",

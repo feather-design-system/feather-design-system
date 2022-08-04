@@ -6,7 +6,7 @@
   },
   "description": "A collection of Feather styles",
   "author": "NantHealth",
-  "main": "dist/app.js",
+  "main": "dist/app.mjs",
   "license": "UNLICENSED",
   "scripts": {
     "compile": "node build/post.js"
