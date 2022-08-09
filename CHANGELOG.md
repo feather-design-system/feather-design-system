@@ -1,3 +1,17 @@
+## [0.11.1](https://github.com/feather-design-system/feather-design-system/compare/v0.10.17...v0.11.1) (2022-08-09)
+
+
+### Bug Fixes
+
+* **keyCode:** remove unused import ([a29f35f](https://github.com/feather-design-system/feather-design-system/commit/a29f35f14d98d9f72a7f54738fda2649831cc5e9))
+
+
+### Features
+
+* **build:** ensuring that all packages are being built with the correct extensions ([f9bd481](https://github.com/feather-design-system/feather-design-system/commit/f9bd481587797245f0ab57d13181b88cb1f29ad0))
+
+
+
 ## [0.10.17](https://github.com/feather-design-system/feather-design-system/compare/v0.10.15...v0.10.17) (2022-07-28)
 
 
