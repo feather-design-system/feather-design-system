@@ -13,9 +13,7 @@ A tooltip is a highly contextual form of an overlay. Triggered on hover, tooltip
 
 ## Examples
 
-<ClientOnly>
 <Tooltip-Examples />
-</ClientOnly>
 
 ## Usage
 

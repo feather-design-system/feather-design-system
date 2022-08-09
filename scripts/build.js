@@ -24,7 +24,7 @@ const { getFilter } = require("./utils");
           return fs.writeFile(
             path.join(dest, newFileName),
             `${cssExists ? `import "${cssPath}";` : ""}
-export * from  "./index.mjs";
+export * from  "./index.es.js";
     `
           );
         }),
