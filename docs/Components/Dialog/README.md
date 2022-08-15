@@ -12,8 +12,9 @@ menu: components
 Dialogs consist of a scrim/lightbox, an optional header, an optional close button, body content, at least one action button and an optional illustration. For Dialogs that require user action, the tertiary button style should be used by default. Complex workflows or destructive actions may require the use of the primary button style to communicate high priority actions. When Buttons are used on a dialog, they are always found at the bottom of the Dialog surface.
 
 ## Examples
-
+<ClientOnly>
 <Dialog-Examples />
+</ClientOnly>
 
 ## Usage
 

@@ -73,6 +73,10 @@ export default {
     position: absolute !important;
     z-index: 1 !important;
   }
+  :deep(.header), .header {
+    position: relative;
+    //width: 150%;
+  }
 }
 section {
   height: 12.5rem;

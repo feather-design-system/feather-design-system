@@ -12,8 +12,9 @@ menu: components
 A tooltip is a highly contextual form of an overlay. Triggered on hover, tooltips are designed to provide a small amount of additive information within a high contrast background to provide a clear visual indicator to the user. Tooltips also have several options for pointer position depending on where the tooltip is needed and where the trigger falls within viewport.
 
 ## Examples
-
+<ClientOnly>
 <Tooltip-Examples />
+</ClientOnly>
 
 ## Usage
 
