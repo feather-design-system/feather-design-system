@@ -7,7 +7,7 @@
       >Open Dialog</feather-button
     >
     <p>Dialog Is Open: {{ visible }}</p>
-    <div class="relative">
+    <div class="relative-demo">
       <div style="height: 120vh">
         <feather-dialog v-model="visible" :relative="true" :labels="labels">
           <p class="my-content">Ich bin zufrieden</p>
@@ -48,7 +48,7 @@ export default defineComponent({
 .my-content {
   width: 25rem;
 }
-.relative {
+.relative-demo {
   width: 37.5rem;
   height: 37.5rem;
   position: relative;

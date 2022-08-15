@@ -1,5 +1,5 @@
 <template>
-  <Teleport to="body">
+  <Teleport to="body" :disabled="relative">
     <div
       class="feather-dialog feather-styles"
       :class="{ relative: relative }"
@@ -67,15 +67,7 @@ import {
   useHideRelativeOverflow,
 } from "@featherds/composables/modal/HideOverflow";
 import { useLabelProperty } from "@featherds/composables/LabelProperty";
-import {
-  computed,
-  toRef,
-  ref,
-  watch,
-  defineComponent,
-  PropType,
-  Ref,
-} from "vue";
+import { computed, toRef, ref, watch, defineComponent, PropType } from "vue";
 
 const LABELS = {
   title: "REQUIRED",
