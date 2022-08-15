@@ -6,7 +6,7 @@
       :aria-expanded="visible ? 'true' : 'false'"
       >Open Dialog</FeatherButton
     >
-    <div class="relative">
+    <div class="relative-demo">
       <div style="height: 200%">
         <FeatherDialog v-model="visible" relative :labels="labels">
           <p class="my-content">A message from the Relative Dialog</p>
@@ -39,7 +39,7 @@ export default {
 .my-content {
   width: 25rem;
 }
-.relative {
+.relative-demo {
   width: 37.5rem;
   height: 37.5rem;
   position: relative;
