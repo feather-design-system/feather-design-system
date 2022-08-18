@@ -46,7 +46,6 @@ export default defineComponent({
   props,
   setup(props, context) {
     const full = ref(props.contentLayout === "full");
-    const navLayout = ref(props.navLayout);
     const _expand = ref(false);
     const active = ref(false);
     const railContent = ref();
