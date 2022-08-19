@@ -21,6 +21,22 @@ exports[`FeatherPdfViewer.vue should always show error state when force-error is
           first-focus=""
           tabindex="-1"
         >
+          <feather-button-stub
+            asanchor="true"
+            class="close-icon"
+            data-ref-id="feather-pdfviewer-close"
+            disabled="false"
+            href="#"
+            icon="Close Viewer"
+            primary="false"
+            secondary="false"
+            text="false"
+          >
+            <feather-icon-stub
+              flex="false"
+              icon="[object Object]"
+            />
+          </feather-button-stub>
           <header>
             <span
               data-ref-id="feather-pdfviewer-title"
@@ -64,22 +80,6 @@ exports[`FeatherPdfViewer.vue should always show error state when force-error is
               <!--v-if-->
             </div>
           </div>
-          <feather-button-stub
-            asanchor="true"
-            class="close-icon"
-            data-ref-id="feather-pdfviewer-close"
-            disabled="false"
-            href="#"
-            icon="Close Viewer"
-            primary="false"
-            secondary="false"
-            text="false"
-          >
-            <feather-icon-stub
-              flex="false"
-              icon="[object Object]"
-            />
-          </feather-button-stub>
         </div>
       </div>
     </focus-trap-stub>
@@ -108,6 +108,22 @@ exports[`FeatherPdfViewer.vue should always show error state when force-error is
           first-focus=""
           tabindex="-1"
         >
+          <feather-button-stub
+            asanchor="true"
+            class="close-icon"
+            data-ref-id="feather-pdfviewer-close"
+            disabled="false"
+            href="#"
+            icon="Close Viewer"
+            primary="false"
+            secondary="false"
+            text="false"
+          >
+            <feather-icon-stub
+              flex="false"
+              icon="[object Object]"
+            />
+          </feather-button-stub>
           <header>
             <span
               data-ref-id="feather-pdfviewer-title"
@@ -151,22 +167,6 @@ exports[`FeatherPdfViewer.vue should always show error state when force-error is
               <!--v-if-->
             </div>
           </div>
-          <feather-button-stub
-            asanchor="true"
-            class="close-icon"
-            data-ref-id="feather-pdfviewer-close"
-            disabled="false"
-            href="#"
-            icon="Close Viewer"
-            primary="false"
-            secondary="false"
-            text="false"
-          >
-            <feather-icon-stub
-              flex="false"
-              icon="[object Object]"
-            />
-          </feather-button-stub>
         </div>
       </div>
     </focus-trap-stub>
@@ -195,6 +195,22 @@ exports[`FeatherPdfViewer.vue should always show error state when force-error is
           first-focus=""
           tabindex="-1"
         >
+          <feather-button-stub
+            asanchor="true"
+            class="close-icon"
+            data-ref-id="feather-pdfviewer-close"
+            disabled="false"
+            href="#"
+            icon="Close Viewer"
+            primary="false"
+            secondary="false"
+            text="false"
+          >
+            <feather-icon-stub
+              flex="false"
+              icon="[object Object]"
+            />
+          </feather-button-stub>
           <header>
             <span
               data-ref-id="feather-pdfviewer-title"
@@ -238,22 +254,6 @@ exports[`FeatherPdfViewer.vue should always show error state when force-error is
               <!--v-if-->
             </div>
           </div>
-          <feather-button-stub
-            asanchor="true"
-            class="close-icon"
-            data-ref-id="feather-pdfviewer-close"
-            disabled="false"
-            href="#"
-            icon="Close Viewer"
-            primary="false"
-            secondary="false"
-            text="false"
-          >
-            <feather-icon-stub
-              flex="false"
-              icon="[object Object]"
-            />
-          </feather-button-stub>
         </div>
       </div>
     </focus-trap-stub>
@@ -282,6 +282,22 @@ exports[`FeatherPdfViewer.vue should always show error state when force-error is
           first-focus=""
           tabindex="-1"
         >
+          <feather-button-stub
+            asanchor="true"
+            class="close-icon"
+            data-ref-id="feather-pdfviewer-close"
+            disabled="false"
+            href="#"
+            icon="Close Viewer"
+            primary="false"
+            secondary="false"
+            text="false"
+          >
+            <feather-icon-stub
+              flex="false"
+              icon="[object Object]"
+            />
+          </feather-button-stub>
           <header>
             <span
               data-ref-id="feather-pdfviewer-title"
@@ -325,22 +341,6 @@ exports[`FeatherPdfViewer.vue should always show error state when force-error is
               <!--v-if-->
             </div>
           </div>
-          <feather-button-stub
-            asanchor="true"
-            class="close-icon"
-            data-ref-id="feather-pdfviewer-close"
-            disabled="false"
-            href="#"
-            icon="Close Viewer"
-            primary="false"
-            secondary="false"
-            text="false"
-          >
-            <feather-icon-stub
-              flex="false"
-              icon="[object Object]"
-            />
-          </feather-button-stub>
         </div>
       </div>
     </focus-trap-stub>
@@ -369,6 +369,22 @@ exports[`FeatherPdfViewer.vue should display error when no preview url and not p
           first-focus=""
           tabindex="-1"
         >
+          <feather-button-stub
+            asanchor="true"
+            class="close-icon"
+            data-ref-id="feather-pdfviewer-close"
+            disabled="false"
+            href="#"
+            icon="Close Viewer"
+            primary="false"
+            secondary="false"
+            text="false"
+          >
+            <feather-icon-stub
+              flex="false"
+              icon="[object Object]"
+            />
+          </feather-button-stub>
           <header>
             <span
               data-ref-id="feather-pdfviewer-title"
@@ -412,22 +428,6 @@ exports[`FeatherPdfViewer.vue should display error when no preview url and not p
               </div>
             </div>
           </div>
-          <feather-button-stub
-            asanchor="true"
-            class="close-icon"
-            data-ref-id="feather-pdfviewer-close"
-            disabled="false"
-            href="#"
-            icon="Close Viewer"
-            primary="false"
-            secondary="false"
-            text="false"
-          >
-            <feather-icon-stub
-              flex="false"
-              icon="[object Object]"
-            />
-          </feather-button-stub>
         </div>
       </div>
     </focus-trap-stub>
@@ -456,6 +456,22 @@ exports[`FeatherPdfViewer.vue should display error when preview url doesn't retu
           first-focus=""
           tabindex="-1"
         >
+          <feather-button-stub
+            asanchor="true"
+            class="close-icon"
+            data-ref-id="feather-pdfviewer-close"
+            disabled="false"
+            href="#"
+            icon="Close Viewer"
+            primary="false"
+            secondary="false"
+            text="false"
+          >
+            <feather-icon-stub
+              flex="false"
+              icon="[object Object]"
+            />
+          </feather-button-stub>
           <header>
             <span
               data-ref-id="feather-pdfviewer-title"
@@ -499,22 +515,6 @@ exports[`FeatherPdfViewer.vue should display error when preview url doesn't retu
               <!--v-if-->
             </div>
           </div>
-          <feather-button-stub
-            asanchor="true"
-            class="close-icon"
-            data-ref-id="feather-pdfviewer-close"
-            disabled="false"
-            href="#"
-            icon="Close Viewer"
-            primary="false"
-            secondary="false"
-            text="false"
-          >
-            <feather-icon-stub
-              flex="false"
-              icon="[object Object]"
-            />
-          </feather-button-stub>
         </div>
       </div>
     </focus-trap-stub>
@@ -543,6 +543,22 @@ exports[`FeatherPdfViewer.vue should display original download when extension is
           first-focus=""
           tabindex="-1"
         >
+          <feather-button-stub
+            asanchor="true"
+            class="close-icon"
+            data-ref-id="feather-pdfviewer-close"
+            disabled="false"
+            href="#"
+            icon="Close Viewer"
+            primary="false"
+            secondary="false"
+            text="false"
+          >
+            <feather-icon-stub
+              flex="false"
+              icon="[object Object]"
+            />
+          </feather-button-stub>
           <header>
             <span
               data-ref-id="feather-pdfviewer-title"
@@ -586,22 +602,6 @@ exports[`FeatherPdfViewer.vue should display original download when extension is
               </div>
             </div>
           </div>
-          <feather-button-stub
-            asanchor="true"
-            class="close-icon"
-            data-ref-id="feather-pdfviewer-close"
-            disabled="false"
-            href="#"
-            icon="Close Viewer"
-            primary="false"
-            secondary="false"
-            text="false"
-          >
-            <feather-icon-stub
-              flex="false"
-              icon="[object Object]"
-            />
-          </feather-button-stub>
         </div>
       </div>
     </focus-trap-stub>
@@ -630,6 +630,22 @@ exports[`FeatherPdfViewer.vue should display preview when the preview url exists
           first-focus=""
           tabindex="-1"
         >
+          <feather-button-stub
+            asanchor="true"
+            class="close-icon"
+            data-ref-id="feather-pdfviewer-close"
+            disabled="false"
+            href="#"
+            icon="Close Viewer"
+            primary="false"
+            secondary="false"
+            text="false"
+          >
+            <feather-icon-stub
+              flex="false"
+              icon="[object Object]"
+            />
+          </feather-button-stub>
           <header>
             <span
               data-ref-id="feather-pdfviewer-title"
@@ -668,22 +684,6 @@ exports[`FeatherPdfViewer.vue should display preview when the preview url exists
               <!--v-if-->
             </div>
           </div>
-          <feather-button-stub
-            asanchor="true"
-            class="close-icon"
-            data-ref-id="feather-pdfviewer-close"
-            disabled="false"
-            href="#"
-            icon="Close Viewer"
-            primary="false"
-            secondary="false"
-            text="false"
-          >
-            <feather-icon-stub
-              flex="false"
-              icon="[object Object]"
-            />
-          </feather-button-stub>
         </div>
       </div>
     </focus-trap-stub>
@@ -712,6 +712,22 @@ exports[`FeatherPdfViewer.vue should hide download button when hide-actions is t
           first-focus=""
           tabindex="-1"
         >
+          <feather-button-stub
+            asanchor="true"
+            class="close-icon"
+            data-ref-id="feather-pdfviewer-close"
+            disabled="false"
+            href="#"
+            icon="Close Viewer"
+            primary="false"
+            secondary="false"
+            text="false"
+          >
+            <feather-icon-stub
+              flex="false"
+              icon="[object Object]"
+            />
+          </feather-button-stub>
           <header>
             <span
               data-ref-id="feather-pdfviewer-title"
@@ -743,22 +759,6 @@ exports[`FeatherPdfViewer.vue should hide download button when hide-actions is t
               </div>
             </div>
           </div>
-          <feather-button-stub
-            asanchor="true"
-            class="close-icon"
-            data-ref-id="feather-pdfviewer-close"
-            disabled="false"
-            href="#"
-            icon="Close Viewer"
-            primary="false"
-            secondary="false"
-            text="false"
-          >
-            <feather-icon-stub
-              flex="false"
-              icon="[object Object]"
-            />
-          </feather-button-stub>
         </div>
       </div>
     </focus-trap-stub>

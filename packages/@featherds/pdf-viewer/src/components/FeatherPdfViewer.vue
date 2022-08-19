@@ -14,6 +14,17 @@
           data-ref-id="feather-pdfviewer"
         >
           <div class="focus-area" tabindex="-1" first-focus>
+            <FeatherButton
+              as-anchor
+              on-color
+              href="#"
+              :icon="closeLabel"
+              class="close-icon"
+              @click.prevent="close"
+              data-ref-id="feather-pdfviewer-close"
+            >
+              <FeatherIcon :icon="closeIcon"></FeatherIcon>
+            </FeatherButton>
             <header>
               <span data-ref-id="feather-pdfviewer-title">{{
                 titleLabel
@@ -68,18 +79,6 @@
                 </div>
               </div>
             </div>
-
-            <FeatherButton
-              as-anchor
-              on-color
-              href="#"
-              :icon="closeLabel"
-              class="close-icon"
-              @click.prevent="close"
-              data-ref-id="feather-pdfviewer-close"
-            >
-              <FeatherIcon :icon="closeIcon"></FeatherIcon>
-            </FeatherButton>
           </div>
         </div>
       </FocusTrap>
