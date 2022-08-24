@@ -4,6 +4,7 @@
   "publishConfig": {
     "access": "public"
   },
+  "type": "module",
   "description": "",
   "main": "lib/index.js",
   "keywords": [

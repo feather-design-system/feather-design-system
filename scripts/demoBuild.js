@@ -1,6 +1,7 @@
-const build = require("./vite/demoBuild");
+import * as build from "./vite/demoBuild.js";
+import * as prepareDemos from "./demos.js";
+
 (async () => {
-  const prepareDemos = require("./demos");
   await prepareDemos.run();
   await build.run();
 })();

@@ -1,5 +1,5 @@
-const { createWriteStream } = require("fs");
-const { SitemapStream } = require("sitemap");
+import { createWriteStream } from "fs";
+import { SitemapStream } from "sitemap";
 const sitemapPlugin = (options) => ({
   name: "vuepress-plugin-sitemap",
   onGenerated(app) {
@@ -14,4 +14,4 @@ const sitemapPlugin = (options) => ({
     console.log("Generated sitemap");
   },
 });
-module.exports = { sitemapPlugin };
+export { sitemapPlugin };

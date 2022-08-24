@@ -1,4 +1,4 @@
-const base = require("./wdio.local.conf").config;
+const base = require("./wdio.local.conf.cjs").config;
 const pkg = require("./package.json");
 
 const build = "@featherds - " + pkg.version;

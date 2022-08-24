@@ -1,12 +1,16 @@
 // .vuepress/config.js
+import { getDirname, path } from "@vuepress/utils";
 
-const path = require("path");
-const { sassImports } = require("../../scripts/vite/alias");
-const { noopDirectiveTransform } = require("@vue/compiler-dom");
-const vueSourcePlugin = require("./plugins/vueSourcePlugin");
-const { viteBundler } = require("vuepress");
-const { theme } = require("./theme");
-module.exports = {
+const __dirname = getDirname(import.meta.url);
+import { noopDirectiveTransform } from "@vue/compiler-dom";
+import { sassImports } from "../../scripts/vite/alias";
+import vueSourcePlugin from "./plugins/vueSourcePlugin";
+import { viteBundler } from "vuepress";
+import { theme } from "./theme";
+import foundation from "./menus/foundation";
+import components from "./menus/components";
+import guides from "./menus/guides";
+export default {
   title: "Feather DS",
   theme: theme({
     footerComponent: "Footer",
@@ -19,9 +23,9 @@ module.exports = {
         { name: "Components", url: "/Components/" },
         { name: "Guides", url: "/Guides/GettingStarted/" },
       ],
-      foundation: require("./menus/foundation"),
-      components: require("./menus/components"),
-      guides: require("./menus/guides"),
+      foundation,
+      components,
+      guides,
     },
   }),
   templateDev: path.resolve(__dirname, "./templates/dev.html"),

@@ -1,6 +1,6 @@
-const pkg = require("../lerna.json");
+import pkg from "../lerna.json" assert { type: "json" };
 
-const getPackageName = path => {
+const getPackageName = (path) => {
   const dirs = path.split("/");
   return dirs[dirs.indexOf("@featherds") + 1];
 };
@@ -13,9 +13,5 @@ const getFilter = () => {
 
 const isFeature = () => pkg.version.split(".")[0] === "0";
 const getFeatureVersion = () => pkg.version.replace(/\./g, "/").split("-")[0];
-module.exports = {
-  getPackageName,
-  getFilter,
-  isFeature,
-  getFeatureVersion
-};
+
+export { getPackageName, getFilter, isFeature, getFeatureVersion };

@@ -8,7 +8,7 @@
   </div>
 </template>
 <script lang="ts">
-import { ref, nextTick, defineComponent, toRef, computed, PropType } from "vue";
+import { ref, nextTick, defineComponent } from "vue";
 export const props = {
   enable: {
     type: Boolean,

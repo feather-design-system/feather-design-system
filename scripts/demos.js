@@ -1,10 +1,12 @@
-const globby = require("globby");
-const path = require("path");
-const fs = require("fs-extra");
-const { pascalCase } = require("change-case");
-const { getPackageName } = require("./utils");
+import globby from "globby";
+import path from "path";
+import fs from "fs-extra";
+import { fileURLToPath } from "url";
+import { pascalCase } from "change-case";
+import { getPackageName } from "./utils.js";
+const __dirname = path.dirname(fileURLToPath(import.meta.url));
 
-const run = (async (subfolder = "") => {
+const run = async (subfolder = "") => {
   const globs = [`packages/@featherds/*/demos/*.vue`];
   const files = await globby(globs, {
     cwd: process.cwd(),
@@ -75,6 +77,6 @@ const run = (async (subfolder = "") => {
   // const linter = new Service(process.cwd());
   // //lint the files we just created to avoid unncessary errors
   // return linter.run("lint", { _: ["", "./demo/"] });
-});
+};
 
-module.exports = { run };
+export { run };

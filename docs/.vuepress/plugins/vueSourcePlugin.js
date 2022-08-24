@@ -1,5 +1,6 @@
-const path = require("path");
-const fs = require("fs-extra");
+import { getDirname, path } from "@vuepress/utils";
+import fs from "fs-extra";
+const __dirname = getDirname(import.meta.url);
 const vueSourcePlugin = {
   name: "vue-src",
   transform(code, id) {
@@ -19,4 +20,4 @@ const vueSourcePlugin = {
   },
 };
 
-module.exports = vueSourcePlugin;
+export default vueSourcePlugin;

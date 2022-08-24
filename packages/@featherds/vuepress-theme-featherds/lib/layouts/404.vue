@@ -20,7 +20,7 @@
 import FeatherPage from "./FeatherPage.vue";
 import { FeatherButton } from "@featherds/button";
 import { computed } from "vue";
-import { useThemeLocaleData } from "@vuepress/plugin-theme-data/lib/client";
+import { useThemeLocaleData } from "@vuepress/plugin-theme-data/client";
 export default {
   setup() {
     const theme = useThemeLocaleData();

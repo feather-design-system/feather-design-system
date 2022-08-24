@@ -1,18 +1,18 @@
-const { path } = require("@vuepress/utils");
-const {
-  activeHeaderLinksPlugin,
-} = require("@vuepress/plugin-active-header-links");
+import { getDirname, path } from "@vuepress/utils";
 
-const { containerPlugin } = require("@vuepress/plugin-container");
+const __dirname = getDirname(import.meta.url);
+import { activeHeaderLinksPlugin } from "@vuepress/plugin-active-header-links";
 
-const { themeDataPlugin } = require("@vuepress/plugin-theme-data");
+import { containerPlugin } from "@vuepress/plugin-container";
 
-const { prismjsPlugin } = require("@vuepress/plugin-prismjs");
-const { sitemapPlugin } = require("./plugins/sitemap");
+import { themeDataPlugin } from "@vuepress/plugin-theme-data";
+
+import { prismjsPlugin } from "@vuepress/plugin-prismjs";
+import { sitemapPlugin } from "./plugins/sitemap.js";
 
 const featherDSTheme = (data) => ({
   name: "vuepress-theme-featherds",
-  clientAppEnhanceFiles: path.resolve(__dirname, "./clientAppEnhance.js"),
+  clientConfigFile: path.resolve(__dirname, "./clientAppEnhance.js"),
   layouts: path.resolve(__dirname, "./layouts"),
   plugins: [
     sitemapPlugin({ hostname: "http://feather.nanthealth.com" }),
@@ -33,4 +33,4 @@ const featherDSTheme = (data) => ({
   ],
 });
 
-module.exports = { featherDSTheme };
+export { featherDSTheme };

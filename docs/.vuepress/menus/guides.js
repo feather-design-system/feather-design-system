@@ -1,4 +1,4 @@
-module.exports = [
+export default [
   {
     name: "Guides",
     items: [{ name: "Getting Started", url: "/Guides/GettingStarted/" }].concat(

@@ -41,7 +41,7 @@ import {
   FeatherListSeparator,
 } from "@featherds/list";
 import { FocusTrap } from "@featherds/dialog";
-import { useThemeLocaleData } from "@vuepress/plugin-theme-data/lib/client";
+import { useThemeLocaleData } from "@vuepress/plugin-theme-data/client";
 import { useSiteLocaleData } from "@vuepress/client";
 import { useCloseOnEsc } from "@featherds/composables/modal/CloseOnEsc";
 import { useRestoreFocus } from "@featherds/composables/modal/RestoreFocus";

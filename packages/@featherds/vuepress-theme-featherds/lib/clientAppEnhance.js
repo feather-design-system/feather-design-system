@@ -1,5 +1,7 @@
 import { FeatherButton } from "@featherds/button";
-import { defineClientAppEnhance } from "@vuepress/client";
-export default defineClientAppEnhance(({ app }) => {
-  app.component("FeatherButton", FeatherButton);
+import { defineClientConfig } from "@vuepress/client";
+export default defineClientConfig({
+  enhance: ({ app }) => {
+    app.component("FeatherButton", FeatherButton);
+  },
 });

@@ -1,4 +1,4 @@
-const path = require("path");
+import path from "path";
 const scope = "@featherds";
 const folder = "@featherds";
 const sassImports = [
@@ -22,4 +22,4 @@ const fileImport = [
   },
 ];
 
-module.exports = { sassImports, fileImport, moduleImport };
+export { sassImports, fileImport, moduleImport };
