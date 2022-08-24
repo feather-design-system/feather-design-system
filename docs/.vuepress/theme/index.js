@@ -1,10 +1,10 @@
-const { path } = require("@vuepress/utils");
-const { featherDSTheme } = require("@featherds/vuepress-theme-featherds");
-const {
-  registerComponentsPlugin,
-} = require("@vuepress/plugin-register-components");
+import { getDirname, path } from "@vuepress/utils";
+import { featherDSTheme } from "@featherds/vuepress-theme-featherds";
+import { registerComponentsPlugin } from "@vuepress/plugin-register-components";
 
-const { googleAnalyticsPlugin } = require("@vuepress/plugin-google-analytics");
+const __dirname = getDirname(import.meta.url);
+
+import { googleAnalyticsPlugin } from "@vuepress/plugin-google-analytics";
 
 const theme = (data) => ({
   extends: featherDSTheme(data),
@@ -24,4 +24,4 @@ const theme = (data) => ({
     }),
   ],
 });
-module.exports = { theme };
+export { theme };

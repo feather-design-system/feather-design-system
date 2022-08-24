@@ -1,14 +1,27 @@
 <template>
   <div class="feather-snackbar-wrapper" v-if="modelValue || contentShow">
-    <div class="feather-snackbar" data-ref-id="feather-snackbar" :class="{
-      'fade-in': internalValue,
-      'fade-out': contentShow && !internalValue,
-      center: center,
-      error: error,
-    }" @animationend="closed" @keydown="keyPressed" @mouseover="stopTimer" @mouseleave="resumeTimer"
-      @focusin="stopTimer" @focusout="resumeTimer">
+    <div
+      class="feather-snackbar"
+      data-ref-id="feather-snackbar"
+      :class="{
+        'fade-in': internalValue,
+        'fade-out': contentShow && !internalValue,
+        center: center,
+        error: error,
+      }"
+      @animationend="closed"
+      @keydown="keyPressed"
+      @mouseover="stopTimer"
+      @mouseleave="resumeTimer"
+      @focusin="stopTimer"
+      @focusout="resumeTimer"
+    >
       <div class="content-wrapper" role="status" aria-live="polite">
-        <div class="content" v-if="contentShow" data-ref-id="feather-snackbar-content">
+        <div
+          class="content"
+          v-if="contentShow"
+          data-ref-id="feather-snackbar-content"
+        >
           <slot />
         </div>
       </div>
@@ -65,7 +78,7 @@ export default defineComponent({
       "unqueueSnackbar",
       false as false | ((id: number) => void)
     );
-    const nextSnackbar = inject("nextSnackbar", () => { });
+    const nextSnackbar = inject("nextSnackbar", () => {});
     interface ITimer {
       pause: () => void;
       resume: () => void;

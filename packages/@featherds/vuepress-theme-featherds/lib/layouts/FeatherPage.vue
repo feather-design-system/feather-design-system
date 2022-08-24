@@ -57,7 +57,7 @@ import AppBarLink from "../components/AppBarLink.vue";
 import PageThemeChange from "../components/PageThemeChange";
 import NavbarSearch from "../components/NavbarSearch";
 import { computed } from "vue";
-import { useThemeLocaleData } from "@vuepress/plugin-theme-data/lib/client";
+import { useThemeLocaleData } from "@vuepress/plugin-theme-data/client";
 import { useSiteLocaleData } from "@vuepress/client";
 
 export default {

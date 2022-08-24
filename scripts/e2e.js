@@ -1,14 +1,19 @@
 const args = process.argv.slice(2);
-const serve = require("./vite/serve");
+import * as serve from "./vite/serve.js";
+import execa from "execa";
+import * as demos from "./demos.js";
+
+import { createRequire } from "node:module";
+
 (async () => {
-  await require("./demos").run();
+  await demos.run();
   const server = await serve.run();
   await server.listen();
 
   process.env.VUE_DEV_SERVER_URL = `http://localhost.lambdatest.com:${server.config.server.port}/demos/#`;
 
-  const execa = require("execa");
-  const wdioBinPath = require.resolve("@wdio/cli/bin/wdio");
+  const { resolve } = createRequire(import.meta.url);
+  const wdioBinPath = resolve("@wdio/cli/bin/wdio");
 
   const runner = execa(wdioBinPath, args, {
     stdio: "inherit",

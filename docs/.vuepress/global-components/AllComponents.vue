@@ -9,7 +9,7 @@
   </div>
 </template>
 <script>
-import { useThemeLocaleData } from "@vuepress/plugin-theme-data/lib/client";
+import { useThemeLocaleData } from "@vuepress/plugin-theme-data/client";
 import { computed } from "vue";
 export default {
   setup() {

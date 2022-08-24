@@ -1,8 +1,9 @@
-const { build } = require("vite");
-const path = require("path");
-const { sassImports } = require("./alias");
+import { build } from "vite";
+import fs from "fs-extra";
+import path from "path";
+import { sassImports } from "./alias.js";
 const run = async ({ entry, dest }) => {
-  const pkg = require(path.resolve(dest, "../package.json"));
+  const pkg = await fs.readJSON(path.resolve(dest, "../package.json"));
   const deps = pkg.dependencies ? Object.keys(pkg.dependencies) : [];
   return build({
     configFile: path.join(process.cwd(), "./vite.config.js"),
@@ -32,4 +33,4 @@ const run = async ({ entry, dest }) => {
   });
 };
 
-module.exports = { run };
+export { run };

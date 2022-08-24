@@ -1,6 +1,6 @@
-const { build } = require("vite");
-const path = require("path");
-const { sassImports, moduleImport, fileImport } = require("./alias");
+import { build } from "vite";
+import path from "path";
+import { sassImports, moduleImport, fileImport } from "./alias.js";
 const run = async () =>
   build({
     configFile: "./vite.config.js",
@@ -21,4 +21,4 @@ const run = async () =>
     },
   });
 
-module.exports = { run };
+export { run };

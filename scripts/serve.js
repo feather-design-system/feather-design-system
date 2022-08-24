@@ -1,7 +1,9 @@
-const serve = require("./vite/serve");
+import * as serve from "./vite/serve.js";
+import * as prepareDemos from "./demos.js";
+
 (async () => {
-  const prepareDemos = require("./demos");
   await prepareDemos.run();
   const server = await serve.run();
   await server.listen();
+  server.printUrls();
 })();

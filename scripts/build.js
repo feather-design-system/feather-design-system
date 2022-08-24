@@ -1,8 +1,8 @@
-const build = require("./vite/build");
-const globby = require("globby");
-const path = require("path");
-const fs = require("fs-extra");
-const { getFilter } = require("./utils");
+import * as build from "./vite/build.js";
+import globby from "globby";
+import path from "path";
+import fs from "fs-extra";
+import { getFilter } from "./utils.js";
 (async () => {
   const filter = getFilter();
   const files = await globby(`packages/@featherds/${filter}/src/index.[jt]s`, {
@@ -24,8 +24,8 @@ const { getFilter } = require("./utils");
           return fs.writeFile(
             path.join(dest, newFileName),
             `${cssExists ? `import "${cssPath}";` : ""}
-export * from  "./index.es.js";
-    `
+export * from "./index.mjs";
+`
           );
         }),
       Promise.resolve()
