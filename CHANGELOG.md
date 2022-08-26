@@ -1,3 +1,13 @@
+# [0.12.0](https://github.com/feather-design-system/feather-design-system/compare/v0.11.2...v0.12.0) (2022-08-26)
+
+
+### Bug Fixes
+
+* **demos:** resolving a couple of demo issues so they work correctly in SSR ([d3f8c67](https://github.com/feather-design-system/feather-design-system/commit/d3f8c670fb6d9f52d5280b55bf470f1f6749b92c))
+* **dialog:** resolving [#128](https://github.com/feather-design-system/feather-design-system/issues/128) - 'relative' option is broken as elements being appended to body ([05e504c](https://github.com/feather-design-system/feather-design-system/commit/05e504cbe4b714cb939694a0bc681bc4cc877a0b))
+
+
+
 ## [0.11.2](https://github.com/feather-design-system/feather-design-system/compare/v0.11.1...v0.11.2) (2022-08-09)
 
 
