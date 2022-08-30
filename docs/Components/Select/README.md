@@ -79,7 +79,6 @@ The following example allows `10` items to be displayed before scrolling.
 | error      | error string to display under select                                                    | `String`        | `false`  | -           |
 | clear      | label for the clear link that will appear at the end of the input when this has a value | `String`        | `false`  | `""`        |
 | hint       | hint string to display under select                                                     | `String`        | `false`  | -           |
-| background | sets label background color to `background`                                             | `Boolean`       | `false`  | `false`     |
 | hideLabel  | hides the label for the input in scenarios like tables where it would get in the way    | `Boolean`       | `false`  | -           |
 | schema     | a schema for use in validation                                                          | `Object`        | `false`  | -           |
 

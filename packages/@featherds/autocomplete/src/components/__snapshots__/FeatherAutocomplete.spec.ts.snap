@@ -18,21 +18,28 @@ exports[`FeatherAutocomplete base functionality multi disabled state should rend
       id="feather-menu-trigger"
       role="combobox"
     >
-      <fieldset
-        aria-hidden="true"
+      <div
         class="feather-input-border"
       >
-        <legend>
-          Users
-        </legend>
-      </fieldset>
-      <label
-        class="feather-input-label"
-        data-ref-id="feather-form-element-label"
-        for="feather-autocomplete-input"
-      >
-        Users
-      </label>
+        <div
+          class="pre-border"
+        />
+        <div
+          class="label-border"
+          style="width: 0px;"
+        >
+          <label
+            class="feather-input-label"
+            data-ref-id="feather-form-element-label"
+            for="feather-autocomplete-input"
+          >
+            Users
+          </label>
+        </div>
+        <div
+          class="post-border"
+        />
+      </div>
       <div
         class="feather-input-wrapper"
       >
@@ -190,21 +197,28 @@ exports[`FeatherAutocomplete base functionality multi disabled state should rend
       id="feather-menu-trigger"
       role="combobox"
     >
-      <fieldset
-        aria-hidden="true"
+      <div
         class="feather-input-border"
       >
-        <legend>
-          Users
-        </legend>
-      </fieldset>
-      <label
-        class="feather-input-label"
-        data-ref-id="feather-form-element-label"
-        for="feather-autocomplete-input"
-      >
-        Users
-      </label>
+        <div
+          class="pre-border"
+        />
+        <div
+          class="label-border"
+          style="width: 0px;"
+        >
+          <label
+            class="feather-input-label"
+            data-ref-id="feather-form-element-label"
+            for="feather-autocomplete-input"
+          >
+            Users
+          </label>
+        </div>
+        <div
+          class="post-border"
+        />
+      </div>
       <div
         class="feather-input-wrapper"
       >
@@ -324,21 +338,28 @@ exports[`FeatherAutocomplete base functionality multi should lower label when th
       id="feather-menu-trigger"
       role="combobox"
     >
-      <fieldset
-        aria-hidden="true"
+      <div
         class="feather-input-border"
       >
-        <legend>
-          Users
-        </legend>
-      </fieldset>
-      <label
-        class="feather-input-label"
-        data-ref-id="feather-form-element-label"
-        for="feather-autocomplete-input"
-      >
-        Users
-      </label>
+        <div
+          class="pre-border"
+        />
+        <div
+          class="label-border"
+          style="width: 0px;"
+        >
+          <label
+            class="feather-input-label"
+            data-ref-id="feather-form-element-label"
+            for="feather-autocomplete-input"
+          >
+            Users
+          </label>
+        </div>
+        <div
+          class="post-border"
+        />
+      </div>
       <div
         class="feather-input-wrapper"
       >
@@ -457,21 +478,28 @@ exports[`FeatherAutocomplete base functionality multi should not leave previous 
       id="feather-menu-trigger"
       role="combobox"
     >
-      <fieldset
-        aria-hidden="true"
+      <div
         class="feather-input-border"
       >
-        <legend>
-          Users
-        </legend>
-      </fieldset>
-      <label
-        class="feather-input-label"
-        data-ref-id="feather-form-element-label"
-        for="feather-autocomplete-input"
-      >
-        Users
-      </label>
+        <div
+          class="pre-border"
+        />
+        <div
+          class="label-border"
+          style="width: 0px;"
+        >
+          <label
+            class="feather-input-label"
+            data-ref-id="feather-form-element-label"
+            for="feather-autocomplete-input"
+          >
+            Users
+          </label>
+        </div>
+        <div
+          class="post-border"
+        />
+      </div>
       <div
         class="feather-input-wrapper"
       >
@@ -689,21 +717,28 @@ exports[`FeatherAutocomplete base functionality multi should raise the label whe
       id="feather-menu-trigger"
       role="combobox"
     >
-      <fieldset
-        aria-hidden="true"
+      <div
         class="feather-input-border"
       >
-        <legend>
-          Users
-        </legend>
-      </fieldset>
-      <label
-        class="feather-input-label"
-        data-ref-id="feather-form-element-label"
-        for="feather-autocomplete-input"
-      >
-        Users
-      </label>
+        <div
+          class="pre-border"
+        />
+        <div
+          class="label-border"
+          style="width: 0px;"
+        >
+          <label
+            class="feather-input-label"
+            data-ref-id="feather-form-element-label"
+            for="feather-autocomplete-input"
+          >
+            Users
+          </label>
+        </div>
+        <div
+          class="post-border"
+        />
+      </div>
       <div
         class="feather-input-wrapper"
       >
@@ -900,21 +935,28 @@ exports[`FeatherAutocomplete base functionality multi should show loading spinne
       id="feather-menu-trigger"
       role="combobox"
     >
-      <fieldset
-        aria-hidden="true"
+      <div
         class="feather-input-border"
       >
-        <legend>
-          Users
-        </legend>
-      </fieldset>
-      <label
-        class="feather-input-label"
-        data-ref-id="feather-form-element-label"
-        for="feather-autocomplete-input"
-      >
-        Users
-      </label>
+        <div
+          class="pre-border"
+        />
+        <div
+          class="label-border"
+          style="width: 0px;"
+        >
+          <label
+            class="feather-input-label"
+            data-ref-id="feather-form-element-label"
+            for="feather-autocomplete-input"
+          >
+            Users
+          </label>
+        </div>
+        <div
+          class="post-border"
+        />
+      </div>
       <div
         class="feather-input-wrapper"
       >
@@ -1077,21 +1119,28 @@ exports[`FeatherAutocomplete base functionality multi should show no results tex
       id="feather-menu-trigger"
       role="combobox"
     >
-      <fieldset
-        aria-hidden="true"
+      <div
         class="feather-input-border"
       >
-        <legend>
-          Users
-        </legend>
-      </fieldset>
-      <label
-        class="feather-input-label"
-        data-ref-id="feather-form-element-label"
-        for="feather-autocomplete-input"
-      >
-        Users
-      </label>
+        <div
+          class="pre-border"
+        />
+        <div
+          class="label-border"
+          style="width: 0px;"
+        >
+          <label
+            class="feather-input-label"
+            data-ref-id="feather-form-element-label"
+            for="feather-autocomplete-input"
+          >
+            Users
+          </label>
+        </div>
+        <div
+          class="post-border"
+        />
+      </div>
       <div
         class="feather-input-wrapper"
       >
@@ -1259,21 +1308,28 @@ exports[`FeatherAutocomplete base functionality single disabled state should ren
       id="feather-menu-trigger"
       role="combobox"
     >
-      <fieldset
-        aria-hidden="true"
+      <div
         class="feather-input-border"
       >
-        <legend>
-          Users
-        </legend>
-      </fieldset>
-      <label
-        class="feather-input-label"
-        data-ref-id="feather-form-element-label"
-        for="feather-autocomplete-input"
-      >
-        Users
-      </label>
+        <div
+          class="pre-border"
+        />
+        <div
+          class="label-border"
+          style="width: 0px;"
+        >
+          <label
+            class="feather-input-label"
+            data-ref-id="feather-form-element-label"
+            for="feather-autocomplete-input"
+          >
+            Users
+          </label>
+        </div>
+        <div
+          class="post-border"
+        />
+      </div>
       <div
         class="feather-input-wrapper"
       >
@@ -1411,21 +1467,28 @@ exports[`FeatherAutocomplete base functionality single disabled state should ren
       id="feather-menu-trigger"
       role="combobox"
     >
-      <fieldset
-        aria-hidden="true"
+      <div
         class="feather-input-border"
       >
-        <legend>
-          Users
-        </legend>
-      </fieldset>
-      <label
-        class="feather-input-label"
-        data-ref-id="feather-form-element-label"
-        for="feather-autocomplete-input"
-      >
-        Users
-      </label>
+        <div
+          class="pre-border"
+        />
+        <div
+          class="label-border"
+          style="width: 0px;"
+        >
+          <label
+            class="feather-input-label"
+            data-ref-id="feather-form-element-label"
+            for="feather-autocomplete-input"
+          >
+            Users
+          </label>
+        </div>
+        <div
+          class="post-border"
+        />
+      </div>
       <div
         class="feather-input-wrapper"
       >
@@ -1545,21 +1608,28 @@ exports[`FeatherAutocomplete base functionality single should lower label when t
       id="feather-menu-trigger"
       role="combobox"
     >
-      <fieldset
-        aria-hidden="true"
+      <div
         class="feather-input-border"
       >
-        <legend>
-          Users
-        </legend>
-      </fieldset>
-      <label
-        class="feather-input-label"
-        data-ref-id="feather-form-element-label"
-        for="feather-autocomplete-input"
-      >
-        Users
-      </label>
+        <div
+          class="pre-border"
+        />
+        <div
+          class="label-border"
+          style="width: 0px;"
+        >
+          <label
+            class="feather-input-label"
+            data-ref-id="feather-form-element-label"
+            for="feather-autocomplete-input"
+          >
+            Users
+          </label>
+        </div>
+        <div
+          class="post-border"
+        />
+      </div>
       <div
         class="feather-input-wrapper"
       >
@@ -1678,21 +1748,28 @@ exports[`FeatherAutocomplete base functionality single should not leave previous
       id="feather-menu-trigger"
       role="combobox"
     >
-      <fieldset
-        aria-hidden="true"
+      <div
         class="feather-input-border"
       >
-        <legend>
-          Users
-        </legend>
-      </fieldset>
-      <label
-        class="feather-input-label"
-        data-ref-id="feather-form-element-label"
-        for="feather-autocomplete-input"
-      >
-        Users
-      </label>
+        <div
+          class="pre-border"
+        />
+        <div
+          class="label-border"
+          style="width: 0px;"
+        >
+          <label
+            class="feather-input-label"
+            data-ref-id="feather-form-element-label"
+            for="feather-autocomplete-input"
+          >
+            Users
+          </label>
+        </div>
+        <div
+          class="post-border"
+        />
+      </div>
       <div
         class="feather-input-wrapper"
       >
@@ -1910,21 +1987,28 @@ exports[`FeatherAutocomplete base functionality single should raise the label wh
       id="feather-menu-trigger"
       role="combobox"
     >
-      <fieldset
-        aria-hidden="true"
+      <div
         class="feather-input-border"
       >
-        <legend>
-          Users
-        </legend>
-      </fieldset>
-      <label
-        class="feather-input-label"
-        data-ref-id="feather-form-element-label"
-        for="feather-autocomplete-input"
-      >
-        Users
-      </label>
+        <div
+          class="pre-border"
+        />
+        <div
+          class="label-border"
+          style="width: 0px;"
+        >
+          <label
+            class="feather-input-label"
+            data-ref-id="feather-form-element-label"
+            for="feather-autocomplete-input"
+          >
+            Users
+          </label>
+        </div>
+        <div
+          class="post-border"
+        />
+      </div>
       <div
         class="feather-input-wrapper"
       >
@@ -2061,21 +2145,28 @@ exports[`FeatherAutocomplete base functionality single should show loading spinn
       id="feather-menu-trigger"
       role="combobox"
     >
-      <fieldset
-        aria-hidden="true"
+      <div
         class="feather-input-border"
       >
-        <legend>
-          Users
-        </legend>
-      </fieldset>
-      <label
-        class="feather-input-label"
-        data-ref-id="feather-form-element-label"
-        for="feather-autocomplete-input"
-      >
-        Users
-      </label>
+        <div
+          class="pre-border"
+        />
+        <div
+          class="label-border"
+          style="width: 0px;"
+        >
+          <label
+            class="feather-input-label"
+            data-ref-id="feather-form-element-label"
+            for="feather-autocomplete-input"
+          >
+            Users
+          </label>
+        </div>
+        <div
+          class="post-border"
+        />
+      </div>
       <div
         class="feather-input-wrapper"
       >
@@ -2238,21 +2329,28 @@ exports[`FeatherAutocomplete base functionality single should show no results te
       id="feather-menu-trigger"
       role="combobox"
     >
-      <fieldset
-        aria-hidden="true"
+      <div
         class="feather-input-border"
       >
-        <legend>
-          Users
-        </legend>
-      </fieldset>
-      <label
-        class="feather-input-label"
-        data-ref-id="feather-form-element-label"
-        for="feather-autocomplete-input"
-      >
-        Users
-      </label>
+        <div
+          class="pre-border"
+        />
+        <div
+          class="label-border"
+          style="width: 0px;"
+        >
+          <label
+            class="feather-input-label"
+            data-ref-id="feather-form-element-label"
+            for="feather-autocomplete-input"
+          >
+            Users
+          </label>
+        </div>
+        <div
+          class="post-border"
+        />
+      </div>
       <div
         class="feather-input-wrapper"
       >
@@ -2420,21 +2518,28 @@ exports[`FeatherAutocomplete multi:specific chip selection should move chip sele
       id="feather-menu-trigger"
       role="combobox"
     >
-      <fieldset
-        aria-hidden="true"
+      <div
         class="feather-input-border"
       >
-        <legend>
-          Users
-        </legend>
-      </fieldset>
-      <label
-        class="feather-input-label"
-        data-ref-id="feather-form-element-label"
-        for="feather-autocomplete-input"
-      >
-        Users
-      </label>
+        <div
+          class="pre-border"
+        />
+        <div
+          class="label-border"
+          style="width: 0px;"
+        >
+          <label
+            class="feather-input-label"
+            data-ref-id="feather-form-element-label"
+            for="feather-autocomplete-input"
+          >
+            Users
+          </label>
+        </div>
+        <div
+          class="post-border"
+        />
+      </div>
       <div
         class="feather-input-wrapper"
       >
@@ -2631,21 +2736,28 @@ exports[`FeatherAutocomplete multi:specific chip selection should move chip sele
       id="feather-menu-trigger"
       role="combobox"
     >
-      <fieldset
-        aria-hidden="true"
+      <div
         class="feather-input-border"
       >
-        <legend>
-          Users
-        </legend>
-      </fieldset>
-      <label
-        class="feather-input-label"
-        data-ref-id="feather-form-element-label"
-        for="feather-autocomplete-input"
-      >
-        Users
-      </label>
+        <div
+          class="pre-border"
+        />
+        <div
+          class="label-border"
+          style="width: 0px;"
+        >
+          <label
+            class="feather-input-label"
+            data-ref-id="feather-form-element-label"
+            for="feather-autocomplete-input"
+          >
+            Users
+          </label>
+        </div>
+        <div
+          class="post-border"
+        />
+      </div>
       <div
         class="feather-input-wrapper"
       >
@@ -2842,21 +2954,28 @@ exports[`FeatherAutocomplete multi:specific chip selection should not move chip 
       id="feather-menu-trigger"
       role="combobox"
     >
-      <fieldset
-        aria-hidden="true"
+      <div
         class="feather-input-border"
       >
-        <legend>
-          Users
-        </legend>
-      </fieldset>
-      <label
-        class="feather-input-label"
-        data-ref-id="feather-form-element-label"
-        for="feather-autocomplete-input"
-      >
-        Users
-      </label>
+        <div
+          class="pre-border"
+        />
+        <div
+          class="label-border"
+          style="width: 0px;"
+        >
+          <label
+            class="feather-input-label"
+            data-ref-id="feather-form-element-label"
+            for="feather-autocomplete-input"
+          >
+            Users
+          </label>
+        </div>
+        <div
+          class="post-border"
+        />
+      </div>
       <div
         class="feather-input-wrapper"
       >
@@ -3053,21 +3172,28 @@ exports[`FeatherAutocomplete multi:specific chip selection should not perform an
       id="feather-menu-trigger"
       role="combobox"
     >
-      <fieldset
-        aria-hidden="true"
+      <div
         class="feather-input-border"
       >
-        <legend>
-          Users
-        </legend>
-      </fieldset>
-      <label
-        class="feather-input-label"
-        data-ref-id="feather-form-element-label"
-        for="feather-autocomplete-input"
-      >
-        Users
-      </label>
+        <div
+          class="pre-border"
+        />
+        <div
+          class="label-border"
+          style="width: 0px;"
+        >
+          <label
+            class="feather-input-label"
+            data-ref-id="feather-form-element-label"
+            for="feather-autocomplete-input"
+          >
+            Users
+          </label>
+        </div>
+        <div
+          class="post-border"
+        />
+      </div>
       <div
         class="feather-input-wrapper"
       >
@@ -3264,21 +3390,28 @@ exports[`FeatherAutocomplete multi:specific chip selection should select rightmo
       id="feather-menu-trigger"
       role="combobox"
     >
-      <fieldset
-        aria-hidden="true"
+      <div
         class="feather-input-border"
       >
-        <legend>
-          Users
-        </legend>
-      </fieldset>
-      <label
-        class="feather-input-label"
-        data-ref-id="feather-form-element-label"
-        for="feather-autocomplete-input"
-      >
-        Users
-      </label>
+        <div
+          class="pre-border"
+        />
+        <div
+          class="label-border"
+          style="width: 0px;"
+        >
+          <label
+            class="feather-input-label"
+            data-ref-id="feather-form-element-label"
+            for="feather-autocomplete-input"
+          >
+            Users
+          </label>
+        </div>
+        <div
+          class="post-border"
+        />
+      </div>
       <div
         class="feather-input-wrapper"
       >
@@ -3555,21 +3688,28 @@ exports[`FeatherAutocomplete multi:specific chip selection should select the rig
       id="feather-menu-trigger"
       role="combobox"
     >
-      <fieldset
-        aria-hidden="true"
+      <div
         class="feather-input-border"
       >
-        <legend>
-          Users
-        </legend>
-      </fieldset>
-      <label
-        class="feather-input-label"
-        data-ref-id="feather-form-element-label"
-        for="feather-autocomplete-input"
-      >
-        Users
-      </label>
+        <div
+          class="pre-border"
+        />
+        <div
+          class="label-border"
+          style="width: 0px;"
+        >
+          <label
+            class="feather-input-label"
+            data-ref-id="feather-form-element-label"
+            for="feather-autocomplete-input"
+          >
+            Users
+          </label>
+        </div>
+        <div
+          class="post-border"
+        />
+      </div>
       <div
         class="feather-input-wrapper"
       >
@@ -3766,21 +3906,28 @@ exports[`FeatherAutocomplete multi:specific chip selection should should deselec
       id="feather-menu-trigger"
       role="combobox"
     >
-      <fieldset
-        aria-hidden="true"
+      <div
         class="feather-input-border"
       >
-        <legend>
-          Users
-        </legend>
-      </fieldset>
-      <label
-        class="feather-input-label"
-        data-ref-id="feather-form-element-label"
-        for="feather-autocomplete-input"
-      >
-        Users
-      </label>
+        <div
+          class="pre-border"
+        />
+        <div
+          class="label-border"
+          style="width: 0px;"
+        >
+          <label
+            class="feather-input-label"
+            data-ref-id="feather-form-element-label"
+            for="feather-autocomplete-input"
+          >
+            Users
+          </label>
+        </div>
+        <div
+          class="post-border"
+        />
+      </div>
       <div
         class="feather-input-wrapper"
       >
@@ -3976,21 +4123,28 @@ exports[`FeatherAutocomplete multi:specific selection limit should clear warning
       id="feather-menu-trigger"
       role="combobox"
     >
-      <fieldset
-        aria-hidden="true"
+      <div
         class="feather-input-border"
       >
-        <legend>
-          Users
-        </legend>
-      </fieldset>
-      <label
-        class="feather-input-label"
-        data-ref-id="feather-form-element-label"
-        for="feather-autocomplete-input"
-      >
-        Users
-      </label>
+        <div
+          class="pre-border"
+        />
+        <div
+          class="label-border"
+          style="width: 0px;"
+        >
+          <label
+            class="feather-input-label"
+            data-ref-id="feather-form-element-label"
+            for="feather-autocomplete-input"
+          >
+            Users
+          </label>
+        </div>
+        <div
+          class="post-border"
+        />
+      </div>
       <div
         class="feather-input-wrapper"
       >
@@ -4187,21 +4341,28 @@ exports[`FeatherAutocomplete multi:specific selection limit should display a war
       id="feather-menu-trigger"
       role="combobox"
     >
-      <fieldset
-        aria-hidden="true"
+      <div
         class="feather-input-border"
       >
-        <legend>
-          Users
-        </legend>
-      </fieldset>
-      <label
-        class="feather-input-label"
-        data-ref-id="feather-form-element-label"
-        for="feather-autocomplete-input"
-      >
-        Users
-      </label>
+        <div
+          class="pre-border"
+        />
+        <div
+          class="label-border"
+          style="width: 0px;"
+        >
+          <label
+            class="feather-input-label"
+            data-ref-id="feather-form-element-label"
+            for="feather-autocomplete-input"
+          >
+            Users
+          </label>
+        </div>
+        <div
+          class="post-border"
+        />
+      </div>
       <div
         class="feather-input-wrapper"
       >
@@ -4470,21 +4631,28 @@ exports[`FeatherAutocomplete multi:specific selection limit should display a war
       id="feather-menu-trigger"
       role="combobox"
     >
-      <fieldset
-        aria-hidden="true"
+      <div
         class="feather-input-border"
       >
-        <legend>
-          Users
-        </legend>
-      </fieldset>
-      <label
-        class="feather-input-label"
-        data-ref-id="feather-form-element-label"
-        for="feather-autocomplete-input"
-      >
-        Users
-      </label>
+        <div
+          class="pre-border"
+        />
+        <div
+          class="label-border"
+          style="width: 0px;"
+        >
+          <label
+            class="feather-input-label"
+            data-ref-id="feather-form-element-label"
+            for="feather-autocomplete-input"
+          >
+            Users
+          </label>
+        </div>
+        <div
+          class="post-border"
+        />
+      </div>
       <div
         class="feather-input-wrapper"
       >
@@ -4755,21 +4923,28 @@ exports[`FeatherAutocomplete multi:specific selection limit should display a war
       id="feather-menu-trigger"
       role="combobox"
     >
-      <fieldset
-        aria-hidden="true"
+      <div
         class="feather-input-border"
       >
-        <legend>
-          Users
-        </legend>
-      </fieldset>
-      <label
-        class="feather-input-label"
-        data-ref-id="feather-form-element-label"
-        for="feather-autocomplete-input"
-      >
-        Users
-      </label>
+        <div
+          class="pre-border"
+        />
+        <div
+          class="label-border"
+          style="width: 0px;"
+        >
+          <label
+            class="feather-input-label"
+            data-ref-id="feather-form-element-label"
+            for="feather-autocomplete-input"
+          >
+            Users
+          </label>
+        </div>
+        <div
+          class="post-border"
+        />
+      </div>
       <div
         class="feather-input-wrapper"
       >
@@ -5017,21 +5192,28 @@ exports[`FeatherAutocomplete multi:specific should hide/reset menu and clear tex
       id="feather-menu-trigger"
       role="combobox"
     >
-      <fieldset
-        aria-hidden="true"
+      <div
         class="feather-input-border"
       >
-        <legend>
-          Users
-        </legend>
-      </fieldset>
-      <label
-        class="feather-input-label"
-        data-ref-id="feather-form-element-label"
-        for="feather-autocomplete-input"
-      >
-        Users
-      </label>
+        <div
+          class="pre-border"
+        />
+        <div
+          class="label-border"
+          style="width: 0px;"
+        >
+          <label
+            class="feather-input-label"
+            data-ref-id="feather-form-element-label"
+            for="feather-autocomplete-input"
+          >
+            Users
+          </label>
+        </div>
+        <div
+          class="post-border"
+        />
+      </div>
       <div
         class="feather-input-wrapper"
       >
@@ -5149,21 +5331,28 @@ exports[`FeatherAutocomplete single:specific should close menu when enter is pre
       id="feather-menu-trigger"
       role="combobox"
     >
-      <fieldset
-        aria-hidden="true"
+      <div
         class="feather-input-border"
       >
-        <legend>
-          Users
-        </legend>
-      </fieldset>
-      <label
-        class="feather-input-label"
-        data-ref-id="feather-form-element-label"
-        for="feather-autocomplete-input"
-      >
-        Users
-      </label>
+        <div
+          class="pre-border"
+        />
+        <div
+          class="label-border"
+          style="width: 0px;"
+        >
+          <label
+            class="feather-input-label"
+            data-ref-id="feather-form-element-label"
+            for="feather-autocomplete-input"
+          >
+            Users
+          </label>
+        </div>
+        <div
+          class="post-border"
+        />
+      </div>
       <div
         class="feather-input-wrapper"
       >
@@ -5281,21 +5470,28 @@ exports[`FeatherAutocomplete single:specific should handle a null property on va
       id="feather-menu-trigger"
       role="combobox"
     >
-      <fieldset
-        aria-hidden="true"
+      <div
         class="feather-input-border"
       >
-        <legend>
-          Users
-        </legend>
-      </fieldset>
-      <label
-        class="feather-input-label"
-        data-ref-id="feather-form-element-label"
-        for="feather-autocomplete-input"
-      >
-        Users
-      </label>
+        <div
+          class="pre-border"
+        />
+        <div
+          class="label-border"
+          style="width: 0px;"
+        >
+          <label
+            class="feather-input-label"
+            data-ref-id="feather-form-element-label"
+            for="feather-autocomplete-input"
+          >
+            Users
+          </label>
+        </div>
+        <div
+          class="post-border"
+        />
+      </div>
       <div
         class="feather-input-wrapper"
       >
@@ -5432,21 +5628,28 @@ exports[`FeatherAutocomplete single:specific should show add new element when in
       id="feather-menu-trigger"
       role="combobox"
     >
-      <fieldset
-        aria-hidden="true"
+      <div
         class="feather-input-border"
       >
-        <legend>
-          Users
-        </legend>
-      </fieldset>
-      <label
-        class="feather-input-label"
-        data-ref-id="feather-form-element-label"
-        for="feather-autocomplete-input"
-      >
-        Users
-      </label>
+        <div
+          class="pre-border"
+        />
+        <div
+          class="label-border"
+          style="width: 0px;"
+        >
+          <label
+            class="feather-input-label"
+            data-ref-id="feather-form-element-label"
+            for="feather-autocomplete-input"
+          >
+            Users
+          </label>
+        </div>
+        <div
+          class="post-border"
+        />
+      </div>
       <div
         class="feather-input-wrapper"
       >

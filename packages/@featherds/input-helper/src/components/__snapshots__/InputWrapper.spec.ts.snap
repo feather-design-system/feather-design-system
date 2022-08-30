@@ -4,21 +4,28 @@ exports[`InputWrapper.vue should hide the label when hideLabel is true 1`] = `
 <div
   class="feather-input-wrapper-container hide-label error"
 >
-  <fieldset
-    aria-hidden="true"
+  <div
     class="feather-input-border"
   >
-    <legend>
-      test
-    </legend>
-  </fieldset>
-  <label
-    class="feather-input-label"
-    data-ref-id="feather-form-element-label"
-    for="test"
-  >
-    test
-  </label>
+    <div
+      class="pre-border"
+    />
+    <div
+      class="label-border"
+      style="width: 0px;"
+    >
+      <label
+        class="feather-input-label"
+        data-ref-id="feather-form-element-label"
+        for="test"
+      >
+        test
+      </label>
+    </div>
+    <div
+      class="post-border"
+    />
+  </div>
   <div
     class="feather-input-wrapper"
   >
@@ -72,21 +79,28 @@ exports[`InputWrapper.vue should render a focused border & raised label 1`] = `
 <div
   class="feather-input-wrapper-container focused error"
 >
-  <fieldset
-    aria-hidden="true"
+  <div
     class="feather-input-border"
   >
-    <legend>
-      test
-    </legend>
-  </fieldset>
-  <label
-    class="feather-input-label"
-    data-ref-id="feather-form-element-label"
-    for="test"
-  >
-    test
-  </label>
+    <div
+      class="pre-border"
+    />
+    <div
+      class="label-border"
+      style="width: 0px;"
+    >
+      <label
+        class="feather-input-label"
+        data-ref-id="feather-form-element-label"
+        for="test"
+      >
+        test
+      </label>
+    </div>
+    <div
+      class="post-border"
+    />
+  </div>
   <div
     class="feather-input-wrapper"
   >
@@ -140,21 +154,28 @@ exports[`InputWrapper.vue should render a normal wrapper 1`] = `
 <div
   class="feather-input-wrapper-container error"
 >
-  <fieldset
-    aria-hidden="true"
+  <div
     class="feather-input-border"
   >
-    <legend>
-      test
-    </legend>
-  </fieldset>
-  <label
-    class="feather-input-label"
-    data-ref-id="feather-form-element-label"
-    for="test"
-  >
-    test
-  </label>
+    <div
+      class="pre-border"
+    />
+    <div
+      class="label-border"
+      style="width: 0px;"
+    >
+      <label
+        class="feather-input-label"
+        data-ref-id="feather-form-element-label"
+        for="test"
+      >
+        test
+      </label>
+    </div>
+    <div
+      class="post-border"
+    />
+  </div>
   <div
     class="feather-input-wrapper"
   >
@@ -208,21 +229,28 @@ exports[`InputWrapper.vue should render a raised label 1`] = `
 <div
   class="feather-input-wrapper-container raised error"
 >
-  <fieldset
-    aria-hidden="true"
+  <div
     class="feather-input-border"
   >
-    <legend>
-      test
-    </legend>
-  </fieldset>
-  <label
-    class="feather-input-label"
-    data-ref-id="feather-form-element-label"
-    for="test"
-  >
-    test
-  </label>
+    <div
+      class="pre-border"
+    />
+    <div
+      class="label-border"
+      style="width: 0px;"
+    >
+      <label
+        class="feather-input-label"
+        data-ref-id="feather-form-element-label"
+        for="test"
+      >
+        test
+      </label>
+    </div>
+    <div
+      class="post-border"
+    />
+  </div>
   <div
     class="feather-input-wrapper"
   >
@@ -276,21 +304,28 @@ exports[`InputWrapper.vue should render clear and error icons 1`] = `
 <div
   class="feather-input-wrapper-container error"
 >
-  <fieldset
-    aria-hidden="true"
+  <div
     class="feather-input-border"
   >
-    <legend>
-      test
-    </legend>
-  </fieldset>
-  <label
-    class="feather-input-label"
-    data-ref-id="feather-form-element-label"
-    for="test"
-  >
-    test
-  </label>
+    <div
+      class="pre-border"
+    />
+    <div
+      class="label-border"
+      style="width: 0px;"
+    >
+      <label
+        class="feather-input-label"
+        data-ref-id="feather-form-element-label"
+        for="test"
+      >
+        test
+      </label>
+    </div>
+    <div
+      class="post-border"
+    />
+  </div>
   <div
     class="feather-input-wrapper"
   >
@@ -362,21 +397,28 @@ exports[`InputWrapper.vue should render clear icon when clear and show clear is 
 <div
   class="feather-input-wrapper-container error"
 >
-  <fieldset
-    aria-hidden="true"
+  <div
     class="feather-input-border"
   >
-    <legend>
-      test
-    </legend>
-  </fieldset>
-  <label
-    class="feather-input-label"
-    data-ref-id="feather-form-element-label"
-    for="test"
-  >
-    test
-  </label>
+    <div
+      class="pre-border"
+    />
+    <div
+      class="label-border"
+      style="width: 0px;"
+    >
+      <label
+        class="feather-input-label"
+        data-ref-id="feather-form-element-label"
+        for="test"
+      >
+        test
+      </label>
+    </div>
+    <div
+      class="post-border"
+    />
+  </div>
   <div
     class="feather-input-wrapper"
   >
@@ -448,21 +490,28 @@ exports[`InputWrapper.vue should render in an error state 1`] = `
 <div
   class="feather-input-wrapper-container error"
 >
-  <fieldset
-    aria-hidden="true"
+  <div
     class="feather-input-border"
   >
-    <legend>
-      test
-    </legend>
-  </fieldset>
-  <label
-    class="feather-input-label"
-    data-ref-id="feather-form-element-label"
-    for="test"
-  >
-    test
-  </label>
+    <div
+      class="pre-border"
+    />
+    <div
+      class="label-border"
+      style="width: 0px;"
+    >
+      <label
+        class="feather-input-label"
+        data-ref-id="feather-form-element-label"
+        for="test"
+      >
+        test
+      </label>
+    </div>
+    <div
+      class="post-border"
+    />
+  </div>
   <div
     class="feather-input-wrapper"
   >
@@ -516,21 +565,28 @@ exports[`InputWrapper.vue should render in disabled state 1`] = `
 <div
   class="feather-input-wrapper-container error disabled"
 >
-  <fieldset
-    aria-hidden="true"
+  <div
     class="feather-input-border"
   >
-    <legend>
-      test
-    </legend>
-  </fieldset>
-  <label
-    class="feather-input-label"
-    data-ref-id="feather-form-element-label"
-    for="test"
-  >
-    test
-  </label>
+    <div
+      class="pre-border"
+    />
+    <div
+      class="label-border"
+      style="width: 0px;"
+    >
+      <label
+        class="feather-input-label"
+        data-ref-id="feather-form-element-label"
+        for="test"
+      >
+        test
+      </label>
+    </div>
+    <div
+      class="post-border"
+    />
+  </div>
   <div
     class="feather-input-wrapper"
   >
@@ -584,21 +640,28 @@ exports[`InputWrapper.vue should take into account any prefix elements when not 
 <div
   class="feather-input-wrapper-container error"
 >
-  <fieldset
-    aria-hidden="true"
+  <div
     class="feather-input-border"
   >
-    <legend>
-      test
-    </legend>
-  </fieldset>
-  <label
-    class="feather-input-label"
-    data-ref-id="feather-form-element-label"
-    for="test"
-  >
-    test
-  </label>
+    <div
+      class="pre-border"
+    />
+    <div
+      class="label-border"
+      style="width: 0px;"
+    >
+      <label
+        class="feather-input-label"
+        data-ref-id="feather-form-element-label"
+        for="test"
+      >
+        test
+      </label>
+    </div>
+    <div
+      class="post-border"
+    />
+  </div>
   <div
     class="feather-input-wrapper"
   >

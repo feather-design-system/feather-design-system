@@ -1,14 +1,18 @@
 <template>
   <div class="feather-input-wrapper-container" :class="containerCls">
-    <fieldset aria-hidden="true" class="feather-input-border">
-      <legend>{{ label }}</legend>
-    </fieldset>
-    <label
-      class="feather-input-label"
-      :for="inputId"
-      data-ref-id="feather-form-element-label"
-      >{{ label }}</label
-    >
+    <div class="feather-input-border">
+      <div class="pre-border"></div>
+      <div class="label-border" :style="{ width: labelWidth }">
+        <label
+          class="feather-input-label"
+          :for="inputId"
+          data-ref-id="feather-form-element-label"
+          >{{ label }}</label
+        >
+      </div>
+      <div class="post-border"></div>
+    </div>
+
     <div class="feather-input-wrapper" @click="handleWrapperClick">
       <div class="prefix">
         <slot name="pre" />
@@ -61,8 +65,8 @@ export default defineComponent({
   props,
   data() {
     return {
-      prefixWidth: 0,
-      prefixObserver: undefined as unknown as MutationObserver,
+      labelWidth: "0px",
+      labelObserver: undefined as unknown as MutationObserver,
     };
   },
   setup() {
@@ -121,9 +125,6 @@ export default defineComponent({
       if (this.error) {
         cls.push("error");
       }
-      if (this.background) {
-        cls.push("background");
-      }
 
       if (this.disabled) {
         cls.push("disabled");
@@ -146,23 +147,26 @@ export default defineComponent({
     },
   },
   mounted() {
-    const element = this.$el.querySelector(".prefix");
+    const element = this.$el.querySelector(".feather-input-label");
     if (element) {
       const config = { childList: true, subtree: true };
       const callback = () => {
-        const prefix = this.$el.querySelector(".prefix");
-        this.prefixWidth = prefix ? prefix.offsetWidth : 0;
+        const label = this.$el.querySelector(".feather-input-label");
+        this.labelWidth =
+          label && label.offsetWidth > 2
+            ? label.offsetWidth * 0.75 + 8 + "px"
+            : "0px";
       };
 
-      this.prefixObserver = new MutationObserver(callback);
+      this.labelObserver = new MutationObserver(callback);
 
-      this.prefixObserver.observe(element, config);
+      this.labelObserver.observe(element, config);
       callback();
     }
   },
   unmounted() {
-    if (this.prefixObserver) {
-      this.prefixObserver.disconnect();
+    if (this.labelObserver) {
+      this.labelObserver.disconnect();
     }
   },
   components: {
@@ -185,29 +189,50 @@ export default defineComponent({
 .feather-input-wrapper-container {
   position: relative;
   width: 100%;
-  &.background {
-    .feather-input-label {
-      background-color: var($background);
-    }
-  }
-  fieldset.feather-input-border {
+  .feather-input-border {
     position: absolute;
     top: 0;
     left: 0;
     right: 0;
     bottom: 0;
-    border: 1px solid var($secondary-text-on-surface);
-    border-radius: 4px;
+    display: flex;
     margin: 0;
     padding: 0;
-    legend {
-      display: none;
+    #{$input-wrapper-border-color}: var($secondary-text-on-surface);
+    #{$input-wrapper-border-width}: 1px;
+    .pre-border {
+      border-left: var($input-wrapper-border-width) solid
+        var($input-wrapper-border-color);
+      border-top: var($input-wrapper-border-width) solid
+        var($input-wrapper-border-color);
+      border-bottom: var($input-wrapper-border-width) solid
+        var($input-wrapper-border-color);
+      border-radius: 4px 0 0 4px;
+      width: 12px;
+      flex: none;
+    }
+    .post-border {
+      border-right: var($input-wrapper-border-width) solid
+        var($input-wrapper-border-color);
+      border-top: var($input-wrapper-border-width) solid
+        var($input-wrapper-border-color);
+      border-bottom: var($input-wrapper-border-width) solid
+        var($input-wrapper-border-color);
+      border-radius: 0 4px 4px 0;
+      flex: 1;
+    }
+    .label-border {
+      border-top: var($input-wrapper-border-width) solid
+        var($input-wrapper-border-color);
+      border-bottom: var($input-wrapper-border-width) solid
+        var($input-wrapper-border-color);
+      transition: border-top-width 100ms ease-in-out 100ms;
     }
   }
   &:hover {
     cursor: text;
     .feather-input-border {
-      border-color: var($primary-text-on-surface);
+      #{$input-wrapper-border-color}: var($primary-text-on-surface);
       &:after {
         content: "";
         width: 3px;
@@ -230,13 +255,17 @@ export default defineComponent({
 
   &.focused:not(.disabled) {
     .feather-input-border {
-      border-color: var($primary);
-      border-width: 2px;
+      #{$input-wrapper-border-color}: var($primary);
+      #{$input-wrapper-border-width}: 2px;
 
       &:after {
         transform: translateX(8px) scaleX(0.25);
         opacity: 0;
       }
+    }
+    .feather-input-border .label-border {
+      transition: none;
+      border-top-width: 0;
     }
     .feather-input-label {
       color: var($primary);
@@ -250,7 +279,7 @@ export default defineComponent({
     }
     &.focused {
       .feather-input-border {
-        border-color: var($error);
+        #{$input-wrapper-border-color}: var($error);
       }
       .feather-input-label {
         color: var($error);
@@ -263,7 +292,7 @@ export default defineComponent({
 
   &.disabled {
     .feather-input-border {
-      border-color: var($border-on-surface);
+      #{$input-wrapper-border-color}: var($border-on-surface);
       cursor: default !important;
     }
     &:hover .feather-input-border {
@@ -295,6 +324,10 @@ export default defineComponent({
   }
 
   &.raised {
+    .feather-input-border .label-border {
+      transition: none;
+      border-top-width: 0;
+    }
     .feather-input-label {
       @include raised-label();
       left: 0.75rem;
@@ -326,7 +359,7 @@ export default defineComponent({
     }
     &.raised {
       .feather-input-label {
-        left: 1rem;
+        left: 0.75rem;
       }
     }
   }
@@ -371,7 +404,6 @@ export default defineComponent({
 .feather-input-label {
   @include body-small();
   color: var($secondary-text-on-surface);
-  background-color: var($surface);
   line-height: 1.2rem;
   top: 0.625rem;
   cursor: text;

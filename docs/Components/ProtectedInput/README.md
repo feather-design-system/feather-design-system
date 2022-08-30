@@ -29,7 +29,6 @@ Used in scenarios where sensitive user information must be entered into a comput
 | label      | Text label for the input                                                                                                              | `String`  | `true`   | -                             |
 | hint       | Hint text to be displayed below the input                                                                                             | `String`  | `false`  | -                             |
 | error      | Error text to be displayed below the input                                                                                            | `String`  | `false`  | -                             |
-| background | Sets the label background color to `$background`. Use this if control is on a background surface                                      | `Boolean` | `false`  | `false`                       |
 | disabled   | Puts the input into a disabled state                                                                                                  | `Boolean` | `false`  | `false`                       |
 | labels     | Object containing labels to be used by this component. Mainly used for i18n or customization of labels. See [Labels](#labels) example | `Object`  | `false`  | See [Labels](#labels) example |
 

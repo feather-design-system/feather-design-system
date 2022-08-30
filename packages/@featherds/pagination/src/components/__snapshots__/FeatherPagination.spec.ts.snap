@@ -10,7 +10,6 @@ exports[`FeatherPagination.vue should disable first and previous buttons on firs
     Rows per page
   </div>
   <feather-select-stub
-    background="false"
     class="page-size-select"
     clear=""
     disabled="false"
@@ -117,7 +116,6 @@ exports[`FeatherPagination.vue should disable last and next buttons on last page
     Rows per page
   </div>
   <feather-select-stub
-    background="false"
     class="page-size-select"
     clear=""
     disabled="false"

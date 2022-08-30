@@ -1,7 +1,7 @@
 <template>
   <div class="feather-row">
     <form class="feather-col-4">
-      <FeatherInput label="First Name" v-model="firstName" background />
+      <FeatherInput label="First Name" v-model="firstName" />
       <FeatherSelect
         label="State"
         background

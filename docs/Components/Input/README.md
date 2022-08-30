@@ -21,36 +21,35 @@ Inputs can be used as a singular object in a layout, or they can be paired toget
 
 **Label Guidelines:**
 
-* keep label text descriptive, unambiguous and concise
-* be consistent with capitalization of label text (title case or sentence case)
-* labels should fit on a single line
-* use natural language if necessary (e.g. instead of “Issued by” consider “Which bank issued your card?”)
-* asterisks should be used on required fields
+- keep label text descriptive, unambiguous and concise
+- be consistent with capitalization of label text (title case or sentence case)
+- labels should fit on a single line
+- use natural language if necessary (e.g. instead of “Issued by” consider “Which bank issued your card?”)
+- asterisks should be used on required fields
 
 **Field Guidelines:**
 
-* keep field sizes consistent within a page
-* one field per row unless the fields are closely related (e.g. First Name and Last Name or City, State)
-* where appropriate a max field size and character limit should be included
+- keep field sizes consistent within a page
+- one field per row unless the fields are closely related (e.g. First Name and Last Name or City, State)
+- where appropriate a max field size and character limit should be included
 
 ## Input
 
 ### Props
 
-| Name       | Description                                                                                      | Type      | Required | Default      |
-| ---------- | ------------------------------------------------------------------------------------------------ | --------- | -------- | ------------ |
-| modelValue | value to be placed in the Input                                                                  | `String`  | `false`  | -            |
-| label      | text label for the Input                                                                         | `String`  | `true`   | -            |
-| hint       | hint text to be displayed below the Input                                                        | `String`  | `false`  | -            |
-| error      | error text to be displayed below the Input                                                       | `String`  | `false`  | -            |
-| clear      | label for the clear link that will appear at the end of the Input when it has a value            | `String`  | `false`  | `""`         |
-| type       | type of underlying Input                                                                         | `String`  | `false`  | `"text"`     |
-| background | sets the label background color to `$background`. Use this if control is on a background surface | `Boolean` | `false`  | `false`      |
-| disabled   | puts the Input into a disabled state                                                             | `Boolean` | `false`  | `false`      |
-| maxlength  | maximum amount of characters this Input will accept                                              | `Number`  | `false`  | 0 - no limit |
-| hideLabel  | hides the label for the Input in scenarios like tables where it would get in the way             | `Boolean` | `false`  | -            |
-| id         | an ID that can be will be assigned to the input element                                          | `String`  | `false`  | -            |
-| schema     | a schema for use in validation                                                                   | `Object`  | `false`  | -            |
+| Name       | Description                                                                           | Type      | Required | Default      |
+| ---------- | ------------------------------------------------------------------------------------- | --------- | -------- | ------------ |
+| modelValue | value to be placed in the Input                                                       | `String`  | `false`  | -            |
+| label      | text label for the Input                                                              | `String`  | `true`   | -            |
+| hint       | hint text to be displayed below the Input                                             | `String`  | `false`  | -            |
+| error      | error text to be displayed below the Input                                            | `String`  | `false`  | -            |
+| clear      | label for the clear link that will appear at the end of the Input when it has a value | `String`  | `false`  | `""`         |
+| type       | type of underlying Input                                                              | `String`  | `false`  | `"text"`     |
+| disabled   | puts the Input into a disabled state                                                  | `Boolean` | `false`  | `false`      |
+| maxlength  | maximum amount of characters this Input will accept                                   | `Number`  | `false`  | 0 - no limit |
+| hideLabel  | hides the label for the Input in scenarios like tables where it would get in the way  | `Boolean` | `false`  | -            |
+| id         | an ID that can be will be assigned to the input element                               | `String`  | `false`  | -            |
+| schema     | a schema for use in validation                                                        | `Object`  | `false`  | -            |
 
 ### Events
 
@@ -73,18 +72,16 @@ Inputs can be used as a singular object in a layout, or they can be paired toget
 
 Specifying an `class` or `data-ref-id` attribute will cause them to be applied to the component root container `div`. All other attributes are inherited to the `input` where applicable. Some will be ignored if they conflict with attributes used for accessibility.
 
-
 ## ValidationHeader
+
 This is an element designed to be used in conjunction with forms using the `yup` validation library. This component displays a list of errors and links to the errored fields which helps in best practices for form validation. Please see the examples in the [Form Validation page](/Guides/FormValidation/#examples)
 
 ### Props
 
-| Name       | Description                                                      | Type    | Required | Default |
-| ---------- | ---------------------------------------------------------------- | ------- | -------- | ------- |
-| errorList  | an array of yup `ValidationError` objects produced by validation | `Array` | `false`  | `[]`    |
-
+| Name      | Description                                                      | Type    | Required | Default |
+| --------- | ---------------------------------------------------------------- | ------- | -------- | ------- |
+| errorList | an array of yup `ValidationError` objects produced by validation | `Array` | `false`  | `[]`    |
 
 ### data-ref-ids
 
 - `feather-validation-header` - the root element
-

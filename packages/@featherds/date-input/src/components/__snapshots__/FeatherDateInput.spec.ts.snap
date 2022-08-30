@@ -14,21 +14,28 @@ exports[`FeatherDateInput.vue should render disabled 1`] = `
     <div
       class="feather-input-wrapper-container raised disabled"
     >
-      <fieldset
-        aria-hidden="true"
+      <div
         class="feather-input-border"
       >
-        <legend>
-          Test
-        </legend>
-      </fieldset>
-      <label
-        class="feather-input-label"
-        data-ref-id="feather-form-element-label"
-        for="feather-date-input-label"
-      >
-        Test
-      </label>
+        <div
+          class="pre-border"
+        />
+        <div
+          class="label-border"
+          style="width: 0px;"
+        >
+          <label
+            class="feather-input-label"
+            data-ref-id="feather-form-element-label"
+            for="feather-date-input-label"
+          >
+            Test
+          </label>
+        </div>
+        <div
+          class="post-border"
+        />
+      </div>
       <div
         class="feather-input-wrapper"
       >
@@ -187,21 +194,28 @@ exports[`FeatherDateInput.vue should render disabled 1`] = `
             <div
               class="feather-input-wrapper-container raised inline feather-select-wrapper"
             >
-              <fieldset
-                aria-hidden="true"
+              <div
                 class="feather-input-border"
               >
-                <legend>
-                  Select month
-                </legend>
-              </fieldset>
-              <label
-                class="feather-input-label"
-                data-ref-id="feather-form-element-label"
-                for="feather-select-input"
-              >
-                Select month
-              </label>
+                <div
+                  class="pre-border"
+                />
+                <div
+                  class="label-border"
+                  style="width: 0px;"
+                >
+                  <label
+                    class="feather-input-label"
+                    data-ref-id="feather-form-element-label"
+                    for="feather-select-input"
+                  >
+                    Select month
+                  </label>
+                </div>
+                <div
+                  class="post-border"
+                />
+              </div>
               <div
                 class="feather-input-wrapper"
               >
@@ -487,21 +501,28 @@ exports[`FeatherDateInput.vue should render disabled 1`] = `
             <div
               class="feather-input-wrapper-container raised inline feather-select-wrapper"
             >
-              <fieldset
-                aria-hidden="true"
+              <div
                 class="feather-input-border"
               >
-                <legend>
-                  Select year
-                </legend>
-              </fieldset>
-              <label
-                class="feather-input-label"
-                data-ref-id="feather-form-element-label"
-                for="feather-select-input"
-              >
-                Select year
-              </label>
+                <div
+                  class="pre-border"
+                />
+                <div
+                  class="label-border"
+                  style="width: 0px;"
+                >
+                  <label
+                    class="feather-input-label"
+                    data-ref-id="feather-form-element-label"
+                    for="feather-select-input"
+                  >
+                    Select year
+                  </label>
+                </div>
+                <div
+                  class="post-border"
+                />
+              </div>
               <div
                 class="feather-input-wrapper"
               >
