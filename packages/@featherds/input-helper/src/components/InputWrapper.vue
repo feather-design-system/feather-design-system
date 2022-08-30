@@ -152,16 +152,22 @@ export default defineComponent({
       const config = { childList: true, subtree: true };
       const callback = () => {
         const label = this.$el.querySelector(".feather-input-label");
-        this.labelWidth =
-          label && label.offsetWidth > 2
-            ? label.offsetWidth * 0.75 + 8 + "px"
-            : "0px";
+        const { width } = label.getBoundingClientRect();
+        if (width > 2) {
+          if (this.raised || this.focused) {
+            this.labelWidth = width + "px";
+          } else {
+            this.labelWidth = width * 0.75 + 8 + "px";
+          }
+        } else {
+          this.labelWidth = "0px";
+        }
       };
 
       this.labelObserver = new MutationObserver(callback);
 
       this.labelObserver.observe(element, config);
-      callback();
+      this.$nextTick(callback);
     }
   },
   unmounted() {
@@ -411,7 +417,6 @@ export default defineComponent({
   transition: all 280ms ease-in-out;
   transition-property: top, left, transform, padding;
   transform-origin: center left;
-  z-index: 1;
   left: 1rem;
 }
 </style>
