@@ -135,7 +135,6 @@ import Calendar from "./Calendar/Calendar.vue";
 import { IDateDisabledConfig, LABELS } from "./types";
 import { FeatherMenu } from "@featherds/menu";
 import parse from "date-fns/parse";
-import { lastDayOfQuarterWithOptions } from "date-fns/fp";
 
 export const props = {
   ...InputWrapperProps,
@@ -189,6 +188,11 @@ export const props = {
         "M-d-yy",
       ];
     },
+  },
+  referenceDate: {
+    type: Object as PropType<Date>,
+    required: false,
+    default: () => new Date(),
   },
 } as const;
 export const emits = {
@@ -343,12 +347,32 @@ export default defineComponent({
         spinbuttons.deselectAllSpinButtons();
       }
     };
+
+    //taken from https://github.com/date-fns/date-fns/issues/2087
+    const isMatchYears = (date: string, pattern: string) => {
+      const yearsLen = pattern.split("y").length - 1;
+      if (!(yearsLen > 0)) {
+        return true;
+      } else {
+        const yearsIndex = pattern.indexOf("y");
+        const afterYears = date.slice(yearsIndex);
+        const yearsMatch = afterYears.match(/^.\d+/);
+        if (yearsMatch !== null) {
+          const firstMatch = yearsMatch[0];
+          const result = firstMatch.match(/\d+/);
+          if (result) {
+            return result[0].length === yearsLen;
+          }
+        }
+        return false;
+      }
+    };
     const handlePaste = (pasted: string) => {
       let date = new Date();
       const found = props.pasteFormats.some((format) => {
         try {
-          date = parse(pasted, format, new Date(2022, 0, 1));
-          return !isNaN(date.getTime());
+          date = parse(pasted, format, props.referenceDate);
+          return !isNaN(date.getTime()) && isMatchYears(pasted, format);
         } catch (e) {
           return false;
         }
