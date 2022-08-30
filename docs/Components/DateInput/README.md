@@ -27,16 +27,17 @@ These components are often found in the form of workflows where data entry is th
 
 ### Props
 
-| Name          | Description                                                                                                                           | Type       | Required | Default                               |
-| ------------- | ------------------------------------------------------------------------------------------------------------------------------------- | ---------- | -------- | ------------------------------------- |
-| modelValue    | value of the input                                                                                                                    | `Date`     | `false`  | -                                     |
-| minYear       | minimum year to show                                                                                                                  | `Number`   | `false`  | `1900`                                |
-| maxYear       | maximum year to show                                                                                                                  | `Number`   | `false`  | `2030`                                |
-| mondayFirst   | should monday be first day of the week.                                                                                               | `Boolean`  | `false`  | -                                     |
-| disabledDates | can be used to configure disabled dates. See [Disabled Dates](#disabled-dates)                                                        | `Object`   | `false`  | See [Disabled Dates](#disabled-dates) |
-| labels        | Object containing labels to be used by this component. Mainly used for i18n or customization of labels. See [Labels](#labels) example | `Object`   | `false`  | See [Labels](#labels) example         |
-| schema        | a schema for use in validation                                                                                                        | `Object`   | `false`  | -                                     |
-| pasteFormats  | checks pasted strings for allowed date formats                                                                                        | `String[]` | `false`  | See [Pasting](#pasting)               |
+| Name          | Description                                                                                                                           | Type       | Required | Default                                            |
+| ------------- | ------------------------------------------------------------------------------------------------------------------------------------- | ---------- | -------- | -------------------------------------------------- |
+| modelValue    | value of the input                                                                                                                    | `Date`     | `false`  | -                                                  |
+| minYear       | minimum year to show                                                                                                                  | `Number`   | `false`  | `1900`                                             |
+| maxYear       | maximum year to show                                                                                                                  | `Number`   | `false`  | `2030`                                             |
+| mondayFirst   | should monday be first day of the week.                                                                                               | `Boolean`  | `false`  | -                                                  |
+| disabledDates | can be used to configure disabled dates. See [Disabled Dates](#disabled-dates)                                                        | `Object`   | `false`  | See [Disabled Dates](#disabled-dates)              |
+| labels        | Object containing labels to be used by this component. Mainly used for i18n or customization of labels. See [Labels](#labels) example | `Object`   | `false`  | See [Labels](#labels) example                      |
+| schema        | a schema for use in validation                                                                                                        | `Object`   | `false`  | -                                                  |
+| pasteFormats  | checks pasted strings for allowed date formats                                                                                        | `String[]` | `false`  | See [Pasting](#pasting)                            |
+| referenceDate | date to be used as a reference date when parsing pasted text                                                                          | `Date`     | `false`  | Current Date `new Date()`. See [Pasting](#pasting) |
 
 ### Labels
 
@@ -75,7 +76,7 @@ Text labels for Date Input can be customized via the `labels` property. The defa
 
 ### Pasting
 
-When pasting a string to `FeatherDateInput` we will attempt to parse it for a valid date based on the formats specified in the prop `pasteFormats`. The order of the array is important as that is the order they will be checked. We utilize `date-fns/parse` for handling parsing the string therefore all formats adhere to its syntax. Check out [parse](https://date-fns.org/v2.29.1/docs/parse) for details. The default formats are as follows:
+When pasting a string to `FeatherDateInput` we will attempt to parse it for a valid date based on the formats specified in the prop `pasteFormats`. The order of the array is important as that is the order they will be checked. We utilize `date-fns/parse` for handling parsing the string therefore all formats adhere to its syntax. `date-fns/parse` makes use of a reference date for handling 2 digit years, this means for handling dates in previous century it might not parse `"92"` as the correct `"1992"`. In this scenario we recommend updating the `referenceDate` prop to a date in the previous century, consider `new Date(1900, 1, 1), if any paste data into the field is likely to be the previous century. Check out [parse](https://date-fns.org/v2.29.1/docs/parse) for details. The default formats are as follows:
 
 ```js
 [

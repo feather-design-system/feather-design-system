@@ -43,15 +43,39 @@ const getWrapper = function (options: Record<string, unknown> = {}) {
 
 describe("FeatherDateInput.vue", () => {
   it("should parse valid date strings pasted into spin button", async () => {
-    const wrapper = getWrapper();
+    const wrapper = getWrapper({
+      props: {
+        referenceDate: new Date(1900, 1, 1),
+      },
+    });
     const month = wrapper.findComponent({ ref: "monthButton" });
-    const date = new Date(2022, 1, 1);
+    const date = new Date(1922, 1, 1);
 
-    month.vm.$emit("paste", format(date, "yyyy-MM-dd"));
-    await nextTick();
+    const formats = [
+      "yyyy-MM-dd",
+      "MM/dd/yyyy",
+      "MM-dd-yyyy",
+      "MMM/dd/yyyy",
+      "MMM-dd-yyyy",
+      "MM/dd/yy",
+      "MM-dd-yy",
+      "MMM/dd/yy",
+      "MMM-dd-yy",
+      "M/d/yyyy",
+      "M-d-yyyy",
+      "M/d/yy",
+      "M-d-yy",
+    ];
+    for (const f of formats) {
+      month.vm.$emit("paste", format(date, f));
+      await nextTick();
+    }
+
     const emitted = wrapper.emitted<[Date]>("update:modelValue");
     if (emitted) {
-      expect(isSameDay(emitted[0][0], date)).toBe(true);
+      for (let i = 0; i < formats.length; i++) {
+        expect(isSameDay(emitted[i][0], date)).toBe(true);
+      }
     }
   });
   it("should not parse invalid date string pasted into spin button", async () => {
