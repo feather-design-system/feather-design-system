@@ -111,7 +111,9 @@ export default defineComponent({
     isRaised() {
       if (this.type === "number") {
         if (
-          (this.internalValue !== undefined && this.internalValue !== null) ||
+          (this.internalValue !== undefined &&
+            this.internalValue !== null &&
+            this.internalValue !== "") ||
           this.focused
         ) {
           return true;

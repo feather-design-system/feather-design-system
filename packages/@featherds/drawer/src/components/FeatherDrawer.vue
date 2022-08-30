@@ -1,6 +1,6 @@
 <template>
   <Teleport to="body">
-    <div class="drawer-container feather-styles" v-if="modelValue">
+    <div class="drawer-container feather-styles">
       <transition name="greyOutShim">
         <div v-if="modelValue" class="greyedOut"></div>
       </transition>
@@ -10,7 +10,7 @@
         v-on:after-leave="shown = false"
       >
         <focus-trap
-          v-show="modelValue"
+          v-if="modelValue"
           :enable="modelValue"
           :style="{ width: width }"
           :key="'sect'"
