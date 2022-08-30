@@ -12,10 +12,6 @@ export const InputWrapperProps = {
     type: String,
     default: "",
   },
-  background: {
-    type: Boolean,
-    default: false,
-  },
   disabled: {
     type: Boolean,
     default: false,

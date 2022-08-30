@@ -7,21 +7,28 @@ exports[`FeatherProtectedInput.vue should change input type when show password i
   <div
     class="feather-input-wrapper-container feather-input-content"
   >
-    <fieldset
-      aria-hidden="true"
+    <div
       class="feather-input-border"
     >
-      <legend>
-        TEST
-      </legend>
-    </fieldset>
-    <label
-      class="feather-input-label"
-      data-ref-id="feather-form-element-label"
-      for="feather-input-label"
-    >
-      TEST
-    </label>
+      <div
+        class="pre-border"
+      />
+      <div
+        class="label-border"
+        style="width: 0px;"
+      >
+        <label
+          class="feather-input-label"
+          data-ref-id="feather-form-element-label"
+          for="feather-input-label"
+        >
+          TEST
+        </label>
+      </div>
+      <div
+        class="post-border"
+      />
+    </div>
     <div
       class="feather-input-wrapper"
     >
@@ -105,21 +112,28 @@ exports[`FeatherProtectedInput.vue should render with show password icon by defa
   <div
     class="feather-input-wrapper-container feather-input-content"
   >
-    <fieldset
-      aria-hidden="true"
+    <div
       class="feather-input-border"
     >
-      <legend>
-        TEST
-      </legend>
-    </fieldset>
-    <label
-      class="feather-input-label"
-      data-ref-id="feather-form-element-label"
-      for="feather-input-label"
-    >
-      TEST
-    </label>
+      <div
+        class="pre-border"
+      />
+      <div
+        class="label-border"
+        style="width: 0px;"
+      >
+        <label
+          class="feather-input-label"
+          data-ref-id="feather-form-element-label"
+          for="feather-input-label"
+        >
+          TEST
+        </label>
+      </div>
+      <div
+        class="post-border"
+      />
+    </div>
     <div
       class="feather-input-wrapper"
     >

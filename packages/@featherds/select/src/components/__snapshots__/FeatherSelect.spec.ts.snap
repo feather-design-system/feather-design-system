@@ -14,21 +14,28 @@ exports[`FeatherSelect.vue should not raise the label when its empty 1`] = `
       class="feather-input-wrapper-container feather-select-wrapper"
       id="feather-menu-trigger"
     >
-      <fieldset
-        aria-hidden="true"
+      <div
         class="feather-input-border"
       >
-        <legend>
-          Users
-        </legend>
-      </fieldset>
-      <label
-        class="feather-input-label"
-        data-ref-id="feather-form-element-label"
-        for="feather-select-input"
-      >
-        Users
-      </label>
+        <div
+          class="pre-border"
+        />
+        <div
+          class="label-border"
+          style="width: 0px;"
+        >
+          <label
+            class="feather-input-label"
+            data-ref-id="feather-form-element-label"
+            for="feather-select-input"
+          >
+            Users
+          </label>
+        </div>
+        <div
+          class="post-border"
+        />
+      </div>
       <div
         class="feather-input-wrapper"
       >
@@ -106,21 +113,28 @@ exports[`FeatherSelect.vue should raise the label when it has a value 1`] = `
       class="feather-input-wrapper-container raised feather-select-wrapper"
       id="feather-menu-trigger"
     >
-      <fieldset
-        aria-hidden="true"
+      <div
         class="feather-input-border"
       >
-        <legend>
-          Users
-        </legend>
-      </fieldset>
-      <label
-        class="feather-input-label"
-        data-ref-id="feather-form-element-label"
-        for="feather-select-input"
-      >
-        Users
-      </label>
+        <div
+          class="pre-border"
+        />
+        <div
+          class="label-border"
+          style="width: 0px;"
+        >
+          <label
+            class="feather-input-label"
+            data-ref-id="feather-form-element-label"
+            for="feather-select-input"
+          >
+            Users
+          </label>
+        </div>
+        <div
+          class="post-border"
+        />
+      </div>
       <div
         class="feather-input-wrapper"
       >
@@ -198,21 +212,28 @@ exports[`FeatherSelect.vue should render in disabled state 1`] = `
       class="feather-input-wrapper-container disabled feather-select-wrapper"
       id="feather-menu-trigger"
     >
-      <fieldset
-        aria-hidden="true"
+      <div
         class="feather-input-border"
       >
-        <legend>
-          Users
-        </legend>
-      </fieldset>
-      <label
-        class="feather-input-label"
-        data-ref-id="feather-form-element-label"
-        for="feather-select-input"
-      >
-        Users
-      </label>
+        <div
+          class="pre-border"
+        />
+        <div
+          class="label-border"
+          style="width: 0px;"
+        >
+          <label
+            class="feather-input-label"
+            data-ref-id="feather-form-element-label"
+            for="feather-select-input"
+          >
+            Users
+          </label>
+        </div>
+        <div
+          class="post-border"
+        />
+      </div>
       <div
         class="feather-input-wrapper"
       >
@@ -291,21 +312,28 @@ exports[`FeatherSelect.vue should render in error state 1`] = `
       class="feather-input-wrapper-container error feather-select-wrapper"
       id="feather-menu-trigger"
     >
-      <fieldset
-        aria-hidden="true"
+      <div
         class="feather-input-border"
       >
-        <legend>
-          Users
-        </legend>
-      </fieldset>
-      <label
-        class="feather-input-label"
-        data-ref-id="feather-form-element-label"
-        for="feather-select-input"
-      >
-        Users
-      </label>
+        <div
+          class="pre-border"
+        />
+        <div
+          class="label-border"
+          style="width: 0px;"
+        >
+          <label
+            class="feather-input-label"
+            data-ref-id="feather-form-element-label"
+            for="feather-select-input"
+          >
+            Users
+          </label>
+        </div>
+        <div
+          class="post-border"
+        />
+      </div>
       <div
         class="feather-input-wrapper"
       >
