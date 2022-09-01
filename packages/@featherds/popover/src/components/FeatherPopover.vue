@@ -129,7 +129,8 @@ export default defineComponent({
       }) as Ref<HTMLElement[]>,
       () => {
         hidePopover(true);
-      }
+      },
+      { click: true }
     );
 
     watch(show, (v) => {

@@ -8,7 +8,10 @@ const run = async () =>
     base: "/demos/",
     resolve: {
       alias: [...sassImports, ...moduleImport, ...fileImport],
-      extensions: [".mjs", ".js", ".ts", ".jsx", ".tsx", ".json", ".vue"],
+      extensions: [".js", ".ts", ".jsx", ".tsx", ".json", ".vue"],
+    },
+    define: {
+      "process.env.NODE_ENV": "'production'",
     },
     build: {
       outDir: path.resolve(`${process.cwd()}/demo-dist/`),
