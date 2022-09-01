@@ -2,7 +2,16 @@ import { watch, onBeforeUnmount, ref, onMounted, Ref } from "vue";
 
 const useOutsideClick = (
   elementRef: Ref<HTMLElement> | Ref<HTMLElement[]>,
-  listener: (e?: FocusEvent) => void
+  listener: (e?: FocusEvent) => void,
+  options: {
+    click?: boolean;
+    focus?: boolean;
+    window?: boolean;
+  } = {
+    click: true,
+    focus: true,
+    window: true,
+  }
 ) => {
   const active = ref(false);
   const windowBlurChecker = (e: FocusEvent) => {
@@ -26,9 +35,15 @@ const useOutsideClick = (
   };
   const removeEvents = () => {
     if (document && window) {
-      document.removeEventListener("click", outSideClick, true);
-      document.removeEventListener("focus", outSideClick, true);
-      window.removeEventListener("blur", windowBlurChecker);
+      if (options.click) {
+        document.removeEventListener("click", outSideClick, true);
+      }
+      if (options.focus) {
+        document.removeEventListener("focus", outSideClick, true);
+      }
+      if (options.window) {
+        window.removeEventListener("blur", windowBlurChecker);
+      }
     }
   };
   onMounted(() => {
@@ -36,9 +51,15 @@ const useOutsideClick = (
       active,
       (enabled) => {
         if (document && window && enabled) {
-          document.addEventListener("click", outSideClick, true);
-          document.addEventListener("focus", outSideClick, true);
-          window.addEventListener("blur", windowBlurChecker);
+          if (options.click) {
+            document.addEventListener("click", outSideClick, true);
+          }
+          if (options.focus) {
+            document.addEventListener("focus", outSideClick, true);
+          }
+          if (options.window) {
+            window.addEventListener("blur", windowBlurChecker);
+          }
         } else {
           removeEvents();
         }
