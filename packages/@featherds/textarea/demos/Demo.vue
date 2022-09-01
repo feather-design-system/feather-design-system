@@ -6,6 +6,7 @@
       label="Auto growing"
       rows="5"
       auto
+      :maxlength="50"
     ></FeatherTextarea>
     <FeatherTextarea
       background
