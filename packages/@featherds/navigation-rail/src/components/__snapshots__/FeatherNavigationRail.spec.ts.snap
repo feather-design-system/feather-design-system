@@ -229,3 +229,233 @@ exports[`FeatherNavigationRail.vue should toggle state when chevron clicked 2`] 
   </div>
 </div>
 `;
+
+exports[`FeatherNavigationRail.vue should toggle state when chevron trigger by enter 1`] = `
+<div
+  class="nav-rail-container"
+>
+  <div
+    class="nav-rail collapsed"
+  >
+    <div
+      class="nav-header"
+    >
+      <div
+        class="header-content"
+      >
+        
+        
+      </div>
+      <div
+        aria-pressed="false"
+        class="expand-link hover focus"
+        data-ref-id="feather-navigation-rail-expand"
+        role="button"
+        tabindex="0"
+      >
+        <feather-icon-stub
+          class="chevron"
+          flex="false"
+          icon="[object Object]"
+          title="Show full menu"
+        />
+        <feather-ripple-stub
+          center="true"
+        />
+      </div>
+    </div>
+    <div
+      class="rail-menu"
+    >
+      <nav
+        aria-label="Main Navigation"
+        class="primary-menu"
+        data-ref-id="feather-navigation-rail-main"
+      >
+        <feather-list-stub>
+          
+          
+        </feather-list-stub>
+      </nav>
+      <transition-stub>
+        <!--v-if-->
+      </transition-stub>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`FeatherNavigationRail.vue should toggle state when chevron trigger by enter 2`] = `
+<div
+  class="nav-rail-container"
+>
+  <div
+    class="nav-rail"
+  >
+    <div
+      class="nav-header"
+    >
+      <div
+        class="header-content"
+      >
+        
+        
+      </div>
+      <div
+        aria-pressed="true"
+        class="expand-link hover focus"
+        data-ref-id="feather-navigation-rail-expand"
+        role="button"
+        tabindex="0"
+      >
+        <feather-icon-stub
+          class="chevron"
+          flex="false"
+          icon="[object Object]"
+          title="Show full menu"
+        />
+        <feather-ripple-stub
+          center="true"
+        />
+      </div>
+    </div>
+    <div
+      class="rail-menu"
+    >
+      <nav
+        aria-label="Main Navigation"
+        class="primary-menu"
+        data-ref-id="feather-navigation-rail-main"
+      >
+        <feather-list-stub>
+          
+          
+        </feather-list-stub>
+      </nav>
+      <transition-stub>
+        <div
+          class="secondary-menu"
+        >
+          
+          
+        </div>
+      </transition-stub>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`FeatherNavigationRail.vue should toggle state when chevron trigger by space 1`] = `
+<div
+  class="nav-rail-container"
+>
+  <div
+    class="nav-rail collapsed"
+  >
+    <div
+      class="nav-header"
+    >
+      <div
+        class="header-content"
+      >
+        
+        
+      </div>
+      <div
+        aria-pressed="false"
+        class="expand-link hover focus"
+        data-ref-id="feather-navigation-rail-expand"
+        role="button"
+        tabindex="0"
+      >
+        <feather-icon-stub
+          class="chevron"
+          flex="false"
+          icon="[object Object]"
+          title="Show full menu"
+        />
+        <feather-ripple-stub
+          center="true"
+        />
+      </div>
+    </div>
+    <div
+      class="rail-menu"
+    >
+      <nav
+        aria-label="Main Navigation"
+        class="primary-menu"
+        data-ref-id="feather-navigation-rail-main"
+      >
+        <feather-list-stub>
+          
+          
+        </feather-list-stub>
+      </nav>
+      <transition-stub>
+        <!--v-if-->
+      </transition-stub>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`FeatherNavigationRail.vue should toggle state when chevron trigger by space 2`] = `
+<div
+  class="nav-rail-container"
+>
+  <div
+    class="nav-rail"
+  >
+    <div
+      class="nav-header"
+    >
+      <div
+        class="header-content"
+      >
+        
+        
+      </div>
+      <div
+        aria-pressed="true"
+        class="expand-link hover focus"
+        data-ref-id="feather-navigation-rail-expand"
+        role="button"
+        tabindex="0"
+      >
+        <feather-icon-stub
+          class="chevron"
+          flex="false"
+          icon="[object Object]"
+          title="Show full menu"
+        />
+        <feather-ripple-stub
+          center="true"
+        />
+      </div>
+    </div>
+    <div
+      class="rail-menu"
+    >
+      <nav
+        aria-label="Main Navigation"
+        class="primary-menu"
+        data-ref-id="feather-navigation-rail-main"
+      >
+        <feather-list-stub>
+          
+          
+        </feather-list-stub>
+      </nav>
+      <transition-stub>
+        <div
+          class="secondary-menu"
+        >
+          
+          
+        </div>
+      </transition-stub>
+    </div>
+  </div>
+</div>
+`;

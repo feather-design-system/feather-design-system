@@ -9,6 +9,7 @@
           tabindex="0"
           role="button"
           @click.prevent.stop="toggle"
+          @keydown.enter.space="toggle"
           class="expand-link hover focus"
           :aria-pressed="expanded"
           data-ref-id="feather-navigation-rail-expand"
@@ -76,7 +77,7 @@ export default defineComponent({
     watch(modelValue, (nv) => {
       expanded.value = nv;
     });
-    const toggle = (e: MouseEvent) => {
+    const toggle = (e: Event) => {
       e.preventDefault();
       expanded.value = !expanded.value;
       context.emit("update:modelValue", expanded.value);
