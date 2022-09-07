@@ -238,7 +238,24 @@ export default defineComponent({
     watch(
       [day, month, year],
       ([_day, _month, _year]) => {
-        if (_day !== undefined && _month !== undefined && _year !== undefined) {
+        //check to make sure we aren't updating
+        //to the date that already is set
+        let _oldDay = 0;
+        let _oldYear = 0;
+        let _oldMonth = 0;
+        if (value.value instanceof Date) {
+          _oldDay = value.value.getDate();
+          _oldYear = value.value.getFullYear();
+          _oldMonth = value.value.getMonth() + 1;
+        }
+        if (
+          _day !== undefined &&
+          _month !== undefined &&
+          _year !== undefined &&
+          _year !== _oldYear &&
+          _day !== _oldDay &&
+          _month !== _oldMonth
+        ) {
           context.emit("update:modelValue", new Date(_year, _month - 1, _day));
         }
         showClear.value = !!(_day || _month || _year);
