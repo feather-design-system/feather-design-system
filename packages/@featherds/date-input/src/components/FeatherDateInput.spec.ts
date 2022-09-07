@@ -198,6 +198,16 @@ describe("FeatherDateInput.vue", () => {
     await nextTick();
     expect(getCalls<[Date]>(wrapper, "update:modelValue")[0][0]).toBe(date);
   });
+  it("should not emit more than one update:modelValue", async () => {
+    const wrapper = getWrapper();
+    const calendar = wrapper.findComponent({ ref: "calendar" });
+    const date = new Date(2020, 1, 1);
+    calendar.vm.$emit("update:modelValue", date);
+    await nextTick();
+    await wrapper.setProps({ modelValue: date });
+    await nextTick();
+    expect(getCalls<[Date]>(wrapper, "update:modelValue").length).toBe(1);
+  });
   it("should select date initially passed in as value", async () => {
     const wrapper = getWrapper({
       props: {
