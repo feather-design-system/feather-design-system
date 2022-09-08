@@ -145,7 +145,7 @@ export default defineComponent({
   width: 100vw;
   height: 100vh;
   z-index: var($zindex-modal-backdrop);
-  background-color: rgba(0, 0, 0, 0.3);
+  background-color: var($lightbox-background);
 }
 
 .content {

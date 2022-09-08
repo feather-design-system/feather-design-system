@@ -270,7 +270,7 @@ export default defineComponent({
   top: 0;
   height: 100vh;
   width: 100vw;
-  background-color: var($disabled-text-on-surface);
+  background-color: var($lightbox-background);
   &.transparent {
     background-color: transparent;
   }
