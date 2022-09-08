@@ -13,7 +13,6 @@ import { sitemapPlugin } from "./plugins/sitemap.js";
 const featherDSTheme = (data) => ({
   name: "vuepress-theme-featherds",
   clientConfigFile: path.resolve(__dirname, "./clientAppEnhance.js"),
-  layouts: path.resolve(__dirname, "./layouts"),
   plugins: [
     sitemapPlugin({ hostname: "http://feather.nanthealth.com" }),
     prismjsPlugin({
