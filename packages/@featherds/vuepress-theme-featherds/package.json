@@ -27,10 +27,10 @@
     "@featherds/table": "file:../table",
     "@vuepress/client": "^2.0.0-beta.43",
     "@vuepress/core": "^2.0.0-beta.43",
-    "@vuepress/plugin-active-header-links": "^2.0.0-beta.43",
-    "@vuepress/plugin-container": "^2.0.0-beta.43",
-    "@vuepress/plugin-prismjs": "^2.0.0-beta.43",
-    "@vuepress/plugin-theme-data": "^2.0.0-beta.43"
+    "@vuepress/plugin-active-header-links": "^2.0.0-beta.51",
+    "@vuepress/plugin-container": "^2.0.0-beta.51",
+    "@vuepress/plugin-prismjs": "^2.0.0-beta.51",
+    "@vuepress/plugin-theme-data": "^2.0.0-beta.51"
   },
   "author": "NantHealth",
   "license": "Apache-2.0"

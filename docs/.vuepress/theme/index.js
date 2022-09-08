@@ -8,8 +8,6 @@ import { googleAnalyticsPlugin } from "@vuepress/plugin-google-analytics";
 
 const theme = (data) => ({
   extends: featherDSTheme(data),
-  layouts: path.resolve(__dirname, "./layouts"),
-
   plugins: [
     googleAnalyticsPlugin({
       id: process.env.GA || "test",
