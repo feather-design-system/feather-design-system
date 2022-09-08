@@ -1,6 +1,6 @@
 {
   "name": "@featherds/tooltip",
-  "version": "0.12.1",
+  "version": "0.12.2",
   "publishConfig": {
     "access": "public"
   },
@@ -9,8 +9,8 @@
   "main": "dist/app.mjs",
   "license": "Apache-2.0",
   "dependencies": {
-    "@featherds/popover":"file:../popover",
     "@featherds/composables": "file:../composables",
+    "@featherds/popover": "file:../popover",
     "@featherds/styles": "file:../styles",
     "@featherds/utils": "file:../utils",
     "vue": "^3.1.0"

@@ -1,3 +1,21 @@
+## [0.12.2](https://github.com/feather-design-system/feather-design-system/compare/v0.12.1...v0.12.2) (2022-09-08)
+
+
+### Bug Fixes
+
+* **date-input:** no longer emits 2 update:modelValue events ([7dd5b80](https://github.com/feather-design-system/feather-design-system/commit/7dd5b805bcf30292a879fe50fe12f3436f979c90)), closes [#142](https://github.com/feather-design-system/feather-design-system/issues/142)
+* **input:** wrapper color fix now doesn't need background prop ([16839dd](https://github.com/feather-design-system/feather-design-system/commit/16839dd86bc45a94d8f580240de803a858084d30))
+* **input:** wrapper color fix now doesn't need background prop ([971d2d9](https://github.com/feather-design-system/feather-design-system/commit/971d2d9f8c29027e43d9ca4700fac82a224d838e)), closes [#136](https://github.com/feather-design-system/feather-design-system/issues/136)
+* **nav-rail:** adding keyboard support for expand ([1753ba7](https://github.com/feather-design-system/feather-design-system/commit/1753ba7e1281d0d889a807a5d3b42f45724dd86d)), closes [#141](https://github.com/feather-design-system/feather-design-system/issues/141)
+
+
+### Features
+
+* **date-input:** adding ability to paste in preformatted date strings ([d8ccf7b](https://github.com/feather-design-system/feather-design-system/commit/d8ccf7bf847ee2c92f5f2a467477495af53eec91)), closes [#123](https://github.com/feather-design-system/feather-design-system/issues/123)
+* **popover:** adding new popover component ([060044a](https://github.com/feather-design-system/feather-design-system/commit/060044a82f601d5d79bf37db48ca3f56a8b5abe5))
+
+
+
 ## [0.12.1](https://github.com/feather-design-system/feather-design-system/compare/v0.12.0...v0.12.1) (2022-08-26)
 
 
