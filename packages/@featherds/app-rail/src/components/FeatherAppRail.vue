@@ -2,11 +2,7 @@
   <div class="fake-bar"></div>
 
   <SkipContentLink :content="content" :skip-label="skipLabel" />
-  <div
-    class="feather-app-rail"
-    v-bind="listeners"
-    :class="{ narrow: !expanded }"
-  >
+  <div class="feather-app-rail" v-on="listeners" :class="{ narrow: !expanded }">
     <div class="feather-app-rail-icon">
       <slot name="icon" :expanded="expanded"></slot>
     </div>
@@ -72,10 +68,10 @@ export default defineComponent({
       focused.value = true;
     };
     const listeners = {
-      onFocusin: focusIn,
-      onFocusout: focusOut,
-      onmouseenter: () => (hovered.value = true),
-      onmouseleave: () => (hovered.value = false),
+      focusin: focusIn,
+      focusout: focusOut,
+      mouseenter: () => (hovered.value = true),
+      mouseleave: () => (hovered.value = false),
     };
     provide("feather-app-rail-expanded", expanded);
 
