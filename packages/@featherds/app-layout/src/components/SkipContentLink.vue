@@ -1,5 +1,5 @@
 <template>
-  <a class="skip" :href="contentId">{{ skipLabel }}</a>
+  <a class="skip" :href="contentId" @click="scrollTo">{{ skipLabel }}</a>
 </template>
 
 <script lang="ts">
@@ -19,6 +19,21 @@ export default defineComponent({
   computed: {
     contentId() {
       return `#${this.content}`;
+    },
+  },
+  methods: {
+    scrollTo(e: MouseEvent) {
+      if (!Object.hasOwn(this, "$router")) {
+        return;
+      } else {
+        e.preventDefault();
+        const scrollEl = document.getElementById(this.content);
+        if (scrollEl) {
+          scrollEl.scrollIntoView({ behavior: "smooth" });
+          scrollEl.tabIndex = -1;
+          scrollEl.focus();
+        }
+      }
     },
   },
 });
