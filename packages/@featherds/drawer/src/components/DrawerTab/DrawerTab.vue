@@ -140,7 +140,7 @@ span.tab-label {
   left: $tab-width;
   white-space: nowrap;
   z-index: 1;
-  border-radius: 0 3px 3px 0px;
+  border-radius: 0 4px 4px 0px;
 
   & > span.content {
     padding: 0 1rem;

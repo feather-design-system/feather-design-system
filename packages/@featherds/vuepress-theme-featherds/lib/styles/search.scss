@@ -67,7 +67,7 @@
     --docsearch-logo-color: var(--feather-primary);
     --docsearch-highlight-color: var(--feather-primary);
     .DocSearch-Modal {
-      border-radius: 2px;
+      border-radius: 4px;
       background-color: var($surface);
       @include elevation(24);
     }

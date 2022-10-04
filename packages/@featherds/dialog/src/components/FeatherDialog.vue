@@ -185,7 +185,7 @@ export default defineComponent({
 .content {
   z-index: 1;
   background-color: var($surface);
-  border-radius: 2px;
+  border-radius: 4px;
   @include elevation(24);
   position: relative;
   margin: 0 var($spacing-xl);
