@@ -1,3 +1,19 @@
+## [0.12.3](https://github.com/feather-design-system/feather-design-system/compare/v0.12.2...v0.12.3) (2022-10-06)
+
+
+### Bug Fixes
+
+* aligning border radius to 4px ([f424fac](https://github.com/feather-design-system/feather-design-system/commit/f424fac96340a06ec02762494d428c2b215cf4e8))
+* **app-rail:** hover functionality should now work with SSR ([eac8932](https://github.com/feather-design-system/feather-design-system/commit/eac8932e02439e509dca6b2e1959b995d696320c)), closes [#148](https://github.com/feather-design-system/feather-design-system/issues/148)
+* **AppBar:** resolving jumping to main content when vue-router is in use ([58612f6](https://github.com/feather-design-system/feather-design-system/commit/58612f630715dc934e3bc70183d2774c16f01e1d))
+
+
+### Features
+
+* **dialog:** adding lightbox-background variable ([8a0da7f](https://github.com/feather-design-system/feather-design-system/commit/8a0da7feb2b996ecdffd4b5c0eb63700ff8befc0)), closes [#138](https://github.com/feather-design-system/feather-design-system/issues/138)
+
+
+
 ## [0.12.2](https://github.com/feather-design-system/feather-design-system/compare/v0.12.1...v0.12.2) (2022-09-08)
 
 
