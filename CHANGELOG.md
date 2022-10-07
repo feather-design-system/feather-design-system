@@ -1,3 +1,12 @@
+## [0.12.4](https://github.com/feather-design-system/feather-design-system/compare/v0.12.3...v0.12.4) (2022-10-07)
+
+
+### Bug Fixes
+
+* **AppLayout:** tweaked the resolution made prior for 'skip to content' when using vue-router ([8ebcf9c](https://github.com/feather-design-system/feather-design-system/commit/8ebcf9c156ae2901088e660a6c35200bea7e571f))
+
+
+
 ## [0.12.3](https://github.com/feather-design-system/feather-design-system/compare/v0.12.2...v0.12.3) (2022-10-06)
 
 
