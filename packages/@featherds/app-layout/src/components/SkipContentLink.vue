@@ -23,7 +23,7 @@ export default defineComponent({
   },
   methods: {
     scrollTo(e: MouseEvent) {
-      if (!Object.hasOwn(this, "$router")) {
+      if (!(this as any).$router) {
         return;
       } else {
         e.preventDefault();
