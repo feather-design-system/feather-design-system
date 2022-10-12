@@ -1,3 +1,12 @@
+## [0.12.5](https://github.com/feather-design-system/feather-design-system/compare/v0.12.4...v0.12.5) (2022-10-12)
+
+
+### Bug Fixes
+
+* **app-layout:** addresses [#152](https://github.com/feather-design-system/feather-design-system/issues/152) - SkipToContent link changes routes in vue-router ([279e881](https://github.com/feather-design-system/feather-design-system/commit/279e881a54dd4f7244d698f5cad145a42220f993))
+
+
+
 ## [0.12.4](https://github.com/feather-design-system/feather-design-system/compare/v0.12.3...v0.12.4) (2022-10-07)
 
 
