@@ -23,16 +23,12 @@ export default defineComponent({
   },
   methods: {
     scrollTo(e: MouseEvent) {
-      if (!(this as any).$router) {
-        return;
-      } else {
-        e.preventDefault();
-        const scrollEl = document.getElementById(this.content);
-        if (scrollEl) {
-          scrollEl.scrollIntoView({ behavior: "smooth" });
-          scrollEl.tabIndex = -1;
-          scrollEl.focus();
-        }
+      e.preventDefault();
+      const scrollEl = document.getElementById(this.content);
+      if (scrollEl) {
+        scrollEl.scrollIntoView({ behavior: "smooth" });
+        scrollEl.tabIndex = -1;
+        scrollEl.focus();
       }
     },
   },
@@ -42,6 +38,7 @@ export default defineComponent({
 <style lang="scss" scoped>
 @import "@featherds/styles/mixins/elevation";
 @import "@featherds/styles/mixins/typography";
+
 a.skip {
   width: 1px;
   height: 1px;
@@ -55,6 +52,7 @@ a.skip {
   top: 0px;
   left: 0px;
   border: 1px solid var($primary);
+
   &:focus {
     width: auto;
     height: auto;
