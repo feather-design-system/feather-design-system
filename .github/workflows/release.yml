@@ -18,7 +18,7 @@ jobs:
     runs-on: ubuntu-latest
     if: github.event_name == 'workflow_dispatch'
     steps:
-      - uses: actions/checkout@v2
+      - uses: actions/checkout@v3
         with:
           # pulls all commits (needed for lerna / semantic release to correctly version)
           fetch-depth: "0"
@@ -29,7 +29,7 @@ jobs:
       - run: git config --global user.name "$CI_USER"
 
       - name: Setup npm
-        uses: actions/setup-node@v2
+        uses: actions/setup-node@v3
         with:
           cache: "npm"
           node-version: "16.x"
@@ -57,16 +57,24 @@ jobs:
 
       - name: Create Release
         id: create_release
-        uses: actions/create-release@latest
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }} # This token is provided by Actions, you do not need to create your own token
+        uses: "actions/github-script@v6"
         with:
-          tag_name: ${{ github.event.inputs.version }}
-          release_name: Release ${{ github.event.inputs.version }}
-          body: |
-            ${{ steps.get_release_notes.outputs.release_notes }}
-          draft: false
-          prerelease: false
+          github-token: "${{ secrets.ERGEBNIS_BOT_TOKEN }}"
+          script: |
+            try {
+              await github.rest.repos.createRelease({
+                owner: context.repo.owner,
+                repo: context.repo.repo,
+                tag_name: '${{ github.event.inputs.version }}',
+                name: 'Release ${{ github.event.inputs.version }}',
+                body: `${{ steps.get_release_notes.outputs.release_notes }}`
+                draft: false,
+                prerelease: false,
+                generate_release_notes: true,
+              });
+            } catch (error) {
+              core.setFailed(error.message);
+            }
 
       - name: Build docs
         run: npm run docs:build
