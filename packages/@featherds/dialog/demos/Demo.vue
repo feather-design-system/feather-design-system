@@ -12,7 +12,12 @@
       <p>Dialog Is Open: {{ visible }}</p>
     </div>
 
-    <FeatherDialog v-model="visible" @shown="onShown" :labels="labels">
+    <FeatherDialog
+      v-model="visible"
+      @shown="onShown"
+      :labels="labels"
+      data-ref-id="test"
+    >
       <template v-slot:icon>
         <FeatherIcon
           :icon="icon"
