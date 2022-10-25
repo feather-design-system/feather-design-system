@@ -5,7 +5,9 @@
     "access": "public"
   },
   "author": "NantHealth",
-  "scripts": {},
+  "scripts": {
+    "compile": "tsc --declaration"
+  },
   "main": "dist/app.mjs",
   "license": "Apache-2.0",
   "dependencies": {
