@@ -252,9 +252,7 @@ export default defineComponent({
           _day !== undefined &&
           _month !== undefined &&
           _year !== undefined &&
-          _year !== _oldYear &&
-          _day !== _oldDay &&
-          _month !== _oldMonth
+          (_year !== _oldYear || _day !== _oldDay || _month !== _oldMonth)
         ) {
           context.emit("update:modelValue", new Date(_year, _month - 1, _day));
         }
