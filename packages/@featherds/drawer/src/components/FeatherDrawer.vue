@@ -1,6 +1,6 @@
 <template>
   <Teleport to="body">
-    <div class="drawer-container feather-styles">
+    <div class="drawer-container feather-styles" v-bind="$attrs">
       <transition name="greyOutShim">
         <div v-if="modelValue" class="greyedOut"></div>
       </transition>

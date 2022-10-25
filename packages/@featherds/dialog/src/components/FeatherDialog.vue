@@ -4,6 +4,7 @@
       class="feather-dialog feather-styles"
       :class="{ relative: relative }"
       v-show="modelValue"
+      v-bind="$attrs"
     >
       <transition name="fade">
         <div class="backdrop" v-show="modelValue"></div>
