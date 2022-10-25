@@ -15,6 +15,7 @@
       class="my-date"
     ></FeatherDateInput>
   </section>
+  {{ test ? test.toString() : "" }}
   <button @click="clearAll">Clear</button>
 </template>
 <script lang="ts">
@@ -23,7 +24,7 @@ import { defineComponent } from "vue";
 export default defineComponent({
   data() {
     return {
-      test: undefined,
+      test: undefined as unknown as Date,
     };
   },
   methods: {
