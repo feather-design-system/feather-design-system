@@ -48,6 +48,15 @@ const capabilities = [
 module.exports.config = Object.assign({}, base, {
   user: process.env.LAMBDA_USER,
   key: process.env.LAMBDA_KEY,
+  autoCompileOpts: {
+    autoCompile: true,
+    // see https://github.com/TypeStrong/ts-node#cli-and-programmatic-options
+    // for all available options
+    tsNodeOpts: {
+      transpileOnly: true,
+      project: "./tsconfig.wdio.json",
+    },
+  },
   services: [
     [
       "lambdatest",
@@ -57,7 +66,10 @@ module.exports.config = Object.assign({}, base, {
     ],
   ],
   capabilities,
-  specs: ["./packages/@featherds/**/e2e/**/*.spec.js"],
+  specs: [
+    "./packages/@featherds/**/e2e/**/*.spec.js",
+    "./packages/@featherds/**/wdio/**/*.spec.ts",
+  ],
   baseUrl: `${process.env.VUE_DEV_SERVER_URL}`,
   reporters: ["spec"],
   maxInstances: 3,

@@ -14,11 +14,12 @@
     "noUnusedParameters": true,
     "lib": ["ESNext", "DOM"],
     "typeRoots": ["./node_modules/@types/", "./packages/@featherds/"],
-    "types": [],
+    "types": ["node", "webdriverio/async", "@wdio/mocha-framework"],
     "skipLibCheck": true //vue test utils giving errors
   },
   "include": [
     "packages/@featherds/*/src/**/*.ts",
+    "packages/@featherds/*/wdio/**/*.ts",
     "shims/*.d.ts",
     "packages/@featherds/**/*.d.ts",
     "packages/@featherds/*/src/**/*.d.ts",
