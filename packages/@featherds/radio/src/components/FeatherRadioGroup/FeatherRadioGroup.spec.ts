@@ -7,8 +7,8 @@ import { getCalls } from "@featherds/utils/test/calls";
 import { h, nextTick } from "vue";
 import * as id from "@featherds/utils/id";
 import { Code } from "@featherds/utils/keys";
-
-jest.spyOn(id, "getSafeId").mockImplementation((x) => x);
+import { vi, expect, describe, it } from "vitest";
+vi.spyOn(id, "getSafeId").mockImplementation((x) => x);
 
 const selector = "[role='radiogroup']";
 const getWrapper = function (options: Record<string, unknown> = {}) {

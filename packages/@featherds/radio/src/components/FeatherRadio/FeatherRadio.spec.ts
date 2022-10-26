@@ -3,8 +3,8 @@ import FeatherRadio from "./FeatherRadio.vue";
 import axe from "@featherds/utils/test/axe";
 import * as id from "@featherds/utils/id";
 import { nextTick } from "vue";
-
-jest.spyOn(id, "getSafeId").mockImplementation((x) => x);
+import { vi, expect, describe, it } from "vitest";
+vi.spyOn(id, "getSafeId").mockImplementation((x) => x);
 
 const getWrapper = function (options: Record<string, unknown> = {}) {
   const props = (options.props as Record<string, unknown>) || {};
@@ -21,9 +21,9 @@ const getSlot = () => ({
   },
 });
 const mockProvide = () => {
-  const register = jest.fn();
-  const select = jest.fn();
-  const blur = jest.fn();
+  const register = vi.fn();
+  const select = vi.fn();
+  const blur = vi.fn();
   return {
     provide: {
       register,

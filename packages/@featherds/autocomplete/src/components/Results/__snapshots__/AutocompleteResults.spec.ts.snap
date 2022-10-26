@@ -1,6 +1,6 @@
-// Jest Snapshot v1, https://goo.gl/fbAQLP
+// Vitest Snapshot v1
 
-exports[`Autocomplete Results should mark items as selected that appear in value array 1`] = `
+exports[`Autocomplete Results > should mark items as selected that appear in value array 1`] = `
 <feather-list-stub
   aria-hidden="false"
   aria-multiselectable="true"
@@ -94,7 +94,7 @@ exports[`Autocomplete Results should mark items as selected that appear in value
 </feather-list-stub>
 `;
 
-exports[`Autocomplete Results should mark items as selected that appear in value array and active when active index is set. 1`] = `
+exports[`Autocomplete Results > should mark items as selected that appear in value array and active when active index is set. 1`] = `
 <feather-list-stub
   aria-hidden="false"
   aria-multiselectable="true"
@@ -189,7 +189,7 @@ exports[`Autocomplete Results should mark items as selected that appear in value
 </feather-list-stub>
 `;
 
-exports[`Autocomplete Results should support active index being out of range 1`] = `
+exports[`Autocomplete Results > should support active index being out of range 1`] = `
 <feather-list-stub
   aria-hidden="false"
   aria-multiselectable="true"
@@ -283,7 +283,7 @@ exports[`Autocomplete Results should support active index being out of range 1`]
 </feather-list-stub>
 `;
 
-exports[`Autocomplete Results should support active index within results range 1`] = `
+exports[`Autocomplete Results > should support active index within results range 1`] = `
 <feather-list-stub
   aria-hidden="false"
   aria-multiselectable="true"
@@ -378,7 +378,7 @@ exports[`Autocomplete Results should support active index within results range 1
 </feather-list-stub>
 `;
 
-exports[`Autocomplete Results should support no item active 1`] = `
+exports[`Autocomplete Results > should support no item active 1`] = `
 <feather-list-stub
   aria-hidden="false"
   aria-multiselectable="true"
@@ -472,7 +472,7 @@ exports[`Autocomplete Results should support no item active 1`] = `
 </feather-list-stub>
 `;
 
-exports[`Autocomplete Results should support single select 1`] = `
+exports[`Autocomplete Results > should support single select 1`] = `
 <feather-list-stub
   aria-hidden="false"
   aria-multiselectable="false"

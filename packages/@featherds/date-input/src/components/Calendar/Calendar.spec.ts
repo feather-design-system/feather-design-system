@@ -4,6 +4,7 @@ import utils from "./DateUtils";
 import { getCalls } from "@featherds/utils/test/calls";
 import { LABELS } from "../types";
 import { Code, Modifier } from "@featherds/utils/keys";
+import { expect, describe, it, beforeEach } from "vitest";
 
 const getWrapper = () =>
   shallowMount(Calendar, {

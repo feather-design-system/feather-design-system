@@ -5,8 +5,8 @@ import FeatherTextarea from "./FeatherTextarea.vue";
 import { mount } from "@vue/test-utils";
 import * as id from "@featherds/utils/id";
 import "@featherds/input-helper/test/MutationObserver";
-
-jest.spyOn(id, "getSafeId").mockImplementation((x) => x);
+import { vi, expect, describe, it } from "vitest";
+vi.spyOn(id, "getSafeId").mockImplementation((x) => x);
 
 const getWrapper = function (options: Record<string, unknown>) {
   return mount(FeatherTextarea, options);
@@ -148,7 +148,7 @@ describe("FeatherTextarea.vue", () => {
   });
 
   it("should allow custom focus events", async () => {
-    const fn = jest.fn();
+    const fn = vi.fn();
     const wrapper = getWrapper({
       props: {
         label: "label",
@@ -165,7 +165,7 @@ describe("FeatherTextarea.vue", () => {
   });
 
   it("should allow custom blur events", () => {
-    const fn = jest.fn();
+    const fn = vi.fn();
     const wrapper = getWrapper({
       props: {
         label: "label",

@@ -1,6 +1,6 @@
-// Jest Snapshot v1, https://goo.gl/fbAQLP
+// Vitest Snapshot v1
 
-exports[`Badge.vue should render correct type with title 1`] = `
+exports[`Badge.vue > should render correct type with title 1`] = `
 <div
   class="badge error"
 >
@@ -11,7 +11,7 @@ exports[`Badge.vue should render correct type with title 1`] = `
 </div>
 `;
 
-exports[`Badge.vue should render correct type with title 2`] = `
+exports[`Badge.vue > should render correct type with title 2`] = `
 <div
   class="badge info"
 >
@@ -22,7 +22,7 @@ exports[`Badge.vue should render correct type with title 2`] = `
 </div>
 `;
 
-exports[`Badge.vue should render siblings modifier 1`] = `
+exports[`Badge.vue > should render siblings modifier 1`] = `
 <div
   class="badge error siblings"
 >

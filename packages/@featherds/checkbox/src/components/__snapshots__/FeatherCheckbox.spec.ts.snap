@@ -1,6 +1,6 @@
-// Jest Snapshot v1, https://goo.gl/fbAQLP
+// Vitest Snapshot v1
 
-exports[`FeatherCheckbox.vue should have a label 1`] = `
+exports[`FeatherCheckbox.vue > should have a label 1`] = `
 <div
   class="layout-container"
 >
@@ -54,7 +54,7 @@ exports[`FeatherCheckbox.vue should have a label 1`] = `
 </div>
 `;
 
-exports[`FeatherCheckbox.vue should set aria-checked based on property 1`] = `
+exports[`FeatherCheckbox.vue > should set aria-checked based on property 1`] = `
 <div
   class="layout-container"
 >
@@ -108,7 +108,7 @@ exports[`FeatherCheckbox.vue should set aria-checked based on property 1`] = `
 </div>
 `;
 
-exports[`FeatherCheckbox.vue should set aria-checked based on property 2`] = `
+exports[`FeatherCheckbox.vue > should set aria-checked based on property 2`] = `
 <div
   class="layout-container"
 >
@@ -162,7 +162,7 @@ exports[`FeatherCheckbox.vue should set aria-checked based on property 2`] = `
 </div>
 `;
 
-exports[`FeatherCheckbox.vue should set aria-checked based on property 3`] = `
+exports[`FeatherCheckbox.vue > should set aria-checked based on property 3`] = `
 <div
   class="layout-container"
 >

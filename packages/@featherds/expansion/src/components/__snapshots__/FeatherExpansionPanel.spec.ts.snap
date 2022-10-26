@@ -1,6 +1,6 @@
-// Jest Snapshot v1, https://goo.gl/fbAQLP
+// Vitest Snapshot v1
 
-exports[`FeatherExpansionPanel.vue should have correct HTML structure 1`] = `
+exports[`FeatherExpansionPanel.vue > should have correct HTML structure 1`] = `
 <div
   class="feather-expansion"
 >
@@ -40,13 +40,18 @@ exports[`FeatherExpansionPanel.vue should have correct HTML structure 1`] = `
       </svg>
     </a>
   </div>
-  <transition-stub>
+  <transition-stub
+    appear="false"
+    css="true"
+    name="expand"
+    persisted="false"
+  >
     <!--v-if-->
   </transition-stub>
 </div>
 `;
 
-exports[`FeatherExpansionPanel.vue should not toggle expanded when disabled 1`] = `
+exports[`FeatherExpansionPanel.vue > should not toggle expanded when disabled 1`] = `
 <div
   class="feather-expansion"
 >
@@ -86,13 +91,18 @@ exports[`FeatherExpansionPanel.vue should not toggle expanded when disabled 1`] 
       </svg>
     </a>
   </div>
-  <transition-stub>
+  <transition-stub
+    appear="false"
+    css="true"
+    name="expand"
+    persisted="false"
+  >
     <!--v-if-->
   </transition-stub>
 </div>
 `;
 
-exports[`FeatherExpansionPanel.vue should render loading 1`] = `
+exports[`FeatherExpansionPanel.vue > should render loading 1`] = `
 <div
   class="feather-expansion"
 >
@@ -132,7 +142,12 @@ exports[`FeatherExpansionPanel.vue should render loading 1`] = `
       </svg>
     </a>
   </div>
-  <transition-stub>
+  <transition-stub
+    appear="false"
+    css="true"
+    name="expand"
+    persisted="false"
+  >
     <div
       aria-labelledby="feather-expansion-header"
       data-ref-id="feather-expansion-content"

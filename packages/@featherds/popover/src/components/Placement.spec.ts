@@ -1,5 +1,7 @@
 import { PopoverPlacement } from "../types";
 import { calculatePlacement } from "./Placement";
+import { expect, describe, it } from "vitest";
+
 //Gives layout with enough space in the areas with true.
 //pass true if you want enough space for the tooltip
 const getLayout = (top = true, right = true, bottom = true, left = true) => {

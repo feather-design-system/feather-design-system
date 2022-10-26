@@ -11,11 +11,11 @@
     "sourceMap": true,
     "resolveJsonModule": true,
     "esModuleInterop": true,
-    "noUnusedParameters":true,
-    "lib": ["esnext", "dom"],
+    "noUnusedParameters": true,
+    "lib": ["ESNext", "DOM"],
     "typeRoots": ["./node_modules/@types/", "./packages/@featherds/"],
-    "types": ["jest"],
-    "skipLibCheck": true//vue test utils giving errors
+    "types": [],
+    "skipLibCheck": true //vue test utils giving errors
   },
   "include": [
     "packages/@featherds/*/src/**/*.ts",
@@ -27,5 +27,5 @@
     "packages/@featherds/*/demos/**/*.vue",
     "docs/.vuepress/examples/**/*.vue"
   ],
-  "exclude": ["./node_modules/" ]
+  "exclude": ["./node_modules/"]
 }

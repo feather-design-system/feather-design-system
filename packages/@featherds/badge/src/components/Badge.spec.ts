@@ -1,6 +1,7 @@
 import Badge from "./Badge.vue";
 import { BadgeTypes } from "../types/Types";
 import { shallowMount } from "@vue/test-utils";
+import { expect, describe, it } from "vitest";
 
 const getWrapper = function (options: Record<string, unknown>) {
   return shallowMount(Badge, options);

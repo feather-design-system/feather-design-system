@@ -1,6 +1,6 @@
-// Jest Snapshot v1, https://goo.gl/fbAQLP
+// Vitest Snapshot v1
 
-exports[`FeatherSnackbar.vue should show snackbar and auto-close 1`] = `
+exports[`FeatherSnackbar.vue > should show snackbar and auto-close 1`] = `
 <div
   class="feather-snackbar-wrapper"
 >

@@ -1,4 +1,6 @@
 import { useDropdownService } from "./DropdownService";
+import { vi, expect, describe, it } from "vitest";
+
 const getItems = (disabled = false) =>
   [1, 2, 3, 4].map((i) => {
     const a = document.createElement("a");
@@ -6,7 +8,7 @@ const getItems = (disabled = false) =>
     if (disabled) {
       a.classList.add("disabled");
     }
-    a.focus = jest.fn();
+    a.focus = vi.fn();
     return a;
   });
 const checkSelected = (

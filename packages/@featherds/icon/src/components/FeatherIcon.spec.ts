@@ -3,6 +3,7 @@ import FeatherIcon from "./FeatherIcon.vue";
 import { mount } from "@vue/test-utils";
 import Add from "@featherds/icon/action/Add";
 import { markRaw } from "vue";
+import { expect, describe, it } from "vitest";
 
 describe("Feather Icon", () => {
   it("should be accessible with 2 ", async () => {

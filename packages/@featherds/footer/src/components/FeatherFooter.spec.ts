@@ -1,5 +1,6 @@
 import FeatherFooter from "./FeatherFooter.vue";
 import { mount } from "@vue/test-utils";
+import { expect, describe, it } from "vitest";
 
 const copyright = "Test ${year}";
 const getWrapper = function (options: Record<string, unknown> = {}) {

@@ -1,6 +1,6 @@
-// Jest Snapshot v1, https://goo.gl/fbAQLP
+// Vitest Snapshot v1
 
-exports[`FeatherRadioGroup.vue should have error text 1`] = `
+exports[`FeatherRadioGroup.vue > should have error text 1`] = `
 <div
   class="feather-radio-group-container"
 >
@@ -40,7 +40,7 @@ exports[`FeatherRadioGroup.vue should have error text 1`] = `
 </div>
 `;
 
-exports[`FeatherRadioGroup.vue should have hint text 1`] = `
+exports[`FeatherRadioGroup.vue > should have hint text 1`] = `
 <div
   class="feather-radio-group-container"
 >
@@ -79,7 +79,7 @@ exports[`FeatherRadioGroup.vue should have hint text 1`] = `
 </div>
 `;
 
-exports[`FeatherRadioGroup.vue should set id and name 1`] = `
+exports[`FeatherRadioGroup.vue > should set id and name 1`] = `
 <div
   class="feather-radio-group-container"
 >
@@ -117,7 +117,7 @@ exports[`FeatherRadioGroup.vue should set id and name 1`] = `
 </div>
 `;
 
-exports[`FeatherRadioGroup.vue should stack vertically 1`] = `
+exports[`FeatherRadioGroup.vue > should stack vertically 1`] = `
 <div
   class="feather-radio-group-container vertical"
 >

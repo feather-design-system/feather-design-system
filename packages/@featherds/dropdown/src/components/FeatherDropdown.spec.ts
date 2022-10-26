@@ -6,8 +6,8 @@ import { getCalls } from "@featherds/utils/test/calls";
 import { Code } from "@featherds/utils/keys";
 
 import * as id from "@featherds/utils/id";
-
-jest.spyOn(id, "getSafeId").mockImplementation((x) => x);
+import { vi, expect, describe, it } from "vitest";
+vi.spyOn(id, "getSafeId").mockImplementation((x) => x);
 const getWrapper = (options: Record<string, unknown> = {}) => {
   return mount(FeatherDropdown, options);
 };
@@ -69,7 +69,7 @@ describe("FeatherDropdown.vue", () => {
           default: [getLi(), getLi()],
         };
         const wrapper = getWrapper({ slots });
-        jest.spyOn(wrapper.vm.dropdownService, "selectNext");
+        vi.spyOn(wrapper.vm.dropdownService, "selectNext");
         await nextTick();
         await wrapper.setProps({
           modelValue: true,
@@ -85,7 +85,7 @@ describe("FeatherDropdown.vue", () => {
           default: [getLi(), getLi()],
         };
         const wrapper = getWrapper({ slots });
-        jest.spyOn(wrapper.vm.dropdownService, "selectNext");
+        vi.spyOn(wrapper.vm.dropdownService, "selectNext");
         await nextTick();
         await wrapper.setProps({
           modelValue: true,
@@ -103,7 +103,7 @@ describe("FeatherDropdown.vue", () => {
           default: [getLi(), getLi()],
         };
         const wrapper = getWrapper({ slots });
-        jest.spyOn(wrapper.vm.dropdownService, "selectPrevious");
+        vi.spyOn(wrapper.vm.dropdownService, "selectPrevious");
         await nextTick();
         await wrapper.setProps({
           modelValue: true,
@@ -119,7 +119,7 @@ describe("FeatherDropdown.vue", () => {
           default: [getLi(), getLi()],
         };
         const wrapper = getWrapper({ slots });
-        jest.spyOn(wrapper.vm.dropdownService, "selectPrevious");
+        vi.spyOn(wrapper.vm.dropdownService, "selectPrevious");
         await nextTick();
         await wrapper.setProps({
           modelValue: true,
@@ -152,7 +152,7 @@ describe("FeatherDropdown.vue", () => {
       default: [getLi(), getLi()],
     };
     const wrapper = getWrapper({ slots });
-    jest.spyOn(wrapper.vm.dropdownService, "select");
+    vi.spyOn(wrapper.vm.dropdownService, "select");
     await nextTick();
     await wrapper.setProps({
       modelValue: true,

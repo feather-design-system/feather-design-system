@@ -1,6 +1,6 @@
-// Jest Snapshot v1, https://goo.gl/fbAQLP
+// Vitest Snapshot v1
 
-exports[`FeatherDateInput.vue should render disabled 1`] = `
+exports[`FeatherDateInput.vue > should render disabled 1`] = `
 <div
   class="feather-date-input-container"
 >
@@ -3264,7 +3264,7 @@ exports[`FeatherDateInput.vue should render disabled 1`] = `
 </div>
 `;
 
-exports[`FeatherDateInput.vue should select date initially passed in as value 1`] = `
+exports[`FeatherDateInput.vue > should select date initially passed in as value 1`] = `
 <div
   aria-describedby="feather-date-input-description"
   aria-disabled="false"

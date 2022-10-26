@@ -2,6 +2,7 @@ import SpinButton from "./SpinButton.vue";
 import { mount } from "@vue/test-utils";
 import { Code } from "@featherds/utils/keys";
 import { getCalls } from "@featherds/utils/test/calls";
+import { expect, describe, it } from "vitest";
 
 const getWrapper = function (options: Record<string, any>) {
   return mount(SpinButton, options);

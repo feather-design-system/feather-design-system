@@ -7,8 +7,8 @@ import "@featherds/input-helper/test/MutationObserver";
 import { nextTick } from "vue";
 import { ISelectItemType } from "./types";
 import { Code } from "@featherds/utils/keys";
-
-jest.spyOn(id, "getSafeId").mockImplementation((x) => x);
+import { vi, expect, describe, it } from "vitest";
+vi.spyOn(id, "getSafeId").mockImplementation((x) => x);
 
 const getProps = (props: unknown) => {
   return {
@@ -276,7 +276,9 @@ describe("FeatherSelect.vue", () => {
     expect(wrapper.vm.showMenu).toBe(false);
   });
   it("should select item that starts with a character sequence when it is quickly typed", async () => {
-    jest.useFakeTimers();
+    vi.useFakeTimers({
+      toFake: ["setTimeout", "clearTimeout"],
+    });
 
     const wrapper = getFullWrapper({
       props: {
@@ -291,7 +293,7 @@ describe("FeatherSelect.vue", () => {
     await input.trigger("keydown", { key: "a" });
     await input.trigger("keydown", { key: "b" });
 
-    jest.runAllTimers();
+    vi.runAllTimers();
     expect(
       (
         wrapper.vm.internalValue as ISelectItemType as { _text: string }
@@ -300,13 +302,13 @@ describe("FeatherSelect.vue", () => {
   });
   describe("accessibility", () => {
     it("should be accessible in normal state", async () => {
-      jest.useRealTimers();
+      vi.useRealTimers();
 
       const wrapper = getFullWrapper();
       expect(await axe(wrapper.element)).toHaveNoViolations();
     });
     it("should be accessible in open state with value", async () => {
-      jest.useRealTimers();
+      vi.useRealTimers();
 
       const wrapper = getFullWrapper({
         props: {

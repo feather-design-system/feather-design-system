@@ -4,7 +4,7 @@ import { getCalls } from "@featherds/utils/test/calls";
 import FeatherMegaMenu from "./FeatherMegaMenu.vue";
 import { MenuFocusLoop } from "@featherds/menu";
 import { Code } from "@featherds/utils/keys";
-
+import { vi, expect, describe, it } from "vitest";
 const menuName = "Test";
 const templateWithColumnsLinks = `<div>
                                     <div>
@@ -110,8 +110,8 @@ describe("FeatherMegaMenu.vue", () => {
     expect(wrapper.vm.open).toBe(false);
   });
   it("should add and remove document level event listeners", async () => {
-    const addSpy = jest.spyOn(document, "addEventListener");
-    const remove = jest.spyOn(document, "removeEventListener");
+    const addSpy = vi.spyOn(document, "addEventListener");
+    const remove = vi.spyOn(document, "removeEventListener");
     const wrapper = getWrapper();
     await nextTick();
 
@@ -125,7 +125,7 @@ describe("FeatherMegaMenu.vue", () => {
     expect(remove).toHaveBeenCalled();
   });
   it("should remove document level event listeners when unmounted", () => {
-    const remove = jest.spyOn(document, "removeEventListener");
+    const remove = vi.spyOn(document, "removeEventListener");
     const wrapper = getWrapper();
     wrapper.unmount();
     expect(remove).toHaveBeenCalled();
@@ -141,7 +141,7 @@ describe("FeatherMegaMenu.vue", () => {
     expect(name.attributes().role).toBe("presentation");
   });
   it("should focus the first item after opening", async () => {
-    jest.useFakeTimers();
+    vi.useFakeTimers();
     const slots = {
       default: templateWithColumnsLinks,
       button: "<button>Test</button>",
@@ -153,13 +153,14 @@ describe("FeatherMegaMenu.vue", () => {
     await nextTick();
 
     wrapper.vm.afterEnter();
-    jest.runAllTimers();
+    vi.runAllTimers();
 
     await nextTick();
     expect(document.activeElement).toEqual(wrapper.find("li a").element);
   });
 
   it("should close the menu and focus menu button when ESC is pressed", async () => {
+    vi.useRealTimers();
     const slots = {
       default: templateWithColumnsLinks,
       button: "<button>Test</button>",
@@ -170,10 +171,6 @@ describe("FeatherMegaMenu.vue", () => {
     wrapper.vm.open = true;
     await nextTick();
 
-    wrapper.find("button").element.focus = jest.fn();
-    const button = wrapper.find("button");
-    button.element.focus = jest.fn();
-
     checkMenu(true, wrapper);
 
     const menu = wrapper.find(".menu-content");
@@ -181,10 +178,10 @@ describe("FeatherMegaMenu.vue", () => {
     await nextTick();
 
     checkMenu(false, wrapper);
-    // expect(button.element.focus).toHaveBeenCalled();
   });
 
   it("should close menu when a menuitem is clicked", async () => {
+    vi.useRealTimers();
     const slots = {
       default: templateWithColumnsLinks,
       button: "<button>Test</button>",

@@ -1,6 +1,6 @@
-// Jest Snapshot v1, https://goo.gl/fbAQLP
+// Vitest Snapshot v1
 
-exports[`FeatherNavigationRail.vue should render the component closed when initial value is false 1`] = `
+exports[`FeatherNavigationRail.vue > should render the component closed when initial value is false 1`] = `
 <div
   class="nav-rail-container"
 >
@@ -47,7 +47,12 @@ exports[`FeatherNavigationRail.vue should render the component closed when initi
           
         </feather-list-stub>
       </nav>
-      <transition-stub>
+      <transition-stub
+        appear="false"
+        css="true"
+        name="fade"
+        persisted="false"
+      >
         <!--v-if-->
       </transition-stub>
     </div>
@@ -55,7 +60,7 @@ exports[`FeatherNavigationRail.vue should render the component closed when initi
 </div>
 `;
 
-exports[`FeatherNavigationRail.vue should render the component open when initial value is true 1`] = `
+exports[`FeatherNavigationRail.vue > should render the component open when initial value is true 1`] = `
 <div
   class="nav-rail-container"
 >
@@ -102,7 +107,12 @@ exports[`FeatherNavigationRail.vue should render the component open when initial
           
         </feather-list-stub>
       </nav>
-      <transition-stub>
+      <transition-stub
+        appear="false"
+        css="true"
+        name="fade"
+        persisted="false"
+      >
         <div
           class="secondary-menu"
         >
@@ -115,7 +125,7 @@ exports[`FeatherNavigationRail.vue should render the component open when initial
 </div>
 `;
 
-exports[`FeatherNavigationRail.vue should toggle state when chevron clicked 1`] = `
+exports[`FeatherNavigationRail.vue > should toggle state when chevron clicked 1`] = `
 <div
   class="nav-rail-container"
 >
@@ -162,7 +172,12 @@ exports[`FeatherNavigationRail.vue should toggle state when chevron clicked 1`] 
           
         </feather-list-stub>
       </nav>
-      <transition-stub>
+      <transition-stub
+        appear="false"
+        css="true"
+        name="fade"
+        persisted="false"
+      >
         <!--v-if-->
       </transition-stub>
     </div>
@@ -170,7 +185,7 @@ exports[`FeatherNavigationRail.vue should toggle state when chevron clicked 1`] 
 </div>
 `;
 
-exports[`FeatherNavigationRail.vue should toggle state when chevron clicked 2`] = `
+exports[`FeatherNavigationRail.vue > should toggle state when chevron clicked 2`] = `
 <div
   class="nav-rail-container"
 >
@@ -217,7 +232,12 @@ exports[`FeatherNavigationRail.vue should toggle state when chevron clicked 2`] 
           
         </feather-list-stub>
       </nav>
-      <transition-stub>
+      <transition-stub
+        appear="false"
+        css="true"
+        name="fade"
+        persisted="false"
+      >
         <div
           class="secondary-menu"
         >
@@ -230,7 +250,7 @@ exports[`FeatherNavigationRail.vue should toggle state when chevron clicked 2`] 
 </div>
 `;
 
-exports[`FeatherNavigationRail.vue should toggle state when chevron trigger by enter 1`] = `
+exports[`FeatherNavigationRail.vue > should toggle state when chevron trigger by enter 1`] = `
 <div
   class="nav-rail-container"
 >
@@ -277,7 +297,12 @@ exports[`FeatherNavigationRail.vue should toggle state when chevron trigger by e
           
         </feather-list-stub>
       </nav>
-      <transition-stub>
+      <transition-stub
+        appear="false"
+        css="true"
+        name="fade"
+        persisted="false"
+      >
         <!--v-if-->
       </transition-stub>
     </div>
@@ -285,7 +310,7 @@ exports[`FeatherNavigationRail.vue should toggle state when chevron trigger by e
 </div>
 `;
 
-exports[`FeatherNavigationRail.vue should toggle state when chevron trigger by enter 2`] = `
+exports[`FeatherNavigationRail.vue > should toggle state when chevron trigger by enter 2`] = `
 <div
   class="nav-rail-container"
 >
@@ -332,7 +357,12 @@ exports[`FeatherNavigationRail.vue should toggle state when chevron trigger by e
           
         </feather-list-stub>
       </nav>
-      <transition-stub>
+      <transition-stub
+        appear="false"
+        css="true"
+        name="fade"
+        persisted="false"
+      >
         <div
           class="secondary-menu"
         >
@@ -345,7 +375,7 @@ exports[`FeatherNavigationRail.vue should toggle state when chevron trigger by e
 </div>
 `;
 
-exports[`FeatherNavigationRail.vue should toggle state when chevron trigger by space 1`] = `
+exports[`FeatherNavigationRail.vue > should toggle state when chevron trigger by space 1`] = `
 <div
   class="nav-rail-container"
 >
@@ -392,7 +422,12 @@ exports[`FeatherNavigationRail.vue should toggle state when chevron trigger by s
           
         </feather-list-stub>
       </nav>
-      <transition-stub>
+      <transition-stub
+        appear="false"
+        css="true"
+        name="fade"
+        persisted="false"
+      >
         <!--v-if-->
       </transition-stub>
     </div>
@@ -400,7 +435,7 @@ exports[`FeatherNavigationRail.vue should toggle state when chevron trigger by s
 </div>
 `;
 
-exports[`FeatherNavigationRail.vue should toggle state when chevron trigger by space 2`] = `
+exports[`FeatherNavigationRail.vue > should toggle state when chevron trigger by space 2`] = `
 <div
   class="nav-rail-container"
 >
@@ -447,7 +482,12 @@ exports[`FeatherNavigationRail.vue should toggle state when chevron trigger by s
           
         </feather-list-stub>
       </nav>
-      <transition-stub>
+      <transition-stub
+        appear="false"
+        css="true"
+        name="fade"
+        persisted="false"
+      >
         <div
           class="secondary-menu"
         >

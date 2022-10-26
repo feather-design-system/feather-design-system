@@ -1,6 +1,6 @@
-// Jest Snapshot v1, https://goo.gl/fbAQLP
+// Vitest Snapshot v1
 
-exports[`FeatherProtectedInput.vue should change input type when show password is clicked 1`] = `
+exports[`FeatherProtectedInput.vue > should change input type when show password is clicked 1`] = `
 <div
   class="feather-input-container"
 >
@@ -105,7 +105,7 @@ exports[`FeatherProtectedInput.vue should change input type when show password i
 </div>
 `;
 
-exports[`FeatherProtectedInput.vue should render with show password icon by default 1`] = `
+exports[`FeatherProtectedInput.vue > should render with show password icon by default 1`] = `
 <div
   class="feather-input-container"
 >

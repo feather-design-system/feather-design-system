@@ -1,7 +1,8 @@
 import GridChip from "./GridChip.vue";
 import { mount } from "@vue/test-utils";
 import * as id from "@featherds/utils/id";
-jest.spyOn(id, "getSafeId").mockImplementation((x) => x);
+import { vi, expect, describe, it } from "vitest";
+vi.spyOn(id, "getSafeId").mockImplementation((x) => x);
 
 const getWrapper = function (options = {}, addIcon = false) {
   options = {

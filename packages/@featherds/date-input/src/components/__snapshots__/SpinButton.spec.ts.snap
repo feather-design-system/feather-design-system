@@ -1,6 +1,6 @@
-// Jest Snapshot v1, https://goo.gl/fbAQLP
+// Vitest Snapshot v1
 
-exports[`SpinButton.vue should render correctly 1`] = `
+exports[`SpinButton.vue > should render correctly 1`] = `
 <span
   aria-disabled="false"
   aria-label="Test"
@@ -16,7 +16,7 @@ exports[`SpinButton.vue should render correctly 1`] = `
 </span>
 `;
 
-exports[`SpinButton.vue should render disabled 1`] = `
+exports[`SpinButton.vue > should render disabled 1`] = `
 <span
   aria-disabled="true"
   aria-label="Test"
@@ -32,7 +32,7 @@ exports[`SpinButton.vue should render disabled 1`] = `
 </span>
 `;
 
-exports[`SpinButton.vue should render placeholder when there is no value 1`] = `
+exports[`SpinButton.vue > should render placeholder when there is no value 1`] = `
 <span
   aria-disabled="false"
   aria-label="Test"

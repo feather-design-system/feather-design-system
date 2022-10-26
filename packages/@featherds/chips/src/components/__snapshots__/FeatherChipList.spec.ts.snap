@@ -1,6 +1,6 @@
-// Jest Snapshot v1, https://goo.gl/fbAQLP
+// Vitest Snapshot v1
 
-exports[`Feather Chip List list format should render child chips correctly 1`] = `
+exports[`Feather Chip List > list format > should render child chips correctly 1`] = `
 <div
   aria-label="TEST"
   class="chip-list"
@@ -74,7 +74,7 @@ exports[`Feather Chip List list format should render child chips correctly 1`] =
 </div>
 `;
 
-exports[`Feather Chip List list format should render child chips with click correctly 1`] = `
+exports[`Feather Chip List > list format > should render child chips with click correctly 1`] = `
 <div
   aria-label="TEST"
   class="chip-list"
@@ -154,7 +154,7 @@ exports[`Feather Chip List list format should render child chips with click corr
 </div>
 `;
 
-exports[`Feather Chip List list format should render child chips with delete correctly 1`] = `
+exports[`Feather Chip List > list format > should render child chips with delete correctly 1`] = `
 <div
   aria-label="TEST"
   class="chip-list"
@@ -276,7 +276,7 @@ exports[`Feather Chip List list format should render child chips with delete cor
 </div>
 `;
 
-exports[`Feather Chip List list format should render child chips with one disabled correctly 1`] = `
+exports[`Feather Chip List > list format > should render child chips with one disabled correctly 1`] = `
 <div
   aria-label="TEST"
   class="chip-list"
@@ -350,7 +350,7 @@ exports[`Feather Chip List list format should render child chips with one disabl
 </div>
 `;
 
-exports[`Feather Chip List radio format should render child chips to correctly 1`] = `
+exports[`Feather Chip List > radio format > should render child chips to correctly 1`] = `
 <div
   aria-label="TEST"
   class="chip-list"

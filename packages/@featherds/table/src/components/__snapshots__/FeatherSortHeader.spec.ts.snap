@@ -1,6 +1,6 @@
-// Jest Snapshot v1, https://goo.gl/fbAQLP
+// Vitest Snapshot v1
 
-exports[`FeatherSortHeader.vue should set aria-sort based on prop 1`] = `
+exports[`FeatherSortHeader.vue > should set aria-sort based on prop 1`] = `
 <th
   aria-sort="ascending"
   data-ref-id="feather-sort-header"
@@ -48,7 +48,7 @@ exports[`FeatherSortHeader.vue should set aria-sort based on prop 1`] = `
 </th>
 `;
 
-exports[`FeatherSortHeader.vue should set aria-sort based on prop 2`] = `
+exports[`FeatherSortHeader.vue > should set aria-sort based on prop 2`] = `
 <th
   aria-sort="descending"
   data-ref-id="feather-sort-header"
@@ -96,7 +96,7 @@ exports[`FeatherSortHeader.vue should set aria-sort based on prop 2`] = `
 </th>
 `;
 
-exports[`FeatherSortHeader.vue should set aria-sort based on prop 3`] = `
+exports[`FeatherSortHeader.vue > should set aria-sort based on prop 3`] = `
 <th
   aria-sort="none"
   data-ref-id="feather-sort-header"

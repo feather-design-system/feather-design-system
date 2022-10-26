@@ -18,7 +18,11 @@
           <a href="#/AppLayout-BasicVerticalExampleFullscreen">
             <IconTextAnimate>
               <template v-slot:icon>
-                <FeatherIcon :icon="app" title="Awesome Product" class="product-icon"></FeatherIcon>
+                <FeatherIcon
+                  :icon="app"
+                  title="Awesome Product"
+                  class="product-icon"
+                ></FeatherIcon>
               </template>
               <template v-slot:text>
                 <span class="product-text">Product</span>
@@ -28,9 +32,21 @@
         </template>
         <template v-slot:nav>
           <FeatherAppRailNavHeader title="Applications" />
-          <FeatherAppRailNavItem href="#/AppLayout-BasicVerticalExampleFullscreen" :icon="app" title="App One" />
-          <FeatherAppRailNavItem href="#/AppLayout-BasicVerticalExampleFullscreen" :icon="app" title="App Two" />
-          <FeatherAppRailNavItem href="#/AppLayout-BasicVerticalExampleFullscreen" :icon="app" title="App Three" />
+          <FeatherAppRailNavItem
+            href="#/AppLayout-BasicVerticalExampleFullscreen"
+            :icon="app"
+            title="App One"
+          />
+          <FeatherAppRailNavItem
+            href="#/AppLayout-BasicVerticalExampleFullscreen"
+            :icon="app"
+            title="App Two"
+          />
+          <FeatherAppRailNavItem
+            href="#/AppLayout-BasicVerticalExampleFullscreen"
+            :icon="app"
+            title="App Three"
+          />
         </template>
       </FeatherAppRail>
     </template>

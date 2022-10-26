@@ -1,6 +1,6 @@
-// Jest Snapshot v1, https://goo.gl/fbAQLP
+// Vitest Snapshot v1
 
-exports[`FeatherPagination.vue should disable first and previous buttons on first page 1`] = `
+exports[`FeatherPagination.vue > should disable first and previous buttons on first page 1`] = `
 <div
   class="feather-pagination"
 >
@@ -106,7 +106,7 @@ exports[`FeatherPagination.vue should disable first and previous buttons on firs
 </div>
 `;
 
-exports[`FeatherPagination.vue should disable last and next buttons on last page 1`] = `
+exports[`FeatherPagination.vue > should disable last and next buttons on last page 1`] = `
 <div
   class="feather-pagination"
 >

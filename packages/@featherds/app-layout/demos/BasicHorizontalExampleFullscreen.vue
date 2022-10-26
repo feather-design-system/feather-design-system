@@ -4,17 +4,36 @@
       <FeatherAppBar :labels="labels" :content="content" full-width>
         <template v-slot:left>
           <a href="#/AppLayout-BasicVerticalExampleFullscreen" class="product">
-            <FeatherIcon :icon="App" title="Awesome Product" class="product-icon"></FeatherIcon>
+            <FeatherIcon
+              :icon="App"
+              title="Awesome Product"
+              class="product-icon"
+            ></FeatherIcon>
             <span class="product-text">Product</span>
           </a>
 
-          <a href="#/AppLayout-BasicVerticalExampleFullscreen" class="app-bar-link">App One</a>
-          <a href="#/AppLayout-BasicVerticalExampleFullscreen" class="app-bar-link">App Two</a>
-          <a href="#/AppLayout-BasicVerticalExampleFullscreen" class="app-bar-link">App Three</a>
-
+          <a
+            href="#/AppLayout-BasicVerticalExampleFullscreen"
+            class="app-bar-link"
+            >App One</a
+          >
+          <a
+            href="#/AppLayout-BasicVerticalExampleFullscreen"
+            class="app-bar-link"
+            >App Two</a
+          >
+          <a
+            href="#/AppLayout-BasicVerticalExampleFullscreen"
+            class="app-bar-link"
+            >App Three</a
+          >
         </template>
         <template v-slot:right>
-          <FeatherAppBarLink :icon="Support" title="Support" url="#/AppLayout-BasicHorizontalExampleFullscreen" />
+          <FeatherAppBarLink
+            :icon="Support"
+            title="Support"
+            url="#/AppLayout-BasicHorizontalExampleFullscreen"
+          />
         </template>
       </FeatherAppBar>
     </template>
@@ -31,8 +50,16 @@
           </div>
         </template>
         <template v-slot:main>
-          <FeatherRailItem href="#/AppLayout-BasicVerticalExampleFullscreen" :icon="App" title="Feedback" />
-          <FeatherRailItem href="#/AppLayout-BasicVerticalExampleFullscreen" :icon="App" title="Sign out" />
+          <FeatherRailItem
+            href="#/AppLayout-BasicVerticalExampleFullscreen"
+            :icon="App"
+            title="Feedback"
+          />
+          <FeatherRailItem
+            href="#/AppLayout-BasicVerticalExampleFullscreen"
+            :icon="App"
+            title="Sign out"
+          />
         </template>
       </FeatherNavigationRail>
     </template>

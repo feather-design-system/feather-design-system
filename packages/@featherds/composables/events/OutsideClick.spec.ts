@@ -1,7 +1,7 @@
 import { useOutsideClick } from "./OutsideClick";
 import { mount } from "@vue/test-utils";
 import { ref, nextTick } from "vue";
-
+import { vi, expect, describe, it } from "vitest";
 const createWrapper = (setup) => {
   return mount({
     template: `<div></div>`,
@@ -11,14 +11,14 @@ const createWrapper = (setup) => {
 
 describe("Scroll composable", () => {
   it("should only attach listeners when element and active", async () => {
-    const windowSpy = jest.spyOn(window, "addEventListener");
-    const documentSpy = jest.spyOn(document, "addEventListener");
+    const windowSpy = vi.spyOn(window, "addEventListener");
+    const documentSpy = vi.spyOn(document, "addEventListener");
     const el = document.createElement("div");
     document.body.appendChild(el);
     const elRef = ref(el);
     let active;
     const wrapper = createWrapper(() => {
-      active = useOutsideClick(elRef, jest.fn());
+      active = useOutsideClick(elRef, vi.fn());
     });
     await nextTick();
     expect(windowSpy).not.toHaveBeenCalled();
@@ -26,18 +26,15 @@ describe("Scroll composable", () => {
 
     active.value = true;
     await nextTick();
-    expect(windowSpy).not.toHaveBeenCalled();
-    expect(documentSpy).not.toHaveBeenCalled();
-
-    await nextTick();
     expect(windowSpy).toHaveBeenCalled();
     expect(documentSpy).toHaveBeenCalled();
   });
   it("should only call callback when an element outside is clicked", async () => {
-    const el = document.createElement("div.test");
+    const el = document.createElement("div");
+    el.classList.add("test");
     document.body.appendChild(el);
     const elRef = ref(el);
-    const listener = jest.fn();
+    const listener = vi.fn();
     const wrapper = createWrapper(() => {
       const active = useOutsideClick(elRef, listener);
       active.value = true;
@@ -45,7 +42,6 @@ describe("Scroll composable", () => {
     await nextTick();
 
     let event = new MouseEvent("click", {
-      view: window,
       bubbles: true,
       cancelable: false,
     });
@@ -56,25 +52,25 @@ describe("Scroll composable", () => {
     expect(listener).toHaveBeenCalledTimes(1);
 
     event = new MouseEvent("click", {
-      view: window,
       bubbles: true,
       cancelable: false,
     });
-    wrapper.find("div.test").element.dispatchEvent(event);
+    console.log(document.body.innerHTML);
+    document.querySelector("div.test").dispatchEvent(event);
 
     await nextTick();
 
-    expect(listener).toHaveBeenCalledTimes(2);
+    expect(listener).toHaveBeenCalledTimes(1);
   });
   it("should remove listeners when active is false", async () => {
-    const windowSpy = jest.spyOn(window, "removeEventListener");
-    const documentSpy = jest.spyOn(document, "removeEventListener");
+    const windowSpy = vi.spyOn(window, "removeEventListener");
+    const documentSpy = vi.spyOn(document, "removeEventListener");
     const el = document.createElement("div");
     document.body.appendChild(el);
     const elRef = ref(el);
     let active;
     const wrapper = createWrapper(() => {
-      active = useOutsideClick(elRef, jest.fn());
+      active = useOutsideClick(elRef, vi.fn());
       active.value = true;
     });
     await nextTick();
@@ -86,14 +82,14 @@ describe("Scroll composable", () => {
     expect(documentSpy).toHaveBeenCalled();
   });
   it("should remove listeners on unmount", async () => {
-    const windowSpy = jest.spyOn(window, "removeEventListener");
-    const documentSpy = jest.spyOn(document, "removeEventListener");
+    const windowSpy = vi.spyOn(window, "removeEventListener");
+    const documentSpy = vi.spyOn(document, "removeEventListener");
     const el = document.createElement("div");
     document.body.appendChild(el);
     const elRef = ref(el);
     let active;
     const wrapper = createWrapper(() => {
-      active = useOutsideClick(elRef, jest.fn());
+      active = useOutsideClick(elRef, vi.fn());
       active.value = true;
     });
     await nextTick();

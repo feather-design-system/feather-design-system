@@ -1,6 +1,7 @@
 import { mount } from "@vue/test-utils";
 import SkipContentLink from "./SkipContentLink.vue";
-let scrollIntoViewMock = jest.fn();
+import { vi, expect, describe, it, beforeEach } from "vitest";
+const scrollIntoViewMock = vi.fn();
 window.HTMLElement.prototype.scrollIntoView = scrollIntoViewMock;
 
 const getWrapper = () =>

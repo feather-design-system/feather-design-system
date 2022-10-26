@@ -1,6 +1,6 @@
-// Jest Snapshot v1, https://goo.gl/fbAQLP
+// Vitest Snapshot v1
 
-exports[`InputWrapper.vue should hide the label when hideLabel is true 1`] = `
+exports[`InputWrapper.vue > should hide the label when hideLabel is true 1`] = `
 <div
   class="feather-input-wrapper-container hide-label error"
 >
@@ -75,7 +75,7 @@ exports[`InputWrapper.vue should hide the label when hideLabel is true 1`] = `
 </div>
 `;
 
-exports[`InputWrapper.vue should render a focused border & raised label 1`] = `
+exports[`InputWrapper.vue > should render a focused border & raised label 1`] = `
 <div
   class="feather-input-wrapper-container focused error"
 >
@@ -150,7 +150,7 @@ exports[`InputWrapper.vue should render a focused border & raised label 1`] = `
 </div>
 `;
 
-exports[`InputWrapper.vue should render a normal wrapper 1`] = `
+exports[`InputWrapper.vue > should render a normal wrapper 1`] = `
 <div
   class="feather-input-wrapper-container error"
 >
@@ -225,7 +225,7 @@ exports[`InputWrapper.vue should render a normal wrapper 1`] = `
 </div>
 `;
 
-exports[`InputWrapper.vue should render a raised label 1`] = `
+exports[`InputWrapper.vue > should render a raised label 1`] = `
 <div
   class="feather-input-wrapper-container raised error"
 >
@@ -300,7 +300,7 @@ exports[`InputWrapper.vue should render a raised label 1`] = `
 </div>
 `;
 
-exports[`InputWrapper.vue should render clear and error icons 1`] = `
+exports[`InputWrapper.vue > should render clear and error icons 1`] = `
 <div
   class="feather-input-wrapper-container error"
 >
@@ -393,7 +393,7 @@ exports[`InputWrapper.vue should render clear and error icons 1`] = `
 </div>
 `;
 
-exports[`InputWrapper.vue should render clear icon when clear and show clear is set 1`] = `
+exports[`InputWrapper.vue > should render clear icon when clear and show clear is set 1`] = `
 <div
   class="feather-input-wrapper-container error"
 >
@@ -486,7 +486,7 @@ exports[`InputWrapper.vue should render clear icon when clear and show clear is 
 </div>
 `;
 
-exports[`InputWrapper.vue should render in an error state 1`] = `
+exports[`InputWrapper.vue > should render in an error state 1`] = `
 <div
   class="feather-input-wrapper-container error"
 >
@@ -561,7 +561,7 @@ exports[`InputWrapper.vue should render in an error state 1`] = `
 </div>
 `;
 
-exports[`InputWrapper.vue should render in disabled state 1`] = `
+exports[`InputWrapper.vue > should render in disabled state 1`] = `
 <div
   class="feather-input-wrapper-container error disabled"
 >
@@ -636,7 +636,7 @@ exports[`InputWrapper.vue should render in disabled state 1`] = `
 </div>
 `;
 
-exports[`InputWrapper.vue should take into account any prefix elements when not raised 1`] = `
+exports[`InputWrapper.vue > should take into account any prefix elements when not raised 1`] = `
 <div
   class="feather-input-wrapper-container error"
 >

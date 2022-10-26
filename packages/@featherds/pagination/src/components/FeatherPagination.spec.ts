@@ -1,6 +1,7 @@
 import FeatherPagination from "./FeatherPagination.vue";
 import { shallowMount } from "@vue/test-utils";
 import { getCalls } from "@featherds/utils/test/calls";
+import { expect, describe, it } from "vitest";
 
 const getWrapper = function (options: Record<string, unknown> = {}) {
   const props = (options.props as Object) || {};

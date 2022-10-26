@@ -4,7 +4,8 @@ import FeatherPopover from "./FeatherPopover.vue";
 import * as id from "@featherds/utils/id";
 import { PopoverPlacement } from "../types";
 import { Code } from "@featherds/utils/keys";
-jest.spyOn(id, "getSafeId").mockImplementation((x) => x);
+import { vi, expect, describe, it } from "vitest";
+vi.spyOn(id, "getSafeId").mockImplementation((x) => x);
 const getTrigger = () =>
   `<template #trigger="params">
   <button v-bind="params.attrs" v-on="params.on">popover BUTTON</button>
@@ -37,10 +38,10 @@ describe("FeatherPopover", () => {
     expect(wrapper.element).toMatchSnapshot();
   });
   it("should show a popover on click", async () => {
-    jest.useFakeTimers();
+    vi.useFakeTimers();
     const wrapper = getWrapper();
     await click(wrapper);
-    jest.runAllTimers();
+    vi.runAllTimers();
     await nextTick();
     await nextTick();
     await nextTick();
@@ -48,10 +49,10 @@ describe("FeatherPopover", () => {
   });
 
   it("should hide popover on escape", async () => {
-    jest.useFakeTimers();
+    vi.useFakeTimers();
     const wrapper = getWrapper();
     await click(wrapper);
-    jest.runAllTimers();
+    vi.runAllTimers();
     await nextTick();
     await nextTick();
     await nextTick();

@@ -2,6 +2,8 @@ import { mount } from "@vue/test-utils";
 import axe from "axe-core";
 import FeatherDrawer from "./FeatherDrawer.vue";
 import { getCalls } from "@featherds/utils/test/calls";
+import { expect, describe, it } from "vitest";
+
 const slots = {
   default: {
     template: `<div><h1>Drawer content</h1>
@@ -59,55 +61,57 @@ describe("FeatherDrawer.vue", () => {
   });
 
   describe("a11y", () => {
-    it("should have no accessibility errors when closed", (done) => {
-      const wrapper = getWrapper({ props: getprops(false), slots });
-      document.body.appendChild(wrapper.element);
-      axe.run(
-        wrapper.element,
-        {
-          runOnly: {
-            type: "tag",
-            values: ["wcag2a", "wcag2aa"],
+    it("should have no accessibility errors when closed", () =>
+      new Promise((done) => {
+        const wrapper = getWrapper({ props: getprops(false), slots });
+        document.body.appendChild(wrapper.element);
+        axe.run(
+          wrapper.element,
+          {
+            runOnly: {
+              type: "tag",
+              values: ["wcag2a", "wcag2aa"],
+            },
           },
-        },
-        (err, result) => {
-          expect(err).toBe(null);
-          expect(result.violations.length).toBe(0);
-          result.violations.forEach((v) => {
-            //eslint-disable-next-line
-            console.error(
-              `${v.description} at ${v.nodes.map((n) => n.target).join(", ")}`
-            );
-          });
-          document.body.removeChild(wrapper.element);
-          done();
-        }
-      );
-    });
-    it("should have no accessibility errors when open", (done) => {
-      const wrapper = getWrapper({ props: getprops(true), slots });
-      document.body.appendChild(wrapper.element);
-      axe.run(
-        wrapper.element,
-        {
-          runOnly: {
-            type: "tag",
-            values: ["wcag2a", "wcag2aa"],
+          (err, result) => {
+            expect(err).toBe(null);
+            expect(result.violations.length).toBe(0);
+            result.violations.forEach((v) => {
+              //eslint-disable-next-line
+              console.error(
+                `${v.description} at ${v.nodes.map((n) => n.target).join(", ")}`
+              );
+            });
+            document.body.removeChild(wrapper.element);
+            done("");
+          }
+        );
+      }));
+    it("should have no accessibility errors when open", () =>
+      new Promise((done) => {
+        const wrapper = getWrapper({ props: getprops(true), slots });
+        document.body.appendChild(wrapper.element);
+        axe.run(
+          wrapper.element,
+          {
+            runOnly: {
+              type: "tag",
+              values: ["wcag2a", "wcag2aa"],
+            },
           },
-        },
-        (err, result) => {
-          expect(err).toBe(null);
-          expect(result.violations.length).toBe(0);
-          result.violations.forEach((v) => {
-            //eslint-disable-next-line
-            console.error(
-              `${v.description} at ${v.nodes.map((n) => n.target).join(", ")}`
-            );
-          });
-          document.body.removeChild(wrapper.element);
-          done();
-        }
-      );
-    });
+          (err, result) => {
+            expect(err).toBe(null);
+            expect(result.violations.length).toBe(0);
+            result.violations.forEach((v) => {
+              //eslint-disable-next-line
+              console.error(
+                `${v.description} at ${v.nodes.map((n) => n.target).join(", ")}`
+              );
+            });
+            document.body.removeChild(wrapper.element);
+            done("");
+          }
+        );
+      }));
   });
 });

@@ -1,7 +1,7 @@
 import { nextTick } from "vue";
 import { useResize } from "./Resize";
 import { mount } from "@vue/test-utils";
-
+import { vi, expect, describe, it } from "vitest";
 const createWrapper = (setup) => {
   return mount({
     template: `<div></div>`,
@@ -11,9 +11,9 @@ const createWrapper = (setup) => {
 
 describe("Resize composable", () => {
   it("should debounce calls to the callback", async () => {
-    const listener = jest.fn();
+    const listener = vi.fn();
 
-    jest.useFakeTimers();
+    vi.useFakeTimers();
     const wrapper = createWrapper(() => {
       const active = useResize(listener);
       active.value = true;
@@ -26,13 +26,13 @@ describe("Resize composable", () => {
     window.dispatchEvent(event1);
     window.dispatchEvent(event2);
 
-    jest.runAllTimers();
+    vi.runAllTimers();
     expect(listener).toHaveBeenCalledTimes(1);
   });
 
   it("should only add event listener when active is set to true", async () => {
-    const spy = jest.spyOn(window, "addEventListener");
-    const listener = jest.fn();
+    const spy = vi.spyOn(window, "addEventListener");
+    const listener = vi.fn();
 
     let active;
     const wrapper = createWrapper(() => {
@@ -46,9 +46,9 @@ describe("Resize composable", () => {
     expect(spy).toHaveBeenCalled();
   });
   it("should remove events on unmount", async () => {
-    const spy = jest.spyOn(window, "removeEventListener");
+    const spy = vi.spyOn(window, "removeEventListener");
     const wrapper = createWrapper(() => {
-      const active = useResize(jest.fn());
+      const active = useResize(vi.fn());
       active.value = true;
     });
     await nextTick();

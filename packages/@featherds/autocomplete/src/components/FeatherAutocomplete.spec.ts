@@ -4,11 +4,12 @@ import { shallowMount, mount } from "@vue/test-utils";
 import * as id from "@featherds/utils/id";
 import axe from "@featherds/utils/test/axe";
 import { nextTick } from "vue";
+import { vi, expect, describe, it } from "vitest";
 
 import "@featherds/input-helper/test/MutationObserver";
 import { getCalls } from "@featherds/utils/test/calls";
 import { Code } from "@featherds/utils/keys";
-jest.spyOn(id, "getSafeId").mockImplementation((x) => x);
+vi.spyOn(id, "getSafeId").mockImplementation((x) => x);
 
 const getProps =
   (type: AutocompleteTypes) =>
@@ -110,7 +111,9 @@ const baseFunctionality = (type: AutocompleteTypes) => {
       expect(wrapper.emitted("search")).toBeUndefined();
     });
     it("should perform search with text when characters are entered > min char", async () => {
-      jest.useFakeTimers();
+      vi.useFakeTimers({
+        toFake: ["setTimeout", "clearTimeout"],
+      });
 
       const wrapper = getFullWrapper({
         props: { minChar: 3 },
@@ -122,11 +125,13 @@ const baseFunctionality = (type: AutocompleteTypes) => {
       input.element.value = result;
       await input.trigger("input");
       await input.trigger("focus");
-      jest.runAllTimers();
+      vi.runAllTimers();
       expect(getCalls<string>(wrapper, "search")[0][0]).toBe(result);
     });
     it("should throttle search queries", async () => {
-      jest.useFakeTimers();
+      vi.useFakeTimers({
+        toFake: ["setTimeout", "clearTimeout"],
+      });
 
       const wrapper = getFullWrapper({
         props: { minChar: 3 },
@@ -138,9 +143,9 @@ const baseFunctionality = (type: AutocompleteTypes) => {
       await input.trigger("focus");
       input.element.value = result;
       await input.trigger("input");
-      jest.advanceTimersByTime(100);
+      vi.advanceTimersByTime(100);
       expect(wrapper.emitted("search")).toBeUndefined();
-      jest.advanceTimersByTime(200);
+      vi.advanceTimersByTime(200);
       expect(getCalls<string>(wrapper, "search")[0][0]).toBe(result);
     });
     it("should show loading spinner when search is performed", async () => {
@@ -154,7 +159,9 @@ const baseFunctionality = (type: AutocompleteTypes) => {
       expect(wrapper.element).toMatchSnapshot();
     });
     it("should show no results text when search returns no results", async () => {
-      jest.useFakeTimers();
+      vi.useFakeTimers({
+        toFake: ["setTimeout", "clearTimeout"],
+      });
 
       const results = [] as IAutocompleteItemType[];
       const wrapper = getFullWrapper();
@@ -165,7 +172,7 @@ const baseFunctionality = (type: AutocompleteTypes) => {
         results,
       });
 
-      jest.runAllTimers();
+      vi.runAllTimers();
       await nextTick();
       await nextTick();
       await nextTick();
@@ -216,16 +223,16 @@ const baseFunctionality = (type: AutocompleteTypes) => {
       });
     });
     describe("Accessibility", () => {
-      beforeEach(() => jest.setTimeout(60000));
+      // beforeEach(() => vi.setTimeout(60000));
 
       it("should be accessible in default state", async () => {
-        jest.useRealTimers();
+        vi.useRealTimers();
         const wrapper = getFullWrapper();
 
         expect(await axe(wrapper.element)).toHaveNoViolations();
       });
       it("should be accessible in loading state", async () => {
-        jest.useRealTimers();
+        vi.useRealTimers();
         const wrapper = getFullWrapper();
         await wrapper.find(".feather-autocomplete-input").trigger("focus");
 
@@ -237,7 +244,7 @@ const baseFunctionality = (type: AutocompleteTypes) => {
       });
 
       it("should be accessible in minchar state", async () => {
-        jest.useRealTimers();
+        vi.useRealTimers();
         const wrapper = getFullWrapper();
 
         await wrapper.setProps({
@@ -247,7 +254,7 @@ const baseFunctionality = (type: AutocompleteTypes) => {
         expect(await axe(wrapper.element)).toHaveNoViolations();
       });
       it("should be accessible with menu open", async () => {
-        jest.useRealTimers();
+        vi.useRealTimers();
         const results = getResults();
         const wrapper = getFullWrapper();
         await wrapper.find(".feather-autocomplete-input").trigger("focus");
@@ -259,7 +266,7 @@ const baseFunctionality = (type: AutocompleteTypes) => {
         expect(await axe(wrapper.element)).toHaveNoViolations();
       });
       it("should be accessible in default state with value", async () => {
-        jest.useRealTimers();
+        vi.useRealTimers();
         const modelValue = getValue();
         const wrapper = getFullWrapper({
           props: {
@@ -269,7 +276,7 @@ const baseFunctionality = (type: AutocompleteTypes) => {
         expect(await axe(wrapper.element)).toHaveNoViolations();
       });
       it("should be accessible with menu open and a value", async () => {
-        jest.useRealTimers();
+        vi.useRealTimers();
         const results = getResults();
         const wrapper = getFullWrapper({
           props: {
@@ -453,7 +460,9 @@ describe("FeatherAutocomplete", () => {
       expect(wrapper.vm.showMinCharWarning).toBe(false);
     });
     it("should hide/reset menu and clear text input when it loses focus", async () => {
-      jest.useFakeTimers();
+      vi.useFakeTimers({
+        toFake: ["setTimeout", "clearTimeout"],
+      });
       const wrapper = getFullWrapper();
       const input = wrapper.find<HTMLInputElement>(
         ".feather-autocomplete-input"
@@ -461,7 +470,7 @@ describe("FeatherAutocomplete", () => {
       await input.trigger("focus");
       input.element.value = "test";
       await input.trigger("input");
-      jest.runAllTimers();
+      vi.runAllTimers();
 
       await wrapper.setProps({
         results: getResults(),
@@ -885,7 +894,9 @@ describe("FeatherAutocomplete", () => {
       ).toStrictEqual(results[index]);
     });
     it("should display the current selected value if no new selection is made", async () => {
-      jest.useFakeTimers();
+      vi.useFakeTimers({
+        toFake: ["setTimeout", "clearTimeout"],
+      });
       const modelValue = getValue() as IAutocompleteItemType;
       const wrapper = getFullWrapper({
         props: {
@@ -899,9 +910,8 @@ describe("FeatherAutocomplete", () => {
 
       input.element.value = modelValue._text + "dasdasd";
       await input.trigger("input");
-      jest.runAllTimers();
       await nextTick();
-
+      vi.runAllTimers();
       await wrapper.find(".feather-autocomplete-input").trigger("blur");
       await wrapper.findComponent({ ref: "menu" }).vm.$emit("outside-click");
       await nextTick();
@@ -951,7 +961,9 @@ describe("FeatherAutocomplete", () => {
     });
 
     it("should emit new event when add new element is clicked", async () => {
-      jest.useFakeTimers();
+      vi.useFakeTimers({
+        toFake: ["setTimeout", "clearTimeout"],
+      });
 
       const results = [] as IAutocompleteItemType[];
       const wrapper = getFullWrapper({
@@ -965,8 +977,7 @@ describe("FeatherAutocomplete", () => {
       wrapper.setProps({
         results,
       });
-
-      jest.runAllTimers();
+      vi.runAllTimers();
       await nextTick();
       const resultsList = wrapper.findComponent({ ref: "results" });
       resultsList.vm.$emit("select", {
@@ -976,7 +987,9 @@ describe("FeatherAutocomplete", () => {
       expect(getCalls<[string]>(wrapper, "new")[0][0]).toBe(query);
     });
     it("should show add new element when in add-new mode", async () => {
-      jest.useFakeTimers();
+      vi.useFakeTimers({
+        toFake: ["setTimeout", "clearTimeout"],
+      });
 
       const results = [] as IAutocompleteItemType[];
       const wrapper = getFullWrapper({
@@ -991,7 +1004,7 @@ describe("FeatherAutocomplete", () => {
         results,
       });
 
-      jest.runAllTimers();
+      vi.runAllTimers();
       await nextTick();
       await nextTick();
       await nextTick();
@@ -1000,7 +1013,9 @@ describe("FeatherAutocomplete", () => {
       expect(wrapper.vm.showResults).toBe(true);
     });
     it("should add new item on blur when it is highlighted", async () => {
-      jest.useFakeTimers();
+      vi.useFakeTimers({
+        toFake: ["setTimeout", "clearTimeout"],
+      });
       const results = getResults() as IAutocompleteItemType[];
       const wrapper = getFullWrapper({
         props: {

@@ -1,10 +1,15 @@
-// Jest Snapshot v1, https://goo.gl/fbAQLP
+// Vitest Snapshot v1
 
-exports[`FeatherPdfViewer.vue should always show error state when force-error is true and can preview 1`] = `
+exports[`FeatherPdfViewer.vue > should always show error state when force-error is true and can preview 1`] = `
 <div
   class="feather-pdfviewer"
 >
-  <transition-stub>
+  <transition-stub
+    appear="false"
+    css="true"
+    name="fade"
+    persisted="true"
+  >
     <focus-trap-stub
       class="trap"
       enable="true"
@@ -87,11 +92,16 @@ exports[`FeatherPdfViewer.vue should always show error state when force-error is
 </div>
 `;
 
-exports[`FeatherPdfViewer.vue should always show error state when force-error is true and can preview 2`] = `
+exports[`FeatherPdfViewer.vue > should always show error state when force-error is true and can preview 2`] = `
 <div
   class="feather-pdfviewer"
 >
-  <transition-stub>
+  <transition-stub
+    appear="false"
+    css="true"
+    name="fade"
+    persisted="true"
+  >
     <focus-trap-stub
       class="trap"
       enable="true"
@@ -174,11 +184,16 @@ exports[`FeatherPdfViewer.vue should always show error state when force-error is
 </div>
 `;
 
-exports[`FeatherPdfViewer.vue should always show error state when force-error is true and should show no preview 1`] = `
+exports[`FeatherPdfViewer.vue > should always show error state when force-error is true and should show no preview 1`] = `
 <div
   class="feather-pdfviewer"
 >
-  <transition-stub>
+  <transition-stub
+    appear="false"
+    css="true"
+    name="fade"
+    persisted="true"
+  >
     <focus-trap-stub
       class="trap"
       enable="true"
@@ -261,11 +276,16 @@ exports[`FeatherPdfViewer.vue should always show error state when force-error is
 </div>
 `;
 
-exports[`FeatherPdfViewer.vue should always show error state when force-error is true and should show no preview 2`] = `
+exports[`FeatherPdfViewer.vue > should always show error state when force-error is true and should show no preview 2`] = `
 <div
   class="feather-pdfviewer"
 >
-  <transition-stub>
+  <transition-stub
+    appear="false"
+    css="true"
+    name="fade"
+    persisted="true"
+  >
     <focus-trap-stub
       class="trap"
       enable="true"
@@ -348,11 +368,16 @@ exports[`FeatherPdfViewer.vue should always show error state when force-error is
 </div>
 `;
 
-exports[`FeatherPdfViewer.vue should display error when no preview url and not pdf 1`] = `
+exports[`FeatherPdfViewer.vue > should display error when no preview url and not pdf 1`] = `
 <div
   class="feather-pdfviewer"
 >
-  <transition-stub>
+  <transition-stub
+    appear="false"
+    css="true"
+    name="fade"
+    persisted="true"
+  >
     <focus-trap-stub
       class="trap"
       enable="true"
@@ -435,11 +460,16 @@ exports[`FeatherPdfViewer.vue should display error when no preview url and not p
 </div>
 `;
 
-exports[`FeatherPdfViewer.vue should display error when preview url doesn't return 200 1`] = `
+exports[`FeatherPdfViewer.vue > should display error when preview url doesn't return 200 1`] = `
 <div
   class="feather-pdfviewer"
 >
-  <transition-stub>
+  <transition-stub
+    appear="false"
+    css="true"
+    name="fade"
+    persisted="true"
+  >
     <focus-trap-stub
       class="trap"
       enable="true"
@@ -522,11 +552,16 @@ exports[`FeatherPdfViewer.vue should display error when preview url doesn't retu
 </div>
 `;
 
-exports[`FeatherPdfViewer.vue should display original download when extension is not pdf 1`] = `
+exports[`FeatherPdfViewer.vue > should display original download when extension is not pdf 1`] = `
 <div
   class="feather-pdfviewer"
 >
-  <transition-stub>
+  <transition-stub
+    appear="false"
+    css="true"
+    name="fade"
+    persisted="true"
+  >
     <focus-trap-stub
       class="trap"
       enable="true"
@@ -609,11 +644,16 @@ exports[`FeatherPdfViewer.vue should display original download when extension is
 </div>
 `;
 
-exports[`FeatherPdfViewer.vue should display preview when the preview url exists 1`] = `
+exports[`FeatherPdfViewer.vue > should display preview when the preview url exists 1`] = `
 <div
   class="feather-pdfviewer"
 >
-  <transition-stub>
+  <transition-stub
+    appear="false"
+    css="true"
+    name="fade"
+    persisted="true"
+  >
     <focus-trap-stub
       class="trap"
       enable="true"
@@ -691,11 +731,16 @@ exports[`FeatherPdfViewer.vue should display preview when the preview url exists
 </div>
 `;
 
-exports[`FeatherPdfViewer.vue should hide download button when hide-actions is true 1`] = `
+exports[`FeatherPdfViewer.vue > should hide download button when hide-actions is true 1`] = `
 <div
   class="feather-pdfviewer"
 >
-  <transition-stub>
+  <transition-stub
+    appear="false"
+    css="true"
+    name="fade"
+    persisted="true"
+  >
     <focus-trap-stub
       class="trap"
       enable="true"

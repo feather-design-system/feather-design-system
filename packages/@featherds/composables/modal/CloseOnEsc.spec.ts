@@ -2,7 +2,7 @@ import { useCloseOnEsc } from "./CloseOnEsc";
 import { mount } from "@vue/test-utils";
 import { ref, nextTick } from "vue";
 import { Code } from "@featherds/utils/keys";
-
+import { vi, expect, describe, it } from "vitest";
 const createWrapper = (setup) => {
   return mount({
     template: `<div></div>`,
@@ -12,7 +12,7 @@ const createWrapper = (setup) => {
 
 describe("Close On Escape composable", () => {
   it("should only attach listeners when visible", async () => {
-    const documentSpy = jest.spyOn(document, "addEventListener");
+    const documentSpy = vi.spyOn(document, "addEventListener");
     const visible = ref(false);
     const wrapper = createWrapper(() => {
       useCloseOnEsc(visible);
@@ -25,7 +25,7 @@ describe("Close On Escape composable", () => {
     expect(documentSpy).toHaveBeenCalled();
   });
   it("should remove listeners when visible is false", async () => {
-    const documentSpy = jest.spyOn(document, "removeEventListener");
+    const documentSpy = vi.spyOn(document, "removeEventListener");
     const visible = ref(true);
     const wrapper = createWrapper(() => {
       useCloseOnEsc(visible);
@@ -48,7 +48,6 @@ describe("Close On Escape composable", () => {
 
     const event = new KeyboardEvent("keydown", {
       code: Code.ESCAPE,
-      view: window,
       bubbles: true,
       cancelable: false,
     });
@@ -61,7 +60,7 @@ describe("Close On Escape composable", () => {
   });
 
   it("should remove listeners on unmount", async () => {
-    const documentSpy = jest.spyOn(document, "removeEventListener");
+    const documentSpy = vi.spyOn(document, "removeEventListener");
     const visible = ref(true);
     const wrapper = createWrapper(() => {
       useCloseOnEsc(visible);

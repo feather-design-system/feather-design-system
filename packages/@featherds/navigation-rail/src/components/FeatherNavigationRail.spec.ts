@@ -3,6 +3,7 @@ import FeatherRailItem from "./FeatherRailItem.vue";
 import { shallowMount, mount } from "@vue/test-utils";
 import axe from "@featherds/utils/test/axe";
 import { getCalls } from "@featherds/utils/test/calls";
+import { expect, describe, it } from "vitest";
 
 const getWrapper = function (options: Record<string, unknown>) {
   return shallowMount(FeatherNavigationRail, options);

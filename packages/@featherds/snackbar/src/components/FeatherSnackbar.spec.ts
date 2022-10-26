@@ -4,7 +4,7 @@ import FeatherSnackbar from "./FeatherSnackbar.vue";
 import axe from "@featherds/utils/test/axe";
 import { getCalls } from "@featherds/utils/test/calls";
 import { Code } from "@featherds/utils/keys";
-
+import { vi, expect, describe, it } from "vitest";
 const slots = {
   default: {
     template: `This is a test`,
@@ -26,7 +26,7 @@ const getWrapper = function (options: Record<string, unknown>) {
 
 describe("FeatherSnackbar.vue", () => {
   it("should show snackbar and auto-close", async () => {
-    jest.useFakeTimers();
+    vi.useFakeTimers();
 
     const wrapper = getWrapper({ props: getprops(false), slots });
     expect(wrapper.find(".feather-snackbar-wrapper").exists()).toBe(false);
@@ -37,7 +37,7 @@ describe("FeatherSnackbar.vue", () => {
     expect(wrapper.find(".feather-snackbar-wrapper").exists()).toBe(true);
     expect(wrapper.element).toMatchSnapshot();
 
-    jest.runAllTimers();
+    vi.runAllTimers();
     await nextTick();
     expect(wrapper.vm.internalValue).toBe(false);
     const events = getCalls<[boolean]>(wrapper, "update:modelValue");
@@ -45,13 +45,13 @@ describe("FeatherSnackbar.vue", () => {
   });
 
   it("should close when ESC is pressed", async () => {
-    jest.useFakeTimers();
+    vi.useFakeTimers();
     const wrapper = getWrapper({ props: getprops(true), slots });
     const snackbar = wrapper.find(".feather-snackbar");
 
     await snackbar.trigger("keydown", { code: Code.ESCAPE });
 
-    jest.runAllTimers();
+    vi.runAllTimers();
     await nextTick();
 
     expect(wrapper.vm.internalValue).toBe(false);
@@ -64,8 +64,8 @@ describe("FeatherSnackbar.vue", () => {
     const snackbar = wrapper.find(".feather-snackbar");
     await nextTick();
 
-    const stopTimerSpy = jest.spyOn(wrapper.vm, "stopTimer");
-    const resumeTimerSpy = jest.spyOn(wrapper.vm, "resumeTimer");
+    const stopTimerSpy = vi.spyOn(wrapper.vm, "stopTimer");
+    const resumeTimerSpy = vi.spyOn(wrapper.vm, "resumeTimer");
 
     await snackbar.trigger("mouseover");
     expect(stopTimerSpy).toBeCalled();
@@ -75,7 +75,7 @@ describe("FeatherSnackbar.vue", () => {
   });
 
   it("should assign classes correctly", async () => {
-    jest.useFakeTimers();
+    vi.useFakeTimers();
     const wrapper = getWrapper({ props: getprops(true, true, true), slots });
     const snackbar = wrapper.find(".feather-snackbar");
     await nextTick();
@@ -85,7 +85,7 @@ describe("FeatherSnackbar.vue", () => {
   });
 
   it("should be accessible when open", async () => {
-    jest.useRealTimers();
+    vi.useRealTimers();
     const wrapper = getWrapper({ props: getprops(true), slots });
     await nextTick();
     expect(await axe(wrapper.element)).toHaveNoViolations();

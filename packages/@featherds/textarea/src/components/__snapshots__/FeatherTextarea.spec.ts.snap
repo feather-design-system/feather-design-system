@@ -1,6 +1,6 @@
-// Jest Snapshot v1, https://goo.gl/fbAQLP
+// Vitest Snapshot v1
 
-exports[`FeatherTextarea.vue should allow custom blur events 1`] = `
+exports[`FeatherTextarea.vue > should allow custom blur events 1`] = `
 <div
   class="feather-textarea-container"
 >
@@ -76,7 +76,7 @@ exports[`FeatherTextarea.vue should allow custom blur events 1`] = `
 </div>
 `;
 
-exports[`FeatherTextarea.vue should allow custom focus events 1`] = `
+exports[`FeatherTextarea.vue > should allow custom focus events 1`] = `
 <div
   class="feather-textarea-container"
 >
@@ -152,7 +152,7 @@ exports[`FeatherTextarea.vue should allow custom focus events 1`] = `
 </div>
 `;
 
-exports[`FeatherTextarea.vue should clear textarea when clear-icon is clicked 1`] = `
+exports[`FeatherTextarea.vue > should clear textarea when clear-icon is clicked 1`] = `
 <div
   class="feather-textarea-container"
 >
@@ -228,7 +228,7 @@ exports[`FeatherTextarea.vue should clear textarea when clear-icon is clicked 1`
 </div>
 `;
 
-exports[`FeatherTextarea.vue should not render a clear icon when the textarea doesn't have a value 1`] = `
+exports[`FeatherTextarea.vue > should not render a clear icon when the textarea doesn't have a value 1`] = `
 <div
   class="feather-textarea-container"
 >
@@ -304,7 +304,7 @@ exports[`FeatherTextarea.vue should not render a clear icon when the textarea do
 </div>
 `;
 
-exports[`FeatherTextarea.vue should render a clear icon when clear has a value and textarea also has a value 1`] = `
+exports[`FeatherTextarea.vue > should render a clear icon when clear has a value and textarea also has a value 1`] = `
 <div
   class="feather-textarea-container"
 >
@@ -398,7 +398,7 @@ exports[`FeatherTextarea.vue should render a clear icon when clear has a value a
 </div>
 `;
 
-exports[`FeatherTextarea.vue should render a maxlength attribute and character count when maxlength specified 1`] = `
+exports[`FeatherTextarea.vue > should render a maxlength attribute and character count when maxlength specified 1`] = `
 <div
   class="feather-textarea-container"
 >
@@ -481,7 +481,7 @@ exports[`FeatherTextarea.vue should render a maxlength attribute and character c
 </div>
 `;
 
-exports[`FeatherTextarea.vue should render an textarea error 1`] = `
+exports[`FeatherTextarea.vue > should render an textarea error 1`] = `
 <div
   class="feather-textarea-container"
 >
@@ -585,7 +585,7 @@ exports[`FeatherTextarea.vue should render an textarea error 1`] = `
 </div>
 `;
 
-exports[`FeatherTextarea.vue should render an textarea error and has a value 1`] = `
+exports[`FeatherTextarea.vue > should render an textarea error and has a value 1`] = `
 <div
   class="feather-textarea-container"
 >
@@ -689,7 +689,7 @@ exports[`FeatherTextarea.vue should render an textarea error and has a value 1`]
 </div>
 `;
 
-exports[`FeatherTextarea.vue should render an textarea error and has focus 1`] = `
+exports[`FeatherTextarea.vue > should render an textarea error and has focus 1`] = `
 <div
   class="feather-textarea-container"
 >
@@ -793,7 +793,7 @@ exports[`FeatherTextarea.vue should render an textarea error and has focus 1`] =
 </div>
 `;
 
-exports[`FeatherTextarea.vue should render an textarea with a label 1`] = `
+exports[`FeatherTextarea.vue > should render an textarea with a label 1`] = `
 <div
   class="feather-textarea-container"
 >
@@ -869,7 +869,7 @@ exports[`FeatherTextarea.vue should render an textarea with a label 1`] = `
 </div>
 `;
 
-exports[`FeatherTextarea.vue should render an textarea with a label and hint text 1`] = `
+exports[`FeatherTextarea.vue > should render an textarea with a label and hint text 1`] = `
 <div
   class="feather-textarea-container"
 >
@@ -946,7 +946,7 @@ exports[`FeatherTextarea.vue should render an textarea with a label and hint tex
 </div>
 `;
 
-exports[`FeatherTextarea.vue should render an textarea with a preset value 1`] = `
+exports[`FeatherTextarea.vue > should render an textarea with a preset value 1`] = `
 <div
   class="feather-textarea-container"
 >
@@ -1023,7 +1023,7 @@ exports[`FeatherTextarea.vue should render an textarea with a preset value 1`] =
 </div>
 `;
 
-exports[`FeatherTextarea.vue should render an textarea with raised label when focused 1`] = `
+exports[`FeatherTextarea.vue > should render an textarea with raised label when focused 1`] = `
 <div
   class="feather-textarea-container"
 >
@@ -1099,7 +1099,7 @@ exports[`FeatherTextarea.vue should render an textarea with raised label when fo
 </div>
 `;
 
-exports[`FeatherTextarea.vue should render an textarea with raised label when focused and has a value 1`] = `
+exports[`FeatherTextarea.vue > should render an textarea with raised label when focused and has a value 1`] = `
 <div
   class="feather-textarea-container"
 >

@@ -1,5 +1,6 @@
 import DrawerTab from "./DrawerTab.vue";
 import { mount } from "@vue/test-utils";
+import { vi, expect, describe, it } from "vitest";
 const label = "LABEL";
 const getWrapper = (options: Record<string, unknown> = {}) => {
   options.slots = {
@@ -10,7 +11,7 @@ const getWrapper = (options: Record<string, unknown> = {}) => {
   };
   options.global = {
     provide: {
-      registerTab: jest.fn(),
+      registerTab: vi.fn(),
     },
   };
   return mount(DrawerTab, options);
@@ -56,7 +57,7 @@ describe("DrawerTab.vue", () => {
     it("should call clear timeout, reset showLabelTimeout and hide label", async () => {
       const wrapper = getWrapper();
       wrapper.vm.showLabelTimeout = 1000;
-      jest.spyOn(window, "clearTimeout");
+      vi.spyOn(window, "clearTimeout");
       wrapper.vm.mouseLeave();
       expect(clearTimeout).toHaveBeenCalled();
       expect(wrapper.vm.showLabel).toBe(false);

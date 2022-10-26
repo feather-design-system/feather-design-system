@@ -1,9 +1,17 @@
-import { configureAxe } from "jest-axe";
-import { AxeResults, Result } from "axe-core";
+import { AxeResults, Result, default as axeCore } from "axe-core";
 import chalk from "chalk";
-import { printReceived, matcherHint } from "jest-matcher-utils";
+import { expect } from "vitest";
+interface CustomMatchers<R = unknown> {
+  toHaveNoViolations(): R;
+}
 
-const toHaveNoViolations = {
+declare global {
+  namespace Vi {
+    interface Assertion extends CustomMatchers {}
+    interface AsymmetricMatchersContaining extends CustomMatchers {}
+  }
+}
+expect.extend({
   toHaveNoViolations(results: AxeResults) {
     if (typeof results.violations === "undefined") {
       throw new Error("No violations found in aXe results object");
@@ -35,7 +43,7 @@ const toHaveNoViolations = {
                 lineBreak +
                 `Received:` +
                 lineBreak +
-                printReceived(`${violation.help} (${violation.id})`) +
+                `${violation.help} (${violation.id})` +
                 lineBreak +
                 chalk.yellow(node.failureSummary || "") +
                 lineBreak +
@@ -58,18 +66,65 @@ const toHaveNoViolations = {
 
     const message = () => {
       if (pass) {
-        return;
+        return "";
       }
-      return (
-        matcherHint(".toHaveNoViolations") + "\n\n" + `${formatedViolations}`
-      );
+      return `${formatedViolations}`;
     };
 
-    return { actual: violations, message, pass };
+    return { message, pass };
   },
-} as jest.ExpectExtendMap;
+});
 
-expect.extend(toHaveNoViolations);
+function configureAxe(runnerOptions = {}) {
+  return function axe(html: string | Element, additionalOptions = {}) {
+    const { element, restore } = mount(html);
+    const options = Object.assign({}, runnerOptions, additionalOptions);
+
+    return new Promise((resolve) => {
+      axeCore.run(element, options, (err, results) => {
+        restore();
+        if (err) throw err;
+        resolve(results);
+      });
+    });
+  };
+}
+
+function mount(html: string | Element) {
+  if (isHTMLElement(html)) {
+    const el = html as Element;
+    if (document.body.contains(el)) {
+      return { element: html, restore: () => undefined };
+    }
+
+    html = el.outerHTML;
+  }
+
+  if (isHTMLString(html)) {
+    const str = html as string;
+    const originalHTML = document.body.innerHTML;
+    const restore = () => {
+      document.body.innerHTML = originalHTML;
+    };
+
+    document.body.innerHTML = str;
+    return { element: document.body, restore };
+  }
+
+  if (typeof html === "string") {
+    throw new Error(`html parameter ("${html}") has no elements`);
+  }
+
+  throw new Error(`html parameter should be an HTML string or an HTML element`);
+}
+
+function isHTMLElement(html: string | Element) {
+  return !!html && typeof html === "object" && typeof html.tagName === "string";
+}
+
+function isHTMLString(html: string | Element) {
+  return typeof html === "string" && /(<([^>]+)>)/i.test(html);
+}
 
 export default configureAxe({
   runOnly: {

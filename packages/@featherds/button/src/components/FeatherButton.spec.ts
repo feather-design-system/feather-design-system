@@ -1,6 +1,7 @@
 import FeatherButton from "./FeatherButton.vue";
 import { mount } from "@vue/test-utils";
 import axe from "@featherds/utils/test/axe";
+import { vi, expect, describe, it } from "vitest";
 const getWrapper = function (opts: Record<string, unknown>) {
   return mount(FeatherButton, opts);
 };
@@ -47,16 +48,6 @@ describe("FeatherButton.vue", () => {
     };
     const wrapper = getWrapper({ props });
     expect(wrapper.element.classList.contains("btn")).toBe(true);
-    hasClass(wrapper.element, "btn-primary");
-  });
-  xit("should have correct fab button classes", () => {
-    const props = {
-      fab: true,
-    };
-    const wrapper = getWrapper({ props });
-    expect(wrapper.element.classList.contains("btn")).toBe(true);
-    expect(wrapper.element.classList.contains("btn-fab")).toBe(true);
-    expect(wrapper.element.classList.contains("btn-icon")).toBe(true);
     hasClass(wrapper.element, "btn-primary");
   });
   it("should have correct secondary class", () => {
@@ -119,8 +110,8 @@ describe("FeatherButton.vue", () => {
       default: { template: "<i id='icon'/>" },
     };
     const attrs = {
-      onDisabledClick: jest.fn(() => {}),
-      onClick: jest.fn(() => {}),
+      onDisabledClick: vi.fn(() => {}),
+      onClick: vi.fn(() => {}),
     };
     const wrapper = getWrapper({ props, slots, attrs });
     wrapper.trigger("click");

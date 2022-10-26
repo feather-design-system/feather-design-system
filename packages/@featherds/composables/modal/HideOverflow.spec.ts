@@ -1,7 +1,7 @@
 import { useHideBodyOverflow, useHideRelativeOverflow } from "./HideOverflow";
 import { mount } from "@vue/test-utils";
 import { ref, nextTick } from "vue";
-
+import { expect, describe, it } from "vitest";
 const createWrapper = (setup) => {
   return mount({
     template: `<div></div>`,

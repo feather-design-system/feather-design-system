@@ -1,6 +1,6 @@
-// Jest Snapshot v1, https://goo.gl/fbAQLP
+// Vitest Snapshot v1
 
-exports[`RadioChip radio button should set aria-checked based on data 1`] = `
+exports[`RadioChip > radio button > should set aria-checked based on data 1`] = `
 <div
   allow-click="true"
   aria-checked="true"
@@ -27,7 +27,7 @@ exports[`RadioChip radio button should set aria-checked based on data 1`] = `
 </div>
 `;
 
-exports[`RadioChip radio button should set aria-checked based on data 2`] = `
+exports[`RadioChip > radio button > should set aria-checked based on data 2`] = `
 <div
   allow-click="true"
   aria-checked="false"
@@ -54,7 +54,7 @@ exports[`RadioChip radio button should set aria-checked based on data 2`] = `
 </div>
 `;
 
-exports[`RadioChip radio button should set aria-disabled based on property 1`] = `
+exports[`RadioChip > radio button > should set aria-disabled based on property 1`] = `
 <div
   allow-click="false"
   aria-checked="false"
@@ -81,7 +81,7 @@ exports[`RadioChip radio button should set aria-disabled based on property 1`] =
 </div>
 `;
 
-exports[`RadioChip radio button should set aria-disabled based on property 2`] = `
+exports[`RadioChip > radio button > should set aria-disabled based on property 2`] = `
 <div
   allow-click="true"
   aria-checked="false"
@@ -108,7 +108,7 @@ exports[`RadioChip radio button should set aria-disabled based on property 2`] =
 </div>
 `;
 
-exports[`RadioChip should render a disabled chip 1`] = `
+exports[`RadioChip > should render a disabled chip 1`] = `
 <div
   allow-click="false"
   aria-checked="false"
@@ -135,7 +135,7 @@ exports[`RadioChip should render a disabled chip 1`] = `
 </div>
 `;
 
-exports[`RadioChip should render a standard chip 1`] = `
+exports[`RadioChip > should render a standard chip 1`] = `
 <div
   allow-click="true"
   aria-checked="false"
@@ -162,7 +162,7 @@ exports[`RadioChip should render a standard chip 1`] = `
 </div>
 `;
 
-exports[`RadioChip should render a standard chip with icon 1`] = `
+exports[`RadioChip > should render a standard chip with icon 1`] = `
 <div
   allow-click="true"
   aria-checked="false"
@@ -200,7 +200,7 @@ exports[`RadioChip should render a standard chip with icon 1`] = `
 </div>
 `;
 
-exports[`RadioChip should render condensed 1`] = `
+exports[`RadioChip > should render condensed 1`] = `
 <div
   allow-click="true"
   aria-checked="false"
@@ -227,7 +227,7 @@ exports[`RadioChip should render condensed 1`] = `
 </div>
 `;
 
-exports[`RadioChip should render condensed from a group 1`] = `
+exports[`RadioChip > should render condensed from a group 1`] = `
 <div
   allow-click="true"
   aria-checked="false"

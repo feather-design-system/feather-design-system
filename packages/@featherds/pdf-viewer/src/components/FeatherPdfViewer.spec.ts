@@ -1,7 +1,7 @@
 import FeatherPdfViewer from "./FeatherPdfViewer.vue";
 import { shallowMount } from "@vue/test-utils";
 import { getCalls } from "@featherds/utils/test/calls";
-
+import { vi, expect, describe, it, beforeEach } from "vitest";
 const focusTrap = {
   template: "<div><slot /></div>",
 };
@@ -23,16 +23,19 @@ const getWrapper = function (options: Record<string, unknown> = {}) {
 
 describe("FeatherPdfViewer.vue", () => {
   const xhrMock = {
-    open: jest.fn(),
-    send: jest.fn(),
+    open: vi.fn(),
+    send: vi.fn(),
     status: 200,
-    onload: () => { }
+    onload: () => {},
   };
   const xhrRequestMock = xhrMock as unknown as XMLHttpRequest;
   beforeEach(() => {
     xhrMock.open.mockReset();
     xhrMock.send.mockReset();
-    jest.spyOn(window, "XMLHttpRequest").mockImplementation(() => xhrRequestMock);
+    vi.spyOn(
+      window as unknown as { XMLHttpRequest: () => void },
+      "XMLHttpRequest"
+    ).mockImplementation(() => xhrRequestMock);
   });
   it("should use document url when extension is pdf", () => {
     const url = "test.pdf";

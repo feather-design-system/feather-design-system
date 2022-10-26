@@ -3,7 +3,7 @@ import { Code } from "@featherds/utils/keys";
 import { nextTick } from "vue";
 import { mount } from "@vue/test-utils";
 import { IAutocompleteGridColumn } from "../types";
-
+import { expect, describe, it } from "vitest";
 const LEFTEVENT = {
   code: Code.LEFT,
   preventDefault: () => {},
