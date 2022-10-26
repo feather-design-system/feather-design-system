@@ -33,7 +33,14 @@
 <script lang="ts">
 import ClearIcon from "./ClearIcon.vue";
 import ErrorIcon from "./ErrorIcon.vue";
-import { inject, computed, defineComponent, ExtractPropTypes, Ref } from "vue";
+import {
+  inject,
+  computed,
+  defineComponent,
+  ExtractPropTypes,
+  Ref,
+  toRef,
+} from "vue";
 import { InputWrapperProps } from "../composables/InputWrapper";
 export const props = {
   for: {
@@ -49,6 +56,9 @@ export const props = {
     default: false,
   },
   clearText: {
+    type: String,
+  },
+  errorText: {
     type: String,
   },
   raised: {
@@ -69,7 +79,7 @@ export default defineComponent({
       labelObserver: undefined as unknown as MutationObserver,
     };
   },
-  setup() {
+  setup(props) {
     const options = inject(
       "wrapperOptions",
       {} as ExtractPropTypes<typeof InputWrapperProps>
@@ -78,9 +88,13 @@ export default defineComponent({
       "validationErrorMessage",
       false as false | Ref<string>
     );
+    const errorText = toRef(props, "errorText");
     const error = computed(() => {
       if (options.error) {
         return options.error;
+      }
+      if (errorText && errorText.value) {
+        return errorText.value;
       }
       if (errorMessage && errorMessage.value) {
         return errorMessage.value;

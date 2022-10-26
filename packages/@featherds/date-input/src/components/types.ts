@@ -20,5 +20,6 @@ export const LABELS = {
   inCalendar: "In calendar",
   calendar: "Click for calendar",
   clear: "Clear date",
+  invalidDate: "Please provide a valid data",
   menu: "Use arrow keys to navigate dates. Page down and page up will navigate by month. Shift page down and shift page up will navigate by year. Press escape to exit the calendar.",
 };

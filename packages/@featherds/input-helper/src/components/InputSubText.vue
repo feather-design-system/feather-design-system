@@ -20,11 +20,23 @@
   </div>
 </template>
 <script lang="ts">
-import { inject, computed, defineComponent, ExtractPropTypes, Ref } from "vue";
+import {
+  inject,
+  computed,
+  defineComponent,
+  ExtractPropTypes,
+  Ref,
+  toRef,
+} from "vue";
 import { InputSubTextProps } from "../composables/InputSubText";
-
+export const props = {
+  errorText: {
+    type: String,
+  },
+};
 export default defineComponent({
-  setup() {
+  props,
+  setup(props) {
     const options = inject(
       "subTextOptions",
       {} as ExtractPropTypes<typeof InputSubTextProps>
@@ -33,9 +45,13 @@ export default defineComponent({
       "validationErrorMessage",
       false as false | Ref<string>
     );
+    const errorText = toRef(props, "errorText");
     const error = computed(() => {
       if (options.error) {
         return options.error;
+      }
+      if (errorText && errorText.value) {
+        return errorText.value;
       }
       if (errorMessage && errorMessage.value) {
         return errorMessage.value;

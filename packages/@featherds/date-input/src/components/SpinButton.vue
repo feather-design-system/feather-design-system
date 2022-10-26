@@ -103,7 +103,6 @@ export default defineComponent({
     },
     parseValue(str: string) {
       const value = parseInt(str, 10);
-      console.log(value)
       if (isNaN(value)) {
         this.$emit("update:modelValue", undefined);
       } else if (value < this.min) {
@@ -111,14 +110,11 @@ export default defineComponent({
         //then we can validate it, otherwise it's still being typed in
         if (str.length >= this.min.toString().length && value !== 0) {
           this.$emit("update:modelValue", this.min);
-          this.clear();
         } else {
           this.valid = false;
         }
       } else if (value > this.max) {
-        this.valid = false;
         this.$emit("update:modelValue", this.max);
-        this.clear();
       } else {
         this.valid = true;
         this.$emit("update:modelValue", value);
@@ -190,7 +186,6 @@ export default defineComponent({
         //if a user tries to type in 6 chars into the year only take last 4 as valid
         const charLimit = this.max.toString().length;
         if (newInput.length > charLimit) {
-          console.log(`newInput length is ${newInput} and char limit is ${charLimit}`)
           this.$emit("update:modelValue", undefined);
           this.input = e.key;
         } else {
@@ -246,11 +241,12 @@ export default defineComponent({
   watch: {
     modelValue(val) {
       nextTick(() => {
-        console.log(`modelvalue is ${this.modelValue} and input is ${this.input}`);
-        if (!this.focused) this.input = val ? val : "";
+        if (!this.focused) {
+          this.input = val ? val : "";
+        }
       });
     },
-  }
+  },
 });
 </script>
 <style lang="scss" scoped>

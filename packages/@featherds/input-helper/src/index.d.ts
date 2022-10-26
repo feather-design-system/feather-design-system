@@ -14,7 +14,9 @@ export const ActionIcon: DefineComponent<
   typeof import("./components/ActionIcon.vue").props
 >;
 
-export const InputSubText: DefineComponent;
+export const InputSubText: DefineComponent<
+  typeof import("./components/InputSubText.vue").props
+>;
 export const ValidationHeader: DefineComponent<
   typeof import("./components/ValidationHeader.vue").props
 >;

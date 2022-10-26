@@ -22,6 +22,7 @@
           :focused="hasFocus"
           :show-clear="showClear"
           :clear-text="clearLabel"
+          :error-text="error"
           @wrapper-click="handleWrapperClick"
           @clear="handleClear"
           ref="wrapper"
@@ -101,7 +102,7 @@
         :aria-label="menuLabel"
       />
     </FeatherMenu>
-    <InputSubText :id="descriptionId"> </InputSubText>
+    <InputSubText :id="descriptionId" :error-text="error"> </InputSubText>
   </div>
 </template>
 <script lang="ts">
@@ -209,7 +210,10 @@ export default defineComponent({
   setup(props, context) {
     useInputSubText(props);
     useInputWrapper(props);
-
+    const labels = useLabelProperty<typeof LABELS>(
+      toRef(props, "labels"),
+      LABELS
+    );
     const day = ref() as Ref<number | undefined>;
     const month = ref() as Ref<number | undefined>;
     const year = ref() as Ref<number | undefined>;
@@ -227,12 +231,22 @@ export default defineComponent({
       return getSafeId("feather-date-input-month");
     });
 
+    const errorProp = toRef(props, "error") as Ref<string>;
+    const invalidDateState = ref(false);
+
+    const error = computed(() => {
+      if (invalidDateState.value) {
+        return labels.invalidDateLabel.value;
+      } else {
+        return errorProp.value;
+      }
+    });
     const { validate } = useValidation(
       ref(monthId),
       value,
       props.label as string,
       props.schema as Record<string, any>,
-      toRef(props, "error") as Ref<string>
+      error
     );
 
     watch(
@@ -248,22 +262,31 @@ export default defineComponent({
           _oldYear = value.value.getFullYear();
           _oldMonth = value.value.getMonth() + 1;
         }
+        invalidDateState.value = false;
         if (
           _day !== undefined &&
           _month !== undefined &&
           _year !== undefined &&
           (_year !== _oldYear || _day !== _oldDay || _month !== _oldMonth)
         ) {
-          context.emit("update:modelValue", new Date(_year, _month - 1, _day));
+          const newDate = new Date(_year, _month - 1, _day);
+          if (
+            newDate.getDate() === _day &&
+            newDate.getFullYear() === _year &&
+            newDate.getMonth() + 1 === _month
+          ) {
+            context.emit("update:modelValue", newDate);
+          } else {
+            //dates dont match, set to invalid
+            context.emit("update:modelValue", new Date("invalid"));
+            invalidDateState.value = true;
+          }
         } else if (
-          _oldDay !== undefined &&
-          _oldMonth !== undefined &&
-          _oldYear !== undefined &&
-          (_day == undefined || _month == undefined || _year == undefined)
+          _year !== _oldYear ||
+          _day !== _oldDay ||
+          _month !== _oldMonth
         ) {
-          //if there was an old value present (wasn't still being entered)
-          //and something isn't valid NOW, then we have to
-          context.emit("update:modelValue", new Date("invalid"));
+          context.emit("update:modelValue", undefined);
         }
         showClear.value = !!(_day || _month || _year);
       },
@@ -313,38 +336,23 @@ export default defineComponent({
       const monthButton = ref();
       const yearButton = ref();
 
-      const validateButtons = (m = false, d = false, y = false) => {
-        if (m) {
-          monthButton.value?.clear();
-        }
-        if (d) {
-          dayButton.value?.clear();
-        }
-        if (y) {
-          yearButton.value?.clear();
-        }
-      };
-
       const focusMonth = () => {
         if (disabled.value) {
           return;
         }
         monthButton.value.focus();
-        //validateButtons(false, true, true);
       };
       const focusDay = () => {
         if (disabled.value) {
           return;
         }
         dayButton.value.focus();
-        //validateButtons(true, false, true);
       };
       const focusYear = () => {
         if (disabled.value) {
           return;
         }
         yearButton.value.focus();
-        //validateButtons(true, true, false);
       };
       const clear = () => {
         dayButton.value?.clear();
@@ -378,16 +386,13 @@ export default defineComponent({
     };
     const handleBlur = (e: FocusEvent) => {
       if (!menu.value.$el.contains(e.relatedTarget) && !showMenu.value) {
-        console.log("validate 1");
         validate();
         //reset the spinners
-        // if (value.value) {
-        //   day.value = value.value.getDate();
-        //   year.value = value.value.getFullYear();
-        //   month.value = value.value.getMonth() + 1;
-        // } else {
-        //   reset();
-        // }
+        if (value.value) {
+          day.value = value.value.getDate();
+          year.value = value.value.getFullYear();
+          month.value = value.value.getMonth() + 1;
+        }
         focused.value = false;
         context.emit("blur");
       } else {
@@ -434,7 +439,6 @@ export default defineComponent({
 
     watch(hasFocus, (v) => {
       if (!v) {
-        console.log("validate 2");
         validate();
         context.emit("blur");
         showMenu.value = false;
@@ -493,14 +497,15 @@ export default defineComponent({
 
     watch(
       value,
-      (nv, ov) => {
+      (nv) => {
         if (nv instanceof Date) {
-          day.value = nv.getDate() ? nv.getDate() : undefined;
-          year.value = nv.getFullYear() ? nv.getFullYear() : undefined;
-          month.value = nv.getMonth() + 1 ? nv.getMonth() + 1 : undefined;
-        }
-        if (ov !== undefined && nv === undefined) {
-          reset();
+          if (!nv.getDate() && focused.value) {
+            //if the date is invalid, and we are focused, lets do nothing
+          } else {
+            day.value = nv.getDate() ? nv.getDate() : undefined;
+            year.value = nv.getFullYear() ? nv.getFullYear() : undefined;
+            month.value = nv.getMonth() + 1 ? nv.getMonth() + 1 : undefined;
+          }
         }
       },
       { immediate: true }
@@ -518,10 +523,6 @@ export default defineComponent({
       }
     });
 
-    const labels = useLabelProperty<typeof LABELS>(
-      toRef(props, "labels"),
-      LABELS
-    );
     context.expose({ reset });
     return {
       validate,
@@ -532,6 +533,7 @@ export default defineComponent({
       focused,
       hasFocus,
       showMenu,
+      error,
       icon,
       menu,
       calendar,

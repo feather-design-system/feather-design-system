@@ -39,7 +39,7 @@
   @if $size != null {
     $max: map-get($size, max);
     @if $max != null {
-      @media (min-width: ($max +1)) {
+      @media (min-width: ($max + 1)) {
         @content;
       }
     }

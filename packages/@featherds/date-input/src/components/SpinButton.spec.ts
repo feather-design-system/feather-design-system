@@ -78,18 +78,26 @@ describe("SpinButton.vue", () => {
       max: 1000,
       modelValue: 32,
     });
+    await wrapper.vm.$nextTick();
+    await wrapper.vm.$nextTick();
+
     expect(getValue(wrapper)).toBe("0032");
 
     await wrapper.setProps({
       max: 100,
       modelValue: 3,
     });
+    await wrapper.vm.$nextTick();
+    await wrapper.vm.$nextTick();
     expect(getValue(wrapper)).toBe("003");
 
     await wrapper.setProps({
       max: 10,
       modelValue: 2,
     });
+    await wrapper.vm.$nextTick();
+    await wrapper.vm.$nextTick();
+
     expect(getValue(wrapper)).toBe("02");
   });
   it("should emit next when a user cannot type any more values to match the current range", async () => {
@@ -131,12 +139,10 @@ describe("SpinButton.vue", () => {
     });
     await setValue(wrapper, "1");
     expect(getCalls<[number]>(wrapper, "update:modelValue").length).toBe(1);
-    expect(
-      getCalls<[unknown]>(wrapper, "update:modelValue")[0][0]
-    ).toBeUndefined();
+    expect(getCalls<[unknown]>(wrapper, "update:modelValue")[0][0]).toBe(5);
 
     await setValue(wrapper, "009");
-    expect(getCalls<[number]>(wrapper, "update:modelValue")[3][0]).toBe(9); //one for each char
+    expect(getCalls<[number]>(wrapper, "update:modelValue")[1][0]).toBe(9);
   });
   it("should clear value when delete is pressed", async () => {
     const wrapper = getWrapper({
@@ -234,7 +240,6 @@ describe("SpinButton.vue", () => {
     await wrapper.find("span").trigger("keydown", {
       key: "9",
     });
-
     expect(getCalls<[number]>(wrapper, "update:modelValue")[2][0]).toBe(119);
 
     const span = wrapper.find("span");
