@@ -13,6 +13,7 @@
     :class="{ disabled: disabled }"
     @keydown="handleKeyDown"
     @focus="handleFocus"
+    @blur="handleBlur"
     @click.stop="handleFocus"
     @paste.stop.prevent="handlePaste"
     >{{ displayText }}</span
@@ -21,7 +22,7 @@
 
 <script lang="ts">
 import { Code } from "@featherds/utils/keys";
-import { defineComponent } from "vue";
+import { defineComponent, nextTick } from "vue";
 export default defineComponent({
   model: {
     prop: "modelValue",
@@ -57,6 +58,7 @@ export default defineComponent({
     return {
       input: "",
       valid: true,
+      focused: false,
     };
   },
   computed: {
@@ -74,7 +76,7 @@ export default defineComponent({
         }
         return `${padding}${value}`;
       };
-      if (this.modelValue !== undefined) {
+      if (this.modelValue !== undefined && !this.input) {
         if (this.modelValue.toString().length < this.max.toString().length) {
           return pad(this.modelValue);
         }
@@ -101,14 +103,22 @@ export default defineComponent({
     },
     parseValue(str: string) {
       const value = parseInt(str, 10);
+      console.log(value)
       if (isNaN(value)) {
         this.$emit("update:modelValue", undefined);
       } else if (value < this.min) {
-        this.valid = false;
-        this.$emit("update:modelValue", undefined);
+        //if the length of the str is greater or equal to min length
+        //then we can validate it, otherwise it's still being typed in
+        if (str.length >= this.min.toString().length && value !== 0) {
+          this.$emit("update:modelValue", this.min);
+          this.clear();
+        } else {
+          this.valid = false;
+        }
       } else if (value > this.max) {
         this.valid = false;
-        this.$emit("update:modelValue", undefined);
+        this.$emit("update:modelValue", this.max);
+        this.clear();
       } else {
         this.valid = true;
         this.$emit("update:modelValue", value);
@@ -124,10 +134,17 @@ export default defineComponent({
         this.$emit("next");
       }
     },
+    handleBlur() {
+      nextTick(() => {
+        this.input = this.modelValue?.toString() ?? "";
+        this.focused = false;
+      });
+    },
     handleFocus(e: FocusEvent) {
       if (this.disabled) {
         return;
       }
+      this.focused = true;
       this.highlight(e.target as HTMLInputElement);
       this.input = "";
     },
@@ -173,7 +190,9 @@ export default defineComponent({
         //if a user tries to type in 6 chars into the year only take last 4 as valid
         const charLimit = this.max.toString().length;
         if (newInput.length > charLimit) {
-          this.input = newInput.substring(newInput.length - charLimit);
+          console.log(`newInput length is ${newInput} and char limit is ${charLimit}`)
+          this.$emit("update:modelValue", undefined);
+          this.input = e.key;
         } else {
           this.input = newInput;
         }
@@ -218,14 +237,20 @@ export default defineComponent({
           break;
         case Code.BACKSPACE:
           this.input = this.input.slice(0, -1);
-
           this.parseValue(this.input);
           stop(e);
-
           break;
       }
     },
   },
+  watch: {
+    modelValue(val) {
+      nextTick(() => {
+        console.log(`modelvalue is ${this.modelValue} and input is ${this.input}`);
+        if (!this.focused) this.input = val ? val : "";
+      });
+    },
+  }
 });
 </script>
 <style lang="scss" scoped>

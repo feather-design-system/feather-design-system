@@ -255,6 +255,15 @@ export default defineComponent({
           (_year !== _oldYear || _day !== _oldDay || _month !== _oldMonth)
         ) {
           context.emit("update:modelValue", new Date(_year, _month - 1, _day));
+        } else if (
+          _oldDay !== undefined &&
+          _oldMonth !== undefined &&
+          _oldYear !== undefined &&
+          (_day == undefined || _month == undefined || _year == undefined)
+        ) {
+          //if there was an old value present (wasn't still being entered)
+          //and something isn't valid NOW, then we have to
+          context.emit("update:modelValue", new Date("invalid"));
         }
         showClear.value = !!(_day || _month || _year);
       },
@@ -321,21 +330,21 @@ export default defineComponent({
           return;
         }
         monthButton.value.focus();
-        validateButtons(false, true, true);
+        //validateButtons(false, true, true);
       };
       const focusDay = () => {
         if (disabled.value) {
           return;
         }
         dayButton.value.focus();
-        validateButtons(true, false, true);
+        //validateButtons(true, false, true);
       };
       const focusYear = () => {
         if (disabled.value) {
           return;
         }
         yearButton.value.focus();
-        validateButtons(true, true, false);
+        //validateButtons(true, true, false);
       };
       const clear = () => {
         dayButton.value?.clear();
@@ -369,19 +378,21 @@ export default defineComponent({
     };
     const handleBlur = (e: FocusEvent) => {
       if (!menu.value.$el.contains(e.relatedTarget) && !showMenu.value) {
+        console.log("validate 1");
         validate();
         //reset the spinners
-        if (value.value) {
-          day.value = value.value.getDate();
-          year.value = value.value.getFullYear();
-          month.value = value.value.getMonth() + 1;
-        } else {
-          reset();
-        }
+        // if (value.value) {
+        //   day.value = value.value.getDate();
+        //   year.value = value.value.getFullYear();
+        //   month.value = value.value.getMonth() + 1;
+        // } else {
+        //   reset();
+        // }
         focused.value = false;
         context.emit("blur");
+      } else {
+        spinbuttons.deselectAllSpinButtons();
       }
-      spinbuttons.deselectAllSpinButtons();
     };
 
     //taken from https://github.com/date-fns/date-fns/issues/2087
@@ -423,6 +434,7 @@ export default defineComponent({
 
     watch(hasFocus, (v) => {
       if (!v) {
+        console.log("validate 2");
         validate();
         context.emit("blur");
         showMenu.value = false;
@@ -483,9 +495,9 @@ export default defineComponent({
       value,
       (nv, ov) => {
         if (nv instanceof Date) {
-          day.value = nv.getDate();
-          year.value = nv.getFullYear();
-          month.value = nv.getMonth() + 1;
+          day.value = nv.getDate() ? nv.getDate() : undefined;
+          year.value = nv.getFullYear() ? nv.getFullYear() : undefined;
+          month.value = nv.getMonth() + 1 ? nv.getMonth() + 1 : undefined;
         }
         if (ov !== undefined && nv === undefined) {
           reset();
