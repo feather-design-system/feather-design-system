@@ -20,7 +20,7 @@ export default defineComponent({
   setup() {
     const form = useForm();
     const dateField: Ref<Date | undefined> = ref();
-    const dateV = date().required("required");
+    const dateV = date().typeError("This is not a valid date").required("required");
 
     const onSubmit = (_e: Event) => {
       form.validate();
