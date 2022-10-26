@@ -1,7 +1,9 @@
 import { mount } from "@vue/test-utils";
-import axe from "axe-core";
+import axe from "@featherds/utils/test/axe";
 import FeatherDialog from "./FeatherDialog.vue";
 import { getCalls } from "@featherds/utils/test/calls";
+import { expect, describe, it } from "vitest";
+
 const slots = {
   default: {
     template: `<div><h1>Dialog content</h1>
@@ -41,7 +43,8 @@ describe("FeatherDialog.vue", () => {
     const wrapper = getWrapper({ props: getprops(false), slots });
     expect(wrapper.find(".content").exists()).toBe(false);
     await wrapper.setProps({ modelValue: true });
-    expect(wrapper.find(".content").isVisible()).toBe(true);
+    await wrapper.vm.$nextTick();
+    expect(wrapper.find(".content").exists()).toBe(true);
     await wrapper.setProps({ modelValue: false });
     expect(wrapper.find(".content").exists()).toBe(false);
   });
@@ -71,55 +74,15 @@ describe("FeatherDialog.vue", () => {
   });
 
   describe("a11y", () => {
-    it("should have no accessibility errors when closed", (done) => {
+    it("should have no accessibility errors when closed", async () => {
       const wrapper = getWrapper({ props: getprops(false), slots });
       document.body.appendChild(wrapper.element);
-      axe.run(
-        wrapper.element,
-        {
-          runOnly: {
-            type: "tag",
-            values: ["wcag2a", "wcag2aa"],
-          },
-        },
-        (err, result) => {
-          expect(err).toBe(null);
-          expect(result.violations.length).toBe(0);
-          result.violations.forEach((v) => {
-            //eslint-disable-next-line
-            console.error(
-              `${v.description} at ${v.nodes.map((n) => n.target).join(", ")}`
-            );
-          });
-          document.body.removeChild(wrapper.element);
-          done();
-        }
-      );
+      expect(await axe(wrapper.element)).toHaveNoViolations();
     });
-    it("should have no accessibility errors when open", (done) => {
+    it("should have no accessibility errors when open", async () => {
       const wrapper = getWrapper({ props: getprops(true), slots });
       document.body.appendChild(wrapper.element);
-      axe.run(
-        wrapper.element,
-        {
-          runOnly: {
-            type: "tag",
-            values: ["wcag2a", "wcag2aa"],
-          },
-        },
-        (err, result) => {
-          expect(err).toBe(null);
-          expect(result.violations.length).toBe(0);
-          result.violations.forEach((v) => {
-            //eslint-disable-next-line
-            console.error(
-              `${v.description} at ${v.nodes.map((n) => n.target).join(", ")}`
-            );
-          });
-          document.body.removeChild(wrapper.element);
-          done();
-        }
-      );
+      expect(await axe(wrapper.element)).toHaveNoViolations();
     });
   });
 });

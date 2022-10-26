@@ -32,7 +32,7 @@ export default defineComponent({
     search(q: string) {
       this.loading = true;
       clearTimeout(this.timeout);
-      this.timeout = setTimeout(() => {
+      this.timeout = window.setTimeout(() => {
         this.results = tags
           .filter((x) => x.toLowerCase().indexOf(q.toLowerCase()) > -1)
           .map((x) => ({

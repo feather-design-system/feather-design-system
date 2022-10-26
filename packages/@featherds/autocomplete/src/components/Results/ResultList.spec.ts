@@ -1,5 +1,5 @@
 import { useResultList } from "./ResultList";
-import Vue from "vue";
+import { expect, describe, it } from "vitest";
 import { nextTick } from "vue";
 import { mount } from "@vue/test-utils";
 import { Code } from "@featherds/utils/keys";

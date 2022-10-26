@@ -1,5 +1,6 @@
 import { PopoverPlacement, PointerAlignment } from "../types";
 import { calculateAlignment } from "./Alignment";
+import { expect, describe, it } from "vitest";
 
 const getLayout = (left = true, center = true, right = true) => {
   const tooltip = {

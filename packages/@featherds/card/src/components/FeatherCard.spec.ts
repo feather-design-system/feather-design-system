@@ -1,6 +1,9 @@
 import FeatherCard from "./FeatherCard.vue";
 import { mount } from "@vue/test-utils";
 import axe from "@featherds/utils/test/axe";
+
+import { expect, describe, it } from "vitest";
+
 const getWrapper = function (opts: Record<string, unknown>) {
   return mount(FeatherCard, opts);
 };

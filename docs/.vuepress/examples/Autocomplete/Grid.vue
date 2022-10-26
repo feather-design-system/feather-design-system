@@ -57,7 +57,7 @@ export default defineComponent({
     search(q: string) {
       this.loading = true;
       clearTimeout(this.timeout);
-      this.timeout = setTimeout(() => {
+      this.timeout = window.setTimeout(() => {
         this.results = people.filter(
           (x) => x.name.toLowerCase().indexOf(q) > -1
         );

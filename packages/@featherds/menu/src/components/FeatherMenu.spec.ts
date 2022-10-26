@@ -3,7 +3,8 @@ import { mount } from "@vue/test-utils";
 import axe from "@featherds/utils/test/axe";
 import FeatherMenu from "./FeatherMenu.vue";
 import * as id from "@featherds/utils/id";
-jest.spyOn(id, "getSafeId").mockImplementation((x) => x);
+import { vi, expect, describe, it } from "vitest";
+vi.spyOn(id, "getSafeId").mockImplementation((x) => x);
 const getWrapper = async (options: Record<string, unknown> = {}) => {
   const wrapper = mount(FeatherMenu, options);
   await nextTick();
@@ -93,7 +94,7 @@ describe("FeatherMenu.vue", () => {
       default: [getContent()],
     };
     const wrapper = await getWrapper({ slots });
-    const documentRemove = jest.spyOn(document, "removeEventListener");
+    const documentRemove = vi.spyOn(document, "removeEventListener");
     wrapper.unmount();
     expect(documentRemove).toHaveBeenCalled();
   });
@@ -108,25 +109,27 @@ describe("FeatherMenu.vue", () => {
         slots,
         props: { open: true, fill: true },
       });
-      jest
-        .spyOn(wrapper.vm.$refs.menu as HTMLElement, "getBoundingClientRect")
-        .mockImplementation(() => {
-          return {
-            height: 100,
-            width: 20,
-          } as DOMRect;
-        });
-      jest
-        .spyOn(wrapper.vm.$refs.root as HTMLElement, "getBoundingClientRect")
-        .mockImplementation(() => {
-          return {
-            top: 50,
-            bottom: 60,
-            left: 50,
-            right: 100,
-            width: 50,
-          } as DOMRect;
-        });
+      vi.spyOn(
+        wrapper.vm.$refs.menu as HTMLElement,
+        "getBoundingClientRect"
+      ).mockImplementation(() => {
+        return {
+          height: 100,
+          width: 20,
+        } as DOMRect;
+      });
+      vi.spyOn(
+        wrapper.vm.$refs.root as HTMLElement,
+        "getBoundingClientRect"
+      ).mockImplementation(() => {
+        return {
+          top: 50,
+          bottom: 60,
+          left: 50,
+          right: 100,
+          width: 50,
+        } as DOMRect;
+      });
       wrapper.vm.calculatePosition();
       await nextTick();
 
@@ -141,25 +144,27 @@ describe("FeatherMenu.vue", () => {
         slots,
         props: { open: true, fill: true },
       });
-      jest
-        .spyOn(wrapper.vm.$refs.menu as HTMLElement, "getBoundingClientRect")
-        .mockImplementation(() => {
-          return {
-            height: 100,
-            width: 200,
-          } as DOMRect;
-        });
-      jest
-        .spyOn(wrapper.vm.$refs.root as HTMLElement, "getBoundingClientRect")
-        .mockImplementation(() => {
-          return {
-            top: 50,
-            bottom: 60,
-            left: 50,
-            right: 100,
-            width: 50,
-          } as DOMRect;
-        });
+      vi.spyOn(
+        wrapper.vm.$refs.menu as HTMLElement,
+        "getBoundingClientRect"
+      ).mockImplementation(() => {
+        return {
+          height: 100,
+          width: 200,
+        } as DOMRect;
+      });
+      vi.spyOn(
+        wrapper.vm.$refs.root as HTMLElement,
+        "getBoundingClientRect"
+      ).mockImplementation(() => {
+        return {
+          top: 50,
+          bottom: 60,
+          left: 50,
+          right: 100,
+          width: 50,
+        } as DOMRect;
+      });
       wrapper.vm.calculatePosition();
       await nextTick();
 
@@ -178,24 +183,26 @@ describe("FeatherMenu.vue", () => {
           slots,
           props: { right: true, open: true },
         });
-        jest
-          .spyOn(wrapper.vm.$refs.menu as HTMLElement, "getBoundingClientRect")
-          .mockImplementation(() => {
-            return {
-              height: 100,
-              width: 100,
-            } as DOMRect;
-          });
-        jest
-          .spyOn(wrapper.vm.$refs.root as HTMLElement, "getBoundingClientRect")
-          .mockImplementation(() => {
-            return {
-              top: 50,
-              bottom: 60,
-              left: 50,
-              right: 120,
-            } as DOMRect;
-          });
+        vi.spyOn(
+          wrapper.vm.$refs.menu as HTMLElement,
+          "getBoundingClientRect"
+        ).mockImplementation(() => {
+          return {
+            height: 100,
+            width: 100,
+          } as DOMRect;
+        });
+        vi.spyOn(
+          wrapper.vm.$refs.root as HTMLElement,
+          "getBoundingClientRect"
+        ).mockImplementation(() => {
+          return {
+            top: 50,
+            bottom: 60,
+            left: 50,
+            right: 120,
+          } as DOMRect;
+        });
         wrapper.vm.calculatePosition();
         await nextTick();
         expect(wrapper.vm.positionLeft).toBe("20px");
@@ -213,24 +220,26 @@ describe("FeatherMenu.vue", () => {
         const height = 100;
         const width = 100;
         const windowHeight = window.innerHeight;
-        jest
-          .spyOn(wrapper.vm.$refs.menu as HTMLElement, "getBoundingClientRect")
-          .mockImplementation(() => {
-            return {
-              height,
-              width,
-            } as DOMRect;
-          });
-        jest
-          .spyOn(wrapper.vm.$refs.root as HTMLElement, "getBoundingClientRect")
-          .mockImplementation(() => {
-            return {
-              top: windowHeight - height,
-              bottom: windowHeight - height + 10,
-              left: 50,
-              right: 120,
-            } as DOMRect;
-          });
+        vi.spyOn(
+          wrapper.vm.$refs.menu as HTMLElement,
+          "getBoundingClientRect"
+        ).mockImplementation(() => {
+          return {
+            height,
+            width,
+          } as DOMRect;
+        });
+        vi.spyOn(
+          wrapper.vm.$refs.root as HTMLElement,
+          "getBoundingClientRect"
+        ).mockImplementation(() => {
+          return {
+            top: windowHeight - height,
+            bottom: windowHeight - height + 10,
+            left: 50,
+            right: 120,
+          } as DOMRect;
+        });
         wrapper.vm.calculatePosition();
         await nextTick();
         expect(wrapper.vm.positionLeft).toBe("20px");
@@ -247,24 +256,26 @@ describe("FeatherMenu.vue", () => {
         });
         const height = 100;
         const width = 100;
-        jest
-          .spyOn(wrapper.vm.$refs.menu as HTMLElement, "getBoundingClientRect")
-          .mockImplementation(() => {
-            return {
-              height,
-              width,
-            } as DOMRect;
-          });
-        jest
-          .spyOn(wrapper.vm.$refs.root as HTMLElement, "getBoundingClientRect")
-          .mockImplementation(() => {
-            return {
-              top: 50,
-              bottom: 60,
-              left: 10,
-              right: 30,
-            } as DOMRect;
-          });
+        vi.spyOn(
+          wrapper.vm.$refs.menu as HTMLElement,
+          "getBoundingClientRect"
+        ).mockImplementation(() => {
+          return {
+            height,
+            width,
+          } as DOMRect;
+        });
+        vi.spyOn(
+          wrapper.vm.$refs.root as HTMLElement,
+          "getBoundingClientRect"
+        ).mockImplementation(() => {
+          return {
+            top: 50,
+            bottom: 60,
+            left: 10,
+            right: 30,
+          } as DOMRect;
+        });
         wrapper.vm.calculatePosition();
         await nextTick();
         expect(wrapper.vm.positionLeft).toBe("10px");
@@ -283,24 +294,26 @@ describe("FeatherMenu.vue", () => {
         const width = 100;
         const windowWidth = window.innerWidth;
         const windowHeight = window.innerHeight;
-        jest
-          .spyOn(wrapper.vm.$refs.menu as HTMLElement, "getBoundingClientRect")
-          .mockImplementation(() => {
-            return {
-              height,
-              width,
-            } as DOMRect;
-          });
-        jest
-          .spyOn(wrapper.vm.$refs.root as HTMLElement, "getBoundingClientRect")
-          .mockImplementation(() => {
-            return {
-              top: 50,
-              bottom: windowHeight - 50,
-              left: 50,
-              right: windowWidth - 50,
-            } as DOMRect;
-          });
+        vi.spyOn(
+          wrapper.vm.$refs.menu as HTMLElement,
+          "getBoundingClientRect"
+        ).mockImplementation(() => {
+          return {
+            height,
+            width,
+          } as DOMRect;
+        });
+        vi.spyOn(
+          wrapper.vm.$refs.root as HTMLElement,
+          "getBoundingClientRect"
+        ).mockImplementation(() => {
+          return {
+            top: 50,
+            bottom: windowHeight - 50,
+            left: 50,
+            right: windowWidth - 50,
+          } as DOMRect;
+        });
         wrapper.vm.calculatePosition();
         await nextTick();
         expect(wrapper.vm.positionLeft).toBe("874px");
@@ -316,24 +329,26 @@ describe("FeatherMenu.vue", () => {
         const width = 100;
         const windowWidth = window.innerWidth;
         const windowHeight = window.innerHeight;
-        jest
-          .spyOn(wrapper.vm.$refs.menu as HTMLElement, "getBoundingClientRect")
-          .mockImplementation(() => {
-            return {
-              height,
-              width,
-            } as DOMRect;
-          });
-        jest
-          .spyOn(wrapper.vm.$refs.root as HTMLElement, "getBoundingClientRect")
-          .mockImplementation(() => {
-            return {
-              top: windowHeight - height,
-              bottom: windowHeight - height + 10,
-              left: 10,
-              right: 30,
-            } as DOMRect;
-          });
+        vi.spyOn(
+          wrapper.vm.$refs.menu as HTMLElement,
+          "getBoundingClientRect"
+        ).mockImplementation(() => {
+          return {
+            height,
+            width,
+          } as DOMRect;
+        });
+        vi.spyOn(
+          wrapper.vm.$refs.root as HTMLElement,
+          "getBoundingClientRect"
+        ).mockImplementation(() => {
+          return {
+            top: windowHeight - height,
+            bottom: windowHeight - height + 10,
+            left: 10,
+            right: 30,
+          } as DOMRect;
+        });
         wrapper.vm.calculatePosition();
         await nextTick();
         expect(wrapper.vm.positionLeft).toBe("10px");
@@ -347,24 +362,26 @@ describe("FeatherMenu.vue", () => {
           default: [getContent()],
         };
         const wrapper = await getWrapper({ slots, props: { open: true } });
-        jest
-          .spyOn(wrapper.vm.$refs.menu as HTMLElement, "getBoundingClientRect")
-          .mockImplementation(() => {
-            return {
-              height: 100,
-              width: 100,
-            } as DOMRect;
-          });
-        jest
-          .spyOn(wrapper.vm.$refs.root as HTMLElement, "getBoundingClientRect")
-          .mockImplementation(() => {
-            return {
-              top: 50,
-              bottom: 60,
-              left: 50,
-              right: 80,
-            } as DOMRect;
-          });
+        vi.spyOn(
+          wrapper.vm.$refs.menu as HTMLElement,
+          "getBoundingClientRect"
+        ).mockImplementation(() => {
+          return {
+            height: 100,
+            width: 100,
+          } as DOMRect;
+        });
+        vi.spyOn(
+          wrapper.vm.$refs.root as HTMLElement,
+          "getBoundingClientRect"
+        ).mockImplementation(() => {
+          return {
+            top: 50,
+            bottom: 60,
+            left: 50,
+            right: 80,
+          } as DOMRect;
+        });
         wrapper.vm.calculatePosition();
         await nextTick();
 
@@ -380,24 +397,26 @@ describe("FeatherMenu.vue", () => {
         const height = 100;
         const width = 100;
         const windowHeight = window.innerHeight;
-        jest
-          .spyOn(wrapper.vm.$refs.menu as HTMLElement, "getBoundingClientRect")
-          .mockImplementation(() => {
-            return {
-              height,
-              width,
-            } as DOMRect;
-          });
-        jest
-          .spyOn(wrapper.vm.$refs.root as HTMLElement, "getBoundingClientRect")
-          .mockImplementation(() => {
-            return {
-              top: windowHeight - height,
-              bottom: windowHeight - height + 10,
-              left: 50,
-              right: 80,
-            } as DOMRect;
-          });
+        vi.spyOn(
+          wrapper.vm.$refs.menu as HTMLElement,
+          "getBoundingClientRect"
+        ).mockImplementation(() => {
+          return {
+            height,
+            width,
+          } as DOMRect;
+        });
+        vi.spyOn(
+          wrapper.vm.$refs.root as HTMLElement,
+          "getBoundingClientRect"
+        ).mockImplementation(() => {
+          return {
+            top: windowHeight - height,
+            bottom: windowHeight - height + 10,
+            left: 50,
+            right: 80,
+          } as DOMRect;
+        });
         wrapper.vm.calculatePosition();
         await nextTick();
         expect(wrapper.vm.positionLeft).toBe("50px");
@@ -412,24 +431,26 @@ describe("FeatherMenu.vue", () => {
         const height = 100;
         const width = 100;
         const windowWidth = window.innerWidth;
-        jest
-          .spyOn(wrapper.vm.$refs.menu as HTMLElement, "getBoundingClientRect")
-          .mockImplementation(() => {
-            return {
-              height,
-              width,
-            } as DOMRect;
-          });
-        jest
-          .spyOn(wrapper.vm.$refs.root as HTMLElement, "getBoundingClientRect")
-          .mockImplementation(() => {
-            return {
-              top: 50,
-              bottom: 60,
-              left: windowWidth - 30,
-              right: windowWidth,
-            } as DOMRect;
-          });
+        vi.spyOn(
+          wrapper.vm.$refs.menu as HTMLElement,
+          "getBoundingClientRect"
+        ).mockImplementation(() => {
+          return {
+            height,
+            width,
+          } as DOMRect;
+        });
+        vi.spyOn(
+          wrapper.vm.$refs.root as HTMLElement,
+          "getBoundingClientRect"
+        ).mockImplementation(() => {
+          return {
+            top: 50,
+            bottom: 60,
+            left: windowWidth - 30,
+            right: windowWidth,
+          } as DOMRect;
+        });
         wrapper.vm.calculatePosition();
         await nextTick();
         expect(wrapper.vm.positionLeft).toBe("924px");
@@ -445,24 +466,26 @@ describe("FeatherMenu.vue", () => {
         const width = 100;
         const windowWidth = window.innerWidth;
         const windowHeight = window.innerHeight;
-        jest
-          .spyOn(wrapper.vm.$refs.menu as HTMLElement, "getBoundingClientRect")
-          .mockImplementation(() => {
-            return {
-              height,
-              width,
-            } as DOMRect;
-          });
-        jest
-          .spyOn(wrapper.vm.$refs.root as HTMLElement, "getBoundingClientRect")
-          .mockImplementation(() => {
-            return {
-              top: 50,
-              bottom: windowHeight - 50,
-              left: 50,
-              right: windowWidth - 50,
-            } as DOMRect;
-          });
+        vi.spyOn(
+          wrapper.vm.$refs.menu as HTMLElement,
+          "getBoundingClientRect"
+        ).mockImplementation(() => {
+          return {
+            height,
+            width,
+          } as DOMRect;
+        });
+        vi.spyOn(
+          wrapper.vm.$refs.root as HTMLElement,
+          "getBoundingClientRect"
+        ).mockImplementation(() => {
+          return {
+            top: 50,
+            bottom: windowHeight - 50,
+            left: 50,
+            right: windowWidth - 50,
+          } as DOMRect;
+        });
         wrapper.vm.calculatePosition();
         await nextTick();
         expect(wrapper.vm.positionLeft).toBe("50px");
@@ -478,24 +501,26 @@ describe("FeatherMenu.vue", () => {
         const width = 100;
         const windowWidth = window.innerWidth;
         const windowHeight = window.innerHeight;
-        jest
-          .spyOn(wrapper.vm.$refs.menu as HTMLElement, "getBoundingClientRect")
-          .mockImplementation(() => {
-            return {
-              height,
-              width,
-            } as DOMRect;
-          });
-        jest
-          .spyOn(wrapper.vm.$refs.root as HTMLElement, "getBoundingClientRect")
-          .mockImplementation(() => {
-            return {
-              top: windowHeight - height,
-              bottom: windowHeight - height + 10,
-              left: windowWidth - 30,
-              right: windowWidth,
-            } as DOMRect;
-          });
+        vi.spyOn(
+          wrapper.vm.$refs.menu as HTMLElement,
+          "getBoundingClientRect"
+        ).mockImplementation(() => {
+          return {
+            height,
+            width,
+          } as DOMRect;
+        });
+        vi.spyOn(
+          wrapper.vm.$refs.root as HTMLElement,
+          "getBoundingClientRect"
+        ).mockImplementation(() => {
+          return {
+            top: windowHeight - height,
+            bottom: windowHeight - height + 10,
+            left: windowWidth - 30,
+            right: windowWidth,
+          } as DOMRect;
+        });
         wrapper.vm.calculatePosition();
         await nextTick();
         expect(wrapper.vm.positionLeft).toBe("924px");

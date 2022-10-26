@@ -1,6 +1,6 @@
-// Jest Snapshot v1, https://goo.gl/fbAQLP
+// Vitest Snapshot v1
 
-exports[`FeatherAutocomplete base functionality multi disabled state should render in a disabled state with a value 1`] = `
+exports[`FeatherAutocomplete > base functionality > multi > disabled state > should render in a disabled state with a value 1`] = `
 <div
   class="feather-autocomplete-container"
 >
@@ -179,7 +179,7 @@ exports[`FeatherAutocomplete base functionality multi disabled state should rend
 </div>
 `;
 
-exports[`FeatherAutocomplete base functionality multi disabled state should render in a disabled state with no value 1`] = `
+exports[`FeatherAutocomplete > base functionality > multi > disabled state > should render in a disabled state with no value 1`] = `
 <div
   class="feather-autocomplete-container"
 >
@@ -320,7 +320,7 @@ exports[`FeatherAutocomplete base functionality multi disabled state should rend
 </div>
 `;
 
-exports[`FeatherAutocomplete base functionality multi should lower label when there is no value and autocomplete doesnt have focus 1`] = `
+exports[`FeatherAutocomplete > base functionality > multi > should lower label when there is no value and autocomplete doesnt have focus 1`] = `
 <div
   class="feather-autocomplete-container"
 >
@@ -459,7 +459,7 @@ exports[`FeatherAutocomplete base functionality multi should lower label when th
 </div>
 `;
 
-exports[`FeatherAutocomplete base functionality multi should not leave previous search results visible whilst new search is being performed 1`] = `
+exports[`FeatherAutocomplete > base functionality > multi > should not leave previous search results visible whilst new search is being performed 1`] = `
 <div
   class="feather-autocomplete-container"
 >
@@ -699,7 +699,7 @@ exports[`FeatherAutocomplete base functionality multi should not leave previous 
 </div>
 `;
 
-exports[`FeatherAutocomplete base functionality multi should raise the label when the autocomplete has a value 1`] = `
+exports[`FeatherAutocomplete > base functionality > multi > should raise the label when the autocomplete has a value 1`] = `
 <div
   class="feather-autocomplete-container"
 >
@@ -916,7 +916,7 @@ exports[`FeatherAutocomplete base functionality multi should raise the label whe
 </div>
 `;
 
-exports[`FeatherAutocomplete base functionality multi should show loading spinner when search is performed 1`] = `
+exports[`FeatherAutocomplete > base functionality > multi > should show loading spinner when search is performed 1`] = `
 <div
   class="feather-autocomplete-container"
 >
@@ -1100,7 +1100,7 @@ exports[`FeatherAutocomplete base functionality multi should show loading spinne
 </div>
 `;
 
-exports[`FeatherAutocomplete base functionality multi should show no results text when search returns no results 1`] = `
+exports[`FeatherAutocomplete > base functionality > multi > should show no results text when search returns no results 1`] = `
 <div
   class="feather-autocomplete-container"
 >
@@ -1290,7 +1290,7 @@ exports[`FeatherAutocomplete base functionality multi should show no results tex
 </div>
 `;
 
-exports[`FeatherAutocomplete base functionality single disabled state should render in a disabled state with a value 1`] = `
+exports[`FeatherAutocomplete > base functionality > single > disabled state > should render in a disabled state with a value 1`] = `
 <div
   class="feather-autocomplete-container"
 >
@@ -1449,7 +1449,7 @@ exports[`FeatherAutocomplete base functionality single disabled state should ren
 </div>
 `;
 
-exports[`FeatherAutocomplete base functionality single disabled state should render in a disabled state with no value 1`] = `
+exports[`FeatherAutocomplete > base functionality > single > disabled state > should render in a disabled state with no value 1`] = `
 <div
   class="feather-autocomplete-container"
 >
@@ -1590,7 +1590,7 @@ exports[`FeatherAutocomplete base functionality single disabled state should ren
 </div>
 `;
 
-exports[`FeatherAutocomplete base functionality single should lower label when there is no value and autocomplete doesnt have focus 1`] = `
+exports[`FeatherAutocomplete > base functionality > single > should lower label when there is no value and autocomplete doesnt have focus 1`] = `
 <div
   class="feather-autocomplete-container"
 >
@@ -1729,7 +1729,7 @@ exports[`FeatherAutocomplete base functionality single should lower label when t
 </div>
 `;
 
-exports[`FeatherAutocomplete base functionality single should not leave previous search results visible whilst new search is being performed 1`] = `
+exports[`FeatherAutocomplete > base functionality > single > should not leave previous search results visible whilst new search is being performed 1`] = `
 <div
   class="feather-autocomplete-container"
 >
@@ -1969,7 +1969,7 @@ exports[`FeatherAutocomplete base functionality single should not leave previous
 </div>
 `;
 
-exports[`FeatherAutocomplete base functionality single should raise the label when the autocomplete has a value 1`] = `
+exports[`FeatherAutocomplete > base functionality > single > should raise the label when the autocomplete has a value 1`] = `
 <div
   class="feather-autocomplete-container"
 >
@@ -2126,7 +2126,7 @@ exports[`FeatherAutocomplete base functionality single should raise the label wh
 </div>
 `;
 
-exports[`FeatherAutocomplete base functionality single should show loading spinner when search is performed 1`] = `
+exports[`FeatherAutocomplete > base functionality > single > should show loading spinner when search is performed 1`] = `
 <div
   class="feather-autocomplete-container"
 >
@@ -2310,7 +2310,7 @@ exports[`FeatherAutocomplete base functionality single should show loading spinn
 </div>
 `;
 
-exports[`FeatherAutocomplete base functionality single should show no results text when search returns no results 1`] = `
+exports[`FeatherAutocomplete > base functionality > single > should show no results text when search returns no results 1`] = `
 <div
   class="feather-autocomplete-container"
 >
@@ -2500,7 +2500,7 @@ exports[`FeatherAutocomplete base functionality single should show no results te
 </div>
 `;
 
-exports[`FeatherAutocomplete multi:specific chip selection should move chip selection left when left arrow is pressed, so long it is not the left most token 1`] = `
+exports[`FeatherAutocomplete > multi:specific > chip selection > should move chip selection left when left arrow is pressed, so long it is not the left most token 1`] = `
 <div
   class="feather-autocomplete-container"
 >
@@ -2718,7 +2718,7 @@ exports[`FeatherAutocomplete multi:specific chip selection should move chip sele
 </div>
 `;
 
-exports[`FeatherAutocomplete multi:specific chip selection should move chip selection right when right arrow is pressed, so long it is not the right most token 1`] = `
+exports[`FeatherAutocomplete > multi:specific > chip selection > should move chip selection right when right arrow is pressed, so long it is not the right most token 1`] = `
 <div
   class="feather-autocomplete-container"
 >
@@ -2936,7 +2936,7 @@ exports[`FeatherAutocomplete multi:specific chip selection should move chip sele
 </div>
 `;
 
-exports[`FeatherAutocomplete multi:specific chip selection should not move chip selection when left is pressed on the left most token 1`] = `
+exports[`FeatherAutocomplete > multi:specific > chip selection > should not move chip selection when left is pressed on the left most token 1`] = `
 <div
   class="feather-autocomplete-container"
 >
@@ -3154,7 +3154,7 @@ exports[`FeatherAutocomplete multi:specific chip selection should not move chip 
 </div>
 `;
 
-exports[`FeatherAutocomplete multi:specific chip selection should not perform any chip navigation when there is text 1`] = `
+exports[`FeatherAutocomplete > multi:specific > chip selection > should not perform any chip navigation when there is text 1`] = `
 <div
   class="feather-autocomplete-container"
 >
@@ -3371,7 +3371,7 @@ exports[`FeatherAutocomplete multi:specific chip selection should not perform an
 </div>
 `;
 
-exports[`FeatherAutocomplete multi:specific chip selection should select rightmost token if left is pressed whilst navigating the menu and there is no search text 1`] = `
+exports[`FeatherAutocomplete > multi:specific > chip selection > should select rightmost token if left is pressed whilst navigating the menu and there is no search text 1`] = `
 <div
   class="feather-autocomplete-container"
 >
@@ -3670,7 +3670,7 @@ exports[`FeatherAutocomplete multi:specific chip selection should select rightmo
 </div>
 `;
 
-exports[`FeatherAutocomplete multi:specific chip selection should select the right most chip when left arrow is pressed and input has no text 1`] = `
+exports[`FeatherAutocomplete > multi:specific > chip selection > should select the right most chip when left arrow is pressed and input has no text 1`] = `
 <div
   class="feather-autocomplete-container"
 >
@@ -3888,7 +3888,7 @@ exports[`FeatherAutocomplete multi:specific chip selection should select the rig
 </div>
 `;
 
-exports[`FeatherAutocomplete multi:specific chip selection should should deselect chip when right arrow is pressed on right most token 1`] = `
+exports[`FeatherAutocomplete > multi:specific > chip selection > should should deselect chip when right arrow is pressed on right most token 1`] = `
 <div
   class="feather-autocomplete-container"
 >
@@ -4105,7 +4105,7 @@ exports[`FeatherAutocomplete multi:specific chip selection should should deselec
 </div>
 `;
 
-exports[`FeatherAutocomplete multi:specific selection limit should clear warning when item is removed 1`] = `
+exports[`FeatherAutocomplete > multi:specific > selection limit > should clear warning when item is removed 1`] = `
 <div
   class="feather-autocomplete-container"
 >
@@ -4322,7 +4322,7 @@ exports[`FeatherAutocomplete multi:specific selection limit should clear warning
 </div>
 `;
 
-exports[`FeatherAutocomplete multi:specific selection limit should display a warning when selection limit is from initial value and has focus 1`] = `
+exports[`FeatherAutocomplete > multi:specific > selection limit > should display a warning when selection limit is from initial value and has focus 1`] = `
 <div
   class="feather-autocomplete-container"
 >
@@ -4612,7 +4612,7 @@ exports[`FeatherAutocomplete multi:specific selection limit should display a war
 </div>
 `;
 
-exports[`FeatherAutocomplete multi:specific selection limit should display a warning when selection limit is reached and has focus 1`] = `
+exports[`FeatherAutocomplete > multi:specific > selection limit > should display a warning when selection limit is reached and has focus 1`] = `
 <div
   class="feather-autocomplete-container"
 >
@@ -4904,7 +4904,7 @@ exports[`FeatherAutocomplete multi:specific selection limit should display a war
 </div>
 `;
 
-exports[`FeatherAutocomplete multi:specific selection limit should display a warning when selection limit is reached from menu selection 1`] = `
+exports[`FeatherAutocomplete > multi:specific > selection limit > should display a warning when selection limit is reached from menu selection 1`] = `
 <div
   class="feather-autocomplete-container"
 >
@@ -5174,7 +5174,7 @@ exports[`FeatherAutocomplete multi:specific selection limit should display a war
 </div>
 `;
 
-exports[`FeatherAutocomplete multi:specific should hide/reset menu and clear text input when it loses focus 1`] = `
+exports[`FeatherAutocomplete > multi:specific > should hide/reset menu and clear text input when it loses focus 1`] = `
 <div
   class="feather-autocomplete-container"
 >
@@ -5313,7 +5313,7 @@ exports[`FeatherAutocomplete multi:specific should hide/reset menu and clear tex
 </div>
 `;
 
-exports[`FeatherAutocomplete single:specific should close menu when enter is pressed on a menu item to select it 1`] = `
+exports[`FeatherAutocomplete > single:specific > should close menu when enter is pressed on a menu item to select it 1`] = `
 <div
   class="feather-autocomplete-container"
 >
@@ -5452,7 +5452,7 @@ exports[`FeatherAutocomplete single:specific should close menu when enter is pre
 </div>
 `;
 
-exports[`FeatherAutocomplete single:specific should handle a null property on value 1`] = `
+exports[`FeatherAutocomplete > single:specific > should handle a null property on value 1`] = `
 <div
   class="feather-autocomplete-container"
 >
@@ -5609,7 +5609,7 @@ exports[`FeatherAutocomplete single:specific should handle a null property on va
 </div>
 `;
 
-exports[`FeatherAutocomplete single:specific should show add new element when in add-new mode 1`] = `
+exports[`FeatherAutocomplete > single:specific > should show add new element when in add-new mode 1`] = `
 <div
   class="feather-autocomplete-container"
 >

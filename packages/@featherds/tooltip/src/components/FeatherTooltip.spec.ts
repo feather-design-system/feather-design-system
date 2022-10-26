@@ -4,7 +4,8 @@ import FeatherTooltip from "./FeatherTooltip.vue";
 import * as id from "@featherds/utils/id";
 import { PopoverPlacement } from "@featherds/popover";
 import { Code } from "@featherds/utils/keys";
-jest.spyOn(id, "getSafeId").mockImplementation((x) => x);
+import { vi, expect, describe, it } from "vitest";
+vi.spyOn(id, "getSafeId").mockImplementation((x) => x);
 const getDefault = () =>
   `<template #scoped="params">
   <button v-bind="params.attrs" v-on="params.on">TOOLTIP BUTTON</button>
@@ -36,10 +37,10 @@ describe("FeatherTooltip", () => {
     expect(wrapper.element).toMatchSnapshot();
   });
   it("should show a tooltip on hover", async () => {
-    jest.useFakeTimers();
+    vi.useFakeTimers();
     const wrapper = getWrapper();
     await hover(wrapper);
-    jest.runAllTimers();
+    vi.runAllTimers();
     await nextTick();
     await nextTick();
     await nextTick();
@@ -47,10 +48,10 @@ describe("FeatherTooltip", () => {
   });
 
   it("should show a tooltip on focus", async () => {
-    jest.useFakeTimers();
+    vi.useFakeTimers();
     const wrapper = getWrapper();
     await focus(wrapper);
-    jest.runAllTimers();
+    vi.runAllTimers();
     await nextTick();
     await nextTick();
     await nextTick();
@@ -58,10 +59,10 @@ describe("FeatherTooltip", () => {
   });
 
   it("should hide tooltip on escape", async () => {
-    jest.useFakeTimers();
+    vi.useFakeTimers();
     const wrapper = getWrapper();
     await focus(wrapper);
-    jest.runAllTimers();
+    vi.runAllTimers();
     await nextTick();
     await nextTick();
     await nextTick();

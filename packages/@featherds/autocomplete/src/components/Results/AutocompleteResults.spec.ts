@@ -2,7 +2,7 @@ import AutocompleteResults from "./AutocompleteResults.vue";
 import { FeatherListItem } from "@featherds/list";
 import { shallowMount } from "@vue/test-utils";
 import { getCalls } from "@featherds/utils/test/calls";
-
+import { expect, describe, it } from "vitest";
 const activeId = "ACTIVE";
 const items = [
   {

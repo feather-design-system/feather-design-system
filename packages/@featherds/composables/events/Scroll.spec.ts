@@ -1,7 +1,7 @@
 import { useScroll } from "./Scroll";
 import { mount } from "@vue/test-utils";
-import { ref, nextTick } from "vue";
-
+import { ref, nextTick, Ref } from "vue";
+import { expect, describe, it, vi } from "vitest";
 const createWrapper = (setup) => {
   return mount({
     template: `<div></div>`,
@@ -12,8 +12,8 @@ const createWrapper = (setup) => {
 describe("Scroll composable", () => {
   it("should debounce calls to the callback", async () => {
     const elRef = ref(document);
-    const listener = jest.fn();
-    jest.useFakeTimers();
+    const listener = vi.fn();
+    vi.useFakeTimers();
     const wrapper = createWrapper(() => {
       const active = useScroll(elRef, listener);
       active.value = true;
@@ -25,21 +25,21 @@ describe("Scroll composable", () => {
     const event2 = new Event("scroll");
     document.dispatchEvent(event1);
     document.dispatchEvent(event2);
-    jest.runAllTimers();
+    vi.runAllTimers();
     expect(listener).toHaveBeenCalledTimes(1);
   });
   it("should update the listener to new element when ref is updated", async () => {
     const el1 = {
-      addEventListener: jest.fn(),
-      removeEventListener: jest.fn(),
-    };
+      addEventListener: vi.fn(),
+      removeEventListener: vi.fn(),
+    } as unknown as HTMLElement;
     const el2 = {
-      addEventListener: jest.fn(),
-      removeEventListener: jest.fn(),
-    };
+      addEventListener: vi.fn(),
+      removeEventListener: vi.fn(),
+    } as unknown as HTMLElement;
     const elRef = ref(el1);
     const wrapper = createWrapper(() => {
-      const active = useScroll(elRef, jest.fn());
+      const active = useScroll(elRef, vi.fn());
       active.value = true;
     });
     await nextTick();
@@ -51,13 +51,13 @@ describe("Scroll composable", () => {
   });
   it("should only add event listener when active is set to true", async () => {
     const elRef = ref({
-      addEventListener: jest.fn(),
-      removeEventListener: jest.fn(),
-    });
+      addEventListener: vi.fn(),
+      removeEventListener: vi.fn(),
+    }) as unknown as Ref<HTMLElement>;
 
     let active;
     const wrapper = createWrapper(() => {
-      active = useScroll(elRef, jest.fn());
+      active = useScroll(elRef, vi.fn());
     });
     await nextTick();
     expect(elRef.value.addEventListener).not.toHaveBeenCalled();
@@ -67,11 +67,11 @@ describe("Scroll composable", () => {
   });
   it("should remove events on unmount", async () => {
     const elRef = ref({
-      addEventListener: jest.fn(),
-      removeEventListener: jest.fn(),
-    });
+      addEventListener: vi.fn(),
+      removeEventListener: vi.fn(),
+    }) as unknown as Ref<HTMLElement>;
     const wrapper = createWrapper(() => {
-      const active = useScroll(elRef, jest.fn());
+      const active = useScroll(elRef, vi.fn());
       active.value = true;
     });
     await nextTick();

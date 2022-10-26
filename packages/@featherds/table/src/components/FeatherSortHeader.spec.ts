@@ -3,8 +3,8 @@ import FeatherSortHeader from "./FeatherSortHeader.vue";
 import { SORT } from "../types/types";
 import * as id from "@featherds/utils/id";
 import { getCalls } from "@featherds/utils/test/calls";
-
-jest.spyOn(id, "getSafeId").mockImplementation((x) => x);
+import { vi, expect, describe, it } from "vitest";
+vi.spyOn(id, "getSafeId").mockImplementation((x) => x);
 const PROPERTY = "test";
 
 const getWrapper = function (options: Record<string, unknown> = {}) {

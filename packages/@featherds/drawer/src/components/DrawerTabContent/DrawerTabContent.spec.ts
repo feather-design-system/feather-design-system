@@ -1,5 +1,6 @@
 import { mount } from "@vue/test-utils";
 import DrawerTabContent from "./DrawerTabContent.vue";
+import { vi, expect, describe, it } from "vitest";
 const header = "Test";
 const content = "CONTENTNTNT";
 const getWrapper = function () {
@@ -12,7 +13,7 @@ const getWrapper = function () {
     },
     global: {
       provide: {
-        registerPanel: jest.fn(),
+        registerPanel: vi.fn(),
       },
     },
   });

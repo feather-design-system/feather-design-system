@@ -3,7 +3,8 @@ import FeatherChip from "./FeatherChip.vue";
 import { mount } from "@vue/test-utils";
 import * as id from "@featherds/utils/id";
 import { h, nextTick, RendererElement, RendererNode, VNode } from "vue";
-jest.spyOn(id, "getSafeId").mockImplementation((x) => x);
+import { vi, expect, describe, it } from "vitest";
+vi.spyOn(id, "getSafeId").mockImplementation((x) => x);
 
 import axe from "@featherds/utils/test/axe";
 import { getCalls } from "@featherds/utils/test/calls";

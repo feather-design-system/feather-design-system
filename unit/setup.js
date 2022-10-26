@@ -5,4 +5,4 @@ config.global.stubs = {
   teleport: true,
 };
 
-config.renderStubDefaultSlot = true;
+config.global.renderStubDefaultSlot = true;

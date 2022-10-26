@@ -25,7 +25,12 @@
         Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean a urna
         ut orci congue eleifend porttitor ut lorem. Phasellus non commodo est.
         Pellentesque ullamcorper dolor purus, sed semper ipsum scelerisque vel.
-        <FeatherDialog v-model="innerVisible" :labels="labels" relative hide-close>
+        <FeatherDialog
+          v-model="innerVisible"
+          :labels="labels"
+          relative
+          hide-close
+        >
           <template v-slot:icon>
             <FeatherIcon
               :icon="icon"
@@ -37,7 +42,14 @@
           <div class="confirmation-content">Are you sure?</div>
           <template v-slot:footer>
             <FeatherButton text @click="innerVisible = false">No</FeatherButton>
-            <FeatherButton primary @click="innerVisible = false; visible = false">Yes</FeatherButton>
+            <FeatherButton
+              primary
+              @click="
+                innerVisible = false;
+                visible = false;
+              "
+              >Yes</FeatherButton
+            >
           </template>
         </FeatherDialog>
       </div>
@@ -71,7 +83,7 @@ export default defineComponent({
     confirmationLabels: {
       title: "Really?",
       close: "Close",
-    }
+    },
   }),
   methods: {
     onShown() {

@@ -1,6 +1,6 @@
-// Jest Snapshot v1, https://goo.gl/fbAQLP
+// Vitest Snapshot v1
 
-exports[`FeatherDropdown.vue should pass through cover property 1`] = `
+exports[`FeatherDropdown.vue > should pass through cover property 1`] = `
 <div
   class="feather-menu feather-dropdown-menu-container"
   data-ref-id="feather-dropdown-menu-container"
@@ -20,7 +20,7 @@ exports[`FeatherDropdown.vue should pass through cover property 1`] = `
 </div>
 `;
 
-exports[`FeatherDropdown.vue should pass through right property 1`] = `
+exports[`FeatherDropdown.vue > should pass through right property 1`] = `
 <div
   class="feather-menu feather-dropdown-menu-container"
   data-ref-id="feather-dropdown-menu-container"

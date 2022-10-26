@@ -85,10 +85,15 @@ const names = [
 ];
 import { IAutocompleteItemType } from "@featherds/autocomplete";
 import { defineComponent } from "vue";
+import {
+  _setTimeout,
+  TimeoutResult,
+  _clearTimeout,
+} from "@featherds/utils/setTimeout";
 export default defineComponent({
   data() {
     return {
-      timeout: -1,
+      timeout: undefined as unknown as TimeoutResult,
       loading: false,
       results: [] as IAutocompleteItemType[],
       value: undefined as unknown as IAutocompleteItemType,
@@ -99,7 +104,7 @@ export default defineComponent({
     search(q: string) {
       this.loading = true;
       clearTimeout(this.timeout);
-      this.timeout = setTimeout(() => {
+      this.timeout = _setTimeout(() => {
         this.results = names
           .filter((x) => x.toLowerCase().indexOf(q.toLowerCase()) > -1)
           .map((x) => ({

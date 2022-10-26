@@ -1,6 +1,6 @@
-// Jest Snapshot v1, https://goo.gl/fbAQLP
+// Vitest Snapshot v1
 
-exports[`Highlighter ignore case should highlight reglardless of case 1`] = `
+exports[`Highlighter > ignore case > should highlight reglardless of case 1`] = `
 <span>
   <span>
     a
@@ -16,7 +16,7 @@ exports[`Highlighter ignore case should highlight reglardless of case 1`] = `
 </span>
 `;
 
-exports[`Highlighter ignore case should highlight text at the end of the string 1`] = `
+exports[`Highlighter > ignore case > should highlight text at the end of the string 1`] = `
 <span>
   <span>
     ab
@@ -30,7 +30,7 @@ exports[`Highlighter ignore case should highlight text at the end of the string 
 </span>
 `;
 
-exports[`Highlighter ignore case should highlight text at the start of the string 1`] = `
+exports[`Highlighter > ignore case > should highlight text at the start of the string 1`] = `
 <span>
   <span />
   <span
@@ -44,7 +44,7 @@ exports[`Highlighter ignore case should highlight text at the start of the strin
 </span>
 `;
 
-exports[`Highlighter ignore case should highlight text in the middle of the string 1`] = `
+exports[`Highlighter > ignore case > should highlight text in the middle of the string 1`] = `
 <span>
   <span>
     a
@@ -60,7 +60,7 @@ exports[`Highlighter ignore case should highlight text in the middle of the stri
 </span>
 `;
 
-exports[`Highlighter ignore case should not highlight when there isn't a match 1`] = `
+exports[`Highlighter > ignore case > should not highlight when there isn't a match 1`] = `
 <span>
   <span>
     abcd
@@ -70,7 +70,7 @@ exports[`Highlighter ignore case should not highlight when there isn't a match 1
 </span>
 `;
 
-exports[`Highlighter should not highlight when turned off 1`] = `
+exports[`Highlighter > should not highlight when turned off 1`] = `
 <span>
   <span>
     abcd

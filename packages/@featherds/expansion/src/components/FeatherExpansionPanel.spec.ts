@@ -4,7 +4,8 @@ import { mount } from "@vue/test-utils";
 import axe from "@featherds/utils/test/axe";
 import { getCalls } from "@featherds/utils/test/calls";
 import * as id from "@featherds/utils/id";
-jest.spyOn(id, "getSafeId").mockImplementation((x) => x);
+import { vi, expect, describe, it } from "vitest";
+vi.spyOn(id, "getSafeId").mockImplementation((x) => x);
 
 const getWrapper = function () {
   const options = {

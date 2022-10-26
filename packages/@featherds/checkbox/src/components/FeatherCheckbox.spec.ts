@@ -5,7 +5,8 @@ import FeatherCheckbox from "./FeatherCheckbox.vue";
 import * as id from "@featherds/utils/id";
 import { getCalls } from "@featherds/utils/test/calls";
 import { Code } from "@featherds/utils/keys";
-jest.spyOn(id, "getSafeId").mockImplementation((x) => x);
+import { vi, expect, describe, it } from "vitest";
+vi.spyOn(id, "getSafeId").mockImplementation((x) => x);
 
 const getWrapper = function (options: Record<string, unknown> = {}) {
   options = {
@@ -13,7 +14,7 @@ const getWrapper = function (options: Record<string, unknown> = {}) {
     ...getSlot(),
     global: {
       provide: {
-        registerCheckbox: jest.fn(),
+        registerCheckbox: vi.fn(),
       },
     },
   };

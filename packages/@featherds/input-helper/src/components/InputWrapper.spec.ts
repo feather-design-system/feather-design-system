@@ -2,6 +2,7 @@ import InputWrapper from "./InputWrapper.vue";
 import { mount } from "@vue/test-utils";
 import "../../test/MutationObserver";
 import { ref } from "vue";
+import { expect, describe, it } from "vitest";
 
 const provide = (opts: unknown) => {
   return {

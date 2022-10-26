@@ -1,6 +1,6 @@
 import AutocompleteResultsGrid from "./AutocompleteResultsGrid.vue";
 import { shallowMount } from "@vue/test-utils";
-
+import { expect, describe, it } from "vitest";
 const activeId = "ACTIVE";
 const items = [
   {

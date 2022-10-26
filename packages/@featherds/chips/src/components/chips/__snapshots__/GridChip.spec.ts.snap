@@ -1,6 +1,6 @@
-// Jest Snapshot v1, https://goo.gl/fbAQLP
+// Vitest Snapshot v1
 
-exports[`GridChip should emit a click event 1`] = `
+exports[`GridChip > should emit a click event 1`] = `
 <div
   aria-disabled="false"
   class="chip hover focus"
@@ -36,7 +36,7 @@ exports[`GridChip should emit a click event 1`] = `
 </div>
 `;
 
-exports[`GridChip should render a disabled chip 1`] = `
+exports[`GridChip > should render a disabled chip 1`] = `
 <div
   aria-disabled="true"
   class="chip disabled"
@@ -69,7 +69,7 @@ exports[`GridChip should render a disabled chip 1`] = `
 </div>
 `;
 
-exports[`GridChip should render a removable chip 1`] = `
+exports[`GridChip > should render a removable chip 1`] = `
 <div
   aria-disabled="false"
   class="chip focus"
@@ -126,7 +126,7 @@ exports[`GridChip should render a removable chip 1`] = `
 </div>
 `;
 
-exports[`GridChip should render a standard chip 1`] = `
+exports[`GridChip > should render a standard chip 1`] = `
 <div
   aria-disabled="false"
   class="chip"
@@ -159,7 +159,7 @@ exports[`GridChip should render a standard chip 1`] = `
 </div>
 `;
 
-exports[`GridChip should render a standard chip with icon 1`] = `
+exports[`GridChip > should render a standard chip with icon 1`] = `
 <div
   aria-disabled="false"
   class="chip"
@@ -203,7 +203,7 @@ exports[`GridChip should render a standard chip with icon 1`] = `
 </div>
 `;
 
-exports[`GridChip should render condensed 1`] = `
+exports[`GridChip > should render condensed 1`] = `
 <div
   aria-disabled="false"
   class="chip condensed"
@@ -236,7 +236,7 @@ exports[`GridChip should render condensed 1`] = `
 </div>
 `;
 
-exports[`GridChip should render condensed from a group 1`] = `
+exports[`GridChip > should render condensed from a group 1`] = `
 <div
   aria-disabled="false"
   class="chip"

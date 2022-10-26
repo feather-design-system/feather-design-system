@@ -4,7 +4,8 @@ import format from "date-fns/format";
 import isSameDay from "date-fns/isSameDay";
 
 import * as id from "@featherds/utils/id";
-const idSpy = jest.spyOn(id, "getSafeId").mockImplementation((x) => x);
+import { vi, expect, describe, it } from "vitest";
+const idSpy = vi.spyOn(id, "getSafeId").mockImplementation((x) => x);
 
 import { mount } from "@vue/test-utils";
 import "@featherds/input-helper/test/MutationObserver";
@@ -89,7 +90,7 @@ describe("FeatherDateInput.vue", () => {
   });
   it("should move from month to day with next from month spinner", async () => {
     const wrapper = getWrapper();
-    const stubFocusDay = jest.fn();
+    const stubFocusDay = vi.fn();
     wrapper.vm.dayButton.focus = stubFocusDay;
     const month = wrapper.findComponent({ ref: "monthButton" });
     month.vm.$emit("next");
@@ -98,7 +99,7 @@ describe("FeatherDateInput.vue", () => {
   });
   it("should move from day to year with next from day spinner", async () => {
     const wrapper = getWrapper();
-    const stubFocus = jest.fn();
+    const stubFocus = vi.fn();
     wrapper.vm.yearButton.focus = stubFocus;
 
     const day = wrapper.findComponent({ ref: "dayButton" });
@@ -108,7 +109,7 @@ describe("FeatherDateInput.vue", () => {
   });
   it("should move from year to day with  previous from year spinner", async () => {
     const wrapper = getWrapper();
-    const stubFocus = jest.fn();
+    const stubFocus = vi.fn();
     wrapper.vm.dayButton.focus = stubFocus;
 
     const year = wrapper.findComponent({ ref: "yearButton" });
@@ -118,7 +119,7 @@ describe("FeatherDateInput.vue", () => {
   });
   it("should move from day to month with previous from day spinner", async () => {
     const wrapper = getWrapper();
-    const stubFocus = jest.fn();
+    const stubFocus = vi.fn();
     wrapper.vm.monthButton.focus = stubFocus;
 
     const day = wrapper.findComponent({ ref: "dayButton" });
@@ -149,7 +150,7 @@ describe("FeatherDateInput.vue", () => {
 
     const icon = wrapper.findComponent({ ref: "icon" });
     await icon.trigger("click");
-    const stubFocus = jest.fn();
+    const stubFocus = vi.fn();
     wrapper.vm.calendar.focus = stubFocus;
     const menu = wrapper.findComponent({ ref: "menu" });
     menu.vm.$emit("trigger-click");
@@ -158,7 +159,7 @@ describe("FeatherDateInput.vue", () => {
   });
   it("should focus month if wrapper is clicked", async () => {
     const wrapper = getWrapper();
-    const stubFocus = jest.fn();
+    const stubFocus = vi.fn();
     wrapper.vm.monthButton.focus = stubFocus;
     const inputWrapper = wrapper.findComponent({ ref: "wrapper" });
     inputWrapper.vm.$emit("wrapper-click", { target: inputWrapper.vm.$el });
@@ -169,7 +170,7 @@ describe("FeatherDateInput.vue", () => {
 
   it("should open calendar if enter is pressed", async () => {
     const wrapper = getWrapper();
-    const stubFocus = jest.fn();
+    const stubFocus = vi.fn();
     wrapper.vm.calendar.focus = stubFocus;
 
     const calendar = wrapper.findComponent({ ref: "wrapper" });
@@ -181,7 +182,7 @@ describe("FeatherDateInput.vue", () => {
 
   it("should open calendar if space is pressed", async () => {
     const wrapper = getWrapper();
-    const stubFocus = jest.fn();
+    const stubFocus = vi.fn();
     wrapper.vm.calendar.focus = stubFocus;
 
     const calendar = wrapper.findComponent({ ref: "wrapper" });

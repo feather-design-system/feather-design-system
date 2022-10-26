@@ -1,6 +1,6 @@
-// Jest Snapshot v1, https://goo.gl/fbAQLP
+// Vitest Snapshot v1
 
-exports[`FeatherSelect.vue should not raise the label when its empty 1`] = `
+exports[`FeatherSelect.vue > should not raise the label when its empty 1`] = `
 <div
   class="feather-select-container"
 >
@@ -99,7 +99,7 @@ exports[`FeatherSelect.vue should not raise the label when its empty 1`] = `
 </div>
 `;
 
-exports[`FeatherSelect.vue should raise the label when it has a value 1`] = `
+exports[`FeatherSelect.vue > should raise the label when it has a value 1`] = `
 <div
   class="feather-select-container"
 >
@@ -198,7 +198,7 @@ exports[`FeatherSelect.vue should raise the label when it has a value 1`] = `
 </div>
 `;
 
-exports[`FeatherSelect.vue should render in disabled state 1`] = `
+exports[`FeatherSelect.vue > should render in disabled state 1`] = `
 <div
   class="feather-select-container"
 >
@@ -298,7 +298,7 @@ exports[`FeatherSelect.vue should render in disabled state 1`] = `
 </div>
 `;
 
-exports[`FeatherSelect.vue should render in error state 1`] = `
+exports[`FeatherSelect.vue > should render in error state 1`] = `
 <div
   class="feather-select-container"
 >

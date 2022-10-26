@@ -1,6 +1,6 @@
 import Highlighter from "./Highlighter.vue";
 import { shallowMount } from "@vue/test-utils";
-
+import { describe, it, expect } from "vitest";
 const getWrapper = function (options = {}) {
   return shallowMount(Highlighter, options);
 };

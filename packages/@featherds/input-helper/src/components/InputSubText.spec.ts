@@ -1,5 +1,6 @@
 import InputSubText from "./InputSubText.vue";
 import { mount } from "@vue/test-utils";
+import { expect, describe, it } from "vitest";
 
 const provide = (opts: unknown) => {
   return {

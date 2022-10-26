@@ -1,7 +1,7 @@
 import FeatherBackButton from "./FeatherBackButton.vue";
 import { mount } from "@vue/test-utils";
-import "@testing-library/jest-dom";
 import axe from "@featherds/utils/test/axe";
+import { vi, expect, describe, it } from "vitest";
 const getWrapper = function (options: Record<string, unknown>) {
   return mount(FeatherBackButton, options);
 };
@@ -15,29 +15,30 @@ describe("FeatherBackButton.vue", () => {
       },
     };
     const wrapper = getWrapper(options);
-    expect(wrapper.find(".text").element).not.toBeVisible();
+    expect(wrapper.find(".text").isVisible()).toBe(false);
   });
-  it("should be visible after long hover", (done) => {
-    const options = {
-      slots: {
-        default: getSlot("hello"),
-      },
-    };
-    const wrapper = getWrapper(options);
-    wrapper.trigger("mouseenter");
-    setTimeout(() => {
-      expect(wrapper.find(".text").isVisible()).toBe(true);
-      done();
-    }, wrapper.vm.longHover + 50);
-  });
+  it("should be visible after long hover", () =>
+    new Promise((done) => {
+      const options = {
+        slots: {
+          default: getSlot("hello"),
+        },
+      };
+      const wrapper = getWrapper(options);
+      wrapper.trigger("mouseenter");
+      setTimeout(() => {
+        expect(wrapper.find(".text").isVisible()).toBe(true);
+        done("");
+      }, wrapper.vm.longHover + 50);
+    }));
   it("should trigger external handlers", async () => {
     const options = {
       slots: {
         default: getSlot("hello"),
       },
       attrs: {
-        onClick: jest.fn(),
-        onMouseenter: jest.fn(),
+        onClick: vi.fn(),
+        onMouseenter: vi.fn(),
       },
     };
     const wrapper = getWrapper(options);
