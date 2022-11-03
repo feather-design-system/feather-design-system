@@ -1,6 +1,6 @@
 {
   "name": "@featherds/table",
-  "version": "0.12.7",
+  "version": "0.12.9",
   "publishConfig": {
     "access": "public"
   },
