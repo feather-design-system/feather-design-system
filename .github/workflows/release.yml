@@ -67,7 +67,7 @@ jobs:
                 repo: context.repo.repo,
                 tag_name: '${{ env.VERSION }}',
                 name: 'Release ${{ env.VERSION }}',
-                body: '${{ steps.get_release_notes.outputs.release_notes }}'
+                body: `${{ steps.get_release_notes.outputs.release_notes }}`,
                 draft: false,
                 prerelease: false,
                 generate_release_notes: true,
