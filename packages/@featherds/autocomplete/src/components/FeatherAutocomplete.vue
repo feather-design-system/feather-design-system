@@ -346,7 +346,6 @@ export default defineComponent({
         input: this.handleTextInput,
         blur: this.handleInputBlur,
         focus: this.handleInputFocus,
-        click: this.handleInputEnter,
         keydown: this.handleInputKeyDown,
       };
     },

@@ -77,8 +77,8 @@ const baseFunctionality = (type: AutocompleteTypes) => {
   describe(type, () => {
     it("should perform search with empty string when clicked and min char is 0", async () => {
       const wrapper = getFullWrapper();
-      await wrapper.find(".feather-autocomplete-input").trigger("click");
       await wrapper.find(".feather-autocomplete-input").trigger("focus");
+      await wrapper.findComponent({ ref: "menu" }).vm.$emit("trigger-click");
       expect(getCalls<string>(wrapper, "search")[0][0]).toBe("");
     });
     it("should not perform search with empty string when focused and min char is 0", async () => {
