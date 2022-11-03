@@ -1,3 +1,13 @@
+## [0.12.6](https://github.com/feather-design-system/feather-design-system/compare/v0.12.5...v0.12.6) (2022-11-03)
+
+
+### Bug Fixes
+
+* **date-input:** date could not be updated via typing on spin buttons ([be86439](https://github.com/feather-design-system/feather-design-system/commit/be86439cec1ad34340d899d667eff9047dc62002))
+* **dialog:** allowing data-ref-id to be passed in ([805044c](https://github.com/feather-design-system/feather-design-system/commit/805044c3b66c18434a19733a8c8e7338eade8835))
+
+
+
 ## [0.12.5](https://github.com/feather-design-system/feather-design-system/compare/v0.12.4...v0.12.5) (2022-10-12)
 
 
