@@ -18,7 +18,6 @@ const getDefault = () =>
 const getWrapper = (placement = PopoverPlacement.top) =>
   mount(FeatherPopover, {
     props: {
-      title: "hello world",
       placement,
     },
     slots: {

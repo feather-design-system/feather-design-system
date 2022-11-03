@@ -55,7 +55,6 @@ describe("Scroll composable", () => {
       bubbles: true,
       cancelable: false,
     });
-    console.log(document.body.innerHTML);
     document.querySelector("div.test").dispatchEvent(event);
 
     await nextTick();
