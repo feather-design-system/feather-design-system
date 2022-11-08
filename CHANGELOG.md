@@ -1,3 +1,18 @@
+## [0.12.10](https://github.com/feather-design-system/feather-design-system/compare/v0.12.9...v0.12.10) (2022-11-08)
+
+
+### Bug Fixes
+
+* **autocomplete:** trying to make sync results work ([57136b6](https://github.com/feather-design-system/feather-design-system/commit/57136b6066fa9dad682904b44d5e0745bc75ac5e))
+
+
+### Features
+
+* **wdio:** adding a sample wdio page object for FeatherSelect ([51c2f10](https://github.com/feather-design-system/feather-design-system/commit/51c2f10dd0ef55b0055ca90b9cd6e3901f35bde4))
+* **wdio:** selectbyText for FeatherSelect ([40bd85e](https://github.com/feather-design-system/feather-design-system/commit/40bd85eac68cad9577acccf7df09300ce079b9e8))
+
+
+
 ## [0.12.9](https://github.com/feather-design-system/feather-design-system/compare/v0.12.7...v0.12.9) (2022-11-03)
 
 
