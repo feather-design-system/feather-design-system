@@ -43,6 +43,13 @@ const getWrapper = function (options: Record<string, unknown>) {
 
 describe("FeatherDrawer.vue", () => {
   it("should show drawer when modelValue prop changes", async () => {
+    const wrapper = getWrapper({
+      props: { ...getprops(true), hideClose: true },
+      slots,
+    });
+    expect(wrapper.element).toMatchSnapshot();
+  });
+  it("should hide close button", async () => {
     const wrapper = getWrapper({ props: getprops(false), slots });
     expect(wrapper.find(".content").exists()).toBe(false);
     await wrapper.setProps({ modelValue: true });

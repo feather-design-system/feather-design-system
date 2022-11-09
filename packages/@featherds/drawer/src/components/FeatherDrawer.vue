@@ -9,7 +9,7 @@
         v-on:after-enter="shown = true"
         v-on:after-leave="shown = false"
       >
-        <focus-trap
+        <FocusTrap
           v-if="modelValue"
           :enable="modelValue"
           :style="{ width: width }"
@@ -30,12 +30,13 @@
             <div class="slot">
               <slot></slot>
             </div>
-            <dialog-close
+            <DialogClose
+              v-if="!hideClose"
               :close-text="closeLabel"
               @close="close"
-            ></dialog-close>
+            ></DialogClose>
           </div>
-        </focus-trap>
+        </FocusTrap>
       </transition>
     </div>
   </Teleport>
@@ -88,6 +89,10 @@ export const props = {
     validator: (v: Partial<typeof LABELS>) => {
       return !!v.title;
     },
+  },
+  hideClose: {
+    type: Boolean,
+    default: false,
   },
 } as const;
 export const emits = {

@@ -35,6 +35,7 @@ You **must** configure the `labels` property to have a relevant title. See [Labe
 | width      | can have value `"auto"` or must end with a `px,%,em,vw`. Controls the width of the Drawer                                               | `String`  | -        | `"auto"`                      |
 | labels     | `Object` containing labels to be used by this component. Mainly used for i18n or customization of labels. See [Labels](#labels) example | `Object`  | `false`  | See [Labels](#labels) example |
 | left       | When true Drawer will appear to the left of the window                                                                                  | `Boolean` | -        | `false`                       |
+| hideClose  | When `true` the close button will be hidden. You **must** provide an alternative close method                                           | `Boolean` | -        | `false`                       |
 
 ### Labels
 
