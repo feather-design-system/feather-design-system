@@ -1,3 +1,12 @@
+## [0.12.11](https://github.com/feather-design-system/feather-design-system/compare/v0.12.10...v0.12.11) (2022-11-09)
+
+
+### Bug Fixes
+
+* **drawer:** making close icon optional ([1fa3306](https://github.com/feather-design-system/feather-design-system/commit/1fa33067485585ec8329808264a1e7f7feba2985))
+
+
+
 ## [0.12.10](https://github.com/feather-design-system/feather-design-system/compare/v0.12.9...v0.12.10) (2022-11-08)
 
 
