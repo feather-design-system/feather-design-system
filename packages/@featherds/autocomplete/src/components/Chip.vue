@@ -9,7 +9,12 @@
       <FeatherIcon :icon="pre?.icon" :title="pre?.title"> </FeatherIcon
     ></BaseChipPreIcon>
     <BaseChipLabel>{{ text }}</BaseChipLabel>
-    <span class="chip-delete" @click.stop="handleClick" v-if="!disabled">
+    <span
+      class="chip-delete"
+      data-ref-id="feather-autocomplete-chip-delete"
+      @click.stop="handleClick"
+      v-if="!disabled"
+    >
       <FeatherIcon class="delete-icon" flex :title="removeLabel"
         ><Cancel />
       </FeatherIcon>

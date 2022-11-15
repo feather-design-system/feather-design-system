@@ -14,6 +14,7 @@ exports[`RadioChip > radio button > should set aria-checked based on data 1`] = 
   <!--v-if-->
   <span
     class="label"
+    data-ref-id="feather-chip-label"
     id="chip-label-id"
   >
     
@@ -41,6 +42,7 @@ exports[`RadioChip > radio button > should set aria-checked based on data 2`] = 
   <!--v-if-->
   <span
     class="label"
+    data-ref-id="feather-chip-label"
     id="chip-label-id"
   >
     
@@ -68,6 +70,7 @@ exports[`RadioChip > radio button > should set aria-disabled based on property 1
   <!--v-if-->
   <span
     class="label"
+    data-ref-id="feather-chip-label"
     id="chip-label-id"
   >
     
@@ -95,6 +98,7 @@ exports[`RadioChip > radio button > should set aria-disabled based on property 2
   <!--v-if-->
   <span
     class="label"
+    data-ref-id="feather-chip-label"
     id="chip-label-id"
   >
     
@@ -122,6 +126,7 @@ exports[`RadioChip > should render a disabled chip 1`] = `
   <!--v-if-->
   <span
     class="label"
+    data-ref-id="feather-chip-label"
     id="chip-label-id"
   >
     
@@ -149,6 +154,7 @@ exports[`RadioChip > should render a standard chip 1`] = `
   <!--v-if-->
   <span
     class="label"
+    data-ref-id="feather-chip-label"
     id="chip-label-id"
   >
     
@@ -187,6 +193,7 @@ exports[`RadioChip > should render a standard chip with icon 1`] = `
   </span>
   <span
     class="label"
+    data-ref-id="feather-chip-label"
     id="chip-label-id"
   >
     
@@ -214,6 +221,7 @@ exports[`RadioChip > should render condensed 1`] = `
   <!--v-if-->
   <span
     class="label"
+    data-ref-id="feather-chip-label"
     id="chip-label-id"
   >
     
@@ -241,6 +249,7 @@ exports[`RadioChip > should render condensed from a group 1`] = `
   <!--v-if-->
   <span
     class="label"
+    data-ref-id="feather-chip-label"
     id="chip-label-id"
   >
     

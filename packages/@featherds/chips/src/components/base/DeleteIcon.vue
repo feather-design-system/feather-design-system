@@ -4,6 +4,7 @@
       href="#"
       class="delete-icon"
       role="button"
+      data-ref-id="feather-chip-delete-icon"
       @click.stop.prevent="handleDelete"
       :aria-label="label"
       :aria-describedby="textId"
