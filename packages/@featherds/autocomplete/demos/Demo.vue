@@ -71,23 +71,7 @@ export default defineComponent({
       value: [] as IAutocompleteItemType[],
     };
   },
-  watch: {
-    value(v: IAutocompleteItemType[]) {
-      v.forEach((item, i) => {
-        if (item._text === "Liam" && !item._pre) {
-          setTimeout(() => {
-            this.value[i] = {
-              _pre: {
-                icon: icon,
-                title: "There is an issue with this selection",
-              },
-              ...item,
-            };
-          }, 1000);
-        }
-      });
-    },
-  },
+
   methods: {
     search(q: string) {
       this.loading = true;
@@ -96,15 +80,6 @@ export default defineComponent({
         this.results = names
           .filter((x) => x.toLowerCase().indexOf(q.toLowerCase()) > -1)
           .map((x) => {
-            // if (x === "William") {
-            //   return {
-            //     _pre: {
-            //       icon: icon,
-            //       title: "There is an issue with this selection"
-            //     },
-            //     _text: x
-            //   };
-            // }
             return {
               _text: x,
             };
@@ -112,11 +87,6 @@ export default defineComponent({
         this.loading = false;
       }, 500);
     },
-  },
-  mounted() {
-    setTimeout(() => {
-      this.value = [{ _text: "Liam" }];
-    }, 50);
   },
   components: {
     ...components,

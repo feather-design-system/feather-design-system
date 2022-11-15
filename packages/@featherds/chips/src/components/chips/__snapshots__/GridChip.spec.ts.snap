@@ -20,6 +20,7 @@ exports[`GridChip > should emit a click event 1`] = `
       <!--v-if-->
       <span
         class="label"
+        data-ref-id="feather-chip-label"
         id="chip-text"
       >
         
@@ -53,6 +54,7 @@ exports[`GridChip > should render a disabled chip 1`] = `
       <!--v-if-->
       <span
         class="label"
+        data-ref-id="feather-chip-label"
         id="chip-text"
       >
         
@@ -86,6 +88,7 @@ exports[`GridChip > should render a removable chip 1`] = `
       <!--v-if-->
       <span
         class="label"
+        data-ref-id="feather-chip-label"
         id="chip-text"
       >
         
@@ -104,6 +107,7 @@ exports[`GridChip > should render a removable chip 1`] = `
       aria-describedby="chip-text"
       aria-label="Remove"
       class="delete-icon"
+      data-ref-id="feather-chip-delete-icon"
       href="#"
       role="button"
     >
@@ -143,6 +147,7 @@ exports[`GridChip > should render a standard chip 1`] = `
       <!--v-if-->
       <span
         class="label"
+        data-ref-id="feather-chip-label"
         id="chip-text"
       >
         
@@ -187,6 +192,7 @@ exports[`GridChip > should render a standard chip with icon 1`] = `
       </span>
       <span
         class="label"
+        data-ref-id="feather-chip-label"
         id="chip-text"
       >
         
@@ -220,6 +226,7 @@ exports[`GridChip > should render condensed 1`] = `
       <!--v-if-->
       <span
         class="label"
+        data-ref-id="feather-chip-label"
         id="chip-text"
       >
         
@@ -253,6 +260,7 @@ exports[`GridChip > should render condensed from a group 1`] = `
       <!--v-if-->
       <span
         class="label"
+        data-ref-id="feather-chip-label"
         id="chip-text"
       >
         

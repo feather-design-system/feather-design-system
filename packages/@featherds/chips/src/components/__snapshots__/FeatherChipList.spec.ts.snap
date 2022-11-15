@@ -25,6 +25,7 @@ exports[`Feather Chip List > list format > should render child chips correctly 1
         <!--v-if-->
         <span
           class="label"
+          data-ref-id="feather-chip-label"
           id="chip-text"
         >
           
@@ -56,6 +57,7 @@ exports[`Feather Chip List > list format > should render child chips correctly 1
         <!--v-if-->
         <span
           class="label"
+          data-ref-id="feather-chip-label"
           id="chip-text"
         >
           
@@ -102,6 +104,7 @@ exports[`Feather Chip List > list format > should render child chips with click 
         <!--v-if-->
         <span
           class="label"
+          data-ref-id="feather-chip-label"
           id="chip-text"
         >
           
@@ -136,6 +139,7 @@ exports[`Feather Chip List > list format > should render child chips with click 
         <!--v-if-->
         <span
           class="label"
+          data-ref-id="feather-chip-label"
           id="chip-text"
         >
           
@@ -179,6 +183,7 @@ exports[`Feather Chip List > list format > should render child chips with delete
         <!--v-if-->
         <span
           class="label"
+          data-ref-id="feather-chip-label"
           id="chip-text"
         >
           
@@ -197,6 +202,7 @@ exports[`Feather Chip List > list format > should render child chips with delete
         aria-describedby="chip-text"
         aria-label="Remove"
         class="delete-icon"
+        data-ref-id="feather-chip-delete-icon"
         href="#"
         role="button"
       >
@@ -234,6 +240,7 @@ exports[`Feather Chip List > list format > should render child chips with delete
         <!--v-if-->
         <span
           class="label"
+          data-ref-id="feather-chip-label"
           id="chip-text"
         >
           
@@ -252,6 +259,7 @@ exports[`Feather Chip List > list format > should render child chips with delete
         aria-describedby="chip-text"
         aria-label="Remove"
         class="delete-icon"
+        data-ref-id="feather-chip-delete-icon"
         href="#"
         role="button"
       >
@@ -301,6 +309,7 @@ exports[`Feather Chip List > list format > should render child chips with one di
         <!--v-if-->
         <span
           class="label"
+          data-ref-id="feather-chip-label"
           id="chip-text"
         >
           
@@ -332,6 +341,7 @@ exports[`Feather Chip List > list format > should render child chips with one di
         <!--v-if-->
         <span
           class="label"
+          data-ref-id="feather-chip-label"
           id="chip-text"
         >
           
@@ -371,6 +381,7 @@ exports[`Feather Chip List > radio format > should render child chips to correct
     <!--v-if-->
     <span
       class="label"
+      data-ref-id="feather-chip-label"
       id="chip-label-id"
     >
       
@@ -395,6 +406,7 @@ exports[`Feather Chip List > radio format > should render child chips to correct
     <!--v-if-->
     <span
       class="label"
+      data-ref-id="feather-chip-label"
       id="chip-label-id"
     >
       

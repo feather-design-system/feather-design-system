@@ -17,6 +17,7 @@ exports[`ReadOnlyChip > should render a disabled chip 1`] = `
       <!--v-if-->
       <span
         class="label"
+        data-ref-id="feather-chip-label"
         id="chip-text"
       >
         
@@ -50,6 +51,7 @@ exports[`ReadOnlyChip > should render a standard chip 1`] = `
       <!--v-if-->
       <span
         class="label"
+        data-ref-id="feather-chip-label"
         id="chip-text"
       >
         
@@ -94,6 +96,7 @@ exports[`ReadOnlyChip > should render a standard chip with icon 1`] = `
       </span>
       <span
         class="label"
+        data-ref-id="feather-chip-label"
         id="chip-text"
       >
         
@@ -127,6 +130,7 @@ exports[`ReadOnlyChip > should render condensed 1`] = `
       <!--v-if-->
       <span
         class="label"
+        data-ref-id="feather-chip-label"
         id="chip-text"
       >
         
@@ -160,6 +164,7 @@ exports[`ReadOnlyChip > should render condensed from a group 1`] = `
       <!--v-if-->
       <span
         class="label"
+        data-ref-id="feather-chip-label"
         id="chip-text"
       >
         

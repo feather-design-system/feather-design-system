@@ -1,5 +1,11 @@
 <template>
-  <span class="label" :title="titleText" ref="container"><slot /></span>
+  <span
+    class="label"
+    :title="titleText"
+    ref="container"
+    data-ref-id="feather-chip-label"
+    ><slot
+  /></span>
 </template>
 <script lang="ts">
 import { defineComponent } from "vue";
