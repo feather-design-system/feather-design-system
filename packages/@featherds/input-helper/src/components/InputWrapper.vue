@@ -40,6 +40,7 @@ import {
   ExtractPropTypes,
   Ref,
   toRef,
+  toRefs,
 } from "vue";
 import { InputWrapperProps } from "../composables/InputWrapper";
 export const props = {
@@ -101,7 +102,7 @@ export default defineComponent({
       }
       return false;
     });
-    return { ...options, error };
+    return { ...toRefs(options), error };
   },
   computed: {
     computedClearText() {
@@ -126,6 +127,7 @@ export default defineComponent({
     },
     containerCls() {
       const cls = [];
+      console.log(this);
       if (this.hideLabel) {
         cls.push("hide-label");
       }

@@ -2,7 +2,7 @@
 
 exports[`InputWrapper.vue > should hide the label when hideLabel is true 1`] = `
 <div
-  class="feather-input-wrapper-container hide-label error"
+  class="feather-input-wrapper-container hide-label"
 >
   <div
     class="feather-input-border"
@@ -41,33 +41,7 @@ exports[`InputWrapper.vue > should hide the label when hideLabel is true 1`] = `
       class="post"
     >
       <!--v-if-->
-      <svg
-        aria-hidden="true"
-        class="error-icon hide-when-disabled feather-icon error-icon hide-when-disabled"
-        data-ref-id="error-icon"
-        focusable="false"
-        role="img"
-        viewBox="0 0 24 24"
-        xmlns="http://www.w3.org/2000/svg"
-      >
-        <path
-          d="M12,2A10,10,0,1,0,22,12,10,10,0,0,0,12,2Zm0,18a8,8,0,1,1,8-8A8,8,0,0,1,12,20Z"
-        />
-        <rect
-          height="7"
-          rx="1"
-          width="2"
-          x="11"
-          y="7"
-        />
-        <rect
-          height="2"
-          rx="0.65"
-          width="2"
-          x="11"
-          y="15"
-        />
-      </svg>
+      <!--v-if-->
       
       
     </div>
@@ -77,7 +51,7 @@ exports[`InputWrapper.vue > should hide the label when hideLabel is true 1`] = `
 
 exports[`InputWrapper.vue > should render a focused border & raised label 1`] = `
 <div
-  class="feather-input-wrapper-container focused error"
+  class="feather-input-wrapper-container focused"
 >
   <div
     class="feather-input-border"
@@ -116,33 +90,7 @@ exports[`InputWrapper.vue > should render a focused border & raised label 1`] = 
       class="post"
     >
       <!--v-if-->
-      <svg
-        aria-hidden="true"
-        class="error-icon hide-when-disabled feather-icon error-icon hide-when-disabled"
-        data-ref-id="error-icon"
-        focusable="false"
-        role="img"
-        viewBox="0 0 24 24"
-        xmlns="http://www.w3.org/2000/svg"
-      >
-        <path
-          d="M12,2A10,10,0,1,0,22,12,10,10,0,0,0,12,2Zm0,18a8,8,0,1,1,8-8A8,8,0,0,1,12,20Z"
-        />
-        <rect
-          height="7"
-          rx="1"
-          width="2"
-          x="11"
-          y="7"
-        />
-        <rect
-          height="2"
-          rx="0.65"
-          width="2"
-          x="11"
-          y="15"
-        />
-      </svg>
+      <!--v-if-->
       
       
     </div>
@@ -152,7 +100,7 @@ exports[`InputWrapper.vue > should render a focused border & raised label 1`] = 
 
 exports[`InputWrapper.vue > should render a normal wrapper 1`] = `
 <div
-  class="feather-input-wrapper-container error"
+  class="feather-input-wrapper-container"
 >
   <div
     class="feather-input-border"
@@ -191,33 +139,7 @@ exports[`InputWrapper.vue > should render a normal wrapper 1`] = `
       class="post"
     >
       <!--v-if-->
-      <svg
-        aria-hidden="true"
-        class="error-icon hide-when-disabled feather-icon error-icon hide-when-disabled"
-        data-ref-id="error-icon"
-        focusable="false"
-        role="img"
-        viewBox="0 0 24 24"
-        xmlns="http://www.w3.org/2000/svg"
-      >
-        <path
-          d="M12,2A10,10,0,1,0,22,12,10,10,0,0,0,12,2Zm0,18a8,8,0,1,1,8-8A8,8,0,0,1,12,20Z"
-        />
-        <rect
-          height="7"
-          rx="1"
-          width="2"
-          x="11"
-          y="7"
-        />
-        <rect
-          height="2"
-          rx="0.65"
-          width="2"
-          x="11"
-          y="15"
-        />
-      </svg>
+      <!--v-if-->
       
       
     </div>
@@ -227,7 +149,7 @@ exports[`InputWrapper.vue > should render a normal wrapper 1`] = `
 
 exports[`InputWrapper.vue > should render a raised label 1`] = `
 <div
-  class="feather-input-wrapper-container raised error"
+  class="feather-input-wrapper-container raised"
 >
   <div
     class="feather-input-border"
@@ -266,33 +188,7 @@ exports[`InputWrapper.vue > should render a raised label 1`] = `
       class="post"
     >
       <!--v-if-->
-      <svg
-        aria-hidden="true"
-        class="error-icon hide-when-disabled feather-icon error-icon hide-when-disabled"
-        data-ref-id="error-icon"
-        focusable="false"
-        role="img"
-        viewBox="0 0 24 24"
-        xmlns="http://www.w3.org/2000/svg"
-      >
-        <path
-          d="M12,2A10,10,0,1,0,22,12,10,10,0,0,0,12,2Zm0,18a8,8,0,1,1,8-8A8,8,0,0,1,12,20Z"
-        />
-        <rect
-          height="7"
-          rx="1"
-          width="2"
-          x="11"
-          y="7"
-        />
-        <rect
-          height="2"
-          rx="0.65"
-          width="2"
-          x="11"
-          y="15"
-        />
-      </svg>
+      <!--v-if-->
       
       
     </div>
@@ -395,7 +291,7 @@ exports[`InputWrapper.vue > should render clear and error icons 1`] = `
 
 exports[`InputWrapper.vue > should render clear icon when clear and show clear is set 1`] = `
 <div
-  class="feather-input-wrapper-container error"
+  class="feather-input-wrapper-container"
 >
   <div
     class="feather-input-border"
@@ -452,33 +348,7 @@ exports[`InputWrapper.vue > should render clear icon when clear and show clear i
           />
         </svg>
       </a>
-      <svg
-        aria-hidden="true"
-        class="error-icon hide-when-disabled feather-icon error-icon hide-when-disabled"
-        data-ref-id="error-icon"
-        focusable="false"
-        role="img"
-        viewBox="0 0 24 24"
-        xmlns="http://www.w3.org/2000/svg"
-      >
-        <path
-          d="M12,2A10,10,0,1,0,22,12,10,10,0,0,0,12,2Zm0,18a8,8,0,1,1,8-8A8,8,0,0,1,12,20Z"
-        />
-        <rect
-          height="7"
-          rx="1"
-          width="2"
-          x="11"
-          y="7"
-        />
-        <rect
-          height="2"
-          rx="0.65"
-          width="2"
-          x="11"
-          y="15"
-        />
-      </svg>
+      <!--v-if-->
       
       
     </div>
@@ -563,7 +433,7 @@ exports[`InputWrapper.vue > should render in an error state 1`] = `
 
 exports[`InputWrapper.vue > should render in disabled state 1`] = `
 <div
-  class="feather-input-wrapper-container error disabled"
+  class="feather-input-wrapper-container"
 >
   <div
     class="feather-input-border"
@@ -602,33 +472,56 @@ exports[`InputWrapper.vue > should render in disabled state 1`] = `
       class="post"
     >
       <!--v-if-->
-      <svg
-        aria-hidden="true"
-        class="error-icon hide-when-disabled feather-icon error-icon hide-when-disabled"
-        data-ref-id="error-icon"
-        focusable="false"
-        role="img"
-        viewBox="0 0 24 24"
-        xmlns="http://www.w3.org/2000/svg"
+      <!--v-if-->
+      
+      
+    </div>
+  </div>
+</div>
+`;
+
+exports[`InputWrapper.vue > should render in disabled state 2`] = `
+<div
+  class="feather-input-wrapper-container disabled"
+>
+  <div
+    class="feather-input-border"
+  >
+    <div
+      class="pre-border"
+    />
+    <div
+      class="label-border"
+      style="width: 0px;"
+    >
+      <label
+        class="feather-input-label"
+        data-ref-id="feather-form-element-label"
+        for="test"
       >
-        <path
-          d="M12,2A10,10,0,1,0,22,12,10,10,0,0,0,12,2Zm0,18a8,8,0,1,1,8-8A8,8,0,0,1,12,20Z"
-        />
-        <rect
-          height="7"
-          rx="1"
-          width="2"
-          x="11"
-          y="7"
-        />
-        <rect
-          height="2"
-          rx="0.65"
-          width="2"
-          x="11"
-          y="15"
-        />
-      </svg>
+        test
+      </label>
+    </div>
+    <div
+      class="post-border"
+    />
+  </div>
+  <div
+    class="feather-input-wrapper"
+  >
+    <div
+      class="prefix"
+    >
+      
+      
+    </div>
+    
+    
+    <div
+      class="post"
+    >
+      <!--v-if-->
+      <!--v-if-->
       
       
     </div>
@@ -638,7 +531,7 @@ exports[`InputWrapper.vue > should render in disabled state 1`] = `
 
 exports[`InputWrapper.vue > should take into account any prefix elements when not raised 1`] = `
 <div
-  class="feather-input-wrapper-container error"
+  class="feather-input-wrapper-container"
 >
   <div
     class="feather-input-border"
@@ -684,33 +577,7 @@ exports[`InputWrapper.vue > should take into account any prefix elements when no
       class="post"
     >
       <!--v-if-->
-      <svg
-        aria-hidden="true"
-        class="error-icon hide-when-disabled feather-icon error-icon hide-when-disabled"
-        data-ref-id="error-icon"
-        focusable="false"
-        role="img"
-        viewBox="0 0 24 24"
-        xmlns="http://www.w3.org/2000/svg"
-      >
-        <path
-          d="M12,2A10,10,0,1,0,22,12,10,10,0,0,0,12,2Zm0,18a8,8,0,1,1,8-8A8,8,0,0,1,12,20Z"
-        />
-        <rect
-          height="7"
-          rx="1"
-          width="2"
-          x="11"
-          y="7"
-        />
-        <rect
-          height="2"
-          rx="0.65"
-          width="2"
-          x="11"
-          y="15"
-        />
-      </svg>
+      <!--v-if-->
       
       
     </div>
