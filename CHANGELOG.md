@@ -1,3 +1,19 @@
+## [0.12.12](https://github.com/feather-design-system/feather-design-system/compare/v0.12.11...v0.12.12) (2022-11-22)
+
+
+### Bug Fixes
+
+* **date-input:** resolves [#101](https://github.com/feather-design-system/feather-design-system/issues/101) - date input calendar dropdowns occasionally cut off text ([46901ad](https://github.com/feather-design-system/feather-design-system/commit/46901adec95e1cfb1e829a79e2d48c38a4f567e5))
+* **date-input:** trying to improve the way the date parsing and spinners interact ([21d532d](https://github.com/feather-design-system/feather-design-system/commit/21d532d7fa637d03a02de7c96e58fac17d2dedf3))
+* **input-wrapper:** allow toggling of provided props to correctly toggle classes ([908d6bd](https://github.com/feather-design-system/feather-design-system/commit/908d6bd0a7f157b551acd87e9aa5ef87181fc5dd)), closes [#160](https://github.com/feather-design-system/feather-design-system/issues/160)
+
+
+### Features
+
+* **wdio:** input and autocomplete objs ([b5fc761](https://github.com/feather-design-system/feather-design-system/commit/b5fc76186793077e3579cddad68f0fe1fcab0b9a))
+
+
+
 ## [0.12.11](https://github.com/feather-design-system/feather-design-system/compare/v0.12.10...v0.12.11) (2022-11-09)
 
 
