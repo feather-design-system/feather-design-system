@@ -1,5 +1,4 @@
-const INPUT = "[data-ref-id='feather-select-input']";
-const OPTION = ".result-item";
+const INPUT = "[data-ref-id='test']";
 import { FeatherSelect } from "../../FeatherSelect";
 export const create = async () => {
   await browser.url(`${process.env.VUE_DEV_SERVER_URL}/Select-Demo`);

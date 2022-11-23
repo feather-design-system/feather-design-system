@@ -8,9 +8,7 @@ class BaseAutocomplete {
   get input() {
     return $(this.selector).$(INPUT);
   }
-  get clear() {
-    return $(this.selector).$(CLEAR);
-  }
+
   constructor(_selector: string) {
     this.selector = _selector;
   }
@@ -63,19 +61,22 @@ class BaseAutocomplete {
         " autocomplete"
     );
   }
+}
+
+export class FeatherAutocompleteSingle extends BaseAutocomplete {
+  get clear() {
+    return $(this.selector).$(CLEAR);
+  }
   async clearValue() {
     await this.clear.click();
   }
-}
-
-export class AutocompleteSingle extends BaseAutocomplete {
   async getValue() {
     const input = await this.input;
     return input.getValue();
   }
 }
 
-export class AutocompleteMulti extends BaseAutocomplete {
+export class FeatherAutocompleteMulti extends BaseAutocomplete {
   get chips() {
     return $(this.selector).$$(CHIP);
   }

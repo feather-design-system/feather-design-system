@@ -1,7 +1,9 @@
+const INPUT = "[data-ref-id='feather-input']";
+
 export class FeatherInput {
   private inputSelector: string;
   get input() {
-    return $(this.inputSelector);
+    return $(this.inputSelector + " " + INPUT);
   }
   constructor(_input: string) {
     this.inputSelector = _input;

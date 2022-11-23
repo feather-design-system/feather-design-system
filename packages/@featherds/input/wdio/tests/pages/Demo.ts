@@ -1,4 +1,4 @@
-const INPUT = "[data-ref-id='feather-input']";
+const INPUT = "[data-ref-id='test']";
 const DISPLAY = "#display";
 import { FeatherInput } from "../../FeatherInput";
 export const create = async () => {

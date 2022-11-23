@@ -25,6 +25,10 @@ export default [
           url: "/Guides/Typescript/",
         },
         {
+          name: "WebdriverIO",
+          url: "/Guides/WDIO/",
+        },
+        {
           name: "App Layout",
           url: "/Guides/AppLayout/",
         },

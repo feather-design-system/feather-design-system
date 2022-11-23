@@ -1,8 +1,9 @@
 const OPTION = "[data-ref-id='feather-select-list'] li";
+const INPUT = "[data-ref-id='feather-select-input']";
 export class FeatherSelect {
   private selectSelector: string;
   get select() {
-    return $(this.selectSelector);
+    return $(this.selectSelector + " " + INPUT);
   }
   constructor(_select: string) {
     this.selectSelector = _select;
