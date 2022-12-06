@@ -10,7 +10,6 @@ Thank you so much for being interested in contributing to Feather Design System.
 
 ## Pull Request Guidelines
 
-- The `main` branch is a snapshot of the latest stable release. The `dev` branch is where all latest code changes live.
 - Checkout topic branches from the relevant branch, typically this will be `dev`.
 - Do not check in `dist` or built assets.
 - Make sure `npm run test` passes.
