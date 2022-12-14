@@ -94,7 +94,7 @@ export default defineComponent({
       if (options.error) {
         return options.error;
       }
-      if (errorText && errorText.value) {
+      if (errorText.value && errorText.value) {
         return errorText.value;
       }
       if (errorMessage && errorMessage.value) {
