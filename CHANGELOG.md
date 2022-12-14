@@ -1,3 +1,12 @@
+## [0.12.13](https://github.com/feather-design-system/feather-design-system/compare/v0.12.12...v0.12.13) (2022-12-14)
+
+
+### Bug Fixes
+
+* **wdio:** moving gitignore so that JS files can be published ([64a9c1b](https://github.com/feather-design-system/feather-design-system/commit/64a9c1b54eb8db157d2fb3599a19fb76789f85f5)), closes [#162](https://github.com/feather-design-system/feather-design-system/issues/162)
+
+
+
 ## [0.12.12](https://github.com/feather-design-system/feather-design-system/compare/v0.12.11...v0.12.12) (2022-11-22)
 
 
