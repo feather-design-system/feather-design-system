@@ -85,8 +85,7 @@ describe("FeatherDateInput.vue", () => {
 
     month.vm.$emit("paste", "not a date");
     await nextTick();
-    const emitted = getCalls<[Date]>(wrapper, "update:modelValue")[0][0];
-    expect(emitted).toBeUndefined();
+    expect(wrapper.emitted("update:modelValue")).toBeUndefined();
   });
   it("should move from month to day with next from month spinner", async () => {
     const wrapper = getWrapper();
@@ -197,7 +196,7 @@ describe("FeatherDateInput.vue", () => {
     const date = new Date(2020, 1, 1);
     calendar.vm.$emit("update:modelValue", date);
     await nextTick();
-    expect(getCalls<[Date]>(wrapper, "update:modelValue")[1][0]).toBe(date);
+    expect(getCalls<[Date]>(wrapper, "update:modelValue")[0][0]).toBe(date);
   });
   it("should not emit more than one update:modelValue", async () => {
     const wrapper = getWrapper();
@@ -207,7 +206,7 @@ describe("FeatherDateInput.vue", () => {
     await nextTick();
     await wrapper.setProps({ modelValue: date });
     await nextTick();
-    expect(getCalls<[Date]>(wrapper, "update:modelValue").length).toBe(2);
+    expect(getCalls<[Date]>(wrapper, "update:modelValue").length).toBe(1);
   });
   it("should select date initially passed in as value", async () => {
     const wrapper = getWrapper({

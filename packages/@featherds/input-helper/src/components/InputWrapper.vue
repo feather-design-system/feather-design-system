@@ -127,7 +127,6 @@ export default defineComponent({
     },
     containerCls() {
       const cls = [];
-      console.log(this);
       if (this.hideLabel) {
         cls.push("hide-label");
       }
