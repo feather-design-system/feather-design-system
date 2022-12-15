@@ -1,3 +1,12 @@
+## [0.12.14](https://github.com/feather-design-system/feather-design-system/compare/v0.12.13...v0.12.14) (2022-12-15)
+
+
+### Bug Fixes
+
+* **DateInput:** prevent immediate update of day/month/year to undefined [#164](https://github.com/feather-design-system/feather-design-system/issues/164) ([1b31830](https://github.com/feather-design-system/feather-design-system/commit/1b318301c42bc30a71fc89e64d0e46a4e211737f))
+
+
+
 ## [0.12.13](https://github.com/feather-design-system/feather-design-system/compare/v0.12.12...v0.12.13) (2022-12-14)
 
 
