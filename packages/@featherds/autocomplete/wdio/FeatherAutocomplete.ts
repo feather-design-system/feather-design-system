@@ -5,21 +5,21 @@ const CHIP = "[data-ref-id='feather-chip-label']";
 const CHIPDELETE = "[data-ref-id='feather-autocomplete-chip-delete']";
 class BaseAutocomplete {
   protected selector: string;
-  get input() {
-    return $(this.selector).$(INPUT);
-  }
-  get clear() {
-    return $(this.selector).$(CLEAR);
-  }
+
   constructor(_selector: string) {
     this.selector = _selector;
   }
-
+  protected input() {
+    return $(this.selector).$(INPUT);
+  }
+  protected clear() {
+    return $(this.selector).$(CLEAR);
+  }
   async selectByText(text: string) {
     const runInBrowser = function (argument: WebdriverIO.Element) {
       argument.click();
     };
-    const select = await this.input;
+    const select = await this.input();
     await browser.execute(runInBrowser, select);
 
     await $(OPTION).waitForDisplayed({ timeout: 60000 });
@@ -46,7 +46,7 @@ class BaseAutocomplete {
     const runInBrowser = function (argument: WebdriverIO.Element) {
       argument.click();
     };
-    const select = await this.input;
+    const select = await this.input();
     await browser.execute(runInBrowser, select);
     await $(OPTION).waitForDisplayed({ timeout: 60000 });
     const item = await $$(OPTION)[index];
@@ -64,13 +64,13 @@ class BaseAutocomplete {
     );
   }
   async clearValue() {
-    await this.clear.click();
+    await this.clear().click();
   }
 }
 
 export class AutocompleteSingle extends BaseAutocomplete {
   async getValue() {
-    const input = await this.input;
+    const input = await this.input();
     return input.getValue();
   }
 }
