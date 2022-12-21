@@ -18,8 +18,10 @@ describe("Feather Autocomplete", () => {
     it("should clear a value", async () => {
       const page = await createSingle();
       await page.selectByIndex(0);
+      let val = await page.getValue();
+      expect(val.length).to.be.greaterThan(0);
       await page.clearValue();
-      const val = await page.getValue();
+      val = await page.getValue();
       expect(val.length).to.eq(0);
     });
   });
