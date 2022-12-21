@@ -1,6 +1,6 @@
 export class FeatherInput {
   private inputSelector: string;
-  get input() {
+  private input() {
     return $(this.inputSelector);
   }
   constructor(_input: string) {
@@ -8,19 +8,19 @@ export class FeatherInput {
   }
 
   async setValue(text: string) {
-    const input = await this.input;
+    const input = await this.input();
     await input.waitForDisplayed();
     return input.setValue(text);
   }
 
   async getValue() {
-    const input = await this.input;
+    const input = await this.input();
     await input.waitForDisplayed();
     return input.getValue();
   }
 
   async clearValue() {
-    const input = await this.input;
+    const input = await this.input();
     await input.waitForDisplayed();
 
     const inputValue = await input.getValue();

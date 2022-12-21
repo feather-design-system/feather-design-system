@@ -1,19 +1,21 @@
 const OPTION = "[data-ref-id='feather-select-list'] li";
 export class FeatherSelect {
   private selectSelector: string;
-  get select() {
+  private select() {
     return $(this.selectSelector);
   }
   constructor(_select: string) {
     this.selectSelector = _select;
   }
-
-  async selectByText(text: string) {
+  clickElement(el: WebdriverIO.Element) {
     const runInBrowser = function (argument: WebdriverIO.Element) {
       argument.click();
     };
-    const select = await this.select;
-    await browser.execute(runInBrowser, select);
+    return browser.execute(runInBrowser, el);
+  }
+  async selectByText(text: string) {
+    const select = await this.select();
+    await this.clickElement(select);
 
     await $(OPTION).waitForDisplayed({ timeout: 60000 });
 
@@ -22,7 +24,7 @@ export class FeatherSelect {
     const itemIndex = textArray.indexOf(text);
     if (itemIndex > -1) {
       const result = await items[itemIndex].getText();
-      await items[itemIndex].click();
+      await this.clickElement(items[itemIndex]);
       return result.trim();
     }
 
@@ -39,13 +41,13 @@ export class FeatherSelect {
     const runInBrowser = function (argument: WebdriverIO.Element) {
       argument.click();
     };
-    const select = await this.select;
+    const select = await this.select();
     await browser.execute(runInBrowser, select);
     await $(OPTION).waitForDisplayed({ timeout: 60000 });
     const item = await $$(OPTION)[index];
     if (item) {
       const result = await item.getText();
-      await item.click();
+      await this.clickElement(item);
       return result.trim();
     }
     throw new Error(
@@ -57,6 +59,6 @@ export class FeatherSelect {
     );
   }
   async getValue() {
-    return await this.select.getValue();
+    return await this.select().getValue();
   }
 }

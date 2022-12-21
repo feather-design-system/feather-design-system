@@ -1,6 +1,6 @@
 const OPTION = ".result-item";
 const INPUT = "[data-ref-id='feather-autocomplete-input']";
-const CLEAR = "[data-ref-id='feather-form-element-clear'] svg";
+const CLEAR = "[data-ref-id='feather-form-element-clear']";
 const CHIP = "[data-ref-id='feather-chip-label']";
 const CHIPDELETE = "[data-ref-id='feather-autocomplete-chip-delete']";
 class BaseAutocomplete {
@@ -15,12 +15,15 @@ class BaseAutocomplete {
   protected clear() {
     return $(this.selector).$(CLEAR);
   }
-  async selectByText(text: string) {
+  protected clickElement(el: WebdriverIO.Element) {
     const runInBrowser = function (argument: WebdriverIO.Element) {
       argument.click();
     };
+    return browser.execute(runInBrowser, el);
+  }
+  async selectByText(text: string) {
     const select = await this.input();
-    await browser.execute(runInBrowser, select);
+    await this.clickElement(select);
 
     await $(OPTION).waitForDisplayed({ timeout: 60000 });
 
@@ -29,7 +32,7 @@ class BaseAutocomplete {
     const itemIndex = textArray.indexOf(text);
     if (itemIndex > -1) {
       const result = await items[itemIndex].getText();
-      await items[itemIndex].click();
+      await this.clickElement(items[itemIndex]);
       return result.trim();
     }
 
@@ -52,7 +55,7 @@ class BaseAutocomplete {
     const item = await $$(OPTION)[index];
     if (item) {
       const result = await item.getText();
-      await item.click();
+      await this.clickElement(item);
       return result.trim();
     }
     throw new Error(
@@ -64,7 +67,8 @@ class BaseAutocomplete {
     );
   }
   async clearValue() {
-    await this.clear().click();
+    const clearIcon = await this.clear();
+    return this.clickElement(clearIcon);
   }
 }
 
@@ -76,22 +80,22 @@ export class AutocompleteSingle extends BaseAutocomplete {
 }
 
 export class AutocompleteMulti extends BaseAutocomplete {
-  get chips() {
+  private chips() {
     return $(this.selector).$$(CHIP);
   }
-  get chipsDelete() {
+  private chipsDelete() {
     return $(this.selector).$$(CHIPDELETE);
   }
   async getValue() {
-    const chips = await this.chips;
+    const chips = await this.chips();
     return Promise.all(chips.map((c) => c.getText()));
   }
   async clearChip(txt: string) {
-    const chipsDelete = await this.chipsDelete;
+    const chipsDelete = await this.chipsDelete();
     const values = await this.getValue();
     const index = values.indexOf(txt);
     if (index > -1) {
-      await chipsDelete[index].click();
+      await this.clickElement(chipsDelete[index]);
       return;
     }
     throw new Error(
