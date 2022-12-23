@@ -22,10 +22,13 @@ class BaseAutocomplete {
     return browser.execute(runInBrowser, el);
   }
   async selectByText(text: string) {
-    const select = await this.input();
-    await this.clickElement(select);
+    const menuVisible = await $(OPTION).isDisplayed();
+    if (!menuVisible) {
+      const select = await this.input();
+      await this.clickElement(select);
 
-    await $(OPTION).waitForDisplayed({ timeout: 60000 });
+      await $(OPTION).waitForDisplayed({ timeout: 60000 });
+    }
 
     const items = await $$(OPTION);
     const textArray = await Promise.all(items.map((item) => item.getText()));
@@ -46,12 +49,14 @@ class BaseAutocomplete {
   }
 
   async selectByIndex(index: number) {
-    const runInBrowser = function (argument: WebdriverIO.Element) {
-      argument.click();
-    };
-    const select = await this.input();
-    await browser.execute(runInBrowser, select);
-    await $(OPTION).waitForDisplayed({ timeout: 60000 });
+    const menuVisible = await $(OPTION).isDisplayed();
+    if (!menuVisible) {
+      const select = await this.input();
+      await this.clickElement(select);
+
+      await $(OPTION).waitForDisplayed({ timeout: 60000 });
+    }
+
     const item = await $$(OPTION)[index];
     if (item) {
       const result = await item.getText();
