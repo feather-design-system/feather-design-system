@@ -1,3 +1,5 @@
+import { reverse } from "lodash";
+
 const OPTION = ".result-item";
 const INPUT = "[data-ref-id='feather-autocomplete-input']";
 const CLEAR = "[data-ref-id='feather-form-element-clear']";
@@ -22,6 +24,7 @@ class BaseAutocomplete {
     return browser.execute(runInBrowser, el);
   }
   async selectByText(text: string) {
+    await $(".spinner-container").waitForDisplayed({ reverse: true });
     const menuVisible = await $(OPTION).isDisplayed();
     if (!menuVisible) {
       const select = await this.input();
