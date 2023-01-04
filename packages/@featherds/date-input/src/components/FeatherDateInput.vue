@@ -135,7 +135,7 @@ import DateIcon from "./Calendar/DateIcon.vue";
 import Calendar from "./Calendar/Calendar.vue";
 import { IDateDisabledConfig, LABELS } from "./types";
 import { FeatherMenu } from "@featherds/menu";
-import parse from "date-fns/parse";
+import { parse } from "date-fns";
 
 export const props = {
   ...InputWrapperProps,
