@@ -4,7 +4,7 @@
       :label="label"
       :hint="hint"
       v-model="value"
-      :maxlength="5"
+      :maxlength="10"
       class="test"
       data-ref-id="test"
     >
