@@ -289,7 +289,8 @@ export default defineComponent({
           context.emit("update:modelValue", undefined);
         }
         showClear.value = !!(_day || _month || _year);
-      }
+      },
+      { flush: "post" }
     );
 
     const handleCalendarSelection = (_value: Date | undefined) => {
