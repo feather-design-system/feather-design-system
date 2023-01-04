@@ -1,19 +1,16 @@
-import getYear from "date-fns/getYear";
-import setYear from "date-fns/setYear";
-import addYears from "date-fns/addYears";
-import subYears from "date-fns/subYears";
-import getMonth from "date-fns/getMonth";
-import setMonth from "date-fns/setMonth";
-import addMonths from "date-fns/addMonths";
-import subMonths from "date-fns/subMonths";
-import getDay from "date-fns/getDay";
-import getDate from "date-fns/getDate";
-import isSameDay from "date-fns/isSameDay";
-import addDays from "date-fns/addDays";
-import addWeeks from "date-fns/addWeeks";
-import subDays from "date-fns/subDays";
-import subWeeks from "date-fns/subWeeks";
-import getDaysInMonth from "date-fns/getDaysInMonth";
+import {
+  addDays,
+  addMonths, addWeeks,
+  addYears,
+  getDate,
+  getDay, getDaysInMonth,
+  getMonth,
+  getYear,
+  isSameDay,
+  setMonth,
+  setYear, subDays, subMonths, subWeeks,
+  subYears
+} from "date-fns";
 import { IDateDisabledConfig } from "../types";
 
 const isDateDisabled = (
