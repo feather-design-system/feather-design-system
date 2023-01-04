@@ -1,3 +1,12 @@
+## [0.12.16](https://github.com/feather-design-system/feather-design-system/compare/v0.12.15...v0.12.16) (2023-01-04)
+
+
+### Bug Fixes
+
+* **build:** fixed import statments that failed resolution post vite upgrade ([f48fa30](https://github.com/feather-design-system/feather-design-system/commit/f48fa30682b51cd50d54f86ac7bf4fdad8e1ec8a))
+
+
+
 ## [0.12.15](https://github.com/feather-design-system/feather-design-system/compare/v0.12.14...v0.12.15) (2023-01-04)
 
 
