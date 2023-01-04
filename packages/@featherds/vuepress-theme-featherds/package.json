@@ -1,6 +1,6 @@
 {
   "name": "@featherds/vuepress-theme-featherds",
-  "version": "0.12.14",
+  "version": "0.12.15",
   "publishConfig": {
     "access": "public"
   },

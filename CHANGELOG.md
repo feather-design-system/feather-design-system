@@ -1,3 +1,19 @@
+## [0.12.15](https://github.com/feather-design-system/feather-design-system/compare/v0.12.14...v0.12.15) (2023-01-04)
+
+
+### Bug Fixes
+
+* **dateinput:** fixed synchronization issue when value is set via props ([cf868b7](https://github.com/feather-design-system/feather-design-system/commit/cf868b7580747fe20b3a544b911b44433ed77b1b))
+* **e2e:** removing getters ([10ec961](https://github.com/feather-design-system/feather-design-system/commit/10ec9610b089df7b5415db6333f2c8d56815ad7f)), closes [#169](https://github.com/feather-design-system/feather-design-system/issues/169)
+* **wdio:** ability to run local typescript test ([de2dbab](https://github.com/feather-design-system/feather-design-system/commit/de2dbab26babbbb6123aef6a2eebee29befde4f7))
+
+
+### Features
+
+* **volta:** added node version for volta support ([3559106](https://github.com/feather-design-system/feather-design-system/commit/35591066b6720f68834a58a8498b550afa098a36))
+
+
+
 ## [0.12.14](https://github.com/feather-design-system/feather-design-system/compare/v0.12.13...v0.12.14) (2022-12-15)
 
 
