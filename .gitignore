@@ -13,3 +13,4 @@ docs/.vuepress/.temp/
 docs/Packages/*/
 results-e2e.xml
 junit.xml
+.idea
