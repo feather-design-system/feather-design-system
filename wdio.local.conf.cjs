@@ -17,6 +17,15 @@ module.exports.config = {
       browserName: "chrome",
     },
   ],
+  autoCompileOpts: {
+    autoCompile: true,
+    // see https://github.com/TypeStrong/ts-node#cli-and-programmatic-options
+    // for all available options
+    tsNodeOpts: {
+      transpileOnly: true,
+      project: "./tsconfig.wdio.json",
+    },
+  },
 
   reporters: ["spec"],
   maxInstances: 1,
