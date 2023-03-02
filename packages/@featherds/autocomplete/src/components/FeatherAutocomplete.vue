@@ -626,19 +626,7 @@ export default defineComponent({
     handleInputBlur(e: FocusEvent) {
       this.validate();
 
-      if (!!(this.singleSelect && e.relatedTarget)) {
-        const clickedLI = (e.relatedTarget as HTMLElement).classList.contains(
-          "feather-list-item"
-        );
-
-        if (!clickedLI) {
-          console.log("BLUR");
-          this.strategy.handleInputBlur(); // MUST DO THIS FOR KEYBOARD
-        }
-      } else {
-        this.strategy.handleInputBlur();
-      }
-
+      this.strategy.handleInputBlur(e);
       if (this.forceCloseResults || !this.showMenu) {
         this.handleOutsideClick();
       }
@@ -653,8 +641,6 @@ export default defineComponent({
       this.adjustTextArea();
     },
     clickedItem(item: IAutocompleteItemType) {
-      console.log("item", item);
-
       this.selectItem(item);
       //clear everything and re focus
       this.internalResults = [];

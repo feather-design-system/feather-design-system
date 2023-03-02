@@ -6,6 +6,18 @@
   "version": "0.2.0",
   "configurations": [
     {
+      "type": "chrome",
+      "request": "launch",
+      "name": "Chrome Debug Feather Demo",
+      "url": "http://localhost:3000"
+    },
+    {
+      "type": "msedge",
+      "request": "launch",
+      "name": "Edge Debug Feather Demo",
+      "url": "http://localhost:3000"
+    },
+    {
       "type": "node",
       "request": "launch",
       "name": "Debug Current Test File",
