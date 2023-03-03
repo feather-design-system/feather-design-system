@@ -1,4 +1,4 @@
-import { defineConfig } from "vite";
+import { defineConfig } from "vitest/config";
 import vue from "@vitejs/plugin-vue";
 import { sassImports, moduleImport, fileImport } from "./scripts/vite/alias.js";
 // https://vitejs.dev/config/
