@@ -623,9 +623,10 @@ export default defineComponent({
       this.inputRef.focus();
       this.handleDropdownIconClick();
     },
-    handleInputBlur() {
+    handleInputBlur(e: FocusEvent) {
       this.validate();
-      this.strategy.handleInputBlur();
+
+      this.strategy.handleInputBlur(e);
       if (this.forceCloseResults || !this.showMenu) {
         this.handleOutsideClick();
       }

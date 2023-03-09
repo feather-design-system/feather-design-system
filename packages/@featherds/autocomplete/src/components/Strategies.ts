@@ -103,12 +103,20 @@ const useStrategy = (
     clickedItem() {
       component.forceCloseResults.value = true;
     },
-    handleInputBlur() {
+    handleInputBlur(e: FocusEvent) {
+      const userClickedLI = !!(
+        e.relatedTarget &&
+        (e.relatedTarget as HTMLElement).classList.contains("feather-list-item")
+      );
+
       //select active index
       if (resultsRender.active.row > -1) {
         const item = component.internalResults.value[resultsRender.active.row];
         if (item && item._new && component.allowNew) {
           emit("new", item._new as string);
+        } else if (type === "single" && userClickedLI) {
+          // user clicked with mouse; prevent selection on blur
+          e.preventDefault();
         } else {
           emit("update:modelValue", item);
         }

@@ -893,6 +893,36 @@ describe("FeatherAutocomplete", () => {
         getCalls<[IAutocompleteItemType[]]>(wrapper, "update:modelValue")[0][0]
       ).toStrictEqual(results[index]);
     });
+    it("should fire single update:modelValue when clicked", async () => {
+      const results = getResults();
+      const wrapper = getFullWrapper();
+      await wrapper
+        .find<HTMLInputElement>(".feather-autocomplete-input")
+        .trigger("focus");
+
+      await wrapper.setProps({
+        results,
+      });
+
+      // search
+      const query = "item";
+      wrapper.vm.query = query;
+
+      // click the 2nd result
+      await wrapper
+        .findComponent({ ref: "results" })
+        .findAll(".result-item")[1]
+        .trigger("click");
+
+      await wrapper.find(".feather-autocomplete-input").trigger("blur");
+      await wrapper.vm.$nextTick();
+      const events = getCalls<[IAutocompleteItemType[]]>(
+        wrapper,
+        "update:modelValue"
+      );
+
+      expect(events.length).toBe(1);
+    });
     it("should display the current selected value if no new selection is made", async () => {
       vi.useFakeTimers({
         toFake: ["setTimeout", "clearTimeout"],
