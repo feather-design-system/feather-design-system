@@ -9,9 +9,6 @@ $colors: (
   $background: #f4f7fc,
   $surface: #ffffff,
   $surface-dark: #131736,
-  $error: #d43d45,
-  $success: #0f6e00,
-  $warning: #ffac26,
   $lightbox-background: rgba(10, 12, 27, 0.76),
   $state-color-on-color: #fff,
   $state-color-on-surface-dark: #fff,
@@ -20,6 +17,26 @@ $colors: (
   $high-visibility-text-on-surface: #85d4ff,
   //added here so RGB is added
   $primary-text-on-surface: rgba(10, 12, 27, 0.9),
+  // status colors
+  $success: #0b720c,
+  $error: #a5021f,
+  $major: #e35302,
+  $minor: #ffac26,
+  $warning: #fbe947,
+  $indeterminate: #0092c7,
+  $cleared: #757575,
+  $ready: #503dc5,
+  // chart colors
+  $categorical1: #009de1,
+  $categorical2: #0043a4,
+  $categorical3: #8437d4,
+  $categorical4: #400060,
+  $categorical5: #389b4e,
+  $categorical6: #006e7a,
+  $categorical7: #f44383,
+  $categorical8: #7c2e37,
+  $categorical9: #5b3657,
+  $categorical10: #d48000
 );
 
 $colors: add-RGB($colors);
@@ -239,5 +256,5 @@ $base-light: map-collect(
   $state-on-surface-dark,
   $shades,
   $elevation-background,
-  $shadows
-);
+  $shadows,
+  );
