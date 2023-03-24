@@ -1,0 +1,26 @@
+{
+  "name": "@featherds/chart",
+  "version": "0.12.39",
+  "private": true,
+  "publishConfig": {
+    "access": "public"
+  },
+  "description": "Feather styled chart component.",
+  "author": "NantHealth",
+  "scripts": {},
+  "main": "dist/app.mjs",
+  "license": "Apache-2.0",
+  "dependencies": {
+    "@featherds/ripple": "file:../ripple",
+    "@featherds/styles": "file:../styles",
+    "@featherds/button": "file:../button",
+    "@featherds/icon": "file:../icon",
+    "@featherds/dropdown": "file:../dropdown",
+    "vue": "^3.5.0-0"
+  },
+  "keywords": [
+    "vue",
+    "feather-chart"
+  ],
+  "types": "./src/index.d.ts"
+}
