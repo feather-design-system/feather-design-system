@@ -1,3 +1,8 @@
+if (process.env.NODE_ENV !== "production") {
+  window.__VUE_PROD_HYDRATION_MISMATCH_DETAILS__ = true;
+} else {
+  window.__VUE_PROD_HYDRATION_MISMATCH_DETAILS__ = false;
+}
 import { createApp } from "vue";
 import Layout from "./Layout.vue";
 import Fullscreen from "./Fullscreen.vue";
