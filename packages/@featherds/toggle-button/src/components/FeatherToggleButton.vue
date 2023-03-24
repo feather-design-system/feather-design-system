@@ -53,7 +53,7 @@ const toggle = (e: Event) => {
   element.setAttribute("aria-pressed", "true");
 
   const label = element.querySelector(".toggle-label")?.innerHTML;
-  emit("toggle-button-click", `${id}`, element!.id, label);
+  emit("toggle-button-click", `${id}`, element!.id, label ? label : "");
 };
 
 const showLabel = (button: ToggleButton) => {

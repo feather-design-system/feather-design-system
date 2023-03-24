@@ -179,7 +179,7 @@ export default [
         },
         {
           name: "Toggle Button",
-          url: "/Components/Togglebutton/",
+          url: "/Components/ToggleButton/",
           image: "/assets/components/TOGGLE_BUTTON@2x.png",
         },
       ].sort((a, b) => {

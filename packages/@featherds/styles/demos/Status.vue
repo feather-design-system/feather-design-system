@@ -168,7 +168,7 @@ const numToHex = (val: number) => {
   background-color: var($surface);
   display: flex;
   padding: 1em;
-  margin-top: 1.5em;
+   margin-top: 1.5em;
 }
 
 .status-color {
