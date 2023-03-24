@@ -1,0 +1,22 @@
+{
+  "name": "@featherds/dashboard",
+  "version": "0.12.40",
+  "private": true,
+  "publishConfig": {
+    "access": "public"
+  },
+  "description": "Feather styled dashboard component.",
+  "author": "NantHealth",
+  "scripts": {},
+  "main": "dist/app.mjs",
+  "license": "Apache-2.0",
+  "dependencies": {
+    "@featherds/styles": "file:../styles",
+    "vue": "^3.5.12"
+  },
+  "keywords": [
+    "vue",
+    "FeatherDashboard"
+  ],
+  "types": "./src/index.d.ts"
+}

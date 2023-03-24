@@ -3,5 +3,6 @@
     "*.css": "postcss"
   },
   "editor.formatOnSave": true,
-  "todo-tree.tree.showBadges": true
+  "todo-tree.tree.showBadges": true,
+  "todo-tree.tree.scanMode": "workspace"
 }
