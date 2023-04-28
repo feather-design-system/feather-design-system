@@ -1,3 +1,12 @@
+## [0.12.18](https://github.com/feather-design-system/feather-design-system/compare/v0.12.17...v0.12.18) (2023-04-28)
+
+
+### Bug Fixes
+
+* **card:** resolves [#178](https://github.com/feather-design-system/feather-design-system/issues/178) - enhance security for feather docs ([#179](https://github.com/feather-design-system/feather-design-system/issues/179)) ([5a93481](https://github.com/feather-design-system/feather-design-system/commit/5a934818a17780debaa60e597778a61a844390bd))
+
+
+
 ## [0.12.17](https://github.com/feather-design-system/feather-design-system/compare/v0.12.16...v0.12.17) (2023-03-09)
 
 

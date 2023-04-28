@@ -1,6 +1,6 @@
 {
   "name": "@featherds/utils",
-  "version": "0.12.17",
+  "version": "0.12.18",
   "publishConfig": {
     "access": "public"
   },
