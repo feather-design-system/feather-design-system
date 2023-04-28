@@ -1,6 +1,6 @@
 <template>
   <h1>Cards</h1>
-  <div class="cards-1">
+  <div class="cards">
     <FeatherCard
       title="Article Card"
       subtitle="The Article HTML Tag"
@@ -22,7 +22,7 @@
       </template>
     </FeatherCard>
   </div>
-  <div class="cards-2">
+  <div class="cards">
     <FeatherCard
       title="Anchor Card"
       subtitle="The Anchor HTML Tag"
@@ -57,7 +57,7 @@
       sapien pellentesque habitant morbi tristique senectus et.
     </FeatherCard>
   </div>
-  <div class="cards-3">
+  <div class="cards">
     <FeatherCard
       title="First of Three Cards"
       subtitle="Card Detail"
@@ -90,7 +90,7 @@
       Pretty, pretty picture. <a href="https://www.google.com">Google</a>
     </FeatherCard>
   </div>
-  <div class="cards-4">
+  <div class="cards">
     <FeatherCard title="First of Four Cards" subtitle="First Card" class="card">
       <template #image>
         <img src="https://picsum.photos/200/200" class="large-image fill" />
@@ -156,20 +156,20 @@
     Here is a card with a title, image and the content. No subtitle used.
   </FeatherCard>
   <FeatherCard
-    title="I am Groot."
-    subtitle="I am Groot."
-    class="card i-am-groot"
+    title="A Card"
+    subtitle="With 2 Buttons"
+    class="card two-buttons"
   >
     <template #image>
       <img
-        src="https://tenor.com/view/real-groot-guardians-of-the-galaxy-groot-gif-7317009.gif"
+        src="https://picsum.photos/200/200"
         class="small-image"
       />
     </template>
-    I am Groot.
+    Pretty, pretty picture.
     <template #actions>
-      <FeatherButton text>I am Groot</FeatherButton>
-      <FeatherButton text>I am Groot</FeatherButton>
+      <FeatherButton secondary>Cancel</FeatherButton>
+      <FeatherButton primary>Ok</FeatherButton>
     </template>
   </FeatherCard>
   <FeatherCard
@@ -200,7 +200,7 @@
     leo.
   </FeatherCard>
   <h2>Original Images</h2>
-  <div class="cards-4">
+  <div class="cards">
     <span class="original-image">
       <h3>400x400</h3>
       <img src="https://picsum.photos/400/400" />
@@ -248,10 +248,7 @@ export default defineComponent({
 </script>
 
 <style scoped>
-.cards-1,
-.cards-2,
-.cards-3,
-.cards-4 {
+.cards {
   display: flex;
   flex-direction: row;
 }
@@ -275,7 +272,7 @@ export default defineComponent({
   object-position: center;
   width: 100%;
 }
-.i-am-groot {
+.two-buttons {
   max-width: 20.5rem;
 }
 .camel-case {
