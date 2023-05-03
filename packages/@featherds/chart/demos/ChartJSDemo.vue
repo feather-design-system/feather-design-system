@@ -2,7 +2,7 @@
   <div class="container">
     <h1>Vue Chart using Chart.js</h1>
     <component
-      :is="FeatherChart"
+      :is="FeatherChartJS"
       :chartData="(data as FeatherBarChartData)"
       :chartOptions="options"
       :ariaDesc="description"
@@ -31,7 +31,7 @@ import {
   FeatherChartType,
 } from "../src/components/types";
 import { PropType, reactive, ref } from "vue";
-import { FeatherChart } from "./../src";
+import { FeatherChartJS } from "./../src";
 
 const props = defineProps({
   data: Object as PropType<FeatherBarChartData>,
