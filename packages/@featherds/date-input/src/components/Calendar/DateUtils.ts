@@ -1,15 +1,20 @@
 import {
   addDays,
-  addMonths, addWeeks,
+  addMonths,
+  addWeeks,
   addYears,
   getDate,
-  getDay, getDaysInMonth,
+  getDay,
+  getDaysInMonth,
   getMonth,
   getYear,
   isSameDay,
   setMonth,
-  setYear, subDays, subMonths, subWeeks,
-  subYears
+  setYear,
+  subDays,
+  subMonths,
+  subWeeks,
+  subYears,
 } from "date-fns";
 import { IDateDisabledConfig } from "../types";
 

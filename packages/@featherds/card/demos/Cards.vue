@@ -161,10 +161,7 @@
     class="card two-buttons"
   >
     <template #image>
-      <img
-        src="https://picsum.photos/200/200"
-        class="small-image"
-      />
+      <img src="https://picsum.photos/200/200" class="small-image" />
     </template>
     Pretty, pretty picture.
     <template #actions>

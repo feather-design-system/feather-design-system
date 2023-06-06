@@ -14,9 +14,6 @@ $clickable-visited: prefix(clickable-visited);
 $background: prefix(background);
 $surface: prefix(surface);
 $surface-dark: prefix(surface-dark);
-$error: prefix(error);
-$success: prefix(success);
-$warning: prefix(warning);
 $lightbox-background: prefix(lightbox-background);
 
 $hero-gradient-1-1: prefix(hero-gradient-1-1);
@@ -332,6 +329,28 @@ $grid: (
     gutter: $xxs-gutter,
   ),
 );
+
+// status colors
+$success: prefix(success);
+$error: prefix(error);
+$major: prefix(major);
+$minor: prefix(minor);
+$warning: prefix(warning);
+$indeterminate: prefix(indeterminate);
+$cleared: prefix(cleared);
+$ready: prefix(ready);
+
+// chart colors
+$categorical1: prefix(categorical1);
+$categorical2: prefix(categorical2);
+$categorical3: prefix(categorical3);
+$categorical4: prefix(categorical4);
+$categorical5: prefix(categorical5);
+$categorical6: prefix(categorical6);
+$categorical7: prefix(categorical7);
+$categorical8: prefix(categorical8);
+$categorical9: prefix(categorical9);
+$categorical10: prefix(categorical0);
 
 //components
 //button

@@ -9,7 +9,7 @@ menu: guides
 
 ## Plugins
 
-Before we start looking at some code we **strongly** recommend the use of the [Volar plugin](https://marketplace.visualstudio.com/items?itemName=johnsoncodehk.volar). Whilst [Vuter](https://marketplace.visualstudio.com/items?itemName=yoyo930021.vuter) also provides typescript support, currently Volar extends that support to typing in the template of a SFC (Single File Component).
+Before we start looking at some code we **strongly** recommend the use of the [Volar plugin](https://marketplace.visualstudio.com/items?itemName=Vue.volar). For TypeScript vue support, [TypeScript Vue Plugin (Volar)](https://marketplace.visualstudio.com/items?itemName=Vue.vscode-typescript-vue-plugin) is recommended.
 
 ## Typechecking
 
