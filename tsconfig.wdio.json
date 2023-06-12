@@ -8,7 +8,12 @@
     "noImplicitAny": true,
     "strictPropertyInitialization": true,
     "strictNullChecks": true,
-    "types": ["node", "webdriverio/async", "@wdio/mocha-framework", "chai"]
+    "types": [
+      "node",
+      "webdriverio/async",
+      "@wdio/mocha-framework",
+      "chai",
+      "mocha"]
   },
   "include": [
     "packages/@featherds/*/e2e/**/*.ts",

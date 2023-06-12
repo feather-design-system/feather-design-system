@@ -1,5 +1,5 @@
 <template>
-  <section>
+  <section class="on-color-demo">
     <h1>Buttons</h1>
 
     <FeatherButton :disabled="disabled" secondary on-color
@@ -47,7 +47,7 @@ export default defineComponent({
 </script>
 <style lang="scss" scoped>
 @import "@featherds/styles/themes/variables";
-section {
+.on-color-demo {
   background-color: var($secondary);
 }
 </style>

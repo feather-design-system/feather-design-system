@@ -1,0 +1,22 @@
+{
+  "name": "@featherds/toggle-button",
+  "version": "0.12.18",
+  "publishConfig": {
+    "access": "public"
+  },
+  "description": "Feather styled toggle button component.",
+  "author": "NantHealth",
+  "scripts": {},
+  "main": "dist/app.mjs",
+  "license": "Apache-2.0",
+  "dependencies": {
+    "@featherds/ripple": "file:../ripple",
+    "@featherds/styles": "file:../styles",
+    "vue": "^3.1.0-0"
+  },
+  "keywords": [
+    "vue",
+    "FeatherToggleButton"
+  ],
+  "types": "./src/index.d.ts"
+}

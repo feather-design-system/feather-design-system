@@ -177,6 +177,11 @@ export default [
           url: "/Components/Popover/",
           image: "/assets/components/POPOVER@2x.png",
         },
+        {
+          name: "Toggle Button",
+          url: "/Components/Togglebutton/",
+          image: "/assets/components/TOGGLE_BUTTON@2x.png",
+        },
       ].sort((a, b) => {
         if (a.name > b.name) {
           return 1;

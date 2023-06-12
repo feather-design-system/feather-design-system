@@ -28,6 +28,14 @@ const featherDSTheme = (data) => ({
       type: "warning",
       defaultTitle: "warning",
     }),
+    containerPlugin({
+      type: "dos",
+      defaultTitle: "DO",
+    }),
+    containerPlugin({
+      type: "donts",
+      defaultTitle: "DON'T",
+    }),
     themeDataPlugin({ themeData: data }),
   ],
 });

@@ -6,7 +6,7 @@
   @include elevation(2);
   border-radius: 4px;
   padding: 0.5rem 0.75rem;
-  margin: 2rem;
+  margin: 2rem 0;
   color: var($primary-text-on-surface);
 
   .custom-container-title {
@@ -26,7 +26,19 @@
   &.warning {
     border-left: 0.5rem solid var($warning);
     .custom-container-title {
-      color: var($warning);
+      color: var($primary);
+    }
+  }
+  &.dos {
+    border-left: 0.5rem solid var($success);
+    .custom-container-title {
+      color: var($primary);
+    }
+  }
+  &.donts {
+    border-left: 0.5rem solid var($error);
+    .custom-container-title {
+      color: var($primary);
     }
   }
 }

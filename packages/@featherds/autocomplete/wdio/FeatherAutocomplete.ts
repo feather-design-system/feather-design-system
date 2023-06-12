@@ -1,5 +1,3 @@
-import { reverse } from "lodash";
-
 const OPTION = ".result-item";
 const INPUT = "[data-ref-id='feather-autocomplete-input']";
 const CLEAR = "[data-ref-id='feather-form-element-clear']";
@@ -28,7 +26,8 @@ class BaseAutocomplete {
     const menuVisible = await $(OPTION).isDisplayed();
     if (!menuVisible) {
       const select = await this.input();
-      await this.clickElement(select);
+      // await this.clickElement(select);
+      await select.click();
 
       await $(OPTION).waitForDisplayed({ timeout: 60000 });
     }
@@ -55,7 +54,8 @@ class BaseAutocomplete {
     const menuVisible = await $(OPTION).isDisplayed();
     if (!menuVisible) {
       const select = await this.input();
-      await this.clickElement(select);
+      // await this.clickElement(select);
+      await select.click();
 
       await $(OPTION).waitForDisplayed({ timeout: 60000 });
     }

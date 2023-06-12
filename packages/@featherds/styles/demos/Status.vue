@@ -1,6 +1,6 @@
 <template>
   <h1>Colors</h1>
-  <section>
+  <section class="status-demo">
     <div
       v-for="(item, index) in colorSet"
       :key="colorSetKeys[index]"
@@ -10,7 +10,7 @@
       <div
         v-for="color in item.arr"
         :key="color"
-        :class="color"
+        :class="`demo-${color}`"
         class="status-color focus"
         @click="showColor($event)"
       >
@@ -160,10 +160,10 @@ const numToHex = (val: number) => {
 };
 </script>
 
-<style lang="scss">
+<style lang="scss" scoped>
 @import "@featherds/styles/themes/variables";
 
-section {
+.status-demo {
   background-color: var($surface);
   display: flex;
   padding: 1em;
@@ -196,19 +196,19 @@ section {
   }
 }
 
-.error {
+.demo-error {
   background: var($error);
 }
 
-.success {
+.demo-success {
   background: var($success);
 }
 
-.major {
+.demo-major {
   background: var($major);
 }
 
-.minor {
+.demo-minor {
   .status-color-text {
     color: var($primary-text-on-warning);
   }
@@ -216,7 +216,7 @@ section {
   background: var($minor);
 }
 
-.warning {
+.demo-warning {
   .status-color-text {
     color: var($primary-text-on-warning);
   }
@@ -224,45 +224,45 @@ section {
   background: var($warning);
 }
 
-.indeterminate {
+.demo-indeterminate {
   background: var($indeterminate);
 }
 
-.cleared {
+.demo-cleared {
   background: var($cleared);
 }
 
-.ready {
+.demo-ready {
   background: var($ready);
 }
-.categorical1 {
+.demo-categorical1 {
   background: var($categorical1);
 }
-.categorical2 {
+.demo-categorical2 {
   background: var($categorical2);
 }
-.categorical3 {
+.demo-categorical3 {
   background: var($categorical3);
 }
-.categorical4 {
+.demo-categorical4 {
   background: var($categorical4);
 }
-.categorical5 {
+.demo-categorical5 {
   background: var($categorical5);
 }
-.categorical6 {
+.demo-categorical6 {
   background: var($categorical6);
 }
-.categorical7 {
+.demo-categorical7 {
   background: var($categorical7);
 }
-.categorical8 {
+.demo-categorical8 {
   background: var($categorical8);
 }
-.categorical9 {
+.demo-categorical9 {
   background: var($categorical9);
 }
-.categorical10 {
+.demo-categorical10 {
   background: var($categorical10);
 }
 </style>
