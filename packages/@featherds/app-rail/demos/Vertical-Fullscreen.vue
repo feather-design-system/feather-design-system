@@ -19,34 +19,34 @@
       <template v-slot:nav>
         <FeatherAppRailNavHeader title="Applications" />
         <FeatherAppRailNavItem
-          href="#/AppRail-DemoFullscreen"
+          href="#/AppRail-VerticalFullscreen"
           :icon="app"
           title="App One"
         />
         <FeatherAppRailNavItem
-          href="#/AppRail-DemoFullscreen"
+          href="#/AppRail-VerticalFullscreen"
           :icon="app"
           title="App Two"
         />
         <FeatherAppRailNavItem
-          href="#/AppRail-DemoFullscreen"
+          href="#/AppRail-VerticalFullscreen"
           :icon="app"
           title="App Three"
           class="selected"
         />
         <FeatherAppRailNavHeader title="Applications" />
         <FeatherAppRailNavItem
-          href="#/AppRail-DemoFullscreen"
+          href="#/AppRail-VerticalFullscreen"
           :icon="app"
           title="App One"
         />
         <FeatherAppRailNavItem
-          href="#/AppRail-DemoFullscreen"
+          href="#/AppRail-VerticalFullscreen"
           :icon="app"
           title="App Two"
         />
         <FeatherAppRailNavItem
-          href="#/AppRail-DemoFullscreen"
+          href="#/AppRail-VerticalFullscreen"
           :icon="app"
           title="App Three"
         />
