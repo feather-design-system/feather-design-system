@@ -1,3 +1,12 @@
+## [0.12.19](https://github.com/feather-design-system/feather-design-system/compare/v0.12.18...v0.12.19) (2023-06-15)
+
+
+### Features
+
+* **styles:** add new color variables [#180](https://github.com/feather-design-system/feather-design-system/issues/180) ([#181](https://github.com/feather-design-system/feather-design-system/issues/181)) ([d98d65a](https://github.com/feather-design-system/feather-design-system/commit/d98d65a16a4e94dfd4b45e69e7b88ce1f46ae784))
+
+
+
 ## [0.12.18](https://github.com/feather-design-system/feather-design-system/compare/v0.12.17...v0.12.18) (2023-04-28)
 
 

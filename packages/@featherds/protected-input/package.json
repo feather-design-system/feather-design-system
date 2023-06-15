@@ -1,6 +1,6 @@
 {
   "name": "@featherds/protected-input",
-  "version": "0.12.18",
+  "version": "0.12.19",
   "publishConfig": {
     "access": "public"
   },
