@@ -50,10 +50,6 @@ export default defineComponent({
 @import "@featherds/styles/themes/variables";
 @import "@featherds/styles/themes/utils";
 
-:deep(a.feather-list-item.feather-vertical-app-bar-item:visited) {
-  color: var($state-text-color-on-surface-dark);
-}
-
 :deep(a.feather-vertical-app-bar-item:focus) {
   box-shadow: none;
 }
@@ -64,6 +60,9 @@ export default defineComponent({
   border-radius: 4px;
   transition: margin 280ms ease-in-out, padding 280ms ease-in-out;
 
+  &.feather-list-item:visited {
+    color: var($state-text-color-on-surface-dark);
+  }
   .feather-list-item-text {
     opacity: 1;
     transition: opacity 280ms ease-in-out;
