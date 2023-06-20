@@ -53,11 +53,16 @@ export default defineComponent({
 :deep(a.feather-vertical-app-bar-item:focus) {
   box-shadow: none;
 }
+
 :deep(a.feather-vertical-app-bar-item) {
   @include subtitle2();
   @include state-on-surface-dark();
   border-radius: 4px;
   transition: margin 280ms ease-in-out, padding 280ms ease-in-out;
+
+  &.feather-list-item:visited {
+    color: var($state-text-color-on-surface-dark);
+  }
   .feather-list-item-text {
     opacity: 1;
     transition: opacity 280ms ease-in-out;
@@ -67,11 +72,13 @@ export default defineComponent({
   .feather-list-item-icon {
     transition: margin 280ms ease-in-out, padding 280ms ease-in-out;
   }
+
   &.narrow {
     margin-left: 0.5rem;
     margin-right: 0.5rem;
     padding-left: 9px;
     padding-right: 9px;
+
     .feather-list-item-icon {
       padding: 0;
       margin: 0;
