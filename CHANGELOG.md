@@ -1,3 +1,12 @@
+## [0.12.20](https://github.com/feather-design-system/feather-design-system/compare/v0.12.19...v0.12.20) (2023-06-22)
+
+
+### Bug Fixes
+
+* **app-rail:** resolve visited color [#183](https://github.com/feather-design-system/feather-design-system/issues/183) ([#184](https://github.com/feather-design-system/feather-design-system/issues/184)) ([6558f2a](https://github.com/feather-design-system/feather-design-system/commit/6558f2a9adabe3ad9bf85c28526edad7a808ead5))
+
+
+
 ## [0.12.19](https://github.com/feather-design-system/feather-design-system/compare/v0.12.18...v0.12.19) (2023-06-15)
 
 
