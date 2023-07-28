@@ -67,11 +67,22 @@ export default defineComponent({
       _clearTimeout(focusTimeout);
       focused.value = true;
     };
+    const itemClicked = async (_e: Event) => {
+      _clearTimeout(focusTimeout);
+
+      focused.value = false;
+      hovered.value = false;
+
+      const content = document.querySelector(`.skip`) as HTMLElement;
+      content.click();
+
+    };
     const listeners = {
       focusin: focusIn,
       focusout: focusOut,
       mouseenter: () => (hovered.value = true),
       mouseleave: () => (hovered.value = false),
+      click: itemClicked,
     };
     provide("feather-app-rail-expanded", expanded);
 
