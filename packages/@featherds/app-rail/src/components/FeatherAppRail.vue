@@ -75,7 +75,6 @@ export default defineComponent({
 
       const content = document.querySelector(`.skip`) as HTMLElement;
       content.click();
-
     };
     const listeners = {
       focusin: focusIn,
