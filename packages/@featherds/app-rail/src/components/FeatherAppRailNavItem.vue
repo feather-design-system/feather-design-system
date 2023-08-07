@@ -60,13 +60,16 @@ export default defineComponent({
   border-radius: 4px;
   transition: margin 280ms ease-in-out, padding 280ms ease-in-out;
 
-  // &.feather-list-item:visited {
-  //   color: var($state-text-color-on-surface-dark);
-  // }
   .feather-list-item-text {
     opacity: 1;
     transition: opacity 280ms ease-in-out;
     transition-delay: 140ms;
+  }
+
+  &:visited:not(.selected) {
+    .feather-list-item-text {
+      color: var($state-text-color-on-surface-dark);
+    }
   }
 
   .feather-list-item-icon {
