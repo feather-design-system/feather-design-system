@@ -3,8 +3,6 @@ import * as serve from "./vite/serve.js";
 import execa from "execa";
 import * as demos from "./demos.js";
 
-import { createRequire } from "node:module";
-
 (async () => {
   await demos.run();
   const server = await serve.run();
@@ -12,12 +10,8 @@ import { createRequire } from "node:module";
 
   process.env.VUE_DEV_SERVER_URL = `http://localhost.lambdatest.com:${server.config.server.port}/demos/#`;
 
-  const { resolve } = createRequire(import.meta.url);
-  const wdioBinPath = resolve("@wdio/cli/bin/wdio");
+  const runner = execa('wdio', [ 'run', args], { stdio: 'inherit'});
 
-  const runner = execa(wdioBinPath, args, {
-    stdio: "inherit",
-  });
   const end = (e) => {
     if (server) {
       server.close();

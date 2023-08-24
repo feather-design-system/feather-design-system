@@ -1,6 +1,8 @@
+import { $, browser } from "@wdio/globals";
+
 const INPUT = "[data-ref-id='feather-input']";
 const DISPLAY = "#display";
-import { FeatherInput } from "../../FeatherInput";
+import { FeatherInput } from "../../FeatherInput.js";
 export const create = async () => {
   await browser.url(`${process.env.VUE_DEV_SERVER_URL}/Input-Demo`);
   await browser.refresh();

@@ -1,3 +1,5 @@
+import { $, $$, browser } from "@wdio/globals";
+
 const OPTION = "[data-ref-id='feather-select-list'] li";
 export class FeatherSelect {
   private selectSelector: string;
@@ -7,8 +9,8 @@ export class FeatherSelect {
   constructor(_select: string) {
     this.selectSelector = _select;
   }
-  clickElement(el: WebdriverIO.Element) {
-    const runInBrowser = function (argument: WebdriverIO.Element) {
+  clickElement(el: any) {
+    const runInBrowser = function (argument: any) {
       argument.click();
     };
     return browser.execute(runInBrowser, el);
@@ -20,7 +22,7 @@ export class FeatherSelect {
     await $(OPTION).waitForDisplayed({ timeout: 60000 });
 
     const items = await $$(OPTION);
-    const textArray = await Promise.all(items.map((item) => item.getText()));
+    const textArray = await Promise.all(items.map((item: any) => item.getText()));
     const itemIndex = textArray.indexOf(text);
     if (itemIndex > -1) {
       const result = await items[itemIndex].getText();
@@ -38,7 +40,7 @@ export class FeatherSelect {
   }
 
   async selectByIndex(index: number) {
-    const runInBrowser = function (argument: WebdriverIO.Element) {
+    const runInBrowser = function (argument: any) {
       argument.click();
     };
     const select = await this.select();

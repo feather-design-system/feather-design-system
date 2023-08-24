@@ -1,10 +1,15 @@
-module.exports.config = {
-  specs: ["./packages/@featherds/**/e2e/**/*.spec.js", "./packages/@featherds/**/wdio/**/*.spec.ts"],
+import { Options } from "@wdio/types";
+
+export const config: Options.Testrunner = {
+  specs: [
+    "./packages/@featherds/**/e2e/**/*.spec.js",
+    "./packages/@featherds/**/wdio/**/*.spec.ts",
+  ],
   baseUrl: `${process.env.VUE_DEV_SERVER_URL}`,
-  // services: ["selenium-standalone"],
+  runner: "local",
   services: [],
   exclude: [],
-  sync: true,
+
   maxInstances: 1,
   logLevel: "error",
   bail: 0,
@@ -14,9 +19,15 @@ module.exports.config = {
 
   capabilities: [
     {
-      maxInstances: 1,
       browserName: "chrome",
+      "goog:chromeOptions": { args: ["--incognito"] },
+      // "goog:chromeOptions": { args: [ "--guest" ]}
     },
+    // {
+    //   browserName: "edge",
+    //   "ms:edgeOptions": { args: [ "--InPrivate" ] }
+    //   // "ms:edgeOptions": { args: [ "--guest" ] }
+    // },
   ],
   autoCompileOpts: {
     autoCompile: true,
@@ -29,7 +40,6 @@ module.exports.config = {
   },
 
   reporters: ["spec"],
-  maxInstances: 1,
   framework: "mocha",
   mochaOpts: {
     ui: "bdd",

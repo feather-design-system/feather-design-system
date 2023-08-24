@@ -14,7 +14,7 @@
     "noUnusedParameters": true,
     "lib": ["ESNext", "DOM"],
     "typeRoots": ["./node_modules/@types/", "./packages/@featherds/"],
-    "types": ["node", "webdriverio/async", "@wdio/mocha-framework"],
+    "types": ["node", "@wdio/globals/types", "@wdio/mocha-framework"],
     "skipLibCheck": true //vue test utils giving errors
   },
   "include": [

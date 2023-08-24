@@ -1,3 +1,5 @@
+import { $, $$, browser } from "@wdio/globals";
+
 const OPTION = ".result-item";
 const INPUT = "[data-ref-id='feather-autocomplete-input']";
 const CLEAR = "[data-ref-id='feather-form-element-clear']";
@@ -15,8 +17,8 @@ class BaseAutocomplete {
   protected clear() {
     return $(this.selector).$(CLEAR);
   }
-  protected clickElement(el: WebdriverIO.Element) {
-    const runInBrowser = function (argument: WebdriverIO.Element) {
+  protected clickElement(el: any) {
+    const runInBrowser = function (argument: any) {
       argument.click();
     };
     return browser.execute(runInBrowser, el);
@@ -25,15 +27,15 @@ class BaseAutocomplete {
     await $(".spinner-container").waitForDisplayed({ reverse: true });
     const menuVisible = await $(OPTION).isDisplayed();
     if (!menuVisible) {
-      const select = await this.input();
-      // await this.clickElement(select);
+      const select = await $(INPUT);
       await select.click();
-
       await $(OPTION).waitForDisplayed({ timeout: 60000 });
     }
 
     const items = await $$(OPTION);
-    const textArray = await Promise.all(items.map((item) => item.getText()));
+    const textArray = await Promise.all(
+      items.map((item: any) => item.getText())
+    );
     const itemIndex = textArray.indexOf(text);
     if (itemIndex > -1) {
       const result = await items[itemIndex].getText();
@@ -53,11 +55,10 @@ class BaseAutocomplete {
   async selectByIndex(index: number) {
     const menuVisible = await $(OPTION).isDisplayed();
     if (!menuVisible) {
-      const select = await this.input();
-      // await this.clickElement(select);
+      const select = await $(INPUT);
       await select.click();
-
-      await $(OPTION).waitForDisplayed({ timeout: 60000 });
+      const option = await $(OPTION);
+      await option.waitForDisplayed({ timeout: 60000 });
     }
 
     const item = await $$(OPTION)[index];
@@ -96,7 +97,7 @@ export class AutocompleteMulti extends BaseAutocomplete {
   }
   async getValue() {
     const chips = await this.chips();
-    return Promise.all(chips.map((c) => c.getText()));
+    return Promise.all(chips.map((c: any) => c.getText()));
   }
   async clearChip(txt: string) {
     const chipsDelete = await this.chipsDelete();

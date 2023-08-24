@@ -1,14 +1,22 @@
-const base = require("./wdio.local.conf.cjs").config;
-const pkg = require("./package.json");
+import { config as baseConfig } from "./wdio.local.conf.js";
 
-const build = "@featherds - " + pkg.version;
+import { driver } from "@wdio/globals";
+
+// TODO: Fix json import
+import pkg from "./package.json" assert { type: "json" };
+
+// const build = "@featherds - " + "0.0.1";
+const build = `@featherds - ${pkg.version}`;
 const capabilities = [
   {
     build: build,
     maxInstances: 1,
     platform: "Windows 10",
     browserName: "Chrome",
-    version: "latest",
+    browserVersion: "latest",
+    chromeOptions: {
+      args: ["incognito"],
+    },
     tunnel: true,
     console: true,
   },
@@ -40,14 +48,17 @@ const capabilities = [
     build: build,
     maxInstances: 1,
     platform: "Windows 10",
-    browserName: "MicrosoftEdge",
-    version: "latest",
+    browserName: "Edge",
+    browserVersion: "latest",
+    edgeOptions: { args: ["InPrivate"] },
     tunnel: true,
+    console: true,
   },
 ];
-module.exports.config = Object.assign({}, base, {
+export const config = Object.assign({}, baseConfig, {
   user: process.env.LAMBDA_USER,
   key: process.env.LAMBDA_KEY,
+
   autoCompileOpts: {
     autoCompile: true,
     // see https://github.com/TypeStrong/ts-node#cli-and-programmatic-options
@@ -79,10 +90,10 @@ module.exports.config = Object.assign({}, base, {
     ui: "bdd",
     timeout: 5 * 60 * 1000,
   },
-  beforeSession(config, capabilities, specs) {
+  beforeSession(_config, capabilities, specs) {
     capabilities.name = specs[0].split(/(\\|\/)/g).pop() || undefined;
   },
-  after(result) {
+  after(result: number) {
     driver.execute(
       "lambda-status=".concat(result == 0 ? "passed" : "failed"),
       undefined

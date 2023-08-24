@@ -1,5 +1,8 @@
+import { describe, it } from "mocha";
 import { expect } from "chai";
-import { create } from "./pages/Demo";
+
+import { create } from "./pages/Demo.js";
+
 describe("Feather Input", () => {
   it("should update value when a new value is input", async () => {
     const page = await create();

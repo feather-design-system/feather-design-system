@@ -1,5 +1,5 @@
-import { AutocompleteMulti } from "../../FeatherAutocomplete";
-
+import { $, browser } from "@wdio/globals";
+import { AutocompleteMulti } from "../../FeatherAutocomplete.js";
 export const create = async () => {
   await browser.url(`https://google.com`);
   await $("input").waitForExist({ timeout: 60000 });
