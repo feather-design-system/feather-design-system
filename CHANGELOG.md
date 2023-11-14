@@ -1,3 +1,12 @@
+## [0.12.21](https://github.com/feather-design-system/feather-design-system/compare/v0.12.20...v0.12.21) (2023-11-14)
+
+
+### Features
+
+* **toggle-button:** init ([#188](https://github.com/feather-design-system/feather-design-system/issues/188)) ([cc3f360](https://github.com/feather-design-system/feather-design-system/commit/cc3f36033e17a17f8f92e3419c5280a8cfb888e6))
+
+
+
 ## [0.12.20](https://github.com/feather-design-system/feather-design-system/compare/v0.12.19...v0.12.20) (2023-06-22)
 
 
