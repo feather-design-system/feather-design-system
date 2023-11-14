@@ -1,6 +1,6 @@
 <template>
   <FeatherPage class="layout 404">
-    <section>
+    <section class="section-404">
       <div class="section-wrapper">
         <div class="not-found">
           <component :is="errorLogo" v-if="errorLogo" />
@@ -38,7 +38,7 @@ export default {
 @import "@featherds/styles/mixins/responsive";
 @import "@featherds/styles/themes/variables";
 
-section {
+.section-404 {
   display: flex;
   align-items: center;
   justify-content: center;

@@ -1,5 +1,5 @@
 <template>
-  <section>
+  <section class="elevation-demo">
     <div v-for="(item, index) in items" :key="item" :class="item" class="item">
       Elevation {{ raw[index] }}
     </div>
@@ -33,7 +33,7 @@ $elevations: 0, 1, 2, 3, 4, 6, 8, 12, 16, 24;
   align-items: center;
   justify-content: center;
 }
-section {
+.elevation-demo {
   background: var($background);
   margin: -0.5rem;
   color: var($primary-text-on-surface);

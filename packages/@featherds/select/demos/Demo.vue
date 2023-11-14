@@ -1,5 +1,5 @@
 <template>
-  <section>
+  <section class="select-demo">
     <FeatherSelect
       class="my-select"
       data-ref-id="test"
@@ -94,7 +94,7 @@ export default defineComponent({
 .my-select {
   width: 25rem;
 }
-section {
+.select-demo {
   height: 120vh;
 }
 </style>

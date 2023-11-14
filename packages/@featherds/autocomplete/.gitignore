@@ -1,2 +1,6 @@
 wdio/*.d.ts
 wdio/*.js
+wdio/tests/*.d.ts
+wdio/tests/*.js
+wdio/tests/pages/*.d.ts
+wdio/tests/pages/*.js

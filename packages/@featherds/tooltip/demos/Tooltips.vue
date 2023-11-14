@@ -1,5 +1,5 @@
 <template>
-  <section>
+  <section class="tooltips-demo">
     <div class="configuration">
       <div>
         Placement
@@ -56,7 +56,7 @@ export default defineComponent({
 });
 </script>
 <style lang="scss" scoped>
-section {
+.tooltips-demo {
   display: flex;
   flex-direction: column;
   align-items: center;

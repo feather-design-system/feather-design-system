@@ -1,5 +1,5 @@
 <template>
-  <section>
+  <section class="dropdown-demo">
     <div>
       <FeatherCheckbox v-model="right">Right Aligned</FeatherCheckbox>
       <FeatherCheckbox v-model="cover">Cover</FeatherCheckbox>
@@ -118,7 +118,7 @@ export default defineComponent({
 });
 </script>
 <style lang="scss" scoped>
-section {
+.dropdown-demo {
   text-align: center;
 }
 </style>
