@@ -15,6 +15,18 @@
         >
           <div class="focus-area" tabindex="-1" first-focus>
             <header>
+              <FeatherButton
+                as-anchor
+                on-color
+                href="#"
+                :icon="closeLabel"
+                class="close-icon"
+                @click.prevent="close"
+                data-ref-id="feather-pdfviewer-close"
+              >
+                <FeatherIcon :icon="closeIcon"></FeatherIcon>
+              </FeatherButton>
+
               <span data-ref-id="feather-pdfviewer-title">{{
                 titleLabel
               }}</span>
@@ -68,18 +80,8 @@
                 </div>
               </div>
             </div>
-
-            <FeatherButton
-              as-anchor
-              on-color
-              href="#"
-              :icon="closeLabel"
-              class="close-icon"
-              @click.prevent="close"
-              data-ref-id="feather-pdfviewer-close"
-            >
-              <FeatherIcon :icon="closeIcon"></FeatherIcon>
-            </FeatherButton>
+            <!--required to maintain focus trap when pdf rendered in iframe-->
+            <div tabindex="0"></div>
           </div>
         </div>
       </FocusTrap>
