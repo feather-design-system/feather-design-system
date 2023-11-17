@@ -1,6 +1,6 @@
 {
   "name": "@featherds/badge",
-  "version": "0.12.21",
+  "version": "0.12.22",
   "publishConfig": {
     "access": "public"
   },

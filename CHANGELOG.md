@@ -1,3 +1,12 @@
+## [0.12.22](https://github.com/feather-design-system/feather-design-system/compare/v0.12.21...v0.12.22) (2023-11-17)
+
+
+### Bug Fixes
+
+* **pdf-viewer:** make close button the first receiver of tab focus ([ef2b404](https://github.com/feather-design-system/feather-design-system/commit/ef2b404cb3f9365aa7f0fe2237f9c59ca6bf5837))
+
+
+
 ## [0.12.21](https://github.com/feather-design-system/feather-design-system/compare/v0.12.20...v0.12.21) (2023-11-14)
 
 
