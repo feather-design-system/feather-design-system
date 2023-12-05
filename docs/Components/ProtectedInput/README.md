@@ -1,6 +1,7 @@
 ---
 title: "Protected Input"
-pre: "@featherds/protected-input"
+pre: ""
+npm: "@featherds/protected-input"
 design: "A variation of the standard text input field but used for discreet and confidential information."
 lang: en-US
 tags: ["ProtectedInput", "component"]

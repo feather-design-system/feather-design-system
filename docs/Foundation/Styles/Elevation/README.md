@@ -2,6 +2,7 @@
 title: "Elevation"
 lang: en-US
 pre: "styles"
+npm: ""
 description: "Used to define the distance between any two elements on the z-axis."
 tags: ["Foundation", "Elevation"]
 menu: foundation
@@ -27,7 +28,7 @@ Elevation is simulated by the generation of a drop-shadow on component surfaces.
 
 ### Elevations in Dark Mode
 
-Elevation in dark most is calculated differently due to the low contrast of a drop shadow against a dark gray or black background used in dark mode. The surfaces inherit both the application primary color as well as a tint that is meant to emulate the surface of the component interacting with the light being cast onto it. These surface values may be generated procedurally or may be hard-coded depending on your needs.
+Elevation in dark mode is calculated differently due to the low contrast of a drop shadow against a dark gray or black background used in dark mode. The surfaces inherit both the application primary color as well as a tint that is meant to emulate the surface of the component interacting with the light being cast onto it. These surface values may be generated procedurally or may be hard-coded depending on your needs.
 
 <ClientOnly>
 <picture>

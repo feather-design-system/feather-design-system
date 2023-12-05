@@ -1,6 +1,7 @@
 ---
 title: "Popover"
-pre: "@featherds/popover"
+pre: ""
+npm: "@featherds/popover"
 description: "Popovers are overlays that contain detailed content that is triggered by the user by clicking on its associated element."
 lang: en-US
 tags: ["Popover", "component"]

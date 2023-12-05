@@ -1,6 +1,7 @@
 ---
 title: "Checkbox"
-pre: "@featherds/checkbox"
+pre: ""
+npm: "@featherds/checkbox"
 description: "Allows users to select one or many options."
 lang: en-US
 tags: ["Checkbox", "component"]

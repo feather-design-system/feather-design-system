@@ -1,6 +1,7 @@
 ---
 title: "Footer"
-pre: "@featherds/footer"
+pre: ""
+npm: "@featherds/footer"
 description: "Provides important links, licensing details and copyright information."
 lang: en-US
 tags: ["Footer", "component"]

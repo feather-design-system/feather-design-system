@@ -1,6 +1,7 @@
 ---
 title: "Card"
-pre: "@featherds/card"
+pre: ""
+npm: "@featherds/card"
 description: "Cards are self-contained UI regions that provide a high-level summary of a single topic."
 lang: en-US
 tags: ["Card", "component"]

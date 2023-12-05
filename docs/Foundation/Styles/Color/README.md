@@ -2,6 +2,7 @@
 title: "Color"
 lang: en-US
 pre: "styles"
+npm: ""
 description: "Used to establish tone, identity and impact in a beautiful and accessible manner."
 tags: ["Foundation", "Color"]
 menu: foundation

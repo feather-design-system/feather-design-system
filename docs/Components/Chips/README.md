@@ -1,6 +1,7 @@
 ---
 title: "Chips"
-pre: "@featherds/chips"
+pre: ""
+npm: "@featherds/chips"
 description: "Chips are delicious."
 lang: en-US
 tags: ["FeatherChip", "component"]

@@ -2,6 +2,7 @@
 title: "Typography"
 lang: en-US
 pre: "styles"
+npm: ""
 description: "Used to define information hierarchy"
 tags: ["Foundation", "Typography"]
 menu: foundation

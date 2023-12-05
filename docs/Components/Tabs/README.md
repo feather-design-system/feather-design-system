@@ -1,6 +1,7 @@
 ---
 title: "Tabs"
-pre: "@featherds/tabs"
+pre: ""
+npm: "@featherds/tabs"
 description: "Used to organize content and allow users to toggle between different page views and content within the same page."
 lang: en-US
 tags: ["Tabs", "component"]

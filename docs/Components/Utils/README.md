@@ -1,8 +1,9 @@
 ---
 title: "Utils"
-lang: en-US
 pre: "@featherds/utils"
+npm: ""
 description: "Handy utilities for common use cases."
+lang: en-US
 tags: ["Utils", "component"]
 menu: components
 ---

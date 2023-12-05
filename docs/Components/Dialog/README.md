@@ -1,6 +1,7 @@
 ---
 title: "Dialog"
-pre: "@featherds/dialog"
+pre: ""
+npm: "@featherds/dialog"
 description: "Provides easy access to important information and/or limits focus to the interaction required for a user to complete a given task."
 lang: en-US
 tags: ["Dialog", "component"]

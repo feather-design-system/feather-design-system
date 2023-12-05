@@ -1,8 +1,9 @@
 ---
 title: "Megamenu"
-lang: en-US
-pre: "@featherds/megamenu"
+pre: ""
+npm: "@featherds/megamenu"
 description: "An enhanced dropdown type menu but for more complex content."
+lang: en-US
 tags: ["Megamenu", "component"]
 menu: components
 ---

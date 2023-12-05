@@ -1,6 +1,7 @@
 ---
 title: "Typography"
-pre: "@featherds/styles"
+pre: ""
+npm: "@featherds/styles"
 description: "Rich type and powerful messaging."
 lang: en-US
 tags: ["Typography", "guide"]

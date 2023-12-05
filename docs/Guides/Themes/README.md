@@ -1,6 +1,7 @@
 ---
 title: "Themes"
-pre: "@featherds/styles"
+pre: ""
+npm: "@featherds/styles"
 description: "How to use themes to style your application"
 lang: en-US
 tags: ["Themes", "guide"]

@@ -1,6 +1,7 @@
 ---
 title: "Select"
-pre: "@featherds/select"
+pre: ""
+npm: "@featherds/select"
 description: "A dropdown list control that presents the user with a list of options allowing them to select a single option from the menu. "
 lang: en-US
 tags: ["Select", "component"]

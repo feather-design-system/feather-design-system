@@ -1,6 +1,7 @@
 ---
 title: "App Rail"
-pre: "@featherds/app-Rail"
+pre: ""
+npm: "@featherds/app-rail"
 description: "The App Rail provides users with persistent access to the top level of application navigation."
 lang: en-US
 tags: ["AppRail", "component"]

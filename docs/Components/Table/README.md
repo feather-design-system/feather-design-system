@@ -1,6 +1,7 @@
 ---
 title: "Table"
-pre: "@featherds/table"
+pre: ""
+npm: "@featherds/table"
 description: "Tables display a matrix of data with functionality to assist in sorting and filtering of information."
 lang: en-US
 tags: ["Table", "component"]

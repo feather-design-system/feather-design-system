@@ -1,6 +1,7 @@
 ---
 title: "Input"
-pre: "@featherds/input"
+pre: ""
+npm: "@featherds/input"
 description: "Allows users to enter and edit text."
 lang: en-US
 tags: ["Input", "component"]
