@@ -8,6 +8,7 @@
       :modelValue="_pageSize"
       @update:modelValue="updatePageSize"
       :options="_pageSizes"
+      :disabled="disablePageSize"
       inline
       class="page-size-select"
     />
@@ -167,17 +168,21 @@ export default defineComponent({
       return Math.ceil(this.total / this.pageSize);
     },
     disableForward() {
-      return this.modelValue >= this.lastPage;
+      return this.modelValue >= this.lastPage || this.total <= 0;
     },
     disableBackward() {
       return this.modelValue <= 1;
+    },
+    disablePageSize() {
+      return this.disableForward && this.disableBackward;
     },
     rangeText() {
       let result = this.labels.range ? this.labels.range : LABELS.range;
       result = result.replace("${total}", this.total.toString());
       const start = this.modelValue * this.pageSize - this.pageSize + 1;
       if (start < 0 || start > this.total) {
-        return "ERROR calculating start";
+        // return "ERROR calculating start";
+        return;
       }
       result = result.replace("${start}", start.toString());
       let end = start + this.pageSize - 1;
