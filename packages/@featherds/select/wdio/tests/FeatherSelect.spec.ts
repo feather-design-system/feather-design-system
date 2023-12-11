@@ -1,5 +1,8 @@
+import { describe, it } from "mocha";
 import { expect } from "chai";
-import { create } from "./pages/Demo";
+
+import { create } from "./pages/Demo.js";
+
 describe("Feather Select", () => {
   it("should select a value by index", async () => {
     const page = await create();

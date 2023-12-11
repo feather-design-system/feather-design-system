@@ -2,7 +2,12 @@
   "extends": "../../../tsconfig.json",
   "compilerOptions": {
     "sourceMap": false,
-    "module": "commonjs"
+    "module": "ES2022",
+    "target": "ES2022"
   },
-  "include": ["./wdio/*.ts"]
+  "include": [
+    "./wdio/*.ts",
+    "./wdio/tests/*.ts",
+    "./wdio/tests/pages/*.ts"
+  ]
 }

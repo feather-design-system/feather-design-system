@@ -3,7 +3,9 @@ import globby from "globby";
 import path from "path";
 import fs from "fs-extra";
 import { getFilter } from "./utils.js";
+
 (async () => {
+
   const filter = getFilter();
   const files = await globby(`packages/@featherds/${filter}/src/index.[jt]s`, {
     cwd: process.cwd(),
@@ -20,11 +22,13 @@ import { getFilter } from "./utils.js";
           //add new file for single import
           const newFileName = "app.mjs";
           const cssPath = "./style.css";
+          const mjsPath = "./index.mjs";
           const cssExists = fs.existsSync(path.join(dest, cssPath));
+          const mjsExists = fs.existsSync(path.join(dest, mjsPath));
           return fs.writeFile(
             path.join(dest, newFileName),
             `${cssExists ? `import "${cssPath}";` : ""}
-export * from "./index.mjs";
+export * from ${mjsExists ? `"${mjsPath}";` : `"./index.js"`};
 `
           );
         }),

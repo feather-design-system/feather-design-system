@@ -1,6 +1,7 @@
+import { describe, it } from "mocha";
 import { expect } from "chai";
-import { create as createSingle } from "./pages/Single";
-import { create as createMulti } from "./pages/Demo";
+import { create as createSingle } from "./pages/Single.js";
+import { create as createMulti } from "./pages/Demo.js";
 describe("Feather Autocomplete", () => {
   describe("single", () => {
     it("should select a value by index", async () => {
