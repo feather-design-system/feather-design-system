@@ -1,3 +1,12 @@
+## [0.12.23](https://github.com/feather-design-system/feather-design-system/compare/v0.12.22...v0.12.23) (2023-12-12)
+
+
+### Bug Fixes
+
+* **ci:** dev dependency upgrades ([#190](https://github.com/feather-design-system/feather-design-system/issues/190)) ([a93806a](https://github.com/feather-design-system/feather-design-system/commit/a93806a343397d4df322ca69617fb8348e6a6196))
+
+
+
 ## [0.12.22](https://github.com/feather-design-system/feather-design-system/compare/v0.12.21...v0.12.22) (2023-11-17)
 
 
