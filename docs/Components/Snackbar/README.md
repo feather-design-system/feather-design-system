@@ -1,6 +1,7 @@
 ---
 title: "Snackbar"
-pre: "@featherds/snackbar"
+pre: ""
+npm: "@featherds/snackbar"
 description: "A small, self-dismissing message container for displaying transient information that does not require user interaction."
 lang: en-US
 tags: ["Snackbar", "component"]

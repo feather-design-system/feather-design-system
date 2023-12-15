@@ -1,6 +1,7 @@
 ---
 title: "Badge"
-pre: "@featherds/badge"
+pre: ""
+npm: "@featherds/badge"
 description: "Badges are small status descriptors for UI elements."
 lang: en-US
 tags: ["Badge", "component"]

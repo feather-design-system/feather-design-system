@@ -1,8 +1,9 @@
 ---
 title: "Icon"
-lang: en-US
-pre: "@featherds/icon"
+pre: ""
+npm: "@featherds/icon"
 description: "Rich iconography to help make your content engage and inspire."
+lang: en-US
 tags: ["Icon", "component"]
 menu: components
 ---

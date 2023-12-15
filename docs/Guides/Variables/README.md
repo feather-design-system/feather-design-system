@@ -1,6 +1,7 @@
 ---
 title: "Variables"
-pre: "@featherds/styles"
+pre: ""
+npm: "@featherds/styles"
 description: "Powerful theming and customisation."
 lang: en-US
 tags: ["Variables", "guide"]

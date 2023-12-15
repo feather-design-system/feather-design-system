@@ -1,6 +1,7 @@
 ---
 title: "Pagination"
-pre: "@featherds/pagination"
+pre: ""
+npm: "@featherds/pagination"
 description: "Pagination elements display information about the number of pages that exist of a list of items and provide controls to navigate through them."
 lang: en-US
 tags: ["Pagination", "component"]

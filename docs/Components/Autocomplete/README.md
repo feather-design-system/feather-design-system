@@ -1,6 +1,7 @@
 ---
 title: "Autocomplete"
-pre: "@featherds/autocomplete"
+pre: ""
+npm: "@featherds/autocomplete"
 description: "Helps users to search for, select and provide valid answers from large datasets."
 lang: en-US
 tags: ["Autocomplete", "component"]

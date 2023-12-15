@@ -1,6 +1,7 @@
 ---
 title: "Grid"
-pre: "@featherds/styles"
+pre: ""
+npm: "@featherds/styles"
 description: "Tools and presets for scaffolding your application layout."
 lang: en-US
 tags: ["Grid", "component"]

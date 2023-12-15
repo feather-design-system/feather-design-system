@@ -1,7 +1,8 @@
 ---
 title: "Button"
 lang: en-US
-pre: "@featherds/button"
+pre: ""
+npm: "@featherds/button"
 description: "An interaction point to help users initiate actions or navigate through your application."
 tags: ["Button", "component"]
 menu: components

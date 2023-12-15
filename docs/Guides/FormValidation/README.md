@@ -1,6 +1,7 @@
 ---
 title: "Form Validation"
-pre: "@featherds/input"
+pre: ""
+npm: "@featherds/input"
 description: "Guidance and support for effective forms."
 lang: en-US
 tags: ["validation", "guide"]

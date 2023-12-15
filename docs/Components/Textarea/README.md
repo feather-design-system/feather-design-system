@@ -1,6 +1,7 @@
 ---
 title: "Textarea"
-pre: "@featherds/textarea"
+pre: ""
+npm: "@featherds/textarea"
 description: "Provides users with a suitable field size to accommodate more than a single line of text."
 lang: en-US
 tags: ["Textarea", "component"]

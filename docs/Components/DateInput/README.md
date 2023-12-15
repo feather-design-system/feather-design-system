@@ -1,6 +1,7 @@
 ---
 title: "Date Input"
-pre: "@featherds/date-input"
+pre: ""
+npm: "@featherds/date-input"
 description: "Allows users to select a date from the past, present or future."
 lang: en-US
 tags: ["DateInput", "component"]

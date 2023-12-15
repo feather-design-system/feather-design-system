@@ -7,6 +7,7 @@
       <div class="title-section center feather-container">
         <div class="content-container">
           <p class="pre-text">{{ preText }}</p>
+          <p class="npm-name">{{ npmName }}</p>
           <h1 class="title" :id="idSafeTitle">
             <a
               class="header-anchor"
@@ -80,6 +81,9 @@ export default {
     preText() {
       return this.$page.frontmatter.pre;
     },
+    npmName() {
+      return this.$page.frontmatter.npm;
+    },
     menu() {
       return this.$page.frontmatter.menu;
     },
@@ -146,11 +150,16 @@ $contentWidth: 47.5rem;
   margin-bottom: 2.5rem;
   padding: 2.5rem 0;
   background: var($background);
-  .pre-text {
+  .pre-text,
+  .npm-name {
     @include overline();
     color: var($primary);
     margin: 0;
     margin-bottom: 0.5rem;
+  }
+
+  .npm-name {
+    text-transform: lowercase;
   }
   .title-description {
     margin: 0;

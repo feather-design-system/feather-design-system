@@ -1,6 +1,7 @@
 ---
 title: "Tooltip"
-pre: "@featherds/tooltip"
+pre: ""
+npm: "@featherds/tooltip"
 description: "A small content box triggered by hovering or focusing over a certain area."
 lang: en-US
 tags: ["Tooltip", "component"]

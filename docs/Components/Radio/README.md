@@ -1,6 +1,7 @@
 ---
 title: "Radio"
-pre: "@featherds/radio"
+pre: ""
+npm: "@featherds/radio"
 description: "Enables a user to choose one option from a group of options."
 lang: en-US
 tags: ["Radio", "component"]

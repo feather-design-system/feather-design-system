@@ -1,6 +1,7 @@
 ---
 title: "Toggle Button"
-pre: "@featherds/toggle-button"
+pre: ""
+npm: "@featherds/toggle-button"
 description: "Allow users to choose one option from a set of mutually exclusive options."
 lang: en-US
 tags: ["Togglebutton", "component"]

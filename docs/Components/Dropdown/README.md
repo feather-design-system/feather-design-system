@@ -1,6 +1,7 @@
 ---
 title: "Dropdown"
-pre: "@featherds/dropdown"
+pre: ""
+npm: "@featherds/dropdown"
 description: "A small container for menus and options."
 lang: en-US
 tags: ["Dropdown", "component"]

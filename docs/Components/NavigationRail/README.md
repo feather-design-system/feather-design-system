@@ -1,8 +1,9 @@
 ---
 title: "Navigation Rail"
-pre: "@featherds/navigation-rail"
-lang: en-US
+pre: ""
+npm: "@featherds/navigation-rail"
 description: "A side rail for holding navigation elements and related information."
+lang: en-US
 tags: ["NavigationRail", "component"]
 menu: components
 ---

@@ -1,6 +1,7 @@
 ---
 title: "Back Button"
-pre: "@featherds/back-button"
+pre: ""
+npm: "@featherds/back-button"
 description: "A generic button that allows the user to go back to a previous page."
 lang: en-US
 tags: ["BackButton", "Back-Button", "component"]

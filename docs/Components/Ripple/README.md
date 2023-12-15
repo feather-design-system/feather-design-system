@@ -1,8 +1,9 @@
 ---
 title: "Ripple"
-lang: en-US
 pre: "@featherds/ripple"
+npm: ""
 description: "Provides feedback on clickable elements that is both useful and beautiful."
+lang: en-US
 tags: ["Ripple", "component"]
 menu: components
 ---

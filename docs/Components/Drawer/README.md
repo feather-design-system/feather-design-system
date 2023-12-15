@@ -1,6 +1,7 @@
 ---
 title: "Drawer"
-pre: "@featherds/drawer"
+pre: ""
+npm: "@featherds/drawer"
 description: "Used to provide relevant information or simple tasks on top of one or more pages in an application."
 lang: en-US
 tags: ["Drawer", "component"]

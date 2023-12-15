@@ -1,6 +1,7 @@
 ---
 title: "Expansion"
-pre: "@featherds/expansion"
+pre: ""
+npm: "@featherds/expansion"
 description: "An expansion panel is a lightweight container that may either stand alone or be connected to a larger surface, such as a card."
 lang: en-US
 tags: ["Expansion", "component"]

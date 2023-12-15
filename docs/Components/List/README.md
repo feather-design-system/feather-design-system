@@ -1,6 +1,7 @@
 ---
 title: "List"
-pre: "@featherds/list"
+pre: ""
+npm: "@featherds/list"
 description: "Lists are convenient ways to group data elements."
 lang: en-US
 tags: ["List", "component"]
