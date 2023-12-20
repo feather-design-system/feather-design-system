@@ -427,7 +427,11 @@ export default defineComponent({
       immediate: true,
     },
     results(v) {
-      if (v && v.length > 0) {
+      // if (v && v.length > 0) {
+      if (!this.singleSelect && v && v.length > 0) {
+        this.selectFirst();
+      } else if (this.singleSelect && this.firstPass) {
+        this.firstPass = false;
         this.selectFirst();
       }
       this.forceCloseResults = false; // should no longer force close
@@ -727,6 +731,7 @@ export default defineComponent({
     const hasFocus = ref(false);
     const selectionLimitReached = ref(false);
     const forceCloseResults = ref(false);
+    const firstPass = ref(true);
     const query = ref("");
     const internalResults = ref([] as IAutocompleteItemType[]);
     const input = ref();
@@ -773,6 +778,7 @@ export default defineComponent({
       internalResults,
       selectionLimitReached,
       forceCloseResults,
+      firstPass,
       hasFocus,
       strategy,
       emitSearch,
