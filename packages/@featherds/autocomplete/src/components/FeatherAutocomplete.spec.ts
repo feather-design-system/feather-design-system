@@ -886,6 +886,7 @@ describe("FeatherAutocomplete", () => {
       });
 
       await input.trigger("keydown", { code: Code.DOWN });
+      await input.trigger("keydown", { code: Code.DOWN });
 
       const index = wrapper.vm.active.row;
       await input.trigger("blur");
@@ -960,6 +961,7 @@ describe("FeatherAutocomplete", () => {
         results,
       });
 
+      await input.trigger("keydown", { code: Code.DOWN });
       await input.trigger("keydown", { code: Code.ENTER });
 
       expect(wrapper.element).toMatchSnapshot();

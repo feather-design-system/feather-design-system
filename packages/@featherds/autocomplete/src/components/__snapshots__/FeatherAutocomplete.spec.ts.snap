@@ -5737,7 +5737,7 @@ exports[`FeatherAutocomplete > single:specific > should show add new element whe
           
           
           <textarea
-            aria-activedescendant=""
+            aria-activedescendant="result-item"
             aria-autocomplete="list"
             aria-busy="false"
             aria-controls="feather-autocomplete-input-results"
@@ -5798,7 +5798,8 @@ exports[`FeatherAutocomplete > single:specific > should show add new element whe
         
         <li
           aria-selected="false"
-          class="feather-list-item hover focus result-item hover"
+          class="feather-list-item hover focus highlighted result-item hover"
+          id="result-item"
           role="option"
           style="overflow: hidden; position: relative;"
           tabindex="-1"
