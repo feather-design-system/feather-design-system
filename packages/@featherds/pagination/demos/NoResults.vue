@@ -11,11 +11,6 @@
   </section>
   <section class="pagination-demo">
     <div class="pagination-page">
-      <!-- <p>
-        <span id="current-page">| Current Page: {{ page }} | </span>
-        <span id="page-size"> Current Page Size: {{ pageSize }} | </span>
-        <span id="total"> Total: {{ total }} | </span>
-      </p> -->
       <h4>Page</h4>
       <p>
         <FeatherButton
