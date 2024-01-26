@@ -1,3 +1,13 @@
+## [0.12.25](https://github.com/feather-design-system/feather-design-system/compare/v0.12.24...v0.12.25) (2024-01-26)
+
+
+### Bug Fixes
+
+* **autocomplete:** default active row initial load ([#193](https://github.com/feather-design-system/feather-design-system/issues/193)) ([4f6db1a](https://github.com/feather-design-system/feather-design-system/commit/4f6db1a26301911b81cfbccc90f9ee357d73db36))
+* **pagination:** handle no results ([#177](https://github.com/feather-design-system/feather-design-system/issues/177)) ([#192](https://github.com/feather-design-system/feather-design-system/issues/192)) ([4a3fa8d](https://github.com/feather-design-system/feather-design-system/commit/4a3fa8d7d655f83592ea1c78562dfcc332f3588d))
+
+
+
 ## [0.12.24](https://github.com/feather-design-system/feather-design-system/compare/v0.12.23...v0.12.24) (2023-12-15)
 
 
