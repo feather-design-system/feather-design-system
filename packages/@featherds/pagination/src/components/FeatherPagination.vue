@@ -174,7 +174,7 @@ export default defineComponent({
       return this.modelValue <= 1;
     },
     disablePageSize() {
-      return this.disableForward && this.disableBackward;
+      return this.total <= 0;
     },
     rangeText() {
       let result = this.labels.range ? this.labels.range : LABELS.range;
