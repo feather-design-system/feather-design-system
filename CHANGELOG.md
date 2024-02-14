@@ -1,3 +1,12 @@
+## [0.12.26](https://github.com/feather-design-system/feather-design-system/compare/v0.12.25...v0.12.26) (2024-02-14)
+
+
+### Bug Fixes
+
+* set typescript version 4.9.4 #; resolves [#195](https://github.com/feather-design-system/feather-design-system/issues/195) ([#196](https://github.com/feather-design-system/feather-design-system/issues/196)) ([f53c03d](https://github.com/feather-design-system/feather-design-system/commit/f53c03d2a01fcfc39eaf10b7b0536d806bc989e8))
+
+
+
 ## [0.12.25](https://github.com/feather-design-system/feather-design-system/compare/v0.12.24...v0.12.25) (2024-01-26)
 
 

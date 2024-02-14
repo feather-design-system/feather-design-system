@@ -1,6 +1,6 @@
 {
   "name": "@featherds/menu",
-  "version": "0.12.25",
+  "version": "0.12.26",
   "publishConfig": {
     "access": "public"
   },
