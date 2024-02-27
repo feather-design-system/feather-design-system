@@ -46,7 +46,9 @@ describe("FeatherPdfViewer.vue", () => {
         documentExtension: "pdf",
       },
     });
-    expect(xhrMock.open.mock.calls[0][1]).toBe(url);
+    // NOTE:
+    const mockedCalls = xhrMock.open.mock.calls[0] as any[];
+    expect(mockedCalls[1]).toBe(url);
   });
   it("should use preview url when extension is not pdf", () => {
     const url = "test.pdf";
@@ -58,7 +60,9 @@ describe("FeatherPdfViewer.vue", () => {
         previewUrl: url,
       },
     });
-    expect(xhrMock.open.mock.calls[0][1]).toBe(url);
+    // NOTE:
+    const mockedCalls = xhrMock.open.mock.calls[0] as any[];
+    expect(mockedCalls[1]).toBe(url);
   });
   it("should display error when no preview url and not pdf", async () => {
     const wrapper = getWrapper({
@@ -136,7 +140,9 @@ describe("FeatherPdfViewer.vue", () => {
       },
     });
     await wrapper.find(".close-icon").trigger("click");
-    expect(getCalls<[boolean]>(wrapper, "update:modelValue")[0][0]).toBe(false);
+    expect(getCalls<[boolean]>(wrapper, "update:modelValue")[0]![0]).toBe(
+      false
+    );
   });
 
   it("should always show error state when force-error is true and can preview", async () => {

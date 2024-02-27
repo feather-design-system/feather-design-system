@@ -85,7 +85,7 @@ describe("FeatherMenu.vue", () => {
     const wrapper = await getWrapper({ slots });
     await wrapper.find(`#${wrapper.vm.triggerId}`).trigger("click");
     await nextTick();
-    expect(wrapper.emitted()["trigger-click"].length).toBe(1);
+    expect(wrapper.emitted()["trigger-click"]!.length).toBe(1);
   });
 
   it("should remove necessary event listeners on unmount", async () => {
@@ -327,7 +327,6 @@ describe("FeatherMenu.vue", () => {
         const wrapper = await getWrapper({ slots, props: { open: true } });
         const height = 100;
         const width = 100;
-        const windowWidth = window.innerWidth;
         const windowHeight = window.innerHeight;
         vi.spyOn(
           wrapper.vm.$refs.menu as HTMLElement,

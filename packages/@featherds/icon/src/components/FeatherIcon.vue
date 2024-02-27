@@ -41,7 +41,7 @@ export default defineComponent({
     let icon = toRaw(this.icon) as DefineComponent<{}>;
     if (this.$slots.default) {
       return h("span", { class: "feather-icon-container" }, [
-        h(this.$slots.default()[0], {
+        h(this.$slots.default()[0]!, {
           class: cls,
           ..._attrs,
         }),

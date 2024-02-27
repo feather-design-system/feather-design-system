@@ -2,14 +2,7 @@
 import { FeatherInput, FeatherInputProps } from "@featherds/input";
 import PasswordIcon from "./PasswordIcon.vue";
 import { useLabelProperty } from "@featherds/composables/LabelProperty";
-import {
-  toRef,
-  h,
-  defineComponent,
-  PropType,
-  DefineComponent,
-  ExtractPropTypes,
-} from "vue";
+import { toRef, h, defineComponent, PropType, DefineComponent } from "vue";
 
 const LABELS = {
   show: "Show password",
@@ -25,6 +18,7 @@ export const props = {
   },
 } as const;
 export const emits = {
+  // eslint-disable-next-line @typescript-eslint/no-unused-vars
   "update:modelValue": (_v: string) => true,
 };
 export default defineComponent({
@@ -54,19 +48,23 @@ export default defineComponent({
     };
   },
   render() {
-    const icon = h(PasswordIcon, {
+    // ts(2769)
+    // NOTE:
+    const icon = h(PasswordIcon as any, {
       modelValue: this.showPassword,
       hide: this.computedLabels.hideLabel.value,
       show: this.computedLabels.showLabel.value,
-      "onUpdate:modelValue": (val) => {
+      // ts(7006)
+      "onUpdate:modelValue": (val: boolean) => {
         this.showPassword = val;
       },
     });
     const attrs = { ...this.$attrs };
     delete attrs.clear; //dont allow clear in password.
-    delete attrs.maxlength; //dont allow maxlength in password.
-    //removing the labels property
+    delete attrs.maxlength; //dont allow maxlength in password
+    // eslint-disable-next-line @typescript-eslint/no-unused-vars
     const { labels, ...inputProps } = this.$props;
+    // const { ...inputProps } = this.$props;
     return h(
       FeatherInput as unknown as DefineComponent,
       {

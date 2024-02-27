@@ -127,7 +127,7 @@ describe("Feather Chip List", () => {
       });
       await nextTick();
       await nextTick();
-      expect(wrapper.findAll("[role='radio']")[0].attributes("tabindex")).toBe(
+      expect(wrapper.findAll("[role='radio']")[0]!.attributes("tabindex")).toBe(
         "0"
       );
     });
@@ -137,7 +137,7 @@ describe("Feather Chip List", () => {
       });
       await nextTick();
       await nextTick();
-      expect(wrapper.findAll("[role='radio']")[1].attributes("tabindex")).toBe(
+      expect(wrapper.findAll("[role='radio']")[1]!.attributes("tabindex")).toBe(
         "0"
       );
     });
@@ -149,7 +149,7 @@ describe("Feather Chip List", () => {
       await nextTick();
       await nextTick();
       expect(
-        wrapper.findAll("[role='radio']")[1].attributes("aria-checked")
+        wrapper.findAll("[role='radio']")[1]!.attributes("aria-checked")
       ).toBe("true");
     });
     it("should emit input on check", async () => {
@@ -157,7 +157,7 @@ describe("Feather Chip List", () => {
         props: { mode: "radio", modelValue: 2 },
       });
       await wrapper.find("[role='radio']").trigger("click");
-      expect(getCalls<[number]>(wrapper, "update:modelValue")[0][0]).toBe(1);
+      expect(getCalls<[number]>(wrapper, "update:modelValue")[0]![0]).toBe(1);
     });
 
     it("should select clicked radio button", async () => {
@@ -167,7 +167,7 @@ describe("Feather Chip List", () => {
       await nextTick();
       await nextTick();
       await wrapper.find("[role='radio']").trigger("click");
-      expect(getCalls<[number]>(wrapper, "update:modelValue")[0][0]).toBe(1);
+      expect(getCalls<[number]>(wrapper, "update:modelValue")[0]![0]).toBe(1);
     });
     it("should not select a disabled clicked radio button", async () => {
       const wrapper = getWrapper([getRadio(1, true), getRadio(2, false)], {
@@ -187,7 +187,7 @@ describe("Feather Chip List", () => {
         await nextTick();
         const radio = wrapper.find(selector);
         await radio.trigger("keydown", { code });
-        expect(getCalls<[number]>(wrapper, "update:modelValue")[0][0]).toBe(1);
+        expect(getCalls<[number]>(wrapper, "update:modelValue")[0]![0]).toBe(1);
       };
       await testSelection(Code.ENTER);
       await testSelection(Code.SPACE);
@@ -204,7 +204,7 @@ describe("Feather Chip List", () => {
         await nextTick();
         const radio = wrapper.find(selector);
         await radio.trigger("keydown", { code });
-        expect(getCalls<[number]>(wrapper, "update:modelValue")[0][0]).toBe(3);
+        expect(getCalls<[number]>(wrapper, "update:modelValue")[0]![0]).toBe(3);
       };
       await testNext(Code.DOWN);
       await testNext(Code.RIGHT);
@@ -221,7 +221,7 @@ describe("Feather Chip List", () => {
         await nextTick();
         const radio = wrapper.find(selector);
         await radio.trigger("keydown", { code });
-        expect(getCalls<[number]>(wrapper, "update:modelValue")[0][0]).toBe(2);
+        expect(getCalls<[number]>(wrapper, "update:modelValue")[0]![0]).toBe(2);
       };
       await testNext(Code.DOWN);
       await testNext(Code.RIGHT);
@@ -239,7 +239,7 @@ describe("Feather Chip List", () => {
         await nextTick();
         const radio = wrapper.find(selector);
         await radio.trigger("keydown", { code });
-        expect(getCalls<[number]>(wrapper, "update:modelValue")[0][0]).toBe(1);
+        expect(getCalls<[number]>(wrapper, "update:modelValue")[0]![0]).toBe(1);
       };
       await testPrev(Code.LEFT);
       await testPrev(Code.UP);
@@ -262,7 +262,7 @@ describe("Feather Chip List", () => {
         await nextTick();
         const radio = wrapper.find(selector);
         await radio.trigger("keydown", { code });
-        expect(getCalls<[number]>(wrapper, "update:modelValue")[0][0]).toBe(2);
+        expect(getCalls<[number]>(wrapper, "update:modelValue")[0]![0]).toBe(2);
       };
       await testPrev(Code.LEFT);
       await testPrev(Code.UP);

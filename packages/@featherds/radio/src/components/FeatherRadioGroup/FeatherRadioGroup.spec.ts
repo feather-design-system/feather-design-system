@@ -1,4 +1,4 @@
-import { mount } from "@vue/test-utils";
+import { DOMWrapper, mount } from "@vue/test-utils";
 import FeatherRadioGroup from "./FeatherRadioGroup.vue";
 import FeatherRadio from "../FeatherRadio/FeatherRadio.vue";
 
@@ -78,9 +78,11 @@ describe("FeatherRadioGroup.vue", () => {
     });
     await nextTick();
     await nextTick();
-    expect(
-      wrapper.findAll("[role='radio']")[0].attributes("aria-checked")
-    ).toBe("true");
+    // NOTE: not sure about return type
+    const radioButton = wrapper.findAll(
+      "[role='radio']"
+    )[0] as DOMWrapper<Element>;
+    expect(radioButton.attributes("aria-checked")).toBe("true");
   });
 
   it("should set first property on first radio if none match the value", async () => {
@@ -93,9 +95,10 @@ describe("FeatherRadioGroup.vue", () => {
     });
     await nextTick();
     await nextTick();
-    expect(wrapper.findAll("[role='radio']")[0].attributes("tabindex")).toBe(
-      "0"
-    );
+    const radioButton = wrapper.findAll(
+      "[role='radio']"
+    )[0] as DOMWrapper<Element>;
+    expect(radioButton.attributes("tabindex")).toBe("0");
   });
   it("should set first property on first radio not disabled if none match the value", async () => {
     const slots = {
@@ -107,9 +110,11 @@ describe("FeatherRadioGroup.vue", () => {
     });
     await nextTick();
     await nextTick();
-    expect(wrapper.findAll("[role='radio']")[1].attributes("tabindex")).toBe(
-      "0"
-    );
+
+    const radioButton = wrapper.findAll(
+      "[role='radio']"
+    )[1] as DOMWrapper<Element>;
+    expect(radioButton.attributes("tabindex")).toBe("0");
   });
   it("should set select first radio that matches initial value", async () => {
     const slots = {
@@ -122,9 +127,11 @@ describe("FeatherRadioGroup.vue", () => {
     await nextTick();
     await nextTick();
     await nextTick();
-    expect(
-      wrapper.findAll("[role='radio']")[1].attributes("aria-checked")
-    ).toBe("true");
+
+    const radioButton = wrapper.findAll(
+      "[role='radio']"
+    )[1] as DOMWrapper<Element>;
+    expect(radioButton.attributes("aria-checked")).toBe("true");
   });
   it("should emit input on check", async () => {
     const slots = {
@@ -135,7 +142,11 @@ describe("FeatherRadioGroup.vue", () => {
       props: { modelValue: 2 },
     });
     await wrapper.find("[role='radio']").trigger("click");
-    expect(getCalls<[number]>(wrapper, "update:modelValue")[0][0]).toBe(1);
+    const calls = getCalls<[number]>(
+      wrapper,
+      "update:modelValue"
+    )[0] as number[];
+    expect(calls[0]).toBe(1);
   });
 
   it("should select clicked radio button", async () => {
@@ -149,7 +160,11 @@ describe("FeatherRadioGroup.vue", () => {
     await nextTick();
     await nextTick();
     await wrapper.find("[role='radio']").trigger("click");
-    expect(getCalls<[number]>(wrapper, "update:modelValue")[0][0]).toBe(1);
+    const calls = getCalls<[number]>(
+      wrapper,
+      "update:modelValue"
+    )[0] as number[];
+    expect(calls[0]).toBe(1);
   });
 
   it("should select radio button when modelValue is updated", async () => {
@@ -168,9 +183,10 @@ describe("FeatherRadioGroup.vue", () => {
     await wrapper.vm.$nextTick();
     await wrapper.vm.$nextTick();
 
-    expect(
-      wrapper.findAll("[role='radio']")[1].attributes("aria-checked")
-    ).toBe("true");
+    const radioButton = wrapper.findAll(
+      "[role='radio']"
+    )[1] as DOMWrapper<Element>;
+    expect(radioButton.attributes("aria-checked")).toBe("true");
   });
   it("should not select a disabled clicked radio button", async () => {
     const slots = {
@@ -198,7 +214,11 @@ describe("FeatherRadioGroup.vue", () => {
       await nextTick();
       const radio = wrapper.find(selector);
       await radio.trigger("keydown", { code });
-      expect(getCalls<[number]>(wrapper, "update:modelValue")[0][0]).toBe(1);
+      const calls = getCalls<[number]>(
+        wrapper,
+        "update:modelValue"
+      )[0] as number[];
+      expect(calls[0]).toBe(1);
     };
     await testSelection(Code.ENTER);
     await testSelection(Code.SPACE);
@@ -216,7 +236,11 @@ describe("FeatherRadioGroup.vue", () => {
       await nextTick();
       const radio = wrapper.find(selector);
       await radio.trigger("keydown", { code });
-      expect(getCalls<[number]>(wrapper, "update:modelValue")[0][0]).toBe(3);
+      const calls = getCalls<[number]>(
+        wrapper,
+        "update:modelValue"
+      )[0] as number[];
+      expect(calls[0]).toBe(3);
     };
     await testNext(Code.DOWN);
     await testNext(Code.RIGHT);
@@ -234,7 +258,12 @@ describe("FeatherRadioGroup.vue", () => {
       await nextTick();
       const radio = wrapper.find(selector);
       await radio.trigger("keydown", { code });
-      expect(getCalls<[number]>(wrapper, "update:modelValue")[0][0]).toBe(2);
+
+      const calls = getCalls<[number]>(
+        wrapper,
+        "update:modelValue"
+      )[0] as number[];
+      expect(calls[0]).toBe(2);
     };
     await testNext(Code.DOWN);
     await testNext(Code.RIGHT);
@@ -253,7 +282,11 @@ describe("FeatherRadioGroup.vue", () => {
       await nextTick();
       const radio = wrapper.find(selector);
       await radio.trigger("keydown", { code });
-      expect(getCalls<[number]>(wrapper, "update:modelValue")[0][0]).toBe(1);
+      const calls = getCalls<[number]>(
+        wrapper,
+        "update:modelValue"
+      )[0] as number[];
+      expect(calls[0]).toBe(1);
     };
     await testPrev(Code.LEFT);
     await testPrev(Code.UP);
@@ -277,7 +310,11 @@ describe("FeatherRadioGroup.vue", () => {
       await nextTick();
       const radio = await wrapper.find(selector);
       await radio.trigger("keydown", { code });
-      expect(getCalls<[number]>(wrapper, "update:modelValue")[0][0]).toBe(2);
+      const calls = getCalls<[number]>(
+        wrapper,
+        "update:modelValue"
+      )[0] as number[];
+      expect(calls[0]).toBe(2);
     };
     await testPrev(Code.LEFT);
     await testPrev(Code.UP);

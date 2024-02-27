@@ -36,7 +36,7 @@ const mockProvide = () => {
 describe("FeatherRadio.vue", () => {
   it("should call register", () => {
     const { provide } = mockProvide();
-    const wrapper = getWrapper({ ...getSlot(), global: { provide } });
+    getWrapper({ ...getSlot(), global: { provide } });
     expect(provide.register).toHaveBeenCalled();
   });
   it("should be focusable when first is set even if not checked", async () => {

@@ -21,14 +21,14 @@ class DropdownService {
       (x) => !x.classList.contains("disabled")
     );
     enabled = enabled.length ? enabled : this.items; //if there is none enabled just use items.
-    this.select(enabled[0]);
+    this.select(enabled[0] as HTMLElement);
   }
   selectLast() {
     let enabled = Array.from(this.items).filter(
       (x) => !x.classList.contains("disabled")
     );
     enabled = enabled.length ? enabled : this.items; //if there is none enabled just use items.
-    this.select(enabled[enabled.length - 1]);
+    this.select(enabled[enabled.length - 1] as HTMLElement); // TS2345
   }
   selectPrevious() {
     if (!this.currentItem) {
@@ -41,9 +41,9 @@ class DropdownService {
     const index = notDisabled.indexOf(current);
     this.blur();
     if (index === 0) {
-      this.select(notDisabled[notDisabled.length - 1]);
+      this.select(notDisabled[notDisabled.length - 1] as HTMLElement); // TS2345
     } else {
-      this.select(notDisabled[index - 1]);
+      this.select(notDisabled[index - 1] as HTMLElement); // TS2345
     }
   }
   selectNext() {
@@ -57,9 +57,9 @@ class DropdownService {
     const index = notDisabled.indexOf(current);
     this.blur();
     if (index === notDisabled.length - 1) {
-      this.select(notDisabled[0]);
+      this.select(notDisabled[0] as HTMLElement); // TS2345
     } else {
-      this.select(notDisabled[index + 1]);
+      this.select(notDisabled[index + 1] as HTMLElement); // TS2345
     }
   }
 }

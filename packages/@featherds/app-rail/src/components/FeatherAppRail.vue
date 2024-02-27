@@ -1,7 +1,7 @@
 <template>
   <div class="fake-bar"></div>
 
-  <SkipContentLink :content="content" :skip-label="skipLabel" />
+  <SkipContentLink :content="content" :skip-label="skipLabel!" />
   <div class="feather-app-rail" v-on="listeners" :class="{ narrow: !expanded }">
     <div class="feather-app-rail-icon">
       <slot name="icon" :expanded="expanded"></slot>

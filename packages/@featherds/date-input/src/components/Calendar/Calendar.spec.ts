@@ -47,7 +47,7 @@ describe("Calendar", () => {
     expect(getCalls<[Date]>(wrapper, "update:modelValue")).toBeTruthy();
     expect(
       utils.isSameDay(
-        getCalls<[Date]>(wrapper, "update:modelValue")[0][0],
+        getCalls<[Date]>(wrapper, "update:modelValue")[0]![0],
         new Date(2018, 2, 1)
       )
     ).toBe(true);
@@ -91,7 +91,7 @@ describe("Calendar", () => {
       await selected.trigger("keydown", { code: Code.SPACE });
       expect(
         utils.isSameDay(
-          getCalls<[Date]>(wrapper, "update:modelValue")[0][0],
+          getCalls<[Date]>(wrapper, "update:modelValue")[0]![0],
           new Date(2018, 2, 24)
         )
       ).toBe(true);
@@ -103,7 +103,7 @@ describe("Calendar", () => {
       await selected.trigger("keydown", { code: Code.ENTER });
       expect(
         utils.isSameDay(
-          getCalls<[Date]>(wrapper, "update:modelValue")[0][0],
+          getCalls<[Date]>(wrapper, "update:modelValue")[0]![0],
           new Date(2018, 2, 24)
         )
       ).toBe(true);

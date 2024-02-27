@@ -29,7 +29,7 @@ const useForm = () => {
   const errorMessages = ref([] as IValidationFailure[]);
   const _validate = () => {
     const validation = Object.keys(controls).map((key) => {
-      return controls[key].validate();
+      return controls[key]!.validate();
     });
     errorMessages.value = validation.filter(
       (x) => x.success === false
@@ -38,7 +38,7 @@ const useForm = () => {
   };
   const _clearErrors = () => {
     Object.keys(controls).forEach((key) => {
-      controls[key].clear();
+      controls[key]!.clear();
     });
     errorMessages.value = [] as IValidationFailure[];
     return [];
@@ -58,9 +58,9 @@ const useForm = () => {
       const keys = Object.keys(controls);
       const newControls = keys.reduce((acc, val) => {
         if (val === old) {
-          acc[curr] = controls[old];
+          acc[curr] = controls[old]!;
         } else {
-          acc[val] = controls[val];
+          acc[val] = controls[val]!;
         }
         return acc;
       }, {} as Record<string, IValidator>);

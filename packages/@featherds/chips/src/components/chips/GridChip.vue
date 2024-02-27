@@ -17,7 +17,7 @@
       v-if="canDelete"
       :disabled="disabled"
       :text-id="chipTextId"
-      :label="deleteLabel"
+      :label="deleteLabel!"
       role="gridcell"
       @delete="$emit('delete')"
     />

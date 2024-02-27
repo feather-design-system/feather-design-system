@@ -29,6 +29,7 @@ export const props = {
   },
 } as const;
 export const emits = {
+  // eslint-disable-next-line @typescript-eslint/no-unused-vars
   "update:modelValue": (_v: boolean) => true,
 };
 export default defineComponent({

@@ -37,6 +37,7 @@ export default defineComponent({
       //be 8 + before/after which means 10 or potentially 12.
       //see https://developer.mozilla.org/en-US/docs/Web/API/Node/compareDocumentPosition#return_value
       if (result === 0x0a || result === 0x0c) return "parent";
+      return "parent";
     };
 
     const focusFirstDescendant = (element: HTMLElement) => {

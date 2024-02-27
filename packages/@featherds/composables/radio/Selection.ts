@@ -26,9 +26,9 @@ const useSelection = (
         return;
       }
       if (index.value === 0) {
-        select(notDisabled.value[notDisabled.value.length - 1]);
+        select(notDisabled.value[notDisabled.value.length - 1]!);
       } else {
-        select(notDisabled.value[index.value - 1]);
+        select(notDisabled.value[index.value - 1]!);
       }
     },
     selectNext() {
@@ -36,9 +36,9 @@ const useSelection = (
         return;
       }
       if (index.value === notDisabled.value.length - 1) {
-        select(notDisabled.value[0]);
+        select(notDisabled.value[0]!);
       } else {
-        select(notDisabled.value[index.value + 1]);
+        select(notDisabled.value[index.value + 1]!);
       }
     },
   };

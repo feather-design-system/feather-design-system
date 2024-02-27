@@ -16,7 +16,7 @@ const checkSelected = (
   items: HTMLElement[],
   index: number
 ) => {
-  expect(items[index].focus).toHaveBeenCalled();
+  expect(items[index]!.focus).toHaveBeenCalled();
   expect(service.currentItem).toBe(items[index]);
 };
 describe("Dropdown Service", () => {
@@ -24,7 +24,7 @@ describe("Dropdown Service", () => {
     it("should select the first not disabled item", () => {
       const service = useDropdownService();
       const items = getItems();
-      items[0].classList.add("disabled");
+      items[0]!.classList.add("disabled");
       service.setItems(items);
       service.selectFirst();
       checkSelected(service, items, 1);
@@ -48,7 +48,7 @@ describe("Dropdown Service", () => {
     it("should select the last not disabled item", () => {
       const service = useDropdownService();
       const items = getItems();
-      items[items.length - 1].classList.add("disabled");
+      items[items.length - 1]!.classList.add("disabled");
       service.setItems(items);
       service.selectLast();
       checkSelected(service, items, items.length - 2);
@@ -72,9 +72,9 @@ describe("Dropdown Service", () => {
     it("should select the last element when first element is disabled and current element is second", () => {
       const service = useDropdownService();
       const items = getItems();
-      items[0].classList.add("disabled");
+      items[0]!.classList.add("disabled");
       service.setItems(items);
-      service.select(items[1]); //set second;
+      service.select(items[1]!); //set second;
       service.selectPrevious();
       checkSelected(service, items, items.length - 1);
     });
@@ -82,7 +82,7 @@ describe("Dropdown Service", () => {
       const service = useDropdownService();
       const items = getItems();
       service.setItems(items);
-      service.select(items[0]); //set first;
+      service.select(items[0]!); //set first;
       service.selectPrevious();
       checkSelected(service, items, items.length - 1);
     });
@@ -90,7 +90,7 @@ describe("Dropdown Service", () => {
       const service = useDropdownService();
       const items = getItems();
       service.setItems(items);
-      service.select(items[1]); //set second;
+      service.select(items[1]!); //set second;
       service.selectPrevious();
       checkSelected(service, items, 0);
     });
@@ -99,9 +99,9 @@ describe("Dropdown Service", () => {
     it("should select the first element when last element is disabled and current element is second last", () => {
       const service = useDropdownService();
       const items = getItems();
-      items[items.length - 1].classList.add("disabled");
+      items[items.length - 1]!.classList.add("disabled");
       service.setItems(items);
-      service.select(items[items.length - 2]); //set second last;
+      service.select(items[items.length - 2]!); //set second last;
       service.selectNext();
       checkSelected(service, items, 0);
     });
@@ -109,7 +109,7 @@ describe("Dropdown Service", () => {
       const service = useDropdownService();
       const items = getItems();
       service.setItems(items);
-      service.select(items[items.length - 1]); //set last;
+      service.select(items[items.length - 1]!); //set last;
       service.selectNext();
       checkSelected(service, items, 0);
     });
@@ -117,7 +117,7 @@ describe("Dropdown Service", () => {
       const service = useDropdownService();
       const items = getItems();
       service.setItems(items);
-      service.select(items[0]); //set first;
+      service.select(items[0]!); //set first;
       service.selectNext();
       checkSelected(service, items, 1);
     });

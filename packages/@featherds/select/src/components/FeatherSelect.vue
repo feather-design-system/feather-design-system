@@ -102,6 +102,7 @@ export const props = {
   },
 } as const;
 export const emits = {
+  // eslint-disable-next-line @typescript-eslint/no-unused-vars
   "update:modelValue": (_v: ISelectItemType | undefined) => true,
 };
 export default defineComponent({
@@ -196,7 +197,7 @@ export default defineComponent({
         const found = this.options.filter(
           (x) => x[this.textProp] === iv[this.textProp]
         );
-        if (found && found.length) {
+        if (found[0]) {
           return this.options.indexOf(found[0]);
         }
       }

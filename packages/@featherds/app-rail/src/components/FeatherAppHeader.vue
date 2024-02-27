@@ -10,7 +10,7 @@
 </template>
 <script lang="ts">
 import { ScrollHideHeader } from "@featherds/app-layout";
-import { defineComponent, provide } from "vue";
+import { defineComponent } from "vue";
 
 export const props = {
   scrollHide: {

@@ -68,6 +68,7 @@ export const props = {
   },
 } as const;
 export const emits = {
+  // eslint-disable-next-line @typescript-eslint/no-unused-vars
   "sort-changed": (_v: { property: string; value: SORT }) => true,
 };
 export default defineComponent({
@@ -143,11 +144,12 @@ export default defineComponent({
       } else if (dir === SORT.DESCENDING) {
         label = this.sortDescendingLabel;
       }
-
-      (this.$refs.alert as HTMLElement).textContent = label;
-      setTimeout(() => {
-        (this.$refs.alert as HTMLElement).textContent = "";
-      }, 100);
+      if (label) {
+        (this.$refs.alert as HTMLElement).textContent = label;
+        setTimeout(() => {
+          (this.$refs.alert as HTMLElement).textContent = "";
+        }, 100);
+      }
     },
   },
 });

@@ -12,10 +12,26 @@
     "resolveJsonModule": true,
     "esModuleInterop": true,
     "noUnusedParameters": true,
-    "lib": ["ESNext", "DOM"],
+    "lib": ["ESNext", "DOM", "DOM.Iterable"],
     "typeRoots": ["./node_modules/@types/", "./packages/@featherds/"],
-    "types": ["node", "@wdio/globals/types", "@wdio/mocha-framework"],
-    "skipLibCheck": true //vue test utils giving errors
+    "types": ["node"],
+    "skipLibCheck": true, //vue test utils giving errors
+
+    "paths": {
+      "@/*": ["src/*"]
+    },
+    "allowImportingTsExtensions": true,
+    "noEmit": true, //TS5096n
+    "isolatedModules": true,
+
+    //* Linting *//
+    "noUnusedLocals": true,
+    "allowUnreachableCode": false,
+    "noFallthroughCasesInSwitch": true,
+    "noImplicitOverride": true,
+    "noImplicitReturns": true,
+    "noUncheckedIndexedAccess": true,
+
   },
   "include": [
     "packages/@featherds/*/src/**/*.ts",

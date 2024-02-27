@@ -1,18 +1,18 @@
-import { PopoverPlacement, PointerAlignment } from "../types";
+import { PopoverPlacement, PointerAlignment, Tooltip, Trigger } from "../types";
 import { calculateAlignment } from "./Alignment";
 import { expect, describe, it } from "vitest";
 
 const getLayout = (left = true, center = true, right = true) => {
-  const tooltip = {
+  const tooltip: Tooltip = {
     height: 100,
     width: 100,
-  } as Record<string, number>;
-  const trigger = {
+  };
+  const trigger: Trigger = {
     height: 20,
     width: 20,
     left: 0,
     top: tooltip.height + 10,
-  } as Record<string, number>;
+  };
 
   const screenHeight = trigger.height + tooltip.height + 50; // + 50 for a buffer
   let screenWidth = trigger.width;
@@ -46,16 +46,16 @@ const getLayout = (left = true, center = true, right = true) => {
 };
 
 const getVerticalLayout = (left = true, center = true, right = true) => {
-  const tooltip = {
+  const tooltip: Tooltip = {
     height: 100,
     width: 100,
-  } as Record<string, number>;
-  const trigger = {
+  };
+  const trigger: Trigger = {
     height: 20,
     width: 20,
     left: 0,
     top: tooltip.height + 10,
-  } as Record<string, number>;
+  };
 
   const screenWidth = trigger.width + tooltip.width + 50; // + 50 for a buffer
   let screenHeight = trigger.height;

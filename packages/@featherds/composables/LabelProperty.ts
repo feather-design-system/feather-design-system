@@ -1,7 +1,7 @@
 import { computed, Ref, ComputedRef } from "vue";
 type Labels<Type> = {
   [Property in keyof Type as `${string & Property}Label`]: ComputedRef<
-    Type[Property]
+    Type[Property] | string | undefined
   >;
 };
 const useLabelProperty = <T>(
@@ -10,11 +10,13 @@ const useLabelProperty = <T>(
 ): Labels<T> => {
   const result: Record<string, ComputedRef<string>> = {};
   Object.keys(defaultLabels).forEach((key) => {
+    //TS2322
+    // @ts-expect-error
     result[`${key}Label`] = computed(() => {
-      return labelRef.value[key] ? labelRef.value[key] : defaultLabels[key];
+      return labelRef.value[key] || defaultLabels[key];
     });
   });
-  return result as any as Labels<T>;
+  return result as Labels<T>;
 };
 
 export { useLabelProperty };

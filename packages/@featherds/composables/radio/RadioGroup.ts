@@ -31,7 +31,10 @@ const useRadioGroup = (
       let enabled = radios.value.filter((x) => !x.disabled);
       enabled = enabled.length ? enabled : radios.value; //if there is none enabled just use radios.
       firstElement.value = enabled[0];
-      firstElement.value.first = true;
+      // firstElement.value.first = true;
+      if (firstElement.value != undefined) {
+        firstElement.value.first = true;
+      }
     }
   });
 

@@ -1,7 +1,7 @@
 <template>
   <ScrollHideHeader class="feather-app-bar-wrapper" :scroll-hide="scrollHide">
     <template #pre>
-      <SkipContentLink :content="content" :skip-label="skipLabel" />
+      <SkipContentLink :content="content" :skip-label="skipLabel!" />
     </template>
     <div class="header">
       <div
@@ -13,7 +13,7 @@
             v-if="canShowExpand"
             class="expand-button"
             :icon="menu"
-            :title="expandLabel"
+            :title="expandLabel!"
             @click.stop.prevent="(expand as () => void)"
             url="#"
           />

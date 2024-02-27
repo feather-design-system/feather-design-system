@@ -61,7 +61,7 @@ describe("FeatherDrawer.vue", () => {
     it("should trigger change event with false", () => {
       const wrapper = getWrapper({ props: getprops(true), slots });
       wrapper.vm.close();
-      expect(getCalls<[boolean]>(wrapper, "update:modelValue")[0][0]).toBe(
+      expect(getCalls<[boolean]>(wrapper, "update:modelValue")[0]![0]).toBe(
         false
       );
     });

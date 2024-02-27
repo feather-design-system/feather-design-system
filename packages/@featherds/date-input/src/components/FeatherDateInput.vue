@@ -39,7 +39,7 @@
             <SpinButton
               :id="monthId"
               :tabindex="disabled ? -1 : 0"
-              :label="monthLabel"
+              :label="monthLabel!"
               ref="monthButton"
               :min="1"
               :max="12"
@@ -52,7 +52,7 @@
             />
             /
             <SpinButton
-              :label="dayLabel"
+              :label="dayLabel!"
               ref="dayButton"
               :min="1"
               :max="31"
@@ -66,7 +66,7 @@
             />
             /
             <SpinButton
-              :label="yearLabel"
+              :label="yearLabel!"
               ref="yearButton"
               :min="minYear"
               :max="maxYear"
@@ -197,6 +197,7 @@ export const props = {
   },
 } as const;
 export const emits = {
+  // eslint-disable-next-line @typescript-eslint/no-unused-vars
   "update:modelValue": (_value: Date | undefined) => true,
   blur: () => true,
 };
@@ -236,7 +237,7 @@ export default defineComponent({
 
     const error = computed(() => {
       if (invalidDateState.value) {
-        return labels.invalidDateLabel.value;
+        return labels.invalidDateLabel.value!;
       } else {
         return errorProp.value;
       }

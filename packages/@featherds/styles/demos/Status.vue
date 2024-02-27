@@ -83,8 +83,7 @@ const hexVal = [
 ];
 const regex = /rgb\((\d{1,3}), (\d{1,3}), (\d{1,3})\)/;
 
-const themeObserver = new MutationObserver((event) => {
-  const [e1] = event;
+const themeObserver = new MutationObserver(() => {
   forceRerender();
 });
 
@@ -93,7 +92,7 @@ themeObserver.observe(document.querySelector("body")!, { attributes: true });
 const forceRerender = async () => {
   colorSet.forEach((item, index) => {
     const currentKey = item.title;
-    const newTheme = colorSetKeys.value[index].includes("dark")
+    const newTheme = colorSetKeys.value[index]!.includes("dark")
       ? "light"
       : "dark";
     colorSetKeys.value.splice(index, 1, `${currentKey}${newTheme}`);
@@ -147,9 +146,11 @@ const hideColor = (e: MouseEvent) => {
 
 const convertRgbToHex = (color: string) => {
   const match = regex.exec(color);
-  if (match) {
+  if (!match) {
+    return;
+  } else {
     const [, r, g, b] = match;
-    return `#${numToHex(+r)}${numToHex(+g)}${numToHex(+b)}`;
+    return `#${numToHex(+r!)}${numToHex(+g!)}${numToHex(+b!)}`;
   }
 };
 

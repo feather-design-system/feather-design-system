@@ -15,6 +15,7 @@ const model = {
   event: "update:modelValue",
 };
 const emits = {
+  // eslint-disable-next-line @typescript-eslint/no-unused-vars
   "update:modelValue": (_value: number | undefined) => true,
 };
 const stockProps = {
@@ -126,14 +127,14 @@ const useTabContainer = (
         index = 0;
       }
       stop(evt);
-      selectIndex(pairs.value.indexOf(notDisabledPairs[index]));
+      selectIndex(pairs.value.indexOf(notDisabledPairs[index]!));
     } else if (prevKeys.includes(code)) {
       index--;
       if (index < 0) {
         index = notDisabledPairs.length - 1;
       }
       stop(evt);
-      selectIndex(pairs.value.indexOf(notDisabledPairs[index]));
+      selectIndex(pairs.value.indexOf(notDisabledPairs[index]!));
     }
     if (selectKeys.includes(code)) {
       activateIndex(index);

@@ -28,10 +28,12 @@ describe("FeatherExpansionPanel.vue", () => {
     );
     await button.trigger("click");
     expect(button.attributes("aria-expanded")).toBe("true");
-    expect(getCalls<[boolean]>(wrapper, "update:modelValue")[0][0]).toBe(true);
+    expect(getCalls<[boolean]>(wrapper, "update:modelValue")[0]![0]).toBe(true);
     await button.trigger("click");
     expect(button.attributes("aria-expanded")).toBe("false");
-    expect(getCalls<[boolean]>(wrapper, "update:modelValue")[1][0]).toBe(false);
+    expect(getCalls<[boolean]>(wrapper, "update:modelValue")[1]![0]).toBe(
+      false
+    );
   });
 
   it("should not toggle expanded when disabled", async () => {

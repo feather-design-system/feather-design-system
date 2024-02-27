@@ -34,7 +34,7 @@ const useValidation = (
         return { success: true } as IValidationSuccess;
       } catch (e: unknown) {
         const err = e as { errors: string[] };
-        errorMessage.value = err.errors[0];
+        errorMessage.value = err.errors[0]!;
         return {
           success: false,
           message: err.errors[0],
