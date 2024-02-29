@@ -1,3 +1,16 @@
+// Note: introduced new types
+export type Tooltip = {
+  height: number;
+  width: number;
+};
+
+export type Trigger = {
+  height: number;
+  width: number;
+  left: number;
+  top: number;
+};
+
 export enum PopoverPlacement {
   top = "top",
   bottom = "bottom",

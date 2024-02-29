@@ -1,4 +1,4 @@
-import { PopoverPlacement } from "../types";
+import { PopoverPlacement, Tooltip, Trigger } from "../types";
 import { calculatePlacement } from "./Placement";
 import { expect, describe, it } from "vitest";
 
@@ -6,14 +6,22 @@ import { expect, describe, it } from "vitest";
 //pass true if you want enough space for the tooltip
 const getLayout = (top = true, right = true, bottom = true, left = true) => {
   const arrowHeight = 10;
+  // const tooltip = {
+  //   height: 20,
+  //   width: 20,
+  // } as Record<string, number>;
+  // const trigger = {
+  //   height: 100,
+  //   width: 100,
+  // } as Record<string, number>;
   const tooltip = {
     height: 20,
     width: 20,
-  } as Record<string, number>;
+  } as Tooltip;
   const trigger = {
     height: 100,
     width: 100,
-  } as Record<string, number>;
+  } as Trigger;
 
   let screenHeight = trigger.height;
   let screenWidth = trigger.width;

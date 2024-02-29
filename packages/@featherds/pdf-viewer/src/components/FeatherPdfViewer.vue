@@ -65,7 +65,7 @@
                 <div class="file-error" v-if="state === 2">
                   <slot name="error">
                     <ErrorPanel
-                      :text="errorPreviewFileLabel"
+                      :text="errorPreviewFileLabel!"
                       :download-text="computedDownloadLabel"
                       :download-url="documentUrl"
                   /></slot>
@@ -73,7 +73,7 @@
                 <div class="file-error" v-if="state === 1">
                   <slot name="no-preview">
                     <ErrorPanel
-                      :text="noPreviewFileLabel"
+                      :text="noPreviewFileLabel!"
                       :download-text="computedDownloadLabel"
                       :download-url="documentUrl"
                   /></slot>
@@ -150,9 +150,11 @@ export const props = {
   },
 } as const;
 export const emits = {
+  // eslint-disable-next-line @typescript-eslint/no-unused-vars
   "update:modelValue": (_v: boolean) => true,
   shown: () => true,
   hidden: () => true,
+  // eslint-disable-next-line @typescript-eslint/no-unused-vars
   "check-request": (_v: XMLHttpRequest) => true,
 };
 export default defineComponent({
@@ -229,7 +231,10 @@ export default defineComponent({
     //if we dont have a pdf extension and no preview url then show error.
     watch(
       [visible, preview, ext, docUrl],
-      ([vis, url, _extension, docUrl]) => {
+      // eslint-disable-next-line @typescript-eslint/no-unused-vars
+      // ([vis, url, _extension, docUrl]) => {
+      // NOTE: Can we just eliminate the variable from the list?
+      ([vis, url, , docUrl]) => {
         if (vis && ((url && url.length) || (docUrl && docUrl.length))) {
           updateState(STATE.LOADING);
           var http = new window.XMLHttpRequest();
@@ -268,7 +273,9 @@ export default defineComponent({
       }
     });
     const computedDownloadLabel = computed(() => {
-      if (labels.downloadLabel) {
+      // ts(18048)
+      // if (labels.downloadLabel) {
+      if (labels.downloadLabel.value) {
         return labels.downloadLabel.value.replace(
           "${ext}",
           props.documentExtension
@@ -277,7 +284,9 @@ export default defineComponent({
       return "";
     });
     const computedViewerTitle = computed(() => {
-      if (labels.viewerTitleLabel) {
+      // ts(18048)
+      // if (labels.viewerTitleLabel) {
+      if (labels.viewerTitleLabel.value && labels.titleLabel.value) {
         return labels.viewerTitleLabel.value.replace(
           "${docname}",
           labels.titleLabel.value

@@ -33,10 +33,11 @@ describe("FeatherSortHeader.vue", () => {
   it("should emit sort-changed when clicked", async () => {
     const wrapper = getWrapper();
     await wrapper.find("[role='button']").trigger("click");
-    const firstEvent = getCalls<[{ property: string; value: SORT }]>(
+    const firstCall = getCalls<[{ property: string; value: SORT }]>(
       wrapper,
       "sort-changed"
-    )[0][0];
+    )[0] as [{ property: string; value: SORT }];
+    const firstEvent = firstCall[0];
     expect(firstEvent.property).toBe(PROPERTY);
     expect(firstEvent.value).toBe(SORT.DESCENDING);
 
@@ -44,10 +45,11 @@ describe("FeatherSortHeader.vue", () => {
       sort: SORT.DESCENDING,
     });
     await wrapper.find("[role='button']").trigger("click");
-    const secondEvent = getCalls<[{ property: string; value: SORT }]>(
+    const secondCall = getCalls<[{ property: string; value: SORT }]>(
       wrapper,
       "sort-changed"
-    )[1][0];
+    )[1] as [{ property: string; value: SORT }];
+    const secondEvent = secondCall[0];
     expect(secondEvent.property).toBe(PROPERTY);
     expect(secondEvent.value).toBe(SORT.NONE);
 
@@ -56,10 +58,11 @@ describe("FeatherSortHeader.vue", () => {
     });
 
     await wrapper.find("[role='button']").trigger("click");
-    const thirdEvent = getCalls<[{ property: string; value: SORT }]>(
+    const thirdCall = getCalls<[{ property: string; value: SORT }]>(
       wrapper,
       "sort-changed"
-    )[2][0];
+    )[2] as [{ property: string; value: SORT }];
+    const thirdEvent = thirdCall[0];
     expect(thirdEvent.property).toBe(PROPERTY);
     expect(thirdEvent.value).toBe(SORT.ASCENDING);
   });

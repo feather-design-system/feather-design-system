@@ -65,7 +65,7 @@ describe("FeatherCheckbox.vue", () => {
   it("should emit input event when clicked", async () => {
     const wrapper = getWrapper();
     await wrapper.find("[role='checkbox']").trigger("click");
-    expect(getCalls<boolean[]>(wrapper, "update:modelValue")[0][0]).toBe(true);
+    expect(getCalls<boolean[]>(wrapper, "update:modelValue")[0]![0]).toBe(true);
   });
   it("should toggle the value when enter or space is pressed", async () => {
     const testKeydown = async (code: Code, modelValue: boolean) => {
@@ -75,7 +75,7 @@ describe("FeatherCheckbox.vue", () => {
       expect(wrapper.vm.modelValue).toBe(modelValue);
       const input = wrapper.find<HTMLElement>("[role='checkbox']");
       await input.trigger("keydown", { code });
-      expect(getCalls<boolean[]>(wrapper, "update:modelValue")[0][0]).toBe(
+      expect(getCalls<boolean[]>(wrapper, "update:modelValue")[0]![0]).toBe(
         !modelValue
       );
     };
@@ -116,7 +116,7 @@ describe("FeatherCheckbox.vue", () => {
       });
       await nextTick();
       expect(
-        getCalls<boolean[]>(wrapper, "update:modelValue")[0][0]
+        getCalls<boolean[]>(wrapper, "update:modelValue")[0]![0]
       ).toBeUndefined();
     });
     it("should set value to true when an indeterminate checkbox is clicked", async () => {
@@ -130,7 +130,7 @@ describe("FeatherCheckbox.vue", () => {
       });
       await nextTick();
       await wrapper.find("[role='checkbox']").trigger("click");
-      expect(getCalls<boolean[]>(wrapper, "update:modelValue")[1][0]).toBe(
+      expect(getCalls<boolean[]>(wrapper, "update:modelValue")[1]![0]).toBe(
         true
       );
     });
@@ -145,7 +145,7 @@ describe("FeatherCheckbox.vue", () => {
       });
       await nextTick();
       await wrapper.find("[role='checkbox']").trigger("click");
-      expect(getCalls<boolean[]>(wrapper, "indeterminate")[1][0]).toBe(false);
+      expect(getCalls<boolean[]>(wrapper, "indeterminate")[1]![0]).toBe(false);
     });
     it("should emit an indeterminate event when indeterminate is set via prop", async () => {
       const wrapper = getWrapper({
@@ -157,7 +157,7 @@ describe("FeatherCheckbox.vue", () => {
         indeterminate: true,
       });
       await nextTick();
-      expect(getCalls<boolean[]>(wrapper, "indeterminate")[0][0]).toBe(true);
+      expect(getCalls<boolean[]>(wrapper, "indeterminate")[0]![0]).toBe(true);
     });
   });
   describe("a11y", () => {

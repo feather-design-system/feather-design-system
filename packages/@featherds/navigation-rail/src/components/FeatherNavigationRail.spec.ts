@@ -35,7 +35,7 @@ describe("FeatherNavigationRail.vue", () => {
     expect(wrapper.element).toMatchSnapshot();
     await wrapper.find(".expand-link").trigger("click");
     expect(wrapper.element).toMatchSnapshot();
-    expect(getCalls<[boolean]>(wrapper, "update:modelValue")[0][0]).toBe(true);
+    expect(getCalls<[boolean]>(wrapper, "update:modelValue")[0]![0]).toBe(true);
   });
   it("should toggle state when chevron trigger by enter", async () => {
     const wrapper = getWrapper({
@@ -46,7 +46,7 @@ describe("FeatherNavigationRail.vue", () => {
     expect(wrapper.element).toMatchSnapshot();
     await wrapper.find(".expand-link").trigger("keydown.enter");
     expect(wrapper.element).toMatchSnapshot();
-    expect(getCalls<[boolean]>(wrapper, "update:modelValue")[0][0]).toBe(true);
+    expect(getCalls<[boolean]>(wrapper, "update:modelValue")[0]![0]).toBe(true);
   });
   it("should toggle state when chevron trigger by space", async () => {
     const wrapper = getWrapper({
@@ -57,7 +57,7 @@ describe("FeatherNavigationRail.vue", () => {
     expect(wrapper.element).toMatchSnapshot();
     await wrapper.find(".expand-link").trigger("keydown.space");
     expect(wrapper.element).toMatchSnapshot();
-    expect(getCalls<[boolean]>(wrapper, "update:modelValue")[0][0]).toBe(true);
+    expect(getCalls<[boolean]>(wrapper, "update:modelValue")[0]![0]).toBe(true);
   });
   it("should be accessible", async () => {
     const wrapper = mount(FeatherNavigationRail, {

@@ -162,7 +162,7 @@ export default defineComponent({
           tooltipBox,
           placementProp.value,
           arrowHeight
-        );
+        ) as PopoverPlacement;
         let alignment = PointerAlignment.center;
 
         if (
@@ -175,7 +175,7 @@ export default defineComponent({
             tooltipBox,
             alignmentProp.value,
             arrowOffset
-          );
+          ) as PointerAlignment;
         }
         //set the classes so arrow can be positioned
         alignmentClass.value = alignment.toString();

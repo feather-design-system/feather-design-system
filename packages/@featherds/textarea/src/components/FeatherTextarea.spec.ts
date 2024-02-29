@@ -69,9 +69,11 @@ describe("FeatherTextarea.vue", () => {
     const expected = "TEEST";
     textarea.element.value = expected;
     textarea.trigger("input");
-    expect(getCalls<[string]>(wrapper, "update:modelValue")[1][0]).toBe(
-      expected
-    );
+    const call = getCalls<[string]>(
+      wrapper,
+      "update:modelValue"
+    )[1] as string[];
+    expect(call[0]).toBe(expected);
   });
 
   it("should render an textarea error", () => {
@@ -144,7 +146,11 @@ describe("FeatherTextarea.vue", () => {
     wrapper.vm.handleClear();
     await nextTick();
     expect(wrapper.element).toMatchSnapshot();
-    expect(getCalls<[string]>(wrapper, "update:modelValue")[1][0]).toBe("");
+    const call = getCalls<[string]>(
+      wrapper,
+      "update:modelValue"
+    )[1] as string[];
+    expect(call[0]).toBe("");
   });
 
   it("should allow custom focus events", async () => {

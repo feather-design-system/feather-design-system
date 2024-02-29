@@ -18,7 +18,6 @@
 <script lang="ts">
 import * as components from "./../src";
 import { IAutocompleteItemType } from "@featherds/autocomplete";
-import icon from "@featherds/icon/notification/Warning";
 const names = [
   "Liam",
   "Emma",

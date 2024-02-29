@@ -88,9 +88,12 @@ describe("FeatherSelect.vue", () => {
     await input.trigger("keydown", { code: Code.ESCAPE });
 
     expect(wrapper.vm.showMenu).toBe(false);
-    expect(
-      getCalls<[ISelectItemType]>(wrapper, "update:modelValue")[0][0]
-    ).toStrictEqual(options[0]);
+
+    const calls = getCalls<[ISelectItemType]>(
+      wrapper,
+      "update:modelValue"
+    )[0] as ISelectItemType[];
+    expect(calls[0]).toStrictEqual(options[0]);
   });
 
   it("should clear the value when clear icon is clicked", async () => {
@@ -106,9 +109,11 @@ describe("FeatherSelect.vue", () => {
     await wrapper
       .find("[data-ref-id='feather-form-element-clear']")
       .trigger("click");
-    expect(
-      getCalls<[ISelectItemType]>(wrapper, "update:modelValue")[0][0]
-    ).toBeUndefined();
+    const calls = getCalls<[ISelectItemType]>(
+      wrapper,
+      "update:modelValue"
+    )[0] as ISelectItemType[];
+    expect(calls[0]).toBeUndefined();
   });
   it("should open and select first item on first down", async () => {
     const wrapper = getFullWrapper({
@@ -167,9 +172,12 @@ describe("FeatherSelect.vue", () => {
 
     await input.trigger("keydown", { code: Code.ESCAPE });
     expect(wrapper.vm.showMenu).toBe(false);
-    expect(
-      getCalls<[ISelectItemType]>(wrapper, "update:modelValue")[0][0]
-    ).toStrictEqual(options[1]);
+
+    const calls = getCalls<[ISelectItemType]>(
+      wrapper,
+      "update:modelValue"
+    )[0] as ISelectItemType[];
+    expect(calls[0]).toStrictEqual(options[1]);
   });
   it("should not wrap to the top when down is pressed on the last option", async () => {
     const wrapper = getFullWrapper({
@@ -262,9 +270,12 @@ describe("FeatherSelect.vue", () => {
     await wrapper.vm.$nextTick();
     expect(wrapper.vm.showMenu).toBe(false);
     expect(document.activeElement).toBe(wrapper.find("input").element);
-    expect(
-      getCalls<[ISelectItemType]>(wrapper, "update:modelValue")[0][0]
-    ).toStrictEqual(options[0]);
+
+    const calls = getCalls<[ISelectItemType]>(
+      wrapper,
+      "update:modelValue"
+    )[0] as ISelectItemType[];
+    expect(calls[0]).toStrictEqual(options[0]);
   });
   it("should not open menu when focused (tabbed to)", async () => {
     const wrapper = getFullWrapper({

@@ -1,6 +1,6 @@
 import FeatherAutocomplete from "./FeatherAutocomplete.vue";
 import { IAutocompleteItemType, AutocompleteTypes } from "./types";
-import { shallowMount, mount } from "@vue/test-utils";
+import { mount } from "@vue/test-utils";
 import * as id from "@featherds/utils/id";
 import axe from "@featherds/utils/test/axe";
 import { nextTick } from "vue";
@@ -21,7 +21,7 @@ const getProps =
     };
   };
 
-const getResultsType = (_type: AutocompleteTypes) => () => {
+const getResultsType = () => () => {
   return [
     {
       _text: "Item 1",
@@ -49,16 +49,10 @@ const handleUpdateValueType =
   (args: (IAutocompleteItemType | IAutocompleteItemType[])[]) => {
     if (type === AutocompleteTypes.multi) {
       const items = args as Array<IAutocompleteItemType[]>;
-      return items[0][0];
+      return items[0]![0];
     }
     const items = args as IAutocompleteItemType[];
     return items[0];
-  };
-const getWrapperType = (type: AutocompleteTypes) =>
-  function (options: Record<string, unknown> = {}) {
-    const props = options.props as Record<string, unknown>;
-    options.props = getProps(type)(props);
-    return shallowMount(FeatherAutocomplete, options);
   };
 
 const getFullWrapperType = (type: AutocompleteTypes) =>
@@ -70,16 +64,15 @@ const getFullWrapperType = (type: AutocompleteTypes) =>
 
 const baseFunctionality = (type: AutocompleteTypes) => {
   const getFullWrapper = getFullWrapperType(type);
-  const getWrapper = getWrapperType(type);
   const getValue = getValueType(type);
-  const getResults = getResultsType(type);
+  const getResults = getResultsType();
   const handleUpdateValue = handleUpdateValueType(type);
   describe(type, () => {
     it("should perform search with empty string when clicked and min char is 0", async () => {
       const wrapper = getFullWrapper();
       await wrapper.find(".feather-autocomplete-input").trigger("focus");
       await wrapper.findComponent({ ref: "menu" }).vm.$emit("trigger-click");
-      expect(getCalls<string>(wrapper, "search")[0][0]).toBe("");
+      expect(getCalls<string>(wrapper, "search")[0]![0]).toBe(""); //TS2345
     });
     it("should not perform search with empty string when focused and min char is 0", async () => {
       const wrapper = getFullWrapper();
@@ -94,7 +87,7 @@ const baseFunctionality = (type: AutocompleteTypes) => {
       await input.trigger("focus");
       await input.trigger("keydown", { code: Code.SPACE });
 
-      expect(getCalls<string>(wrapper, "search")[0][0]).toBe("");
+      expect(getCalls<string>(wrapper, "search")[0]![0]).toBe(""); // TS2345
     });
     it("should not search when clicked an min char is >0", async () => {
       const wrapper = getFullWrapper({
@@ -126,7 +119,7 @@ const baseFunctionality = (type: AutocompleteTypes) => {
       await input.trigger("input");
       await input.trigger("focus");
       vi.runAllTimers();
-      expect(getCalls<string>(wrapper, "search")[0][0]).toBe(result);
+      expect(getCalls<string>(wrapper, "search")[0]![0]).toBe(result); // TS2345
     });
     it("should throttle search queries", async () => {
       vi.useFakeTimers({
@@ -146,7 +139,7 @@ const baseFunctionality = (type: AutocompleteTypes) => {
       vi.advanceTimersByTime(100);
       expect(wrapper.emitted("search")).toBeUndefined();
       vi.advanceTimersByTime(200);
-      expect(getCalls<string>(wrapper, "search")[0][0]).toBe(result);
+      expect(getCalls<string>(wrapper, "search")[0]![0]).toBe(result); // TS2345
     });
     it("should show loading spinner when search is performed", async () => {
       const wrapper = getFullWrapper();
@@ -346,9 +339,9 @@ const baseFunctionality = (type: AutocompleteTypes) => {
         await input.trigger("keydown", { code: Code.ENTER });
 
         const emitted = handleUpdateValue(
-          getCalls<[IAutocompleteItemType[]]>(wrapper, "update:modelValue")[0]
+          getCalls<[IAutocompleteItemType[]]>(wrapper, "update:modelValue")[0]! // TS2345
         );
-        expect(emitted._text).toBe(results[0]._text);
+        expect(emitted!._text).toBe(results[0]!._text); // TS2345
       });
       it("should select an element when clicked", async () => {
         const results = getResults();
@@ -363,16 +356,16 @@ const baseFunctionality = (type: AutocompleteTypes) => {
           .findComponent({ ref: "results" })
           .vm.$emit("select", results[0]);
         let emitted = handleUpdateValue(
-          getCalls<[IAutocompleteItemType[]]>(wrapper, "update:modelValue")[0]
+          getCalls<[IAutocompleteItemType[]]>(wrapper, "update:modelValue")[0]! // TS2345
         );
-        expect(emitted._text).toBe(results[0]._text);
+        expect(emitted!._text).toBe(results[0]!._text); // TS2345
         await wrapper.find(".feather-autocomplete-input").trigger("blur");
         const events = getCalls<[IAutocompleteItemType[]]>(
           wrapper,
           "update:modelValue"
         );
-        emitted = handleUpdateValue(events[events.length - 1]);
-        expect(emitted._text).toBe(results[0]._text);
+        emitted = handleUpdateValue(events[events.length - 1]!); // TS2345
+        expect(emitted!._text).toBe(results[0]!._text);
       });
     });
   });
@@ -385,7 +378,7 @@ describe("FeatherAutocomplete", () => {
   });
   describe("multi:specific", () => {
     const getFullWrapper = getFullWrapperType(AutocompleteTypes.multi);
-    const getResults = getResultsType(AutocompleteTypes.multi);
+    const getResults = getResultsType();
     const getValue = getValueType(AutocompleteTypes.multi);
     it("should activate first item in menu on initial load", async () => {
       const results = getResults();
@@ -651,16 +644,12 @@ describe("FeatherAutocomplete", () => {
         await input.trigger("keydown", { code: Code.LEFT });
         await input.trigger("keydown", { code: Code.DELETE });
 
-        const dsds = getCalls<[IAutocompleteItemType[]]>(
-          wrapper,
-          "update:modelValue"
-        )[0][0];
         expect(
           getCalls<[IAutocompleteItemType[]]>(
             wrapper,
             "update:modelValue"
-          )[0][0][0]._text
-        ).toBe(modelValue[0]._text);
+          )[0]![0][0]!._text
+        ).toBe(modelValue[0]!._text);
         expect(wrapper.vm.activeChipIndex).toBe(-1);
       });
       it("should delete a chip when chip is active and backspace is pressed", async () => {
@@ -687,8 +676,8 @@ describe("FeatherAutocomplete", () => {
           getCalls<[IAutocompleteItemType[]]>(
             wrapper,
             "update:modelValue"
-          )[0][0][0]._text
-        ).toBe(modelValue[0]._text);
+          )[0]![0][0]!._text
+        ).toBe(modelValue[0]!._text);
         expect(wrapper.vm.activeChipIndex).toBe(-1);
       });
       it("should not have any active tokens when one is deleted", async () => {
@@ -716,8 +705,8 @@ describe("FeatherAutocomplete", () => {
           getCalls<[IAutocompleteItemType[]]>(
             wrapper,
             "update:modelValue"
-          )[0][0][0]._text
-        ).toBe(modelValue[0]._text);
+          )[0]![0][0]!._text
+        ).toBe(modelValue[0]!._text);
         expect(wrapper.vm.activeChipIndex).toBe(-1);
       });
       it("should delete a chip when the delete x is clicked", async () => {
@@ -739,8 +728,8 @@ describe("FeatherAutocomplete", () => {
           getCalls<[IAutocompleteItemType[]]>(
             wrapper,
             "update:modelValue"
-          )[0][0][0]._text
-        ).toBe(modelValue[1]._text);
+          )[0]![0][0]!._text
+        ).toBe(modelValue[1]!._text);
       });
       it("should select rightmost token if left is pressed whilst navigating the menu and there is no search text", async () => {
         const results = [
@@ -840,7 +829,7 @@ describe("FeatherAutocomplete", () => {
         });
         await wrapper.find(".feather-autocomplete-input").trigger("focus");
         expect(wrapper.vm.showSelectionLimit).toBe(true);
-        wrapper.vm.removeFromValue(modelValue[0]);
+        wrapper.vm.removeFromValue(modelValue[0]!);
         await nextTick();
         expect(wrapper.element).toMatchSnapshot();
         expect(wrapper.vm.showSelectionLimit).toBe(false);
@@ -850,7 +839,7 @@ describe("FeatherAutocomplete", () => {
 
   describe("single:specific", () => {
     const getFullWrapper = getFullWrapperType(AutocompleteTypes.single);
-    const getResults = getResultsType(AutocompleteTypes.single);
+    const getResults = getResultsType();
     const getValue = getValueType(AutocompleteTypes.single);
     it("should display value text in the input when a value is selected", async () => {
       const wrapper = getFullWrapper();
@@ -891,7 +880,7 @@ describe("FeatherAutocomplete", () => {
       const index = wrapper.vm.active.row;
       await input.trigger("blur");
       expect(
-        getCalls<[IAutocompleteItemType[]]>(wrapper, "update:modelValue")[0][0]
+        getCalls<[IAutocompleteItemType[]]>(wrapper, "update:modelValue")[0]![0]
       ).toStrictEqual(results[index]);
     });
     it("should fire single update:modelValue when clicked", async () => {
@@ -912,7 +901,7 @@ describe("FeatherAutocomplete", () => {
       // click the 2nd result
       await wrapper
         .findComponent({ ref: "results" })
-        .findAll(".result-item")[1]
+        .findAll(".result-item")[1]! // TS2532
         .trigger("click");
 
       await wrapper.find(".feather-autocomplete-input").trigger("blur");
@@ -988,7 +977,7 @@ describe("FeatherAutocomplete", () => {
       wrapper.vm.handleClear();
       await nextTick();
       expect(
-        getCalls<[IAutocompleteItemType[]]>(wrapper, "update:modelValue")[0][0]
+        getCalls<[IAutocompleteItemType[]]>(wrapper, "update:modelValue")[0]![0]
       ).toBe(undefined);
     });
 
@@ -1016,7 +1005,7 @@ describe("FeatherAutocomplete", () => {
         _new: query,
         [wrapper.vm.textProp]: query,
       });
-      expect(getCalls<[string]>(wrapper, "new")[0][0]).toBe(query);
+      expect(getCalls<[string]>(wrapper, "new")[0]![0]).toBe(query); // TS2532
     });
     it("should show add new element when in add-new mode", async () => {
       vi.useFakeTimers({
@@ -1067,7 +1056,7 @@ describe("FeatherAutocomplete", () => {
       });
       await input.trigger("blur");
       await nextTick();
-      expect(getCalls<[string]>(wrapper, "new")[0][0]).toBe(query);
+      expect(getCalls<[string]>(wrapper, "new")[0]![0]).toBe(query); // TS2532
     });
   });
 });

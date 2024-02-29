@@ -57,7 +57,7 @@
           {{ d }}
         </th>
       </tr>
-      <tr v-for="week in weeks" :key="'week' + week[0].timestamp">
+      <tr v-for="week in weeks" :key="'week' + week[0]!.timestamp">
         <td v-for="day in week" :key="day.timestamp">
           <button
             class="cell day hover focus"
@@ -234,7 +234,7 @@ export default defineComponent({
       return days;
     },
     endBlankDays(): ICalendarDay[] {
-      const d = new Date(this.days[this.days.length - 1].timestamp);
+      const d = new Date(this.days[this.days.length - 1]!.timestamp);
       const dObj = new Date(d.getFullYear(), d.getMonth(), d.getDate());
       let count = utils.getDay(dObj) as number;
       if (this.mondayFirst) {
@@ -295,7 +295,7 @@ export default defineComponent({
       this.alertText = "";
     },
     setAlertText() {
-      this.alertText = this.inCalendarLabel;
+      this.alertText = this.inCalendarLabel!;
     },
     focus() {
       this.$nextTick(() => {

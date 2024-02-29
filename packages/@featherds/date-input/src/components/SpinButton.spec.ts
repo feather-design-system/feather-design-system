@@ -139,10 +139,10 @@ describe("SpinButton.vue", () => {
     });
     await setValue(wrapper, "1");
     expect(getCalls<[number]>(wrapper, "update:modelValue").length).toBe(1);
-    expect(getCalls<[unknown]>(wrapper, "update:modelValue")[0][0]).toBe(5);
+    expect(getCalls<[unknown]>(wrapper, "update:modelValue")[0]![0]).toBe(5);
 
     await setValue(wrapper, "009");
-    expect(getCalls<[number]>(wrapper, "update:modelValue")[1][0]).toBe(9);
+    expect(getCalls<[number]>(wrapper, "update:modelValue")[1]![0]).toBe(9);
   });
   it("should clear value when delete is pressed", async () => {
     const wrapper = getWrapper({
@@ -159,10 +159,10 @@ describe("SpinButton.vue", () => {
     await span.trigger("keydown", { code: Code.DELETE });
 
     expect(
-      getCalls<[unknown]>(wrapper, "update:modelValue")[0][0]
+      getCalls<[unknown]>(wrapper, "update:modelValue")[0]![0]
     ).toBeUndefined();
     await wrapper.setProps({
-      modelValue: getCalls<[unknown]>(wrapper, "update:modelValue")[0][0],
+      modelValue: getCalls<[unknown]>(wrapper, "update:modelValue")[0]![0],
     });
     expect(getValue(wrapper)).toBe("dd");
   });
@@ -180,7 +180,7 @@ describe("SpinButton.vue", () => {
       clipboardData: { getData: () => pasted },
     });
     await wrapper.vm.$nextTick();
-    expect(getCalls<[number]>(wrapper, "update:modelValue")[0][0]).toBe(28);
+    expect(getCalls<[number]>(wrapper, "update:modelValue")[0]![0]).toBe(28);
   });
   it("should trigger paste event when text is pasted", async () => {
     const wrapper = getWrapper({
@@ -196,7 +196,7 @@ describe("SpinButton.vue", () => {
     await wrapper.find("span").trigger("paste", {
       clipboardData: { getData: () => pasted },
     });
-    expect(getCalls<[string]>(wrapper, "paste")[0][0]).toBe(pasted);
+    expect(getCalls<[string]>(wrapper, "paste")[0]![0]).toBe(pasted);
   });
   it("should clear input when no character is typed", async () => {
     const wrapper = getWrapper({
@@ -213,10 +213,10 @@ describe("SpinButton.vue", () => {
     await span.trigger("keydown", { code: Code.BACKSPACE });
 
     expect(
-      getCalls<[unknown]>(wrapper, "update:modelValue")[0][0]
+      getCalls<[unknown]>(wrapper, "update:modelValue")[0]![0]
     ).toBeUndefined();
     await wrapper.setProps({
-      modelValue: getCalls<[unknown]>(wrapper, "update:modelValue")[0][0],
+      modelValue: getCalls<[unknown]>(wrapper, "update:modelValue")[0]![0],
     });
     expect(getValue(wrapper)).toBe("dd");
   });
@@ -240,12 +240,12 @@ describe("SpinButton.vue", () => {
     await wrapper.find("span").trigger("keydown", {
       key: "9",
     });
-    expect(getCalls<[number]>(wrapper, "update:modelValue")[2][0]).toBe(119);
+    expect(getCalls<[number]>(wrapper, "update:modelValue")[2]![0]).toBe(119);
 
     const span = wrapper.find("span");
     await span.trigger("keydown", { code: Code.BACKSPACE });
 
-    expect(getCalls<[number]>(wrapper, "update:modelValue")[3][0]).toBe(11);
+    expect(getCalls<[number]>(wrapper, "update:modelValue")[3]![0]).toBe(11);
     expect(getValue(wrapper)).toBe("0011");
   });
 });

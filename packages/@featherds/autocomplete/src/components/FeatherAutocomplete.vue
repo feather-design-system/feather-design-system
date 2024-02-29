@@ -55,7 +55,7 @@
               :focused="index === activeChipIndex"
               :disabled="disabled"
               :text="(item[textProp] as string)"
-              :remove-label="removeLabel"
+              :remove-label="removeLabel!"
               :pre="getPre(item)"
               @delete="removeFromValue(item)"
             />
@@ -442,7 +442,7 @@ export default defineComponent({
         this.query.length > 0 &&
         !this.allowNewEnabled
       ) {
-        this.setAlert(this.noResultsLabel);
+        this.setAlert(this.noResultsLabel!);
       }
       if (this.allowNewEnabled && this.query.length) {
         const found = v.some((item: IAutocompleteItemType) => {
@@ -469,7 +469,7 @@ export default defineComponent({
     },
     selectionLimitReached(v) {
       if (v) {
-        this.setAlert(this.selectionLimitLabel);
+        this.setAlert(this.selectionLimitLabel!);
       }
     },
   },
@@ -551,13 +551,13 @@ export default defineComponent({
       if (e.code === Code.ENTER && this.activeChipIndex > -1) {
         e.preventDefault();
         const modelValue = this.modelValue as IAutocompleteItemType[];
-        this.removeFromValue(modelValue[this.activeChipIndex]);
+        this.removeFromValue(modelValue[this.activeChipIndex]!);
         resetChipIndex();
         return;
       }
       if (e.code === Code.ENTER && this.active.row > -1) {
         e.preventDefault();
-        this.selectItem(this.internalResults[this.active.row]);
+        this.selectItem(this.internalResults[this.active.row]!);
         return;
       }
 
@@ -614,7 +614,7 @@ export default defineComponent({
           (e.code === Code.DELETE || e.code === Code.BACKSPACE) &&
           this.activeChipIndex !== -1
         ) {
-          this.removeFromValue(modelValue[this.activeChipIndex]);
+          this.removeFromValue(modelValue[this.activeChipIndex]!);
           resetMenuIndex();
           resetChipIndex();
         }

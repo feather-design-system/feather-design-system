@@ -91,8 +91,8 @@ describe("Autocomplete Results", () => {
       },
     });
     await wrapper.findComponent(FeatherListItem).trigger("click");
-    expect(getCalls<[{ _text: string }]>(wrapper, "select")[0][0]._text).toBe(
-      items[0]._text
+    expect(getCalls<[{ _text: string }]>(wrapper, "select")[0]![0]._text).toBe(
+      items[0]!._text
     );
   });
 });

@@ -44,9 +44,10 @@
               >
                 <slot name="footer" />
               </div>
+              <!-- NOTE:  closeLabel not defined locally - related to Label -->
               <DialogClose
                 v-if="!hideClose"
-                :close-text="closeLabel"
+                :close-text="closeLabel!"
                 @close="close"
                 small
               ></DialogClose>
@@ -101,6 +102,7 @@ export const props = {
   },
 } as const;
 export const emits = {
+  // eslint-disable-next-line @typescript-eslint/no-unused-vars
   "update:modelValue": (_value: boolean) => true,
   shown: () => true,
   hidden: () => true,

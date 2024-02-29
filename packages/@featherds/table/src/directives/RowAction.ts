@@ -18,7 +18,10 @@ export default {
       string,
       (e: MouseEvent) => void
     >;
-    el.removeEventListener("click", bindingObj._listener);
+    el.removeEventListener(
+      "click",
+      bindingObj._listener as (e: MouseEvent) => void // NOTE: oy
+    );
   },
 } as ObjectDirective<HTMLElement, (e: MouseEvent) => void>;
 

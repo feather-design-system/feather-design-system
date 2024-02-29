@@ -57,8 +57,9 @@ const useStrategy = (
       },
       removeItem(item: IAutocompleteItemType) {
         const index = modelValue.value.findIndex((el) => {
-          if (item[component.textProp.value] === el[component.textProp.value])
-            return true;
+          return (
+            item[component.textProp.value] === el[component.textProp.value]
+          );
         });
         if (index > -1) {
           const result = modelValue.value.slice(0);

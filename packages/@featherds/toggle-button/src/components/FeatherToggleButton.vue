@@ -18,19 +18,9 @@
       @click="toggle"
       :disabled="item.disabled"
     >
-      <span
-        v-if="index != 0"
-        class="toggle-divider"
-        aria-hidden="true"
-      >|</span>
-      <FeatherIcon
-        v-if="showIcon(item)"
-        :icon="item.icon"
-      ></FeatherIcon>
-      <span
-        v-else-if="showLabel(item)"
-        class="toggle-label"
-      >
+      <span v-if="index != 0" class="toggle-divider" aria-hidden="true">|</span>
+      <FeatherIcon v-if="showIcon(item)" :icon="item.icon"></FeatherIcon>
+      <span v-else-if="showLabel(item)" class="toggle-label">
         {{ item.label }}
       </span>
     </button>
@@ -38,9 +28,9 @@
 </template>
 
 <script lang="ts" setup>
-import { FeatherIcon } from "@featherds/icon"
+import { FeatherIcon } from "@featherds/icon";
 import { ToggleButton } from "./types";
-import { PropType, computed, reactive } from "vue";
+import { PropType, reactive } from "vue";
 
 const emit = defineEmits(["toggle-button-click"]);
 
@@ -75,42 +65,25 @@ const showIcon = (button: ToggleButton) => {
 };
 
 const defaultSelection = (index: number) => {
-  return props.selected === index ? ' selected' : '';
+  return props.selected === index ? " selected" : "";
 };
 
 const isMutedColor = () => {
-  return props.muted === true ? ' muted' : '';
+  return props.muted === true ? " muted" : "";
 };
 
 const classes = (button: ToggleButton, index: number) => {
-
   let tbType: string;
   if (!!button.icon) {
-    tbType = 'icon-only';
+    tbType = "icon-only";
+  } else {
+    tbType = "label-only";
   }
-  else {
-    tbType = 'label-only';
-  }
 
-  return `${tbType}${defaultSelection(index)}${!!button.disabled && button.disabled ? ' disabled' : ''}`;
-}
-
-const maxWidth = computed(() => {
-  const buttons = [...props.buttons] as ToggleButton[];
-  const maxLen = buttons.map((btn) => {
-    if (btn.label) {
-      const withLabels = buttons.filter(btn => btn.label !== null);
-      console.log("withLabels: ", withLabels);
-      const max = Math.max(...withLabels.map(v => {
-        return !!v.label ? v.label.length : 0;
-      }));
-      console.log("max:", max);
-      return max;
-    }
-  })[0];
-  return !!maxLen ? maxLen : 0;
-});
-
+  return `${tbType}${defaultSelection(index)}${
+    !!button.disabled && button.disabled ? " disabled" : ""
+  }`;
+};
 </script>
 
 <style lang="scss" scoped>
@@ -128,7 +101,6 @@ const maxWidth = computed(() => {
 
   background-color: var($shade-4);
   pointer-events: none;
-
 
   .toggle-btn {
     position: relative;
@@ -185,7 +157,6 @@ const maxWidth = computed(() => {
       pointer-events: none;
       width: 1px;
       height: 15px;
-
     }
 
     & .toggle-label {
@@ -214,7 +185,6 @@ const maxWidth = computed(() => {
 
   &.muted {
     .toggle-btn {
-
       &.focus.hover.selected,
       &.focus.hover.selected:hover,
       &.focus.hover.selected:focus {
@@ -223,6 +193,5 @@ const maxWidth = computed(() => {
       }
     }
   }
-
 }
 </style>

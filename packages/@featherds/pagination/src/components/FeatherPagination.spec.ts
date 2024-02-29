@@ -39,8 +39,8 @@ describe("FeatherPagination.vue", () => {
       },
     });
     wrapper.vm.updatePageSize({ _text: "20" });
-    expect(getCalls<[number]>(wrapper, "update:pageSize")[0][0]).toBe(20);
-    expect(getCalls<[number]>(wrapper, "update:modelValue")[0][0]).toBe(1);
+    expect(getCalls<[number]>(wrapper, "update:pageSize")[0]![0]).toBe(20);
+    expect(getCalls<[number]>(wrapper, "update:modelValue")[0]![0]).toBe(1);
   });
   it("should set page to 1 when first is clicked", () => {
     const wrapper = getWrapper({
@@ -50,7 +50,12 @@ describe("FeatherPagination.vue", () => {
       },
     });
     wrapper.vm.first();
-    expect(getCalls<[number]>(wrapper, "update:modelValue")[0][0]).toBe(1);
+    // NOTE: solution?
+    const numCalls = getCalls<[number]>(
+      wrapper,
+      "update:modelValue"
+    )[0] as number[];
+    expect(numCalls[0]).toBe(1);
   });
   it("should set page to last possible page when last is clicked", () => {
     const wrapper = getWrapper({
@@ -60,7 +65,12 @@ describe("FeatherPagination.vue", () => {
       },
     });
     wrapper.vm.last();
-    expect(getCalls<[number]>(wrapper, "update:modelValue")[0][0]).toBe(10);
+    // NOTE: possible solution?
+    const numCalls = getCalls<[number]>(
+      wrapper,
+      "update:modelValue"
+    )[0] as number[];
+    expect(numCalls[0]).toBe(10);
   });
   it("should increment page by one when next is clicked", () => {
     const wrapper = getWrapper({
@@ -70,7 +80,13 @@ describe("FeatherPagination.vue", () => {
       },
     });
     wrapper.vm.next();
-    expect(getCalls<[number]>(wrapper, "update:modelValue")[0][0]).toBe(5);
+    const numCalls = getCalls<[number]>(
+      wrapper,
+      "update:modelValue"
+    )[0] as number[];
+    expect(numCalls[0]).toBe(5);
+    //  TS2352
+    // expect(getCalls<[number]>(wrapper, "update:modelValue")[0][0]).toBe(5);
   });
   it("should decrement page by one when previous is clicked", () => {
     const wrapper = getWrapper({
@@ -80,7 +96,11 @@ describe("FeatherPagination.vue", () => {
       },
     });
     wrapper.vm.previous();
-    expect(getCalls<[number]>(wrapper, "update:modelValue")[0][0]).toBe(3);
+    const numCalls = getCalls<[number]>(
+      wrapper,
+      "update:modelValue"
+    )[0] as number[];
+    expect(numCalls[0]).toBe(3);
   });
   it("should display the correct range text for first and second pages", async () => {
     const wrapper = getWrapper({

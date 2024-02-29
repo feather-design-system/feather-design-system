@@ -1,7 +1,7 @@
 import InputWrapper from "./InputWrapper.vue";
 import { mount } from "@vue/test-utils";
 import "../../test/MutationObserver";
-import { reactive, ref } from "vue";
+import { reactive } from "vue";
 import { expect, describe, it } from "vitest";
 
 const provide = (opts: unknown) => {

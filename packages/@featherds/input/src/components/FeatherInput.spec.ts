@@ -72,7 +72,7 @@ describe("FeatherInput.vue", () => {
     const expected = "TEEST";
     input.element.value = expected;
     input.trigger("input");
-    expect(getCalls<[string]>(wrapper, "update:modelValue")[1][0]).toBe(
+    expect(getCalls<[string]>(wrapper, "update:modelValue")[1]![0]).toBe(
       expected
     );
   });
@@ -147,7 +147,7 @@ describe("FeatherInput.vue", () => {
     wrapper.vm.handleClear();
     await nextTick();
     expect(wrapper.element).toMatchSnapshot();
-    expect(getCalls<[string]>(wrapper, "update:modelValue")[1][0]).toBe("");
+    expect(getCalls<[string]>(wrapper, "update:modelValue")[1]![0]).toBe("");
   });
 
   it("should allow custom focus events", async () => {

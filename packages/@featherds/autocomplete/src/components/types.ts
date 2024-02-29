@@ -136,8 +136,11 @@ export const props = {
 
 export const emits = {
   "update:modelValue": (
+    // eslint-disable-next-line @typescript-eslint/no-unused-vars
     _value: IAutocompleteItemType | IAutocompleteItemType[] | undefined
   ) => true,
+  // eslint-disable-next-line @typescript-eslint/no-unused-vars
   new: (_value: string) => true,
+  // eslint-disable-next-line @typescript-eslint/no-unused-vars
   search: (_value: string) => true,
 };

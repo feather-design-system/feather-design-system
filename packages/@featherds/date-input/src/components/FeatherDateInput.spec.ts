@@ -75,7 +75,7 @@ describe("FeatherDateInput.vue", () => {
     const emitted = wrapper.emitted<[Date]>("update:modelValue");
     if (emitted) {
       for (let i = 1; i < formats.length; i++) {
-        expect(isSameDay(emitted[i][0], date)).toBe(true);
+        expect(isSameDay(emitted[i]![0], date)).toBe(true);
       }
     }
   });
@@ -196,7 +196,7 @@ describe("FeatherDateInput.vue", () => {
     const date = new Date(2020, 1, 1);
     calendar.vm.$emit("update:modelValue", date);
     await nextTick();
-    expect(getCalls<[Date]>(wrapper, "update:modelValue")[0][0]).toBe(date);
+    expect(getCalls<[Date]>(wrapper, "update:modelValue")[0]![0]).toBe(date);
   });
   it("should not emit more than one update:modelValue", async () => {
     const wrapper = getWrapper();

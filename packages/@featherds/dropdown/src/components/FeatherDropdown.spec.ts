@@ -2,7 +2,6 @@ import { defineComponent, nextTick } from "vue";
 import { mount } from "@vue/test-utils";
 import FeatherDropdown from "./FeatherDropdown.vue";
 import axe from "@featherds/utils/test/axe";
-import { getCalls } from "@featherds/utils/test/calls";
 import { Code } from "@featherds/utils/keys";
 
 import * as id from "@featherds/utils/id";

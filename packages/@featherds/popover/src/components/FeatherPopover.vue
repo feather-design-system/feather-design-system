@@ -166,14 +166,14 @@ export default defineComponent({
           popoverBox,
           placementProp.value,
           arrowHeight
-        );
+        ) as PopoverPlacement; // ts(18048)
         const alignment = calculateAlignment(
           placement,
           triggerBox,
           popoverBox,
           alignmentProp.value,
           arrowOffset
-        );
+        ) as PointerAlignment; // ts(18048)
         //set the classes so arrow can be positioned
         alignmentClass.value = alignment.toString();
         placementSelected.value = placement.toString();
