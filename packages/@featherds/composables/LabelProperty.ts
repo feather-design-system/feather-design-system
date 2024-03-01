@@ -10,10 +10,8 @@ const useLabelProperty = <T>(
 ): Labels<T> => {
   const result: Record<string, ComputedRef<string>> = {};
   Object.keys(defaultLabels).forEach((key) => {
-    //TS2322
-    // @ts-expect-error
     result[`${key}Label`] = computed(() => {
-      return labelRef.value[key] || defaultLabels[key];
+      return labelRef.value[key] || defaultLabels[key]!;
     });
   });
   return result as Labels<T>;
