@@ -1,6 +1,6 @@
 {
   "name": "@featherds/app-layout",
-  "version": "0.12.27",
+  "version": "0.12.28",
   "publishConfig": {
     "access": "public"
   },
