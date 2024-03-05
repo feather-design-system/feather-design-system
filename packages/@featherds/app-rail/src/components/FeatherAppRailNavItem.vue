@@ -61,8 +61,11 @@ export default defineComponent({
   transition: margin 280ms ease-in-out, padding 280ms ease-in-out;
 
   &.feather-list-item:visited {
-    color: var($state-text-color-on-surface-dark);
+    &:not(.selected) {
+      color: var($state-text-color-on-surface-dark);
+    }
   }
+
   .feather-list-item-text {
     opacity: 1;
     transition: opacity 280ms ease-in-out;
