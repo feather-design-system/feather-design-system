@@ -3,7 +3,6 @@
     "editorconfig.editorconfig",
     "dbaeumer.vscode-eslint",
     "Vue.volar",
-    "Vue.vscode-typescript-vue-plugin",
     "esbenp.prettier-vscode",
   ]
 }
