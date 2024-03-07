@@ -1,3 +1,13 @@
+## [0.12.29](https://github.com/feather-design-system/feather-design-system/compare/v0.12.28...v0.12.29) (2024-03-07)
+
+
+### Bug Fixes
+
+* **app-rail:** fix color for selected text [#185](https://github.com/feather-design-system/feather-design-system/issues/185) ([#199](https://github.com/feather-design-system/feather-design-system/issues/199)) ([7a068a9](https://github.com/feather-design-system/feather-design-system/commit/7a068a95def87f72bb2963b59decaa1f83e9954b))
+* **vscode:** remove deprecated extension ([#200](https://github.com/feather-design-system/feather-design-system/issues/200)) ([765388a](https://github.com/feather-design-system/feather-design-system/commit/765388a2c185b00e1ae1573d09d7c192b5302725))
+
+
+
 ## [0.12.28](https://github.com/feather-design-system/feather-design-system/compare/v0.12.27...v0.12.28) (2024-03-01)
 
 
