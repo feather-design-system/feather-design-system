@@ -28,7 +28,9 @@
     "generate:icons": "node packages/@featherds/icon/scripts/createIcons.js",
     "new": "hygen new",
     "test": "npm run test:unit:ci",
-    "changelog": "conventional-changelog -p angular -i CHANGELOG.md -s && git add CHANGELOG.md"
+    "changelog": "conventional-changelog -p angular -i CHANGELOG.md -s && git add CHANGELOG.md",
+    "storybook": "storybook dev -p 6006",
+    "build-storybook": "storybook build"
   },
   "dependencies": {
     "@featherds/app-bar": "file:packages/@featherds/app-bar",
@@ -75,11 +77,19 @@
     "@featherds/vuepress-theme-featherds": "file:packages/@featherds/vuepress-theme-featherds"
   },
   "devDependencies": {
+    "@chromatic-com/storybook": "^1.2.20",
     "@commitlint/cli": "^19.0.3",
     "@commitlint/config-conventional": "^13.1.0",
     "@commitlint/prompt-cli": "^16.2.1",
     "@docsearch/css": "^3.0.0",
     "@docsearch/js": "^3.0.0",
+    "@storybook/addon-essentials": "^8.0.0",
+    "@storybook/addon-interactions": "^8.0.0",
+    "@storybook/addon-links": "^8.0.0",
+    "@storybook/blocks": "^8.0.0",
+    "@storybook/test": "^8.0.0",
+    "@storybook/vue3": "^8.0.0",
+    "@storybook/vue3-vite": "^8.0.0",
     "@vee-validate/rules": "^4.1.20",
     "@vitejs/plugin-vue": "^4.0.0",
     "@vitest/ui": "^0.25.8",
@@ -104,6 +114,7 @@
     "cz-conventional-changelog": "^3.0.1",
     "eslint": "^7.29.0",
     "eslint-plugin-prettier": "^3.4.0",
+    "eslint-plugin-storybook": "^0.8.0",
     "eslint-plugin-vue": "^7.11.1",
     "fs-extra": "^8.1.0",
     "globby": "^11.0.0",
@@ -118,6 +129,7 @@
     "sass": "^1.52.3",
     "sinon": "^5.0.7",
     "sitemap": "^7.0.0",
+    "storybook": "^8.0.0",
     "ts-node": "^10.9.1",
     "tsx": "^3.12.8",
     "typescript": "^5.6.2",
