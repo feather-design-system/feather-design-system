@@ -24,6 +24,7 @@
 
 <script lang="ts">
 import { defineComponent } from "vue";
+
 export const props = {
   title: { type: String, required: true },
   subtitle: { type: String, required: false },
@@ -31,6 +32,7 @@ export const props = {
 };
 
 export default defineComponent({
+  name: "FeatherCard",
   props,
   computed: {
     actionsAllowed() {

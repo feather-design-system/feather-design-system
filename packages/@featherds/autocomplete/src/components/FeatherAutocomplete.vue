@@ -197,6 +197,7 @@ import {
 } from "./types";
 
 export default defineComponent({
+  name: "FeatherAutocomplete",
   model: {
     prop: "modelValue",
     event: "update:modelValue",

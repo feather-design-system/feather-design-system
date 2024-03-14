@@ -208,6 +208,7 @@ export const emits = {
   blur: () => true,
 };
 export default defineComponent({
+  name: "FeatherDateInput",
   model: {
     prop: "modelValue",
     event: "update:modelValue",

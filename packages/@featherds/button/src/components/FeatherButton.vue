@@ -30,7 +30,9 @@ export const props = {
     default: false,
   },
 } as const;
+
 export default defineComponent({
+  name: "FeatherButton",
   inheritAttrs: false,
   props,
   setup() {

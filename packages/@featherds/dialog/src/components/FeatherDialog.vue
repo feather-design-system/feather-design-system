@@ -108,6 +108,7 @@ export const emits = {
   hidden: () => true,
 };
 export default defineComponent({
+  name: "FeatherDialog",
   model: {
     prop: "modelValue",
     event: "update:modelValue",

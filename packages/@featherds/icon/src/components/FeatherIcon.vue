@@ -15,6 +15,7 @@ export const props = {
   },
 } as const;
 export default defineComponent({
+  name: "FeatherIcon",
   props,
   render() {
     const attrs = this.$attrs;
