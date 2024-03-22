@@ -123,6 +123,7 @@ const LABELS = {
   paginationLabel: "Pagination controls",
 };
 export default defineComponent({
+  name: "FeatherPagination",
   model: {
     prop: "modelValue",
     event: "update:modelValue",

@@ -48,6 +48,7 @@ import {
 } from "@featherds/input-helper";
 import { props, emits } from "./types";
 export default defineComponent({
+  name: "FeatherInput",
   model: {
     prop: "modelValue",
     event: "update:modelValue",

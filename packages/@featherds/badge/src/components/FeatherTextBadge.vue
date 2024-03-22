@@ -8,6 +8,7 @@ export const props = {
   type: { type: String as PropType<keyof typeof BadgeTypes>, required: true },
 } as const;
 export default defineComponent({
+  name: "FeatherTextBadge",
   props,
 });
 </script>

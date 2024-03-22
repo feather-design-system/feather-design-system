@@ -47,6 +47,7 @@ export const props = {
   },
 } as const;
 export default defineComponent({
+  name: "FeatherPopover",
   props,
   setup(props) {
     const show = ref(false); //show will trigger animate when positioning is ready

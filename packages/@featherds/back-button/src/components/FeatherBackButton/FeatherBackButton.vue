@@ -40,6 +40,7 @@ export const props = {
   },
 } as const;
 export default defineComponent({
+  name: "FeatherBackButton",
   emits: ["focus", "blur", "mouseenter", "mouseleave"],
   props,
   data: () => ({

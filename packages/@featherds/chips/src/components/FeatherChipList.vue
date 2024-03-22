@@ -37,6 +37,7 @@ export const props = {
   },
 } as const;
 export default defineComponent({
+  name: "FeatherChipList",
   model: {
     prop: "modelValue",
     event: "update:modelValue",

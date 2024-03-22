@@ -7,6 +7,7 @@
 import { defineComponent, PropType } from "vue";
 import { BadgeTypes } from "../types/Types";
 export default defineComponent({
+  name: "Badge",
   props: {
     type: { type: String as PropType<keyof typeof BadgeTypes>, required: true },
     title: { type: String, required: true },

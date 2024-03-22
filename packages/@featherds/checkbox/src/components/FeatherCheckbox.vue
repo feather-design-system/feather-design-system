@@ -75,6 +75,7 @@ export const emits = {
   indeterminate: (_value: boolean) => true,
 };
 export default defineComponent({
+  name: "FeatherCheckbox",
   model: {
     prop: "modelValue",
     event: "update:modelValue",

@@ -28,6 +28,7 @@ export const props = {
   },
 } as const;
 export default defineComponent({
+  name: "FeatherBadge",
   props,
   computed: {
     orderBadges() {

@@ -1,7 +1,9 @@
 {
   "name": "featherds",
   "version": "0.0.1",
-  "author": "NantHealth",
+  "author": {
+    "name": "NantHealth"
+  },
   "license": "Apache-2.0",
   "type": "module",
   "scripts": {
@@ -30,7 +32,8 @@
     "test": "npm run test:unit:ci",
     "changelog": "conventional-changelog -p angular -i CHANGELOG.md -s && git add CHANGELOG.md",
     "storybook": "storybook dev -p 6006",
-    "build-storybook": "storybook build"
+    "build-storybook": "storybook build",
+    "chromatic": "npx chromatic --project-token=chpt_e0d450fd5ee61b8"
   },
   "dependencies": {
     "@featherds/app-bar": "file:packages/@featherds/app-bar",
@@ -83,13 +86,13 @@
     "@commitlint/prompt-cli": "^16.2.1",
     "@docsearch/css": "^3.0.0",
     "@docsearch/js": "^3.0.0",
-    "@storybook/addon-essentials": "^8.0.0",
-    "@storybook/addon-interactions": "^8.0.0",
-    "@storybook/addon-links": "^8.0.0",
-    "@storybook/blocks": "^8.0.0",
-    "@storybook/test": "^8.0.0",
-    "@storybook/vue3": "^8.0.0",
-    "@storybook/vue3-vite": "^8.0.0",
+    "@storybook/addon-essentials": "^8.0.4",
+    "@storybook/addon-interactions": "^8.0.4",
+    "@storybook/addon-links": "^8.0.4",
+    "@storybook/blocks": "^8.0.4",
+    "@storybook/test": "^8.0.4",
+    "@storybook/vue3": "^8.0.4",
+    "@storybook/vue3-vite": "^8.0.4",
     "@vee-validate/rules": "^4.1.20",
     "@vitejs/plugin-vue": "^4.0.0",
     "@vitest/ui": "^0.25.8",
@@ -109,6 +112,7 @@
     "axe-core": "^4.5.0",
     "chai": "^4.3.8",
     "change-case": "^4.1.1",
+    "chromatic": "^11.2.0",
     "conventional-changelog-cli": "^2.1.1",
     "cross-env": "^5.2.1",
     "cz-conventional-changelog": "^3.0.1",
@@ -129,7 +133,8 @@
     "sass": "^1.52.3",
     "sinon": "^5.0.7",
     "sitemap": "^7.0.0",
-    "storybook": "^8.0.0",
+    "storybook": "^8.0.4",
+    "storybook-addon-vue-slots": "^0.9.29",
     "ts-node": "^10.9.1",
     "tsx": "^3.12.8",
     "typescript": "^5.6.2",
