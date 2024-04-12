@@ -29,6 +29,7 @@ export const Default: Story = {
       return { args };
     },
     template: `
+    <div class="app-layout-story">
     <FeatherAppLayout :contentLayout="args.contentLayout" :navLayout="args.navLayout">
       <template #header>
         <div>HEADER goes here</div>

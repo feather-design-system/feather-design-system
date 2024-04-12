@@ -1,18 +1,23 @@
-.app-header, .app-aside, .app-content, .app-footer {
-  padding: 0.5em;
-  border: 1px solid #ccc;
-  background-color: #142850;
-  color: white;
-}
-.app-header{
-  background-color: #27496d;
-}
-.app-aside {
-  background-color: #0c7b93;
-}
-.app-content {
-  background-color: #1a93ff;
-}
-.app-footer {
-  background-color: #0c6e93;
+.app-layout-story {
+  .app-header,
+  .app-aside,
+  .app-content,
+  .app-footer {
+    padding: 0.5em;
+    border: 1px solid #ccc;
+    background-color: #142850;
+    color: white;
+  }
+  .app-header {
+    background-color: #27496d;
+  }
+  .app-aside {
+    background-color: #0c7b93;
+  }
+  .app-content {
+    background-color: #1a93ff;
+  }
+  .app-footer {
+    background-color: #0c6e93;
+  }
 }

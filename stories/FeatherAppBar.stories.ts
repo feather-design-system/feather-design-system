@@ -60,15 +60,15 @@ export const Default: Story = {
       :scrollHide="args.scrollHide"
       >
       <template #left>
-        <FeatherAppBarLink url="#" :icon="menu" :title="'Menu'" target="_blank" />
+        <FeatherAppBarLink :icon="menu" :title="'Menu'" target="_blank" />
         Feather AppBar
       </template>
       <template #center>
         Wednesday&nbsp;3:21&nbsp;PM
       </template>
       <template #right>
-        <FeatherAppBarLink url="#" :icon="email" :title="'Email'" target="_blank" />
-        <FeatherAppBarLink url="#" :icon="account" :title="'My Account'" target="_blank" />
+        <FeatherAppBarLink :icon="email" :title="'Email'" target="_blank" />
+        <FeatherAppBarLink :icon="account" :title="'My Account'" target="_blank" />
       </template>
     </FeatherAppBar>
     <main id="main-content">
