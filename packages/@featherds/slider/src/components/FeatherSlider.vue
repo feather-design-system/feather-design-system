@@ -2,7 +2,7 @@
   <div class="feather-slider-container">
     <div class="label">{{ label }}</div>
     <div class="control"></div>
-    <datalist :id="`${id}-ticks`">
+    <datalist :id="`${id}-ticks`" :style="datalistStyle">
       <option
         v-for="item in ticks"
         :value="item.tick"
@@ -48,6 +48,7 @@
       <hr />
 
       <p>Slider Value: {{ sliderDisplayValue }}</p>
+      <p>Floor: {{ floor }}</p>
       <p>Min: {{ min }}</p>
       <p>Max: {{ max }}</p>
       <p>Step: {{ step }}</p>
@@ -56,6 +57,12 @@
 </template>
 
 <script lang="ts" setup>
+type Tick = {
+  tick: number;
+  label: string;
+  color: string;
+};
+
 import { computed, reactive, ref, watch } from "vue";
 
 const props = defineProps({
@@ -64,22 +71,23 @@ const props = defineProps({
   value: { type: Number, default: 25 },
   min: { type: Number, default: 0 },
   max: { type: Number, default: 100 },
+  floor: { type: Number, default: 0 },
   ticks: {
-    type: Array<{ tick: number; label: string; color: string }>,
+    type: Array<Tick>,
     default: () => [
       { tick: 25, label: "critical", color: "error" },
       { tick: 50, label: "major", color: "major" },
       { tick: 75, label: "minor", color: "minor" },
       { tick: 100, label: "warning", color: "warning" },
     ],
+    required: true,
   },
 });
 
-const { id, label, value, min, max, ticks } = reactive(props);
+const { id, label, value, min, max, floor, ticks } = reactive(props);
+
 const sliderValue = ref(value);
-// const step = computed(() => ((max - min) / 3).toFixed(1));
-// const step = undefined;
-const step = ref(25);
+const step = ref(parseFloat((max / ticks.length).toFixed(0)));
 
 const emit = defineEmits(["update:value"]);
 
@@ -93,11 +101,33 @@ const updateValue = (event: Event) => {
   sliderValue.value = Number(target.value);
 };
 
-const clickStep = (e: Event) => {
+const clickStep = (e: MouseEvent) => {
   if (!(e.target instanceof HTMLOptionElement)) {
     return;
   }
-  sliderValue.value = Number(e.target.value);
+  if (!ticks) return;
+  const currentTick = ticks.find(
+    (item: Tick) => item.tick === Number((e.target as HTMLInputElement)?.value)
+  );
+  console.log("currentTick: ", currentTick);
+  if (!currentTick) return;
+  const firstTick = ticks[0]?.tick ?? 0;
+  if (currentTick.tick <= floor) {
+    sliderValue.value = floor;
+    return;
+  }
+  if (currentTick.tick === firstTick) {
+    if (sliderValue.value !== firstTick) {
+      sliderValue.value = step.value;
+    } else {
+      sliderValue.value = 0;
+    }
+    return;
+  }
+  if (currentTick.tick >= floor) {
+    sliderValue.value = currentTick.tick;
+    return;
+  }
 };
 
 const clickTrack = () => {
@@ -105,7 +135,7 @@ const clickTrack = () => {
 };
 
 const clickIndicator = () => {
-  if (sliderValue.value - step.value <= 0) return;
+  if (sliderValue.value - floor <= 0) return;
   sliderValue.value = sliderValue.value - step.value;
 };
 
@@ -114,8 +144,10 @@ const moveSlider = (event: KeyboardEvent) => {
     if (event.key === "ArrowRight" || event.key === "ArrowUp") {
       if (sliderValue.value + step.value > 100) return;
       sliderValue.value = sliderValue.value + step.value;
+      event.preventDefault();
     } else if (event.key === "ArrowLeft" || event.key === "ArrowDown") {
-      if (sliderValue.value - step.value <= 0) return;
+      if (sliderValue.value - floor <= 0) return;
+      event.preventDefault();
       sliderValue.value = sliderValue.value - step.value;
     }
   }
@@ -133,6 +165,16 @@ const optionLabel = computed(() => {
 
 // #endregion
 
+// #region Styles
+
+const datalistStyle = computed(() => {
+  return {
+    display: "grid",
+    gridTemplateColumns: `repeat(${ticks.length}, 1fr)`,
+    justifyContent: "space-around",
+  };
+});
+
 const trackStyle = computed(() => {
   return {
     width: `100%`,
@@ -147,9 +189,11 @@ const indicatorStyle = computed(() => {
 
 const thumbStyle = computed(() => {
   return {
-    left: `calc(${sliderValue.value}% - ${10}px)`,
+    left: `calc(${sliderValue.value}% - ${6}px)`,
   };
 });
+
+// #endregion
 
 const sliderDisplayValue = computed(() => {
   let value = parseFloat(sliderValue.value.toString());
@@ -179,12 +223,9 @@ console.log(id);
   padding: 0.5rem;
   width: 600px;
   datalist {
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
     text-align: center;
-    justify-content: space-around;
     margin-bottom: 0.5em;
-    width: 100%; // move to javascript
+    width: 100%; // TODO: move to javascript
     option {
       cursor: pointer;
       @include body-small();
@@ -250,9 +291,9 @@ console.log(id);
     .slider-thumb {
       position: absolute;
       top: -20px;
-      height: 200%;
-      width: 10px;
-      border-radius: 4px;
+      height: 250%;
+      width: 12px;
+      border-radius: 8px;
       border: 0.25em solid var($surface);
       background-color: var($secondary);
       transition: left 0.625s ease;

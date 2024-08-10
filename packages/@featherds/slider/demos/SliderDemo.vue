@@ -3,20 +3,22 @@
     <h1>Slider</h1>
     <FeatherSlider
       id="slider-demo"
-      v-model.number="value"
+      :value="sliderValue1"
+      :floor="customTickBaseColors[1]?.tick"
       :max="max"
       :label="'Slider with empty color attributes'"
       :ticks="customTickBaseColors"
     />
     <FeatherSlider
       id="slider-demo2"
-      v-model.number="value"
+      :value="sliderValue2"
+      :floor="customTickBaseColors[0]?.tick"
       :max="max"
       :label="'Slider with feather colors'"
     />
     <FeatherSlider
       id="slider-demo3"
-      v-model.number="value"
+      :value="sliderValue3"
       :max="max"
       :label="'Slider with custom labels'"
       :ticks="customTicks"
@@ -29,10 +31,11 @@ import { ref } from "vue";
 import FeatherSlider from "../src/components/FeatherSlider.vue";
 
 const customTicks: { tick: number; label: string; color: string }[] = [
-  { tick: 25, label: "Step 1", color: "" },
-  { tick: 50, label: "Step 2", color: "" },
-  { tick: 75, label: "step 3", color: "" },
-  { tick: 100, label: "step 4", color: "" },
+  { tick: 20, label: "Step 1", color: "" },
+  { tick: 40, label: "Step 2", color: "" },
+  { tick: 60, label: "step 3", color: "" },
+  { tick: 80, label: "step 4", color: "" },
+  { tick: 100, label: "step 5", color: "" },
 ];
 const customTickBaseColors: { tick: number; label: string; color: string }[] = [
   { tick: 25, label: "critical", color: "" },
@@ -41,7 +44,9 @@ const customTickBaseColors: { tick: number; label: string; color: string }[] = [
   { tick: 100, label: "warning", color: "" },
 ];
 
-const value = ref(50);
+const sliderValue1 = ref(50);
+const sliderValue2 = ref(25);
+const sliderValue3 = ref(0);
 // const min = ref(0);
 const max = ref(100);
 </script>
