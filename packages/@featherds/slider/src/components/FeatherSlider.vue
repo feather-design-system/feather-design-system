@@ -1,116 +1,144 @@
 <template>
   <div class="feather-slider-container">
     <div class="label">{{ label }}</div>
-    <div class="control"></div>
-    <datalist :id="`${id}-ticks`" :style="datalistStyle">
-      <option
-        v-for="item in ticks"
-        :value="item.tick"
-        :key="item.tick"
-        :label="item.label"
-        :class="`feather-${item.color}-color ${
-          item.tick <= sliderValue ? 'selected' : ''
-        }`"
-        @click="clickStep"
-      />
-    </datalist>
-
-    <div
-      class="feather-slider"
-      tabindex="0"
-      @keydown="moveSlider"
-      role="slider"
-      :aria-min="min"
-      :aria-max="max"
-      :aria-valuenow="sliderValue"
-      :aria-valuetext="optionLabel"
-    >
-      <div class="slider-track" :style="trackStyle" @click="clickTrack" />
+    <div class="control">
+      <datalist :id="`${id}-ticks`" :style="datalistStyle">
+        <!-- <template v-for="(item, index) in ticks" :key="item.tick">
+          <option
+          v-if="item.tick != 0"
+          :value="`${((100 / ticks.length) * (index + 1)).toFixed(2)}`"
+          :label="item.label"
+          :class="`feather-${item.color}-color ${
+            item.tick <= sliderValue ? 'selected' : ''
+            }`"
+            @click="clickStep"
+            />
+          </template> -->
+        <option
+          v-for="item in ticks"
+          :value="item.tick"
+          :key="item.tick"
+          :label="item.label"
+          :class="`feather-${item.color}-color ${
+            item.tick && item.tick <= sliderValue ? 'selected' : ''
+          }`"
+          :style="optionStyle"
+          @click="clickStep"
+        />
+        <!-- :value="`${((100 / ticks.length) * (index + 1)).toFixed(2)}`" -->
+        <span class="locked" :style="lockedStyle"
+          ><FeatherIcon :icon="Lock"
+        /></span>
+      </datalist>
       <div
-        class="slider-indicator"
-        :style="indicatorStyle"
-        @click="clickIndicator"
-      />
-      <div class="slider-thumb" :style="thumbStyle" />
-    </div>
-    <div class="slider-semantic">
-      <hr />
-      <input
-        type="range"
-        class="slider-semantic"
-        :list="`${id}-ticks`"
-        :step="step"
-        :min="min"
-        :max="max"
-        v-model="sliderValue"
-        @input="updateValue"
-      />
-      <hr />
+        class="feather-slider"
+        tabindex="0"
+        @keydown="moveSlider"
+        role="slider"
+        :aria-min="min"
+        :aria-max="max"
+        :aria-valuenow="sliderValue"
+        :aria-valuetext="optionLabel"
+      >
+        <div class="slider-track" :style="trackStyle" @click="clickTrack" />
+        <div
+          class="slider-indicator"
+          :style="indicatorStyle"
+          @click="clickIndicator"
+        />
+        <div class="slider-thumb" :style="thumbStyle" />
+      </div>
+      <div class="slider-semantic">
+        <hr />
+        <!-- <input
+          type="range"
+          class="slider-semantic"
+          :list="`${id}-ticks`"
+          :step="step"
+          :min="min"
+          :max="max"
+          v-model="sliderValue"
+          @input="updateValue"
+        />
+        <hr /> -->
 
-      <p>Slider Value: {{ sliderDisplayValue }}</p>
-      <p>Floor: {{ floor }}</p>
-      <p>Min: {{ min }}</p>
-      <p>Max: {{ max }}</p>
-      <p>Step: {{ step }}</p>
+        <p>Slider Value: {{ sliderDisplayValue }}</p>
+        <p>Floor: {{ floor }}</p>
+        <p>Min: {{ min }}</p>
+        <p>Max: {{ max }}</p>
+        <p>Step: {{ step }}</p>
+      </div>
     </div>
   </div>
 </template>
 
 <script lang="ts" setup>
 type Tick = {
-  tick: number;
+  tick?: number;
   label: string;
   color: string;
 };
 
-import { computed, reactive, ref, watch } from "vue";
+import { computed, onMounted, reactive, ref, watch } from "vue";
+import { FeatherIcon } from "@featherds/icon";
+import Lock from "@featherds/icon/action/Lock";
 
 const props = defineProps({
   id: { type: String, required: true },
   label: { type: String, default: "Slider" },
-  value: { type: Number, default: 25 },
-  min: { type: Number, default: 0 },
-  max: { type: Number, default: 100 },
+  value: { type: Number, default: 1 },
+  // min: { type: Number, default: 0 },
+  // max: { type: Number, default: 4 },
   floor: { type: Number, default: 0 },
   ticks: {
     type: Array<Tick>,
     default: () => [
-      { tick: 25, label: "critical", color: "error" },
-      { tick: 50, label: "major", color: "major" },
-      { tick: 75, label: "minor", color: "minor" },
-      { tick: 100, label: "warning", color: "warning" },
+      { label: "critical", color: "error" },
+      { label: "major", color: "major" },
+      { label: "minor", color: "minor" },
+      { label: "warning", color: "warning" },
     ],
-    required: true,
+    required: false,
   },
 });
 
-const { id, label, value, min, max, floor, ticks } = reactive(props);
+// const { id, label, value, min, max, floor, ticks } = reactive(props);
+const { id, label, value, floor, ticks } = reactive(props);
+
+const min = 0;
+const max = ticks.length;
+
+// Initialize tick values
+ticks.forEach((tick: Tick, index: number) => {
+  tick.tick = index + 1;
+});
 
 const sliderValue = ref(value);
-const step = ref(parseFloat((max / ticks.length).toFixed(0)));
+const step = ref(max / ticks.length);
 
 const emit = defineEmits(["update:value"]);
 
-const updateValue = (event: Event) => {
-  const target = event.target as HTMLInputElement;
-  console.log("target.value: ", target.value);
-  if (target.value === "0") {
-    sliderValue.value = step.value;
-    return;
-  }
-  sliderValue.value = Number(target.value);
-};
+// const updateValue = (event: Event) => {
+//   const target = event.target as HTMLInputElement;
+//   console.log("target.value: ", target.value);
+//   if (target.value === "0") {
+//     sliderValue.value = step.value;
+//     return;
+//   }
+//   sliderValue.value = Number(target.value);
+// };
 
 const clickStep = (e: MouseEvent) => {
   if (!(e.target instanceof HTMLOptionElement)) {
     return;
   }
   if (!ticks) return;
+  console.log("ticks: ", ticks, e.target.value);
   const currentTick = ticks.find(
     (item: Tick) => item.tick === Number((e.target as HTMLInputElement)?.value)
   );
-  console.log("currentTick: ", currentTick);
-  if (!currentTick) return;
+  if (!currentTick || !currentTick.tick) return;
+  console.log("currentTick: ", currentTick, "e.target.value: ", e.target.value);
   const firstTick = ticks[0]?.tick ?? 0;
   if (currentTick.tick <= floor) {
     sliderValue.value = floor;
@@ -142,7 +170,7 @@ const clickIndicator = () => {
 const moveSlider = (event: KeyboardEvent) => {
   if (event instanceof KeyboardEvent) {
     if (event.key === "ArrowRight" || event.key === "ArrowUp") {
-      if (sliderValue.value + step.value > 100) return;
+      if (sliderValue.value + step.value > max) return;
       sliderValue.value = sliderValue.value + step.value;
       event.preventDefault();
     } else if (event.key === "ArrowLeft" || event.key === "ArrowDown") {
@@ -157,7 +185,7 @@ const moveSlider = (event: KeyboardEvent) => {
 
 const optionLabel = computed(() => {
   const correspondingTick = ticks.find(
-    (tick: any) => tick.tick === sliderValue.value
+    (tick: Tick) => tick.tick === sliderValue.value
   );
   if (!correspondingTick) return;
   return `${label} ${correspondingTick.label}`;
@@ -183,13 +211,25 @@ const trackStyle = computed(() => {
 
 const indicatorStyle = computed(() => {
   return {
-    width: `${sliderValue.value}%`,
+    width: `${(sliderValue.value * 100) / max}%`,
   };
+});
+
+const lockedStyle = computed(() => {
+  return {
+    left: `calc(${(floor * 100) / max}% - ${24}px)`,
+    top: "26px",
+    zIndex: 1,
+  };
+});
+
+const optionStyle = computed(() => {
+  return {};
 });
 
 const thumbStyle = computed(() => {
   return {
-    left: `calc(${sliderValue.value}% - ${6}px)`,
+    left: `calc(${(sliderValue.value * 100) / max}% - ${6}px)`,
   };
 });
 
@@ -197,17 +237,23 @@ const thumbStyle = computed(() => {
 
 const sliderDisplayValue = computed(() => {
   let value = parseFloat(sliderValue.value.toString());
-  return value.toFixed(0);
+  return value;
 });
 
 watch(sliderValue, (newValue) => {
-  const correspondingTick = ticks.find((tick: any) => tick.tick === newValue);
+  const correspondingTick = ticks.find((tick: Tick) => tick.tick === newValue);
+  if (!correspondingTick) {
+    const undefinedTick: Tick = { tick: 0, label: "", color: "" };
+    emit("update:value", `${id}`, undefinedTick);
+    return;
+  }
   emit("update:value", `${id}`, correspondingTick);
-  console.log("newValue: ", newValue);
-  console.log("sliderValue: ", sliderValue.value);
 });
 
 console.log(id);
+onMounted(() => {
+  console.log("mounted");
+});
 </script>
 
 <style lang="scss" scoped>
@@ -219,84 +265,123 @@ console.log(id);
   .label {
     @include body-large();
   }
-  background-color: var($surface);
-  padding: 0.5rem;
-  width: 600px;
-  datalist {
-    text-align: center;
-    margin-bottom: 0.5em;
-    width: 100%; // TODO: move to javascript
-    option {
-      cursor: pointer;
-      @include body-small();
-      text-transform: capitalize;
-      border-radius: 4px;
-      border: 2px solid var($surface);
-      background-color: var($shade-4);
-      transition: background-color 1s ease, color 0.3s ease, border 0.3s ease; // Add transition
-      &.selected {
-        background-color: var($primary);
-        color: var($primary-text-on-color);
-        border: 2px solid var($primary-text-on-color);
-        &.feather-error-color {
-          background-color: var($error);
-        }
-        &.feather-major-color {
-          background-color: var($major);
-        }
-        &.feather-minor-color {
-          background-color: var($minor);
-          color: var($primary-text-on-warning);
-        }
-        &.feather-warning-color {
-          background-color: var($warning);
-          color: var($primary-text-on-warning);
+  .control {
+    &:focus-within {
+      border: 2px solid var($shade-3);
+    }
+    border: 2px solid transparent;
+    border-radius: 4px;
+    background-color: var($surface);
+    padding: 0.5rem;
+    width: 600px;
+    datalist {
+      position: relative;
+      text-align: center;
+      option {
+        cursor: pointer;
+        @include body-small();
+        overflow: visible;
+        text-transform: capitalize;
+        border-radius: 4px;
+        border: 2px solid var($surface);
+        background-color: var($shade-4);
+        transition: background-color 1s ease, color 0.3s ease, border 0.3s ease;
+        // &:nth-child(1) {
+        //   border-radius: 16px 0 0 16px;
+        //   border-radius: 16px 0 0 0;
+        // }
+        // &:nth-last-child(0) {
+        //   border-radius: 0 16px 16px 0;
+        //   border-radius: 0 16px 0 0;
+        // }
+        &.selected {
+          background-color: var($primary);
+          color: var($primary-text-on-color);
+          border: 2px solid var($primary-text-on-color);
+          &.feather-error-color {
+            background-color: var($error);
+          }
+          &.feather-major-color {
+            background-color: var($major);
+          }
+          &.feather-minor-color {
+            background-color: var($minor);
+            color: var($primary-text-on-warning);
+          }
+          &.feather-warning-color {
+            background-color: var($warning);
+            color: var($primary-text-on-warning);
+          }
         }
       }
+      span.locked {
+        position: absolute;
+        color: var($primary-text-on-color);
+        font-size: 1.2em;
+        width: auto;
+        top: 0.125em;
+        pointer-events: none;
+      }
     }
-  }
-  .slider-semantic {
-    display: none;
-    width: 100%;
-  }
-  .feather-slider {
-    position: relative;
-    height: 20px;
-    width: 100%;
-    background-color: var($surface);
-    border: 2px solid var($surface);
-    border-radius: 16px;
-
-    &:focus {
-      outline: none;
-      border: 2px solid var($secondary);
+    .slider-semantic {
+      display: none;
+      width: 100%;
     }
-    .slider-track {
-      cursor: pointer;
-      position: absolute;
-      height: 100%;
-      background-color: var($shade-4);
-      border-radius: 16px;
-    }
-    .slider-indicator {
-      cursor: pointer;
-      position: absolute;
+    .feather-slider {
+      position: relative;
       height: 20px;
-      margin: -1px auto;
-      background-color: var($primary);
-      border: 2px solid var($shade-4);
+      width: 100%;
+      background-color: var($surface);
+      border: 2px solid var($surface);
       border-radius: 16px;
-      transition: width 0.625s ease;
-    }
-    .slider-thumb {
-      position: absolute;
-      top: -20px;
-      height: 250%;
-      width: 12px;
-      border-radius: 8px;
-      border: 0.25em solid var($surface);
-      background-color: var($secondary);
-      transition: left 0.625s ease;
+
+      &:focus {
+        outline: none;
+        border: 2px solid var($secondary);
+        // NOTE: Style choice to make the track rounded
+        border-radius: 0 0 16px 16px;
+        border-radius: 16px;
+      }
+      .slider-track {
+        cursor: pointer;
+        position: absolute;
+        height: 100%;
+        background-color: var($shade-4);
+        // NOTE: Style choice to make the track rounded
+        // border-radius: 0 0 16px 16px;
+        border-radius: 16px;
+      }
+      .slider-indicator {
+        cursor: pointer;
+        position: absolute;
+        height: 20px;
+        margin: -1px auto;
+        background-color: var($primary);
+        border: 2px solid var($shade-4);
+        // NOTE: Style choice to make the indicator rounded
+        border-radius: 0 0 0 16px;
+        border-radius: 16px;
+        transition: width 0.5s ease;
+        span.locked {
+          position: absolute;
+          color: var($primary-text-on-color);
+          font-size: 1.2em;
+          width: auto;
+          top: 0.125em;
+          user-select: none;
+          cursor: pointer;
+        }
+      }
+      .slider-thumb {
+        position: absolute;
+        top: -34px;
+        height: 340%;
+        width: 12px;
+        border-radius: 8px;
+        border: 0.25em solid var($surface);
+        background-color: var($secondary);
+        transition: left 0.5s ease;
+      }
     }
   }
 }
