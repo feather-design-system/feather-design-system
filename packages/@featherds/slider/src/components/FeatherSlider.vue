@@ -129,12 +129,10 @@ const clickStep = (e: MouseEvent) => {
   }
   floor = floor ?? 0;
   if (!ticks) return;
-  console.log("ticks: ", ticks, e.target.value);
   const currentTick = ticks.find((item: SliderTick) => {
     return item.tick === Number((e.target as HTMLInputElement)?.value);
   });
   if (!currentTick || !currentTick.tick) return;
-  console.log("currentTick: ", currentTick, "e.target.value: ", e.target.value);
   const firstTick = ticks[0]?.tick ?? 0;
   if (currentTick.tick <= floor) {
     sliderValue.value = floor;
@@ -251,10 +249,7 @@ watch(sliderValue, (newValue) => {
   emit("update:value", `${id}`, correspondingTick);
 });
 
-console.log(id);
-onMounted(() => {
-  console.log("mounted");
-});
+onMounted(() => {});
 </script>
 
 <style lang="scss" scoped>
