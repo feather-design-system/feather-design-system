@@ -1,7 +1,6 @@
 <template>
   <div>
     <h1>Slider</h1>
-    <!-- :max="4" -->
     <FeatherSlider
       id="slider-demo"
       :value="sliderValue1"
@@ -9,28 +8,24 @@
       :label="'Slider with empty color attributes'"
       :ticks="customTick1"
     />
-    <!-- :max="4" -->
     <FeatherSlider
       id="slider-demo2"
       :value="sliderValue2"
       :floor="1"
       :label="'Slider with feather colors'"
     />
-    <!-- :max="5" -->
     <FeatherSlider
       id="slider-demo3"
       :value="sliderValue3"
       :label="'Slider with custom labels'"
       :ticks="customTicks3"
     />
-    <!-- :max="3" -->
     <FeatherSlider
       id="slider-demo4"
       :value="sliderValue4"
       :label="'Slider with custom labels'"
       :ticks="customTicks4"
     />
-    <!-- :max="9" -->
     <FeatherSlider
       id="slider-demo5"
       :value="sliderValue5"
@@ -43,36 +38,29 @@
 <script lang="ts" setup>
 import { ref } from "vue";
 import FeatherSlider from "../src/components/FeatherSlider.vue";
+import { SliderTick } from "../src/types/Types";
 
-const customTicks3: {
-  tick?: number | undefined;
-  label: string;
-  color: string;
-}[] = [
+const customTicks3: SliderTick[] = [
   { label: "Step 1", color: "" },
   { label: "Step 2", color: "" },
   { label: "step 3", color: "" },
   { label: "step 4", color: "" },
   { label: "step 5", color: "" },
 ];
-const customTick1: {
-  tick?: number | undefined;
-  label: string;
-  color: string;
-}[] = [
+const customTick1: SliderTick[] = [
   { label: "critical", color: "" },
   { label: "major", color: "" },
   { label: "minor", color: "" },
   { label: "warning", color: "" },
 ];
-const customTicks4: { tick?: number; label: string; color: string }[] = [
+const customTicks4: SliderTick[] = [
   { label: "Step 1", color: "" },
   { label: "Step 2", color: "" },
   { label: "step 3", color: "" },
 ];
 
 // TODO: need to be able to import Tick type from FeatherSlider
-const customTick5: { tick?: number; label: string; color: string }[] = [
+const customTick5: SliderTick[] = [
   { label: "Step 1", color: "" },
   { label: "Step 2", color: "" },
   { label: "step 3", color: "" },

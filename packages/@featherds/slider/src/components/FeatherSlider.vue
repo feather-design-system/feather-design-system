@@ -73,25 +73,19 @@
 </template>
 
 <script lang="ts" setup>
-type Tick = {
-  tick?: number;
-  label: string;
-  color: string;
-};
+import { SliderTick, FeatherSliderProps } from "../types/Types";
 
 import { computed, onMounted, reactive, ref, watch } from "vue";
 import { FeatherIcon } from "@featherds/icon";
 import Lock from "@featherds/icon/action/Lock";
 
-const props = defineProps({
+const props: FeatherSliderProps = defineProps({
   id: { type: String, required: true },
   label: { type: String, default: "Slider" },
   value: { type: Number, default: 1 },
-  // min: { type: Number, default: 0 },
-  // max: { type: Number, default: 4 },
   floor: { type: Number, default: 0 },
   ticks: {
-    type: Array<Tick>,
+    type: Array<SliderTick>,
     default: () => [
       { label: "critical", color: "error" },
       { label: "major", color: "major" },
@@ -102,14 +96,15 @@ const props = defineProps({
   },
 });
 
-// const { id, label, value, min, max, floor, ticks } = reactive(props);
-const { id, label, value, floor, ticks } = reactive(props);
+const { id, label, value, ticks } = reactive(props);
+let { floor } = reactive(props);
 
+floor = floor ?? 0;
 const min = 0;
 const max = ticks.length;
 
 // Initialize tick values
-ticks.forEach((tick: Tick, index: number) => {
+ticks.forEach((tick: SliderTick, index: number) => {
   tick.tick = index + 1;
 });
 
@@ -132,11 +127,12 @@ const clickStep = (e: MouseEvent) => {
   if (!(e.target instanceof HTMLOptionElement)) {
     return;
   }
+  floor = floor ?? 0;
   if (!ticks) return;
   console.log("ticks: ", ticks, e.target.value);
-  const currentTick = ticks.find(
-    (item: Tick) => item.tick === Number((e.target as HTMLInputElement)?.value)
-  );
+  const currentTick = ticks.find((item: SliderTick) => {
+    return item.tick === Number((e.target as HTMLInputElement)?.value);
+  });
   if (!currentTick || !currentTick.tick) return;
   console.log("currentTick: ", currentTick, "e.target.value: ", e.target.value);
   const firstTick = ticks[0]?.tick ?? 0;
@@ -163,6 +159,7 @@ const clickTrack = () => {
 };
 
 const clickIndicator = () => {
+  floor = floor ?? 0;
   if (sliderValue.value - floor <= 0) return;
   sliderValue.value = sliderValue.value - step.value;
 };
@@ -174,6 +171,7 @@ const moveSlider = (event: KeyboardEvent) => {
       sliderValue.value = sliderValue.value + step.value;
       event.preventDefault();
     } else if (event.key === "ArrowLeft" || event.key === "ArrowDown") {
+      floor = floor ?? 0;
       if (sliderValue.value - floor <= 0) return;
       event.preventDefault();
       sliderValue.value = sliderValue.value - step.value;
@@ -185,7 +183,7 @@ const moveSlider = (event: KeyboardEvent) => {
 
 const optionLabel = computed(() => {
   const correspondingTick = ticks.find(
-    (tick: Tick) => tick.tick === sliderValue.value
+    (tick: SliderTick) => tick.tick === sliderValue.value
   );
   if (!correspondingTick) return;
   return `${label} ${correspondingTick.label}`;
@@ -216,6 +214,7 @@ const indicatorStyle = computed(() => {
 });
 
 const lockedStyle = computed(() => {
+  floor = floor ?? 0;
   return {
     left: `calc(${(floor * 100) / max}% - ${24}px)`,
     top: "26px",
@@ -241,9 +240,11 @@ const sliderDisplayValue = computed(() => {
 });
 
 watch(sliderValue, (newValue) => {
-  const correspondingTick = ticks.find((tick: Tick) => tick.tick === newValue);
+  const correspondingTick = ticks.find(
+    (tick: SliderTick) => tick.tick === newValue
+  );
   if (!correspondingTick) {
-    const undefinedTick: Tick = { tick: 0, label: "", color: "" };
+    const undefinedTick: SliderTick = { tick: 0, label: "", color: "" };
     emit("update:value", `${id}`, undefinedTick);
     return;
   }
