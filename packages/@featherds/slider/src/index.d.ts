@@ -1,4 +1,6 @@
 import { DefineComponent } from "vue";
-export const FeatherSlider: DefineComponent<
-  typeof import("./components/FeatherSlider.vue").props
->;
+import { FeatherSliderProps } from "./types/Types";
+
+export const FeatherSlider: DefineComponent<FeatherSliderProps>;
+
+export { SliderTick } from "./types/Types";
