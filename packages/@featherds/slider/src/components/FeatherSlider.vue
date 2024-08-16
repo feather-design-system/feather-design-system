@@ -1,5 +1,5 @@
 <template>
-  <div class="feather-slider-container">
+  <div :id="`${id}`" class="feather-slider-container" @mouseleave="endDrag">
     <div class="label">{{ label }}</div>
     <div class="control">
       <datalist :id="`${id}-ticks`" :style="datalistStyle">
@@ -11,7 +11,7 @@
           :class="`feather-${item.color}-color ${
             item.tick <= sliderValue ? 'selected' : ''
             }`"
-            @click="clickStep"
+            @click="clickOption"
             />
           </template> -->
         <option
@@ -23,7 +23,7 @@
             item.tick && item.tick <= sliderValue ? 'selected' : ''
           }`"
           :style="optionStyle"
-          @click="clickStep"
+          @click="clickOption"
         />
         <!-- :value="`${((100 / ticks.length) * (index + 1)).toFixed(2)}`" -->
         <span class="locked" :style="lockedStyle"
@@ -46,11 +46,14 @@
           :style="indicatorStyle"
           @click="clickIndicator"
         />
-        <div class="slider-thumb" :style="thumbStyle" />
+        <div class="slider-thumb" :style="thumbStyle" :draggable="false" />
+        <!-- @mousedown="beginDrag" -->
+        <!-- @mousemove="continueDrag" -->
+        <!-- @mouseup="endDrag" -->
       </div>
       <div class="slider-semantic">
         <hr />
-        <!-- <input
+        <input
           type="range"
           class="slider-semantic"
           :list="`${id}-ticks`"
@@ -60,7 +63,7 @@
           v-model="sliderValue"
           @input="updateValue"
         />
-        <hr /> -->
+        <hr />
 
         <p>Slider Value: {{ sliderDisplayValue }}</p>
         <p>Floor: {{ floor }}</p>
@@ -76,6 +79,12 @@
 import { SliderTick, FeatherSliderProps } from "../types/Types";
 
 import { computed, onMounted, reactive, ref, watch } from "vue";
+
+// TODO:  Change path to @featherds/composables/events/Drag when published
+import { useDraggable } from "../../../composables/events/Drag";
+// const { beginDrag, continueDrag, endDrag, position } = useDraggable();
+const { endDrag, position } = useDraggable();
+
 import { FeatherIcon } from "@featherds/icon";
 import Lock from "@featherds/icon/action/Lock";
 
@@ -113,17 +122,18 @@ const step = ref(max / ticks.length);
 
 const emit = defineEmits(["update:value"]);
 
-// const updateValue = (event: Event) => {
-//   const target = event.target as HTMLInputElement;
-//   console.log("target.value: ", target.value);
-//   if (target.value === "0") {
-//     sliderValue.value = step.value;
-//     return;
-//   }
-//   sliderValue.value = Number(target.value);
-// };
+const updateValue = (event: Event) => {
+  const target = event.target as HTMLInputElement;
+  console.log("target.value: ", target.value);
+  if (target.value === "0") {
+    sliderValue.value = step.value;
+    return;
+  }
+  sliderValue.value = Number(target.value);
+};
 
-const clickStep = (e: MouseEvent) => {
+const clickOption = (e: MouseEvent) => {
+  console.log(optionWidth.value);
   if (!(e.target instanceof HTMLOptionElement)) {
     return;
   }
@@ -227,10 +237,15 @@ const optionStyle = computed(() => {
 const thumbStyle = computed(() => {
   return {
     left: `calc(${(sliderValue.value * 100) / max}% - ${6}px)`,
+    transform: `translatex(${position.x}px)`,
   };
 });
 
 // #endregion
+
+const optionWidth = computed(() => {
+  return document.querySelector(`#${id}-ticks>option`)?.clientWidth;
+});
 
 const sliderDisplayValue = computed(() => {
   let value = parseFloat(sliderValue.value.toString());
@@ -342,7 +357,13 @@ onMounted(() => {});
         cursor: pointer;
         position: absolute;
         height: 100%;
-        background-color: var($shade-4);
+        background-color: var($success);
+        background-color: rgba(
+          var(--feather-success-r),
+          var(--feather-success-g),
+          var(--feather-success-b),
+          0.8
+        );
         // NOTE: Style choice to make the track rounded
         // border-radius: 0 0 16px 16px;
         border-radius: 16px;
@@ -352,7 +373,14 @@ onMounted(() => {});
         position: absolute;
         height: 20px;
         margin: -1px auto;
-        background-color: var($primary);
+        background-color: var($error);
+        background-color: rgba(
+          var(--feather-error-r),
+          var(--feather-error-g),
+          var(--feather-error-b),
+          0.9
+        );
+
         border: 2px solid var($shade-4);
         // NOTE: Style choice to make the indicator rounded
         border-radius: 0 0 0 16px;
