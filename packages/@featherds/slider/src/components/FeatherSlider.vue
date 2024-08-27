@@ -11,7 +11,6 @@
           :min="min"
           :max="max"
           v-model="sliderValue"
-          :style="semanticSliderStyle"
           @input="updateValue"
         />
       </div>
@@ -26,49 +25,32 @@
           :style="optionStyle"
           @click="clickOption"
         />
-        <span class="locked" :style="lockedStyle">
-          <FeatherIcon :icon="Lock" />
-        </span>
       </datalist>
 
-      <div class="option-list">
-        <span
-          v-for="item in ticks"
-          :value="item.tick"
-          :key="item.tick"
-          :label="item.label"
-          :class="`feather-${item.color}-color ${item.tick! <= sliderValue ? 'selected' : ''}`"
-          :style="optionStyle"
-          @click="clickOption"
-        >
-          <template v-if="item.icon">
-            <svg><use :href="`#${item.icon}`" class="option-icon" /></svg>
-            {{ item.label }}
-          </template>
-          <template v-else>
-            {{ item.label }}
-          </template>
-        </span>
+      <div class="option-list" :style="optionListStyle">
+        <template v-for="item in ticks" :key="item.tick">
+          <!-- TODO:  Consider skipping first option instead of checking for item.tick = 0 -->
+          <span
+            v-if="item.tick !== 0"
+            :value="item.tick"
+            :label="item.label"
+            :class="`slider-option feather-${item.color}-color ${item.tick! <= sliderValue ? 'selected' : ''}`"
+            :style="optionStyle"
+            @click="clickLabel(item as SliderTick)"
+          >
+            <template v-if="item.tick === floor">
+              <FeatherIcon :icon="Lock" :style="lockedStyle" class="locked" />
+            </template>
+            <template v-if="item.icon">
+              <svg><use :href="`#${item.icon}`" class="option-icon" /></svg>
+              {{ item.label }}
+            </template>
+            <template v-else>
+              {{ item.label }}
+            </template>
+          </span>
+        </template>
       </div>
-
-      <!-- <div
-        class="feather-slider"
-        tabindex="0"
-        @keydown="moveSlider"
-        role="slider"
-        :aria-min="min"
-        :aria-max="max"
-        :aria-valuenow="sliderValue"
-        :aria-valuetext="optionLabel"
-      >
-        <div class="slider-track" :style="trackStyle" @click="clickTrack" />
-        <div
-          class="slider-indicator"
-          :style="indicatorStyle"
-          @click="clickIndicator"
-        />
-        <div class="slider-thumb" :style="thumbStyle" />
-      </div> -->
       <div class="slider-debug">
         <p>Slider Value: {{ sliderDisplayValue }}</p>
         <p>Floor: {{ floor }}</p>
@@ -76,8 +58,6 @@
         <p>Max: {{ max }}</p>
         <p>Step: {{ step }}</p>
         <p>Option Width: {{ optionWidth }}</p>
-        <p>1st Option X: {{ firstOptionX }}</p>
-        <p>Slider X: {{ sliderX }}</p>
         <p>Lock X: {{ lockX }}</p>
       </div>
     </div>
@@ -92,6 +72,7 @@ import { computed, onMounted, reactive, ref, watch } from "vue";
 import { FeatherIcon } from "@featherds/icon";
 import Lock from "@featherds/icon/action/Lock";
 
+// TODO:  Consider skipping first option instead of checking for item.tick = 0
 const props: FeatherSliderProps = defineProps({
   id: { type: String, required: true },
   label: { type: String, default: "Slider" },
@@ -100,10 +81,11 @@ const props: FeatherSliderProps = defineProps({
   ticks: {
     type: Array<SliderTick>,
     default: () => [
-      { tick: 0, label: "critical", color: "error" },
-      { tick: 1, label: "major", color: "major" },
-      { tick: 2, label: "minor", color: "minor" },
-      { tick: 3, label: "warning", color: "warning" },
+      { tick: 0, label: "", color: "" },
+      { tick: 1, label: "critical", color: "error" },
+      { tick: 2, label: "major", color: "major" },
+      { tick: 3, label: "minor", color: "minor" },
+      { tick: 4, label: "warning", color: "warning" },
     ],
     required: false,
   },
@@ -113,12 +95,15 @@ const { id, label, value, ticks } = reactive(props);
 let { floor } = reactive(props);
 
 floor = floor ?? 0;
+let optionWidth = ref(0);
+let lockX = ref(0);
+
+if (!ticks.find((tick: SliderTick) => tick.tick === 0)) {
+  ticks.unshift({ tick: 0, label: "", color: "" });
+}
+
 const min = 0;
 const max = ticks.length ? ticks.length - 1 : 0;
-let optionWidth = ref(0);
-let firstOptionX = ref(0);
-let sliderX = ref(0);
-let lockX = ref(0);
 
 // Initialize tick values
 // ticks.forEach((tick: SliderTick, index: number) => {
@@ -133,12 +118,24 @@ const emit = defineEmits(["update:value"]);
 
 const updateValue = (event: Event) => {
   const target = event.target as HTMLInputElement;
-  console.log("target.value: ", target.value);
-  // if (target.value === "0") {
-  //   sliderValue.value = step.value;
-  //   return;
-  // }
-  sliderValue.value = Number(target.value);
+  let targetValue = Number(target.value);
+  floor = floor ?? 0;
+  if (targetValue <= floor) {
+    sliderValue.value = floor;
+    return;
+  }
+  sliderValue.value = targetValue;
+};
+
+const clickLabel = (tick: SliderTick) => {
+  if (tick.tick === undefined) return;
+  floor = floor ?? 0;
+
+  if (tick.tick <= floor) {
+    sliderValue.value = floor;
+    return;
+  }
+  sliderValue.value = tick.tick;
 };
 
 const clickOption = (e: MouseEvent) => {
@@ -171,115 +168,45 @@ const clickOption = (e: MouseEvent) => {
   }
 };
 
-// const clickTrack = () => {
-//   sliderValue.value = sliderValue.value + step.value;
-// };
-
-// const clickIndicator = () => {
-//   floor = floor ?? 0;
-//   if (sliderValue.value - floor <= 0) return;
-//   sliderValue.value = sliderValue.value - step.value;
-// };
-
-// const moveSlider = (event: KeyboardEvent) => {
-//   if (event instanceof KeyboardEvent) {
-//     if (event.key === "ArrowRight" || event.key === "ArrowUp") {
-//       if (sliderValue.value + step.value > max) return;
-//       sliderValue.value = sliderValue.value + step.value;
-//       event.preventDefault();
-//     } else if (event.key === "ArrowLeft" || event.key === "ArrowDown") {
-//       floor = floor ?? 0;
-//       if (sliderValue.value - floor <= 0) return;
-//       event.preventDefault();
-//       sliderValue.value = sliderValue.value - step.value;
-//     }
-//   }
-// };
-
-// #region Accessibility
-
-// const optionLabel = computed(() => {
-//   const correspondingTick = ticks.find(
-//     (tick: SliderTick) => tick.tick === sliderValue.value
-//   );
-//   if (!correspondingTick) return;
-//   return `${label} ${correspondingTick.label}`;
-// });
-
-// #endregion
-
 // #region Styles
 
 const datalistStyle = computed(() => {
-  return {
-    // display: "grid",
-    // gridTemplateColumns: `repeat(${ticks.length}, 1fr)`,
-    // // justifyContent: "space-evenly",
-    // width: "100%",
-  };
+  return {};
 });
-
-// const trackStyle = computed(() => {
-//   return {
-//     width: `100%`,
-//   };
-// });
-
-// const indicatorStyle = computed(() => {
-//   return {
-//     width: `${(sliderValue.value * 100) / ticks.length}%`,
-//   };
-// });
 
 const lockedStyle = computed(() => {
   floor = floor ?? 0;
   return {
-    // left: `calc(${(floor * 100) / max}% - ${24}px)`,
-    // left: `calc(${(100 / ticks.length) * floor}% + ${width / 2}px)`,
-    left: `calc(${51 * floor}px)`,
-    top: "-2.1em",
-    zIndex: 1,
-    content: "locked",
-    // visibility: `${floor === 0 ? hidden : visible}` as CSSStyleValue,
-    // color: "var(--feather-error)",
+    left: `${optionWidth.value * floor}px`,
+    top: "-4.5em",
   };
+});
+
+const optionListStyle = computed(() => {
+  return {};
 });
 
 const optionStyle = computed(() => {
   return {
-    width: `${100 / ticks.length + 1}%`,
+    width: "100%",
   };
 });
-
-const semanticSliderStyle = computed(() => {
-  return {
-    width: `${100 - (100 / ticks.length + 1)}%`,
-  };
-});
-// const thumbStyle = computed(() => {
-//   return {
-//     left: `calc(${(sliderValue.value * 100) / ticks.length}% - ${6}px)`,
-//   };
-// });
 
 // #endregion
 
-// const optionWidth = computed(() => {
-//   return document.querySelector(`#${id}-ticks>option`)?.clientWidth;
-// });
-
-// const datalistWidth = computed(() => {
-//   if (optionWidth.value == undefined || isNaN(optionWidth.value))
-//     return undefined;
-//   return optionWidth.value * ticks.length;
-// });
-
 const sliderDisplayValue = computed(() => {
   let value = parseFloat(sliderValue.value.toString());
+  if (isNaN(value)) {
+    value = 0;
+  }
   return value;
 });
 
 watch(sliderValue, (newValue) => {
+  if (!Array.isArray(ticks)) {
+    console.error("Ticks is not an array");
+    return;
+  }
   const correspondingTick = ticks.find(
     (tick: SliderTick) => tick.tick === newValue
   );
@@ -292,17 +219,11 @@ watch(sliderValue, (newValue) => {
 });
 
 onMounted(() => {
-  optionWidth.value = document.querySelector(
-    `#${id}-ticks>option`
-  )?.clientWidth!;
-
-  firstOptionX.value = (
-    document.querySelector(`#${id}-ticks>option`) as HTMLOptionElement
-  )?.offsetLeft!;
-
-  sliderX.value = (
-    document.querySelector(`#${id} .control>input`) as HTMLOptionElement
-  )?.offsetLeft!;
+  optionWidth.value = (
+    document.querySelector(
+      `#${id} > .control > .option-list > .slider-option`
+    ) as HTMLElement
+  )?.offsetWidth!;
 });
 </script>
 
@@ -311,12 +232,17 @@ onMounted(() => {
 @import "@featherds/styles/mixins/elevation";
 @import "@featherds/styles/themes/utils";
 
-// input[type="range"] {
-//   width: 200px;
-//   margin: 0;
-// }
+@mixin iconAndBackground($color) {
+  svg > * {
+    fill: var($color);
+    color: var($color);
+  }
+  background-color: alpha($color, 0.2);
+  color: var($color);
+}
+
 .feather-slider-container {
-  width: 600px;
+  width: 671px;
 
   .label {
     @include body-large();
@@ -334,14 +260,18 @@ onMounted(() => {
     }
     .option-list {
       display: flex;
-      // display: none;
-      justify-content: space-around;
+      margin: 0 0.5em;
+      flex-direction: row;
+      justify-content: space-evenly;
       position: relative;
-      // text-align: center;
       writing-mode: horizontal-tb;
-      // width: 100%;
-      span,
       option {
+        position: absolute;
+        left: -2000px;
+      }
+      .slider-option {
+        display: flex;
+        justify-content: center;
         height: 100%;
         cursor: pointer;
         @include body-small();
@@ -350,113 +280,51 @@ onMounted(() => {
         text-transform: capitalize;
         border-radius: 4px;
         border: 2px solid var($surface);
-        background-color: var($shade-4);
-        margin: 0.25em 0.25em;
+        // background-color: rgba(217, 221, 189, 0.2); TODO: #d9ddbd in figma; also Kendo variables in Figma.
+        // background-color: alpha($background, 0.2);
+        background-color: var($background);
+        color: var($shade-2);
+        margin: 0.125em 0.125em;
         transition: background-color 1s ease, color 0.3s ease, border 0.3s ease;
         &.selected {
+          // &:has(.locked) {
+          //   border: 2px solid var($primary);
+          // }
           background-color: var($primary);
           color: var($primary-text-on-color);
           border: 2px solid var($primary-text-on-color);
           &.feather-error-color {
-            background-color: var($error);
+            @include iconAndBackground($error);
           }
           &.feather-major-color {
-            background-color: var($major);
+            @include iconAndBackground($major);
           }
           &.feather-minor-color {
-            background-color: var($minor);
-            color: var($primary-text-on-warning);
+            @include iconAndBackground($minor);
+            color: var($primary-text-on-surface);
           }
           &.feather-warning-color {
-            background-color: var($warning);
-            color: var($primary-text-on-warning);
+            @include iconAndBackground($warning);
+            color: var($primary-text-on-surface);
           }
         }
         svg {
-          width: 2em;
-          height: 2em;
-          fill: var($primary-text-on-color);
-          padding: 0.25em;
-        }
-      }
-      span.locked {
-        position: absolute;
-        display: none;
-        color: var($primary-text-on-color);
-        color: purple;
-        font-size: 1.2em;
-        width: auto;
-        top: 0.125em;
-        pointer-events: none;
-      }
-    }
-    .feather-slider {
-      position: relative;
-      height: 20px;
-      width: 100%;
-      background-color: var($surface);
-      border: 2px solid var($surface);
-      border-radius: 16px;
-
-      &:focus {
-        outline: none;
-        border: 2px solid var($secondary);
-        // NOTE: Style choice to make the track rounded
-        border-radius: 0 0 16px 16px;
-        border-radius: 16px;
-      }
-      .slider-track {
-        cursor: pointer;
-        position: absolute;
-        height: 100%;
-        background-color: var($success);
-        background-color: rgba(
-          var(--feather-success-r),
-          var(--feather-success-g),
-          var(--feather-success-b),
-          0.8
-        );
-        // NOTE: Style choice to make the track rounded
-        // border-radius: 0 0 16px 16px;
-        border-radius: 16px;
-      }
-      .slider-indicator {
-        cursor: pointer;
-        position: absolute;
-        height: 20px;
-        margin: -1px auto;
-        background-color: var($error);
-        background-color: rgba(
-          var(--feather-error-r),
-          var(--feather-error-g),
-          var(--feather-error-b),
-          0.9
-        );
-
-        border: 2px solid var($shade-4);
-        // NOTE: Style choice to make the indicator rounded
-        border-radius: 0 0 0 16px;
-        border-radius: 16px;
-        transition: width 0.5s ease;
-        span.locked {
-          position: absolute;
+          width: 1.75em;
+          height: 1.75em;
           color: var($primary-text-on-color);
-          font-size: 1.2em;
-          width: auto;
-          top: 0.125em;
-          user-select: none;
-          cursor: pointer;
+          padding: 0.25em;
+          use {
+            color: var($shade-2);
+          }
         }
       }
-      .slider-thumb {
+      .locked {
         position: absolute;
-        top: -34px;
-        height: 340%;
-        width: 12px;
-        border-radius: 8px;
-        border: 0.25em solid var($surface);
-        background-color: var($secondary);
-        transition: left 0.5s ease;
+        fill: var($primary);
+        top: -2.1em;
+        // display: none;
+        font-size: 0.5em;
+        pointer-events: none;
       }
     }
   }
@@ -466,13 +334,11 @@ onMounted(() => {
     align-items: center;
     width: 100%;
     height: 100%;
-    accent-color: var($primary);
     .slider-semantic {
-      width: auto;
+      accent-color: var($primary);
+      width: 100%;
       height: auto;
-      background-color: var($success);
-      color: purple;
-      transition: background-color 1s ease, color 1s ease;
+      transition: all 1s ease;
     }
   }
 }
