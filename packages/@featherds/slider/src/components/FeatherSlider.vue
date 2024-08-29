@@ -248,6 +248,16 @@ onMounted(() => {
     @include body-large();
   }
   .control {
+    datalist {
+      > option {
+        display: none;
+      }
+      // datalist wonky in firefox
+      // display: none;
+      // height: 0px;
+
+      // opacity: 0;
+    }
     &:focus-within {
       border: 2px solid var($shade-3);
     }
@@ -284,7 +294,7 @@ onMounted(() => {
         // background-color: alpha($background, 0.2);
         background-color: var($background);
         color: var($shade-2);
-        margin: 0.125em 0.125em;
+        margin: 0.25em 0.25em;
         transition: background-color 1s ease, color 0.3s ease, border 0.3s ease;
         &.selected {
           // &:has(.locked) {
@@ -322,8 +332,9 @@ onMounted(() => {
         position: absolute;
         fill: var($primary);
         top: -2.1em;
-        // display: none;
+        display: none;
         font-size: 0.5em;
+        margin: 0.25em;
         pointer-events: none;
       }
     }
@@ -337,8 +348,36 @@ onMounted(() => {
     .slider-semantic {
       accent-color: var($primary);
       width: 100%;
-      height: auto;
+      height: 0.25em;
+      margin: 0.25em;
+      border-radius: 50px;
       transition: all 1s ease;
+      &::-webkit-slider-runnable-track {
+        height: 4px; /* Adjust the height to make it skinnier */
+      }
+      &::-moz-range-track {
+        height: 4px; /* Adjust the height to make it skinnier */
+        background-color: var($primary);
+        border-radius: 50px;
+      }
+
+      &::-webkit-slider-thumb {
+        transform: translateY(-0.5em);
+        height: 1em;
+        width: 1em;
+        border-radius: 50%;
+        background: var($primary);
+        cursor: pointer;
+        transition: all 1s ease;
+      }
+      &::-moz-range-thumb {
+        width: 16px;
+        height: 16px;
+        border-radius: 50%;
+        background: var($primary);
+        cursor: pointer;
+        transition: all 1s ease;
+      }
     }
   }
 }
