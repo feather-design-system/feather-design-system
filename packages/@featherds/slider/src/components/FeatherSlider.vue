@@ -2,6 +2,8 @@
   <div :id="`${id}`" class="feather-slider-container">
     <div class="label">{{ label }}</div>
     <div class="control">
+      <div aria-live="polite" class="sr-only" id="liveRegion"></div>
+
       <div class="slider-semantic-container">
         <input
           type="range"
@@ -10,32 +12,35 @@
           :step="step"
           :min="min"
           :max="max"
+          :aria-valuemin="0"
+          :aria-valuemax="max"
+          :aria-valuenow="sliderValue"
+          :style="sliderSemanticStyle"
           v-model="sliderValue"
+          @focus="announceValue"
           @input="updateValue"
+          @change="updateValue"
         />
       </div>
 
-      <datalist :id="`${id}-ticks`" :style="datalistStyle" class="option-list">
+      <datalist :id="`${id}-ticks`" class="option-list">
         <option
           v-for="item in ticks"
           :value="item.tick"
           :key="item.tick"
           :label="item.label"
           :class="`feather-${item.color}-color ${item.tick! <= sliderValue ? 'selected' : ''}`"
-          :style="optionStyle"
           @click="clickOption"
         />
       </datalist>
 
-      <div class="option-list" :style="optionListStyle">
+      <div class="option-list">
         <template v-for="item in ticks" :key="item.tick">
-          <!-- TODO:  Consider skipping first option instead of checking for item.tick = 0 -->
           <span
             v-if="item.tick !== 0"
             :value="item.tick"
             :label="item.label"
             :class="`slider-option feather-${item.color}-color ${item.tick! <= sliderValue ? 'selected' : ''}`"
-            :style="optionStyle"
             @click="clickLabel(item as SliderTick)"
           >
             <template v-if="item.tick === floor">
@@ -72,7 +77,6 @@ import { computed, onMounted, reactive, ref, watch } from "vue";
 import { FeatherIcon } from "@featherds/icon";
 import Lock from "@featherds/icon/action/Lock";
 
-// TODO:  Consider skipping first option instead of checking for item.tick = 0
 const props: FeatherSliderProps = defineProps({
   id: { type: String, required: true },
   label: { type: String, default: "Slider" },
@@ -102,6 +106,8 @@ if (!ticks.find((tick: SliderTick) => tick.tick === 0)) {
   ticks.unshift({ tick: 0, label: "", color: "" });
 }
 
+const tickLabels = ticks.map((tick: SliderTick) => tick.label);
+
 const min = 0;
 const max = ticks.length ? ticks.length - 1 : 0;
 
@@ -111,6 +117,16 @@ const max = ticks.length ? ticks.length - 1 : 0;
 // });
 
 const sliderValue = ref(value);
+
+const sliderLabel = computed(() => {
+  const label = tickLabels.filter((item: string, index) => {
+    if (index <= sliderValue.value) {
+      return item;
+    }
+    return;
+  });
+  return label.length >= 1 ? label : ["none"];
+});
 
 const step = ref(max / (ticks.length - 1));
 
@@ -122,9 +138,11 @@ const updateValue = (event: Event) => {
   floor = floor ?? 0;
   if (targetValue <= floor) {
     sliderValue.value = floor;
+    announceValue();
     return;
   }
   sliderValue.value = targetValue;
+  announceValue();
 };
 
 const clickLabel = (tick: SliderTick) => {
@@ -133,9 +151,11 @@ const clickLabel = (tick: SliderTick) => {
 
   if (tick.tick <= floor) {
     sliderValue.value = floor;
+    announceValue();
     return;
   }
   sliderValue.value = tick.tick;
+  announceValue();
 };
 
 const clickOption = (e: MouseEvent) => {
@@ -170,10 +190,6 @@ const clickOption = (e: MouseEvent) => {
 
 // #region Styles
 
-const datalistStyle = computed(() => {
-  return {};
-});
-
 const lockedStyle = computed(() => {
   floor = floor ?? 0;
   return {
@@ -182,13 +198,35 @@ const lockedStyle = computed(() => {
   };
 });
 
-const optionListStyle = computed(() => {
-  return {};
-});
+const sliderSemanticStyle = computed(() => {
+  // Damn you, mozilla (-moz-range-track is unreliable), hence the gradient hack
+  let gradient = ticks.map((tick: SliderTick, index: number) => {
+    if (!tick.tick) tick.tick = 0;
 
-const optionStyle = computed(() => {
+    let firstpart = `${
+      tick.tick <= sliderValue.value // <= instead of <
+        ? "var(--feather-primary)"
+        : "var(--feather-shade-4)"
+    } ${(tick.tick / max) * 100}%`;
+
+    // start and end of gradient
+    if (index === 0 || index === max) return `${firstpart}`;
+
+    // middle of gradient
+    let secondpart = `${
+      tick.tick < sliderValue.value // < instead of <=
+        ? "var(--feather-primary)"
+        : "var(--feather-shade-4)"
+    } ${(tick.tick / max) * 100 + 1}%`; // +1 to avoid overlap
+
+    return `${firstpart}, ${secondpart}`;
+  });
+
   return {
-    width: "100%",
+    background: `linear-gradient(
+      to right,
+      ${gradient.join(", ")}
+      )`,
   };
 });
 
@@ -218,6 +256,15 @@ watch(sliderValue, (newValue) => {
   emit("update:value", `${id}`, correspondingTick);
 });
 
+// #region accessibility
+const announceValue = () => {
+  const liveRegion = document.getElementById("liveRegion");
+  if (liveRegion) {
+    liveRegion.textContent = `${sliderLabel.value.join(" ")} selected`;
+  }
+};
+// #endregion
+
 onMounted(() => {
   optionWidth.value = (
     document.querySelector(
@@ -241,6 +288,17 @@ onMounted(() => {
   color: var($color);
 }
 
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  border: 0;
+}
+
 .feather-slider-container {
   width: 671px;
 
@@ -252,11 +310,6 @@ onMounted(() => {
       > option {
         display: none;
       }
-      // datalist wonky in firefox
-      // display: none;
-      // height: 0px;
-
-      // opacity: 0;
     }
     &:focus-within {
       border: 2px solid var($shade-3);
@@ -269,11 +322,11 @@ onMounted(() => {
       display: none;
     }
     .option-list {
+      position: relative;
       display: flex;
-      margin: 0 0.5em;
       flex-direction: row;
       justify-content: space-evenly;
-      position: relative;
+      margin: 0 0.5em;
       writing-mode: horizontal-tb;
       option {
         position: absolute;
@@ -283,6 +336,7 @@ onMounted(() => {
         display: flex;
         justify-content: center;
         height: 100%;
+        width: 100%;
         cursor: pointer;
         @include body-small();
         overflow: visible;
@@ -352,13 +406,21 @@ onMounted(() => {
       margin: 0.25em;
       border-radius: 50px;
       transition: all 1s ease;
+      &:focus-visible {
+        outline: none;
+      }
       &::-webkit-slider-runnable-track {
-        height: 4px; /* Adjust the height to make it skinnier */
+        height: 0.25em;
       }
       &::-moz-range-track {
-        height: 4px; /* Adjust the height to make it skinnier */
-        background-color: var($primary);
-        border-radius: 50px;
+        height: 0.25em;
+        // background-color: var($primary);
+        // background: linear-gradient(
+        //   to right,
+        //   var($primary) 50%,
+        //   var($shade-4) 50%
+        // );
+        // border-radius: 50px;
       }
 
       &::-webkit-slider-thumb {
@@ -371,8 +433,8 @@ onMounted(() => {
         transition: all 1s ease;
       }
       &::-moz-range-thumb {
-        width: 16px;
-        height: 16px;
+        width: 1em;
+        height: 1em;
         border-radius: 50%;
         background: var($primary);
         cursor: pointer;
