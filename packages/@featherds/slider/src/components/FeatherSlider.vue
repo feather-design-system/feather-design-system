@@ -1,8 +1,9 @@
 <template>
   <div :id="`${id}`" class="feather-slider-container">
-    <div class="label">{{ label }}</div>
     <div class="control">
-      <div aria-live="polite" class="sr-only" id="liveRegion"></div>
+      <div :id="`${id}-label`" class="label">
+        {{ label }}
+      </div>
 
       <div class="slider-semantic-container">
         <input
@@ -12,6 +13,7 @@
           :step="step"
           :min="min"
           :max="max"
+          :aria-labeledby="`${id}-label`"
           :aria-valuemin="0"
           :aria-valuemax="max"
           :aria-valuenow="sliderValue"
@@ -22,6 +24,7 @@
           @change="updateValue"
         />
       </div>
+      <div aria-live="polite" class="sr-only" id="liveRegion"></div>
 
       <datalist :id="`${id}-ticks`" class="option-list">
         <option
