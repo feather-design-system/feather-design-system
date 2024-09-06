@@ -371,7 +371,7 @@ onMounted(() => {
           background-color: var($primary);
           color: var($primary-text-on-color);
           border: 2px solid var($primary-text-on-color);
-          @include hoverBackground($primary, 0.9);
+          @include hoverBackground($primary, 0.88);
           &.feather-error-color {
             @include iconAndBackground($error);
             @include hoverBackground($error);
@@ -383,6 +383,7 @@ onMounted(() => {
           &.feather-minor-color {
             @include iconAndBackground($minor);
             @include hoverBackground($minor);
+            color: var($primary-text-on-surface);
           }
           &.feather-warning-color {
             @include iconAndBackground($warning);
