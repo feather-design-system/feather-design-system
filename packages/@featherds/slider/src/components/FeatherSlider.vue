@@ -26,7 +26,8 @@
       </div>
       <div aria-live="polite" class="sr-only" id="liveRegion"></div>
 
-      <datalist :id="`${id}-ticks`" class="option-list">
+      <!-- <datalist :id="`${id}-ticks`" class="option-list"> -->
+      <datalist :id="`${id}-ticks`">
         <option
           v-for="item in ticks"
           :value="item.tick"
@@ -43,7 +44,7 @@
             v-if="item.tick !== 0"
             :value="item.tick"
             :label="item.label"
-            :class="`slider-option feather-${item.color}-color ${item.tick! <= sliderValue ? 'selected' : ''}`"
+            :class="`hover slider-option feather-${item.color}-color ${item.tick! <= sliderValue ? 'selected' : ''}`"
             @click="clickLabel(item as SliderTick)"
           >
             <template v-if="item.tick === floor">
@@ -291,6 +292,14 @@ onMounted(() => {
   color: var($color);
 }
 
+@mixin hoverBackground($color, $alpha: 0.35) {
+  &:hover {
+    background-color: alpha($color, $alpha);
+    border: 2px solid
+      alpha($state-color-on-color, var($state-opacity-hover-on-surface));
+  }
+}
+
 .sr-only {
   position: absolute;
   width: 1px;
@@ -305,10 +314,10 @@ onMounted(() => {
 .feather-slider-container {
   width: 671px;
 
-  .label {
-    @include body-large();
-  }
   .control {
+    .label {
+      @include body-large();
+    }
     datalist {
       > option {
         display: none;
@@ -329,6 +338,7 @@ onMounted(() => {
       display: flex;
       flex-direction: row;
       justify-content: space-evenly;
+      height: 2.5em;
       margin: 0 0.5em;
       writing-mode: horizontal-tb;
       option {
@@ -336,12 +346,13 @@ onMounted(() => {
         left: -2000px;
       }
       .slider-option {
+        @include body-small();
         display: flex;
         justify-content: center;
+        align-items: center;
         height: 100%;
         width: 100%;
         cursor: pointer;
-        @include body-small();
         overflow: visible;
         text-align: center;
         text-transform: capitalize;
@@ -360,19 +371,36 @@ onMounted(() => {
           background-color: var($primary);
           color: var($primary-text-on-color);
           border: 2px solid var($primary-text-on-color);
+          @include hoverBackground($primary, 0.9);
           &.feather-error-color {
             @include iconAndBackground($error);
+            @include hoverBackground($error);
           }
           &.feather-major-color {
             @include iconAndBackground($major);
+            @include hoverBackground($major);
           }
           &.feather-minor-color {
             @include iconAndBackground($minor);
-            color: var($primary-text-on-surface);
+            @include hoverBackground($minor);
           }
           &.feather-warning-color {
             @include iconAndBackground($warning);
+            @include hoverBackground($warning, 0.75);
             color: var($primary-text-on-surface);
+          }
+          &:focus {
+            border-color: var($state-color-on-color);
+          }
+        }
+        &:not(.selected) {
+          &:hover {
+            background-color: var($shade-2);
+            color: var($primary-text-on-color);
+            border: 2px solid var($primary-text-on-color);
+          }
+          &:focus {
+            border-color: var($primary);
           }
         }
         svg {
@@ -407,7 +435,7 @@ onMounted(() => {
       width: 100%;
       height: 0.25em;
       margin: 0.25em;
-      border-radius: 50px;
+      border-radius: 3em;
       transition: all 1s ease;
       &:focus-visible {
         outline: none;
