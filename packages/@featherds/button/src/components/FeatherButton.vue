@@ -97,6 +97,7 @@ export default defineComponent({
     };
 
     const classes = getClasses();
+    // @ts-ignore
     data.class = ([this.$attrs.class as string] || []).concat(classes);
 
     if (this.$slots.icon) {
