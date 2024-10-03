@@ -28,7 +28,7 @@ describe("FeatherProgressCircular.vue", () => {
     it("should render various sizes", async () => {
       const props = { value: 0 };
       const wrapper = getWrapper({ props });
-      const circular = wrapper.find(".feather-progress-circular");
+      // const circular = wrapper.find(".feather-progress-circular");
 
       await wrapper.setProps({ size: "sm" });
       expect(wrapper.element).toMatchSnapshot();

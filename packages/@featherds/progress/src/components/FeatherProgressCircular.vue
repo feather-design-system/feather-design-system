@@ -40,7 +40,6 @@ import {
   defineComponent,
   onMounted,
   PropType,
-  ref,
   toRef,
   toRefs,
   watch,
@@ -98,8 +97,10 @@ export default defineComponent({
     });
 
     const reportText = computed(() => {
-      const status = labels.reportLabel.value
-        .replace("${symbol}", labels.symbolLabel.value)
+      let reportLabel = labels.reportLabel.value || "";
+      let symbolLabel = labels.symbolLabel.value || "";
+      const status = reportLabel
+        .replace("${symbol}", symbolLabel)
         .replace(
           "${value}",
           percentage.value ? percentage.value.toString() : ""
@@ -108,8 +109,9 @@ export default defineComponent({
     });
 
     const statusAnnouncement = computed(() => {
+      let unitsLabel = labels.unitsLabel.value || "";
       const valueString = percentage.value ? percentage.value.toString() : "";
-      return labels.unitsLabel.value.replace("${value}", valueString);
+      return unitsLabel.replace("${value}", valueString);
     });
 
     const completedAnnouncement = computed(() => {
