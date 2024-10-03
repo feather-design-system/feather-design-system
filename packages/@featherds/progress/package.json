@@ -1,6 +1,6 @@
 {
   "name": "@featherds/progress",
-  "version": "0.12.30",
+  "version": "0.12.31",
   "publishConfig": {
     "access": "public"
   },
