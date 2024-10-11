@@ -28,61 +28,27 @@ import contentBlogArticle from "@featherds/icon/content/BlogArticle";
 
 import contentVideo from "@featherds/icon/content/Video";
 
-import fileAttachment from "@featherds/icon/file/Attachment";
+import datavisAreaChart from "@featherds/icon/datavis/AreaChart";
 
-import fileFolder from "@featherds/icon/file/Folder";
+import datavisBarChart from "@featherds/icon/datavis/BarChart";
 
-import fileFolderAdd from "@featherds/icon/file/FolderAdd";
+import datavisColumnChart from "@featherds/icon/datavis/ColumnChart";
 
-import fileFolderLocked from "@featherds/icon/file/FolderLocked";
+import datavisDonutChart from "@featherds/icon/datavis/DonutChart";
 
-import fileFolderOpen from "@featherds/icon/file/FolderOpen";
+import datavisLineChart from "@featherds/icon/datavis/LineChart";
 
-import fileGeneric from "@featherds/icon/file/Generic";
+import datavisPieChart from "@featherds/icon/datavis/PieChart";
 
-import fileImage from "@featherds/icon/file/Image";
+import datavisPolarChart from "@featherds/icon/datavis/PolarChart";
 
-import filePdf from "@featherds/icon/file/Pdf";
+import datavisReporting from "@featherds/icon/datavis/Reporting";
 
-import fileText from "@featherds/icon/file/Text";
+import datavisStackedBarChart from "@featherds/icon/datavis/StackedBarChart";
 
-import fileWordDoc from "@featherds/icon/file/WordDoc";
+import datavisStackedColumnChart from "@featherds/icon/datavis/StackedColumnChart";
 
-import fileXls from "@featherds/icon/file/Xls";
-
-import fileZip from "@featherds/icon/file/Zip";
-
-import hardwareAppliances from "@featherds/icon/hardware/Appliances";
-
-import hardwareAppliancesAlt from "@featherds/icon/hardware/AppliancesAlt";
-
-import hardwareApplianceProfiles from "@featherds/icon/hardware/ApplianceProfiles";
-
-import hardwareDesktopWindows from "@featherds/icon/hardware/DesktopWindows";
-
-import hardwareInstances from "@featherds/icon/hardware/Instances";
-
-import hardwareKeyboardArrowDown from "@featherds/icon/hardware/KeyboardArrowDown";
-
-import hardwareKeyboardArrowUp from "@featherds/icon/hardware/KeyboardArrowUp";
-
-import hardwareLaptop from "@featherds/icon/hardware/Laptop";
-
-import hardwareMinionProfiles from "@featherds/icon/hardware/MinionProfiles";
-
-import hardwareNetwork from "@featherds/icon/hardware/Network";
-
-import hardwareNetworkProfiles from "@featherds/icon/hardware/NetworkProfiles";
-
-import hardwareRouter from "@featherds/icon/hardware/Router";
-
-import hardwareSecurity from "@featherds/icon/hardware/Security";
-
-import hardwareServer from "@featherds/icon/hardware/Server";
-
-import hardwareVirtualMachine from "@featherds/icon/hardware/VirtualMachine";
-
-import hardwareVirtualMachineAlt from "@featherds/icon/hardware/VirtualMachineAlt";
+import datavisTreeDiagram from "@featherds/icon/datavis/TreeDiagram";
 
 import actionAccountCircle from "@featherds/icon/action/AccountCircle";
 
@@ -262,6 +228,62 @@ import actionViewDetails from "@featherds/icon/action/ViewDetails";
 
 import actionWorkflow from "@featherds/icon/action/Workflow";
 
+import fileAttachment from "@featherds/icon/file/Attachment";
+
+import fileFolder from "@featherds/icon/file/Folder";
+
+import fileFolderAdd from "@featherds/icon/file/FolderAdd";
+
+import fileFolderLocked from "@featherds/icon/file/FolderLocked";
+
+import fileFolderOpen from "@featherds/icon/file/FolderOpen";
+
+import fileGeneric from "@featherds/icon/file/Generic";
+
+import fileImage from "@featherds/icon/file/Image";
+
+import filePdf from "@featherds/icon/file/Pdf";
+
+import fileText from "@featherds/icon/file/Text";
+
+import fileWordDoc from "@featherds/icon/file/WordDoc";
+
+import fileXls from "@featherds/icon/file/Xls";
+
+import fileZip from "@featherds/icon/file/Zip";
+
+import hardwareAppliances from "@featherds/icon/hardware/Appliances";
+
+import hardwareAppliancesAlt from "@featherds/icon/hardware/AppliancesAlt";
+
+import hardwareApplianceProfiles from "@featherds/icon/hardware/ApplianceProfiles";
+
+import hardwareDesktopWindows from "@featherds/icon/hardware/DesktopWindows";
+
+import hardwareInstances from "@featherds/icon/hardware/Instances";
+
+import hardwareKeyboardArrowDown from "@featherds/icon/hardware/KeyboardArrowDown";
+
+import hardwareKeyboardArrowUp from "@featherds/icon/hardware/KeyboardArrowUp";
+
+import hardwareLaptop from "@featherds/icon/hardware/Laptop";
+
+import hardwareMinionProfiles from "@featherds/icon/hardware/MinionProfiles";
+
+import hardwareNetwork from "@featherds/icon/hardware/Network";
+
+import hardwareNetworkProfiles from "@featherds/icon/hardware/NetworkProfiles";
+
+import hardwareRouter from "@featherds/icon/hardware/Router";
+
+import hardwareSecurity from "@featherds/icon/hardware/Security";
+
+import hardwareServer from "@featherds/icon/hardware/Server";
+
+import hardwareVirtualMachine from "@featherds/icon/hardware/VirtualMachine";
+
+import hardwareVirtualMachineAlt from "@featherds/icon/hardware/VirtualMachineAlt";
+
 import medicalAmbulance from "@featherds/icon/medical/Ambulance";
 
 import medicalCostSavings from "@featherds/icon/medical/CostSavings";
@@ -368,34 +390,17 @@ export default {
         { icon: communicationPhone, key: "communicationPhone" },
         { icon: contentBlogArticle, key: "contentBlogArticle" },
         { icon: contentVideo, key: "contentVideo" },
-        { icon: fileAttachment, key: "fileAttachment" },
-        { icon: fileFolder, key: "fileFolder" },
-        { icon: fileFolderAdd, key: "fileFolderAdd" },
-        { icon: fileFolderLocked, key: "fileFolderLocked" },
-        { icon: fileFolderOpen, key: "fileFolderOpen" },
-        { icon: fileGeneric, key: "fileGeneric" },
-        { icon: fileImage, key: "fileImage" },
-        { icon: filePdf, key: "filePdf" },
-        { icon: fileText, key: "fileText" },
-        { icon: fileWordDoc, key: "fileWordDoc" },
-        { icon: fileXls, key: "fileXls" },
-        { icon: fileZip, key: "fileZip" },
-        { icon: hardwareAppliances, key: "hardwareAppliances" },
-        { icon: hardwareAppliancesAlt, key: "hardwareAppliancesAlt" },
-        { icon: hardwareApplianceProfiles, key: "hardwareApplianceProfiles" },
-        { icon: hardwareDesktopWindows, key: "hardwareDesktopWindows" },
-        { icon: hardwareInstances, key: "hardwareInstances" },
-        { icon: hardwareKeyboardArrowDown, key: "hardwareKeyboardArrowDown" },
-        { icon: hardwareKeyboardArrowUp, key: "hardwareKeyboardArrowUp" },
-        { icon: hardwareLaptop, key: "hardwareLaptop" },
-        { icon: hardwareMinionProfiles, key: "hardwareMinionProfiles" },
-        { icon: hardwareNetwork, key: "hardwareNetwork" },
-        { icon: hardwareNetworkProfiles, key: "hardwareNetworkProfiles" },
-        { icon: hardwareRouter, key: "hardwareRouter" },
-        { icon: hardwareSecurity, key: "hardwareSecurity" },
-        { icon: hardwareServer, key: "hardwareServer" },
-        { icon: hardwareVirtualMachine, key: "hardwareVirtualMachine" },
-        { icon: hardwareVirtualMachineAlt, key: "hardwareVirtualMachineAlt" },
+        { icon: datavisAreaChart, key: "datavisAreaChart" },
+        { icon: datavisBarChart, key: "datavisBarChart" },
+        { icon: datavisColumnChart, key: "datavisColumnChart" },
+        { icon: datavisDonutChart, key: "datavisDonutChart" },
+        { icon: datavisLineChart, key: "datavisLineChart" },
+        { icon: datavisPieChart, key: "datavisPieChart" },
+        { icon: datavisPolarChart, key: "datavisPolarChart" },
+        { icon: datavisReporting, key: "datavisReporting" },
+        { icon: datavisStackedBarChart, key: "datavisStackedBarChart" },
+        { icon: datavisStackedColumnChart, key: "datavisStackedColumnChart" },
+        { icon: datavisTreeDiagram, key: "datavisTreeDiagram" },
         { icon: actionAccountCircle, key: "actionAccountCircle" },
         { icon: actionAdd, key: "actionAdd" },
         { icon: actionAddCircleAlt, key: "actionAddCircleAlt" },
@@ -485,6 +490,34 @@ export default {
         { icon: actionView, key: "actionView" },
         { icon: actionViewDetails, key: "actionViewDetails" },
         { icon: actionWorkflow, key: "actionWorkflow" },
+        { icon: fileAttachment, key: "fileAttachment" },
+        { icon: fileFolder, key: "fileFolder" },
+        { icon: fileFolderAdd, key: "fileFolderAdd" },
+        { icon: fileFolderLocked, key: "fileFolderLocked" },
+        { icon: fileFolderOpen, key: "fileFolderOpen" },
+        { icon: fileGeneric, key: "fileGeneric" },
+        { icon: fileImage, key: "fileImage" },
+        { icon: filePdf, key: "filePdf" },
+        { icon: fileText, key: "fileText" },
+        { icon: fileWordDoc, key: "fileWordDoc" },
+        { icon: fileXls, key: "fileXls" },
+        { icon: fileZip, key: "fileZip" },
+        { icon: hardwareAppliances, key: "hardwareAppliances" },
+        { icon: hardwareAppliancesAlt, key: "hardwareAppliancesAlt" },
+        { icon: hardwareApplianceProfiles, key: "hardwareApplianceProfiles" },
+        { icon: hardwareDesktopWindows, key: "hardwareDesktopWindows" },
+        { icon: hardwareInstances, key: "hardwareInstances" },
+        { icon: hardwareKeyboardArrowDown, key: "hardwareKeyboardArrowDown" },
+        { icon: hardwareKeyboardArrowUp, key: "hardwareKeyboardArrowUp" },
+        { icon: hardwareLaptop, key: "hardwareLaptop" },
+        { icon: hardwareMinionProfiles, key: "hardwareMinionProfiles" },
+        { icon: hardwareNetwork, key: "hardwareNetwork" },
+        { icon: hardwareNetworkProfiles, key: "hardwareNetworkProfiles" },
+        { icon: hardwareRouter, key: "hardwareRouter" },
+        { icon: hardwareSecurity, key: "hardwareSecurity" },
+        { icon: hardwareServer, key: "hardwareServer" },
+        { icon: hardwareVirtualMachine, key: "hardwareVirtualMachine" },
+        { icon: hardwareVirtualMachineAlt, key: "hardwareVirtualMachineAlt" },
         { icon: medicalAmbulance, key: "medicalAmbulance" },
         { icon: medicalCostSavings, key: "medicalCostSavings" },
         { icon: medicalDrug, key: "medicalDrug" },

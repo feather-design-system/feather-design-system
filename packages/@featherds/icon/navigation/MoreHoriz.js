@@ -1,5 +1,5 @@
 import { openBlock, createElementBlock, createElementVNode } from "vue";
-var _export_sfc = (sfc, props) => {
+const _export_sfc = (sfc, props) => {
   const target = sfc.__vccOpts || sfc;
   for (const [key, val] of props) {
     target[key] = val;
@@ -34,5 +34,7 @@ const _hoisted_5 = [
 function _sfc_render(_ctx, _cache) {
   return openBlock(), createElementBlock("svg", _hoisted_1, _hoisted_5);
 }
-var MoreHoriz = /* @__PURE__ */ _export_sfc(_sfc_main, [["render", _sfc_render]]);
-export { MoreHoriz as default };
+const MoreHoriz = /* @__PURE__ */ _export_sfc(_sfc_main, [["render", _sfc_render]]);
+export {
+  MoreHoriz as default
+};

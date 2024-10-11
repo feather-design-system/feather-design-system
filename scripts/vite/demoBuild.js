@@ -3,7 +3,7 @@ import path from "path";
 import { sassImports, moduleImport, fileImport } from "./alias.js";
 const run = async () =>
   build({
-    configFile: "./vite.config.js",
+    configFile: "./vite.config.mjs",
     root: process.cwd(),
     base: "/demos/",
     resolve: {

@@ -3,7 +3,7 @@ import { sassImports, moduleImport, fileImport } from "./alias.js";
 const run = async () =>
   createServer({
     // any valid user config options, plus `mode` and `configFile`
-    configFile: "./vite.config.js",
+    configFile: "./vite.config.mjs",
     root: process.cwd(),
     resolve: {
       alias: [...sassImports, ...moduleImport, ...fileImport],
