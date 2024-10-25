@@ -25,7 +25,7 @@
     "docs:info": "vuepress info",
     "docs:build": "vuepress build docs",
     "docs:dev": "vuepress dev docs",
-    "generate:icons": "node packages/@featherds/icon/scripts/createIcons.js",
+    "generate:icons": "node packages/@featherds/icon/scripts/createIcons.mjs",
     "new": "hygen new",
     "test": "npm run test:unit:ci",
     "changelog": "conventional-changelog -p angular -i CHANGELOG.md -s && git add CHANGELOG.md"

@@ -1,12 +1,13 @@
-const path = require("path");
-const fs = require("fs-extra");
-const { build } = require("vite");
+import { join, basename } from "path";
+import { build } from "vite";
+import fsExtraPkg from "fs-extra";
+const { move } = fsExtraPkg;
 
-const vite = (folder, file) => {
+export const vite = (folder, file) => {
   const config = {
     logLevel: "silent",
     publicDir: false,
-    configFile: path.join(process.cwd(), "./vite.config.js"),
+    configFile: join(process.cwd(), "./vite.config.mjs"),
     resolve: {
       extensions: [".vue"],
     },
@@ -16,8 +17,8 @@ const vite = (folder, file) => {
       minify: false,
       lib: {
         entry: file,
-        name: path.basename(file, ".vue"),
-        fileName: path.basename(file, ".vue"),
+        name: basename(file, ".vue"),
+        fileName: basename(file, ".vue"),
         formats: ["es"],
       },
       rollupOptions: {
@@ -37,18 +38,20 @@ const vite = (folder, file) => {
   return build(config);
 };
 
-const run = (folder, files) => {
+export const run = (folder, files) => {
   return files.reduce(
     (p, f) =>
       p.then(() =>
         vite(folder, f)
           .catch(console.log)
-          .then(() =>
-            fs.move(
-              path.join(folder, path.basename(f, ".vue") + ".mjs"),
-              path.join(folder, path.basename(f, ".vue") + ".js"),
-              { overwrite: true }
-            )
+          .then(
+            () =>
+              console.log("finished", join(folder, basename(f, ".vue") + "."))
+            // move(
+            //   join(folder, basename(f, ".vue") + ".mjs"),
+            //   join(folder, basename(f, ".vue") + ".js"),
+            //   { overwrite: true }
+            // )
           )
       ),
     Promise.resolve()
@@ -56,6 +59,6 @@ const run = (folder, files) => {
   // return Promise.all(files.map((f) => vite(folder, f).catch(console.error)));
 };
 
-module.exports = {
-  run,
-};
+// export default {
+//   run,
+// };

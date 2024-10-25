@@ -1,11 +1,21 @@
-const fs = require("fs-extra");
+import { fileURLToPath } from "url";
+import fsExtraPkg from "fs-extra";
+import pathPkg from "path";
 
-const generateAllDemoFile = async (feather) => {
+const { dirname } = pathPkg;
+const { readFile, outputFile } = fsExtraPkg;
+
+export const generateAllDemoFile = async (feather) => {
+  const __filename = fileURLToPath(import.meta.url);
+  const __dirname = dirname(__filename);
+
   const getImport = (icon) =>
     `import ${icon.group}${icon.name} from "@featherds/icon/${icon.group}/${icon.name}";
 `;
+  console.log("FileName", __filename);
+  console.log("DirName", __dirname);
 
-  const htmlTemplate = await fs.readFile(__dirname + "/allDemo.html");
+  const htmlTemplate = await readFile(__dirname + "/allDemo.html");
   const demoTemplate = `
   ${htmlTemplate}
   <script>
@@ -44,10 +54,10 @@ export default {
 </style>
 `;
   console.log("Generating All Demo");
-  return fs.outputFile(
+  return outputFile(
     `packages/@featherds/icon/demos/AllIcons.vue`,
     demoTemplate
   );
 };
 
-module.exports = generateAllDemoFile;
+// export default generateAllDemoFile;

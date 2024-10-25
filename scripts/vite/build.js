@@ -6,7 +6,7 @@ const run = async ({ entry, dest }) => {
   const pkg = await fs.readJSON(path.resolve(dest, "../package.json"));
   const deps = pkg.dependencies ? Object.keys(pkg.dependencies) : [];
   return build({
-    configFile: path.join(process.cwd(), "./vite.config.js"),
+    configFile: path.join(process.cwd(), "./vite.config.mjs"),
     root: path.resolve(dest, "../"),
     resolve: {
       extensions: [".mjs", ".js", ".ts", ".jsx", ".tsx", ".json", ".vue"],

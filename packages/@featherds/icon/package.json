@@ -5,6 +5,7 @@
     "access": "public"
   },
   "author": "NantHealth",
+  "type": "module",
   "scripts": {},
   "main": "dist/app.mjs",
   "license": "Apache-2.0",
