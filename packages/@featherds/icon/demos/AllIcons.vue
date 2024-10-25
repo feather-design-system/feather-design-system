@@ -10,6 +10,10 @@
 
   <script>
   import * as components from "./../src";
+import contentBlogArticle from "@featherds/icon/content/BlogArticle";
+
+import contentVideo from "@featherds/icon/content/Video";
+
 import communicationCertificate from "@featherds/icon/communication/Certificate";
 
 import communicationCertificateAlt from "@featherds/icon/communication/CertificateAlt";
@@ -23,10 +27,6 @@ import communicationDocumentation from "@featherds/icon/communication/Documentat
 import communicationIdCard from "@featherds/icon/communication/IdCard";
 
 import communicationPhone from "@featherds/icon/communication/Phone";
-
-import contentBlogArticle from "@featherds/icon/content/BlogArticle";
-
-import contentVideo from "@featherds/icon/content/Video";
 
 import datavisAreaChart from "@featherds/icon/datavis/AreaChart";
 
@@ -358,6 +358,136 @@ import navigationUnfoldLess from "@featherds/icon/navigation/UnfoldLess";
 
 import navigationUnfoldMore from "@featherds/icon/navigation/UnfoldMore";
 
+import networkAggregationLayer from "@featherds/icon/network/AggregationLayer";
+
+import networkAggregationLayerAlt1 from "@featherds/icon/network/AggregationLayerAlt1";
+
+import networkAggregationLayerAlt2 from "@featherds/icon/network/AggregationLayerAlt2";
+
+import networkAggregationLayerAlt3 from "@featherds/icon/network/AggregationLayerAlt3";
+
+import networkAggregationLayerAlt4 from "@featherds/icon/network/AggregationLayerAlt4";
+
+import networkAggregationLayerAlt5 from "@featherds/icon/network/AggregationLayerAlt5";
+
+import networkApiConfig from "@featherds/icon/network/ApiConfig";
+
+import networkApiEndpoints from "@featherds/icon/network/ApiEndpoints";
+
+import networkAppliances from "@featherds/icon/network/Appliances";
+
+import networkAppliancesAlt from "@featherds/icon/network/AppliancesAlt";
+
+import networkApplianceProfiles from "@featherds/icon/network/ApplianceProfiles";
+
+import networkBuild from "@featherds/icon/network/Build";
+
+import networkCertificateAlt from "@featherds/icon/network/CertificateAlt";
+
+import networkCloud from "@featherds/icon/network/Cloud";
+
+import networkCloudBackUp from "@featherds/icon/network/CloudBackUp";
+
+import networkCloudDownload from "@featherds/icon/network/CloudDownload";
+
+import networkCloudService from "@featherds/icon/network/CloudService";
+
+import networkCloudUpload from "@featherds/icon/network/CloudUpload";
+
+import networkCode from "@featherds/icon/network/Code";
+
+import networkCompare from "@featherds/icon/network/Compare";
+
+import networkCompare1 from "@featherds/icon/network/Compare1";
+
+import networkCompliance from "@featherds/icon/network/Compliance";
+
+import networkConfiguration from "@featherds/icon/network/Configuration";
+
+import networkConnection from "@featherds/icon/network/Connection";
+
+import networkContainerAdd from "@featherds/icon/network/ContainerAdd";
+
+import networkContainerTransient from "@featherds/icon/network/ContainerTransient";
+
+import networkContainerUnknown from "@featherds/icon/network/ContainerUnknown";
+
+import networkDatabase from "@featherds/icon/network/Database";
+
+import networkDesktop from "@featherds/icon/network/Desktop";
+
+import networkDigitize from "@featherds/icon/network/Digitize";
+
+import networkElectricalServices from "@featherds/icon/network/ElectricalServices";
+
+import networkEndUser from "@featherds/icon/network/EndUser";
+
+import networkExitCompare from "@featherds/icon/network/ExitCompare";
+
+import networkExitCompareModeAlt from "@featherds/icon/network/ExitCompareModeAlt";
+
+import networkExtractData from "@featherds/icon/network/ExtractData";
+
+import networkFirewall from "@featherds/icon/network/Firewall";
+
+import networkInstances from "@featherds/icon/network/Instances";
+
+import networkInventoryAlt from "@featherds/icon/network/InventoryAlt";
+
+import networkLaptop from "@featherds/icon/network/Laptop";
+
+import networkLoggerConfigs from "@featherds/icon/network/LoggerConfigs";
+
+import networkLogs from "@featherds/icon/network/Logs";
+
+import networkLogsAlt from "@featherds/icon/network/LogsAlt";
+
+import networkLogFile from "@featherds/icon/network/LogFile";
+
+import networkMicroservices from "@featherds/icon/network/Microservices";
+
+import networkMinion from "@featherds/icon/network/Minion";
+
+import networkMinionProfiles from "@featherds/icon/network/MinionProfiles";
+
+import networkNetworkProfiles from "@featherds/icon/network/NetworkProfiles";
+
+import networkNodes from "@featherds/icon/network/Nodes";
+
+import networkPolicy from "@featherds/icon/network/Policy";
+
+import networkPower from "@featherds/icon/network/Power";
+
+import networkRouterLan from "@featherds/icon/network/RouterLan";
+
+import networkRouterWan from "@featherds/icon/network/RouterWan";
+
+import networkSecurity from "@featherds/icon/network/Security";
+
+import networkSecurityScan from "@featherds/icon/network/SecurityScan";
+
+import networkServer from "@featherds/icon/network/Server";
+
+import networkServerClock from "@featherds/icon/network/ServerClock";
+
+import networkSwitch from "@featherds/icon/network/Switch";
+
+import networkTerminal from "@featherds/icon/network/Terminal";
+
+import networkUpdateUtilities from "@featherds/icon/network/UpdateUtilities";
+
+import networkUtilities from "@featherds/icon/network/Utilities";
+
+import networkViewCode from "@featherds/icon/network/ViewCode";
+
+import networkVirtualMachine from "@featherds/icon/network/VirtualMachine";
+
+import networkVirtualMachineAlt from "@featherds/icon/network/VirtualMachineAlt";
+
+import networkVirtualMachineAlt2 from "@featherds/icon/network/VirtualMachineAlt2";
+
+import networkWifiRouter from "@featherds/icon/network/WifiRouter";
+
 import notificationConnected from "@featherds/icon/notification/Connected";
 
 import notificationError from "@featherds/icon/notification/Error";
@@ -381,15 +511,15 @@ import notificationWifiStatusBar from "@featherds/icon/notification/WifiStatusBa
 export default {
   data(){
     return {
-      featherIcons:[{ icon: communicationCertificate, key: "communicationCertificate" },
+      featherIcons:[{ icon: contentBlogArticle, key: "contentBlogArticle" },
+        { icon: contentVideo, key: "contentVideo" },
+        { icon: communicationCertificate, key: "communicationCertificate" },
         { icon: communicationCertificateAlt, key: "communicationCertificateAlt" },
         { icon: communicationChat, key: "communicationChat" },
         { icon: communicationContacts, key: "communicationContacts" },
         { icon: communicationDocumentation, key: "communicationDocumentation" },
         { icon: communicationIdCard, key: "communicationIdCard" },
         { icon: communicationPhone, key: "communicationPhone" },
-        { icon: contentBlogArticle, key: "contentBlogArticle" },
-        { icon: contentVideo, key: "contentVideo" },
         { icon: datavisAreaChart, key: "datavisAreaChart" },
         { icon: datavisBarChart, key: "datavisBarChart" },
         { icon: datavisColumnChart, key: "datavisColumnChart" },
@@ -555,6 +685,71 @@ export default {
         { icon: navigationSubdirectoryArrowRight, key: "navigationSubdirectoryArrowRight" },
         { icon: navigationUnfoldLess, key: "navigationUnfoldLess" },
         { icon: navigationUnfoldMore, key: "navigationUnfoldMore" },
+        { icon: networkAggregationLayer, key: "networkAggregationLayer" },
+        { icon: networkAggregationLayerAlt1, key: "networkAggregationLayerAlt1" },
+        { icon: networkAggregationLayerAlt2, key: "networkAggregationLayerAlt2" },
+        { icon: networkAggregationLayerAlt3, key: "networkAggregationLayerAlt3" },
+        { icon: networkAggregationLayerAlt4, key: "networkAggregationLayerAlt4" },
+        { icon: networkAggregationLayerAlt5, key: "networkAggregationLayerAlt5" },
+        { icon: networkApiConfig, key: "networkApiConfig" },
+        { icon: networkApiEndpoints, key: "networkApiEndpoints" },
+        { icon: networkAppliances, key: "networkAppliances" },
+        { icon: networkAppliancesAlt, key: "networkAppliancesAlt" },
+        { icon: networkApplianceProfiles, key: "networkApplianceProfiles" },
+        { icon: networkBuild, key: "networkBuild" },
+        { icon: networkCertificateAlt, key: "networkCertificateAlt" },
+        { icon: networkCloud, key: "networkCloud" },
+        { icon: networkCloudBackUp, key: "networkCloudBackUp" },
+        { icon: networkCloudDownload, key: "networkCloudDownload" },
+        { icon: networkCloudService, key: "networkCloudService" },
+        { icon: networkCloudUpload, key: "networkCloudUpload" },
+        { icon: networkCode, key: "networkCode" },
+        { icon: networkCompare, key: "networkCompare" },
+        { icon: networkCompare1, key: "networkCompare1" },
+        { icon: networkCompliance, key: "networkCompliance" },
+        { icon: networkConfiguration, key: "networkConfiguration" },
+        { icon: networkConnection, key: "networkConnection" },
+        { icon: networkContainerAdd, key: "networkContainerAdd" },
+        { icon: networkContainerTransient, key: "networkContainerTransient" },
+        { icon: networkContainerUnknown, key: "networkContainerUnknown" },
+        { icon: networkDatabase, key: "networkDatabase" },
+        { icon: networkDesktop, key: "networkDesktop" },
+        { icon: networkDigitize, key: "networkDigitize" },
+        { icon: networkElectricalServices, key: "networkElectricalServices" },
+        { icon: networkEndUser, key: "networkEndUser" },
+        { icon: networkExitCompare, key: "networkExitCompare" },
+        { icon: networkExitCompareModeAlt, key: "networkExitCompareModeAlt" },
+        { icon: networkExtractData, key: "networkExtractData" },
+        { icon: networkFirewall, key: "networkFirewall" },
+        { icon: networkInstances, key: "networkInstances" },
+        { icon: networkInventoryAlt, key: "networkInventoryAlt" },
+        { icon: networkLaptop, key: "networkLaptop" },
+        { icon: networkLoggerConfigs, key: "networkLoggerConfigs" },
+        { icon: networkLogs, key: "networkLogs" },
+        { icon: networkLogsAlt, key: "networkLogsAlt" },
+        { icon: networkLogFile, key: "networkLogFile" },
+        { icon: networkMicroservices, key: "networkMicroservices" },
+        { icon: networkMinion, key: "networkMinion" },
+        { icon: networkMinionProfiles, key: "networkMinionProfiles" },
+        { icon: networkNetworkProfiles, key: "networkNetworkProfiles" },
+        { icon: networkNodes, key: "networkNodes" },
+        { icon: networkPolicy, key: "networkPolicy" },
+        { icon: networkPower, key: "networkPower" },
+        { icon: networkRouterLan, key: "networkRouterLan" },
+        { icon: networkRouterWan, key: "networkRouterWan" },
+        { icon: networkSecurity, key: "networkSecurity" },
+        { icon: networkSecurityScan, key: "networkSecurityScan" },
+        { icon: networkServer, key: "networkServer" },
+        { icon: networkServerClock, key: "networkServerClock" },
+        { icon: networkSwitch, key: "networkSwitch" },
+        { icon: networkTerminal, key: "networkTerminal" },
+        { icon: networkUpdateUtilities, key: "networkUpdateUtilities" },
+        { icon: networkUtilities, key: "networkUtilities" },
+        { icon: networkViewCode, key: "networkViewCode" },
+        { icon: networkVirtualMachine, key: "networkVirtualMachine" },
+        { icon: networkVirtualMachineAlt, key: "networkVirtualMachineAlt" },
+        { icon: networkVirtualMachineAlt2, key: "networkVirtualMachineAlt2" },
+        { icon: networkWifiRouter, key: "networkWifiRouter" },
         { icon: notificationConnected, key: "notificationConnected" },
         { icon: notificationError, key: "notificationError" },
         { icon: notificationUnconnected, key: "notificationUnconnected" },
