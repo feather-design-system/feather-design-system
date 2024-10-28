@@ -1,7 +1,7 @@
 <template>
   <section>
-    <FeatherVerticalAppBar :labels="labels" :content="content">
-      <template v-slot:icon>
+    <FeatherAppRail :labels="labels" :content="content">
+      <template v-slot:header>
         <IconTextAnimate>
           <template v-slot:icon>
             <FeatherIcon
@@ -15,51 +15,59 @@
             <span class="product-text">Product</span>
           </template>
 
-          <span class="product-text">Product</span>
+          <!-- <span class="product-text">Product</span> -->
         </IconTextAnimate>
       </template>
       <template v-slot:nav>
-        <FeatherVerticalNavHeader title="Applications" />
-        <FeatherVerticalNavItem
+        <FeatherAppRailNavHeader title="" />
+        <FeatherAppRailNavHeader title="Applications" />
+        <FeatherAppRailNavItem
           href="#/AppRail-DemoFullscreen"
           :icon="app"
           title="App One"
         />
-        <FeatherVerticalNavItem
+        <FeatherAppRailNavItem
           href="#/AppRail-DemoFullscreen"
           :icon="app"
           title="App Two"
         />
-        <FeatherVerticalNavItem
+        <FeatherAppRailNavItem
           href="#/AppRail-DemoFullscreen"
           :icon="app"
           title="App Three"
         />
-        <FeatherVerticalNavHeader title="Applications" />
-        <FeatherVerticalNavItem
+        <FeatherAppRailNavHeader title="Settings" />
+        <FeatherAppRailNavItem
           href="#/AppRail-DemoFullscreen"
           :icon="app"
           title="App One"
         />
-        <FeatherVerticalNavItem
+        <FeatherAppRailNavItem
           href="#/AppRail-DemoFullscreen"
           :icon="app"
           title="App Two"
         />
-        <FeatherVerticalNavItem
+        <FeatherAppRailNavItem
           href="#/AppRail-DemoFullscreen"
           :icon="app"
           title="App Three"
         />
       </template>
-    </FeatherVerticalAppBar>
-    <div id="test">Page contents</div>
+    </FeatherAppRail>
+    <FeatherAppBar :labels="labels" :content="content" scroll-hide>
+      <template v-slot:left>
+        <FeatherIcon :icon="app" title="Awesome Product" class="product-icon">
+        </FeatherIcon>
+      </template>
+    </FeatherAppBar>
+    <div id="test" class="main-content">Page contents</div>
   </section>
 </template>
 <script lang="ts">
 import App from "@featherds/icon/medical/Hospital";
 import { FeatherIcon } from "@featherds/icon";
 import * as components from "./../src";
+import * as appRailComponents from "./../../app-rail/src";
 import { defineComponent } from "vue";
 export default defineComponent({
   data() {
@@ -73,6 +81,7 @@ export default defineComponent({
   },
   components: {
     ...components,
+    ...appRailComponents,
     FeatherIcon,
   },
 });
@@ -89,5 +98,10 @@ export default defineComponent({
 .product-text {
   margin-left: 0.5rem;
   @include headline3;
+}
+.main-content {
+  width: 80%;
+  margin: 0 auto;
+  padding: 1rem;
 }
 </style>
