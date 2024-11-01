@@ -3,6 +3,7 @@
     <FeatherMenu
       no-expand
       fill
+      :absolute-positioned="absolutePositioned"
       :open="showMenu"
       @outside-click="handleOutsideClick"
       @trigger-click="handleTriggerClick"
@@ -99,6 +100,10 @@ export const props = {
   schema: {
     type: Object,
     required: false,
+  },
+  absolutePositioned: {
+    type: Boolean,
+    default: false,
   },
 } as const;
 export const emits = {

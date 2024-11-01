@@ -350,6 +350,7 @@ export default defineComponent({
       border-top-width: 0;
     }
     .feather-input-label {
+      background: var($elevation-background-2);
       @include raised-label();
       left: 0.75rem;
     }

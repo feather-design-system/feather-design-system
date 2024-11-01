@@ -187,6 +187,7 @@ exports[`FeatherDateInput.vue > should render disabled 1`] = `
           data-ref-id="feather-calendar-select-month"
         >
           <div
+            absolute-positioned="false"
             class="feather-select-menu-container"
             data-ref-id="feather-select-menu-container"
             fill=""
@@ -494,6 +495,7 @@ exports[`FeatherDateInput.vue > should render disabled 1`] = `
           data-ref-id="feather-calendar-select-year"
         >
           <div
+            absolute-positioned="false"
             class="feather-select-menu-container"
             data-ref-id="feather-select-menu-container"
             fill=""

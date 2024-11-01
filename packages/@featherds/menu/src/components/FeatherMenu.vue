@@ -3,6 +3,7 @@
     <slot name="trigger" :attrs="triggerAttrs" :on="triggerListeners"></slot>
     <div
       class="feather-menu-dropdown"
+      v-bind:absolute-positioned="absolutePositioned ? '' : null"
       :class="{ hidden: calculating }"
       :data-ref-id="dataRefId + '-dropdown'"
       ref="menu"
@@ -60,6 +61,10 @@ export const props = {
   },
 
   fill: {
+    type: Boolean,
+    default: false,
+  },
+  absolutePositioned: {
     type: Boolean,
     default: false,
   },
@@ -151,10 +156,35 @@ export default defineComponent({
         ) {
           left = containerRect.left;
         }
+
+        if (props.absolutePositioned) {
+          const parent = findAbsolutePositionedParent(menu.value);
+          if (parent !== null) {
+            const parentRect = parent.getBoundingClientRect();
+            top = containerRect.top + containerRect.height - parentRect.top;
+            left = containerRect.left - parentRect.left;
+          }
+        }
         positionLeft.value = `${left}px`;
         positionTop.value = `${top}px`;
         calculating.value = false;
       });
+    };
+
+    const findAbsolutePositionedParent = (element: HTMLElement) => {
+      let parent = element.closest("div");
+      while (parent) {
+        const style = window.getComputedStyle(parent);
+        if (style.position === "absolute") {
+          return parent;
+        }
+        if (parent.parentElement) {
+          parent = parent.parentElement.closest("div");
+        } else {
+          parent = null;
+        }
+      }
+      return null;
     };
 
     const outsideElementEvent = (e?: Event) => {
