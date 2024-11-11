@@ -3,6 +3,7 @@
     <FeatherMenu
       fill
       no-expand
+      :absolute-positioned="absolutePositioned"
       :open="showMenu"
       @outside-click="handleOutsideClick"
       @trigger-click="handleTriggerClick"
@@ -698,6 +699,7 @@ export default defineComponent({
     },
   },
   setup(props, context) {
+    const absolutePositioned = ref(props.absolutePositioned);
     const labels = useLabelProperty<typeof LABELS>(
       toRef(props, "labels"),
       LABELS
@@ -775,6 +777,7 @@ export default defineComponent({
       ...labels,
       ...useInputInheritAttrs(context.attrs as Record<string, unknown>),
       query,
+      absolutePositioned,
       internalResults,
       selectionLimitReached,
       forceCloseResults,

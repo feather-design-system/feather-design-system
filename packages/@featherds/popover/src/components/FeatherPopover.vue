@@ -2,6 +2,7 @@
   <slot name="trigger" :attrs="attrs" :on="listeners"> </slot>
   <Transition :css="animate">
     <div
+      v-bind:absolute-positioned="absolutePositioned ? '' : null"
       class="feather-popover-container"
       v-if="show"
       ref="popover"
@@ -44,6 +45,10 @@ export const props = {
   pointerAlignment: {
     type: String as PropType<PointerAlignment>,
     default: () => PointerAlignment.center,
+  },
+  absolutePositioned: {
+    type: Boolean,
+    default: false,
   },
 } as const;
 export default defineComponent({
@@ -151,6 +156,22 @@ export default defineComponent({
       return placementSelected.value ? "p-" + placementSelected.value : false;
     });
 
+    const findAbsolutePositionedParent = (element: HTMLElement) => {
+      let parent = element.closest("div");
+      while (parent) {
+        const style = window.getComputedStyle(parent);
+        if (style.position === "absolute") {
+          return parent;
+        }
+        if (parent.parentElement) {
+          parent = parent.parentElement.closest("div");
+        } else {
+          parent = null;
+        }
+      }
+      return null;
+    };
+
     const positionPopover = (popoverElement: HTMLElement) => {
       const triggerElement = document.querySelector(`[${idAttr}=${triggerID}]`);
 
@@ -236,6 +257,15 @@ export default defineComponent({
               //align to the right and allow space for arrow offset
               leftCal = triggerBoxCenter - popoverBox.width + arrowOffset;
               break;
+          }
+        }
+
+        if (props.absolutePositioned) {
+          const parent = findAbsolutePositionedParent(popover.value);
+          if (parent !== null) {
+            const parentRect = parent.getBoundingClientRect();
+            topCal = topCal - parentRect.top;
+            leftCal = leftCal - parentRect.left;
           }
         }
 

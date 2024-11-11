@@ -9,6 +9,7 @@
     <FeatherMenu
       right
       :open="showMenu"
+      :absolute-positioned="absolutePositioned"
       @outside-click="handleOutsideClick"
       @trigger-click="handleTriggerClick"
       class="feather-date-input-menu-container"
@@ -100,6 +101,7 @@
         :labels="labels"
         :monday-first="mondayFirst"
         :aria-label="menuLabel"
+        :absolute-positioned="absolutePositioned"
       />
     </FeatherMenu>
     <InputSubText :id="descriptionId" :error-text="error"> </InputSubText>
@@ -194,6 +196,10 @@ export const props = {
     type: Object as PropType<Date>,
     required: false,
     default: () => new Date(),
+  },
+  absolutePositioned: {
+    type: Boolean,
+    default: false,
   },
 } as const;
 export const emits = {
