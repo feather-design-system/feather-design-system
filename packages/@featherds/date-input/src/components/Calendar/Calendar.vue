@@ -28,6 +28,7 @@
         ref="select-month"
         data-ref-id="feather-calendar-select-month"
         class="inline-select"
+        :absolute-positioned="absolutePositioned"
       />
       <FeatherSelect
         :model-value="currentYear"
@@ -38,6 +39,7 @@
         ref="select-year"
         data-ref-id="feather-calendar-select-year"
         class="inline-select year"
+        :absolute-positioned="absolutePositioned"
       />
 
       <FeatherButton
@@ -131,6 +133,10 @@ export default defineComponent({
     labels: {
       type: Object as PropType<Partial<typeof LABELS>>,
       required: true,
+    },
+    absolutePositioned: {
+      type: Boolean,
+      default: false,
     },
   },
   data() {

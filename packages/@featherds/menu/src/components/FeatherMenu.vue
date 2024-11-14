@@ -161,8 +161,8 @@ export default defineComponent({
           const parent = findAbsolutePositionedParent(menu.value);
           if (parent !== null) {
             const parentRect = parent.getBoundingClientRect();
-            top = containerRect.top + containerRect.height - parentRect.top;
-            left = containerRect.left - parentRect.left;
+            top = top - parentRect.top;
+            left = left - parentRect.left;
           }
         }
         positionLeft.value = `${left}px`;

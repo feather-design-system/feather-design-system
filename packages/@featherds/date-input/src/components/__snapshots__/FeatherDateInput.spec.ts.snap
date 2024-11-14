@@ -5,6 +5,7 @@ exports[`FeatherDateInput.vue > should render disabled 1`] = `
   class="feather-date-input-container"
 >
   <div
+    absolute-positioned="false"
     class="feather-date-input-menu-container"
     data-ref-id="feather-date-input-menu-container"
     open="false"

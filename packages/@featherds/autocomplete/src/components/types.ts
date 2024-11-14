@@ -129,6 +129,10 @@ export const props = {
     type: Object,
     required: false,
   },
+  absolutePositioned: {
+    type: Boolean,
+    default: false,
+  },
   ...HighlightProps,
   ...InputSubTextProps,
   ...InputWrapperProps,
