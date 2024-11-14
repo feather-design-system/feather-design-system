@@ -36,7 +36,55 @@
           class="details-panel"
         >
           <template #default>
-            <div v-html="details" />
+            <div v-show="addMode" class="add-panel-container">
+              <div title="Add Node" class="add-panel">
+                <FeatherSelect
+                  absolute-positioned
+                  label="Location"
+                  :options="[
+                    { _text: 'BOS' },
+                    { _text: 'PHI' },
+                    { _text: 'RAL' },
+                  ]"
+                >
+                </FeatherSelect>
+                <FeatherSelect
+                  absolute-positioned
+                  label="Node Type"
+                  :options="[
+                    { _text: 'database' },
+                    { _text: 'server' },
+                    { _text: 'other' },
+                  ]"
+                >
+                </FeatherSelect>
+                <FeatherInput
+                  label="New Node Name"
+                  v-model="newNodeName"
+                  placeholder="Enter a new node name"
+                />
+                <p>
+                  <FeatherButton text @click="addMode = !addMode">
+                    cancel
+                  </FeatherButton>
+                  <FeatherButton primary @click="addMode = !addMode">
+                    save
+                  </FeatherButton>
+                </p>
+              </div>
+            </div>
+            <div v-show="!addMode">
+              <div v-html="details" />
+            </div>
+            <p>
+              <FeatherButton
+                v-show="!addMode"
+                primary
+                @click="addMode = !addMode"
+              >
+                Add Node
+              </FeatherButton>
+            </p>
           </template>
         </FeatherExpansionPanel>
       </template>
@@ -69,6 +117,8 @@ import { FeatherChart } from "./../src";
 import { FeatherButton } from "@featherds/button";
 import { FeatherIcon } from "@featherds/icon";
 import { FeatherExpansionPanel } from "@featherds/expansion";
+import { FeatherInput } from "@featherds/input";
+import { FeatherSelect } from "@featherds/select";
 import {
   // FeatherChartAxes,
   FeatherChartFlexibleData,
@@ -121,7 +171,9 @@ import { treeData, treeData4, treeData3 } from "./demo-data";
 const hierarchicalData = reactive({} as FeatherChartTreeDiagramData);
 Object.assign(hierarchicalData, treeData);
 
-const details = ref("Details go here");
+const details = ref("");
+const newNodeName = ref("");
+const addMode = ref(false);
 
 // HANDLE EVENTS
 const more = (chartId: string, data: FeatherChartTreeDiagramData) => {
