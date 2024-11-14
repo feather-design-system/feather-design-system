@@ -1,3 +1,12 @@
+## [0.12.33](https://github.com/feather-design-system/feather-design-system/compare/v0.12.32...v0.12.33) (2024-11-14)
+
+
+### Bug Fixes
+
+* handle menus inside absolute containers ([#207](https://github.com/feather-design-system/feather-design-system/issues/207)) ([beda159](https://github.com/feather-design-system/feather-design-system/commit/beda159a2b7aa52332a1b2f67c1f3d714fc3511a))
+
+
+
 ## [0.12.32](https://github.com/feather-design-system/feather-design-system/compare/v0.12.31...v0.12.32) (2024-10-25)
 
 
