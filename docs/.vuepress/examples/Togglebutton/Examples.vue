@@ -36,7 +36,7 @@ export default {
       {
         _text: "Muted Color",
         component: markRaw(MutedColor),
-        source: instance.type.srcs["Muted"],
+        source: instance.type.srcs["MutedColor"],
       },
     ]);
 

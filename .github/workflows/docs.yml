@@ -15,7 +15,7 @@ jobs:
         uses: actions/setup-node@v3
         with:
           cache: "npm"
-          node-version: "16.x"
+          node-version: "20.x"
           registry-url: "https://registry.npmjs.org"
 
       - run: npm ci
@@ -24,28 +24,43 @@ jobs:
 
       - name: Build docs
         run: npm run docs:build
+
       - name: Azure login
-        uses: azure/login@v1
+        uses: azure/login@v2
         with:
           creds: ${{ secrets.AZURE_TOKEN }}
 
-      - name: Delete old docs
-        uses: azure/CLI@v1
+      # az storage remove -c '$web' --exclude-path "demos" --recursive --account-name prsv
+      # azure cli "remove" deprecated; Must list all blobs to exclude demos/ and delete them one by one
+      # 1. List all blobs using query filter to exclude 'demos/'
+      # 2. Pipes the filtered list to delete command
+      # 3. Maintains the demos folder content
+      # 4. Uses proper authentication
+      # 5. Uses `xargs` to iterate over the list and delete each blob
+      - name: Delete old blobs (docs) except those in demos folder
+        uses: azure/CLI@v2
         with:
           inlineScript: |
-            az storage remove -c '$web' --exclude-path "demos" --recursive --account-name prsv
+            az storage blob list --container-name '$web' --account-name prsv --auth-mode login --query "[?!starts_with(name, 'demos/')].[name]" -o tsv |
+            xargs -I {} az storage blob delete --container-name '$web' --name {} --account-name prsv --auth-mode login
 
-      - name: Upload to Azure blob storage
-        uses: azure/CLI@v1
+      - name: Upload docs to Azure blob storage
+        uses: azure/CLI@v2
         with:
           inlineScript: |
-            az storage blob upload-batch --account-name prsv -d '$web' -s ./docs/.vuepress/dist
+            az storage blob upload-batch -d '$web' -s ./docs/.vuepress/dist --account-name prsv --auth-mode login
+
+      - name: Set Subscription Context
+        uses: azure/CLI@v2
+        with:
+          inlineScript: |
+            az account set --subscription ${{ secrets.AZURE_SUBSCRIPTION_ID }}
 
       - name: Purge CDN
-        uses: azure/CLI@v1
+        uses: azure/CLI@v2
         with:
           inlineScript: |
-            az cdn endpoint purge -n ${{ secrets.AZURE_CDN_ENDPOINT }} --profile-name ${{ secrets.AZURE_CDN_PROFILE_NAME }} --content-paths "/*" --resource-group ${{ secrets.AZURE_RESOURCE_GROUP }} --no-wait
+            az cdn endpoint purge --resource-group ${{ secrets.AZURE_RESOURCE_GROUP }} --profile-name ${{ secrets.AZURE_CDN_PROFILE_NAME }} --name ${{ secrets.AZURE_CDN_ENDPOINT }} --content-paths '/*'  --no-wait
 
       - name: Azure logout
         run: |

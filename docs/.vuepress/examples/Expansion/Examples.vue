@@ -2,6 +2,7 @@
   ./Panel.vue
   ./Loading.vue
   ./Disabled.vue
+  ./Icon.vue
 </src>
 <template>
   <FeatherDemo :demos="demos" />
@@ -10,6 +11,7 @@
 import Panel from "./Panel.vue";
 import Loading from "./Loading.vue";
 import Disabled from "./Disabled.vue";
+import Icon from "./Icon.vue";
 import { ref, getCurrentInstance, markRaw } from "vue";
 export default {
   setup() {
@@ -30,6 +32,11 @@ export default {
         _text: "Disabled",
         component: markRaw(Disabled),
         source: instance.type.srcs["Disabled"],
+      },
+      {
+        _text: "Icon",
+        component: markRaw(Icon),
+        source: instance.type.srcs["Icon"],
       },
     ]);
 

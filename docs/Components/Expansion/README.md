@@ -23,6 +23,7 @@ menu: components
 | modelValue | when true Expansion will be open. `v-model` can be used for 2 way binding | `Boolean` | `false`  | -       |
 | level      | should be set to fit inside the header flow. Accessbility requirement     | `Number`  | `false`  | 2       |
 | title      | will set the title of the header. Use this **OR** title slot              | `String`  | `false`  | -       |
+| icon       | will render icon in front of title.  Use this **OR** icon slot            | `Object`  | `false`  | -       |
 | loading    | when true will display loading spinner in the panel content               | `Boolean` | `false`  | `false` |
 | disabled   | when true the Expansion Panel will be disabled and not open               | `Boolean` | `false`  | `false` |
 
@@ -34,6 +35,7 @@ menu: components
 
 - `title` - optional slot. Will place content in the header. Use this **OR** title property
 - `default` - content that will be expanded
+- `icon` - optional icon slot.  Will place icon in front of title in the header.  Use this **OR** icon attribute.
 
 ### data-ref-ids
 

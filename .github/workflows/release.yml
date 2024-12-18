@@ -13,6 +13,7 @@ env:
   CI_USER: ${{ secrets.CI_USER}}
   CI_EMAIL: ${{ secrets.CI_EMAIL }}
   VERSION: ${{ github.event.inputs.version }}
+
 jobs:
   release:
     runs-on: ubuntu-latest
@@ -32,25 +33,31 @@ jobs:
         uses: actions/setup-node@v3
         with:
           cache: "npm"
-          node-version: "16.x"
+          node-version: "20.x"
           registry-url: "https://registry.npmjs.org"
 
       - run: npm ci
+
       - name: Build project
         run: npm run build
+
       - name: NPM version
         run: npm version $VERSION -no-git-tag-version
+
       - name: Generate Changelog
         run: npm run changelog
+
       - name: NPM who am i!?
         run: npm whoami
+
       - name: NPM publish
         run: npm run custom:publish -- $VERSION
+
       - name: Push Version Commit
         run: git push --follow-tags
 
       - name: Extract Changelog
-        uses: yashanand1910/standard-release-notes@v1.2.1
+        uses: yashanand1910/standard-release-notes@v1.4.0
         id: get_release_notes
         with:
           version: ${{ env.VERSION }} # Required
@@ -76,31 +83,32 @@ jobs:
               core.setFailed(error.message);
             }
 
-      - name: Build docs
-        run: npm run docs:build
-      - name: Azure login
-        uses: azure/login@v1
-        with:
-          creds: ${{ secrets.AZURE_TOKEN }}
+      # - name: Build docs
+      #   run: npm run docs:build
 
-      - name: Delete old docs
-        uses: azure/CLI@v1
-        with:
-          inlineScript: |
-            az storage remove -c '$web' --exclude-path "demos" --recursive --account-name prsv
+      # - name: Azure login
+      #   uses: azure/login@v1
+      #   with:
+      #     creds: ${{ secrets.AZURE_TOKEN }}
 
-      - name: Upload to Azure blob storage
-        uses: azure/CLI@v1
-        with:
-          inlineScript: |
-            az storage blob upload-batch --account-name prsv -d '$web' -s ./docs/.vuepress/dist
+      # - name: Delete old docs
+      #   uses: azure/CLI@v1
+      #   with:
+      #     inlineScript: |
+      #       az storage remove -c '$web' --exclude-path "demos" --recursive --account-name prsv
 
-      - name: Purge CDN
-        uses: azure/CLI@v1
-        with:
-          inlineScript: |
-            az cdn endpoint purge -n ${{ secrets.AZURE_CDN_ENDPOINT }} --profile-name ${{ secrets.AZURE_CDN_PROFILE_NAME }} --content-paths "/*" --resource-group ${{ secrets.AZURE_RESOURCE_GROUP }} --no-wait
+      # - name: Upload to Azure blob storage
+      #   uses: azure/CLI@v1
+      #   with:
+      #     inlineScript: |
+      #       az storage blob upload-batch --account-name prsv -d '$web' -s ./docs/.vuepress/dist
 
-      - name: Azure logout
-        run: |
-          az logout
+      # - name: Purge CDN
+      #   uses: azure/CLI@v1
+      #   with:
+      #     inlineScript: |
+      #       az cdn endpoint purge -n ${{ secrets.AZURE_CDN_ENDPOINT }} --profile-name ${{ secrets.AZURE_CDN_PROFILE_NAME }} --content-paths "/*" --resource-group ${{ secrets.AZURE_RESOURCE_GROUP }} --no-wait
+
+      # - name: Azure logout
+      #   run: |
+      #     az logout

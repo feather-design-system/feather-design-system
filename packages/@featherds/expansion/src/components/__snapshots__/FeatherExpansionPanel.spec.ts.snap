@@ -19,6 +19,8 @@ exports[`FeatherExpansionPanel.vue > should have correct HTML structure 1`] = `
       id="feather-expansion-header"
       role="button"
     >
+      <!--v-if-->
+      <!--v-if-->
       <span
         class="feather-expansion-header-button-text"
       >
@@ -70,6 +72,8 @@ exports[`FeatherExpansionPanel.vue > should not toggle expanded when disabled 1`
       id="feather-expansion-header"
       role="button"
     >
+      <!--v-if-->
+      <!--v-if-->
       <span
         class="feather-expansion-header-button-text"
       >
@@ -121,6 +125,8 @@ exports[`FeatherExpansionPanel.vue > should render loading 1`] = `
       id="feather-expansion-header"
       role="button"
     >
+      <!--v-if-->
+      <!--v-if-->
       <span
         class="feather-expansion-header-button-text"
       >

@@ -94,7 +94,7 @@ export default defineComponent({
       return !!(this.internalValue && this.internalValue.length > 0);
     },
     contentCls() {
-      const cls = [];
+      const cls: string[] = [];
 
       if (this.error) {
         cls.push("error");

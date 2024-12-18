@@ -9,14 +9,14 @@ menu: guides
 
 ## Intro
 
-Feather DS components are built using [Vue3](https://v3.vuejs.org/). If you haven't already set up your Vue3 project we recommend either using [Vite](https://vitejs.dev/guide/#overview) or [Vue CLI v5](https://cli.vuejs.org/guide/) to get your project set up and running. FeatherDS requires the use of a Javascript Bundler and cannot be consumed directly in the browser.
+Feather DS components are built using [Vue3](https://v3.vuejs.org/). If you haven't already set up your Vue3 project we recommend either using [Vite](https://vitejs.dev/guide/#overview) to get your project set up and running. FeatherDS requires the use of a Javascript Bundler and cannot be consumed directly in the browser.
 
 ## Prerequisites
 
 Before you begin using Feather DS, you will need to have the following setup on your system;
 
-- [Node v14.15.0 or newer](https://nodejs.org/en/)
-- [NPM v7](https://docs.npmjs.com/downloading-and-installing-node-js-and-npm)
+- [Node v20.18.3 or newer](https://nodejs.org/en/)
+- [NPM v9.6.7 or newer](https://docs.npmjs.com/downloading-and-installing-node-js-and-npm)
 - A Vue3 project
 
 ## Install
@@ -55,31 +55,27 @@ Once you have the imports setup you will need to add the `.feather-styles` class
 
 ## Using Components
 
-When it comes time for you to use our components, each one has multiple examples to help you get started. They will detail how to import and use a component in different scenarios. The following workflow is for Vue SFC structure.
+When it comes time for you to use our components, each one has multiple examples to help you get started. They will detail how to import and use a component in different scenarios. The following workflow is for Vue SFC Composition API structure.
 
-Import the component and declare it in the `components` section of your SFC.
+Import the component in the `script` section, use it in the `template` section and provide any styles in the `style` section.
 
-```js
-import { FeatherButton } from "@featherds/button";
-
-export default {
-  //... your component configuration
-  components: {
-    FeatherButton,
-  },
-};
-```
-
-Now we can go ahead and start using the component inside the `template` section of your SFC.
-
-```html
+```vue
 <template>
-  <section>
-    <FeatherButton primary>Primary Button</FeatherButton>
-    <FeatherButton secondary>Secondary Button</FeatherButton>
-    <FeatherButton text>Text Button</FeatherButton>
-  </section>
+  <div class="my-component">
+    <FeatherButton secondary>Add</FeatherButton>
+  </div>
 </template>
+
+<script lang="ts" setup>
+import { FeatherButton } from "@featherds/button";
+</script>
+
+<style lang="scss" scoped>
+.my-component {
+  margin: 1rem;
+}
+</style>
+
 ```
 
 ## Browsers

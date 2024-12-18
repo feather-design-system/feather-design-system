@@ -13,8 +13,11 @@ menu: components
 Popovers are overlays that have a look and feel similar to tooltips, however they are mutually exclusive. Tooltips are very short descriptions and shouldn’t exceed around 3 - 5 words. When the exceeding character limitation conditions are met, popovers should instead be used. Popovers can contain hyperlinks, buttons, media, and other sub-components. Since the primary color is white, an elevation (or drop shadow) is used to distinguish it from the main page.
 
 ## Examples
+
 <ClientOnly>
+
 <Popover-Examples />
+
 </ClientOnly>
 
 ## Usage
@@ -23,7 +26,7 @@ Popovers are overlays that contain rich media and have many different use cases.
 
 ## Best Practices
 
-### 1. Show one popover at a time.
+### 1. Show one popover at a time
 
 Showing many popovers at once can confuse the user, convolute hierarchy, and clutter the interface. Keep one popover to keep the user focused on their task.
 

@@ -1,6 +1,9 @@
 <template>
   <section>
     <FeatherExpansionPanel title="Suggested Patients">
+      <template #icon>
+        <FeatherIcon :icon="imageIcon" />
+      </template>
       <table>
         <thead>
           <tr>
@@ -40,7 +43,10 @@
         </tbody>
       </table>
     </FeatherExpansionPanel>
-    <FeatherExpansionPanel title="Suggested Patients">
+    <FeatherExpansionPanel
+      title="Suggested Patients"
+      :icon="(folderIcon as any)"
+    >
       <table>
         <thead>
           <tr>
@@ -87,11 +93,16 @@ import * as components from "./../src";
 import { FeatherIcon } from "@featherds/icon";
 import { FeatherButton } from "@featherds/button";
 import Icon from "@featherds/icon/navigation/ChevronRight";
+import Image from "@featherds/icon/file/Image";
+import Folder from "@featherds/icon/file/Folder";
 import { defineComponent } from "vue";
+
 export default defineComponent({
   data() {
     return {
       icon: Icon,
+      imageIcon: Image,
+      folderIcon: Folder,
     };
   },
   components: {
