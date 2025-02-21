@@ -21,7 +21,7 @@
     "test:e2e": "node scripts/e2e.js wdio.lambda.conf.ts",
     "test:e2e:local": "node scripts/e2e.js wdio.local.conf.ts",
     "lint": "eslint --fix --ext .js,.vue,.ts .",
-    "custom:publish": "lerna publish -m \"chore: publish %s\" --yes --no-push --no-verify-access --force-publish=*",
+    "custom:publish": "lerna publish -m \"chore: publish %s\" --yes --no-push --no-verify-access --force-publish=* --ignore @featherds/panel-bar",
     "docs:info": "vuepress info",
     "docs:build": "vuepress build docs",
     "docs:dev": "vuepress dev docs",
