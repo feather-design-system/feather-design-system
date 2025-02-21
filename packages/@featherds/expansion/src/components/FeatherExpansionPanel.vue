@@ -14,6 +14,12 @@
         @click.prevent="handleClick"
         data-ref-id="feather-expansion-header-button"
       >
+        <span v-if="icon" class="feather-expansion-header-icon">
+          <FeatherIcon :icon="icon" />
+        </span>
+        <span v-if="$slots.icon" class="feather-expansion-header-icon">
+          <slot name="icon"></slot>
+        </span>
         <span class="feather-expansion-header-button-text">
           <slot name="title"> {{ title }}</slot></span
         >
@@ -55,7 +61,7 @@ import { FeatherIcon } from "@featherds/icon";
 import { FeatherSpinner } from "@featherds/progress";
 import DownArrow from "@featherds/icon/navigation/ExpandMore";
 import { getSafeId } from "@featherds/utils/id";
-import { defineComponent } from "vue";
+import { defineComponent, PropType } from "vue";
 export const props = {
   modelValue: {
     type: Boolean,
@@ -81,10 +87,14 @@ export const props = {
     default: false,
     required: false,
   },
+  icon: {
+    type: Object as unknown as PropType<typeof FeatherIcon>,
+    required: false,
+  },
 } as const;
-export const emits = {
-  "update:modelValue": (_v: boolean) => true,
-};
+
+export const emits = ["update:modelValue"];
+
 export default defineComponent({
   name: "FeatherExpansionPanel",
   model: {
@@ -201,6 +211,10 @@ export default defineComponent({
     }
   }
 
+  .feather-expansion-header-icon {
+    font-size: 1.5rem;
+    padding-inline: 0 0.5rem;
+  }
   .feather-expansion-header-button {
     display: flex;
     align-items: center;

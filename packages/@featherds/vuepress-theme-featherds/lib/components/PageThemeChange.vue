@@ -26,8 +26,8 @@ export default {
     };
   },
   watch: {
-    selected(v, ov) {
-      this.updateTheme(v, ov);
+    selected(v) {
+      this.updateTheme(v);
     },
   },
   mounted() {
@@ -36,12 +36,13 @@ export default {
     this.selected = targetTheme || currSelected;
     //edge case, if there is no localstorage, the watch doesn't fire (the values haven't changed)
     //so we need to manually force the initial theme render
-    if (!targetTheme) this.updateTheme(this.selected, this.selected);
+    if (!targetTheme) this.updateTheme(this.selected);
   },
   methods: {
-    updateTheme(curr, old) {
+    updateTheme(curr) {
       window.localStorage.setItem(KEY, JSON.stringify(curr));
-      document.body.classList.remove(old._text);
+      // document.body.classList.remove(old._text);
+      THEMES.map((e) => document.body.classList.remove(e._text));
       document.body.classList.add(curr._text);
       update(curr);
     },

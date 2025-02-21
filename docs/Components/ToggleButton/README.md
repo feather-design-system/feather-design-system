@@ -4,7 +4,7 @@ pre: ""
 npm: "@featherds/toggle-button"
 description: "Allow users to choose one option from a set of mutually exclusive options."
 lang: en-US
-tags: ["Togglebutton", "component"]
+tags: ["ToggleButton", "component"]
 menu: components
 ---
 
@@ -14,7 +14,7 @@ The Toggle Button is designed to offer a single choice among two or more options
 
 ## Examples
 
-<Togglebutton-Examples/>
+<ToggleButton-Examples/>
 
 ## Usage
 
