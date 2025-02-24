@@ -1,3 +1,12 @@
+## [0.12.34](https://github.com/feather-design-system/feather-design-system/compare/v0.12.33...v0.12.34) (2025-02-24)
+
+
+### Features
+
+* **expansion:** add icon support, docs, actions ([#209](https://github.com/feather-design-system/feather-design-system/issues/209)) ([6c56106](https://github.com/feather-design-system/feather-design-system/commit/6c561060c315e976bacdc93cd79cf45f70c32e06))
+
+
+
 ## [0.12.33](https://github.com/feather-design-system/feather-design-system/compare/v0.12.32...v0.12.33) (2024-11-14)
 
 

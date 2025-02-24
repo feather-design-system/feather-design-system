@@ -1,6 +1,6 @@
 {
   "name": "@featherds/snackbar",
-  "version": "0.12.33",
+  "version": "0.12.34",
   "publishConfig": {
     "access": "public"
   },
