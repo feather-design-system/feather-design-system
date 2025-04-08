@@ -22,17 +22,17 @@ export default {
 };
 </script>
 <style lang="scss">
-@import "@featherds/styles/themes/variables";
-@import "@featherds/styles/mixins/grid";
+@use "@featherds/styles/themes/variables" as vars;
+@use "@featherds/styles/mixins/grid" as grid;
 body {
-  background-color: var($background);
+  background-color: var(vars.$background);
 }
 
 .feather-container {
-  @include container();
   box-sizing: border-box;
   flex: 1;
   width: 100%;
   margin: 0 auto;
+  @include grid.container();
 }
 </style>

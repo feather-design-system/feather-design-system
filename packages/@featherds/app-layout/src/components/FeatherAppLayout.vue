@@ -78,9 +78,7 @@ export default defineComponent({
 </script>
 
 <style lang="scss" scoped>
-@import "@featherds/styles/mixins/grid";
-@import "@featherds/styles/themes/variables";
-@import "@featherds/styles/mixins/elevation";
+@use "@featherds/styles/themes/variables" as vars;
 .app-layout {
   height: 100%;
   min-height: 100vh;
@@ -116,7 +114,7 @@ export default defineComponent({
   justify-content: center;
   width: 100%;
   > .app-content-container {
-    max-width: var($content-width);
+    max-width: var(vars.$content-width);
     width: 100%;
     &.full-width {
       max-width: none;

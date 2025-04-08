@@ -1,188 +1,188 @@
-@import "utils";
-@import "variables";
+@use "variables" as vars;
+@use "utils" as utils;
 $colors: (
-  $secondary: #7d92ff,
-  $secondary-variant: #a3b3ff,
-  $clickable-normal: #b3e7ff,
-  $clickable-selected: #b3e7ff,
-  $clickable-visited: #ffcdfe,
-  $background: #0a0c1b,
-  $surface-dark: #131736,
-  $lightbox-background: rgba(0, 0, 0, 0.76),
-  $state-color-on-color: #0a0c1b,
-  $state-color-on-surface: #fff,
-  $state-color-on-neutral: #fff,
-  $state-color-on-surface-dark: #fff,
-  $high-visibility-on-surface: #fff,
-  $high-visibility-text-on-surface: #195bb5,
+  vars.$secondary: #7d92ff,
+  vars.$secondary-variant: #a3b3ff,
+  vars.$clickable-normal: #b3e7ff,
+  vars.$clickable-selected: #b3e7ff,
+  vars.$clickable-visited: #ffcdfe,
+  vars.$background: #0a0c1b,
+  vars.$surface-dark: #131736,
+  vars.$lightbox-background: rgba(0, 0, 0, 0.76),
+  vars.$state-color-on-color: #0a0c1b,
+  vars.$state-color-on-surface: #fff,
+  vars.$state-color-on-neutral: #fff,
+  vars.$state-color-on-surface-dark: #fff,
+  vars.$high-visibility-on-surface: #fff,
+  vars.$high-visibility-text-on-surface: #195bb5,
   //added here so RGB is added
-  $primary-text-on-surface: rgba(255, 255, 255, 1),
+  vars.$primary-text-on-surface: rgba(255, 255, 255, 1),
   // status colors
-  $success: #83ee7d,
-  $error: #ffa3b5,
-  $major: #e35302,
-  $minor: #ffac26,
-  $warning: #fbe947,
-  $indeterminate: #20b9f0,
-  $cleared: #b7b7b7,
-  $ready: #6c5cce,
+  vars.$success: #83ee7d,
+  vars.$error: #ffa3b5,
+  vars.$major: #e35302,
+  vars.$minor: #ffac26,
+  vars.$warning: #fbe947,
+  vars.$indeterminate: #20b9f0,
+  vars.$cleared: #b7b7b7,
+  vars.$ready: #6c5cce,
   // chart colors
-  $categorical1: #009De1,
-  $categorical2: #9ff0fd,
-  $categorical3: #be47ff,
-  $categorical4: #c991ff,
-  $categorical5: #389b4e,
-  $categorical6: #c1e67a,
-  $categorical7: #af4469,
-  $categorical8: #ee7d71,
-  $categorical9: #d3c3fb,
-  $categorical10: #f3b04f
+  vars.$categorical1: #009De1,
+  vars.$categorical2: #9ff0fd,
+  vars.$categorical3: #be47ff,
+  vars.$categorical4: #c991ff,
+  vars.$categorical5: #389b4e,
+  vars.$categorical6: #c1e67a,
+  vars.$categorical7: #af4469,
+  vars.$categorical8: #ee7d71,
+  vars.$categorical9: #d3c3fb,
+  vars.$categorical10: #f3b04f
 );
 
-$colors: add-RGB($colors);
+$colors: utils.add-RGB($colors);
 
 $hero-gradients: (
-  $hero-gradient-1-1:
+  vars.$hero-gradient-1-1:
     radial-gradient(
       ellipse 400% 600% at 100% 0%,
       rgba(#3a4bd3, 0.45) 0%,
       #14d1df00 100%
     )
     0% 0% no-repeat padding-box,
-  $hero-gradient-1-2:
+  vars.$hero-gradient-1-2:
     radial-gradient(
       ellipse 200% 200% at 25% 40%,
       rgba(#db2973, 0.5) 0%,
       #14d1df00 100%
     )
     0% 0% no-repeat padding-box,
-  $hero-gradient-1-3:
+  vars.$hero-gradient-1-3:
     radial-gradient(
       ellipse 50% 100% at 75% 66%,
       rgba(#32e7f3, 0.7) 0%,
       #14d1df00 100%
     )
     0% 0% no-repeat padding-box,
-  $hero-gradient-2-1:
+  vars.$hero-gradient-2-1:
     radial-gradient(
       ellipse 300% 175% at 0% -55%,
       rgba(#3a4bd3, 0.6) 0%,
       #14d1df00 100%
     )
     0% 0% no-repeat padding-box,
-  $hero-gradient-2-2:
+  vars.$hero-gradient-2-2:
     radial-gradient(
       ellipse 200% 200% at -20% -135%,
       rgba(#db2973, 0.55) 0%,
       #14d1df00 100%
     )
     0% 0% no-repeat padding-box,
-  $hero-gradient-2-3:
+  vars.$hero-gradient-2-3:
     radial-gradient(
       ellipse 50% 100% at 75% -44%,
       rgba(#32e7f3, 0.15) 0%,
       #14d1df00 100%
     )
     0% 0% no-repeat padding-box,
-  $hero-gradient-2-4:
+  vars.$hero-gradient-2-4:
     radial-gradient(ellipse 0% 0% at 0% 0%, transparent 0%, transparent 100%) 0%
     0% no-repeat padding-box,
 );
 
 $on-color: (
-  $primary-text-on-color: rgba(10, 12, 27, 1),
-  $secondary-text-on-color: rgba(10, 12, 27, 0.78),
-  $disabled-text-on-color: rgba(10, 12, 27, 0.5),
-  $border-on-color: rgba(10, 12, 27, 0.12),
-  $border-light-on-color: rgba(10, 12, 27, 0.06),
+  vars.$primary-text-on-color: rgba(10, 12, 27, 1),
+  vars.$secondary-text-on-color: rgba(10, 12, 27, 0.78),
+  vars.$disabled-text-on-color: rgba(10, 12, 27, 0.5),
+  vars.$border-on-color: rgba(10, 12, 27, 0.12),
+  vars.$border-light-on-color: rgba(10, 12, 27, 0.06),
 );
 
 $on-surface: (
-  $secondary-text-on-surface: rgba(255, 255, 255, 0.78),
-  $disabled-text-on-surface: rgba(255, 255, 255, 0.5),
-  $border-on-surface: rgba(255, 255, 255, 0.24),
-  $border-light-on-surface: rgba(255, 255, 255, 0.12),
+  vars.$secondary-text-on-surface: rgba(255, 255, 255, 0.78),
+  vars.$disabled-text-on-surface: rgba(255, 255, 255, 0.5),
+  vars.$border-on-surface: rgba(255, 255, 255, 0.24),
+  vars.$border-light-on-surface: rgba(255, 255, 255, 0.12),
 );
 
 $on-warning: (
-  $primary-text-on-warning: rgba(0, 0, 0, 1),
-  $secondary-text-on-warning: rgba(0, 0, 0, 0.78),
-  $disabled-text-on-warning: rgba(0, 0, 0, 0.5),
-  $border-on-warning: rgba(0, 0, 0, 0.12),
-  $border-light-on-warning: rgba(0, 0, 0, 0.06),
+  vars.$primary-text-on-warning: rgba(0, 0, 0, 1),
+  vars.$secondary-text-on-warning: rgba(0, 0, 0, 0.78),
+  vars.$disabled-text-on-warning: rgba(0, 0, 0, 0.5),
+  vars.$border-on-warning: rgba(0, 0, 0, 0.12),
+  vars.$border-light-on-warning: rgba(0, 0, 0, 0.06),
 );
 
 $shadeColor: white;
 $shades: (
-  $shade-1: rgba($shadeColor, 0.6),
-  $shade-2: rgba($shadeColor, 0.4),
-  $shade-3: rgba($shadeColor, 0.24),
-  $shade-4: rgba($shadeColor, 0.12),
+  vars.$shade-1: rgba($shadeColor, 0.6),
+  vars.$shade-2: rgba($shadeColor, 0.4),
+  vars.$shade-3: rgba($shadeColor, 0.24),
+  vars.$shade-4: rgba($shadeColor, 0.12),
 );
 $state-on-surface: (
-  $state-opacity-hover-on-surface: 0.08,
-  $state-opacity-pressed-on-surface: 0.32,
-  $state-opacity-selected-on-surface: 0.12,
-  $state-opacity-focus-on-surface: 0.12,
+  vars.$state-opacity-hover-on-surface: 0.08,
+  vars.$state-opacity-pressed-on-surface: 0.32,
+  vars.$state-opacity-selected-on-surface: 0.12,
+  vars.$state-opacity-focus-on-surface: 0.12,
 );
 
 $state-on-surface-dark: (
-  $state-text-color-on-surface-dark: alpha($state-color-on-surface-dark, 0.78),
-  $state-opacity-hover-on-surface-dark: 0.08,
-  $state-text-color-hover-on-surface-dark: var($state-color-on-surface-dark),
-  $state-opacity-focus-on-surface-dark: 0.16,
-  $state-border-focus-on-surface-dark: 2px solid
-    var($state-color-on-surface-dark),
-  $state-text-color-focus-on-surface-dark: var($state-color-on-surface-dark),
-  $state-opacity-pressed-on-surface-dark: 0.32,
-  $state-text-color-pressed-on-surface-dark: var($state-color-on-surface-dark),
-  $state-background-selected-on-surface-dark: var($state-color-on-surface-dark),
+  vars.$state-text-color-on-surface-dark: utils.alpha(vars.$state-color-on-surface-dark, 0.78),
+  vars.$state-opacity-hover-on-surface-dark: 0.08,
+  vars.$state-text-color-hover-on-surface-dark: var(vars.$state-color-on-surface-dark),
+  vars.$state-opacity-focus-on-surface-dark: 0.16,
+  vars.$state-border-focus-on-surface-dark: 2px solid
+    var(vars.$state-color-on-surface-dark),
+  vars.$state-text-color-focus-on-surface-dark: var(vars.$state-color-on-surface-dark),
+  vars.$state-opacity-pressed-on-surface-dark: 0.32,
+  vars.$state-text-color-pressed-on-surface-dark: var(vars.$state-color-on-surface-dark),
+  vars.$state-background-selected-on-surface-dark: var(vars.$state-color-on-surface-dark),
 );
 
 $state-on-neutral: (
-  $state-opacity-hover-on-neutral: 0.08,
-  $state-opacity-pressed-on-neutral: 0.32,
-  $state-opacity-selected-on-neutral: 0.12,
-  $state-opacity-focus-on-neutral: 0.12,
+  vars.$state-opacity-hover-on-neutral: 0.08,
+  vars.$state-opacity-pressed-on-neutral: 0.32,
+  vars.$state-opacity-selected-on-neutral: 0.12,
+  vars.$state-opacity-focus-on-neutral: 0.12,
 );
 $state-on-color: (
-  $state-opacity-hover-on-color: 0.08,
-  $state-opacity-pressed-on-color: 0.24,
-  $state-opacity-selected-on-color: 0.12,
-  $state-opacity-focus-on-color: 0.12,
-  $state-border-focus-on-color: 2px solid white,
-  $state-inner-border-color-focus-on-color: rgba(0, 0, 0, 0.6),
+  vars.$state-opacity-hover-on-color: 0.08,
+  vars.$state-opacity-pressed-on-color: 0.24,
+  vars.$state-opacity-selected-on-color: 0.12,
+  vars.$state-opacity-focus-on-color: 0.12,
+  vars.$state-border-focus-on-color: 2px solid white,
+  vars.$state-inner-border-color-focus-on-color: rgba(0, 0, 0, 0.6),
 );
 
 $shadows: (
-  $shadow-0: #{0px 0px 1px 0px rgba(255, 255, 255, 0.2)},
-  $shadow-1: 0 0 #fff,
-  $shadow-2: 0 0 #fff,
-  $shadow-3: 0 0 #fff,
-  $shadow-4: 0 0 #fff,
-  $shadow-5: 0 0 #fff,
-  $shadow-6: 0 0 #fff,
-  $shadow-7: 0 0 #fff,
-  $shadow-8: 0 0 #fff,
-  $shadow-9: 0 0 #fff,
-  $shadow-10: 0 0 #fff,
-  $shadow-11: 0 0 #fff,
-  $shadow-12: 0 0 #fff,
-  $shadow-13: 0 0 #fff,
-  $shadow-14: 0 0 #fff,
-  $shadow-15: 0 0 #fff,
-  $shadow-16: 0 0 #fff,
-  $shadow-17: 0 0 #fff,
-  $shadow-18: 0 0 #fff,
-  $shadow-19: 0 0 #fff,
-  $shadow-20: 0 0 #fff,
-  $shadow-21: 0 0 #fff,
-  $shadow-22: 0 0 #fff,
-  $shadow-23: 0 0 #fff,
-  $shadow-24: 0 0 #fff,
+  vars.$shadow-0: #{0px 0px 1px 0px rgba(255, 255, 255, 0.2)},
+  vars.$shadow-1: 0 0 #fff,
+  vars.$shadow-2: 0 0 #fff,
+  vars.$shadow-3: 0 0 #fff,
+  vars.$shadow-4: 0 0 #fff,
+  vars.$shadow-5: 0 0 #fff,
+  vars.$shadow-6: 0 0 #fff,
+  vars.$shadow-7: 0 0 #fff,
+  vars.$shadow-8: 0 0 #fff,
+  vars.$shadow-9: 0 0 #fff,
+  vars.$shadow-10: 0 0 #fff,
+  vars.$shadow-11: 0 0 #fff,
+  vars.$shadow-12: 0 0 #fff,
+  vars.$shadow-13: 0 0 #fff,
+  vars.$shadow-14: 0 0 #fff,
+  vars.$shadow-15: 0 0 #fff,
+  vars.$shadow-16: 0 0 #fff,
+  vars.$shadow-17: 0 0 #fff,
+  vars.$shadow-18: 0 0 #fff,
+  vars.$shadow-19: 0 0 #fff,
+  vars.$shadow-20: 0 0 #fff,
+  vars.$shadow-21: 0 0 #fff,
+  vars.$shadow-22: 0 0 #fff,
+  vars.$shadow-23: 0 0 #fff,
+  vars.$shadow-24: 0 0 #fff,
 );
 
-$base-dark: map-collect(
+$base-dark: utils.map-collect(
   $colors,
   $hero-gradients,
   $on-color,

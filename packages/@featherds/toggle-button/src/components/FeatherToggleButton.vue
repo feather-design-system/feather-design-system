@@ -87,19 +87,19 @@ const classes = (button: ToggleButton, index: number) => {
 </script>
 
 <style lang="scss" scoped>
-@import "@featherds/styles/mixins/typography";
-@import "@featherds/styles/mixins/elevation";
-@import "@featherds/styles/themes/utils";
+@use "@featherds/styles/themes/variables" as vars;
+@use "@featherds/styles/mixins/typography" as typo;
+@use "@featherds/styles/themes/utils" as utils;
 
 .toggle-btn-container {
-  @include state-on-color();
+  @include utils.state-on-color();
   display: inline-flex;
   padding: 4px;
   align-items: flex-start;
   border-radius: 4px;
   z-index: 0;
 
-  background-color: var($shade-4);
+  background-color: var(vars.$shade-4);
   pointer-events: none;
 
   .toggle-btn {
@@ -109,15 +109,15 @@ const classes = (button: ToggleButton, index: number) => {
     gap: 16px;
 
     border-radius: 2px;
-    color: var($primary-text-on-surface);
+    color: var(vars.$primary-text-on-surface);
 
     border: 0;
     background-color: transparent;
     pointer-events: auto;
 
     &.disabled {
-      @include state-disabled();
-      color: var($shade-2);
+      @include utils.state-disabled();
+      color: var(vars.$shade-2);
       pointer-events: none;
     }
 
@@ -137,14 +137,14 @@ const classes = (button: ToggleButton, index: number) => {
     }
 
     &:hover {
-      background-color: var($shade-4);
+      background-color: var(vars.$shade-4);
     }
 
     &.focus.hover.selected,
     &.focus.hover.selected:hover,
     &.focus.hover.selected:focus {
-      background-color: var($primary);
-      color: var($primary-text-on-color);
+      background-color: var(vars.$primary);
+      color: var(vars.$primary-text-on-color);
       font-weight: bolder;
       letter-spacing: -0.5px;
     }
@@ -152,7 +152,7 @@ const classes = (button: ToggleButton, index: number) => {
     & .toggle-divider {
       position: absolute;
       left: -1.75px;
-      color: var($shade-4);
+      color: var(vars.$shade-4);
       overflow: visible;
       pointer-events: none;
       width: 1px;
@@ -188,8 +188,8 @@ const classes = (button: ToggleButton, index: number) => {
       &.focus.hover.selected,
       &.focus.hover.selected:hover,
       &.focus.hover.selected:focus {
-        background-color: var($primary-text-on-color);
-        color: var($primary-text-on-surface);
+        background-color: var(vars.$primary-text-on-color);
+        color: var(vars.$primary-text-on-surface);
       }
     }
   }

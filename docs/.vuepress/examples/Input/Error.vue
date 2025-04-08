@@ -15,7 +15,6 @@ export default {
 };
 </script>
 <style lang="scss" scoped>
-@import "@featherds/styles/themes/variables";
 .my-text-input {
   width: 25rem;
 }

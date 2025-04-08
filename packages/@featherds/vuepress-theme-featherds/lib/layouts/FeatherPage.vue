@@ -51,7 +51,7 @@
 <script>
 import { FeatherIcon } from "@featherds/icon";
 import KeyboardArrowDown from "@featherds/icon/navigation/ExpandMore";
-import { FeatherAppBarLink, FeatherAppBar } from "@featherds/app-bar";
+import { FeatherAppBar } from "@featherds/app-bar";
 import { FeatherAppLayout } from "@featherds/app-layout";
 import AppBarLink from "../components/AppBarLink.vue";
 import PageThemeChange from "../components/PageThemeChange";
@@ -91,10 +91,11 @@ export default {
 };
 </script>
 <style lang="scss" scoped>
-@import "@featherds/styles/lib/grid";
-@import "@featherds/styles/mixins/typography";
-@import "@featherds/styles/mixins/responsive";
-@import "@featherds/styles/themes/variables";
+@use "@featherds/styles/themes/variables" as vars;
+@use "@featherds/styles/lib/grid" as grid;
+@use "@featherds/styles/mixins/typography" as typo;
+@use "@featherds/styles/mixins/responsive" as resp;
+
 #main {
   flex: 1;
   display: flex;
@@ -111,14 +112,14 @@ export default {
   display: inline-block;
   margin-right: 1.5rem;
   a {
-    @include headline3();
-    color: var($state-color-on-surface-dark);
+    @include typo.headline3();
+    color: var(vars.$state-color-on-surface-dark);
     text-decoration: none;
     text-transform: uppercase;
     &:hover,
     &:visited {
       text-decoration: none;
-      color: var($state-color-on-surface-dark);
+      color: var(vars.$state-color-on-surface-dark);
     }
   }
   &,
@@ -147,7 +148,7 @@ export default {
 
   & .search-container {
     & .search-icon {
-      color: var($secondary-text-on-color);
+      color: var(vars.$secondary-text-on-color);
       font-size: 1.5rem;
       position: relative;
       top: 3px;
@@ -182,7 +183,7 @@ export default {
   display: block;
 }
 
-@include media-query-below(m) {
+@include resp.media-query-below(m) {
   .small-header-icon {
     display: block;
   }
@@ -190,7 +191,7 @@ export default {
     display: none;
   }
 }
-@include media-query-below(s) {
+@include resp.media-query-below(s) {
   :deep(div.feather-app-bar-wrapper) {
     --feather-header-height: 7.5rem;
     .header-content {
@@ -213,18 +214,18 @@ export default {
   }
 }
 //need this for SSR to hide the menu by default render when small enough
-@include media-query-below(xl) {
+@include resp.media-query-below(xl) {
   .feather-styles :deep(.app-rail) {
     .app-rail-content {
       position: fixed;
       left: 0;
       top: 0;
-      z-index: var($zindex-modal);
+      z-index: var(vars.$zindex-modal);
       transform: translateX(-100%);
     }
   }
 }
 </style>
 <style lang="scss">
-@import "../styles/global";
+@use "../styles/global";
 </style>

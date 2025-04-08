@@ -15,10 +15,10 @@ menu: guides
 To use a variable that is defined as part of a theme, you first need to import the `variables` file into your `scss`. Then you should use the `var` keyword to load the variable for the property you want.
 
 ```scss
-@import "@featherds/styles/themes/variables";
+@use "@featherds/styles/themes/variables" as vars;
 
 .my-component {
-  color: var($primary);
+  color: var(vars.$primary);
 }
 ```
 

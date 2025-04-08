@@ -97,7 +97,7 @@ export default defineComponent({
 });
 </script>
 <style lang="scss">
-@import "@featherds/styles/themes/variables";
+@use "@featherds/styles/themes/variables" as vars;
 #target {
   position: sticky;
   overflow: scroll;
@@ -105,6 +105,6 @@ export default defineComponent({
   margin-left: 150px;
   width: 500px;
   height: 500px;
-  background-color: var($surface);
+  background-color: var(vars.$surface);
 }
 </style>

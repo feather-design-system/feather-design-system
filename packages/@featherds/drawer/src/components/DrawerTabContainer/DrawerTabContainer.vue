@@ -35,8 +35,8 @@ export default defineComponent({
 </script>
 
 <style lang="scss" scoped>
-@import "@featherds/styles/themes/variables";
-@import "@featherds/drawer/src/scss/variables";
+@use "@featherds/styles/themes/variables" as vars;
+@use "@featherds/drawer/src/scss/variables" as drawer-vars;
 
 .drawer-tab-container {
   height: 100%;
@@ -45,13 +45,12 @@ export default defineComponent({
     padding: 0;
     margin: 0;
     height: 100%;
-    width: $tab-width;
-    background-color: var($shade-1);
+    width: drawer-vars.$tab-width;
+    background-color: var(vars.$shade-1);
     float: left;
     vertical-align: top;
   }
   > .tab-content {
-    vertical-align: top;
     overflow: auto;
     height: 100%;
     display: block;

@@ -5,7 +5,8 @@ const __dirname = getDirname(import.meta.url);
 import { noopDirectiveTransform } from "@vue/compiler-dom";
 import { sassImports } from "../../scripts/vite/alias";
 import vueSourcePlugin from "./plugins/vueSourcePlugin";
-import { viteBundler } from "vuepress";
+import { viteBundler } from "@vuepress/bundler-vite";
+import { prismjsPlugin } from "@vuepress/plugin-prismjs";
 import { theme } from "./theme";
 import foundation from "./menus/foundation";
 import components from "./menus/components";
@@ -19,7 +20,7 @@ export default {
     errorLogoComponent: "AtomError",
     menus: {
       header: [
-        { name: "Foundation", url: "/Foundation/Story/Philosophy" },
+        { name: "Foundation", url: "/Foundation/Story/Philosophy/" },
         { name: "Components", url: "/Components/" },
         { name: "Guides", url: "/Guides/GettingStarted/" },
       ],
@@ -28,10 +29,14 @@ export default {
       guides,
     },
   }),
+  plugins: [
+    prismjsPlugin({
+      lineNumbers: false,
+    })
+  ],
   templateDev: path.resolve(__dirname, "./templates/dev.html"),
   templateBuild: path.resolve(__dirname, "./templates/ssr.html"),
   patterns: ["README.md", "Components/**/*.md", "Foundation/**/*.md"],
-  markdown: { code: { lineNumbers: false } },
   bundler: viteBundler({
     viteOptions: {
       resolve: {

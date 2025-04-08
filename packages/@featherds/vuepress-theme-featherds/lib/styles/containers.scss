@@ -1,16 +1,16 @@
-@import "@featherds/styles/themes/variables";
-@import "@featherds/styles/mixins/elevation";
-@import "@featherds/styles/mixins/typography";
+@use "@featherds/styles/themes/variables" as vars;
+@use "@featherds/styles/mixins/elevation" as elev;
+@use "@featherds/styles/mixins/typography" as typo;
 
 .feather-styles .custom-container {
-  @include elevation(2);
+  @include elev.elevation(2);
   border-radius: 4px;
   padding: 0.5rem 0.75rem;
   margin: 2rem 0;
-  color: var($primary-text-on-surface);
+  color: var(vars.$primary-text-on-surface);
 
   .custom-container-title {
-    @include subtitle2();
+    @include typo.subtitle2();
     margin: 0;
     margin-bottom: 0.5rem;
   }
@@ -18,27 +18,27 @@
     margin: 0;
   }
   &.tip {
-    border-left: 0.5rem solid var($primary);
+    border-left: 0.5rem solid var(vars.$primary);
     .custom-container-title {
-      color: var($primary);
+      color: var(vars.$primary);
     }
   }
   &.warning {
-    border-left: 0.5rem solid var($warning);
+    border-left: 0.5rem solid var(vars.$warning);
     .custom-container-title {
-      color: var($primary);
+      color: var(vars.$primary);
     }
   }
   &.dos {
-    border-left: 0.5rem solid var($success);
+    border-left: 0.5rem solid var(vars.$success);
     .custom-container-title {
-      color: var($primary);
+      color: var(vars.$primary);
     }
   }
   &.donts {
-    border-left: 0.5rem solid var($error);
+    border-left: 0.5rem solid var(vars.$error);
     .custom-container-title {
-      color: var($primary);
+      color: var(vars.$primary);
     }
   }
 }

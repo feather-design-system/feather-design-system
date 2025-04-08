@@ -19,7 +19,7 @@ The mixin support is provided to allow easy use of our grid functionality inside
 We have added a number of mixins which is our preferred method for using grid layout inside of a SFC. To use the mixins you need to import:
 
 ```scss
-@import "@featherds/styles/mixins/grid";
+@use "@featherds/styles/mixins/grid" as grid;
 ```
 
 You have the following mixins available:
@@ -27,55 +27,55 @@ You have the following mixins available:
 ```scss
 // creates a grid container constrained to our max width
 .my-container {
-  @include container;
+  @include grid.container;
 }
 
 // creates a grid container that is full width
 .my-container {
-  @include container(true);
+  @include grid.container(true);
 }
 
 // create a row
 .my-row {
-  @include row;
+  @include grid.row;
 }
 
 // create a generic column.
 .my-column {
   //column width is 2
-  @include col(2);
+  @include grid.col(2);
 }
 
 // create a responsive column.
 .my-responsive-column {
-  @include col(xl, 8);
-  @include col(l, 8);
-  @include col(m, 4);
-  @include col(s, 4);
-  @include col(xs, 2);
+  @include grid.col(xl, 8);
+  @include grid.col(l, 8);
+  @include grid.col(m, 4);
+  @include grid.col(s, 4);
+  @include grid.col(xs, 2);
 }
 
 // create a generic, offset column.
 .my-offset-column {
   //column width is 2
-  @include col(2);
+  @include grid.col(2);
   //offset width is 2
-  @include offset(2);
+  @include grid.offset(2);
 }
 
 // create a responsive, offset column.
 .my-offset-responsive-column {
-  @include col(xl, 8);
-  @include col(l, 8);
-  @include col(m, 4);
-  @include col(s, 4);
-  @include col(xs, 2);
+  @include grid.col(xl, 8);
+  @include grid.col(l, 8);
+  @include grid.col(m, 4);
+  @include grid.col(s, 4);
+  @include grid.col(xs, 2);
 
-  @include offset(xl, 4);
-  @include offset(l, 4);
-  @include offset(m, 2);
-  @include offset(s, 2);
-  @include offset(xs, 1);
+  @include grid.offset(xl, 4);
+  @include grid.offset(l, 4);
+  @include grid.offset(m, 2);
+  @include grid.offset(s, 2);
+  @include grid.offset(xs, 1);
 }
 ```
 
@@ -84,7 +84,7 @@ You have the following mixins available:
 `@featherds/styles` has a number of classes that are utilized to create a grid layout. To use these classes you need to import:
 
 ```scss
-@import "@featherds/styles/lib/grid";
+@use "@featherds/styles/lib/grid" as grid;
 ```
 
 These classes are **NOT** included in our default include.

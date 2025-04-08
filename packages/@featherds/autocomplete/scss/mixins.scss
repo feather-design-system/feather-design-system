@@ -1,4 +1,4 @@
-@import "@featherds/list/scss/mixins.scss";
+@use "@featherds/list/scss/mixins.scss" as list-mixins;
 @mixin autocomplete-results-height($rows) {
-  @include feather-list-height($rows);
+  @include list-mixins.feather-list-height($rows);
 }

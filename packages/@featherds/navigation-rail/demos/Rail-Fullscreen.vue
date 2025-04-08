@@ -82,8 +82,8 @@ export default defineComponent({
 });
 </script>
 <style lang="scss" scoped>
-@import "@featherds/styles/mixins/typography";
-@import "@featherds/styles/themes/variables";
+@use "@featherds/styles/themes/variables" as vars;
+@use "@featherds/styles/mixins/typography" as typo;
 #test {
   height: 120vh;
 }
@@ -97,14 +97,14 @@ export default defineComponent({
   .user-icon {
     height: 2rem;
     width: 2rem;
-    color: var($primary);
+    color: var(vars.$primary);
     margin-right: 1rem;
   }
   .user-name {
-    @include subtitle1;
+    @include typo.subtitle1;
   }
   .sub {
-    @include caption;
+    @include typo.caption;
   }
 }
 </style>

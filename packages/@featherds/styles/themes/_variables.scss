@@ -1,4 +1,4 @@
-@import "_base-controls/date-input";
+@use "_base-controls/date-input";
 
 @function prefix($prop) {
   @return --feather-#{$prop};

@@ -47,6 +47,7 @@ exports[`FeatherTextarea.vue > should allow custom blur events 1`] = `
         data-ref-id="feather-textarea-input"
         id="feather-textarea-label"
         name="feather-textarea-label"
+        value="YEET"
       />
       
       <div
@@ -123,6 +124,7 @@ exports[`FeatherTextarea.vue > should allow custom focus events 1`] = `
         data-ref-id="feather-textarea-input"
         id="feather-textarea-label"
         name="feather-textarea-label"
+        value="YEET"
       />
       
       <div
@@ -199,6 +201,7 @@ exports[`FeatherTextarea.vue > should clear textarea when clear-icon is clicked 
         data-ref-id="feather-textarea-input"
         id="feather-textarea-label"
         name="feather-textarea-label"
+        value=""
       />
       
       <div
@@ -351,6 +354,7 @@ exports[`FeatherTextarea.vue > should render a clear icon when clear has a value
         data-ref-id="feather-textarea-input"
         id="feather-textarea-label"
         name="feather-textarea-label"
+        value="Test"
       />
       
       <div
@@ -446,6 +450,7 @@ exports[`FeatherTextarea.vue > should render a maxlength attribute and character
         id="feather-textarea-label"
         maxlength="5"
         name="feather-textarea-label"
+        value="test"
       />
       
       <div
@@ -632,6 +637,7 @@ exports[`FeatherTextarea.vue > should render an textarea error and has a value 1
         data-ref-id="feather-textarea-input"
         id="feather-textarea-label"
         name="feather-textarea-label"
+        value="Test"
       />
       
       <div
@@ -993,6 +999,7 @@ exports[`FeatherTextarea.vue > should render an textarea with a preset value 1`]
         data-ref-id="feather-textarea-input"
         id="feather-textarea-label"
         name="feather-textarea-label"
+        value="YEET"
       />
       
       <div
@@ -1146,6 +1153,7 @@ exports[`FeatherTextarea.vue > should render an textarea with raised label when 
         data-ref-id="feather-textarea-input"
         id="feather-textarea-label"
         name="feather-textarea-label"
+        value="YEET"
       />
       
       <div

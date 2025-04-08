@@ -253,21 +253,21 @@ export default defineComponent({
 </script>
 
 <style lang="scss" scoped>
-@import "@featherds/styles/themes/variables";
-@import "@featherds/styles/mixins/typography";
+@use "@featherds/styles/themes/variables" as vars;
+@use "@featherds/styles/mixins/typography" as typo;
 .feather-tooltip-description {
-  @include screen-reader;
+  @include typo.screen-reader;
 }
 .feather-tooltip-container {
   pointer-events: none;
   position: fixed;
   top: 0;
   left: 0;
-  z-index: var(--feather-current-zindex, var($zindex-tooltip));
+  z-index: var(--feather-current-zindex, var(vars.$zindex-tooltip));
   .tooltip {
-    @include body-small;
-    color: var($secondary-text-on-color);
-    background-color: var($high-visibility-on-surface);
+    @include typo.body-small;
+    color: var(vars.$secondary-text-on-color);
+    background-color: var(vars.$high-visibility-on-surface);
     padding: 0.5rem 1rem;
     border-radius: 4px;
     max-width: 16rem;

@@ -64,14 +64,14 @@ export default defineComponent({
 });
 </script>
 <style lang="scss" scoped>
-@import "@featherds/styles/mixins/typography";
+@use "@featherds/styles/mixins/typography" as typo;
 
 .product-icon {
   font-size: 18px;
 }
 .product-text {
   margin-left: 0.5rem;
-  @include headline3;
+  @include typo.headline3;
   color: var(--feather-app-rail-text-color);
 }
 

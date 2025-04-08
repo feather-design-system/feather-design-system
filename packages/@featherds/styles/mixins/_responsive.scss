@@ -1,4 +1,5 @@
-@import "../themes/variables";
+@use "sass:map";
+@use "../themes/variables" as vars;
 
 @mixin media-query($min, $max) {
   @if $min != null and $max != null {
@@ -18,10 +19,10 @@
 
 //for(md) is for everything sized md and smaller.
 @mixin media-query-for($name) {
-  $size: map-get($grid, $name);
+  $size: map.get(vars.$grid, $name);
   @if $size != null {
-    $max: map-get($size, max);
-    $min: map-get($size, min);
+    $max: map.get($size, max);
+    $min: map.get($size, min);
     @if $max != null {
       @media (max-width: $max) {
         @content;
@@ -35,9 +36,9 @@
 }
 
 @mixin media-query-above($name) {
-  $size: map-get($grid, $name);
+  $size: map.get($grid, $name);
   @if $size != null {
-    $max: map-get($size, max);
+    $max: map.get($size, max);
     @if $max != null {
       @media (min-width: ($max + 1)) {
         @content;
@@ -47,9 +48,9 @@
 }
 
 @mixin media-query-below($name) {
-  $size: map-get($grid, $name);
+  $size: map.get(vars.$grid, $name);
   @if $size != null {
-    $min: map-get($size, min);
+    $min: map.get($size, min);
     @if $min != null {
       @media (max-width: ($min - 1)) {
         @content;

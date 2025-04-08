@@ -31,7 +31,7 @@ export default {
 };
 </script>
 <style lang="scss" scoped>
-@import "@featherds/styles/themes/variables";
+@use "@featherds/styles/themes/variables" as vars;
 ul {
   margin: 0;
   padding: 0;
@@ -39,13 +39,13 @@ ul {
 li {
   list-style: none;
   padding: 0.5rem;
-  color: var($primary-text-on-color);
+  color: var(vars.$primary-text-on-color);
   &.bg-surface,
   &.bg-background {
-    color: var($secondary-text-on-surface);
+    color: var(vars.$secondary-text-on-surface);
   }
   &.bg-warning {
-    color: var($secondary-text-on-warning);
+    color: var(vars.$secondary-text-on-warning);
   }
 }
 </style>

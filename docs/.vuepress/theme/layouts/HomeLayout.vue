@@ -176,14 +176,14 @@ export default {
 </script>
 
 <style lang="scss">
-@import "@featherds/styles/themes/variables";
-@import "@featherds/styles/mixins/typography";
-@import "@featherds/styles/mixins/elevation";
+@use "@featherds/styles/themes/variables" as vars;
+@use "@featherds/styles/mixins/typography" as typo;
+@use "@featherds/styles/mixins/elevation" as elev;
 
 body.pagescroll div.feather-styles.layout.homepage header.banner {
-  background-color: var($surface-dark);
+  background-color: var(vars.$surface-dark);
   transition: all 0.2s linear;
-  @include header();
+  @include typo.header();
 }
 
 div.feather-styles.homepage.layout {
@@ -200,7 +200,7 @@ div.feather-styles.homepage.layout {
   }
 
   .body-large {
-    @include body-large();
+    @include typo.body-large();
   }
 }
 .feather-styles.homepage.layout #main .center.content {
@@ -213,7 +213,7 @@ div.feather-styles.homepage.layout {
 .feather-styles.homepage section {
   position: relative;
   z-index: 0;
-  background-color: var($surface);
+  background-color: var(vars.$surface);
   &:before {
     content: "";
     position: absolute;
@@ -222,7 +222,7 @@ div.feather-styles.homepage.layout {
     bottom: 0;
     left: 0;
     right: 0;
-    background-color: var($surface);
+    background-color: var(vars.$surface);
   }
 
   &.gradient-1,
@@ -236,27 +236,27 @@ div.feather-styles.homepage.layout {
     padding-top: 8.75rem;
   }
   &.gradient-1:before {
-    background: var($hero-gradient-1-1), var($hero-gradient-1-2),
-      var($hero-gradient-1-3);
+    background: var(vars.$hero-gradient-1-1), var(vars.$hero-gradient-1-2),
+      var(vars.$hero-gradient-1-3);
   }
   &.gradient-2:before {
-    background: var($hero-gradient-2-1), var($hero-gradient-2-2),
-      var($hero-gradient-2-3), var($hero-gradient-2-4);
+    background: var(vars.$hero-gradient-2-1), var(vars.$hero-gradient-2-2),
+      var(vars.$hero-gradient-2-3), var(vars.$hero-gradient-2-4);
   }
 
   .section-wrapper {
     h1 {
-      @include headline1();
+      @include typo.headline1();
       margin-bottom: 1rem;
     }
     h2 {
-      @include headline2();
+      @include typo.headline2();
     }
     h3 {
-      @include headline3();
+      @include typo.headline3();
     }
     margin: 0 auto;
-    max-width: var($content-width);
+    max-width: var(vars.$content-width);
     text-align: left;
     padding: 5rem 2.5rem;
 
@@ -278,7 +278,7 @@ div.feather-styles.homepage.layout {
     }
 
     button.btn-secondary > svg path {
-      fill: var($primary);
+      fill: var(vars.$primary);
     }
 
     &.learn {
@@ -314,13 +314,13 @@ div.feather-styles.homepage.layout {
           padding-left: 2.5rem;
           padding-right: 1.25rem;
 
-          border-right: 2px solid var($shade-1);
+          border-right: 2px solid var(vars.$shade-1);
 
           p {
             padding-top: 0;
             margin-top: 0.25rem;
-            @include body-large();
-            color: var($secondary-text-on-surface);
+            @include typo.body-large();
+            color: var(vars.$secondary-text-on-surface);
           }
         }
       }
@@ -330,7 +330,7 @@ div.feather-styles.homepage.layout {
           list-style-type: decimal-leading-zero;
         }
         li::marker {
-          color: var($primary);
+          color: var(vars.$primary);
           font-size: 2em;
           font-weight: bold;
         }
@@ -338,10 +338,10 @@ div.feather-styles.homepage.layout {
           margin-bottom: 1.5rem;
         }
         dt {
-          @include headline2();
+          @include typo.headline2();
         }
         dd {
-          @include body-small();
+          @include typo.body-small();
           margin-inline-start: 0;
           margin-top: 0.5rem;
         }
@@ -361,7 +361,7 @@ div.feather-styles.homepage.layout {
       padding: 2.5rem 3rem 3rem 3rem;
 
       svg {
-        fill: var($primary);
+        fill: var(vars.$primary);
         position: absolute;
         font-size: 1.875rem;
         margin-left: -2.875rem;
@@ -372,14 +372,14 @@ div.feather-styles.homepage.layout {
         display: block;
       }
       .tagline {
-        @include overline();
-        line-height: var($overline-font-size);
-        color: var($primary);
+        @include typo.overline();
+        line-height: var(vars.$overline-font-size);
+        color: var(vars.$primary);
         padding-bottom: 0.5rem;
       }
       .title {
-        @include title();
-        line-height: var($title-font-size);
+        @include typo.title();
+        line-height: var(vars.$title-font-size);
       }
     }
   }
@@ -412,15 +412,15 @@ div.feather-styles.homepage.layout {
         #search-container .DocSearch-Button,
         .search-icon,
         .DocSearch.DocSearch-Button:hover .DocSearch-Button-Placeholder {
-          color: var($primary-text-on-surface);
+          color: var(vars.$primary-text-on-surface);
         }
         .DocSearch.DocSearch-Button:hover:after,
         .DocSearch.DocSearch-Button:focus:after,
         .DocSearch.DocSearch-Button:active:after {
-          background-color: var($primary-text-on-surface);
+          background-color: var(vars.$primary-text-on-surface);
         }
         .DocSearch.DocSearch-Button {
-          border-color: var($primary-text-on-surface);
+          border-color: var(vars.$primary-text-on-surface);
         }
       }
     }
@@ -475,11 +475,11 @@ div.feather-styles.homepage.layout {
 @media screen and (max-width: 60rem) {
   .feather-styles.homepage section div.card-group {
     h3 {
-      @include headline4();
+      @include typo.headline4();
       margin-top: 0.5rem;
       margin-bottom: 0;
       margin-right: 1rem;
-      line-height: var($headline3-font-size);
+      line-height: var(vars.$headline3-font-size);
     }
     a.pretty-card {
       flex: 0 0 33%;

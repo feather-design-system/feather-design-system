@@ -240,6 +240,7 @@ exports[`FeatherDateInput.vue > should render disabled 1`] = `
                   data-ref-id="feather-select-input"
                   id="feather-select-input"
                   readonly=""
+                  value="February"
                 />
                 
                 <div
@@ -548,6 +549,7 @@ exports[`FeatherDateInput.vue > should render disabled 1`] = `
                   data-ref-id="feather-select-input"
                   id="feather-select-input"
                   readonly=""
+                  value="2020"
                 />
                 
                 <div
@@ -2733,522 +2735,526 @@ exports[`FeatherDateInput.vue > should render disabled 1`] = `
         class="calendar"
         role="presentation"
       >
-        <tr>
+        <thead>
+          <tr>
+            
+            <th
+              class="cell day-header"
+            >
+              S
+            </th>
+            <th
+              class="cell day-header"
+            >
+              M
+            </th>
+            <th
+              class="cell day-header"
+            >
+              T
+            </th>
+            <th
+              class="cell day-header"
+            >
+              W
+            </th>
+            <th
+              class="cell day-header"
+            >
+              T
+            </th>
+            <th
+              class="cell day-header"
+            >
+              F
+            </th>
+            <th
+              class="cell day-header"
+            >
+              S
+            </th>
+            
+          </tr>
+        </thead>
+        <tbody>
           
-          <th
-            class="cell day-header"
-          >
-            S
-          </th>
-          <th
-            class="cell day-header"
-          >
-            M
-          </th>
-          <th
-            class="cell day-header"
-          >
-            T
-          </th>
-          <th
-            class="cell day-header"
-          >
-            W
-          </th>
-          <th
-            class="cell day-header"
-          >
-            T
-          </th>
-          <th
-            class="cell day-header"
-          >
-            F
-          </th>
-          <th
-            class="cell day-header"
-          >
-            S
-          </th>
+          <tr>
+            
+            <td>
+              <button
+                aria-disabled="false"
+                aria-label="Sunday, January 26, 2020"
+                aria-pressed="false"
+                class="cell day hover focus blank"
+                data-ref-id=""
+                tabindex="-1"
+                type="button"
+              >
+                26
+              </button>
+            </td>
+            <td>
+              <button
+                aria-disabled="false"
+                aria-label="Monday, January 27, 2020"
+                aria-pressed="false"
+                class="cell day hover focus blank"
+                data-ref-id=""
+                tabindex="-1"
+                type="button"
+              >
+                27
+              </button>
+            </td>
+            <td>
+              <button
+                aria-disabled="false"
+                aria-label="Tuesday, January 28, 2020"
+                aria-pressed="false"
+                class="cell day hover focus blank"
+                data-ref-id=""
+                tabindex="-1"
+                type="button"
+              >
+                28
+              </button>
+            </td>
+            <td>
+              <button
+                aria-disabled="false"
+                aria-label="Wednesday, January 29, 2020"
+                aria-pressed="false"
+                class="cell day hover focus blank"
+                data-ref-id=""
+                tabindex="-1"
+                type="button"
+              >
+                29
+              </button>
+            </td>
+            <td>
+              <button
+                aria-disabled="false"
+                aria-label="Thursday, January 30, 2020"
+                aria-pressed="false"
+                class="cell day hover focus blank"
+                data-ref-id=""
+                tabindex="-1"
+                type="button"
+              >
+                30
+              </button>
+            </td>
+            <td>
+              <button
+                aria-disabled="false"
+                aria-label="Friday, January 31, 2020"
+                aria-pressed="false"
+                class="cell day hover focus blank"
+                data-ref-id=""
+                tabindex="-1"
+                type="button"
+              >
+                31
+              </button>
+            </td>
+            <td>
+              <button
+                aria-disabled="false"
+                aria-label="Saturday, February 1, 2020"
+                aria-pressed="true"
+                class="cell day hover focus selected highlighted"
+                data-ref-id="feather-calendar-highlighted-day"
+                tabindex="0"
+                type="button"
+              >
+                1
+              </button>
+            </td>
+            
+          </tr>
+          <tr>
+            
+            <td>
+              <button
+                aria-disabled="false"
+                aria-label="Sunday, February 2, 2020"
+                aria-pressed="false"
+                class="cell day hover focus"
+                data-ref-id=""
+                tabindex="-1"
+                type="button"
+              >
+                2
+              </button>
+            </td>
+            <td>
+              <button
+                aria-disabled="false"
+                aria-label="Monday, February 3, 2020"
+                aria-pressed="false"
+                class="cell day hover focus"
+                data-ref-id=""
+                tabindex="-1"
+                type="button"
+              >
+                3
+              </button>
+            </td>
+            <td>
+              <button
+                aria-disabled="false"
+                aria-label="Tuesday, February 4, 2020"
+                aria-pressed="false"
+                class="cell day hover focus"
+                data-ref-id=""
+                tabindex="-1"
+                type="button"
+              >
+                4
+              </button>
+            </td>
+            <td>
+              <button
+                aria-disabled="false"
+                aria-label="Wednesday, February 5, 2020"
+                aria-pressed="false"
+                class="cell day hover focus"
+                data-ref-id=""
+                tabindex="-1"
+                type="button"
+              >
+                5
+              </button>
+            </td>
+            <td>
+              <button
+                aria-disabled="false"
+                aria-label="Thursday, February 6, 2020"
+                aria-pressed="false"
+                class="cell day hover focus"
+                data-ref-id=""
+                tabindex="-1"
+                type="button"
+              >
+                6
+              </button>
+            </td>
+            <td>
+              <button
+                aria-disabled="false"
+                aria-label="Friday, February 7, 2020"
+                aria-pressed="false"
+                class="cell day hover focus"
+                data-ref-id=""
+                tabindex="-1"
+                type="button"
+              >
+                7
+              </button>
+            </td>
+            <td>
+              <button
+                aria-disabled="false"
+                aria-label="Saturday, February 8, 2020"
+                aria-pressed="false"
+                class="cell day hover focus"
+                data-ref-id=""
+                tabindex="-1"
+                type="button"
+              >
+                8
+              </button>
+            </td>
+            
+          </tr>
+          <tr>
+            
+            <td>
+              <button
+                aria-disabled="false"
+                aria-label="Sunday, February 9, 2020"
+                aria-pressed="false"
+                class="cell day hover focus"
+                data-ref-id=""
+                tabindex="-1"
+                type="button"
+              >
+                9
+              </button>
+            </td>
+            <td>
+              <button
+                aria-disabled="false"
+                aria-label="Monday, February 10, 2020"
+                aria-pressed="false"
+                class="cell day hover focus"
+                data-ref-id=""
+                tabindex="-1"
+                type="button"
+              >
+                10
+              </button>
+            </td>
+            <td>
+              <button
+                aria-disabled="false"
+                aria-label="Tuesday, February 11, 2020"
+                aria-pressed="false"
+                class="cell day hover focus"
+                data-ref-id=""
+                tabindex="-1"
+                type="button"
+              >
+                11
+              </button>
+            </td>
+            <td>
+              <button
+                aria-disabled="false"
+                aria-label="Wednesday, February 12, 2020"
+                aria-pressed="false"
+                class="cell day hover focus"
+                data-ref-id=""
+                tabindex="-1"
+                type="button"
+              >
+                12
+              </button>
+            </td>
+            <td>
+              <button
+                aria-disabled="false"
+                aria-label="Thursday, February 13, 2020"
+                aria-pressed="false"
+                class="cell day hover focus"
+                data-ref-id=""
+                tabindex="-1"
+                type="button"
+              >
+                13
+              </button>
+            </td>
+            <td>
+              <button
+                aria-disabled="false"
+                aria-label="Friday, February 14, 2020"
+                aria-pressed="false"
+                class="cell day hover focus"
+                data-ref-id=""
+                tabindex="-1"
+                type="button"
+              >
+                14
+              </button>
+            </td>
+            <td>
+              <button
+                aria-disabled="false"
+                aria-label="Saturday, February 15, 2020"
+                aria-pressed="false"
+                class="cell day hover focus"
+                data-ref-id=""
+                tabindex="-1"
+                type="button"
+              >
+                15
+              </button>
+            </td>
+            
+          </tr>
+          <tr>
+            
+            <td>
+              <button
+                aria-disabled="false"
+                aria-label="Sunday, February 16, 2020"
+                aria-pressed="false"
+                class="cell day hover focus"
+                data-ref-id=""
+                tabindex="-1"
+                type="button"
+              >
+                16
+              </button>
+            </td>
+            <td>
+              <button
+                aria-disabled="false"
+                aria-label="Monday, February 17, 2020"
+                aria-pressed="false"
+                class="cell day hover focus"
+                data-ref-id=""
+                tabindex="-1"
+                type="button"
+              >
+                17
+              </button>
+            </td>
+            <td>
+              <button
+                aria-disabled="false"
+                aria-label="Tuesday, February 18, 2020"
+                aria-pressed="false"
+                class="cell day hover focus"
+                data-ref-id=""
+                tabindex="-1"
+                type="button"
+              >
+                18
+              </button>
+            </td>
+            <td>
+              <button
+                aria-disabled="false"
+                aria-label="Wednesday, February 19, 2020"
+                aria-pressed="false"
+                class="cell day hover focus"
+                data-ref-id=""
+                tabindex="-1"
+                type="button"
+              >
+                19
+              </button>
+            </td>
+            <td>
+              <button
+                aria-disabled="false"
+                aria-label="Thursday, February 20, 2020"
+                aria-pressed="false"
+                class="cell day hover focus"
+                data-ref-id=""
+                tabindex="-1"
+                type="button"
+              >
+                20
+              </button>
+            </td>
+            <td>
+              <button
+                aria-disabled="false"
+                aria-label="Friday, February 21, 2020"
+                aria-pressed="false"
+                class="cell day hover focus"
+                data-ref-id=""
+                tabindex="-1"
+                type="button"
+              >
+                21
+              </button>
+            </td>
+            <td>
+              <button
+                aria-disabled="false"
+                aria-label="Saturday, February 22, 2020"
+                aria-pressed="false"
+                class="cell day hover focus"
+                data-ref-id=""
+                tabindex="-1"
+                type="button"
+              >
+                22
+              </button>
+            </td>
+            
+          </tr>
+          <tr>
+            
+            <td>
+              <button
+                aria-disabled="false"
+                aria-label="Sunday, February 23, 2020"
+                aria-pressed="false"
+                class="cell day hover focus"
+                data-ref-id=""
+                tabindex="-1"
+                type="button"
+              >
+                23
+              </button>
+            </td>
+            <td>
+              <button
+                aria-disabled="false"
+                aria-label="Monday, February 24, 2020"
+                aria-pressed="false"
+                class="cell day hover focus"
+                data-ref-id=""
+                tabindex="-1"
+                type="button"
+              >
+                24
+              </button>
+            </td>
+            <td>
+              <button
+                aria-disabled="false"
+                aria-label="Tuesday, February 25, 2020"
+                aria-pressed="false"
+                class="cell day hover focus"
+                data-ref-id=""
+                tabindex="-1"
+                type="button"
+              >
+                25
+              </button>
+            </td>
+            <td>
+              <button
+                aria-disabled="false"
+                aria-label="Wednesday, February 26, 2020"
+                aria-pressed="false"
+                class="cell day hover focus"
+                data-ref-id=""
+                tabindex="-1"
+                type="button"
+              >
+                26
+              </button>
+            </td>
+            <td>
+              <button
+                aria-disabled="false"
+                aria-label="Thursday, February 27, 2020"
+                aria-pressed="false"
+                class="cell day hover focus"
+                data-ref-id=""
+                tabindex="-1"
+                type="button"
+              >
+                27
+              </button>
+            </td>
+            <td>
+              <button
+                aria-disabled="false"
+                aria-label="Friday, February 28, 2020"
+                aria-pressed="false"
+                class="cell day hover focus"
+                data-ref-id=""
+                tabindex="-1"
+                type="button"
+              >
+                28
+              </button>
+            </td>
+            <td>
+              <button
+                aria-disabled="false"
+                aria-label="Saturday, February 29, 2020"
+                aria-pressed="false"
+                class="cell day hover focus"
+                data-ref-id=""
+                tabindex="-1"
+                type="button"
+              >
+                29
+              </button>
+            </td>
+            
+          </tr>
           
-        </tr>
-        
-        <tr>
-          
-          <td>
-            <button
-              aria-disabled="false"
-              aria-label="Sunday, January 26, 2020"
-              aria-pressed="false"
-              class="cell day hover focus blank"
-              data-ref-id=""
-              tabindex="-1"
-              type="button"
-            >
-              26
-            </button>
-          </td>
-          <td>
-            <button
-              aria-disabled="false"
-              aria-label="Monday, January 27, 2020"
-              aria-pressed="false"
-              class="cell day hover focus blank"
-              data-ref-id=""
-              tabindex="-1"
-              type="button"
-            >
-              27
-            </button>
-          </td>
-          <td>
-            <button
-              aria-disabled="false"
-              aria-label="Tuesday, January 28, 2020"
-              aria-pressed="false"
-              class="cell day hover focus blank"
-              data-ref-id=""
-              tabindex="-1"
-              type="button"
-            >
-              28
-            </button>
-          </td>
-          <td>
-            <button
-              aria-disabled="false"
-              aria-label="Wednesday, January 29, 2020"
-              aria-pressed="false"
-              class="cell day hover focus blank"
-              data-ref-id=""
-              tabindex="-1"
-              type="button"
-            >
-              29
-            </button>
-          </td>
-          <td>
-            <button
-              aria-disabled="false"
-              aria-label="Thursday, January 30, 2020"
-              aria-pressed="false"
-              class="cell day hover focus blank"
-              data-ref-id=""
-              tabindex="-1"
-              type="button"
-            >
-              30
-            </button>
-          </td>
-          <td>
-            <button
-              aria-disabled="false"
-              aria-label="Friday, January 31, 2020"
-              aria-pressed="false"
-              class="cell day hover focus blank"
-              data-ref-id=""
-              tabindex="-1"
-              type="button"
-            >
-              31
-            </button>
-          </td>
-          <td>
-            <button
-              aria-disabled="false"
-              aria-label="Saturday, February 1, 2020"
-              aria-pressed="true"
-              class="cell day hover focus selected highlighted"
-              data-ref-id="feather-calendar-highlighted-day"
-              tabindex="0"
-              type="button"
-            >
-              1
-            </button>
-          </td>
-          
-        </tr>
-        <tr>
-          
-          <td>
-            <button
-              aria-disabled="false"
-              aria-label="Sunday, February 2, 2020"
-              aria-pressed="false"
-              class="cell day hover focus"
-              data-ref-id=""
-              tabindex="-1"
-              type="button"
-            >
-              2
-            </button>
-          </td>
-          <td>
-            <button
-              aria-disabled="false"
-              aria-label="Monday, February 3, 2020"
-              aria-pressed="false"
-              class="cell day hover focus"
-              data-ref-id=""
-              tabindex="-1"
-              type="button"
-            >
-              3
-            </button>
-          </td>
-          <td>
-            <button
-              aria-disabled="false"
-              aria-label="Tuesday, February 4, 2020"
-              aria-pressed="false"
-              class="cell day hover focus"
-              data-ref-id=""
-              tabindex="-1"
-              type="button"
-            >
-              4
-            </button>
-          </td>
-          <td>
-            <button
-              aria-disabled="false"
-              aria-label="Wednesday, February 5, 2020"
-              aria-pressed="false"
-              class="cell day hover focus"
-              data-ref-id=""
-              tabindex="-1"
-              type="button"
-            >
-              5
-            </button>
-          </td>
-          <td>
-            <button
-              aria-disabled="false"
-              aria-label="Thursday, February 6, 2020"
-              aria-pressed="false"
-              class="cell day hover focus"
-              data-ref-id=""
-              tabindex="-1"
-              type="button"
-            >
-              6
-            </button>
-          </td>
-          <td>
-            <button
-              aria-disabled="false"
-              aria-label="Friday, February 7, 2020"
-              aria-pressed="false"
-              class="cell day hover focus"
-              data-ref-id=""
-              tabindex="-1"
-              type="button"
-            >
-              7
-            </button>
-          </td>
-          <td>
-            <button
-              aria-disabled="false"
-              aria-label="Saturday, February 8, 2020"
-              aria-pressed="false"
-              class="cell day hover focus"
-              data-ref-id=""
-              tabindex="-1"
-              type="button"
-            >
-              8
-            </button>
-          </td>
-          
-        </tr>
-        <tr>
-          
-          <td>
-            <button
-              aria-disabled="false"
-              aria-label="Sunday, February 9, 2020"
-              aria-pressed="false"
-              class="cell day hover focus"
-              data-ref-id=""
-              tabindex="-1"
-              type="button"
-            >
-              9
-            </button>
-          </td>
-          <td>
-            <button
-              aria-disabled="false"
-              aria-label="Monday, February 10, 2020"
-              aria-pressed="false"
-              class="cell day hover focus"
-              data-ref-id=""
-              tabindex="-1"
-              type="button"
-            >
-              10
-            </button>
-          </td>
-          <td>
-            <button
-              aria-disabled="false"
-              aria-label="Tuesday, February 11, 2020"
-              aria-pressed="false"
-              class="cell day hover focus"
-              data-ref-id=""
-              tabindex="-1"
-              type="button"
-            >
-              11
-            </button>
-          </td>
-          <td>
-            <button
-              aria-disabled="false"
-              aria-label="Wednesday, February 12, 2020"
-              aria-pressed="false"
-              class="cell day hover focus"
-              data-ref-id=""
-              tabindex="-1"
-              type="button"
-            >
-              12
-            </button>
-          </td>
-          <td>
-            <button
-              aria-disabled="false"
-              aria-label="Thursday, February 13, 2020"
-              aria-pressed="false"
-              class="cell day hover focus"
-              data-ref-id=""
-              tabindex="-1"
-              type="button"
-            >
-              13
-            </button>
-          </td>
-          <td>
-            <button
-              aria-disabled="false"
-              aria-label="Friday, February 14, 2020"
-              aria-pressed="false"
-              class="cell day hover focus"
-              data-ref-id=""
-              tabindex="-1"
-              type="button"
-            >
-              14
-            </button>
-          </td>
-          <td>
-            <button
-              aria-disabled="false"
-              aria-label="Saturday, February 15, 2020"
-              aria-pressed="false"
-              class="cell day hover focus"
-              data-ref-id=""
-              tabindex="-1"
-              type="button"
-            >
-              15
-            </button>
-          </td>
-          
-        </tr>
-        <tr>
-          
-          <td>
-            <button
-              aria-disabled="false"
-              aria-label="Sunday, February 16, 2020"
-              aria-pressed="false"
-              class="cell day hover focus"
-              data-ref-id=""
-              tabindex="-1"
-              type="button"
-            >
-              16
-            </button>
-          </td>
-          <td>
-            <button
-              aria-disabled="false"
-              aria-label="Monday, February 17, 2020"
-              aria-pressed="false"
-              class="cell day hover focus"
-              data-ref-id=""
-              tabindex="-1"
-              type="button"
-            >
-              17
-            </button>
-          </td>
-          <td>
-            <button
-              aria-disabled="false"
-              aria-label="Tuesday, February 18, 2020"
-              aria-pressed="false"
-              class="cell day hover focus"
-              data-ref-id=""
-              tabindex="-1"
-              type="button"
-            >
-              18
-            </button>
-          </td>
-          <td>
-            <button
-              aria-disabled="false"
-              aria-label="Wednesday, February 19, 2020"
-              aria-pressed="false"
-              class="cell day hover focus"
-              data-ref-id=""
-              tabindex="-1"
-              type="button"
-            >
-              19
-            </button>
-          </td>
-          <td>
-            <button
-              aria-disabled="false"
-              aria-label="Thursday, February 20, 2020"
-              aria-pressed="false"
-              class="cell day hover focus"
-              data-ref-id=""
-              tabindex="-1"
-              type="button"
-            >
-              20
-            </button>
-          </td>
-          <td>
-            <button
-              aria-disabled="false"
-              aria-label="Friday, February 21, 2020"
-              aria-pressed="false"
-              class="cell day hover focus"
-              data-ref-id=""
-              tabindex="-1"
-              type="button"
-            >
-              21
-            </button>
-          </td>
-          <td>
-            <button
-              aria-disabled="false"
-              aria-label="Saturday, February 22, 2020"
-              aria-pressed="false"
-              class="cell day hover focus"
-              data-ref-id=""
-              tabindex="-1"
-              type="button"
-            >
-              22
-            </button>
-          </td>
-          
-        </tr>
-        <tr>
-          
-          <td>
-            <button
-              aria-disabled="false"
-              aria-label="Sunday, February 23, 2020"
-              aria-pressed="false"
-              class="cell day hover focus"
-              data-ref-id=""
-              tabindex="-1"
-              type="button"
-            >
-              23
-            </button>
-          </td>
-          <td>
-            <button
-              aria-disabled="false"
-              aria-label="Monday, February 24, 2020"
-              aria-pressed="false"
-              class="cell day hover focus"
-              data-ref-id=""
-              tabindex="-1"
-              type="button"
-            >
-              24
-            </button>
-          </td>
-          <td>
-            <button
-              aria-disabled="false"
-              aria-label="Tuesday, February 25, 2020"
-              aria-pressed="false"
-              class="cell day hover focus"
-              data-ref-id=""
-              tabindex="-1"
-              type="button"
-            >
-              25
-            </button>
-          </td>
-          <td>
-            <button
-              aria-disabled="false"
-              aria-label="Wednesday, February 26, 2020"
-              aria-pressed="false"
-              class="cell day hover focus"
-              data-ref-id=""
-              tabindex="-1"
-              type="button"
-            >
-              26
-            </button>
-          </td>
-          <td>
-            <button
-              aria-disabled="false"
-              aria-label="Thursday, February 27, 2020"
-              aria-pressed="false"
-              class="cell day hover focus"
-              data-ref-id=""
-              tabindex="-1"
-              type="button"
-            >
-              27
-            </button>
-          </td>
-          <td>
-            <button
-              aria-disabled="false"
-              aria-label="Friday, February 28, 2020"
-              aria-pressed="false"
-              class="cell day hover focus"
-              data-ref-id=""
-              tabindex="-1"
-              type="button"
-            >
-              28
-            </button>
-          </td>
-          <td>
-            <button
-              aria-disabled="false"
-              aria-label="Saturday, February 29, 2020"
-              aria-pressed="false"
-              class="cell day hover focus"
-              data-ref-id=""
-              tabindex="-1"
-              type="button"
-            >
-              29
-            </button>
-          </td>
-          
-        </tr>
-        
+        </tbody>
       </table>
     </div>
     

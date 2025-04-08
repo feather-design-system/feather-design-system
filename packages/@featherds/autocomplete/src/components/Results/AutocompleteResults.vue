@@ -122,9 +122,7 @@ export default defineComponent({
 });
 </script>
 <style lang="scss" scoped>
-@import "@featherds/styles/mixins/typography";
-@import "@featherds/styles/themes/variables";
-@import "@featherds/styles/themes/utils";
+@use "@featherds/styles/themes/variables" as vars;
 
 .feather-autocomplete-results-list {
   overflow-y: auto;
@@ -133,12 +131,12 @@ export default defineComponent({
     &.hr {
       height: 0;
       margin: 0.5rem 0;
-      border-bottom: 1px solid var($border-light-on-surface);
+      border-bottom: 1px solid var(vars.$border-light-on-surface);
     }
   }
   .autocomplete-item-new-label {
-    background-color: var($border-on-surface);
-    color: var($primary);
+    background-color: var(vars.$border-on-surface);
+    color: var(vars.$primary);
     padding: 0.25rem 0.5rem;
     display: inline-block;
     margin-left: 0.25rem;
@@ -146,8 +144,8 @@ export default defineComponent({
 }
 </style>
 <style lang="scss">
-@import "../../../scss/mixins";
+@use "../../../scss/mixins" as autocomplete-mixins;
 .feather-autocomplete-results-list {
-  @include autocomplete-results-height(6);
+  @include autocomplete-mixins.autocomplete-results-height(6);
 }
 </style>

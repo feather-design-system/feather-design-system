@@ -46,23 +46,23 @@ export default defineComponent({
 });
 </script>
 <style lang="scss" scoped>
-@import "@featherds/styles/mixins/typography";
-@import "@featherds/styles/themes/variables";
-@import "@featherds/styles/themes/utils";
+@use "@featherds/styles/themes/variables" as vars;
+@use "@featherds/styles/mixins/typography" as typo;
+@use "@featherds/styles/themes/utils" as utils;
 
 :deep(a.feather-vertical-app-bar-item:focus) {
   box-shadow: none;
 }
 
 :deep(a.feather-vertical-app-bar-item) {
-  @include subtitle2();
-  @include state-on-surface-dark();
+  @include typo.subtitle2();
+  @include utils.state-on-surface-dark();
   border-radius: 4px;
   transition: margin 280ms ease-in-out, padding 280ms ease-in-out;
 
   &.feather-list-item:visited {
     &:not(.selected) {
-      color: var($state-text-color-on-surface-dark);
+      color: var(vars.$state-text-color-on-surface-dark);
     }
   }
 

@@ -144,19 +144,19 @@ export default {
 };
 </script>
 <style lang="scss" scoped>
-@import "@featherds/table/scss/table";
-@import "@featherds/styles/mixins/typography";
+@use "@featherds/table/scss/table" as table;
+@use "@featherds/styles/mixins/typography" as typo;
 table {
   width: 100%;
-  @include table();
-  @include row-select();
-  @include row-hover();
+  @include table.table();
+  @include table.row-select();
+  @include table.row-hover();
   tbody tr {
     cursor: pointer;
   }
 
   .sr-only {
-    @include screen-reader;
+    @include typo.screen-reader;
   }
 }
 </style>

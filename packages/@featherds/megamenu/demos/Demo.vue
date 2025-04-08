@@ -42,7 +42,7 @@ export default defineComponent({
 });
 </script>
 <style lang="scss" scoped>
-@import "@featherds/styles/lib/grid";
+@use "@featherds/styles/lib/grid";
 #test {
   height: 120vh;
 }

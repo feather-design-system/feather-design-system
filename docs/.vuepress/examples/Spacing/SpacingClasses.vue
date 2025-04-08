@@ -58,6 +58,5 @@ export default {
 };
 </script>
 <style lang="scss" scoped>
-@import "@featherds/input-helper/scss/spacing";
 
 </style>

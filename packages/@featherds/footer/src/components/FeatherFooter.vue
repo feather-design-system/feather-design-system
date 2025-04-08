@@ -51,15 +51,15 @@ export default defineComponent({
 </script>
 
 <style lang="scss" scoped>
-@import "@featherds/styles/themes/variables";
-@import "@featherds/styles/mixins/typography";
+@use "@featherds/styles/themes/variables" as vars;
+@use "@featherds/styles/mixins/typography" as typo;
 footer {
   margin-top: 4rem;
   padding: 2rem 0;
   text-align: center;
-  border-top: 1px solid var($border-on-surface);
+  border-top: 1px solid var(vars.$border-on-surface);
   .footer-content {
-    max-width: var($content-width);
+    max-width: var(vars.$content-width);
     margin: 0 auto;
   }
   .footer-row {
@@ -69,7 +69,7 @@ footer {
     }
   }
   .copyright {
-    @include body-small();
+    @include typo.body-small();
   }
   .links ul {
     margin: 0;

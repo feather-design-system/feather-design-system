@@ -250,7 +250,7 @@ export default defineComponent({
 });
 </script>
 <style lang="scss" scoped>
-@import "@featherds/styles/themes/variables";
+@use "@featherds/styles/themes/variables" as vars;
 span {
   cursor: pointer;
   &:focus {
@@ -258,7 +258,7 @@ span {
   }
   &.disabled {
     cursor: text;
-    color: var($disabled-text-on-surface);
+    color: var(vars.$disabled-text-on-surface);
   }
 }
 </style>

@@ -19,13 +19,14 @@ export default {
 };
 </script>
 <style lang="scss" scoped>
-@import "@featherds/styles/mixins/typography";
+@use "@featherds/styles/themes/variables" as vars;
+@use "@featherds/styles/mixins/typography" as typo;
 .sidebar .title {
-  @include overline();
+  @include typo.overline();
   text-transform: uppercase;
   margin-bottom: 1rem;
   display: inline-block;
-  color: var($primary-text-on-surface);
+  color: var(vars.$primary-text-on-surface);
 }
 ul {
   margin: 0;

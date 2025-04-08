@@ -1,5 +1,5 @@
-@import "./open-mixins";
-@import "../lib/fonts.scss";
+@use "./open-mixins" as open-mixins;
+@use "../lib/fonts.scss";
 :root {
-  @include open-light();
+  @include open-mixins.open-light();
 }

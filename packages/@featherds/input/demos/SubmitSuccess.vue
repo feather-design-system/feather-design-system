@@ -96,8 +96,8 @@ export default defineComponent({
 });
 </script>
 <style lang="scss" scoped>
-@import "@featherds/styles/mixins/typography";
+@use "@featherds/styles/mixins/typography" as typo;
 .alert {
-  @include screen-reader();
+  @include typo.screen-reader();
 }
 </style>

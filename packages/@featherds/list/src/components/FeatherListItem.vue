@@ -90,31 +90,31 @@ export default defineComponent({
 });
 </script>
 <style lang="scss" scoped>
-@import "@featherds/styles/mixins/typography";
-@import "@featherds/styles/themes/variables";
-@import "@featherds/styles/themes/utils";
-@import "../../scss/variables";
+@use "@featherds/styles/themes/variables" as vars;
+@use "@featherds/styles/mixins/typography" as typo;
+@use "@featherds/styles/themes/utils" as utils;
+@use "../../scss/variables" as list-vars;
 li {
   list-style: none;
   white-space: nowrap;
 }
 .feather-list-item {
   list-style: none;
-  @include body-small();
-  color: var($secondary-text-on-surface);
-  height: $feather-list-height;
+  @include typo.body-small();
+  color: var(vars.$secondary-text-on-surface);
+  height: list-vars.$feather-list-height;
   padding: 0 1rem;
   display: flex;
   align-items: center;
   cursor: pointer;
-  @include state-on-surface();
+  @include utils.state-on-surface();
   &.selected {
-    color: var($primary-text-on-surface);
+    color: var(vars.$primary-text-on-surface);
   }
   &.disabled {
     cursor: default;
-    color: var($disabled-text-on-surface);
-    @include state-disabled();
+    color: var(vars.$disabled-text-on-surface);
+    @include utils.state-disabled();
   }
   .feather-list-item-text {
     flex: 1;
@@ -137,7 +137,7 @@ li {
 }
 
 li.feather-list-item.highlighted {
-  box-shadow: inset 3px 0 0px 0px var($primary);
+  box-shadow: inset 3px 0 0px 0px var(vars.$primary);
   &.disabled {
     outline: 0;
     box-shadow: none;
@@ -147,14 +147,14 @@ a.feather-list-item {
   text-decoration: none;
   &:focus {
     outline: 0;
-    box-shadow: inset 0 0 0 1px var($primary);
+    box-shadow: inset 0 0 0 1px var(vars.$primary);
   }
   &:hover,
   &:focus,
   &:active,
   &:visited {
     text-decoration: none;
-    color: var($secondary-text-on-surface);
+    color: var(vars.$secondary-text-on-surface);
   }
   &.disabled {
     outline: 0;
@@ -164,7 +164,7 @@ a.feather-list-item {
     &:active,
     &:visited {
       text-decoration: none;
-      color: var($disabled-text-on-surface);
+      color: var(vars.$disabled-text-on-surface);
     }
   }
 }

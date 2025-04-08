@@ -19,12 +19,12 @@ export default {
 };
 </script>
 <style scoped lang="scss">
-@import "@featherds/styles/themes/variables";
-@import "@featherds/styles/mixins/typography";
+@use "@featherds/styles/themes/variables" as vars;
+@use "@featherds/styles/mixins/typography" as typo;
 
 .overline-links-title {
-  @include body-large();
-  font-weight: var($font-bold);
+  @include typo.body-large();
+  font-weight: var(vars.$font-bold);
   margin-bottom: 0.5rem;
 }
 .overline-links {

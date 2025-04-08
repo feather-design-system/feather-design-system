@@ -79,11 +79,7 @@ export default defineComponent({
 
 <style lang="scss" scoped>
 @use "sass:math";
-@import "@featherds/styles/themes/variables";
-@import "@featherds/styles/mixins/elevation";
-@import "@featherds/styles/mixins/flex";
-@import "@featherds/styles/themes/utils";
-@import "@featherds/styles/mixins/typography";
+@use "@featherds/styles/themes/variables" as vars;
 
 .feather-snackbar-group {
   position: fixed;
@@ -91,7 +87,7 @@ export default defineComponent({
   bottom: 0px;
   right: 0px;
   pointer-events: none;
-  z-index: var(--feather-current-zindex, var($zindex-popover));
+  z-index: var(--feather-current-zindex, var(vars.$zindex-popover));
 
   &.relative {
     position: sticky;

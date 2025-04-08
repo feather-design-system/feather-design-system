@@ -16,14 +16,14 @@ export default {
 };
 </script>
 <style scoped lang="scss">
-@import "@featherds/styles/themes/variables";
-@import "@featherds/styles/mixins/typography";
+@use "@featherds/styles/themes/variables" as vars;
+@use "@featherds/styles/mixins/typography" as typo;
 .overline-link {
   list-style: none;
   margin-bottom: 0.5rem;
 }
 .overline-link a {
-  @include overline();
-  color: var($primary);
+  @include typo.overline();
+  color: var(vars.$primary);
 }
 </style>

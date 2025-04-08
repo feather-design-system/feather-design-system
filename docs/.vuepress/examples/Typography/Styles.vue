@@ -117,9 +117,9 @@ export default {
 };
 </script>
 <style lang="scss" scoped>
-@import "@featherds/styles/mixins/typography";
-@import "@featherds/styles/mixins/responsive";
-@import "@featherds/styles/themes/variables";
+@use "@featherds/styles/themes/variables" as vars;
+@use "@featherds/styles/mixins/typography" as typo;
+@use "@featherds/styles/mixins/responsive" as resp;
 
 .typography-container {
   margin-bottom: 1.5rem;
@@ -130,7 +130,7 @@ export default {
       width: 12.5rem;
       flex: none;
       .aa {
-        border-bottom: 1px solid var($border-on-surface);
+        border-bottom: 1px solid var(vars.$border-on-surface);
       }
     }
     .example {
@@ -143,12 +143,12 @@ export default {
       border-bottom: 1px solid transparent;
     }
     .subtext {
-      color: var($secondary-text-on-surface);
+      color: var(vars.$secondary-text-on-surface);
     }
   }
 }
 
-@include media-query-below(m) {
+@include resp.media-query-below(m) {
   .typography-container .typography-example {
     .alpha {
       display: none;
@@ -160,53 +160,53 @@ export default {
 }
 
 .display1 {
-  @include display1();
+  @include typo.display1();
 }
 .display2 {
-  @include display2();
+  @include typo.display2();
 }
 .display3 {
-  @include display3();
+  @include typo.display3();
 }
 .title {
-  @include title();
+  @include typo.title();
 }
 
 .headline1 {
-  @include headline1();
+  @include typo.headline1();
 }
 .headline2 {
-  @include headline2();
+  @include typo.headline2();
 }
 .headline3 {
-  @include headline3();
+  @include typo.headline3();
 }
 .headline4 {
-  @include headline4();
+  @include typo.headline4();
 }
 
 .subtitle1 {
-  @include subtitle1();
+  @include typo.subtitle1();
 }
 .subtitle2 {
-  @include subtitle2();
+  @include typo.subtitle2();
 }
 
 .bodyLarge {
-  @include body-large();
+  @include typo.body-large();
 }
 .bodySmall {
-  @include body-small();
+  @include typo.body-small();
 }
 
 .button {
-  @include button();
+  @include typo.button();
 }
 
 .caption {
-  @include caption();
+  @include typo.caption();
 }
 .overline {
-  @include overline();
+  @include typo.overline();
 }
 </style>

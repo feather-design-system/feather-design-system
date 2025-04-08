@@ -66,21 +66,21 @@ export default defineComponent({
 });
 </script>
 <style lang="scss" scoped>
-@import "@featherds/styles/themes/variables";
+@use "@featherds/styles/themes/variables" as vars;
 .password-icon {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  color: var($secondary-text-on-surface);
+  color: var(vars.$secondary-text-on-surface);
   &:visited,
   &:active {
-    color: var($secondary-text-on-surface);
+    color: var(vars.$secondary-text-on-surface);
   }
   font-size: 1.25rem;
   height: 1.25rem;
   cursor: pointer;
   &:hover {
-    color: var($primary-text-on-surface);
+    color: var(vars.$primary-text-on-surface);
   }
 }
 </style>

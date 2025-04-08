@@ -93,10 +93,6 @@ export default defineComponent({
 });
 </script>
 <style lang="scss" scoped>
-@import "@featherds/styles/mixins/typography";
-@import "@featherds/styles/themes/variables";
-@import "@featherds/styles/themes/utils";
-
 .feather-select-options-list {
   overflow-y: auto;
   min-width: 100%;
@@ -104,8 +100,8 @@ export default defineComponent({
 </style>
 
 <style lang="scss">
-@import "../../scss/mixins";
+@use "../../scss/mixins" as select-mixins;
 .feather-select-options-list {
-  @include select-menu-height(6);
+  @include select-mixins.select-menu-height(6);
 }
 </style>

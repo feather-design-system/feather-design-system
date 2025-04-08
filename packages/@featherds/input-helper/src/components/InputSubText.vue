@@ -63,23 +63,23 @@ export default defineComponent({
 });
 </script>
 <style lang="scss" scoped>
-@import "@featherds/styles/themes/variables";
-@import "@featherds/styles/mixins/typography";
+@use "@featherds/styles/themes/variables" as vars;
+@use "@featherds/styles/mixins/typography" as typo;
 .feather-input-sub-text {
   display: flex;
   min-height: 1.5rem;
   padding: 0.25rem 0.75rem 0.25rem 1rem;
 }
 .feather-input-hint {
-  @include caption();
-  color: var($secondary-text-on-surface);
+  @include typo.caption();
+  color: var(vars.$secondary-text-on-surface);
 }
 .feather-input-error {
-  @include caption();
-  color: var($error);
+  @include typo.caption();
+  color: var(vars.$error);
 }
 .feather-input-spacer {
-  @include caption();
+  @include typo.caption();
 }
 
 .feather-input-hint,

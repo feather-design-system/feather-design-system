@@ -814,12 +814,12 @@ export default defineComponent({
 </script>
 
 <style lang="scss" scoped>
-@import "@featherds/styles/mixins/typography";
-@import "@featherds/styles/themes/variables";
+@use "@featherds/styles/mixins/typography" as typo;
+@use "@featherds/styles/themes/variables" as vars;
 
 .alert,
 .description {
-  @include screen-reader();
+  @include typo.screen-reader();
 }
 
 .feather-autocomplete-container {
@@ -837,7 +837,7 @@ export default defineComponent({
 .min-char-warning,
 .selection-limit-warning {
   :deep(.feather-icon) {
-    color: var($primary);
+    color: var(vars.$primary);
     font-size: 1.25rem;
     margin-right: 0.75rem;
   }
@@ -855,10 +855,10 @@ export default defineComponent({
   background-color: transparent;
   flex: 1 1 2.5rem;
   width: 0;
-  @include body-small();
+  @include typo.body-small();
   line-height: 1.5em; //IE has an issue with the mixin lineheight when typing
-  color: var($primary-text-on-surface);
-  caret-color: var($primary);
+  color: var(vars.$primary-text-on-surface);
+  caret-color: var(vars.$primary);
   overflow: auto;
   &::-ms-clear {
     display: none;
@@ -867,22 +867,22 @@ export default defineComponent({
     outline: 0;
   }
   &.error {
-    caret-color: var($error);
+    caret-color: var(vars.$error);
   }
   [disabled] {
-    color: var($disabled-text-on-surface);
+    color: var(vars.$disabled-text-on-surface);
   }
 }
 
 .disabled {
   .feather-autocomplete-dropdown-icon,
   .feather-autocomplete-input {
-    color: var($disabled-text-on-surface);
+    color: var(vars.$disabled-text-on-surface);
     cursor: default;
   }
 }
 .feather-autocomplete-dropdown-icon {
-  color: var($secondary-text-on-surface);
+  color: var(vars.$secondary-text-on-surface);
   transition: transform 280ms ease-in-out;
   transform-origin: center center;
   font-size: 1.25rem;

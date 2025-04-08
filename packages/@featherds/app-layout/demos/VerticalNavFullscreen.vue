@@ -149,8 +149,8 @@ export default defineComponent({
 </script>
 
 <style lang="scss" scoped>
-@import "@featherds/styles/mixins/typography";
-@import "@featherds/styles/themes/variables";
+@use "@featherds/styles/mixins/typography" as typo;
+@use "@featherds/styles/themes/variables" as vars;
 .header-section {
   padding: 0 0.5rem;
   display: flex;
@@ -159,7 +159,7 @@ export default defineComponent({
   justify-content: flex-end;
 }
 .btn {
-  margin-left: var($spacing-xs);
+  margin-left: var(vars.$spacing-xs);
 }
 .country-select {
   width: 200px;
@@ -169,7 +169,7 @@ export default defineComponent({
 }
 .product-text {
   margin-left: 0.5rem;
-  @include headline3;
+  @include typo.headline3;
   color: var(--feather-app-rail-text-color);
 }
 </style>

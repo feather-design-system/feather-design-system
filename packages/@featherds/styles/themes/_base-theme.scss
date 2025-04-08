@@ -1,180 +1,180 @@
-@import "utils";
-@import "variables";
+@use "variables" as vars;
+@use "utils" as utils;
 
 $display1: (
-  $display1-font-size: 5rem,
-  $display1-line-height: 6rem,
-  $display1-letter-spacing: -0.015625em,
-  $display1-font-weight: var($font-normal),
-  $display1-text-transform: none,
-  $display1-font-style: normal,
+  vars.$display1-font-size: 5rem,
+  vars.$display1-line-height: 6rem,
+  vars.$display1-letter-spacing: -0.015625em,
+  vars.$display1-font-weight: var(vars.$font-normal),
+  vars.$display1-text-transform: none,
+  vars.$display1-font-style: normal,
 );
 
 $display2: (
-  $display2-font-size: 3.75rem,
-  $display2-line-height: 4.5rem,
-  $display2-letter-spacing: -0.0083em,
-  $display2-font-weight: var($font-normal),
-  $display2-text-transform: none,
-  $display2-font-style: normal,
+  vars.$display2-font-size: 3.75rem,
+  vars.$display2-line-height: 4.5rem,
+  vars.$display2-letter-spacing: -0.0083em,
+  vars.$display2-font-weight: var(vars.$font-normal),
+  vars.$display2-text-transform: none,
+  vars.$display2-font-style: normal,
 );
 
 $display3: (
-  $display3-font-size: 3rem,
-  $display3-line-height: 3.75rem,
-  $display3-letter-spacing: -0.005em,
-  $display3-font-weight: var($font-medium),
-  $display3-text-transform: none,
-  $display3-font-style: normal,
+  vars.$display3-font-size: 3rem,
+  vars.$display3-line-height: 3.75rem,
+  vars.$display3-letter-spacing: -0.005em,
+  vars.$display3-font-weight: var(vars.$font-medium),
+  vars.$display3-text-transform: none,
+  vars.$display3-font-style: normal,
 );
 
 $title: (
-  $title-font-size: 2.125rem,
-  $title-line-height: 2.5rem,
-  $title-letter-spacing: normal,
-  $title-font-weight: var($font-light),
-  $title-text-transform: none,
-  $title-font-style: normal,
+  vars.$title-font-size: 2.125rem,
+  vars.$title-line-height: 2.5rem,
+  vars.$title-letter-spacing: normal,
+  vars.$title-font-weight: var(vars.$font-light),
+  vars.$title-text-transform: none,
+  vars.$title-font-style: normal,
 );
 
 $headline1: (
-  $headline1-font-size: 1.75rem,
-  $headline1-line-height: 2.25rem,
-  $headline1-letter-spacing: normal,
-  $headline1-font-weight: var($font-semibold),
-  $headline1-text-transform: none,
-  $headline1-font-style: normal,
+  vars.$headline1-font-size: 1.75rem,
+  vars.$headline1-line-height: 2.25rem,
+  vars.$headline1-letter-spacing: normal,
+  vars.$headline1-font-weight: var(vars.$font-semibold),
+  vars.$headline1-text-transform: none,
+  vars.$headline1-font-style: normal,
 );
 
 $headline2: (
-  $headline2-font-size: 1.5rem,
-  $headline2-line-height: 2rem,
-  $headline2-letter-spacing: normal,
-  $headline2-font-weight: var($font-medium),
-  $headline2-text-transform: none,
-  $headline2-font-style: normal,
+  vars.$headline2-font-size: 1.5rem,
+  vars.$headline2-line-height: 2rem,
+  vars.$headline2-letter-spacing: normal,
+  vars.$headline2-font-weight: var(vars.$font-medium),
+  vars.$headline2-text-transform: none,
+  vars.$headline2-font-style: normal,
 );
 
 $headline3: (
-  $headline3-font-size: 1.1875rem,
-  $headline3-line-height: 2rem,
-  $headline3-letter-spacing: 0.012em,
-  $headline3-font-weight: var($font-bold),
-  $headline3-text-transform: none,
-  $headline3-font-style: normal,
+  vars.$headline3-font-size: 1.1875rem,
+  vars.$headline3-line-height: 2rem,
+  vars.$headline3-letter-spacing: 0.012em,
+  vars.$headline3-font-weight: var(vars.$font-bold),
+  vars.$headline3-text-transform: none,
+  vars.$headline3-font-style: normal,
 );
 
 $headline4: (
-  $headline4-font-size: 1rem,
-  $headline4-line-height: 2rem,
-  $headline4-letter-spacing: 0.0125em,
-  $headline4-font-weight: var($font-semibold),
-  $headline4-text-transform: none,
-  $headline4-font-style: normal,
+  vars.$headline4-font-size: 1rem,
+  vars.$headline4-line-height: 2rem,
+  vars.$headline4-letter-spacing: 0.0125em,
+  vars.$headline4-font-weight: var(vars.$font-semibold),
+  vars.$headline4-text-transform: none,
+  vars.$headline4-font-style: normal,
 );
 
 $subtitle1: (
-  $subtitle1-font-size: 0.875rem,
-  $subtitle1-line-height: 1.5rem,
-  $subtitle1-letter-spacing: 0.00714em,
-  $subtitle1-font-weight: var($font-bold),
-  $subtitle1-text-transform: none,
-  $subtitle1-font-style: normal,
+  vars.$subtitle1-font-size: 0.875rem,
+  vars.$subtitle1-line-height: 1.5rem,
+  vars.$subtitle1-letter-spacing: 0.00714em,
+  vars.$subtitle1-font-weight: var(vars.$font-bold),
+  vars.$subtitle1-text-transform: none,
+  vars.$subtitle1-font-style: normal,
 );
 
 $subtitle2: (
-  $subtitle2-font-size: 0.8125rem,
-  $subtitle2-line-height: 1.25rem,
-  $subtitle2-letter-spacing: 0.00714em,
-  $subtitle2-font-weight: var($font-bold),
-  $subtitle2-text-transform: none,
-  $subtitle2-font-style: normal,
+  vars.$subtitle2-font-size: 0.8125rem,
+  vars.$subtitle2-line-height: 1.25rem,
+  vars.$subtitle2-letter-spacing: 0.00714em,
+  vars.$subtitle2-font-weight: var(vars.$font-bold),
+  vars.$subtitle2-text-transform: none,
+  vars.$subtitle2-font-style: normal,
 );
 
 $body-large: (
-  $body-large-font-size: 1rem,
-  $body-large-line-height: 1.75rem,
-  $body-large-letter-spacing: 0.03125em,
-  $body-large-font-weight: var($font-normal),
-  $body-large-text-transform: none,
-  $body-large-font-style: normal,
+  vars.$body-large-font-size: 1rem,
+  vars.$body-large-line-height: 1.75rem,
+  vars.$body-large-letter-spacing: 0.03125em,
+  vars.$body-large-font-weight: var(vars.$font-normal),
+  vars.$body-large-text-transform: none,
+  vars.$body-large-font-style: normal,
 );
 
 $body-small: (
-  $body-small-font-size: 0.875rem,
-  $body-small-line-height: 1.5rem,
-  $body-small-letter-spacing: 0.01786em,
-  $body-small-font-weight: var($font-normal),
-  $body-small-text-transform: none,
-  $body-small-font-style: normal,
+  vars.$body-small-font-size: 0.875rem,
+  vars.$body-small-line-height: 1.5rem,
+  vars.$body-small-letter-spacing: 0.01786em,
+  vars.$body-small-font-weight: var(vars.$font-normal),
+  vars.$body-small-text-transform: none,
+  vars.$body-small-font-style: normal,
 );
 
 $button: (
-  $button-font-size: 0.875rem,
-  $button-line-height: 1.25rem,
-  $button-letter-spacing: 0.08929em,
-  $button-font-weight: var($font-bold),
-  $button-text-transform: uppercase,
-  $button-font-style: normal,
+  vars.$button-font-size: 0.875rem,
+  vars.$button-line-height: 1.25rem,
+  vars.$button-letter-spacing: 0.08929em,
+  vars.$button-font-weight: var(vars.$font-bold),
+  vars.$button-text-transform: uppercase,
+  vars.$button-font-style: normal,
 );
 $caption: (
-  $caption-font-size: 0.75rem,
-  $caption-line-height: 1rem,
-  $caption-letter-spacing: normal,
-  $caption-font-weight: var($font-normal),
-  $caption-text-transform: none,
-  $caption-font-style: normal,
+  vars.$caption-font-size: 0.75rem,
+  vars.$caption-line-height: 1rem,
+  vars.$caption-letter-spacing: normal,
+  vars.$caption-font-weight: var(vars.$font-normal),
+  vars.$caption-text-transform: none,
+  vars.$caption-font-style: normal,
 );
 
 $overline: (
-  $overline-font-size: 0.75rem,
-  $overline-line-height: 1rem,
-  $overline-letter-spacing: 0.105em,
-  $overline-font-weight: var($font-semibold),
-  $overline-text-transform: uppercase,
-  $overline-font-style: normal,
+  vars.$overline-font-size: 0.75rem,
+  vars.$overline-line-height: 1rem,
+  vars.$overline-letter-spacing: 0.105em,
+  vars.$overline-font-weight: var(vars.$font-semibold),
+  vars.$overline-text-transform: uppercase,
+  vars.$overline-font-style: normal,
 );
 
 $typography: (
-  $root-font-size: 1rem,
-  $header-font-family: #{"Inter",
+  vars.$root-font-size: 1rem,
+  vars.$header-font-family: #{"Inter",
   Helvetica,
   Arial,
   sans-serif},
-  $font-family: #{"OpenSans",
+  vars.$font-family: #{"OpenSans",
   Helvetica,
   Arial,
   sans-serif},
-  $font-light: 300,
-  $font-normal: normal,
-  $font-medium: 500,
-  $font-semibold: 600,
-  $font-bold: 700,
-  $base-font-size: 0.875rem,
+  vars.$font-light: 300,
+  vars.$font-normal: normal,
+  vars.$font-medium: 500,
+  vars.$font-semibold: 600,
+  vars.$font-bold: 700,
+  vars.$base-font-size: 0.875rem,
 );
 
 $layout: (
-  $header-height: 3.75rem,
-  $content-width: 75rem,
-  $zindex-dropdown: 1000,
-  $zindex-sticky: 1020,
-  $zindex-fixed: 1030,
-  $zindex-modal-backdrop: 1040,
-  $zindex-modal: 1050,
-  $zindex-popover: 1060,
-  $zindex-tooltip: 1070,
+  vars.$header-height: 3.75rem,
+  vars.$content-width: 75rem,
+  vars.$zindex-dropdown: 1000,
+  vars.$zindex-sticky: 1020,
+  vars.$zindex-fixed: 1030,
+  vars.$zindex-modal-backdrop: 1040,
+  vars.$zindex-modal: 1050,
+  vars.$zindex-popover: 1060,
+  vars.$zindex-tooltip: 1070,
 );
 $spacing: (
-  $spacing-xxs: 0.25rem,
-  $spacing-xs: 0.5rem,
-  $spacing-s: 0.75rem,
-  $spacing-m: 1rem,
-  $spacing-l: 1.25rem,
-  $spacing-xl: 1.5rem,
-  $spacing-xxl: 3rem,
+  vars.$spacing-xxs: 0.25rem,
+  vars.$spacing-xs: 0.5rem,
+  vars.$spacing-s: 0.75rem,
+  vars.$spacing-m: 1rem,
+  vars.$spacing-l: 1.25rem,
+  vars.$spacing-xl: 1.5rem,
+  vars.$spacing-xxl: 3rem,
 );
 
-$base-theme: map-collect(
+$base-theme: utils.map-collect(
   $display1,
   $display2,
   $display3,

@@ -100,7 +100,6 @@ export default defineComponent({
 </script>
 
 <style lang="scss" scoped>
-@import "@featherds/styles/themes/variables";
 .feather-tab-container {
   position: relative;
   .feather-tab-slider {
@@ -132,8 +131,8 @@ export default defineComponent({
 }
 </style>
 <style lang="scss">
-@import "@featherds/styles/themes/variables";
+@use "@featherds/styles/themes/variables" as vars;
 .feather-tab-slider {
-  background-color: var($primary);
+  background-color: var(vars.$primary);
 }
 </style>

@@ -76,7 +76,7 @@ export default defineComponent({
 </script>
 
 <style lang="scss" scoped>
-@import "../../scss/mixins";
+@use "../../scss/mixins" as chip-mixins;
 .chip-list {
   margin: 0;
   margin-top: 0.75rem;
@@ -93,13 +93,13 @@ export default defineComponent({
   }
   &.condensed {
     :deep(.chip) {
-      @include condensed-chip;
+      @include chip-mixins.condensed-chip;
     }
   }
   &.single {
     margin: 0;
     :deep(.chip) {
-      @include standalone-chip;
+      @include chip-mixins.standalone-chip;
     }
   }
 }

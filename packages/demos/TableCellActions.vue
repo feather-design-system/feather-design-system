@@ -180,24 +180,24 @@ export default {
 };
 </script>
 <style lang="scss" scoped>
-@import "@featherds/table/scss/table";
-@import "@featherds/styles/themes/variables";
-@import "@featherds/styles/mixins/typography";
+@use "@featherds/styles/themes/variables" as vars;
+@use "@featherds/styles/mixins/typography" as typo;
+@use "@featherds/table/scss/table" as table;
 table {
   width: 100%;
-  @include table();
-  @include row-hover();
+  @include table.table();
+  @include table.row-hover();
   .icon-cell {
-    color: var($secondary-text-on-surface);
+    color: var(vars.$secondary-text-on-surface);
     &.Online {
-      color: var($success);
+      color: var(vars.$success);
     }
   }
   .small-col {
     width: 15%;
   }
   .sr-only {
-    @include screen-reader;
+    @include typo.screen-reader;
   }
 }
 </style>

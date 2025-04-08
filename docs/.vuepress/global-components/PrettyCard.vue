@@ -37,23 +37,23 @@ export default {
 };
 </script>
 <style lang="scss" scoped>
-@import "@featherds/styles/themes/variables";
-@import "@featherds/styles/mixins/elevation";
-@import "@featherds/styles/mixins/typography";
+@use "@featherds/styles/themes/variables" as vars;
+@use "@featherds/styles/mixins/elevation" as elev;
+@use "@featherds/styles/mixins/typography" as typo;
 a.pretty-card {
   display: inline-block;
   position: relative;
   width: 19.8125rem;
   flex: 0 1 19.8125rem;
-  border: 1px solid var($secondary);
-  background-color: var($surface);
+  border: 1px solid var(vars.$secondary);
+  background-color: var(vars.$surface);
   border-bottom-right-radius: 16px;
   text-decoration: none;
   transition: 0.3s;
   vertical-align: middle;
   &:hover,
   &:focus {
-    @include elevation(4);
+    @include elev.elevation(4);
     cursor: pointer;
     text-decoration: none;
   }
@@ -61,7 +61,7 @@ a.pretty-card {
     margin-right: 0;
   }
   h3 {
-    @include headline3();
+    @include typo.headline3();
   }
 
   img {
@@ -73,19 +73,19 @@ a.pretty-card {
     padding: 1.5rem 1.5rem 2.5rem 1.5rem;
   }
   span.overline {
-    @include overline();
+    @include typo.overline();
     line-height: normal;
     padding-bottom: 0;
-    color: var($primary);
+    color: var(vars.$primary);
   }
   h3 {
     margin-top: 0;
     margin-bottom: 0;
     margin-right: 1rem;
-    line-height: var($headline3-font-size);
+    line-height: var(vars.$headline3-font-size);
   }
   .feather-icon {
-    color: var($primary);
+    color: var(vars.$primary);
     position: absolute;
     font-size: 2.5rem;
     bottom: 0;

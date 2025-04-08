@@ -96,25 +96,26 @@ export default {
 };
 </script>
 <style lang="scss" scoped>
-@import "@featherds/styles/mixins/grid";
-@import "@featherds/styles/themes/variables";
-@import "@featherds/styles/mixins/elevation";
-@import "@featherds/styles/mixins/typography";
+@use "@featherds/styles/themes/variables" as vars;
+@use "@featherds/styles/mixins/elevation" as elev;
+@use "@featherds/styles/mixins/typography" as typo;
+@use "@featherds/styles/mixins/responsive" as resp;
+
 $width: 16.5rem;
 .fake-header {
   display: flex;
   align-items: center;
-  height: var($header-height);
+  height: var(vars.$header-height);
   padding-left: 1rem;
   flex: none;
-  border-bottom: 1px solid var($border-on-surface);
+  border-bottom: 1px solid var(vars.$border-on-surface);
   a {
-    @include headline4;
-    color: var($primary-text-on-surface);
+    @include typo.headline4;
+    color: var(vars.$primary-text-on-surface);
     &:hover,
     &:visited,
     &:active {
-      color: var($primary-text-on-surface);
+      color: var(vars.$primary-text-on-surface);
     }
   }
 }
@@ -125,9 +126,9 @@ $width: 16.5rem;
 
 .nav-list {
   height: calc(100vh);
-  background: var($background);
-  color: var($primary-text-on-surface);
-  @include elevation(2);
+  background: var(vars.$background);
+  color: var(vars.$primary-text-on-surface);
+  @include elev.elevation(2);
   position: fixed;
   width: $width;
   top: 0;
@@ -138,7 +139,7 @@ $width: 16.5rem;
     overflow-y: auto;
     flex: 1;
     :deep(.feather-list-item-text) {
-      @include body-large;
+      @include typo.body-large;
     }
     :deep(.feather-list-item) {
       height: 3rem !important;
@@ -146,15 +147,15 @@ $width: 16.5rem;
   }
 }
 
-@include media-query-below(xl) {
+@include resp.media-query-below(xl) {
   .app-rail.responsive {
     display: none;
     .app-rail-content {
       position: fixed;
       left: 0;
       top: 0;
-      @include elevation(24);
-      z-index: var($zindex-modal);
+      @include elev.elevation(24);
+      z-index: var(vars.$zindex-modal);
       transition: transform 280ms ease-in-out;
       transform: translateX(-100%);
     }
@@ -165,8 +166,8 @@ $width: 16.5rem;
       top: 0;
       bottom: 0;
       right: 0;
-      z-index: var($zindex-modal-backdrop);
-      background-color: var($disabled-text-on-surface);
+      z-index: var(vars.$zindex-modal-backdrop);
+      background-color: var(vars.$disabled-text-on-surface);
     }
 
     &.show {

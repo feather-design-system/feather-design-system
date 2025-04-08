@@ -25,7 +25,7 @@
 </template>
 
 <style lang="scss" scoped>
-@import "@featherds/styles/mixins/typography";
+@use "@featherds/styles/mixins/typography" as typo;
 .italics {
   font-style: italic;
 }
@@ -34,33 +34,33 @@
   font-weight: bold;
 }
 .display-1 {
-  @include display1();
+  @include typo.display1();
 }
 .display-2 {
-  @include display2();
+  @include typo.display2();
 }
 .display-3 {
-  @include display3();
+  @include typo.display3();
 }
 .subtitle1-mixin {
-  @include subtitle1();
+  @include typo.subtitle1();
 }
 .subtitle2-mixin {
-  @include subtitle2();
+  @include typo.subtitle2();
 }
 .body-large-mixin {
-  @include body-large();
+  @include typo.body-large();
 }
 .body-small-mixin {
-  @include body-small();
+  @include typo.body-small();
 }
 .button-mixin {
-  @include button();
+  @include typo.button();
 }
 .caption-mixin {
-  @include caption();
+  @include typo.caption();
 }
 .overline-mixin {
-  @include overline();
+  @include typo.overline();
 }
 </style>

@@ -32,17 +32,17 @@ export default defineComponent({
 </script>
 
 <style lang="scss" scoped>
-@import "@featherds/styles/themes/utils";
-@import "@featherds/styles/themes/variables";
-@import "@featherds/styles/mixins/typography";
+@use "@featherds/styles/themes/variables" as vars;
+@use "@featherds/styles/themes/utils" as utils;
+@use "@featherds/styles/mixins/typography" as typo;
 
 button.btn-menu {
-  @include button();
+  @include typo.button();
   height: 100%;
   display: flex;
   align-items: center;
-  background-color: var($secondary);
-  color: var($primary-text-on-color);
+  background-color: var(vars.$secondary);
+  color: var(vars.$primary-text-on-color);
   border: none;
   border-bottom: 1px solid transparent;
   border-radius: 0;
@@ -52,7 +52,7 @@ button.btn-menu {
   padding: 0 1rem;
   position: relative;
   cursor: pointer;
-  @include state-on-color($secondary);
+  @include utils.state-on-color(vars.$secondary);
   :deep(svg) {
     position: relative;
   }

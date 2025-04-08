@@ -181,8 +181,8 @@ export default defineComponent({
 });
 </script>
 <style lang="scss" scoped>
-@import "../scss/table";
+@use "../scss/table" as table;
 table {
-  @include table();
+  @include table.table();
 }
 </style>

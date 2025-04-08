@@ -77,19 +77,19 @@ export default defineComponent({
 });
 </script>
 <style lang="scss" scoped>
-@import "@featherds/styles/themes/variables";
-@import "@featherds/styles/mixins/typography";
-@import "@featherds/styles/themes/utils";
-@import "@featherds/drawer/src/scss/variables";
+@use "@featherds/styles/themes/variables" as vars;
+@use "@featherds/styles/mixins/typography" as typo;
+@use "@featherds/styles/themes/utils" as utils;
+@use "@featherds/drawer/src/scss/variables" as drawer-vars;
 
 li {
   position: relative;
 }
 li {
-  @include state-on-neutral();
+  @include utils.state-on-neutral();
   .tab-icon-ripple-container {
-    width: $tab-width;
-    height: $tab-width;
+    width: drawer-vars.$tab-width;
+    height: drawer-vars.$tab-width;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -97,47 +97,53 @@ li {
 
   .tab {
     position: relative;
-    @include headline4();
-    color: var($primary-text-on-color);
-    width: $tab-width;
-    height: $tab-width;
-    line-height: $tab-width;
+    @include typo.headline4();
+    color: var(vars.$primary-text-on-color);
+    width: drawer-vars.$tab-width;
+    height: drawer-vars.$tab-width;
+    line-height: drawer-vars.$tab-width;
     display: block;
     text-align: center;
     padding: 1px;
     &[aria-selected="true"] {
-      box-shadow: inset -2px 0 0 0 var($secondary-text-on-color);
+      box-shadow: inset -2px 0 0 0 var(vars.$secondary-text-on-color);
     }
     &:focus {
       padding: 0px;
-      border: var($state-color-on-color) solid 1px;
+      border: var(vars.$state-color-on-color) solid 1px;
     }
     &:visited {
-      color: var($primary-text-on-color);
+      color: var(vars.$primary-text-on-color);
       &[aria-selected="true"] {
-        color: var($primary-text-on-color);
+        color: var(vars.$primary-text-on-color);
       }
     }
   }
 }
 
 span.tab-label {
-  color: var($primary-text-on-color);
+  color: var(vars.$primary-text-on-color);
   //to achieve background color properly, we need to put surface first for a background,
   //then shade-1 to match the bar, then the hover effect on top
   background-image: linear-gradient(
       to right,
-      alpha($state-color-on-neutral, var($state-opacity-hover-on-surface)),
-      alpha($state-color-on-neutral, var($state-opacity-hover-on-surface))
+      utils.alpha(
+        vars.$state-color-on-neutral,
+        var(vars.$state-opacity-hover-on-surface)
+      ),
+      utils.alpha(
+        vars.$state-color-on-neutral,
+        var(vars.$state-opacity-hover-on-surface)
+      )
     ),
-    linear-gradient(to right, var($shade-1), var($shade-1)),
-    linear-gradient(to right, var($surface), var($surface));
-  height: $tab-width;
-  line-height: $tab-width;
-  font-size: var($base-font-size);
+    linear-gradient(to right, var(vars.$shade-1), var(vars.$shade-1)),
+    linear-gradient(to right, var(vars.$surface), var(vars.$surface));
+  height: drawer-vars.$tab-width;
+  line-height: drawer-vars.$tab-width;
+  font-size: var(vars.$base-font-size);
   position: absolute;
   top: 0;
-  left: $tab-width;
+  left: drawer-vars.$tab-width;
   white-space: nowrap;
   z-index: 1;
   border-radius: 0 4px 4px 0px;
@@ -145,8 +151,8 @@ span.tab-label {
   & > span.content {
     padding: 0 1rem;
     display: inline-block;
-    height: $tab-width;
-    line-height: $tab-width;
+    height: drawer-vars.$tab-width;
+    line-height: drawer-vars.$tab-width;
   }
 }
 

@@ -20,10 +20,10 @@ export default defineComponent({
 });
 </script>
 <style lang="scss" scoped>
-@import "@featherds/styles/themes/variables";
+@use "@featherds/styles/themes/variables" as vars;
 .fake-header {
   height: 3.75rem;
-  background-color: var($background);
+  background-color: var(vars.$background);
   padding-left: 1rem;
   display: flex;
   align-items: center;

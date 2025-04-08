@@ -169,9 +169,9 @@ export default defineComponent({
 
 <style lang="scss" scoped>
 @use "sass:math";
-@import "@featherds/styles/themes/variables";
-@import "@featherds/styles/mixins/elevation";
-@import "@featherds/styles/mixins/typography";
+@use "@featherds/styles/themes/variables" as vars;
+@use "@featherds/styles/mixins/elevation" as elev;
+@use "@featherds/styles/mixins/typography" as typo;
 
 .feather-snackbar-wrapper {
   display: flex;
@@ -181,14 +181,14 @@ export default defineComponent({
   right: 0px;
   padding: 24px;
   pointer-events: none;
-  z-index: var(--feather-current-zindex, var($zindex-popover));
+  z-index: var(--feather-current-zindex, var(vars.$zindex-popover));
 
   .feather-snackbar {
     display: flex;
     flex-wrap: wrap;
-    @include elevation(6);
+    @include elev.elevation(6);
     border-radius: 4px;
-    background-color: var($high-visibility-on-surface);
+    background-color: var(vars.$high-visibility-on-surface);
     padding: 0.75rem 0 0.75rem 1rem;
     max-width: 540px;
     overflow: visible;
@@ -208,8 +208,8 @@ export default defineComponent({
     }
 
     .content-wrapper {
-      @include body-small();
-      color: var($secondary-text-on-color);
+      @include typo.body-small();
+      color: var(vars.$secondary-text-on-color);
       min-width: calc(160px + 1rem);
       max-width: calc(400px + 1rem);
       padding-right: 1rem;
@@ -220,28 +220,28 @@ export default defineComponent({
       padding: 0 0.5rem 0 0.5rem;
 
       & :deep(.btn-text) {
-        color: var($high-visibility-text-on-surface);
+        color: var(vars.$high-visibility-text-on-surface);
 
         &:focus {
-          border-color: var($high-visibility-text-on-surface);
+          border-color: var(vars.$high-visibility-text-on-surface);
         }
       }
 
-      color: var($secondary-text-on-color);
+      color: var(vars.$secondary-text-on-color);
     }
 
     &.error {
-      background-color: var($error);
+      background-color: var(vars.$error);
 
       .content-wrapper {
-        color: var($secondary-text-on-color);
+        color: var(vars.$secondary-text-on-color);
       }
 
       :deep(.btn-text) {
-        color: var($primary-text-on-color);
+        color: var(vars.$primary-text-on-color);
 
         &:focus {
-          border-color: var($primary-text-on-color);
+          border-color: var(vars.$primary-text-on-color);
         }
       }
     }

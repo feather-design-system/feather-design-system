@@ -1,4 +1,4 @@
-@import "@featherds/styles/themes/variables";
+@use "@featherds/styles/themes/variables" as vars;
 
 @mixin standalone-chip() {
   margin: 0.75rem 1rem;
@@ -26,10 +26,10 @@
     font-size: 1.125rem;
     height: 1.125rem;
     margin-right: 0.25rem;
-    color: var($secondary-text-on-surface);
+    color: var(vars.$secondary-text-on-surface);
     cursor: pointer;
     &:hover {
-      color: var($primary-text-on-surface);
+      color: var(vars.$primary-text-on-surface);
     }
     &:focus {
       outline: 0;

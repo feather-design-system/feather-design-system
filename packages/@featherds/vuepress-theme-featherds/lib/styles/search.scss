@@ -1,33 +1,40 @@
+@use "@featherds/styles/mixins/typography" as typo;
+@use "@featherds/styles/themes/variables" as vars;
+@use "@featherds/styles/mixins/elevation" as elev;
+@use "@featherds/styles/lib/reset";
+@use "@featherds/styles/lib/typography";
+
 .DocSearch {
-  @include header();
-  @import "@featherds/styles/lib/reset";
-  @import "@featherds/styles/lib/typography";
+
+
   --docsearch-searchbox-background: transparent;
-  --docsearch-muted-color: var(#{$state-text-color-on-surface-dark});
-  --docsearch-text-color: var(#{$state-text-color-focus-on-surface-dark});
+  --docsearch-muted-color: var(#{vars.$state-text-color-on-surface-dark});
+  --docsearch-text-color: var(#{vars.$state-text-color-focus-on-surface-dark});
   --docsearch-searchbox-height: 2.5rem;
-  color: var($state-color-on-surface-dark);
+  @include typo.header();
+  // @include typography.typography-style();
+  color: var(vars.$state-color-on-surface-dark);
   .DocSearch-Button-Keys {
     display: none;
   }
   &.DocSearch-Button {
     border-radius: 4px;
     height: 2.5rem;
-    border: 1px solid var($state-text-color-on-surface-dark);
+    border: 1px solid var(vars.$state-text-color-on-surface-dark);
     padding: 0 1rem 1px 0.75rem;
     margin: 0 0 0 1rem;
     position: relative;
     &:hover,
     &:focus,
     &:active {
-      border: 1px solid var($state-color-on-surface-dark);
+      border: 1px solid var(vars.$state-color-on-surface-dark);
       background-color: transparent;
       box-shadow: none;
 
       &:after {
         content: "";
         width: 3px;
-        background-color: var($state-color-on-surface-dark);
+        background-color: var(vars.$state-color-on-surface-dark);
         top: 0.5rem;
         bottom: 0.5rem;
         left: 0px;
@@ -39,7 +46,7 @@
         transform-origin: center;
       }
       .DocSearch-Button-Placeholder {
-        color: var($state-color-on-surface-dark);
+        color: var(vars.$state-color-on-surface-dark);
       }
     }
 
@@ -54,7 +61,7 @@
   }
 
   &.DocSearch-Container {
-    z-index: var($zindex-modal);
+    z-index: var(vars.$zindex-modal);
     --docsearch-muted-color: var(--feather-secondary-text-on-surface);
     --docsearch-text-color: var(--feather-primary-text-on-surface);
     --docsearch-searchbox-focus-background: transparent;
@@ -68,24 +75,24 @@
     --docsearch-highlight-color: var(--feather-primary);
     .DocSearch-Modal {
       border-radius: 4px;
-      background-color: var($surface);
-      @include elevation(24);
+      background-color: var(vars.$surface);
+      @include elev.elevation(24);
     }
   }
 
   .DocSearch-Form {
     box-shadow: none;
-    border: 1px solid var($primary);
+    border: 1px solid var(vars.$primary);
     input {
       font-size: 0.875rem;
     }
     svg {
       height: 1.125rem;
       width: 1.125rem;
-      color: var($secondary-text-on-surface);
+      color: var(vars.$secondary-text-on-surface);
     }
   }
   .DocSearch-Footer {
-    border-top: 1px solid var($border-on-surface);
+    border-top: 1px solid var(vars.$border-on-surface);
   }
 }

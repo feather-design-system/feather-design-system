@@ -127,8 +127,8 @@ export default defineComponent({
 });
 </script>
 <style lang="scss" scoped>
-@import "@featherds/styles/mixins/typography";
-@import "@featherds/styles/themes/variables";
+@use "@featherds/styles/mixins/typography" as typo;
+@use "@featherds/styles/themes/variables" as vars;
 
 .product {
   margin-right: 18px;
@@ -140,7 +140,7 @@ export default defineComponent({
 }
 
 .app-bar-link {
-  @include header();
+  @include typo.header();
   height: 100%;
   padding: 0.5rem;
   margin: 0 0.75rem;
@@ -153,20 +153,20 @@ export default defineComponent({
   &:active,
   &:hover,
   &:visited {
-    color: var($state-text-color-on-surface-dark);
+    color: var(vars.$state-text-color-on-surface-dark);
     text-decoration: none;
   }
 }
 
 .product-icon {
   font-size: 18px;
-  color: var($state-text-color-on-surface-dark);
+  color: var(vars.$state-text-color-on-surface-dark);
 }
 
 .product-text {
   margin-left: 0.5rem;
-  @include headline3;
-  color: var($state-text-color-on-surface-dark);
+  @include typo.headline3;
+  color: var(vars.$state-text-color-on-surface-dark);
 }
 
 .user {
@@ -176,16 +176,16 @@ export default defineComponent({
   .user-icon {
     height: 2rem;
     width: 2rem;
-    color: var($primary);
+    color: var(vars.$primary);
     margin-right: 1rem;
   }
 
   .user-name {
-    @include subtitle1;
+    @include typo.subtitle1;
   }
 
   .sub {
-    @include caption;
+    @include typo.caption;
   }
 }
 </style>

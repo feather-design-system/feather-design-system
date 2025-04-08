@@ -128,15 +128,15 @@ export default defineComponent({
 </script>
 
 <style lang="scss" scoped>
-@import "@featherds/styles/mixins/typography";
-@import "@featherds/styles/themes/variables";
-@import "@featherds/styles/themes/utils";
+@use "@featherds/styles/themes/variables" as vars;
+@use "@featherds/styles/mixins/typography" as typo;
+@use "@featherds/styles/themes/utils" as utils;
 
 .feather-radio {
   &:focus {
     outline: 0;
   }
-  @include state-on-surface();
+  @include utils.state-on-surface();
 }
 .layout-container {
   display: inline-block;
@@ -158,7 +158,7 @@ export default defineComponent({
   .icon {
     height: 1.25rem;
     width: 1.25rem;
-    border: 2px solid var($secondary-text-on-surface);
+    border: 2px solid var(vars.$secondary-text-on-surface);
     background-color: transparent;
     border-radius: 100%;
     position: relative;
@@ -167,14 +167,14 @@ export default defineComponent({
     position: absolute;
     height: 100%;
     width: 100%;
-    fill: var($primary);
+    fill: var(vars.$primary);
     border-radius: 100%;
     opacity: 0;
     transform: scale(0);
   }
   .label {
-    @include body-small();
-    color: var($primary-text-on-surface);
+    @include typo.body-small();
+    color: var(vars.$primary-text-on-surface);
     min-width: 1.5rem;
     padding-right: 0.75rem;
     padding-left: 0.25rem;
@@ -189,7 +189,7 @@ export default defineComponent({
 
 .feather-radio[aria-checked="true"] {
   .icon {
-    border-color: var($primary);
+    border-color: var(vars.$primary);
   }
   .dot {
     transition: all 280ms ease-in-out;
@@ -198,15 +198,15 @@ export default defineComponent({
   }
 }
 .feather-radio[aria-disabled="true"] {
-  @include state-disabled();
+  @include utils.state-disabled();
   .icon {
-    border-color: var($disabled-text-on-surface);
+    border-color: var(vars.$disabled-text-on-surface);
   }
   .label {
-    color: var($disabled-text-on-surface);
+    color: var(vars.$disabled-text-on-surface);
   }
   .dot {
-    fill: var($disabled-text-on-surface);
+    fill: var(vars.$disabled-text-on-surface);
   }
 }
 </style>

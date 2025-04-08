@@ -134,25 +134,24 @@ export default defineComponent({
 </script>
 
 <style lang="scss" scoped>
-@import "@featherds/styles/mixins/typography";
-@import "@featherds/styles/mixins/elevation";
-@import "@featherds/styles/mixins/flex";
-@import "@featherds/styles/themes/utils";
-@import "@featherds/styles/themes/variables";
+@use "@featherds/styles/themes/variables" as vars;
+@use "@featherds/styles/mixins/typography" as typo;
+@use "@featherds/styles/mixins/flex" as flex;
+@use "@featherds/styles/themes/utils" as utils;
 
 @mixin disabled-styles() {
   &[aria-disabled="true"] {
     cursor: default;
-    color: var($shade-2);
+    color: var(vars.$shade-2);
     border-color: transparent;
     box-shadow: none;
-    @include state-disabled();
+    @include utils.state-disabled();
     &:focus,
     &:hover,
     &:active,
     &:visited {
       cursor: default;
-      color: var($shade-2);
+      color: var(vars.$shade-2);
       background-color: transparent;
       border-color: transparent;
       box-shadow: none;
@@ -161,8 +160,8 @@ export default defineComponent({
 }
 @mixin disabled-styles-on-color() {
   &[aria-disabled="true"] {
-    @include state-disabled();
-    color: var($state-color-on-color);
+    @include utils.state-disabled();
+    color: var(vars.$state-color-on-color);
     opacity: 0.5;
   }
 }
@@ -175,7 +174,7 @@ export default defineComponent({
   border: none;
   cursor: pointer;
   position: relative;
-  @include button();
+  @include typo.button();
   line-height: 2rem;
   vertical-align: middle;
   min-width: 4rem;
@@ -195,125 +194,125 @@ export default defineComponent({
   }
 
   + .btn {
-    margin-left: var($spacing-xs);
+    margin-left: var(vars.$spacing-xs);
   }
 }
 .btn-content {
   position: relative;
 }
 .btn-primary {
-  background-color: var($primary);
-  color: var($primary-text-on-color);
-  box-shadow: var($shadow-2);
+  background-color: var(vars.$primary);
+  color: var(vars.$primary-text-on-color);
+  box-shadow: var(vars.$shadow-2);
   border: 2px solid transparent;
-  @include button-state-on-color();
+  @include utils.button-state-on-color();
   @include disabled-styles();
   &:visited {
-    color: var($primary-text-on-color);
+    color: var(vars.$primary-text-on-color);
   }
 
   &[aria-disabled="true"] {
-    background-color: var($shade-4);
-    @include state-disabled($shade-4);
+    background-color: var(vars.$shade-4);
+    @include utils.state-disabled(vars.$shade-4);
     &:focus,
     &:hover,
     &:active,
     &:visited {
-      background-color: var($shade-4);
+      background-color: var(vars.$shade-4);
     }
   }
   + .btn-primary,
   + .btn-secondary {
-    margin-left: var($spacing-m);
+    margin-left: var(vars.$spacing-m);
   }
 }
 
 .btn-secondary {
   background-color: transparent;
-  color: var($primary);
-  border: 2px solid var($border-on-surface);
-  @include state-on-surface();
+  color: var(vars.$primary);
+  border: 2px solid var(vars.$border-on-surface);
+  @include utils.state-on-surface();
   @include disabled-styles();
   &:focus {
-    border-color: var($primary);
+    border-color: var(vars.$primary);
   }
   &:visited {
-    color: var($primary);
+    color: var(vars.$primary);
   }
   &[aria-disabled="true"] {
-    border-color: var($shade-4);
-    @include state-disabled();
+    border-color: var(vars.$shade-4);
+    @include utils.state-disabled();
     &:focus,
     &:hover,
     &:active,
     &:visited {
-      border-color: var($shade-4);
+      border-color: var(vars.$shade-4);
     }
   }
   &.on-color {
-    color: var($state-color-on-color);
-    border: 2px solid var($state-color-on-color);
-    @include state-on-color();
+    color: var(vars.$state-color-on-color);
+    border: 2px solid var(vars.$state-color-on-color);
+    @include utils.state-on-color();
 
     &:focus {
-      border-color: var($state-color-on-color);
+      border-color: var(vars.$state-color-on-color);
     }
     &:visited {
-      color: var($state-color-on-color);
+      color: var(vars.$state-color-on-color);
     }
 
     &[aria-disabled="true"] {
       @include disabled-styles-on-color();
-      border-color: var($state-color-on-color);
+      border-color: var(vars.$state-color-on-color);
       &:focus,
       &:hover,
       &:active,
       &:visited {
-        border-color: var($state-color-on-color);
+        border-color: var(vars.$state-color-on-color);
       }
     }
   }
   + .btn-primary,
   + .btn-secondary {
-    margin-left: var($spacing-m);
+    margin-left: var(vars.$spacing-m);
   }
 }
 .btn-text {
-  color: var($text-button-primary, var($primary));
+  color: var(vars.$text-button-primary, var(vars.$primary));
   background-color: transparent;
   border: 2px solid transparent;
   padding: 0 0.5rem;
-  @include state-on-surface();
+  @include utils.state-on-surface();
   @include disabled-styles();
   &:hover {
-    border-color: alpha(
-      $state-color-on-surface,
-      var($state-opacity-hover-on-surface)
+    border-color: utils.alpha(
+      vars.$state-color-on-surface,
+      var(vars.$state-opacity-hover-on-surface)
     );
   }
   &:focus {
-    border-color: var($text-button-primary, var($primary));
+    border-color: var(vars.$text-button-primary, var(vars.$primary));
   }
 
   &:visited {
-    color: var($text-button-primary, var($primary));
+    color: var(vars.$text-button-primary, var(vars.$primary));
   }
 
   &.on-color {
-    color: var($state-color-on-color);
-    @include state-on-color();
+    color: var(vars.$state-color-on-color);
+    @include utils.state-on-color();
     &:hover {
-      border-color: alpha(
-        $state-color-on-color,
-        var($state-opacity-hover-on-color)
+      border-color: utils.alpha(
+        vars.$state-color-on-color,
+        var(vars.$state-opacity-hover-on-color)
       );
     }
     &:focus {
-      border-color: var($state-color-on-color);
+      border-color: var(vars.$state-color-on-color);
     }
 
     &:visited {
-      color: var($state-color-on-color);
+      color: var(vars.$state-color-on-color);
     }
 
     &[aria-disabled="true"] {
@@ -330,7 +329,7 @@ export default defineComponent({
   width: 2.25rem;
   min-width: 2.25rem;
   border-radius: 100%;
-  @include center();
+  @include flex.center();
   :deep(svg) {
     width: 1.5rem;
     font-size: 1.5rem;

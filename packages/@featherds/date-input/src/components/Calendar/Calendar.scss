@@ -1,10 +1,11 @@
 @use "sass:math";
-@import "@featherds/styles/themes/variables";
-@import "@featherds/styles/mixins/typography";
-@import "@featherds/styles/themes/utils";
+@use "@featherds/styles/themes/variables" as vars;
+@use "@featherds/styles/mixins/typography" as typo;
+@use "@featherds/styles/themes/utils" as utils;
+@use "@featherds/styles/themes/_base-controls/date-input" as date-input;
 $width: 1.875rem;
 .sr-only {
-  @include screen-reader;
+  @include typo.screen-reader;
 }
 .picker {
   box-sizing: border-box;
@@ -15,28 +16,28 @@ $width: 1.875rem;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: var($spacing-m);
-  padding-top: var($spacing-xl);
+  padding: var(vars.$spacing-m);
+  padding-top: var(vars.$spacing-xl);
   .chevron {
     width: 2.25rem;
     margin: 0;
     &.left {
-      margin-right: var($spacing-m);
+      margin-right: var(vars.$spacing-m);
     }
   }
   .inline-select {
-    width: $date-input-calendar-select-width;
+    width: date-input.$date-input-calendar-select-width;
     margin: 0;
     display: inline-block;
-    margin-right: var($spacing-s);
+    margin-right: var(vars.$spacing-s);
     &.year {
-      margin-right: var($spacing-m);
-      width: $date-input-calendar-year-width;
+      margin-right: var(vars.$spacing-m);
+      width: date-input.$date-input-calendar-year-width;
     }
   }
 }
 .calendar {
-  margin: 0 var($spacing-m) var($spacing-m) var($spacing-m);
+  margin: 0 var(vars.$spacing-m) var(vars.$spacing-m) var(vars.$spacing-m);
   border-collapse: collapse;
   td,
   tr {
@@ -54,40 +55,40 @@ $width: 1.875rem;
     }
   }
   .cell {
-    margin-bottom: var($spacing-xxs);
+    margin-bottom: var(vars.$spacing-xxs);
     height: $width;
     width: 2.75rem;
-    @include body-small;
+    @include typo.body-small;
     border-radius: 2px;
     border: 2px solid transparent;
-    background-color: var($surface);
+    background-color: var(vars.$surface);
     cursor: pointer;
 
-    @include state-on-surface();
+    @include utils.state-on-surface();
 
     &.highlighted {
-      border: 2px solid var($primary);
+      border: 2px solid var(vars.$primary);
     }
 
     &.selected {
-      background: var($primary);
-      color: var($primary-text-on-color);
-      font-weight: var($font-bold);
+      background: var(vars.$primary);
+      color: var(vars.$primary-text-on-color);
+      font-weight: var(vars.$font-bold);
       &:focus.focus {
-        background: var($primary);
+        background: var(vars.$primary);
       }
       &:hover.hover {
-        background: var($primary);
+        background: var(vars.$primary);
         &:focus.focus {
-          background: var($primary);
+          background: var(vars.$primary);
         }
       }
     }
 
     &.disabled {
-      @include state-disabled($border-light-on-surface);
-      background: var($border-light-on-surface);
-      color: var($disabled-text-on-surface);
+      @include utils.state-disabled(vars.$border-light-on-surface);
+      background: var(vars.$border-light-on-surface);
+      color: var(vars.$disabled-text-on-surface);
       border-radius: 0px;
       cursor: default;
     }
@@ -97,18 +98,18 @@ $width: 1.875rem;
     }
   }
   .blank {
-    @include body-small;
-    color: var($disabled-text-on-surface);
+    @include typo.body-small;
+    color: var(vars.$disabled-text-on-surface);
   }
   .day-header {
-    @include body-small;
-    font-weight: var($font-bold);
-    color: var($secondary-text-on-surface);
-    width: percentage(math.div(1, 7));
+    @include typo.body-small;
+    font-weight: var(vars.$font-bold);
+    color: var(vars.$secondary-text-on-surface);
+    width: math.percentage(math.div(1, 7));
     cursor: default;
     &:hover {
       background: inherit;
-      color: var($secondary-text-on-surface);
+      color: var(vars.$secondary-text-on-surface);
     }
   }
 }

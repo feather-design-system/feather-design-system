@@ -30,12 +30,12 @@ export default defineComponent({
 });
 </script>
 <style lang="scss" scoped>
-@import "@featherds/styles/mixins/typography";
-@import "@featherds/styles/themes/variables";
-@import "@featherds/styles/themes/utils";
+@use "@featherds/styles/themes/variables" as vars;
+@use "@featherds/styles/mixins/typography" as typo;
+@use "@featherds/styles/themes/utils" as utils;
 $height: 3rem;
 li .tab {
-  @include button();
+  @include typo.button();
   text-align: center;
   text-decoration: none;
   cursor: pointer;
@@ -50,9 +50,9 @@ li .tab {
   }
 
   background: transparent;
-  color: var($secondary-text-on-surface);
+  color: var(vars.$secondary-text-on-surface);
 
-  @include state-on-surface();
+  @include utils.state-on-surface();
 
   &:hover,
   &:focus,
@@ -67,42 +67,42 @@ li .tab {
     &,
     &.selected {
       background: inherit;
-      box-shadow: inset 0 0 0 2px var($primary);
+      box-shadow: inset 0 0 0 2px var(vars.$primary);
     }
     &.selected {
-      background: surface-gradient($state-opacity-selected-on-surface),
-        linear-grad($background);
+      background: surface-gradient(vars.$state-opacity-selected-on-surface),
+        linear-grad(vars.$background);
     }
   }
   &:hover:focus .focus.hover,
   &:hover:focus.focus.hover {
-    background: surface-gradient($state-opacity-hover-on-surface),
-      linear-grad($background);
+    background: surface-gradient(vars.$state-opacity-hover-on-surface),
+      linear-grad(vars.$background);
     &.selected {
-      background: surface-gradient($state-opacity-selected-on-surface),
-        surface-gradient($state-opacity-hover-on-surface),
-        linear-grad($background);
+      background: surface-gradient(vars.$state-opacity-selected-on-surface),
+        surface-gradient(vars.$state-opacity-hover-on-surface),
+        linear-grad(vars.$background);
     }
   }
 
   &:visited {
-    color: var($primary-text-on-surface);
+    color: var(vars.$primary-text-on-surface);
   }
   &.selected {
-    color: var($primary);
+    color: var(vars.$primary);
   }
   &[aria-disabled="true"] {
     cursor: default;
-    color: var($shade-2);
+    color: var(vars.$shade-2);
     border-color: transparent;
     box-shadow: none;
-    @include state-disabled();
+    @include utils.state-disabled();
     &:focus,
     &:hover,
     &:active,
     &:visited {
       cursor: default;
-      color: var($shade-2);
+      color: var(vars.$shade-2);
       background-color: transparent;
       border-color: transparent;
       box-shadow: none;

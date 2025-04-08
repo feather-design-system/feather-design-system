@@ -44,10 +44,10 @@ You can configure the Dropdown menu height by setting the height style for `.fea
 The following example allows `10` items to be displayed before scrolling.
 
 ```scss
-@import "@featherds/dropdown/scss/mixins";
+@use "@featherds/dropdown/scss/mixins" as dropdown-mixins;
 
 .my-component :deep(.feather-dropdown) {
-  @include dropdown-menu-height(10);
+  @include dropdown-mixins.dropdown-menu-height(10);
 }
 ```
 

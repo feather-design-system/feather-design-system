@@ -120,17 +120,17 @@ export default defineComponent({
 </script>
 
 <style lang="scss" scoped>
-@import "@featherds/styles/mixins/typography";
-@import "@featherds/input-helper/scss/spacing";
-@import "@featherds/styles/themes/variables";
+@use "@featherds/styles/themes/variables" as vars;
+@use "@featherds/styles/mixins/typography" as typo;
+@use "@featherds/input-helper/scss/spacing" as spacing;
 
 .group-label {
-  @include subtitle1();
+  @include typo.subtitle1();
   display: block;
-  color: var($primary-text-on-surface);
+  color: var(vars.$primary-text-on-surface);
   min-width: 1.5rem;
 }
 .feather-checkbox-group-container {
-  @include group-spacing;
+  @include spacing.group-spacing;
 }
 </style>

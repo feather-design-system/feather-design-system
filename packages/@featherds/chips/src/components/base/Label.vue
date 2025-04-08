@@ -18,10 +18,11 @@ export default defineComponent({
   },
   methods: {
     ellipsisActive() {
-      return (
-        (this.$refs["container"] as HTMLElement).offsetWidth <
-        (this.$refs["container"] as HTMLElement).scrollWidth
-      );
+      const container = this.$refs["container"] as HTMLElement | undefined;
+      const offsetWidth = container?.offsetWidth ?? 0;
+      const scrollWidth = container?.scrollWidth ?? 0;
+
+      return offsetWidth < scrollWidth;
     },
     updateTitle() {
       this.titleText = this.ellipsisActive()
@@ -38,11 +39,11 @@ export default defineComponent({
 });
 </script>
 <style lang="scss" scoped>
-@import "@featherds/styles/mixins/typography";
-@import "@featherds/styles/themes/variables";
+@use "@featherds/styles/themes/variables" as vars;
+@use "@featherds/styles/mixins/typography" as typo;
 .label {
-  @include body-small();
-  color: var($secondary-text-on-surface);
+  @include typo.body-small();
+  color: var(vars.$secondary-text-on-surface);
   margin-right: 0.75rem;
   margin-left: 0.75rem;
   text-overflow: ellipsis;

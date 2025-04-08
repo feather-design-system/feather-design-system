@@ -71,13 +71,13 @@ export default defineComponent({
 </script>
 
 <style lang="scss" scoped>
-@import "@featherds/chips/scss/mixins";
+@use "@featherds/chips/scss/mixins" as chip-mixins;
 .autocomplete-chip.chip {
   margin: 0.25rem 0;
   margin-right: 0.5rem;
 }
 
 .chip-delete {
-  @include chip-delete();
+  @include chip-mixins.chip-delete();
 }
 </style>

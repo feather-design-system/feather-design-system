@@ -73,8 +73,8 @@ export default defineComponent({
 });
 </script>
 <style lang="scss" scoped>
-@import "@featherds/styles/mixins/typography";
-@import "@featherds/styles/themes/variables";
+@use "@featherds/styles/themes/variables" as vars;
+@use "@featherds/styles/mixins/typography" as typo;
 .error-container {
   display: flex;
   align-items: center;
@@ -82,8 +82,8 @@ export default defineComponent({
   flex-direction: column;
 }
 .error-text {
-  @include headline3;
-  color: var($secondary-text-on-surface);
+  @include typo.headline3;
+  color: var(vars.$secondary-text-on-surface);
   margin-top: 2rem;
   margin-bottom: 0.5rem;
 }
@@ -91,7 +91,7 @@ export default defineComponent({
   height: 17.5rem;
   width: 11.25rem;
   svg {
-    fill: var($primary-text-on-surface);
+    fill: var(vars.$primary-text-on-surface);
   }
 }
 </style>

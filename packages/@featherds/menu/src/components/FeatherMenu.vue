@@ -240,18 +240,18 @@ export default defineComponent({
 </script>
 
 <style lang="scss" scoped>
-@import "@featherds/styles/mixins/elevation";
-@import "@featherds/styles/themes/variables";
+@use "@featherds/styles/themes/variables" as vars;
+@use "@featherds/styles/mixins/elevation" as elev;
 .feather-menu {
   position: relative;
   display: inline-block;
 }
 .feather-menu-dropdown {
-  @include elevation(8);
+  @include elev.elevation(8);
   position: fixed;
   left: 0;
   top: 0;
-  z-index: var($zindex-dropdown);
+  z-index: var(vars.$zindex-dropdown);
 }
 .hidden {
   position: fixed;

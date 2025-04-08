@@ -1,6 +1,6 @@
-@import "@featherds/styles/themes/variables";
-@import "@featherds/styles/themes/utils";
-@import "@featherds/styles/mixins/typography";
+@use "@featherds/styles/themes/variables" as vars;
+@use "@featherds/styles/themes/utils" as utils;
+@use "@featherds/styles/mixins/typography" as typo;
 
 @mixin table-condensed {
   tr {
@@ -28,20 +28,20 @@
 
 @mixin row-select {
   tbody > tr.selected td {
-    background: linear-gradient(alpha($primary, 0.12), alpha($primary, 0.12));
+    background: linear-gradient(utils.alpha(vars.$primary, 0.12), utils.alpha(vars.$primary, 0.12));
   }
 }
 @mixin tbody-select {
   tbody.selected > tr td {
-    background: linear-gradient(alpha($primary, 0.12), alpha($primary, 0.12));
+    background: linear-gradient(utils.alpha(vars.$primary, 0.12), utils.alpha(vars.$primary, 0.12));
   }
 }
 
 @mixin row-striped() {
   tbody > tr:nth-child(even) {
     background: linear-gradient(
-      var($border-light-on-surface),
-      var($border-light-on-surface)
+      var(vars.$border-light-on-surface),
+      var(vars.$border-light-on-surface)
     );
   }
 }
@@ -49,8 +49,8 @@
 @mixin tbody-striped() {
   tbody:nth-child(even) {
     background: linear-gradient(
-      var($border-light-on-surface),
-      var($border-light-on-surface)
+      var(vars.$border-light-on-surface),
+      var(vars.$border-light-on-surface)
     );
   }
 }
@@ -60,8 +60,8 @@
     & > tr:nth-child(even) {
       &:hover td {
         background: linear-gradient(
-          alpha($state-color-on-neutral, var($state-opacity-hover-on-neutral)),
-          alpha($state-color-on-neutral, var($state-opacity-hover-on-neutral))
+          utils.alpha(vars.$state-color-on-neutral, var(vars.$state-opacity-hover-on-neutral)),
+          utils.alpha(vars.$state-color-on-neutral, var(vars.$state-opacity-hover-on-neutral))
         );
       }
     }
@@ -71,15 +71,15 @@
     & > tr.selected:nth-child(even) {
       &:hover td {
         background: linear-gradient(
-            alpha($primary, 0.12),
-            alpha($primary, 0.12)
+            utils.alpha(vars.$primary, 0.12),
+            utils.alpha(vars.$primary, 0.12)
           ),
           linear-gradient(
-            alpha(
-              $state-color-on-neutral,
-              var($state-opacity-hover-on-neutral)
+            utils.alpha(
+              vars.$state-color-on-neutral,
+              var(vars.$state-opacity-hover-on-neutral)
             ),
-            alpha($state-color-on-neutral, var($state-opacity-hover-on-neutral))
+            utils.alpha(vars.$state-color-on-neutral, var(vars.$state-opacity-hover-on-neutral))
           );
       }
     }
@@ -91,18 +91,18 @@
   tbody:nth-child(even) {
     &:hover td {
       background: linear-gradient(
-        alpha($state-color-on-neutral, var($state-opacity-hover-on-neutral)),
-        alpha($state-color-on-neutral, var($state-opacity-hover-on-neutral))
+        utils.alpha(vars.$state-color-on-neutral, var(vars.$state-opacity-hover-on-neutral)),
+        utils.alpha(vars.$state-color-on-neutral, var(vars.$state-opacity-hover-on-neutral))
       );
     }
   }
   tbody.selected,
   tbody.selected:nth-child(even) {
     &:hover td {
-      background: linear-gradient(alpha($primary, 0.12), alpha($primary, 0.12)),
+      background: linear-gradient(utils.alpha(vars.$primary, 0.12), utils.alpha(vars.$primary, 0.12)),
         linear-gradient(
-          alpha($state-color-on-neutral, var($state-opacity-hover-on-neutral)),
-          alpha($state-color-on-neutral, var($state-opacity-hover-on-neutral))
+          utils.alpha(vars.$state-color-on-neutral, var(vars.$state-opacity-hover-on-neutral)),
+          utils.alpha(vars.$state-color-on-neutral, var(vars.$state-opacity-hover-on-neutral))
         );
     }
   }
@@ -113,7 +113,7 @@
     td {
       box-shadow: none;
     }
-    box-shadow: 0 1px 0 0 var($border-on-surface);
+    box-shadow: 0 1px 0 0 var(vars.$border-on-surface);
   }
   tbody {
     tr:first-child {
@@ -131,21 +131,21 @@
 }
 @mixin table() {
   border-spacing: 0px;
-  @include body-small();
-  color: var($secondary-text-on-surface);
+  @include typo.body-small();
+  color: var(vars.$secondary-text-on-surface);
 
   caption {
     text-align: left;
-    @include subtitle1();
-    color: var($primary-text-on-surface);
-    margin-bottom: var($spacing-m);
+    @include typo.subtitle1();
+    color: var(vars.$primary-text-on-surface);
+    margin-bottom: var(vars.$spacing-m);
   }
   th {
     padding: 0 1rem;
     align-items: center;
     font-weight: bold;
     text-align: left;
-    border-bottom: 1px solid var($disabled-text-on-surface);
+    border-bottom: 1px solid var(vars.$disabled-text-on-surface);
     & a {
       display: inline-block;
       padding: 0.5rem 0px;
@@ -154,7 +154,7 @@
 
   td {
     padding: 0px 1rem;
-    box-shadow: 0 1px 0 0 var($border-on-surface);
+    box-shadow: 0 1px 0 0 var(vars.$border-on-surface);
     text-align: left;
     .btn {
       margin-top: 0;

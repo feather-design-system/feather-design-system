@@ -1,22 +1,25 @@
+@use "sass:string";
+@use "variables" as vars;
+
 //utility classes
 $spacing: (
-  "xxs": $spacing-xxs,
-  "xs": $spacing-xs,
-  "s": $spacing-s,
-  "m": $spacing-m,
-  "l": $spacing-l,
-  "xl": $spacing-xl,
-  "xxl": $spacing-xxl
+  "xxs": vars.$spacing-xxs,
+  "xs": vars.$spacing-xs,
+  "s": vars.$spacing-s,
+  "m": vars.$spacing-m,
+  "l": vars.$spacing-l,
+  "xl": vars.$spacing-xl,
+  "xxl": vars.$spacing-xxl
 );
 $directions: (top, bottom, left, right);
 
 @each $size, $value in $spacing {
   @each $direction in $directions {
-    .m#{str-slice($direction, 0, 1)}-#{$size} {
+    .m#{string.slice($direction, 0, 1)}-#{$size} {
       margin-#{$direction}: var($value);
     }
 
-    .p#{str-slice($direction, 0, 1)}-#{$size} {
+    .p#{string.slice($direction, 0, 1)}-#{$size} {
       padding-#{$direction}: var($value);
     }
   }

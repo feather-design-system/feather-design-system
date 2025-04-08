@@ -1,5 +1,5 @@
 <template>
-  <section>
+  <section class="tabs-demo">
     <FeatherTabContainer>
       <template v-slot:tabs>
         <FeatherTab>Tab one</FeatherTab>
@@ -26,3 +26,10 @@ export default {
   },
 };
 </script>
+<style lang="scss" scoped>
+.tabs-demo {
+  & > *{
+    margin-block: 1em;
+  }
+}
+</style>

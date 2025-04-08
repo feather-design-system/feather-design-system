@@ -37,12 +37,12 @@ export default {
 }
 </style>
 <style lang="scss">
-@import "@featherds/styles/themes/open-mixins";
+@use "@featherds/styles/themes/open-mixins" as open;
 
 .light {
-  @include open-light();
+  @include open.open-light();
 }
 .dark {
-  @include open-dark();
+  @include open.open-dark();
 }
 </style>

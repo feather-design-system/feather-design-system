@@ -106,19 +106,19 @@ export default {
 };
 </script>
 <style lang="scss" scoped>
-@import "@featherds/table/scss/table";
+@use "@featherds/table/scss/table" as table;
 table {
   width: 100%;
-  @include table();
-  @include row-select();
+  @include table.table();
+  @include table.row-select();
   &.hover {
-    @include row-hover();
+    @include table.row-hover();
   }
   &.condensed {
-    @include table-condensed();
+    @include table.table-condensed();
   }
   &.striped {
-    @include row-striped();
+    @include table.row-striped();
   }
 }
 </style>

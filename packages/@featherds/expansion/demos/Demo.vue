@@ -113,11 +113,11 @@ export default defineComponent({
 });
 </script>
 <style lang="scss" scoped>
-@import "@featherds/table/scss/table";
+@use "@featherds/table/scss/table" as table;
 table {
   width: 100%;
-  @include table;
-  @include table-condensed;
-  @include row-hover;
+  @include table.table;
+  @include table.table-condensed;
+  @include table.row-hover;
 }
 </style>

@@ -38,20 +38,21 @@ export default defineComponent({
 });
 </script>
 <style lang="scss" scoped>
-@import "@featherds/styles/themes/variables";
-@import "@featherds/styles/mixins/elevation";
+@use "@featherds/styles/themes/variables" as vars;
+@use "@featherds/styles/mixins/elevation" as elev;
+
 $width: 16.5rem;
 .fake-header {
-  height: var($header-height);
+  height: var(vars.$header-height);
 }
 .nav-list-container {
   width: $width;
 }
 .nav-list {
   height: calc(100vh);
-  background: var($background);
-  color: var($primary-text-on-surface);
-  @include elevation(2);
+  background: var(vars.$background);
+  color: var(vars.$primary-text-on-surface);
+  @include elev.elevation(2);
   position: fixed;
   width: $width;
   top: 0;

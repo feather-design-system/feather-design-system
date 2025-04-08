@@ -46,8 +46,17 @@ export default defineComponent({
 });
 </script>
 <style lang="scss" scoped>
-@import "@featherds/styles/themes/variables";
+@use "@featherds/styles/themes/variables" as vars;
 .on-color-demo {
-  background-color: var($secondary);
+  padding: var(vars.$spacing-m);
+  border-radius: 4px;
+  background-color: var(vars.$secondary);
+  h1,
+  label {
+    color: var(vars.$primary-text-on-color);
+  }
+  .on-color {
+    margin-block: var(vars.$spacing-m);
+  }
 }
 </style>

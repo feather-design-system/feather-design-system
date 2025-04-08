@@ -62,10 +62,10 @@ You can configure the options menu height by setting the height style for `.feat
 The following example allows `10` items to be displayed before scrolling.
 
 ```scss
-@import "@featherds/select/scss/mixins";
+@use "@featherds/select/scss/mixins" as select-mixins;
 
 .my-component :deep(.feather-select-options-list) {
-  @include select-menu-height(10);
+  @include select-mixins.select-menu-height(10);
 }
 ```
 

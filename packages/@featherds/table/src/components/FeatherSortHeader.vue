@@ -156,9 +156,8 @@ export default defineComponent({
 </script>
 
 <style lang="scss" scoped>
-@import "@featherds/styles/themes/variables";
-@import "@featherds/styles/themes/utils";
-@import "@featherds/styles/mixins/typography";
+@use "@featherds/styles/themes/utils" as utils;
+@use "@featherds/styles/mixins/typography" as typo;
 
 th .header-flex-container {
   cursor: pointer;
@@ -166,7 +165,7 @@ th .header-flex-container {
   align-items: center;
   font-weight: bold;
   &.content {
-    @include state-on-surface();
+    @include utils.state-on-surface();
   }
   .sort-cell-label {
     display: inline-block;
@@ -207,6 +206,6 @@ span.hidden-description {
 }
 span.description,
 span.alert {
-  @include screen-reader();
+  @include typo.screen-reader();
 }
 </style>

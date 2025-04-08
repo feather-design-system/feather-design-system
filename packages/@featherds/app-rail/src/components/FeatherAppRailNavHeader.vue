@@ -26,7 +26,8 @@ export default defineComponent({
 });
 </script>
 <style lang="scss" scoped>
-@import "@featherds/styles/mixins/typography";
+@use "@featherds/styles/themes/variables" as vars;
+@use "@featherds/styles/mixins/typography" as typo;
 .vertical-app-bar-separator {
   height: 3.5rem;
   display: flex;
@@ -35,7 +36,7 @@ export default defineComponent({
     flex: 1;
     border: none;
     margin: 0;
-    border-top: 1px solid var($border-on-color);
+    border-top: 1px solid var(vars.$border-on-color);
   }
   &:first-child {
     height: 3rem;
@@ -46,8 +47,8 @@ export default defineComponent({
 }
 .vertical-app-bar-header {
   margin-top: 1rem;
-  @include overline();
-  color: var($state-text-color-on-surface-dark);
+  @include typo.overline();
+  color: var(vars.$state-text-color-on-surface-dark);
   &:first-child {
     margin-top: 0.5rem;
   }

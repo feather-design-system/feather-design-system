@@ -72,19 +72,19 @@ export default defineComponent({
 </script>
 
 <style lang="scss" scoped>
-@import "@featherds/styles/themes/variables";
+@use "@featherds/styles/themes/variables" as vars;
 
 .header-wrapper,
 .banner {
   width: 100%;
-  height: var($header-height);
+  height: var(vars.$header-height);
 }
 
 .scroll-hide header {
   position: fixed;
   top: 0;
   left: 0;
-  z-index: var($zindex-fixed);
+  z-index: var(vars.$zindex-fixed);
   transition: transform 280ms ease-in-out;
   &.show {
     transform: translateY(0px);

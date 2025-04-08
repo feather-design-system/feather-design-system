@@ -41,10 +41,10 @@ If you're building a component or want to use styles elsewhere in your applicati
 See [Variables](../Variables/) for more details.
 
 ```sass
-@import "@featherds/styles/themes/variables";
+@use "@featherds/styles/themes/variables as vars";
 
 element {
-  background-color: var($primary);
+  background-color: var(vars.$primary);
 }
 
 ```

@@ -55,16 +55,17 @@ export default {
 };
 </script>
 <style lang="scss" scoped>
-@import "@featherds/styles/themes/variables";
-@import "@featherds/styles/mixins/typography";
+@use "@featherds/styles/themes/variables" as vars;
+@use "@featherds/styles/mixins/typography" as typo;
+
 footer {
-  background-color: var($background);
+  background-color: var(vars.$background);
   flex-basis: 100%;
 
   .inner-wrapper {
     display: flex;
     flex-direction: column;
-    max-width: var($content-width);
+    max-width: var(vars.$content-width);
     margin: 0 auto;
     padding: 2.5rem 1.5rem;
 
@@ -72,10 +73,10 @@ footer {
       display: flex;
       flex-wrap: wrap;
       padding-bottom: 2.5rem;
-      border-bottom: 2px solid var($shade-1);
+      border-bottom: 2px solid var(vars.$shade-1);
 
       ul {
-        @include overline();
+        @include typo.overline();
         list-style: none;
         padding: 0;
         margin: 0;
@@ -85,7 +86,7 @@ footer {
           margin-bottom: 1rem;
         }
         a {
-          color: var($primary-text-on-surface);
+          color: var(vars.$primary-text-on-surface);
         }
       }
       ul,
@@ -127,7 +128,7 @@ footer {
       svg {
         height: auto;
         width: auto;
-        fill: var($primary-text-on-surface);
+        fill: var(vars.$primary-text-on-surface);
       }
     }
   }

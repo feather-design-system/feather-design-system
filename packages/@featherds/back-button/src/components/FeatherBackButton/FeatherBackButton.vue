@@ -114,16 +114,17 @@ export default defineComponent({
 </script>
 
 <style lang="scss" scoped>
-@import "@featherds/styles/themes/utils";
-@import "@featherds/styles/themes/variables";
-@import "@featherds/styles/mixins/elevation";
-@import "@featherds/styles/mixins/typography";
+@use "@featherds/styles/themes/variables" as vars;
+@use "@featherds/styles/mixins/elevation" as elev;
+@use "@featherds/styles/themes/utils" as utils;
+@use "@featherds/styles/mixins/typography" as typo;
+
 button {
   position: relative;
   background-color: transparent;
   border-radius: 36px;
-  border: 1px solid var($primary);
-  color: var($primary);
+  border: 1px solid var(vars.$primary);
+  color: var(vars.$primary);
 
   height: 2.25rem;
   margin: 0;
@@ -138,10 +139,9 @@ button {
   &:hover,
   &:focus,
   &.hover {
-    @include elevation(6);
+    @include elev.elevation(6);
   }
-  @include state-on-surface();
-  // @include state-on-surface(".hover", false);
+  @include utils.state-on-surface();
   &:hover:after,
   &.hover:after,
   &:focus:before {
@@ -154,8 +154,8 @@ button {
 .text {
   padding-right: 1rem;
   padding-left: 0.5rem;
-  @include button();
-  color: var($primary);
+  @include typo.button();
+  color: var(vars.$primary);
   height: 2.25rem;
   line-height: 2.25rem;
   white-space: nowrap;

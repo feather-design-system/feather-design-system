@@ -19,6 +19,10 @@ export default [
         name: "Elevation",
         url: "/Foundation/Styles/Elevation/",
       },
+      {
+        name: "SASS",
+        url: "/Foundation/Styles/SASS/",
+      },
     ],
   },
 ];

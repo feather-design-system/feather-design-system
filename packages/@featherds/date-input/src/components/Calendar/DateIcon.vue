@@ -34,13 +34,13 @@ export default defineComponent({
 });
 </script>
 <style lang="scss" scoped>
-@import "@featherds/styles/themes/variables";
-@import "@featherds/styles/themes/utils";
+@use "@featherds/styles/themes/variables" as vars;
+@use "@featherds/styles/themes/utils" as utils;
 .action-icon {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  color: var($secondary-text-on-surface);
+  color: var(vars.$secondary-text-on-surface);
   font-size: 1.25rem;
   height: 1.625rem;
   width: 1.625rem;
@@ -48,19 +48,19 @@ export default defineComponent({
   cursor: pointer;
   border: 1px solid transparent;
 
-  @include state-on-surface();
+  @include utils.state-on-surface();
   &:focus {
     outline: 0;
-    border-color: var($primary);
+    border-color: var(vars.$primary);
   }
 
   &:visited,
   &:active {
-    color: var($secondary-text-on-surface);
+    color: var(vars.$secondary-text-on-surface);
   }
 
   &:hover {
-    color: var($primary-text-on-surface);
+    color: var(vars.$primary-text-on-surface);
   }
 }
 </style>

@@ -32,10 +32,10 @@ You can use our spacing variables within SCSS wherever needed. These can be appl
 You can use these variables like our other theme variables:
 
 ```scss
-@import "@featherds/styles/themes/variables";
+@use "@featherds/styles/themes/variables" as vars;
 
 .component-with-spacing {
-  margin-bottom: var($spacing-m);
+  margin-bottom: var(vars.$spacing-m);
 }
 ```
 
@@ -74,9 +74,9 @@ For just setting default form spacing in common scenarios, you can use the `form
 
 ```
 <style lang="scss" scoped>
-@import "@featherds/input-helper/scss/spacing";
+@use "@featherds/input-helper/scss/spacing as spacing";
 form {
-  @include form-spacing();
+  @include spacing.form-spacing();
 }
 </style>
 ```

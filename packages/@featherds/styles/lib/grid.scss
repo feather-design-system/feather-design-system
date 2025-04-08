@@ -1,7 +1,8 @@
 @use "sass:math";
-@import "../themes/variables";
-@import "../mixins/grid";
-@import "../mixins/responsive";
+@use "sass:map";
+@use "../themes/variables" as vars;
+@use "../mixins/grid" as grid;
+@use "../mixins/responsive" as resp;
 
 .feather-row {
   display: flex;
@@ -9,17 +10,17 @@
 }
 
 .feather-container {
-  max-width: var($content-width);
+  max-width: var(vars.$content-width);
   &.full-width {
     max-width: 100%;
   }
 }
 
-@each $label, $map in $grid {
-  $col: map-get($map, col);
-  $gutter: map-get($map, gutter);
+@each $label, $map in vars.$grid {
+  $col: map.get($map, col);
+  $gutter: map.get($map, gutter);
 
-  @include media-query-for($label) {
+  @include resp.media-query-for($label) {
     .feather-container {
       padding-left: $gutter;
       padding-right: $gutter;
@@ -51,10 +52,10 @@
 
     @for $i from 1 through $col {
       .feather-col-#{$label}-#{$i} {
-        @include column($i, $col, $gutter);
+        @include grid.column($i, $col, $gutter);
       }
       .feather-offset-#{$label}-#{$i} {
-        @include offset($i, $col);
+        @include grid.offset($i, $col);
       }
 
       //override generic padding only
@@ -69,10 +70,10 @@
   @if $label == "xl" {
     @for $i from 1 through $col {
       .feather-col-#{$i} {
-        @include column($i, $col, $gutter);
+        @include grid.column($i, $col, $gutter);
       }
       .feather-offset-#{$i} {
-        @include offset($i, $col);
+        @include grid.offset($i, $col);
       }
     }
   }
