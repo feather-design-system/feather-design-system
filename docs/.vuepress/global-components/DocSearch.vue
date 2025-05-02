@@ -34,9 +34,9 @@ export default {
 };
 </script>
 <style lang="scss" scoped>
-@import "@featherds/styles/themes/variables";
+@use "@featherds/styles/themes/variables" as vars;
 .search-icon {
-  color: var($state-text-color-on-surface-dark);
+  color: var(vars.$state-text-color-on-surface-dark);
   font-size: 1.5rem;
   position: relative;
   top: 0px;

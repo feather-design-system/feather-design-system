@@ -28,19 +28,16 @@ export default defineComponent({
 </script>
 
 <style lang="scss" scoped>
-@import "@featherds/styles/themes/variables";
-@import "@featherds/styles/mixins/elevation";
-@import "@featherds/styles/mixins/responsive";
-@import "@featherds/styles/mixins/typography";
+@use "@featherds/styles/themes/variables" as vars;
 
 .header {
-  color: var($primary-text-on-surface);
-  background-color: var($surface);
+  color: var(vars.$primary-text-on-surface);
+  background-color: var(vars.$surface);
   width: 100%;
-  height: var($header-height);
-  border-bottom: 1px solid var($border-on-surface);
+  height: var(vars.$header-height);
+  border-bottom: 1px solid var(vars.$border-on-surface);
   display: flex;
   align-items: center;
-  #{$text-button-primary}: var(#{$secondary-text-on-surface});
+  #{vars.$text-button-primary}: var(#{vars.$secondary-text-on-surface});
 }
 </style>

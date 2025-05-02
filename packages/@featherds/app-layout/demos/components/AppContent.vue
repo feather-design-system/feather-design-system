@@ -6,6 +6,4 @@
     </div>
   </div>
 </template>
-<style lang="scss" scoped>
-@import "@featherds/styles/lib/grid";
-</style>
+<style lang="scss" scoped></style>

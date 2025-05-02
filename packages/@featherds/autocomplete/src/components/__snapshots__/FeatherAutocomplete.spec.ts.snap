@@ -4535,7 +4535,7 @@ exports[`FeatherAutocomplete > multi:specific > selection limit > should display
             class="feather-autocomplete-input"
             data-ref-id="feather-autocomplete-input"
             id="feather-autocomplete-input"
-            style="height: 1.625rem; flex-basis: 100%; white-space: normal;"
+            style="height: 0px; flex-basis: 100%; white-space: normal;"
             tabindex="0"
           />
         </div>
@@ -4564,10 +4564,10 @@ exports[`FeatherAutocomplete > multi:specific > selection limit > should display
     </div>
     
     <div
-      class="feather-menu-dropdown"
+      class="feather-menu-dropdown hidden"
       data-ref-id="feather-autocomplete-menu-container-dropdown"
       id="feather-menu-dropdown"
-      style="width: 0px; left: 0px; top: 0px;"
+      style="width: auto;"
     >
       
       <ul

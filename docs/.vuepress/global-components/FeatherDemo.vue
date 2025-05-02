@@ -119,12 +119,12 @@ export default {
 };
 </script>
 <style lang="scss" scoped>
-@import "@featherds/styles/themes/variables";
-@import "@featherds/styles/mixins/typography";
-@import "@featherds/styles/mixins/responsive";
+@use "@featherds/styles/themes/variables" as vars;
+@use "@featherds/styles/mixins/typography" as typo;
+@use "@featherds/styles/mixins/responsive" as resp;
 .feather-demo {
-  border: 1px solid var($shade-4);
-  background-color: var($background);
+  border: 1px solid var(vars.$shade-4);
+  background-color: var(vars.$background);
   border-radius: 4px;
   margin-bottom: 1rem;
   :deep(pre[class*="language-"]) {
@@ -133,22 +133,22 @@ export default {
   }
   //revert default documentation styling
   h1 {
-    @include headline1();
+    @include typo.headline1();
   }
   h2 {
-    @include headline2();
+    @include typo.headline2();
   }
 
   h3 {
-    @include headline3();
+    @include typo.headline3();
   }
 
   h4 {
-    @include headline4();
+    @include typo.headline4();
   }
 }
 .demo-toolbar {
-  background-color: var($background);
+  background-color: var(vars.$background);
   height: 4rem;
   padding: 0 1rem;
   display: flex;
@@ -156,7 +156,7 @@ export default {
   justify-content: space-between;
   border-radius: 4px 4px 0 0;
 }
-@include media-query-below(m) {
+@include resp.media-query-below(m) {
   .demo-toolbar {
     flex-direction: column-reverse;
     height: auto;
@@ -169,7 +169,7 @@ export default {
   }
 }
 .demo {
-  background-color: var($surface);
+  background-color: var(vars.$surface);
   padding: 0.5rem 1.25rem;
   border-radius: 0 0 4px 4px;
   position: relative;

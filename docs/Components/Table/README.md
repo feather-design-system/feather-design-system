@@ -45,9 +45,9 @@ Table styling is exposed through various mixins that can be combined to produce 
 All tables must include at least this mixin in order to achieve the required styling.
 
 ```scss
-@import "@featherds/table/scss/table";
+@use "@featherds/table/scss/table" as table;
 table {
-  @include table();
+  @include table.table();
 }
 ```
 
@@ -58,10 +58,10 @@ The `table` mixin provide basic table styling as well as the [Column alignment](
 The `row-select` mixin adds the `.selected` class which can be set on `tr` elements to show that the row is selected.
 
 ```scss
-@import "@featherds/table/scss/table";
+@use "@featherds/table/scss/table" as table;
 table {
-  @include table();
-  @include row-select();
+  @include table.table();
+  @include table.row-select();
 }
 ```
 
@@ -70,10 +70,10 @@ table {
 The `row-hover` mixin adds styling to each row when it is hovered over.
 
 ```scss
-@import "@featherds/table/scss/table";
+@use "@featherds/table/scss/table" as table;
 table {
-  @include table();
-  @include row-hover();
+  @include table.table();
+  @include table.row-hover();
 }
 ```
 
@@ -82,10 +82,10 @@ table {
 The `table-condensed` mixin reduces the sizing of the table.
 
 ```scss
-@import "@featherds/table/scss/table";
+@use "@featherds/table/scss/table" as table;
 table {
-  @include table();
-  @include table-condensed();
+  @include table.table();
+  @include table.table-condensed();
 }
 ```
 
@@ -94,10 +94,10 @@ table {
 The `row-striped` mixin adds striping pattern to the table.
 
 ```scss
-@import "@featherds/table/scss/table";
+@use "@featherds/table/scss/table" as table;
 table {
-  @include table();
-  @include row-striped();
+  @include table.table();
+  @include table.row-striped();
 }
 ```
 
@@ -106,10 +106,10 @@ table {
 The `tbody-striped` mixin adds striping pattern to the table by striping the underlying `tbody` elements. This is useful when you need to stripe grouped rows. The best way to group rows is to use multiple `tbody`s.
 
 ```scss
-@import "@featherds/table/scss/table";
+@use "@featherds/table/scss/table" as table;
 table {
-  @include table();
-  @include tbody-striped();
+  @include table.table();
+  @include table.tbody-striped();
 }
 ```
 

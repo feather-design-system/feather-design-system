@@ -152,8 +152,8 @@ export default defineComponent({
 </style>
 
 <style lang="scss">
-@import "../../scss/mixins";
+@use "../../scss/mixins" as dropdown-mixins;
 .feather-dropdown {
-  @include dropdown-menu-height(6);
+  @include dropdown-mixins.dropdown-menu-height(6);
 }
 </style>

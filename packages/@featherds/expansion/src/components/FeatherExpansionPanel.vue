@@ -197,13 +197,13 @@ export default defineComponent({
 </script>
 
 <style lang="scss" scoped>
-@import "@featherds/styles/themes/variables";
-@import "@featherds/styles/mixins/typography";
-@import "@featherds/styles/mixins/elevation";
+@use "@featherds/styles/themes/variables" as vars;
+@use "@featherds/styles/mixins/typography" as typo;
+@use "@featherds/styles/mixins/elevation" as elev;
 
 .feather-expansion {
   width: 100%;
-  @include elevation(2);
+  @include elev.elevation(2);
   [role="region"] {
     will-change: height;
     .panel-content {
@@ -227,8 +227,8 @@ export default defineComponent({
     width: 100%;
     transition: height 280ms ease-in-out;
     cursor: pointer;
-    @include body-small();
-    color: var($primary-text-on-surface);
+    @include typo.body-small();
+    color: var(vars.$primary-text-on-surface);
     &:hover {
       text-decoration: none;
     }
@@ -236,7 +236,7 @@ export default defineComponent({
       height: 4rem;
     }
     &.disabled {
-      color: var($disabled-text-on-surface);
+      color: var(vars.$disabled-text-on-surface);
       cursor: default;
     }
   }
@@ -252,9 +252,9 @@ export default defineComponent({
     height: 1.125rem;
     width: 1.125rem;
     font-size: 1.125rem;
-    color: var($secondary-text-on-surface);
+    color: var(vars.$secondary-text-on-surface);
     &.disabled {
-      color: var($disabled-text-on-surface);
+      color: var(vars.$disabled-text-on-surface);
       cursor: default;
     }
   }

@@ -41,7 +41,7 @@ export default defineComponent({
 </script>
 
 <style lang="scss" scoped>
-@import "@featherds/styles/themes/variables";
+@use "@featherds/styles/themes/variables" as vars;
 $close-width: 3rem;
 $small-width: 2.5rem;
 a.closeButton {
@@ -50,7 +50,7 @@ a.closeButton {
   right: 0px;
   cursor: pointer;
   font-size: 1.125rem;
-  color: var($secondary-text-on-surface);
+  color: var(vars.$secondary-text-on-surface);
   text-decoration: none;
   display: flex;
   align-items: center;
@@ -59,12 +59,12 @@ a.closeButton {
   width: $close-width;
   text-align: center;
   &:visited {
-    color: var($secondary-text-on-surface);
+    color: var(vars.$secondary-text-on-surface);
   }
   &:hover,
   &:active {
     text-decoration: none;
-    color: var($primary-text-on-surface);
+    color: var(vars.$primary-text-on-surface);
   }
   &.small {
     height: $small-width;

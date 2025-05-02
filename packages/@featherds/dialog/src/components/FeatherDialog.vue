@@ -161,9 +161,9 @@ export default defineComponent({
 </script>
 
 <style lang="scss" scoped>
-@import "@featherds/styles/themes/variables";
-@import "@featherds/styles/mixins/elevation";
-@import "@featherds/styles/mixins/typography";
+@use "@featherds/styles/themes/variables" as vars;
+@use "@featherds/styles/mixins/elevation" as elev;
+@use "@featherds/styles/mixins/typography" as typo;
 .feather-dialog {
   position: fixed;
   left: 0;
@@ -173,7 +173,7 @@ export default defineComponent({
   display: flex;
   justify-content: center;
   align-items: center;
-  z-index: var($zindex-modal);
+  z-index: var(vars.$zindex-modal);
   &.relative {
     position: absolute;
     top: 0;
@@ -187,11 +187,11 @@ export default defineComponent({
 
 .content {
   z-index: 1;
-  background-color: var($surface);
+  background-color: var(vars.$surface);
   border-radius: 4px;
-  @include elevation(24);
+  @include elev.elevation(24);
   position: relative;
-  margin: 0 var($spacing-xl);
+  margin: 0 var(vars.$spacing-xl);
 }
 
 //fixing UISPRT-171 - removing focus outlines
@@ -204,10 +204,10 @@ export default defineComponent({
 
 .dialog-body {
   padding: 1.5rem;
-  color: var($secondary-text-on-surface);
+  color: var(vars.$secondary-text-on-surface);
   header {
-    color: var($primary-text-on-surface);
-    @include headline4();
+    color: var(vars.$primary-text-on-surface);
+    @include typo.headline4();
     margin-bottom: 1.5rem;
     line-height: 1.25em;
   }
@@ -273,7 +273,7 @@ export default defineComponent({
   top: 0;
   height: 100vh;
   width: 100vw;
-  background-color: var($lightbox-background);
+  background-color: var(vars.$lightbox-background);
   &.transparent {
     background-color: transparent;
   }

@@ -21,15 +21,15 @@
   </svg>
 </template>
 <style lang="scss" scoped>
-@import "@featherds/styles/themes/variables";
+@use "@featherds/styles/themes/variables" as vars;
 
 path {
   fill: none;
-  stroke: var($secondary-variant);
+  stroke: var(vars.$secondary-variant);
 
   &.circle {
     stroke: none;
-    fill: var($primary-text-on-surface);
+    fill: var(vars.$primary-text-on-surface);
   }
 }
 

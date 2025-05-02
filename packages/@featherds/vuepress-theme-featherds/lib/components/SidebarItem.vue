@@ -19,27 +19,27 @@ export default {
 };
 </script>
 <style lang="scss" scoped>
-@import "@featherds/styles/themes/variables";
-@import "@featherds/styles/mixins/typography";
+@use "@featherds/styles/themes/variables" as vars;
+@use "@featherds/styles/mixins/typography" as typo;
 
 li a {
   height: 2rem;
   padding-left: 1rem;
   display: flex;
   align-items: center;
-  border-left: 2px solid var($shade-4);
-  @include body-small;
-  color: var($secondary-text-on-surface);
+  border-left: 2px solid var(vars.$shade-4);
+  @include typo.body-small;
+  color: var(vars.$secondary-text-on-surface);
   &:visited {
-    color: var($secondary-text-on-surface);
+    color: var(vars.$secondary-text-on-surface);
   }
   &:hover {
     text-decoration: none;
-    color: var($primary-text-on-surface);
+    color: var(vars.$primary-text-on-surface);
   }
   &.active {
-    color: var($primary);
-    border-left: 2px solid var($primary);
+    color: var(vars.$primary);
+    border-left: 2px solid var(vars.$primary);
   }
 }
 </style>

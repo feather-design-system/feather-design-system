@@ -34,9 +34,8 @@ export default {
 };
 </script>
 <style lang="scss" scoped>
-@import "@featherds/styles/mixins/typography";
-@import "@featherds/styles/mixins/responsive";
-@import "@featherds/styles/themes/variables";
+@use "@featherds/styles/themes/variables" as vars;
+@use "@featherds/styles/mixins/typography" as typo;
 
 .section-404 {
   display: flex;
@@ -55,8 +54,8 @@ export default {
     bottom: 0;
     left: 0;
     right: 0;
-    background: var($hero-gradient-2-1), var($hero-gradient-2-2),
-      var($hero-gradient-2-3), var($hero-gradient-2-4);
+    background: var(vars.$hero-gradient-2-1), var(vars.$hero-gradient-2-2),
+      var(vars.$hero-gradient-2-3), var(vars.$hero-gradient-2-4);
   }
 
   .section-wrapper {
@@ -66,13 +65,13 @@ export default {
     max-width: 37.5rem;
 
     span.overline {
-      @include overline();
-      color: var($secondary-variant);
+      @include typo.overline();
+      color: var(vars.$secondary-variant);
       margin-bottom: 0.75rem;
     }
 
     h3 {
-      @include headline1();
+      @include typo.headline1();
     }
 
     .not-found {
@@ -99,8 +98,8 @@ export default {
         p {
           padding-top: 0;
           margin-top: 0.25rem;
-          @include body-large();
-          color: var($secondary-text-on-surface);
+          @include typo.body-large();
+          color: var(vars.$secondary-text-on-surface);
         }
 
         a.btn {

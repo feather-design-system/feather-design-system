@@ -117,8 +117,8 @@ export default {
 }
 </style>
 <style scoped lang="scss">
-@import "@featherds/styles/mixins/typography";
-@import "@featherds/styles/themes/variables";
+@use "@featherds/styles/themes/variables" as vars;
+@use "@featherds/styles/mixins/typography" as typo;
 ul {
   padding: 0;
   margin: 0;
@@ -129,14 +129,14 @@ ul {
 
     display: inline-block;
     font-size: 1.5rem;
-    color: var($secondary-text-on-surface);
+    color: var(vars.$secondary-text-on-surface);
     text-align: center;
     width: 9.375rem;
     padding: 0.5rem;
     transition: background-color 1s;
 
     &:hover {
-      background-color: var($background);
+      background-color: var(vars.$background);
       border-radius: 0.5rem;
     }
 
@@ -163,8 +163,8 @@ ul {
       width: 3rem;
     }
     .icon-name {
-      @include caption();
-      color: var($secondary-text-on-surface);
+      @include typo.caption();
+      color: var(vars.$secondary-text-on-surface);
       display: block;
       text-overflow: ellipsis;
       overflow: hidden;
@@ -176,18 +176,18 @@ ul {
   align-items: center;
   justify-items: center;
   gap: 0.5rem;
-  background: var($surface);
+  background: var(vars.$surface);
   border-radius: 4px;
 
   .info-icon {
-    // color: var($primary);
+    // color: var(vars.$primary);
     height: 1rem;
     width: auto;
   }
 
   span {
-    @include caption();
-    color: var($primary-text-on-surface);
+    @include typo.caption();
+    color: var(vars.$primary-text-on-surface);
   }
 }
 

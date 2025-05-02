@@ -21,9 +21,9 @@ export default defineComponent({
 });
 </script>
 <style lang="scss" scoped>
-@import "@featherds/styles/themes/variables";
+@use "@featherds/styles/themes/variables" as vars;
 .error-icon {
-  color: var($error);
+  color: var(vars.$error);
   font-size: 1.25rem;
 }
 </style>

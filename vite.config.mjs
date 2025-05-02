@@ -8,6 +8,16 @@ export default defineConfig({
     vue(),
     // vueDevTools()
   ],
+  server: {
+    allowedHosts: ["localhost.lambdatest.com"],
+  },
+  css: {
+    preprocessorOptions: {
+      scss: {
+        api: "modern",
+      },
+    },
+  },
   define: {
     __VUE_PROD_HYDRATION_MISMATCH_DETAILS__: false,
   },

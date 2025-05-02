@@ -54,31 +54,35 @@
       </FeatherButton>
     </div>
     <table class="calendar" role="presentation">
-      <tr>
-        <th class="cell day-header" v-for="d in daysOfWeek" :key="d">
-          {{ d }}
-        </th>
-      </tr>
-      <tr v-for="week in weeks" :key="'week' + week[0]!.timestamp">
-        <td v-for="day in week" :key="day.timestamp">
-          <button
-            class="cell day hover focus"
-            type="button"
-            :aria-label="day.label"
-            :aria-disabled="day.isDisabled ? 'true' : 'false'"
-            :aria-pressed="day.isSelected ? 'true' : 'false'"
-            :class="dayClasses(day)"
-            @click="onClick(day)"
-            @keydown="onKeydown"
-            :data-ref-id="
-              day.isHighlighted ? 'feather-calendar-highlighted-day' : ''
-            "
-            :tabindex="day.isHighlighted ? 0 : -1"
-          >
-            {{ day.date }}
-          </button>
-        </td>
-      </tr>
+      <thead>
+        <tr>
+          <th class="cell day-header" v-for="d in daysOfWeek" :key="d">
+            {{ d }}
+          </th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr v-for="week in weeks" :key="'week' + week[0]!.timestamp">
+          <td v-for="day in week" :key="day.timestamp">
+            <button
+              class="cell day hover focus"
+              type="button"
+              :aria-label="day.label"
+              :aria-disabled="day.isDisabled ? 'true' : 'false'"
+              :aria-pressed="day.isSelected ? 'true' : 'false'"
+              :class="dayClasses(day)"
+              @click="onClick(day)"
+              @keydown="onKeydown"
+              :data-ref-id="
+                day.isHighlighted ? 'feather-calendar-highlighted-day' : ''
+              "
+              :tabindex="day.isHighlighted ? 0 : -1"
+            >
+              {{ day.date }}
+            </button>
+          </td>
+        </tr>
+      </tbody>
     </table>
   </div>
 </template>
@@ -457,5 +461,5 @@ export default defineComponent({
 </script>
 
 <style lang="scss" scoped>
-@import "./Calendar";
+@use "./Calendar";
 </style>

@@ -39,10 +39,10 @@
   </div>
 </template>
 <style lang="scss" scoped>
-@import "@featherds/styles/themes/variables";
+@use "@featherds/styles/themes/variables" as vars;
 .feather-row {
   ul {
-    border: 1px solid var($primary);
+    border: 1px solid var(vars.$primary);
   }
 }
 </style>

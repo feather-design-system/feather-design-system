@@ -141,16 +141,17 @@ export default defineComponent({
 </script>
 
 <style lang="scss" scoped>
-@import "@featherds/styles/themes/variables";
-@import "@featherds/styles/mixins/elevation";
+@use "@featherds/styles/themes/variables" as vars;
+@use "@featherds/styles/mixins/elevation" as elev;
+
 .greyedOut {
   position: fixed;
   top: 0;
   left: 0;
   width: 100vw;
   height: 100vh;
-  z-index: var($zindex-modal-backdrop);
-  background-color: var($lightbox-background);
+  z-index: var(vars.$zindex-modal-backdrop);
+  background-color: var(vars.$lightbox-background);
 }
 
 .content {
@@ -158,10 +159,10 @@ export default defineComponent({
   top: 0;
   right: 0;
   height: 100%;
-  z-index: var($zindex-modal);
-  background-color: var($surface);
+  z-index: var(vars.$zindex-modal);
+  background-color: var(vars.$surface);
   margin-left: 3.5rem;
-  @include elevation(8);
+  @include elev.elevation(8);
   &.left {
     right: unset;
     left: 0;

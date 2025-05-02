@@ -296,9 +296,9 @@ export default defineComponent({
 
 <style lang="scss" scoped>
 @use "sass:math";
-@import "@featherds/styles/themes/variables";
-@import "@featherds/styles/mixins/typography";
-@import "@featherds/styles/mixins/elevation";
+@use "@featherds/styles/themes/variables" as vars;
+@use "@featherds/styles/mixins/typography" as typo;
+
 $pWidth: 33px;
 $pHeight: 18px;
 $expectedWidth: 18px;
@@ -309,12 +309,12 @@ $verticalOffset: $offset + (math.div($pWidth, 2) - math.div($pHeight, 2));
   position: fixed;
   top: 0;
   left: 0;
-  z-index: var($zindex-popover);
+  z-index: var(vars.$zindex-popover);
   .popover {
-    @include body-small;
-    color: var($secondary-text-on-surface);
-    background-color: var($elevation-background-2);
-    border: 1px solid var($border-on-surface);
+    @include typo.body-small;
+    color: var(vars.$secondary-text-on-surface);
+    background-color: var(vars.$elevation-background-2);
+    border: 1px solid var(vars.$border-on-surface);
     padding: 1.25rem;
     border-radius: 4px;
     max-width: 16rem;

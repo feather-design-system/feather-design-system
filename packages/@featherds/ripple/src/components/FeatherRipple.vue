@@ -76,6 +76,12 @@ export default defineComponent({
         });
       });
     },
+    cleanupEventListeners() {
+      // make sure parent exists before attempting to remove event listener
+      if (this.parent) {
+        this.parent.removeEventListener("click", this.onClick);
+      }
+    },
   },
   render() {
     if (this.pressed === false) {
@@ -107,8 +113,11 @@ export default defineComponent({
     }
     this.parent.style.position = "relative";
   },
+  beforeUnmount() {
+    this.cleanupEventListeners();
+  },
   unmounted() {
-    this.parent.removeEventListener("click", this.onClick);
+    this.cleanupEventListeners();
   },
 });
 </script>

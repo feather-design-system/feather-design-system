@@ -16,13 +16,13 @@ export default {
 };
 </script>
 <style lang="scss" scoped>
-@import "@featherds/styles/mixins/elevation";
-@import "@featherds/styles/themes/variables";
+@use "@featherds/styles/mixins/elevation" as elev;
+@use "@featherds/styles/themes/variables" as vars;
 
 $elevations: 0, 1, 2, 3, 4, 6, 8, 12, 16, 24;
 @each $i in $elevations {
   .el-#{$i} {
-    @include elevation($i);
+    @include elev.elevation($i);
   }
 }
 .item {
@@ -34,8 +34,8 @@ $elevations: 0, 1, 2, 3, 4, 6, 8, 12, 16, 24;
   justify-content: center;
 }
 section {
-  background: var($background);
+  background: var(vars.$background);
   margin: -0.5rem;
-  color: var($primary-text-on-surface);
+  color: var(vars.$primary-text-on-surface);
 }
 </style>

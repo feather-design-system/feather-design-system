@@ -40,10 +40,11 @@ export default defineComponent({
 
 <style lang="scss" scoped>
 @use "sass:math";
-@import "@featherds/styles/themes/variables";
-@import "@featherds/styles/mixins/elevation";
-@import "@featherds/styles/mixins/flex";
-@import "@featherds/styles/themes/utils";
+@use "@featherds/styles/themes/variables" as vars;
+@use "@featherds/styles/mixins/elevation" as elev;
+@use "@featherds/styles/mixins/flex" as flex;
+@use "@featherds/styles/themes/utils" as utils;
+
 $circleHeight: 1.25rem;
 $height: 2.25rem;
 $trackHeight: 0.875rem;
@@ -60,14 +61,14 @@ $trackLength: 2.125rem;
 
   &.checked {
     .switch-circle {
-      background: layers(var($primary));
+      background: utils.layers(var(vars.$primary));
       border: 1px solid transparent;
     }
     .switcher {
       transform: translateX(0.875rem);
     }
     .track {
-      background-color: alpha($primary, 0.4);
+      background-color: utils.alpha(vars.$primary, 0.4);
     }
   }
   &.disabled {
@@ -77,16 +78,19 @@ $trackLength: 2.125rem;
 .switch-circle {
   height: $circleHeight;
   width: $circleHeight;
-  @include elevation(2);
-  background: layers(var($border-light-on-surface), var($background));
-  border: 1px solid var($shade-1);
+  @include elev.elevation(2);
+  background: utils.layers(
+    var(vars.$border-light-on-surface),
+    var(vars.$background)
+  );
+  border: 1px solid var(vars.$shade-1);
   border-radius: 100%;
   transition: all 280ms ease-in-out;
 }
 .switcher {
   flex: none;
   display: flex;
-  @include center;
+  @include flex.center;
   height: $height;
   border-radius: 100%;
   width: $height;
@@ -103,7 +107,7 @@ $trackLength: 2.125rem;
   width: $trackLength;
   height: $trackHeight;
   border-radius: $trackHeight;
-  background-color: alpha($primary-text-on-surface, 0.24);
+  background-color: utils.alpha(vars.$primary-text-on-surface, 0.24);
   transition: all 280ms ease-in-out;
 }
 label {

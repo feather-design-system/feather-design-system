@@ -147,32 +147,30 @@ export default defineComponent({
 });
 </script>
 <style lang="scss" scoped>
-@import "@featherds/styles/mixins/typography";
-@import "@featherds/styles/themes/variables";
-@import "@featherds/styles/themes/utils";
-@import "@featherds/table/scss/_table";
+@use "@featherds/styles/themes/variables" as vars;
+@use "@featherds/table/scss/_table" as table;
 .feather-autocomplete-results-grid {
   overflow-y: scroll;
 }
 .feather-autocomplete-results-grid-container {
-  @include table();
-  @include table-condensed();
-  @include row-hover();
-  @include row-select();
+  @include table.table();
+  @include table.table-condensed();
+  @include table.row-hover();
+  @include table.row-select();
   width: 100%;
   tr {
     &.selected {
-      color: var($primary-text-on-surface);
+      color: var(vars.$primary-text-on-surface);
     }
 
     &.focus td:first-child {
-      box-shadow: inset 3px 0 0px 0px var($primary);
+      box-shadow: inset 3px 0 0px 0px var(vars.$primary);
     }
     td {
       border: 1px solid transparent;
     }
     td.focus-cell {
-      border: 1px solid var($primary);
+      border: 1px solid var(vars.$primary);
     }
   }
   tbody tr {
@@ -181,8 +179,8 @@ export default defineComponent({
 }
 </style>
 <style lang="scss">
-@import "../../../scss/mixins";
+@use "../../../scss/mixins" as autocomplete-mixins;
 .feather-autocomplete-results-grid {
-  @include autocomplete-results-height(6);
+  @include autocomplete-mixins.autocomplete-results-height(6);
 }
 </style>

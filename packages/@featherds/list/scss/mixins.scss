@@ -1,4 +1,4 @@
-@import "./variables.scss";
+@use "./variables.scss" as list-vars;
 @mixin feather-list-height($rows) {
-  max-height: $feather-list-height * $rows + 1rem;
+  max-height: list-vars.$feather-list-height * $rows + 1rem;
 }

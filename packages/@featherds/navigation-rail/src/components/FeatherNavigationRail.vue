@@ -104,28 +104,29 @@ export default defineComponent({
 });
 </script>
 <style lang="scss" scoped>
-@import "@featherds/styles/themes/variables";
-@import "@featherds/styles/mixins/elevation";
-@import "@featherds/styles/mixins/flex";
-@import "@featherds/styles/themes/utils";
+@use "@featherds/styles/themes/variables" as vars;
+@use "@featherds/styles/mixins/elevation" as elev;
+@use "@featherds/styles/mixins/flex" as flex;
+@use "@featherds/styles/themes/utils" as utils;
+
 $width: 16.5rem;
 $condensed: 3.25rem;
 $header-size: 2.5rem;
 .nav-header {
-  @include flex;
+  @include flex.flex;
   justify-content: flex-end;
   align-items: center;
-  border-bottom: 1px solid var($border-on-surface);
+  border-bottom: 1px solid var(vars.$border-on-surface);
   padding: 0.5rem 0.375rem 0.5rem 0.75rem;
   .expand-link {
-    @include flex;
-    @include center;
-    @include none;
+    @include flex.flex;
+    @include flex.center;
+    @include flex.none;
     cursor: pointer;
     font-size: 1.25rem;
     width: $header-size;
     height: $header-size;
-    color: var($secondary-text-on-surface);
+    color: var(vars.$secondary-text-on-surface);
     .chevron {
       transition: transform 280ms ease-in-out;
     }
@@ -134,15 +135,15 @@ $header-size: 2.5rem;
     border-radius: 100%;
     background-color: transparent;
     border: 2px solid transparent;
-    @include state-on-surface();
+    @include utils.state-on-surface();
     &:hover {
-      border-color: alpha(
-        $state-color-on-surface,
-        var($state-opacity-hover-on-surface)
+      border-color: utils.alpha(
+        vars.$state-color-on-surface,
+        var(vars.$state-opacity-hover-on-surface)
       );
     }
     &:focus {
-      border-color: var($primary);
+      border-color: var(vars.$primary);
     }
   }
   .header-content {
@@ -157,7 +158,7 @@ $header-size: 2.5rem;
 
 .rail-menu {
   :deep(.feather-menu-list) {
-    border-top: 1px solid var($border-on-surface);
+    border-top: 1px solid var(vars.$border-on-surface);
   }
 
   :deep(.primary-menu .feather-list-item-text) {
@@ -175,11 +176,11 @@ $header-size: 2.5rem;
   position: fixed;
   width: $width;
   left: 0;
-  top: var($header-height);
-  height: calc(100vh - var($header-height));
-  background: var($background);
-  color: var($primary-text-on-surface);
-  @include elevation(2);
+  top: var(vars.$header-height);
+  height: calc(100vh - var(vars.$header-height));
+  background: var(vars.$background);
+  color: var(vars.$primary-text-on-surface);
+  @include elev.elevation(2);
 }
 
 .nav-rail.collapsed {

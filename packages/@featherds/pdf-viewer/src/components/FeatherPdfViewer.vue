@@ -322,9 +322,8 @@ export default defineComponent({
 </script>
 
 <style lang="scss" scoped>
-@import "@featherds/styles/themes/variables";
-@import "@featherds/styles/mixins/typography";
-@import "@featherds/styles/mixins/grid";
+@use "@featherds/styles/themes/variables" as vars;
+@use "@featherds/styles/mixins/typography" as typo;
 
 .feather-pdfviewer {
   position: fixed;
@@ -335,12 +334,12 @@ export default defineComponent({
   display: flex;
   justify-content: center;
   align-items: center;
-  z-index: var($zindex-modal);
+  z-index: var(vars.$zindex-modal);
 
   header {
-    background-color: var($secondary);
-    @include subtitle2;
-    color: var($primary-text-on-color);
+    background-color: var(vars.$secondary);
+    @include typo.subtitle2;
+    color: var(vars.$primary-text-on-color);
     height: 3.75rem;
     display: flex;
     align-items: center;
@@ -407,7 +406,7 @@ export default defineComponent({
 }
 
 .content {
-  background-color: var($surface);
+  background-color: var(vars.$surface);
 }
 
 .loading {

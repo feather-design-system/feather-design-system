@@ -94,8 +94,6 @@ const handleToggle = (e: Event, panel: Panel) => {
 };
 </script>
 <style lang="scss">
-@import "@featherds/styles/themes/variables";
-
 .feather-panel-bar {
   // overridable feather-panel-bar-details component variables
   --feather-panel-bar-title-font-size: var(--feather-headline4-font-size);
@@ -115,22 +113,22 @@ const handleToggle = (e: Event, panel: Panel) => {
 </style>
 
 <style lang="scss" scoped>
-@import "@featherds/styles/themes/variables";
-@import "@featherds/styles/themes/utils";
-@import "@featherds/styles/mixins/typography";
+@use "@featherds/styles/themes/variables" as vars;
+@use "@featherds/styles/themes/utils" as utils;
+@use "@featherds/styles/mixins/typography" as typo;
 
 .feather-panel-bar {
   --transition-speed: 0.375s;
   --border-width: 1px;
   --border-radius: 0;
   width: clamp(320px, 80%, 1280px);
-  box-shadow: var($shadow-2);
+  box-shadow: var(vars.$shadow-2);
   border-radius: var(--border-radius);
 
   .feather-panel-bar-header,
   .feather-panel-bar-footer {
-    @include headline4();
-    background-color: alpha($primary, 0.06);
+    @include typo.headline4();
+    background-color: utils.alpha(vars.$primary, 0.06);
     padding: 0.5rem 1.5rem;
     font-size: var(--feather-panel-bar-title-font-size);
     font-weight: var(--feather-panel-bar-title-font-weight);
@@ -144,10 +142,10 @@ const handleToggle = (e: Event, panel: Panel) => {
     overflow: hidden;
     outline: 0.125px solid transparent;
     border: var(--border-width) solid transparent;
-    border-top: var(--border-width) solid var($shade-4);
+    border-top: var(--border-width) solid var(vars.$shade-4);
 
     &:hover {
-      border: var(--border-width) solid var($shade-2);
+      border: var(--border-width) solid var(vars.$shade-2);
       summary {
         cursor: pointer;
       }
@@ -164,7 +162,7 @@ const handleToggle = (e: Event, panel: Panel) => {
       flex-direction: row;
       justify-content: space-between;
       height: 3rem;
-      @include body-small();
+      @include typo.body-small();
       .icon-and-title {
         display: flex;
         align-items: center;
@@ -191,7 +189,7 @@ const handleToggle = (e: Event, panel: Panel) => {
       }
       &:focus-visible,
       &:focus {
-        color: var($primary);
+        color: var(vars.$primary);
         outline: none;
       }
     }

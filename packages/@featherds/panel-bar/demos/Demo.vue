@@ -112,7 +112,7 @@ const demoMode = ref<"single" | "multi">("single");
 // }
 </style>
 <style lang="scss" scoped>
-@import "@featherds/styles/themes/variables";
+@use "@featherds/styles/themes/variables" as vars;
 .demo {
   display: flex;
   flex-direction: row;
@@ -126,7 +126,7 @@ const demoMode = ref<"single" | "multi">("single");
     align-items: flex-start;
     justify-content: center;
     padding: 1rem;
-    color: var($primary-text-on-surface);
+    color: var(vars.$primary-text-on-surface);
     border-radius: 0.25rem;
     div:has(input[id="demoTitle"]) {
       display: inline-flex;

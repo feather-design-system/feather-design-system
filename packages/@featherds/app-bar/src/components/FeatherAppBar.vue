@@ -118,10 +118,9 @@ export default defineComponent({
 </script>
 
 <style lang="scss" scoped>
-@import "@featherds/styles/themes/variables";
-@import "@featherds/styles/mixins/elevation";
-@import "@featherds/styles/mixins/responsive";
-@import "@featherds/styles/mixins/typography";
+@use "@featherds/styles/themes/variables" as vars;
+@use "@featherds/styles/mixins/elevation" as elev;
+@use "@featherds/styles/mixins/responsive" as resp;
 
 .center-horiz {
   display: flex;
@@ -129,16 +128,16 @@ export default defineComponent({
 }
 
 .header {
-  color: var($state-text-color-on-surface-dark);
-  @include elevation(4);
+  color: var(vars.$state-text-color-on-surface-dark);
+  @include elev.elevation(4);
   position: fixed;
   top: 0;
   left: 0;
-  z-index: var($zindex-fixed);
-  background-color: var($surface-dark);
-  border-bottom: 1px solid var($border-on-surface);
+  z-index: var(vars.$zindex-fixed);
+  background-color: var(vars.$surface-dark);
+  border-bottom: 1px solid var(vars.$border-on-surface);
   width: 100%;
-  height: var($header-height);
+  height: var(vars.$header-height);
 }
 
 .header-content {
@@ -146,20 +145,20 @@ export default defineComponent({
   height: 100%;
   display: flex;
   justify-content: center;
-  max-width: var($content-width);
+  max-width: var(vars.$content-width);
   padding-top: 0;
   padding-bottom: 0;
-  padding-left: $xl-gutter;
-  padding-right: $xl-gutter;
+  padding-left: vars.$xl-gutter;
+  padding-right: vars.$xl-gutter;
 
-  @include media-query-for(s) {
-    padding-left: $s-gutter;
-    padding-right: $s-gutter;
+  @include resp.media-query-for(s) {
+    padding-left: vars.$s-gutter;
+    padding-right: vars.$s-gutter;
   }
   .expand-button {
     display: none;
   }
-  @include media-query-below(xl) {
+  @include resp.media-query-below(xl) {
     .expand-button {
       display: flex;
     }

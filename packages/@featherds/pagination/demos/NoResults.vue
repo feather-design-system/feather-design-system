@@ -118,13 +118,13 @@ export default defineComponent({
 });
 </script>
 <style lang="scss" scoped>
-@import "@featherds/styles/themes/variables";
+@use "@featherds/styles/themes/variables" as vars;
 
 .pagination-demo {
   padding-top: 4rem;
   .div {
     .button {
-      background-color: var($primary);
+      background-color: var(vars.$primary);
     }
   }
 }
@@ -135,13 +135,13 @@ export default defineComponent({
 }
 
 .pagination-page {
-  border: 1px solid var($border-on-surface);
+  border: 1px solid var(vars.$border-on-surface);
   padding: 0.5rem;
   border-bottom-style: none;
 }
 
 .pagination-total {
-  border: 1px solid var($border-on-surface);
+  border: 1px solid var(vars.$border-on-surface);
   padding: 0.5rem;
 }
 </style>

@@ -21,26 +21,26 @@
   </div>
 </template>
 <style lang="scss" scoped>
-@import "@featherds/styles/mixins/grid";
+@use "@featherds/styles/mixins/grid" as grid;
 
 .container {
-  @include container;
+  @include grid.container;
 }
 
 .row {
-  @include row;
+  @include grid.row;
 }
 
 .lhs {
-  @include col(2);
+  @include grid.col(2);
 }
 
 .rhs {
-  @include col(10);
+  @include grid.col(10);
 }
 
 .split {
-  @include col(4);
+  @include grid.col(4);
 }
 
 .row {

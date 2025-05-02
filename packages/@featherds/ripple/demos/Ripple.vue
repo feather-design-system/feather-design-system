@@ -18,16 +18,16 @@ export default defineComponent({
 });
 </script>
 <style lang="scss" scoped>
-@import "@featherds/styles/themes/variables";
+@use "@featherds/styles/themes/variables" as vars;
 .ripple-container {
   height: 12.5rem;
   width: 12.5rem;
   position: relative;
-  border: 1px solid var($border-on-surface);
-  background-color: var($surface);
+  border: 1px solid var(vars.$border-on-surface);
+  background-color: var(vars.$surface);
 }
 section :deep(.ripple) {
-  background-color: var($state-color-on-surface);
-  opacity: var($state-opacity-pressed-on-surface);
+  background-color: var(vars.$state-color-on-surface);
+  opacity: var(vars.$state-opacity-pressed-on-surface);
 }
 </style>

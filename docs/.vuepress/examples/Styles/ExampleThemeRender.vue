@@ -54,12 +54,12 @@ export default {
 };
 </script>
 <style lang="scss" scoped>
-@import "@featherds/styles/themes/variables";
-@import "@featherds/styles/mixins/typography";
+@use "@featherds/styles/themes/variables" as vars;
+@use "@featherds/styles/mixins/typography" as typo;
 
 .theme-render {
   padding: 0.5rem 2rem;
-  background-color: var($background);
+  background-color: var(vars.$background);
 }
 .outer-row {
   display: flex;
@@ -72,20 +72,21 @@ export default {
   flex: 1;
   display: flex;
   flex-direction: column;
-  @include body-large();
+  @include typo.body-large();
   padding: 0.25rem;
 }
 </style>
 
 <style lang="scss" scoped>
-@import "@featherds/styles/themes/open-mixins";
+@use "sass:string";
+@use "@featherds/styles/themes/open-mixins" as open-mixins;
 
 @function str-replace($string, $search, $replace: "") {
-  $index: str-index($string, $search);
+  $index: string.index($string, $search);
   @if $index {
-    @return str-slice($string, 1, $index - 1) + $replace +
+    @return string.slice($string, 1, $index - 1) + $replace +
       str-replace(
-        str-slice($string, $index + str-length($search)),
+        string.slice($string, $index + string.length($search)),
         $search,
         $replace
       );
@@ -93,7 +94,7 @@ export default {
   @return $string;
 }
 
-@each $property, $value in $open-light-map {
+@each $property, $value in open-mixins.$open-light-map {
   $prop: str-replace($property, "--feather-", "");
   :deep(.#{$prop}) {
     color: var(#{$property});

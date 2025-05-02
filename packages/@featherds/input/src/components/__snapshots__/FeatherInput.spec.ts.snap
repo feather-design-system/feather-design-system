@@ -49,6 +49,7 @@ exports[`FeatherInput.vue > should allow custom blur events 1`] = `
         maxlength="false"
         name="feather-input-label"
         type="text"
+        value="YEET"
       />
       
       <div
@@ -127,6 +128,7 @@ exports[`FeatherInput.vue > should allow custom focus events 1`] = `
         maxlength="false"
         name="feather-input-label"
         type="text"
+        value="YEET"
       />
       
       <div
@@ -205,6 +207,7 @@ exports[`FeatherInput.vue > should clear input when clear-icon is clicked 1`] = 
         maxlength="false"
         name="feather-input-label"
         type="text"
+        value=""
       />
       
       <div
@@ -361,6 +364,7 @@ exports[`FeatherInput.vue > should render a clear icon when clear has a value an
         maxlength="false"
         name="feather-input-label"
         type="text"
+        value="Test"
       />
       
       <div
@@ -457,6 +461,7 @@ exports[`FeatherInput.vue > should render a maxlength attribute and character co
         maxlength="5"
         name="feather-input-label"
         type="text"
+        value="test"
       />
       
       <div
@@ -647,6 +652,7 @@ exports[`FeatherInput.vue > should render an input error input and has a value 1
         maxlength="false"
         name="feather-input-label"
         type="text"
+        value="Test"
       />
       
       <div
@@ -1016,6 +1022,7 @@ exports[`FeatherInput.vue > should render an input with a preset value 1`] = `
         maxlength="false"
         name="feather-input-label"
         type="text"
+        value="YEET"
       />
       
       <div
@@ -1173,6 +1180,7 @@ exports[`FeatherInput.vue > should render an input with raised label when focuse
         maxlength="false"
         name="feather-input-label"
         type="text"
+        value="YEET"
       />
       
       <div

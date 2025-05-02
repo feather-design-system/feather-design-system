@@ -19,14 +19,14 @@ export default {
 };
 </script>
 <style lang="scss" scoped>
-@import "@featherds/styles/themes/variables";
+@use "@featherds/styles/themes/variables" as vars;
 .my-icon,
 .my-primary-icon {
   font-size: 1.5rem;
-  color: var($secondary-text-on-surface);
+  color: var(vars.$secondary-text-on-surface);
 }
 
 .my-primary-icon {
-  color: var($primary);
+  color: var(vars.$primary);
 }
 </style>

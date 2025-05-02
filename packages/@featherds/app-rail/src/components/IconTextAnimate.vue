@@ -15,7 +15,7 @@ export default defineComponent({
 });
 </script>
 <style lang="scss" scoped>
-@import "@featherds/styles/themes/variables";
+@use "@featherds/styles/themes/variables" as vars;
 .icon-text-animate {
   height: 56px;
   display: flex;
@@ -24,8 +24,8 @@ export default defineComponent({
   padding-left: 1rem;
   transition-delay: 140ms;
   transition: all 280ms ease-in-out;
-  color: var($state-color-on-surface-dark);
-  --feather-app-rail-text-color: var(#{$state-color-on-surface-dark});
+  color: var(vars.$state-color-on-surface-dark);
+  --feather-app-rail-text-color: var(#{vars.$state-color-on-surface-dark});
   &.expanded {
     width: 100%;
     padding-left: 2rem;

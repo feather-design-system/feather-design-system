@@ -68,9 +68,8 @@ export default {
 };
 </script>
 <style lang="scss" scoped>
-@import "@featherds/styles/themes/variables";
-@import "@featherds/styles/mixins/typography";
+@use "@featherds/styles/themes/variables" as vars;
 .theme-changer.toggle.btn.btn-text {
-  color: var($state-color-on-surface-dark);
+  color: var(vars.$state-color-on-surface-dark);
 }
 </style>

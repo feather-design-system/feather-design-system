@@ -25,12 +25,12 @@
   </svg>
 </template>
 <style lang="scss" scoped>
-@import "@featherds/styles/themes/variables";
+@use "@featherds/styles/themes/variables" as vars;
 
 circle {
-  fill: var($primary-text-on-surface);
+  fill: var(vars.$primary-text-on-surface);
 }
 path {
-  fill: var($primary);
+  fill: var(vars.$primary);
 }
 </style>

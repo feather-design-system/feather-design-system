@@ -62,10 +62,10 @@ export default defineComponent({
 </script>
 
 <style lang="scss" scoped>
-@import "@featherds/styles/themes/variables";
-@import "@featherds/styles/themes/utils";
-@import "@featherds/styles/mixins/typography";
-@import "../../../scss/mixins";
+@use "@featherds/styles/themes/variables" as vars;
+@use "@featherds/styles/themes/utils" as utils;
+@use "@featherds/styles/mixins/typography" as typo;
+@use "../../../scss/mixins" as chip-mixins;
 
 .chip {
   margin: 0;
@@ -75,13 +75,13 @@ export default defineComponent({
   list-style: none;
   display: inline-flex;
   align-items: center;
-  background-color: var($border-light-on-surface);
+  background-color: var(vars.$border-light-on-surface);
   border-radius: 16px;
   border: 1px solid transparent;
   min-width: 0;
   max-width: 18rem;
   padding: 0 0.25rem;
-  @include state-on-neutral($border-light-on-surface);
+  @include utils.state-on-neutral(vars.$border-light-on-surface);
   &:focus {
     outline: none;
   }
@@ -107,32 +107,32 @@ export default defineComponent({
 
   &.focused:not(.disabled) {
     :deep(.label) {
-      color: var($primary-text-on-surface);
+      color: var(vars.$primary-text-on-surface);
     }
-    border: 1px solid var($border-on-surface);
+    border: 1px solid var(vars.$border-on-surface);
     outline: 0;
   }
   &.disabled {
-    color: var($disabled-text-on-surface);
-    background-color: var($border-light-on-surface);
-    @include state-disabled($border-light-on-surface);
+    color: var(vars.$disabled-text-on-surface);
+    background-color: var(vars.$border-light-on-surface);
+    @include utils.state-disabled(vars.$border-light-on-surface);
     cursor: default;
     :deep(.label) {
-      color: var($disabled-text-on-surface);
+      color: var(vars.$disabled-text-on-surface);
       cursor: default;
       &:hover {
-        color: var($disabled-text-on-surface);
+        color: var(vars.$disabled-text-on-surface);
       }
     }
     :deep(.ripple) {
       display: none;
     }
     :deep(.chip-icon > .feather-icon) {
-      color: var($disabled-text-on-surface);
+      color: var(vars.$disabled-text-on-surface);
     }
   }
   &.condensed {
-    @include condensed-chip;
+    @include chip-mixins.condensed-chip;
   }
 }
 </style>

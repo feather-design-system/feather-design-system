@@ -240,17 +240,17 @@ export default defineComponent({
 </script>
 
 <style lang="scss" scoped>
-@import "@featherds/styles/themes/variables";
+@use "@featherds/styles/themes/variables" as vars;
 .feather-pagination {
   display: flex;
-  border: 1px solid var($border-on-surface);
-  color: var($secondary-text-on-surface);
+  border: 1px solid var(vars.$border-on-surface);
+  color: var(vars.$secondary-text-on-surface);
   min-height: 3.5rem;
   padding-left: 1rem;
   align-items: center;
   justify-content: flex-end;
   .action {
-    margin: 0 var($spacing-m);
+    margin: 0 var(vars.$spacing-m);
   }
   ul {
     padding: 0;

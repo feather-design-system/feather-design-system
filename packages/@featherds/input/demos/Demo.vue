@@ -75,9 +75,9 @@ export default defineComponent({
 });
 </script>
 <style lang="scss" scoped>
-@import "@featherds/styles/themes/variables";
+@use "@featherds/styles/themes/variables" as vars;
 .surface {
-  background-color: var($surface);
+  background-color: var(vars.$surface);
   padding: 1.25rem;
 }
 </style>

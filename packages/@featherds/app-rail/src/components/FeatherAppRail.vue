@@ -91,8 +91,8 @@ export default defineComponent({
 </script>
 
 <style lang="scss" scoped>
-@import "@featherds/styles/themes/variables";
-@import "@featherds/styles/mixins/elevation";
+@use "@featherds/styles/themes/variables" as vars;
+
 $bar-narrow-width: 3.5rem;
 $bar-width: 16.5rem;
 .fake-bar {
@@ -106,12 +106,12 @@ $bar-width: 16.5rem;
   top: 0;
   left: 0;
   height: 100vh;
-  background-color: var($surface-dark);
-  border-right: 2px solid var($border-on-surface);
-  color: var($primary-text-on-color);
-  z-index: var($zindex-fixed);
-  --feather-secondary-text-on-surface: var(#{$secondary-text-on-color});
-  --feather-primary-text-on-surface: var(#{$primary-text-on-color});
+  background-color: var(vars.$surface-dark);
+  border-right: 2px solid var(vars.$border-on-surface);
+  color: var(vars.$primary-text-on-color);
+  z-index: var(vars.$zindex-fixed);
+  --feather-secondary-text-on-surface: var(#{vars.$secondary-text-on-color});
+  --feather-primary-text-on-surface: var(#{vars.$primary-text-on-color});
   transition: all 500ms ease-in-out;
   :deep(.feather-list-item),
   :deep(.feather-list-header) {

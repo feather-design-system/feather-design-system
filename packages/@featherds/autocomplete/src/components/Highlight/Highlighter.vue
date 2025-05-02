@@ -57,8 +57,8 @@ export default defineComponent({
 });
 </script>
 <style lang="scss" scoped>
-@import "@featherds/styles/themes/variables";
+@use "@featherds/styles/themes/variables" as vars;
 .highlight {
-  font-weight: var($font-bold);
+  font-weight: var(vars.$font-bold);
 }
 </style>

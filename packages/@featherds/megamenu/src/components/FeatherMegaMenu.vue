@@ -127,9 +127,9 @@ export default defineComponent({
 </script>
 
 <style lang="scss" scoped>
-@import "@featherds/styles/themes/variables";
-@import "@featherds/styles/mixins/elevation";
-@import "@featherds/styles/mixins/flex";
+@use "@featherds/styles/themes/variables" as vars;
+@use "@featherds/styles/mixins/elevation" as elev;
+@use "@featherds/styles/mixins/flex" as flex;
 .mega-menu {
   display: inline-block;
   vertical-align: top;
@@ -139,17 +139,17 @@ export default defineComponent({
   position: absolute;
   width: 100%;
   left: 0;
-  background-color: var($surface);
-  @include elevation(8);
+  background-color: var(vars.$surface);
+  @include elev.elevation(8);
   max-height: 90vh;
   overflow: hidden;
   overflow-y: auto;
   z-index: 1;
   & > .center {
-    @include flex;
-    @include horizontal;
+    @include flex.flex;
+    @include flex.horizontal;
     position: relative;
-    max-width: var($content-width);
+    max-width: var(vars.$content-width);
     margin: 0 auto;
   }
   .menu-content {
@@ -159,7 +159,7 @@ export default defineComponent({
     margin-right: 0.75rem;
     margin-bottom: 1.5rem;
     width: 100%;
-    @include fill;
+    @include flex.fill;
     & :deep(li > a) {
       border-radius: 4px;
     }
@@ -169,7 +169,7 @@ export default defineComponent({
   }
 }
 .menu-name {
-  @include none();
+  @include flex.none();
 }
 .slide-down-enter-active {
   transition: transform 250ms;

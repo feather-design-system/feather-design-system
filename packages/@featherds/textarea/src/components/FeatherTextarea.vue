@@ -281,8 +281,8 @@ export default defineComponent({
 </script>
 
 <style lang="scss" scoped>
-@import "@featherds/styles/themes/variables";
-@import "@featherds/styles/mixins/typography";
+@use "@featherds/styles/themes/variables" as vars;
+@use "@featherds/styles/mixins/typography" as typo;
 
 .feather-textarea {
   border: none;
@@ -293,10 +293,10 @@ export default defineComponent({
   background-color: transparent;
   flex: 1 1 2.5rem;
   width: 0;
-  @include body-small();
+  @include typo.body-small();
   line-height: 1.5em; //IE has an issue with the mixin lineheight when typing
-  color: var($primary-text-on-surface);
-  caret-color: var($primary);
+  color: var(vars.$primary-text-on-surface);
+  caret-color: var(vars.$primary);
   overflow: auto;
   &::-ms-clear {
     display: none;
@@ -305,10 +305,10 @@ export default defineComponent({
     outline: 0;
   }
   &.error {
-    caret-color: var($error);
+    caret-color: var(vars.$error);
   }
   &[disabled] {
-    color: var($disabled-text-on-surface);
+    color: var(vars.$disabled-text-on-surface);
   }
 }
 
@@ -316,8 +316,8 @@ export default defineComponent({
   padding-left: 1rem;
   align-self: flex-start;
   margin-left: auto;
-  @include caption();
-  color: var($secondary-text-on-surface);
+  @include typo.caption();
+  color: var(vars.$secondary-text-on-surface);
 }
 
 .feather-textarea-container {

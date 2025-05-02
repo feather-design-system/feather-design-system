@@ -233,7 +233,7 @@ const filterChange = (value: string | number | undefined) => {
 </script>
 
 <style lang="scss" scoped>
-@import "@featherds/table/scss/table";
+@use "@featherds/table/scss/table" as table;
 
 .filter-sort-demo {
   --animation-duration: 0.3s;
@@ -254,13 +254,13 @@ const filterChange = (value: string | number | undefined) => {
     width: 20rem;
   }
   table {
-    @include table();
+    @include table.table();
     width: 100%;
     &.condensed {
-      @include table-condensed();
+      @include table.table-condensed();
     }
     &.striped {
-      @include row-striped();
+      @include table.row-striped();
     }
     // Add transitions for rows and cells
     tbody {

@@ -34,27 +34,27 @@ export default defineComponent({
 </script>
 
 <style lang="scss" scoped>
-@import "@featherds/styles/themes/variables";
-@import "@featherds/styles/mixins/typography";
+@use "@featherds/styles/themes/variables" as vars;
+@use "@featherds/styles/mixins/typography" as typo;
 .telephone {
-  @include body-small();
+  @include typo.body-small();
   display: flex;
   flex-direction: row;
   align-items: center;
   justify-content: center;
   .icon {
     font-size: 1.25rem;
-    color: var($secondary-text-on-surface);
+    color: var(vars.$secondary-text-on-surface);
     margin-right: 0.25rem;
   }
   a {
-    @include body-small();
+    @include typo.body-small();
     height: 1.25rem;
     &:hover {
       text-decoration: none;
     }
     &:visited {
-      @include body-small();
+      @include typo.body-small();
     }
   }
 }

@@ -1,6 +1,14 @@
-@import "@featherds/table/scss/table";
+@use "@featherds/table/scss/table" as table;
 
 table:not([class]) {
-  @include table();
-  @include row-striped();
+  @include table.table();
+  @include table.row-striped();
+}
+
+// 
+@mixin table-style () {
+  table:not([class]) {
+    @include table.table();
+    @include table.row-striped();
+  }
 }

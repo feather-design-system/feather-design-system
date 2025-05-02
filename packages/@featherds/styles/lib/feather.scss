@@ -1,8 +1,11 @@
-@import "../mixins/typography";
+@use "reset";
+// @use "typography" as typo-styles;
+@use "typography";
+@use "../mixins/typography" as typo;
+
 .feather-styles {
-  @include body-small();
-  @import "reset";
-  @import "typography";
+  @include typo.body-small();
+  // @include typo-styles.typography-style();
 }
 html.feather-styles,
 html.feather-styles body,

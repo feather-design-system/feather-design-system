@@ -47,13 +47,14 @@ export default defineComponent({
 </script>
 
 <style lang="scss" scoped>
-@import "@featherds/styles/mixins/typography";
-@import "@featherds/styles/mixins/elevation";
-@import "@featherds/styles/themes/utils";
+@use "@featherds/styles/themes/variables" as vars;
+@use "@featherds/styles/mixins/elevation" as elev;
+@use "@featherds/styles/mixins/typography" as typo;
+@use "@featherds/styles/themes/utils" as utils;
 
 .feather-card {
-  @include elevation(2);
-  @include state-on-surface();
+  @include elev.elevation(2);
+  @include utils.state-on-surface();
   display: flex;
   flex-direction: column;
   position: relative;
@@ -68,9 +69,9 @@ export default defineComponent({
   }
 
   .feather-card-title {
-    @include headline4;
+    @include typo.headline4;
     margin: 1rem;
-    color: var($primary-text-on-surface);
+    color: var(vars.$primary-text-on-surface);
   }
 
   .feather-card-image-container {
@@ -80,14 +81,14 @@ export default defineComponent({
   }
 
   .feather-card-subtitle {
-    @include subtitle2;
-    color: var($secondary-text-on-surface);
+    @include typo.subtitle2;
+    color: var(vars.$secondary-text-on-surface);
     margin: 0 1rem 0.5rem;
   }
 
   .feather-card-content {
-    @include body-small;
-    color: var($secondary-text-on-surface);
+    @include typo.body-small;
+    color: var(vars.$secondary-text-on-surface);
     margin: 0 0 1rem 1rem;
     padding-right: 1rem;
   }

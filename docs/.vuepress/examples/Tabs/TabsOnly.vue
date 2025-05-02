@@ -1,15 +1,20 @@
 <template>
-  <section>
-    <p>
+  <section class="tabs-demo">
+    <div>
       <ul>
-        <li>You <b>must</b> specify the <code>controls</code> and <code>id</code> attribute on the <code>FeatherTab</code>. <code>controls</code> should be the ID of the panel it is responsible for.
-         </li>
-         <li>
-          You are responsible for showing and hiding the correct panel.
-         </li>
-         <li> Panels <b>must</b> have correct aria labelling to maintain accessibility.</li>
+        <li>
+          You <b>must</b> specify the <code>controls</code> and
+          <code>id</code> attribute on the <code>FeatherTab</code>.
+          <code>controls</code> should be the ID of the panel it is responsible
+          for.
+        </li>
+        <li>You are responsible for showing and hiding the correct panel.</li>
+        <li>
+          Panels <b>must</b> have correct aria labelling to maintain
+          accessibility.
+        </li>
       </ul>
-    </p>
+    </div>
     <FeatherTabContainer v-model="index">
       <template v-slot:tabs>
         <FeatherTab id="one" controls="onepanel">Tab one</FeatherTab>
@@ -64,6 +69,11 @@ export default {
 };
 </script>
 <style lang="scss" scoped>
+.tabs-demo {
+  & > *{
+    margin-block: 1em;
+  }
+}
 [role="tabpanel"] {
   display: none;
   &[aria-expanded="true"] {

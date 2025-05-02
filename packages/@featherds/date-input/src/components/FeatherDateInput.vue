@@ -576,12 +576,12 @@ export default defineComponent({
 </script>
 
 <style lang="scss" scoped>
-@import "@featherds/styles/themes/variables";
+@use "@featherds/styles/themes/variables" as vars;
 .feather-date-input-group {
   flex: 1;
   &.disabled {
     cursor: default;
-    color: var($disabled-text-on-surface);
+    color: var(vars.$disabled-text-on-surface);
   }
 }
 .feather-date-input-menu-container {

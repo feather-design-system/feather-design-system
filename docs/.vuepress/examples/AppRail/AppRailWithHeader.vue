@@ -123,7 +123,7 @@ export default defineComponent({
 </script>
 
 <style lang="scss" scoped>
-@import "@featherds/styles/mixins/typography";
+@use "@featherds/styles/mixins/typography" as typo;
 .header-section {
   padding: 0 0.5rem;
   display: flex;
@@ -139,7 +139,7 @@ export default defineComponent({
 }
 .product-text {
   margin-left: 0.5rem;
-  @include headline3;
+  @include typo.headline4;
   color: var(--feather-app-rail-text-color);
 }
 

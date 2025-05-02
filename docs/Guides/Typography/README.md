@@ -16,38 +16,38 @@ Use mixins where possible. They allow you to style the element with the correct 
 
 <style lang="scss">
 
-  @import "@featherds/styles/mixins/typography";
+  @use "@featherds/styles/mixins/typography" as typo;
   .feather-styles .demo-headings{
     h1,h2,h3,h4,h5,h6,p,a{
       margin:0;
       padding:0;
     }
     h1 {
-  @include headline1();
+  @include typo.headline1();
 }
 
 h2 {
-  @include headline2();
+  @include typo.headline2();
 }
 
 h3 {
-  @include headline3();
+  @include typo.headline3();
 }
 
 h4 {
-  @include headline4();
+  @include typo.headline4();
 }
 
 h5 {
-  @include subtitle1();
+  @include typo.subtitle1();
 }
 
 h6 {
-  @include subtitle2();
+  @include typo.subtitle2();
 }
 
 p {
-  @include body-small();
+  @include typo.body-small();
 }
   }
 
@@ -62,7 +62,7 @@ p {
 Mixins can be used by importing `@featherds/styles/mixins/typography`.
 
 ```scss
-@import "@featherds/styles/mixins/typography";
+@use "@featherds/styles/mixins/typography" as typo;
 ```
 
 It exposes the following mixins:
@@ -92,7 +92,7 @@ It exposes the following mixins:
 Feather styles some HTML elements by default. Typography styles are applied to elements directly when you include `@featherds/styles` and add the `.feather-styles` class to a parent element.
 
 ```scss
-@import "@featherds/styles";
+@use "@featherds/styles";
 ```
 
 This import will also style the following HTML Elements:

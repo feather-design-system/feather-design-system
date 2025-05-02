@@ -1,30 +1,32 @@
 $font-path: "@featherds/styles/fonts/" !default;
-@import "@featherds/styles/lib/feather";
-@import "@featherds/styles/mixins/typography";
-@import "@featherds/styles/themes/open-dark";
+@use "@featherds/styles/lib/feather";
+@use "@featherds/styles/themes/variables" as vars;
+@use "@featherds/styles/mixins/typography" as typo;
+@use "@featherds/styles/themes/open-dark" as open-dark;
 
-@import "@featherds/styles/lib/grid";
-@import "@featherds/styles/mixins/responsive";
-@import "./containers.scss";
+@use "@featherds/styles/lib/grid" as grid-vars;
+@use "@featherds/styles/mixins/responsive" as resp;
+@use "./containers.scss";
 // Code and the like
-@import "prism-themes/themes/prism-atom-dark.css";
-@import "@featherds/styles/themes/open-mixins";
-@import "./search.scss";
+@use "prism-themes/themes/prism-atom-dark.css";
+@use "@featherds/styles/themes/open-mixins" as open-mixins;
+@use "./search.scss";
+@use "./table.scss" as table-style;
 html,
 body,
 #app {
   min-height: 100vh;
-  background-color: var($surface);
-  color: var($primary-text-on-surface);
+  background-color: var(vars.$surface);
+  color: var(vars.$primary-text-on-surface);
   min-height: 100%;
 }
 
 .open-light {
-  @include open-light();
+  @include open-mixins.open-light();
 }
 
 .open-dark {
-  @include open-dark();
+  @include open-mixins.open-dark();
 }
 
 code {
@@ -44,7 +46,8 @@ pre[class*="language-"] {
 }
 // //include local table stylings
 // //replace with styling from feather table
-@import "./table.scss";
+
+@include table-style.table-style();
 
 //Reset some spacing
 body {
@@ -58,11 +61,11 @@ body {
     ol {
       padding-left: 1.25rem;
       margin-bottom: 2.5rem;
-      @include body-small;
+      @include typo.body-small;
       li {
         margin-bottom: 1rem;
         &::marker {
-          color: var($secondary-text-on-surface);
+          color: var(vars.$secondary-text-on-surface);
         }
       }
     }
@@ -76,7 +79,7 @@ body {
     margin-bottom: 1.5rem;
     width: 100%;
   }
-  @include media-query-below(m) {
+  @include resp.media-query-below(m) {
     table:not([class]) {
       display: block;
       max-width: 100vw;
@@ -85,13 +88,13 @@ body {
   }
 
   blockquote {
-    border-left: 2px solid var($secondary);
+    border-left: 2px solid var(vars.$secondary);
     margin: 0;
     padding: 0px 1rem;
-    @include headline2;
+    @include typo.headline2;
   }
   hr {
-    border-top: 1px solid var($border-on-surface);
+    border-top: 1px solid var(vars.$border-on-surface);
     border-bottom: none;
     margin: 2rem 0.5rem;
   }
@@ -103,11 +106,11 @@ body {
     }
   }
   h1 {
-    @include display2();
+    @include typo.display2();
     margin-bottom: 0.5rem;
   }
   h2 {
-    @include headline1();
+    @include typo.headline1();
     margin-bottom: 1.5rem;
   }
   * + h2 {
@@ -115,14 +118,14 @@ body {
   }
   h3 {
     margin-bottom: 1rem;
-    @include headline2();
+    @include typo.headline2();
   }
   h4 {
-    @include headline3();
+    @include typo.headline3();
     margin-bottom: 1rem;
   }
   p {
-    @include body-large();
+    @include typo.body-large();
     margin-bottom: 1.5rem;
   }
   img {
@@ -131,38 +134,53 @@ body {
 }
 
 //Do not show the # before each title
-.header-anchor {
-  display: none;
+h1 {
+  .header-anchor {
+    display: none;
+  }
 }
 
-@include media-query-below(s) {
+a.header-anchor {
+  font-family: inherit;
+  text-decoration: none;
+  pointer-events: none;
+  span {
+    color: var(vars.$primary-text-on-surface);
+  }
+  &:visited {
+    color: inherit;
+    text-decoration: inherit;
+  }
+}
+
+@include resp.media-query-below(s) {
   .feather-styles {
     h1 {
-      @include headline1();
+      @include typo.headline1();
       margin: 0.25em 0;
     }
     h2 {
-      @include headline2();
+      @include typo.headline2();
       margin-bottom: 0.5rem;
     }
     h3 {
       margin-bottom: 0.5rem;
-      @include headline3();
+      @include typo.headline3();
     }
     h4 {
-      @include headline4();
+      @include typo.headline4();
       margin-bottom: 0.5rem;
     }
     h5 {
-      @include subtitle1();
+      @include typo.subtitle1();
       margin-bottom: 0.5rem;
     }
     h6 {
-      @include subtitle2();
+      @include typo.subtitle2();
       margin-bottom: 0.5rem;
     }
     p {
-      @include body-small();
+      @include typo.body-small();
       margin-bottom: 1.5rem;
     }
     ul {

@@ -8,6 +8,13 @@ export default defineConfig({
     alias: [...sassImports, ...moduleImport, ...fileImport],
     extensions: [".mjs", ".js", ".ts", ".jsx", ".tsx", ".json", ".vue"],
   },
+  css: {
+    preprocessorOptions: {
+      scss: {
+        api: "modern",
+      },
+    },
+  },
   root: ".",
   test: {
     include: [

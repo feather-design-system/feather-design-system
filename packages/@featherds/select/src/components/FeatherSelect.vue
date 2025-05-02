@@ -350,8 +350,8 @@ export default defineComponent({
 </script>
 
 <style lang="scss" scoped>
-@import "@featherds/styles/mixins/typography";
-@import "@featherds/styles/themes/variables";
+@use "@featherds/styles/themes/variables" as vars;
+@use "@featherds/styles/mixins/typography" as typo;
 
 .feather-select-input {
   border: none;
@@ -362,9 +362,9 @@ export default defineComponent({
   vertical-align: middle;
   height: 100%;
   background-color: transparent;
-  @include body-small();
+  @include typo.body-small();
   line-height: 1.5em; //IE has an issue with the mixin lineheight when typing
-  color: var($secondary-text-on-surface);
+  color: var(vars.$secondary-text-on-surface);
   flex: 1;
   pointer-events: none;
   cursor: pointer;
@@ -385,7 +385,7 @@ export default defineComponent({
   height: 1.25rem;
   width: 1.25rem;
   align-self: center;
-  color: var($secondary-text-on-surface);
+  color: var(vars.$secondary-text-on-surface);
   transition: transform 280ms ease-in-out;
   transform-origin: center center;
   &.rotate {
@@ -398,14 +398,14 @@ export default defineComponent({
 }
 .feather-select-wrapper {
   &.focused .feather-select-input {
-    color: var($primary-text-on-surface);
+    color: var(vars.$primary-text-on-surface);
   }
   &.disabled {
     .feather-select-input {
-      color: var($disabled-text-on-surface);
+      color: var(vars.$disabled-text-on-surface);
     }
     .feather-select-icon {
-      color: var($disabled-text-on-surface);
+      color: var(vars.$disabled-text-on-surface);
     }
   }
   &:hover {

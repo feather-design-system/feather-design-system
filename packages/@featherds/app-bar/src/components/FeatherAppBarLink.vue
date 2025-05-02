@@ -57,10 +57,10 @@ export default defineComponent({
 });
 </script>
 <style lang="scss" scoped>
-@import "@featherds/styles/themes/variables";
-@import "@featherds/styles/themes/utils";
+@use "@featherds/styles/themes/variables" as vars;
+@use "@featherds/styles/themes/utils" as utils;
 a.round {
-  @include state-on-surface-dark();
+  @include utils.state-on-surface-dark();
   display: flex;
   align-items: center;
   height: 2.5rem;
@@ -76,7 +76,7 @@ a.round {
   }
 
   + a.round {
-    margin-left: var($spacing-xs);
+    margin-left: var(vars.$spacing-xs);
   }
 }
 
@@ -85,12 +85,18 @@ a.home {
   padding: 0.25rem;
   &:focus {
     background: linear-gradient(
-      alpha($state-color-on-color, var($state-opacity-focus-on-color)),
-      alpha($state-color-on-color, var($state-opacity-focus-on-color))
+      utils.alpha(
+        vars.$state-color-on-color,
+        var(vars.$state-opacity-focus-on-color)
+      ),
+      utils.alpha(
+        vars.$state-color-on-color,
+        var(vars.$state-opacity-focus-on-color)
+      )
     );
   }
   :deep(svg.feather-icon) {
-    color: var($surface);
+    color: var(vars.$surface);
 
     height: 2rem;
     width: auto;

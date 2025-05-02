@@ -109,5 +109,5 @@ export default {
 };
 </script>
 <style lang="scss" scoped>
-@import "@featherds/styles/lib/grid";
+@use "@featherds/styles/lib/grid";
 </style>

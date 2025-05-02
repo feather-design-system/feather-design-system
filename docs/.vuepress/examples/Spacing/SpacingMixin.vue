@@ -32,8 +32,8 @@ export default {
 };
 </script>
 <style lang="scss" scoped>
-@import "@featherds/input-helper/scss/spacing";
+@use "@featherds/input-helper/scss/spacing" as spacing;
 form {
-  @include form-spacing();
+  @include spacing.form-spacing();
 }
 </style>

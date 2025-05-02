@@ -34,12 +34,12 @@ export default {
 };
 </script>
 <style lang="scss" scoped>
-@import "@featherds/styles/themes/variables";
-@import "@featherds/styles/themes/utils";
-@import "@featherds/styles/mixins/typography";
+@use "@featherds/styles/themes/variables" as vars;
+@use "@featherds/styles/themes/utils" as utils;
+@use "@featherds/styles/mixins/typography" as typo;
 
 a.link {
-  @include header();
+  @include typo.header();
   height: 100%;
   padding: 0.5rem;
   margin: 0 0.75rem;
@@ -51,29 +51,29 @@ a.link {
   &:active,
   &:hover,
   &:visited {
-    color: var($state-color-on-surface-dark);
+    color: var(vars.$state-color-on-surface-dark);
     text-decoration: none;
   }
 
   :deep(.ripple) {
-    background-color: var($state-color-on-surface-dark);
-    opacity: var($state-opacity-pressed-on-surface-dark);
+    background-color: var(vars.$state-color-on-surface-dark);
+    opacity: var(vars.$state-opacity-pressed-on-surface-dark);
   }
   &:focus {
     background: linear-gradient(
-      alpha(
-        $state-color-on-surface-dark,
-        var($state-opacity-focus-on-surface-dark)
+      utils.alpha(
+        vars.$state-color-on-surface-dark,
+        var(vars.$state-opacity-focus-on-surface-dark)
       ),
-      alpha(
-        $state-color-on-surface-dark,
-        var($state-opacity-focus-on-surface-dark)
+      utils.alpha(
+        vars.$state-color-on-surface-dark,
+        var(vars.$state-opacity-focus-on-surface-dark)
       )
     );
   }
 
   &.active {
-    box-shadow: 0px -0.25rem 0px 0px var($primary-variant) inset;
+    box-shadow: 0px -0.25rem 0px 0px var(vars.$primary-variant) inset;
   }
 }
 </style>

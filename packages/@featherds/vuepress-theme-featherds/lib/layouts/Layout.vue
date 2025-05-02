@@ -113,16 +113,15 @@ export default {
 };
 </script>
 <style lang="scss" scoped>
-@import "@featherds/styles/themes/variables";
-@import "@featherds/styles/mixins/elevation";
-@import "@featherds/styles/mixins/typography";
-@import "@featherds/styles/mixins/responsive";
+@use "@featherds/styles/themes/variables" as vars;
+@use "@featherds/styles/mixins/typography" as typo;
+@use "@featherds/styles/mixins/responsive" as resp;
 
 $contentWidth: 47.5rem;
 .content-container {
   max-width: $contentWidth;
 }
-@include media-query-below(s) {
+@include resp.media-query-below(s) {
   .content-container {
     width: 100%;
   }
@@ -149,11 +148,11 @@ $contentWidth: 47.5rem;
 .title-container {
   margin-bottom: 2.5rem;
   padding: 2.5rem 0;
-  background: var($background);
+  background: var(vars.$background);
   .pre-text,
   .npm-name {
-    @include overline();
-    color: var($primary);
+    @include typo.overline();
+    color: var(vars.$primary);
     margin: 0;
     margin-bottom: 0.5rem;
   }
@@ -177,12 +176,12 @@ div.toc {
   }
 }
 
-@include media-query-below(xl) {
+@include resp.media-query-below(xl) {
   div.toc.fixed {
     left: calc(50% + 15.5rem);
   }
 }
-@include media-query-below(l) {
+@include resp.media-query-below(l) {
   div.toc {
     position: static;
     margin: 1rem;

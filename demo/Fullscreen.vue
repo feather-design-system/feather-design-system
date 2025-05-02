@@ -13,7 +13,7 @@ export default {
 };
 </script>
 <style lang="scss">
-@import "@featherds/styles/themes/variables";
+@use "@featherds/styles/themes/variables" as vars;
 html,
 body {
   height: 100vh;
@@ -25,7 +25,7 @@ body,
   min-height: 100%;
 }
 body {
-  background-color: var($background);
+  background-color: var(vars.$background);
   margin: 0;
 }
 </style>

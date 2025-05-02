@@ -198,8 +198,8 @@ export default defineComponent({
 </script>
 
 <style lang="scss" scoped>
-@import "@featherds/styles/themes/variables";
-@import "@featherds/styles/mixins/typography";
+@use "@featherds/styles/themes/variables" as vars;
+@use "@featherds/styles/mixins/typography" as typo;
 
 @mixin raised-label() {
   top: -0.625rem;
@@ -219,45 +219,45 @@ export default defineComponent({
     display: flex;
     margin: 0;
     padding: 0;
-    #{$input-wrapper-border-color}: var($secondary-text-on-surface);
-    #{$input-wrapper-border-width}: 1px;
+    #{vars.$input-wrapper-border-color}: var(vars.$secondary-text-on-surface);
+    #{vars.$input-wrapper-border-width}: 1px;
     .pre-border {
-      border-left: var($input-wrapper-border-width) solid
-        var($input-wrapper-border-color);
-      border-top: var($input-wrapper-border-width) solid
-        var($input-wrapper-border-color);
-      border-bottom: var($input-wrapper-border-width) solid
-        var($input-wrapper-border-color);
+      border-left: var(vars.$input-wrapper-border-width) solid
+        var(vars.$input-wrapper-border-color);
+      border-top: var(vars.$input-wrapper-border-width) solid
+        var(vars.$input-wrapper-border-color);
+      border-bottom: var(vars.$input-wrapper-border-width) solid
+        var(vars.$input-wrapper-border-color);
       border-radius: 4px 0 0 4px;
       width: 12px;
       flex: none;
     }
     .post-border {
-      border-right: var($input-wrapper-border-width) solid
-        var($input-wrapper-border-color);
-      border-top: var($input-wrapper-border-width) solid
-        var($input-wrapper-border-color);
-      border-bottom: var($input-wrapper-border-width) solid
-        var($input-wrapper-border-color);
+      border-right: var(vars.$input-wrapper-border-width) solid
+        var(vars.$input-wrapper-border-color);
+      border-top: var(vars.$input-wrapper-border-width) solid
+        var(vars.$input-wrapper-border-color);
+      border-bottom: var(vars.$input-wrapper-border-width) solid
+        var(vars.$input-wrapper-border-color);
       border-radius: 0 4px 4px 0;
       flex: 1;
     }
     .label-border {
-      border-top: var($input-wrapper-border-width) solid
-        var($input-wrapper-border-color);
-      border-bottom: var($input-wrapper-border-width) solid
-        var($input-wrapper-border-color);
+      border-top: var(vars.$input-wrapper-border-width) solid
+        var(vars.$input-wrapper-border-color);
+      border-bottom: var(vars.$input-wrapper-border-width) solid
+        var(vars.$input-wrapper-border-color);
       transition: border-top-width 100ms ease-in-out 100ms;
     }
   }
   &:hover {
     cursor: text;
     .feather-input-border {
-      #{$input-wrapper-border-color}: var($primary-text-on-surface);
+      #{vars.$input-wrapper-border-color}: var(vars.$primary-text-on-surface);
       &:after {
         content: "";
         width: 3px;
-        background-color: var($primary);
+        background-color: var(vars.$primary);
         top: 0.5rem;
         bottom: 0.5rem;
         left: 0px;
@@ -270,14 +270,14 @@ export default defineComponent({
       }
     }
     .feather-input-label {
-      color: var($primary);
+      color: var(vars.$primary);
     }
   }
 
   &.focused:not(.disabled) {
     .feather-input-border {
-      #{$input-wrapper-border-color}: var($primary);
-      #{$input-wrapper-border-width}: 2px;
+      #{vars.$input-wrapper-border-color}: var(vars.$primary);
+      #{vars.$input-wrapper-border-width}: 2px;
 
       &:after {
         transform: translateX(8px) scaleX(0.25);
@@ -289,31 +289,31 @@ export default defineComponent({
       border-top-width: 0;
     }
     .feather-input-label {
-      color: var($primary);
+      color: var(vars.$primary);
       @include raised-label();
     }
   }
 
   &.error {
     &:hover .feather-input-border:after {
-      background-color: var($error);
+      background-color: var(vars.$error);
     }
     &.focused {
       .feather-input-border {
-        #{$input-wrapper-border-color}: var($error);
+        #{vars.$input-wrapper-border-color}: var(vars.$error);
       }
       .feather-input-label {
-        color: var($error);
+        color: var(vars.$error);
       }
     }
     .feather-input-label {
-      color: var($error);
+      color: var(vars.$error);
     }
   }
 
   &.disabled {
     .feather-input-border {
-      #{$input-wrapper-border-color}: var($border-on-surface);
+      #{vars.$input-wrapper-border-color}: var(vars.$border-on-surface);
       cursor: default !important;
     }
     &:hover .feather-input-border {
@@ -323,21 +323,21 @@ export default defineComponent({
       }
     }
     .feather-input-label {
-      color: var($disabled-text-on-surface);
+      color: var(vars.$disabled-text-on-surface);
       cursor: default;
     }
     &.focused {
       .feather-input-wrapper {
-        border-color: var($border-on-surface);
+        border-color: var(vars.$border-on-surface);
       }
     }
     .feather-input-label {
-      color: var($disabled-text-on-surface);
+      color: var(vars.$disabled-text-on-surface);
       cursor: default;
       pointer-events: none;
     }
     .prefix {
-      color: var($disabled-text-on-surface);
+      color: var(vars.$disabled-text-on-surface);
     }
     :deep(.hide-when-disabled) {
       display: none;
@@ -350,7 +350,7 @@ export default defineComponent({
       border-top-width: 0;
     }
     .feather-input-label {
-      background: var($elevation-background-2);
+      background: var(vars.$elevation-background-2);
       @include raised-label();
       left: 0.75rem;
     }
@@ -366,7 +366,7 @@ export default defineComponent({
 
   &.hide-label {
     label {
-      @include screen-reader;
+      @include typo.screen-reader;
       left: -99999px !important;
     }
   }
@@ -391,7 +391,7 @@ export default defineComponent({
   flex: none;
   display: flex;
   align-items: center;
-  color: var($secondary-text-on-surface);
+  color: var(vars.$secondary-text-on-surface);
 
   :deep(svg) {
     width: 1.25rem;
@@ -424,8 +424,8 @@ export default defineComponent({
   }
 }
 .feather-input-label {
-  @include body-small();
-  color: var($secondary-text-on-surface);
+  @include typo.body-small();
+  color: var(vars.$secondary-text-on-surface);
   line-height: 1.2rem;
   top: 0.625rem;
   cursor: text;

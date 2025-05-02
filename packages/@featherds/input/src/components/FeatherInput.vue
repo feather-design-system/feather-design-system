@@ -226,18 +226,18 @@ export default defineComponent({
 </script>
 
 <style lang="scss" scoped>
-@import "@featherds/styles/themes/variables";
-@import "@featherds/styles/mixins/typography";
+@use "@featherds/styles/themes/variables" as vars;
+@use "@featherds/styles/mixins/typography" as typo;
 .feather-input-content {
   &.error {
     .feather-input {
-      caret-color: var($error);
+      caret-color: var(vars.$error);
     }
   }
 
   &.focused {
     .feather-input {
-      color: var($primary-text-on-surface);
+      color: var(vars.$primary-text-on-surface);
     }
   }
 }
@@ -249,11 +249,11 @@ export default defineComponent({
   width: 0;
   min-width: 2.5rem;
   background-color: transparent;
-  @include body-small();
+  @include typo.body-small();
   line-height: 1.5em; //IE has an issue with the mixin lineheight when typing
-  color: var($secondary-text-on-surface);
+  color: var(vars.$secondary-text-on-surface);
   flex: 1;
-  caret-color: var($primary);
+  caret-color: var(vars.$primary);
   &::-ms-clear,
   &::-ms-reveal {
     display: none;
@@ -262,7 +262,7 @@ export default defineComponent({
     outline: 0;
   }
   &[disabled] {
-    color: var($disabled-text-on-surface);
+    color: var(vars.$disabled-text-on-surface);
   }
 }
 
@@ -270,7 +270,7 @@ export default defineComponent({
   padding-left: 1rem;
   align-self: flex-start;
   margin-left: auto;
-  @include caption();
-  color: var($secondary-text-on-surface);
+  @include typo.caption();
+  color: var(vars.$secondary-text-on-surface);
 }
 </style>

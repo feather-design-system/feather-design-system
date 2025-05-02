@@ -1,42 +1,42 @@
-@import "../mixins/typography";
+@use "../mixins/typography" as typo;
 
 h1 {
-  @include headline1();
+  @include typo.headline1();
 }
 h2 {
-  @include headline2();
+  @include typo.headline2();
 }
 
 h3 {
-  @include headline3();
+  @include typo.headline3();
 }
 
 h4 {
-  @include headline4();
+  @include typo.headline4();
 }
 
 h5 {
-  @include subtitle1();
+  @include typo.subtitle1();
 }
 
 h6 {
-  @include subtitle2();
+  @include typo.subtitle2();
 }
 
 p {
-  @include body-small();
+  @include typo.body-small();
 }
 
 small,
 .small,
 .caption {
-  @include caption();
+  @include typo.caption();
 }
 
 a {
-  @include anchor();
+  @include typo.anchor();
 }
 
 .sr-text {
-  @include screen-reader();
+  @include typo.screen-reader();
 }

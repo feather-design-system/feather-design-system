@@ -16,7 +16,8 @@
 
 <style lang="scss" scoped>
 @use "sass:math";
-@import "@featherds/styles/themes/variables";
+@use "@featherds/styles/themes/variables" as vars;
+
 $offset: 187;
 $duration: 1.4s;
 
@@ -42,7 +43,7 @@ $duration: 1.4s;
 }
 
 .path {
-  stroke: var($primary);
+  stroke: var(vars.$primary);
   stroke-dasharray: $offset;
   stroke-dashoffset: 0;
   transform-origin: center;

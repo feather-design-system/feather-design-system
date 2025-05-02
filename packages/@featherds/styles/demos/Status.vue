@@ -162,10 +162,10 @@ const numToHex = (val: number) => {
 </script>
 
 <style lang="scss" scoped>
-@import "@featherds/styles/themes/variables";
+@use "@featherds/styles/themes/variables" as vars;
 
 .status-demo {
-  background-color: var($surface);
+  background-color: var(vars.$surface);
   display: flex;
   padding: 1em;
   margin-top: 1.5em;
@@ -182,11 +182,11 @@ const numToHex = (val: number) => {
   }
 
   .status-color-text {
-    color: var($primary-text-on-color);
+    color: var(vars.$primary-text-on-color);
   }
 
   .hex {
-    background: var($surface);
+    background: var(vars.$surface);
     padding: 0 0.5rem 0 0.5rem;
     border-radius: 3px;
     float: right;
@@ -198,72 +198,72 @@ const numToHex = (val: number) => {
 }
 
 .demo-error {
-  background: var($error);
+  background: var(vars.$error);
 }
 
 .demo-success {
-  background: var($success);
+  background: var(vars.$success);
 }
 
 .demo-major {
-  background: var($major);
+  background: var(vars.$major);
 }
 
 .demo-minor {
   .status-color-text {
-    color: var($primary-text-on-warning);
+    color: var(vars.$primary-text-on-warning);
   }
 
-  background: var($minor);
+  background: var(vars.$minor);
 }
 
 .demo-warning {
   .status-color-text {
-    color: var($primary-text-on-warning);
+    color: var(vars.$primary-text-on-warning);
   }
 
-  background: var($warning);
+  background: var(vars.$warning);
 }
 
 .demo-indeterminate {
-  background: var($indeterminate);
+  background: var(vars.$indeterminate);
 }
 
 .demo-cleared {
-  background: var($cleared);
+  background: var(vars.$cleared);
 }
 
 .demo-ready {
-  background: var($ready);
+  background: var(vars.$ready);
 }
 .demo-categorical1 {
-  background: var($categorical1);
+  background: var(vars.$categorical1);
 }
 .demo-categorical2 {
-  background: var($categorical2);
+  background: var(vars.$categorical2);
 }
 .demo-categorical3 {
-  background: var($categorical3);
+  background: var(vars.$categorical3);
 }
 .demo-categorical4 {
-  background: var($categorical4);
+  background: var(vars.$categorical4);
 }
 .demo-categorical5 {
-  background: var($categorical5);
+  background: var(vars.$categorical5);
 }
 .demo-categorical6 {
-  background: var($categorical6);
+  background: var(vars.$categorical6);
 }
 .demo-categorical7 {
-  background: var($categorical7);
+  background: var(vars.$categorical7);
 }
 .demo-categorical8 {
-  background: var($categorical8);
+  background: var(vars.$categorical8);
 }
 .demo-categorical9 {
-  background: var($categorical9);
+  background: var(vars.$categorical9);
 }
 .demo-categorical10 {
-  background: var($categorical10);
+  background: var(vars.$categorical10);
 }
 </style>

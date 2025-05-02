@@ -120,16 +120,16 @@ export default {
 };
 </script>
 <style lang="scss" scoped>
-@import "@featherds/table/scss/table";
-@import "@featherds/styles/themes/variables";
+@use "@featherds/styles/themes/variables";
+@use "@featherds/table/scss/table" as table;
 table {
   width: 100%;
-  @include table();
-  @include row-striped();
+  @include table.table();
+  @include table.row-striped();
   .icon-cell {
-    color: var($secondary-text-on-surface);
+    color: var(vars.$secondary-text-on-surface);
     &.Online {
-      color: var($success);
+      color: var(vars.$success);
     }
   }
   .small-col {

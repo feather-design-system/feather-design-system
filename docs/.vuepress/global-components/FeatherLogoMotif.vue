@@ -22,7 +22,6 @@
   </svg>
 </template>
 <style lang="scss" scoped>
-@import "@featherds/styles/themes/variables";
 
 svg {
   fill: currentColor;

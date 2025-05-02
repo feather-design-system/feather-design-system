@@ -13,7 +13,6 @@ export default defineComponent({
 });
 </script>
 <style lang="scss" scoped>
-@import "@featherds/styles/themes/variables";
 li.feather-list-item {
   padding: 0;
 }

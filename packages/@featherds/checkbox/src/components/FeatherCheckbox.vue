@@ -150,16 +150,16 @@ export default defineComponent({
 
 <style lang="scss" scoped>
 @use "sass:math";
-@import "@featherds/styles/themes/variables";
-@import "@featherds/styles/themes/utils";
-@import "@featherds/styles/mixins/typography";
+@use "@featherds/styles/themes/variables" as vars;
+@use "@featherds/styles/themes/utils" as utils;
+@use "@featherds/styles/mixins/typography" as typo;
 
 .feather-checkbox {
-  @include state-on-surface();
+  @include utils.state-on-surface();
 }
 .layout-container {
   display: inline-block;
-  margin-bottom: var($spacing-xs);
+  margin-bottom: var(vars.$spacing-xs);
 }
 
 $height: 2.25rem;
@@ -182,7 +182,7 @@ $boxHeight: math.div($height, 2);
   .box {
     height: $boxHeight;
     width: $boxHeight;
-    border: 2px solid var($secondary-text-on-surface);
+    border: 2px solid var(vars.$secondary-text-on-surface);
     background-color: transparent;
     border-radius: 2px;
     pointer-events: none;
@@ -195,7 +195,7 @@ $boxHeight: math.div($height, 2);
   }
   .checkmark {
     opacity: 0;
-    color: var($surface);
+    color: var(vars.$surface);
     flex: 1;
     transition: opacity 180ms 0ms cubic-bezier(0, 0, 0.2, 1),
       transform 180ms 0ms cubic-bezier(0, 0, 0.2, 1);
@@ -212,7 +212,7 @@ $boxHeight: math.div($height, 2);
     left: 0px;
     border-width: 1px;
     border-style: solid;
-    border-color: var($surface);
+    border-color: var(vars.$surface);
     height: 0;
     width: 100%;
     margin-top: math.div($boxHeight - 0.375, 2);
@@ -222,8 +222,8 @@ $boxHeight: math.div($height, 2);
       transform 180ms 0ms cubic-bezier(0, 0, 0.2, 1);
   }
   label {
-    @include body-small();
-    color: var($primary-text-on-surface);
+    @include typo.body-small();
+    color: var(vars.$primary-text-on-surface);
     padding-left: 0.25rem;
     padding-right: 1rem;
     min-width: 3.5rem;
@@ -237,13 +237,13 @@ $boxHeight: math.div($height, 2);
   }
 }
 .feather-checkbox:hover[aria-checked="true"] .box {
-  border-color: var($primary);
-  background-color: var($primary);
+  border-color: var(vars.$primary);
+  background-color: var(vars.$primary);
 }
 
 .feather-checkbox[aria-checked="true"] .box {
-  border-color: var($primary);
-  background-color: var($primary);
+  border-color: var(vars.$primary);
+  background-color: var(vars.$primary);
   .checkmark {
     opacity: 1;
   }
@@ -253,8 +253,8 @@ $boxHeight: math.div($height, 2);
 }
 
 .feather-checkbox[aria-checked="mixed"] .box {
-  border-color: var($primary);
-  background-color: var($primary);
+  border-color: var(vars.$primary);
+  background-color: var(vars.$primary);
   .checkmark {
     opacity: 0;
   }
@@ -265,20 +265,20 @@ $boxHeight: math.div($height, 2);
 }
 
 .feather-checkbox[aria-disabled="true"] {
-  @include state-disabled();
+  @include utils.state-disabled();
   cursor: default;
   .box {
-    border-color: var($disabled-text-on-surface);
+    border-color: var(vars.$disabled-text-on-surface);
   }
   .checkbox {
     background: transparent;
   }
   &[aria-checked="true"] .box {
     border-color: transparent;
-    background-color: var($disabled-text-on-surface);
+    background-color: var(vars.$disabled-text-on-surface);
   }
   label {
-    color: var($disabled-text-on-surface);
+    color: var(vars.$disabled-text-on-surface);
     cursor: default;
   }
 }

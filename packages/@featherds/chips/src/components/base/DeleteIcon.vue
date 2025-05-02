@@ -52,9 +52,9 @@ export default defineComponent({
 });
 </script>
 <style lang="scss" scoped>
-@import "../../../scss/mixins";
+@use "../../../scss/mixins" as chip-mixins;
 
 .chip-delete {
-  @include chip-delete();
+  @include chip-mixins.chip-delete();
 }
 </style>

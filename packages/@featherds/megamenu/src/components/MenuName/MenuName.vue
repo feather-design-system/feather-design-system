@@ -17,26 +17,27 @@ export default defineComponent({
 </script>
 
 <style lang="scss" scoped>
-@import "@featherds/styles/themes/variables";
-@import "@featherds/styles/mixins/flex";
-@import "@featherds/styles/mixins/typography";
+@use "sass:map";
+@use "@featherds/styles/themes/variables" as vars;
+@use "@featherds/styles/mixins/flex" as flex;
+@use "@featherds/styles/mixins/typography" as typo;
 
 .menu-name {
   width: 14rem;
   margin: 1.5rem 0;
   padding-left: 1.375rem;
   padding-right: 1.5rem;
-  border-right: 1px solid var($border-on-surface);
-  @include flex;
-  @include horizontal;
+  border-right: 1px solid var(vars.$border-on-surface);
+  @include flex.flex;
+  @include flex.horizontal;
   align-items: center;
   box-sizing: border-box;
   .name {
-    @include headline2();
-    @include fill;
+    @include typo.headline2();
+    @include flex.fill;
   }
 }
-@media screen and (max-width: map-get(map-get($grid,l),max)) {
+@media screen and (max-width: map.get(map.get(vars.$grid,l),max)) {
   .menu-name {
     display: none;
   }

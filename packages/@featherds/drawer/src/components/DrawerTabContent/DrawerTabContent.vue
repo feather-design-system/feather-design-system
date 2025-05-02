@@ -35,8 +35,8 @@ export default defineComponent({
 </script>
 
 <style lang="scss" scoped>
-@import "@featherds/styles/themes/variables";
-@import "@featherds/styles/mixins/typography";
+@use "@featherds/styles/themes/variables" as vars;
+@use "@featherds/styles/mixins/typography" as typo;
 .drawer-tab-content[role="tabpanel"] {
   display: flex;
   flex-direction: column;
@@ -52,9 +52,9 @@ export default defineComponent({
   }
   div.header {
     display: block;
-    @include headline3();
-    background-color: var($surface);
-    color: var($primary-text-on-surface);
+    @include typo.headline3();
+    background-color: var(vars.$surface);
+    color: var(vars.$primary-text-on-surface);
     padding-left: 1rem;
     padding-right: 2.5rem;
     flex: none;
