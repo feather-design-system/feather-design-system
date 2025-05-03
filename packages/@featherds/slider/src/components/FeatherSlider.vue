@@ -279,24 +279,28 @@ onMounted(() => {
 </script>
 
 <style lang="scss" scoped>
-@import "@featherds/styles/mixins/typography";
-@import "@featherds/styles/mixins/elevation";
-@import "@featherds/styles/themes/utils";
+@use "@featherds/styles/themes/variables" as vars;
+@use "@featherds/styles/mixins/typography" as typo;
+// @use "@featherds/styles/mixins/elevation" as elev;
+@use "@featherds/styles/themes/utils" as utils;
 
 @mixin iconAndBackground($color) {
   svg > * {
     fill: var($color);
     color: var($color);
   }
-  background-color: alpha($color, 0.2);
+  background-color: utils.alpha($color, 0.2);
   color: var($color);
 }
 
 @mixin hoverBackground($color, $alpha: 0.35) {
   &:hover {
-    background-color: alpha($color, $alpha);
+    background-color: utils.alpha($color, $alpha);
     border: 2px solid
-      alpha($state-color-on-color, var($state-opacity-hover-on-surface));
+      utils.alpha(
+        vars.$state-color-on-color,
+        var(vars.$state-opacity-hover-on-surface)
+      );
   }
 }
 
@@ -316,7 +320,7 @@ onMounted(() => {
 
   .control {
     .label {
-      @include body-large();
+      @include typo.body-large();
     }
     datalist {
       > option {
@@ -324,11 +328,11 @@ onMounted(() => {
       }
     }
     &:focus-within {
-      border: 2px solid var($shade-3);
+      border: 2px solid var(vars.$shade-3);
     }
     border: 2px solid transparent;
     border-radius: 4px;
-    background-color: var($surface);
+    background-color: var(vars.$surface);
     padding: 0.5rem;
     .slider-debug {
       display: none;
@@ -346,7 +350,7 @@ onMounted(() => {
         left: -2000px;
       }
       .slider-option {
-        @include body-small();
+        @include typo.body-small();
         display: flex;
         justify-content: center;
         align-items: center;
@@ -357,66 +361,66 @@ onMounted(() => {
         text-align: center;
         text-transform: capitalize;
         border-radius: 4px;
-        border: 2px solid var($surface);
+        border: 2px solid var(vars.$surface);
         // background-color: rgba(217, 221, 189, 0.2); TODO: #d9ddbd in figma; also Kendo variables in Figma.
-        // background-color: alpha($background, 0.2);
-        background-color: var($background);
-        color: var($shade-2);
+        // background-color: utils.alpha(vars.$background, 0.2);
+        background-color: var(vars.$background);
+        color: var(vars.$shade-2);
         margin: 0.25em 0.25em;
         transition: background-color 1s ease, color 0.3s ease, border 0.3s ease;
         &.selected {
           // &:has(.locked) {
-          //   border: 2px solid var($primary);
+          //   border: 2px solid var(vars.$primary);
           // }
-          background-color: var($primary);
-          color: var($primary-text-on-color);
-          border: 2px solid var($primary-text-on-color);
-          @include hoverBackground($primary, 0.88);
+          background-color: var(vars.$primary);
+          color: var(vars.$primary-text-on-color);
+          border: 2px solid var(vars.$primary-text-on-color);
+          @include hoverBackground(vars.$primary, 0.88);
           &.feather-error-color {
-            @include iconAndBackground($error);
-            @include hoverBackground($error);
+            @include iconAndBackground(vars.$error);
+            @include hoverBackground(vars.$error);
           }
           &.feather-major-color {
-            @include iconAndBackground($major);
-            @include hoverBackground($major);
+            @include iconAndBackground(vars.$major);
+            @include hoverBackground(vars.$major);
           }
           &.feather-minor-color {
-            @include iconAndBackground($minor);
-            @include hoverBackground($minor);
-            color: var($primary-text-on-surface);
+            @include iconAndBackground(vars.$minor);
+            @include hoverBackground(vars.$minor);
+            color: var(vars.$primary-text-on-surface);
           }
           &.feather-warning-color {
-            @include iconAndBackground($warning);
-            @include hoverBackground($warning, 0.75);
-            color: var($primary-text-on-surface);
+            @include iconAndBackground(vars.$warning);
+            @include hoverBackground(vars.$warning, 0.75);
+            color: var(vars.$primary-text-on-surface);
           }
           &:focus {
-            border-color: var($state-color-on-color);
+            border-color: var(vars.$state-color-on-color);
           }
         }
         &:not(.selected) {
           &:hover {
-            background-color: var($shade-2);
-            color: var($primary-text-on-color);
-            border: 2px solid var($primary-text-on-color);
+            background-color: var(vars.$shade-2);
+            color: var(vars.$primary-text-on-color);
+            border: 2px solid var(vars.$primary-text-on-color);
           }
           &:focus {
-            border-color: var($primary);
+            border-color: var(vars.$primary);
           }
         }
         svg {
           width: 1.75em;
           height: 1.75em;
-          color: var($primary-text-on-color);
+          color: var(vars.$primary-text-on-color);
           padding: 0.25em;
           use {
-            color: var($shade-2);
+            color: var(vars.$shade-2);
           }
         }
       }
       .locked {
         position: absolute;
-        fill: var($primary);
+        fill: var(vars.$primary);
         top: -2.1em;
         display: none;
         font-size: 0.5em;
@@ -432,7 +436,7 @@ onMounted(() => {
     width: 100%;
     height: 100%;
     .slider-semantic {
-      accent-color: var($primary);
+      accent-color: var(vars.$primary);
       width: 100%;
       height: 0.25em;
       margin: 0.25em;
@@ -446,11 +450,11 @@ onMounted(() => {
       }
       &::-moz-range-track {
         height: 0.25em;
-        // background-color: var($primary);
+        // background-color: var(vars.$primary);
         // background: linear-gradient(
         //   to right,
-        //   var($primary) 50%,
-        //   var($shade-4) 50%
+        //   var(vars.$primary) 50%,
+        //   var(vars.$shade-4) 50%
         // );
         // border-radius: 50px;
       }
@@ -460,7 +464,7 @@ onMounted(() => {
         height: 1em;
         width: 1em;
         border-radius: 50%;
-        background: var($primary);
+        background: var(vars.$primary);
         cursor: pointer;
         transition: all 1s ease;
       }
@@ -468,7 +472,7 @@ onMounted(() => {
         width: 1em;
         height: 1em;
         border-radius: 50%;
-        background: var($primary);
+        background: var(vars.$primary);
         cursor: pointer;
         transition: all 1s ease;
       }
