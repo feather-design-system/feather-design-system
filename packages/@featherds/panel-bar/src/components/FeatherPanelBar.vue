@@ -1,24 +1,33 @@
 <template>
-  <div class="feather-panel-bar" role="region" :aria-labelledby="id">
+  <div
+    :id="id"
+    :class="panelBarClasses"
+    role="region"
+    :aria-labelledby="id"
+    ref="panelBarRef"
+  >
     <div v-if="header" class="feather-panel-bar-header">
-      {{ title }}
+      <FeatherIcon
+        v-if="!isDockCollapsed && props.icon"
+        :icon="props.icon"
+      ></FeatherIcon>
+      {{ !isDockCollapsed && props.title ? props.title : "" }}
     </div>
-    <!-- @vue-ignore -->
     <details
-      v-for="(panel, index) in items"
+      v-for="(panel, index) in props.items"
       class="feather-panel-bar-details"
       :key="index"
       :id="`panel-${panel.id || index}`"
-      :name="mode === 'single' ? id : panel.id"
-      @toggle="handleToggle($event, panel)"
+      :name="props.mode === 'single' ? props.id : panel.id"
+      @toggle="handlePanelToggle($event, panel)"
     >
       <summary
         :id="`feather-panel-bar-summary-${panel.id || index}`"
         class="feather-panel-bar-summary"
         :aria-controls="`feather-panel-bar-content-${panel.id || index}`"
-        :aria-expanded="isOpen(panel.id).value"
+        :aria-expanded="isPanelOpen(panel.id).value"
       >
-        <span class="icon-and-title">
+        <span class="summary">
           <span v-if="panel.icon" class="icon">
             <FeatherIcon :icon="panel.icon" />
           </span>
@@ -29,7 +38,11 @@
         </span>
       </summary>
       <div class="feather-panel-bar-content">
-        <component :is="panel.component"></component>
+        <component
+          v-if="panel.component"
+          :is="panel.component"
+          v-bind="panel.componentProps || {}"
+        />
         <div>{{ panel.content }}</div>
       </div>
     </details>
@@ -38,19 +51,13 @@
 </template>
 
 <script setup lang="ts">
-import { computed, PropType, ref } from "vue";
+import { computed, inject, PropType, Ref, ref, watch } from "vue";
 import { FeatherIcon } from "@featherds/icon";
 import ExpandMore from "@featherds/icon/navigation/ExpandMore";
-import { Panel } from "./types";
+import type { Panel } from "./types";
+import type { DockConfig } from "@featherds/dock";
 
-const openPanelIds = ref<Set<string>>(new Set());
-
-const isOpen = (panelId: string) =>
-  computed(() => {
-    return openPanelIds.value.has(panelId);
-  });
-
-defineProps({
+const props = defineProps({
   id: {
     type: String as PropType<string>,
     required: true,
@@ -81,21 +88,88 @@ defineProps({
     required: false,
   },
 });
-const emit = defineEmits(["toggle"]);
+const emit = defineEmits(["panel-toggle"]);
 
-const handleToggle = (e: Event, panel: Panel) => {
+const panelBarRef = ref<HTMLElement | undefined>(undefined);
+
+const panelBarClasses = computed(() => {
+  return {
+    "feather-panel-bar": true,
+    docked: isDocked.value,
+    "dock-closed": isDocked.value && isDockCollapsed.value,
+  };
+});
+
+// #region DockConfig
+const dockConfig = inject<Ref<DockConfig>>(
+  "dockConfig",
+  ref({
+    id: "none",
+    location: "none",
+    isOpen: false,
+  })
+);
+
+const dockId = ref(dockConfig.value.id);
+
+if (dockConfig) {
+  watch(
+    dockConfig,
+    (cfg) => {
+      if (
+        panelBarRef.value &&
+        !cfg.isOpen &&
+        isDocked.value &&
+        cfg.id === dockId.value
+      ) {
+        panelBarRef.value
+          .querySelectorAll("details[open]")
+          .forEach((details) => {
+            details.removeAttribute("open");
+          });
+      }
+    },
+    { deep: true }
+  );
+}
+
+const requestDockExpansion = inject<() => void>("requestDockExpansion", () => {
+  if (dockConfig.value.location !== "none") {
+    console.log("requestDockExpansion not provided");
+  }
+});
+
+const isDocked = computed(() => {
+  return dockConfig.value.location !== "none";
+});
+
+const isDockCollapsed = computed(() => {
+  return isDocked.value && !dockConfig.value.isOpen;
+});
+
+// #endregion
+
+const openPanelIds = ref<Set<string>>(new Set());
+
+const isPanelOpen = (panelId: string) =>
+  computed(() => {
+    return openPanelIds.value.has(panelId);
+  });
+
+const handlePanelToggle = (e: Event, panel: Panel) => {
   const details = e.target as HTMLDetailsElement;
   if (details.open) {
     openPanelIds.value.add(panel.id);
+    requestDockExpansion();
   } else {
     openPanelIds.value.delete(panel.id);
   }
-  emit("toggle", e, panel.id, details.open, panel.title);
+  emit("panel-toggle", e, openPanelIds.value);
 };
 </script>
 <style lang="scss">
 .feather-panel-bar {
-  // overridable feather-panel-bar-details component variables
+  --feather-panel-bar-background-color: var(--feather-surface);
   --feather-panel-bar-title-font-size: var(--feather-headline4-font-size);
   --feather-panel-bar-title-font-weight: var(--feather-headline4-font-weight);
   --feather-panel-bar-title-line-height: var(--feather-headline4-line-height);
@@ -118,17 +192,22 @@ const handleToggle = (e: Event, panel: Panel) => {
 @use "@featherds/styles/mixins/typography" as typo;
 
 .feather-panel-bar {
+  --feather-panel-bar-title-font-size: var(--feather-headline4-font-size);
+  --feather-panel-bar-title-font-weight: var(--feather-headline4-font-weight);
+  --feather-panel-bar-title-line-height: var(--feather-headline4-line-height);
   --transition-speed: 0.375s;
   --border-width: 1px;
   --border-radius: 0;
-  width: clamp(320px, 80%, 1280px);
+
+  width: 100%; // fits to parent
+  max-width: 100%; // but not more
   box-shadow: var(vars.$shadow-2);
   border-radius: var(--border-radius);
 
   .feather-panel-bar-header,
   .feather-panel-bar-footer {
     @include typo.headline4();
-    background-color: utils.alpha(vars.$primary, 0.06);
+    background-color: var(--feather-panel-bar-background-color);
     padding: 0.5rem 1.5rem;
     font-size: var(--feather-panel-bar-title-font-size);
     font-weight: var(--feather-panel-bar-title-font-weight);
@@ -143,7 +222,9 @@ const handleToggle = (e: Event, panel: Panel) => {
     outline: 0.125px solid transparent;
     border: var(--border-width) solid transparent;
     border-top: var(--border-width) solid var(vars.$shade-4);
+    background-color: var(--feather-panel-bar-background-color);
 
+    &:focus-within,
     &:hover {
       border: var(--border-width) solid var(vars.$shade-2);
       summary {
@@ -162,8 +243,9 @@ const handleToggle = (e: Event, panel: Panel) => {
       flex-direction: row;
       justify-content: space-between;
       height: 3rem;
+      user-select: none;
       @include typo.body-small();
-      .icon-and-title {
+      .summary {
         display: flex;
         align-items: center;
         .icon {
@@ -203,6 +285,7 @@ const handleToggle = (e: Event, panel: Panel) => {
         opacity var(--transition-speed) ease-in-out;
       height: auto;
       width: 100%;
+      scrollbar-color: transparent transparent; // prevent scrollbar flashing
     }
     &::details-content {
       height: 0;
@@ -224,6 +307,36 @@ const handleToggle = (e: Event, panel: Panel) => {
       .feather-panel-bar-content {
         grid-template-rows: auto;
         opacity: 1;
+      }
+    }
+  }
+  &.docked.dock-closed {
+    background-color: var(--feather-dock-background-color);
+    box-shadow: none;
+    .feather-panel-bar-header,
+    .feather-panel-bar-footer {
+      display: none;
+    }
+    .feather-panel-bar-details {
+      background-color: var(--feather-dock-background-color);
+      &:hover,
+      &:focus-visible,
+      &:focus-within {
+        border: 1px solid var(vars.$primary);
+        border-radius: 0.25rem;
+      }
+      .feather-panel-bar-summary {
+        .summary {
+          .icon {
+            margin-left: -0.7rem;
+          }
+          .title {
+            display: none;
+          }
+        }
+        .expand {
+          display: none;
+        }
       }
     }
   }

@@ -1,16 +1,19 @@
 import type { DefineComponent, ExtractPropTypes } from "vue";
 import FeatherPanelBar from "./components/FeatherPanelBar.vue";
+import type { Panel } from "./components/types";
 
-type FeatherPanelBarProps = ExtractPropTypes<typeof FeatherPanelBar>;
-type FeatherPanelBarEmits = typeof FeatherPanelBar.emit;
+export type PanelBarProps = ExtractPropTypes<typeof FeatherPanelBar>;
+export type PanelBarEmits = typeof FeatherPanelBar.emit;
 
-export const FeatherExpansionPanel: DefineComponent<
-  FeatherPanelBarProps,
+export const FeatherPanelBar: DefineComponent<
+  PanelBarProps,
   {},
   {},
   {},
   {},
   {},
   {},
-  FeatherPanelBarEmits
+  PanelBarEmits
 >;
+
+export type { Panel };

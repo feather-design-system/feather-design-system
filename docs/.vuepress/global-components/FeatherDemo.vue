@@ -21,9 +21,56 @@
       @leave="leave"
     >
       <div class="source" v-if="showSource">
-        <pre
-          class="language-html"
-        ><code v-html="activeDemoSource" class="language-html"></code></pre>
+        <div v-if="!activeDemoSupporting || activeDemoSupporting.length === 0">
+          <pre
+            class="language-html"
+          ><code v-html="activeDemoSource" class="language-html"></code>
+          </pre>
+        </div>
+        <template v-else>
+          <FeatherTabContainer>
+            <template v-slot:tabs>
+              <FeatherTab ref="firstTabRef">
+                <div>
+                  <FeatherIcon :icon="ViewCode" class="source-tab" />
+                </div>
+              </FeatherTab>
+              <template v-if="activeDemoSupporting">
+                <FeatherTab
+                  v-for="(file, index) in activeDemoSupporting"
+                  :key="file.filename"
+                  :id="`tab-${index}`"
+                  :aria-controls="`panel-${index}`"
+                >
+                  {{ file.filename }}
+                </FeatherTab>
+              </template>
+            </template>
+            <FeatherTabPanel
+              :id="`tabpanel-0`"
+              aria-labelledby="tab-0"
+              v-if="activeDemoSource"
+            >
+              <pre
+                class="language-html"
+              ><code v-html="activeDemoSource" class="language-html"></code>
+              </pre>
+            </FeatherTabPanel>
+            <template v-if="activeDemoSupporting">
+              <FeatherTabPanel
+                v-for="(file, index) in activeDemoSupporting"
+                :key="file.filename"
+                :id="`tabpanel-${index}`"
+                :aria-labelledby="`tab-${index}`"
+              >
+                <pre
+                  class="language-html"
+                ><code v-html="formatSource(file.source, file.ext)" class="language-html"></code>
+                </pre>
+              </FeatherTabPanel>
+            </template>
+          </FeatherTabContainer>
+        </template>
       </div>
     </transition>
     <div class="demo">
@@ -32,10 +79,20 @@
   </div>
 </template>
 <script>
-import Prism from "prismjs";
 import { ref, computed } from "vue";
+import Prism from "prismjs";
+import "prismjs/components/prism-typescript";
+import "prismjs/components/prism-javascript";
 import { FeatherButton } from "@featherds/button";
 import { FeatherSelect } from "@featherds/select";
+import { FeatherIcon } from "@featherds/icon";
+import { FeatherExpansionPanel } from "@featherds/expansion";
+import {
+  FeatherTab,
+  FeatherTabPanel,
+  FeatherTabContainer,
+} from "@featherds/tabs";
+import ViewCode from "@featherds/icon/network/ViewCode";
 export default {
   props: {
     demos: {
@@ -44,6 +101,7 @@ export default {
     },
   },
   setup(props) {
+    const firstTabRef = ref(null);
     const showSource = ref(false);
     const demos = ref(props.demos);
     const selected = ref(demos.value[0]);
@@ -52,11 +110,34 @@ export default {
 
     const activeDemoSource = computed(() => {
       const src = selected.value.source;
-      if (src) {
-        return Prism.highlight(src, Prism.languages.markup, "vue");
+      return getVueMarkup(src, "vue");
+    });
+
+    const activeDemoSupporting = computed(() => {
+      return selected.value.supporting || [];
+    });
+
+    const formatSource = (source, ext) => {
+      return getVueMarkup(source, ext);
+    };
+
+    const getVueMarkup = (source, ext) => {
+      if (source) {
+        let language = Prism.languages.markup;
+        console.log(Prism.languages);
+        if (ext === 'vue') {
+          language = Prism.languages.markup
+        }
+        if (ext === 'js' || ext === 'javacript') {
+          language = Prism.languages.javascript;
+        }
+        if (ext === 'ts' || ext === 'typescript') {
+          language = Prism.languages.typescript;
+        }
+        return Prism.highlight(source, language, ext || "html");
       }
       return "<div>Sorry no code</div>";
-    });
+    };
 
     return {
       showSource,
@@ -64,6 +145,11 @@ export default {
       selected,
       activeDemoComponent,
       activeDemoSource,
+      activeDemoSupporting,
+      firstTabRef,
+      formatSource,
+      getVueMarkup,
+      ViewCode,
     };
   },
   methods: {
@@ -112,9 +198,23 @@ export default {
       });
     },
   },
+  updated() {
+    if (this.firstTabRef) {
+      this.$nextTick(() => {
+        // this.firstTabRef.$el.click();
+        this.firstTabRef.$el.children[0].click();
+      });
+    }
+  },
   components: {
     FeatherButton,
     FeatherSelect,
+    FeatherTab,
+    FeatherTabPanel,
+    FeatherTabContainer,
+    FeatherExpansionPanel,
+    FeatherIcon,
+    ViewCode,
   },
 };
 </script>
@@ -145,6 +245,11 @@ export default {
 
   h4 {
     @include typo.headline4();
+  }
+  .source-tab {
+    @include typo.headline4();
+    margin: 0;
+    padding: 0;
   }
 }
 .demo-toolbar {

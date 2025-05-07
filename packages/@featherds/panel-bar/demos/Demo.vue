@@ -7,9 +7,7 @@
       :items="panels"
       @toggle="handleToggle"
       :header="showHeader"
-      :headingLevel="headingLevel"
       :footer="showFooter"
-      :panelHeadingLevel="panelHeadingLevel"
     ></FeatherPanelBar>
     <div class="controls">
       <div>
@@ -92,8 +90,6 @@ const handleToggle = (e: ToggleEvent) => {
 
 // demo controls
 const showHeader = ref(true);
-const headingLevel = ref(2);
-const panelHeadingLevel = ref(undefined);
 const showFooter = ref(true);
 const demoTitle = ref("Feather Panel Bar Demo");
 const demoMode = ref<"single" | "multi">("single");

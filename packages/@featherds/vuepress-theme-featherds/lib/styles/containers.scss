@@ -41,4 +41,45 @@
       color: var(vars.$primary);
     }
   }
+  &.under-construction {
+    position: relative;
+    padding: 0 0 0 0.5rem;
+    overflow: hidden;
+    z-index: 1;
+    &::before {
+      content: "";
+      position: absolute;
+      inset: 0 0 0 0;
+      z-index: -1;
+      border-radius: inherit;
+      background: repeating-linear-gradient(
+        -32deg,
+        var(vars.$warning),
+        var(vars.$warning) 8px,
+        var(vars.$lightbox-background) 8px,
+        var(vars.$lightbox-background) 16px
+      );
+    }
+
+    .custom-container-title {
+      position: relative;
+      padding-top: 1rem;
+      margin-bottom: 0;
+      color: var(vars.$primary);
+      background-color: var(vars.$elevation-background-2);
+      z-index: 1;
+      // &::after {
+      //   content: " 🚧";
+      //   display: inline-block;
+      //   margin-right: 0.25em;
+      // }
+    }
+    p {
+      color: var(vars.$primary-text-on-surface);
+      background-color: var(vars.$elevation-background-2);
+      padding: 0.5rem 0.75rem;
+      position: relative;
+      z-index: 1;
+    }
+  }
 }

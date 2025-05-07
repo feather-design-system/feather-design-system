@@ -36,7 +36,11 @@ const featherDSTheme = (data) => ({
       type: "donts",
       defaultTitle: "DON'T",
     }),
-    themeDataPlugin({ themeData: data }),
+    containerPlugin({
+      type: "under-construction",
+      defaultTitle: "Component Under Construction",
+    }),
+    themeDataPlugin({ name: "themeDataPlugin", themeData: data }),
   ],
 });
 
