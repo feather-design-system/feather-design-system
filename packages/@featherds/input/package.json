@@ -1,6 +1,6 @@
 {
   "name": "@featherds/input",
-  "version": "0.12.36",
+  "version": "0.12.38",
   "type": "module",
   "publishConfig": {
     "access": "public"
