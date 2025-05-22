@@ -1,3 +1,12 @@
+## [0.12.36](https://github.com/feather-design-system/feather-design-system/compare/v0.12.35...v0.12.36) (2025-05-22)
+
+
+### Features
+
+* **sidebar:** init ([#213](https://github.com/feather-design-system/feather-design-system/issues/213)) ([550d320](https://github.com/feather-design-system/feather-design-system/commit/550d320b368eb1bbbc3ad02140e36df161a5a50b))
+
+
+
 ## [0.12.35](https://github.com/feather-design-system/feather-design-system/compare/v0.12.34...v0.12.35) (2025-05-02)
 
 
