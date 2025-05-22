@@ -1,6 +1,9 @@
 {
   "name": "@featherds/panel-bar",
   "version": "0.12.36",
+  "publishConfig": {
+    "access": "public"
+  },
   "author": "NantHealth",
   "scripts": {},
   "main": "dist/app.mjs",
