@@ -69,11 +69,7 @@ export const props = {
     default: false,
   },
 } as const;
-export const emits = {
-  "trigger-click": (_e: MouseEvent) => true,
-  close: (_v?: boolean) => true,
-  "outside-click": (_e?: Event) => true,
-};
+export const emits = ["trigger-click", "close", "outside-click"];
 export default defineComponent({
   emits,
   props,

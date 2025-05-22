@@ -182,6 +182,17 @@ export default [
           url: "/Components/ToggleButton/",
           image: "/assets/components/TOGGLE_BUTTON@2x.png",
         },
+        {
+          name: "Panel Bar",
+          url: "/Components/PanelBar/",
+          // image: "/assets/components/PANEL_BAR@2x.png",
+          image: "/assets/branding/GETTING_STARTED@2x.png",
+        },
+        {
+          name: "Sidebar",
+          url: "/Components/Sidebar/",
+          image: "/assets/components/SIDE_BAR@2x.png",
+        },
       ].sort((a, b) => {
         if (a.name > b.name) {
           return 1;

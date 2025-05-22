@@ -1,0 +1,21 @@
+{
+  "name": "@featherds/sidebar",
+  "version": "0.12.35",
+  "publishConfig": {
+    "access": "public"
+  },
+  "author": "NantHealth",
+  "scripts": {},
+  "main": "dist/app.mjs",
+  "license": "Apache-2.0",
+  "dependencies": {
+    "@featherds/icon": "file:../icon",
+    "@featherds/styles": "file:../styles",
+    "vue": "^3.5.13"
+  },
+  "keywords": [
+    "vue",
+    "FeatherSidebar"
+  ],
+  "types": "./src/index.d.ts"
+}
