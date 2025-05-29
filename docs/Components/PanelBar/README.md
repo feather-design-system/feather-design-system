@@ -55,11 +55,13 @@ The `FeatherPanelBar` component renders a group of panels, each of which can be 
 ```ts
 type Panel = {
   id: string;
-  title: string;
+  title?: string;
+  icon?: typeof FeatherIcon;
   content?: string;
   component?: Component;
-  icon?: typeof FeatherIcon;
+  componentProps?: Record<string, unknown>;
   open?: boolean;
+  onClick?: () => void;
 };
 ```
 

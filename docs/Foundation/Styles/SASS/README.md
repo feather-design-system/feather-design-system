@@ -14,7 +14,7 @@ Feather Design System leverages [Sass](https://sass-lang.com/) (Syntactically Aw
 
 ## Version
 
-Feather DS currently utilizes **Dart Sass version `^1.79.0`**. We recommend using a compatible version in your projects when extending or customizing Feather styles.
+Feather DS currently utilizes **Dart Sass version `^1.80.0`**. We recommend using a compatible version in your projects when extending or customizing Feather styles.
 
 ## Sass Modules (`@use`)
 

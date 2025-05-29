@@ -169,7 +169,7 @@ const handlePanelToggle = (e: Event, panel: Panel) => {
 </script>
 <style lang="scss">
 .feather-panel-bar {
-  --feather-panel-bar-background-color: var(--feather-surface);
+  --feather-panel-bar-background-color: inherit;
   --feather-panel-bar-title-font-size: var(--feather-headline4-font-size);
   --feather-panel-bar-title-font-weight: var(--feather-headline4-font-weight);
   --feather-panel-bar-title-line-height: var(--feather-headline4-line-height);
@@ -311,14 +311,12 @@ const handlePanelToggle = (e: Event, panel: Panel) => {
     }
   }
   &.docked.dock-closed {
-    background-color: var(--feather-dock-background-color);
     box-shadow: none;
     .feather-panel-bar-header,
     .feather-panel-bar-footer {
       display: none;
     }
     .feather-panel-bar-details {
-      background-color: var(--feather-dock-background-color);
       &:hover,
       &:focus-visible,
       &:focus-within {
@@ -339,6 +337,9 @@ const handlePanelToggle = (e: Event, panel: Panel) => {
         }
       }
     }
+  }
+  &.docked {
+    background-color: var(--feather-dock-background-color);
   }
 }
 </style>

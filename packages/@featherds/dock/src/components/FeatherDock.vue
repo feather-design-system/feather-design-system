@@ -7,7 +7,7 @@
         :aria-expanded="dockConfig.isOpen"
         :aria-label="dockConfig.isOpen ? labels.collapse : labels.expand"
         data-ref-id="feather-dock-toggle"
-        :icon="dockConfig.isOpen ? 'MenuClose' : 'MenuOpen'"
+        :icon="dockConfig.isOpen ? 'Menu Close' : 'Menu Open'"
       >
         <FeatherIcon :icon="dockConfig.isOpen ? MenuClose : MenuOpen" />
       </FeatherButton>
@@ -353,8 +353,6 @@ onUnmounted(() => {
     margin-block: 1.25rem;
     transition: all 0.3s ease-in-out;
     .feather-dock-toggle {
-      background-color: var(vars.$surface);
-      @include elev.elevation(16);
       padding-inline: 1rem;
     }
   }
