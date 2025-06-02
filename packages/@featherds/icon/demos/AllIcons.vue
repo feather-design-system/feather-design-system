@@ -10,10 +10,6 @@
 
   <script>
   import * as components from "./../src";
-import contentBlogArticle from "@featherds/icon/content/BlogArticle";
-
-import contentVideo from "@featherds/icon/content/Video";
-
 import communicationCertificate from "@featherds/icon/communication/Certificate";
 
 import communicationCertificateAlt from "@featherds/icon/communication/CertificateAlt";
@@ -27,6 +23,10 @@ import communicationDocumentation from "@featherds/icon/communication/Documentat
 import communicationIdCard from "@featherds/icon/communication/IdCard";
 
 import communicationPhone from "@featherds/icon/communication/Phone";
+
+import contentBlogArticle from "@featherds/icon/content/BlogArticle";
+
+import contentVideo from "@featherds/icon/content/Video";
 
 import datavisAreaChart from "@featherds/icon/datavis/AreaChart";
 
@@ -135,6 +135,8 @@ import actionFeedbackAlt from "@featherds/icon/action/FeedbackAlt";
 import actionFileCopy from "@featherds/icon/action/FileCopy";
 
 import actionFilterAlt from "@featherds/icon/action/FilterAlt";
+
+import actionGroup from "@featherds/icon/action/Group";
 
 import actionHelp from "@featherds/icon/action/Help";
 
@@ -358,6 +360,32 @@ import navigationUnfoldLess from "@featherds/icon/navigation/UnfoldLess";
 
 import navigationUnfoldMore from "@featherds/icon/navigation/UnfoldMore";
 
+import notificationConnected from "@featherds/icon/notification/Connected";
+
+import notificationError from "@featherds/icon/notification/Error";
+
+import notificationNotification from "@featherds/icon/notification/Notification";
+
+import notificationNotificationsOff from "@featherds/icon/notification/NotificationsOff";
+
+import notificationNotificationSelected from "@featherds/icon/notification/NotificationSelected";
+
+import notificationNotificationSoundSelected from "@featherds/icon/notification/NotificationSoundSelected";
+
+import notificationUnconnected from "@featherds/icon/notification/Unconnected";
+
+import notificationWarning from "@featherds/icon/notification/Warning";
+
+import notificationWifi from "@featherds/icon/notification/Wifi";
+
+import notificationWifiNoConnection from "@featherds/icon/notification/WifiNoConnection";
+
+import notificationWifiOff from "@featherds/icon/notification/WifiOff";
+
+import notificationWifiSignalBad from "@featherds/icon/notification/WifiSignalBad";
+
+import notificationWifiStatusBar from "@featherds/icon/notification/WifiStatusBar";
+
 import networkAggregationLayer from "@featherds/icon/network/AggregationLayer";
 
 import networkAggregationLayerAlt1 from "@featherds/icon/network/AggregationLayerAlt1";
@@ -488,38 +516,20 @@ import networkVirtualMachineAlt2 from "@featherds/icon/network/VirtualMachineAlt
 
 import networkWifiRouter from "@featherds/icon/network/WifiRouter";
 
-import notificationConnected from "@featherds/icon/notification/Connected";
-
-import notificationError from "@featherds/icon/notification/Error";
-
-import notificationUnconnected from "@featherds/icon/notification/Unconnected";
-
-import notificationWarning from "@featherds/icon/notification/Warning";
-
-import notificationWifi from "@featherds/icon/notification/Wifi";
-
-import notificationWifiNoConnection from "@featherds/icon/notification/WifiNoConnection";
-
-import notificationWifiOff from "@featherds/icon/notification/WifiOff";
-
-import notificationWifiSignalBad from "@featherds/icon/notification/WifiSignalBad";
-
-import notificationWifiStatusBar from "@featherds/icon/notification/WifiStatusBar";
-
 
 
 export default {
   data(){
     return {
-      featherIcons:[{ icon: contentBlogArticle, key: "contentBlogArticle" },
-        { icon: contentVideo, key: "contentVideo" },
-        { icon: communicationCertificate, key: "communicationCertificate" },
+      featherIcons:[{ icon: communicationCertificate, key: "communicationCertificate" },
         { icon: communicationCertificateAlt, key: "communicationCertificateAlt" },
         { icon: communicationChat, key: "communicationChat" },
         { icon: communicationContacts, key: "communicationContacts" },
         { icon: communicationDocumentation, key: "communicationDocumentation" },
         { icon: communicationIdCard, key: "communicationIdCard" },
         { icon: communicationPhone, key: "communicationPhone" },
+        { icon: contentBlogArticle, key: "contentBlogArticle" },
+        { icon: contentVideo, key: "contentVideo" },
         { icon: datavisAreaChart, key: "datavisAreaChart" },
         { icon: datavisBarChart, key: "datavisBarChart" },
         { icon: datavisColumnChart, key: "datavisColumnChart" },
@@ -574,6 +584,7 @@ export default {
         { icon: actionFeedbackAlt, key: "actionFeedbackAlt" },
         { icon: actionFileCopy, key: "actionFileCopy" },
         { icon: actionFilterAlt, key: "actionFilterAlt" },
+        { icon: actionGroup, key: "actionGroup" },
         { icon: actionHelp, key: "actionHelp" },
         { icon: actionHide, key: "actionHide" },
         { icon: actionHome, key: "actionHome" },
@@ -685,6 +696,19 @@ export default {
         { icon: navigationSubdirectoryArrowRight, key: "navigationSubdirectoryArrowRight" },
         { icon: navigationUnfoldLess, key: "navigationUnfoldLess" },
         { icon: navigationUnfoldMore, key: "navigationUnfoldMore" },
+        { icon: notificationConnected, key: "notificationConnected" },
+        { icon: notificationError, key: "notificationError" },
+        { icon: notificationNotification, key: "notificationNotification" },
+        { icon: notificationNotificationsOff, key: "notificationNotificationsOff" },
+        { icon: notificationNotificationSelected, key: "notificationNotificationSelected" },
+        { icon: notificationNotificationSoundSelected, key: "notificationNotificationSoundSelected" },
+        { icon: notificationUnconnected, key: "notificationUnconnected" },
+        { icon: notificationWarning, key: "notificationWarning" },
+        { icon: notificationWifi, key: "notificationWifi" },
+        { icon: notificationWifiNoConnection, key: "notificationWifiNoConnection" },
+        { icon: notificationWifiOff, key: "notificationWifiOff" },
+        { icon: notificationWifiSignalBad, key: "notificationWifiSignalBad" },
+        { icon: notificationWifiStatusBar, key: "notificationWifiStatusBar" },
         { icon: networkAggregationLayer, key: "networkAggregationLayer" },
         { icon: networkAggregationLayerAlt1, key: "networkAggregationLayerAlt1" },
         { icon: networkAggregationLayerAlt2, key: "networkAggregationLayerAlt2" },
@@ -749,16 +773,7 @@ export default {
         { icon: networkVirtualMachine, key: "networkVirtualMachine" },
         { icon: networkVirtualMachineAlt, key: "networkVirtualMachineAlt" },
         { icon: networkVirtualMachineAlt2, key: "networkVirtualMachineAlt2" },
-        { icon: networkWifiRouter, key: "networkWifiRouter" },
-        { icon: notificationConnected, key: "notificationConnected" },
-        { icon: notificationError, key: "notificationError" },
-        { icon: notificationUnconnected, key: "notificationUnconnected" },
-        { icon: notificationWarning, key: "notificationWarning" },
-        { icon: notificationWifi, key: "notificationWifi" },
-        { icon: notificationWifiNoConnection, key: "notificationWifiNoConnection" },
-        { icon: notificationWifiOff, key: "notificationWifiOff" },
-        { icon: notificationWifiSignalBad, key: "notificationWifiSignalBad" },
-        { icon: notificationWifiStatusBar, key: "notificationWifiStatusBar" }]
+        { icon: networkWifiRouter, key: "networkWifiRouter" }]
     };
   },
   components: {

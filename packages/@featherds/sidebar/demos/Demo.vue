@@ -3,8 +3,9 @@
     id="my-sidebar"
     :items="panels"
     :pushedSelector="pushedSelector"
-    menuTitle="My Sidebar"
     mode="single"
+    menuTitle="My Sidebar"
+    menuHeader
   />
   <main class="sidebar-demo-main-content">
     <h2>Main Page Content</h2>
@@ -281,5 +282,16 @@ const panels: Panel[] = [
   grid-template-columns: 1fr;
   grid-template-rows: auto;
   gap: 1rem;
+}
+</style>
+
+<style lang="scss">
+#my-sidebar {
+  --feather-dock-content-padding-top: 2rem;
+  --feather-dock-toggle-top: calc(100% - 3rem);
+  .feather-panel-bar {
+    --feather-panel-bar-title-font-size: 1.375rem;
+    --feather-panel-bar-panel-title-font-size: 1rem;
+  }
 }
 </style>

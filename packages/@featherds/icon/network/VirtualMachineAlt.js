@@ -1,4 +1,4 @@
-import { openBlock, createElementBlock, createElementVNode } from "vue";
+import { createElementBlock, openBlock, createElementVNode } from "vue";
 const _export_sfc = (sfc, props) => {
   const target = sfc.__vccOpts || sfc;
   for (const [key, val] of props) {
@@ -13,33 +13,28 @@ const _hoisted_1 = {
   height: "24",
   viewBox: "0 0 24 24"
 };
-const _hoisted_2 = /* @__PURE__ */ createElementVNode("path", { d: "M11.98,7.42s.07,0,.1.02l4.1,2.26.02,4.55-4.08,2.29s-.06.03-.1.03-.07,0-.1-.02l-4.1-2.26-.02-4.55,4.08-2.29s.06-.03.1-.03M11.98,5.62c-.34,0-.68.09-.98.26l-4.49,2.52c-.32.18-.51.51-.51.88l.03,5.49c0,.36.2.7.52.87l4.51,2.49c.3.17.63.25.97.25s.68-.09.98-.26l4.49-2.52c.32-.18.51-.51.51-.88l-.03-5.49c0-.36-.2-.7-.52-.87l-4.51-2.49c-.3-.17-.63-.25-.97-.25h0Z" }, null, -1);
-const _hoisted_3 = /* @__PURE__ */ createElementVNode("polyline", {
-  points: "17 9 12 12 7 9",
-  fill: "none",
-  stroke: "#000",
-  "stroke-miterlimit": "10",
-  "stroke-width": "1.8"
-}, null, -1);
-const _hoisted_4 = /* @__PURE__ */ createElementVNode("line", {
-  x1: "12",
-  y1: "18",
-  x2: "12",
-  y2: "12",
-  fill: "none",
-  stroke: "#000",
-  "stroke-miterlimit": "10",
-  "stroke-width": "1.96"
-}, null, -1);
-const _hoisted_5 = /* @__PURE__ */ createElementVNode("path", { d: "M12,2.9c3.24,0,6.26,1.74,7.88,4.55,1.62,2.81,1.62,6.29,0,9.1-1.62,2.81-4.64,4.55-7.88,4.55s-6.26-1.74-7.88-4.55c-1.62-2.81-1.62-6.29,0-9.1,1.62-2.81,4.64-4.55,7.88-4.55M12,1c-3.93,0-7.56,2.1-9.53,5.5-1.96,3.4-1.96,7.6,0,11,1.96,3.4,5.6,5.5,9.53,5.5s7.56-2.1,9.53-5.5c1.96-3.4,1.96-7.6,0-11-1.96-3.4-5.6-5.5-9.53-5.5h0Z" }, null, -1);
-const _hoisted_6 = [
-  _hoisted_2,
-  _hoisted_3,
-  _hoisted_4,
-  _hoisted_5
-];
 function _sfc_render(_ctx, _cache) {
-  return openBlock(), createElementBlock("svg", _hoisted_1, _hoisted_6);
+  return openBlock(), createElementBlock("svg", _hoisted_1, _cache[0] || (_cache[0] = [
+    createElementVNode("path", { d: "M11.98,7.42s.07,0,.1.02l4.1,2.26.02,4.55-4.08,2.29s-.06.03-.1.03-.07,0-.1-.02l-4.1-2.26-.02-4.55,4.08-2.29s.06-.03.1-.03M11.98,5.62c-.34,0-.68.09-.98.26l-4.49,2.52c-.32.18-.51.51-.51.88l.03,5.49c0,.36.2.7.52.87l4.51,2.49c.3.17.63.25.97.25s.68-.09.98-.26l4.49-2.52c.32-.18.51-.51.51-.88l-.03-5.49c0-.36-.2-.7-.52-.87l-4.51-2.49c-.3-.17-.63-.25-.97-.25h0Z" }, null, -1),
+    createElementVNode("polyline", {
+      points: "17 9 12 12 7 9",
+      fill: "none",
+      stroke: "#000",
+      "stroke-miterlimit": "10",
+      "stroke-width": "1.8"
+    }, null, -1),
+    createElementVNode("line", {
+      x1: "12",
+      y1: "18",
+      x2: "12",
+      y2: "12",
+      fill: "none",
+      stroke: "#000",
+      "stroke-miterlimit": "10",
+      "stroke-width": "1.96"
+    }, null, -1),
+    createElementVNode("path", { d: "M12,2.9c3.24,0,6.26,1.74,7.88,4.55,1.62,2.81,1.62,6.29,0,9.1-1.62,2.81-4.64,4.55-7.88,4.55s-6.26-1.74-7.88-4.55c-1.62-2.81-1.62-6.29,0-9.1,1.62-2.81,4.64-4.55,7.88-4.55M12,1c-3.93,0-7.56,2.1-9.53,5.5-1.96,3.4-1.96,7.6,0,11,1.96,3.4,5.6,5.5,9.53,5.5s7.56-2.1,9.53-5.5c1.96-3.4,1.96-7.6,0-11-1.96-3.4-5.6-5.5-9.53-5.5h0Z" }, null, -1)
+  ]));
 }
 const VirtualMachineAlt = /* @__PURE__ */ _export_sfc(_sfc_main, [["render", _sfc_render]]);
 export {

@@ -1,9 +1,8 @@
 <template>
-  <FeatherAppBar :labels="labels" :content="'main'"></FeatherAppBar>
-  <FeatherDock :expandedWidth="'20rem'" id="dock">
+  <FeatherDock :expandedWidth="'20rem'" id="my-docked-panel-sidebar">
     <template #docked>
       <FeatherPanelBar
-        :id="'sidebar'"
+        :id="'panels-sidebar'"
         :items="panels"
         mode="Panel"
         title="Feather Documentation"
@@ -99,7 +98,6 @@
 
 <script setup lang="ts">
 import { computed, markRaw } from "vue";
-import { FeatherAppBar } from "@featherds/app-bar";
 import { FeatherPanelBar, Panel } from "@featherds/panel-bar";
 import { FeatherMenuList, MenuListEntry } from "@featherds/menu";
 import { FeatherDock } from "@featherds/dock";
@@ -108,8 +106,6 @@ import Documentation from "@featherds/icon/communication/Documentation";
 import ViewCode from "@featherds/icon/network/ViewCode";
 import PlayCircle from "@featherds/icon/action/PlayCircle";
 import Warning from "@featherds/icon/notification/Warning";
-
-const labels = { skip: "Skip to main content" };
 
 const demoMenuList = computed((): MenuListEntry[] => {
   return [
@@ -275,6 +271,17 @@ const panels = computed((): Panel[] => {
   ];
 });
 </script>
+
+<style lang="scss">
+#my-docked-panel-sidebar {
+  --feather-dock-content-padding-top: 6rem;
+  #panels-sidebar.feather-panel-bar {
+    --feather-panel-bar-title-font-size: 1.125rem;
+    --feather-panel-bar-panel-title-font-size: 0.75rem;
+    --feather-panel-bar-panel-title-font-weight: 400;
+  }
+}
+</style>
 
 <style lang="scss" scoped>
 @use "@featherds/styles/themes/variables" as vars;

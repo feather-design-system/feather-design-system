@@ -199,8 +199,8 @@
       @include set-color($background);
     }
   }
-  &:focus.focus,
-  &:focus .focus {
+  &:focus-visible.focus,
+  &:focus-visible .focus {
     background: surface-dark-gradient(vars.$state-opacity-focus-on-surface-dark),
       linear-grad($background);
     @include set-color(vars.$state-text-color-focus-on-surface-dark);
@@ -210,8 +210,8 @@
       @include set-color($background);
     }
   }
-  &:hover:focus .focus.hover,
-  &:hover:focus.focus.hover {
+  &:hover:focus-visible .focus.hover,
+  &:hover:focus-visible.focus.hover {
     background: surface-dark-gradient(vars.$state-opacity-hover-on-surface-dark),
       surface-dark-gradient(vars.$state-opacity-focus-on-surface-dark),
       linear-grad($background);

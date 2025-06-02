@@ -1,5 +1,6 @@
-export type SidebarProps = {
+type BaseSidebarProps = {
   id: string;
+  items: unknown;
   pushedSelector?: string | string[] | undefined;
   modelValue?: boolean;
   location?: "left" | "right" | "none";
@@ -9,10 +10,14 @@ export type SidebarProps = {
     expand: string;
     collapse: string;
   };
-  items: unknown;
+};
+
+export type SidebarProps = BaseSidebarProps & {
   mode?: "single" | "multi";
   menuHeader?: boolean;
   menuFooter?: boolean;
   menuTitle?: string;
   menuIcon?: string;
 };
+
+export type SidenavProps = BaseSidebarProps & {};

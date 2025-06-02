@@ -1,6 +1,6 @@
 <template>
   <FeatherDock
-    id="left-dock"
+    id="panel-bar-left-dock"
     location="left"
     pushedSelector="main"
     v-model="isDockOpen"
@@ -276,43 +276,24 @@ const isDockOpen = ref(false);
 </script>
 
 <style>
-/* .feather-dock {
-  --feather-dock-background-color: navy;
+#panel-bar-left-dock {
+  --feather-dock-toggle-top: 0.25rem;
+  --feather-dock-content-padding-top: 4rem;
+  .feather-panel-bar-summary {
+    --feather-panel-bar-panel-title-font-size: 11px;
+  }
+  .feather-panel-bar-header {
+    color: var(--feather-primary-text-on-surface-dark);
+  }
+  .feather-list-header {
+    color: var(--feather-primary-text-on-surface-dark);
+  }
 }
-.feather-panel-bar {
-  --border-radius: 2rem;
-  --feather-panel-bar-background-color: yellow;
-  --feather-panel-bar-title-font-size: 2rem;
-  --feather-panel-bar-header-background-color: purple;
-  --feather-panel-bar-title-font-size: 24px;
-
-  --feather-panel-bar-panel-title-font-size: 10px;
-} */
 </style>
 <style lang="scss" scoped>
 @use "@featherds/styles/themes/variables" as vars;
 @use "@featherds/styles/themes/utils" as utils;
 @use "@featherds/styles/mixins/elevation" as elev;
-
-// .feather-dock {
-//   --feather-dock-background-color: linear-gradient(
-//     180deg,
-//     hsl(var(--feather-minor-r), 85%, 75%) 40%,
-//     hsl(var(--feather-minor-g), 85%, 75%) 90%,
-//     hsl(var(--feather-minor-b), 15%, 75%) 100%
-//   );
-// --feather-dock-background-color: linear-gradient(
-//   180deg,
-//   hsl(var(--feather-warning-r), 85%, 75%) 40%,
-//   hsl(var(--feather-warning-g), 85%, 75%) 90%,
-//   hsl(var(--feather-warning-b), 15%, 75%) 100%
-// );
-// }
-// .feather-panel-bar {
-// --border-radius: 0.25rem;
-// --feather-panel-bar-title-font-size: 0.875rem;
-// --feather-panel-bar-panel-title-font-size: 11px;
-// }
 
 main {
   display: grid;

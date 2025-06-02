@@ -1,2 +1,3 @@
 export { default as FeatherSidebar } from "./components/FeatherSidebar.vue";
-// export type { DockConfig, DockLabels } from "./types";
+export { default as FeatherSidenav } from "./components/FeatherSidenav.vue";
+export * from "./types";

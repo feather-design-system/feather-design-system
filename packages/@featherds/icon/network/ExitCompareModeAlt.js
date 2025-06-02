@@ -1,4 +1,4 @@
-import { openBlock, createElementBlock, createElementVNode } from "vue";
+import { createElementBlock, openBlock, createElementVNode } from "vue";
 const _export_sfc = (sfc, props) => {
   const target = sfc.__vccOpts || sfc;
   for (const [key, val] of props) {
@@ -13,14 +13,11 @@ const _hoisted_1 = {
   height: "24",
   viewBox: "0 0 24 24"
 };
-const _hoisted_2 = /* @__PURE__ */ createElementVNode("path", { d: "M11,5v2h2v-2h-2ZM11,1v2h2V1h-2ZM11,17v2h2v-2h-2ZM11,21v2h2v-2h-2ZM13.41,12l1.59-1.59c.39-.39.39-1.02,0-1.41s-1.02-.39-1.41,0l-1.59,1.59-1.59-1.59c-.39-.39-1.02-.39-1.41,0s-.39,1.02,0,1.41l1.59,1.59-1.59,1.59c-.39.39-.39,1.02,0,1.41s1.02.39,1.41,0l1.59-1.59,1.59,1.59c.39.39,1.02.39,1.41,0s.39-1.02,0-1.41l-1.59-1.59ZM9,5v-2h-3c-1.11,0-2,.89-2,2v14c0,1.11.9,2,2,2h3v-2h-3V5h3Z" }, null, -1);
-const _hoisted_3 = /* @__PURE__ */ createElementVNode("path", { d: "M20,5v14c0,1.11-.89,2-2,2h-3v-2h3V5h-3v-2h3c1.1,0,2,.89,2,2Z" }, null, -1);
-const _hoisted_4 = [
-  _hoisted_2,
-  _hoisted_3
-];
 function _sfc_render(_ctx, _cache) {
-  return openBlock(), createElementBlock("svg", _hoisted_1, _hoisted_4);
+  return openBlock(), createElementBlock("svg", _hoisted_1, _cache[0] || (_cache[0] = [
+    createElementVNode("path", { d: "M11,5v2h2v-2h-2ZM11,1v2h2V1h-2ZM11,17v2h2v-2h-2ZM11,21v2h2v-2h-2ZM13.41,12l1.59-1.59c.39-.39.39-1.02,0-1.41s-1.02-.39-1.41,0l-1.59,1.59-1.59-1.59c-.39-.39-1.02-.39-1.41,0s-.39,1.02,0,1.41l1.59,1.59-1.59,1.59c-.39.39-.39,1.02,0,1.41s1.02.39,1.41,0l1.59-1.59,1.59,1.59c.39.39,1.02.39,1.41,0s.39-1.02,0-1.41l-1.59-1.59ZM9,5v-2h-3c-1.11,0-2,.89-2,2v14c0,1.11.9,2,2,2h3v-2h-3V5h3Z" }, null, -1),
+    createElementVNode("path", { d: "M20,5v14c0,1.11-.89,2-2,2h-3v-2h3V5h-3v-2h3c1.1,0,2,.89,2,2Z" }, null, -1)
+  ]));
 }
 const ExitCompareModeAlt = /* @__PURE__ */ _export_sfc(_sfc_main, [["render", _sfc_render]]);
 export {
