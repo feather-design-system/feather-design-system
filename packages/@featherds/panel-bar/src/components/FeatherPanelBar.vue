@@ -15,7 +15,7 @@
     </div>
     <details
       v-for="(panel, index) in props.items"
-      class="feather-panel-bar-details"
+      class="feather-panel-bar-details hover focus"
       :key="index"
       :id="`panel-${panel.id || index}`"
       :name="props.mode === 'single' ? props.id : panel.id"
@@ -167,21 +167,22 @@ const handlePanelToggle = (e: Event, panel: Panel) => {
   emit("panel-toggle", e, openPanelIds.value);
 };
 </script>
+
 <style lang="scss">
+/* NON-SCOPED SO OVERRIDABLE PROPERTIES CAN BE OVERRIDEN */
 .feather-panel-bar {
-  --feather-panel-bar-background-color: var(--feather-surface);
+  --feather-panel-bar-background-color: inherit;
+  --feather-panel-bar-color: inherit;
+  // Panel Bar Title
   --feather-panel-bar-title-font-size: var(--feather-headline4-font-size);
   --feather-panel-bar-title-font-weight: var(--feather-headline4-font-weight);
-  --feather-panel-bar-title-line-height: var(--feather-headline4-line-height);
 
+  // Panel Bar Panel Title
   --feather-panel-bar-panel-title-font-size: var(
     --feather-body-small-font-size
   );
   --feather-panel-bar-panel-title-font-weight: var(
     --feather-body-small-font-weight
-  );
-  --feather-panel-bar-panel-title-line-height: var(
-    --feather-body-small-line-height
   );
 }
 </style>
@@ -192,41 +193,41 @@ const handlePanelToggle = (e: Event, panel: Panel) => {
 @use "@featherds/styles/mixins/typography" as typo;
 
 .feather-panel-bar {
-  --feather-panel-bar-title-font-size: var(--feather-headline4-font-size);
-  --feather-panel-bar-title-font-weight: var(--feather-headline4-font-weight);
-  --feather-panel-bar-title-line-height: var(--feather-headline4-line-height);
   --transition-speed: 0.375s;
   --border-width: 1px;
   --border-radius: 0;
+  display: flex;
+  flex-direction: column;
 
   width: 100%; // fits to parent
   max-width: 100%; // but not more
   box-shadow: var(vars.$shadow-2);
   border-radius: var(--border-radius);
+  background-color: var(--feather-panel-bar-background-color);
+  color: var(--feather-panel-bar-color);
 
-  .feather-panel-bar-header,
-  .feather-panel-bar-footer {
+  & > .feather-panel-bar-header,
+  & > .feather-panel-bar-footer {
     @include typo.headline4();
     background-color: var(--feather-panel-bar-background-color);
+    color: var(--feather-panel-bar-color);
     padding: 0.5rem 1.5rem;
     font-size: var(--feather-panel-bar-title-font-size);
-    font-weight: var(--feather-panel-bar-title-font-weight);
-    line-height: var(--feather-panel-bar-title-line-height);
   }
 
-  .feather-panel-bar-details {
-    // scss-lint:disable-next-line unknown-property
+  & > .feather-panel-bar-details {
+    @include utils.state-on-surface();
+
     interpolate-size: allow-keywords;
-    padding: 0 1.5rem;
+    width: auto;
     overflow: hidden;
-    outline: 0.125px solid transparent;
+    outline: 1px solid transparent;
     border: var(--border-width) solid transparent;
     border-top: var(--border-width) solid var(vars.$shade-4);
     background-color: var(--feather-panel-bar-background-color);
 
     &:focus-within,
     &:hover {
-      border: var(--border-width) solid var(vars.$shade-2);
       summary {
         cursor: pointer;
       }
@@ -237,13 +238,14 @@ const handlePanelToggle = (e: Event, panel: Panel) => {
     &:last-child {
       border-radius: 0 0 var(--border-radius) var(--border-radius);
     }
-
     .feather-panel-bar-summary {
       display: flex;
       flex-direction: row;
       justify-content: space-between;
       height: 3rem;
       user-select: none;
+      padding-inline: 0.5rem;
+
       @include typo.body-small();
       .summary {
         display: flex;
@@ -255,7 +257,6 @@ const handlePanelToggle = (e: Event, panel: Panel) => {
         .title {
           font-size: var(--feather-panel-bar-panel-title-font-size);
           font-weight: var(--feather-panel-bar-panel-title-font-weight);
-          line-height: var(--feather-panel-bar-panel-title-line-height);
         }
       }
       .expand {
@@ -269,11 +270,6 @@ const handlePanelToggle = (e: Event, panel: Panel) => {
       &::marker {
         display: none;
       }
-      &:focus-visible,
-      &:focus {
-        color: var(vars.$primary);
-        outline: none;
-      }
     }
     .feather-panel-bar-content {
       display: grid;
@@ -286,6 +282,7 @@ const handlePanelToggle = (e: Event, panel: Panel) => {
       height: auto;
       width: 100%;
       scrollbar-color: transparent transparent; // prevent scrollbar flashing
+      padding-inline: 0.5rem;
     }
     &::details-content {
       height: 0;
@@ -296,6 +293,9 @@ const handlePanelToggle = (e: Event, panel: Panel) => {
     &[open] {
       &::details-content {
         height: auto;
+      }
+      .feather-panel-bar-summary {
+        @include utils.state-on-surface();
       }
       summary {
         .expand {
@@ -310,25 +310,28 @@ const handlePanelToggle = (e: Event, panel: Panel) => {
       }
     }
   }
-  &.docked.dock-closed {
-    background-color: var(--feather-dock-background-color);
+  &.docked {
     box-shadow: none;
-    .feather-panel-bar-header,
-    .feather-panel-bar-footer {
-      display: none;
-    }
     .feather-panel-bar-details {
-      background-color: var(--feather-dock-background-color);
-      &:hover,
-      &:focus-visible,
-      &:focus-within {
-        border: 1px solid var(vars.$primary);
-        border-radius: 0.25rem;
-      }
+      border: 1px solid transparent;
+    }
+  }
+  &.docked.dock-closed {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    align-items: center;
+
+    box-shadow: none;
+    .feather-panel-bar-details {
       .feather-panel-bar-summary {
+        @include utils.state-on-surface();
         .summary {
+          justify-content: center;
+          align-items: center;
           .icon {
-            margin-left: -0.7rem;
+            margin: 0;
+            padding: 0.5rem;
           }
           .title {
             display: none;
@@ -338,6 +341,10 @@ const handlePanelToggle = (e: Event, panel: Panel) => {
           display: none;
         }
       }
+    }
+    .feather-panel-bar-header,
+    .feather-panel-bar-footer {
+      display: none;
     }
   }
 }

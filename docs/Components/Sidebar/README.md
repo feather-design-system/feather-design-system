@@ -37,7 +37,7 @@ Use the Sidebar to:
 
 ## Sidebar
 
-### Props
+### Sidebar Props
 
 | Name | Description | Type | Required | Default |
 |------|-------------|------|----------|---------|
@@ -47,7 +47,7 @@ Use the Sidebar to:
 | `modelValue` | Controls whether the sidebar is expanded (`true`) or collapsed (`false`) | `boolean` | No | `false` |
 | `location` | Position of the sidebar (`'left'`, `'right'`, or `'none'`) | `string` | No | `'left'` |
 | `expandedWidth` | Width of the sidebar when expanded | `string` | No | `'20rem'` |
-| `collapsedWidth` | Width of the sidebar when collapsed | `string` | No | `'4rem'` |
+| `collapsedWidth` | Width of the sidebar when collapsed | `string` | No | `'3rem'` |
 | `mode` | Whether one panel (`'single'`) or multiple panels (`'multi'`) can be open | `string` | No | `'single'` |
 | `menuHeader` | Whether to show the menu header | `boolean` | No | `false` |
 | `menuFooter` | Whether to show the menu footer | `boolean` | No | `false` |
@@ -55,13 +55,13 @@ Use the Sidebar to:
 | `menuIcon` | Icon to display in the menu header | `string` | No | - |
 | `labels` | Accessibility labels for expand/collapse actions | `Object` | No | `{ expand: 'Expand dock', collapse: 'Collapse dock' }` |
 
-### Events
+### Dock Events
 
 | Name | Description | Payload |
 |------|-------------|---------|
 | `update:modelValue` | Emitted when sidebar expand/collapse state changes | `boolean` |
 
-### Types
+### Sidebar Types
 
 #### Panel
 
@@ -105,3 +105,24 @@ Use clear, descriptive panel titles
 Include icons to represent panels when collapsed
 Ensure custom components maintain keyboard navigation
 Provide meaningful labels for expand/collapse actions
+
+## Sidenav
+
+<Sidebar-SidenavExamples />
+
+### Sidenav Props
+
+| Name | Description | Type | Required | Default |
+|------|-------------|------|----------|---------|
+| `id` | Unique identifier for the sidebar | `string` | Yes | - |
+| `items` | Array of menus to display | `Array<MenuListEntry>` | Yes | - |
+| `pushedSelector` | CSS selector for elements that should be pushed when expanded | `string` | No | - |
+| `modelValue` | Controls whether the sidebar is expanded (`true`) or collapsed (`false`) | `boolean` | No | `false` |
+| `location` | Position of the sidebar (`'left'`, `'right'`, or `'none'`) | `string` | No | `'left'` |
+| `expandedWidth` | Width of the sidebar when expanded | `string` | No | `'20rem'` |
+| `collapsedWidth` | Width of the sidebar when collapsed | `string` | No | `'3rem'` |
+| `labels` | Accessibility labels for expand/collapse actions | `Object` | No | `{ expand: 'Expand dock', collapse: 'Collapse dock' }` |
+
+| Name | Description | Payload |
+|------|-------------|---------|
+| `update:modelValue` | Emitted when sidebar expand/collapse state changes | `boolean` |

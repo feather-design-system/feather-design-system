@@ -1,6 +1,6 @@
 <template>
   <FeatherSidebar
-    id="my-sidebar"
+    id="docs-example-sidebar-right"
     :items="items"
     location="right"
     :pushedSelector="['.title-container', '.feather-container']"
@@ -32,7 +32,7 @@ const items = [
     },
   },
   {
-    id: "my-sidebar",
+    id: "my-sidebar-profile",
     title: "My Profile",
     content: "Your security officer is Dwight Schrute.",
     icon: AccountCircle as typeof FeatherIcon,

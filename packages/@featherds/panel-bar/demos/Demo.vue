@@ -96,16 +96,10 @@ const demoMode = ref<"single" | "multi">("single");
 </script>
 
 <style lang="scss">
-// .feather-panel-bar {
-//   // override variables exposed by the feather-panel-bar-details component
-//   --feather-panel-bar-title-font-size: 1.25em;
-//   --feather-panel-bar-title-font-weight: 400;
-//   --feather-panel-bar-title-line-height: 1.5rem;
-
-//   --feather-panel-bar-panel-title-font-size: 1.25em;
-//   --feather-panel-bar-panel-title-font-weight: 400;
-//   --feather-panel-bar-panel-title-line-height: 1rem;
-// }
+#panels-demo.feather-panel-bar {
+  // override variables exposed by the feather-panel-bar component
+  --feather-panel-bar-title-font-size: 1em;
+}
 </style>
 <style lang="scss" scoped>
 @use "@featherds/styles/themes/variables" as vars;

@@ -1,5 +1,5 @@
 <template>
-  <FeatherSidebar id="my-sidebar" :items="items" :pushedSelector="['.app-layout', '.nav-list']" />
+  <FeatherSidebar id="docs-example-sidebar-right" :items="items" :pushedSelector="['.app-layout', '.nav-list']" />
   <div :style="{ 'font-size': '2em', 'text-align': 'center' }">
     <FeatherIcon :icon="ArrowBack" /> Demo
   </div>
@@ -16,7 +16,7 @@ import type { Panel } from "@featherds/panel-bar";
 const items = computed((): Panel[] => {
   return [
     {
-      id: "my-sidebar",
+      id: "docs-example-sidebar-right",
       title: "My Sidebar",
       content: "Some content",
       icon: Menu as typeof FeatherIcon,

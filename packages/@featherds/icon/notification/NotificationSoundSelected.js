@@ -1,0 +1,22 @@
+import { createElementBlock, openBlock, createElementVNode } from "vue";
+const _export_sfc = (sfc, props) => {
+  const target = sfc.__vccOpts || sfc;
+  for (const [key, val] of props) {
+    target[key] = val;
+  }
+  return target;
+};
+const _sfc_main = {};
+const _hoisted_1 = {
+  xmlns: "http://www.w3.org/2000/svg",
+  viewBox: "0 0 24 24"
+};
+function _sfc_render(_ctx, _cache) {
+  return openBlock(), createElementBlock("svg", _hoisted_1, _cache[0] || (_cache[0] = [
+    createElementVNode("path", { d: "M12,21h0c-1.1,0-2-.9-2-2h0s4,0,4,0h0c0,1.1-.9,2-2,2ZM19.15,17.15l-2.15-2.15v-5c0-2.42-1.72-4.44-4-4.9v-.1c0-.55-.45-1-1-1s-1,.45-1,1v.1c-2.28.46-4,2.48-4,4.9v5l-2.15,2.15c-.31.31-.09.85.35.85h13.6c.44,0,.66-.54.35-.85ZM18.82,13.82l.74.74c.23.23.64.19.8-.11,1.91-3.6,1.27-8.14-1.57-11.07-.21-.22-.59-.18-.76.07l-.57.8c-.14.2-.11.48.07.65,2.14,2.09,2.44,5.72,1.2,8.34-.09.19-.06.42.09.57ZM5.26,13.25c-1.34-2.78-.79-6.07,1.25-8.34.16-.17.18-.43.05-.62l-.59-.83c-.18-.25-.55-.29-.76-.07-2.83,2.93-3.49,7.46-1.58,11.07.16.29.56.34.8.11l.74-.74c.15-.15.18-.38.09-.57Z" }, null, -1)
+  ]));
+}
+const NotificationSoundSelected = /* @__PURE__ */ _export_sfc(_sfc_main, [["render", _sfc_render]]);
+export {
+  NotificationSoundSelected as default
+};

@@ -1,4 +1,4 @@
-import { openBlock, createElementBlock, createElementVNode } from "vue";
+import { createElementBlock, openBlock, createElementVNode } from "vue";
 const _export_sfc = (sfc, props) => {
   const target = sfc.__vccOpts || sfc;
   for (const [key, val] of props) {
@@ -13,20 +13,17 @@ const _hoisted_1 = {
   height: "24",
   viewBox: "0 0 24 24"
 };
-const _hoisted_2 = /* @__PURE__ */ createElementVNode("rect", {
-  width: "24",
-  height: "24",
-  transform: "translate(24 24) rotate(180)",
-  fill: "none",
-  "stroke-width": "0"
-}, null, -1);
-const _hoisted_3 = /* @__PURE__ */ createElementVNode("path", { d: "M19.52,7.09l-6.99-3.96c-.16-.09-.33-.13-.51-.13-.17,0-.35.04-.5.13l-7.01,3.96c-.31.18-.5.55-.5.91v8c0,.36.19.73.5.91l3.74,2.11c.33.19.75-.05.75-.44v-1.06c0-.18-.09-.34-.25-.43l-2.77-1.6v-7l6.02-3.5,6.02,3.5v7l-2.77,1.62c-.15.09-.25.25-.25.43v1.06c0,.38.41.62.75.44l3.77-2.14c.31-.18.48-.55.48-.91v-8c0-.36-.17-.73-.48-.91ZM11.01,15.55c0-2.1,2.75-2.41,2.75-4.01,0-.82-.67-1.75-1.75-1.75-.85,0-1.63.75-1.78,1.56-.04.2-.22.33-.52.33h-.79c-.25,0-.44-.21-.44-.45,0-.18.56-3.22,3.53-3.22,2.12,0,3.51,1.85,3.51,3.54,0,2.25-2.51,2.48-2.51,4.12v1.35h-1.99v-1.45ZM13,18.5v1c0,.28-.22.5-.5.5h-1c-.28,0-.5-.22-.5-.5v-1c0-.28.22-.5.5-.5h1c.28,0,.5.22.5.5Z" }, null, -1);
-const _hoisted_4 = [
-  _hoisted_2,
-  _hoisted_3
-];
 function _sfc_render(_ctx, _cache) {
-  return openBlock(), createElementBlock("svg", _hoisted_1, _hoisted_4);
+  return openBlock(), createElementBlock("svg", _hoisted_1, _cache[0] || (_cache[0] = [
+    createElementVNode("rect", {
+      width: "24",
+      height: "24",
+      transform: "translate(24 24) rotate(180)",
+      fill: "none",
+      "stroke-width": "0"
+    }, null, -1),
+    createElementVNode("path", { d: "M19.52,7.09l-6.99-3.96c-.16-.09-.33-.13-.51-.13-.17,0-.35.04-.5.13l-7.01,3.96c-.31.18-.5.55-.5.91v8c0,.36.19.73.5.91l3.74,2.11c.33.19.75-.05.75-.44v-1.06c0-.18-.09-.34-.25-.43l-2.77-1.6v-7l6.02-3.5,6.02,3.5v7l-2.77,1.62c-.15.09-.25.25-.25.43v1.06c0,.38.41.62.75.44l3.77-2.14c.31-.18.48-.55.48-.91v-8c0-.36-.17-.73-.48-.91ZM11.01,15.55c0-2.1,2.75-2.41,2.75-4.01,0-.82-.67-1.75-1.75-1.75-.85,0-1.63.75-1.78,1.56-.04.2-.22.33-.52.33h-.79c-.25,0-.44-.21-.44-.45,0-.18.56-3.22,3.53-3.22,2.12,0,3.51,1.85,3.51,3.54,0,2.25-2.51,2.48-2.51,4.12v1.35h-1.99v-1.45ZM13,18.5v1c0,.28-.22.5-.5.5h-1c-.28,0-.5-.22-.5-.5v-1c0-.28.22-.5.5-.5h1c.28,0,.5.22.5.5Z" }, null, -1)
+  ]));
 }
 const ContainerUnknown = /* @__PURE__ */ _export_sfc(_sfc_main, [["render", _sfc_render]]);
 export {

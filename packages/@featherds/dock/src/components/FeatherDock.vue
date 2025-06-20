@@ -1,18 +1,28 @@
 <template>
   <div :class="dockClasses" :id="id">
-    <div class="feather-dock-toggle-container">
-      <FeatherButton
-        class="feather-dock-toggle"
-        @click="toggleDock"
-        :aria-expanded="dockConfig.isOpen"
-        :aria-label="dockConfig.isOpen ? labels.collapse : labels.expand"
-        data-ref-id="feather-dock-toggle"
-        :icon="dockConfig.isOpen ? 'MenuClose' : 'MenuOpen'"
-      >
-        <FeatherIcon :icon="dockConfig.isOpen ? MenuClose : MenuOpen" />
-      </FeatherButton>
-    </div>
-    <div class="feather-dock-content">
+    <!-- @keydown.esc.stop.prevent="handleSidebarEscape" -->
+    <FeatherButton
+      class="feather-dock-toggle hover focus"
+      data-ref-id="feather-dock-toggle"
+      :icon="dockConfig.isOpen ? 'Menu Close' : 'Menu Open'"
+      :onColor="true"
+      @click="toggleDock"
+      :aria-expanded="dockConfig.isOpen"
+      :aria-label="dockConfig.isOpen ? labels.collapse : labels.expand"
+      :aria-controls="`${id}-content`"
+      role="navigation"
+    >
+      <FeatherIcon :icon="dockConfig.isOpen ? MenuClose : MenuOpen" />
+    </FeatherButton>
+    <div
+      ref="dockContentRef"
+      :id="`${id}-content`"
+      class="feather-dock-content"
+      role="region"
+      :aria-label="
+        dockConfig.isOpen ? 'Dock content expanded' : 'Dock content collapsed'
+      "
+    >
       <slot name="docked">
         <div class="custom-content">
           <h2>Custom Dock Content</h2>
@@ -51,7 +61,7 @@ const props = withDefaults(defineProps<DockProps>(), {
   modelValue: false,
   location: "left",
   expandedWidth: "20rem",
-  collapsedWidth: "4rem",
+  collapsedWidth: "3rem",
   pushedSelector: undefined,
   labels: () => ({
     expand: "Expand dock",
@@ -65,6 +75,8 @@ const emit = defineEmits([
   "update:dock-collapsed",
 ]);
 
+const dockContentRef = ref<HTMLElement | undefined>(undefined);
+
 const isDockOpen = ref(props.modelValue);
 
 watch(
@@ -73,9 +85,6 @@ watch(
     if (newVal !== isDockOpen.value) {
       isDockOpen.value = newVal;
       updatePushedElement();
-      console.log(
-        `Dock state changed to ${isDockOpen.value ? "open" : "closed"}`
-      );
     }
   },
   { immediate: true }
@@ -96,7 +105,7 @@ const dockConfig = computed<DockConfig>(() => ({
   isOpen: isDockOpen.value,
 }));
 
-const width = computed(() => {
+const dockWidth = computed(() => {
   return dockConfig.value.isOpen ? props.expandedWidth : props.collapsedWidth;
 });
 
@@ -109,6 +118,23 @@ const toggleDock = () => {
     : emit("update:dock-collapsed");
 
   updatePushedElement();
+};
+
+const handleSidebarEscape = (event: KeyboardEvent) => {
+  if (event.key === "Escape" && isDockOpen.value) {
+    isDockOpen.value = false;
+    emit("update:modelValue", false);
+    emit("update:dock-collapsed");
+    updatePushedElement();
+
+    // Focus the toggle button when dock is closed
+    const toggleBtnEl = document.querySelector(
+      `#${props.id} .feather-dock-toggle`
+    ) as HTMLElement | null;
+    if (toggleBtnEl) {
+      toggleBtnEl.focus();
+    }
+  }
 };
 
 const convertToPixels = (value: string): string => {
@@ -144,7 +170,6 @@ const updatePushedElement = () => {
     ? props.pushedSelector
     : [props.pushedSelector];
   selectors.forEach((selector) => {
-    console.log("Updating pushed element:", selector);
     try {
       const targets = document.querySelectorAll(selector);
       if (targets.length === 0) {
@@ -162,18 +187,20 @@ const updatePushedElement = () => {
         const widthFromProps = dockConfig.value.isOpen
           ? props.expandedWidth
           : props.collapsedWidth;
+        // @ts-ignore
+        // eslint-disable-next-line @typescript-eslint/no-unused-vars
         const widthInPx = dockConfig.value.isOpen
           ? expandedWidthPx.value
           : collapsedWidthPx.value;
 
         // If the element is in the normal flow, we need to adjust the margin
         if (isInFlow) {
-          console.log(
-            "Inflow element found:",
-            selector,
-            position,
-            widthFromProps
-          );
+          // console.log(
+          //   "Inflow element found:",
+          //   selector,
+          //   position,
+          //   widthFromProps
+          // );
           const marginProperty =
             dockConfig.value.location === "left"
               ? "margin-left"
@@ -181,8 +208,8 @@ const updatePushedElement = () => {
 
           element.style.setProperty(marginProperty, widthFromProps);
         } else {
-          console.warn("Outflow element found:", selector, position, widthInPx);
-          console.warn("Outflow not supported yet");
+          // console.warn("Outflow element found:", selector, position, widthInPx);
+          // console.warn("Outflow not supported yet");
           // // elements outside normal flow (fixed or absolute) need to be adjusted differently
           // const side = dockConfig.value.location === "left" ? "left" : "right";
           // // add to their existing position
@@ -190,7 +217,6 @@ const updatePushedElement = () => {
           //   window.getComputedStyle(element)[side] || "0",
           //   10
           // );
-
           // const newVal = `${originalPos + parseInt(widthInPx, 10)}px`;
           // element.style.setProperty(side, newVal);
           // // store original value for later restoration
@@ -245,9 +271,11 @@ provide("dockConfig", readonly(dockConfig)); //readonly
 
 onMounted(() => {
   updatePushedElement();
+  document.addEventListener("keydown", handleSidebarEscape);
 });
 
 onUnmounted(() => {
+  document.removeEventListener("keydown", handleSidebarEscape);
   if (props.pushedSelector) {
     // If the dock is closed, remove the margin from the pushed elements
     // This is important to avoid layout shifts when the dock is closed
@@ -266,7 +294,7 @@ onUnmounted(() => {
           const isInFlow = position === "static" || position === "relative";
 
           if (isInFlow) {
-            console.log("Inflow element found:", selector, position);
+            // console.log("Inflow element found:", selector, position);
             element.style.removeProperty(
               dockConfig.value.location === "left"
                 ? "margin-left"
@@ -308,68 +336,116 @@ onUnmounted(() => {
 <style>
 .dock-push-target {
   transition: all 0.3s ease-in-out;
+
+  @media (prefers-reduced-motion: reduce) {
+    transition-duration: 0.01s; /* nearly instant */
+    transition-timing-function: linear;
+  }
+}
+.feather-dock {
+  /* PROPERTIES CAN BE OVERRIDEN */
+  --feather-dock-background-color: var(--feather-surface);
+  --feather-dock-color: var(--feather-primary-text-on-surface);
+
+  --feather-dock-content-padding-top: 3rem;
+  --feather-dock-toggle-top: 0.25rem;
+  --feather-dock-timing: 0.3s;
+
+  @media (prefers-reduced-motion: reduce) {
+    --feather-dock-timing: 0.1s; /* nearly instant */
+    --feather-dock-toggle-timing-fn: linear;
+    --feather-dock-toggle-timing-fn: linear !important;
+    transition: left 0.01s linear, width 0.1s linear !important;
+  }
+  .feather-dock-toggle {
+    @media (prefers-reduced-motion: reduce) {
+      transition: left 0.01s linear !important;
+      transition-timing-function: linear !important;
+    }
+  }
 }
 </style>
 
 <style lang="scss" scoped>
 @use "@featherds/styles/themes/variables" as vars;
+@use "@featherds/styles/themes/utils" as utils;
 @use "@featherds/styles/mixins/elevation" as elev;
 
 .feather-dock {
-  --feather-dock-background-color: var(#{vars.$hero-gradient-1-1}),
-    var(#{vars.$hero-gradient-2-3}), var(#{vars.$hero-gradient-2-3});
-  --feather-dock-width: v-bind("width");
+  --feather-dock-width: v-bind("dockWidth");
+  --feather-dock-toggle-timing-fn: v-bind(
+    "dockConfig.isOpen ? 'cubic-bezier(0, 0.8, 0.4, 1)' : 'cubic-beziercubic-bezier(0, 0.8, 0.4, 1)'"
+  );
+
   position: fixed;
   inset: 0 0 0 0;
-  border-radius: 0.25rem;
-  padding-top: 3rem;
-  padding-inline: 0.625rem;
+  border-radius: 0;
 
   width: var(--feather-dock-width);
 
-  overflow-y: scroll;
+  overflow-y: visible;
   scroll-behavior: smooth;
   scrollbar-gutter: stable;
   scrollbar-width: thin;
+  scrollbar-color: var(--feather-dock-color) transparent;
+  z-index: var(vars.$zindex-modal);
 
   @include elev.elevation(16);
-  transition: width 0.3s ease-in-out;
-  background: var(--feather-dock-background-color);
+  transition: all var(--feather-dock-timing, 0.3s);
+  transition-timing-function: var(--feather-dock-toggle-timing-fn);
+  background-color: var(--feather-dock-background-color);
+  color: var(--feather-dock-color);
+
   &.right {
     inset: 0 0 0 auto;
-    .feather-dock-toggle-container {
-      justify-content: flex-start;
-      .feather-dock-toggle {
-        transform: rotate(180deg);
-      }
-    }
-  }
-  .feather-dock-toggle-container {
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-    justify-content: flex-end;
-    background: none;
-    margin-block: 1.25rem;
-    transition: all 0.3s ease-in-out;
     .feather-dock-toggle {
-      background-color: var(vars.$surface);
-      @include elev.elevation(16);
-      padding-inline: 1rem;
+      transform: rotate(180deg);
+      right: calc(var(--feather-dock-width) - 1rem);
+      left: auto;
+      transition: right var(--feather-dock-timing, 0.3s);
+      transition-timing-function: var(--feather-dock-toggle-timing-fn);
     }
-  }
-
-  &.dock-open {
-    background-color: var(vars.$surface);
   }
   &.dock-closed {
-    background-color: var(vars.$surface);
     scrollbar-width: none;
-    &.right,
-    &.left {
-      .feather-dock-toggle-container {
-        justify-content: center;
-      }
+    scrollbar-color: transparent transparent;
+    & > .feather-dock-toggle {
+      position: absolute;
+      left: calc(var(--feather-dock-width) / 2 - 1.5rem);
+      margin: auto 0.5rem;
+    }
+  }
+  & > .feather-dock-toggle {
+    @include utils.state-on-neutral();
+    position: fixed;
+    top: var(--feather-dock-toggle-top, 1rem);
+    left: calc(var(--feather-dock-width) - 1rem);
+    background-color: var(--feather-dock-background-color);
+    color: var(--feather-dock-color);
+    backdrop-filter: blur(32px);
+    -webkit-backdrop-filter: blur(32px);
+    z-index: var(vars.$zindex-popover);
+    transition: left var(--feather-dock-timing, 0.3s);
+    transition-timing-function: var(--feather-dock-toggle-timing-fn);
+    // outline: 0.125rem solid var(--feather-background);
+    // outline-offset: -0.125rem;
+    font-size: 1rem;
+    z-index: calc(var(--feather-zindex-modal) + 1);
+  }
+  & > .feather-dock-content {
+    position: relative;
+    height: 100%;
+    width: 100%;
+    overflow-y: auto;
+    padding: 0.25rem;
+    padding-top: var(--feather-dock-content-padding-top, 3rem);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    .custom-content {
+      text-align: center;
+      padding: 1rem;
     }
   }
 }

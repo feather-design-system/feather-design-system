@@ -1,6 +1,6 @@
 <template>
   <FeatherDock
-    id="left-dock"
+    id="the-left-dock"
     location="left"
     pushedSelector="main"
     v-model="isDockOpen"
@@ -17,7 +17,7 @@
     </template>
   </FeatherDock>
   <FeatherDock
-    id="right-dock"
+    id="the-right-dock"
     :location="'right'"
     pushedSelector="main"
     v-model="isRightDockOpen"
@@ -374,5 +374,12 @@ main {
       background-color: utils.alpha(vars.$error, 0.6);
     }
   }
+}
+</style>
+
+<style>
+#the-left-dock,
+#the-right-dock {
+  --feather-dock-toggle-top: calc(100% - 3.5rem);
 }
 </style>

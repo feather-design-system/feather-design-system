@@ -1,10 +1,11 @@
 <src>
   ./Intro.vue
-  ./Demo.vue
-  ./Right.vue
-  ./WithFeatherMenuList.vue
-  ./WithCustomComponent.vue
+  ./SidebarDemo.vue
+  ./SidebarRight.vue
+  ./SidebarWithFeatherMenuList.vue
+  ./SidebarWithCustomComponent.vue
   ./MyCustomComponent.vue
+  ./SidenavDemo.vue
   ./menus.ts
 </src>
 <template>
@@ -12,12 +13,11 @@
 </template>
 <script>
 import Intro from "./Intro.vue";
-import Demo from "./Demo.vue";
-import Right from "./Right.vue";
-import WithFeatherMenuList from "./WithFeatherMenuList.vue";
-import WithCustomComponent from "./WithCustomComponent.vue";
+import SidebarDemo from "./SidebarDemo.vue";
+import SidebarRight from "./SidebarRight.vue";
+import SidebarWithFeatherMenuList from "./SidebarWithFeatherMenuList.vue";
+import SidebarWithCustomComponent from "./SidebarWithCustomComponent.vue";
 import MyCustomComponent from "./MyCustomComponent.vue";
-
 import menus from "./menus.ts?raw";
 
 import { ref, getCurrentInstance, markRaw } from "vue";
@@ -33,14 +33,14 @@ export default {
         // source: instance.type.srcs["Intro"],
       },
       {
-        _text: "Demo",
-        component: markRaw(Demo),
-        source: instance.type.srcs["Demo"],
+        _text: "Sidebar Demo",
+        component: markRaw(SidebarDemo),
+        source: instance.type.srcs["SidebarDemo"],
       },
       {
-        _text: "Right",
-        component: markRaw(Right),
-        source: instance.type.srcs["Right"],
+        _text: "Sidebar Right",
+        component: markRaw(SidebarRight),
+        source: instance.type.srcs["SidebarRight"],
         supporting: [
           {
             filename: "menus.ts",
@@ -52,9 +52,9 @@ export default {
         ],
       },
       {
-        _text: "With FeatherMenuList",
-        component: markRaw(WithFeatherMenuList),
-        source: instance.type.srcs["WithFeatherMenuList"],
+        _text: "Sidebar With FeatherMenuList",
+        component: markRaw(SidebarWithFeatherMenuList),
+        source: instance.type.srcs["SidebarWithFeatherMenuList"],
         supporting: [
           {
             filename: "menus.ts",
@@ -66,9 +66,9 @@ export default {
         ],
       },
       {
-        _text: "With Custom Component",
-        component: markRaw(WithCustomComponent),
-        source: instance.type.srcs["WithCustomComponent"],
+        _text: "Sidebar With Custom Component",
+        component: markRaw(SidebarWithCustomComponent),
+        source: instance.type.srcs["SidebarWithCustomComponent"],
         supporting: [
           {
             filename: "MyCustomComponent.vue",

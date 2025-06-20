@@ -2,9 +2,10 @@
   <FeatherSidebar
     id="my-sidebar"
     :items="panels"
-    :pushedSelector="'main'"
+    :pushedSelector="pushedSelector"
+    mode="single"
     menuTitle="My Sidebar"
-    mode="multi"
+    menuHeader
   />
   <main class="sidebar-demo-main-content">
     <h2>Main Page Content</h2>
@@ -32,11 +33,22 @@
         </p>
       </li>
     </ul>
+    <h3>Config</h3>
+    <div class="config">
+      <label for="pushedSelector">Pushed Selector: </label>
+      <input
+        id="pushedSelector"
+        type="text"
+        placeholder="Enter a selector sidebar push mode"
+        v-model="pushedSelector"
+        style="width: 25%"
+      />
+    </div>
   </main>
 </template>
 
 <script setup lang="ts">
-import { markRaw } from "vue";
+import { markRaw, ref } from "vue";
 import { FeatherSidebar } from "../src/";
 import { Panel } from "@featherds/panel-bar";
 import { FeatherMenuList, MenuListEntry } from "@featherds/menu";
@@ -54,6 +66,8 @@ import Dashboard from "@featherds/icon/action/Dashboard";
 import LineChart from "@featherds/icon/datavis/LineChart";
 import Folder from "@featherds/icon/file/Folder";
 import Terminal from "@featherds/icon/network/Terminal";
+
+const pushedSelector = ref<string>("main");
 
 // Sample menus for demo
 const menu1: MenuListEntry[] = [
@@ -268,5 +282,16 @@ const panels: Panel[] = [
   grid-template-columns: 1fr;
   grid-template-rows: auto;
   gap: 1rem;
+}
+</style>
+
+<style lang="scss">
+#my-sidebar {
+  --feather-dock-content-padding-top: 2rem;
+  --feather-dock-toggle-top: calc(100% - 3rem);
+  .feather-panel-bar {
+    --feather-panel-bar-title-font-size: 1.375rem;
+    --feather-panel-bar-panel-title-font-size: 1rem;
+  }
 }
 </style>
