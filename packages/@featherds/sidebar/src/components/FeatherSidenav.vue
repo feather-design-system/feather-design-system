@@ -7,7 +7,7 @@
     :expandedWidth="dockProps.expandedWidth"
     :collapsedWidth="dockProps.collapsedWidth"
     :labels="dockProps.labels"
-    class="feather-sidebar"
+    class="feather-sidenav"
   >
     <template #docked>
       <FeatherSidenavList :id="menuProps.id" :items="menuProps.items" />
@@ -51,24 +51,33 @@ const menuProps = computed(() => {
 });
 </script>
 
-<style>
-.feather-sidebar.feather-dock {
-  --feather-sidebar-background-color: var(--feather-surface-dark);
-  --feather-sidebar-color: var(--feather-state-text-color-on-surface-dark);
+<style lang="scss">
+@use "@featherds/styles/themes/utils" as utils;
+.feather-sidenav.feather-dock {
+  --feather-dock-background-color: var(--feather-surface-dark);
+  --feather-dock-color: var(--feather-state-text-color-on-surface-dark);
   --feather-dock-timing: 0.3s;
   --feather-dock-content-padding-top: 4rem;
   --feather-dock-toggle-top: 0.5rem;
 
-  .feather-dock-toggle {
-    outline: 1px solid transparent;
+  & > .feather-dock-toggle {
+    @include utils.state-on-surface-dark();
+    background-color: var(--feather-dock-background-color);
+    color: var(--feather-dock-color);
+    //   outline: 1px solid transparent;
   }
 }
 </style>
 
 <style lang="scss" scoped>
 @use "@featherds/styles/themes/utils" as utils;
-.feather-sidebar.feather-dock {
-  background-color: var(--feather-sidebar-background-color);
-  color: var(--feather-sidebar-color);
+.feather-sidenav.feather-dock {
+  background-color: var(--feather-dock-background-color);
+  color: var(--feather-dock-color);
+  .feather-dock-toggle {
+    background-color: var(--feather-dock-background-color);
+    color: var(--feather-dock-color);
+    outline: 1px solid transparent;
+  }
 }
 </style>

@@ -312,6 +312,30 @@ import medicalTreatmentSchedule from "@featherds/icon/medical/TreatmentSchedule"
 
 import medicalVitals from "@featherds/icon/medical/Vitals";
 
+import notificationConnected from "@featherds/icon/notification/Connected";
+
+import notificationError from "@featherds/icon/notification/Error";
+
+import notificationNotificationsOff from "@featherds/icon/notification/NotificationsOff";
+
+import notificationNotificationSelected from "@featherds/icon/notification/NotificationSelected";
+
+import notificationNotificationSoundSelected from "@featherds/icon/notification/NotificationSoundSelected";
+
+import notificationUnconnected from "@featherds/icon/notification/Unconnected";
+
+import notificationWarning from "@featherds/icon/notification/Warning";
+
+import notificationWifi from "@featherds/icon/notification/Wifi";
+
+import notificationWifiNoConnection from "@featherds/icon/notification/WifiNoConnection";
+
+import notificationWifiOff from "@featherds/icon/notification/WifiOff";
+
+import notificationWifiSignalBad from "@featherds/icon/notification/WifiSignalBad";
+
+import notificationWifiStatusBar from "@featherds/icon/notification/WifiStatusBar";
+
 import navigationApps from "@featherds/icon/navigation/Apps";
 
 import navigationAppsGetMore from "@featherds/icon/navigation/AppsGetMore";
@@ -359,32 +383,6 @@ import navigationSubdirectoryArrowRight from "@featherds/icon/navigation/Subdire
 import navigationUnfoldLess from "@featherds/icon/navigation/UnfoldLess";
 
 import navigationUnfoldMore from "@featherds/icon/navigation/UnfoldMore";
-
-import notificationConnected from "@featherds/icon/notification/Connected";
-
-import notificationError from "@featherds/icon/notification/Error";
-
-import notificationNotification from "@featherds/icon/notification/Notification";
-
-import notificationNotificationsOff from "@featherds/icon/notification/NotificationsOff";
-
-import notificationNotificationSelected from "@featherds/icon/notification/NotificationSelected";
-
-import notificationNotificationSoundSelected from "@featherds/icon/notification/NotificationSoundSelected";
-
-import notificationUnconnected from "@featherds/icon/notification/Unconnected";
-
-import notificationWarning from "@featherds/icon/notification/Warning";
-
-import notificationWifi from "@featherds/icon/notification/Wifi";
-
-import notificationWifiNoConnection from "@featherds/icon/notification/WifiNoConnection";
-
-import notificationWifiOff from "@featherds/icon/notification/WifiOff";
-
-import notificationWifiSignalBad from "@featherds/icon/notification/WifiSignalBad";
-
-import notificationWifiStatusBar from "@featherds/icon/notification/WifiStatusBar";
 
 import networkAggregationLayer from "@featherds/icon/network/AggregationLayer";
 
@@ -672,6 +670,18 @@ export default {
         { icon: medicalTreatmentCycle, key: "medicalTreatmentCycle" },
         { icon: medicalTreatmentSchedule, key: "medicalTreatmentSchedule" },
         { icon: medicalVitals, key: "medicalVitals" },
+        { icon: notificationConnected, key: "notificationConnected" },
+        { icon: notificationError, key: "notificationError" },
+        { icon: notificationNotificationsOff, key: "notificationNotificationsOff" },
+        { icon: notificationNotificationSelected, key: "notificationNotificationSelected" },
+        { icon: notificationNotificationSoundSelected, key: "notificationNotificationSoundSelected" },
+        { icon: notificationUnconnected, key: "notificationUnconnected" },
+        { icon: notificationWarning, key: "notificationWarning" },
+        { icon: notificationWifi, key: "notificationWifi" },
+        { icon: notificationWifiNoConnection, key: "notificationWifiNoConnection" },
+        { icon: notificationWifiOff, key: "notificationWifiOff" },
+        { icon: notificationWifiSignalBad, key: "notificationWifiSignalBad" },
+        { icon: notificationWifiStatusBar, key: "notificationWifiStatusBar" },
         { icon: navigationApps, key: "navigationApps" },
         { icon: navigationAppsGetMore, key: "navigationAppsGetMore" },
         { icon: navigationArrowBack, key: "navigationArrowBack" },
@@ -696,19 +706,6 @@ export default {
         { icon: navigationSubdirectoryArrowRight, key: "navigationSubdirectoryArrowRight" },
         { icon: navigationUnfoldLess, key: "navigationUnfoldLess" },
         { icon: navigationUnfoldMore, key: "navigationUnfoldMore" },
-        { icon: notificationConnected, key: "notificationConnected" },
-        { icon: notificationError, key: "notificationError" },
-        { icon: notificationNotification, key: "notificationNotification" },
-        { icon: notificationNotificationsOff, key: "notificationNotificationsOff" },
-        { icon: notificationNotificationSelected, key: "notificationNotificationSelected" },
-        { icon: notificationNotificationSoundSelected, key: "notificationNotificationSoundSelected" },
-        { icon: notificationUnconnected, key: "notificationUnconnected" },
-        { icon: notificationWarning, key: "notificationWarning" },
-        { icon: notificationWifi, key: "notificationWifi" },
-        { icon: notificationWifiNoConnection, key: "notificationWifiNoConnection" },
-        { icon: notificationWifiOff, key: "notificationWifiOff" },
-        { icon: notificationWifiSignalBad, key: "notificationWifiSignalBad" },
-        { icon: notificationWifiStatusBar, key: "notificationWifiStatusBar" },
         { icon: networkAggregationLayer, key: "networkAggregationLayer" },
         { icon: networkAggregationLayerAlt1, key: "networkAggregationLayerAlt1" },
         { icon: networkAggregationLayerAlt2, key: "networkAggregationLayerAlt2" },

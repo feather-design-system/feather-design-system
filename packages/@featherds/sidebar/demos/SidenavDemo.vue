@@ -7,11 +7,11 @@
   <!-- expandedWidth="12rem" -->
   <main>
     <div>
-      <h1>Sidenav Menu Demo</h1>
-      <p>This is a demo of the Feather Sidenav Menu component.</p>
+      <h1>Sidenav Demo</h1>
+      <p>This is a demo of the Feather Sidenav component.</p>
       <p>
-        The sidenav menu is designed to be used in conjunction with the Feather
-        Dock component, allowing for a responsive and accessible navigation
+        The sidenav is designed to be used in conjunction with the Feather Dock
+        component, allowing for a responsive and accessible navigation
         experience.
       </p>
       <p>
@@ -19,8 +19,8 @@
         as needed.
       </p>
       <p>
-        The sidenav menu supports various item types, including links and
-        separators, and can include icons for better visual representation.
+        The sidenav supports various item types, including links and separators,
+        and can include icons for better visual representation.
       </p>
     </div>
   </main>

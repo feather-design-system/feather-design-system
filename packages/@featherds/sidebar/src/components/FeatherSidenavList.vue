@@ -151,7 +151,7 @@ const isDockCollapsed = computed(() => {
 
 const listClasses = computed(() => {
   return {
-    "feather-sidebar-menu": true,
+    "feather-sidenav-menu": true,
     docked: isDocked.value,
     "dock-closed": isDocked.value && isDockCollapsed.value,
     "dock-open": isDocked.value && !isDockCollapsed.value,
@@ -160,7 +160,7 @@ const listClasses = computed(() => {
 
 const listItemClasses = computed(() => {
   return {
-    "feather-sidebar-menu-item": true,
+    "feather-sidenav-menu-item": true,
   };
 });
 
@@ -197,9 +197,9 @@ const forceClosePopovers = () => {
 </script>
 
 <style lang="scss">
-.feather-sidebar-menu {
-  --feather-sidebar-background-color: inherit;
-  --feather-sidebar-color: inherit;
+.feather-sidenav {
+  --feather-dock-background-color: inherit;
+  --feather-dock-color: inherit;
 }
 </style>
 
@@ -207,19 +207,18 @@ const forceClosePopovers = () => {
 @use "@featherds/styles/themes/utils" as utils;
 @use "@featherds/styles/mixins/elevation" as elev;
 
-.feather-list.feather-sidebar-menu {
+.feather-list.feather-sidenav-menu {
   --icon-size-level1: 1.5rem;
   --icon-size-level2: 1.5rem;
   &.docked {
     :deep(a.feather-list-item):focus {
-      box-shadow: inset 0 0 0 1px var(--feather-sidebar-color);
+      box-shadow: inset 0 0 0 1px var(--feather-dock-color);
     }
     &.dock-open {
-      // background-color: var(--feather-sidebar-background-color);
       & > .feather-list-header {
-        color: var(--feather-sidebar-color);
+        color: var(--feather-dock-color);
       }
-      :deep(.feather-list-item).feather-sidebar-menu-item {
+      :deep(.feather-list-item).feather-sidenav-menu-item {
         @include utils.state-on-surface-dark();
         .feather-list-item-text {
           display: grid;
@@ -261,6 +260,7 @@ const forceClosePopovers = () => {
         }
         & > .feather-list-item {
           @include utils.state-on-surface-dark();
+          border-radius: 6rem;
           & > .feather-list-item-text {
             display: grid;
             grid-template-columns: auto 1fr auto;
@@ -288,12 +288,12 @@ const forceClosePopovers = () => {
           @include elev.elevation(8);
           margin: 0;
           padding-block-start: 0;
-          background-color: var(--feather-sidebar-background-color);
-          color: var(--feather-sidebar-color);
+          background-color: var(--feather-dock-background-color);
+          color: var(--feather-dock-color);
 
           & > .feather-list {
             & > .feather-list-header {
-              color: var(--feather-sidebar-color);
+              color: var(--feather-dock-color);
             }
             > li > .feather-list-item {
               @include utils.state-on-surface-dark();
@@ -310,7 +310,7 @@ const forceClosePopovers = () => {
     &.dock-closed {
       display: flex;
       flex-direction: column;
-      :deep(.feather-list-item).feather-sidebar-menu-item {
+      :deep(.feather-list-item).feather-sidenav-menu-item {
         @include utils.state-on-surface-dark();
         padding: 0.125rem;
         padding-block-start: 0.5rem;
@@ -347,11 +347,11 @@ const forceClosePopovers = () => {
         .popover {
           margin-block: 0;
           padding-block-start: 0;
-          background-color: var(--feather-sidebar-background-color);
-          color: var(--feather-sidebar-color);
+          background-color: var(--feather-dock-background-color);
+          color: var(--feather-dock-color);
           & > .feather-list {
             & > .feather-list-header {
-              color: var(--feather-sidebar-color);
+              color: var(--feather-dock-color);
             }
             > li > .feather-list-item {
               @include utils.state-on-surface-dark();

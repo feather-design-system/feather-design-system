@@ -62,10 +62,9 @@ const timingFn = ref<ISelectItemType>({
 });
 
 const timingFunctions = [
+  { label: "ease-out Brian", fn: "cubic-bezier(0, 0.8, 0.4, 1)" },
   { label: "ease-in-out", fn: "ease-in-out" },
   { label: "ease-in", fn: "ease-in" },
-  { label: "ease-out", fn: "ease-out" },
-  { label: "ease-out Brian", fn: "cubic-bezier(0, 0.8, 0.4, 1)" },
   { label: "ease-out", fn: "ease-out" },
   { label: "fast, snap late", fn: "cubic-bezier(0.06, 1.78, 0.8, 0.68)" },
   { label: "hard bounce", fn: "cubic-bezier(0.06, 1.78, 0.13, 0.43)" },

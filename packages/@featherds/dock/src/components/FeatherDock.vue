@@ -348,7 +348,7 @@ onUnmounted(() => {
   --feather-dock-color: var(--feather-primary-text-on-surface);
 
   --feather-dock-content-padding-top: 3rem;
-  --feather-dock-toggle-top: 3rem;
+  --feather-dock-toggle-top: 0.25rem;
   --feather-dock-timing: 0.3s;
 
   @media (prefers-reduced-motion: reduce) {
@@ -427,8 +427,8 @@ onUnmounted(() => {
     z-index: var(vars.$zindex-popover);
     transition: left var(--feather-dock-timing, 0.3s);
     transition-timing-function: var(--feather-dock-toggle-timing-fn);
-    outline: 0.125rem solid var(--feather-background);
-    outline-offset: -0.125rem;
+    // outline: 0.125rem solid var(--feather-background);
+    // outline-offset: -0.125rem;
     font-size: 1rem;
     z-index: calc(var(--feather-zindex-modal) + 1);
   }

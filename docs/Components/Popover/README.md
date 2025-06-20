@@ -56,7 +56,6 @@ Popovers shouldn’t take up the entire or a significant portion of the screen, 
 
 | Name | Description | Type | Required | Default |
 | ---- | ----------- | ---- | -------- | ------- |
-
 | placement | determines the placement of the popover around the slot content | `PopoverPlacement` | `false` | `PopoverPlacement.top` |
 | pointer-alignment | determines the alignment of the pointer on the popover | `PointerAlignment` | `false` | `PointerAlignment.center` |
 
