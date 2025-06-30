@@ -1,0 +1,15 @@
+{
+  "name": "@featherds/shared",
+  "version": "0.12.39",
+  "publishConfig": {
+    "access": "public"
+  },
+  "author": "NantHealth",
+  "scripts": {
+    "compile": "tsc --declaration"
+  },
+  "keywords": [
+    "vue",
+    "FeatherShared"
+  ]
+}

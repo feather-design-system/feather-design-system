@@ -193,6 +193,16 @@ export default [
           url: "/Components/Sidebar/",
           image: "/assets/components/SIDE_BAR@2x.png",
         },
+        {
+          name: "Alert",
+          url: "/Components/Alert/",
+          image: "/assets/branding/GETTING_STARTED@2x.png",
+        },
+        {
+          name: "Tag",
+          url: "/Components/Tag/",
+          image: "/assets/branding/GETTING_STARTED@2x.png",
+        },
       ].sort((a, b) => {
         if (a.name > b.name) {
           return 1;

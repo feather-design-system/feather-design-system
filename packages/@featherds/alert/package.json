@@ -1,0 +1,26 @@
+{
+  "name": "@featherds/alert",
+  "version": "0.12.39",
+  "private": true,
+    "publishConfig": {
+    "access": "public"
+  },
+  "description": "Feather styled alert component.",
+  "author": "NantHealth",
+  "scripts": {},
+  "main": "dist/app.mjs",
+  "license": "Apache-2.0",
+  "dependencies": {
+    "@featherds/button": "file:../button",
+    "@featherds/icon": "file:../icon",
+    "@featherds/status": "file:../status",
+    "@featherds/styles": "file:../styles",
+    "@featherds/utils": "file:../utils",
+    "vue": "^3.5.12"
+  },
+  "keywords": [
+    "vue",
+    "FeatherAlert"
+  ],
+  "types": "./src/index.d.ts"
+}

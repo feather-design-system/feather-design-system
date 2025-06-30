@@ -29,8 +29,12 @@
 <script setup lang="ts">
 import { computed } from "vue";
 import { FeatherDock, DockProps } from "@featherds/dock";
-import { SidebarProps } from "../types";
-import { FeatherPanelBar, PanelBarProps, Panel } from "@featherds/panel-bar";
+import { type SidebarProps } from "../types";
+import {
+  FeatherPanelBar,
+  type PanelBarProps,
+  type Panel,
+} from "@featherds/panel-bar";
 const props = defineProps<SidebarProps>();
 // forward typed events to parent so consumers can listen to `update:expanded` / `update:collapsed`
 const emit = defineEmits<{

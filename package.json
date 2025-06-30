@@ -32,6 +32,7 @@
     "changelog": "conventional-changelog -p angular -i CHANGELOG.md -s && git add CHANGELOG.md"
   },
   "dependencies": {
+    "@featherds/alert": "file:packages/@featherds/alert",
     "@featherds/app-bar": "file:packages/@featherds/app-bar",
     "@featherds/app-layout": "file:packages/@featherds/app-layout",
     "@featherds/app-rail": "file:packages/@featherds/app-rail",
@@ -66,12 +67,15 @@
     "@featherds/radio": "file:packages/@featherds/radio",
     "@featherds/ripple": "file:packages/@featherds/ripple",
     "@featherds/select": "file:packages/@featherds/select",
+    "@featherds/shared": "file:packages/@featherds/shared",
     "@featherds/sidebar": "file:packages/@featherds/sidebar",
     "@featherds/snackbar": "file:packages/@featherds/snackbar",
+    "@featherds/status": "file:packages/@featherds/status",
     "@featherds/styles": "file:packages/@featherds/styles",
     "@featherds/switch": "file:packages/@featherds/switch",
     "@featherds/table": "file:packages/@featherds/table",
     "@featherds/tabs": "file:packages/@featherds/tabs",
+    "@featherds/tag": "file:packages/@featherds/tag",
     "@featherds/textarea": "file:packages/@featherds/textarea",
     "@featherds/toggle-button": "file:packages/@featherds/toggle-button",
     "@featherds/tooltip": "file:packages/@featherds/tooltip",
