@@ -3,7 +3,7 @@ import vue from "@vitejs/plugin-vue";
 import { sassImports, moduleImport, fileImport } from "./scripts/vite/alias.js";
 // https://vitejs.dev/config/
 export default defineConfig({
-  plugins: [vue()],
+  plugins: [vue() as any],
   resolve: {
     alias: [...sassImports, ...moduleImport, ...fileImport],
     extensions: [".mjs", ".js", ".ts", ".jsx", ".tsx", ".json", ".vue"],

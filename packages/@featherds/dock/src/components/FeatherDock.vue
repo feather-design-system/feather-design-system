@@ -77,20 +77,10 @@ const emit = defineEmits([
 
 const dockContentRef = ref<HTMLElement | undefined>(undefined);
 
-const isDockOpen = ref(props.modelValue);
+// use composable's ref as source of truth; its .value is a Ref<boolean>
+const isDockOpen = ref<boolean>(props.modelValue);
 
 const pushedSelectorPadding = ref("");
-
-watch(
-  () => props.modelValue,
-  (newVal: boolean) => {
-    if (newVal !== isDockOpen.value) {
-      isDockOpen.value = newVal;
-      updatePushedElement();
-    }
-  },
-  { immediate: true }
-);
 
 const dockClasses = computed(() => {
   return {
@@ -239,6 +229,17 @@ const updatePushedElement = () => {
     }
   });
 };
+
+// Watch external prop changes and sync to internal state, now that updatePushedElement is defined
+watch(
+  () => props.modelValue,
+  (newVal: boolean) => {
+    if (newVal !== isDockOpen.value) {
+      isDockOpen.value = newVal;
+      updatePushedElement();
+    }
+  }
+);
 
 provide(
   "scrollToElement",

@@ -16,8 +16,12 @@ describe("Scroll composable", () => {
     const el = document.createElement("div");
     document.body.appendChild(el);
     const elRef = ref(el);
-    let active;
-    const wrapper = createWrapper(() => {
+    interface OutsideClickActive {
+      value: boolean;
+    }
+
+    let active!: OutsideClickActive;
+    createWrapper(() => {
       active = useOutsideClick(elRef, vi.fn());
     });
     await nextTick();
@@ -35,7 +39,7 @@ describe("Scroll composable", () => {
     document.body.appendChild(el);
     const elRef = ref(el);
     const listener = vi.fn();
-    const wrapper = createWrapper(() => {
+    createWrapper(() => {
       const active = useOutsideClick(elRef, listener);
       active.value = true;
     });
@@ -55,7 +59,7 @@ describe("Scroll composable", () => {
       bubbles: true,
       cancelable: false,
     });
-    document.querySelector("div.test").dispatchEvent(event);
+    document.querySelector("div.test")?.dispatchEvent(event);
 
     await nextTick();
 
@@ -67,8 +71,8 @@ describe("Scroll composable", () => {
     const el = document.createElement("div");
     document.body.appendChild(el);
     const elRef = ref(el);
-    let active;
-    const wrapper = createWrapper(() => {
+    let active!: { value: boolean };
+    createWrapper(() => {
       active = useOutsideClick(elRef, vi.fn());
       active.value = true;
     });
@@ -86,7 +90,7 @@ describe("Scroll composable", () => {
     const el = document.createElement("div");
     document.body.appendChild(el);
     const elRef = ref(el);
-    let active;
+    let active!: { value: boolean };
     const wrapper = createWrapper(() => {
       active = useOutsideClick(elRef, vi.fn());
       active.value = true;

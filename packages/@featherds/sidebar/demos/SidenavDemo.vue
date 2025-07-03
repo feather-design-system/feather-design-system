@@ -1,10 +1,13 @@
 <template>
   <FeatherSidenav
-    id="my-sidenav-menu"
+    :id="sideNavId"
     :items="mainMenu"
+    expandedWidth="10rem"
     pushedSelector="main"
+    :modelValue="sideNavExpanded"
+    @update:collapsed="handleCollapsed"
+    @update:expanded="handleExpanded"
   ></FeatherSidenav>
-  <!-- expandedWidth="12rem" -->
   <main>
     <div>
       <h1>Sidenav Demo</h1>
@@ -27,6 +30,7 @@
 </template>
 
 <script setup lang="ts">
+import { computed, onMounted, ref } from "vue";
 import { FeatherSidenav } from "../src";
 import { FeatherIcon } from "@featherds/icon";
 import { FeatherMenuList } from "@featherds/menu";
@@ -35,6 +39,17 @@ import Settings from "@featherds/icon/action/Settings";
 import Help from "@featherds/icon/action/Help";
 import LogOut from "@featherds/icon/action/LogOut";
 import { accountMenu, settingsMenu, helpMenu } from "./menus";
+import { useLocalStorage } from "@featherds/composables/browser/useLocalStorage";
+
+const sideNavId = "my-sidenav-menu";
+const sideNavExpanded = ref(false); // default; will be overridden by local storage value
+
+const sideNavExpandedKey = computed(() => `my-app_${sideNavId}:isExpanded`);
+
+// use the shared composable to keep a storage-backed ref in sync (stores sidenav open state)
+useLocalStorage<boolean>(sideNavExpandedKey.value, sideNavExpanded, {
+  debounce: 200,
+});
 
 const mainMenu = [
   {
@@ -89,6 +104,20 @@ const mainMenu = [
     icon: LogOut as typeof FeatherIcon,
   },
 ];
+
+const handleCollapsed = (id: string): void => {
+  console.log("Sidenav collapsed", id);
+  sideNavExpanded.value = false;
+};
+
+const handleExpanded = (id: string): void => {
+  console.log("Sidenav expanded", id);
+  sideNavExpanded.value = true;
+};
+
+onMounted(() => {
+  console.log("SidenavDemo mounted, sideNavId:", sideNavId);
+});
 </script>
 
 <style lang="scss">
