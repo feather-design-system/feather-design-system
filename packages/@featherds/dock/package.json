@@ -1,6 +1,6 @@
 {
   "name": "@featherds/dock",
-  "version": "0.12.39",
+  "version": "0.12.40",
   "publishConfig": {
     "access": "public"
   },

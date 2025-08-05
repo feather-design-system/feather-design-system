@@ -1,3 +1,12 @@
+## [0.12.40](https://github.com/feather-design-system/feather-design-system/compare/v0.12.39...v0.12.40) (2025-08-05)
+
+
+### Features
+
+* **dock:** adjust padding (not margin); add --feather-dock-header-offset ([#218](https://github.com/feather-design-system/feather-design-system/issues/218)) ([87ceca9](https://github.com/feather-design-system/feather-design-system/commit/87ceca9229bf297513b3352d880c8e84766d6623))
+
+
+
 ## [0.12.39](https://github.com/feather-design-system/feather-design-system/compare/v0.12.38...v0.12.39) (2025-06-20)
 
 

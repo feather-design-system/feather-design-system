@@ -1,6 +1,6 @@
 {
   "name": "@featherds/select",
-  "version": "0.12.39",
+  "version": "0.12.40",
   "type": "module",
   "publishConfig": {
     "access": "public"
