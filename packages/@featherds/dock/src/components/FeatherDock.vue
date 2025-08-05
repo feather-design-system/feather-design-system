@@ -79,6 +79,8 @@ const dockContentRef = ref<HTMLElement | undefined>(undefined);
 
 const isDockOpen = ref(props.modelValue);
 
+const pushedSelectorPadding = ref("");
+
 watch(
   () => props.modelValue,
   (newVal: boolean) => {
@@ -185,8 +187,15 @@ const updatePushedElement = () => {
         const isInFlow = position === "static" || position === "relative";
 
         const widthFromProps = dockConfig.value.isOpen
-          ? props.expandedWidth
-          : props.collapsedWidth;
+          ? `${
+              parseInt(convertToPixels(props.expandedWidth)) +
+              parseInt(convertToPixels(pushedSelectorPadding.value))
+            }px`
+          : `${
+              parseInt(convertToPixels(props.collapsedWidth)) +
+              parseInt(convertToPixels(pushedSelectorPadding.value))
+            }px`;
+
         // @ts-ignore
         // eslint-disable-next-line @typescript-eslint/no-unused-vars
         const widthInPx = dockConfig.value.isOpen
@@ -201,12 +210,12 @@ const updatePushedElement = () => {
           //   position,
           //   widthFromProps
           // );
-          const marginProperty =
+          const paddingProperty =
             dockConfig.value.location === "left"
-              ? "margin-left"
-              : "margin-right";
+              ? "padding-left"
+              : "padding-right";
 
-          element.style.setProperty(marginProperty, widthFromProps);
+          element.style.setProperty(paddingProperty, widthFromProps);
         } else {
           // console.warn("Outflow element found:", selector, position, widthInPx);
           // console.warn("Outflow not supported yet");
@@ -270,6 +279,22 @@ provide(
 provide("dockConfig", readonly(dockConfig)); //readonly
 
 onMounted(() => {
+  if (props.pushedSelector) {
+    const selector = Array.isArray(props.pushedSelector)
+      ? props.pushedSelector[0]
+      : props.pushedSelector;
+
+    if (!selector) return;
+    const element = document.querySelector(selector) as HTMLElement;
+
+    if (!element) return;
+    pushedSelectorPadding.value =
+      dockConfig.value.location === "left"
+        ? window.getComputedStyle(element).paddingLeft
+        : window.getComputedStyle(element).paddingRight;
+  }
+
+  // Update the pushed element padding
   updatePushedElement();
   document.addEventListener("keydown", handleSidebarEscape);
 });
@@ -297,8 +322,8 @@ onUnmounted(() => {
             // console.log("Inflow element found:", selector, position);
             element.style.removeProperty(
               dockConfig.value.location === "left"
-                ? "margin-left"
-                : "margin-right"
+                ? "padding-left"
+                : "padding-right"
             );
           } else {
             console.warn("Outflow element found:", selector, position);
@@ -350,6 +375,7 @@ onUnmounted(() => {
   --feather-dock-content-padding-top: 3rem;
   --feather-dock-toggle-top: 0.25rem;
   --feather-dock-timing: 0.3s;
+  --feather-dock-header-offset: 0px;
 
   @media (prefers-reduced-motion: reduce) {
     --feather-dock-timing: 0.1s; /* nearly instant */
@@ -378,7 +404,7 @@ onUnmounted(() => {
   );
 
   position: fixed;
-  inset: 0 0 0 0;
+  inset: var(--feather-dock-header-offset) 0 0 0;
   border-radius: 0;
 
   width: var(--feather-dock-width);
@@ -388,7 +414,7 @@ onUnmounted(() => {
   scrollbar-gutter: stable;
   scrollbar-width: thin;
   scrollbar-color: var(--feather-dock-color) transparent;
-  z-index: var(vars.$zindex-modal);
+  z-index: var(vars.$zindex-fixed);
 
   @include elev.elevation(16);
   transition: all var(--feather-dock-timing, 0.3s);
@@ -414,11 +440,17 @@ onUnmounted(() => {
       left: calc(var(--feather-dock-width) / 2 - 1.5rem);
       margin: auto 0.5rem;
     }
+    > .feather-dock-toggle {
+      top: var(--feather-dock-toggle-top);
+    }
   }
   & > .feather-dock-toggle {
     @include utils.state-on-neutral();
     position: fixed;
-    top: var(--feather-dock-toggle-top, 1rem);
+
+    top: calc(
+      var(--feather-dock-toggle-top) + var(--feather-dock-header-offset)
+    );
     left: calc(var(--feather-dock-width) - 1rem);
     background-color: var(--feather-dock-background-color);
     color: var(--feather-dock-color);
