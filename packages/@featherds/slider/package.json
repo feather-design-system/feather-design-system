@@ -1,6 +1,7 @@
 {
   "name": "@featherds/slider",
   "version": "0.12.30",
+  "private": true,
   "publishConfig": {
     "access": "public"
   },
@@ -12,11 +13,11 @@
   "dependencies": {
     "@featherds/ripple": "file:../ripple",
     "@featherds/styles": "file:../styles",
-    "vue": "^3.1.0-0"
+    "vue": "^3.5.12"
   },
   "keywords": [
     "vue",
-    "feather-slider"
+    "FeatherSlider"
   ],
   "types": "./src/index.d.ts"
 }
