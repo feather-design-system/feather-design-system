@@ -76,7 +76,8 @@
     "@featherds/toggle-button": "file:packages/@featherds/toggle-button",
     "@featherds/tooltip": "file:packages/@featherds/tooltip",
     "@featherds/utils": "file:packages/@featherds/utils",
-    "@featherds/vuepress-theme-featherds": "file:packages/@featherds/vuepress-theme-featherds"
+    "@featherds/vuepress-theme-featherds": "file:packages/@featherds/vuepress-theme-featherds",
+    "vue-grid-layout-v3": "^3.1.2"
   },
   "devDependencies": {
     "@commitlint/cli": "^19.0.3",
