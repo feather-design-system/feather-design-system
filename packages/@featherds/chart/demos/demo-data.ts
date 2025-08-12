@@ -6801,6 +6801,8 @@ export const hbarData = {
     { month: "Aug", apples: 320, bananas: 140 },
     { month: "Sept", apples: 840, bananas: 920 },
     { month: "Oct", apples: 1600, bananas: 100 },
+    { month: "Nov", apples: 1600, bananas: 100 },
+    { month: "Dec", apples: 60, bananas: 6 },
   ],
 };
 

@@ -18,7 +18,7 @@ import {
   dataForForceDirectedGraph,
   dendroData2,
   hbarData1,
-  hbarData,
+  hbarData2,
 } from "../../chart/demos/demo-data";
 import type {
   FeatherChartAxes,
@@ -107,7 +107,7 @@ const items = ref([
     props: {
       id: "chart-3",
       type: "horizontal-bar",
-      data: hbarData as FeatherChartBarData,
+      data: hbarData2 as FeatherChartBarData,
       title: "Trends",
       size: "xl",
       options: chart2options,

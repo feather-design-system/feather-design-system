@@ -4,11 +4,11 @@
     v-model:layout="state.layout"
     :colNum="props.colNum"
     :rowHeight="props.rowHeight"
-    :isDraggable="state.isDraggable"
-    :isResizable="state.isResizable"
+    :isDraggable="props.isDraggable"
+    :isResizable="props.isResizable"
   >
     <GridItem
-      class="feather-grid-item"
+      :class="gridItemClasses"
       v-for="item in state.layout"
       :key="item.i"
       :i="item.i"
@@ -17,25 +17,31 @@
       :w="item.w"
       :h="item.h"
       :static="item.static"
+      :dragAllowFrom="
+        props.isDraggable && props.hasDragHandle
+          ? '.feather-draggable-handle'
+          : ''
+      "
+      :dragIgnoreFrom="props.hasDragHandle ? '.no-drag' : ''"
     >
+      <div
+        v-if="showDragHandle && !item.static"
+        class="feather-draggable-handle"
+      ></div>
       <component
         v-if="item.component"
-        class="feather-grid-item-component"
+        :class="gridItemContentClasses"
         :is="item.component"
         v-bind="item.props"
       />
 
-      <span
-        v-else
-        v-html="item.content"
-        class="feather-grid-item-component"
-      ></span>
+      <span v-else v-html="item.content" :class="gridItemContentClasses"></span>
     </GridItem>
   </GridLayout>
 </template>
 
 <script setup lang="ts">
-import { reactive } from "vue";
+import { computed, reactive } from "vue";
 import { GridLayout, GridItem, type GridLayoutItem } from "vue-grid-layout-v3";
 
 const props = defineProps({
@@ -60,17 +66,46 @@ const props = defineProps({
     type: Array as () => GridLayoutItem[],
     default: () => [],
   },
+  hasDragHandle: {
+    type: Boolean,
+    default: true,
+  },
 });
 
 const state = reactive({
   layout: props.items,
   isDraggable: props.isDraggable,
   isResizable: props.isResizable,
+  hasDragHandle: props.hasDragHandle,
+});
+
+const gridItemClasses = computed(() => {
+  return {
+    "feather-grid-item": true,
+    "feather-draggable": props.isDraggable,
+    "feather-sizable": props.isResizable,
+  };
+});
+
+const gridItemContentClasses = computed(() => {
+  return {
+    "feather-grid-item-content": true,
+    "no-drag": props.isDraggable && props.hasDragHandle,
+  };
+});
+
+const showDragHandle = computed(() => {
+  return props.isDraggable && props.hasDragHandle;
 });
 </script>
 
 <style lang="scss" scoped>
 @use "@featherds/styles/themes/variables" as vars;
+
+.feather-grid-item {
+  --interaction-color: var(vars.$primary-variant);
+  color: var(--interaction-color);
+}
 
 .feather-grid-layout {
   border: 1px solid var(vars.$shade-4);
@@ -87,40 +122,53 @@ const state = reactive({
     overflow: hidden;
     position: relative;
 
+    > .feather-draggable-handle {
+      background-color: color-mix(
+        in hsl var(vars.$primary) 10%,
+        var(vars.$surface) 50%
+      );
+      background-repeat: repeat;
+      background-image: radial-gradient(
+        circle at 2px 2px,
+        var(--interaction-color, var(vars.$primary)) 1px,
+        transparent 1.5px
+      );
+      background-size: 0.5em 0.5em;
+      margin: 0.25rem;
+
+      cursor: drag;
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 1.5rem;
+      height: 1.5rem;
+      z-index: -1;
+      border-radius: 0 16px 0 0;
+      opacity: 0;
+      transition: opacity 0.3s ease-in-out;
+    }
+
     > :deep(.vue-resizable-handle) {
-      background: url(undefined);
       background-color: color-mix(
         in oklab,
         var(vars.$primary) 8%,
         var(vars.$surface) 50%
       );
-      border-radius: 16px 2px 2px 2px;
-      &::before {
-        content: "⌟";
-        position: absolute;
-        font-size: 1.25rem;
-        bottom: 0rem;
-        right: 0.25rem;
-        color: color-mix(
-          in oklab,
-          var(vars.$primary) 50%,
-          var(vars.$surface) 50%
-        );
-      }
-      // &::after {
-      //   content: "̷";
-      //   position: absolute;
-      //   font-size: 1rem;
-      //   bottom: 0rem;
-      //   right: 0.35rem;
-      //   color: color-mix(
-      //     in oklab,
-      //     var(vars.$primary) 50%,
-      //     var(vars.$surface) 50%
-      //   );
-      // }
-    }
+      border-radius: 100% 0 0 0;
+      background-image: repeating-linear-gradient(
+        135deg,
+        var(--interaction-color, var(vars.$primary)) 0 2px,
+        transparent 2px 6px
+      );
+      background-size: 1.75em 2.5em;
 
+      width: 1.5rem;
+      height: 1.5rem;
+      z-index: -1;
+      opacity: 0;
+      transition: opacity 0.3s ease-in-out;
+    }
+    &.resizing,
     &.vue-draggable-dragging {
       background-color: color-mix(
         in oklab,
@@ -130,17 +178,21 @@ const state = reactive({
 
       color: var(vars.$primary-text-on-surface);
     }
-    &.resizing {
-      background: auto;
-      background-color: color-mix(
-        in oklab,
-        var(vars.$primary) 8%,
-        var(vars.$surface) 20%
-      );
+    &:hover {
+      > :deep(.vue-resizable-handle),
+      > .feather-draggable-handle {
+        opacity: 0.25;
+        z-index: var(vars.$zindex-popover);
+        background-color: color-mix(
+          in hsl,
+          var(vars.$primary) 10%,
+          var(vars.$surface) 50%
+        );
+      }
     }
   }
   :deep(.vue-grid-item.vue-grid-placeholder) {
-    background-color: var(vars.$primary);
+    background-color: var(vars.$secondary);
     border-radius: 4px;
   }
   &.static {
