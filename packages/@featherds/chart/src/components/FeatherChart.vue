@@ -129,7 +129,7 @@
           :size="size"
           :data="data"
           :dimensions="sizing"
-          :options="options"
+          :options="mergedOptions"
           :axes="axes"
         >
         </Component>
@@ -147,7 +147,7 @@ import {
   onBeforeMount,
   onMounted,
   onUnmounted,
-  PropType,
+  // PropType,
   provide,
   reactive,
   ref,
@@ -182,55 +182,89 @@ const emit = defineEmits(["filter", "more-event", "refresh-event"]);
 // #endregion
 
 // #region PROPS
-const props = defineProps({
-  id: { type: String, required: true },
-  size: {
-    type: String as PropType<FeatherChartShirtSize>,
-    required: false,
-    default: function () {
-      return "md";
-    },
-  },
-  title: { type: String, required: false },
-  type: { type: String as PropType<FeatherChartType>, required: true },
-  data: { type: {} as PropType<FeatherChartFlexibleData>, required: true },
-  options: {
-    type: Object as PropType<FeatherChartOptions>,
-    required: false,
-    default: function () {
-      return {
-        units: "units",
-        colorScheme: undefined,
-        margin: {
-          top: 20,
-          right: 20,
-          bottom: 20,
-          left: 20,
-        },
-        xAxis: {
-          tickPadding: 0,
-          tickRotation: 0,
-        },
-        yAxis: {
-          tickPadding: 0,
-          tickRotation: 0,
-        },
-      };
-    },
-  },
-  axes: {
-    type: Object as PropType<FeatherChartAxes>,
-    required: false,
-    default: function () {
-      return {
-        x: "",
-        y: "",
-      };
-    },
-  },
-});
+// const props = defineProps({
+//   id: { type: String, required: true },
+//   size: {
+//     type: String as PropType<FeatherChartShirtSize>,
+//     required: false,
+//     default: function () {
+//       return "md";
+//     },
+//   },
+//   title: { type: String, required: false },
+//   type: { type: String as PropType<FeatherChartType>, required: true },
+//   data: { type: {} as PropType<FeatherChartFlexibleData>, required: true },
+//   options: {
+//     type: Object as PropType<FeatherChartOptions>,
+//     required: false,
+//     default: function () {
+//       return {
+//         units: "units",
+//         colorScheme: undefined,
+//         margin: {
+//           top: 20,
+//           right: 20,
+//           bottom: 20,
+//           left: 20,
+//         },
+//         xAxis: {
+//           tickPadding: 0,
+//           tickRotation: 0,
+//         },
+//         yAxis: {
+//           tickPadding: 0,
+//           tickRotation: 0,
+//         },
+//       };
+//     },
+//   },
+//   axes: {
+//     type: Object as PropType<FeatherChartAxes>,
+//     required: false,
+//     default: function () {
+//       return {
+//         x: "",
+//         y: "",
+//       };
+//     },
+//   },
+// });
+
+const props = withDefaults(
+  defineProps<{
+    id: string;
+    size?: FeatherChartShirtSize;
+    title?: string;
+    type: FeatherChartType;
+    data: FeatherChartFlexibleData;
+    options?: FeatherChartOptions;
+    axes?: FeatherChartAxes;
+  }>(),
+  {
+    size: "md",
+    axes: () => ({ x: "", y: "" }),
+    options: () => undefined as unknown as FeatherChartOptions,
+  }
+);
+
+// Must define DEFAULT_OPTIONS here due to "no hoisting in props"
+const DEFAULT_OPTIONS: FeatherChartOptions = {
+  units: "units",
+  colorScheme: undefined,
+  margin: { top: 20, right: 20, bottom: 20, left: 20 },
+  xAxis: { tickPadding: 6, tickRotation: 345 },
+  yAxis: { tickPadding: 6, tickRotation: 0 },
+};
 
 const { id, axes, data, options, size, title, type } = reactive(props);
+
+const mergedOptions = computed(() => {
+  const userOptions = (options as FeatherChartOptions) || {};
+  return {
+    ...DEFAULT_OPTIONS,
+    ...userOptions,
+  };
+});
 // #endregion
 
 const zoomLevel = ref<ZoomLevel>(ZoomLevel.ZOOM_NONE);
@@ -254,10 +288,10 @@ interface ChartComponent extends ComponentPublicInstance {
 const chartRef = ref<ChartComponent | null>(null);
 
 const chartType = ref(type);
-const theme = ref(
-  document.querySelector("body")?.classList.contains("dark") ? "dark" : "light"
-);
-provide("theme", theme);
+// const theme = ref(
+//   document.querySelector("body")?.classList.contains("dark") ? "dark" : "light"
+// );
+// provide("theme", theme);
 
 const sizing = reactive(
   getSizing(
@@ -268,24 +302,24 @@ const sizing = reactive(
 
 // DEFAULTS
 // TODO:  Setting default on props now; shouldn't need this anymore (But still need this for Radial demo???)'
-if (!options.xAxis) {
-  options.xAxis = {};
-  options.xAxis.tickPadding = 10;
-  options.xAxis.tickRotation = 0;
-}
-if (!options.yAxis) {
-  options.yAxis = {};
-  options.yAxis.tickPadding = 10;
-  options.yAxis.tickRotation = 0;
-}
-if (options.margin == undefined) {
-  options.margin = {
-    top: 16,
-    right: 24,
-    bottom: 16,
-    left: 32,
-  };
-}
+// if (!options.xAxis) {
+//   options.xAxis = {};
+//   options.xAxis.tickPadding = 10;
+//   options.xAxis.tickRotation = 0;
+// }
+// if (!options.yAxis) {
+//   options.yAxis = {};
+//   options.yAxis.tickPadding = 10;
+//   options.yAxis.tickRotation = 0;
+// }
+// if (options.margin == undefined) {
+//   options.margin = {
+//     top: 16,
+//     right: 24,
+//     bottom: 16,
+//     left: 32,
+//   };
+// }
 
 let containerWidth = computed(() => {
   const margin = options.margin || { left: 0, right: 0 };

@@ -50,7 +50,7 @@ const axes: FeatherChartAxes = {
   y: "value",
 };
 const areaOptions: FeatherChartOptions = {
-  units: "units",
+  units: "gallons",
   ariaSummary: "This chart shows stuff.",
   margin: {
     top: 33,
@@ -60,11 +60,11 @@ const areaOptions: FeatherChartOptions = {
   },
   xAxis: {
     tickPadding: 6,
-    tickRotation: 340,
+    tickRotation: 25,
   },
   yAxis: {
     tickPadding: 6,
-    tickRotation: 355,
+    tickRotation: 25,
   },
 };
 
