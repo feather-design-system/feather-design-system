@@ -176,6 +176,7 @@ const draw = () => {
   const xAxisTickPadding = options.xAxis?.tickPadding || 0;
   const xAxisTickRotation = options.xAxis?.tickRotation || 0;
   const yAxisTickPadding = options.yAxis?.tickPadding || 0;
+  const yAxisTickRotation = options.yAxis?.tickRotation || 0;
 
   svg
     .append("g")
@@ -194,7 +195,7 @@ const draw = () => {
     .classed("yAxis", true)
     .call(axisLeft(yScale).tickPadding(yAxisTickPadding))
     .selectAll("text")
-    .attr("transform", `rotate(${xAxisTickRotation})`);
+    .attr("transform", `rotate(${yAxisTickRotation})`);
 
   setDynamicScope(`#${id}`);
 };

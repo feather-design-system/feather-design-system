@@ -56,15 +56,15 @@ const areaOptions: FeatherChartOptions = {
     top: 33,
     right: 33,
     bottom: 33,
-    left: 40,
+    left: 50,
   },
   xAxis: {
-    tickPadding: 0,
-    tickRotation: 0,
+    tickPadding: 6,
+    tickRotation: 340,
   },
   yAxis: {
-    tickPadding: 0,
-    tickRotation: 0,
+    tickPadding: 6,
+    tickRotation: 355,
   },
 };
 

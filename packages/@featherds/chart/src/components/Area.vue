@@ -131,12 +131,27 @@ const draw = () => {
     );
 
   // AXES
+
+  const xAxisTickPadding = options.xAxis?.tickPadding ?? 0;
+  const xAxisTickRotation = options.xAxis?.tickRotation ?? 0;
+
+  const yAxisTickPadding = options.yAxis?.tickPadding ?? 0;
+  const yAxisTickRotation = options.yAxis?.tickRotation ?? 0;
+
   svg
     .append("g")
-    .attr("transform", "translate(0," + containerHeight + ")")
-    .call(axisBottom(xScale));
+    .classed("xAxis", true)
+    .attr("transform", `translate(0, ${containerHeight})`)
+    .call(axisBottom(xScale).ticks(5).tickSize(6).tickPadding(xAxisTickPadding))
+    .selectAll("text")
+    .attr("transform", `rotate(${xAxisTickRotation})`);
 
-  svg.append("g").call(axisLeft(yScale));
+  svg
+    .append("g")
+    .classed("yAxis", true)
+    .call(axisLeft(yScale).tickPadding(yAxisTickPadding))
+    .selectAll("text")
+    .attr("transform", `rotate(${yAxisTickRotation})`);
 
   // DATA
   const theArea = area()
