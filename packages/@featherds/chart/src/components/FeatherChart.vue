@@ -109,41 +109,6 @@
       </div>
     </div>
 
-    <div class="feather-chart-legend-container" v-if="showLegend()">
-      <div :id="`legend${id}`" class="legend">
-        <div class="legend-item">
-          <span class="legend-text">X-Axis Title</span>
-        </div>
-        <div
-          v-for="(item, index) in legend"
-          :key="index"
-          class="legend-item"
-          @click="
-            emit('legend', `${id}`, item);
-            legendItemClick(
-              $event,
-              `${id}`,
-              item,
-              `categorical${(index % 4) + 1}`
-            );
-          "
-          @keydown="
-            legendItemClick(
-              $event,
-              `${id}`,
-              item,
-              `categorical${(index % 4) + 1}`
-            )
-          "
-          tabindex="0"
-        >
-          <span class="legend-color" :class="`categorical${(index % 4) + 1}`"
-            >*</span
-          >
-          <span class="legend-text">{{ item }} </span>
-        </div>
-      </div>
-    </div>
     <div class="chart">
       <!-- <div class="draggable-container" :class="{ 'being-dragged': isDragging }"> -->
       <div class="draggable-container">
@@ -174,6 +139,20 @@
 </template>
 
 <script lang="ts" setup>
+import {
+  computed,
+  ComponentPublicInstance,
+  defineAsyncComponent,
+  markRaw,
+  onBeforeMount,
+  onMounted,
+  onUnmounted,
+  PropType,
+  provide,
+  reactive,
+  ref,
+  watch,
+} from "vue";
 import { FeatherButton } from "@featherds/button";
 import { FeatherDropdown, FeatherDropdownItem } from "@featherds/dropdown";
 import { FeatherIcon } from "@featherds/icon";
@@ -184,18 +163,6 @@ import View from "@featherds/icon/action/View";
 import Fullscreen from "@featherds/icon/navigation/Fullscreen";
 import FullscreenExit from "@featherds/icon/navigation/FullscreenExit";
 import {
-  computed,
-  defineAsyncComponent,
-  markRaw,
-  onBeforeMount,
-  onMounted,
-  onUnmounted,
-  PropType,
-  provide,
-  reactive,
-  ref,
-} from "vue";
-import {
   FeatherChartType,
   FeatherChartOptions,
   FeatherChartAxes,
@@ -205,23 +172,13 @@ import {
   ZoomLevel,
 } from "./types";
 import { getSizing } from "./Sizing";
-// import { useDraggable } from "@featherds/composables/events/Drag";
-
-// const { isDragging, position, beginDrag, continueDrag, endDrag } =
-//   useDraggable(true);
 
 const fullScreen = ref(false);
 const position = reactive({ x: 0, y: 0 });
 provide("position", position);
 
 // #region EMITS
-const emit = defineEmits([
-  "filter",
-  "legend",
-  "more-event",
-  "refresh-event",
-  "theme-change-event",
-]);
+const emit = defineEmits(["filter", "more-event", "refresh-event"]);
 // #endregion
 
 // #region PROPS
@@ -290,8 +247,6 @@ const isZoomable = computed(() => {
   );
 });
 
-import { ComponentPublicInstance } from "vue";
-
 interface ChartComponent extends ComponentPublicInstance {
   draw: () => void;
 }
@@ -304,47 +259,12 @@ const theme = ref(
 );
 provide("theme", theme);
 
-const legend = reactive([] as string[]);
-legend.push("legend");
-legend.push("under");
-legend.push("construction");
-legend.push("ok?");
-// legend.push("cat5");
-// legend.push("cat6");
-// legend.push("cat7");
-// legend.push("cat8");
-// legend.push("cat9");
-// legend.push("cat10cat10cat10cat10cat10");
-
-// const chartRef = ref(null);
-
-// const sizing: FeatherChartDimensions = getSizing(
-//   size as FeatherChartShirtSize,
-//   type as FeatherChartType
-// );
 const sizing = reactive(
   getSizing(
     size as FeatherChartShirtSize,
     type as FeatherChartType
   ) as FeatherChartDimensions
 );
-
-// MUTATION OBSERVER
-const body = document.querySelector("body");
-let observations = new Set(); // prevent multiple emits
-const observer = new MutationObserver((mutations) => {
-  mutations.forEach((mutation) => {
-    if (mutation.target === body && mutation.attributeName === "class") {
-      observations.add(`${(mutation.target as HTMLElement).classList.value}`);
-    }
-  });
-  if (Array.from(observations).length > 0) {
-    console.log("class changed", observations);
-    theme.value = observations.has("dark") ? "dark" : "light";
-    observations.clear();
-    emit("theme-change-event", id, data);
-  }
-});
 
 // DEFAULTS
 // TODO:  Setting default on props now; shouldn't need this anymore (But still need this for Radial demo???)'
@@ -411,110 +331,66 @@ const controlWidth = computed((): number => {
   return sizing.control.width;
 });
 
+const componentMap: Record<string, () => Promise<any>> = {
+  area: () => import("./Area.vue"),
+  bar: () => import("./Bar.vue"),
+  "vertical-bar": () => import("./VerticalBar.vue"),
+  dendrogram: () => import("./Dendrogram.vue"),
+  "force-directed": () => import("./ForceDirected.vue"),
+  "horizontal-bar": () => import("./HorizontalBar.vue"),
+  line: () => import("./Line.vue"),
+  radial: () => import("./Radial.vue"),
+  "tree-diagram": () => import("./TreeDiagram.vue"),
+};
+
 const chartComponent = computed(() => {
-  // REDRAWS CHART WHEN CHART TYPE CHANGES
-  console.log(`chartComponent CHANGED (type = ${chartType.value})`);
-  switch (chartType.value.toLowerCase()) {
-    case "area":
-      return defineAsyncComponent(() => import("./Area.vue"));
-
-    case "bar":
-      return defineAsyncComponent(() => import("./Bar.vue"));
-
-    case "vertical-bar":
-      return defineAsyncComponent(() => import("./VerticalBar.vue"));
-
-    case "dendrogram":
-      return defineAsyncComponent(() => import("./Dendrogram.vue"));
-
-    case "force-directed":
-      return defineAsyncComponent(() => import("./ForceDirected.vue"));
-
-    case "horizontal-bar":
-      return defineAsyncComponent(() => import("./HorizontalBar.vue"));
-
-    case "line":
-      return defineAsyncComponent(() => import("./Line.vue"));
-
-    case "radial":
-      return defineAsyncComponent(() => import("./Radial.vue"));
-
-    case "tree-diagram":
-      return defineAsyncComponent(() => import("./TreeDiagram.vue"));
-
-    default:
-      throw new Error(`Unhandled chart type: "${chartType.value}"`);
+  const key = chartType.value.toLowerCase();
+  const loader = componentMap[key];
+  if (!loader) {
+    console.error(`Unknown chart type: ${key}`);
+    return null;
   }
+  return defineAsyncComponent(loader);
 });
-
-// #region LEGEND
-const legendItemClick = (
-  e: Event,
-  chartId: string,
-  item: string,
-  categoricalStyle: string
-) => {
-  const { target } = e;
-
-  if (e instanceof KeyboardEvent) {
-    console.log(`|${e.key}|`);
-    if (e.key !== " ") {
-      return;
-    }
-  }
-
-  if (e instanceof MouseEvent || e instanceof KeyboardEvent) {
-    console.log("target", target);
-    console.log("instance of KeyboardEvent?", e instanceof KeyboardEvent);
-    console.log(`ID: ${chartId} ${item} clicked.`);
-    console.log(`enable categorical style: ${categoricalStyle}`);
-
-    document
-      .querySelectorAll(`:not(.${chartId}.${categoricalStyle})`)
-      .forEach((item: Element) => {
-        item.classList.remove("selectedLegend");
-      });
-    document
-      .querySelectorAll(`.${chartId}.${categoricalStyle}`)
-      .forEach((item: Element) => {
-        item.classList.add("selectedLegend");
-      });
-  }
-};
-
-const showLegend = () => {
-  return false;
-  // return type === "dendrogram" ||
-  //   type === "area" ||
-  //   type === "radial" ||
-  //   type === "force-directed"
-  //   ? false
-  //   : true;
-};
-// #endregion
 
 // #region ACTIONS
 const downloadFileName = computed(() => {
-  let chartTitle = title || "chart-data";
+  let chartTitle = title || `${chartType.value} chart-data`;
   let fileName = chartTitle.replaceAll(" ", "-").toLowerCase();
-  return `${fileName}.txt`;
+  return `${fileName}.json`;
 });
 
-const downloadUrl = computed(() => {
-  const url = URL.createObjectURL(
-    new Blob([JSON.stringify(data)], { type: "application/json" })
-  );
-  return url;
-});
+const downloadUrl = ref<string>("");
+
+const buildDownloadUrl = () => {
+  if (downloadUrl.value) {
+    // Revoke the previous URL
+    URL.revokeObjectURL(downloadUrl.value);
+  }
+  // Create a new URL
+  try {
+    downloadUrl.value = URL.createObjectURL(
+      new Blob([JSON.stringify(data)], { type: "application/json" })
+    );
+  } catch (error) {
+    console.error("Error creating download URL:", error);
+    downloadUrl.value = "";
+  }
+};
+
+// Build initially and whenever "data" changes
+watch(
+  () => data,
+  () => buildDownloadUrl(),
+  { deep: true, immediate: true }
+);
 
 const actionRefresh = () => {
   // Emit refresh event and let consumer get latest data.
-  console.log("FeatherChart refresh-event", id, data);
   emit("refresh-event", id, data);
 };
 
 const actionMore = () => {
-  console.log("FeatherChart more-event", id, data);
   emit("more-event", id, data);
 };
 
@@ -551,16 +427,11 @@ defineExpose({ setChartType });
 
 onBeforeMount(() => {});
 
-onMounted(async () => {
-  if (body) {
-    observer.observe(body, { attributes: true, attributeFilter: ["class"] });
-  }
-});
+onMounted(async () => {});
 
 onUnmounted(() => {
-  if (observer) {
-    observer.disconnect();
-  }
+  // Revoke the previous URL - (avoids memory leaks).
+  if (downloadUrl.value) URL.revokeObjectURL(downloadUrl.value);
 });
 </script>
 
@@ -634,131 +505,9 @@ onUnmounted(() => {
       white-space: nowrap;
     }
   }
-
-  .feather-chart-legend-container {
-    @include typo.subtitle1();
-    display: inline-block;
-    width: 100%;
-    margin: 0 0 8px 32px;
-
-    div.legend {
-      display: flex;
-      flex-flow: row wrap;
-
-      div.legend-item {
-        display: inline-flex;
-        flex: 6rem 0 0;
-        margin: 0.125em;
-        // padding: 1px 3px 1px 3px;
-        color: var(vars.$primary-text-on-color);
-        border-radius: 5px;
-        line-height: 1em;
-        font-size: 12px;
-        overflow: hidden;
-        width: fit-content;
-
-        span.legend-color {
-          display: inline-block;
-          color: transparent;
-          height: 10px;
-          width: 10px;
-          min-width: 10px;
-          min-height: 10px;
-          border-radius: 50%;
-          margin: 0.125em;
-          vertical-align: center;
-        }
-
-        span.legend-text {
-          display: inline-block;
-          color: var(vars.$primary-text-on-surface);
-          padding-left: 4px;
-          overflow: hidden;
-
-          :hover {
-            content: "*";
-          }
-        }
-      }
-
-      .categorical1 {
-        background-color: var(vars.$categorical1);
-      }
-
-      .categorical2 {
-        background-color: var(vars.$categorical2);
-      }
-
-      .categorical3 {
-        background-color: var(vars.$categorical3);
-      }
-
-      .categorical4 {
-        background-color: var(vars.$categorical4);
-      }
-
-      .categorical5 {
-        background-color: var(vars.$categorical5);
-      }
-
-      .categorical6 {
-        background-color: var(vars.$categorical6);
-      }
-
-      .categorical7 {
-        background-color: var(vars.$categorical7);
-      }
-
-      .categorical8 {
-        background-color: var(vars.$categorical8);
-      }
-
-      .categorical9 {
-        background-color: var(vars.$categorical9);
-      }
-
-      .categorical10 {
-        background-color: var(vars.$categorical10);
-      }
-    }
-  }
   .chart {
     background-color: var(vars.$surface);
     overflow: hidden;
-    // dragging moved to indivual chart svgs
-    // .draggable-container {
-    //   // user-select: none;
-    //   // cursor: grab;
-    //   // &.being-dragged {
-    //   //   border: 1px dashed var(--feather-high-visibility-text-on-surface);
-    //   //   background-color: rgba(
-    //   //     var(--feather-high-visibility-text-on-surface-r),
-    //   //     var(--feather-high-visibility-text-on-surface-g),
-    //   //     var(--feather-high-visibility-text-on-surface-b),
-    //   //     0.2
-    //   //   );
-    //   //   cursor: grabbing;
-    //   // }
-    // }
-    // .coordinates {
-    //   display: none;
-    //   &.being-dragged {
-    //     display: inline;
-    //   }
-    // }
   }
 }
 </style>
-
-<!-- unscoped to style children charts -->
-<!-- <style lang="scss">
-@use "@featherds/styles/themes/variables" as vars;
-.feather-chart-container {
-  .chart {
-    rect.selectedLegend {
-      stroke: var(vars.$primary);
-      stroke-width: 5px;
-    }
-  }
-}
-</style> -->
