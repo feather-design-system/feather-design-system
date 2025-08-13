@@ -7,8 +7,8 @@
       title="Radial"
       :data="radialData as FeatherChartFlexibleData"
       :options="radialOptions1"
-      @refresh-event="refresh"
-      @more-event="more"
+      @refresh="refresh"
+      @more="more"
     >
       <template #filter>
         <FeatherButton

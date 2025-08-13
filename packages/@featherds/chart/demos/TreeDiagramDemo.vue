@@ -17,8 +17,8 @@
       type="tree-diagram"
       :options="treeDiagramOptions"
       @type="changeType"
-      @more-event="more"
-      @refresh-event="refresh"
+      @more="more"
+      @refresh="refresh"
     >
       <template #content>
         <FeatherExpansionPanel

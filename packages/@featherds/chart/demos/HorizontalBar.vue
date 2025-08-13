@@ -9,8 +9,8 @@
       :options="options"
       :axes="axes"
       @type="changeType"
-      @more-event="more"
-      @refresh-event="refresh"
+      @more="more"
+      @refresh="refresh"
     >
       <template #filter>
         <FeatherButton

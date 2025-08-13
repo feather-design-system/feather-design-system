@@ -18,8 +18,8 @@
       :axes="dendroAxes"
       :options="dendroOptions"
       @type="changeType"
-      @more-event="more"
-      @refresh-event="refresh"
+      @more="more"
+      @refresh="refresh"
     >
       <!-- @filter="changeFilter" -->
       <template #filter>

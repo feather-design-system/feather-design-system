@@ -67,7 +67,6 @@ dimensions.chart.height = dimensions.control.height / 2;
 
 const radialForce = ref(50);
 
-const theme = inject("theme") as Ref<string>;
 const position = inject("position") as { x: number; y: number };
 const zoomLevel = inject("zoomLevel") as Ref<ZoomLevel>;
 
@@ -163,8 +162,6 @@ const draw = () => {
 
   position.x = 0;
   position.y = 0;
-
-  console.log("Drawing in theme: ", theme.value);
 
   if (!isValid()) throw new Error("Data is not valid");
 

@@ -9,8 +9,8 @@
       :data="dendrogram1Data as FeatherChartFlexibleData"
       :options="dendrogram1Options"
       @type="changeType"
-      @more-event="more"
-      @refresh-event="more"
+      @more="more"
+      @refresh="more"
     >
       <template #filter>
         <FeatherButton @click="changeFilter(dendro1Id, '1')" class="filter" text
@@ -30,8 +30,8 @@
       :options="horizontal1Options"
       :axes="horizontal1Axes"
       @type="changeType"
-      @more-event="more"
-      @refresh-event="more"
+      @more="more"
+      @refresh="more"
     >
       <template #filter>
         <FeatherButton @click="changeFilter(hb1Id, '1')" class="filter" text
@@ -51,8 +51,8 @@
       :options="vertical1Options"
       :axes="vertical1Axes"
       @type="changeType"
-      @more-event="more"
-      @refresh-event="more"
+      @more="more"
+      @refresh="more"
     >
       <template #filter>
         <FeatherButton @click="changeFilter(vb1Id, 'BOS')" class="filter" text
@@ -83,8 +83,8 @@
       :options="area1Options"
       :axes="area1Axes"
       @type="changeType"
-      @more-event="more"
-      @refresh-event="more"
+      @more="more"
+      @refresh="more"
     >
       <template #filter>
         <FeatherButton @click="changeFilter(area1Id, '1W')" class="filter" text
@@ -102,8 +102,8 @@
       title="Radial"
       :data="radial1Data as FeatherChartFlexibleData"
       :options="radialOptions1"
-      @more-event="more"
-      @refresh-event="more"
+      @more="more"
+      @refresh="more"
     >
       <template #filter>
         <FeatherButton @click="changeFilter(radial1Id, '3')" class="filter" text

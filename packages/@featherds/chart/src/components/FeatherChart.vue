@@ -178,58 +178,10 @@ const position = reactive({ x: 0, y: 0 });
 provide("position", position);
 
 // #region EMITS
-const emit = defineEmits(["filter", "more-event", "refresh-event"]);
+const emit = defineEmits(["filter", "more", "refresh"]);
 // #endregion
 
 // #region PROPS
-// const props = defineProps({
-//   id: { type: String, required: true },
-//   size: {
-//     type: String as PropType<FeatherChartShirtSize>,
-//     required: false,
-//     default: function () {
-//       return "md";
-//     },
-//   },
-//   title: { type: String, required: false },
-//   type: { type: String as PropType<FeatherChartType>, required: true },
-//   data: { type: {} as PropType<FeatherChartFlexibleData>, required: true },
-//   options: {
-//     type: Object as PropType<FeatherChartOptions>,
-//     required: false,
-//     default: function () {
-//       return {
-//         units: "units",
-//         colorScheme: undefined,
-//         margin: {
-//           top: 20,
-//           right: 20,
-//           bottom: 20,
-//           left: 20,
-//         },
-//         xAxis: {
-//           tickPadding: 0,
-//           tickRotation: 0,
-//         },
-//         yAxis: {
-//           tickPadding: 0,
-//           tickRotation: 0,
-//         },
-//       };
-//     },
-//   },
-//   axes: {
-//     type: Object as PropType<FeatherChartAxes>,
-//     required: false,
-//     default: function () {
-//       return {
-//         x: "",
-//         y: "",
-//       };
-//     },
-//   },
-// });
-
 const props = withDefaults(
   defineProps<{
     id: string;
@@ -358,7 +310,7 @@ const updateFullScreen = () => {
     chartRef.value.draw();
   }
 
-  emit("refresh-event", id, data);
+  emit("refresh", id, data);
 };
 
 const controlWidth = computed((): number => {
@@ -421,11 +373,11 @@ watch(
 
 const actionRefresh = () => {
   // Emit refresh event and let consumer get latest data.
-  emit("refresh-event", id, data);
+  emit("refresh", id, data);
 };
 
 const actionMore = () => {
-  emit("more-event", id, data);
+  emit("more", id, data);
 };
 
 // #endregion

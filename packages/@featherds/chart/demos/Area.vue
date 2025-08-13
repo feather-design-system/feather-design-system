@@ -8,8 +8,8 @@
       :options="areaOptions"
       type="area"
       :axes="axes"
-      @more-event="more"
-      @refresh-event="refresh"
+      @more="more"
+      @refresh="refresh"
     >
       <template #filter>
         <FeatherButton

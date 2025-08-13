@@ -9,8 +9,8 @@
       size="md"
       :options="options"
       :axes="axes"
-      @more-event="more"
-      @refresh-event="refresh"
+      @more="more"
+      @refresh="refresh"
     >
       <template #type>
         <FeatherToggleButton
