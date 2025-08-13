@@ -123,50 +123,55 @@ const showDragHandle = computed(() => {
     position: relative;
 
     > .feather-draggable-handle {
-      background-color: color-mix(
-        in hsl var(vars.$primary) 10%,
-        var(vars.$surface) 50%
-      );
-      background-repeat: repeat;
       background-image: radial-gradient(
         circle at 2px 2px,
         var(--interaction-color, var(vars.$primary)) 1px,
         transparent 1.5px
       );
+      transform: translate(1px, -1px);
+
+      background-color: color-mix(
+        in hsl var(vars.$primary) 10%,
+        var(vars.$surface) 50%
+      );
+      background-repeat: repeat;
       background-size: 0.5em 0.5em;
-      margin: 0.25rem;
+      margin: 0.125rem;
 
       cursor: drag;
       position: absolute;
       bottom: 0;
       left: 0;
-      width: 1.5rem;
-      height: 1.5rem;
+      width: 2rem;
+      height: 2rem;
       z-index: -1;
-      border-radius: 0 16px 0 0;
+      border-radius: 4px;
       opacity: 0;
       transition: opacity 0.3s ease-in-out;
+      clip-path: polygon(0% 0%, 100% 100%, 0% 100%);
     }
 
     > :deep(.vue-resizable-handle) {
+      background-image: repeating-linear-gradient(
+        135deg,
+        var(--interaction-color, var(vars.$primary)) 0 1px,
+        transparent 1.5px 4px
+      );
       background-color: color-mix(
         in oklab,
         var(vars.$primary) 8%,
         var(vars.$surface) 50%
       );
-      border-radius: 100% 0 0 0;
-      background-image: repeating-linear-gradient(
-        135deg,
-        var(--interaction-color, var(vars.$primary)) 0 2px,
-        transparent 2px 6px
-      );
-      background-size: 1.75em 2.5em;
 
-      width: 1.5rem;
-      height: 1.5rem;
+      margin: 0.125rem;
+      border-radius: 4px;
+
+      width: 2rem;
+      height: 2rem;
       z-index: -1;
       opacity: 0;
-      transition: opacity 0.3s ease-in-out;
+      transition: opacity 0.1s ease-in-out;
+      clip-path: polygon(100% 0%, 100% 100%, 0% 100%);
     }
     &.resizing,
     &.vue-draggable-dragging {
