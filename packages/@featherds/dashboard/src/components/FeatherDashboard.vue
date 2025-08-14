@@ -6,6 +6,7 @@
     :rowHeight="props.rowHeight"
     :isDraggable="props.isDraggable"
     :isResizable="props.isResizable"
+    :responsive="true"
   >
     <GridItem
       :class="gridItemClasses"
@@ -140,7 +141,7 @@ const showDragHandle = computed(() => {
 
       cursor: drag;
       position: absolute;
-      bottom: 0;
+      top: 0;
       left: 0;
       width: 2rem;
       height: 2rem;
@@ -148,7 +149,7 @@ const showDragHandle = computed(() => {
       border-radius: 4px;
       opacity: 0;
       transition: opacity 0.3s ease-in-out;
-      clip-path: polygon(0% 0%, 100% 100%, 0% 100%);
+      clip-path: polygon(0% 0%, 0% 100%, 100% 0%);
     }
 
     > :deep(.vue-resizable-handle) {
@@ -186,7 +187,7 @@ const showDragHandle = computed(() => {
     &:hover {
       > :deep(.vue-resizable-handle),
       > .feather-draggable-handle {
-        opacity: 0.25;
+        opacity: 0.5;
         z-index: var(vars.$zindex-popover);
         background-color: color-mix(
           in hsl,

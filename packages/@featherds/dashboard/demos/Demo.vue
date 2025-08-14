@@ -2,7 +2,7 @@
   <div>
     <FeatherDashboard
       :id="`dashboard-1`"
-      :colNum="12"
+      :colNum="16"
       :items="items"
     ></FeatherDashboard>
   </div>
@@ -56,7 +56,7 @@ const items = ref([
     i: "0",
     x: 0,
     y: 0,
-    w: 3,
+    w: 5,
     h: 3,
     static: true,
     component: markRaw(FeatherCard),
@@ -64,10 +64,10 @@ const items = ref([
   },
   {
     i: "1",
-    x: 8,
+    x: 5,
     y: 3,
-    w: 4,
-    h: 7,
+    w: 5,
+    h: 10,
     static: false,
     component: markRaw(FeatherChart),
     props: {
@@ -82,8 +82,8 @@ const items = ref([
     i: "2",
     x: 4,
     y: 4,
-    w: 4,
-    h: 7,
+    w: 6,
+    h: 12,
     static: false,
     component: markRaw(FeatherChart),
     props: {
@@ -93,15 +93,16 @@ const items = ref([
       title: "Bar Chart",
       options: chart2options,
       axes: chart2axes,
+      size: "md",
       onMoreEvent: () => handleMoreEvent,
     },
   },
   {
     i: "3",
-    x: 4,
-    y: 4,
-    w: 8,
-    h: 9,
+    x: 0,
+    y: 3,
+    w: 5,
+    h: 7,
     static: false,
     component: markRaw(FeatherChart),
     props: {
@@ -120,14 +121,14 @@ const items = ref([
     x: 0,
     y: 3,
     w: 4,
-    h: 6,
+    h: 7,
     static: false,
     component: markRaw(FeatherChart),
     props: {
       id: "chart-4",
       type: "force-directed",
       data: dataForForceDirectedGraph as FeatherChartFlexibleData,
-      size: "sm",
+      size: "md",
       title: "Force Directed",
       onMoreEvent: () => handleMoreEvent,
     },
