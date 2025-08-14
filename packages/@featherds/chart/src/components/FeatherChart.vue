@@ -173,10 +173,6 @@ import {
 } from "./types";
 import { getSizing } from "./Sizing";
 
-const fullScreen = ref(false);
-const position = reactive({ x: 0, y: 0 });
-provide("position", position);
-
 // #region EMITS
 const emit = defineEmits(["filter", "more", "refresh"]);
 // #endregion
@@ -218,9 +214,10 @@ const mergedOptions = computed(() => {
   };
 });
 // #endregion
+const fullScreen = ref(false);
+const position = reactive({ x: 0, y: 0 });
 
 const zoomLevel = ref<ZoomLevel>(ZoomLevel.ZOOM_NONE);
-provide("zoomLevel", zoomLevel);
 const isZoomable = computed(() => {
   return (
     // type === "tree-diagram" ||
@@ -240,10 +237,6 @@ interface ChartComponent extends ComponentPublicInstance {
 const chartRef = ref<ChartComponent | null>(null);
 
 const chartType = ref(type);
-// const theme = ref(
-//   document.querySelector("body")?.classList.contains("dark") ? "dark" : "light"
-// );
-// provide("theme", theme);
 
 const sizing = reactive(
   getSizing(
@@ -251,27 +244,6 @@ const sizing = reactive(
     type as FeatherChartType
   ) as FeatherChartDimensions
 );
-
-// DEFAULTS
-// TODO:  Setting default on props now; shouldn't need this anymore (But still need this for Radial demo???)'
-// if (!options.xAxis) {
-//   options.xAxis = {};
-//   options.xAxis.tickPadding = 10;
-//   options.xAxis.tickRotation = 0;
-// }
-// if (!options.yAxis) {
-//   options.yAxis = {};
-//   options.yAxis.tickPadding = 10;
-//   options.yAxis.tickRotation = 0;
-// }
-// if (options.margin == undefined) {
-//   options.margin = {
-//     top: 16,
-//     right: 24,
-//     bottom: 16,
-//     left: 32,
-//   };
-// }
 
 let containerWidth = computed(() => {
   const margin = options.margin || { left: 0, right: 0 };
@@ -282,17 +254,6 @@ let containerHeight = computed(() => {
   const margin = options.margin || { top: 0, bottom: 0 };
   return sizing.chart.height - (margin.top + margin.bottom);
 });
-provide(
-  "containerWidth",
-  containerWidth
-  // sizing.chart.width - (options.margin.left + options.margin.right)
-);
-
-provide(
-  "containerHeight",
-  containerHeight
-  // sizing.chart.height - (options.margin.top + options.margin.bottom)
-);
 
 const setChartType = (type: FeatherChartType) => {
   chartType.value = type;
@@ -407,6 +368,13 @@ const iconFullscreen = computed(() => {
   }
 });
 
+// #endregion
+
+// #region PROVIDE
+provide("position", position);
+provide("zoomLevel", zoomLevel);
+provide("containerWidth", containerWidth);
+provide("containerHeight", containerHeight);
 // #endregion
 
 defineExpose({ setChartType });
