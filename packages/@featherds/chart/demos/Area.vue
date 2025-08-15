@@ -1,9 +1,113 @@
 <template>
   <div class="demo">
     <FeatherChart
-      :id="areaId"
-      title="Simple Area Chart"
+      :id="`${areaId}-sm`"
+      title="Simple Area Chart (sm)"
+      size="sm"
+      :data="areaData as FeatherChartFlexibleData"
+      :options="areaOptions"
+      type="area"
+      :axes="axes"
+      @more="more"
+      @refresh="refresh"
+    >
+      <template #filter>
+        <FeatherButton
+          @click="changeFilter(areaId, `1W`)"
+          class="filter filterToday"
+          text
+          >1W</FeatherButton
+        >
+        <FeatherButton
+          @click="changeFilter(areaId, '5Y')"
+          class="filter filterToday"
+          text
+          >5Y</FeatherButton
+        >
+      </template>
+    </FeatherChart>
+    <FeatherChart
+      :id="`${areaId}-md`"
+      title="Simple Area Chart (md)"
       size="md"
+      :data="areaData as FeatherChartFlexibleData"
+      :options="areaOptions"
+      type="area"
+      :axes="axes"
+      @more="more"
+      @refresh="refresh"
+    >
+      <template #filter>
+        <FeatherButton
+          @click="changeFilter(areaId, `1W`)"
+          class="filter filterToday"
+          text
+          >1W</FeatherButton
+        >
+        <FeatherButton
+          @click="changeFilter(areaId, '5Y')"
+          class="filter filterToday"
+          text
+          >5Y</FeatherButton
+        >
+      </template>
+    </FeatherChart>
+    <FeatherChart
+      :id="`${areaId}-lg`"
+      title="Simple Area Chart (lg)"
+      size="lg"
+      :data="areaData as FeatherChartFlexibleData"
+      :options="areaOptions"
+      type="area"
+      :axes="axes"
+      @more="more"
+      @refresh="refresh"
+    >
+      <template #filter>
+        <FeatherButton
+          @click="changeFilter(areaId, `1W`)"
+          class="filter filterToday"
+          text
+          >1W</FeatherButton
+        >
+        <FeatherButton
+          @click="changeFilter(areaId, '5Y')"
+          class="filter filterToday"
+          text
+          >5Y</FeatherButton
+        >
+      </template>
+    </FeatherChart>
+    <FeatherChart
+      :id="`${areaId}-xl`"
+      title="Simple Area Chart (xl)"
+      size="xl"
+      :data="areaData as FeatherChartFlexibleData"
+      :options="areaOptions"
+      type="area"
+      :axes="axes"
+      @more="more"
+      @refresh="refresh"
+    >
+      <template #filter>
+        <FeatherButton
+          @click="changeFilter(areaId, `1W`)"
+          class="filter filterToday"
+          text
+          >1W</FeatherButton
+        >
+        <FeatherButton
+          @click="changeFilter(areaId, '5Y')"
+          class="filter filterToday"
+          text
+          >5Y</FeatherButton
+        >
+      </template>
+    </FeatherChart>
+    <FeatherChart
+      :id="`${areaId}-xxl`"
+      title="Simple Area Chart (xxl)"
+      size="xxl"
       :data="areaData as FeatherChartFlexibleData"
       :options="areaOptions"
       type="area"
