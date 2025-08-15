@@ -111,7 +111,12 @@
 
     <div class="chart">
       <!-- <div class="draggable-container" :class="{ 'being-dragged': isDragging }"> -->
-      <div class="draggable-container">
+      <div
+        class="draggable-container"
+        @wheel.prevent="onWheel"
+        @keydown="onKeyDown"
+        tabindex="0"
+      >
         <!-- :draggable="true"
         @mousedown.shift.prevent="beginDrag"
         @mousemove="continueDrag"
@@ -172,6 +177,7 @@ import {
   ZoomLevel,
 } from "./types";
 import { getSizing } from "./Sizing";
+import { useWheelZoom } from "@featherds/composables/events/WheelZoom";
 
 // #region EMITS
 const emit = defineEmits(["filter", "more", "refresh"]);
@@ -217,10 +223,9 @@ const mergedOptions = computed(() => {
 const fullScreen = ref(false);
 const position = reactive({ x: 0, y: 0 });
 
-const zoomLevel = ref<ZoomLevel>(ZoomLevel.ZOOM_NONE);
 const isZoomable = computed(() => {
   return (
-    // type === "tree-diagram" ||
+    type === "tree-diagram" ||
     type === "force-directed" ||
     type === "radial" ||
     type === "dendrogram" ||
@@ -228,6 +233,24 @@ const isZoomable = computed(() => {
     type === "horizontal-bar" ||
     type === "vertical-bar"
   );
+});
+
+const {
+  step,
+  scale: zoomScale,
+  onWheel,
+  onKeyDown,
+} = useWheelZoom({
+  enabled: isZoomable,
+});
+
+const zoomLevel = computed<ZoomLevel>(() => {
+  // map step range to your existing ZoomLevel classes (kept for CSS)
+  if (step.value <= -2) return ZoomLevel.ZOOM_IN_2;
+  if (step.value === -1) return ZoomLevel.ZOOM_IN_1;
+  if (step.value === 0) return ZoomLevel.ZOOM_NONE;
+  if (step.value === 1) return ZoomLevel.ZOOM_OUT_1;
+  return ZoomLevel.ZOOM_OUT_2;
 });
 
 interface ChartComponent extends ComponentPublicInstance {
@@ -373,6 +396,7 @@ const iconFullscreen = computed(() => {
 // #region PROVIDE
 provide("position", position);
 provide("zoomLevel", zoomLevel);
+provide("zoomScale", zoomScale);
 provide("containerWidth", containerWidth);
 provide("containerHeight", containerHeight);
 // #endregion

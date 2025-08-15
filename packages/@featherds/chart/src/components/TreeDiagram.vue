@@ -18,8 +18,8 @@
     :style="{
       transform: `translate(${svgPos.x}px, ${svgPos.y}px)`,
     }"
-    @wheel="handleWheel"
   ></svg>
+  <!-- @wheel="handleWheel" -->
   <div class="svg-footer">
     <FeatherButton
       class="modify-chart"
@@ -129,51 +129,52 @@ const { data, dimensions, id, options } = reactive(props);
 
 // #region zoom
 const zoomLevel = inject("zoomLevel") as Ref<ZoomLevel>;
-const wheelDelta = ref(0);
+const zoomScale = inject("zoomScale", ref(1)) as Ref<number>;
+// const wheelDelta = ref(0);
 
-const handleWheel = (event: WheelEvent) => {
-  wheelDelta.value += Math.abs(event.deltaY) / event.deltaY;
-  switch (wheelDelta.value) {
-    case -2:
-      zoomLevel.value = ZoomLevel.ZOOM_IN_2;
-      break;
-    case -1:
-      zoomLevel.value = ZoomLevel.ZOOM_IN_1;
-      break;
-    case 0:
-      zoomLevel.value = ZoomLevel.ZOOM_NONE;
-      break;
-    case 1:
-      zoomLevel.value = ZoomLevel.ZOOM_OUT_1;
-      break;
-    case 2:
-      zoomLevel.value = ZoomLevel.ZOOM_OUT_2;
-      break;
-  }
-  if (wheelDelta.value > 2) {
-    wheelDelta.value = 2;
-  }
-  if (wheelDelta.value < -2) {
-    wheelDelta.value = -2;
-  }
-};
+// const handleWheel = (event: WheelEvent) => {
+//   wheelDelta.value += Math.abs(event.deltaY) / event.deltaY;
+//   switch (wheelDelta.value) {
+//     case -2:
+//       zoomLevel.value = ZoomLevel.ZOOM_IN_2;
+//       break;
+//     case -1:
+//       zoomLevel.value = ZoomLevel.ZOOM_IN_1;
+//       break;
+//     case 0:
+//       zoomLevel.value = ZoomLevel.ZOOM_NONE;
+//       break;
+//     case 1:
+//       zoomLevel.value = ZoomLevel.ZOOM_OUT_1;
+//       break;
+//     case 2:
+//       zoomLevel.value = ZoomLevel.ZOOM_OUT_2;
+//       break;
+//   }
+//   if (wheelDelta.value > 2) {
+//     wheelDelta.value = 2;
+//   }
+//   if (wheelDelta.value < -2) {
+//     wheelDelta.value = -2;
+//   }
+// };
 
-const zoomScale = computed(() => {
-  switch (zoomLevel.value) {
-    case ZoomLevel.ZOOM_IN_2:
-      return 2;
-    case ZoomLevel.ZOOM_IN_1:
-      return 1.5;
-    case ZoomLevel.ZOOM_NONE:
-      return 1;
-    case ZoomLevel.ZOOM_OUT_1:
-      return 0.75;
-    case ZoomLevel.ZOOM_OUT_2:
-      return 0.5;
-    default:
-      return 1;
-  }
-});
+// const zoomScale = computed(() => {
+//   switch (zoomLevel.value) {
+//     case ZoomLevel.ZOOM_IN_2:
+//       return 2;
+//     case ZoomLevel.ZOOM_IN_1:
+//       return 1.5;
+//     case ZoomLevel.ZOOM_NONE:
+//       return 1;
+//     case ZoomLevel.ZOOM_OUT_1:
+//       return 0.75;
+//     case ZoomLevel.ZOOM_OUT_2:
+//       return 0.5;
+//     default:
+//       return 1;
+//   }
+// });
 
 // #endregion zoom
 
