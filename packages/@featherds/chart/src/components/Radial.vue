@@ -181,21 +181,6 @@ onMounted(() => {
 @use "@featherds/styles/mixins/typography" as typo;
 
 .feather-radial-svg {
-  &.zoom-in-2 {
-    transform: scale(2);
-  }
-  &.zoom-in-1 {
-    transform: scale(1.5);
-  }
-  &.zoom-none {
-    transform: scale(1);
-  }
-  &.zoom-out-1 {
-    transform: scale(0.75);
-  }
-  &.zoom-out-2 {
-    transform: scale(0.5);
-  }
   g {
     g {
       path.link {
