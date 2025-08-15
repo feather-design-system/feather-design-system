@@ -87,7 +87,7 @@
         </FeatherButton>
         <FeatherButton
           :class="fullScreen ? 'fullscreen' : ''"
-          icon="Fullscreen"
+          :icon="fullScreen ? 'Show Heading' : 'Hide Heading'"
           @click="updateFullScreen"
         >
           <FeatherIcon :icon="iconFullscreen"></FeatherIcon>
@@ -261,11 +261,11 @@ const setChartType = (type: FeatherChartType) => {
 
 const updateFullScreen = () => {
   fullScreen.value = !fullScreen.value;
-  if (fullScreen.value) {
-    sizing.chart.height += 160;
-  } else {
-    sizing.chart.height -= 160;
-  }
+  // if (fullScreen.value) {
+  //   sizing.chart.height += 160;
+  // } else {
+  //   sizing.chart.height -= 160;
+  // }
 
   if (chartRef.value && chartRef.value.draw) {
     chartRef.value.draw();
@@ -394,10 +394,12 @@ onUnmounted(() => {
 @use "@featherds/styles/mixins/typography" as typo;
 
 .feather-chart-container {
-  display: inline-block;
   background-color: var(vars.$surface);
   padding: 8px;
   overflow: hidden;
+  container-name: chart-container;
+  container-type: inline-size;
+  width: 100%;
 
   .feather-chart-title-container {
     @include typo.headline3();
@@ -462,6 +464,16 @@ onUnmounted(() => {
   .chart {
     background-color: var(vars.$surface);
     overflow: hidden;
+  }
+}
+
+@container chart-container (max-width: 300px) {
+  .action-container {
+    &::before {
+      content: "!";
+      position: relative;
+      color: red;
+    }
   }
 }
 </style>
