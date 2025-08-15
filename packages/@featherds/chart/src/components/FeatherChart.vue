@@ -33,51 +33,6 @@
             @click="actionRefresh()"
           ></FeatherIcon>
         </FeatherButton>
-        <FeatherDropdown
-          v-if="isZoomable && !fullScreen"
-          class="zoom-menu"
-          :right="true"
-        >
-          <template v-slot:trigger="{ attrs, on }">
-            <FeatherButton
-              text
-              icon="Zoom"
-              href="#"
-              v-bind="attrs"
-              v-on="on"
-              class="zoom-trigger"
-            >
-              <FeatherIcon :icon="iconView" />
-            </FeatherButton>
-          </template>
-
-          <FeatherDropdownItem
-            :selected="zoomLevel === ZoomLevel.ZOOM_IN_2"
-            @click="zoomLevel = ZoomLevel.ZOOM_IN_2"
-            >Zoom In 2</FeatherDropdownItem
-          >
-          <FeatherDropdownItem
-            :selected="zoomLevel === ZoomLevel.ZOOM_IN_1"
-            @click="zoomLevel = ZoomLevel.ZOOM_IN_1"
-            >Zoom In 1</FeatherDropdownItem
-          >
-          <FeatherDropdownItem
-            :selected="zoomLevel === ZoomLevel.ZOOM_NONE"
-            @click="zoomLevel = ZoomLevel.ZOOM_NONE"
-            >Default View</FeatherDropdownItem
-          >
-          <FeatherDropdownItem
-            :selected="zoomLevel === ZoomLevel.ZOOM_OUT_1"
-            @click="zoomLevel = ZoomLevel.ZOOM_OUT_1"
-            >Zoom Out 1</FeatherDropdownItem
-          >
-          <FeatherDropdownItem
-            :selected="zoomLevel === ZoomLevel.ZOOM_OUT_2"
-            @click="zoomLevel = ZoomLevel.ZOOM_OUT_2"
-            >Zoom Out 2</FeatherDropdownItem
-          >
-        </FeatherDropdown>
-
         <FeatherButton v-if="!fullScreen" icon="More">
           <FeatherIcon
             :icon="iconMore"
@@ -93,8 +48,6 @@
           <FeatherIcon :icon="iconFullscreen"></FeatherIcon>
         </FeatherButton>
       </div>
-      <!-- <div class="fullscreen"> -->
-      <!-- </div> -->
     </div>
     <div class="content">
       <slot name="content"></slot>
@@ -110,21 +63,22 @@
     </div>
 
     <div class="chart">
-      <!-- <div class="draggable-container" :class="{ 'being-dragged': isDragging }"> -->
       <div
         class="draggable-container"
+        :class="{
+          'being-dragged': svgDrag.isDragging?.value,
+        }"
         @wheel.prevent="onWheel"
         @keydown="onKeyDown"
+        @mousedown="onMouseDown"
+        @mousemove="svgDrag.continueDrag($event, zoomScale)"
+        @mouseup="svgDrag.endDrag()"
+        @mouseleave="svgDrag.endDrag()"
+        :style="{
+          transform: `translate(${svgDrag.position.x}px, ${svgDrag.position.y}px) scale(${zoomScale})`,
+        }"
         tabindex="0"
       >
-        <!-- :draggable="true"
-        @mousedown.shift.prevent="beginDrag"
-        @mousemove="continueDrag"
-        @mouseup="endDrag"
-        @mouseleave="endDrag"
-        :style="{
-          transform: `translate(${position.x}px, ${position.y}px)`,
-        }" -->
         <Component
           ref="chartRef"
           :is="chartComponent"
@@ -159,12 +113,10 @@ import {
   watch,
 } from "vue";
 import { FeatherButton } from "@featherds/button";
-import { FeatherDropdown, FeatherDropdownItem } from "@featherds/dropdown";
 import { FeatherIcon } from "@featherds/icon";
 import DownloadFile from "@featherds/icon/action/DownloadFile";
 import Refresh from "@featherds/icon/navigation/Refresh";
 import MoreVert from "@featherds/icon/navigation/MoreVert";
-import View from "@featherds/icon/action/View";
 import Fullscreen from "@featherds/icon/navigation/Fullscreen";
 import FullscreenExit from "@featherds/icon/navigation/FullscreenExit";
 import {
@@ -178,6 +130,9 @@ import {
 } from "./types";
 import { getSizing } from "./Sizing";
 import { useWheelZoom } from "@featherds/composables/events/WheelZoom";
+import { useDraggable } from "@featherds/composables/events/Drag";
+
+const svgDrag = useDraggable();
 
 // #region EMITS
 const emit = defineEmits(["filter", "more", "refresh"]);
@@ -240,6 +195,7 @@ const {
   scale: zoomScale,
   onWheel,
   onKeyDown,
+  setStep,
 } = useWheelZoom({
   enabled: isZoomable,
 });
@@ -252,6 +208,30 @@ const zoomLevel = computed<ZoomLevel>(() => {
   if (step.value === 1) return ZoomLevel.ZOOM_OUT_1;
   return ZoomLevel.ZOOM_OUT_2;
 });
+
+const setZoomLevel = (level: ZoomLevel) => {
+  switch (level) {
+    case ZoomLevel.ZOOM_IN_2:
+      setStep(-2);
+      break;
+    case ZoomLevel.ZOOM_IN_1:
+      setStep(-1);
+      break;
+    case ZoomLevel.ZOOM_NONE:
+      setStep(0);
+      break;
+    case ZoomLevel.ZOOM_OUT_1:
+      setStep(1);
+      break;
+    case ZoomLevel.ZOOM_OUT_2:
+      setStep(2);
+      break;
+  }
+};
+
+// bound for use in css to move chart content
+const translateX = computed(() => `${svgDrag.position.x}px`);
+const translateY = computed(() => `${svgDrag.position.y}px`);
 
 interface ChartComponent extends ComponentPublicInstance {
   draw: () => void;
@@ -284,11 +264,6 @@ const setChartType = (type: FeatherChartType) => {
 
 const updateFullScreen = () => {
   fullScreen.value = !fullScreen.value;
-  // if (fullScreen.value) {
-  //   sizing.chart.height += 160;
-  // } else {
-  //   sizing.chart.height -= 160;
-  // }
 
   if (chartRef.value && chartRef.value.draw) {
     chartRef.value.draw();
@@ -356,7 +331,7 @@ watch(
 );
 
 const actionRefresh = () => {
-  // Emit refresh event and let consumer get latest data.
+  setZoomLevel(ZoomLevel.ZOOM_NONE);
   emit("refresh", id, data);
 };
 
@@ -365,6 +340,17 @@ const actionMore = () => {
 };
 
 // #endregion
+
+// Only drag with the middle mouse button to preserve left-click selection on SVG items
+const onMouseDown = (e: MouseEvent) => {
+  // Middle button (wheel click) only
+  if (e.button !== 1) return;
+
+  // Prevent Windows auto-scroll circle on middle click
+  e.preventDefault();
+
+  svgDrag.beginDrag(e);
+};
 
 // #region ICONS
 const iconDownload = computed(() => {
@@ -377,10 +363,6 @@ const iconRefresh = computed(() => {
 
 const iconMore = computed(() => {
   return markRaw(MoreVert);
-});
-
-const iconView = computed(() => {
-  return markRaw(View);
 });
 
 const iconFullscreen = computed(() => {
@@ -397,6 +379,8 @@ const iconFullscreen = computed(() => {
 provide("position", position);
 provide("zoomLevel", zoomLevel);
 provide("zoomScale", zoomScale);
+provide("setZoomLevel", setZoomLevel);
+provide("svgDrag", svgDrag);
 provide("containerWidth", containerWidth);
 provide("containerHeight", containerHeight);
 // #endregion
@@ -416,6 +400,7 @@ onUnmounted(() => {
 <style lang="scss" scoped>
 @use "@featherds/styles/themes/variables" as vars;
 @use "@featherds/styles/mixins/typography" as typo;
+@use "@featherds/styles/themes/utils" as utils;
 
 .feather-chart-container {
   background-color: var(vars.$surface);
@@ -488,6 +473,28 @@ onUnmounted(() => {
   .chart {
     background-color: var(vars.$surface);
     overflow: hidden;
+
+    .draggable-container {
+      transform: translate(v-bind(translateX), v-bind(translateY));
+      scale: (v-bind(zoomScale));
+      transition: scale 0.3s ease-in-out;
+      cursor: grab;
+      // Show pointer over interactive descendants (including tabindex targets)
+      &:not(.being-dragged) {
+        :deep(a),
+        :deep(rect),
+        :deep(circle),
+        :deep([role="button"]),
+        :deep([role="link"]) {
+          cursor: pointer;
+        }
+      }
+      &.being-dragged {
+        border: 1px dashed utils.alpha(vars.$primary, 0.5);
+        cursor: grabbing;
+        transition: none;
+      }
+    }
   }
 }
 

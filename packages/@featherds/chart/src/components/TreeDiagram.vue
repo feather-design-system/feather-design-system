@@ -3,22 +3,21 @@
   <template id="component-icon-resources">
     <FeatherIcon id="icon-expand" :icon="ExpandLess" />
   </template>
-  <!-- @mousedown.shift.prevent="beginDrag" -->
   <svg
     :id="id"
     :width="dimensions.chart.width"
     :height="dimensions.chart.height"
     class="feather-tree-diagram-svg"
-    :class="`${baseLenClass} ${zoomLevel} ${isDragging ? 'being-dragged' : ''}`"
-    :draggable="true"
-    @mousedown.prevent="beginDrag($event)"
-    @mousemove="continueDrag($event, zoomScale)"
-    @mouseup="endDrag"
-    @mouseleave="endDrag"
-    :style="{
-      transform: `translate(${svgPos.x}px, ${svgPos.y}px)`,
-    }"
+    :class="`${baseLenClass}`"
+    :draggable="false"
   ></svg>
+  <!-- @mousedown.prevent="svgDrag?.beginDrag($event)"
+    @mousemove="svgDrag?.continueDrag($event, zoomScale)"
+    @mouseup="svgDrag?.endDrag()"
+    @mouseleave="svgDrag?.endDrag()"
+    :style="{
+      transform: `translate(${svgDrag?.position.x}px, ${svgDrag?.position.y}px)`,
+    }" -->
   <!-- @wheel="handleWheel" -->
   <div class="svg-footer">
     <FeatherButton
@@ -93,15 +92,6 @@ import ExpandLess from "@featherds/icon/navigation/ExpandLess";
 import KeyboardArrowUp from "@featherds/icon/hardware/KeyboardArrowUp";
 import KeyboardArrowDown from "@featherds/icon/hardware/KeyboardArrowDown";
 
-import { useDraggable } from "@featherds/composables/events/Drag";
-const {
-  beginDrag,
-  continueDrag,
-  endDrag,
-  isDragging,
-  position: svgPos,
-} = useDraggable();
-
 const props = defineProps({
   id: { type: String, required: true },
   title: { type: String, required: false },
@@ -124,59 +114,17 @@ const props = defineProps({
 
 const { data, dimensions, id, options } = reactive(props);
 
-// const position = inject("position") as { x: number; y: number };
-// const position: { x: number; y: number } = { x: 0, y: 0 };
-
 // #region zoom
-const zoomLevel = inject("zoomLevel") as Ref<ZoomLevel>;
-const zoomScale = inject("zoomScale", ref(1)) as Ref<number>;
-// const wheelDelta = ref(0);
+const setZoomLevel = inject<((z: ZoomLevel) => void) | undefined>(
+  "setZoomLevel",
+  undefined
+);
 
-// const handleWheel = (event: WheelEvent) => {
-//   wheelDelta.value += Math.abs(event.deltaY) / event.deltaY;
-//   switch (wheelDelta.value) {
-//     case -2:
-//       zoomLevel.value = ZoomLevel.ZOOM_IN_2;
-//       break;
-//     case -1:
-//       zoomLevel.value = ZoomLevel.ZOOM_IN_1;
-//       break;
-//     case 0:
-//       zoomLevel.value = ZoomLevel.ZOOM_NONE;
-//       break;
-//     case 1:
-//       zoomLevel.value = ZoomLevel.ZOOM_OUT_1;
-//       break;
-//     case 2:
-//       zoomLevel.value = ZoomLevel.ZOOM_OUT_2;
-//       break;
-//   }
-//   if (wheelDelta.value > 2) {
-//     wheelDelta.value = 2;
-//   }
-//   if (wheelDelta.value < -2) {
-//     wheelDelta.value = -2;
-//   }
-// };
-
-// const zoomScale = computed(() => {
-//   switch (zoomLevel.value) {
-//     case ZoomLevel.ZOOM_IN_2:
-//       return 2;
-//     case ZoomLevel.ZOOM_IN_1:
-//       return 1.5;
-//     case ZoomLevel.ZOOM_NONE:
-//       return 1;
-//     case ZoomLevel.ZOOM_OUT_1:
-//       return 0.75;
-//     case ZoomLevel.ZOOM_OUT_2:
-//       return 0.5;
-//     default:
-//       return 1;
-//   }
-// });
-
-// #endregion zoom
+// Import type from composable?
+type SvgDrag = {
+  position: { x: number; y: number };
+};
+const svgDrag = inject<SvgDrag>("svgDrag");
 
 const defaultNodeClickHandler = (id: string, data: any) => {
   // console warning to remind the developer to provide a handler
@@ -497,13 +445,15 @@ const removeChildren = () => {
 
 // #region movement
 const moveSvg = (offset: { x: number; y: number }) => {
-  const elSvg = document.getElementById(`${id}`)!;
-  if (elSvg) {
-    const newPos = centerElement(offset);
-    svgPos.x = newPos.x;
-    svgPos.y = newPos.y;
-    elSvg.style.transform = `translate(${svgPos.x}px, ${svgPos.y}px)`;
+  // const elSvg = document.getElementById(`${id}`)!;
+  // if (elSvg) {
+  const newPos = centerElement(offset);
+  if (svgDrag) {
+    svgDrag.position.x = newPos.x;
+    svgDrag.position.y = newPos.y;
+    // elSvg.style.transform = `translate(${svgDrag.position.x}px, ${svgDrag.position.y}px)`;
   }
+  // }
 };
 
 const centerElement = (offset?: {
@@ -520,14 +470,13 @@ const centerElement = (offset?: {
 
 const recenter = () => {
   // reset position
-  svgPos.x = 0;
-  svgPos.y = 0;
+  if (svgDrag) {
+    svgDrag.position.x = 0;
+    svgDrag.position.y = 0;
+  }
 
-  const svg = document.getElementById(`${id}`)!;
-  svg.style.transform = `translate(${svgPos.x}px, ${svgPos.y}px)`;
-  svg.classList.remove("zoom-in-2", "zoom-in-1", "zoom-out-1", "zoom-out-2");
-  svg.classList.add("zoom-none");
-  zoomLevel.value = ZoomLevel.ZOOM_NONE;
+  // zoomLevel.value = ZoomLevel.ZOOM_NONE;
+  setZoomLevel?.(ZoomLevel.ZOOM_NONE);
 };
 
 // #endregion movement
@@ -548,7 +497,9 @@ const childCount = (d: any) => {
 
 const draw = (offset?: { x: number; y: number } | undefined) => {
   const newPos = centerElement(offset);
-  svgPos.x = newPos.x;
+  if (svgDrag) {
+    svgDrag.position.x = newPos.x;
+  }
 
   if (!isValid()) throw new Error("Data is not valid");
 
@@ -806,19 +757,7 @@ watchEffect(() => {
 onBeforeMount(() => {});
 
 onMounted(() => {
-  // const elSvg = document.getElementById(`${id}`)!;
-
   draw();
-
-  // selectAll(".node-group.container-type").classed("collapsed", true);
-  // selectAll(".node-group.container-type").each((d: any) => {
-  //   collapsedNodes.add(d.data.name);
-  //   hideDescendants(d);
-  // });
-
-  // setTimeout(() => {
-  //   elSvg.style.opacity = "1";
-  // }, 1000);
 });
 </script>
 
@@ -845,33 +784,17 @@ onMounted(() => {
       font-size: x-small;
     }
   }
-  &:hover {
-    cursor: grab;
-    border: 1px dashed utils.alpha(vars.$primary, 0.05);
-  }
-  &.being-dragged {
-    cursor: grabbing;
-    transition: scale 1s ease-in-out;
-    border: 1px dashed utils.alpha(vars.$primary, 0.5);
-  }
+  // &:hover {
+  //   cursor: grab;
+  //   border: 1px dashed utils.alpha(vars.$primary, 0.05);
+  // }
+  // &.being-dragged {
+  //   cursor: grabbing;
+  //   transition: scale 1s ease-in-out;
+  //   border: 1px dashed utils.alpha(vars.$primary, 0.5);
+  // }
 
   // TODO: Think about moving css zoom functionality to FeatherChart... scale .chart svg
-  &.zoom-in-2 {
-    scale: 2;
-  }
-  &.zoom-in-1 {
-    scale: 1.5;
-  }
-  &.zoom-none {
-    scale: 1;
-  }
-  &.zoom-out-1 {
-    scale: 0.75;
-  }
-  &.zoom-out-2 {
-    scale: 0.5;
-  }
-
   g {
     .link {
       opacity: 1;
