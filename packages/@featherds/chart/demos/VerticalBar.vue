@@ -41,20 +41,20 @@ const axes: FeatherChartAxes = {
   y: "",
 };
 const options: FeatherChartOptions = {
-  units: "units",
+  units: "sales",
   ariaSummary: "This chart shows stuff.",
   margin: {
-    top: 33,
-    right: 33,
-    bottom: 33,
-    left: 33,
+    top: 36,
+    right: 36,
+    bottom: 36,
+    left: 50,
   },
   xAxis: {
-    tickPadding: 3,
-    tickRotation: 25,
+    tickPadding: 16,
+    tickRotation: 0,
   },
   yAxis: {
-    tickPadding: 3,
+    tickPadding: 8,
     tickRotation: -15,
   },
 };

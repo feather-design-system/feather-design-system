@@ -289,7 +289,7 @@ const horizontal1Options: FeatherChartOptions = {
   units: "units",
   ariaSummary: "This chart shows stuff.",
 };
-horizontal1Options.margin = { top: 20, right: 20, bottom: 50, left: 40 };
+horizontal1Options.margin = { top: 20, right: 40, bottom: 50, left: 40 };
 horizontal1Options.xAxis = { tickPadding: 5, tickRotation: 0 };
 horizontal1Options.yAxis = { tickPadding: 3, tickRotation: 10 };
 
@@ -300,7 +300,7 @@ const vertical1Axes: FeatherChartAxes = {
   y: "",
 };
 const vertical1Options: FeatherChartOptions = { ...horizontal1Options };
-vertical1Options.margin = { top: 20, right: 20, bottom: 50, left: 35 };
+//vertical1Options.margin = { top: 20, right: 20, bottom: 50, left: 35 };
 vertical1Options.xAxis = { tickPadding: 10 };
 vertical1Options.yAxis = { tickPadding: 10 };
 

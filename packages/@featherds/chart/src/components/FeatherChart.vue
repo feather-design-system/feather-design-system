@@ -132,8 +132,6 @@ import { getSizing } from "./Sizing";
 import { useWheelZoom } from "@featherds/composables/events/WheelZoom";
 import { useDraggable } from "@featherds/composables/events/Drag";
 
-const svgDrag = useDraggable();
-
 // #region EMITS
 const emit = defineEmits(["filter", "more", "refresh"]);
 // #endregion
@@ -160,12 +158,21 @@ const props = withDefaults(
 const DEFAULT_OPTIONS: FeatherChartOptions = {
   units: "units",
   colorScheme: undefined,
-  margin: { top: 20, right: 20, bottom: 20, left: 20 },
+  margin: { top: 36, right: 36, bottom: 36, left: 36 },
   xAxis: { tickPadding: 6, tickRotation: 345 },
   yAxis: { tickPadding: 6, tickRotation: 0 },
 };
 
 const { id, axes, data, options, size, title, type } = reactive(props);
+
+const svgDrag = useDraggable();
+
+const resetPan = () => {
+  // reset draggable container transform
+  svgDrag.position.x = 0;
+  svgDrag.position.y = 0;
+  svgDrag.endDrag?.();
+};
 
 const mergedOptions = computed(() => {
   const userOptions = (options as FeatherChartOptions) || {};
@@ -332,6 +339,7 @@ watch(
 
 const actionRefresh = () => {
   setZoomLevel(ZoomLevel.ZOOM_NONE);
+  resetPan();
   emit("refresh", id, data);
 };
 

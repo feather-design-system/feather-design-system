@@ -125,11 +125,11 @@ const draw = () => {
     .attr("viewBox", `0 0 ${dimensions.chart.width} ${dimensions.chart.height}`)
     .attr("style", "max-width: 100%; height: auto;")
     .attr("tabindex", "0")
-    .append("g");
-  // .attr(
-  //   "transform",
-  //   `translate(${options.margin.left}, ${options.margin.top})`
-  // );
+    .append("g")
+    .attr(
+      "transform",
+      `translate(${options.margin.left}, ${options.margin.top})`
+    );
 
   // DRAW BARS
   const layers = svg.selectAll("g").data(stackedData).join("g");
@@ -137,7 +137,7 @@ const draw = () => {
   // AXES
   // TODO:  enhance tick rotation for all charts
   const xAxisTickPadding = options.xAxis?.tickPadding || 0;
-  // const xAxisTickRotation = options.xAxis?.tickRotation || 0;
+  const xAxisTickRotation = options.xAxis?.tickRotation || 0;
   const yAxisTickPadding = options.yAxis?.tickPadding || 0;
   const yAxisTickRotation = options.yAxis?.tickRotation || 0;
 
@@ -146,10 +146,7 @@ const draw = () => {
     .classed("yAxis", true)
     .transition(yAnimation)
     .call(
-      axisLeft(yScale)
-        .ticks(6)
-        .tickPadding(yAxisTickPadding)
-        .tickSize(-containerWidth)
+      axisLeft(yScale).ticks(5).tickPadding(yAxisTickPadding).tickSizeInner(10)
     )
     .selectAll("text")
     .attr("transform", `rotate(${yAxisTickRotation})`);
@@ -159,9 +156,9 @@ const draw = () => {
     .classed("xAxis", true)
     .attr("transform", `translate(0, ${containerHeight})`)
     .transition(xAnimation)
-    .call(axisBottom(xScale).tickPadding(xAxisTickPadding))
-    .selectAll("text");
-  // .attr("transform", `rotate(${xAxisTickRotation})`);
+    .call(axisBottom(xScale).ticks(6).tickPadding(xAxisTickPadding))
+    .selectAll("text")
+    .attr("transform", `rotate(${xAxisTickRotation})`);
 
   // transition for bars
   const duration = 1000 / keyList.length;
@@ -220,12 +217,15 @@ onMounted(() => {
 .feather-vertical-bar-svg {
   g.xAxis,
   g.yAxis {
-    font-size: small;
-    padding: 1em;
+    font-size: 1em; // TODO: Make tick-font-size an option
 
+    path.domain {
+      stroke: currentColor;
+    }
     .tick {
-      line {
-        color: var(vars.$shade-4);
+      line,
+      text {
+        fill: var(vars.$secondary-text-on-surface);
       }
     }
   }
