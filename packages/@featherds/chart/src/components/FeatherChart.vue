@@ -163,6 +163,7 @@ import {
   reactive,
   ref,
   watch,
+  toRefs,
 } from "vue";
 import { FeatherButton } from "@featherds/button";
 import { FeatherIcon } from "@featherds/icon";
@@ -220,10 +221,18 @@ const DEFAULT_OPTIONS: FeatherChartOptions = {
   yAxis: { tickPadding: 6, tickRotation: 0 },
 };
 
-const { id, axes, data, options, size, title, type } = reactive(props);
+const { id, axes, data, options, size, title, type } = toRefs(props);
+
+watch(size, (next, prev) => {
+  // Remove after testing
+  console.log("[FeatherChart] size changed:", prev, "->", next);
+  if (chartRef.value && chartRef.value.draw) {
+    chartRef.value.draw();
+  }
+});
 
 const mergedOptions = computed(() => {
-  const userOptions = (options as FeatherChartOptions) || {};
+  const userOptions = (options.value as FeatherChartOptions) || {};
   return {
     ...DEFAULT_OPTIONS,
     ...userOptions,
@@ -243,14 +252,15 @@ const resetPan = () => {
 };
 
 const isZoomable = computed(() => {
+  const t = type.value;
   return (
-    type === "tree-diagram" ||
-    type === "force-directed" ||
-    type === "radial" ||
-    type === "dendrogram" ||
-    type === "area" ||
-    type === "horizontal-bar" ||
-    type === "vertical-bar"
+    t === "tree-diagram" ||
+    t === "force-directed" ||
+    t === "radial" ||
+    t === "dendrogram" ||
+    t === "area" ||
+    t === "horizontal-bar" ||
+    t === "vertical-bar"
   );
 });
 
@@ -298,7 +308,10 @@ const translateX = computed(() => `${svgDrag.position.x}px`);
 const translateY = computed(() => `${svgDrag.position.y}px`);
 
 const chartRef = ref<ChartComponent | null>(null);
-const chartType = ref(type);
+const chartType = ref(type.value);
+const draggableRef = ref<HTMLElement | null>(null);
+
+watch(type, (v) => (chartType.value = v));
 
 const showActionSubmenu = ref(false);
 const actionSubmenuRef = ref<HTMLElement | null>(null);
@@ -341,21 +354,22 @@ const toggleActionSubmenu = async () => {
   }
 };
 
-const sizing = reactive(
-  getSizing(
-    size as FeatherChartShirtSize,
-    type as FeatherChartType
-  ) as FeatherChartDimensions
+const sizing = computed(
+  () =>
+    getSizing(
+      size.value as FeatherChartShirtSize,
+      chartType.value as FeatherChartType
+    ) as FeatherChartDimensions
 );
 
 const containerWidth = computed(() => {
-  const margin = options.margin || { left: 0, right: 0 };
-  return sizing.chart.width - (margin.left + margin.right);
+  const margin = mergedOptions.value.margin || { left: 0, right: 0 };
+  return sizing.value.chart.width - (margin.left + margin.right);
 });
 
 const containerHeight = computed(() => {
-  const margin = options.margin || { top: 0, bottom: 0 };
-  return sizing.chart.height - (margin.top + margin.bottom);
+  const margin = mergedOptions.value.margin || { top: 0, bottom: 0 };
+  return sizing.value.chart.height - (margin.top + margin.bottom);
 });
 
 const setChartType = (type: FeatherChartType) => {
@@ -369,11 +383,11 @@ const updateFullScreen = () => {
     chartRef.value.draw();
   }
 
-  emit("refresh", id, data);
+  emit("refresh", id.value, data.value);
 };
 
 const controlWidth = computed((): number => {
-  return sizing.control.width;
+  return sizing.value.control.width;
 });
 
 const componentMap: Record<string, () => Promise<any>> = {
@@ -400,7 +414,7 @@ const chartComponent = computed(() => {
 
 // #region ACTIONS
 const downloadFileName = computed(() => {
-  let chartTitle = title || `${chartType.value} chart-data`;
+  let chartTitle = title.value || `${chartType.value} chart-data`;
   let fileName = chartTitle.replaceAll(" ", "-").toLowerCase();
   return `${fileName}.json`;
 });
@@ -433,7 +447,7 @@ watch(
 const actionRefresh = () => {
   setZoomLevel(ZoomLevel.ZOOM_NONE);
   resetPan();
-  emit("refresh", id, data);
+  emit("refresh", id.value, data.value);
 };
 
 // #endregion
@@ -450,17 +464,11 @@ const onMouseDown = (e: MouseEvent) => {
 };
 
 // #region ICONS
-const iconDownload = computed(() => {
-  return markRaw(DownloadFile);
-});
+const iconDownload = computed(() => markRaw(DownloadFile));
 
-const iconRefresh = computed(() => {
-  return markRaw(Refresh);
-});
+const iconRefresh = computed(() => markRaw(Refresh));
 
-const iconMore = computed(() => {
-  return markRaw(MoreVert);
-});
+const iconMore = computed(() => markRaw(MoreVert));
 
 const iconFullscreen = computed(() => {
   if (fullScreen.value) {

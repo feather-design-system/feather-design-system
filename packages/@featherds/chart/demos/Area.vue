@@ -145,7 +145,6 @@ import {
 } from "./../src/components/types";
 
 import { areaDataset1, areaDataset2 } from "./demo-data";
-// import { watchEffect } from "vue";
 
 const areaId = "area";
 
