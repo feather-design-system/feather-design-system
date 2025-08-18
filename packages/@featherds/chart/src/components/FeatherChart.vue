@@ -309,7 +309,6 @@ const translateY = computed(() => `${svgDrag.position.y}px`);
 
 const chartRef = ref<ChartComponent | null>(null);
 const chartType = ref(type.value);
-const draggableRef = ref<HTMLElement | null>(null);
 
 watch(type, (v) => (chartType.value = v));
 
