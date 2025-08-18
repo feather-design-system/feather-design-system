@@ -50,7 +50,7 @@ const props = defineProps({
   axes: { type: Object as PropType<FeatherChartAxes>, required: true },
 });
 
-const { axes, data, dimensions, id, options, type } = reactive(props);
+const { axes, data, dimensions, id, options } = reactive(props);
 
 const position = inject("position") as { x: number; y: number };
 const zoomLevel = inject("zoomLevel") as Ref<ZoomLevel>;
@@ -190,9 +190,7 @@ const isValid = () => {
 
   // AND ensure all required props for the specified chart have been provided.
   // TODO: Validate props
-  console.log(`ensure all necessary props are provided to draw ${type}`);
   return true;
-  //  throw new Error("Missing props")
 };
 
 defineExpose({ draw });

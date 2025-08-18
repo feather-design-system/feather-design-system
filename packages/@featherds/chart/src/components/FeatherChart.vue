@@ -21,34 +21,86 @@
           :href="downloadUrl"
           asAnchor
         >
-          <FeatherIcon
-            :icon="iconDownload"
-            class="download action"
-          ></FeatherIcon>
+          <FeatherIcon :icon="iconDownload" />
         </FeatherButton>
         <FeatherButton v-if="!fullScreen" icon="Refresh" v-show="size !== 'xs'">
-          <FeatherIcon
-            :icon="iconRefresh"
-            class="refresh action"
-            @click="actionRefresh()"
-          ></FeatherIcon>
-        </FeatherButton>
-        <FeatherButton v-if="!fullScreen" icon="More">
-          <FeatherIcon
-            :icon="iconMore"
-            class="more action"
-            @click="actionMore()"
-          ></FeatherIcon>
+          <FeatherIcon :icon="iconRefresh" @click="actionRefresh()" />
         </FeatherButton>
         <FeatherButton
           :class="fullScreen ? 'fullscreen' : ''"
           :icon="fullScreen ? 'Show Heading' : 'Hide Heading'"
           @click="updateFullScreen"
         >
-          <FeatherIcon :icon="iconFullscreen"></FeatherIcon>
+          <FeatherIcon :icon="iconFullscreen" />
+        </FeatherButton>
+      </div>
+      <div class="action-menu">
+        <FeatherButton
+          icon="More"
+          :aria-expanded="showActionSubmenu ? 'true' : 'false'"
+          :aria-controls="`chart-actions-${id}`"
+          @click.stop="toggleActionSubmenu"
+          ref="menuButtonRef"
+        >
+          <FeatherIcon :icon="iconMore" />
         </FeatherButton>
       </div>
     </div>
+
+    <transition name="actions-slide" :duration="{ enter: 150, leave: 150 }">
+      <div
+        v-show="showActionSubmenu"
+        :id="`chart-actions-${id}`"
+        class="actions-submenu"
+        role="region"
+        aria-label="Chart actions"
+        tabindex="-1"
+        ref="actionSubmenuRef"
+        @keydown.esc.prevent.stop="hideActionSubmenu"
+      >
+        <div class="actions-submenu-inner">
+          <FeatherButton
+            v-if="!fullScreen"
+            icon="Download"
+            :download="downloadFileName"
+            :href="downloadUrl"
+            asAnchor
+            @click="hideActionSubmenu"
+          >
+            <FeatherIcon
+              :icon="iconDownload"
+              class="download action"
+            ></FeatherIcon>
+          </FeatherButton>
+          <FeatherButton
+            v-if="!fullScreen"
+            icon="Refresh"
+            @click="
+              () => {
+                hideActionSubmenu();
+                actionRefresh();
+              }
+            "
+          >
+            <FeatherIcon
+              :icon="iconRefresh"
+              class="refresh action"
+            ></FeatherIcon>
+          </FeatherButton>
+          <FeatherButton
+            :icon="fullScreen ? 'Show Heading' : 'Hide Heading'"
+            @click="
+              () => {
+                hideActionSubmenu();
+                updateFullScreen();
+              }
+            "
+          >
+            <FeatherIcon :icon="iconFullscreen"></FeatherIcon>
+          </FeatherButton>
+        </div>
+      </div>
+    </transition>
     <div class="content">
       <slot name="content"></slot>
     </div>
@@ -103,10 +155,10 @@ import {
   ComponentPublicInstance,
   defineAsyncComponent,
   markRaw,
+  nextTick,
   onBeforeMount,
   onMounted,
   onUnmounted,
-  // PropType,
   provide,
   reactive,
   ref,
@@ -131,9 +183,14 @@ import {
 import { getSizing } from "./Sizing";
 import { useWheelZoom } from "@featherds/composables/events/WheelZoom";
 import { useDraggable } from "@featherds/composables/events/Drag";
+import { useOutsideClick } from "@featherds/composables/events/OutsideClick";
+
+interface ChartComponent extends ComponentPublicInstance {
+  draw: () => void;
+}
 
 // #region EMITS
-const emit = defineEmits(["filter", "more", "refresh"]);
+const emit = defineEmits(["filter", "refresh"]);
 // #endregion
 
 // #region PROPS
@@ -165,15 +222,6 @@ const DEFAULT_OPTIONS: FeatherChartOptions = {
 
 const { id, axes, data, options, size, title, type } = reactive(props);
 
-const svgDrag = useDraggable();
-
-const resetPan = () => {
-  // reset draggable container transform
-  svgDrag.position.x = 0;
-  svgDrag.position.y = 0;
-  svgDrag.endDrag?.();
-};
-
 const mergedOptions = computed(() => {
   const userOptions = (options as FeatherChartOptions) || {};
   return {
@@ -184,6 +232,15 @@ const mergedOptions = computed(() => {
 // #endregion
 const fullScreen = ref(false);
 const position = reactive({ x: 0, y: 0 });
+
+const svgDrag = useDraggable();
+
+const resetPan = () => {
+  // reset draggable container transform
+  svgDrag.position.x = 0;
+  svgDrag.position.y = 0;
+  svgDrag.endDrag?.();
+};
 
 const isZoomable = computed(() => {
   return (
@@ -240,13 +297,49 @@ const setZoomLevel = (level: ZoomLevel) => {
 const translateX = computed(() => `${svgDrag.position.x}px`);
 const translateY = computed(() => `${svgDrag.position.y}px`);
 
-interface ChartComponent extends ComponentPublicInstance {
-  draw: () => void;
-}
-
 const chartRef = ref<ChartComponent | null>(null);
-
 const chartType = ref(type);
+
+const showActionSubmenu = ref(false);
+const actionSubmenuRef = ref<HTMLElement | null>(null);
+const menuButtonRef = ref<HTMLElement | null>(null);
+
+const actionMenuTargets = computed<HTMLElement[]>(() => {
+  const list: HTMLElement[] = [];
+  const v = menuButtonRef.value as any;
+  const btn =
+    v instanceof HTMLElement ? v : (v?.$el as HTMLElement | null) ?? null;
+
+  if (btn) list.push(btn);
+  if (actionSubmenuRef.value && actionSubmenuRef.value instanceof HTMLElement) {
+    list.push(actionSubmenuRef.value);
+  }
+  return list;
+});
+
+const outsideClickActive = useOutsideClick(
+  actionMenuTargets,
+  () => {
+    if (showActionSubmenu.value) hideActionSubmenu();
+  },
+  { click: true, focus: true, window: true }
+);
+
+watch(showActionSubmenu, (newValue) => {
+  outsideClickActive.value = newValue;
+});
+
+const hideActionSubmenu = () => {
+  showActionSubmenu.value = false;
+};
+
+const toggleActionSubmenu = async () => {
+  showActionSubmenu.value = !showActionSubmenu.value;
+  if (showActionSubmenu.value) {
+    await nextTick();
+    actionSubmenuRef.value?.focus();
+  }
+};
 
 const sizing = reactive(
   getSizing(
@@ -255,12 +348,12 @@ const sizing = reactive(
   ) as FeatherChartDimensions
 );
 
-let containerWidth = computed(() => {
+const containerWidth = computed(() => {
   const margin = options.margin || { left: 0, right: 0 };
   return sizing.chart.width - (margin.left + margin.right);
 });
 
-let containerHeight = computed(() => {
+const containerHeight = computed(() => {
   const margin = options.margin || { top: 0, bottom: 0 };
   return sizing.chart.height - (margin.top + margin.bottom);
 });
@@ -343,10 +436,6 @@ const actionRefresh = () => {
   emit("refresh", id, data);
 };
 
-const actionMore = () => {
-  emit("more", id, data);
-};
-
 // #endregion
 
 // Only drag with the middle mouse button to preserve left-click selection on SVG items
@@ -397,9 +486,13 @@ defineExpose({ setChartType });
 
 onBeforeMount(() => {});
 
-onMounted(async () => {});
+onMounted(async () => {
+  // document.addEventListener("click", onDocClick);
+});
 
 onUnmounted(() => {
+  // document.removeEventListener("click", onDocClick);
+
   // Revoke the previous URL - (avoids memory leaks).
   if (downloadUrl.value) URL.revokeObjectURL(downloadUrl.value);
 });
@@ -411,6 +504,7 @@ onUnmounted(() => {
 @use "@featherds/styles/themes/utils" as utils;
 
 .feather-chart-container {
+  position: relative;
   background-color: var(vars.$surface);
   padding: 8px;
   overflow: hidden;
@@ -426,12 +520,13 @@ onUnmounted(() => {
     margin: 0.5rem 0;
 
     .feather-chart-title {
-      display: inline-flex;
-      margin-right: auto;
-      color: var(vars.$primary);
-      flex: 0 0 auto;
-      flex-shrink: 0;
-      overflow: auto;
+      display: block;
+      flex: 1 1 auto;
+      min-width: 0;
+      margin-right: 0;
+      overflow: hidden;
+      white-space: nowrap;
+      text-overflow: ellipsis;
       &.fullscreen {
         position: absolute;
         z-index: 1;
@@ -441,8 +536,11 @@ onUnmounted(() => {
       }
     }
 
+    .action-menu {
+      display: none;
+    }
     .action-container {
-      display: inline-flex;
+      display: flex;
       margin-left: auto;
       button {
         margin: 0;
@@ -461,6 +559,36 @@ onUnmounted(() => {
         text-align: right;
         z-index: 1;
       }
+    }
+  }
+
+  .actions-submenu {
+    position: sticky;
+    top: 0.5rem;
+    z-index: var(vars.$zindex-popover);
+    width: 100%;
+
+    height: 0;
+    overflow: visible;
+    pointer-events: none; // inner handles clicks
+    display: block;
+
+    .actions-submenu-inner {
+      position: absolute;
+      top: 0;
+      right: 0;
+      pointer-events: auto;
+      overflow: visible;
+
+      display: flex;
+      flex: 1 1 auto;
+
+      padding: 0.5rem;
+      background: var(vars.$surface);
+      border-radius: 0.25rem;
+      box-shadow: 0 4px 16px utils.alpha(vars.$primary, 0.18);
+      will-change: transform, opacity;
+      transition: opacity 150ms ease-out, transform 150ms ease-out;
     }
   }
 
@@ -485,7 +613,7 @@ onUnmounted(() => {
     .draggable-container {
       transform: translate(v-bind(translateX), v-bind(translateY));
       scale: (v-bind(zoomScale));
-      transition: scale 0.3s ease-in-out;
+      transition: scale 0.3s ease-in-out, transform 0.3s ease-in-out;
       cursor: grab;
       // Show pointer over interactive descendants (including tabindex targets)
       &:not(.being-dragged) {
@@ -498,7 +626,7 @@ onUnmounted(() => {
         }
       }
       &.being-dragged {
-        border: 1px dashed utils.alpha(vars.$primary, 0.5);
+        border: 1px dashed utils.alpha(vars.$primary, 0.24);
         cursor: grabbing;
         transition: none;
       }
@@ -506,12 +634,38 @@ onUnmounted(() => {
   }
 }
 
+:deep(.actions-slide-enter-active),
+:deep(.actions-slide-leave-active) {
+  transition: opacity 150ms ease-out;
+}
+:deep(.actions-slide-enter-from),
+:deep(.actions-slide-leave-to) {
+  opacity: 0; // root fades in/out (mostly invisible)
+}
+
+// Animate the INNER panel using the parent transition classes
+:deep(.actions-slide-enter-from) .actions-submenu-inner {
+  opacity: 0;
+  transform: translateY(-8px);
+}
+:deep(.actions-slide-leave-from) .actions-submenu-inner {
+  opacity: 1;
+  transform: translateY(0);
+}
+:deep(.actions-slide-leave-to) .actions-submenu-inner {
+  opacity: 0;
+  transform: translateY(-8px);
+}
+
 @container chart-container (max-width: 300px) {
-  .action-container {
-    &::before {
-      content: "!";
-      position: relative;
-      color: red;
+  .feather-chart-container {
+    .feather-chart-title-container {
+      .action-menu.action-menu {
+        display: block;
+      }
+      .action-container {
+        display: none;
+      }
     }
   }
 }
