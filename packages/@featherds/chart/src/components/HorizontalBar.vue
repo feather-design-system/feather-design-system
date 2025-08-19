@@ -147,7 +147,7 @@ const draw = () => {
       .data((d: any) => d)
       .join("rect")
       .attr("tabindex", "0")
-      .attr("aria-role", "img")
+      .attr("role", "img")
       .attr("aria-label", (d) => {
         // @ts-ignore
         const group = Object.entries((d as any).data)[0][1];

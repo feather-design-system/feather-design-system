@@ -222,12 +222,13 @@ const resetPan = () => {
 const isZoomable = computed(() => {
   const t = type.value;
   return (
-    t === "tree-diagram" ||
-    t === "force-directed" ||
-    t === "radial" ||
-    t === "dendrogram" ||
     t === "area" ||
+    t === "force-directed" ||
     t === "horizontal-bar" ||
+    t === "line" ||
+    t === "dendrogram" ||
+    t === "radial" ||
+    t === "tree-diagram" ||
     t === "vertical-bar"
   );
 });

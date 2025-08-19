@@ -102,21 +102,36 @@ const draw = () => {
     throw new Error("Unexpected x accessor");
   });
 
+  // Filter out null/invalid rows
+  const validData = newData.filter(
+    (d: any) =>
+      d.date instanceof Date &&
+      typeof d.value === "number" &&
+      Number.isFinite(d.value)
+  ) as Array<{ date: Date; value: number }>;
+
+  if (validData.length === 0) {
+    // Nothing valid to render
+    return;
+  }
+
   // SCALES
   const xScale = scaleTime()
-    .domain(extent(newData, xAccessor) as [Date, Date]) // or Date[]
+    .domain(extent(validData, xAccessor) as [Date, Date]) // or Date[]
     .range([0, containerWidth]);
 
   const yScale = scaleLinear()
-    .domain([
-      0,
-      max(newData, function (d) {
-        return (d as any)[axes.y];
-      }),
-    ])
+    .domain([0, max(validData, (d: any) => d[axes.y]) as number])
     .range([containerHeight, 0]);
 
   if (!options.margin) throw new Error("margin not set");
+
+  // AXES
+  const xAxisTickPadding = options.xAxis?.tickPadding ?? 0;
+  const xAxisTickRotation = options.xAxis?.tickRotation ?? 0;
+
+  const yAxisTickPadding = options.yAxis?.tickPadding ?? 0;
+  const yAxisTickRotation = options.yAxis?.tickRotation ?? 0;
 
   const svg = select(`#${id}`)
     .attr("width", dimensions.chart.width)
@@ -129,14 +144,6 @@ const draw = () => {
       "transform",
       `translate(${options.margin.left}, ${options.margin.top})`
     );
-
-  // AXES
-
-  const xAxisTickPadding = options.xAxis?.tickPadding ?? 0;
-  const xAxisTickRotation = options.xAxis?.tickRotation ?? 0;
-
-  const yAxisTickPadding = options.yAxis?.tickPadding ?? 0;
-  const yAxisTickRotation = options.yAxis?.tickRotation ?? 0;
 
   svg
     .append("g")
@@ -161,7 +168,7 @@ const draw = () => {
 
   svg
     .append("path")
-    .datum(newData)
+    .datum(validData)
     .attr("opacity", 0)
     .transition()
     .duration(1000)
