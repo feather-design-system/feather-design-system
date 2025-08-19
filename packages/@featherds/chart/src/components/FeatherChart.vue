@@ -1,20 +1,11 @@
 <template>
-  <div
-    class="feather-chart-container"
-    :width="`${controlWidth}px`"
-    :max-width="`${controlWidth}px`"
-  >
+  <div class="feather-chart-container">
     <div class="feather-chart-title-container">
-      <div
-        v-if="title"
-        class="feather-chart-title"
-        :class="fullScreen ? 'fullscreen' : ''"
-      >
+      <div v-if="title" class="feather-chart-title">
         {{ title }}
       </div>
       <div class="action-container">
         <FeatherButton
-          v-if="!fullScreen"
           v-show="size !== 'xs'"
           icon="Download"
           :download="downloadFileName"
@@ -23,15 +14,19 @@
         >
           <FeatherIcon :icon="iconDownload" />
         </FeatherButton>
-        <FeatherButton v-if="!fullScreen" icon="Refresh" v-show="size !== 'xs'">
-          <FeatherIcon :icon="iconRefresh" @click="actionRefresh()" />
+        <FeatherButton
+          icon="Refresh"
+          v-show="size !== 'xs'"
+          @click="actionRefresh"
+        >
+          <FeatherIcon :icon="iconRefresh" />
         </FeatherButton>
         <FeatherButton
-          :class="fullScreen ? 'fullscreen' : ''"
-          :icon="fullScreen ? 'Show Heading' : 'Hide Heading'"
-          @click="updateFullScreen"
+          icon="Settings"
+          v-show="size !== 'xs'"
+          @click="() => console.log('Settings')"
         >
-          <FeatherIcon :icon="iconFullscreen" />
+          <FeatherIcon :icon="iconSettings" />
         </FeatherButton>
       </div>
       <div class="action-menu">
@@ -40,6 +35,7 @@
           :aria-expanded="showActionSubmenu ? 'true' : 'false'"
           :aria-controls="`chart-actions-${id}`"
           @click.stop="toggleActionSubmenu"
+          @keydown.enter.space.prevent.stop="toggleActionSubmenu"
           ref="menuButtonRef"
         >
           <FeatherIcon :icon="iconMore" />
@@ -58,45 +54,25 @@
         ref="actionSubmenuRef"
         @keydown.esc.prevent.stop="hideActionSubmenu"
       >
-        <div class="actions-submenu-inner">
+        <div class="actions-submenu-inner" @blur="hideActionSubmenu">
           <FeatherButton
-            v-if="!fullScreen"
             icon="Download"
             :download="downloadFileName"
             :href="downloadUrl"
             asAnchor
             @click="hideActionSubmenu"
           >
-            <FeatherIcon
-              :icon="iconDownload"
-              class="download action"
-            ></FeatherIcon>
+            <FeatherIcon :icon="iconDownload" />
+          </FeatherButton>
+          <FeatherButton icon="Refresh" @click="actionRefresh">
+            <FeatherIcon :icon="iconRefresh" />
           </FeatherButton>
           <FeatherButton
-            v-if="!fullScreen"
-            icon="Refresh"
-            @click="
-              () => {
-                hideActionSubmenu();
-                actionRefresh();
-              }
-            "
+            icon="Settings"
+            v-show="size !== 'xs'"
+            @click="() => console.log('Settings')"
           >
-            <FeatherIcon
-              :icon="iconRefresh"
-              class="refresh action"
-            ></FeatherIcon>
-          </FeatherButton>
-          <FeatherButton
-            :icon="fullScreen ? 'Show Heading' : 'Hide Heading'"
-            @click="
-              () => {
-                hideActionSubmenu();
-                updateFullScreen();
-              }
-            "
-          >
-            <FeatherIcon :icon="iconFullscreen"></FeatherIcon>
+            <FeatherIcon :icon="iconSettings" />
           </FeatherButton>
         </div>
       </div>
@@ -104,7 +80,7 @@
     <div class="content">
       <slot name="content"></slot>
     </div>
-    <div v-if="!fullScreen" class="feather-chart-filter-container">
+    <div class="feather-chart-filter-container">
       <div class="chart-filter" v-show="size != 'xs'">
         <!--TODO:  Rename this slot to  something more specific -->
         <slot name="type"></slot>
@@ -126,9 +102,6 @@
         @mousemove="svgDrag.continueDrag($event, zoomScale)"
         @mouseup="svgDrag.endDrag()"
         @mouseleave="svgDrag.endDrag()"
-        :style="{
-          transform: `translate(${svgDrag.position.x}px, ${svgDrag.position.y}px) scale(${zoomScale})`,
-        }"
         tabindex="0"
       >
         <Component
@@ -160,7 +133,6 @@ import {
   onMounted,
   onUnmounted,
   provide,
-  reactive,
   ref,
   watch,
   toRefs,
@@ -170,8 +142,7 @@ import { FeatherIcon } from "@featherds/icon";
 import DownloadFile from "@featherds/icon/action/DownloadFile";
 import Refresh from "@featherds/icon/navigation/Refresh";
 import MoreVert from "@featherds/icon/navigation/MoreVert";
-import Fullscreen from "@featherds/icon/navigation/Fullscreen";
-import FullscreenExit from "@featherds/icon/navigation/FullscreenExit";
+import Settings from "@featherds/icon/action/Settings";
 import {
   FeatherChartType,
   FeatherChartOptions,
@@ -239,9 +210,6 @@ const mergedOptions = computed(() => {
   };
 });
 // #endregion
-const fullScreen = ref(false);
-const position = reactive({ x: 0, y: 0 });
-
 const svgDrag = useDraggable();
 
 const resetPan = () => {
@@ -343,6 +311,13 @@ watch(showActionSubmenu, (newValue) => {
 
 const hideActionSubmenu = () => {
   showActionSubmenu.value = false;
+  // Return focus to the menu button when the submenu closes
+  nextTick(() => {
+    const v = menuButtonRef.value as any;
+    const btn =
+      v instanceof HTMLElement ? v : (v?.$el as HTMLElement | null) ?? null;
+    btn?.focus?.();
+  });
 };
 
 const toggleActionSubmenu = async () => {
@@ -375,19 +350,11 @@ const setChartType = (type: FeatherChartType) => {
   chartType.value = type;
 };
 
-const updateFullScreen = () => {
-  fullScreen.value = !fullScreen.value;
-
-  if (chartRef.value && chartRef.value.draw) {
-    chartRef.value.draw();
-  }
-
-  emit("refresh", id.value, data.value);
-};
-
 const controlWidth = computed((): number => {
   return sizing.value.control.width;
 });
+
+const controlWidthPx = computed(() => `${controlWidth.value}px`);
 
 const componentMap: Record<string, () => Promise<any>> = {
   area: () => import("./Area.vue"),
@@ -428,7 +395,7 @@ const buildDownloadUrl = () => {
   // Create a new URL
   try {
     downloadUrl.value = URL.createObjectURL(
-      new Blob([JSON.stringify(data)], { type: "application/json" })
+      new Blob([JSON.stringify(data.value)], { type: "application/json" })
     );
   } catch (error) {
     console.error("Error creating download URL:", error);
@@ -438,12 +405,23 @@ const buildDownloadUrl = () => {
 
 // Build initially and whenever "data" changes
 watch(
-  () => data,
+  () => data.value,
   () => buildDownloadUrl(),
   { deep: true, immediate: true }
 );
 
+// If options (e.g., margins) change, trigger redraw/layout recalculation
+watch(
+  () => options.value,
+  () => {
+    // mergedOptions-based computeds will update automatically; ensure chart redraws
+    nextTick(() => chartRef.value?.draw?.());
+  },
+  { deep: true }
+);
+
 const actionRefresh = () => {
+  if (showActionSubmenu.value) hideActionSubmenu();
   setZoomLevel(ZoomLevel.ZOOM_NONE);
   resetPan();
   emit("refresh", id.value, data.value);
@@ -464,23 +442,14 @@ const onMouseDown = (e: MouseEvent) => {
 
 // #region ICONS
 const iconDownload = computed(() => markRaw(DownloadFile));
-
 const iconRefresh = computed(() => markRaw(Refresh));
-
 const iconMore = computed(() => markRaw(MoreVert));
-
-const iconFullscreen = computed(() => {
-  if (fullScreen.value) {
-    return markRaw(Fullscreen);
-  } else {
-    return markRaw(FullscreenExit);
-  }
-});
+const iconSettings = computed(() => markRaw(Settings));
 
 // #endregion
 
 // #region PROVIDE
-provide("position", position);
+provide("position", svgDrag.position);
 provide("zoomLevel", zoomLevel);
 provide("zoomScale", zoomScale);
 provide("setZoomLevel", setZoomLevel);
@@ -517,7 +486,8 @@ onUnmounted(() => {
   overflow: hidden;
   container-name: chart-container;
   container-type: inline-size;
-  width: 100%;
+  width: v-bind(controlWidthPx);
+  max-width: 100%;
 
   .feather-chart-title-container {
     @include typo.headline3();
@@ -534,13 +504,13 @@ onUnmounted(() => {
       overflow: hidden;
       white-space: nowrap;
       text-overflow: ellipsis;
-      &.fullscreen {
-        position: absolute;
-        z-index: 1;
-        border-radius: 0.5rem;
-        padding-right: 0.5rem;
-        background-color: var(vars.$surface);
-      }
+      // &.fullscreen {
+      //   position: absolute;
+      //   z-index: 1;
+      //   border-radius: 0.5rem;
+      //   padding-right: 0.5rem;
+      //   background-color: var(vars.$surface);
+      // }
     }
 
     .action-menu {
@@ -558,14 +528,14 @@ onUnmounted(() => {
       svg {
         user-select: none;
       }
-      .fullscreen {
-        position: absolute;
-        transform: translateX(-2.55em);
-        padding: 0;
-        margin: 0;
-        text-align: right;
-        z-index: 1;
-      }
+      // .fullscreen {
+      //   position: absolute;
+      //   transform: translateX(-2.55em);
+      //   padding: 0;
+      //   margin: 0;
+      //   text-align: right;
+      //   z-index: 1;
+      // }
     }
   }
 
@@ -618,9 +588,9 @@ onUnmounted(() => {
     overflow: hidden;
 
     .draggable-container {
-      transform: translate(v-bind(translateX), v-bind(translateY));
-      scale: (v-bind(zoomScale));
-      transition: scale 0.3s ease-in-out, transform 0.3s ease-in-out;
+      transform: translate(v-bind(translateX), v-bind(translateY))
+        scale(v-bind(zoomScale));
+      transition: transform 0.3s ease-in-out;
       cursor: grab;
       // Show pointer over interactive descendants (including tabindex targets)
       &:not(.being-dragged) {
