@@ -188,8 +188,9 @@ const DEFAULT_OPTIONS: FeatherChartOptions = {
   units: "units",
   colorScheme: undefined,
   margin: { top: 36, right: 36, bottom: 36, left: 36 },
-  xAxis: { tickPadding: 6, tickRotation: 345 },
-  yAxis: { tickPadding: 6, tickRotation: 0 },
+  // showAxes: true,
+  xAxis: { tickPadding: 6, tickRotation: 345, fontSize: 1 },
+  yAxis: { tickPadding: 6, tickRotation: 0, fontSize: 1 },
 };
 
 const { id, axes, data, options, size, title, type } = toRefs(props);
@@ -463,13 +464,9 @@ defineExpose({ setChartType });
 
 onBeforeMount(() => {});
 
-onMounted(async () => {
-  // document.addEventListener("click", onDocClick);
-});
+onMounted(async () => {});
 
 onUnmounted(() => {
-  // document.removeEventListener("click", onDocClick);
-
   // Revoke the previous URL - (avoids memory leaks).
   if (downloadUrl.value) URL.revokeObjectURL(downloadUrl.value);
 });
@@ -505,13 +502,6 @@ onUnmounted(() => {
       overflow: hidden;
       white-space: nowrap;
       text-overflow: ellipsis;
-      // &.fullscreen {
-      //   position: absolute;
-      //   z-index: 1;
-      //   border-radius: 0.5rem;
-      //   padding-right: 0.5rem;
-      //   background-color: var(vars.$surface);
-      // }
     }
 
     .action-menu {
@@ -529,14 +519,6 @@ onUnmounted(() => {
       svg {
         user-select: none;
       }
-      // .fullscreen {
-      //   position: absolute;
-      //   transform: translateX(-2.55em);
-      //   padding: 0;
-      //   margin: 0;
-      //   text-align: right;
-      //   z-index: 1;
-      // }
     }
   }
 

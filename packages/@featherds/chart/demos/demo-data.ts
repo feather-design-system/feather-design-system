@@ -6757,14 +6757,14 @@ export const lineWCategoriesInteresting = {
 
 export const line3SeriesNumbersWide = {
   data: [
-    { sales: 1, boston: 10, raleigh: 8, dallas: 12 },
-    { sales: 2, boston: 12, raleigh: 9, dallas: 11 },
-    { sales: 3, boston: 11, raleigh: 10, dallas: 13 },
-    { sales: 4, boston: 14, raleigh: 12, dallas: 12 },
-    { sales: 5, boston: 15, raleigh: 11, dallas: 14 },
-    { sales: 6, boston: 16, raleigh: 13, dallas: 15 },
-    { sales: 7, boston: 18, raleigh: 14, dallas: 17 },
-    { sales: 8, boston: 17, raleigh: 15, dallas: 18 },
+    { sales: "Q3 2023", boston: 18, raleigh: 14, dallas: 17 },
+    { sales: "Q4 2023", boston: 17, raleigh: 15, dallas: 18 },
+    { sales: "Q1 2024", boston: 10, raleigh: 8, dallas: 12 },
+    { sales: "Q2 2024", boston: 8, raleigh: 9, dallas: 11 },
+    { sales: "Q3 2024", boston: 11, raleigh: 10, dallas: 13 },
+    { sales: "Q4 2024", boston: 14, raleigh: 12, dallas: 12 },
+    { sales: "Q1 2025", boston: 15, raleigh: 11, dallas: 14 },
+    { sales: "Q2 2025", boston: 16, raleigh: 13, dallas: 15 },
   ],
 };
 

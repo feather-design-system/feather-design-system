@@ -27,6 +27,13 @@ export type FeatherChartDimensions = {
   };
 };
 
+export interface FeatherChartAxisOptions {
+  tickPadding?: number;
+  tickRotation?: number;
+  fontSize?: number;
+  showTicks?: boolean;
+}
+
 export type FeatherChartOptions = {
   units: string;
   ariaSummary?: string;
@@ -38,14 +45,9 @@ export type FeatherChartOptions = {
     bottom: number;
     left: number;
   };
-  xAxis?: {
-    tickPadding?: number;
-    tickRotation?: number;
-  };
-  yAxis?: {
-    tickPadding?: number;
-    tickRotation?: number;
-  };
+  // showAxes: boolean;
+  xAxis?: FeatherChartAxisOptions;
+  yAxis?: FeatherChartAxisOptions;
 };
 
 export interface FeatherChartAxes {

@@ -18,7 +18,15 @@ import { transition } from "d3-transition";
 import { easeLinear } from "d3-ease";
 
 import { getValue } from "./Data";
-import { inject, onMounted, PropType, reactive, Ref, watchEffect } from "vue";
+import {
+  // computed,
+  inject,
+  onMounted,
+  PropType,
+  Ref,
+  toRefs,
+  watchEffect,
+} from "vue";
 import {
   FeatherChartAxes,
   FeatherChartBarData,
@@ -45,17 +53,22 @@ const props = defineProps({
   axes: { type: Object as PropType<FeatherChartAxes>, required: true },
 });
 
-const { axes, data, dimensions, id, options } = reactive(props);
+const { axes, data, dimensions, id, options } = toRefs(props);
 
 const position = inject("position") as { x: number; y: number };
 const zoomLevel = inject("zoomLevel") as Ref<ZoomLevel>;
 
-if (!options.margin) throw new Error("margin not set");
+if (!options.value.margin) throw new Error("margin not set");
 
 const containerWidth =
-  dimensions.chart.width - (options.margin.left + options.margin.right);
+  dimensions.value.chart.width -
+  (options.value.margin.left + options.value.margin.right);
 const containerHeight =
-  dimensions.chart.height - (options.margin.top + options.margin.bottom);
+  dimensions.value.chart.height -
+  (options.value.margin.top + options.value.margin.bottom);
+
+// const xAxisFontSize = computed(() => `${options.value.xAxis?.fontSize ?? 1}em`);
+// const yAxisFontSize = computed(() => `${options.value.yAxis?.fontSize ?? 1}em`);
 
 // ACCESSORS
 // TODO:  Should we require user to pass these accessor functions?
@@ -64,33 +77,27 @@ const containerHeight =
 const xAccessor = (d: unknown): string => {
   if (typeof d === "object") {
     // return (d as object)[axes.x as keyof object];
-    return getValue(d as object, axes.x) as string;
+    return getValue(d as object, axes.value.x) as string;
   }
   throw new Error("Unexpected x accessor");
 };
 
 const xStackedAccessor = (d: any): string => {
   if (typeof d === "object") {
-    return getValue(d.data, "data." + axes.x) as string;
+    return getValue(d.data, "data." + axes.value.x) as string;
   }
   throw new Error("Unexpected x stacked accessor");
 };
 
-// const yAccessor = (d: unknown): number => {
-//   if (typeof d === "object") {
-//     // return (d as object)[axes.y as keyof object];
-//     return getValue(d as object, axes.y) as number;
-//   }
-//   throw new Error("Unexpected y accessor");
-// };
-
 // DRAW
 const draw = () => {
   // DATA
-  const keyList = Object.keys((data as any).data[0]).filter((d) => d != axes.x);
-  const keyGroup = data.data.map((d) => xAccessor(d));
+  const keyList = Object.keys((data.value as any).data[0]).filter(
+    (d) => d != axes.value.x
+  );
+  const keyGroup = data.value.data.map((d) => xAccessor(d));
 
-  const stackedData = stack().keys(keyList)(data.data as any);
+  const stackedData = stack().keys(keyList)(data.value.data as any);
 
   // SCALES
   const xScale = scaleBand()
@@ -110,55 +117,57 @@ const draw = () => {
   const xAnimation = transition().duration(500);
   const yAnimation = transition().duration(500);
 
-  if (!options.margin) throw new Error("margin not set");
+  if (!options.value.margin) throw new Error("margin not set");
 
   // CLEAN UP
-  select(`#${id}`).selectChildren().remove();
+  select(`#${id.value}`).selectChildren().remove();
 
   position.x = 0;
   position.y = 0;
 
   // DRAW SVG
-  const svg = select(`#${id}`)
-    .attr("width", dimensions.chart.width)
-    .attr("height", dimensions.chart.height)
-    .attr("viewBox", `0 0 ${dimensions.chart.width} ${dimensions.chart.height}`)
+  const svg = select(`#${id.value}`)
+    .attr("width", dimensions.value.chart.width)
+    .attr("height", dimensions.value.chart.height)
+    .attr(
+      "viewBox",
+      `0 0 ${dimensions.value.chart.width} ${dimensions.value.chart.height}`
+    )
     .attr("style", "max-width: 100%; height: auto;")
     .attr("tabindex", "0")
     .append("g")
     .attr(
       "transform",
-      `translate(${options.margin.left}, ${options.margin.top})`
+      `translate(${options.value.margin.left}, ${options.value.margin.top})`
     );
 
   // DRAW BARS
   const layers = svg.selectAll("g").data(stackedData).join("g");
-
-  // AXES
-  // TODO:  enhance tick rotation for all charts
-  const xAxisTickPadding = options.xAxis?.tickPadding || 0;
-  const xAxisTickRotation = options.xAxis?.tickRotation || 0;
-  const yAxisTickPadding = options.yAxis?.tickPadding || 0;
-  const yAxisTickRotation = options.yAxis?.tickRotation || 0;
 
   svg
     .append("g")
     .classed("yAxis", true)
     .transition(yAnimation)
     .call(
-      axisLeft(yScale).ticks(5).tickPadding(yAxisTickPadding).tickSizeInner(10)
+      axisLeft(yScale)
+        .ticks(5)
+        .tickPadding(options.value.yAxis?.tickPadding ?? 0)
     )
     .selectAll("text")
-    .attr("transform", `rotate(${yAxisTickRotation})`);
+    .attr("transform", `rotate(${options.value.yAxis?.tickRotation ?? 0})`);
 
   svg
     .append("g")
     .classed("xAxis", true)
     .attr("transform", `translate(0, ${containerHeight})`)
     .transition(xAnimation)
-    .call(axisBottom(xScale).ticks(6).tickPadding(xAxisTickPadding))
+    .call(
+      axisBottom(xScale)
+        .ticks(6)
+        .tickPadding(options.value.xAxis?.tickPadding ?? 0)
+    )
     .selectAll("text")
-    .attr("transform", `rotate(${xAxisTickRotation})`);
+    .attr("transform", `rotate(${options.value.xAxis?.tickRotation ?? 0})`);
 
   // transition for bars
   const duration = 1000 / keyList.length;
@@ -169,7 +178,7 @@ const draw = () => {
       .selectAll(".bar")
       .data((d: any) => d)
       .join("rect")
-      .attr("class", `${id} categorical${i + 1}`)
+      .attr("class", `${id.value} categorical${i + 1}`)
       .attr("x", (d) => {
         return xScale(xStackedAccessor(d)) as any;
       })
@@ -181,7 +190,7 @@ const draw = () => {
       .attr("y", (d) => yScale((d as any)[1])) //transition to actual y position
       .attr("height", (d) => yScale((d as any)[0]) - yScale((d as any)[1]));
 
-    setDynamicScope(`#${id}`);
+    setDynamicScope(`#${id.value}`);
   });
 };
 
@@ -201,7 +210,7 @@ const draw = () => {
 defineExpose({ draw });
 
 watchEffect(() => {
-  if (data.data) {
+  if (data.value.data) {
     draw();
   }
 });
@@ -217,8 +226,6 @@ onMounted(() => {
 .feather-vertical-bar-svg {
   g.xAxis,
   g.yAxis {
-    font-size: 1em; // TODO: Make tick-font-size an option
-
     path.domain {
       stroke: currentColor;
     }
@@ -227,6 +234,16 @@ onMounted(() => {
       text {
         fill: var(vars.$secondary-text-on-surface);
       }
+    }
+  }
+  g.xAxis {
+    text {
+      font-size: var(--xAxisFontSize);
+    }
+  }
+  g.yAxis {
+    text {
+      font-size: var(--yAxisFontSize);
     }
   }
 

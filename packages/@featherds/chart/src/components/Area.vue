@@ -126,18 +126,11 @@ const draw = () => {
 
   if (!options.margin) throw new Error("margin not set");
 
-  // AXES
-  const xAxisTickPadding = options.xAxis?.tickPadding ?? 0;
-  const xAxisTickRotation = options.xAxis?.tickRotation ?? 0;
-
-  const yAxisTickPadding = options.yAxis?.tickPadding ?? 0;
-  const yAxisTickRotation = options.yAxis?.tickRotation ?? 0;
-
   const svg = select(`#${id}`)
     .attr("width", dimensions.chart.width)
     .attr("height", dimensions.chart.height)
     .attr("viewBox", `0 0 ${dimensions.chart.width} ${dimensions.chart.height}`)
-    .attr("style", "max-width: 100%; height: auto;")
+    // .attr("style", "max-width: 100%; height: auto;")
     .attr("tabindex", "0")
     .append("g")
     .attr(
@@ -149,16 +142,21 @@ const draw = () => {
     .append("g")
     .classed("xAxis", true)
     .attr("transform", `translate(0, ${containerHeight})`)
-    .call(axisBottom(xScale).ticks(5).tickSize(6).tickPadding(xAxisTickPadding))
+    .call(
+      axisBottom(xScale)
+        .ticks(5)
+        .tickSize(6)
+        .tickPadding(options.xAxis?.tickPadding ?? 0)
+    )
     .selectAll("text")
-    .attr("transform", `rotate(${xAxisTickRotation})`);
+    .attr("transform", `rotate(${options.xAxis?.tickRotation ?? 0})`);
 
   svg
     .append("g")
     .classed("yAxis", true)
-    .call(axisLeft(yScale).tickPadding(yAxisTickPadding))
+    .call(axisLeft(yScale).tickPadding(options.yAxis?.tickPadding ?? 0))
     .selectAll("text")
-    .attr("transform", `rotate(${yAxisTickRotation})`);
+    .attr("transform", `rotate(${options.yAxis?.tickRotation ?? 0})`);
 
   // DATA
   const theArea = area()

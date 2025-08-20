@@ -201,13 +201,6 @@ const draw = () => {
   // SCALES
   // xScale and yScale are set in useXYSeries composable
 
-  // AXES
-  const xAxisTickPadding = options.value.xAxis?.tickPadding || 0;
-  const xAxisTickRotation = options.value.xAxis?.tickRotation || 0;
-
-  const yAxisTickPadding = options.value.yAxis?.tickPadding || 0;
-  const yAxisTickRotation = options.value.yAxis?.tickRotation || 0;
-
   const svg = select(`#${id.value}`)
     .attr("width", dimensions.value.chart.width)
     .attr("height", dimensions.value.chart.height)
@@ -232,10 +225,10 @@ const draw = () => {
       axisBottom(xScale.value as any)
         .ticks(5)
         .tickSize(6)
-        .tickPadding(xAxisTickPadding)
+        .tickPadding(options.value.xAxis?.tickPadding ?? 0)
     )
     .selectAll("text")
-    .attr("transform", `rotate(${xAxisTickRotation})`);
+    .attr("transform", `rotate(${options.value.xAxis?.tickRotation ?? 0})`);
 
   svg
     .append("g")
@@ -244,10 +237,10 @@ const draw = () => {
       axisLeft(yScale.value as any)
         .ticks(5)
         .tickSize(6)
-        .tickPadding(yAxisTickPadding)
+        .tickPadding(options.value.yAxis?.tickPadding ?? 0)
     )
     .selectAll("text")
-    .attr("transform", `rotate(${yAxisTickRotation})`);
+    .attr("transform", `rotate(${options.value.yAxis?.tickRotation ?? 0})`);
 
   svg
     .append("g")
@@ -257,10 +250,10 @@ const draw = () => {
       axisRight(yScale.value as any)
         .ticks(5)
         .tickSize(6)
-        .tickPadding(yAxisTickPadding)
+        .tickPadding(options.value.yAxis?.tickPadding ?? 0)
     )
     .selectAll("text")
-    .attr("transform", `rotate(${yAxisTickRotation})`);
+    .attr("transform", `rotate(${options.value.yAxis?.tickRotation ?? 0})`);
 
   // Setup line generator
   const lineGenerator = line<NormRow>()
@@ -281,14 +274,6 @@ const draw = () => {
       .attr("pathLength", 1)
       .attr("d", lineGenerator as any);
   });
-
-  // svg
-  //   .append("path")
-  //   .classed("line", true)
-  //   .datum(series.value)
-  //   .attr("fill", "none")
-  //   .attr("pathLength", 1)
-  //   .attr("d", lineGenerator as any);
 
   transition(svg as any)
     .duration(1000)

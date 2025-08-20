@@ -66,15 +66,6 @@ const containerWidth =
 const containerHeight =
   dimensions.chart.height - (options.margin.top + options.margin.bottom);
 
-// ACCESSORS
-// const xAccessor = (d: unknown): number => {
-//   if (typeof d === "object") {
-//     // return (d as object)[axes.x as keyof object];
-//     return getValue(d as object, axes.x) as number;
-//   }
-//   throw new Error("Unexpected x accessor");
-// };
-
 const yAccessor = (d: any): string => {
   if (typeof d === "object") {
     return getValue(d, axes.y) as string;
@@ -171,13 +162,6 @@ const draw = () => {
       .attr("width", (d) => xScale((d as any)[1]) - xScale((d as any)[0]));
   });
 
-  // AXES
-  // TODO:  enhance tick rotation for all charts
-  const xAxisTickPadding = options.xAxis?.tickPadding || 0;
-  const xAxisTickRotation = options.xAxis?.tickRotation || 0;
-  const yAxisTickPadding = options.yAxis?.tickPadding || 0;
-  const yAxisTickRotation = options.yAxis?.tickRotation || 0;
-
   svg
     .append("g")
     .classed("xAxis", true)
@@ -186,16 +170,16 @@ const draw = () => {
       axisBottom(xScale)
         .ticks(5, "~s")
         .tickSize(-containerHeight)
-        .tickPadding(xAxisTickPadding)
+        .tickPadding(options.xAxis?.tickPadding ?? 0)
     )
     .selectAll("text")
-    .attr("transform", `rotate(${xAxisTickRotation})`);
+    .attr("transform", `rotate(${options.xAxis?.tickRotation ?? 0})`);
   svg
     .append("g")
     .classed("yAxis", true)
-    .call(axisLeft(yScale).tickPadding(yAxisTickPadding))
+    .call(axisLeft(yScale).tickPadding(options.yAxis?.tickPadding ?? 0))
     .selectAll("text")
-    .attr("transform", `rotate(${yAxisTickRotation})`);
+    .attr("transform", `rotate(${options.yAxis?.tickRotation ?? 0})`);
 
   setDynamicScope(`#${id}`);
 };

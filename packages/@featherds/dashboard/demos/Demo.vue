@@ -19,6 +19,7 @@ import {
   dendroData2,
   hbarData1,
   hbarData2,
+  line3SeriesNumbersWide,
 } from "../../chart/demos/demo-data";
 import type {
   FeatherChartAxes,
@@ -65,7 +66,7 @@ const items = ref([
   {
     i: "1",
     x: 5,
-    y: 3,
+    y: 11,
     w: 5,
     h: 10,
     static: false,
@@ -80,10 +81,10 @@ const items = ref([
   },
   {
     i: "2",
-    x: 4,
-    y: 4,
-    w: 6,
-    h: 12,
+    x: 5,
+    y: 0,
+    w: 5,
+    h: 11,
     static: false,
     component: markRaw(FeatherChart),
     props: {
@@ -100,7 +101,7 @@ const items = ref([
   {
     i: "3",
     x: 0,
-    y: 3,
+    y: 10,
     w: 5,
     h: 7,
     static: false,
@@ -120,7 +121,7 @@ const items = ref([
     i: "4",
     x: 0,
     y: 3,
-    w: 4,
+    w: 2,
     h: 7,
     static: false,
     component: markRaw(FeatherChart),
@@ -136,9 +137,9 @@ const items = ref([
   {
     i: "5",
     x: 0,
-    y: 9,
-    w: 4,
-    h: 7,
+    y: 17,
+    w: 5,
+    h: 6,
     static: false,
     content: `
     <p>More work needed...</p>
@@ -154,6 +155,24 @@ const items = ref([
     </ul>
 
     `,
+  },
+  {
+    i: "6",
+    x: 2,
+    y: 3,
+    w: 3,
+    h: 7,
+    static: false,
+    component: markRaw(FeatherChart),
+    props: {
+      id: "chart-5",
+      type: "line",
+      data: line3SeriesNumbersWide as FeatherChartFlexibleData,
+      size: "md",
+      title: "Line Chart",
+      axes: { x: "sales", y: "" },
+      onMoreEvent: () => handleMoreEvent,
+    },
   },
 ]) as any; // TODO:  Make FeatherLayout type-safe
 
