@@ -36,11 +36,17 @@ import type {
   FeatherChartOptions,
 } from "../src/components/types";
 
-import { lineWNumbers, lineWDates, lineWCategories } from "./demo-data";
+import {
+  lineWNumbers,
+  lineWDates,
+  lineWCategoriesInteresting,
+} from "./demo-data";
 
 const lineDataWDates = { ...lineWDates } as FeatherChartFlexibleData;
 const lineDataWNumbers = { ...lineWNumbers } as FeatherChartFlexibleData;
-const lineDataWCategories = { ...lineWCategories } as FeatherChartFlexibleData;
+const lineDataWCategories = {
+  ...lineWCategoriesInteresting,
+} as FeatherChartFlexibleData;
 
 const options: FeatherChartOptions = {
   units: "units",

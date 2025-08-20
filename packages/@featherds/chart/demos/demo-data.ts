@@ -6739,6 +6739,22 @@ export const lineWCategories = {
   ],
 };
 
+// A more engaging categorical dataset with real-world labels and varied dynamics
+export const lineWCategoriesInteresting = {
+  data: [
+    { category: "Mobile", value: 22 },
+    { category: "Web", value: 38 },
+    { category: "Desktop", value: 28 },
+    { category: "API", value: 44 },
+    { category: "Data", value: 57 },
+    { category: "AI", value: 92 }, // peak/outlier
+    { category: "Edge", value: 61 },
+    { category: "Legacy", value: 25 }, // dip
+    { category: "R&D", value: 48 },
+    { category: "Ops", value: 54 },
+  ],
+};
+
 export const hbarData1 = {
   data: [
     {
