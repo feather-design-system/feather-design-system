@@ -1,12 +1,30 @@
 <template>
   <FeatherChart
-    id="lineChart1"
+    id="lineChartDates"
     type="line"
-    title="Line Chart"
-    :data="lineData"
+    title="Line Chart (date x-axis)"
+    :data="lineDataWDates"
     :size="'md'"
     :options="options"
-    :axes="axes"
+    :axes="axesAsDates"
+  ></FeatherChart>
+  <FeatherChart
+    id="lineChartNumbers"
+    type="line"
+    title="Line Chart (numbers x-axis)"
+    :data="lineDataWNumbers"
+    :size="'md'"
+    :options="options"
+    :axes="axesAsNumbers"
+  ></FeatherChart>
+  <FeatherChart
+    id="lineChartCategory"
+    type="line"
+    title="Line Chart (category x-axis)"
+    :data="lineDataWCategories"
+    :size="'md'"
+    :options="options"
+    :axes="axesAsCategories"
   ></FeatherChart>
 </template>
 
@@ -18,9 +36,11 @@ import type {
   FeatherChartOptions,
 } from "../src/components/types";
 
-import { line1 } from "./demo-data";
+import { lineWNumbers, lineWDates, lineWCategories } from "./demo-data";
 
-const lineData = { ...line1 } as FeatherChartFlexibleData;
+const lineDataWDates = { ...lineWDates } as FeatherChartFlexibleData;
+const lineDataWNumbers = { ...lineWNumbers } as FeatherChartFlexibleData;
+const lineDataWCategories = { ...lineWCategories } as FeatherChartFlexibleData;
 
 const options: FeatherChartOptions = {
   units: "units",
@@ -41,9 +61,17 @@ const options: FeatherChartOptions = {
   },
 };
 
-const axes: FeatherChartAxes = {
+const axesAsDates: FeatherChartAxes = {
   x: "date",
   y: "close",
+};
+const axesAsNumbers: FeatherChartAxes = {
+  x: "point",
+  y: "value",
+};
+const axesAsCategories: FeatherChartAxes = {
+  x: "category",
+  y: "value",
 };
 </script>
 

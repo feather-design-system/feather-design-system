@@ -17,13 +17,20 @@
     <p>Data: {{ data }}</p> -->
 </template>
 <script lang="ts" setup>
-import { PropType, Ref, inject, onMounted, toRefs, watchEffect } from "vue";
+import {
+  PropType,
+  Ref,
+  computed,
+  inject,
+  onMounted,
+  toRefs,
+  watchEffect,
+} from "vue";
 import { select } from "d3-selection";
 import { line } from "d3-shape";
 import { axisBottom, axisLeft, axisRight } from "d3-axis";
-import { scaleLinear, scaleTime } from "d3-scale";
-import { extent, max } from "d3-array";
-import { timeParse } from "d3-time-format";
+// import { scaleLinear, scaleTime } from "d3-scale";
+// import { extent, max } from "d3-array";
 import { transition } from "d3-transition";
 import { easePolyInOut } from "d3-ease";
 import {
@@ -33,6 +40,8 @@ import {
   FeatherChartOptions,
   ZoomLevel,
 } from "./types";
+import { useXYSeries } from "../composables/useXYSeries";
+import type { Row, NormRow } from "../utils/data";
 import { setDynamicScope } from "./chartUtils";
 
 const props = defineProps({
@@ -59,15 +68,33 @@ const zoomLevel = inject("zoomLevel") as Ref<ZoomLevel>;
 
 if (!options.value.margin) throw new Error("margin not set");
 
-const containerWidth =
-  dimensions.value.chart.width -
-  (options.value.margin.left + options.value.margin.right);
-const containerHeight =
-  dimensions.value.chart.height -
-  (options.value.margin.top + options.value.margin.bottom);
+const containerWidth = computed(() => {
+  if (!options.value.margin) throw new Error("margin not set (containerWidth)");
+  return (
+    dimensions.value.chart.width -
+    (options.value.margin.left + options.value.margin.right)
+  );
+});
+const containerHeight = computed(() => {
+  if (!options.value.margin)
+    throw new Error("margin not set (containerHeight)");
+  return (
+    dimensions.value.chart.height -
+    (options.value.margin.top + options.value.margin.bottom)
+  );
+});
 
-const parseDate = timeParse("%Y-%m-%d");
-// const yAccessor = (d: any) => d[axes.value.y];
+const rowsRef = computed<Row[]>(() => (data.value.data as Row[]) ?? []);
+const axesRef = computed(() => ({
+  x: axes.value.x,
+  y: axes.value.y,
+}));
+
+const {
+  data: series,
+  xScale,
+  yScale,
+} = useXYSeries(rowsRef, axesRef, containerWidth, containerHeight);
 
 const draw = () => {
   // Clean up existing
@@ -78,40 +105,20 @@ const draw = () => {
   console.log(`draw ${type.value}`);
   if (!isValid()) throw new Error("Invalid data");
 
-  // DATA
-  const newData = data.value.data.map((d) => {
-    if (!d || typeof d === "object") {
-      // convert date string to Date
-      return {
-        date: parseDate((d as object)[axes.value.x as keyof object]),
-        value: (d as object)[axes.value.y as keyof object],
-      };
-    }
-    throw new Error("Unexpected x accessor");
-  });
-
-  // Filter out null/invalid rows
-  const validData = newData.filter(
-    (d: any) =>
-      d.date instanceof Date &&
-      typeof d.value === "number" &&
-      Number.isFinite(d.value)
-  ) as Array<{ date: Date; value: number }>;
-
-  if (validData.length === 0) {
-    // Nothing valid to render
+  // Skip rendering if normalized series is empty
+  if (!series.value.length) {
     return;
   }
 
   if (!options.value.margin) throw new Error("Margin not set");
 
   // SCALES
-  const xScale = scaleTime()
-    .domain(extent(validData, (d) => d.date) as [Date, Date])
-    .range([0, containerWidth]);
-  const yScale = scaleLinear()
-    .domain([0, max(validData, (d: any) => d.value) as number])
-    .range([containerHeight, 0]);
+  // const xScale = scaleTime()
+  //   .domain(extent(validData, (d) => d.date) as [Date, Date])
+  //   .range([0, containerWidth.value]);
+  // const yScale = scaleLinear()
+  //   .domain([0, max(validData, (d: any) => d.value) as number])
+  //   .range([containerHeight.value, 0]);
 
   // AXES
   const xAxisTickPadding = options.value.xAxis?.tickPadding || 0;
@@ -139,35 +146,53 @@ const draw = () => {
   svg
     .append("g")
     .classed("xAxis", true)
-    .attr("transform", `translate(0, ${containerHeight})`)
-    .call(axisBottom(xScale).ticks(5).tickSize(6).tickPadding(xAxisTickPadding))
+    .attr("transform", `translate(0, ${containerHeight.value})`)
+    .call(
+      axisBottom(xScale.value as any)
+        .ticks(5)
+        .tickSize(6)
+        .tickPadding(xAxisTickPadding)
+    )
     .selectAll("text")
     .attr("transform", `rotate(${xAxisTickRotation})`);
 
   svg
     .append("g")
     .classed("yAxis", true)
-    .call(axisLeft(yScale).ticks(5).tickSize(6).tickPadding(yAxisTickPadding))
+    .call(
+      axisLeft(yScale.value as any)
+        .ticks(5)
+        .tickSize(6)
+        .tickPadding(yAxisTickPadding)
+    )
     .selectAll("text")
     .attr("transform", `rotate(${yAxisTickRotation})`);
 
   svg
     .append("g")
     .classed("yAxis", true)
-    .attr("transform", `translate(${containerWidth}, 0)`)
-    .call(axisRight(yScale).ticks(5).tickSize(6).tickPadding(yAxisTickPadding))
+    .attr("transform", `translate(${containerWidth.value}, 0)`)
+    .call(
+      axisRight(yScale.value as any)
+        .ticks(5)
+        .tickSize(6)
+        .tickPadding(yAxisTickPadding)
+    )
     .selectAll("text")
     .attr("transform", `rotate(${yAxisTickRotation})`);
 
   // Setup line generator
-  const lineGenerator = line()
-    .x((d: any) => xScale(d.date))
-    .y((d: any) => yScale(d.value));
+  const lineGenerator = line<NormRow>()
+    .x((d) => {
+      const xs = xScale.value as any; // time/linear/point
+      return xs(d.x as any) ?? 0;
+    })
+    .y((d) => yScale.value(d.y));
 
   svg
     .append("path")
     .classed("line", true)
-    .datum(validData)
+    .datum(series.value)
     .attr("fill", "none")
     .attr("pathLength", 1)
     .attr("d", lineGenerator as any);
@@ -202,10 +227,10 @@ onMounted(() => {
 .feather-line-svg {
   .line {
     stroke: var(vars.$categorical5);
-    stroke-width: 4;
+    stroke-width: 2;
     stroke-dasharray: 1;
     stroke-dashoffset: 1;
-    animation: line-draw 2s ease forwards;
+    animation: line-draw 3s ease-in-out forwards;
   }
 }
 

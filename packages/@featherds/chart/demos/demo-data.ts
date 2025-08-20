@@ -6628,7 +6628,7 @@ export const dendroData3 = {
   },
 };
 
-export const line1 = {
+export const lineWDates = {
   data: [
     { date: "2007-04-23", close: 93.24 },
     { date: "2007-04-24", close: 95.35 },
@@ -6692,6 +6692,53 @@ export const line1 = {
     { date: "2007-07-17", close: 138.12 },
   ],
 };
+
+// Numeric x-axis variant for line series (smaller recordset)
+export const lineWNumbers = {
+  data: [
+    { point: 1, value: 63.24 },
+    { point: 2, value: 75.35 },
+    { point: 3, value: 78.84 },
+    { point: 4, value: 79.92 },
+    { point: 5, value: 89.8 },
+    { point: 6, value: 90.39 },
+    { point: 7, value: 92.81 },
+    { point: 8, value: 103.92 },
+    { point: 9, value: 106.88 },
+    { point: 10, value: 108.74 },
+    { point: 11, value: 109.36 },
+    { point: 12, value: 107.52 },
+    { point: 13, value: 109.44 },
+    { point: 14, value: 111.98 },
+    { point: 15, value: 90.54 },
+    { point: 16, value: 75.89 },
+    { point: 17, value: 55.69 },
+    { point: 18, value: 75.35 },
+    { point: 19, value: 88.77 },
+    { point: 20, value: 90.19 },
+    { point: 21, value: 105.4 },
+    { point: 22, value: 110.33 },
+    { point: 23, value: 99.67 },
+    { point: 24, value: 85.64 },
+    { point: 25, value: 99.49 },
+    { point: 26, value: 95.19 },
+    { point: 27, value: 96.5 },
+    { point: 28, value: 88.75 },
+    { point: 29, value: 78.5 },
+    { point: 30, value: 81.09 },
+  ],
+};
+
+export const lineWCategories = {
+  data: [
+    { category: "A", value: 30 },
+    { category: "B", value: 80 },
+    { category: "C", value: 45 },
+    { category: "D", value: 60 },
+    { category: "E", value: 90 },
+  ],
+};
+
 export const hbarData1 = {
   data: [
     {
