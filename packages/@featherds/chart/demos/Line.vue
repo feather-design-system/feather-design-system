@@ -1,5 +1,14 @@
 <template>
   <FeatherChart
+    id="lineChartMultipleSeries"
+    type="line"
+    title="Line Chart (multiple series, wide)"
+    :data="lineData3SeriesNumbersWide"
+    :size="'sm'"
+    :options="options"
+    :axes="axesAsMultipleSeries"
+  ></FeatherChart>
+  <FeatherChart
     id="lineChartDates"
     type="line"
     title="Line Chart (date x-axis)"
@@ -40,12 +49,16 @@ import {
   lineWNumbers,
   lineWDates,
   lineWCategoriesInteresting,
+  line3SeriesNumbersWide,
 } from "./demo-data";
 
 const lineDataWDates = { ...lineWDates } as FeatherChartFlexibleData;
 const lineDataWNumbers = { ...lineWNumbers } as FeatherChartFlexibleData;
 const lineDataWCategories = {
   ...lineWCategoriesInteresting,
+} as FeatherChartFlexibleData;
+const lineData3SeriesNumbersWide = {
+  ...line3SeriesNumbersWide,
 } as FeatherChartFlexibleData;
 
 const options: FeatherChartOptions = {
@@ -78,6 +91,10 @@ const axesAsNumbers: FeatherChartAxes = {
 const axesAsCategories: FeatherChartAxes = {
   x: "category",
   y: "value",
+};
+const axesAsMultipleSeries: FeatherChartAxes = {
+  x: "sales",
+  y: "", // not used in multiple series; can be empty
 };
 </script>
 

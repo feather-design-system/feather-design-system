@@ -29,7 +29,6 @@ import {
 import { select } from "d3-selection";
 import { line } from "d3-shape";
 import { axisBottom, axisLeft, axisRight } from "d3-axis";
-// import { scaleLinear, scaleTime } from "d3-scale";
 // import { extent, max } from "d3-array";
 import { transition } from "d3-transition";
 import { easePolyInOut } from "d3-ease";
@@ -84,17 +83,104 @@ const containerHeight = computed(() => {
   );
 });
 
-const rowsRef = computed<Row[]>(() => (data.value.data as Row[]) ?? []);
+const rowsRef = computed<Row[]>(() => {
+  const rawData = data.value.data;
+  return (rawData as Row[]) ?? [];
+});
+
 const axesRef = computed(() => ({
   x: axes.value.x,
   y: axes.value.y,
 }));
 
-const {
-  data: series,
-  xScale,
-  yScale,
-} = useXYSeries(rowsRef, axesRef, containerWidth, containerHeight);
+interface SeriesObject {
+  name: string;
+  data: Row[];
+  yKey: string;
+  color: string;
+}
+const seriesData = computed((): SeriesObject[] => {
+  const rawData = data.value.data;
+  if (!Array.isArray(rawData) || rawData.length === 0) {
+    return [];
+  }
+
+  const firstRow = rawData[0];
+  const xKey = axes.value.x;
+
+  const seriesKeys = Object.keys(
+    (firstRow ?? {}) as Record<string, unknown>
+  ).filter((key) => key !== xKey);
+
+  // If we only have one series key, return it
+  if (seriesKeys.length <= 1) {
+    const rows = Array.isArray(rawData) ? (rawData as Row[]) : [];
+    return [
+      {
+        name: seriesKeys[0] || "Series 1",
+        data: rows,
+        yKey: seriesKeys[0] || axes.value.y,
+        color: `var(--feather-categorical1)`,
+      },
+    ];
+  }
+
+  // Multiple series in wide format - transform to multiple series
+  return seriesKeys.map((seriesKey, index) => ({
+    name: seriesKey,
+    data: rawData.map((row) => ({
+      [xKey]: row[xKey as keyof typeof row],
+      [axes.value.y]: row[seriesKey as keyof typeof row], // Map series column to y-axis
+    })),
+    yKey: axes.value.y,
+    color: `var(--feather-categorical${(index % 10) + 1})`, // May want to do this in css
+  }));
+});
+
+// Process each series through useXYSeries
+const processedSeries = computed(() => {
+  return seriesData.value.map((series) => {
+    const seriesRows = computed(() => series.data as Row[]);
+    const { data: normalizedData } = useXYSeries(
+      seriesRows,
+      axesRef,
+      containerWidth,
+      containerHeight
+    );
+
+    return {
+      name: series.name,
+      data: normalizedData.value,
+      color: series.color,
+    };
+  });
+});
+
+// Use the combined data from all series to establish unified scales
+const allSeriesData = computed<Row[]>(() => {
+  if (seriesData.value.length <= 1) {
+    return rowsRef.value;
+  }
+
+  // Combine all series data for unified scaling
+  return seriesData.value.flatMap((series) => series.data);
+});
+
+// Get the scales for an XY series
+const { xScale, yScale } = useXYSeries(
+  computed(() => allSeriesData.value),
+  axesRef,
+  containerWidth,
+  containerHeight
+);
+
+/* EXISTING */
+
+// const {
+//   data: series,
+//   xScale,
+//   yScale,
+// } = useXYSeries(rowsRef, axesRef, containerWidth, containerHeight);
 
 const draw = () => {
   // Clean up existing
@@ -106,19 +192,14 @@ const draw = () => {
   if (!isValid()) throw new Error("Invalid data");
 
   // Skip rendering if normalized series is empty
-  if (!series.value.length) {
+  if (!processedSeries.value.length) {
     return;
   }
 
   if (!options.value.margin) throw new Error("Margin not set");
 
   // SCALES
-  // const xScale = scaleTime()
-  //   .domain(extent(validData, (d) => d.date) as [Date, Date])
-  //   .range([0, containerWidth.value]);
-  // const yScale = scaleLinear()
-  //   .domain([0, max(validData, (d: any) => d.value) as number])
-  //   .range([containerHeight.value, 0]);
+  // xScale and yScale are set in useXYSeries composable
 
   // AXES
   const xAxisTickPadding = options.value.xAxis?.tickPadding || 0;
@@ -189,13 +270,25 @@ const draw = () => {
     })
     .y((d) => yScale.value(d.y));
 
-  svg
-    .append("path")
-    .classed("line", true)
-    .datum(series.value)
-    .attr("fill", "none")
-    .attr("pathLength", 1)
-    .attr("d", lineGenerator as any);
+  processedSeries.value.forEach((s, index) => {
+    if (s.data.length === 0) return;
+    svg
+      .append("path")
+      .classed("line", true)
+      .datum(s.data)
+      .attr("data-series", (index + 1) % 10)
+      .attr("fill", "none")
+      .attr("pathLength", 1)
+      .attr("d", lineGenerator as any);
+  });
+
+  // svg
+  //   .append("path")
+  //   .classed("line", true)
+  //   .datum(series.value)
+  //   .attr("fill", "none")
+  //   .attr("pathLength", 1)
+  //   .attr("d", lineGenerator as any);
 
   transition(svg as any)
     .duration(1000)
@@ -226,11 +319,42 @@ onMounted(() => {
 @use "@featherds/styles/themes/variables" as vars;
 .feather-line-svg {
   .line {
-    stroke: var(vars.$categorical5);
+    stroke: var(vars.$categorical1);
     stroke-width: 2;
     stroke-dasharray: 1;
     stroke-dashoffset: 1;
     animation: line-draw 3s ease-in-out forwards;
+
+    &[data-series="1"] {
+      stroke: var(vars.$categorical1);
+    }
+    &[data-series="2"] {
+      stroke: var(vars.$categorical2);
+    }
+    &[data-series="3"] {
+      stroke: var(vars.$categorical3);
+    }
+    &[data-series="4"] {
+      stroke: var(vars.$categorical4);
+    }
+    &[data-series="5"] {
+      stroke: var(vars.$categorical5);
+    }
+    &[data-series="6"] {
+      stroke: var(vars.$categorical6);
+    }
+    &[data-series="7"] {
+      stroke: var(vars.$categorical7);
+    }
+    &[data-series="8"] {
+      stroke: var(vars.$categorical8);
+    }
+    &[data-series="9"] {
+      stroke: var(vars.$categorical9);
+    }
+    &[data-series="0"] {
+      stroke: var(vars.$categorical10);
+    }
   }
 }
 
