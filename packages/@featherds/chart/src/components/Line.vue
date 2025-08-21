@@ -3,23 +3,12 @@
     :id="id"
     :width="dimensions.chart.width"
     :height="dimensions.chart.height"
-    class="feather-line-svg"
-    :class="zoomLevel"
+    :class="classes"
   ></svg>
-
-  <!-- <p>Size: {{ size }}</p>
-    <p>ID: {{ id }}</p>
-    <p>Title: {{ title }}</p>
-    <p>Type: {{ type }}</p>
-    <p>Dimensions: {{ dimensions }}</p>
-    <p>Options: {{ options }}</p>
-    <p>Axes: {{ axes }}</p>
-    <p>Data: {{ data }}</p> -->
 </template>
 <script lang="ts" setup>
 import {
   PropType,
-  Ref,
   computed,
   inject,
   onMounted,
@@ -37,7 +26,6 @@ import {
   FeatherChartDimensions,
   FeatherChartLineData,
   FeatherChartOptions,
-  ZoomLevel,
 } from "./types";
 import { useXYSeries } from "../composables/useXYSeries";
 import type { Row, NormRow } from "../utils/data";
@@ -63,7 +51,6 @@ const props = defineProps({
 const { axes, data, dimensions, id, options, type } = toRefs(props);
 
 const position = inject("position") as { x: number; y: number };
-const zoomLevel = inject("zoomLevel") as Ref<ZoomLevel>;
 
 if (!options.value.margin) throw new Error("margin not set");
 
@@ -208,7 +195,6 @@ const draw = () => {
       "viewBox",
       `0 0 ${dimensions.value.chart.width} ${dimensions.value.chart.height}`
     )
-    .attr("style", "max-width: 100%; height: auto;") // TODO:  move to css
     .attr("tabindex", 0)
     .append("g")
     /* TODO: Move to css */
@@ -287,6 +273,12 @@ const isValid = () => {
   return true;
 };
 
+const classes = computed(() => {
+  return {
+    "feather-line-svg": true,
+  };
+});
+
 defineExpose({ draw });
 
 watchEffect(() => {
@@ -303,6 +295,9 @@ onMounted(() => {
 <style lang="scss" scoped>
 @use "@featherds/styles/themes/variables" as vars;
 .feather-line-svg {
+  display: block;
+  max-width: 100%;
+  height: auto;
   .line {
     stroke: var(vars.$categorical1);
     stroke-width: 2;

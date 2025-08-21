@@ -3,8 +3,7 @@
     :id="id"
     :width="dimensions.chart.width"
     :height="dimensions.chart.height"
-    class="feather-vertical-bar-svg"
-    :class="zoomLevel"
+    :class="classes"
   ></svg>
 </template>
 <script lang="ts" setup>
@@ -19,11 +18,11 @@ import { easeLinear } from "d3-ease";
 
 import { getValue } from "./Data";
 import {
+  computed,
   // computed,
   inject,
   onMounted,
   PropType,
-  Ref,
   toRefs,
   watchEffect,
 } from "vue";
@@ -32,7 +31,6 @@ import {
   FeatherChartBarData,
   FeatherChartDimensions,
   FeatherChartOptions,
-  ZoomLevel,
 } from "./types";
 import { setDynamicScope } from "./chartUtils";
 
@@ -56,7 +54,6 @@ const props = defineProps({
 const { axes, data, dimensions, id, options } = toRefs(props);
 
 const position = inject("position") as { x: number; y: number };
-const zoomLevel = inject("zoomLevel") as Ref<ZoomLevel>;
 
 if (!options.value.margin) throw new Error("margin not set");
 
@@ -133,7 +130,6 @@ const draw = () => {
       "viewBox",
       `0 0 ${dimensions.value.chart.width} ${dimensions.value.chart.height}`
     )
-    .attr("style", "max-width: 100%; height: auto;")
     .attr("tabindex", "0")
     .append("g")
     .attr(
@@ -207,6 +203,12 @@ const draw = () => {
 //   //  throw new Error("Missing props")
 // };
 
+const classes = computed(() => {
+  return {
+    "feather-vertical-bar-svg": true,
+  };
+});
+
 defineExpose({ draw });
 
 watchEffect(() => {
@@ -224,6 +226,9 @@ onMounted(() => {
 @use "@featherds/styles/themes/variables" as vars;
 
 .feather-vertical-bar-svg {
+  display: block;
+  max-width: 100%;
+  height: auto;
   g.xAxis,
   g.yAxis {
     path.domain {

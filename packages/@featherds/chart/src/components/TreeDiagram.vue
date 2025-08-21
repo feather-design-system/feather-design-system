@@ -7,8 +7,7 @@
     :id="id"
     :width="dimensions.chart.width"
     :height="dimensions.chart.height"
-    class="feather-tree-diagram-svg"
-    :class="`${baseLenClass}`"
+    :class="classes"
     :draggable="false"
   ></svg>
   <!-- @mousedown.prevent="svgDrag?.beginDrag($event)"
@@ -745,6 +744,13 @@ function isValid() {
   return true;
 }
 
+const classes = computed(() => {
+  return {
+    "feather-tree-diagram-svg": true,
+    [`${baseLenClass.value}`]: true,
+  };
+});
+
 defineExpose({ draw });
 
 watchEffect(() => {
@@ -766,6 +772,9 @@ onMounted(() => {
 @use "@featherds/styles/themes/utils" as utils;
 
 .feather-tree-diagram-svg {
+  // display: block;
+  // max-width: 100%;
+  // height: auto;
   font-family: var(--feather-header-font-family);
   --stroke-width-alert: 3px;
   border: 1px dashed utils.alpha(vars.$primary, 0.01);

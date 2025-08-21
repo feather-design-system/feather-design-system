@@ -3,15 +3,13 @@
     :id="id"
     :width="dimensions.chart.width"
     :height="dimensions.chart.height"
-    class="feather-force-directed-svg"
-    :class="zoomLevel"
+    :class="classes"
   ></svg>
 </template>
 
 <script setup lang="ts">
 import {
   PropType,
-  Ref,
   computed,
   inject,
   onMounted,
@@ -25,7 +23,6 @@ import {
   FeatherChartDimensions,
   FeatherChartForceDirectedData,
   FeatherChartOptions,
-  ZoomLevel,
 } from "./types";
 
 import {
@@ -68,7 +65,6 @@ dimensions.chart.height = dimensions.control.height / 2;
 const radialForce = ref(50);
 
 const position = inject("position") as { x: number; y: number };
-const zoomLevel = inject("zoomLevel") as Ref<ZoomLevel>;
 
 if (!options.margin) throw new Error("margin not set");
 
@@ -172,8 +168,7 @@ const draw = () => {
     .attr(
       "viewBox",
       `-32 -32 ${dimensions.chart.width} ${dimensions.chart.height}`
-    )
-    .attr("style", "max-width: 100%; height: auto;");
+    );
 
   const link = svg
     .append("g")
@@ -243,6 +238,12 @@ const isValid = () => {
   return true;
 };
 
+const classes = computed(() => {
+  return {
+    "feather-force-directed-svg": true,
+  };
+});
+
 defineExpose({ draw });
 
 watchEffect(() => {
@@ -279,6 +280,9 @@ onUnmounted(() => {
 @use "@featherds/styles/themes/variables" as vars;
 
 .feather-force-directed-svg {
+  display: block;
+  max-width: 100%;
+  height: auto;
   overflow: visible;
   g.links {
     line.force-directed-link {

@@ -3,8 +3,7 @@
     :id="id"
     :width="dimensions.chart.width"
     :height="dimensions.chart.height"
-    class="feather-area-svg"
-    :class="zoomLevel"
+    :class="classes"
   ></svg>
 </template>
 <script lang="ts" setup>
@@ -20,7 +19,7 @@ import { easePolyInOut } from "d3-ease";
 
 import {
   PropType,
-  Ref,
+  computed,
   inject,
   onBeforeMount,
   onMounted,
@@ -32,7 +31,6 @@ import {
   FeatherChartAxes,
   FeatherChartDimensions,
   FeatherChartOptions,
-  ZoomLevel,
 } from "./types";
 import { setDynamicScope } from "./chartUtils";
 
@@ -53,7 +51,6 @@ const props = defineProps({
 const { axes, data, dimensions, id, options } = reactive(props);
 
 const position = inject("position") as { x: number; y: number };
-const zoomLevel = inject("zoomLevel") as Ref<ZoomLevel>;
 
 if (!options.margin) throw new Error("margin not set");
 
@@ -198,6 +195,12 @@ const isValid = () => {
   return true;
 };
 
+const classes = computed(() => {
+  return {
+    "feather-area-svg": true,
+  };
+});
+
 defineExpose({ draw });
 
 watchEffect(() => {
@@ -216,6 +219,9 @@ onMounted(() => {
 <style lang="scss" scoped>
 @use "@featherds/styles/themes/variables" as vars;
 .feather-area-svg {
+  display: block;
+  max-width: 100%;
+  height: auto;
   path.area {
     fill: var(vars.$categorical1);
   }

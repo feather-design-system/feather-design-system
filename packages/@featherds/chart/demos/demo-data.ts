@@ -6757,14 +6757,14 @@ export const lineWCategoriesInteresting = {
 
 export const line3SeriesNumbersWide = {
   data: [
-    { sales: "Q3 2023", boston: 18, raleigh: 14, dallas: 17 },
-    { sales: "Q4 2023", boston: 17, raleigh: 15, dallas: 18 },
-    { sales: "Q1 2024", boston: 10, raleigh: 8, dallas: 12 },
-    { sales: "Q2 2024", boston: 8, raleigh: 9, dallas: 11 },
-    { sales: "Q3 2024", boston: 11, raleigh: 10, dallas: 13 },
-    { sales: "Q4 2024", boston: 14, raleigh: 12, dallas: 12 },
-    { sales: "Q1 2025", boston: 15, raleigh: 11, dallas: 14 },
-    { sales: "Q2 2025", boston: 16, raleigh: 13, dallas: 15 },
+    { sales: "Q3 2023", MA: 18, NC: 14, TX: 17, NY: 20 },
+    { sales: "Q4 2023", MA: 17, NC: 15, TX: 18, NY: 18 },
+    { sales: "Q1 2024", MA: 10, NC: 8, TX: 12, NY: 17 },
+    { sales: "Q2 2024", MA: 8, NC: 9, TX: 11, NY: 20 },
+    { sales: "Q3 2024", MA: 11, NC: 10, TX: 13, NY: 21 },
+    { sales: "Q4 2024", MA: 14, NC: 12, TX: 12, NY: 22 },
+    { sales: "Q1 2025", MA: 15, NC: 11, TX: 14, NY: 23 },
+    { sales: "Q2 2025", MA: 16, NC: 13, TX: 15, NY: 19 },
   ],
 };
 

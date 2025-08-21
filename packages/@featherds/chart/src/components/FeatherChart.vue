@@ -235,22 +235,12 @@ const isZoomable = computed(() => {
 });
 
 const {
-  step,
   scale: zoomScale,
   onWheel,
   onKeyDown,
   setStep,
 } = useWheelZoom({
   enabled: isZoomable,
-});
-
-const zoomLevel = computed<ZoomLevel>(() => {
-  // map step range to your existing ZoomLevel classes (kept for CSS)
-  if (step.value <= -2) return ZoomLevel.ZOOM_IN_2;
-  if (step.value === -1) return ZoomLevel.ZOOM_IN_1;
-  if (step.value === 0) return ZoomLevel.ZOOM_NONE;
-  if (step.value === 1) return ZoomLevel.ZOOM_OUT_1;
-  return ZoomLevel.ZOOM_OUT_2;
 });
 
 const setZoomLevel = (level: ZoomLevel) => {
@@ -452,7 +442,6 @@ const iconSettings = computed(() => markRaw(Settings));
 
 // #region PROVIDE
 provide("position", svgDrag.position);
-provide("zoomLevel", zoomLevel);
 provide("zoomScale", zoomScale);
 provide("setZoomLevel", setZoomLevel);
 provide("svgDrag", svgDrag);

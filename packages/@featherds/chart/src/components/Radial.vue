@@ -1,13 +1,10 @@
 <template>
-  <!-- <div class="chart" :width="dimensions.chart.width"> -->
   <svg
     :id="id"
     :width="dimensions.chart.width"
     :height="dimensions.chart.height"
-    class="feather-radial-svg"
-    :class="zoomLevel"
+    :class="classes"
   ></svg>
-  <!-- </div> -->
 </template>
 <script lang="ts" setup>
 import { select } from "d3-selection";
@@ -16,13 +13,19 @@ import { LinkRadial, linkRadial } from "d3-shape";
 import { transition } from "d3-transition";
 import { easeBounce } from "d3-ease";
 
-import { PropType, Ref, inject, onMounted, reactive, watchEffect } from "vue";
+import {
+  PropType,
+  computed,
+  inject,
+  onMounted,
+  reactive,
+  watchEffect,
+} from "vue";
 import {
   FeatherChartAxes,
   FeatherChartDimensions,
   FeatherChartOptions,
   FeatherChartRadialData,
-  ZoomLevel,
 } from "./types";
 import { setDynamicScope } from "./chartUtils";
 
@@ -46,7 +49,6 @@ const props = defineProps({
 const { data, dimensions, id, options } = reactive(props);
 
 const position = inject("position") as { x: number; y: number };
-const zoomLevel = inject("zoomLevel") as Ref<ZoomLevel>;
 
 if (!options.margin) {
   throw new Error("margin not set");
@@ -93,7 +95,6 @@ const draw = () => {
     .attr("width", dimensions.chart.width)
     .attr("height", dimensions.chart.height)
     .attr("viewBox", `0 0 ${dimensions.chart.width} ${dimensions.chart.height}`)
-    .attr("style", "max-width: 100%; height: auto;")
     .attr("tabindex", "0")
     .append("g")
     .attr(
@@ -162,6 +163,12 @@ const isValid = () => {
   return true;
 };
 
+const classes = computed(() => {
+  return {
+    "feather-radial-svg": true,
+  };
+});
+
 defineExpose({ draw });
 
 watchEffect(() => {
@@ -181,6 +188,9 @@ onMounted(() => {
 @use "@featherds/styles/mixins/typography" as typo;
 
 .feather-radial-svg {
+  display: block;
+  max-width: 100%;
+  height: auto;
   g {
     g {
       path.link {
@@ -232,25 +242,7 @@ onMounted(() => {
           stroke-width: 2px;
         }
       }
-
-      // circle.dendrogram-node {
-      //   fill: var(vars.$success);
-      //   stroke: var(vars.$secondary);
-      //   stroke-width: 2px;
-      // }
-
-      // text.dendrogram-node-label {
-      //   fill: var(vars.$primary-text-on-surface);
-      //   font-size: 12px;
-      //   fill: navy;
-      //   top: 100px;
-      //   right: 10px;
-      // }
     }
-
-    // path.area {
-    //   fill: #009de1;
-    // }
   }
 }
 </style>

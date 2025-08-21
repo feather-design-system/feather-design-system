@@ -3,8 +3,7 @@
     :id="id"
     :width="dimensions.chart.width"
     :height="dimensions.chart.height"
-    class="feather-dendrogram-svg"
-    :class="zoomLevel"
+    :class="classes"
   ></svg>
 </template>
 
@@ -23,7 +22,7 @@ import { easeBounce } from "d3-ease";
 
 import {
   PropType,
-  Ref,
+  computed,
   inject,
   onBeforeMount,
   onMounted,
@@ -35,7 +34,6 @@ import {
   FeatherChartDendrogramData,
   FeatherChartDimensions,
   FeatherChartOptions,
-  ZoomLevel,
 } from "./types";
 import { setDynamicScope } from "./chartUtils";
 
@@ -62,7 +60,6 @@ const props = defineProps({
 const { data, dimensions, id, options, size } = reactive(props);
 
 const position = inject("position") as { x: number; y: number };
-const zoomLevel = inject("zoomLevel") as Ref<ZoomLevel>;
 
 if (!options.margin) {
   throw new Error("margin not set");
@@ -115,7 +112,7 @@ const draw = () => {
     .attr("width", dimensions.chart.width)
     .attr("height", dimensions.chart.height)
     .attr("viewBox", `0 0 ${dimensions.chart.width} ${dimensions.chart.height}`)
-    .attr("style", "max-width: 100%; height: auto;")
+    // .attr("style", "max-width: 100%; height: auto;")
     .append("g")
     .attr("class", "dendrogram-main-group")
     .attr(
@@ -190,6 +187,12 @@ const isValid = () => {
   return true;
 };
 
+const classes = computed(() => {
+  return {
+    "feather-dendrogram-svg": true,
+  };
+});
+
 defineExpose({ draw });
 
 watchEffect(() => {
@@ -212,6 +215,9 @@ onMounted(() => {
 @use "@featherds/styles/themes/variables" as vars;
 
 .feather-dendrogram-svg {
+  display: block;
+  max-width: 100%;
+  height: auto;
   g.dendrogram-node {
     circle.dendrogram-node-circle {
       fill: var(vars.$success);
