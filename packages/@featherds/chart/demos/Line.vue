@@ -66,17 +66,19 @@ const options: FeatherChartOptions = {
   ariaSummary: "This chart shows stuff.",
   margin: {
     top: 33,
-    right: 33,
-    bottom: 33,
+    right: 44,
+    bottom: 44,
     left: 44,
   },
   xAxis: {
-    tickPadding: 10,
-    tickRotation: 0,
+    tickPadding: 8,
+    tickRotation: 15,
+    fontSize: 0.75,
   },
   yAxis: {
     tickPadding: 10,
-    tickRotation: 335,
+    tickRotation: 0,
+    fontSize: 0.875,
   },
 };
 

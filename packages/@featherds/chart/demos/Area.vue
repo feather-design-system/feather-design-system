@@ -157,17 +157,19 @@ const areaOptions: FeatherChartOptions = {
   ariaSummary: "This chart shows stuff.",
   margin: {
     top: 33,
-    right: 33,
+    right: 10,
     bottom: 33,
     left: 50,
   },
   xAxis: {
     tickPadding: 6,
-    tickRotation: 25,
+    tickRotation: 350,
+    fontSize: 0.875,
   },
   yAxis: {
     tickPadding: 6,
-    tickRotation: 25,
+    tickRotation: 0,
+    fontSize: 0.875,
   },
 };
 

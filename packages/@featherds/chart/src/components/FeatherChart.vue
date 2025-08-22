@@ -211,6 +211,13 @@ const mergedOptions = computed(() => {
   };
 });
 // #endregion
+// Centralized axis font sizes (moved from individual chart components like VerticalBar)
+const xAxisFontSize = computed(
+  () => `${mergedOptions.value.xAxis?.fontSize ?? 1}rem`
+);
+const yAxisFontSize = computed(
+  () => `${mergedOptions.value.yAxis?.fontSize ?? 1}rem`
+);
 const svgDrag = useDraggable();
 
 const resetPan = () => {
@@ -328,14 +335,16 @@ const sizing = computed(
     ) as FeatherChartDimensions
 );
 
+// The overall chart (SVG) width is the control width from sizing.
+// The drawable container width/height (where D3 places content) is SVG size minus margins.
 const containerWidth = computed(() => {
   const margin = mergedOptions.value.margin || { left: 0, right: 0 };
-  return sizing.value.chart.width - (margin.left + margin.right);
+  return Math.max(0, sizing.value.chart.width - (margin.left + margin.right));
 });
 
 const containerHeight = computed(() => {
   const margin = mergedOptions.value.margin || { top: 0, bottom: 0 };
-  return sizing.value.chart.height - (margin.top + margin.bottom);
+  return Math.max(0, sizing.value.chart.height - (margin.top + margin.bottom));
 });
 
 const setChartType = (type: FeatherChartType) => {
@@ -564,6 +573,13 @@ onUnmounted(() => {
     overflow: hidden;
 
     .draggable-container {
+      :deep(.xAxis text) {
+        font-size: v-bind("xAxisFontSize");
+      }
+      :deep(.yAxis text) {
+        font-size: v-bind("yAxisFontSize");
+      }
+
       transform: translate(v-bind(translateX), v-bind(translateY))
         scale(v-bind(zoomScale));
       transition: transform 0.3s ease-in-out;

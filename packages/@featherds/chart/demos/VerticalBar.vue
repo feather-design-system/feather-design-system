@@ -50,14 +50,14 @@ const options: FeatherChartOptions = {
     left: 50,
   },
   xAxis: {
-    tickPadding: 16,
+    tickPadding: 8,
     tickRotation: 0,
-    fontSize: 1,
+    fontSize: 0.875,
   },
   yAxis: {
-    tickPadding: 8,
-    tickRotation: -15,
-    fontSize: 1,
+    tickPadding: 4,
+    tickRotation: 0,
+    fontSize: 0.875,
   },
 };
 

@@ -52,8 +52,11 @@ export const getSizing = (
       break;
   }
 
-  // 32px left and right
-  dm.chart.width = dm.control.width - 64;
+  // Let the chart width start equal to the control width; the effective drawable
+  // width (minus margins) will now be derived dynamically in FeatherChart.vue
+  // so that the SVG and its draggable container stop growing at the same time
+  // regardless of the actual margin configuration.
+  dm.chart.width = dm.control.width;
 
   return dm;
 };

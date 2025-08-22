@@ -218,17 +218,6 @@ onMounted(() => {
   display: block;
   max-width: 100%;
   height: auto;
-  g.xAxis,
-  g.yAxis {
-    font-size: small;
-    padding: 1em;
-
-    .tick {
-      line {
-        color: var(vars.$shade-4);
-      }
-    }
-  }
 
   rect.bar {
     fill: var(vars.$primary);

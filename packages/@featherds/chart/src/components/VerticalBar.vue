@@ -58,9 +58,6 @@ const container = inject("container") as { width: number; height: number };
 
 if (!options.value.margin) throw new Error("margin not set");
 
-// const xAxisFontSize = computed(() => `${options.value.xAxis?.fontSize ?? 1}em`);
-// const yAxisFontSize = computed(() => `${options.value.yAxis?.fontSize ?? 1}em`);
-
 // ACCESSORS
 // TODO:  Should we require user to pass these accessor functions?
 // NOTE:  USE GETVALUE FUNCTION THAT CAN RETRIEVE VALUE
@@ -223,28 +220,6 @@ onMounted(() => {
   display: block;
   max-width: 100%;
   height: auto;
-  g.xAxis,
-  g.yAxis {
-    path.domain {
-      stroke: currentColor;
-    }
-    .tick {
-      line,
-      text {
-        fill: var(vars.$secondary-text-on-surface);
-      }
-    }
-  }
-  g.xAxis {
-    text {
-      font-size: var(--xAxisFontSize);
-    }
-  }
-  g.yAxis {
-    text {
-      font-size: var(--yAxisFontSize);
-    }
-  }
 
   rect.bar {
     fill: var(vars.$primary);
