@@ -51,24 +51,9 @@ const props = defineProps({
 const { axes, data, dimensions, id, options, type } = toRefs(props);
 
 const position = inject("position") as { x: number; y: number };
+const container = inject("container") as { width: number; height: number };
 
 if (!options.value.margin) throw new Error("margin not set");
-
-const containerWidth = computed(() => {
-  if (!options.value.margin) throw new Error("margin not set (containerWidth)");
-  return (
-    dimensions.value.chart.width -
-    (options.value.margin.left + options.value.margin.right)
-  );
-});
-const containerHeight = computed(() => {
-  if (!options.value.margin)
-    throw new Error("margin not set (containerHeight)");
-  return (
-    dimensions.value.chart.height -
-    (options.value.margin.top + options.value.margin.bottom)
-  );
-});
 
 const rowsRef = computed<Row[]>(() => {
   const rawData = data.value.data;
@@ -84,7 +69,6 @@ interface SeriesObject {
   name: string;
   data: Row[];
   yKey: string;
-  color: string;
 }
 const seriesData = computed((): SeriesObject[] => {
   const rawData = data.value.data;
@@ -107,7 +91,6 @@ const seriesData = computed((): SeriesObject[] => {
         name: seriesKeys[0] || "Series 1",
         data: rows,
         yKey: seriesKeys[0] || axes.value.y,
-        color: `var(--feather-categorical1)`,
       },
     ];
   }
@@ -131,14 +114,13 @@ const processedSeries = computed(() => {
     const { data: normalizedData } = useXYSeries(
       seriesRows,
       axesRef,
-      containerWidth,
-      containerHeight
+      computed(() => container.width),
+      computed(() => container.height)
     );
 
     return {
       name: series.name,
       data: normalizedData.value,
-      color: series.color,
     };
   });
 });
@@ -157,17 +139,9 @@ const allSeriesData = computed<Row[]>(() => {
 const { xScale, yScale } = useXYSeries(
   computed(() => allSeriesData.value),
   axesRef,
-  containerWidth,
-  containerHeight
+  computed(() => container.width),
+  computed(() => container.height)
 );
-
-/* EXISTING */
-
-// const {
-//   data: series,
-//   xScale,
-//   yScale,
-// } = useXYSeries(rowsRef, axesRef, containerWidth, containerHeight);
 
 const draw = () => {
   // Clean up existing
@@ -206,7 +180,7 @@ const draw = () => {
   svg
     .append("g")
     .classed("xAxis", true)
-    .attr("transform", `translate(0, ${containerHeight.value})`)
+    .attr("transform", `translate(0, ${container.height})`)
     .call(
       axisBottom(xScale.value as any)
         .ticks(5)
@@ -231,7 +205,7 @@ const draw = () => {
   svg
     .append("g")
     .classed("yAxis", true)
-    .attr("transform", `translate(${containerWidth.value}, 0)`)
+    .attr("transform", `translate(${container.width}, 0)`)
     .call(
       axisRight(yScale.value as any)
         .ticks(5)

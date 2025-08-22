@@ -51,27 +51,13 @@ const props = defineProps({
 const { axes, data, dimensions, id, options } = reactive(props);
 
 const position = inject("position") as { x: number; y: number };
+const container = inject("container") as { width: number; height: number };
 
 if (!options.margin) throw new Error("margin not set");
-
-const containerWidth =
-  dimensions.chart.width - (options.margin.left + options.margin.right);
-const containerHeight =
-  dimensions.chart.height - (options.margin.top + options.margin.bottom);
 
 const parseDate = timeParse("%Y-%m-%d");
 const xAccessor = (d: any) => d[axes.x];
 const yAccessor = (d: any) => d[axes.y];
-
-// ACCESSORS
-// const xAccessor = (d: unknown): string => {
-//   if (typeof d === "object") {
-//     // return (d as object)[axes.x as keyof object];
-//     // return getValue(d as object, axes.x) as string;
-//     return getValue(d as object, axes.x) as string;
-//   }
-//   throw new Error("Unexpected x accessor");
-// };
 
 // DRAW
 const draw = () => {
@@ -115,11 +101,11 @@ const draw = () => {
   // SCALES
   const xScale = scaleTime()
     .domain(extent(validData, xAccessor) as [Date, Date]) // or Date[]
-    .range([0, containerWidth]);
+    .range([0, container.width]);
 
   const yScale = scaleLinear()
     .domain([0, max(validData, (d: any) => d[axes.y]) as number])
-    .range([containerHeight, 0]);
+    .range([container.height, 0]);
 
   if (!options.margin) throw new Error("margin not set");
 
@@ -138,7 +124,7 @@ const draw = () => {
   svg
     .append("g")
     .classed("xAxis", true)
-    .attr("transform", `translate(0, ${containerHeight})`)
+    .attr("transform", `translate(0, ${container.height})`)
     .call(
       axisBottom(xScale)
         .ticks(5)

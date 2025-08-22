@@ -13,7 +13,7 @@
     type="line"
     title="Line Chart (date x-axis)"
     :data="lineDataWDates"
-    :size="'md'"
+    :size="'sm'"
     :options="options"
     :axes="axesAsDates"
   ></FeatherChart>
@@ -22,7 +22,7 @@
     type="line"
     title="Line Chart (numbers x-axis)"
     :data="lineDataWNumbers"
-    :size="'md'"
+    :size="'sm'"
     :options="options"
     :axes="axesAsNumbers"
   ></FeatherChart>
@@ -31,7 +31,7 @@
     type="line"
     title="Line Chart (category x-axis)"
     :data="lineDataWCategories"
-    :size="'md'"
+    :size="'sm'"
     :options="options"
     :axes="axesAsCategories"
   ></FeatherChart>

@@ -64,7 +64,6 @@ export default defineComponent({
 <script lang="ts" setup>
 import {
   PropType,
-  Ref,
   computed,
   inject,
   onBeforeMount,
@@ -111,37 +110,32 @@ const props = defineProps({
   axes: { type: Object as PropType<FeatherChartAxes>, required: true },
 });
 
-const { data, dimensions, id, options } = reactive(props);
-
-// #region zoom
-const setZoomLevel = inject<((z: ZoomLevel) => void) | undefined>(
-  "setZoomLevel",
-  undefined
-);
-
 // Import type from composable?
 type SvgDrag = {
   position: { x: number; y: number };
 };
-const svgDrag = inject<SvgDrag>("svgDrag");
+
+const { data, dimensions, id, options } = reactive(props);
 
 const defaultNodeClickHandler = (id: string, data: any) => {
   // console warning to remind the developer to provide a handler
   console.warn("handleNodeClicked not provided", id, data);
 };
+const setZoomLevel = inject<((z: ZoomLevel) => void) | undefined>(
+  "setZoomLevel",
+  undefined
+);
 
 const handleNodeClick = inject("handleNodeClick", defaultNodeClickHandler) as (
   id: string,
   data: any
 ) => void;
+const container = inject("container") as { width: number; height: number };
+const svgDrag = inject<SvgDrag>("svgDrag");
 
 if (!options.margin) {
   throw new Error("margin not set");
 }
-
-// TODO:  Need to update all charts to accept these provided values
-const containerWidth = inject("containerWidth") as Ref<number>;
-const containerHeight = inject("containerHeight") as Ref<number>;
 
 let baseLen = ref(0);
 let overrideBaseLen = false;
@@ -459,8 +453,8 @@ const centerElement = (offset?: {
   x: number;
   y: number;
 }): { x: number; y: number } => {
-  const centerX = containerWidth.value / 2;
-  const centerY = containerHeight.value / 6;
+  const centerX = container.width / 2;
+  const centerY = container.height / 6;
   if (offset) {
     return { x: centerX - offset.x, y: centerY - offset.y };
   }
@@ -506,7 +500,7 @@ const draw = (offset?: { x: number; y: number } | undefined) => {
   const dataset: unknown = data.data;
 
   const treeLayout = tree()
-    .size([containerWidth.value, containerHeight.value])
+    .size([container.width, container.height])
     .separation((a, b) => (a.parent === b.parent ? 1 : separation.value));
 
   let nodes = hierarchy(dataset);

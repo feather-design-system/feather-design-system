@@ -55,13 +55,9 @@ const props = defineProps({
 const { axes, data, dimensions, id, options } = reactive(props);
 
 const position = inject("position") as { x: number; y: number };
+const container = inject("container") as { width: number; height: number };
 
 if (!options.margin) throw new Error("margin not set");
-
-const containerWidth =
-  dimensions.chart.width - (options.margin.left + options.margin.right);
-const containerHeight =
-  dimensions.chart.height - (options.margin.top + options.margin.bottom);
 
 const yAccessor = (d: any): string => {
   if (typeof d === "object") {
@@ -92,11 +88,11 @@ const draw = () => {
   const xScale = scaleLinear()
     .domain([0, xMax as any])
     .nice()
-    .range([0, containerWidth]);
+    .range([0, container.width]);
 
   const yScale = scaleBand()
     .domain(keyGroup)
-    .range([0, containerHeight])
+    .range([0, container.height])
     .padding(0.25);
 
   // CLEAN UP
@@ -161,11 +157,11 @@ const draw = () => {
   svg
     .append("g")
     .classed("xAxis", true)
-    .attr("transform", `translate(0,${containerHeight})`)
+    .attr("transform", `translate(0,${container.height})`)
     .call(
       axisBottom(xScale)
         .ticks(5, "~s")
-        .tickSize(-containerHeight)
+        .tickSize(-container.height)
         .tickPadding(options.xAxis?.tickPadding ?? 0)
     )
     .selectAll("text")

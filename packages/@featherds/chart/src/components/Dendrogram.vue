@@ -60,17 +60,12 @@ const props = defineProps({
 const { data, dimensions, id, options, size } = reactive(props);
 
 const position = inject("position") as { x: number; y: number };
+const container = inject("container") as { width: number; height: number };
 
 if (!options.margin) {
   throw new Error("margin not set");
 }
 
-const containerWidth =
-  dimensions.chart.width - (options.margin.left + options.margin.right);
-const containerHeight =
-  dimensions.chart.height - (options.margin.top + options.margin.bottom);
-
-// transition
 const draw = () => {
   // CLEAN UP
   select(`#${id}`).selectChildren().remove();
@@ -86,7 +81,7 @@ const draw = () => {
 
   const clusterLayout = cluster()
     // allow for space to the right of the child nodes (-100)
-    .size([containerHeight, containerWidth - 50])
+    .size([container.height, container.width - 50])
     .separation((a, b) => (a.parent === b.parent ? 1 : 1.75));
 
   const root = hierarchy(dataset, (d) => d.children);

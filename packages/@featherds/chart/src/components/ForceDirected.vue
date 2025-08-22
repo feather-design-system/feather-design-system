@@ -65,13 +65,9 @@ dimensions.chart.height = dimensions.control.height / 2;
 const radialForce = ref(50);
 
 const position = inject("position") as { x: number; y: number };
+const container = inject("container") as { width: number; height: number };
 
 if (!options.margin) throw new Error("margin not set");
-
-const containerWidth =
-  dimensions.chart.width - (options.margin.left + options.margin.right);
-const containerHeight =
-  dimensions.chart.height - (options.margin.top + options.margin.bottom);
 
 const color = computed(() => {
   if (options && options.colorScheme) {
@@ -111,9 +107,9 @@ const registerSimulation = () => {
     )
     .force("charge", forceManyBody())
     .force("radial", forceRadial(radialForce.value))
-    .force("center", forceCenter(containerWidth / 2, containerHeight / 2))
-    .force("x", forceCenter(containerWidth / 2, containerHeight / 2))
-    .force("y", forceCenter(containerWidth / 2, containerHeight / 2));
+    .force("center", forceCenter(container.width / 2, container.height / 2))
+    .force("x", forceCenter(container.width / 2, container.height / 2))
+    .force("y", forceCenter(container.width / 2, container.height / 2));
 };
 
 registerSimulation();
@@ -162,6 +158,10 @@ const draw = () => {
   if (!isValid()) throw new Error("Data is not valid");
 
   // svg
+  // const svg = select(`#${id}`)
+  //   .attr("width", container.width)
+  //   .attr("height", container.height)
+  //   .attr("viewBox", `-32 -32 ${container.width} ${container.height}`);
   const svg = select(`#${id}`)
     .attr("width", dimensions.chart.width)
     .attr("height", dimensions.chart.height)

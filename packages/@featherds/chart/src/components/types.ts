@@ -4,7 +4,6 @@ export interface FeatherChartInterface {
 
 export type FeatherChartType =
   | "area"
-  | "bar"
   | "dendrogram"
   | "donut"
   | "force-directed"

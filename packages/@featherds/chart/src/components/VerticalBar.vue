@@ -54,15 +54,9 @@ const props = defineProps({
 const { axes, data, dimensions, id, options } = toRefs(props);
 
 const position = inject("position") as { x: number; y: number };
+const container = inject("container") as { width: number; height: number };
 
 if (!options.value.margin) throw new Error("margin not set");
-
-const containerWidth =
-  dimensions.value.chart.width -
-  (options.value.margin.left + options.value.margin.right);
-const containerHeight =
-  dimensions.value.chart.height -
-  (options.value.margin.top + options.value.margin.bottom);
 
 // const xAxisFontSize = computed(() => `${options.value.xAxis?.fontSize ?? 1}em`);
 // const yAxisFontSize = computed(() => `${options.value.yAxis?.fontSize ?? 1}em`);
@@ -99,7 +93,7 @@ const draw = () => {
   // SCALES
   const xScale = scaleBand()
     .domain(keyGroup)
-    .range([0, containerWidth])
+    .range([0, container.width])
     .padding(0.25);
 
   const yMax = max(
@@ -109,7 +103,7 @@ const draw = () => {
   const yScale = scaleLinear()
     .domain([0, yMax as any])
     .nice()
-    .range([containerHeight, 0]);
+    .range([container.height, 0]);
 
   const xAnimation = transition().duration(500);
   const yAnimation = transition().duration(500);
@@ -155,7 +149,7 @@ const draw = () => {
   svg
     .append("g")
     .classed("xAxis", true)
-    .attr("transform", `translate(0, ${containerHeight})`)
+    .attr("transform", `translate(0, ${container.height})`)
     .transition(xAnimation)
     .call(
       axisBottom(xScale)

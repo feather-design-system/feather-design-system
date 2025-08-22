@@ -445,8 +445,12 @@ provide("position", svgDrag.position);
 provide("zoomScale", zoomScale);
 provide("setZoomLevel", setZoomLevel);
 provide("svgDrag", svgDrag);
-provide("containerWidth", containerWidth);
-provide("containerHeight", containerHeight);
+// provide("containerWidth", containerWidth);
+// provide("containerHeight", containerHeight);
+provide("container", {
+  width: containerWidth.value,
+  height: containerHeight.value,
+});
 // #endregion
 
 defineExpose({ setChartType });
