@@ -171,7 +171,6 @@ const draw = () => {
     )
     .attr("tabindex", 0)
     .append("g")
-    /* TODO: Move to css */
     .attr(
       "transform",
       `translate(${options.value.margin.left}, ${options.value.margin.top})`
@@ -272,6 +271,7 @@ onMounted(() => {
   display: block;
   max-width: 100%;
   height: auto;
+
   .line {
     stroke: var(vars.$categorical1);
     stroke-width: 2;

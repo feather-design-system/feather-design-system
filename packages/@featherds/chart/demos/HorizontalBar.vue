@@ -4,7 +4,7 @@
       :id="hb1Id"
       type="horizontal-bar"
       :title="hbarTitle"
-      :data="horizontalBarData as FeatherChartFlexibleData"
+      :data="horizontalBarData"
       :size="'md'"
       :options="options"
       :axes="axes"
@@ -45,7 +45,7 @@ import {
   FeatherChartAxes,
   FeatherChartBarData,
   // FeatherChartData,
-  FeatherChartFlexibleData,
+  // FeatherChartFlexibleData,
   FeatherChartOptions,
 } from "./../src/components/types";
 import { hbarData1, hbarData2, hbarData3 } from "./demo-data";

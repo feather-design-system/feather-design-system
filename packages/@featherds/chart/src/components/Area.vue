@@ -11,11 +11,11 @@
 import { select } from "d3-selection";
 import { area } from "d3-shape";
 import { axisBottom, axisLeft } from "d3-axis";
-import { scaleLinear, scaleTime } from "d3-scale";
-import { extent, max } from "d3-array";
 import { timeParse } from "d3-time-format";
 import { transition } from "d3-transition";
 import { easePolyInOut } from "d3-ease";
+
+import { useXYSeries } from "../composables/useXYSeries";
 
 import {
   PropType,
@@ -23,7 +23,7 @@ import {
   inject,
   onBeforeMount,
   onMounted,
-  reactive,
+  toRefs,
   watchEffect,
 } from "vue";
 import {
@@ -48,77 +48,59 @@ const props = defineProps({
   axes: { type: Object as PropType<FeatherChartAxes>, required: true },
 });
 
-const { axes, data, dimensions, id, options } = reactive(props);
+const { axes, data, dimensions, id, options } = toRefs(props);
 
 const position = inject("position") as { x: number; y: number };
 const container = inject("container") as { width: number; height: number };
 
-if (!options.margin) throw new Error("margin not set");
+if (!options.value.margin) throw new Error("margin not set");
 
 const parseDate = timeParse("%Y-%m-%d");
-const xAccessor = (d: any) => d[axes.x];
-const yAccessor = (d: any) => d[axes.y];
 
 // DRAW
 const draw = () => {
   // CLEAN UP
-  select(`#${id}`).selectChildren().remove();
+  select(`#${id.value}`).selectChildren().remove();
 
   position.x = 0;
   position.y = 0;
 
   if (!isValid()) throw new Error("Data is not valid");
+  // Use shared XY series composable to normalize data and provide scales
+  const rowsRef = computed(() => (data.value.data as any[]) ?? []);
+  const axesRef = computed(() => ({ x: axes.value.x, y: axes.value.y }));
+  const {
+    data: seriesData,
+    xScale,
+    yScale,
+  } = useXYSeries(
+    rowsRef,
+    axesRef,
+    computed(() => container.width),
+    computed(() => container.height),
+    { parseDate }
+  );
 
-  // NOTE: X axis is typically a date format.
-  // data.values.date = timeParse("%Y-%m-%d")(d.date), value: d.value)
-
-  // REFACTOR:  data MUST BE IN THIS FORMAT. {date: "2000-01-01", 6}
-
-  const newData = data.data.map((d) => {
-    if (!d || typeof d === "object") {
-      // convert date string to Date
-      return {
-        date: parseDate((d as object)[axes.x as keyof object]),
-        value: (d as object)[axes.y as keyof object],
-      };
-    }
-    throw new Error("Unexpected x accessor");
-  });
-
-  // Filter out null/invalid rows
-  const validData = newData.filter(
-    (d: any) =>
-      d.date instanceof Date &&
-      typeof d.value === "number" &&
-      Number.isFinite(d.value)
-  ) as Array<{ date: Date; value: number }>;
-
-  if (validData.length === 0) {
+  const validData = seriesData.value;
+  if (!validData || validData.length === 0) {
     // Nothing valid to render
     return;
   }
 
-  // SCALES
-  const xScale = scaleTime()
-    .domain(extent(validData, xAccessor) as [Date, Date]) // or Date[]
-    .range([0, container.width]);
+  if (!options.value.margin) throw new Error("margin not set");
 
-  const yScale = scaleLinear()
-    .domain([0, max(validData, (d: any) => d[axes.y]) as number])
-    .range([container.height, 0]);
-
-  if (!options.margin) throw new Error("margin not set");
-
-  const svg = select(`#${id}`)
-    .attr("width", dimensions.chart.width)
-    .attr("height", dimensions.chart.height)
-    .attr("viewBox", `0 0 ${dimensions.chart.width} ${dimensions.chart.height}`)
-    // .attr("style", "max-width: 100%; height: auto;")
+  const svg = select(`#${id.value}`)
+    .attr("width", dimensions.value.chart.width)
+    .attr("height", dimensions.value.chart.height)
+    .attr(
+      "viewBox",
+      `0 0 ${dimensions.value.chart.width} ${dimensions.value.chart.height}`
+    )
     .attr("tabindex", "0")
     .append("g")
     .attr(
       "transform",
-      `translate(${options.margin.left}, ${options.margin.top})`
+      `translate(${options.value.margin.left}, ${options.value.margin.top})`
     );
 
   svg
@@ -126,26 +108,30 @@ const draw = () => {
     .classed("xAxis", true)
     .attr("transform", `translate(0, ${container.height})`)
     .call(
-      axisBottom(xScale)
+      axisBottom(xScale.value as any)
         .ticks(5)
         .tickSize(6)
-        .tickPadding(options.xAxis?.tickPadding ?? 0)
+        .tickPadding(options.value.xAxis?.tickPadding ?? 0)
     )
     .selectAll("text")
-    .attr("transform", `rotate(${options.xAxis?.tickRotation ?? 0})`);
+    .attr("transform", `rotate(${options.value.xAxis?.tickRotation ?? 0})`);
 
   svg
     .append("g")
     .classed("yAxis", true)
-    .call(axisLeft(yScale).tickPadding(options.yAxis?.tickPadding ?? 0))
+    .call(
+      axisLeft(yScale.value as any).tickPadding(
+        options.value.yAxis?.tickPadding ?? 0
+      )
+    )
     .selectAll("text")
-    .attr("transform", `rotate(${options.yAxis?.tickRotation ?? 0})`);
+    .attr("transform", `rotate(${options.value.yAxis?.tickRotation ?? 0})`);
 
   // DATA
   const theArea = area()
-    .x((d: any) => xScale(xAccessor(d)))
-    .y0(yScale(0))
-    .y1((d: any) => yScale(yAccessor(d)));
+    .x((d: any) => (xScale.value as any)(d.x))
+    .y0(() => yScale.value(0))
+    .y1((d: any) => yScale.value(d.y));
 
   svg
     .append("path")
@@ -166,12 +152,12 @@ const draw = () => {
     .ease(easePolyInOut)
     .attr("opacity", 1);
 
-  setDynamicScope(`#${id}`);
+  setDynamicScope(`#${id.value}`);
 };
 
 const isValid = () => {
   // validate data is iterable
-  if (!Array.isArray(data.data)) {
+  if (!Array.isArray(data.value.data)) {
     // console.log(`Is ${data} an Array?: ${Array.isArray(data)}`);
     throw new Error("Data is not iterable!");
   }
@@ -190,7 +176,7 @@ const classes = computed(() => {
 defineExpose({ draw });
 
 watchEffect(() => {
-  if (data.data) {
+  if (data.value.data) {
     draw();
   }
 });

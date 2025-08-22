@@ -26,7 +26,7 @@ import {
   inject,
   onBeforeMount,
   onMounted,
-  reactive,
+  toRefs,
   watchEffect,
 } from "vue";
 import {
@@ -57,18 +57,19 @@ const props = defineProps({
   axes: { type: Object as PropType<FeatherChartAxes>, required: true },
 });
 
-const { data, dimensions, id, options, size } = reactive(props);
+const { data, dimensions, id, options, size } = toRefs(props);
 
 const position = inject("position") as { x: number; y: number };
 const container = inject("container") as { width: number; height: number };
 
-if (!options.margin) {
+if (!options.value.margin) {
   throw new Error("margin not set");
 }
 
+// transition
 const draw = () => {
   // CLEAN UP
-  select(`#${id}`).selectChildren().remove();
+  select(`#${id.value}`).selectChildren().remove();
 
   position.x = 0;
   position.y = 0;
@@ -77,7 +78,7 @@ const draw = () => {
 
   // DATA
   // Dendrogram uses hierarchical data, not Array like every other chart.
-  const dataset: any = data.data;
+  const dataset: any = data.value.data;
 
   const clusterLayout = cluster()
     // allow for space to the right of the child nodes (-100)
@@ -89,7 +90,7 @@ const draw = () => {
 
   clusterLayout(root);
 
-  if (!options.margin) {
+  if (!options.value.margin) {
     throw new Error("margin not set");
   }
 
@@ -103,16 +104,19 @@ const draw = () => {
   };
 
   // DRAW SVG
-  const svg = select(`#${id}`)
-    .attr("width", dimensions.chart.width)
-    .attr("height", dimensions.chart.height)
-    .attr("viewBox", `0 0 ${dimensions.chart.width} ${dimensions.chart.height}`)
+  const svg = select(`#${id.value}`)
+    .attr("width", dimensions.value.chart.width)
+    .attr("height", dimensions.value.chart.height)
+    .attr(
+      "viewBox",
+      `0 0 ${dimensions.value.chart.width} ${dimensions.value.chart.height}`
+    )
     // .attr("style", "max-width: 100%; height: auto;")
     .append("g")
     .attr("class", "dendrogram-main-group")
     .attr(
       "transform",
-      `translate(${options.margin.left}, ${options.margin.top})`
+      `translate(${options.value.margin.left}, ${options.value.margin.top})`
     );
 
   const [inflection1, inflection2] = [20, 30];
@@ -174,7 +178,7 @@ const draw = () => {
     .attr("x", "-10")
     .attr("y", "-10");
 
-  setDynamicScope(`#${id}`);
+  setDynamicScope(`#${id.value}`);
 };
 
 const isValid = () => {
@@ -198,7 +202,7 @@ watchEffect(() => {
 });
 
 onBeforeMount(() => {
-  console.log("Before Mount width", dimensions.chart.width, size);
+  console.log("Before Mount width", dimensions.value.chart.width, size.value);
 });
 
 onMounted(() => {

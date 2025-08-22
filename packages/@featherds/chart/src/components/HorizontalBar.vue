@@ -23,7 +23,8 @@ import {
   onBeforeMount,
   onMounted,
   PropType,
-  reactive,
+  // reactive,
+  toRefs,
   watchEffect,
 } from "vue";
 import {
@@ -52,16 +53,16 @@ const props = defineProps({
   axes: { type: Object as PropType<FeatherChartAxes>, required: true },
 });
 
-const { axes, data, dimensions, id, options } = reactive(props);
+const { axes, data, dimensions, id, options } = toRefs(props);
 
 const position = inject("position") as { x: number; y: number };
 const container = inject("container") as { width: number; height: number };
 
-if (!options.margin) throw new Error("margin not set");
+if (!options.value.margin) throw new Error("margin not set");
 
 const yAccessor = (d: any): string => {
   if (typeof d === "object") {
-    return getValue(d, axes.y) as string;
+    return getValue(d, axes.value.y) as string;
   }
   throw new Error("Unexpected y accessor");
 };
@@ -69,7 +70,7 @@ const yAccessor = (d: any): string => {
 const yStackedAccessor = (d: any): string => {
   if (typeof d === "object") {
     // "data" comes from the "d3" stack() call
-    return getValue(d.data, "data." + axes.y) as string;
+    return getValue(d.data, "data." + axes.value.y) as string;
   }
   throw new Error("Unexpected y stacked accessor");
 };
@@ -77,10 +78,14 @@ const yStackedAccessor = (d: any): string => {
 // DRAW
 const draw = () => {
   // DATA
-  const keyList = Object.keys((data.data as any)[0]).filter((d) => d != axes.y);
-  const keyGroup = (data as FeatherChartBarData).data.map((d) => yAccessor(d));
+  const keyList = Object.keys((data.value.data as any)[0]).filter(
+    (d) => d != axes.value.y
+  );
+  const keyGroup = (data.value as FeatherChartBarData).data.map((d) =>
+    yAccessor(d)
+  );
 
-  const stackedData = stack().keys(keyList)(data.data as any)!;
+  const stackedData = stack().keys(keyList)(data.value.data as any)!;
 
   // SCALES
   // @ts-ignore
@@ -96,24 +101,27 @@ const draw = () => {
     .padding(0.25);
 
   // CLEAN UP
-  select(`#${id}`).selectChildren().remove();
+  select(`#${id.value}`).selectChildren().remove();
 
   position.x = 0;
   position.y = 0;
 
-  if (!options.margin) throw new Error("margin not set");
+  if (!options.value.margin) throw new Error("margin not set");
   if (!isValid()) throw new Error("Data is not valid");
 
   // DRAW SVG
-  const svg = select(`#${id}`)
-    .attr("width", dimensions.chart.width)
-    .attr("height", dimensions.chart.height)
-    .attr("viewBox", `0 0 ${dimensions.chart.width} ${dimensions.chart.height}`)
+  const svg = select(`#${id.value}`)
+    .attr("width", dimensions.value.chart.width)
+    .attr("height", dimensions.value.chart.height)
+    .attr(
+      "viewBox",
+      `0 0 ${dimensions.value.chart.width} ${dimensions.value.chart.height}`
+    )
     .attr("tabindex", "0")
     .append("g")
     .attr(
       "transform",
-      `translate(${options.margin.left},${options.margin.top})`
+      `translate(${options.value.margin.left},${options.value.margin.top})`
     );
 
   // draw bars
@@ -138,7 +146,7 @@ const draw = () => {
         const item = Object.keys((d as any).data)[i + 1];
         return `${group} ${num} ${item};`;
       })
-      .attr("class", `${id} categorical${i + 1} bar`)
+      .attr("class", `${id.value} categorical${i + 1} bar`)
       .attr("x", (d) => xScale((d as any)[0]))
       .attr("y", (d) => {
         return yScale(yStackedAccessor(d)) as any;
@@ -162,18 +170,18 @@ const draw = () => {
       axisBottom(xScale)
         .ticks(5, "~s")
         .tickSize(-container.height)
-        .tickPadding(options.xAxis?.tickPadding ?? 0)
+        .tickPadding(options.value.xAxis?.tickPadding ?? 0)
     )
     .selectAll("text")
-    .attr("transform", `rotate(${options.xAxis?.tickRotation ?? 0})`);
+    .attr("transform", `rotate(${options.value.xAxis?.tickRotation ?? 0})`);
   svg
     .append("g")
     .classed("yAxis", true)
-    .call(axisLeft(yScale).tickPadding(options.yAxis?.tickPadding ?? 0))
+    .call(axisLeft(yScale).tickPadding(options.value.yAxis?.tickPadding ?? 0))
     .selectAll("text")
-    .attr("transform", `rotate(${options.yAxis?.tickRotation ?? 0})`);
+    .attr("transform", `rotate(${options.value.yAxis?.tickRotation ?? 0})`);
 
-  setDynamicScope(`#${id}`);
+  setDynamicScope(`#${id.value}`);
 };
 
 const isValid = () => {
@@ -191,7 +199,7 @@ const classes = computed(() => {
 defineExpose({ draw });
 
 watchEffect(() => {
-  if ((data as FeatherChartBarData).data) {
+  if ((data.value as FeatherChartBarData).data) {
     draw();
   }
 });

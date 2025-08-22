@@ -68,8 +68,8 @@ import {
   inject,
   onBeforeMount,
   onMounted,
-  reactive,
   ref,
+  toRefs,
   watchEffect,
 } from "vue";
 import { select, selectAll } from "d3-selection";
@@ -115,7 +115,7 @@ type SvgDrag = {
   position: { x: number; y: number };
 };
 
-const { data, dimensions, id, options } = reactive(props);
+const { data, dimensions, id, options } = toRefs(props);
 
 const defaultNodeClickHandler = (id: string, data: any) => {
   // console warning to remind the developer to provide a handler
@@ -133,7 +133,7 @@ const handleNodeClick = inject("handleNodeClick", defaultNodeClickHandler) as (
 const container = inject("container") as { width: number; height: number };
 const svgDrag = inject<SvgDrag>("svgDrag");
 
-if (!options.margin) {
+if (!options.value.margin) {
   throw new Error("margin not set");
 }
 
@@ -433,7 +433,7 @@ const hasNonContainerChild = (d: any) => {
 // #endregion filters
 
 const removeChildren = () => {
-  select(`#${id}`).selectChildren().remove();
+  select(`#${id.value}`).selectChildren().remove();
 };
 
 // #region movement
@@ -497,7 +497,7 @@ const draw = (offset?: { x: number; y: number } | undefined) => {
   if (!isValid()) throw new Error("Data is not valid");
 
   // DATA
-  const dataset: unknown = data.data;
+  const dataset: unknown = data.value.data;
 
   const treeLayout = tree()
     .size([container.width, container.height])
@@ -520,17 +520,17 @@ const draw = (offset?: { x: number; y: number } | undefined) => {
   multiInstanceInitialNodes.clear();
   findMultiInstanceNodes(nodes);
 
-  const svg = select(`#${id}`)
-    .attr("width", dimensions.chart.width)
-    .attr("height", dimensions.chart.height);
+  const svg = select(`#${id.value}`)
+    .attr("width", dimensions.value.chart.width)
+    .attr("height", dimensions.value.chart.height);
 
   const g = svg
     .attr("opacity", 0)
     .append("g")
     .attr(
       "transform",
-      `translate(${options.margin ? options.margin.left : 0},${
-        options.margin ? options.margin.top : 0
+      `translate(${options.value.margin ? options.value.margin.left : 0},${
+        options.value.margin ? options.value.margin.top : 0
       })`
     );
 
@@ -565,7 +565,7 @@ const draw = (offset?: { x: number; y: number } | undefined) => {
 
       toggleSelected(e.target as HTMLElement);
       selectedNode.value = d.data.name;
-      handleNodeClick(`${id}`, d);
+      handleNodeClick(`${id.value}`, d);
 
       moveSvg({ x: d.x, y: d.y });
     });
@@ -724,7 +724,7 @@ const draw = (offset?: { x: number; y: number } | undefined) => {
   //   hideDescendants(d);
   // });
 
-  setDynamicScope(`#${id}`);
+  setDynamicScope(`#${id.value}`);
 
   setTimeout(() => {
     svg.attr("opacity", 1);
@@ -734,7 +734,7 @@ const draw = (offset?: { x: number; y: number } | undefined) => {
 
 function isValid() {
   // validation rules here.
-  if (options.margin == undefined) return false;
+  if (options.value.margin == undefined) return false;
   return true;
 }
 
@@ -748,7 +748,7 @@ const classes = computed(() => {
 defineExpose({ draw });
 
 watchEffect(() => {
-  if (data) {
+  if (data.value) {
     removeChildren();
     draw();
   }
@@ -787,17 +787,6 @@ onMounted(() => {
       font-size: x-small;
     }
   }
-  // &:hover {
-  //   cursor: grab;
-  //   border: 1px dashed utils.alpha(vars.$primary, 0.05);
-  // }
-  // &.being-dragged {
-  //   cursor: grabbing;
-  //   transition: scale 1s ease-in-out;
-  //   border: 1px dashed utils.alpha(vars.$primary, 0.5);
-  // }
-
-  // TODO: Think about moving css zoom functionality to FeatherChart... scale .chart svg
   g {
     .link {
       opacity: 1;

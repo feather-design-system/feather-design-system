@@ -18,7 +18,7 @@ import {
   computed,
   inject,
   onMounted,
-  reactive,
+  toRefs,
   watchEffect,
 } from "vue";
 import {
@@ -46,24 +46,26 @@ const props = defineProps({
   axes: { type: Object as PropType<FeatherChartAxes>, required: true },
 });
 
-const { data, dimensions, id, options } = reactive(props);
+const { data, dimensions, id, options } = toRefs(props);
 
 const position = inject("position") as { x: number; y: number };
 
-if (!options.margin) {
+if (!options.value.margin) {
   throw new Error("margin not set");
 }
 
-dimensions.control.height = dimensions.control.width;
-dimensions.chart.height = dimensions.control.height;
+dimensions.value.control.height = dimensions.value.control.width;
+dimensions.value.chart.height = dimensions.value.control.height;
 
 const containerWidth =
-  dimensions.chart.width - (options.margin.left + options.margin.right);
+  dimensions.value.chart.width -
+  (options.value.margin.left + options.value.margin.right);
 const containerHeight =
-  dimensions.chart.height - (options.margin.top + options.margin.bottom);
+  dimensions.value.chart.height -
+  (options.value.margin.top + options.value.margin.bottom);
 
 const draw = () => {
-  select(`#${id}`).selectChildren().remove();
+  select(`#${id.value}`).selectChildren().remove();
 
   position.x = 0;
   position.y = 0;
@@ -71,7 +73,7 @@ const draw = () => {
   if (!isValid()) throw new Error("Data is not valid");
 
   // DATA
-  const radialData = hierarchy(data.data);
+  const radialData = hierarchy(data.value.data);
 
   // HMMM:  containerHeight is arbitrary (defaults to 350) and grows to fit content;  but don't know what content is yet.  May need to do this after we join data or make it configurable.
   const diameter = containerHeight * 0.75;
@@ -86,20 +88,23 @@ const draw = () => {
   const nodes = treeData.descendants();
   const links = treeData.links();
 
-  if (!options.margin) {
+  if (!options.value.margin) {
     throw new Error("margin not set");
   }
 
   // DRAW SVG
-  const svg = select(`#${id}`)
-    .attr("width", dimensions.chart.width)
-    .attr("height", dimensions.chart.height)
-    .attr("viewBox", `0 0 ${dimensions.chart.width} ${dimensions.chart.height}`)
+  const svg = select(`#${id.value}`)
+    .attr("width", dimensions.value.chart.width)
+    .attr("height", dimensions.value.chart.height)
+    .attr(
+      "viewBox",
+      `0 0 ${dimensions.value.chart.width} ${dimensions.value.chart.height}`
+    )
     .attr("tabindex", "0")
     .append("g")
     .attr(
       "transform",
-      `translate(${options.margin.left},${options.margin.top})`
+      `translate(${options.value.margin.left},${options.value.margin.top})`
     );
 
   const graphGroup = svg
@@ -155,7 +160,7 @@ const draw = () => {
     .transition(animate)
     .attr("r", "8");
 
-  setDynamicScope(`#${id}`);
+  setDynamicScope(`#${id.value}`);
 };
 
 const isValid = () => {
@@ -172,7 +177,7 @@ const classes = computed(() => {
 defineExpose({ draw });
 
 watchEffect(() => {
-  if (data) {
+  if (data.value) {
     console.log("Let's draw()'");
     draw();
   }

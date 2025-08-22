@@ -14,8 +14,8 @@ import {
   inject,
   onMounted,
   onUnmounted,
-  reactive,
   ref,
+  toRefs,
   watchEffect,
 } from "vue";
 import {
@@ -57,30 +57,26 @@ let props = defineProps({
   axes: { type: Object as PropType<FeatherChartAxes>, required: true },
 });
 
-const { data, dimensions, id, options } = reactive(props);
-
-dimensions.control.height = dimensions.control.width;
-dimensions.chart.height = dimensions.control.height / 2;
+const { data, dimensions, id, options } = toRefs(props);
 
 const radialForce = ref(50);
 
 const position = inject("position") as { x: number; y: number };
 const container = inject("container") as { width: number; height: number };
 
-if (!options.margin) throw new Error("margin not set");
+if (!options.value.margin) throw new Error("margin not set");
 
 const color = computed(() => {
-  if (options && options.colorScheme) {
-    console.log("setting color scheme in Force Directed", options.colorScheme);
-    return scaleOrdinal(options.colorScheme);
+  if (options && options.value.colorScheme) {
+    return scaleOrdinal(options.value.colorScheme);
   }
   return null;
 });
 
 const nodes = computed(
-  () => data.data.nodes.map((d) => ({ ...d })) as SimulationNodeDatum[]
+  () => data.value.data.nodes.map((d) => ({ ...d })) as SimulationNodeDatum[]
 );
-const links = computed(() => data.data.links.map((d) => ({ ...d })));
+const links = computed(() => data.value.data.links.map((d) => ({ ...d })));
 
 // SIMULATION
 let simulation: Simulation<SimulationNodeDatum, undefined> & {
@@ -150,7 +146,7 @@ const getMetaData = (obj: any) => {
 // https://observablehq.com/@d3/disjoint-force-directed-graph/2?intent=fork
 
 const draw = () => {
-  select(`#${id}`).selectChildren().remove();
+  select(`#${id.value}`).selectChildren().remove();
 
   position.x = 0;
   position.y = 0;
@@ -162,12 +158,12 @@ const draw = () => {
   //   .attr("width", container.width)
   //   .attr("height", container.height)
   //   .attr("viewBox", `-32 -32 ${container.width} ${container.height}`);
-  const svg = select(`#${id}`)
-    .attr("width", dimensions.chart.width)
-    .attr("height", dimensions.chart.height)
+  const svg = select(`#${id.value}`)
+    .attr("width", dimensions.value.chart.width)
+    .attr("height", dimensions.value.chart.height)
     .attr(
       "viewBox",
-      `-32 -32 ${dimensions.chart.width} ${dimensions.chart.height}`
+      `-32 -32 ${dimensions.value.chart.width} ${dimensions.value.chart.height}`
     );
 
   const link = svg
@@ -185,7 +181,7 @@ const draw = () => {
     .data(nodes.value)
     .join("circle")
     .attr("class", (d) =>
-      options.colorScheme
+      options.value.colorScheme
         ? "force-directed-circle"
         : `force-directed-circle categorical${(d as any).group}`
     );
@@ -224,7 +220,7 @@ const draw = () => {
   });
 
   // add vue scoped attribute to dynamic elements
-  setDynamicScope(`#${id}`);
+  setDynamicScope(`#${id.value}`);
 };
 
 const generateRandomNumber = (min: number, max: number) => {
