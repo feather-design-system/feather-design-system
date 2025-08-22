@@ -232,6 +232,7 @@ const isZoomable = computed(() => {
   return (
     t === "area" ||
     t === "force-directed" ||
+    t === "gauge" ||
     t === "horizontal-bar" ||
     t === "line" ||
     t === "dendrogram" ||
@@ -360,13 +361,14 @@ const controlWidthPx = computed(() => `${controlWidth.value}px`);
 const componentMap: Record<string, () => Promise<any>> = {
   area: () => import("./Area.vue"),
   bar: () => import("./Bar.vue"),
-  "vertical-bar": () => import("./VerticalBar.vue"),
   dendrogram: () => import("./Dendrogram.vue"),
   "force-directed": () => import("./ForceDirected.vue"),
+  gauge: () => import("./Gauge.vue"),
   "horizontal-bar": () => import("./HorizontalBar.vue"),
   line: () => import("./Line.vue"),
   radial: () => import("./Radial.vue"),
   "tree-diagram": () => import("./TreeDiagram.vue"),
+  "vertical-bar": () => import("./VerticalBar.vue"),
 };
 
 const chartComponent = computed(() => {

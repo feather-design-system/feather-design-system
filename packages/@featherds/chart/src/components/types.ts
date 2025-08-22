@@ -7,6 +7,7 @@ export type FeatherChartType =
   | "dendrogram"
   | "donut"
   | "force-directed"
+  | "gauge"
   | "horizontal-bar"
   | "line"
   | "pie"

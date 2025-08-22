@@ -1,4 +1,4 @@
-<!-- <template>
+<template>
   <svg
     :id="id"
     :width="dimensions.chart.width"
@@ -16,9 +16,8 @@ import {
   watchEffect,
 } from "vue";
 import { select } from "d3-selection";
-// import { line } from "d3-shape";
-// import { axisBottom, axisLeft, axisRight } from "d3-axis";
-// // import { extent, max } from "d3-array";
+import { Arc, arc } from "d3-shape";
+// import { extent, max } from "d3-array";
 import { transition } from "d3-transition";
 import { easePolyInOut } from "d3-ease";
 import {
@@ -27,9 +26,8 @@ import {
   FeatherChartLineData,
   FeatherChartOptions,
 } from "./types";
-// import { useXYSeries } from "../composables/useXYSeries";
-// import type { Row, NormRow } from "../utils/data";
 import { setDynamicScope } from "./chartUtils";
+import { scaleLinear } from "d3-scale";
 
 const props = defineProps({
   id: { type: String, required: true },
@@ -48,31 +46,37 @@ const props = defineProps({
   axes: { type: Object as PropType<FeatherChartAxes>, required: true },
 });
 
-const { axes, data, dimensions, id, options, type } = toRefs(props);
+type GaugeData = {
+  label: string;
+  min: number;
+  max: number;
+  value: number;
+  thresholds: {
+    warning: number;
+    danger: number;
+  };
+};
+
+const { data, dimensions, id, options, type } = toRefs(props);
 
 const position = inject("position") as { x: number; y: number };
+// radius computed inside draw() based on inner drawable area
+
+const gaugeData = computed((): GaugeData => {
+  const rawData = data.value.data as GaugeData[] | GaugeData | undefined;
+  const first = Array.isArray(rawData) ? rawData[0] : rawData;
+  return (
+    first ?? {
+      label: "Gauge",
+      value: 0,
+      min: 0,
+      max: 0,
+      thresholds: { warning: 80, danger: 96 },
+    }
+  );
+});
 
 if (!options.value.margin) throw new Error("margin not set");
-
-const containerWidth = computed(() => {
-  if (!options.value.margin) throw new Error("margin not set (containerWidth)");
-  return (
-    dimensions.value.chart.width -
-    (options.value.margin.left + options.value.margin.right)
-  );
-});
-const containerHeight = computed(() => {
-  if (!options.value.margin)
-    throw new Error("margin not set (containerHeight)");
-  return (
-    dimensions.value.chart.height -
-    (options.value.margin.top + options.value.margin.bottom)
-  );
-});
-
-// DATA
-
-// SCALES
 
 const draw = () => {
   // Clean up existing
@@ -80,35 +84,83 @@ const draw = () => {
 
   position.x = 0;
   position.y = 0;
-
+  console.log(`draw ${type.value}`);
   if (!isValid()) throw new Error("Invalid data");
-
-  // Skip rendering if normalized series is empty
-  // if (!processedSeries.value.length) {
-  //   return;
-  // }
 
   if (!options.value.margin) throw new Error("Margin not set");
 
-  // SCALES
-  // xScale and yScale are set in useXYSeries composable
+  // INNER DIMENSIONS (drawable area after margins)
+  const innerWidth =
+    dimensions.value.chart.width -
+    options.value.margin.left -
+    options.value.margin.right;
+  const innerHeight =
+    dimensions.value.chart.height -
+    options.value.margin.top -
+    options.value.margin.bottom;
+
+  // Radius based on smallest side of drawable area
+  const radius = Math.min(innerWidth, innerHeight) / 2;
+
+  // ANGLE SCALE: map value domain to semi-circle (-90deg to +90deg)
+  const angleScale = scaleLinear()
+    .domain([gaugeData.value.min, gaugeData.value.max])
+    .range([-Math.PI / 2, Math.PI / 2])
+    .clamp(true);
 
   const svg = select(`#${id.value}`)
-    .attr("width", dimensions.value.chart.width)
-    .attr("height", dimensions.value.chart.height)
     .attr(
       "viewBox",
       `0 0 ${dimensions.value.chart.width} ${dimensions.value.chart.height}`
     )
     .attr("tabindex", 0)
     .append("g")
-    /* TODO: Move to css */
     .attr(
       "transform",
       `translate(${options.value.margin.left}, ${options.value.margin.top})`
     );
 
-  transition(svg as any)
+  // Group centered within drawable area
+  const gaugeGroup = svg
+    .append("g")
+    .attr("transform", `translate(${innerWidth / 2}, ${innerHeight / 2})`);
+
+  const backgroundArc = arc()
+    .innerRadius(radius * 0.6)
+    .outerRadius(radius * 0.8)
+    .startAngle(-Math.PI / 2)
+    .endAngle(Math.PI / 2);
+
+  gaugeGroup
+    .append("path")
+    .classed("background-arc", true)
+    .attr("d", backgroundArc as Arc<any, unknown>);
+
+  const progressArc = arc()
+    .innerRadius(radius * 0.6)
+    .outerRadius(radius * 0.8)
+    .startAngle(-Math.PI / 2)
+    .endAngle(angleScale(gaugeData.value.value));
+
+  gaugeGroup
+    .append("path")
+    .classed("progress-arc", true)
+    .attr("d", progressArc as Arc<any, unknown>);
+
+  gaugeGroup
+    .append("text")
+    .classed("gauge-value", true)
+    .attr("text-anchor", "middle")
+    .attr("dy", -radius * 0.2)
+    .text(gaugeData.value.value);
+
+  gaugeGroup
+    .append("text")
+    .classed("gauge-label", true)
+    .attr("text-anchor", "middle")
+    .text(gaugeData.value.label || "Gauge");
+
+  transition(gaugeGroup as any)
     .duration(1000)
     .ease(easePolyInOut)
     .attr("opacity", 1);
@@ -141,53 +193,23 @@ onMounted(() => {
 </script>
 <style lang="scss" scoped>
 @use "@featherds/styles/themes/variables" as vars;
-.feather-line-svg {
+.feather-gauge-svg {
   display: block;
   max-width: 100%;
   height: auto;
-  .line {
-    stroke: var(vars.$categorical1);
-    stroke-width: 2;
-    stroke-dasharray: 1;
-    stroke-dashoffset: 1;
-    animation: line-draw 3s ease-in-out forwards;
+  .background-arc {
+    fill: var(vars.$shade-3);
+  }
+  .progress-arc {
+    fill: var(vars.$success);
+  }
 
-    &[data-series="1"] {
-      stroke: var(vars.$categorical1);
-    }
-    &[data-series="2"] {
-      stroke: var(vars.$categorical2);
-    }
-    &[data-series="3"] {
-      stroke: var(vars.$categorical3);
-    }
-    &[data-series="4"] {
-      stroke: var(vars.$categorical4);
-    }
-    &[data-series="5"] {
-      stroke: var(vars.$categorical5);
-    }
-    &[data-series="6"] {
-      stroke: var(vars.$categorical6);
-    }
-    &[data-series="7"] {
-      stroke: var(vars.$categorical7);
-    }
-    &[data-series="8"] {
-      stroke: var(vars.$categorical8);
-    }
-    &[data-series="9"] {
-      stroke: var(vars.$categorical9);
-    }
-    &[data-series="0"] {
-      stroke: var(vars.$categorical10);
-    }
+  .gauge-value {
+    font-size: 3rem;
+  }
+
+  .gauge-label {
+    font-size: 1.25rem;
   }
 }
-
-@keyframes line-draw {
-  to {
-    stroke-dashoffset: 0;
-  }
-}
-</style> -->
+</style>
