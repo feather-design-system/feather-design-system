@@ -17,6 +17,7 @@ import FeatherChart from "../../chart/src/components/FeatherChart.vue";
 import {
   dataForForceDirectedGraph,
   dendroData2,
+  gaugeData,
   hbarData1,
   hbarData2,
   line3SeriesNumbersWide,
@@ -122,7 +123,7 @@ const items = ref([
     x: 0,
     y: 3,
     w: 2,
-    h: 7,
+    h: 4,
     static: false,
     component: markRaw(FeatherChart),
     props: {
@@ -161,7 +162,7 @@ const items = ref([
     x: 2,
     y: 5,
     w: 3,
-    h: 7,
+    h: 6,
     static: false,
     component: markRaw(FeatherChart),
     props: {
@@ -189,7 +190,22 @@ const items = ref([
       size: "md",
       title: "Vertical Bar Chart",
       axes: { x: "sales", y: "" },
-      onMoreEvent: () => handleMoreEvent,
+    },
+  },
+  {
+    i: "8",
+    x: 5,
+    y: 2,
+    w: 5,
+    h: 6,
+    static: false,
+    component: markRaw(FeatherChart),
+    props: {
+      id: "chart-7",
+      type: "gauge",
+      data: gaugeData as FeatherChartFlexibleData,
+      size: "xl",
+      title: "Gauge Chart",
     },
   },
 ]) as any; // TODO:  Make FeatherLayout type-safe

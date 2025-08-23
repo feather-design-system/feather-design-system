@@ -4,7 +4,7 @@
     type="gauge"
     title="Gauge"
     :data="gaugeData1"
-    :size="'sm'"
+    :size="'xl'"
     :options="options"
   ></FeatherChart>
 </template>

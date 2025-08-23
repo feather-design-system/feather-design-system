@@ -514,7 +514,10 @@ onUnmounted(() => {
     .action-container {
       display: flex;
       margin-left: auto;
+
+      a.btn,
       button {
+        color: var(vars.$state-color-on-neutral);
         margin: 0;
         .action {
           margin: 0;

@@ -6506,9 +6506,27 @@ export const areaDataset1: FeatherChartAreaData = {
 
 export const gaugeData = {
   data: [
-    { label: "Metric 1", value: 45, min: 0, max: 100, threshold: 90 },
-    // { label: "Metric 2", value: 60, min: 0, max: 100, threshold: 80 },
-    // { label: "Metric 3", value: 75, min: 0, max: 100, threshold: 85 },
+    {
+      label: "Metric 1",
+      value: 45,
+      min: 0,
+      max: 100,
+      thresholds: { warning: 50, error: 75 },
+    },
+    {
+      label: "Metric 2",
+      value: 97,
+      min: 0,
+      max: 100,
+      thresholds: { warning: 75, error: 90 },
+    },
+    {
+      label: "Metric 3",
+      value: 82,
+      min: 0,
+      max: 100,
+      thresholds: { warning: 60, error: 88 },
+    },
   ],
 };
 

@@ -39,6 +39,7 @@ export type FeatherChartOptions = {
   ariaSummary?: string;
   colorScheme?: Array<string>;
   class?: string;
+  gaugeOrientation?: "right" | "top"; // gauge specific: right (vertical semicircle) or top (horizontal semicircle)
   margin?: {
     top: number;
     right: number;
