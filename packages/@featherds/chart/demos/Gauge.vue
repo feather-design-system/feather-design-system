@@ -8,6 +8,7 @@
     :size="'sm'"
     :options="options"
     @refresh="refresh"
+    @gauge-click="handleGaugeClick"
   ></FeatherChart>
   <FeatherChart
     id="gaugeChartWithThreshold"
@@ -130,6 +131,9 @@ const options: FeatherChartOptions = {
     bottom: 44,
     left: 44,
   },
+};
+const handleGaugeClick = (payload: FeatherChartFlexibleData) => {
+  console.log("Gauge clicked:", payload);
 };
 </script>
 

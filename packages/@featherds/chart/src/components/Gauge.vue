@@ -42,7 +42,14 @@ const props = defineProps({
   axes: { type: Object as PropType<FeatherChartAxes>, required: true },
 });
 
-type GaugeData = {
+const emit = defineEmits<{
+  (
+    event: "gauge-click",
+    payload: { id: string; index: number; data: GaugeData; event: Event }
+  ): void;
+}>();
+
+export type GaugeData = {
   label?: string;
   min: number;
   max: number;
@@ -207,8 +214,18 @@ const draw = () => {
     const group = svg
       .append("g")
       .attr("class", "feather-gauge")
+      .attr("tabindex", "0")
       .attr("data-gauge-index", i)
-      .attr("transform", `translate(${cx}, ${cy})`);
+      .attr("transform", `translate(${cx}, ${cy})`)
+      .on("click", (event: Event) => {
+        emit("gauge-click", { id: id.value, index: i, data: g, event });
+      })
+      .on("keydown", (event: KeyboardEvent) => {
+        if (event.key === "Enter" || event.key === " ") {
+          event.preventDefault();
+          emit("gauge-click", { id: id.value, index: i, data: g, event });
+        }
+      });
 
     const backgroundArc = arc()
       .innerRadius(radius * 0.6)
@@ -485,10 +502,11 @@ onMounted(() => {
     }
   }
   .gauge-value {
-    font-weight: bolder;
+    @include typo.display3;
+    // font-family: var(vars.$header-font-family);
+    // font-weight: bolder;
     /* Responsive sizing: JS sets --gauge-value-size on each gauge group; fallback keeps it readable */
     font-size: var(--gauge-value-size, 1rem);
-    line-height: 1;
     fill: var(vars.$primary-text-on-surface);
   }
 

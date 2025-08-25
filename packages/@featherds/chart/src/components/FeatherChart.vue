@@ -115,6 +115,7 @@
           :dimensions="sizing"
           :options="mergedOptions"
           :axes="axes"
+          @gauge-click="$emit('gauge-click', $event)"
         >
         </Component>
       </div>
@@ -163,7 +164,7 @@ interface ChartComponent extends ComponentPublicInstance {
 }
 
 // #region EMITS
-const emit = defineEmits(["filter", "refresh"]);
+const emit = defineEmits(["filter", "refresh", "gauge-click"] as const);
 // #endregion
 
 // #region PROPS
