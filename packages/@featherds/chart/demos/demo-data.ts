@@ -6504,7 +6504,29 @@ export const areaDataset1: FeatherChartAreaData = {
   ],
 };
 
-export const gaugeData = {
+export const gaugeNoData = {
+  data: [
+    {
+      label: "No Data",
+      value: undefined,
+      min: 0,
+      max: 100,
+    },
+  ],
+};
+export const gaugeData1 = {
+  data: [
+    {
+      label: "Metric 1",
+      value: 45,
+      min: 0,
+      max: 100,
+      thresholds: { warning: 50, error: 75 },
+    },
+  ],
+};
+
+export const gaugeData3 = {
   data: [
     {
       label: "Metric 1",
@@ -6526,6 +6548,81 @@ export const gaugeData = {
       min: 0,
       max: 100,
       thresholds: { warning: 60, error: 88 },
+    },
+  ],
+};
+
+export const gaugeData10 = {
+  data: [
+    {
+      label: "Metric 1",
+      value: 45,
+      min: 0,
+      max: 100,
+      thresholds: { warning: 50, error: 75 },
+    },
+    {
+      label: "Metric 2",
+      value: 97,
+      min: 0,
+      max: 100,
+      thresholds: { warning: 75, error: 90 },
+    },
+    {
+      label: "Metric 3",
+      value: 82,
+      min: 0,
+      max: 100,
+      thresholds: { warning: 60, error: 88 },
+    },
+    {
+      label: "Metric 4",
+      value: 12.5,
+      min: 0,
+      max: 20,
+      thresholds: { warning: 12, error: 16 },
+    },
+    {
+      label: "Metric 5",
+      value: 720,
+      min: 0,
+      max: 1000,
+      thresholds: { warning: 600, error: 850 },
+    },
+    {
+      label: "Metric 6",
+      value: 0.72,
+      min: 0,
+      max: 1,
+      thresholds: { warning: 0.6, error: 0.9 },
+    },
+    {
+      label: "Metric 7",
+      value: 350,
+      min: 0,
+      max: 500,
+      thresholds: { warning: 300, error: 420 },
+    },
+    {
+      label: "Metric 8",
+      value: 5,
+      min: 0,
+      max: 10,
+      thresholds: { warning: 6, error: 8 },
+    },
+    {
+      label: "Metric 9",
+      value: 2500,
+      min: 0,
+      max: 5000,
+      thresholds: { warning: 3000, error: 4000 },
+    },
+    {
+      label: "Metric 10",
+      value: 63,
+      min: 0,
+      max: 100,
+      thresholds: { warning: 70, error: 90 },
     },
   ],
 };
