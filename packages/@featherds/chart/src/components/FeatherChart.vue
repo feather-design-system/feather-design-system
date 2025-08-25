@@ -159,6 +159,7 @@ import { useOutsideClick } from "@featherds/composables/events/OutsideClick";
 
 interface ChartComponent extends ComponentPublicInstance {
   draw: () => void;
+  forceRedraw: () => void | Promise<void>;
 }
 
 // #region EMITS
@@ -427,6 +428,7 @@ const actionRefresh = () => {
   if (showActionSubmenu.value) hideActionSubmenu();
   setZoomLevel(ZoomLevel.ZOOM_NONE);
   resetPan();
+  chartRef.value?.forceRedraw?.() || chartRef.value?.draw?.();
   emit("refresh", id.value, data.value);
 };
 
@@ -464,7 +466,11 @@ provide("container", {
 });
 // #endregion
 
-defineExpose({ setChartType });
+defineExpose({
+  setChartType,
+  draw: () => chartRef.value?.draw?.(),
+  forceRedraw: () => chartRef.value?.forceRedraw?.() || chartRef,
+});
 
 onBeforeMount(() => {});
 

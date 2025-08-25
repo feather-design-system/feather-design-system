@@ -411,6 +411,13 @@ const draw = () => {
   setDynamicScope(`#${id.value}`);
 };
 
+const forceRedraw = async () => {
+  select(`#${id.value}`).interrupt();
+  // Clear cached angles so arcs re-animate from start angle
+  previousAngles.clear();
+  draw();
+};
+
 const isValid = () => {
   return true;
 };
@@ -421,7 +428,7 @@ const classes = computed(() => {
   };
 });
 
-defineExpose({ draw });
+defineExpose({ draw, forceRedraw });
 
 // Watch for data changes (post-mount) to animate updates; first render handled in onMounted
 watch(

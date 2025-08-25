@@ -17,7 +17,7 @@ import FeatherChart from "../../chart/src/components/FeatherChart.vue";
 import {
   dataForForceDirectedGraph,
   dendroData2,
-  gaugeData,
+  gaugeData10,
   hbarData1,
   hbarData2,
   line3SeriesNumbersWide,
@@ -203,7 +203,7 @@ const items = ref([
     props: {
       id: "chart-7",
       type: "gauge",
-      data: gaugeData as FeatherChartFlexibleData,
+      data: gaugeData10 as FeatherChartFlexibleData,
       size: "xl",
       title: "Gauge Chart",
     },
