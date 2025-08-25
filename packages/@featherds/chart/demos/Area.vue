@@ -108,7 +108,7 @@
       :id="`${areaId}-xxl`"
       title="Simple Area Chart (xxl)"
       size="xxl"
-      :data="areaData as FeatherChartFlexibleData"
+      :data="areaData"
       :options="areaOptions"
       type="area"
       :axes="axes"

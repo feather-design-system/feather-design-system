@@ -249,8 +249,8 @@ const draw = () => {
       const isValueTick =
         name === "value" || name === "current" || name === "state";
       // Make the current value tick slightly longer for visibility
-      const rInner = radius * (isValueTick ? 0.5 : 0.55);
-      const rOuter = radius * (isValueTick ? 0.9 : 0.85);
+      const rInner = radius * (isValueTick ? 0.3 : 0.6);
+      const rOuter = radius * (isValueTick ? 0.8 : 0.85);
 
       const x1 = Math.cos(a) * rInner;
       const y1 = Math.sin(a) * rInner;
@@ -258,7 +258,7 @@ const draw = () => {
       const y2 = Math.sin(a) * rOuter;
       group
         .append("line")
-        .attr("class", `threshold-tick ${name}`)
+        .attr("class", `tick ${name}`)
         .attr("data-threshold-name", name)
         .attr("x1", x1)
         .attr("y1", y1)
@@ -288,10 +288,47 @@ const draw = () => {
     Object.entries(thresholds).forEach(([name, val]) => {
       addTick(name, val);
     });
-    // Always draw a tick for the current value so user can see pointer even without thresholds
-    addTick("value", g.value);
-    // Debug (remove if noisy):
-    // console.debug('Gauge thresholds', { label: g.label, thresholds, value: g.value });
+
+    // Animated value tick (indicator line): from previous angle to current value angle
+    const valueTickInnerR = radius * 0.5;
+    const valueTickOuterR = radius * 0.8;
+    const coordsForAngle = (ang: number) => {
+      const a = ang - Math.PI / 2;
+      return {
+        x1: Math.cos(a) * valueTickInnerR,
+        y1: Math.sin(a) * valueTickInnerR,
+        x2: Math.cos(a) * valueTickOuterR,
+        y2: Math.sin(a) * valueTickOuterR,
+      };
+    };
+    const prevTick = coordsForAngle(previous);
+    const valueTick = group
+      .append("line")
+      .attr("class", "tick value")
+      .attr("data-threshold-name", "value")
+      .attr("x1", prevTick.x1)
+      .attr("y1", prevTick.y1)
+      .attr("x2", prevTick.x2)
+      .attr("y2", prevTick.y2)
+      .attr("role", "presentation");
+    // Animate rotationally along the arc (interpolate angle, derive coords each frame)
+    valueTick
+      .transition()
+      .duration(800)
+      .ease(easePolyInOut)
+      .tween("value-tick-rotate", function () {
+        const lineSel = select(this);
+        const interp = interpolateNumber(previous, valueAngle);
+        return (t: number) => {
+          const a = interp(t);
+          const c = coordsForAngle(a);
+          lineSel
+            .attr("x1", c.x1)
+            .attr("y1", c.y1)
+            .attr("x2", c.x2)
+            .attr("y2", c.y2);
+        };
+      });
 
     previousAngles.set(key, valueAngle); // store for next draw
 
@@ -358,7 +395,7 @@ onMounted(() => {
   max-width: 100%;
   height: auto;
   .background-arc {
-    fill: var(vars.$shade-3);
+    fill: var(vars.$shade-2);
   }
   .progress-arc {
     fill: var(vars.$success);
@@ -370,17 +407,19 @@ onMounted(() => {
     }
   }
 
-  .threshold-tick {
-    stroke-width: 2;
+  .tick {
     stroke-linecap: round;
     pointer-events: none;
-    filter: drop-shadow(0 1px 1px var(vars.$background));
+    filter: drop-shadow(0 1px 1px var(vars.$surface-dark));
     stroke: var(vars.$success, green);
     stroke: var(vars.$state-color-on-neutral);
+    stroke-width: 2;
     &.warning {
+      stroke-width: 6;
       stroke: var(vars.$minor, orange);
     }
     &.error {
+      stroke-width: 6;
       stroke: var(vars.$error, red);
     }
   }
