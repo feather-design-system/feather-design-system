@@ -1,6 +1,6 @@
 {
   "name": "@featherds/tooltip",
-  "version": "0.12.40",
+  "version": "0.12.41",
   "publishConfig": {
     "access": "public"
   },

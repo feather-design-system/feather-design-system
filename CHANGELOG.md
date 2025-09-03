@@ -1,3 +1,12 @@
+## [0.12.41](https://github.com/feather-design-system/feather-design-system/compare/v0.12.40...v0.12.41) (2025-09-03)
+
+
+### Features
+
+* **sidenav:** emit update:expanded and update:collapsed; optional root tag; ([#219](https://github.com/feather-design-system/feather-design-system/issues/219)) ([ab8ff40](https://github.com/feather-design-system/feather-design-system/commit/ab8ff407cbce87e96f99fb1650f6c911686d2e43))
+
+
+
 ## [0.12.40](https://github.com/feather-design-system/feather-design-system/compare/v0.12.39...v0.12.40) (2025-08-05)
 
 
