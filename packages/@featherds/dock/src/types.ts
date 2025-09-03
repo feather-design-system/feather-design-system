@@ -19,4 +19,6 @@ export interface DockProps {
   collapsedWidth?: string;
   pushedSelector?: string | string[] | undefined;
   labels?: DockLabels;
+  /** Optional tag to use for the dock root element (e.g. 'div', 'nav') */
+  rootTag?: string;
 }

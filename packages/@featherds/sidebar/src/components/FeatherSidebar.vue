@@ -8,6 +8,8 @@
     :expandedWidth="dockProps.expandedWidth"
     :collapsedWidth="dockProps.collapsedWidth"
     :labels="dockProps.labels"
+    @update:dock-expanded="onDockExpanded"
+    @update:dock-collapsed="onDockCollapsed"
   >
     <template #docked>
       <FeatherPanelBar
@@ -29,6 +31,19 @@ import { FeatherDock, DockProps } from "@featherds/dock";
 import { SidebarProps } from "../types";
 import { FeatherPanelBar, PanelBarProps, Panel } from "@featherds/panel-bar";
 const props = defineProps<SidebarProps>();
+// forward typed events to parent so consumers can listen to `update:expanded` / `update:collapsed`
+const emit = defineEmits<{
+  (e: "update:expanded", id: string): void;
+  (e: "update:collapsed", id: string): void;
+}>();
+
+const onDockExpanded = () => {
+  emit("update:expanded", dockProps.value.id);
+};
+
+const onDockCollapsed = () => {
+  emit("update:collapsed", dockProps.value.id);
+};
 
 const dockProps = computed(() => {
   const {

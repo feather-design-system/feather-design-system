@@ -1,6 +1,8 @@
 <template>
   <FeatherDock
     :id="dockProps.id"
+    :rootTag="dockProps.rootTag"
+    :ariaLabel="dockProps.rootTag === 'nav' ? 'Navigation' : ''"
     :pushedSelector="dockProps.pushedSelector"
     :modelValue="dockProps.modelValue"
     :location="dockProps.location"
@@ -8,6 +10,8 @@
     :collapsedWidth="dockProps.collapsedWidth"
     :labels="dockProps.labels"
     class="feather-sidenav"
+    @update:dock-expanded="onDockExpanded"
+    @update:dock-collapsed="onDockCollapsed"
   >
     <template #docked>
       <FeatherSidenavList :id="menuProps.id" :items="menuProps.items" />
@@ -39,8 +43,15 @@ const dockProps = computed(() => {
     location: location || "left",
     expandedWidth: expandedWidth || "20rem",
     collapsedWidth: collapsedWidth || "3rem",
+    rootTag: "nav",
   } as DockProps;
 });
+
+// forward typed events to parent so consumers can listen to `update:expanded` / `update:collapsed`
+const emit = defineEmits<{
+  (e: "update:expanded", id: string): void;
+  (e: "update:collapsed", id: string): void;
+}>();
 
 const menuProps = computed(() => {
   const { id, items } = props;
@@ -49,6 +60,14 @@ const menuProps = computed(() => {
     items: items as MenuListEntry[],
   };
 });
+
+const onDockExpanded = () => {
+  emit("update:expanded", dockProps.value.id);
+};
+
+const onDockCollapsed = () => {
+  emit("update:collapsed", dockProps.value.id);
+};
 </script>
 
 <style lang="scss">
