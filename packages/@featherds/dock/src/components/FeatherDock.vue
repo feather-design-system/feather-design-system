@@ -1,5 +1,5 @@
 <template>
-  <div :class="dockClasses" :id="id">
+  <component :is="rootTag" :class="dockClasses" :id="id">
     <!-- @keydown.esc.stop.prevent="handleSidebarEscape" -->
     <FeatherButton
       class="feather-dock-toggle hover focus"
@@ -37,7 +37,7 @@
         </div>
       </slot>
     </div>
-  </div>
+  </component>
 </template>
 
 <script setup lang="ts">
@@ -67,6 +67,7 @@ const props = withDefaults(defineProps<DockProps>(), {
     expand: "Expand dock",
     collapse: "Collapse dock",
   }),
+  rootTag: "div",
 });
 
 const emit = defineEmits([

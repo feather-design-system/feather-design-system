@@ -2,7 +2,7 @@
   <FeatherSidenav
     :id="sideNavId"
     :items="mainMenu"
-    expandedWidth="10rem"
+    expandedWidth="12rem"
     pushedSelector="main"
     :modelValue="sideNavExpanded"
     @update:collapsed="handleCollapsed"

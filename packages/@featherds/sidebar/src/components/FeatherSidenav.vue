@@ -1,6 +1,8 @@
 <template>
   <FeatherDock
     :id="dockProps.id"
+    :rootTag="dockProps.rootTag"
+    :ariaLabel="dockProps.rootTag === 'nav' ? 'Navigation' : ''"
     :pushedSelector="dockProps.pushedSelector"
     :modelValue="dockProps.modelValue"
     :location="dockProps.location"
@@ -41,6 +43,7 @@ const dockProps = computed(() => {
     location: location || "left",
     expandedWidth: expandedWidth || "20rem",
     collapsedWidth: collapsedWidth || "3rem",
+    rootTag: "nav",
   } as DockProps;
 });
 
