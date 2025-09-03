@@ -7,6 +7,8 @@
       :icon="dockConfig.isOpen ? 'Menu Close' : 'Menu Open'"
       :onColor="true"
       @click="toggleDock"
+      @mouseenter="toggleHovering = true"
+      @mouseleave="toggleHovering = false"
       :aria-expanded="dockConfig.isOpen"
       :aria-label="dockConfig.isOpen ? labels.collapse : labels.expand"
       :aria-controls="`${id}-content`"
@@ -77,6 +79,8 @@ const emit = defineEmits([
 ]);
 
 const dockContentRef = ref<HTMLElement | undefined>(undefined);
+
+const toggleHovering = ref(false);
 
 // use composable's ref as source of truth; its .value is a Ref<boolean>
 const isDockOpen = ref<boolean>(props.modelValue);
@@ -279,6 +283,7 @@ provide(
 
 // Provide the dock configuration and expansion method to all children
 provide("dockConfig", readonly(dockConfig)); //readonly
+provide("toggleHovering", readonly(toggleHovering));
 
 onMounted(() => {
   if (props.pushedSelector) {

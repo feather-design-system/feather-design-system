@@ -20,4 +20,6 @@ export type SidebarProps = BaseSidebarProps & {
   menuIcon?: string;
 };
 
-export type SidenavProps = BaseSidebarProps & {};
+export type SidenavProps = BaseSidebarProps & {
+  hoverMode?: boolean;
+};

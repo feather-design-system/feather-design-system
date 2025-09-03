@@ -51,11 +51,11 @@
 </template>
 
 <script setup lang="ts">
-import { computed, inject, PropType, Ref, ref, watch } from "vue";
+import { computed, inject, PropType, ref } from "vue";
 import { FeatherIcon } from "@featherds/icon";
 import ExpandMore from "@featherds/icon/navigation/ExpandMore";
 import type { Panel } from "./types";
-import type { DockConfig } from "@featherds/dock";
+import { useDock } from "@featherds/composables/dock/useDock";
 
 const props = defineProps({
   id: {
@@ -92,46 +92,14 @@ const emit = defineEmits(["panel-toggle"]);
 
 const panelBarRef = ref<HTMLElement | undefined>(undefined);
 
-const panelBarClasses = computed(() => {
-  return {
-    "feather-panel-bar": true,
-    docked: isDocked.value,
-    "dock-closed": isDocked.value && isDockCollapsed.value,
-  };
+// #region DockConfig (use composable)
+const { dockConfig, isDocked, isDockCollapsed } = useDock({
+  onDockClosed: () => {
+    if (!panelBarRef.value) return;
+    const openDetails = panelBarRef.value.querySelectorAll("details[open]");
+    openDetails.forEach((details) => details.removeAttribute("open"));
+  },
 });
-
-// #region DockConfig
-const dockConfig = inject<Ref<DockConfig>>(
-  "dockConfig",
-  ref({
-    id: "none",
-    location: "none",
-    isOpen: false,
-  })
-);
-
-const dockId = ref(dockConfig.value.id);
-
-if (dockConfig) {
-  watch(
-    dockConfig,
-    (cfg) => {
-      if (
-        panelBarRef.value &&
-        !cfg.isOpen &&
-        isDocked.value &&
-        cfg.id === dockId.value
-      ) {
-        panelBarRef.value
-          .querySelectorAll("details[open]")
-          .forEach((details) => {
-            details.removeAttribute("open");
-          });
-      }
-    },
-    { deep: true }
-  );
-}
 
 const requestDockExpansion = inject<() => void>("requestDockExpansion", () => {
   if (dockConfig.value.location !== "none") {
@@ -139,15 +107,15 @@ const requestDockExpansion = inject<() => void>("requestDockExpansion", () => {
   }
 });
 
-const isDocked = computed(() => {
-  return dockConfig.value.location !== "none";
-});
-
-const isDockCollapsed = computed(() => {
-  return isDocked.value && !dockConfig.value.isOpen;
-});
-
 // #endregion
+
+const panelBarClasses = computed(() => {
+  return {
+    "feather-panel-bar": true,
+    docked: isDocked.value,
+    "dock-closed": isDocked.value && isDockCollapsed.value,
+  };
+});
 
 const openPanelIds = ref<Set<string>>(new Set());
 
