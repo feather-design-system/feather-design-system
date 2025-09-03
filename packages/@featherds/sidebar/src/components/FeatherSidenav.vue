@@ -14,7 +14,11 @@
     @update:dock-collapsed="onDockCollapsed"
   >
     <template #docked>
-      <FeatherSidenavList :id="menuProps.id" :items="menuProps.items" />
+      <FeatherSidenavList
+        :id="menuProps.id"
+        :items="menuProps.items"
+        :hoverMode="props.hoverMode ?? false"
+      />
     </template>
   </FeatherDock>
 </template>
@@ -35,6 +39,7 @@ const dockProps = computed(() => {
     location,
     expandedWidth,
     collapsedWidth,
+    labels,
   } = props;
   return {
     id: id,
@@ -44,6 +49,7 @@ const dockProps = computed(() => {
     expandedWidth: expandedWidth || "20rem",
     collapsedWidth: collapsedWidth || "3rem",
     rootTag: "nav",
+    labels: labels,
   } as DockProps;
 });
 

@@ -1,68 +1,73 @@
 <template>
-  <FeatherList :class="listClasses" :id="props.id" ref="listRef">
-    <template v-for="item in items" :key="item.id">
+  <FeatherList :class="listClasses" :id="props.id">
+    <template v-for="item in processedItems" :key="item.id">
       <FeatherPopover
         v-if="canShowPopover(item)"
         :pointerAlignment="PointerAlignment.left"
         :placement="PopoverPlacement.left"
       >
         <template v-slot:trigger="{ attrs, on }">
-          <!-- Level 1 menu items -->
+          <!-- Level 1 menu items (popover triggers) -->
           <FeatherListItem
-            tabindex="0"
             v-if="item.type === 'item'"
             :id="item.id"
+            :ref="(el) => setTriggerRef(item.id, el as HTMLElement | null)"
             :class="listItemClasses"
             :asLi="true"
             v-bind="attrs"
             v-on="on"
             @focus="forceClosePopovers"
+            @mouseenter="onItemMouseEnter(item.id, $event)"
+            @mouseleave="onItemMouseLeave()"
+            tabindex="0"
           >
-            <!-- <div class="li-icon" @click="requestDockExpansion"> -->
             <div class="li-icon">
               <FeatherIcon
                 v-if="item.type === 'item' && item.icon"
                 :icon="item.icon"
               />
             </div>
-            <div class="li-text">
-              {{ item.title }}
-            </div>
+            <div class="li-text">{{ item.title }}</div>
             <div class="li-chevron">
               <FeatherIcon v-if="!item.href" :icon="ChevronRight" />
             </div>
           </FeatherListItem>
+
           <FeatherListHeader
-            v-if="item.type === 'header'"
+            v-else-if="item.type === 'header'"
             :id="item.id"
             :asLi="true"
-            >{{ item.title }}
-          </FeatherListHeader>
+            >{{ item.title }}</FeatherListHeader
+          >
           <FeatherListSeparator
-            v-if="item.type === 'separator'"
+            v-else-if="item.type === 'separator'"
             class="li-separator"
             :id="item.id"
             :asLi="true"
           />
         </template>
+
         <template #default>
-          <!-- Popover content (Popover default slot)-->
+          <!-- Popover content (Popover default slot) -->
           <FeatherMenuList
             v-if="item.type === 'item' && item.componentProps"
             :id="`${props.id}-${item.id}-menu`"
             :items="item.componentProps?.items || []"
             @focus="forceClosePopovers"
           />
-          <!-- v-bind="item.componentProps || {}" -->
         </template>
       </FeatherPopover>
-      <!-- Level 1 links -->
+
+      <!-- Level 1 links (no popover) -->
+      <!-- mouseenter so we can close all popovers when we enter a differnt li -->
       <FeatherListItem
         v-else-if="item.type === 'item'"
         :id="item.id"
         :href="item.href"
         :target="item.target || undefined"
         :class="listItemClasses"
+        @mouseenter="onItemMouseEnter(item.id, $event)"
+        @mouseleave="onItemMouseLeave()"
         @focus="forceClosePopovers"
       >
         <div class="li-icon">
@@ -71,9 +76,7 @@
             :icon="item.icon"
           />
         </div>
-        <div class="li-text">
-          {{ item.title }}
-        </div>
+        <div class="li-text">{{ item.title }}</div>
         <div class="li-chevron">
           <FeatherIcon v-if="!item.href" :icon="ChevronRight" />
         </div>
@@ -83,7 +86,7 @@
 </template>
 
 <script setup lang="ts">
-import { computed, inject, Ref, ref, watch } from "vue";
+import { computed, toRef } from "vue";
 import {
   FeatherList,
   FeatherListItem,
@@ -96,104 +99,79 @@ import {
   PopoverPlacement,
 } from "@featherds/popover";
 import { FeatherMenuList, MenuListEntry } from "@featherds/menu";
-import { DockConfig } from "@featherds/dock";
 import { FeatherIcon } from "@featherds/icon";
 import ChevronRight from "@featherds/icon/navigation/ChevronRight";
 
+// ============================================================================
+// Props / Types
+// ============================================================================
 const props = defineProps({
-  id: {
-    type: String,
-    required: true,
+  id: { type: String, required: true },
+  items: { type: Array as () => MenuListEntry[], required: true },
+  hoverMode: { type: Boolean, default: false }, // enables hover -> popover behavior
+});
+
+import { usePopoverHover } from "@featherds/composables/popover/usePopoverHover";
+
+// Hover & Popover Behavior (moved to composable)
+const {
+  setTriggerRef,
+  onItemMouseEnter,
+  onItemMouseLeave,
+  forceClosePopovers,
+} = usePopoverHover(toRef(props, "hoverMode"));
+
+// ============================================================================
+// Dock Integration (extracted to composable)
+// ============================================================================
+import { useDock } from "@featherds/composables/dock/useDock";
+
+const { isDocked, isDockCollapsed } = useDock({
+  onDockClosed: () => {
+    forceClosePopovers();
   },
-  items: {
-    type: Array as () => MenuListEntry[],
-    required: true,
+  onToggleHoverOpen: () => {
+    if (props.hoverMode) forceClosePopovers();
   },
 });
 
-const listRef = ref<HTMLElement | undefined>(undefined);
+// ============================================================================
+// List Data & Presentation
+// state (none) -> computed -> helpers
+// ============================================================================
+const listClasses = computed(() => ({
+  "feather-sidenav-menu": true,
+  docked: isDocked.value,
+  "dock-closed": isDocked.value && isDockCollapsed.value,
+  "dock-open": isDocked.value && !isDockCollapsed.value,
+}));
 
-// #region DockConfig
-const dockConfig = inject<Ref<DockConfig>>(
-  "dockConfig",
-  ref({
-    id: "none",
-    location: "none",
-    isOpen: false,
-  })
-);
+const listItemClasses = computed(() => ({
+  "feather-sidenav-menu-item": true,
+}));
 
-const dockId = ref(dockConfig.value.id);
-
-if (dockConfig) {
-  watch(
-    dockConfig,
-    (cfg) => {
-      if (!cfg.isOpen && isDocked.value && cfg.id === dockId.value) {
-        // If the dock is closed, we want to force close any open popovers
-        forceClosePopovers();
-      }
-    },
-    { deep: true }
-  );
-}
-
-// const requestDockExpansion = inject<() => void>("requestDockExpansion");
-
-const isDocked = computed(() => {
-  return dockConfig.value.location !== "none";
-});
-
-const isDockCollapsed = computed(() => {
-  return isDocked.value && !dockConfig.value.isOpen;
-});
-// #endregion
-
-const listClasses = computed(() => {
-  return {
-    "feather-sidenav-menu": true,
-    docked: isDocked.value,
-    "dock-closed": isDocked.value && isDockCollapsed.value,
-    "dock-open": isDocked.value && !isDockCollapsed.value,
-  };
-});
-
-const listItemClasses = computed(() => {
-  return {
-    "feather-sidenav-menu-item": true,
-  };
-});
-
-const canShowPopover = (item: MenuListEntry) => {
-  return (item.type === "item" && !item.href) || item.type !== "item";
-};
-
-const forceClosePopovers = () => {
-  const popoverContainers = document.querySelectorAll(
-    ".feather-popover-container"
-  );
-  if (popoverContainers) {
-    popoverContainers.forEach((container) => {
-      const popoverEl = container.querySelector(".popover");
-      if (popoverEl?.id) {
-        // Find the trigger element for the popover
-        const triggerEl = document.querySelector(
-          `[data-feather-popover][aria-controls="${popoverEl.id}"]`
-        );
-        if (triggerEl) {
-          // Dispatch an Escape key event to close the popover
-          const event = new KeyboardEvent("keydown", {
-            code: "Escape",
-            key: "Escape",
-            bubbles: false,
-            cancelable: true,
-          });
-          triggerEl.dispatchEvent(event);
-        }
-      }
-    });
+// processedItems: when hoverMode is enabled, ensure a header exists
+const processedItems = computed(() => {
+  const items = props.items || [];
+  if (!props.hoverMode) return items;
+  if (!items.some((i) => i.type === "header")) {
+    const generated = {
+      id: `${props.id}-generated-header`,
+      type: "header",
+      title: "Menu",
+    } as unknown as MenuListEntry;
+    return [generated, ...items];
   }
-};
+  return items;
+});
+
+const canShowPopover = (item: MenuListEntry) =>
+  (item.type === "item" && !item.href) || item.type !== "item";
+
+// ============================================================================
+// Lifecycle Cleanup
+// ============================================================================
+// composable handles cleanup
 </script>
 
 <style lang="scss">
@@ -235,9 +213,14 @@ const forceClosePopovers = () => {
               width: var(--icon-size-level1);
             }
           }
-          .li-chevron {
-            visibility: hidden;
+          .li-text {
+            overflow: hidden;
+            text-overflow: ellipsis;
+            white-space: nowrap;
           }
+        }
+        .li-chevron {
+          visibility: hidden;
         }
         &:hover,
         &:focus {
