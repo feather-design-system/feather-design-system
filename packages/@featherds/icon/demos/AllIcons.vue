@@ -10,6 +10,10 @@
 
   <script>
   import * as components from "./../src";
+import contentBlogArticle from "@featherds/icon/content/BlogArticle";
+
+import contentVideo from "@featherds/icon/content/Video";
+
 import communicationCertificate from "@featherds/icon/communication/Certificate";
 
 import communicationCertificateAlt from "@featherds/icon/communication/CertificateAlt";
@@ -23,10 +27,6 @@ import communicationDocumentation from "@featherds/icon/communication/Documentat
 import communicationIdCard from "@featherds/icon/communication/IdCard";
 
 import communicationPhone from "@featherds/icon/communication/Phone";
-
-import contentBlogArticle from "@featherds/icon/content/BlogArticle";
-
-import contentVideo from "@featherds/icon/content/Video";
 
 import datavisAreaChart from "@featherds/icon/datavis/AreaChart";
 
@@ -49,6 +49,64 @@ import datavisStackedBarChart from "@featherds/icon/datavis/StackedBarChart";
 import datavisStackedColumnChart from "@featherds/icon/datavis/StackedColumnChart";
 
 import datavisTreeDiagram from "@featherds/icon/datavis/TreeDiagram";
+
+import fileAttachment from "@featherds/icon/file/Attachment";
+
+import fileFolder from "@featherds/icon/file/Folder";
+
+import fileFolderAdd from "@featherds/icon/file/FolderAdd";
+
+import fileFolderLocked from "@featherds/icon/file/FolderLocked";
+
+import fileFolderOpen from "@featherds/icon/file/FolderOpen";
+
+import fileGeneric from "@featherds/icon/file/Generic";
+
+import fileImage from "@featherds/icon/file/Image";
+
+import filePdf from "@featherds/icon/file/Pdf";
+
+import fileText from "@featherds/icon/file/Text";
+
+import fileWordDoc from "@featherds/icon/file/WordDoc";
+
+import fileXls from "@featherds/icon/file/Xls";
+
+import fileZip from "@featherds/icon/file/Zip";
+
+import hardwareAppliances from "@featherds/icon/hardware/Appliances";
+
+import hardwareAppliancesAlt from "@featherds/icon/hardware/AppliancesAlt";
+
+import hardwareApplianceProfiles from "@featherds/icon/hardware/ApplianceProfiles";
+
+import hardwareDesktopWindows from "@featherds/icon/hardware/DesktopWindows";
+
+import hardwareInstances from "@featherds/icon/hardware/Instances";
+
+import hardwareKeyboardArrowDown from "@featherds/icon/hardware/KeyboardArrowDown";
+
+import hardwareKeyboardArrowUp from "@featherds/icon/hardware/KeyboardArrowUp";
+
+import hardwareLaptop from "@featherds/icon/hardware/Laptop";
+
+import hardwareMinionProfiles from "@featherds/icon/hardware/MinionProfiles";
+
+import hardwareNetwork from "@featherds/icon/hardware/Network";
+
+import hardwareNetworkProfiles from "@featherds/icon/hardware/NetworkProfiles";
+
+import hardwareRouter from "@featherds/icon/hardware/Router";
+
+import hardwareSecurity from "@featherds/icon/hardware/Security";
+
+import hardwareServer from "@featherds/icon/hardware/Server";
+
+import hardwareVirtualMachine from "@featherds/icon/hardware/VirtualMachine";
+
+import hardwareVirtualMachineAlt from "@featherds/icon/hardware/VirtualMachineAlt";
+
+import actionAccountAdministration from "@featherds/icon/action/AccountAdministration";
 
 import actionAccountCircle from "@featherds/icon/action/AccountCircle";
 
@@ -230,62 +288,6 @@ import actionViewDetails from "@featherds/icon/action/ViewDetails";
 
 import actionWorkflow from "@featherds/icon/action/Workflow";
 
-import fileAttachment from "@featherds/icon/file/Attachment";
-
-import fileFolder from "@featherds/icon/file/Folder";
-
-import fileFolderAdd from "@featherds/icon/file/FolderAdd";
-
-import fileFolderLocked from "@featherds/icon/file/FolderLocked";
-
-import fileFolderOpen from "@featherds/icon/file/FolderOpen";
-
-import fileGeneric from "@featherds/icon/file/Generic";
-
-import fileImage from "@featherds/icon/file/Image";
-
-import filePdf from "@featherds/icon/file/Pdf";
-
-import fileText from "@featherds/icon/file/Text";
-
-import fileWordDoc from "@featherds/icon/file/WordDoc";
-
-import fileXls from "@featherds/icon/file/Xls";
-
-import fileZip from "@featherds/icon/file/Zip";
-
-import hardwareAppliances from "@featherds/icon/hardware/Appliances";
-
-import hardwareAppliancesAlt from "@featherds/icon/hardware/AppliancesAlt";
-
-import hardwareApplianceProfiles from "@featherds/icon/hardware/ApplianceProfiles";
-
-import hardwareDesktopWindows from "@featherds/icon/hardware/DesktopWindows";
-
-import hardwareInstances from "@featherds/icon/hardware/Instances";
-
-import hardwareKeyboardArrowDown from "@featherds/icon/hardware/KeyboardArrowDown";
-
-import hardwareKeyboardArrowUp from "@featherds/icon/hardware/KeyboardArrowUp";
-
-import hardwareLaptop from "@featherds/icon/hardware/Laptop";
-
-import hardwareMinionProfiles from "@featherds/icon/hardware/MinionProfiles";
-
-import hardwareNetwork from "@featherds/icon/hardware/Network";
-
-import hardwareNetworkProfiles from "@featherds/icon/hardware/NetworkProfiles";
-
-import hardwareRouter from "@featherds/icon/hardware/Router";
-
-import hardwareSecurity from "@featherds/icon/hardware/Security";
-
-import hardwareServer from "@featherds/icon/hardware/Server";
-
-import hardwareVirtualMachine from "@featherds/icon/hardware/VirtualMachine";
-
-import hardwareVirtualMachineAlt from "@featherds/icon/hardware/VirtualMachineAlt";
-
 import medicalAmbulance from "@featherds/icon/medical/Ambulance";
 
 import medicalCostSavings from "@featherds/icon/medical/CostSavings";
@@ -311,30 +313,6 @@ import medicalTreatmentCycle from "@featherds/icon/medical/TreatmentCycle";
 import medicalTreatmentSchedule from "@featherds/icon/medical/TreatmentSchedule";
 
 import medicalVitals from "@featherds/icon/medical/Vitals";
-
-import notificationConnected from "@featherds/icon/notification/Connected";
-
-import notificationError from "@featherds/icon/notification/Error";
-
-import notificationNotificationsOff from "@featherds/icon/notification/NotificationsOff";
-
-import notificationNotificationSelected from "@featherds/icon/notification/NotificationSelected";
-
-import notificationNotificationSoundSelected from "@featherds/icon/notification/NotificationSoundSelected";
-
-import notificationUnconnected from "@featherds/icon/notification/Unconnected";
-
-import notificationWarning from "@featherds/icon/notification/Warning";
-
-import notificationWifi from "@featherds/icon/notification/Wifi";
-
-import notificationWifiNoConnection from "@featherds/icon/notification/WifiNoConnection";
-
-import notificationWifiOff from "@featherds/icon/notification/WifiOff";
-
-import notificationWifiSignalBad from "@featherds/icon/notification/WifiSignalBad";
-
-import notificationWifiStatusBar from "@featherds/icon/notification/WifiStatusBar";
 
 import navigationApps from "@featherds/icon/navigation/Apps";
 
@@ -383,6 +361,30 @@ import navigationSubdirectoryArrowRight from "@featherds/icon/navigation/Subdire
 import navigationUnfoldLess from "@featherds/icon/navigation/UnfoldLess";
 
 import navigationUnfoldMore from "@featherds/icon/navigation/UnfoldMore";
+
+import notificationConnected from "@featherds/icon/notification/Connected";
+
+import notificationError from "@featherds/icon/notification/Error";
+
+import notificationNotificationsOff from "@featherds/icon/notification/NotificationsOff";
+
+import notificationNotificationSelected from "@featherds/icon/notification/NotificationSelected";
+
+import notificationNotificationSoundSelected from "@featherds/icon/notification/NotificationSoundSelected";
+
+import notificationUnconnected from "@featherds/icon/notification/Unconnected";
+
+import notificationWarning from "@featherds/icon/notification/Warning";
+
+import notificationWifi from "@featherds/icon/notification/Wifi";
+
+import notificationWifiNoConnection from "@featherds/icon/notification/WifiNoConnection";
+
+import notificationWifiOff from "@featherds/icon/notification/WifiOff";
+
+import notificationWifiSignalBad from "@featherds/icon/notification/WifiSignalBad";
+
+import notificationWifiStatusBar from "@featherds/icon/notification/WifiStatusBar";
 
 import networkAggregationLayer from "@featherds/icon/network/AggregationLayer";
 
@@ -519,15 +521,15 @@ import networkWifiRouter from "@featherds/icon/network/WifiRouter";
 export default {
   data(){
     return {
-      featherIcons:[{ icon: communicationCertificate, key: "communicationCertificate" },
+      featherIcons:[{ icon: contentBlogArticle, key: "contentBlogArticle" },
+        { icon: contentVideo, key: "contentVideo" },
+        { icon: communicationCertificate, key: "communicationCertificate" },
         { icon: communicationCertificateAlt, key: "communicationCertificateAlt" },
         { icon: communicationChat, key: "communicationChat" },
         { icon: communicationContacts, key: "communicationContacts" },
         { icon: communicationDocumentation, key: "communicationDocumentation" },
         { icon: communicationIdCard, key: "communicationIdCard" },
         { icon: communicationPhone, key: "communicationPhone" },
-        { icon: contentBlogArticle, key: "contentBlogArticle" },
-        { icon: contentVideo, key: "contentVideo" },
         { icon: datavisAreaChart, key: "datavisAreaChart" },
         { icon: datavisBarChart, key: "datavisBarChart" },
         { icon: datavisColumnChart, key: "datavisColumnChart" },
@@ -539,6 +541,35 @@ export default {
         { icon: datavisStackedBarChart, key: "datavisStackedBarChart" },
         { icon: datavisStackedColumnChart, key: "datavisStackedColumnChart" },
         { icon: datavisTreeDiagram, key: "datavisTreeDiagram" },
+        { icon: fileAttachment, key: "fileAttachment" },
+        { icon: fileFolder, key: "fileFolder" },
+        { icon: fileFolderAdd, key: "fileFolderAdd" },
+        { icon: fileFolderLocked, key: "fileFolderLocked" },
+        { icon: fileFolderOpen, key: "fileFolderOpen" },
+        { icon: fileGeneric, key: "fileGeneric" },
+        { icon: fileImage, key: "fileImage" },
+        { icon: filePdf, key: "filePdf" },
+        { icon: fileText, key: "fileText" },
+        { icon: fileWordDoc, key: "fileWordDoc" },
+        { icon: fileXls, key: "fileXls" },
+        { icon: fileZip, key: "fileZip" },
+        { icon: hardwareAppliances, key: "hardwareAppliances" },
+        { icon: hardwareAppliancesAlt, key: "hardwareAppliancesAlt" },
+        { icon: hardwareApplianceProfiles, key: "hardwareApplianceProfiles" },
+        { icon: hardwareDesktopWindows, key: "hardwareDesktopWindows" },
+        { icon: hardwareInstances, key: "hardwareInstances" },
+        { icon: hardwareKeyboardArrowDown, key: "hardwareKeyboardArrowDown" },
+        { icon: hardwareKeyboardArrowUp, key: "hardwareKeyboardArrowUp" },
+        { icon: hardwareLaptop, key: "hardwareLaptop" },
+        { icon: hardwareMinionProfiles, key: "hardwareMinionProfiles" },
+        { icon: hardwareNetwork, key: "hardwareNetwork" },
+        { icon: hardwareNetworkProfiles, key: "hardwareNetworkProfiles" },
+        { icon: hardwareRouter, key: "hardwareRouter" },
+        { icon: hardwareSecurity, key: "hardwareSecurity" },
+        { icon: hardwareServer, key: "hardwareServer" },
+        { icon: hardwareVirtualMachine, key: "hardwareVirtualMachine" },
+        { icon: hardwareVirtualMachineAlt, key: "hardwareVirtualMachineAlt" },
+        { icon: actionAccountAdministration, key: "actionAccountAdministration" },
         { icon: actionAccountCircle, key: "actionAccountCircle" },
         { icon: actionAdd, key: "actionAdd" },
         { icon: actionAddCircleAlt, key: "actionAddCircleAlt" },
@@ -629,34 +660,6 @@ export default {
         { icon: actionView, key: "actionView" },
         { icon: actionViewDetails, key: "actionViewDetails" },
         { icon: actionWorkflow, key: "actionWorkflow" },
-        { icon: fileAttachment, key: "fileAttachment" },
-        { icon: fileFolder, key: "fileFolder" },
-        { icon: fileFolderAdd, key: "fileFolderAdd" },
-        { icon: fileFolderLocked, key: "fileFolderLocked" },
-        { icon: fileFolderOpen, key: "fileFolderOpen" },
-        { icon: fileGeneric, key: "fileGeneric" },
-        { icon: fileImage, key: "fileImage" },
-        { icon: filePdf, key: "filePdf" },
-        { icon: fileText, key: "fileText" },
-        { icon: fileWordDoc, key: "fileWordDoc" },
-        { icon: fileXls, key: "fileXls" },
-        { icon: fileZip, key: "fileZip" },
-        { icon: hardwareAppliances, key: "hardwareAppliances" },
-        { icon: hardwareAppliancesAlt, key: "hardwareAppliancesAlt" },
-        { icon: hardwareApplianceProfiles, key: "hardwareApplianceProfiles" },
-        { icon: hardwareDesktopWindows, key: "hardwareDesktopWindows" },
-        { icon: hardwareInstances, key: "hardwareInstances" },
-        { icon: hardwareKeyboardArrowDown, key: "hardwareKeyboardArrowDown" },
-        { icon: hardwareKeyboardArrowUp, key: "hardwareKeyboardArrowUp" },
-        { icon: hardwareLaptop, key: "hardwareLaptop" },
-        { icon: hardwareMinionProfiles, key: "hardwareMinionProfiles" },
-        { icon: hardwareNetwork, key: "hardwareNetwork" },
-        { icon: hardwareNetworkProfiles, key: "hardwareNetworkProfiles" },
-        { icon: hardwareRouter, key: "hardwareRouter" },
-        { icon: hardwareSecurity, key: "hardwareSecurity" },
-        { icon: hardwareServer, key: "hardwareServer" },
-        { icon: hardwareVirtualMachine, key: "hardwareVirtualMachine" },
-        { icon: hardwareVirtualMachineAlt, key: "hardwareVirtualMachineAlt" },
         { icon: medicalAmbulance, key: "medicalAmbulance" },
         { icon: medicalCostSavings, key: "medicalCostSavings" },
         { icon: medicalDrug, key: "medicalDrug" },
@@ -670,18 +673,6 @@ export default {
         { icon: medicalTreatmentCycle, key: "medicalTreatmentCycle" },
         { icon: medicalTreatmentSchedule, key: "medicalTreatmentSchedule" },
         { icon: medicalVitals, key: "medicalVitals" },
-        { icon: notificationConnected, key: "notificationConnected" },
-        { icon: notificationError, key: "notificationError" },
-        { icon: notificationNotificationsOff, key: "notificationNotificationsOff" },
-        { icon: notificationNotificationSelected, key: "notificationNotificationSelected" },
-        { icon: notificationNotificationSoundSelected, key: "notificationNotificationSoundSelected" },
-        { icon: notificationUnconnected, key: "notificationUnconnected" },
-        { icon: notificationWarning, key: "notificationWarning" },
-        { icon: notificationWifi, key: "notificationWifi" },
-        { icon: notificationWifiNoConnection, key: "notificationWifiNoConnection" },
-        { icon: notificationWifiOff, key: "notificationWifiOff" },
-        { icon: notificationWifiSignalBad, key: "notificationWifiSignalBad" },
-        { icon: notificationWifiStatusBar, key: "notificationWifiStatusBar" },
         { icon: navigationApps, key: "navigationApps" },
         { icon: navigationAppsGetMore, key: "navigationAppsGetMore" },
         { icon: navigationArrowBack, key: "navigationArrowBack" },
@@ -706,6 +697,18 @@ export default {
         { icon: navigationSubdirectoryArrowRight, key: "navigationSubdirectoryArrowRight" },
         { icon: navigationUnfoldLess, key: "navigationUnfoldLess" },
         { icon: navigationUnfoldMore, key: "navigationUnfoldMore" },
+        { icon: notificationConnected, key: "notificationConnected" },
+        { icon: notificationError, key: "notificationError" },
+        { icon: notificationNotificationsOff, key: "notificationNotificationsOff" },
+        { icon: notificationNotificationSelected, key: "notificationNotificationSelected" },
+        { icon: notificationNotificationSoundSelected, key: "notificationNotificationSoundSelected" },
+        { icon: notificationUnconnected, key: "notificationUnconnected" },
+        { icon: notificationWarning, key: "notificationWarning" },
+        { icon: notificationWifi, key: "notificationWifi" },
+        { icon: notificationWifiNoConnection, key: "notificationWifiNoConnection" },
+        { icon: notificationWifiOff, key: "notificationWifiOff" },
+        { icon: notificationWifiSignalBad, key: "notificationWifiSignalBad" },
+        { icon: notificationWifiStatusBar, key: "notificationWifiStatusBar" },
         { icon: networkAggregationLayer, key: "networkAggregationLayer" },
         { icon: networkAggregationLayerAlt1, key: "networkAggregationLayerAlt1" },
         { icon: networkAggregationLayerAlt2, key: "networkAggregationLayerAlt2" },
