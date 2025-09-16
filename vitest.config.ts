@@ -18,11 +18,12 @@ export default defineConfig({
   root: ".",
   test: {
     include: [
-      "**/@featherds/*/src/**/*.spec.(js|jsx|ts|tsx)",
-      "**/@featherds/composables/**/*.spec.(js|jsx|ts|tsx)",
+      "**/@featherds/*/src/**/*.spec.{js,jsx,ts,tsx}",
+      "**/@featherds/composables/**/*.spec.{js,jsx,ts,tsx}",
     ],
     globals: true,
-    setupFiles: ["./unit/setup", "./unit/serializer"],
+    // include the accessibility setup file so jest-axe matcher is registered
+    setupFiles: ["./tests/setupA11y.ts", "./unit/setup", "./unit/serializer"],
     environment: "jsdom",
   },
 });
