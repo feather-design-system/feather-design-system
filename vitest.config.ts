@@ -25,6 +25,8 @@ export default defineConfig({
     // include the accessibility setup file so jest-axe matcher is registered
     setupFiles: ["./tests/setupA11y.ts", "./unit/setup", "./unit/serializer"],
     environment: "jsdom",
+    // Increase default test timeout to avoid intermittent 5s timeouts in large suites
+    testTimeout: 20000,
     // Ensure native timers are automatically cleaned up to avoid FakeTimers warnings
     fakeTimers: {
       shouldClearNativeTimers: true,
