@@ -30,8 +30,7 @@
     "noFallthroughCasesInSwitch": true,
     "noImplicitOverride": true,
     "noImplicitReturns": true,
-    "noUncheckedIndexedAccess": true,
-
+    "noUncheckedIndexedAccess": true
   },
   "include": [
     "packages/@featherds/*/src/**/*.ts",
@@ -39,6 +38,7 @@
     "shims/*.d.ts",
     "packages/@featherds/**/*.d.ts",
     "packages/@featherds/*/src/**/*.d.ts",
+    "tests/**/*.d.ts",
     "packages/@featherds/*/src/**/*.tsx",
     "packages/@featherds/*/src/**/*.vue",
     "packages/@featherds/*/demos/**/*.vue",
