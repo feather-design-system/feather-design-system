@@ -1,4 +1,4 @@
-// Vitest Snapshot v1
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
 
 exports[`FeatherProtectedInput.vue > should change input type when show password is clicked 1`] = `
 <div

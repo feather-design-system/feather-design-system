@@ -1,4 +1,4 @@
-// Vitest Snapshot v1
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
 
 exports[`FeatherAutocomplete > base functionality > multi > disabled state > should render in a disabled state with a value 1`] = `
 <div
