@@ -19,7 +19,7 @@ function _sfc_render(_ctx, _cache) {
     createElementVNode("polyline", {
       points: "20.13 7.45 12.05 12 3.92 7.52",
       fill: "none",
-      stroke: "#000",
+      stroke: "currentColor",
       "stroke-miterlimit": "10",
       "stroke-width": "1.96"
     }, null, -1),
@@ -29,7 +29,7 @@ function _sfc_render(_ctx, _cache) {
       x2: "12",
       y2: "12",
       fill: "none",
-      stroke: "#000",
+      stroke: "currentColor",
       "stroke-miterlimit": "10",
       "stroke-width": "1.96"
     }, null, -1)
