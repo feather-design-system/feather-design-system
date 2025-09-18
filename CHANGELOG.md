@@ -1,3 +1,14 @@
+## [0.12.42](https://github.com/feather-design-system/feather-design-system/compare/v0.12.41...v0.12.42) (2025-09-18)
+
+
+### Features
+
+* **Icons:** new account and network icons ([#222](https://github.com/feather-design-system/feather-design-system/issues/222)) ([b41b360](https://github.com/feather-design-system/feather-design-system/commit/b41b3607a23ac3a70904ae4be3ca1ec43b8ea11d))
+* **icons:** new AccountAdministration icon ([92dee48](https://github.com/feather-design-system/feather-design-system/commit/92dee48213402c19cb47194b73beec96cf3dfd73))
+* **sidenav:** hover mode ([62e911f](https://github.com/feather-design-system/feather-design-system/commit/62e911fe79719c72317bafd64eae9fe79c87ff5c))
+
+
+
 ## [0.12.41](https://github.com/feather-design-system/feather-design-system/compare/v0.12.40...v0.12.41) (2025-09-03)
 
 
