@@ -10,9 +10,7 @@
 
   <script>
   import * as components from "./../src";
-import contentBlogArticle from "@featherds/icon/content/BlogArticle";
-
-import contentVideo from "@featherds/icon/content/Video";
+import accountGroup from "@featherds/icon/account/Group";
 
 import communicationCertificate from "@featherds/icon/communication/Certificate";
 
@@ -28,6 +26,10 @@ import communicationIdCard from "@featherds/icon/communication/IdCard";
 
 import communicationPhone from "@featherds/icon/communication/Phone";
 
+import contentBlogArticle from "@featherds/icon/content/BlogArticle";
+
+import contentVideo from "@featherds/icon/content/Video";
+
 import datavisAreaChart from "@featherds/icon/datavis/AreaChart";
 
 import datavisBarChart from "@featherds/icon/datavis/BarChart";
@@ -35,6 +37,8 @@ import datavisBarChart from "@featherds/icon/datavis/BarChart";
 import datavisColumnChart from "@featherds/icon/datavis/ColumnChart";
 
 import datavisDonutChart from "@featherds/icon/datavis/DonutChart";
+
+import datavisGauge from "@featherds/icon/datavis/Gauge";
 
 import datavisLineChart from "@featherds/icon/datavis/LineChart";
 
@@ -49,64 +53,6 @@ import datavisStackedBarChart from "@featherds/icon/datavis/StackedBarChart";
 import datavisStackedColumnChart from "@featherds/icon/datavis/StackedColumnChart";
 
 import datavisTreeDiagram from "@featherds/icon/datavis/TreeDiagram";
-
-import fileAttachment from "@featherds/icon/file/Attachment";
-
-import fileFolder from "@featherds/icon/file/Folder";
-
-import fileFolderAdd from "@featherds/icon/file/FolderAdd";
-
-import fileFolderLocked from "@featherds/icon/file/FolderLocked";
-
-import fileFolderOpen from "@featherds/icon/file/FolderOpen";
-
-import fileGeneric from "@featherds/icon/file/Generic";
-
-import fileImage from "@featherds/icon/file/Image";
-
-import filePdf from "@featherds/icon/file/Pdf";
-
-import fileText from "@featherds/icon/file/Text";
-
-import fileWordDoc from "@featherds/icon/file/WordDoc";
-
-import fileXls from "@featherds/icon/file/Xls";
-
-import fileZip from "@featherds/icon/file/Zip";
-
-import hardwareAppliances from "@featherds/icon/hardware/Appliances";
-
-import hardwareAppliancesAlt from "@featherds/icon/hardware/AppliancesAlt";
-
-import hardwareApplianceProfiles from "@featherds/icon/hardware/ApplianceProfiles";
-
-import hardwareDesktopWindows from "@featherds/icon/hardware/DesktopWindows";
-
-import hardwareInstances from "@featherds/icon/hardware/Instances";
-
-import hardwareKeyboardArrowDown from "@featherds/icon/hardware/KeyboardArrowDown";
-
-import hardwareKeyboardArrowUp from "@featherds/icon/hardware/KeyboardArrowUp";
-
-import hardwareLaptop from "@featherds/icon/hardware/Laptop";
-
-import hardwareMinionProfiles from "@featherds/icon/hardware/MinionProfiles";
-
-import hardwareNetwork from "@featherds/icon/hardware/Network";
-
-import hardwareNetworkProfiles from "@featherds/icon/hardware/NetworkProfiles";
-
-import hardwareRouter from "@featherds/icon/hardware/Router";
-
-import hardwareSecurity from "@featherds/icon/hardware/Security";
-
-import hardwareServer from "@featherds/icon/hardware/Server";
-
-import hardwareVirtualMachine from "@featherds/icon/hardware/VirtualMachine";
-
-import hardwareVirtualMachineAlt from "@featherds/icon/hardware/VirtualMachineAlt";
-
-import actionAccountAdministration from "@featherds/icon/action/AccountAdministration";
 
 import actionAccountCircle from "@featherds/icon/action/AccountCircle";
 
@@ -288,6 +234,62 @@ import actionViewDetails from "@featherds/icon/action/ViewDetails";
 
 import actionWorkflow from "@featherds/icon/action/Workflow";
 
+import fileAttachment from "@featherds/icon/file/Attachment";
+
+import fileFolder from "@featherds/icon/file/Folder";
+
+import fileFolderAdd from "@featherds/icon/file/FolderAdd";
+
+import fileFolderLocked from "@featherds/icon/file/FolderLocked";
+
+import fileFolderOpen from "@featherds/icon/file/FolderOpen";
+
+import fileGeneric from "@featherds/icon/file/Generic";
+
+import fileImage from "@featherds/icon/file/Image";
+
+import filePdf from "@featherds/icon/file/Pdf";
+
+import fileText from "@featherds/icon/file/Text";
+
+import fileWordDoc from "@featherds/icon/file/WordDoc";
+
+import fileXls from "@featherds/icon/file/Xls";
+
+import fileZip from "@featherds/icon/file/Zip";
+
+import hardwareAppliances from "@featherds/icon/hardware/Appliances";
+
+import hardwareAppliancesAlt from "@featherds/icon/hardware/AppliancesAlt";
+
+import hardwareApplianceProfiles from "@featherds/icon/hardware/ApplianceProfiles";
+
+import hardwareDesktopWindows from "@featherds/icon/hardware/DesktopWindows";
+
+import hardwareInstances from "@featherds/icon/hardware/Instances";
+
+import hardwareKeyboardArrowDown from "@featherds/icon/hardware/KeyboardArrowDown";
+
+import hardwareKeyboardArrowUp from "@featherds/icon/hardware/KeyboardArrowUp";
+
+import hardwareLaptop from "@featherds/icon/hardware/Laptop";
+
+import hardwareMinionProfiles from "@featherds/icon/hardware/MinionProfiles";
+
+import hardwareNetwork from "@featherds/icon/hardware/Network";
+
+import hardwareNetworkProfiles from "@featherds/icon/hardware/NetworkProfiles";
+
+import hardwareRouter from "@featherds/icon/hardware/Router";
+
+import hardwareSecurity from "@featherds/icon/hardware/Security";
+
+import hardwareServer from "@featherds/icon/hardware/Server";
+
+import hardwareVirtualMachine from "@featherds/icon/hardware/VirtualMachine";
+
+import hardwareVirtualMachineAlt from "@featherds/icon/hardware/VirtualMachineAlt";
+
 import medicalAmbulance from "@featherds/icon/medical/Ambulance";
 
 import medicalCostSavings from "@featherds/icon/medical/CostSavings";
@@ -313,54 +315,6 @@ import medicalTreatmentCycle from "@featherds/icon/medical/TreatmentCycle";
 import medicalTreatmentSchedule from "@featherds/icon/medical/TreatmentSchedule";
 
 import medicalVitals from "@featherds/icon/medical/Vitals";
-
-import navigationApps from "@featherds/icon/navigation/Apps";
-
-import navigationAppsGetMore from "@featherds/icon/navigation/AppsGetMore";
-
-import navigationArrowBack from "@featherds/icon/navigation/ArrowBack";
-
-import navigationArrowDropDown from "@featherds/icon/navigation/ArrowDropDown";
-
-import navigationCancel from "@featherds/icon/navigation/Cancel";
-
-import navigationChevronLeft from "@featherds/icon/navigation/ChevronLeft";
-
-import navigationChevronRight from "@featherds/icon/navigation/ChevronRight";
-
-import navigationExpandLess from "@featherds/icon/navigation/ExpandLess";
-
-import navigationExpandMore from "@featherds/icon/navigation/ExpandMore";
-
-import navigationFirstPage from "@featherds/icon/navigation/FirstPage";
-
-import navigationFullscreen from "@featherds/icon/navigation/Fullscreen";
-
-import navigationFullscreenExit from "@featherds/icon/navigation/FullscreenExit";
-
-import navigationGridView from "@featherds/icon/navigation/GridView";
-
-import navigationLastPage from "@featherds/icon/navigation/LastPage";
-
-import navigationMenu from "@featherds/icon/navigation/Menu";
-
-import navigationMenuClose from "@featherds/icon/navigation/MenuClose";
-
-import navigationMenuOpen from "@featherds/icon/navigation/MenuOpen";
-
-import navigationMoreHoriz from "@featherds/icon/navigation/MoreHoriz";
-
-import navigationMoreVert from "@featherds/icon/navigation/MoreVert";
-
-import navigationRefresh from "@featherds/icon/navigation/Refresh";
-
-import navigationSubdirectoryArrowLeft from "@featherds/icon/navigation/SubdirectoryArrowLeft";
-
-import navigationSubdirectoryArrowRight from "@featherds/icon/navigation/SubdirectoryArrowRight";
-
-import navigationUnfoldLess from "@featherds/icon/navigation/UnfoldLess";
-
-import navigationUnfoldMore from "@featherds/icon/navigation/UnfoldMore";
 
 import notificationConnected from "@featherds/icon/notification/Connected";
 
@@ -446,6 +400,8 @@ import networkDesktop from "@featherds/icon/network/Desktop";
 
 import networkDigitize from "@featherds/icon/network/Digitize";
 
+import networkDistributedMonitoring from "@featherds/icon/network/DistributedMonitoring";
+
 import networkElectricalServices from "@featherds/icon/network/ElectricalServices";
 
 import networkEndUser from "@featherds/icon/network/EndUser";
@@ -460,7 +416,15 @@ import networkFirewall from "@featherds/icon/network/Firewall";
 
 import networkInstances from "@featherds/icon/network/Instances";
 
+import networkInventory from "@featherds/icon/network/Inventory";
+
+import networkInventoryAdd from "@featherds/icon/network/InventoryAdd";
+
 import networkInventoryAlt from "@featherds/icon/network/InventoryAlt";
+
+import networkInventoryConfirm from "@featherds/icon/network/InventoryConfirm";
+
+import networkInventoryDelete from "@featherds/icon/network/InventoryDelete";
 
 import networkLaptop from "@featherds/icon/network/Laptop";
 
@@ -477,6 +441,8 @@ import networkMicroservices from "@featherds/icon/network/Microservices";
 import networkMinion from "@featherds/icon/network/Minion";
 
 import networkMinionProfiles from "@featherds/icon/network/MinionProfiles";
+
+import networkMonitoring from "@featherds/icon/network/Monitoring";
 
 import networkNetworkProfiles from "@featherds/icon/network/NetworkProfiles";
 
@@ -516,13 +482,60 @@ import networkVirtualMachineAlt2 from "@featherds/icon/network/VirtualMachineAlt
 
 import networkWifiRouter from "@featherds/icon/network/WifiRouter";
 
+import navigationApps from "@featherds/icon/navigation/Apps";
+
+import navigationAppsGetMore from "@featherds/icon/navigation/AppsGetMore";
+
+import navigationArrowBack from "@featherds/icon/navigation/ArrowBack";
+
+import navigationArrowDropDown from "@featherds/icon/navigation/ArrowDropDown";
+
+import navigationCancel from "@featherds/icon/navigation/Cancel";
+
+import navigationChevronLeft from "@featherds/icon/navigation/ChevronLeft";
+
+import navigationChevronRight from "@featherds/icon/navigation/ChevronRight";
+
+import navigationExpandLess from "@featherds/icon/navigation/ExpandLess";
+
+import navigationExpandMore from "@featherds/icon/navigation/ExpandMore";
+
+import navigationFirstPage from "@featherds/icon/navigation/FirstPage";
+
+import navigationFullscreen from "@featherds/icon/navigation/Fullscreen";
+
+import navigationFullscreenExit from "@featherds/icon/navigation/FullscreenExit";
+
+import navigationGridView from "@featherds/icon/navigation/GridView";
+
+import navigationLastPage from "@featherds/icon/navigation/LastPage";
+
+import navigationMenu from "@featherds/icon/navigation/Menu";
+
+import navigationMenuClose from "@featherds/icon/navigation/MenuClose";
+
+import navigationMenuOpen from "@featherds/icon/navigation/MenuOpen";
+
+import navigationMoreHoriz from "@featherds/icon/navigation/MoreHoriz";
+
+import navigationMoreVert from "@featherds/icon/navigation/MoreVert";
+
+import navigationRefresh from "@featherds/icon/navigation/Refresh";
+
+import navigationSubdirectoryArrowLeft from "@featherds/icon/navigation/SubdirectoryArrowLeft";
+
+import navigationSubdirectoryArrowRight from "@featherds/icon/navigation/SubdirectoryArrowRight";
+
+import navigationUnfoldLess from "@featherds/icon/navigation/UnfoldLess";
+
+import navigationUnfoldMore from "@featherds/icon/navigation/UnfoldMore";
+
 
 
 export default {
   data(){
     return {
-      featherIcons:[{ icon: contentBlogArticle, key: "contentBlogArticle" },
-        { icon: contentVideo, key: "contentVideo" },
+      featherIcons:[{ icon: accountGroup, key: "accountGroup" },
         { icon: communicationCertificate, key: "communicationCertificate" },
         { icon: communicationCertificateAlt, key: "communicationCertificateAlt" },
         { icon: communicationChat, key: "communicationChat" },
@@ -530,10 +543,13 @@ export default {
         { icon: communicationDocumentation, key: "communicationDocumentation" },
         { icon: communicationIdCard, key: "communicationIdCard" },
         { icon: communicationPhone, key: "communicationPhone" },
+        { icon: contentBlogArticle, key: "contentBlogArticle" },
+        { icon: contentVideo, key: "contentVideo" },
         { icon: datavisAreaChart, key: "datavisAreaChart" },
         { icon: datavisBarChart, key: "datavisBarChart" },
         { icon: datavisColumnChart, key: "datavisColumnChart" },
         { icon: datavisDonutChart, key: "datavisDonutChart" },
+        { icon: datavisGauge, key: "datavisGauge" },
         { icon: datavisLineChart, key: "datavisLineChart" },
         { icon: datavisPieChart, key: "datavisPieChart" },
         { icon: datavisPolarChart, key: "datavisPolarChart" },
@@ -541,35 +557,6 @@ export default {
         { icon: datavisStackedBarChart, key: "datavisStackedBarChart" },
         { icon: datavisStackedColumnChart, key: "datavisStackedColumnChart" },
         { icon: datavisTreeDiagram, key: "datavisTreeDiagram" },
-        { icon: fileAttachment, key: "fileAttachment" },
-        { icon: fileFolder, key: "fileFolder" },
-        { icon: fileFolderAdd, key: "fileFolderAdd" },
-        { icon: fileFolderLocked, key: "fileFolderLocked" },
-        { icon: fileFolderOpen, key: "fileFolderOpen" },
-        { icon: fileGeneric, key: "fileGeneric" },
-        { icon: fileImage, key: "fileImage" },
-        { icon: filePdf, key: "filePdf" },
-        { icon: fileText, key: "fileText" },
-        { icon: fileWordDoc, key: "fileWordDoc" },
-        { icon: fileXls, key: "fileXls" },
-        { icon: fileZip, key: "fileZip" },
-        { icon: hardwareAppliances, key: "hardwareAppliances" },
-        { icon: hardwareAppliancesAlt, key: "hardwareAppliancesAlt" },
-        { icon: hardwareApplianceProfiles, key: "hardwareApplianceProfiles" },
-        { icon: hardwareDesktopWindows, key: "hardwareDesktopWindows" },
-        { icon: hardwareInstances, key: "hardwareInstances" },
-        { icon: hardwareKeyboardArrowDown, key: "hardwareKeyboardArrowDown" },
-        { icon: hardwareKeyboardArrowUp, key: "hardwareKeyboardArrowUp" },
-        { icon: hardwareLaptop, key: "hardwareLaptop" },
-        { icon: hardwareMinionProfiles, key: "hardwareMinionProfiles" },
-        { icon: hardwareNetwork, key: "hardwareNetwork" },
-        { icon: hardwareNetworkProfiles, key: "hardwareNetworkProfiles" },
-        { icon: hardwareRouter, key: "hardwareRouter" },
-        { icon: hardwareSecurity, key: "hardwareSecurity" },
-        { icon: hardwareServer, key: "hardwareServer" },
-        { icon: hardwareVirtualMachine, key: "hardwareVirtualMachine" },
-        { icon: hardwareVirtualMachineAlt, key: "hardwareVirtualMachineAlt" },
-        { icon: actionAccountAdministration, key: "actionAccountAdministration" },
         { icon: actionAccountCircle, key: "actionAccountCircle" },
         { icon: actionAdd, key: "actionAdd" },
         { icon: actionAddCircleAlt, key: "actionAddCircleAlt" },
@@ -660,6 +647,34 @@ export default {
         { icon: actionView, key: "actionView" },
         { icon: actionViewDetails, key: "actionViewDetails" },
         { icon: actionWorkflow, key: "actionWorkflow" },
+        { icon: fileAttachment, key: "fileAttachment" },
+        { icon: fileFolder, key: "fileFolder" },
+        { icon: fileFolderAdd, key: "fileFolderAdd" },
+        { icon: fileFolderLocked, key: "fileFolderLocked" },
+        { icon: fileFolderOpen, key: "fileFolderOpen" },
+        { icon: fileGeneric, key: "fileGeneric" },
+        { icon: fileImage, key: "fileImage" },
+        { icon: filePdf, key: "filePdf" },
+        { icon: fileText, key: "fileText" },
+        { icon: fileWordDoc, key: "fileWordDoc" },
+        { icon: fileXls, key: "fileXls" },
+        { icon: fileZip, key: "fileZip" },
+        { icon: hardwareAppliances, key: "hardwareAppliances" },
+        { icon: hardwareAppliancesAlt, key: "hardwareAppliancesAlt" },
+        { icon: hardwareApplianceProfiles, key: "hardwareApplianceProfiles" },
+        { icon: hardwareDesktopWindows, key: "hardwareDesktopWindows" },
+        { icon: hardwareInstances, key: "hardwareInstances" },
+        { icon: hardwareKeyboardArrowDown, key: "hardwareKeyboardArrowDown" },
+        { icon: hardwareKeyboardArrowUp, key: "hardwareKeyboardArrowUp" },
+        { icon: hardwareLaptop, key: "hardwareLaptop" },
+        { icon: hardwareMinionProfiles, key: "hardwareMinionProfiles" },
+        { icon: hardwareNetwork, key: "hardwareNetwork" },
+        { icon: hardwareNetworkProfiles, key: "hardwareNetworkProfiles" },
+        { icon: hardwareRouter, key: "hardwareRouter" },
+        { icon: hardwareSecurity, key: "hardwareSecurity" },
+        { icon: hardwareServer, key: "hardwareServer" },
+        { icon: hardwareVirtualMachine, key: "hardwareVirtualMachine" },
+        { icon: hardwareVirtualMachineAlt, key: "hardwareVirtualMachineAlt" },
         { icon: medicalAmbulance, key: "medicalAmbulance" },
         { icon: medicalCostSavings, key: "medicalCostSavings" },
         { icon: medicalDrug, key: "medicalDrug" },
@@ -673,30 +688,6 @@ export default {
         { icon: medicalTreatmentCycle, key: "medicalTreatmentCycle" },
         { icon: medicalTreatmentSchedule, key: "medicalTreatmentSchedule" },
         { icon: medicalVitals, key: "medicalVitals" },
-        { icon: navigationApps, key: "navigationApps" },
-        { icon: navigationAppsGetMore, key: "navigationAppsGetMore" },
-        { icon: navigationArrowBack, key: "navigationArrowBack" },
-        { icon: navigationArrowDropDown, key: "navigationArrowDropDown" },
-        { icon: navigationCancel, key: "navigationCancel" },
-        { icon: navigationChevronLeft, key: "navigationChevronLeft" },
-        { icon: navigationChevronRight, key: "navigationChevronRight" },
-        { icon: navigationExpandLess, key: "navigationExpandLess" },
-        { icon: navigationExpandMore, key: "navigationExpandMore" },
-        { icon: navigationFirstPage, key: "navigationFirstPage" },
-        { icon: navigationFullscreen, key: "navigationFullscreen" },
-        { icon: navigationFullscreenExit, key: "navigationFullscreenExit" },
-        { icon: navigationGridView, key: "navigationGridView" },
-        { icon: navigationLastPage, key: "navigationLastPage" },
-        { icon: navigationMenu, key: "navigationMenu" },
-        { icon: navigationMenuClose, key: "navigationMenuClose" },
-        { icon: navigationMenuOpen, key: "navigationMenuOpen" },
-        { icon: navigationMoreHoriz, key: "navigationMoreHoriz" },
-        { icon: navigationMoreVert, key: "navigationMoreVert" },
-        { icon: navigationRefresh, key: "navigationRefresh" },
-        { icon: navigationSubdirectoryArrowLeft, key: "navigationSubdirectoryArrowLeft" },
-        { icon: navigationSubdirectoryArrowRight, key: "navigationSubdirectoryArrowRight" },
-        { icon: navigationUnfoldLess, key: "navigationUnfoldLess" },
-        { icon: navigationUnfoldMore, key: "navigationUnfoldMore" },
         { icon: notificationConnected, key: "notificationConnected" },
         { icon: notificationError, key: "notificationError" },
         { icon: notificationNotificationsOff, key: "notificationNotificationsOff" },
@@ -739,6 +730,7 @@ export default {
         { icon: networkDatabase, key: "networkDatabase" },
         { icon: networkDesktop, key: "networkDesktop" },
         { icon: networkDigitize, key: "networkDigitize" },
+        { icon: networkDistributedMonitoring, key: "networkDistributedMonitoring" },
         { icon: networkElectricalServices, key: "networkElectricalServices" },
         { icon: networkEndUser, key: "networkEndUser" },
         { icon: networkExitCompare, key: "networkExitCompare" },
@@ -746,7 +738,11 @@ export default {
         { icon: networkExtractData, key: "networkExtractData" },
         { icon: networkFirewall, key: "networkFirewall" },
         { icon: networkInstances, key: "networkInstances" },
+        { icon: networkInventory, key: "networkInventory" },
+        { icon: networkInventoryAdd, key: "networkInventoryAdd" },
         { icon: networkInventoryAlt, key: "networkInventoryAlt" },
+        { icon: networkInventoryConfirm, key: "networkInventoryConfirm" },
+        { icon: networkInventoryDelete, key: "networkInventoryDelete" },
         { icon: networkLaptop, key: "networkLaptop" },
         { icon: networkLoggerConfigs, key: "networkLoggerConfigs" },
         { icon: networkLogs, key: "networkLogs" },
@@ -755,6 +751,7 @@ export default {
         { icon: networkMicroservices, key: "networkMicroservices" },
         { icon: networkMinion, key: "networkMinion" },
         { icon: networkMinionProfiles, key: "networkMinionProfiles" },
+        { icon: networkMonitoring, key: "networkMonitoring" },
         { icon: networkNetworkProfiles, key: "networkNetworkProfiles" },
         { icon: networkNodes, key: "networkNodes" },
         { icon: networkPolicy, key: "networkPolicy" },
@@ -773,7 +770,31 @@ export default {
         { icon: networkVirtualMachine, key: "networkVirtualMachine" },
         { icon: networkVirtualMachineAlt, key: "networkVirtualMachineAlt" },
         { icon: networkVirtualMachineAlt2, key: "networkVirtualMachineAlt2" },
-        { icon: networkWifiRouter, key: "networkWifiRouter" }]
+        { icon: networkWifiRouter, key: "networkWifiRouter" },
+        { icon: navigationApps, key: "navigationApps" },
+        { icon: navigationAppsGetMore, key: "navigationAppsGetMore" },
+        { icon: navigationArrowBack, key: "navigationArrowBack" },
+        { icon: navigationArrowDropDown, key: "navigationArrowDropDown" },
+        { icon: navigationCancel, key: "navigationCancel" },
+        { icon: navigationChevronLeft, key: "navigationChevronLeft" },
+        { icon: navigationChevronRight, key: "navigationChevronRight" },
+        { icon: navigationExpandLess, key: "navigationExpandLess" },
+        { icon: navigationExpandMore, key: "navigationExpandMore" },
+        { icon: navigationFirstPage, key: "navigationFirstPage" },
+        { icon: navigationFullscreen, key: "navigationFullscreen" },
+        { icon: navigationFullscreenExit, key: "navigationFullscreenExit" },
+        { icon: navigationGridView, key: "navigationGridView" },
+        { icon: navigationLastPage, key: "navigationLastPage" },
+        { icon: navigationMenu, key: "navigationMenu" },
+        { icon: navigationMenuClose, key: "navigationMenuClose" },
+        { icon: navigationMenuOpen, key: "navigationMenuOpen" },
+        { icon: navigationMoreHoriz, key: "navigationMoreHoriz" },
+        { icon: navigationMoreVert, key: "navigationMoreVert" },
+        { icon: navigationRefresh, key: "navigationRefresh" },
+        { icon: navigationSubdirectoryArrowLeft, key: "navigationSubdirectoryArrowLeft" },
+        { icon: navigationSubdirectoryArrowRight, key: "navigationSubdirectoryArrowRight" },
+        { icon: navigationUnfoldLess, key: "navigationUnfoldLess" },
+        { icon: navigationUnfoldMore, key: "navigationUnfoldMore" }]
     };
   },
   components: {
