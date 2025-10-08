@@ -4,6 +4,7 @@ export interface DockConfig {
   id: string;
   location: DockLocation;
   isOpen: boolean;
+  isResizing?: boolean;
 }
 
 export interface DockLabels {

@@ -12,12 +12,12 @@
             v-if="item.type === 'item'"
             :id="item.id"
             :ref="(el) => setTriggerRef(item.id, el as HTMLElement | null)"
-            :class="listItemClasses"
+            :class="['top-level', listItemClasses]"
             :asLi="true"
             v-bind="attrs"
             v-on="on"
             @focus="forceClosePopovers"
-            @mouseenter="onItemMouseEnter(item.id, $event)"
+            @mouseenter="restrictedMouseEnter(item.id)"
             @mouseleave="onItemMouseLeave()"
             tabindex="0"
           >
@@ -52,21 +52,25 @@
           <FeatherMenuList
             v-if="item.type === 'item' && item.componentProps"
             :id="`${props.id}-${item.id}-menu`"
-            :items="item.componentProps?.items || []"
+            :items="
+              ensureChildMenuHeader(
+                (item.componentProps?.items as MenuListEntry[]) || [],
+                `${item.title || 'Menu'}`
+              )
+            "
             @focus="forceClosePopovers"
           />
         </template>
       </FeatherPopover>
 
       <!-- Level 1 links (no popover) -->
-      <!-- mouseenter so we can close all popovers when we enter a differnt li -->
       <FeatherListItem
         v-else-if="item.type === 'item'"
         :id="item.id"
         :href="item.href"
         :target="item.target || undefined"
-        :class="listItemClasses"
-        @mouseenter="onItemMouseEnter(item.id, $event)"
+        :class="['top-level', listItemClasses]"
+        @mouseenter="restrictedMouseEnter(item.id)"
         @mouseleave="onItemMouseLeave()"
         @focus="forceClosePopovers"
       >
@@ -86,7 +90,7 @@
 </template>
 
 <script setup lang="ts">
-import { computed, toRef } from "vue";
+import { computed, inject, Ref, toRef, watch } from "vue";
 import {
   FeatherList,
   FeatherListItem,
@@ -98,7 +102,8 @@ import {
   PointerAlignment,
   PopoverPlacement,
 } from "@featherds/popover";
-import { FeatherMenuList, MenuListEntry } from "@featherds/menu";
+import type { DockConfig } from "@featherds/dock/src/types";
+import { FeatherMenuList, type MenuListEntry } from "@featherds/menu";
 import { FeatherIcon } from "@featherds/icon";
 import ChevronRight from "@featherds/icon/navigation/ChevronRight";
 
@@ -119,7 +124,7 @@ const {
   onItemMouseEnter,
   onItemMouseLeave,
   forceClosePopovers,
-} = usePopoverHover(toRef(props, "hoverMode"));
+} = usePopoverHover(toRef(props, "hoverMode"), {});
 
 // ============================================================================
 // Dock Integration (extracted to composable)
@@ -135,6 +140,7 @@ const { isDocked, isDockCollapsed } = useDock({
   },
 });
 
+const dockConfig = inject<Ref<DockConfig>>("dockConfig");
 // ============================================================================
 // List Data & Presentation
 // state (none) -> computed -> helpers
@@ -148,30 +154,52 @@ const listClasses = computed(() => ({
 
 const listItemClasses = computed(() => ({
   "feather-sidenav-menu-item": true,
+  "hover-mode": props.hoverMode,
 }));
 
 // processedItems: when hoverMode is enabled, ensure a header exists
 const processedItems = computed(() => {
   const items = props.items || [];
-  if (!props.hoverMode) return items;
-  if (!items.some((i) => i.type === "header")) {
-    const generated = {
-      id: `${props.id}-generated-header`,
-      type: "header",
-      title: "Menu",
-    } as unknown as MenuListEntry;
-    return [generated, ...items];
-  }
   return items;
 });
+
+// Helper function to ensure child menus have headers
+const ensureChildMenuHeader = (
+  childItems: MenuListEntry[],
+  parentTitle: string
+): MenuListEntry[] => {
+  if (!props.hoverMode || !childItems?.length) return childItems || [];
+
+  if (!childItems.some((i) => i.type === "header")) {
+    const generated = {
+      id: `${props.id}-child-header-${Date.now()}`,
+      type: "header",
+      title: parentTitle,
+    } as unknown as MenuListEntry;
+    return [generated, ...childItems];
+  }
+  return childItems;
+};
 
 const canShowPopover = (item: MenuListEntry) =>
   (item.type === "item" && !item.href) || item.type !== "item";
 
-// ============================================================================
-// Lifecycle Cleanup
-// ============================================================================
-// composable handles cleanup
+// Allow mouse enter events; but close popovers when dock is resizing
+const restrictedMouseEnter = (id: string) => {
+  if (dockConfig?.value?.isResizing) {
+    forceClosePopovers();
+  } else {
+    onItemMouseEnter(id);
+  }
+};
+
+// Close popovers when dock starts resizing
+watch(
+  () => dockConfig?.value?.isResizing,
+  (newVal) => {
+    if (newVal) forceClosePopovers();
+  }
+);
 </script>
 
 <style lang="scss">
@@ -189,15 +217,33 @@ const canShowPopover = (item: MenuListEntry) =>
   --icon-size-level1: 1.5rem;
   --icon-size-level2: 1.5rem;
   &.docked {
+    width: 0;
+    > .feather-list-header {
+      display: block;
+      list-style: none;
+      overflow: hidden;
+      white-space: nowrap;
+      text-overflow: ellipsis;
+      color: var(--feather-dock-color);
+      transition: opacity 0.25s ease-in-out;
+    }
     :deep(a.feather-list-item):focus {
       box-shadow: inset 0 0 0 1px var(--feather-dock-color);
     }
     &.dock-open {
       & > .feather-list-header {
-        color: var(--feather-dock-color);
+        opacity: 1;
       }
       :deep(.feather-list-item).feather-sidenav-menu-item {
         @include utils.state-on-surface-dark();
+        &.top-level.hover-mode {
+          .ripple,
+          .ripple.active {
+            opacity: 0;
+            visibility: hidden;
+            transition: none;
+          }
+        }
         .feather-list-item-text {
           display: grid;
           grid-template-columns: auto 1fr auto;
@@ -236,9 +282,6 @@ const canShowPopover = (item: MenuListEntry) =>
       }
       li {
         &:focus {
-          // NOTE:  Works, but not exactly sure why
-          // START: Figure out why this works...
-          // border: 2px solid transparent;
           outline: 2px solid transparent;
         }
         & > .feather-list-item {
@@ -320,7 +363,7 @@ const canShowPopover = (item: MenuListEntry) =>
         }
       }
       .feather-list-header {
-        display: none;
+        opacity: 0;
       }
       :deep(.feather-popover-container).feather-popover-container {
         transform: translateX(-0.625rem);

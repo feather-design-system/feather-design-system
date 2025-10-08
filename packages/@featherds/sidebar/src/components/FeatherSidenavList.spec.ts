@@ -24,29 +24,6 @@ describe("FeatherSidenavList (unit)", () => {
     }
   });
 
-  it("generates a header when hoverMode is true and no header exists", async () => {
-    const { default: FeatherSidenavList } = await import(
-      "./FeatherSidenavList.vue"
-    );
-
-    const items = [
-      { id: "i1", type: "item", title: "One" },
-      { id: "i2", type: "item", title: "Two" },
-    ];
-
-    const wrapper = mount(FeatherSidenavList as any, {
-      props: { id: "test", items, hoverMode: true },
-      global: { stubs: globalStubs },
-    });
-
-    // processedItems should insert a generated header at index 0
-    const processed = (wrapper.vm as any).processedItems as Array<any>;
-    expect(processed.length).toBeGreaterThan(items.length);
-    expect(processed[0].type).toBe("header");
-
-    wrapper.unmount();
-  });
-
   it("applies dock-related classes when useDock reports docked/collapsed state", async () => {
     // Mock the composable before importing the component so the module uses the mock
     vi.doMock("@featherds/composables/dock/useDock", () => {

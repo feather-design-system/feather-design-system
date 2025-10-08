@@ -39,6 +39,12 @@
         </div>
       </slot>
     </div>
+    <div class="feather-dock-resizer">
+      <div
+        class="feather-dock-resizer-handle"
+        @pointerdown="onResizerDown"
+      ></div>
+    </div>
   </component>
 </template>
 
@@ -76,6 +82,7 @@ const emit = defineEmits([
   "update:modelValue",
   "update:dock-expanded",
   "update:dock-collapsed",
+  "update:dock-resized",
 ]);
 
 const dockContentRef = ref<HTMLElement | undefined>(undefined);
@@ -92,6 +99,7 @@ const dockClasses = computed(() => {
     "feather-dock": true,
     "dock-open": isDockOpen.value,
     "dock-closed": !isDockOpen.value,
+    "is-resizing": isResizing.value,
     [props.location]: true,
   };
 });
@@ -100,11 +108,107 @@ const dockConfig = computed<DockConfig>(() => ({
   id: props.id,
   location: props.location,
   isOpen: isDockOpen.value,
+  isResizing: isResizing.value,
 }));
 
-const dockWidth = computed(() => {
-  return dockConfig.value.isOpen ? props.expandedWidth : props.collapsedWidth;
+const convertToPixels = (value: string): string => {
+  if (!value) return "0";
+  if (typeof value === "number") return value;
+  if (value.endsWith("px")) return parseInt(value, 10).toString();
+
+  const el = document.createElement("div");
+  el.style.position = "absolute";
+  el.style.visibility = "hidden";
+  el.style.width = value;
+  document.body.appendChild(el);
+
+  const pixels = el.getBoundingClientRect().width;
+  document.body.removeChild(el);
+
+  return pixels.toString();
+};
+
+const expandedWidthPx = computed(() => {
+  return `${convertToPixels(props.expandedWidth)}px`;
 });
+
+const collapsedWidthPx = computed(() => {
+  return `${convertToPixels(props.collapsedWidth)}px`;
+});
+
+// computed px values of provided widths
+// (expandedWidthPx and collapsedWidthPx are declared above)
+
+// currentExpandedWidth stores the current expanded width (in CSS units, usually px)
+// and is updated when the user drags the resizer. Initialized from the prop.
+const currentExpandedWidth = ref<string>(expandedWidthPx.value);
+
+// Expose dockWidth as a CSS-ready string. When closed, use collapsed prop; when open, use currentExpandedWidth.
+const dockWidth = computed(() => {
+  return dockConfig.value.isOpen
+    ? currentExpandedWidth.value
+    : props.collapsedWidth;
+});
+
+// Resizing state
+const isResizing = ref(false);
+const startX = ref(0);
+const startWidthPx = ref(0);
+
+// Keep local width in sync if prop changes externally
+watch(
+  () => props.expandedWidth,
+  () => {
+    currentExpandedWidth.value = expandedWidthPx.value;
+  }
+);
+
+// --- Resizer handlers -------------------------------------------------
+const onResizerDown = (event: PointerEvent) => {
+  // Only respond to primary pointer
+  if ((event as PointerEvent).isPrimary === false) return;
+  event.preventDefault();
+
+  isResizing.value = true;
+  startX.value = (event as PointerEvent).clientX;
+  // parse start width from currentExpandedWidth (assume px or numeric)
+  startWidthPx.value = parseInt(currentExpandedWidth.value as string, 10) || 0;
+
+  // Add global listeners
+  window.addEventListener("pointermove", onResizerMove);
+  window.addEventListener("pointerup", onResizerUp);
+};
+
+const onResizerMove = (event: PointerEvent) => {
+  if (!isResizing.value) return;
+  const clientX = (event as PointerEvent).clientX;
+  const delta = clientX - startX.value;
+
+  let newWidth = startWidthPx.value;
+  if (props.location === "left") {
+    newWidth = startWidthPx.value + delta;
+  } else {
+    newWidth = startWidthPx.value - delta;
+  }
+
+  // enforce minimum width = collapsedWidthPx
+  const minWidth = parseInt(convertToPixels(props.collapsedWidth), 10) || 48;
+  const maxWidth = Math.max(200, window.innerWidth - 64);
+  newWidth = Math.max(minWidth, Math.min(maxWidth, newWidth));
+
+  currentExpandedWidth.value = `${Math.round(newWidth)}px`;
+
+  // Update pushed elements live
+  updatePushedElement();
+};
+
+const onResizerUp = () => {
+  if (!isResizing.value) return;
+  isResizing.value = false;
+  window.removeEventListener("pointermove", onResizerMove);
+  window.removeEventListener("pointerup", onResizerUp);
+  emit("update:dock-resized", currentExpandedWidth.value);
+};
 
 const toggleDock = () => {
   isDockOpen.value = !isDockOpen.value;
@@ -134,31 +238,6 @@ const handleSidebarEscape = (event: KeyboardEvent) => {
   }
 };
 
-const convertToPixels = (value: string): string => {
-  if (!value) return "0";
-  if (typeof value === "number") return value;
-  if (value.endsWith("px")) return parseInt(value, 10).toString();
-
-  const el = document.createElement("div");
-  el.style.position = "absolute";
-  el.style.visibility = "hidden";
-  el.style.width = value;
-  document.body.appendChild(el);
-
-  const pixels = el.getBoundingClientRect().width;
-  document.body.removeChild(el);
-
-  return pixels.toString();
-};
-
-const expandedWidthPx = computed(() => {
-  return `${convertToPixels(props.expandedWidth)}px`;
-});
-
-const collapsedWidthPx = computed(() => {
-  return `${convertToPixels(props.collapsedWidth)}px`;
-});
-
 const updatePushedElement = () => {
   if (!props.pushedSelector) return;
 
@@ -181,9 +260,10 @@ const updatePushedElement = () => {
         const position = window.getComputedStyle(element).position;
         const isInFlow = position === "static" || position === "relative";
 
+        // Use the live currentExpandedWidth when the dock is open so pushed elements follow resizes
         const widthFromProps = dockConfig.value.isOpen
           ? `${
-              parseInt(convertToPixels(props.expandedWidth)) +
+              parseInt(convertToPixels(currentExpandedWidth.value)) +
               parseInt(convertToPixels(pushedSelectorPadding.value))
             }px`
           : `${
@@ -307,6 +387,12 @@ onMounted(() => {
 });
 
 onUnmounted(() => {
+  // Cleanup any global pointer listeners used during resizing
+  if (isResizing.value) {
+    window.removeEventListener("pointermove", onResizerMove);
+    window.removeEventListener("pointerup", onResizerUp);
+    isResizing.value = false;
+  }
   document.removeEventListener("keydown", handleSidebarEscape);
   if (props.pushedSelector) {
     // If the dock is closed, remove the margin from the pushed elements
@@ -383,6 +469,7 @@ onUnmounted(() => {
   --feather-dock-toggle-top: 0.25rem;
   --feather-dock-timing: 0.3s;
   --feather-dock-header-offset: 0px;
+  --feather-dock-resizer-width: 0.5rem;
 
   @media (prefers-reduced-motion: reduce) {
     --feather-dock-timing: 0.1s; /* nearly instant */
@@ -466,8 +553,6 @@ onUnmounted(() => {
     z-index: var(vars.$zindex-popover);
     transition: left var(--feather-dock-timing, 0.3s);
     transition-timing-function: var(--feather-dock-toggle-timing-fn);
-    // outline: 0.125rem solid var(--feather-background);
-    // outline-offset: -0.125rem;
     font-size: 1rem;
     z-index: calc(var(--feather-zindex-modal) + 1);
   }
@@ -480,12 +565,72 @@ onUnmounted(() => {
     padding-top: var(--feather-dock-content-padding-top, 3rem);
     display: flex;
     flex-direction: column;
-    align-items: center;
+    align-items: flex-start;
 
     .custom-content {
       text-align: center;
       padding: 1rem;
     }
+  }
+  &.dock-open > .feather-dock-resizer {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    /* Make the resizer easier to grab */
+    width: var(--feather-dock-resizer-width);
+    cursor: ew-resize;
+    z-index: var(vars.$zindex-fixed);
+    left: calc(var(--feather-dock-width));
+    right: auto;
+    border-width: 2px;
+
+    .feather-dock-resizer-handle {
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      left: 50%;
+      transform: translateX(-50%);
+      width: var(--feather-dock-resizer-width);
+      border-radius: 0.125rem;
+      transition: all 0.25s ease-in-out 0.25s;
+      background-color: transparent;
+      &:hover {
+        background-color: var(--feather-dock-background-color);
+        border-left: 2px solid var(--feather-dock-color);
+        border-right: none;
+      }
+    }
+  }
+  &.dock-open.right > .feather-dock-resizer {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    /* Make the resizer easier to grab */
+    width: var(--feather-dock-resizer-width);
+    cursor: ew-resize;
+    z-index: var(vars.$zindex-fixed);
+    left: auto;
+    right: calc(var(--feather-dock-width));
+    background-color: transparent;
+    border-width: 2px;
+    .feather-dock-resizer-handle {
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      right: 50%;
+      width: var(--feather-dock-resizer-width);
+      border-radius: 0.125rem;
+      transition: all 0.25s ease-in-out 0.25s;
+      background-color: transparent;
+      &:hover {
+        background-color: var(--feather-dock-background-color);
+        border-left: none;
+        border-right: 2px solid var(--feather-dock-color);
+      }
+    }
+  }
+  &.is-resizing {
+    transition-duration: 0s;
   }
 }
 </style>

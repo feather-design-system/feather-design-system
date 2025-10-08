@@ -104,5 +104,14 @@ const onDockCollapsed = () => {
     color: var(--feather-dock-color);
     outline: 1px solid transparent;
   }
+  // keep icons from smushing when dock is collapsed
+  &.dock-closed {
+    overflow-y: scroll;
+    overscroll-behavior: contain;
+    :deep(.feather-dock-content) {
+      height: auto;
+      width: auto;
+    }
+  }
 }
 </style>
