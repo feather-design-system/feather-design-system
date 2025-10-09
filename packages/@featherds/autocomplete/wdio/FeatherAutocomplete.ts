@@ -33,14 +33,23 @@ class BaseAutocomplete {
     }
 
     const items = await $$(OPTION);
-    const textArray = await Promise.all(
-      items.map((item: any) => item.getText())
-    );
-    const itemIndex = textArray.indexOf(text);
+    const textTrim = text.trim();
+
+    // Build an array of trimmed texts using an explicit loop to avoid
+    // using Promise.all on a WebdriverIO element array (which isn't a plain
+    // iterable of promises in this environment).
+    const textArray: string[] = [];
+    for (let i = 0; i < items.length; i++) {
+      const el = items[i];
+      if (!el) continue;
+      const t = await el.getText();
+      textArray.push((t || "").trim());
+    }
+    const itemIndex = textArray.indexOf(textTrim);
     if (itemIndex > -1) {
-      const result = await items[itemIndex].getText();
+      const result = textArray[itemIndex];
       await this.clickElement(items[itemIndex]);
-      return result.trim();
+      return result;
     }
 
     throw new Error(
@@ -97,7 +106,14 @@ export class AutocompleteMulti extends BaseAutocomplete {
   }
   async getValue() {
     const chips = await this.chips();
-    return Promise.all(chips.map((c: any) => c.getText()));
+    const texts: string[] = [];
+    for (let i = 0; i < chips.length; i++) {
+      const c = chips[i];
+      if (!c) continue;
+      const t = await c.getText();
+      texts.push(t);
+    }
+    return texts;
   }
   async clearChip(txt: string) {
     const chipsDelete = await this.chipsDelete();
