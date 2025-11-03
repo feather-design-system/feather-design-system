@@ -583,6 +583,7 @@ onUnmounted(() => {
     left: calc(var(--feather-dock-width));
     right: auto;
     border-width: 2px;
+    background-color: transparent;
 
     .feather-dock-resizer-handle {
       position: absolute;
@@ -592,8 +593,11 @@ onUnmounted(() => {
       transform: translateX(-50%);
       width: var(--feather-dock-resizer-width);
       border-radius: 0.125rem;
-      transition: all 0.25s ease-in-out 0.25s;
       background-color: transparent;
+      border-left: 2px solid transparent;
+      transition: background-color 0.25s ease-in-out 0.25s,
+        border-left-color 0.25s ease-in-out 0.25s;
+
       &:hover {
         background-color: var(--feather-dock-background-color);
         border-left: 2px solid var(--feather-dock-color);
@@ -613,6 +617,8 @@ onUnmounted(() => {
     right: calc(var(--feather-dock-width));
     background-color: transparent;
     border-width: 2px;
+    background-color: transparent;
+
     .feather-dock-resizer-handle {
       position: absolute;
       top: 0;
@@ -620,17 +626,23 @@ onUnmounted(() => {
       right: 50%;
       width: var(--feather-dock-resizer-width);
       border-radius: 0.125rem;
-      transition: all 0.25s ease-in-out 0.25s;
       background-color: transparent;
+      border-right: 2px solid transparent;
+      transition: background-color 0.25s ease-in-out 0.25s,
+        border-right-color 0.25s ease-in-out 0.25s;
+
       &:hover {
         background-color: var(--feather-dock-background-color);
-        border-left: none;
         border-right: 2px solid var(--feather-dock-color);
+        border-left: none;
       }
     }
   }
   &.is-resizing {
     transition-duration: 0s;
+    > .feather-dock-toggle {
+      transition-duration: 0s;
+    }
   }
 }
 </style>
