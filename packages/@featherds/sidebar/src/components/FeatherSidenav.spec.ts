@@ -59,7 +59,6 @@ describe("FeatherSidenav (unit)", () => {
     expect(dockProps.location).toBe(props.location);
     expect(dockProps.expandedWidth).toBe(props.expandedWidth);
     expect(dockProps.collapsedWidth).toBe(props.collapsedWidth);
-    console.log(dockProps.labels, props.labels);
     expect(dockProps.labels).toEqual(props.labels);
 
     // computed rootTag in the component is hard-coded to 'nav'

@@ -47,7 +47,12 @@ describe("FeatherSidenavList (unit)", () => {
 
     const wrapper = mount(FeatherSidenavList as any, {
       props: { id: "dock-test", items },
-      global: { stubs: globalStubs },
+      global: {
+        stubs: globalStubs,
+        provide: {
+          dockConfig: { id: "sidenav-dock" },
+        },
+      },
     });
 
     // listClasses is a computed; ensure it reflects the mocked dock state
@@ -72,7 +77,12 @@ describe("FeatherSidenavList (unit)", () => {
 
     const wrapper = mount(FeatherSidenavList as any, {
       props: { id: "test-can", items },
-      global: { stubs: globalStubs },
+      global: {
+        stubs: globalStubs,
+        provide: {
+          dockConfig: { id: "sidenav-dock" },
+        },
+      },
     });
 
     const vm: any = wrapper.vm;
@@ -124,6 +134,9 @@ describe("FeatherSidenavList (unit)", () => {
           ...globalStubs,
           FeatherPopover: false,
           FeatherListItem: false,
+        },
+        provide: {
+          dockConfig: { id: "sidenav-dock" },
         },
       },
     });
@@ -185,6 +198,9 @@ describe("FeatherSidenavList (unit)", () => {
           FeatherPopover: false,
           FeatherListItem: false,
         },
+        provide: {
+          dockConfig: { id: "sidenav-dock" },
+        },
       },
     });
 
@@ -233,7 +249,16 @@ describe("FeatherSidenavList (unit)", () => {
 
     const wrapper = mount(FeatherSidenavList as any, {
       props: { id: "kbd-3", items, hoverMode: true },
-      global: { stubs: { ...globalStubs, FeatherListItem: ListItemStub3 } },
+      global: {
+        stubs: {
+          ...globalStubs,
+
+          FeatherListItem: ListItemStub3,
+        },
+        provide: {
+          dockConfig: { id: "sidenav-dock" },
+        },
+      },
     });
 
     // dispatch Escape on document
