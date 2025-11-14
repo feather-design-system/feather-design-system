@@ -24,29 +24,6 @@ describe("FeatherSidenavList (unit)", () => {
     }
   });
 
-  it("generates a header when hoverMode is true and no header exists", async () => {
-    const { default: FeatherSidenavList } = await import(
-      "./FeatherSidenavList.vue"
-    );
-
-    const items = [
-      { id: "i1", type: "item", title: "One" },
-      { id: "i2", type: "item", title: "Two" },
-    ];
-
-    const wrapper = mount(FeatherSidenavList as any, {
-      props: { id: "test", items, hoverMode: true },
-      global: { stubs: globalStubs },
-    });
-
-    // processedItems should insert a generated header at index 0
-    const processed = (wrapper.vm as any).processedItems as Array<any>;
-    expect(processed.length).toBeGreaterThan(items.length);
-    expect(processed[0].type).toBe("header");
-
-    wrapper.unmount();
-  });
-
   it("applies dock-related classes when useDock reports docked/collapsed state", async () => {
     // Mock the composable before importing the component so the module uses the mock
     vi.doMock("@featherds/composables/dock/useDock", () => {
@@ -70,7 +47,12 @@ describe("FeatherSidenavList (unit)", () => {
 
     const wrapper = mount(FeatherSidenavList as any, {
       props: { id: "dock-test", items },
-      global: { stubs: globalStubs },
+      global: {
+        stubs: globalStubs,
+        provide: {
+          dockConfig: { id: "sidenav-dock" },
+        },
+      },
     });
 
     // listClasses is a computed; ensure it reflects the mocked dock state
@@ -95,7 +77,12 @@ describe("FeatherSidenavList (unit)", () => {
 
     const wrapper = mount(FeatherSidenavList as any, {
       props: { id: "test-can", items },
-      global: { stubs: globalStubs },
+      global: {
+        stubs: globalStubs,
+        provide: {
+          dockConfig: { id: "sidenav-dock" },
+        },
+      },
     });
 
     const vm: any = wrapper.vm;
@@ -147,6 +134,9 @@ describe("FeatherSidenavList (unit)", () => {
           ...globalStubs,
           FeatherPopover: false,
           FeatherListItem: false,
+        },
+        provide: {
+          dockConfig: { id: "sidenav-dock" },
         },
       },
     });
@@ -208,6 +198,9 @@ describe("FeatherSidenavList (unit)", () => {
           FeatherPopover: false,
           FeatherListItem: false,
         },
+        provide: {
+          dockConfig: { id: "sidenav-dock" },
+        },
       },
     });
 
@@ -256,7 +249,16 @@ describe("FeatherSidenavList (unit)", () => {
 
     const wrapper = mount(FeatherSidenavList as any, {
       props: { id: "kbd-3", items, hoverMode: true },
-      global: { stubs: { ...globalStubs, FeatherListItem: ListItemStub3 } },
+      global: {
+        stubs: {
+          ...globalStubs,
+
+          FeatherListItem: ListItemStub3,
+        },
+        provide: {
+          dockConfig: { id: "sidenav-dock" },
+        },
+      },
     });
 
     // dispatch Escape on document

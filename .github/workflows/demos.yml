@@ -46,7 +46,6 @@ jobs:
       - name: Delete old demos
         uses: azure/CLI@v2
         with:
-          azcliversion: "2.76.0"
           inlineScript: |
             az storage blob delete-batch --source '$web' --pattern "demos/*" --account-name prsv --auth-mode login
 

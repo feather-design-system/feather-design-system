@@ -10,7 +10,7 @@
         :target="item.target ? item.target : null"
         :disabled="item.disabled || false"
         :selected="item.selected || false"
-        @click="item.onClick"
+        @click="handleLinkClick(item, $event)"
       >
         <template v-if="item.icon" #icon>
           <FeatherIcon :icon="item.icon" />
@@ -41,7 +41,7 @@ import {
 import { FeatherIcon } from "@featherds/icon";
 import { FeatherButton } from "@featherds/button";
 import type { MenuListEntry, MenuListItem } from "./types";
-import { inject } from "vue";
+import { inject, onUnmounted } from "vue";
 
 const props = defineProps({
   items: {
@@ -51,6 +51,7 @@ const props = defineProps({
 });
 
 // #region item helpers
+const timeouts = new Set<ReturnType<typeof setTimeout>>();
 // #endregion
 
 const scrollToElement = inject<(selector: string, className: string) => void>(
@@ -68,6 +69,25 @@ const scrollToElement = inject<(selector: string, className: string) => void>(
   }
 );
 
+const handleLinkClick = (item: MenuListItem, event: Event) => {
+  if (item.target === "_blank") {
+    // Let browser handle naturally
+    // Immediate response for new tabs
+    return;
+  }
+
+  // Apply delay for all other cases
+  event.preventDefault();
+  delayForRipple(() => {
+    if (item.href && item.target) {
+      window.open(item.href, item.target);
+    } else if (item.href) {
+      window.location.href = item.href;
+    }
+    item.onClick?.();
+  }, 150);
+};
+
 const handleItemClick = (item: MenuListItem) => {
   if (item.scrollTarget && scrollToElement) {
     scrollToElement(
@@ -80,6 +100,21 @@ const handleItemClick = (item: MenuListItem) => {
   }
   item.selected = true;
 };
+
+const delayForRipple = (fn: () => void, delay = 100) => {
+  const timeout = setTimeout(() => {
+    timeouts.delete(timeout); // Remove from tracking when complete
+    fn();
+  }, delay);
+  timeouts.add(timeout);
+  return timeout;
+};
+
+onUnmounted(() => {
+  // cleanup any pending timeouts
+  timeouts.forEach((timeout) => clearTimeout(timeout));
+  timeouts.clear();
+});
 </script>
 <style lang="scss">
 @use "@featherds/styles/themes/variables" as vars;
