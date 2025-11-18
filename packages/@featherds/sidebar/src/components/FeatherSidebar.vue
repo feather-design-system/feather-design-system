@@ -10,6 +10,7 @@
     :labels="dockProps.labels"
     @update:dock-expanded="onDockExpanded"
     @update:dock-collapsed="onDockCollapsed"
+    @update:dock-resized="onDockResized"
   >
     <template #docked>
       <FeatherPanelBar
@@ -35,6 +36,7 @@ const props = defineProps<SidebarProps>();
 const emit = defineEmits<{
   (e: "update:expanded", id: string): void;
   (e: "update:collapsed", id: string): void;
+  (e: "update:resized", payload: { id: string; width: number }): void;
 }>();
 
 const onDockExpanded = () => {
@@ -43,6 +45,10 @@ const onDockExpanded = () => {
 
 const onDockCollapsed = () => {
   emit("update:collapsed", dockProps.value.id);
+};
+
+const onDockResized = (width: number) => {
+  emit("update:resized", { id: dockProps.value.id, width });
 };
 
 const dockProps = computed(() => {
