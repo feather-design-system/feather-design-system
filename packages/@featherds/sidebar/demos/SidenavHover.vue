@@ -136,6 +136,7 @@ const mainMenu = [
 #my-sidenav-hover-mode-menu {
   --feather-dock-content-padding-top: 2em;
   --feather-dock-toggle-top: calc(2em);
+  --feather-popover-list-max-height: 20rem;
 }
 main {
   margin: 0 auto;
