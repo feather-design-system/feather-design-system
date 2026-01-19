@@ -211,6 +211,7 @@ watch(
 </style>
 
 <style lang="scss" scoped>
+@use "@featherds/styles/themes/variables" as vars;
 @use "@featherds/styles/themes/utils" as utils;
 @use "@featherds/styles/mixins/elevation" as elev;
 
@@ -240,7 +241,7 @@ watch(
         scrollbar-width: thin;
         -ms-scrollbar-width: thin;
         // Change scrolbar element colors
-        scrollbar-color: var(--feather-secondary-variant)
+        scrollbar-color: hsl(from var(vars.$secondary-variant) h s 65% / 0.85)
           var(--feather-lightbox-background);
       }
     }
