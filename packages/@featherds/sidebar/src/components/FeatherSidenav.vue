@@ -12,6 +12,7 @@
     class="feather-sidenav"
     @update:dock-expanded="onDockExpanded"
     @update:dock-collapsed="onDockCollapsed"
+    @update:dock-resized="onDockResized"
   >
     <template #docked>
       <FeatherSidenavList
@@ -57,6 +58,7 @@ const dockProps = computed(() => {
 const emit = defineEmits<{
   (e: "update:expanded", id: string): void;
   (e: "update:collapsed", id: string): void;
+  (e: "update:resized", payload: { id: string; width: number }): void;
 }>();
 
 const menuProps = computed(() => {
@@ -73,6 +75,9 @@ const onDockExpanded = () => {
 
 const onDockCollapsed = () => {
   emit("update:collapsed", dockProps.value.id);
+};
+const onDockResized = (width: number) => {
+  emit("update:resized", { id: dockProps.value.id, width });
 };
 </script>
 

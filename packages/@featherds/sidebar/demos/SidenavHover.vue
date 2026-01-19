@@ -64,6 +64,37 @@
         the immediate response actually provides better UX.
       </h5>
     </article>
+    <article>
+      <h2>
+        Long Menus
+        <small
+          >(see Settings
+          <FeatherIcon :icon="Settings"></FeatherIcon> Menu)</small
+        >
+      </h2>
+      <p>
+        If a menu contains more items than can fit within the maximum height of
+        the popover, a scrollbar will appear to allow users to scroll through
+        the menu items.
+      </p>
+      <p>
+        The scrollbar has been styled to match the overall design of the Feather
+        Design System, ensuring a consistent look and feel across all
+        components.
+      </p>
+      <p>
+        You can customize the maximum height of the popover menu by setting the
+        <code> --feather-popover-list-max-height</code>
+      </p>
+      <code>
+        <pre>
+        #my-sidenav-hover-mode-menu {
+          --feather-popover-list-max-height: 20rem;
+        }
+      </pre
+        >
+      </code>
+    </article>
   </main>
 </template>
 
@@ -136,6 +167,7 @@ const mainMenu = [
 #my-sidenav-hover-mode-menu {
   --feather-dock-content-padding-top: 2em;
   --feather-dock-toggle-top: calc(2em);
+  --feather-popover-list-max-height: 20rem;
 }
 main {
   margin: 0 auto;

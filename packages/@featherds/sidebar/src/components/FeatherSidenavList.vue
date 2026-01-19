@@ -206,10 +206,12 @@ watch(
 .feather-sidenav {
   --feather-dock-background-color: inherit;
   --feather-dock-color: inherit;
+  --feather-popover-list-max-height: 20rem;
 }
 </style>
 
 <style lang="scss" scoped>
+@use "@featherds/styles/themes/variables" as vars;
 @use "@featherds/styles/themes/utils" as utils;
 @use "@featherds/styles/mixins/elevation" as elev;
 
@@ -229,6 +231,19 @@ watch(
     }
     :deep(a.feather-list-item):focus {
       box-shadow: inset 0 0 0 1px var(--feather-dock-color);
+    }
+    .popover {
+      .feather-list {
+        max-height: var(--feather-popover-list-max-height, 20rem);
+        overflow-y: auto;
+        scrollbar-arrow-color: aquamarine !important;
+        scrollbar-gutter: stable;
+        scrollbar-width: thin;
+        -ms-scrollbar-width: thin;
+        // Change scrolbar element colors
+        scrollbar-color: hsl(from var(vars.$secondary-variant) h s 65% / 0.85)
+          var(--feather-lightbox-background);
+      }
     }
     &.dock-open {
       & > .feather-list-header {

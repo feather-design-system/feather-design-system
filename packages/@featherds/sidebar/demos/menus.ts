@@ -7,6 +7,17 @@ import Settings from "@featherds/icon/action/Settings";
 import Help from "@featherds/icon/action/Help";
 import FeedbackAlt from "@featherds/icon/action/FeedbackAlt";
 import ApiConfig from "@featherds/icon/network/ApiConfig";
+import LightDarkMode from "@featherds/icon/action/LightDarkMode";
+import Notifications from "@featherds/icon/action/Notifications";
+import NotificationsOff from "@featherds/icon/notification/NotificationsOff";
+import Lock from "@featherds/icon/action/Lock";
+import Cloud from "@featherds/icon/action/Cloud";
+import CloudDownload from "@featherds/icon/action/CloudDownload";
+import ManageProfile from "@featherds/icon/action/ManageProfile";
+import Wifi from "@featherds/icon/notification/Wifi";
+import Share from "@featherds/icon/action/Share";
+import Info from "@featherds/icon/action/Info";
+import UpdateUtilities from "@featherds/icon/action/UpdateUtilities";
 
 export const accountMenu: MenuListEntry[] = [
   {
@@ -88,5 +99,93 @@ export const settingsMenu: MenuListEntry[] = [
     href: "/api-config",
     target: "_settings",
     icon: ApiConfig as typeof FeatherIcon,
+  },
+  {
+    id: "theme-settings",
+    type: "item",
+    title: "Theme Settings",
+    href: "/theme-settings",
+    target: "_settings",
+    icon: LightDarkMode as typeof FeatherIcon,
+  },
+  {
+    id: "notifications-settings",
+    type: "item",
+    title: "Notifications",
+    href: "/notifications",
+    target: "_settings",
+    icon: Notifications as typeof FeatherIcon,
+  },
+  {
+    id: "notification-disable",
+    type: "item",
+    title: "Disable Notifications",
+    href: "/notifications/disable",
+    target: "_settings",
+    icon: NotificationsOff as typeof FeatherIcon,
+  },
+  {
+    id: "privacy-settings",
+    type: "item",
+    title: "Privacy & Security",
+    href: "/privacy",
+    target: "_settings",
+    icon: Lock as typeof FeatherIcon,
+  },
+  {
+    id: "cloud-settings",
+    type: "item",
+    title: "Cloud Storage",
+    href: "/cloud-storage",
+    target: "_settings",
+    icon: Cloud as typeof FeatherIcon,
+  },
+  {
+    id: "backup-settings",
+    type: "item",
+    title: "Backup & Sync",
+    href: "/backup",
+    target: "_settings",
+    icon: CloudDownload as typeof FeatherIcon,
+  },
+  {
+    id: "profile-settings",
+    type: "item",
+    title: "Profile Management",
+    href: "/profile",
+    target: "_settings",
+    icon: ManageProfile as typeof FeatherIcon,
+  },
+  {
+    id: "network-settings",
+    type: "item",
+    title: "Network & WiFi",
+    href: "/network",
+    target: "_settings",
+    icon: Wifi as typeof FeatherIcon,
+  },
+  {
+    id: "share-settings",
+    type: "item",
+    title: "Sharing Options",
+    href: "/sharing",
+    target: "_settings",
+    icon: Share as typeof FeatherIcon,
+  },
+  {
+    id: "app-info",
+    type: "item",
+    title: "App Information",
+    href: "/app-info",
+    target: "_settings",
+    icon: Info as typeof FeatherIcon,
+  },
+  {
+    id: "system-updates",
+    type: "item",
+    title: "System Updates",
+    href: "/updates",
+    target: "_settings",
+    icon: UpdateUtilities as typeof FeatherIcon,
   },
 ];
