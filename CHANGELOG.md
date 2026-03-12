@@ -1,3 +1,12 @@
+## [0.12.44](https://github.com/feather-design-system/feather-design-system/compare/v0.12.43...v0.12.44) (2026-03-12)
+
+
+### Features
+
+* **icons:** add new icons for Key, Approval and Not Approved ([#225](https://github.com/feather-design-system/feather-design-system/issues/225)) ([5191b9c](https://github.com/feather-design-system/feather-design-system/commit/5191b9cc769a41757e6b6e37ac2b0c94e19c5416))
+
+
+
 ## [0.12.43](https://github.com/feather-design-system/feather-design-system/compare/v0.12.42...v0.12.43) (2025-11-14)
 
 
