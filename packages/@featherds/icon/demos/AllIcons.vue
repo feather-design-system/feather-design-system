@@ -30,30 +30,6 @@ import contentBlogArticle from "@featherds/icon/content/BlogArticle";
 
 import contentVideo from "@featherds/icon/content/Video";
 
-import datavisAreaChart from "@featherds/icon/datavis/AreaChart";
-
-import datavisBarChart from "@featherds/icon/datavis/BarChart";
-
-import datavisColumnChart from "@featherds/icon/datavis/ColumnChart";
-
-import datavisDonutChart from "@featherds/icon/datavis/DonutChart";
-
-import datavisGauge from "@featherds/icon/datavis/Gauge";
-
-import datavisLineChart from "@featherds/icon/datavis/LineChart";
-
-import datavisPieChart from "@featherds/icon/datavis/PieChart";
-
-import datavisPolarChart from "@featherds/icon/datavis/PolarChart";
-
-import datavisReporting from "@featherds/icon/datavis/Reporting";
-
-import datavisStackedBarChart from "@featherds/icon/datavis/StackedBarChart";
-
-import datavisStackedColumnChart from "@featherds/icon/datavis/StackedColumnChart";
-
-import datavisTreeDiagram from "@featherds/icon/datavis/TreeDiagram";
-
 import actionAccountCircle from "@featherds/icon/action/AccountCircle";
 
 import actionAdd from "@featherds/icon/action/Add";
@@ -65,6 +41,8 @@ import actionAddComment from "@featherds/icon/action/AddComment";
 import actionAddNote from "@featherds/icon/action/AddNote";
 
 import actionAddUser from "@featherds/icon/action/AddUser";
+
+import actionApproval from "@featherds/icon/action/Approval";
 
 import actionArchive from "@featherds/icon/action/Archive";
 
@@ -184,6 +162,8 @@ import actionMarkUnread from "@featherds/icon/action/MarkUnread";
 
 import actionNotifications from "@featherds/icon/action/Notifications";
 
+import actionNotApproved from "@featherds/icon/action/NotApproved";
+
 import actionOptions from "@featherds/icon/action/Options";
 
 import actionPerson from "@featherds/icon/action/Person";
@@ -233,6 +213,30 @@ import actionView from "@featherds/icon/action/View";
 import actionViewDetails from "@featherds/icon/action/ViewDetails";
 
 import actionWorkflow from "@featherds/icon/action/Workflow";
+
+import datavisAreaChart from "@featherds/icon/datavis/AreaChart";
+
+import datavisBarChart from "@featherds/icon/datavis/BarChart";
+
+import datavisColumnChart from "@featherds/icon/datavis/ColumnChart";
+
+import datavisDonutChart from "@featherds/icon/datavis/DonutChart";
+
+import datavisGauge from "@featherds/icon/datavis/Gauge";
+
+import datavisLineChart from "@featherds/icon/datavis/LineChart";
+
+import datavisPieChart from "@featherds/icon/datavis/PieChart";
+
+import datavisPolarChart from "@featherds/icon/datavis/PolarChart";
+
+import datavisReporting from "@featherds/icon/datavis/Reporting";
+
+import datavisStackedBarChart from "@featherds/icon/datavis/StackedBarChart";
+
+import datavisStackedColumnChart from "@featherds/icon/datavis/StackedColumnChart";
+
+import datavisTreeDiagram from "@featherds/icon/datavis/TreeDiagram";
 
 import fileAttachment from "@featherds/icon/file/Attachment";
 
@@ -315,6 +319,54 @@ import medicalTreatmentCycle from "@featherds/icon/medical/TreatmentCycle";
 import medicalTreatmentSchedule from "@featherds/icon/medical/TreatmentSchedule";
 
 import medicalVitals from "@featherds/icon/medical/Vitals";
+
+import navigationApps from "@featherds/icon/navigation/Apps";
+
+import navigationAppsGetMore from "@featherds/icon/navigation/AppsGetMore";
+
+import navigationArrowBack from "@featherds/icon/navigation/ArrowBack";
+
+import navigationArrowDropDown from "@featherds/icon/navigation/ArrowDropDown";
+
+import navigationCancel from "@featherds/icon/navigation/Cancel";
+
+import navigationChevronLeft from "@featherds/icon/navigation/ChevronLeft";
+
+import navigationChevronRight from "@featherds/icon/navigation/ChevronRight";
+
+import navigationExpandLess from "@featherds/icon/navigation/ExpandLess";
+
+import navigationExpandMore from "@featherds/icon/navigation/ExpandMore";
+
+import navigationFirstPage from "@featherds/icon/navigation/FirstPage";
+
+import navigationFullscreen from "@featherds/icon/navigation/Fullscreen";
+
+import navigationFullscreenExit from "@featherds/icon/navigation/FullscreenExit";
+
+import navigationGridView from "@featherds/icon/navigation/GridView";
+
+import navigationLastPage from "@featherds/icon/navigation/LastPage";
+
+import navigationMenu from "@featherds/icon/navigation/Menu";
+
+import navigationMenuClose from "@featherds/icon/navigation/MenuClose";
+
+import navigationMenuOpen from "@featherds/icon/navigation/MenuOpen";
+
+import navigationMoreHoriz from "@featherds/icon/navigation/MoreHoriz";
+
+import navigationMoreVert from "@featherds/icon/navigation/MoreVert";
+
+import navigationRefresh from "@featherds/icon/navigation/Refresh";
+
+import navigationSubdirectoryArrowLeft from "@featherds/icon/navigation/SubdirectoryArrowLeft";
+
+import navigationSubdirectoryArrowRight from "@featherds/icon/navigation/SubdirectoryArrowRight";
+
+import navigationUnfoldLess from "@featherds/icon/navigation/UnfoldLess";
+
+import navigationUnfoldMore from "@featherds/icon/navigation/UnfoldMore";
 
 import notificationConnected from "@featherds/icon/notification/Connected";
 
@@ -426,6 +478,8 @@ import networkInventoryConfirm from "@featherds/icon/network/InventoryConfirm";
 
 import networkInventoryDelete from "@featherds/icon/network/InventoryDelete";
 
+import networkKey from "@featherds/icon/network/Key";
+
 import networkLaptop from "@featherds/icon/network/Laptop";
 
 import networkLoggerConfigs from "@featherds/icon/network/LoggerConfigs";
@@ -482,54 +536,6 @@ import networkVirtualMachineAlt2 from "@featherds/icon/network/VirtualMachineAlt
 
 import networkWifiRouter from "@featherds/icon/network/WifiRouter";
 
-import navigationApps from "@featherds/icon/navigation/Apps";
-
-import navigationAppsGetMore from "@featherds/icon/navigation/AppsGetMore";
-
-import navigationArrowBack from "@featherds/icon/navigation/ArrowBack";
-
-import navigationArrowDropDown from "@featherds/icon/navigation/ArrowDropDown";
-
-import navigationCancel from "@featherds/icon/navigation/Cancel";
-
-import navigationChevronLeft from "@featherds/icon/navigation/ChevronLeft";
-
-import navigationChevronRight from "@featherds/icon/navigation/ChevronRight";
-
-import navigationExpandLess from "@featherds/icon/navigation/ExpandLess";
-
-import navigationExpandMore from "@featherds/icon/navigation/ExpandMore";
-
-import navigationFirstPage from "@featherds/icon/navigation/FirstPage";
-
-import navigationFullscreen from "@featherds/icon/navigation/Fullscreen";
-
-import navigationFullscreenExit from "@featherds/icon/navigation/FullscreenExit";
-
-import navigationGridView from "@featherds/icon/navigation/GridView";
-
-import navigationLastPage from "@featherds/icon/navigation/LastPage";
-
-import navigationMenu from "@featherds/icon/navigation/Menu";
-
-import navigationMenuClose from "@featherds/icon/navigation/MenuClose";
-
-import navigationMenuOpen from "@featherds/icon/navigation/MenuOpen";
-
-import navigationMoreHoriz from "@featherds/icon/navigation/MoreHoriz";
-
-import navigationMoreVert from "@featherds/icon/navigation/MoreVert";
-
-import navigationRefresh from "@featherds/icon/navigation/Refresh";
-
-import navigationSubdirectoryArrowLeft from "@featherds/icon/navigation/SubdirectoryArrowLeft";
-
-import navigationSubdirectoryArrowRight from "@featherds/icon/navigation/SubdirectoryArrowRight";
-
-import navigationUnfoldLess from "@featherds/icon/navigation/UnfoldLess";
-
-import navigationUnfoldMore from "@featherds/icon/navigation/UnfoldMore";
-
 
 
 export default {
@@ -545,24 +551,13 @@ export default {
         { icon: communicationPhone, key: "communicationPhone" },
         { icon: contentBlogArticle, key: "contentBlogArticle" },
         { icon: contentVideo, key: "contentVideo" },
-        { icon: datavisAreaChart, key: "datavisAreaChart" },
-        { icon: datavisBarChart, key: "datavisBarChart" },
-        { icon: datavisColumnChart, key: "datavisColumnChart" },
-        { icon: datavisDonutChart, key: "datavisDonutChart" },
-        { icon: datavisGauge, key: "datavisGauge" },
-        { icon: datavisLineChart, key: "datavisLineChart" },
-        { icon: datavisPieChart, key: "datavisPieChart" },
-        { icon: datavisPolarChart, key: "datavisPolarChart" },
-        { icon: datavisReporting, key: "datavisReporting" },
-        { icon: datavisStackedBarChart, key: "datavisStackedBarChart" },
-        { icon: datavisStackedColumnChart, key: "datavisStackedColumnChart" },
-        { icon: datavisTreeDiagram, key: "datavisTreeDiagram" },
         { icon: actionAccountCircle, key: "actionAccountCircle" },
         { icon: actionAdd, key: "actionAdd" },
         { icon: actionAddCircleAlt, key: "actionAddCircleAlt" },
         { icon: actionAddComment, key: "actionAddComment" },
         { icon: actionAddNote, key: "actionAddNote" },
         { icon: actionAddUser, key: "actionAddUser" },
+        { icon: actionApproval, key: "actionApproval" },
         { icon: actionArchive, key: "actionArchive" },
         { icon: actionAssignTo, key: "actionAssignTo" },
         { icon: actionAttachEmail, key: "actionAttachEmail" },
@@ -622,6 +617,7 @@ export default {
         { icon: actionMarkRead, key: "actionMarkRead" },
         { icon: actionMarkUnread, key: "actionMarkUnread" },
         { icon: actionNotifications, key: "actionNotifications" },
+        { icon: actionNotApproved, key: "actionNotApproved" },
         { icon: actionOptions, key: "actionOptions" },
         { icon: actionPerson, key: "actionPerson" },
         { icon: actionPin, key: "actionPin" },
@@ -647,6 +643,18 @@ export default {
         { icon: actionView, key: "actionView" },
         { icon: actionViewDetails, key: "actionViewDetails" },
         { icon: actionWorkflow, key: "actionWorkflow" },
+        { icon: datavisAreaChart, key: "datavisAreaChart" },
+        { icon: datavisBarChart, key: "datavisBarChart" },
+        { icon: datavisColumnChart, key: "datavisColumnChart" },
+        { icon: datavisDonutChart, key: "datavisDonutChart" },
+        { icon: datavisGauge, key: "datavisGauge" },
+        { icon: datavisLineChart, key: "datavisLineChart" },
+        { icon: datavisPieChart, key: "datavisPieChart" },
+        { icon: datavisPolarChart, key: "datavisPolarChart" },
+        { icon: datavisReporting, key: "datavisReporting" },
+        { icon: datavisStackedBarChart, key: "datavisStackedBarChart" },
+        { icon: datavisStackedColumnChart, key: "datavisStackedColumnChart" },
+        { icon: datavisTreeDiagram, key: "datavisTreeDiagram" },
         { icon: fileAttachment, key: "fileAttachment" },
         { icon: fileFolder, key: "fileFolder" },
         { icon: fileFolderAdd, key: "fileFolderAdd" },
@@ -688,6 +696,30 @@ export default {
         { icon: medicalTreatmentCycle, key: "medicalTreatmentCycle" },
         { icon: medicalTreatmentSchedule, key: "medicalTreatmentSchedule" },
         { icon: medicalVitals, key: "medicalVitals" },
+        { icon: navigationApps, key: "navigationApps" },
+        { icon: navigationAppsGetMore, key: "navigationAppsGetMore" },
+        { icon: navigationArrowBack, key: "navigationArrowBack" },
+        { icon: navigationArrowDropDown, key: "navigationArrowDropDown" },
+        { icon: navigationCancel, key: "navigationCancel" },
+        { icon: navigationChevronLeft, key: "navigationChevronLeft" },
+        { icon: navigationChevronRight, key: "navigationChevronRight" },
+        { icon: navigationExpandLess, key: "navigationExpandLess" },
+        { icon: navigationExpandMore, key: "navigationExpandMore" },
+        { icon: navigationFirstPage, key: "navigationFirstPage" },
+        { icon: navigationFullscreen, key: "navigationFullscreen" },
+        { icon: navigationFullscreenExit, key: "navigationFullscreenExit" },
+        { icon: navigationGridView, key: "navigationGridView" },
+        { icon: navigationLastPage, key: "navigationLastPage" },
+        { icon: navigationMenu, key: "navigationMenu" },
+        { icon: navigationMenuClose, key: "navigationMenuClose" },
+        { icon: navigationMenuOpen, key: "navigationMenuOpen" },
+        { icon: navigationMoreHoriz, key: "navigationMoreHoriz" },
+        { icon: navigationMoreVert, key: "navigationMoreVert" },
+        { icon: navigationRefresh, key: "navigationRefresh" },
+        { icon: navigationSubdirectoryArrowLeft, key: "navigationSubdirectoryArrowLeft" },
+        { icon: navigationSubdirectoryArrowRight, key: "navigationSubdirectoryArrowRight" },
+        { icon: navigationUnfoldLess, key: "navigationUnfoldLess" },
+        { icon: navigationUnfoldMore, key: "navigationUnfoldMore" },
         { icon: notificationConnected, key: "notificationConnected" },
         { icon: notificationError, key: "notificationError" },
         { icon: notificationNotificationsOff, key: "notificationNotificationsOff" },
@@ -743,6 +775,7 @@ export default {
         { icon: networkInventoryAlt, key: "networkInventoryAlt" },
         { icon: networkInventoryConfirm, key: "networkInventoryConfirm" },
         { icon: networkInventoryDelete, key: "networkInventoryDelete" },
+        { icon: networkKey, key: "networkKey" },
         { icon: networkLaptop, key: "networkLaptop" },
         { icon: networkLoggerConfigs, key: "networkLoggerConfigs" },
         { icon: networkLogs, key: "networkLogs" },
@@ -770,31 +803,7 @@ export default {
         { icon: networkVirtualMachine, key: "networkVirtualMachine" },
         { icon: networkVirtualMachineAlt, key: "networkVirtualMachineAlt" },
         { icon: networkVirtualMachineAlt2, key: "networkVirtualMachineAlt2" },
-        { icon: networkWifiRouter, key: "networkWifiRouter" },
-        { icon: navigationApps, key: "navigationApps" },
-        { icon: navigationAppsGetMore, key: "navigationAppsGetMore" },
-        { icon: navigationArrowBack, key: "navigationArrowBack" },
-        { icon: navigationArrowDropDown, key: "navigationArrowDropDown" },
-        { icon: navigationCancel, key: "navigationCancel" },
-        { icon: navigationChevronLeft, key: "navigationChevronLeft" },
-        { icon: navigationChevronRight, key: "navigationChevronRight" },
-        { icon: navigationExpandLess, key: "navigationExpandLess" },
-        { icon: navigationExpandMore, key: "navigationExpandMore" },
-        { icon: navigationFirstPage, key: "navigationFirstPage" },
-        { icon: navigationFullscreen, key: "navigationFullscreen" },
-        { icon: navigationFullscreenExit, key: "navigationFullscreenExit" },
-        { icon: navigationGridView, key: "navigationGridView" },
-        { icon: navigationLastPage, key: "navigationLastPage" },
-        { icon: navigationMenu, key: "navigationMenu" },
-        { icon: navigationMenuClose, key: "navigationMenuClose" },
-        { icon: navigationMenuOpen, key: "navigationMenuOpen" },
-        { icon: navigationMoreHoriz, key: "navigationMoreHoriz" },
-        { icon: navigationMoreVert, key: "navigationMoreVert" },
-        { icon: navigationRefresh, key: "navigationRefresh" },
-        { icon: navigationSubdirectoryArrowLeft, key: "navigationSubdirectoryArrowLeft" },
-        { icon: navigationSubdirectoryArrowRight, key: "navigationSubdirectoryArrowRight" },
-        { icon: navigationUnfoldLess, key: "navigationUnfoldLess" },
-        { icon: navigationUnfoldMore, key: "navigationUnfoldMore" }]
+        { icon: networkWifiRouter, key: "networkWifiRouter" }]
     };
   },
   components: {
