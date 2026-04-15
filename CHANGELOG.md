@@ -1,3 +1,12 @@
+## [0.12.45](https://github.com/feather-design-system/feather-design-system/compare/v0.12.44...v0.12.45) (2026-04-15)
+
+
+### Features
+
+* **alert, status, tag:** init ([#227](https://github.com/feather-design-system/feather-design-system/issues/227)) ([b6e3d06](https://github.com/feather-design-system/feather-design-system/commit/b6e3d06ebb87cc8c44d56523d262794bdf475d1b))
+
+
+
 ## [0.12.44](https://github.com/feather-design-system/feather-design-system/compare/v0.12.43...v0.12.44) (2026-03-12)
 
 
