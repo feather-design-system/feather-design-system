@@ -4,7 +4,7 @@
       <FeatherPanelBar
         :id="'panels-sidebar'"
         :items="panels"
-        mode="Panel"
+        mode="single"
         title="Feather Documentation"
         header
         footer
@@ -98,7 +98,8 @@
 
 <script setup lang="ts">
 import { computed, markRaw } from "vue";
-import { FeatherPanelBar, Panel } from "@featherds/panel-bar";
+import FeatherPanelBar from "../src/components/FeatherPanelBar.vue";
+import { Panel } from "../src/components/types";
 import { FeatherMenuList, MenuListEntry } from "@featherds/menu";
 import { FeatherDock } from "@featherds/dock";
 import { FeatherIcon } from "@featherds/icon";

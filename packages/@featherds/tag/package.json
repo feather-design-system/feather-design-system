@@ -1,22 +1,24 @@
 {
-  "name": "@featherds/dock",
-  "version": "0.12.44",
+  "name": "@featherds/tag",
+  "version": "0.12.39",
+  "private": true,
   "publishConfig": {
     "access": "public"
   },
+  "description": "Feather styled tag component.",
   "author": "NantHealth",
   "scripts": {},
   "main": "dist/app.mjs",
   "license": "Apache-2.0",
   "dependencies": {
-    "@featherds/icon": "file:../icon",
-    "@featherds/panel-bar": "file:../panel-bar",
+    "@featherds/composables": "file:../composables",
     "@featherds/styles": "file:../styles",
-    "vue": "^3.5.13"
+    "@featherds/utils": "file:../utils",
+    "vue": "^3.5.12"
   },
   "keywords": [
     "vue",
-    "FeatherDock"
+    "FeatherTag"
   ],
   "types": "./src/index.d.ts"
 }
