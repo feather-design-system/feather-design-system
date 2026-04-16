@@ -1,3 +1,12 @@
+## [0.12.46](https://github.com/feather-design-system/feather-design-system/compare/v0.12.45...v0.12.46) (2026-04-16)
+
+
+### Features
+
+* **chart:** chart & dashboard init ([#228](https://github.com/feather-design-system/feather-design-system/issues/228)) ([5a926c0](https://github.com/feather-design-system/feather-design-system/commit/5a926c0d922bc45d6ed6c35f780da76513ca9673))
+
+
+
 ## [0.12.45](https://github.com/feather-design-system/feather-design-system/compare/v0.12.44...v0.12.45) (2026-04-15)
 
 

@@ -1,6 +1,6 @@
 {
   "name": "@featherds/expansion",
-  "version": "0.12.45",
+  "version": "0.12.46",
   "publishConfig": {
     "access": "public"
   },
