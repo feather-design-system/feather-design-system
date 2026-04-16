@@ -32,7 +32,7 @@ import {
   FeatherChartDimensions,
   FeatherChartOptions,
 } from "./types";
-import { setDynamicScope } from "./chartUtils";
+// import { setDynamicScope } from "./chartUtils";
 
 const props = defineProps({
   id: { type: String, required: true },
@@ -59,6 +59,7 @@ const parseDate = timeParse("%Y-%m-%d");
 
 // DRAW
 const draw = () => {
+  console.log(`draw: #${id.value} `);
   // CLEAN UP
   select(`#${id.value}`).selectChildren().remove();
 
@@ -151,7 +152,7 @@ const draw = () => {
     .ease(easePolyInOut)
     .attr("opacity", 1);
 
-  setDynamicScope(`#${id.value}`);
+  // setDynamicScope(`#${id.value}`);
 };
 
 const isValid = () => {
