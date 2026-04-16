@@ -32,7 +32,7 @@ import {
   FeatherChartDimensions,
   FeatherChartOptions,
 } from "./types";
-import { setDynamicScope } from "./chartUtils";
+// import { setDynamicScope } from "./chartUtils";
 
 const props = defineProps({
   id: { type: String, required: true },
@@ -59,6 +59,7 @@ const parseDate = timeParse("%Y-%m-%d");
 
 // DRAW
 const draw = () => {
+  console.log(`draw: #${id.value} `);
   // CLEAN UP
   select(`#${id.value}`).selectChildren().remove();
 
@@ -136,23 +137,22 @@ const draw = () => {
   svg
     .append("path")
     .datum(validData)
+    .attr("class", "categorical1 area")
+    .attr("stroke", "#000")
+    .attr("stroke-width", 0.375)
+    .attr("d", theArea as any)
     .attr("opacity", 0)
     .transition()
     .duration(1000)
     .ease(easePolyInOut)
-    .attr("opacity", 1)
-
-    .attr("stroke", "#000")
-    .attr("stroke-width", 0.375)
-    .attr("d", theArea as any)
-    .attr("class", "categorical1 area");
+    .attr("opacity", 1);
 
   transition(svg as any)
     .duration(1000)
     .ease(easePolyInOut)
     .attr("opacity", 1);
 
-  setDynamicScope(`#${id.value}`);
+  // setDynamicScope(`#${id.value}`);
 };
 
 const isValid = () => {
@@ -194,7 +194,8 @@ onMounted(() => {
   display: block;
   max-width: 100%;
   height: auto;
-  path.area {
+
+  :deep(path.area) {
     fill: var(vars.$categorical1);
   }
 }
