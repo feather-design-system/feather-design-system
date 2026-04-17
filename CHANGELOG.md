@@ -1,3 +1,7 @@
+## [0.12.49](https://github.com/feather-design-system/feather-design-system/compare/v0.12.48...v0.12.49) (2026-04-17)
+
+
+
 ## [0.12.48](https://github.com/feather-design-system/feather-design-system/compare/v0.12.47...v0.12.48) (2026-04-17)
 
 

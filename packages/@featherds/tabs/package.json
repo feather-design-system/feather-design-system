@@ -1,6 +1,6 @@
 {
   "name": "@featherds/tabs",
-  "version": "0.12.48",
+  "version": "0.12.49",
   "publishConfig": {
     "access": "public"
   },
