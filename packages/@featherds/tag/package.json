@@ -1,6 +1,6 @@
 {
   "name": "@featherds/tag",
-  "version": "0.12.47",
+  "version": "0.12.48",
   "private": true,
   "publishConfig": {
     "access": "public"

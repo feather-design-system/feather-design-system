@@ -1,6 +1,6 @@
 {
   "name": "@featherds/chips",
-  "version": "0.12.47",
+  "version": "0.12.48",
   "publishConfig": {
     "access": "public"
   },

@@ -1,3 +1,12 @@
+## [0.12.48](https://github.com/feather-design-system/feather-design-system/compare/v0.12.47...v0.12.48) (2026-04-17)
+
+
+### Features
+
+* **slider:** initial  ([#231](https://github.com/feather-design-system/feather-design-system/issues/231)) ([38c32e5](https://github.com/feather-design-system/feather-design-system/commit/38c32e579ccd214219c446b3ff8089229e784aa7))
+
+
+
 ## [0.12.47](https://github.com/feather-design-system/feather-design-system/compare/v0.12.46...v0.12.47) (2026-04-17)
 
 
