@@ -7,11 +7,6 @@ lang: en-US
 tags: ["Sidebar", "component"]
 menu: components
 ---
-
-:::under-construction Under Construction
-FeatherSidebar is under review and is subject to change.
-:::
-
 ## Design
 
 The Sidebar component provides a collapsible side panel interface that can be used to organize navigation, tools, and other content while preserving screen space. It uses panels to group related content and can be collapsed to show only icons when space is at a premium.
