@@ -1,3 +1,12 @@
+## [0.12.47](https://github.com/feather-design-system/feather-design-system/compare/v0.12.46...v0.12.47) (2026-04-17)
+
+
+### Features
+
+* **progress:** linear and circular progress indicators ([#230](https://github.com/feather-design-system/feather-design-system/issues/230)) ([97d2a83](https://github.com/feather-design-system/feather-design-system/commit/97d2a8304d86f9e1b42efbf1847c12a233999203))
+
+
+
 ## [0.12.46](https://github.com/feather-design-system/feather-design-system/compare/v0.12.45...v0.12.46) (2026-04-16)
 
 
