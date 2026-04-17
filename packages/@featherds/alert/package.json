@@ -1,7 +1,6 @@
 {
   "name": "@featherds/alert",
   "version": "0.12.48",
-  "private": true,
   "publishConfig": {
     "access": "public"
   },

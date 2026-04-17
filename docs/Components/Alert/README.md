@@ -7,10 +7,6 @@ lang: en-US
 tags: ["Alert", "component"]
 menu: components
 ---
-:::under-construction Not Published
-FeatherAlert and FeatherAlertDock are under review and have not yet been published.
-:::
-
 ## Design
 
 Alerts provide contextual feedback messages for typical user actions, system events, or critical information. They are designed to be visually prominent and can be used for success, warning, error, or informational messages. Alerts may be dismissible, sticky, or docked to the top or bottom of the viewport.

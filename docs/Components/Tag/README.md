@@ -7,11 +7,6 @@ lang: en-US
 tags: ["Tag", "component"]
 menu: components
 ---
-
-:::under-construction Not Published
-FeatherTag is under review and has not yet been published.
-:::
-
 ## Design
 
 Tags help users quickly identify, filter, or group content by applying short, descriptive labels. They are commonly used in search interfaces, filters, and item lists to provide additional context or enable quick actions.

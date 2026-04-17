@@ -7,10 +7,6 @@ lang: en-US
 tags: ["PanelBar", "panel-bar", "accordion", "component"]
 menu: components
 ---
-:::under-construction Under Construction
-FeatherPanelBar is under review and is subject to change.
-:::
-
 ## Design
 
 The Panel Bar component provides a way to organize content into expandable and collapsible panels. It is useful for presenting large amounts of information in a compact space, allowing users to focus on one section at a time. Panel Bars can be used for FAQs, settings, or any scenario where grouped, toggleable content is beneficial.
