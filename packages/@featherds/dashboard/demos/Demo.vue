@@ -27,7 +27,7 @@ import type {
   FeatherChartBarData,
   FeatherChartFlexibleData,
   FeatherChartOptions,
-} from "packages/@featherds/chart/src/components/types";
+} from "../../chart/src/components/types";
 
 const chart2axes: FeatherChartAxes = {
   x: "",
