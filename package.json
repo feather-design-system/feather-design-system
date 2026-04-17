@@ -1,6 +1,5 @@
 {
   "name": "featherds",
-  "version": "0.0.1",
   "author": "NantHealth",
   "license": "Apache-2.0",
   "type": "module",
@@ -170,7 +169,7 @@
     "vue-i18n": "^8.17.6",
     "vue-router": "^4.0.0",
     "vue-tsc": "^2.1.6",
-    "vuepress": "^2.0.0-rc.20",
+    "vuepress": "2.0.0-rc.20",
     "wdio-lambdatest-service": "2.0.3",
     "webdriverio": "^8.15.10",
     "yup": "^0.32.10"
@@ -179,7 +178,7 @@
     "vue"
   ],
   "volta": {
-    "node": "20.9.0",
+    "node": "20.19.0",
     "npm": "10.1.0"
   }
 }

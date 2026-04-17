@@ -1,7 +1,7 @@
 import { describe, it, expect } from "vitest";
 import { mount } from "@vue/test-utils";
 import { nextTick } from "vue";
-import { DockLabels } from "packages/@featherds/dock/src";
+import { DockLabels } from "@featherds/dock";
 
 describe("FeatherSidenav (unit)", () => {
   it("forwards computed dock props to FeatherDock", async () => {
